@@ -168,12 +168,12 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			});
 			string localPath = String.Join(String.Empty, pathSegments);
 
-			if (!String.IsNullOrEmpty(settings.PathPrefixToRemove) && localPath.StartsWith(settings.PathPrefixToRemove))
+			if (!String.IsNullOrEmpty(settings.PathPrefixToRemove) && localPath.StartsWith(settings.PathPrefixToRemove, StringComparison.Ordinal))
 			{
 				localPath = localPath.Remove(0, settings.PathPrefixToRemove.Length);
 			}
 
-			if (!localPath.StartsWith("/"))
+			if (!localPath.StartsWith('/'))
 			{
 				localPath = "/" + localPath;
 			}

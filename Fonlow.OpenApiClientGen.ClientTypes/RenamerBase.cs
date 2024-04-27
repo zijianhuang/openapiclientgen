@@ -9,12 +9,12 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 {
 	public abstract class RenamerBase : IRenamer
 	{
-		public RenamerBase()
+		protected RenamerBase(HashSet<string> keywordsHashSet)
 		{
-			KeywordsHashSet = new HashSet<string>();
+			KeywordsHashSet = keywordsHashSet;
 		}
 
-		protected HashSet<string> KeywordsHashSet { get; set; }
+		protected HashSet<string> KeywordsHashSet { get; }
 
 		public bool IsKeyword(string s)
 		{
@@ -44,7 +44,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				s = "_" + s;
 			}
 
-			var rs = (!String.IsNullOrEmpty(nsInType) && s.StartsWith(nsInType)) ? s.Remove(0, nsInType.Length + 1) : s;//nsInType.Length+1 to remove the dot after namespace
+			var rs = (!String.IsNullOrEmpty(nsInType) && s.StartsWith(nsInType, StringComparison.Ordinal)) ? s.Remove(0, nsInType.Length + 1) : s;//nsInType.Length+1 to remove the dot after namespace
 
 			var r = ToTitleCase(rs).Replace('-', '_')
 				.Replace("(", "").Replace(")", "")

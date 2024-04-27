@@ -9,9 +9,8 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 {
 	public class TypeScriptRenamer : RenamerBase, IRenamer
 	{
-		public TypeScriptRenamer() : base()
+		public TypeScriptRenamer() : base(new HashSet<string>(keywords))
 		{
-			KeywordsHashSet = new HashSet<string>(keywords);
 		}
 
 		/// <summary>

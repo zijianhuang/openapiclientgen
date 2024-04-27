@@ -104,7 +104,7 @@ export namespace My_Pet_Client {
 		 * @return {Pet} Successful operation
 		 */
 		AddPet(requestBody: Pet, headersHandler?: () => {[header: string]: string}): Promise<Pet> {
-			return fetch(this.baseUri + 'pet', { method: 'post', headers: headersHandler ? Object.assign(headersHandler(), { 'Content-Type': 'application/json;charset=UTF-8' }): { 'Content-Type': 'application/json;charset=UTF-8' }, body: JSON.stringify(requestBody) }).then(d => {if (d.status<=204) return d.json(); throw d;});
+			return fetch(this.baseUri + 'pet', { method: 'post', headers: headersHandler ? Object.assign(headersHandler(), { 'Content-Type': 'application/json;charset=UTF-8' }): { 'Content-Type': 'application/json;charset=UTF-8' }, body: JSON.stringify(requestBody) }).then(d => {if (d.status<=202) return d.json(); else if (d.status==204) return null; throw d;});
 		}
 
 		/**
@@ -125,7 +125,7 @@ export namespace My_Pet_Client {
 		 * @return {User} Successful operation
 		 */
 		CreateUsersWithListInput(requestBody: Array<User>, headersHandler?: () => {[header: string]: string}): Promise<User> {
-			return fetch(this.baseUri + 'user/createWithList', { method: 'post', headers: headersHandler ? Object.assign(headersHandler(), { 'Content-Type': 'application/json;charset=UTF-8' }): { 'Content-Type': 'application/json;charset=UTF-8' }, body: JSON.stringify(requestBody) }).then(d => {if (d.status<=204) return d.json(); throw d;});
+			return fetch(this.baseUri + 'user/createWithList', { method: 'post', headers: headersHandler ? Object.assign(headersHandler(), { 'Content-Type': 'application/json;charset=UTF-8' }): { 'Content-Type': 'application/json;charset=UTF-8' }, body: JSON.stringify(requestBody) }).then(d => {if (d.status<=202) return d.json(); else if (d.status==204) return null; throw d;});
 		}
 
 		/**
@@ -171,7 +171,7 @@ export namespace My_Pet_Client {
 		 * @return {Array<Pet>} successful operation
 		 */
 		FindPetsByStatus(status: PetStatus | null | undefined, headersHandler?: () => {[header: string]: string}): Promise<Array<Pet>> {
-			return fetch(this.baseUri + 'pet/findByStatus?status=' + status, { method: 'get', headers: headersHandler ? headersHandler() : undefined }).then(d => {if (d.status<=204) return d.json(); throw d;});
+			return fetch(this.baseUri + 'pet/findByStatus?status=' + status, { method: 'get', headers: headersHandler ? headersHandler() : undefined }).then(d => {if (d.status<=202) return d.json(); else if (d.status==204) return null; throw d;});
 		}
 
 		/**
@@ -182,7 +182,7 @@ export namespace My_Pet_Client {
 		 * @return {Array<Pet>} successful operation
 		 */
 		FindPetsByTags(tags: Array<string> | null | undefined, headersHandler?: () => {[header: string]: string}): Promise<Array<Pet>> {
-			return fetch(this.baseUri + 'pet/findByTags?' + tags?.map(z => `tags=${encodeURIComponent(z)}`).join('&'), { method: 'get', headers: headersHandler ? headersHandler() : undefined }).then(d => {if (d.status<=204) return d.json(); throw d;});
+			return fetch(this.baseUri + 'pet/findByTags?' + tags?.map(z => `tags=${encodeURIComponent(z)}`).join('&'), { method: 'get', headers: headersHandler ? headersHandler() : undefined }).then(d => {if (d.status<=202) return d.json(); else if (d.status==204) return null; throw d;});
 		}
 
 		/**
@@ -192,7 +192,7 @@ export namespace My_Pet_Client {
 		 * @return {{[id: string]: number }} successful operation
 		 */
 		GetInventory(headersHandler?: () => {[header: string]: string}): Promise<{[id: string]: number }> {
-			return fetch(this.baseUri + 'store/inventory', { method: 'get', headers: headersHandler ? headersHandler() : undefined }).then(d => {if (d.status<=204) return d.json(); throw d;});
+			return fetch(this.baseUri + 'store/inventory', { method: 'get', headers: headersHandler ? headersHandler() : undefined }).then(d => {if (d.status<=202) return d.json(); else if (d.status==204) return null; throw d;});
 		}
 
 		/**
@@ -204,7 +204,7 @@ export namespace My_Pet_Client {
 		 * @return {Order} successful operation
 		 */
 		GetOrderById(orderId: string, headersHandler?: () => {[header: string]: string}): Promise<Order> {
-			return fetch(this.baseUri + 'store/order/' + orderId, { method: 'get', headers: headersHandler ? headersHandler() : undefined }).then(d => {if (d.status<=204) return d.json(); throw d;});
+			return fetch(this.baseUri + 'store/order/' + orderId, { method: 'get', headers: headersHandler ? headersHandler() : undefined }).then(d => {if (d.status<=202) return d.json(); else if (d.status==204) return null; throw d;});
 		}
 
 		/**
@@ -216,7 +216,7 @@ export namespace My_Pet_Client {
 		 * @return {Pet} successful operation
 		 */
 		GetPetById(petId: string, headersHandler?: () => {[header: string]: string}): Promise<Pet> {
-			return fetch(this.baseUri + 'pet/' + petId, { method: 'get', headers: headersHandler ? headersHandler() : undefined }).then(d => {if (d.status<=204) return d.json(); throw d;});
+			return fetch(this.baseUri + 'pet/' + petId, { method: 'get', headers: headersHandler ? headersHandler() : undefined }).then(d => {if (d.status<=202) return d.json(); else if (d.status==204) return null; throw d;});
 		}
 
 		/**
@@ -226,7 +226,7 @@ export namespace My_Pet_Client {
 		 * @return {User} successful operation
 		 */
 		GetUserByName(username: string, headersHandler?: () => {[header: string]: string}): Promise<User> {
-			return fetch(this.baseUri + 'user/' + (username == null ? '' : encodeURIComponent(username)), { method: 'get', headers: headersHandler ? headersHandler() : undefined }).then(d => {if (d.status<=204) return d.json(); throw d;});
+			return fetch(this.baseUri + 'user/' + (username == null ? '' : encodeURIComponent(username)), { method: 'get', headers: headersHandler ? headersHandler() : undefined }).then(d => {if (d.status<=202) return d.json(); else if (d.status==204) return null; throw d;});
 		}
 
 		/**
@@ -256,7 +256,7 @@ export namespace My_Pet_Client {
 		 * @return {Order} successful operation
 		 */
 		PlaceOrder(requestBody: Order, headersHandler?: () => {[header: string]: string}): Promise<Order> {
-			return fetch(this.baseUri + 'store/order', { method: 'post', headers: headersHandler ? Object.assign(headersHandler(), { 'Content-Type': 'application/json;charset=UTF-8' }): { 'Content-Type': 'application/json;charset=UTF-8' }, body: JSON.stringify(requestBody) }).then(d => {if (d.status<=204) return d.json(); throw d;});
+			return fetch(this.baseUri + 'store/order', { method: 'post', headers: headersHandler ? Object.assign(headersHandler(), { 'Content-Type': 'application/json;charset=UTF-8' }): { 'Content-Type': 'application/json;charset=UTF-8' }, body: JSON.stringify(requestBody) }).then(d => {if (d.status<=202) return d.json(); else if (d.status==204) return null; throw d;});
 		}
 
 		/**
@@ -267,7 +267,7 @@ export namespace My_Pet_Client {
 		 * @return {Pet} Successful operation
 		 */
 		UpdatePet(requestBody: Pet, headersHandler?: () => {[header: string]: string}): Promise<Pet> {
-			return fetch(this.baseUri + 'pet', { method: 'put', headers: headersHandler ? Object.assign(headersHandler(), { 'Content-Type': 'application/json;charset=UTF-8' }): { 'Content-Type': 'application/json;charset=UTF-8' }, body: JSON.stringify(requestBody) }).then(d => {if (d.status<=204) return d.json(); throw d;});
+			return fetch(this.baseUri + 'pet', { method: 'put', headers: headersHandler ? Object.assign(headersHandler(), { 'Content-Type': 'application/json;charset=UTF-8' }): { 'Content-Type': 'application/json;charset=UTF-8' }, body: JSON.stringify(requestBody) }).then(d => {if (d.status<=202) return d.json(); else if (d.status==204) return null; throw d;});
 		}
 
 		/**

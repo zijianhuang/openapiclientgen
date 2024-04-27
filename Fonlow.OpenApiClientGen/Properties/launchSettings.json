@@ -1,7 +1,8 @@
 {
   "profiles": {
     "Fonlow.OpenApiClientGen": {
-      "commandName": "Project"
+      "commandName": "Project",
+      "commandLineArgs": "..\\..\\..\\..\\Tests\\SwagTests\\SwagMock\\petStore.yaml ..\\..\\..\\..\\DemoCodeGen.json"
     }
   }
 }

@@ -40,7 +40,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			return ss;
 		}
 
-		static void ValidationsToComments(IList<string> ss, OpenApiSchema fieldSchema, bool excludePattern = false)
+		static void ValidationsToComments(List<string> ss, OpenApiSchema fieldSchema, bool excludePattern = false)
 		{
 			if (fieldSchema.MinLength.HasValue)
 			{

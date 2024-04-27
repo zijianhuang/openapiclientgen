@@ -440,7 +440,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			}
 #endif
 			string propertyName = Renamer.RefinePropertyName(refId);
-			if (propertyName == string.Empty)
+			if (string.IsNullOrEmpty(propertyName))
 			{
 				throw new ArgumentException($"doggy refId: {refId}; currentTypeName: {currentTypeName}");
 			}
@@ -815,7 +815,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			return null;
 		}
 
-		protected override void CreateMemberDocComment(string refId, OpenApiSchema memberSchema, CodeMemberField property, OpenApiSchema modelSchema)
+		protected override void CreateMemberDocComment(string refId, OpenApiSchema memberSchema, CodeMemberField propertyField, OpenApiSchema modelSchema)
 		{
 			string typeComment = memberSchema.Description;
 			if (settings.DataAnnotationsToComments)
@@ -826,11 +826,11 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					ss.Insert(0, typeComment);
 				}
 
-				AddLinesAsSummaryDocComments(property.Comments, ss);
+				AddLinesAsSummaryDocComments(propertyField.Comments, ss);
 			}
 			else
 			{
-				AddDescriptionAsSummaryDocComments(property.Comments, typeComment);
+				AddDescriptionAsSummaryDocComments(propertyField.Comments, typeComment);
 			}
 
 		}

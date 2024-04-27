@@ -287,14 +287,14 @@ namespace Fonlow.CodeDom.Web.Ts
 
 		protected static string RemoveTrialEmptyString(string s)
 		{
-			int p = s.IndexOf(" + ''");
+			int p = s.IndexOf(" + ''", StringComparison.Ordinal);
 			//Debug.Assert(p > -1, "Must match the end string in RemoveTrialEmptyString");
 			if (p > -1)
 			{
 				return s.Remove(p, 5);
 			}
 
-			int p2 = s.IndexOf(")'");
+			int p2 = s.IndexOf(")'", StringComparison.Ordinal);
 			if (p2 > -1)
 			{
 				return s.Remove(p2 + 1, 1);

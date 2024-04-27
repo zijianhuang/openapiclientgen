@@ -35,7 +35,7 @@ namespace Fonlow.CodeDom.Web
 		{
 			if (d.ParameterDescriptor.ParameterBinder == ParameterBinder.FromQuery)
 			{
-				bool queryExists = newUriText.Contains("?");
+				bool queryExists = newUriText.Contains('?');
 				newUriText += queryExists ? "&" : "?";
 
 				if (d.ParameterDescriptor.ParameterType == typeofString && d.ParameterTypeReference?.ArrayRank == 0)
@@ -153,7 +153,7 @@ namespace Fonlow.CodeDom.Web
 			var questionMarkForSafeTransform = d.ParameterDescriptor.IsRequired ? string.Empty : "?";
 			if (d.ParameterDescriptor.ParameterBinder == ParameterBinder.FromQuery)
 			{
-				bool queryExists = newUriText.Contains("?");
+				bool queryExists = newUriText.Contains('?');
 				newUriText += queryExists ? "&" : "?";
 
 				if (d.ParameterDescriptor.ParameterType == typeofString && d.ParameterTypeReference.ArrayRank == 0)

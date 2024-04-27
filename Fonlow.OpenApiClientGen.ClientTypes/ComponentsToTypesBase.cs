@@ -16,7 +16,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 	/// </summary>
 	public abstract class ComponentsToTypesBase : IComponentToCodeDom
 	{
-		public ComponentsToTypesBase(ISettings settings, CodeCompileUnit codeCompileUnit, CodeNamespace clientNamespace)
+		protected ComponentsToTypesBase(ISettings settings, CodeCompileUnit codeCompileUnit, CodeNamespace clientNamespace)
 		{
 			this.codeCompileUnit = codeCompileUnit;
 			this.settings = settings;
@@ -451,16 +451,16 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		/// Mostly used in ParametersRefBuilder.
 		/// </summary>
 		/// <param name="propertySchema"></param>
-		/// <param name="actionName"></param>
+		/// <param name="containerName"></param>
 		/// <param name="propertyName"></param>
 		/// <returns></returns>
 		/// <remarks>This shares similar navigation of schema like those in AddProperty().</remarks>
-		public CodeTypeReference PropertySchemaToCodeTypeReference(OpenApiSchema propertySchema, string actionName, string propertyName)
+		public CodeTypeReference PropertySchemaToCodeTypeReference(OpenApiSchema propertySchema, string containerName, string propertyName)
 		{
 			if (propertySchema == null)
 			{
 				//throw new ArgumentNullException(nameof(propertySchema));
-				Console.Error.WriteLine($"actionName: {actionName} and property: {propertyName} not having propertySchema");
+				Console.Error.WriteLine($"actionName: {containerName} and property: {propertyName} not having propertySchema");
 				return null;
 			}
 
@@ -479,12 +479,12 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				{
 					if (propertySchema.Enum.Count > 0) //for casual enum
 					{
-						var r = GenerateCasualEnum(propertySchema, actionName, propertyName, settings.ClientNamespace);
+						var r = GenerateCasualEnum(propertySchema, containerName, propertyName, settings.ClientNamespace);
 						return r.Item1;
 					}
 					else
 					{
-						Tuple<CodeTypeReference, bool> r = CreateCodeTypeReferenceSchemaOf(propertySchema, actionName, propertyName);
+						Tuple<CodeTypeReference, bool> r = CreateCodeTypeReferenceSchemaOf(propertySchema, containerName, propertyName);
 						return r.Item1;
 					}
 				}
@@ -493,7 +493,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			{
 				if (schemaType == "array") // for array
 				{
-					var r = CreateArrayCodeTypeReference(propertySchema, actionName, propertyName, null, null);
+					var r = CreateArrayCodeTypeReference(propertySchema, containerName, propertyName, null, null);
 					return r.Item1;
 				}
 				else if (propertySchema.Enum.Count == 0 && propertySchema.Reference != null && !isPrimitiveType) // for complex type
@@ -503,7 +503,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				}
 				else if (propertySchema.Reference == null && propertySchema.Properties != null && propertySchema.Properties.Count > 0) // for casual type
 				{
-					string casualTypeName = actionName + Renamer.RefinePropertyName(propertyName);
+					string casualTypeName = containerName + Renamer.RefinePropertyName(propertyName);
 					var found = FindCodeTypeDeclarationInNamespaces(casualTypeName, null); //It could happenen when generating sync and async functions in C#
 					if (found == null)
 					{
@@ -516,7 +516,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				else if (schemaType == "object" && propertySchema.AdditionalProperties != null) // for dictionary
 				{
 					CodeTypeReference dicKeyTypeRef = TypeRefHelper.TranslateToClientTypeReference(typeof(string));
-					CodeTypeReference dicValueTypeRef = PropertySchemaToCodeTypeReference(propertySchema.AdditionalProperties, actionName, propertyName);
+					CodeTypeReference dicValueTypeRef = PropertySchemaToCodeTypeReference(propertySchema.AdditionalProperties, containerName, propertyName);
 					return new CodeTypeReference(typeof(Dictionary<,>).FullName, dicKeyTypeRef, dicValueTypeRef); //for client codes, Dictionary is better than IDictionary, no worry of different implementation of IDictionary
 				}
 				else if (propertySchema.Enum.Count == 0) // for primitive type
@@ -556,7 +556,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 						}
 						else
 						{
-							var r = GenerateCasualEnum(propertySchema, actionName, propertyName, settings.ClientNamespace);
+							var r = GenerateCasualEnum(propertySchema, containerName, propertyName, settings.ClientNamespace);
 							return r.Item1;
 						}
 					}
@@ -580,7 +580,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					}
 					else
 					{
-						var r = GenerateCasualEnum(propertySchema, actionName, propertyName, settings.ClientNamespace);
+						var r = GenerateCasualEnum(propertySchema, containerName, propertyName, settings.ClientNamespace);
 						return r.Item1;
 					}
 				}
@@ -690,7 +690,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		/// </summary>
 		/// <param name="requestBodies"></param>
 		/// <returns></returns>
-		KeyValuePair<string, OpenApiSchema>[] ExtractRequestBodiesOfApplicationJson(IDictionary<string, OpenApiRequestBody> requestBodies)
+		static KeyValuePair<string, OpenApiSchema>[] ExtractRequestBodiesOfApplicationJson(IDictionary<string, OpenApiRequestBody> requestBodies)
 		{
 			var stronglyTypedBodies = requestBodies.Where(d =>
 			{

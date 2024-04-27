@@ -15,6 +15,7 @@
     <RootNamespace>Fonlow.OpenApiClientGen.ClientTypes</RootNamespace>
     <Version>3.1</Version>
     <PackageReleaseNotes>Better support for Int64 in JS. More doc comments generated.</PackageReleaseNotes>
+    <AnalysisLevel>latest-all</AnalysisLevel>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">

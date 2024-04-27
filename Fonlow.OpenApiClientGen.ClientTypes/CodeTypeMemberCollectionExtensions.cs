@@ -20,7 +20,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		/// <param name="value">Value to insert</param>
 		public static void InsertIntoSortedList(this CodeTypeMemberCollection list, CodeTypeMember value)
 		{
-			InsertIntoSortedList(list, value, (a, b) => string.Compare(a.Name, b.Name));
+			InsertIntoSortedList(list, value, (a, b) => string.Compare(a.Name, b.Name, StringComparison.OrdinalIgnoreCase));
 		}
 
 		/// <summary>

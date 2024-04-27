@@ -26,7 +26,7 @@ namespace Fonlow.CodeDom.Web
 			}
 			catch (IndexOutOfRangeException ex)
 			{
-				throw new CodeGenException($"Something wrong with {uriText}, no parameters?");
+				throw new CodeGenException($"Something wrong with {uriText}, no parameters? or error: {ex.Message}");
 			}
 
 			if (parameterNames.Length == 0 && parameterDescriptions.Length == 0)

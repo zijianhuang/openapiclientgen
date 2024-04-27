@@ -72,7 +72,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			provider.GenerateCodeFromCompileUnit(codeCompileUnit, writer, options);
 		}
 
-		CodeObjectHelper CreateCodeObjectHelper(bool asModule)
+		static CodeObjectHelper CreateCodeObjectHelper(bool asModule)
 		{
 			return new CodeObjectHelper(asModule);
 		}
@@ -497,7 +497,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			}).ToArray();
 		}
 
-		void SetClientPropertyTypeInfo(CodeMemberField p, bool isComplex, bool isArray, Type clrPrimitiveType = null)
+		static void SetClientPropertyTypeInfo(CodeMemberField p, bool isComplex, bool isArray, Type clrPrimitiveType = null)
 		{
 			p.Type.UserData.Add(Fonlow.TypeScriptCodeDom.UserDataKeys.FieldTypeInfo,
 			new FieldTypeInfo
@@ -540,7 +540,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			return result;
 		}
 
-		protected override void CreateMemberDocComment(string refId, OpenApiSchema memberSchema, CodeMemberField property, OpenApiSchema modelSchema)
+		protected override void CreateMemberDocComment(string refId, OpenApiSchema memberSchema, CodeMemberField propertyField, OpenApiSchema modelSchema)
 		{
 			string memberComment = memberSchema.Description;
 			if (!String.IsNullOrEmpty(memberComment))
@@ -549,7 +549,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				if (funky)
 				{
 					memberComment = memberComment.Replace("*/", "");
-					Trace.TraceWarning($"Component {refId} with property {property.Name} has Doc comments containing '*/' which is invalid in JSDoc. Please remove it in the definition.");
+					Trace.TraceWarning($"Component {refId} with property {propertyField.Name} has Doc comments containing '*/' which is invalid in JSDoc. Please remove it in the definition.");
 				}
 			}
 
@@ -563,8 +563,8 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 				if (!ComponentsHelper.FieldSchemaContainsValueConstraints(memberSchema))
 				{
-					var fieldTypeInfo = property.Type.UserData.Contains(Fonlow.TypeScriptCodeDom.UserDataKeys.FieldTypeInfo) ?
-					property.Type.UserData[Fonlow.TypeScriptCodeDom.UserDataKeys.FieldTypeInfo] as FieldTypeInfo
+					var fieldTypeInfo = propertyField.Type.UserData.Contains(Fonlow.TypeScriptCodeDom.UserDataKeys.FieldTypeInfo) ?
+					propertyField.Type.UserData[Fonlow.TypeScriptCodeDom.UserDataKeys.FieldTypeInfo] as FieldTypeInfo
 					: null;
 					if (fieldTypeInfo != null && fieldTypeInfo.ClrType != null && dotNetTypeCommentDic.TryGetValue(fieldTypeInfo.ClrType, out string ctm))
 					{
@@ -574,14 +574,14 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 				if (ss.Count > 0)
 				{
-					property.Comments.Add(new CodeCommentStatement(Fonlow.DocComment.StringFunctions.IndentedArrayToString(ss), true));
+					propertyField.Comments.Add(new CodeCommentStatement(Fonlow.DocComment.StringFunctions.IndentedArrayToString(ss), true));
 				}
 			}
 			else
 			{
 				if (!string.IsNullOrEmpty(memberComment))
 				{
-					property.Comments.Add(new CodeCommentStatement(memberComment, true));
+					propertyField.Comments.Add(new CodeCommentStatement(memberComment, true));
 				}
 			}
 		}
@@ -603,7 +603,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			}
 			else if (type.IsArray)
 			{
-				Debug.Assert(type.Name.EndsWith("]"));
+				Debug.Assert(type.Name.EndsWith(']'));
 				Type elementType = type.GetElementType();
 				int arrayRank = type.GetArrayRank();
 				return CreateArrayTypeReference(elementType, arrayRank);
@@ -660,7 +660,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			return null;
 		}
 
-		protected override void CreateTypeDocComment(string refId, OpenApiSchema typeSchema, CodeTypeMember declaration)
+		protected override void CreateTypeDocComment(string refId, OpenApiSchema typeSchema, CodeTypeMember typeDeclaration)
 		{
 			string typeComment = typeSchema.Description;
 			if (String.IsNullOrEmpty(typeComment))
@@ -675,7 +675,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				Trace.TraceWarning($"Component {refId} has Doc comments containing '*/' which is invalid in JSDoc. Please remove it in the definition.");
 			}
 
-			declaration.Comments.Add(new CodeCommentStatement(typeComment, true));
+			typeDeclaration.Comments.Add(new CodeCommentStatement(typeComment, true));
 		}
 
 		public override void AddEnumMembers(CodeTypeDeclaration typeDeclaration, IList<IOpenApiAny> enumTypeList)
