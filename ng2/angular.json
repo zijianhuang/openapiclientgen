@@ -16,7 +16,7 @@
             "outputPath": "dist/oacg-demo",
             "index": "src/index.html",
             "main": "src/main.ts",
-             "polyfills": [
+            "polyfills": [
               "zone.js",
               "zone.js/testing"
             ],
@@ -82,7 +82,6 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "src/test.ts",
             "polyfills": [
               "zone.js",
               "zone.js/testing"
@@ -125,7 +124,8 @@
           }
         }
       }
-    }},
+    }
+  },
   "defaultProject": "oacg-demo",
   "cli": {
     "analytics": false
