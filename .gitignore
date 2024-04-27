@@ -55,3 +55,5 @@ node_modules
 /fetchapi/package-lock.json
 /axios/package-lock.json
 /aurelia/package-lock.json
+/jq/package-lock.json
+/ng2/package-lock.json

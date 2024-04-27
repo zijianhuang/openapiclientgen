@@ -1,4 +1,4 @@
-﻿/// <reference path="../ClientApi/WebApiJQClientAuto.ts"/>
+﻿/// <reference path="../clientapi/WebApiJqClientAuto.ts"/>
 
 // Make sure chutzpah.json is updated with  reference to the jQuery lib when the lib is upgraded.
 // Sometimes the test cases are not appearing in Test Explorer, then claring %temp% may help.
@@ -30,7 +30,7 @@ module CommonCases {
 	QUnit.module("Pets", function () {
 		QUnit.test("getPetById", function (assert) {
 			let done = assert.async();
-			petApi.GetPetById(12, data => {
+			petApi.GetPetById('12', data => {
 				assert.equal(data.name, 'Narco');
 				done();
 			});
@@ -38,7 +38,7 @@ module CommonCases {
 
 		QUnit.test("FindPetsByStatus", function (assert) {
 			let done = assert.async();
-			petApi.FindPetsByStatus([My_Pet_Client.PetStatus.sold, My_Pet_Client.PetStatus.pending], data => {
+			petApi.FindPetsByStatus(My_Pet_Client.PetStatus.sold, data => {
 				assert.equal(data.length, 3);
 				done();
 			});
@@ -46,14 +46,14 @@ module CommonCases {
 
 		QUnit.test("DeletePetNotFound", function (assert) {
 			assert.expect(0);
-			petApi.DeletePet(9, data => {
+			petApi.DeletePet('9', data => {
 				console.info('Running without assert.');
 			});
 		});
 
 		QUnit.test("DeletePet", function (assert) {
 			let done = assert.async();
-			petApi.DeletePet(13, data => {
+			petApi.DeletePet('13', data => {
 				console.info('Response is: ' + JSON.stringify(data));
 				assert.ok(true);
 				done();
@@ -71,7 +71,7 @@ module CommonCases {
 
 		QUnit.test("getPetByIdWithHeaders", function (assert) {
 			let done = assert.async();
-			petApi.GetPetById(14, data => {
+			petApi.GetPetById('14', data => {
 				assert.equal(data.name, 'Celeritas');
 				done();
 			}, ()=>{return { 'transaction-id': '01234567' }});

@@ -57,7 +57,7 @@ describe('Pet API', () => {
 	});
 
 	it('getPetById', (done) => {
-		service.GetPetById(12).subscribe(
+		service.GetPetById('12').subscribe(
 			data => {
 				expect(data.name).toBe('Narco');
 				done();
@@ -71,7 +71,7 @@ describe('Pet API', () => {
 	);
 
 	it('getPetByIdWithHeaders', (done) => {
-		service.GetPetById(13, () => new HttpHeaders({ 'transaction-id': '01234567' })).subscribe(
+		service.GetPetById('13', () => new HttpHeaders({ 'transaction-id': '01234567' })).subscribe(
 			data => {
 				expect(data.name).toBe('Bombasto');
 				done();
@@ -85,7 +85,7 @@ describe('Pet API', () => {
 	);
 
 	it('FindPetsByStatus', (done) => {
-		service.FindPetsByStatus([My_Pet_Client.PetStatus.sold, My_Pet_Client.PetStatus.pending]).subscribe(
+		service.FindPetsByStatus(My_Pet_Client.PetStatus.sold).subscribe(
 			data => {
 				expect(data.length).toBe(3);
 				done();
@@ -99,7 +99,7 @@ describe('Pet API', () => {
 	);
 
 	it('DeletePetNotFound', (done) => {
-		service.DeletePet(9).subscribe(
+		service.DeletePet('9').subscribe(
 			data => {
 				fail("Not good.")
 				done();
@@ -115,7 +115,7 @@ describe('Pet API', () => {
 	);
 
 	it('DeletePet', (done) => {
-		service.DeletePet(13).subscribe(
+		service.DeletePet('13').subscribe(
 			data => {
 				expect(data.status).toBe(200);
 				done();
@@ -134,11 +134,7 @@ describe('Pet API', () => {
 		service.AddPet({name: 'Pet'+Date.now().toString(), photoUrls: []}, () => new HttpHeaders({ 'transaction-id': '01234567' })).subscribe(
 			response => {
 				console.info('Response is '+JSON.stringify(response));
-				expect(response.status).toBe(200);
-				console.debug('headers: '+ response.headers.keys().join(', '));
-				//expect(response.headers.get('transaction-id')).toBe('01234567');//https://stackoverflow.com/questions/52443706/angular-httpclient-missing-response-headers
-				expect(response.body).toContain('Pet');
-				expect(response.body).toContain('01234567');
+				expect(response.name).toContain('Pet');
 				done();
 			},
 			error => {
