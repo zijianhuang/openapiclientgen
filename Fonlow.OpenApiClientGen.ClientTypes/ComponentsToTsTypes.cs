@@ -398,10 +398,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					string[] enumMemberNames;
 					try
 					{
-						enumMemberNames = (String.IsNullOrEmpty(primitivePropertyType) || primitivePropertyType == "string")
-							? GetStringsFromEnumList(propertySchema.Enum)
-							: propertySchema.Enum.Cast<OpenApiInteger>().Select(m => "_" + m.Value.ToString()).ToArray();
-
+						enumMemberNames = GetStringsFromEnumList(propertySchema.Enum);
 					}
 					catch (InvalidCastException ex)
 					{
