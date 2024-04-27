@@ -13,7 +13,8 @@ namespace MyNS
 	using System.Linq;
 	using System.Collections.Generic;
 	using System.Threading.Tasks;
-	using Newtonsoft.Json;
+	using System.Text.Json;
+	using System.Text.Json.Serialization;
 	using Fonlow.Net.Http;
 	
 	
@@ -1342,9 +1343,9 @@ namespace MyNS
 		
 		private System.Net.Http.HttpClient httpClient;
 		
-		private JsonSerializerSettings jsonSerializerSettings;
+		private JsonSerializerOptions jsonSerializerSettings;
 		
-		public Misc(System.Net.Http.HttpClient httpClient, JsonSerializerSettings jsonSerializerSettings=null)
+		public Misc(System.Net.Http.HttpClient httpClient, JsonSerializerOptions jsonSerializerSettings=null)
 		{
 			if (httpClient == null)
 				throw new ArgumentNullException("Null HttpClient.", "httpClient");
@@ -1366,11 +1367,8 @@ namespace MyNS
 			var requestUri = "#X-Amz-Target=PaymentCryptographyControlPlane.CreateAlias";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
 			{
-			using (var requestWriter = new System.IO.StringWriter())
-			{
-			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
-			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
+			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -1381,17 +1379,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
-				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<CreateAliasOutput>(jsonReader);
-				}
+				var contentString = await responseMessage.Content.ReadAsStringAsync();
+				return JsonSerializer.Deserialize<CreateAliasOutput>(contentString, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 			}
 		}
@@ -1406,11 +1399,8 @@ namespace MyNS
 			var requestUri = "#X-Amz-Target=PaymentCryptographyControlPlane.CreateKey";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
 			{
-			using (var requestWriter = new System.IO.StringWriter())
-			{
-			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
-			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
+			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -1421,17 +1411,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
-				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<CreateKeyOutput>(jsonReader);
-				}
+				var contentString = await responseMessage.Content.ReadAsStringAsync();
+				return JsonSerializer.Deserialize<CreateKeyOutput>(contentString, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 			}
 		}
@@ -1446,11 +1431,8 @@ namespace MyNS
 			var requestUri = "#X-Amz-Target=PaymentCryptographyControlPlane.DeleteAlias";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
 			{
-			using (var requestWriter = new System.IO.StringWriter())
-			{
-			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
-			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
+			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -1461,17 +1443,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
-				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<DeleteAliasOutput>(jsonReader);
-				}
+				var contentString = await responseMessage.Content.ReadAsStringAsync();
+				return JsonSerializer.Deserialize<DeleteAliasOutput>(contentString, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 			}
 		}
@@ -1486,11 +1463,8 @@ namespace MyNS
 			var requestUri = "#X-Amz-Target=PaymentCryptographyControlPlane.DeleteKey";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
 			{
-			using (var requestWriter = new System.IO.StringWriter())
-			{
-			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
-			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
+			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -1501,17 +1475,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
-				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<DeleteKeyOutput>(jsonReader);
-				}
+				var contentString = await responseMessage.Content.ReadAsStringAsync();
+				return JsonSerializer.Deserialize<DeleteKeyOutput>(contentString, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 			}
 		}
@@ -1526,11 +1495,8 @@ namespace MyNS
 			var requestUri = "#X-Amz-Target=PaymentCryptographyControlPlane.ExportKey";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
 			{
-			using (var requestWriter = new System.IO.StringWriter())
-			{
-			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
-			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
+			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -1541,17 +1507,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
-				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<ExportKeyOutput>(jsonReader);
-				}
+				var contentString = await responseMessage.Content.ReadAsStringAsync();
+				return JsonSerializer.Deserialize<ExportKeyOutput>(contentString, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 			}
 		}
@@ -1566,11 +1527,8 @@ namespace MyNS
 			var requestUri = "#X-Amz-Target=PaymentCryptographyControlPlane.GetAlias";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
 			{
-			using (var requestWriter = new System.IO.StringWriter())
-			{
-			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
-			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
+			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -1581,17 +1539,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
-				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<GetAliasOutput>(jsonReader);
-				}
+				var contentString = await responseMessage.Content.ReadAsStringAsync();
+				return JsonSerializer.Deserialize<GetAliasOutput>(contentString, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 			}
 		}
@@ -1606,11 +1559,8 @@ namespace MyNS
 			var requestUri = "#X-Amz-Target=PaymentCryptographyControlPlane.GetKey";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
 			{
-			using (var requestWriter = new System.IO.StringWriter())
-			{
-			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
-			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
+			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -1621,17 +1571,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
-				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<GetKeyOutput>(jsonReader);
-				}
+				var contentString = await responseMessage.Content.ReadAsStringAsync();
+				return JsonSerializer.Deserialize<GetKeyOutput>(contentString, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 			}
 		}
@@ -1646,11 +1591,8 @@ namespace MyNS
 			var requestUri = "#X-Amz-Target=PaymentCryptographyControlPlane.GetParametersForExport";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
 			{
-			using (var requestWriter = new System.IO.StringWriter())
-			{
-			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
-			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
+			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -1661,17 +1603,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
-				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<GetParametersForExportOutput>(jsonReader);
-				}
+				var contentString = await responseMessage.Content.ReadAsStringAsync();
+				return JsonSerializer.Deserialize<GetParametersForExportOutput>(contentString, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 			}
 		}
@@ -1686,11 +1623,8 @@ namespace MyNS
 			var requestUri = "#X-Amz-Target=PaymentCryptographyControlPlane.GetParametersForImport";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
 			{
-			using (var requestWriter = new System.IO.StringWriter())
-			{
-			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
-			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
+			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -1701,17 +1635,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
-				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<GetParametersForImportOutput>(jsonReader);
-				}
+				var contentString = await responseMessage.Content.ReadAsStringAsync();
+				return JsonSerializer.Deserialize<GetParametersForImportOutput>(contentString, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 			}
 		}
@@ -1726,11 +1655,8 @@ namespace MyNS
 			var requestUri = "#X-Amz-Target=PaymentCryptographyControlPlane.GetPublicKeyCertificate";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
 			{
-			using (var requestWriter = new System.IO.StringWriter())
-			{
-			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
-			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
+			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -1741,17 +1667,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
-				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<GetPublicKeyCertificateOutput>(jsonReader);
-				}
+				var contentString = await responseMessage.Content.ReadAsStringAsync();
+				return JsonSerializer.Deserialize<GetPublicKeyCertificateOutput>(contentString, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 			}
 		}
@@ -1766,11 +1687,8 @@ namespace MyNS
 			var requestUri = "#X-Amz-Target=PaymentCryptographyControlPlane.ImportKey";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
 			{
-			using (var requestWriter = new System.IO.StringWriter())
-			{
-			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
-			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
+			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -1781,17 +1699,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
-				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<ImportKeyOutput>(jsonReader);
-				}
+				var contentString = await responseMessage.Content.ReadAsStringAsync();
+				return JsonSerializer.Deserialize<ImportKeyOutput>(contentString, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 			}
 		}
@@ -1808,11 +1721,8 @@ namespace MyNS
 			var requestUri = "#X-Amz-Target=PaymentCryptographyControlPlane.ListAliases?MaxResults=" + (MaxResults==null? "" : System.Uri.EscapeDataString(MaxResults))+"&NextToken=" + (NextToken==null? "" : System.Uri.EscapeDataString(NextToken));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
 			{
-			using (var requestWriter = new System.IO.StringWriter())
-			{
-			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
-			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
+			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -1823,17 +1733,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
-				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<ListAliasesOutput>(jsonReader);
-				}
+				var contentString = await responseMessage.Content.ReadAsStringAsync();
+				return JsonSerializer.Deserialize<ListAliasesOutput>(contentString, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 			}
 		}
@@ -1850,11 +1755,8 @@ namespace MyNS
 			var requestUri = "#X-Amz-Target=PaymentCryptographyControlPlane.ListKeys?MaxResults=" + (MaxResults==null? "" : System.Uri.EscapeDataString(MaxResults))+"&NextToken=" + (NextToken==null? "" : System.Uri.EscapeDataString(NextToken));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
 			{
-			using (var requestWriter = new System.IO.StringWriter())
-			{
-			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
-			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
+			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -1865,17 +1767,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
-				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<ListKeysOutput>(jsonReader);
-				}
+				var contentString = await responseMessage.Content.ReadAsStringAsync();
+				return JsonSerializer.Deserialize<ListKeysOutput>(contentString, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 			}
 		}
@@ -1892,11 +1789,8 @@ namespace MyNS
 			var requestUri = "#X-Amz-Target=PaymentCryptographyControlPlane.ListTagsForResource?MaxResults=" + (MaxResults==null? "" : System.Uri.EscapeDataString(MaxResults))+"&NextToken=" + (NextToken==null? "" : System.Uri.EscapeDataString(NextToken));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
 			{
-			using (var requestWriter = new System.IO.StringWriter())
-			{
-			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
-			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
+			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -1907,17 +1801,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
-				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<ListTagsForResourceOutput>(jsonReader);
-				}
+				var contentString = await responseMessage.Content.ReadAsStringAsync();
+				return JsonSerializer.Deserialize<ListTagsForResourceOutput>(contentString, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 			}
 		}
@@ -1932,11 +1821,8 @@ namespace MyNS
 			var requestUri = "#X-Amz-Target=PaymentCryptographyControlPlane.RestoreKey";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
 			{
-			using (var requestWriter = new System.IO.StringWriter())
-			{
-			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
-			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
+			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -1947,17 +1833,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
-				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<RestoreKeyOutput>(jsonReader);
-				}
+				var contentString = await responseMessage.Content.ReadAsStringAsync();
+				return JsonSerializer.Deserialize<RestoreKeyOutput>(contentString, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 			}
 		}
@@ -1972,11 +1853,8 @@ namespace MyNS
 			var requestUri = "#X-Amz-Target=PaymentCryptographyControlPlane.StartKeyUsage";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
 			{
-			using (var requestWriter = new System.IO.StringWriter())
-			{
-			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
-			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
+			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -1987,17 +1865,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
-				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<StartKeyUsageOutput>(jsonReader);
-				}
+				var contentString = await responseMessage.Content.ReadAsStringAsync();
+				return JsonSerializer.Deserialize<StartKeyUsageOutput>(contentString, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 			}
 		}
@@ -2012,11 +1885,8 @@ namespace MyNS
 			var requestUri = "#X-Amz-Target=PaymentCryptographyControlPlane.StopKeyUsage";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
 			{
-			using (var requestWriter = new System.IO.StringWriter())
-			{
-			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
-			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
+			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -2027,17 +1897,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
-				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<StopKeyUsageOutput>(jsonReader);
-				}
+				var contentString = await responseMessage.Content.ReadAsStringAsync();
+				return JsonSerializer.Deserialize<StopKeyUsageOutput>(contentString, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 			}
 		}
@@ -2052,11 +1917,8 @@ namespace MyNS
 			var requestUri = "#X-Amz-Target=PaymentCryptographyControlPlane.TagResource";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
 			{
-			using (var requestWriter = new System.IO.StringWriter())
-			{
-			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
-			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
+			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -2067,17 +1929,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
-				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<TagResourceOutput>(jsonReader);
-				}
+				var contentString = await responseMessage.Content.ReadAsStringAsync();
+				return JsonSerializer.Deserialize<TagResourceOutput>(contentString, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 			}
 		}
@@ -2092,11 +1949,8 @@ namespace MyNS
 			var requestUri = "#X-Amz-Target=PaymentCryptographyControlPlane.UntagResource";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
 			{
-			using (var requestWriter = new System.IO.StringWriter())
-			{
-			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
-			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
+			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -2107,17 +1961,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
-				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<UntagResourceOutput>(jsonReader);
-				}
+				var contentString = await responseMessage.Content.ReadAsStringAsync();
+				return JsonSerializer.Deserialize<UntagResourceOutput>(contentString, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 			}
 		}
@@ -2132,11 +1981,8 @@ namespace MyNS
 			var requestUri = "#X-Amz-Target=PaymentCryptographyControlPlane.UpdateAlias";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
 			{
-			using (var requestWriter = new System.IO.StringWriter())
-			{
-			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
-			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
+			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -2147,17 +1993,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
-				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<UpdateAliasOutput>(jsonReader);
-				}
+				var contentString = await responseMessage.Content.ReadAsStringAsync();
+				return JsonSerializer.Deserialize<UpdateAliasOutput>(contentString, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 			}
 		}

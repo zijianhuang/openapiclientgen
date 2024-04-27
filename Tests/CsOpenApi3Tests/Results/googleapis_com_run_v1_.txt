@@ -13,7 +13,8 @@ namespace MyNS
 	using System.Linq;
 	using System.Collections.Generic;
 	using System.Threading.Tasks;
-	using Newtonsoft.Json;
+	using System.Text.Json;
+	using System.Text.Json.Serialization;
 	using Fonlow.Net.Http;
 	
 	
@@ -2988,9 +2989,9 @@ namespace MyNS
 		
 		private System.Net.Http.HttpClient httpClient;
 		
-		private JsonSerializerSettings jsonSerializerSettings;
+		private JsonSerializerOptions jsonSerializerSettings;
 		
-		public Misc(System.Net.Http.HttpClient httpClient, JsonSerializerSettings jsonSerializerSettings=null)
+		public Misc(System.Net.Http.HttpClient httpClient, JsonSerializerOptions jsonSerializerSettings=null)
 		{
 			if (httpClient == null)
 				throw new ArgumentNullException("Null HttpClient.", "httpClient");
@@ -3026,12 +3027,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
-				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<Status>(jsonReader);
-				}
+				var contentString = await responseMessage.Content.ReadAsStringAsync();
+				return JsonSerializer.Deserialize<Status>(contentString, jsonSerializerSettings);
 			}
 			finally
 			{
@@ -3060,12 +3057,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
-				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<DomainMapping>(jsonReader);
-				}
+				var contentString = await responseMessage.Content.ReadAsStringAsync();
+				return JsonSerializer.Deserialize<DomainMapping>(contentString, jsonSerializerSettings);
 			}
 			finally
 			{
@@ -3096,12 +3089,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
-				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<ListAuthorizedDomainsResponse>(jsonReader);
-				}
+				var contentString = await responseMessage.Content.ReadAsStringAsync();
+				return JsonSerializer.Deserialize<ListAuthorizedDomainsResponse>(contentString, jsonSerializerSettings);
 			}
 			finally
 			{
@@ -3137,12 +3126,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
-				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<ListDomainMappingsResponse>(jsonReader);
-				}
+				var contentString = await responseMessage.Content.ReadAsStringAsync();
+				return JsonSerializer.Deserialize<ListDomainMappingsResponse>(contentString, jsonSerializerSettings);
 			}
 			finally
 			{
@@ -3163,11 +3148,8 @@ namespace MyNS
 			var requestUri = "apis/domains.cloudrun.com/v1/"+ (parent==null? "" : System.Uri.EscapeDataString(parent))+"/domainmappings&dryRun=" + (dryRun==null? "" : System.Uri.EscapeDataString(dryRun));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
 			{
-			using (var requestWriter = new System.IO.StringWriter())
-			{
-			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
-			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
+			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -3178,17 +3160,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
-				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<DomainMapping>(jsonReader);
-				}
+				var contentString = await responseMessage.Content.ReadAsStringAsync();
+				return JsonSerializer.Deserialize<DomainMapping>(contentString, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 			}
 		}
@@ -3216,12 +3193,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
-				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<Status>(jsonReader);
-				}
+				var contentString = await responseMessage.Content.ReadAsStringAsync();
+				return JsonSerializer.Deserialize<Status>(contentString, jsonSerializerSettings);
 			}
 			finally
 			{
@@ -3250,12 +3223,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
-				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<Task_>(jsonReader);
-				}
+				var contentString = await responseMessage.Content.ReadAsStringAsync();
+				return JsonSerializer.Deserialize<Task_>(contentString, jsonSerializerSettings);
 			}
 			finally
 			{
@@ -3275,11 +3244,8 @@ namespace MyNS
 			var requestUri = "apis/run.googleapis.com/v1/"+ (name==null? "" : System.Uri.EscapeDataString(name));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
 			{
-			using (var requestWriter = new System.IO.StringWriter())
-			{
-			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
-			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
+			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -3290,17 +3256,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
-				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<Job>(jsonReader);
-				}
+				var contentString = await responseMessage.Content.ReadAsStringAsync();
+				return JsonSerializer.Deserialize<Job>(contentString, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 			}
 		}
@@ -3316,11 +3277,8 @@ namespace MyNS
 			var requestUri = "apis/run.googleapis.com/v1/"+ (name==null? "" : System.Uri.EscapeDataString(name))+":cancel";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
 			{
-			using (var requestWriter = new System.IO.StringWriter())
-			{
-			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
-			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
+			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -3331,17 +3289,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
-				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<Execution>(jsonReader);
-				}
+				var contentString = await responseMessage.Content.ReadAsStringAsync();
+				return JsonSerializer.Deserialize<Execution>(contentString, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 			}
 		}
@@ -3357,11 +3310,8 @@ namespace MyNS
 			var requestUri = "apis/run.googleapis.com/v1/"+ (name==null? "" : System.Uri.EscapeDataString(name))+":run";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
 			{
-			using (var requestWriter = new System.IO.StringWriter())
-			{
-			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
-			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
+			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -3372,17 +3322,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
-				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<Execution>(jsonReader);
-				}
+				var contentString = await responseMessage.Content.ReadAsStringAsync();
+				return JsonSerializer.Deserialize<Execution>(contentString, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 			}
 		}
@@ -3414,12 +3359,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
-				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<ListExecutionsResponse>(jsonReader);
-				}
+				var contentString = await responseMessage.Content.ReadAsStringAsync();
+				return JsonSerializer.Deserialize<ListExecutionsResponse>(contentString, jsonSerializerSettings);
 			}
 			finally
 			{
@@ -3455,12 +3396,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
-				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<ListJobsResponse>(jsonReader);
-				}
+				var contentString = await responseMessage.Content.ReadAsStringAsync();
+				return JsonSerializer.Deserialize<ListJobsResponse>(contentString, jsonSerializerSettings);
 			}
 			finally
 			{
@@ -3480,11 +3417,8 @@ namespace MyNS
 			var requestUri = "apis/run.googleapis.com/v1/"+ (parent==null? "" : System.Uri.EscapeDataString(parent))+"/jobs";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
 			{
-			using (var requestWriter = new System.IO.StringWriter())
-			{
-			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
-			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
+			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -3495,17 +3429,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
-				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<Job>(jsonReader);
-				}
+				var contentString = await responseMessage.Content.ReadAsStringAsync();
+				return JsonSerializer.Deserialize<Job>(contentString, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 			}
 		}
@@ -3537,12 +3466,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
-				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<ListTasksResponse>(jsonReader);
-				}
+				var contentString = await responseMessage.Content.ReadAsStringAsync();
+				return JsonSerializer.Deserialize<ListTasksResponse>(contentString, jsonSerializerSettings);
 			}
 			finally
 			{
@@ -3575,12 +3500,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
-				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<Status>(jsonReader);
-				}
+				var contentString = await responseMessage.Content.ReadAsStringAsync();
+				return JsonSerializer.Deserialize<Status>(contentString, jsonSerializerSettings);
 			}
 			finally
 			{
@@ -3609,12 +3530,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
-				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<Service>(jsonReader);
-				}
+				var contentString = await responseMessage.Content.ReadAsStringAsync();
+				return JsonSerializer.Deserialize<Service>(contentString, jsonSerializerSettings);
 			}
 			finally
 			{
@@ -3635,11 +3552,8 @@ namespace MyNS
 			var requestUri = "apis/serving.knative.dev/v1/"+ (name==null? "" : System.Uri.EscapeDataString(name))+"&dryRun=" + (dryRun==null? "" : System.Uri.EscapeDataString(dryRun));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
 			{
-			using (var requestWriter = new System.IO.StringWriter())
-			{
-			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
-			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
+			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -3650,17 +3564,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
-				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<Service>(jsonReader);
-				}
+				var contentString = await responseMessage.Content.ReadAsStringAsync();
+				return JsonSerializer.Deserialize<Service>(contentString, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 			}
 		}
@@ -3692,12 +3601,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
-				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<ListConfigurationsResponse>(jsonReader);
-				}
+				var contentString = await responseMessage.Content.ReadAsStringAsync();
+				return JsonSerializer.Deserialize<ListConfigurationsResponse>(contentString, jsonSerializerSettings);
 			}
 			finally
 			{
@@ -3733,12 +3638,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
-				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<ListRevisionsResponse>(jsonReader);
-				}
+				var contentString = await responseMessage.Content.ReadAsStringAsync();
+				return JsonSerializer.Deserialize<ListRevisionsResponse>(contentString, jsonSerializerSettings);
 			}
 			finally
 			{
@@ -3774,12 +3675,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
-				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<ListRoutesResponse>(jsonReader);
-				}
+				var contentString = await responseMessage.Content.ReadAsStringAsync();
+				return JsonSerializer.Deserialize<ListRoutesResponse>(contentString, jsonSerializerSettings);
 			}
 			finally
 			{
@@ -3815,12 +3712,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
-				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<ListServicesResponse>(jsonReader);
-				}
+				var contentString = await responseMessage.Content.ReadAsStringAsync();
+				return JsonSerializer.Deserialize<ListServicesResponse>(contentString, jsonSerializerSettings);
 			}
 			finally
 			{
@@ -3841,11 +3734,8 @@ namespace MyNS
 			var requestUri = "apis/serving.knative.dev/v1/"+ (parent==null? "" : System.Uri.EscapeDataString(parent))+"/services&dryRun=" + (dryRun==null? "" : System.Uri.EscapeDataString(dryRun));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
 			{
-			using (var requestWriter = new System.IO.StringWriter())
-			{
-			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
-			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
+			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -3856,17 +3746,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
-				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<Service>(jsonReader);
-				}
+				var contentString = await responseMessage.Content.ReadAsStringAsync();
+				return JsonSerializer.Deserialize<Service>(contentString, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 			}
 		}
@@ -3895,12 +3780,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
-				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<Status>(jsonReader);
-				}
+				var contentString = await responseMessage.Content.ReadAsStringAsync();
+				return JsonSerializer.Deserialize<Status>(contentString, jsonSerializerSettings);
 			}
 			finally
 			{
@@ -3929,12 +3810,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
-				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<Service>(jsonReader);
-				}
+				var contentString = await responseMessage.Content.ReadAsStringAsync();
+				return JsonSerializer.Deserialize<Service>(contentString, jsonSerializerSettings);
 			}
 			finally
 			{
@@ -3955,11 +3832,8 @@ namespace MyNS
 			var requestUri = "v1/"+ (name==null? "" : System.Uri.EscapeDataString(name))+"&dryRun=" + (dryRun==null? "" : System.Uri.EscapeDataString(dryRun));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
 			{
-			using (var requestWriter = new System.IO.StringWriter())
-			{
-			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
-			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
+			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -3970,17 +3844,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
-				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<Service>(jsonReader);
-				}
+				var contentString = await responseMessage.Content.ReadAsStringAsync();
+				return JsonSerializer.Deserialize<Service>(contentString, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 			}
 		}
@@ -4008,12 +3877,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
-				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<ListLocationsResponse>(jsonReader);
-				}
+				var contentString = await responseMessage.Content.ReadAsStringAsync();
+				return JsonSerializer.Deserialize<ListLocationsResponse>(contentString, jsonSerializerSettings);
 			}
 			finally
 			{
@@ -4045,12 +3910,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
-				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<GoogleLongrunningListOperationsResponse>(jsonReader);
-				}
+				var contentString = await responseMessage.Content.ReadAsStringAsync();
+				return JsonSerializer.Deserialize<GoogleLongrunningListOperationsResponse>(contentString, jsonSerializerSettings);
 			}
 			finally
 			{
@@ -4070,11 +3931,8 @@ namespace MyNS
 			var requestUri = "v1/"+ (name==null? "" : System.Uri.EscapeDataString(name))+":wait";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
 			{
-			using (var requestWriter = new System.IO.StringWriter())
-			{
-			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
-			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
+			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -4085,17 +3943,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
-				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<GoogleLongrunningOperation>(jsonReader);
-				}
+				var contentString = await responseMessage.Content.ReadAsStringAsync();
+				return JsonSerializer.Deserialize<GoogleLongrunningOperation>(contentString, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 			}
 		}
@@ -4122,12 +3975,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
-				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<ListAuthorizedDomainsResponse>(jsonReader);
-				}
+				var contentString = await responseMessage.Content.ReadAsStringAsync();
+				return JsonSerializer.Deserialize<ListAuthorizedDomainsResponse>(contentString, jsonSerializerSettings);
 			}
 			finally
 			{
@@ -4163,12 +4012,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
-				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<ListConfigurationsResponse>(jsonReader);
-				}
+				var contentString = await responseMessage.Content.ReadAsStringAsync();
+				return JsonSerializer.Deserialize<ListConfigurationsResponse>(contentString, jsonSerializerSettings);
 			}
 			finally
 			{
@@ -4204,12 +4049,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
-				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<ListDomainMappingsResponse>(jsonReader);
-				}
+				var contentString = await responseMessage.Content.ReadAsStringAsync();
+				return JsonSerializer.Deserialize<ListDomainMappingsResponse>(contentString, jsonSerializerSettings);
 			}
 			finally
 			{
@@ -4230,11 +4071,8 @@ namespace MyNS
 			var requestUri = "v1/"+ (parent==null? "" : System.Uri.EscapeDataString(parent))+"/domainmappings&dryRun=" + (dryRun==null? "" : System.Uri.EscapeDataString(dryRun));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
 			{
-			using (var requestWriter = new System.IO.StringWriter())
-			{
-			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
-			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
+			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -4245,17 +4083,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
-				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<DomainMapping>(jsonReader);
-				}
+				var contentString = await responseMessage.Content.ReadAsStringAsync();
+				return JsonSerializer.Deserialize<DomainMapping>(contentString, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 			}
 		}
@@ -4287,12 +4120,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
-				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<ListRevisionsResponse>(jsonReader);
-				}
+				var contentString = await responseMessage.Content.ReadAsStringAsync();
+				return JsonSerializer.Deserialize<ListRevisionsResponse>(contentString, jsonSerializerSettings);
 			}
 			finally
 			{
@@ -4328,12 +4157,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
-				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<ListRoutesResponse>(jsonReader);
-				}
+				var contentString = await responseMessage.Content.ReadAsStringAsync();
+				return JsonSerializer.Deserialize<ListRoutesResponse>(contentString, jsonSerializerSettings);
 			}
 			finally
 			{
@@ -4369,12 +4194,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
-				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<ListServicesResponse>(jsonReader);
-				}
+				var contentString = await responseMessage.Content.ReadAsStringAsync();
+				return JsonSerializer.Deserialize<ListServicesResponse>(contentString, jsonSerializerSettings);
 			}
 			finally
 			{
@@ -4395,11 +4216,8 @@ namespace MyNS
 			var requestUri = "v1/"+ (parent==null? "" : System.Uri.EscapeDataString(parent))+"/services&dryRun=" + (dryRun==null? "" : System.Uri.EscapeDataString(dryRun));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
 			{
-			using (var requestWriter = new System.IO.StringWriter())
-			{
-			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
-			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
+			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -4410,17 +4228,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
-				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<Service>(jsonReader);
-				}
+				var contentString = await responseMessage.Content.ReadAsStringAsync();
+				return JsonSerializer.Deserialize<Service>(contentString, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 			}
 		}
@@ -4446,12 +4259,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
-				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<Policy>(jsonReader);
-				}
+				var contentString = await responseMessage.Content.ReadAsStringAsync();
+				return JsonSerializer.Deserialize<Policy>(contentString, jsonSerializerSettings);
 			}
 			finally
 			{
@@ -4471,11 +4280,8 @@ namespace MyNS
 			var requestUri = "v1/"+ (resource==null? "" : System.Uri.EscapeDataString(resource))+":setIamPolicy";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
 			{
-			using (var requestWriter = new System.IO.StringWriter())
-			{
-			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
-			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
+			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -4486,17 +4292,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
-				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<Policy>(jsonReader);
-				}
+				var contentString = await responseMessage.Content.ReadAsStringAsync();
+				return JsonSerializer.Deserialize<Policy>(contentString, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 			}
 		}
@@ -4512,11 +4313,8 @@ namespace MyNS
 			var requestUri = "v1/"+ (resource==null? "" : System.Uri.EscapeDataString(resource))+":testIamPermissions";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
 			{
-			using (var requestWriter = new System.IO.StringWriter())
-			{
-			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
-			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
+			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -4527,17 +4325,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
-				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<TestIamPermissionsResponse>(jsonReader);
-				}
+				var contentString = await responseMessage.Content.ReadAsStringAsync();
+				return JsonSerializer.Deserialize<TestIamPermissionsResponse>(contentString, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 			}
 		}

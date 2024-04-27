@@ -15,9 +15,12 @@ namespace SwagTests
 	public class CSharpTestHelper: ITestHelper
 	{
 		readonly protected ITestOutputHelper output;
-		public CSharpTestHelper(ITestOutputHelper output)
+		readonly protected ISettings defaultSettings;
+
+		public CSharpTestHelper(ITestOutputHelper output, ISettings defaultSettings)
 		{
 			this.output = output;
+			this.defaultSettings = defaultSettings;
 		}
 
 		static OpenApiDocument ReadDef(string filePath)
@@ -53,7 +56,8 @@ namespace SwagTests
 		/// <param name="mySettings"></param>
 		public void GenerateAndAssertAndBuild(string filePath, string expectedFile, ISettings mySettings)
 		{
-			string s = TranslateDefToCode(filePath, mySettings);
+			var settings = mySettings ?? defaultSettings;
+			string s = TranslateDefToCode(filePath, settings);
 			if (TestingSettings.Instance.UpdateGenerated)
 			{
 				File.WriteAllText(expectedFile, s); //To update Results after some feature changes. Copy what in the bin folder back to the source content.
@@ -66,7 +70,7 @@ namespace SwagTests
 
 			if (TestingSettings.Instance.Build)
 			{
-				var r = CSharpValidation.CompileThenSaveAssembly(s, null, mySettings != null && mySettings.UseSystemTextJson);
+				var r = CSharpValidation.CompileThenSaveAssembly(s, null, settings.UseSystemTextJson);
 
 				if (!r.Success)
 				{

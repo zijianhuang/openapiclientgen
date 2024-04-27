@@ -1,6 +1,6 @@
 {
 	"ClientNamespace": "My.Pet.Client",
-	"ClientLibraryProjectFolderName": "./Tests/DemoClientApi",
+	"ClientLibraryProjectFolderName": "./Tests/DemoClientApiTextJson",
 	"ContainerClassName": "PetClient",
 	"ClientLibraryFileName": "PetStoreAuto.cs",
 	"ActionNameStrategy": 4,
@@ -11,6 +11,7 @@
 	"DataAnnotationsToComments": true,
 	"HandleHttpRequestHeaders": true,
 	"SortTypesMembersAndMethods": true,
+	"UseSystemTextJson": true,
 
 	"Plugins": [
 		{

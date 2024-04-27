@@ -10,6 +10,7 @@
 	"DataAnnotationsEnabled": true,
 	"DataAnnotationsToComments": true,
 	"HandleHttpRequestHeaders": true,
-	"UseSystemTextJson":  true
+	"SortTypesMembersAndMethods": true,
+	"UseSystemTextJson": true
 
 }

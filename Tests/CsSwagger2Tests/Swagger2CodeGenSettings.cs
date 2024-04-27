@@ -17,7 +17,7 @@ namespace SwagTests
 			UseEnsureSuccessStatusCodeEx = true,
 			DataAnnotationsEnabled = true,
 			DataAnnotationsToComments = true,
-			UseSystemTextJson=false,
+			UseSystemTextJson=true,
 		};
 
 		public static ISettings WithActionNameStrategy(ActionNameStrategy ans)
@@ -36,7 +36,7 @@ namespace SwagTests
 				DataAnnotationsEnabled = true,
 				DataAnnotationsToComments = true,
 				HandleHttpRequestHeaders = true,
-				UseSystemTextJson = false,
+				UseSystemTextJson = true,
 			};
 		}
 	}

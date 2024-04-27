@@ -13,14 +13,12 @@ namespace SwagTests
 {
 	public class CSharpTestHelperForOpenApiDir: CSharpTestHelper, IOpenApiDirTestHelper
 	{
-		public CSharpTestHelperForOpenApiDir(ITestOutputHelper output, string defaultDefName, ISettings defaultSettings) : base(output)
+		public CSharpTestHelperForOpenApiDir(ITestOutputHelper output, string defaultDefName, ISettings defaultSettings) : base(output, defaultSettings)
 		{
 			this.defaultDefName = defaultDefName;
-			this.defaultSettings = defaultSettings;
 		}
 
 		readonly string defaultDefName;
-		readonly ISettings defaultSettings;
 
 		static OpenApiDocument ReadDef(string filePath)
 		{
@@ -42,8 +40,9 @@ namespace SwagTests
 		/// <param name="openapiDir">Like ..\..\..\..\openapi-directory20240114\APIs\github.com\api.github.com\1.1.4\</param>
 		/// <param name="mySettings"></param>
 		public void GenerateFromOpenApiAndBuild(string openapiDir, ISettings mySettings= null)
-		{ 
-			string s = TranslateDefToCodeUponOpenApiDirWith1Def(openapiDir, mySettings ?? defaultSettings);
+		{
+			var settings = mySettings ?? defaultSettings;
+			string s = TranslateDefToCodeUponOpenApiDirWith1Def(openapiDir, settings);
 			var csFilePath = CreateUniqueFileName(openapiDir);
 			if (!Directory.Exists(resultsDir))
 			{
@@ -62,7 +61,7 @@ namespace SwagTests
 
 			if (TestingSettings.Instance.Build)
 			{
-				var r = CSharpValidation.CompileThenSaveAssembly(s, null, mySettings != null ? mySettings.UseSystemTextJson : false);
+				var r = CSharpValidation.CompileThenSaveAssembly(s, null, settings.UseSystemTextJson);
 				if (!r.Success)
 				{
 					output.WriteLine("CSharp Compilation Errors:");
@@ -78,8 +77,9 @@ namespace SwagTests
 
 		public string GenerateFromOpenApiAndBuildWithError(string openapiDir, ISettings mySettings)
 		{
-			string s = TranslateDefToCodeUponOpenApiDirWith1Def(openapiDir, mySettings);
-			var r = CSharpValidation.CompileThenSaveAssembly(s, null, mySettings != null ? mySettings.UseSystemTextJson : false);
+			var settings = mySettings ?? defaultSettings;
+			string s = TranslateDefToCodeUponOpenApiDirWith1Def(openapiDir, settings);
+			var r = CSharpValidation.CompileThenSaveAssembly(s, null, settings.UseSystemTextJson);
 			if (!r.Success)
 			{
 				StringBuilder sb = new();
