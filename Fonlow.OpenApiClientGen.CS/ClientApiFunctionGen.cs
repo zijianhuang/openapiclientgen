@@ -72,7 +72,7 @@ namespace Fonlow.OpenApiClientGen.CS
 			}
 #endif
 
-			if (actionName.EndsWith("Async", StringComparison.OrdinalIgnoreCase))
+			if (actionName.EndsWith("Async", StringComparison.Ordinal)) // better to be case sensitive, since some end with something like "cbaSync".
 				actionName = actionName[0..^5];
 
 			this.bodyContentRefBuilder = new BodyContentRefBuilder(coms2CsTypes, actionName, renamer);
