@@ -506,10 +506,21 @@ namespace Fonlow.OpenApiClientGen.CS
 			{
 				if (this.stringAsString)
 				{
-					statementCollection.Add(new CodeSnippetStatement("\t\t\t\tusing (System.IO.StreamReader streamReader = new System.IO.StreamReader(responseMessageStream))"));
-					Add4TStartBacket(statementCollection);
-					statementCollection.Add(new CodeMethodReturnStatement(new CodeSnippetExpression("streamReader.ReadToEnd();")));
-					Add4TEndBacket(statementCollection);
+					if (settings.UseSystemTextJson)
+					{
+						statementCollection.Add(new CodeMethodReturnStatement(new CodeMethodInvokeExpression(
+							new CodeMethodReferenceExpression(
+								new CodeVariableReferenceExpression("JsonSerializer"), "Deserialize", new CodeTypeReference(typeof(System.String))),
+							new CodeSnippetExpression("contentString"),
+							new CodeSnippetExpression("jsonSerializerSettings"))));
+					}
+					else
+					{
+						statementCollection.Add(new CodeSnippetStatement("\t\t\t\tusing (System.IO.StreamReader streamReader = new System.IO.StreamReader(responseMessageStream))"));
+						Add4TStartBacket(statementCollection);
+						statementCollection.Add(new CodeMethodReturnStatement(new CodeSnippetExpression("streamReader.ReadToEnd();")));
+						Add4TEndBacket(statementCollection);
+					}
 				}
 				else
 				{
