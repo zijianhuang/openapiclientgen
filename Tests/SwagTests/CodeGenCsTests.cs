@@ -8,15 +8,14 @@ namespace SwagTests
 	{
 		public CodeGenCsTests(ITestOutputHelper output)
 		{
-			helper = new CSharpTestHelper(output);
+			helper = new CSharpTestHelper(output, CodeGenSettings.Default);
 		}
 
 		readonly CSharpTestHelper helper;
 
 		void GenerateAndAssertAndBuild(string filePath, string expectedFile, ISettings mySettings = null)
 		{
-			ISettings settings = mySettings ?? CodeGenSettings.Default;
-			helper.GenerateAndAssertAndBuild(filePath, expectedFile, settings);
+			helper.GenerateAndAssertAndBuild(filePath, expectedFile, mySettings);
 		}
 
 		[Fact]
