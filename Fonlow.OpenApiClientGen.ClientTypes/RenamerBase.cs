@@ -50,6 +50,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				.Replace("(", "").Replace(")", "")
 				.Replace("&", "And")
 				.Replace("?", "_")
+				.Replace("+", "_")
 				.Replace('[', '_').Replace("]", ""); // for something like PartialFindResult[ActivityEntryForApiContract]
 			return dotsToNamespaces ? r : r.Replace(".", string.Empty);
 		}
