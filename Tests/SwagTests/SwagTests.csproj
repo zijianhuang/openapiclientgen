@@ -34,8 +34,8 @@
 	</ItemGroup>
 
 	<Target Name="PreBuild" AfterTargets="PreBuildEvent">
-		<Exec Command="pwsh -File ..\..\PowershellScripts\CopyFiles.ps1 $(ProjectDir)SwagMock\*.* $(TargetDir)SwagMock\" />
-		<Exec Command="pwsh -File ..\..\PowershellScripts\CopyFiles.ps1 $(ProjectDir)Results\*.* $(TargetDir)Results\" />
+		<Exec Command="pwsh -File ../../PowershellScripts/CopyFiles.ps1 $(ProjectDir)SwagMock/*.* $(TargetDir)SwagMock/" />
+		<Exec Command="pwsh -File ../../PowershellScripts/CopyFiles.ps1 $(ProjectDir)Results/*.* $(TargetDir)Results/" />
 	</Target>
 
 </Project>
