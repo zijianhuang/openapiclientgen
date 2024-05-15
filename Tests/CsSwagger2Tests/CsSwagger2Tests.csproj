@@ -38,9 +38,9 @@
 		<ProjectReference Include="..\CsTestHelpers\CsTestHelpers.csproj" />
 	</ItemGroup>
 
-	<Target Name="PreBuildCopy" AfterTargets="PreBuildEvent">
-		<!--<Exec Command="Powershell -file ..\..\PowershellScripts\CopyFiles.ps1 $(ProjectDir)Results\*.* $(TargetDir)Results\" />-->
-		<Copy SourceFiles="$(ProjectDir)Results\*.*" DestinationFolder="$(TargetDir)Results\"  SkipUnchangedFiles="true"/>
+	<Target Name="PreBuild" AfterTargets="PreBuildEvent">
+		<Exec Command="ls -la -R" />
+		<Exec Command="Powershell -file ..\..\PowershellScripts\CopyFiles.ps1 $(ProjectDir)Results\*.* $(TargetDir)Results\" />
 	</Target>
 
 </Project>
