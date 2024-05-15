@@ -44,13 +44,13 @@
   </ItemGroup>
 
 	<Target Name="PreBuild" AfterTargets="PreBuildEvent">
-	  <Exec Command="pwsh -File ..\..\PowershellScripts\CopyFiles.ps1 $(ProjectDir)SwagMock\*.* $(TargetDir)SwagMock\" />
-	  <Exec Command="pwsh -File ..\..\PowershellScripts\CopyFiles.ps1 $(ProjectDir)AureliaResults\*.* $(TargetDir)AureliaResults\" />
-	  <Exec Command="pwsh -File ..\..\PowershellScripts\CopyFiles.ps1 $(ProjectDir)AxiosResults\*.* $(TargetDir)AxiosResults\" />
-	  <Exec Command="pwsh -File ..\..\PowershellScripts\CopyFiles.ps1 $(ProjectDir)FetchResults\*.* $(TargetDir)FetchResults\" />
-	  <Exec Command="pwsh -File ..\..\PowershellScripts\CopyFiles.ps1 $(ProjectDir)JqResults\*.* $(TargetDir)JqResults\" />
-	  <Exec Command="pwsh -File ..\..\PowershellScripts\CopyFiles.ps1 $(ProjectDir)NG2FormGroupResults\*.* $(TargetDir)NG2FormGroupResults\" />
-	  <Exec Command="pwsh -File ..\..\PowershellScripts\CopyFiles.ps1 $(ProjectDir)NG2Results\*.* $(TargetDir)NG2Results\" />
-  </Target>
+		<Exec Command="pwsh -File ../../PowershellScripts/CopyFiles.ps1 $(ProjectDir)SwagMock/*.* $(TargetDir)SwagMock/" />
+		<Exec Command="pwsh -File ../../PowershellScripts/CopyFiles.ps1 $(ProjectDir)AureliaResults/*.* $(TargetDir)AureliaResults/" />
+		<Exec Command="pwsh -File ../../PowershellScripts/CopyFiles.ps1 $(ProjectDir)AxiosResults/*.* $(TargetDir)AxiosResults/" />
+		<Exec Command="pwsh -File ../../PowershellScripts/CopyFiles.ps1 $(ProjectDir)FetchResults/*.* $(TargetDir)FetchResults/" />
+		<Exec Command="pwsh -File ../../PowershellScripts/CopyFiles.ps1 $(ProjectDir)JqResults/*.* $(TargetDir)JqResults/" />
+		<Exec Command="pwsh -File ../../PowershellScripts/CopyFiles.ps1 $(ProjectDir)NG2FormGroupResults/*.* $(TargetDir)NG2FormGroupResults/" />
+		<Exec Command="pwsh -File ../../PowershellScripts/CopyFiles.ps1 $(ProjectDir)NG2Results/*.* $(TargetDir)NG2Results/" />
+	</Target>
 
 </Project>
