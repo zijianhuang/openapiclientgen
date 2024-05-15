@@ -16,6 +16,9 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
+    - name: Open Web Client Directory
+      run: |
+        ls -la
     - name: Setup .NET
       uses: actions/setup-dotnet@v4
       with:
@@ -24,7 +27,3 @@ jobs:
       run: dotnet restore
     - name: Build
       run: dotnet build --no-restore
-    - name: Open Web Client Directory
-      working-directory: /home/runner/work/openapiclientgen/openapiclientgen/Tests/CsSwagger2Tests/
-      run: |
-        ls -la
