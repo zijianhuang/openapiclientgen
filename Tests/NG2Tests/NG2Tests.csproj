@@ -34,10 +34,10 @@
 	<ProjectReference Include="..\TsTestHelpers\TsTestHelpers.csproj" />
   </ItemGroup>
 
-  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-	  <Exec Command="Powershell -file ..\..\PowershellScripts\CopyFiles.ps1 $(ProjectDir)SwagMock\*.* $(TargetDir)SwagMock\" />
-	  <Exec Command="Powershell -file ..\..\PowershellScripts\CopyFiles.ps1 $(ProjectDir)Results\*.* $(TargetDir)Results\" />
-	  <Exec Command="Powershell -file ..\..\PowershellScripts\CopyFiles.ps1 $(ProjectDir)NG2BuildResults/*.ts $(TargetDir)NG2BuildResults/" />
+	<Target Name="PreBuild" AfterTargets="PreBuildEvent">
+	  <Exec Command="pwsh -File ..\..\PowershellScripts\CopyFiles.ps1 $(ProjectDir)SwagMock\*.* $(TargetDir)SwagMock\" />
+	  <Exec Command="pwsh -File ..\..\PowershellScripts\CopyFiles.ps1 $(ProjectDir)Results\*.* $(TargetDir)Results\" />
+	  <Exec Command="pwsh -File ..\..\PowershellScripts\CopyFiles.ps1 $(ProjectDir)NG2BuildResults/*.ts $(TargetDir)NG2BuildResults/" />
   </Target>
 
   <Import Project="..\SwaggerDirShared\SwaggerDirShared.projitems" Label="Shared" />
