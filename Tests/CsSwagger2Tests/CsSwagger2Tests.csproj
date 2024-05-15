@@ -39,7 +39,7 @@
 	</ItemGroup>
 
 	<Target Name="PostBuild" AfterTargets="PostBuildEvent">
-		<Exec Command="xcopy $(ProjectDir)Results\*.* $(TargetDir)Results\ /D /Y /S" />
+		<Exec Command="Powershell -file ..\..\PowershellScripts\CopyFiles.ps1 $(ProjectDir)Results\*.* $(TargetDir)Results\" />
 	</Target>
 
 </Project>

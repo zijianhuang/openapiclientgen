@@ -1,50 +1,56 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
+	<TargetFramework>net8.0</TargetFramework>
+	<ImplicitUsings>enable</ImplicitUsings>
+	<Nullable>enable</Nullable>
 
-    <IsPackable>false</IsPackable>
-    <IsTestProject>true</IsTestProject>
+	<IsPackable>false</IsPackable>
+	<IsTestProject>true</IsTestProject>
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="appsettings.json" />
+	<None Remove="appsettings.json" />
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="appsettings.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
+	<Content Include="appsettings.json">
+	  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	</Content>
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.9.0" />
-    <PackageReference Include="xunit" Version="2.7.1" />
-    <PackageReference Include="xunit.runner.visualstudio" Version="2.5.8">
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-      <PrivateAssets>all</PrivateAssets>
-    </PackageReference>
-    <PackageReference Include="coverlet.collector" Version="6.0.2">
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-      <PrivateAssets>all</PrivateAssets>
-    </PackageReference>
+	<PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.9.0" />
+	<PackageReference Include="xunit" Version="2.7.1" />
+	<PackageReference Include="xunit.runner.visualstudio" Version="2.5.8">
+	  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+	  <PrivateAssets>all</PrivateAssets>
+	</PackageReference>
+	<PackageReference Include="coverlet.collector" Version="6.0.2">
+	  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+	  <PrivateAssets>all</PrivateAssets>
+	</PackageReference>
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Fonlow.OpenApiClientGen.ClientTypes\Fonlow.OpenApiClientGen.ClientTypes.csproj" />
-    <ProjectReference Include="..\..\OpenApiClientGenCore.Aurelia\OpenApiClientGenCore.Aurelia.csproj" />
-    <ProjectReference Include="..\..\OpenApiClientGenCore.Axios\OpenApiClientGenCore.Axios.csproj" />
-    <ProjectReference Include="..\..\OpenApiClientGenCore.Fetch\OpenApiClientGenCore.Fetch.csproj" />
-    <ProjectReference Include="..\..\OpenApiClientGenCore.JQ\OpenApiClientGenCore.JQ.csproj" />
-    <ProjectReference Include="..\..\OpenApiClientGenCore.NG2FormGroup\OpenApiClientGenCore.NG2FormGroup.csproj" />
-    <ProjectReference Include="..\..\OpenApiClientGenCore.NG2\OpenApiClientGenCore.NG2.csproj" />
-    <ProjectReference Include="..\TsTestHelpers\TsTestHelpers.csproj" />
+	<ProjectReference Include="..\..\Fonlow.OpenApiClientGen.ClientTypes\Fonlow.OpenApiClientGen.ClientTypes.csproj" />
+	<ProjectReference Include="..\..\OpenApiClientGenCore.Aurelia\OpenApiClientGenCore.Aurelia.csproj" />
+	<ProjectReference Include="..\..\OpenApiClientGenCore.Axios\OpenApiClientGenCore.Axios.csproj" />
+	<ProjectReference Include="..\..\OpenApiClientGenCore.Fetch\OpenApiClientGenCore.Fetch.csproj" />
+	<ProjectReference Include="..\..\OpenApiClientGenCore.JQ\OpenApiClientGenCore.JQ.csproj" />
+	<ProjectReference Include="..\..\OpenApiClientGenCore.NG2FormGroup\OpenApiClientGenCore.NG2FormGroup.csproj" />
+	<ProjectReference Include="..\..\OpenApiClientGenCore.NG2\OpenApiClientGenCore.NG2.csproj" />
+	<ProjectReference Include="..\TsTestHelpers\TsTestHelpers.csproj" />
   </ItemGroup>
 
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="xcopy $(ProjectDir)SwagMock\*.* $(TargetDir)SwagMock\ /D /Y /S&#xD;&#xA;xcopy $(ProjectDir)AureliaResults\*.* $(TargetDir)AureliaResults\ /D /Y /S&#xD;&#xA;xcopy $(ProjectDir)AxiosResults\*.* $(TargetDir)AxiosResults\ /D /Y /S&#xD;&#xA;xcopy $(ProjectDir)FetchResults\*.* $(TargetDir)FetchResults\ /D /Y /S&#xD;&#xA;xcopy $(ProjectDir)JqResults\*.* $(TargetDir)JqResults\ /D /Y /S&#xD;&#xA;xcopy $(ProjectDir)NG2FormGroupResults\*.* $(TargetDir)NG2FormGroupResults\ /D /Y /S&#xD;&#xA;xcopy $(ProjectDir)NG2Results\*.* $(TargetDir)NG2Results\ /D /Y /S&#xD;&#xA;" />
+	  <Exec Command="Powershell -file ..\..\PowershellScripts\CopyFiles.ps1 $(ProjectDir)SwagMock\*.* $(TargetDir)SwagMock\" />
+	  <Exec Command="Powershell -file ..\..\PowershellScripts\CopyFiles.ps1 $(ProjectDir)AureliaResults\*.* $(TargetDir)AureliaResults\" />
+	  <Exec Command="Powershell -file ..\..\PowershellScripts\CopyFiles.ps1 $(ProjectDir)AxiosResults\*.* $(TargetDir)AxiosResults\" />
+	  <Exec Command="Powershell -file ..\..\PowershellScripts\CopyFiles.ps1 $(ProjectDir)FetchResults\*.* $(TargetDir)FetchResults\" />
+	  <Exec Command="Powershell -file ..\..\PowershellScripts\CopyFiles.ps1 $(ProjectDir)JqResults\*.* $(TargetDir)JqResults\" />
+	  <Exec Command="Powershell -file ..\..\PowershellScripts\CopyFiles.ps1 $(ProjectDir)NG2FormGroupResults\*.* $(TargetDir)NG2FormGroupResults\" />
+	  <Exec Command="Powershell -file ..\..\PowershellScripts\CopyFiles.ps1 $(ProjectDir)NG2Results\*.* $(TargetDir)NG2Results\" />
   </Target>
 
 </Project>
