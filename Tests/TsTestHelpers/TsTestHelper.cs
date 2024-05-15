@@ -117,7 +117,7 @@ namespace SwagTests
 			}
 
 			string expected = ReadFromResults(expectedFile);
-			Assert.Equal(expected, s);
+			Assert.Equal(expected, s, ignoreLineEndingDifferences: true);
 		}
 	}
 

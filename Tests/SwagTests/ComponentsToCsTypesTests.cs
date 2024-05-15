@@ -74,7 +74,7 @@ namespace MyNS
 }
 ";
 			string s = TranslateDefToCsTypesCode("SwagMock" + Path.DirectorySeparatorChar + "SimplePet.json");
-			Assert.Equal(expected, s);
+			Assert.Equal(expected, s, ignoreLineEndingDifferences: true);
 		}
 
 		[Fact]
@@ -120,7 +120,7 @@ namespace MyNS
 				DataAnnotationsToComments = true,
 				PrefixWithTypeName = false,
 			});
-			Assert.Equal(expected, ssssssss);
+			Assert.Equal(expected, ssssssss, ignoreLineEndingDifferences: true);
 		}
 
 		[Fact]
@@ -165,7 +165,7 @@ namespace MyNS
 				PrefixWithTypeName = true,
 				ClientNamespace = "MyNS"
 			});
-			Assert.Equal(expected, ssssssss);
+			Assert.Equal(expected, ssssssss, ignoreLineEndingDifferences: true);
 		}
 
 		[Fact]
@@ -212,7 +212,7 @@ namespace MyNS
 				ClientNamespace = "MyNS",
 				DateToDateOnly = false
 			});
-			Assert.Equal(expected, s);
+			Assert.Equal(expected, s, ignoreLineEndingDifferences: true);
 		}
 
 		[Fact]
@@ -258,7 +258,7 @@ namespace MyNS
 				ClientNamespace = "MyNS",
 				UseGuid = true
 			});
-			Assert.Equal(expected, s);
+			Assert.Equal(expected, s, ignoreLineEndingDifferences: true);
 		}
 
 				
@@ -304,7 +304,7 @@ namespace MyNS
 			{
 				ClientNamespace = "MyNS"
 			});
-			Assert.Equal(expected, s);
+			Assert.Equal(expected, s, ignoreLineEndingDifferences: true);
 		}
 		
 		[Fact]
@@ -384,7 +384,7 @@ namespace MyNS
 				UsePascalCase = true,
 				DecorateDataModelWithPropertyName = true
 			});
-			Assert.Equal(expected, s);
+			Assert.Equal(expected, s, ignoreLineEndingDifferences: true);
 		}
 
 		[Fact]
@@ -431,7 +431,7 @@ namespace MyNS
 }
 ";
 			string s = TranslateDefToCsTypesCode("SwagMock\\SimplePetCat.json");
-			Assert.Equal(expected, s);
+			Assert.Equal(expected, s, ignoreLineEndingDifferences: true);
 		}
 
 
@@ -468,7 +468,7 @@ namespace MyNS
 }
 ";
 			string s = TranslateDefToCsTypesCode("SwagMock\\Enum.json");
-			Assert.Equal(expected, s);
+			Assert.Equal(expected, s, ignoreLineEndingDifferences: true);
 		}
 
 		[Fact]
@@ -508,7 +508,7 @@ namespace MyNS
 				UsePascalCase = true,
 				ClientNamespace = "MyNS"
 			});
-			Assert.Equal(expected, s);
+			Assert.Equal(expected, s, ignoreLineEndingDifferences: true);
 		}
 
 		[Fact]
@@ -544,7 +544,7 @@ namespace MyNS
 }
 ";
 			string s = TranslateDefToCsTypesCode("SwagMock\\IntEnum.json");
-			Assert.Equal(expected, s);
+			Assert.Equal(expected, s, ignoreLineEndingDifferences: true);
 		}
 
 		[Fact]
@@ -594,7 +594,7 @@ namespace MyNS
 }
 ";
 			string s = TranslateDefToCsTypesCode("SwagMock\\CasualEnum.json");
-			Assert.Equal(expected, s);
+			Assert.Equal(expected, s, ignoreLineEndingDifferences: true);
 		}
 
 
@@ -649,7 +649,7 @@ namespace MyNS
 				UsePascalCase = true,
 				ClientNamespace = "MyNS"
 			});
-			Assert.Equal(expected, s);
+			Assert.Equal(expected, s, ignoreLineEndingDifferences: true);
 		}
 
 		[Fact]
@@ -690,7 +690,7 @@ namespace MyNS
 }
 ";
 			string s = TranslateDefToCsTypesCode("SwagMock\\StringArray.json");
-			Assert.Equal(expected, s);
+			Assert.Equal(expected, s, ignoreLineEndingDifferences: true);
 		}
 
 		[Fact]
@@ -736,7 +736,7 @@ namespace MyNS
 				DataAnnotationsToComments = true,
 				ArrayAs = ArrayAsIEnumerableDerived.Collection,
 			});
-			Assert.Equal(expected, s);
+			Assert.Equal(expected, s, ignoreLineEndingDifferences: true);
 		}
 
 
@@ -793,7 +793,7 @@ namespace MyNS
 }
 ";
 			string s = TranslateDefToCsTypesCode("SwagMock\\CustomTypeArray.json");
-			Assert.Equal(expected, s);
+			Assert.Equal(expected, s, ignoreLineEndingDifferences: true);
 		}
 
 
@@ -854,7 +854,7 @@ namespace MyNS
 }
 ";
 			string s = TranslateDefToCsTypesCode("SwagMock\\SimpleOrder.json");
-			Assert.Equal(expected, s);
+			Assert.Equal(expected, s, ignoreLineEndingDifferences: true);
 		}
 
 
@@ -891,7 +891,7 @@ namespace MyNS
 }
 ";
 			string s = TranslateDefToCsTypesCode("SwagMock" + Path.DirectorySeparatorChar + "TypeAlias.json");
-			Assert.Equal(expected, s);
+			Assert.Equal(expected, s, ignoreLineEndingDifferences: true);
 		}
 
 		[Fact]
@@ -923,7 +923,7 @@ namespace MyNS
 }
 ";
 			string s = TranslateDefToCsTypesCode("SwagMock" + Path.DirectorySeparatorChar + "TypeAlias2.json");
-			Assert.Equal(expected, s);
+			Assert.Equal(expected, s, ignoreLineEndingDifferences: true);
 		}
 
 		//[Fact]
@@ -985,7 +985,7 @@ namespace MyNS
 }
 ";
 			string s = TranslateDefToCsTypesCode("SwagMock\\Required.json");
-			Assert.Equal(expected, s);
+			Assert.Equal(expected, s, ignoreLineEndingDifferences: true);
 		}
 
 

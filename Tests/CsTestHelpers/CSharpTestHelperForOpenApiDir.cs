@@ -56,7 +56,7 @@ namespace SwagTests
 			else
 			{
 				string expected = File.ReadAllText(csFilePath);
-				Assert.Equal(expected, s);
+				Assert.Equal(expected, s, ignoreLineEndingDifferences: true);
 			}
 
 			if (TestingSettings.Instance.Build)

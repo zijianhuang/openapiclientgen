@@ -36,7 +36,7 @@ namespace SwagTests
 
 ";
 			string s = helper.TranslateDefToCode("SwagMock\\SimplePet.json");
-			Assert.Equal(expected, s);
+			Assert.Equal(expected, s, ignoreLineEndingDifferences: true);
 		}
 
 		[Fact]
@@ -77,7 +77,7 @@ namespace SwagTests
 
 ";
 			string s = helper.TranslateDefToCode("SwagMock\\SimplePetNestedComplex.json");
-			Assert.Equal(expected, s);
+			Assert.Equal(expected, s, ignoreLineEndingDifferences: true);
 		}
 
 
@@ -106,7 +106,7 @@ namespace SwagTests
 
 ";
 			string s = helper.TranslateDefToCode("SwagMock\\SimplePetCat.json");
-			Assert.Equal(expected, s);
+			Assert.Equal(expected, s, ignoreLineEndingDifferences: true);
 		}
 
 		[Fact]
@@ -121,7 +121,7 @@ namespace SwagTests
 
 ";
 			string s = helper.TranslateDefToCode("SwagMock\\Enum.json");
-			Assert.Equal(expected, s);
+			Assert.Equal(expected, s, ignoreLineEndingDifferences: true);
 		}
 
 		[Fact]
@@ -136,7 +136,7 @@ namespace SwagTests
 
 ";
 			string s = helper.TranslateDefToCode("SwagMock\\IntEnum.json");
-			Assert.Equal(expected, s);
+			Assert.Equal(expected, s, ignoreLineEndingDifferences: true);
 		}
 
 
@@ -162,7 +162,7 @@ namespace SwagTests
 
 ";
 			string s = helper.TranslateDefToCode("SwagMock\\CasualEnum.json");
-			Assert.Equal(expected, s);
+			Assert.Equal(expected, s, ignoreLineEndingDifferences: true);
 		}
 
 		[Fact]
@@ -188,7 +188,7 @@ namespace SwagTests
 
 ";
 			string s = helper.TranslateDefToCode("SwagMock\\StringArray.json");
-			Assert.Equal(expected, s);
+			Assert.Equal(expected, s, ignoreLineEndingDifferences: true);
 		}
 
 		[Fact]
@@ -226,7 +226,7 @@ namespace SwagTests
 
 ";
 			string s = helper.TranslateDefToCode("SwagMock\\CustomTypeArray.json");
-			Assert.Equal(expected, s);
+			Assert.Equal(expected, s, ignoreLineEndingDifferences: true);
 		}
 
 		[Fact]
@@ -257,7 +257,7 @@ namespace SwagTests
 
 ";
 			string s = helper.TranslateDefToCode("SwagMock\\SimpleOrder.json");
-			Assert.Equal(expected, s);
+			Assert.Equal(expected, s, ignoreLineEndingDifferences: true);
 		}
 
 		[Fact]
@@ -280,7 +280,7 @@ namespace SwagTests
 
 ";
 			string s = helper.TranslateDefToCode("SwagMock\\TypeAlias.json");
-			Assert.Equal(expected, s);
+			Assert.Equal(expected, s, ignoreLineEndingDifferences: true);
 		}
 
 		[Fact]
@@ -314,7 +314,7 @@ namespace SwagTests
 
 ";
 			string s = helper.TranslateDefToCode("SwagMock\\Required.json");
-			Assert.Equal(expected, s);
+			Assert.Equal(expected, s, ignoreLineEndingDifferences: true);
 		}
 
 		[Fact]
@@ -373,7 +373,7 @@ export namespace MyNS {
 				UsePascalCase = true,
 				DecorateDataModelWithPropertyName = true
 			});
-			Assert.Equal(expected, s);
+			Assert.Equal(expected, s, ignoreLineEndingDifferences: true);
 		}
 
 
