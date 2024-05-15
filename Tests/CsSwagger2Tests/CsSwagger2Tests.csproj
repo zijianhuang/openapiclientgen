@@ -40,7 +40,7 @@
 
 	<Target Name="PreBuild" AfterTargets="PreBuildEvent">
 		<Exec Command="ls -la -R" />
-		<Exec Command="pwsh -file ..\..\PowershellScripts\CopyFiles.ps1 $(ProjectDir)Results\*.* $(TargetDir)Results\" />
+		<Exec Command="pwsh -File ../../PowershellScripts/CopyFiles.ps1 $(ProjectDir)Results/*.* $(TargetDir)Results/" />
 	</Target>
 
 </Project>
