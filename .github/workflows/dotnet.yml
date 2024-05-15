@@ -16,9 +16,6 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
-    - name: Open Web Client Directory
-      run: |
-        ls -la -R
     - name: Setup .NET
       uses: actions/setup-dotnet@v4
       with:
