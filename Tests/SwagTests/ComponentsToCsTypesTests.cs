@@ -430,7 +430,7 @@ namespace MyNS
 	}
 }
 ";
-			string s = TranslateDefToCsTypesCode("SwagMock\\SimplePetCat.json");
+			string s = TranslateDefToCsTypesCode("SwagMock/SimplePetCat.json");
 			Assert.Equal(expected, s, ignoreLineEndingDifferences: true);
 		}
 
@@ -467,7 +467,7 @@ namespace MyNS
 	}
 }
 ";
-			string s = TranslateDefToCsTypesCode("SwagMock\\Enum.json");
+			string s = TranslateDefToCsTypesCode("SwagMock/Enum.json");
 			Assert.Equal(expected, s, ignoreLineEndingDifferences: true);
 		}
 
@@ -543,7 +543,7 @@ namespace MyNS
 	}
 }
 ";
-			string s = TranslateDefToCsTypesCode("SwagMock\\IntEnum.json");
+			string s = TranslateDefToCsTypesCode("SwagMock/IntEnum.json");
 			Assert.Equal(expected, s, ignoreLineEndingDifferences: true);
 		}
 
@@ -593,7 +593,7 @@ namespace MyNS
 	}
 }
 ";
-			string s = TranslateDefToCsTypesCode("SwagMock\\CasualEnum.json");
+			string s = TranslateDefToCsTypesCode("SwagMock/CasualEnum.json");
 			Assert.Equal(expected, s, ignoreLineEndingDifferences: true);
 		}
 
@@ -689,7 +689,7 @@ namespace MyNS
 	}
 }
 ";
-			string s = TranslateDefToCsTypesCode("SwagMock\\StringArray.json");
+			string s = TranslateDefToCsTypesCode("SwagMock/StringArray.json");
 			Assert.Equal(expected, s, ignoreLineEndingDifferences: true);
 		}
 
@@ -730,7 +730,7 @@ namespace MyNS
 	}
 }
 ";
-			string s = TranslateDefToCsTypesWithSettings("SwagMock\\StringArray.json", new Settings()
+			string s = TranslateDefToCsTypesWithSettings("SwagMock/StringArray.json", new Settings()
 			{
 				ClientNamespace = "MyNS",
 				DataAnnotationsToComments = true,
@@ -792,7 +792,7 @@ namespace MyNS
 	}
 }
 ";
-			string s = TranslateDefToCsTypesCode("SwagMock\\CustomTypeArray.json");
+			string s = TranslateDefToCsTypesCode("SwagMock/CustomTypeArray.json");
 			Assert.Equal(expected, s, ignoreLineEndingDifferences: true);
 		}
 
@@ -853,7 +853,7 @@ namespace MyNS
 	}
 }
 ";
-			string s = TranslateDefToCsTypesCode("SwagMock\\SimpleOrder.json");
+			string s = TranslateDefToCsTypesCode("SwagMock/SimpleOrder.json");
 			Assert.Equal(expected, s, ignoreLineEndingDifferences: true);
 		}
 
@@ -984,7 +984,7 @@ namespace MyNS
 	}
 }
 ";
-			string s = TranslateDefToCsTypesCode("SwagMock\\Required.json");
+			string s = TranslateDefToCsTypesCode("SwagMock/Required.json");
 			Assert.Equal(expected, s, ignoreLineEndingDifferences: true);
 		}
 

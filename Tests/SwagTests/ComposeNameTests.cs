@@ -11,7 +11,7 @@ namespace SwagTests
 	{
 		public DocFixture()
 		{
-			using FileStream stream = new("SwagMock\\myswagger.json", FileMode.Open, FileAccess.Read);
+			using FileStream stream = new("SwagMock/myswagger.json", FileMode.Open, FileAccess.Read);
 			Doc = new OpenApiStreamReader().Read(stream, out OpenApiDiagnostic diagnostic);
 			Composer = new NameComposer(new Settings
 			{
