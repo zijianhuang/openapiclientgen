@@ -12,7 +12,9 @@ namespace OpenApiDirTests
 		const string openDirName= "openapi-directory20240114";
 		public OpenApi3Tests(ITestOutputHelper output)
 		{
-			helper = new NG2OpenApiDirTestHelper(typeof(Fonlow.CodeDom.Web.Ts.ControllersTsNG2FormGroupClientApiGen), output);
+			helper = new NG2OpenApiDirTestHelper(typeof(Fonlow.CodeDom.Web.Ts.ControllersTsNG2FormGroupClientApiGen), output,
+			(string expected, string s) => Assert.Equal(expected, s, ignoreLineEndingDifferences: true),
+			(int expected, int actual) => Assert.Equal(expected, actual));
 		}
 	}
 }

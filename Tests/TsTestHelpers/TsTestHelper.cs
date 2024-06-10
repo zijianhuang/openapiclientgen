@@ -18,14 +18,16 @@ namespace Fonlow.OpenApiClientGen.TestHelpers
 		/// 
 		/// </summary>
 		/// <param name="codeGenType">Code gen Type to be instantiated.</param>
-		public TsTestHelper(Type codeGenType, ITestingSettings testingSettings)
+		public TsTestHelper(Type codeGenType, ITestingSettings testingSettings, Action<string, string> assertEqual)
 		{
 			this.codeGenType = codeGenType;
 			this.testingSettings = testingSettings;
+			this.assertEqual = assertEqual;
 		}
 
 		readonly Type codeGenType;
 		protected readonly ITestingSettings testingSettings;
+		protected readonly Action<string, string> assertEqual;
 
 		static OpenApiDocument ReadOpenApiDef(string filePath)
 		{
@@ -116,7 +118,7 @@ namespace Fonlow.OpenApiClientGen.TestHelpers
 			}
 
 			string expected = ReadFromResults(expectedFile);
-			Assert.Equal(expected, s, ignoreLineEndingDifferences: true);
+			assertEqual(expected, s);
 		}
 	}
 

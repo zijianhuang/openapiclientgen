@@ -10,7 +10,8 @@ namespace SwagTests
 	{
 		public CodeGenFetchTests()
 		{
-			helper = new TsTestHelper(typeof(Fonlow.CodeDom.Web.Ts.ControllersTsFetchClientApiGen), TestingSettings.Instance);
+			helper = new TsTestHelper(typeof(Fonlow.CodeDom.Web.Ts.ControllersTsFetchClientApiGen), TestingSettings.Instance,
+			(string expected, string s) => Assert.Equal(expected, s, ignoreLineEndingDifferences: true));
 		}
 
 		readonly TsTestHelper helper;

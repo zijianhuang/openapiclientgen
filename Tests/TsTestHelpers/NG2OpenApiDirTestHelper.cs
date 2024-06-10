@@ -19,8 +19,10 @@ namespace Fonlow.OpenApiClientGen.TestHelpers
 		/// <param name="genType"></param>
 		/// <param name="output"></param>
 		/// <param name="defaultDefFile">default is openapi.yaml</param>
-		public NG2OpenApiDirTestHelper(Type genType, ITestOutputHelper output, string defaultDefFile="openapi.yaml", ISettings defaultSettings=null) : base(genType, output, 
-			new CasualTestingSettings(TestHelpers.TestingSettings.Instance.Build, TestHelpers.TestingSettings.Instance.UpdateGenerated))
+		public NG2OpenApiDirTestHelper(Type genType, ITestOutputHelper output,
+		Action<string, string> assertEqual, Action<int, int> assertEqualInt, string defaultDefFile="openapi.yaml", ISettings defaultSettings=null) 
+		: base(genType, output, 
+			new CasualTestingSettings(TestHelpers.TestingSettings.Instance.Build, TestHelpers.TestingSettings.Instance.UpdateGenerated), assertEqual, assertEqualInt)
 		{
 			this.defaultDefFile = defaultDefFile;
 			this.defaultSettings = defaultSettings;

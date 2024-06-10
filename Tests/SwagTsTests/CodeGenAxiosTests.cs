@@ -10,7 +10,8 @@ namespace SwagTests
 	{
 		public CodeGenAxiosTests()
 		{
-			helper = new TsTestHelper(typeof(Fonlow.CodeDom.Web.Ts.ControllersTsAxiosClientApiGen), TestingSettings.Instance);
+			helper = new TsTestHelper(typeof(Fonlow.CodeDom.Web.Ts.ControllersTsAxiosClientApiGen), TestingSettings.Instance,
+			(string expected, string s) => Assert.Equal(expected, s, ignoreLineEndingDifferences: true));
 		}
 
 		readonly TsTestHelper helper;

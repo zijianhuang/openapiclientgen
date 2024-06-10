@@ -9,7 +9,8 @@ namespace SwagTests
 	{
 		public ComponentsToTsTypesFormGroupTests()
 		{
-			helper = new TsTestHelper(typeof(Fonlow.CodeDom.Web.Ts.ControllersTsNG2FormGroupClientApiGen), TestingSettings.Instance);
+			helper = new TsTestHelper(typeof(Fonlow.CodeDom.Web.Ts.ControllersTsNG2FormGroupClientApiGen), TestingSettings.Instance,
+			(string expected, string s) => Assert.Equal(expected, s, ignoreLineEndingDifferences: true));
 		}
 
 		readonly TsTestHelper helper;

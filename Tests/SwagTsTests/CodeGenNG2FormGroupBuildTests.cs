@@ -10,7 +10,9 @@ namespace SwagTests
 	{
 		public CodeGenNG2FormGroupBuildTests(ITestOutputHelper output)
 		{
-			helper = new NG2TestHelper(typeof(Fonlow.CodeDom.Web.Ts.ControllersTsNG2FormGroupClientApiGen), output, TestingSettings.Instance);
+			helper = new NG2TestHelper(typeof(Fonlow.CodeDom.Web.Ts.ControllersTsNG2FormGroupClientApiGen), output, TestingSettings.Instance,
+			(string expected, string s) => Assert.Equal(expected, s, ignoreLineEndingDifferences: true),
+			(int expected, int actual) => Assert.Equal(expected, actual));
 		}
 
 		readonly NG2TestHelper helper;

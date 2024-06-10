@@ -3,7 +3,6 @@ using Fonlow.OpenApiClientGen.CS;
 using Microsoft.OpenApi.Models;
 using Microsoft.OpenApi.Readers;
 using System.IO;
-using Xunit;
 using Xunit.Abstractions;
 
 namespace Fonlow.OpenApiClientGen.TestHelpers
@@ -15,11 +14,15 @@ namespace Fonlow.OpenApiClientGen.TestHelpers
 	{
 		readonly protected ITestOutputHelper output;
 		readonly protected ISettings defaultSettings;
+		readonly protected Action<string, string> assertEqual;
+		readonly protected Action<bool> assertTrue;
 
-		public CSharpTestHelper(ITestOutputHelper output, ISettings defaultSettings)
+		public CSharpTestHelper(ITestOutputHelper output, ISettings defaultSettings, Action<string, string> assertEqual, Action<bool> assertTrue)
 		{
 			this.output = output;
 			this.defaultSettings = defaultSettings;
+			this.assertEqual = assertEqual;
+			this.assertTrue = assertTrue;
 		}
 
 		static OpenApiDocument ReadDef(string filePath)
@@ -64,7 +67,7 @@ namespace Fonlow.OpenApiClientGen.TestHelpers
 			else
 			{
 				string expected = ReadFromResults(expectedFile);
-				Assert.Equal(expected, s, ignoreLineEndingDifferences: true);
+				assertEqual(expected, s);//, ignoreLineEndingDifferences: true);
 			}
 
 			if (TestingSettings.Instance.Build)
@@ -80,7 +83,7 @@ namespace Fonlow.OpenApiClientGen.TestHelpers
 					}
 				}
 
-				Assert.True(r.Success);
+				assertTrue(r.Success);
 			}
 		}
 	}

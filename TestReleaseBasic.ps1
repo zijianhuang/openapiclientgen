@@ -1,2 +1,2 @@
 ﻿# Test only those suites without referecing to OpenApiDir. This is also used in DotNetRelease.yml of GitHub actions
-dotnet test --no-build --verbosity normal --configuration Release --filter "(FullyQualifiedName~Tests) & (FullyQualifiedName!~OpenApiDirTests)"
+dotnet test --verbosity normal --configuration Release --filter "(FullyQualifiedName~Tests) & (FullyQualifiedName!~OpenApiDirTests)"

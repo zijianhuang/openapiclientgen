@@ -12,7 +12,9 @@ namespace SwagTests
 	{
 		public VstsCsTests(ITestOutputHelper output)
 		{
-			helper = new CSharpTestHelper(output, CodeGenSettings.Default);
+			helper = new CSharpTestHelper(output, CodeGenSettings.Default,
+				(string expected, string s) => Assert.Equal(expected, s, ignoreLineEndingDifferences: true),
+				(bool success) => Assert.True(success));
 		}
 
 		readonly CSharpTestHelper helper;

@@ -12,7 +12,9 @@ namespace SwagOpenApiDirTests
 		readonly CSharpTestHelperForOpenApiDir helper;
 		public ODAzureTests(ITestOutputHelper output)
 		{
-			helper = new CSharpTestHelperForOpenApiDir(output, "swagger.yaml", Swagger2CodeGenSettings.Default);
+			helper = new CSharpTestHelperForOpenApiDir(output, "swagger.yaml", Swagger2CodeGenSettings.Default,
+				(string expected, string s) => Assert.Equal(expected, s, ignoreLineEndingDifferences: true),
+				(bool success) => Assert.True(success));
 		}
 
 		[Fact]

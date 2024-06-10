@@ -9,7 +9,9 @@ namespace SwagTests
 	{
 		public CodeGenCsTests(ITestOutputHelper output)
 		{
-			helper = new CSharpTestHelper(output, CodeGenSettings.Default);
+			helper = new CSharpTestHelper(output, CodeGenSettings.Default,
+				(string expected, string s) => Assert.Equal(expected, s, ignoreLineEndingDifferences: true),
+				(bool success)=> Assert.True(success));
 		}
 
 		readonly CSharpTestHelper helper;
@@ -465,7 +467,7 @@ namespace SwagTests
 			GenerateAndAssertAndBuild("SwagMock/googleBooksOpenApi.yaml", "Results/googleBooksOpenApi.txt");
 		}
 
-		[Fact(Skip ="Not sure")]
+		[Fact(Skip = "Not sure")]
 		public void TestAzureSecurityInsights()
 		{
 			GenerateAndAssertAndBuild("SwagMock/AzureSecurityInsights.yaml", "Results/AzureSecurityInsights.txt");
@@ -477,7 +479,7 @@ namespace SwagTests
 		/// <summary>
 		/// OpenApi v3.1
 		/// </summary>
-		[Fact(Skip ="Until OpenApi v3.1 is supported by Microsoft.OpenApi.Readers")]
+		[Fact(Skip = "Until OpenApi v3.1 is supported by Microsoft.OpenApi.Readers")]
 		public void Testwebhook31()
 		{
 			GenerateAndAssertAndBuild("SwagMock/webhook31.yaml", "Results/webhook31.txt");

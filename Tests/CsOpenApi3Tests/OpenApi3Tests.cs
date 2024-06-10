@@ -12,7 +12,9 @@ namespace OpenApiDirTests
 		const string openDirName= "openapi-directory20240114";
 		public OpenApi3Tests(ITestOutputHelper output)
 		{
-			helper = new CSharpTestHelperForOpenApiDir(output, "openapi.yaml", OpenApi3CodeGenSettings.Default);
+			helper = new CSharpTestHelperForOpenApiDir(output, "openapi.yaml", OpenApi3CodeGenSettings.Default,
+				(string expected, string s) => Assert.Equal(expected, s, ignoreLineEndingDifferences: true),
+				(bool success) => Assert.True(success));
 		}
 
 		void GenerateFromOpenApiAndBuild(string filePath, ISettings mySettings = null)

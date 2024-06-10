@@ -15,11 +15,14 @@ namespace Fonlow.OpenApiClientGen.TestHelpers
 	{
 		readonly ITestOutputHelper output;
 		readonly bool buildToValidate;
+		readonly Action<int, int> assertEqualInt;
 
-		public NG2TestHelper(Type genType, ITestOutputHelper output, ITestingSettings testingSettings) : base(genType, testingSettings)
+		public NG2TestHelper(Type genType, ITestOutputHelper output, ITestingSettings testingSettings, Action<string, string> assertEqual, Action<int, int> assertEqualInt) 
+		: base(genType, testingSettings, assertEqual)
 		{
 			this.output = output;
 			this.buildToValidate = testingSettings.Build;
+			this.assertEqualInt = assertEqualInt;
 		}
 
 		public void GenerateAndAssertAndBuild(string openApiFile, string expectedFile, ISettings settings = null)
@@ -41,12 +44,12 @@ namespace Fonlow.OpenApiClientGen.TestHelpers
 			else
 			{
 				string expected = ReadFromResults(expectedFile);
-				Assert.Equal(expected, s, ignoreLineEndingDifferences: true);
+				assertEqual(expected, s);
 			}
 
 			if (buildToValidate)
 			{
-				Assert.Equal(0, CheckNGBuild(s));
+				assertEqualInt(0, CheckNGBuild(s));
 			}
 		}
 

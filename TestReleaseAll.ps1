@@ -1,1 +1,1 @@
-﻿dotnet test --no-build --verbosity normal --configuration Release
+﻿dotnet test --verbosity normal --configuration Release
