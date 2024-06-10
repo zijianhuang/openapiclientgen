@@ -312,7 +312,7 @@ namespace Fonlow.OpenApiClientGen.CS
 
 		void CreateDummyOfEnsureSuccessStatusCodeEx()
 		{
-			codeCompileUnit.Namespaces.Add(new CodeNamespace("EnsureSuccessStatusCodeExDummy"));
+			codeCompileUnit.Namespaces.Add(new CodeNamespace("ZZZzzzEnsureSuccessStatusCodeExDummy"));
 		}
 
 		const string blockOfEnsureSuccessStatusCodeEx =
@@ -356,7 +356,7 @@ namespace Fonlow.Net.Http
 }";
 		const string dummyBlock =
 			@"
-namespace EnsureSuccessStatusCodeExDummy
+namespace ZZZzzzEnsureSuccessStatusCodeExDummy
 {
 	
 }";
