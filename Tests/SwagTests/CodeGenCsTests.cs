@@ -212,7 +212,7 @@ namespace SwagTests
 		[Fact]
 		public void TestPetTypes()
 		{
-			GenerateAndAssertAndBuild("SwagMock/PetTypes.json", "Results/PetTypes.txt");
+			GenerateAndAssertAndBuild("SwagMock/petTypes.json", "Results/PetTypes.txt");
 		}
 
 		[Fact]
