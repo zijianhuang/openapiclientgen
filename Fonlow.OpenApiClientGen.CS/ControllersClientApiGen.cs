@@ -98,7 +98,7 @@ namespace Fonlow.OpenApiClientGen.CS
 			string s = streamReader.ReadToEnd();
 			if (settings.UseEnsureSuccessStatusCodeEx && settings.IncludeEnsureSuccessStatusCodeExBlock)
 			{
-				textWriter.Write(s.Replace("//;", "").Replace(dummyBlock, blockOfEnsureSuccessStatusCodeEx));
+				textWriter.Write(s.Replace("//;", "").Replace(dummyBlock, System.OperatingSystem.IsWindows()? blockOfEnsureSuccessStatusCodeEx : GetBlockOfEnsureSuccessStatusCodeExForLinux()));
 			}
 			else
 			{
@@ -315,6 +315,14 @@ namespace Fonlow.OpenApiClientGen.CS
 			codeCompileUnit.Namespaces.Add(new CodeNamespace("ZZZzzzEnsureSuccessStatusCodeExDummy"));
 		}
 
+		string GetBlockOfEnsureSuccessStatusCodeExForLinux()
+		{
+			return blockOfEnsureSuccessStatusCodeEx.ReplaceLineEndings();
+		}
+
+		/// <summary>
+		/// Code block for Windows with \r\n
+		/// </summary>
 		const string blockOfEnsureSuccessStatusCodeEx =
 		@"
 
