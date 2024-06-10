@@ -1,0 +1,1 @@
+﻿dotnet build OpenApiClientGen.sln  --configuration Release --no-incremental

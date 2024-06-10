@@ -1,4 +1,5 @@
 ﻿using Fonlow.Net.Http;
+using Fonlow.Testing;
 using My.Pet.Client;
 using System;
 using System.Threading.Tasks;
@@ -6,52 +7,24 @@ using Xunit;
 
 namespace IntegrationTests
 {
-	public class PetsFixture : IDisposable
+	public class PetsFixture : BasicHttpClient
 	{
 		public PetsFixture()
 		{
-			Uri baseUri = new("http://localhost:5000");
+			var c = TestingSettings.Instance.ServiceCommands[0];
+			HttpClient.BaseAddress = new System.Uri(c.BaseUrl);
 
-			httpClient = new System.Net.Http.HttpClient
+			Api = new PetClient(HttpClient, new System.Text.Json.JsonSerializerOptions()
 			{
-				BaseAddress = baseUri
-			};
-
-			Api = new PetClient(httpClient, new System.Text.Json.JsonSerializerOptions
-			{
-				DefaultIgnoreCondition= System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault,
-				PropertyNameCaseInsensitive= true
+				DefaultIgnoreCondition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault,
+				PropertyNameCaseInsensitive = true,
 			});
 		}
 
 		public PetClient Api { get; private set; }
-
-		readonly System.Net.Http.HttpClient httpClient;
-
-		#region IDisposable pattern
-		bool disposed;
-
-		public void Dispose()
-		{
-			Dispose(true);
-			GC.SuppressFinalize(this);
-		}
-
-		protected virtual void Dispose(bool disposing)
-		{
-			if (!disposed)
-			{
-				if (disposing)
-				{
-					httpClient.Dispose();
-				}
-
-				disposed = true;
-			}
-		}
-		#endregion
 	}
 
+	[Collection(TestConstants.LaunchWebApiAndInit)]
 	public partial class PetsApiIntegration : IClassFixture<PetsFixture>
 	{
 		public PetsApiIntegration(PetsFixture fixture)

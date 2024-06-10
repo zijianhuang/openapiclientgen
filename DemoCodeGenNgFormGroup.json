@@ -8,6 +8,7 @@
 	"DataAnnotationsEnabled": true,
 	"DataAnnotationsToComments": true,
 	"HandleHttpRequestHeaders": true,
+	"SortTypesMembersAndMethods": true,
 
 	"Plugins": [
 		{

@@ -2,7 +2,7 @@ Demostrate how to utilize yaml in application programming.
 
 1. A dedicated assembly containing only generated codes.
 1. Optionally with some technical helper functions codes.
-1. Whenever the yaml is updated, run CodeGen.bat to generated codes. The detailed operations depending on the architectural design of versioning.
+1. Whenever the yaml is updated, run CodeGen.ps1 to generated codes. The detailed operations depending on the architectural design of versioning.
 1. Craft integration tests against the service. (SwagApiTests)
 1. Application programming.
 
