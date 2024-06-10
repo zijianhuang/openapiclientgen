@@ -25,4 +25,4 @@ jobs:
     - name: Build
       run: dotnet build --no-restore --configuration Release
     - name: Test Basic
-      run: dotnet test --no-build --verbosity normal --configuration Release --filter FullyQualifiedName~IntegrationTests
+      run: dotnet test --no-build --verbosity normal --configuration Release --filter FullyQualifiedName~SwagTests
