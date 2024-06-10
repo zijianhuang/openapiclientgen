@@ -354,12 +354,11 @@ namespace Fonlow.Net.Http
 		}
 	}
 }";
-		const string dummyBlock =
-			@"
-namespace ZZZzzzEnsureSuccessStatusCodeExDummy
-{
-	
-}";
+		/// <summary>
+		/// Block also working well in Linux while C# CodeDOM outputs with \n
+		/// </summary>
+		string dummyBlock =
+			$"{Environment.NewLine}namespace ZZZzzzEnsureSuccessStatusCodeExDummy{Environment.NewLine}{{{Environment.NewLine}\t{Environment.NewLine}}}";
 	}
 
 }
