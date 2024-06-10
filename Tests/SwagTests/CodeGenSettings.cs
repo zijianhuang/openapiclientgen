@@ -16,6 +16,7 @@ namespace SwagTests
 				ActionNameStrategy = ans,
 				GenerateBothAsyncAndSync = true,
 				//DecorateDataModelWithSerializable = true,
+				IncludeEnsureSuccessStatusCodeExBlock = true,
 				UseEnsureSuccessStatusCodeEx = true,
 				DataAnnotationsEnabled = true,
 				DataAnnotationsToComments = true,
