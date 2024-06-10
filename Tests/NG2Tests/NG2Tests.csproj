@@ -34,7 +34,7 @@
 		<ProjectReference Include="..\TsTestHelpers\TsTestHelpers.csproj" />
 	</ItemGroup>
 
-	<Target Name="PostBuild" AfterTargets="PostBuildEvent">
+	<Target Name="PreBuild" BeforeTargets="PreBuildEvent">
 		<Exec Command="pwsh -File ../../PowershellScripts/CopyFiles.ps1 $(ProjectDir)SwagMock/ $(TargetDir)&#xD;&#xA;pwsh -File ../../PowershellScripts/CopyFiles.ps1 $(ProjectDir)Results/ $(TargetDir)&#xD;&#xA;" />
 	</Target>
 

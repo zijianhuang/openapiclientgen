@@ -43,7 +43,7 @@
 		<ProjectReference Include="..\TsTestHelpers\TsTestHelpers.csproj" />
 	</ItemGroup>
 
-	<Target Name="PostBuild" AfterTargets="PostBuildEvent">
+	<Target Name="PreBuild" BeforeTargets="PreBuildEvent">
 		<Exec Command="pwsh -File ../../PowershellScripts/CopyFiles.ps1 $(ProjectDir)SwagMock/ $(TargetDir)&#xD;&#xA;pwsh -File ../../PowershellScripts/CopyFiles.ps1 $(ProjectDir)NG2Results/ $(TargetDir)&#xD;&#xA;pwsh -File ../../PowershellScripts/CopyFiles.ps1 $(ProjectDir)NG2FormGroupResults/ $(TargetDir)&#xD;&#xA;pwsh -File ../../PowershellScripts/CopyFiles.ps1 $(ProjectDir)AureliaResults/ $(TargetDir)&#xD;&#xA;pwsh -File ../../PowershellScripts/CopyFiles.ps1 $(ProjectDir)AxiosResults/ $(TargetDir)&#xD;&#xA;pwsh -File ../../PowershellScripts/CopyFiles.ps1 $(ProjectDir)FetchResults/ $(TargetDir)&#xD;&#xA;pwsh -File ../../PowershellScripts/CopyFiles.ps1 $(ProjectDir)JqResults/ $(TargetDir)" />
 	</Target>
 
