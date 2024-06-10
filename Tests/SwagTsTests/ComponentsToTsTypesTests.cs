@@ -1,5 +1,6 @@
 using Xunit;
 using Xunit.Abstractions;
+using Fonlow.OpenApiClientGen.TestHelpers;
 
 namespace SwagTests
 {
@@ -8,7 +9,7 @@ namespace SwagTests
 	{
 		public ComponentsToTsTypesTests()
 		{
-			helper = new TsTestHelper(typeof(Fonlow.CodeDom.Web.Ts.ControllersTsNG2ClientApiGen), new TestHelpers.CasualTestingSettings(false, false));
+			helper = new TsTestHelper(typeof(Fonlow.CodeDom.Web.Ts.ControllersTsNG2ClientApiGen), new CasualTestingSettings(false, false));
 		}
 
 		readonly TsTestHelper helper;

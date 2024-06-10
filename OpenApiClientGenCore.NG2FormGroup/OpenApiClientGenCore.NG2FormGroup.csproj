@@ -14,9 +14,8 @@
 	<ItemGroup>
 		<ProjectReference Include="..\OpenApiClientGenCore.NG2\OpenApiClientGenCore.NG2.csproj" />
 	</ItemGroup>
-	
+
 	<Target Name="PostBuild" AfterTargets="PostBuildEvent">
-		<Exec Command="copy $(TargetPath) $(SolutionDir)Fonlow.OpenApiClientGen\$(OutDir) /Y" Condition="$([MSBuild]::IsOSPlatform('Windows'))" />
-		<Exec Command="cp $(TargetPath) $(SolutionDir)Fonlow.OpenApiClientGen/$(OutDir)" Condition="!$([MSBuild]::IsOSPlatform('Windows'))" />
+		<Exec Command="pwsh -File ../PowershellScripts/CopyFile.ps1 $(TargetPath) ../Fonlow.OpenApiClientGen/$(OutDir)" />
 	</Target>
 </Project>

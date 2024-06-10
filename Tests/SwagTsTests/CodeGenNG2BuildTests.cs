@@ -1,6 +1,8 @@
 using Fonlow.OpenApiClientGen.ClientTypes;
 using Xunit.Abstractions;
 using Xunit;
+using Fonlow.OpenApiClientGen.TestHelpers;
+
 namespace SwagTests
 {
 	[Collection("PluginsInSequence")] //CodeGen is not thread safe
@@ -8,7 +10,7 @@ namespace SwagTests
 	{
 		public CodeGenNG2BuildTests(ITestOutputHelper output)
 		{
-			helper = new NG2TestHelper(typeof(Fonlow.CodeDom.Web.Ts.ControllersTsNG2ClientApiGen), output, TestHelpers.TestingSettings.Instance);
+			helper = new NG2TestHelper(typeof(Fonlow.CodeDom.Web.Ts.ControllersTsNG2ClientApiGen), output, TestingSettings.Instance);
 		}
 
 		readonly NG2TestHelper helper;

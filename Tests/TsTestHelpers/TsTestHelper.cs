@@ -4,10 +4,9 @@ using Microsoft.OpenApi.Readers;
 using System;
 using System.Diagnostics;
 using System.IO;
-using TestHelpers;
 using Xunit;
 
-namespace SwagTests
+namespace Fonlow.OpenApiClientGen.TestHelpers
 {
 	/// <summary>
 	/// For integration testing for TypeScript. Though injecting a code gen type, this can be used for various TypeScript codes generators for various TypeScript libs and frameworks.

@@ -1,6 +1,8 @@
 using Fonlow.OpenApiClientGen.ClientTypes;
 using Xunit.Abstractions;
 using Xunit;
+using Fonlow.OpenApiClientGen.TestHelpers;
+
 namespace SwagTests
 {
 	[Collection("PluginsInSequence")]
@@ -8,7 +10,7 @@ namespace SwagTests
 	{
 		public CodeGenNG2FormGroupBuildTests(ITestOutputHelper output)
 		{
-			helper = new NG2TestHelper(typeof(Fonlow.CodeDom.Web.Ts.ControllersTsNG2FormGroupClientApiGen), output, TestHelpers.TestingSettings.Instance);
+			helper = new NG2TestHelper(typeof(Fonlow.CodeDom.Web.Ts.ControllersTsNG2FormGroupClientApiGen), output, TestingSettings.Instance);
 		}
 
 		readonly NG2TestHelper helper;

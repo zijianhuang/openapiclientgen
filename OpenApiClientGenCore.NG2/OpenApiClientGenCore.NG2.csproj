@@ -1,26 +1,25 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>net7.0</TargetFramework>
-    <AssemblyName>Fonlow.OpenApiClientGen.NG2</AssemblyName>
-    <NeutralLanguage>en</NeutralLanguage>
-    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
-    <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <PackageProjectUrl>https://github.com/zijianhuang/openapiclientgen</PackageProjectUrl>
-    <Copyright>Copyright © Zijian Huang 2021-2024</Copyright>
-    <Authors>Zijian Huang</Authors>
-    <RootNamespace>Fonlow.OpenApiClientGen.NG2</RootNamespace>
-    <Version>2</Version>
-    <AnalysisLevel>latest-all</AnalysisLevel>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>net7.0</TargetFramework>
+		<AssemblyName>Fonlow.OpenApiClientGen.NG2</AssemblyName>
+		<NeutralLanguage>en</NeutralLanguage>
+		<GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<PackageProjectUrl>https://github.com/zijianhuang/openapiclientgen</PackageProjectUrl>
+		<Copyright>Copyright © Zijian Huang 2021-2024</Copyright>
+		<Authors>Zijian Huang</Authors>
+		<RootNamespace>Fonlow.OpenApiClientGen.NG2</RootNamespace>
+		<Version>2</Version>
+		<AnalysisLevel>latest-all</AnalysisLevel>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\Fonlow.OpenApiClientGen.Abstract\Fonlow.OpenApiClientGen.Abstract.csproj" />
-  </ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\Fonlow.OpenApiClientGen.Abstract\Fonlow.OpenApiClientGen.Abstract.csproj" />
+	</ItemGroup>
 
-  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="copy $(TargetPath) $(SolutionDir)Fonlow.OpenApiClientGen\$(OutDir) /Y" Condition="$([MSBuild]::IsOSPlatform('Windows'))" />
-    <Exec Command="cp $(TargetPath) $(SolutionDir)Fonlow.OpenApiClientGen/$(OutDir)" Condition="!$([MSBuild]::IsOSPlatform('Windows'))" />
-  </Target>
+	<Target Name="PostBuild" AfterTargets="PostBuildEvent">
+		<Exec Command="pwsh -File ../PowershellScripts/CopyFile.ps1 $(TargetPath) ../Fonlow.OpenApiClientGen/$(OutDir)" />
+	</Target>
 
 </Project>

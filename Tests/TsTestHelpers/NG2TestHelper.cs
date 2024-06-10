@@ -2,11 +2,10 @@
 using System;
 using System.Diagnostics;
 using System.IO;
-using TestHelpers;
 using Xunit;
 using Xunit.Abstractions;
 
-namespace SwagTests
+namespace Fonlow.OpenApiClientGen.TestHelpers
 {
 	/// <summary>
 	/// For Angular 2+. Generate codes, ng build and assert the build result.

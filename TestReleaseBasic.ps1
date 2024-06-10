@@ -1,0 +1,1 @@
+﻿dotnet test --no-build --verbosity normal --configuration Release --filter "(FullyQualifiedName~Tests) & (FullyQualifiedName!~OpenApiDirTests)"

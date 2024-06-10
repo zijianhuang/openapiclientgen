@@ -1,8 +1,10 @@
 ﻿using Fonlow.OpenApiClientGen.ClientTypes;
 using Xunit;
 using Xunit.Abstractions;
+using SwagTests;
+using Fonlow.OpenApiClientGen.TestHelpers;
 
-namespace SwagTests
+namespace SwagOpenApiDirTests
 {
 	public class ODMiscTests
 	{

@@ -1,25 +1,24 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>net7.0</TargetFramework>
-    <AssemblyName>Fonlow.OpenApiClientGen.Axios</AssemblyName>
-    <RootNamespace>Fonlow.OpenApiClientGen.Axios</RootNamespace>
-    <Authors>Zijian Huang</Authors>
-    <Copyright>Copyright © Zijian Huang 2021-2024</Copyright>
-    <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <PackageProjectUrl>https://github.com/zijianhuang/openapiclientgen</PackageProjectUrl>
-    <NeutralLanguage>en</NeutralLanguage>
-    <Version>2.1.1</Version>
-    <AnalysisLevel>latest-all</AnalysisLevel>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>net7.0</TargetFramework>
+		<AssemblyName>Fonlow.OpenApiClientGen.Axios</AssemblyName>
+		<RootNamespace>Fonlow.OpenApiClientGen.Axios</RootNamespace>
+		<Authors>Zijian Huang</Authors>
+		<Copyright>Copyright © Zijian Huang 2021-2024</Copyright>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<PackageProjectUrl>https://github.com/zijianhuang/openapiclientgen</PackageProjectUrl>
+		<NeutralLanguage>en</NeutralLanguage>
+		<Version>2.1.1</Version>
+		<AnalysisLevel>latest-all</AnalysisLevel>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\Fonlow.OpenApiClientGen.Abstract\Fonlow.OpenApiClientGen.Abstract.csproj" />
-  </ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\Fonlow.OpenApiClientGen.Abstract\Fonlow.OpenApiClientGen.Abstract.csproj" />
+	</ItemGroup>
 
-  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="copy $(TargetPath) $(SolutionDir)Fonlow.OpenApiClientGen\$(OutDir) /Y" Condition="$([MSBuild]::IsOSPlatform('Windows'))" />
-    <Exec Command="cp $(TargetPath) $(SolutionDir)Fonlow.OpenApiClientGen/$(OutDir)" Condition="!$([MSBuild]::IsOSPlatform('Windows'))" />
-  </Target>
+	<Target Name="PostBuild" AfterTargets="PostBuildEvent">
+		<Exec Command="pwsh -File ../PowershellScripts/CopyFile.ps1 $(TargetPath) ../Fonlow.OpenApiClientGen/$(OutDir)" />
+	</Target>
 
 </Project>

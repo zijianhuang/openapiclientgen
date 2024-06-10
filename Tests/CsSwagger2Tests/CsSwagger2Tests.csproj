@@ -38,9 +38,8 @@
 		<ProjectReference Include="..\CsTestHelpers\CsTestHelpers.csproj" />
 	</ItemGroup>
 
-	<Target Name="PreBuild" AfterTargets="PreBuildEvent">
-		<!--<Exec Command="ls -la -R" />-->
-		<Exec Command="pwsh -File ../../PowershellScripts/CopyFiles.ps1 $(ProjectDir)Results/*.* $(TargetDir)Results/" />
+	<Target Name="PostBuild" AfterTargets="PostBuildEvent">
+		<Exec Command="pwsh -File ../../PowershellScripts/CopyFiles.ps1 $(ProjectDir)Results/ $(TargetDir)&#xD;&#xA;" />
 	</Target>
 
 </Project>

@@ -7,9 +7,8 @@ using Fonlow.OpenApiClientGen.CS;
 using Xunit.Abstractions;
 using System;
 using System.Text;
-using TestHelpers;
 
-namespace SwagTests
+namespace Fonlow.OpenApiClientGen.TestHelpers
 {
 	public class CSharpTestHelperForOpenApiDir: CSharpTestHelper, IOpenApiDirTestHelper
 	{

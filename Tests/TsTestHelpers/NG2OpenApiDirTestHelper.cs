@@ -1,10 +1,9 @@
 ﻿using Fonlow.OpenApiClientGen.ClientTypes;
 using System;
 using System.IO;
-using TestHelpers;
 using Xunit.Abstractions;
 
-namespace SwagTests
+namespace Fonlow.OpenApiClientGen.TestHelpers
 {
 	/// <summary>
 	/// For integrations for large amount of OpenAPI files. In such tests, whether the generated codes are the same which those generated in the past is no a concern.

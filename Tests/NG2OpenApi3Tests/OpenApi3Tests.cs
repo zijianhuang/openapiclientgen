@@ -2,7 +2,7 @@ using Fonlow.OpenApiClientGen.ClientTypes;
 using Xunit;
 using Xunit.Abstractions;
 using SwagTests;
-using TestHelpers;
+using Fonlow.OpenApiClientGen.TestHelpers;
 
 namespace OpenApiDirTests
 {

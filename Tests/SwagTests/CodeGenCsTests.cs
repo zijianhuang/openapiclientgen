@@ -1,6 +1,7 @@
 using Fonlow.OpenApiClientGen.ClientTypes;
 using Xunit;
 using Xunit.Abstractions;
+using Fonlow.OpenApiClientGen.TestHelpers;
 
 namespace SwagTests
 {

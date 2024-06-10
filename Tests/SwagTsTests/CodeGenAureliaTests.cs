@@ -1,6 +1,8 @@
 using Fonlow.OpenApiClientGen.ClientTypes;
 using Xunit;
 using Xunit.Abstractions;
+using Fonlow.OpenApiClientGen.TestHelpers;
+
 namespace SwagTests
 {
 	[Collection("PluginsInSequence")] //CodeGen is not thread safe
@@ -8,7 +10,7 @@ namespace SwagTests
 	{
 		public CodeGenAureliaTests()
 		{
-			helper = new TsTestHelper(typeof(Fonlow.CodeDom.Web.Ts.ControllersTsAureliaClientApiGen), TestHelpers.TestingSettings.Instance);
+			helper = new TsTestHelper(typeof(Fonlow.CodeDom.Web.Ts.ControllersTsAureliaClientApiGen), TestingSettings.Instance);
 		}
 
 		readonly TsTestHelper helper;

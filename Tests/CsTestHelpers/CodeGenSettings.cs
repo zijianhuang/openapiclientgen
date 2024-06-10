@@ -1,6 +1,6 @@
 ﻿using Fonlow.OpenApiClientGen.ClientTypes;
 
-namespace SwagTests
+namespace Fonlow.OpenApiClientGen.TestHelpers
 {
 	public static class CodeGenSettings
 	{

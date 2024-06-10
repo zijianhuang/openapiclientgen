@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Fonlow.OpenApiClientGen.ClientTypes;
 using Microsoft.Extensions.Configuration;
 
-namespace TestHelpers
+namespace Fonlow.OpenApiClientGen.TestHelpers
 {
 	public sealed class TestingSettings : ITestingSettings
 	{

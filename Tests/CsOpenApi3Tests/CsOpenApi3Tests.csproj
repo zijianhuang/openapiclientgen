@@ -38,8 +38,8 @@
 
 	<Import Project="..\OpenApi3Shared\OpenApi3Shared.projitems" Label="Shared" />
 
-	<Target Name="PreBuild" AfterTargets="PreBuildEvent">
-		<Exec Command="pwsh -File ../../PowershellScripts/CopyFiles.ps1 $(ProjectDir)Results/*.* $(TargetDir)Results/" />
+	<Target Name="PostBuild" AfterTargets="PostBuildEvent">
+		<Exec Command="pwsh -File ../../PowershellScripts/CopyFiles.ps1 $(ProjectDir)Results/ $(TargetDir)&#xD;&#xA;" />
 	</Target>
 
 

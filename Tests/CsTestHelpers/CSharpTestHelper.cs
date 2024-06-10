@@ -3,11 +3,10 @@ using Fonlow.OpenApiClientGen.CS;
 using Microsoft.OpenApi.Models;
 using Microsoft.OpenApi.Readers;
 using System.IO;
-using TestHelpers;
 using Xunit;
 using Xunit.Abstractions;
 
-namespace SwagTests
+namespace Fonlow.OpenApiClientGen.TestHelpers
 {
 	/// <summary>
 	/// For integration testing: generate, assert against existing copy optionaly and build optionally
