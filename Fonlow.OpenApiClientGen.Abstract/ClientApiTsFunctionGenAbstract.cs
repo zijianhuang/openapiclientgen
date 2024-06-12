@@ -135,7 +135,7 @@ namespace Fonlow.CodeDom.Web.Ts
 			StringBuilder builder = new();
 			string[] linesNoIndent = Fonlow.DocComment.StringFunctions.TrimIndentedMultiLineTextToArray(
 				apiOperation.Summary
-				+ ((String.IsNullOrEmpty(apiOperation.Summary) || string.IsNullOrEmpty(apiOperation.Description)) ? String.Empty : "\n")
+				+ ((String.IsNullOrEmpty(apiOperation.Summary) || string.IsNullOrEmpty(apiOperation.Description)) ? String.Empty : Environment.NewLine)
 				+ apiOperation.Description);
 			if (linesNoIndent != null)
 			{

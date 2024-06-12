@@ -315,7 +315,7 @@ namespace Fonlow.OpenApiClientGen.CS
 			codeCompileUnit.Namespaces.Add(new CodeNamespace("ZZZzzzEnsureSuccessStatusCodeExDummy"));
 		}
 
-		string GetBlockOfEnsureSuccessStatusCodeExForLinux()
+		static string GetBlockOfEnsureSuccessStatusCodeExForLinux()
 		{
 			return blockOfEnsureSuccessStatusCodeEx.ReplaceLineEndings();
 		}
