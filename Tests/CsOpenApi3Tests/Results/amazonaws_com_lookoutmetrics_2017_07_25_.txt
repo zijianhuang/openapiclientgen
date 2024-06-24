@@ -2306,10 +2306,8 @@ namespace MyNS
 		public async Task<ActivateAnomalyDetectorResponse> ActivateAnomalyDetectorAsync(ActivateAnomalyDetectorPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "ActivateAnomalyDetector";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -2320,13 +2318,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ActivateAnomalyDetectorResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ActivateAnomalyDetectorResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2338,10 +2335,8 @@ namespace MyNS
 		public async Task<BackTestAnomalyDetectorResponse> BackTestAnomalyDetectorAsync(BackTestAnomalyDetectorPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "BackTestAnomalyDetector";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -2352,13 +2347,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<BackTestAnomalyDetectorResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<BackTestAnomalyDetectorResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2370,10 +2364,8 @@ namespace MyNS
 		public async Task<CreateAlertResponse> CreateAlertAsync(CreateAlertPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "CreateAlert";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -2384,13 +2376,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<CreateAlertResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<CreateAlertResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2402,10 +2393,8 @@ namespace MyNS
 		public async Task<CreateAnomalyDetectorResponse> CreateAnomalyDetectorAsync(CreateAnomalyDetectorPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "CreateAnomalyDetector";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -2416,13 +2405,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<CreateAnomalyDetectorResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<CreateAnomalyDetectorResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2434,10 +2422,8 @@ namespace MyNS
 		public async Task<CreateMetricSetResponse> CreateMetricSetAsync(CreateMetricSetPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "CreateMetricSet";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -2448,13 +2434,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<CreateMetricSetResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<CreateMetricSetResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2466,10 +2451,8 @@ namespace MyNS
 		public async Task<DeactivateAnomalyDetectorResponse> DeactivateAnomalyDetectorAsync(DeactivateAnomalyDetectorPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "DeactivateAnomalyDetector";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -2480,13 +2463,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<DeactivateAnomalyDetectorResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<DeactivateAnomalyDetectorResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2498,10 +2480,8 @@ namespace MyNS
 		public async Task<DeleteAlertResponse> DeleteAlertAsync(DeleteAlertPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "DeleteAlert";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -2512,13 +2492,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<DeleteAlertResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<DeleteAlertResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2530,10 +2509,8 @@ namespace MyNS
 		public async Task<DeleteAnomalyDetectorResponse> DeleteAnomalyDetectorAsync(DeleteAnomalyDetectorPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "DeleteAnomalyDetector";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -2544,13 +2521,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<DeleteAnomalyDetectorResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<DeleteAnomalyDetectorResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2562,10 +2538,8 @@ namespace MyNS
 		public async Task<DescribeAlertResponse> DescribeAlertAsync(DescribeAlertPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "DescribeAlert";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -2576,13 +2550,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<DescribeAlertResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<DescribeAlertResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2596,10 +2569,8 @@ namespace MyNS
 		public async Task<DescribeAnomalyDetectionExecutionsResponse> DescribeAnomalyDetectionExecutionsAsync(string MaxResults, string NextToken, DescribeAnomalyDetectionExecutionsPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "DescribeAnomalyDetectionExecutions?MaxResults=" + (MaxResults==null? "" : System.Uri.EscapeDataString(MaxResults))+"&NextToken=" + (NextToken==null? "" : System.Uri.EscapeDataString(NextToken));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -2610,13 +2581,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<DescribeAnomalyDetectionExecutionsResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<DescribeAnomalyDetectionExecutionsResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2628,10 +2598,8 @@ namespace MyNS
 		public async Task<DescribeAnomalyDetectorResponse> DescribeAnomalyDetectorAsync(DescribeAnomalyDetectorPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "DescribeAnomalyDetector";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -2642,13 +2610,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<DescribeAnomalyDetectorResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<DescribeAnomalyDetectorResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2660,10 +2627,8 @@ namespace MyNS
 		public async Task<DescribeMetricSetResponse> DescribeMetricSetAsync(DescribeMetricSetPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "DescribeMetricSet";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -2674,13 +2639,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<DescribeMetricSetResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<DescribeMetricSetResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2692,10 +2656,8 @@ namespace MyNS
 		public async Task<DetectMetricSetConfigResponse> DetectMetricSetConfigAsync(DetectMetricSetConfigPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "DetectMetricSetConfig";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -2706,13 +2668,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<DetectMetricSetConfigResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<DetectMetricSetConfigResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2724,10 +2685,8 @@ namespace MyNS
 		public async Task<GetAnomalyGroupResponse> GetAnomalyGroupAsync(GetAnomalyGroupPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "GetAnomalyGroup";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -2738,13 +2697,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<GetAnomalyGroupResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<GetAnomalyGroupResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2756,10 +2714,8 @@ namespace MyNS
 		public async Task<GetDataQualityMetricsResponse> GetDataQualityMetricsAsync(GetDataQualityMetricsPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "GetDataQualityMetrics";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -2770,13 +2726,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<GetDataQualityMetricsResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<GetDataQualityMetricsResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2790,10 +2745,8 @@ namespace MyNS
 		public async Task<GetFeedbackResponse> GetFeedbackAsync(string MaxResults, string NextToken, GetFeedbackPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "GetFeedback?MaxResults=" + (MaxResults==null? "" : System.Uri.EscapeDataString(MaxResults))+"&NextToken=" + (NextToken==null? "" : System.Uri.EscapeDataString(NextToken));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -2804,13 +2757,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<GetFeedbackResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<GetFeedbackResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2822,10 +2774,8 @@ namespace MyNS
 		public async Task<GetSampleDataResponse> GetSampleDataAsync(GetSampleDataPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "GetSampleData";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -2836,13 +2786,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<GetSampleDataResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<GetSampleDataResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2856,10 +2805,8 @@ namespace MyNS
 		public async Task<ListAlertsResponse> ListAlertsAsync(string MaxResults, string NextToken, ListAlertsPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "ListAlerts?MaxResults=" + (MaxResults==null? "" : System.Uri.EscapeDataString(MaxResults))+"&NextToken=" + (NextToken==null? "" : System.Uri.EscapeDataString(NextToken));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -2870,13 +2817,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ListAlertsResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ListAlertsResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2890,10 +2836,8 @@ namespace MyNS
 		public async Task<ListAnomalyDetectorsResponse> ListAnomalyDetectorsAsync(string MaxResults, string NextToken, ListAnomalyDetectorsPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "ListAnomalyDetectors?MaxResults=" + (MaxResults==null? "" : System.Uri.EscapeDataString(MaxResults))+"&NextToken=" + (NextToken==null? "" : System.Uri.EscapeDataString(NextToken));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -2904,13 +2848,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ListAnomalyDetectorsResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ListAnomalyDetectorsResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2924,10 +2867,8 @@ namespace MyNS
 		public async Task<ListAnomalyGroupRelatedMetricsResponse> ListAnomalyGroupRelatedMetricsAsync(string MaxResults, string NextToken, ListAnomalyGroupRelatedMetricsPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "ListAnomalyGroupRelatedMetrics?MaxResults=" + (MaxResults==null? "" : System.Uri.EscapeDataString(MaxResults))+"&NextToken=" + (NextToken==null? "" : System.Uri.EscapeDataString(NextToken));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -2938,13 +2879,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ListAnomalyGroupRelatedMetricsResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ListAnomalyGroupRelatedMetricsResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2958,10 +2898,8 @@ namespace MyNS
 		public async Task<ListAnomalyGroupSummariesResponse> ListAnomalyGroupSummariesAsync(string MaxResults, string NextToken, ListAnomalyGroupSummariesPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "ListAnomalyGroupSummaries?MaxResults=" + (MaxResults==null? "" : System.Uri.EscapeDataString(MaxResults))+"&NextToken=" + (NextToken==null? "" : System.Uri.EscapeDataString(NextToken));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -2972,13 +2910,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ListAnomalyGroupSummariesResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ListAnomalyGroupSummariesResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2992,10 +2929,8 @@ namespace MyNS
 		public async Task<ListAnomalyGroupTimeSeriesResponse> ListAnomalyGroupTimeSeriesAsync(string MaxResults, string NextToken, ListAnomalyGroupTimeSeriesPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "ListAnomalyGroupTimeSeries?MaxResults=" + (MaxResults==null? "" : System.Uri.EscapeDataString(MaxResults))+"&NextToken=" + (NextToken==null? "" : System.Uri.EscapeDataString(NextToken));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -3006,13 +2941,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ListAnomalyGroupTimeSeriesResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ListAnomalyGroupTimeSeriesResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3026,10 +2960,8 @@ namespace MyNS
 		public async Task<ListMetricSetsResponse> ListMetricSetsAsync(string MaxResults, string NextToken, ListMetricSetsPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "ListMetricSets?MaxResults=" + (MaxResults==null? "" : System.Uri.EscapeDataString(MaxResults))+"&NextToken=" + (NextToken==null? "" : System.Uri.EscapeDataString(NextToken));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -3040,13 +2972,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ListMetricSetsResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ListMetricSetsResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3061,8 +2992,7 @@ namespace MyNS
 		public async Task<ListTagsForResourceResponse> ListTagsForResourceAsync(string resourceArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "tags/"+ (resourceArn==null? "" : System.Uri.EscapeDataString(resourceArn));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3072,13 +3002,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ListTagsForResourceResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ListTagsForResourceResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3092,10 +3021,8 @@ namespace MyNS
 		public async Task TagResourceAsync(string resourceArn, TagResourcePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "tags/"+ (resourceArn==null? "" : System.Uri.EscapeDataString(resourceArn));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -3110,7 +3037,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3122,10 +3048,8 @@ namespace MyNS
 		public async Task<PutFeedbackResponse> PutFeedbackAsync(PutFeedbackPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "PutFeedback";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -3136,13 +3060,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<PutFeedbackResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<PutFeedbackResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3160,8 +3083,7 @@ namespace MyNS
 		public async Task UntagResourceAsync(string resourceArn, string[] tagKeys, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "tags/"+ (resourceArn==null? "" : System.Uri.EscapeDataString(resourceArn))+"#tagKeys&"+string.Join("&", tagKeys.Select(z => $"tagKeys={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3175,7 +3097,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3187,10 +3108,8 @@ namespace MyNS
 		public async Task<UpdateAlertResponse> UpdateAlertAsync(UpdateAlertPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "UpdateAlert";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -3201,13 +3120,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<UpdateAlertResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<UpdateAlertResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3219,10 +3137,8 @@ namespace MyNS
 		public async Task<UpdateAnomalyDetectorResponse> UpdateAnomalyDetectorAsync(UpdateAnomalyDetectorPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "UpdateAnomalyDetector";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -3233,13 +3149,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<UpdateAnomalyDetectorResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<UpdateAnomalyDetectorResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3251,10 +3166,8 @@ namespace MyNS
 		public async Task<UpdateMetricSetResponse> UpdateMetricSetAsync(UpdateMetricSetPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "UpdateMetricSet";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -3265,13 +3178,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<UpdateMetricSetResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<UpdateMetricSetResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

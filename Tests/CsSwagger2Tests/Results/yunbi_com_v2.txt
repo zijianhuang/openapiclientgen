@@ -45,8 +45,7 @@ namespace MyNS
 		public async Task GET__version_addresses__address___format_Async(string address)
 		{
 			var requestUri = "v2/addresses/"+ (address==null? "" : System.Uri.EscapeDataString(address))+".json";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -55,7 +54,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -70,8 +68,7 @@ namespace MyNS
 		public async Task GET__version_deposit___format_Async(string access_key, int tonce, string signature, string txid)
 		{
 			var requestUri = "v2/deposit.json?access_key=" + (access_key==null? "" : System.Uri.EscapeDataString(access_key))+"&tonce="+tonce+"&signature=" + (signature==null? "" : System.Uri.EscapeDataString(signature))+"&txid=" + (txid==null? "" : System.Uri.EscapeDataString(txid));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -80,7 +77,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -96,8 +92,7 @@ namespace MyNS
 		public async Task GET__version_deposit_address___format_Async(string access_key, int tonce, string signature, string currency)
 		{
 			var requestUri = "v2/deposit_address.json?access_key=" + (access_key==null? "" : System.Uri.EscapeDataString(access_key))+"&tonce="+tonce+"&signature=" + (signature==null? "" : System.Uri.EscapeDataString(signature))+"&currency=" + (currency==null? "" : System.Uri.EscapeDataString(currency));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -106,7 +101,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -124,8 +118,7 @@ namespace MyNS
 		public async Task GET__version_deposits___format_Async(string access_key, int tonce, string signature, string currency, int limit, string state)
 		{
 			var requestUri = "v2/deposits.json?access_key=" + (access_key==null? "" : System.Uri.EscapeDataString(access_key))+"&tonce="+tonce+"&signature=" + (signature==null? "" : System.Uri.EscapeDataString(signature))+"&currency=" + (currency==null? "" : System.Uri.EscapeDataString(currency))+"&limit="+limit+"&state=" + (state==null? "" : System.Uri.EscapeDataString(state));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -134,7 +127,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -148,8 +140,7 @@ namespace MyNS
 		public async Task GET__version_depth___format_Async(string market, int limit)
 		{
 			var requestUri = "v2/depth.json?market=" + (market==null? "" : System.Uri.EscapeDataString(market))+"&limit="+limit;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -158,7 +149,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -174,8 +164,7 @@ namespace MyNS
 		public async Task GET__version_k___format_Async(string market, int limit, int period, int timestamp)
 		{
 			var requestUri = "v2/k.json?market=" + (market==null? "" : System.Uri.EscapeDataString(market))+"&limit="+limit+"&period="+period+"&timestamp="+timestamp;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -184,7 +173,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -201,8 +189,7 @@ namespace MyNS
 		public async Task GET__version_k_with_pending_trades___format_Async(string market, int trade_id, int limit, int period, int timestamp)
 		{
 			var requestUri = "v2/k_with_pending_trades.json?market=" + (market==null? "" : System.Uri.EscapeDataString(market))+"&trade_id="+trade_id+"&limit="+limit+"&period="+period+"&timestamp="+timestamp;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -211,7 +198,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -223,8 +209,7 @@ namespace MyNS
 		public async Task GET__version_markets___format_Async()
 		{
 			var requestUri = "v2/markets.json";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -233,7 +218,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -248,8 +232,7 @@ namespace MyNS
 		public async Task GET__version_members_me___format_Async(string access_key, int tonce, string signature)
 		{
 			var requestUri = "v2/members/me.json?access_key=" + (access_key==null? "" : System.Uri.EscapeDataString(access_key))+"&tonce="+tonce+"&signature=" + (signature==null? "" : System.Uri.EscapeDataString(signature));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -258,7 +241,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -274,8 +256,7 @@ namespace MyNS
 		public async Task GET__version_order___format_Async(string access_key, int tonce, string signature, int id)
 		{
 			var requestUri = "v2/order.json?access_key=" + (access_key==null? "" : System.Uri.EscapeDataString(access_key))+"&tonce="+tonce+"&signature=" + (signature==null? "" : System.Uri.EscapeDataString(signature))+"&id="+id;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -284,7 +265,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -299,8 +279,7 @@ namespace MyNS
 		public async Task GET__version_order_book___format_Async(string market, int asks_limit, int bids_limit)
 		{
 			var requestUri = "v2/order_book.json?market=" + (market==null? "" : System.Uri.EscapeDataString(market))+"&asks_limit="+asks_limit+"&bids_limit="+bids_limit;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -309,7 +288,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -329,8 +307,7 @@ namespace MyNS
 		public async Task GET__version_orders___format_Async(string access_key, int tonce, string signature, string market, string state, int limit, int page, string order_by)
 		{
 			var requestUri = "v2/orders.json?access_key=" + (access_key==null? "" : System.Uri.EscapeDataString(access_key))+"&tonce="+tonce+"&signature=" + (signature==null? "" : System.Uri.EscapeDataString(signature))+"&market=" + (market==null? "" : System.Uri.EscapeDataString(market))+"&state=" + (state==null? "" : System.Uri.EscapeDataString(state))+"&limit="+limit+"&page="+page+"&order_by=" + (order_by==null? "" : System.Uri.EscapeDataString(order_by));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -339,7 +316,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -350,8 +326,7 @@ namespace MyNS
 		public async Task GET__version_partners_orders__id_trades___format_Async(string id, string access_key_hash)
 		{
 			var requestUri = "v2/partners/orders/"+ (id==null? "" : System.Uri.EscapeDataString(id))+"/trades.json&access_key_hash=" + (access_key_hash==null? "" : System.Uri.EscapeDataString(access_key_hash));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -360,7 +335,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -372,8 +346,7 @@ namespace MyNS
 		public async Task GET__version_tickers___format_Async()
 		{
 			var requestUri = "v2/tickers.json";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -382,7 +355,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -395,8 +367,7 @@ namespace MyNS
 		public async Task GET__version_tickers__market___format_Async(string market)
 		{
 			var requestUri = "v2/tickers/"+ (market==null? "" : System.Uri.EscapeDataString(market))+".json";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -405,7 +376,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -417,8 +387,7 @@ namespace MyNS
 		public async Task GET__version_timestamp___format_Async()
 		{
 			var requestUri = "v2/timestamp.json";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -427,7 +396,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -445,8 +413,7 @@ namespace MyNS
 		public async Task GET__version_trades___format_Async(string market, int limit, int timestamp, int from, int to, string order_by)
 		{
 			var requestUri = "v2/trades.json?market=" + (market==null? "" : System.Uri.EscapeDataString(market))+"&limit="+limit+"&timestamp="+timestamp+"&from="+from+"&to="+to+"&order_by=" + (order_by==null? "" : System.Uri.EscapeDataString(order_by));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -455,7 +422,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -476,8 +442,7 @@ namespace MyNS
 		public async Task GET__version_trades_my___format_Async(string access_key, int tonce, string signature, string market, int limit, int timestamp, int from, int to, string order_by)
 		{
 			var requestUri = "v2/trades/my.json?access_key=" + (access_key==null? "" : System.Uri.EscapeDataString(access_key))+"&tonce="+tonce+"&signature=" + (signature==null? "" : System.Uri.EscapeDataString(signature))+"&market=" + (market==null? "" : System.Uri.EscapeDataString(market))+"&limit="+limit+"&timestamp="+timestamp+"&from="+from+"&to="+to+"&order_by=" + (order_by==null? "" : System.Uri.EscapeDataString(order_by));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -486,7 +451,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

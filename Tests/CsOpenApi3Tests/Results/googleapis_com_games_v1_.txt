@@ -2667,8 +2667,7 @@ namespace MyNS
 		public async Task<AchievementDefinitionsListResponse> Games_achievementDefinitions_listAsync(string language, int maxResults, string pageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "games/v1/achievements?language=" + (language==null? "" : System.Uri.EscapeDataString(language))+"&maxResults="+maxResults+"&pageToken=" + (pageToken==null? "" : System.Uri.EscapeDataString(pageToken));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2678,13 +2677,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<AchievementDefinitionsListResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<AchievementDefinitionsListResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2696,10 +2694,8 @@ namespace MyNS
 		public async Task<AchievementUpdateMultipleResponse> Games_achievements_updateMultipleAsync(AchievementUpdateMultipleRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "games/v1/achievements/updateMultiple";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -2710,13 +2706,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<AchievementUpdateMultipleResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<AchievementUpdateMultipleResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2731,19 +2726,17 @@ namespace MyNS
 		public async Task<AchievementIncrementResponse> Games_achievements_incrementAsync(string achievementId, int stepsToIncrement, string requestId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "games/v1/achievements/"+ (achievementId==null? "" : System.Uri.EscapeDataString(achievementId))+"/increment&stepsToIncrement="+stepsToIncrement+"&requestId=" + (requestId==null? "" : System.Uri.EscapeDataString(requestId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<AchievementIncrementResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<AchievementIncrementResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2756,19 +2749,17 @@ namespace MyNS
 		public async Task<AchievementRevealResponse> Games_achievements_revealAsync(string achievementId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "games/v1/achievements/"+ (achievementId==null? "" : System.Uri.EscapeDataString(achievementId))+"/reveal";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<AchievementRevealResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<AchievementRevealResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2782,19 +2773,17 @@ namespace MyNS
 		public async Task<AchievementSetStepsAtLeastResponse> Games_achievements_setStepsAtLeastAsync(string achievementId, int steps, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "games/v1/achievements/"+ (achievementId==null? "" : System.Uri.EscapeDataString(achievementId))+"/setStepsAtLeast&steps="+steps;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<AchievementSetStepsAtLeastResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<AchievementSetStepsAtLeastResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2807,19 +2796,17 @@ namespace MyNS
 		public async Task<AchievementUnlockResponse> Games_achievements_unlockAsync(string achievementId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "games/v1/achievements/"+ (achievementId==null? "" : System.Uri.EscapeDataString(achievementId))+"/unlock";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<AchievementUnlockResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<AchievementUnlockResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2833,19 +2820,17 @@ namespace MyNS
 		public async Task<EndPoint> Games_applications_getEndPointAsync(string applicationId, Games_applications_getEndPointEndPointType endPointType, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "games/v1/applications/getEndPoint?applicationId=" + (applicationId==null? "" : System.Uri.EscapeDataString(applicationId))+"&endPointType=" + endPointType;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<EndPoint>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<EndPoint>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2857,8 +2842,7 @@ namespace MyNS
 		public async Task Games_applications_playedAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "games/v1/applications/played";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -2867,7 +2851,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2882,8 +2865,7 @@ namespace MyNS
 		public async Task<Application> Games_applications_getAsync(string applicationId, string language, InstancePlatformType platformType, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "games/v1/applications/"+ (applicationId==null? "" : System.Uri.EscapeDataString(applicationId))+"&language=" + (language==null? "" : System.Uri.EscapeDataString(language))+"&platformType=" + platformType;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2893,13 +2875,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Application>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Application>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2912,8 +2893,7 @@ namespace MyNS
 		public async Task<ApplicationVerifyResponse> Games_applications_verifyAsync(string applicationId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "games/v1/applications/"+ (applicationId==null? "" : System.Uri.EscapeDataString(applicationId))+"/verify";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2923,13 +2903,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ApplicationVerifyResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ApplicationVerifyResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2944,8 +2923,7 @@ namespace MyNS
 		public async Task<EventDefinitionListResponse> Games_events_listDefinitionsAsync(string language, int maxResults, string pageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "games/v1/eventDefinitions?language=" + (language==null? "" : System.Uri.EscapeDataString(language))+"&maxResults="+maxResults+"&pageToken=" + (pageToken==null? "" : System.Uri.EscapeDataString(pageToken));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2955,13 +2933,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<EventDefinitionListResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<EventDefinitionListResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2976,8 +2953,7 @@ namespace MyNS
 		public async Task<PlayerEventListResponse> Games_events_listByPlayerAsync(string language, int maxResults, string pageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "games/v1/events?language=" + (language==null? "" : System.Uri.EscapeDataString(language))+"&maxResults="+maxResults+"&pageToken=" + (pageToken==null? "" : System.Uri.EscapeDataString(pageToken));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2987,13 +2963,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<PlayerEventListResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<PlayerEventListResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3006,10 +2981,8 @@ namespace MyNS
 		public async Task<EventUpdateResponse> Games_events_recordAsync(string language, EventRecordRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "games/v1/events?language=" + (language==null? "" : System.Uri.EscapeDataString(language));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -3020,13 +2993,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<EventUpdateResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<EventUpdateResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3041,8 +3013,7 @@ namespace MyNS
 		public async Task<LeaderboardListResponse> Games_leaderboards_listAsync(string language, int maxResults, string pageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "games/v1/leaderboards?language=" + (language==null? "" : System.Uri.EscapeDataString(language))+"&maxResults="+maxResults+"&pageToken=" + (pageToken==null? "" : System.Uri.EscapeDataString(pageToken));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3052,13 +3023,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<LeaderboardListResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<LeaderboardListResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3071,10 +3041,8 @@ namespace MyNS
 		public async Task<PlayerScoreListResponse> Games_scores_submitMultipleAsync(string language, PlayerScoreSubmissionList requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "games/v1/leaderboards/scores?language=" + (language==null? "" : System.Uri.EscapeDataString(language));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -3085,13 +3053,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<PlayerScoreListResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<PlayerScoreListResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3105,8 +3072,7 @@ namespace MyNS
 		public async Task<Leaderboard> Games_leaderboards_getAsync(string leaderboardId, string language, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "games/v1/leaderboards/"+ (leaderboardId==null? "" : System.Uri.EscapeDataString(leaderboardId))+"&language=" + (language==null? "" : System.Uri.EscapeDataString(language));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3116,13 +3082,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Leaderboard>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Leaderboard>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3138,19 +3103,17 @@ namespace MyNS
 		public async Task<PlayerScoreResponse> Games_scores_submitAsync(string leaderboardId, string score, string language, string scoreTag, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "games/v1/leaderboards/"+ (leaderboardId==null? "" : System.Uri.EscapeDataString(leaderboardId))+"/scores&score=" + (score==null? "" : System.Uri.EscapeDataString(score))+"&language=" + (language==null? "" : System.Uri.EscapeDataString(language))+"&scoreTag=" + (scoreTag==null? "" : System.Uri.EscapeDataString(scoreTag));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<PlayerScoreResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<PlayerScoreResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3168,8 +3131,7 @@ namespace MyNS
 		public async Task<LeaderboardScores> Games_scores_listAsync(string leaderboardId, Games_scores_listCollection collection, LeaderboardEntryTimeSpan timeSpan, string language, int maxResults, string pageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "games/v1/leaderboards/"+ (leaderboardId==null? "" : System.Uri.EscapeDataString(leaderboardId))+"/scores/"+collection+"&timeSpan=" + timeSpan+"&language=" + (language==null? "" : System.Uri.EscapeDataString(language))+"&maxResults="+maxResults+"&pageToken=" + (pageToken==null? "" : System.Uri.EscapeDataString(pageToken));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3179,13 +3141,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<LeaderboardScores>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<LeaderboardScores>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3205,8 +3166,7 @@ namespace MyNS
 		public async Task<LeaderboardScores> Games_scores_listWindowAsync(string leaderboardId, Games_scores_listCollection collection, LeaderboardEntryTimeSpan timeSpan, string language, int maxResults, string pageToken, int resultsAbove, bool returnTopIfAbsent, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "games/v1/leaderboards/"+ (leaderboardId==null? "" : System.Uri.EscapeDataString(leaderboardId))+"/window/"+collection+"&timeSpan=" + timeSpan+"&language=" + (language==null? "" : System.Uri.EscapeDataString(language))+"&maxResults="+maxResults+"&pageToken=" + (pageToken==null? "" : System.Uri.EscapeDataString(pageToken))+"&resultsAbove="+resultsAbove+"&returnTopIfAbsent="+returnTopIfAbsent;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3216,13 +3176,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<LeaderboardScores>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<LeaderboardScores>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3234,8 +3193,7 @@ namespace MyNS
 		public async Task<MetagameConfig> Games_metagame_getMetagameConfigAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "games/v1/metagameConfig";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3245,13 +3203,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<MetagameConfig>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<MetagameConfig>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3264,8 +3221,7 @@ namespace MyNS
 		public async Task<GetMultipleApplicationPlayerIdsResponse> Games_players_getMultipleApplicationPlayerIdsAsync(string[] applicationIds, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "games/v1/players/me/multipleApplicationPlayerIds?"+string.Join("&", applicationIds.Select(z => $"applicationIds={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3275,13 +3231,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<GetMultipleApplicationPlayerIdsResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<GetMultipleApplicationPlayerIdsResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3297,8 +3252,7 @@ namespace MyNS
 		public async Task<PlayerListResponse> Games_players_listAsync(Games_players_listCollection collection, string language, int maxResults, string pageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "games/v1/players/me/players/"+collection+"?language=" + (language==null? "" : System.Uri.EscapeDataString(language))+"&maxResults="+maxResults+"&pageToken=" + (pageToken==null? "" : System.Uri.EscapeDataString(pageToken));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3308,13 +3262,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<PlayerListResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<PlayerListResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3326,8 +3279,7 @@ namespace MyNS
 		public async Task<ScopedPlayerIds> Games_players_getScopedPlayerIdsAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "games/v1/players/me/scopedIds";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3337,13 +3289,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ScopedPlayerIds>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ScopedPlayerIds>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3358,8 +3309,7 @@ namespace MyNS
 		public async Task<Player> Games_players_getAsync(string playerId, string language, string playerIdConsistencyToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "games/v1/players/"+ (playerId==null? "" : System.Uri.EscapeDataString(playerId))+"&language=" + (language==null? "" : System.Uri.EscapeDataString(language))+"&playerIdConsistencyToken=" + (playerIdConsistencyToken==null? "" : System.Uri.EscapeDataString(playerIdConsistencyToken));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3369,13 +3319,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Player>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Player>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3392,8 +3341,7 @@ namespace MyNS
 		public async Task<PlayerAchievementListResponse> Games_achievements_listAsync(string playerId, string language, int maxResults, string pageToken, Games_achievements_listState state, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "games/v1/players/"+ (playerId==null? "" : System.Uri.EscapeDataString(playerId))+"/achievements&language=" + (language==null? "" : System.Uri.EscapeDataString(language))+"&maxResults="+maxResults+"&pageToken=" + (pageToken==null? "" : System.Uri.EscapeDataString(pageToken))+"&state=" + state;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3403,13 +3351,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<PlayerAchievementListResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<PlayerAchievementListResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3426,8 +3373,7 @@ namespace MyNS
 		public async Task<CategoryListResponse> Games_metagame_listCategoriesByPlayerAsync(string playerId, Games_metagame_listCategoriesByPlayerCollection collection, string language, int maxResults, string pageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "games/v1/players/"+ (playerId==null? "" : System.Uri.EscapeDataString(playerId))+"/categories/"+collection+"&language=" + (language==null? "" : System.Uri.EscapeDataString(language))+"&maxResults="+maxResults+"&pageToken=" + (pageToken==null? "" : System.Uri.EscapeDataString(pageToken));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3437,13 +3383,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<CategoryListResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<CategoryListResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3462,8 +3407,7 @@ namespace MyNS
 		public async Task<PlayerLeaderboardScoreListResponse> Games_scores_getAsync(string playerId, string leaderboardId, Games_scores_getTimeSpan timeSpan, Games_scores_getIncludeRankType includeRankType, string language, int maxResults, string pageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "games/v1/players/"+ (playerId==null? "" : System.Uri.EscapeDataString(playerId))+"/leaderboards/"+ (leaderboardId==null? "" : System.Uri.EscapeDataString(leaderboardId))+"/scores/"+timeSpan+"&includeRankType=" + includeRankType+"&language=" + (language==null? "" : System.Uri.EscapeDataString(language))+"&maxResults="+maxResults+"&pageToken=" + (pageToken==null? "" : System.Uri.EscapeDataString(pageToken));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3473,13 +3417,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<PlayerLeaderboardScoreListResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<PlayerLeaderboardScoreListResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3495,8 +3438,7 @@ namespace MyNS
 		public async Task<SnapshotListResponse> Games_snapshots_listAsync(string playerId, string language, int maxResults, string pageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "games/v1/players/"+ (playerId==null? "" : System.Uri.EscapeDataString(playerId))+"/snapshots&language=" + (language==null? "" : System.Uri.EscapeDataString(language))+"&maxResults="+maxResults+"&pageToken=" + (pageToken==null? "" : System.Uri.EscapeDataString(pageToken));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3506,13 +3448,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<SnapshotListResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<SnapshotListResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3525,8 +3466,7 @@ namespace MyNS
 		public async Task<RetrievePlayerTokensResponse> Games_recall_retrieveTokensAsync(string sessionId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "games/v1/recall/tokens/"+ (sessionId==null? "" : System.Uri.EscapeDataString(sessionId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3536,13 +3476,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<RetrievePlayerTokensResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<RetrievePlayerTokensResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3554,10 +3493,8 @@ namespace MyNS
 		public async Task<LinkPersonaResponse> Games_recall_linkPersonaAsync(LinkPersonaRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "games/v1/recall:linkPersona";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -3568,13 +3505,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<LinkPersonaResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<LinkPersonaResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3586,10 +3522,8 @@ namespace MyNS
 		public async Task<ResetPersonaResponse> Games_recall_resetPersonaAsync(ResetPersonaRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "games/v1/recall:resetPersona";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -3600,13 +3534,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ResetPersonaResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ResetPersonaResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3618,10 +3551,8 @@ namespace MyNS
 		public async Task<UnlinkPersonaResponse> Games_recall_unlinkPersonaAsync(UnlinkPersonaRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "games/v1/recall:unlinkPersona";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -3632,13 +3563,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<UnlinkPersonaResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<UnlinkPersonaResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3651,8 +3581,7 @@ namespace MyNS
 		public async Task<RevisionCheckResponse> Games_revisions_checkAsync(string clientRevision, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "games/v1/revisions/check?clientRevision=" + (clientRevision==null? "" : System.Uri.EscapeDataString(clientRevision));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3662,13 +3591,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<RevisionCheckResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<RevisionCheckResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3682,8 +3610,7 @@ namespace MyNS
 		public async Task<Snapshot> Games_snapshots_getAsync(string snapshotId, string language, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "games/v1/snapshots/"+ (snapshotId==null? "" : System.Uri.EscapeDataString(snapshotId))+"&language=" + (language==null? "" : System.Uri.EscapeDataString(language));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3693,13 +3620,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Snapshot>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Snapshot>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3711,8 +3637,7 @@ namespace MyNS
 		public async Task<StatsResponse> Games_stats_getAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "games/v1/stats";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3722,13 +3647,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<StatsResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<StatsResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

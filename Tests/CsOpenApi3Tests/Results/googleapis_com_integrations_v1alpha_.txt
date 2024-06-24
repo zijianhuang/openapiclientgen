@@ -9198,8 +9198,7 @@ namespace MyNS
 		public async Task<GoogleCloudIntegrationsV1alphaGenerateTokenResponse> Integrations_callback_generateTokenAsync(string code, string gcpProjectId, EnterpriseCrmEventbusProtoSuspensionResolutionInfoProduct product, string redirectUri, string state, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1alpha/callback:generateToken?code=" + (code==null? "" : System.Uri.EscapeDataString(code))+"&gcpProjectId=" + (gcpProjectId==null? "" : System.Uri.EscapeDataString(gcpProjectId))+"&product=" + product+"&redirectUri=" + (redirectUri==null? "" : System.Uri.EscapeDataString(redirectUri))+"&state=" + (state==null? "" : System.Uri.EscapeDataString(state));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -9209,13 +9208,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<GoogleCloudIntegrationsV1alphaGenerateTokenResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<GoogleCloudIntegrationsV1alphaGenerateTokenResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -9227,8 +9225,7 @@ namespace MyNS
 		public async Task<GoogleCloudIntegrationsV1alphaEnumerateConnectorPlatformRegionsResponse> Integrations_connectorPlatformRegions_enumerateAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1alpha/connectorPlatformRegions:enumerate";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -9238,13 +9235,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<GoogleCloudIntegrationsV1alphaEnumerateConnectorPlatformRegionsResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<GoogleCloudIntegrationsV1alphaEnumerateConnectorPlatformRegionsResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -9257,10 +9253,8 @@ namespace MyNS
 		public async Task<GoogleCloudIntegrationsV1alphaTakeoverEditLockResponse> Integrations_projects_locations_products_integrations_versions_takeoverEditLockAsync(string integrationVersion, GoogleCloudIntegrationsV1alphaTakeoverEditLockRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1alpha/"+ (integrationVersion==null? "" : System.Uri.EscapeDataString(integrationVersion))+":takeoverEditLock";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -9271,13 +9265,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<GoogleCloudIntegrationsV1alphaTakeoverEditLockResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<GoogleCloudIntegrationsV1alphaTakeoverEditLockResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -9290,8 +9283,7 @@ namespace MyNS
 		public async Task<GoogleProtobufEmpty> Integrations_projects_locations_sfdcInstances_sfdcChannels_deleteAsync(string name, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1alpha/"+ (name==null? "" : System.Uri.EscapeDataString(name));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -9301,13 +9293,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<GoogleProtobufEmpty>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<GoogleProtobufEmpty>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -9320,8 +9311,7 @@ namespace MyNS
 		public async Task<GoogleCloudIntegrationsV1alphaSfdcChannel> Integrations_projects_locations_sfdcInstances_sfdcChannels_getAsync(string name, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1alpha/"+ (name==null? "" : System.Uri.EscapeDataString(name));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -9331,13 +9321,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<GoogleCloudIntegrationsV1alphaSfdcChannel>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<GoogleCloudIntegrationsV1alphaSfdcChannel>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -9353,10 +9342,8 @@ namespace MyNS
 		public async Task<GoogleCloudIntegrationsV1alphaSfdcChannel> Integrations_projects_locations_sfdcInstances_sfdcChannels_patchAsync(string name, string updateMask, string clientCertificate_passphrase, string clientCertificate_sslCertificate, GoogleCloudIntegrationsV1alphaSfdcChannel requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1alpha/"+ (name==null? "" : System.Uri.EscapeDataString(name))+"&updateMask=" + (updateMask==null? "" : System.Uri.EscapeDataString(updateMask))+"&clientCertificate.passphrase=" + (clientCertificate_passphrase==null? "" : System.Uri.EscapeDataString(clientCertificate_passphrase))+"&clientCertificate.sslCertificate=" + (clientCertificate_sslCertificate==null? "" : System.Uri.EscapeDataString(clientCertificate_sslCertificate));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -9367,13 +9354,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<GoogleCloudIntegrationsV1alphaSfdcChannel>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<GoogleCloudIntegrationsV1alphaSfdcChannel>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -9386,10 +9372,8 @@ namespace MyNS
 		public async Task<GoogleCloudIntegrationsV1alphaCancelExecutionResponse> Integrations_projects_locations_products_integrations_executions_cancelAsync(string name, GoogleCloudIntegrationsV1alphaCancelExecutionRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1alpha/"+ (name==null? "" : System.Uri.EscapeDataString(name))+":cancel";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -9400,13 +9384,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<GoogleCloudIntegrationsV1alphaCancelExecutionResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<GoogleCloudIntegrationsV1alphaCancelExecutionResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -9420,8 +9403,7 @@ namespace MyNS
 		public async Task<GoogleCloudIntegrationsV1alphaDownloadIntegrationVersionResponse> Integrations_projects_locations_products_integrations_versions_downloadAsync(string name, GoogleCloudIntegrationsV1alphaUploadIntegrationVersionRequestFileFormat fileFormat, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1alpha/"+ (name==null? "" : System.Uri.EscapeDataString(name))+":download&fileFormat=" + fileFormat;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -9431,13 +9413,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<GoogleCloudIntegrationsV1alphaDownloadIntegrationVersionResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<GoogleCloudIntegrationsV1alphaDownloadIntegrationVersionResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -9450,10 +9431,8 @@ namespace MyNS
 		public async Task<GoogleCloudIntegrationsV1alphaExecuteIntegrationsResponse> Integrations_projects_locations_products_integrations_executeAsync(string name, GoogleCloudIntegrationsV1alphaExecuteIntegrationsRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1alpha/"+ (name==null? "" : System.Uri.EscapeDataString(name))+":execute";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -9464,13 +9443,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<GoogleCloudIntegrationsV1alphaExecuteIntegrationsResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<GoogleCloudIntegrationsV1alphaExecuteIntegrationsResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -9483,10 +9461,8 @@ namespace MyNS
 		public async Task<GoogleCloudIntegrationsV1alphaExecuteEventResponse> Integrations_projects_locations_integrations_executeEventAsync(string name, GoogleCloudIntegrationsV1alphaExecuteEventRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1alpha/"+ (name==null? "" : System.Uri.EscapeDataString(name))+":executeEvent";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -9497,13 +9473,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<GoogleCloudIntegrationsV1alphaExecuteEventResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<GoogleCloudIntegrationsV1alphaExecuteEventResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -9516,10 +9491,8 @@ namespace MyNS
 		public async Task<GoogleCloudIntegrationsV1alphaLiftSuspensionResponse> Integrations_projects_locations_products_integrations_executions_suspensions_liftAsync(string name, GoogleCloudIntegrationsV1alphaLiftSuspensionRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1alpha/"+ (name==null? "" : System.Uri.EscapeDataString(name))+":lift";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -9530,13 +9503,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<GoogleCloudIntegrationsV1alphaLiftSuspensionResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<GoogleCloudIntegrationsV1alphaLiftSuspensionResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -9549,10 +9521,8 @@ namespace MyNS
 		public async Task<GoogleCloudIntegrationsV1alphaPublishIntegrationVersionResponse> Integrations_projects_locations_products_integrations_versions_publishAsync(string name, GoogleCloudIntegrationsV1alphaPublishIntegrationVersionRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1alpha/"+ (name==null? "" : System.Uri.EscapeDataString(name))+":publish";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -9563,13 +9533,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<GoogleCloudIntegrationsV1alphaPublishIntegrationVersionResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<GoogleCloudIntegrationsV1alphaPublishIntegrationVersionResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -9582,10 +9551,8 @@ namespace MyNS
 		public async Task<GoogleCloudIntegrationsV1alphaResolveSuspensionResponse> Integrations_projects_locations_products_integrations_executions_suspensions_resolveAsync(string name, GoogleCloudIntegrationsV1alphaResolveSuspensionRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1alpha/"+ (name==null? "" : System.Uri.EscapeDataString(name))+":resolve";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -9596,13 +9563,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<GoogleCloudIntegrationsV1alphaResolveSuspensionResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<GoogleCloudIntegrationsV1alphaResolveSuspensionResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -9615,10 +9581,8 @@ namespace MyNS
 		public async Task<GoogleCloudIntegrationsV1alphaScheduleIntegrationsResponse> Integrations_projects_locations_products_integrations_scheduleAsync(string name, GoogleCloudIntegrationsV1alphaScheduleIntegrationsRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1alpha/"+ (name==null? "" : System.Uri.EscapeDataString(name))+":schedule";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -9629,13 +9593,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<GoogleCloudIntegrationsV1alphaScheduleIntegrationsResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<GoogleCloudIntegrationsV1alphaScheduleIntegrationsResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -9648,10 +9611,8 @@ namespace MyNS
 		public async Task<GoogleProtobufEmpty> Integrations_projects_locations_products_integrations_versions_unpublishAsync(string name, GoogleCloudIntegrationsV1alphaUnpublishIntegrationVersionRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1alpha/"+ (name==null? "" : System.Uri.EscapeDataString(name))+":unpublish";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -9662,13 +9623,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<GoogleProtobufEmpty>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<GoogleProtobufEmpty>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -9681,10 +9641,8 @@ namespace MyNS
 		public async Task<GoogleCloudIntegrationsV1alphaCreateAppsScriptProjectResponse> Integrations_projects_locations_appsScriptProjects_createAsync(string parent, GoogleCloudIntegrationsV1alphaCreateAppsScriptProjectRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1alpha/"+ (parent==null? "" : System.Uri.EscapeDataString(parent))+"/appsScriptProjects";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -9695,13 +9653,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<GoogleCloudIntegrationsV1alphaCreateAppsScriptProjectResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<GoogleCloudIntegrationsV1alphaCreateAppsScriptProjectResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -9714,10 +9671,8 @@ namespace MyNS
 		public async Task<GoogleCloudIntegrationsV1alphaLinkAppsScriptProjectResponse> Integrations_projects_locations_appsScriptProjects_linkAsync(string parent, GoogleCloudIntegrationsV1alphaLinkAppsScriptProjectRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1alpha/"+ (parent==null? "" : System.Uri.EscapeDataString(parent))+"/appsScriptProjects:link";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -9728,13 +9683,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<GoogleCloudIntegrationsV1alphaLinkAppsScriptProjectResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<GoogleCloudIntegrationsV1alphaLinkAppsScriptProjectResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -9751,8 +9705,7 @@ namespace MyNS
 		public async Task<GoogleCloudIntegrationsV1alphaListAuthConfigsResponse> Integrations_projects_locations_products_authConfigs_listAsync(string parent, string filter, int pageSize, string pageToken, string readMask, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1alpha/"+ (parent==null? "" : System.Uri.EscapeDataString(parent))+"/authConfigs&filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&pageSize="+pageSize+"&pageToken=" + (pageToken==null? "" : System.Uri.EscapeDataString(pageToken))+"&readMask=" + (readMask==null? "" : System.Uri.EscapeDataString(readMask));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -9762,13 +9715,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<GoogleCloudIntegrationsV1alphaListAuthConfigsResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<GoogleCloudIntegrationsV1alphaListAuthConfigsResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -9784,10 +9736,8 @@ namespace MyNS
 		public async Task<GoogleCloudIntegrationsV1alphaAuthConfig> Integrations_projects_locations_products_authConfigs_createAsync(string parent, string clientCertificate_encryptedPrivateKey, string clientCertificate_passphrase, string clientCertificate_sslCertificate, GoogleCloudIntegrationsV1alphaAuthConfig requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1alpha/"+ (parent==null? "" : System.Uri.EscapeDataString(parent))+"/authConfigs&clientCertificate.encryptedPrivateKey=" + (clientCertificate_encryptedPrivateKey==null? "" : System.Uri.EscapeDataString(clientCertificate_encryptedPrivateKey))+"&clientCertificate.passphrase=" + (clientCertificate_passphrase==null? "" : System.Uri.EscapeDataString(clientCertificate_passphrase))+"&clientCertificate.sslCertificate=" + (clientCertificate_sslCertificate==null? "" : System.Uri.EscapeDataString(clientCertificate_sslCertificate));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -9798,13 +9748,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<GoogleCloudIntegrationsV1alphaAuthConfig>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<GoogleCloudIntegrationsV1alphaAuthConfig>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -9821,8 +9770,7 @@ namespace MyNS
 		public async Task<GoogleCloudIntegrationsV1alphaListCertificatesResponse> Integrations_projects_locations_products_certificates_listAsync(string parent, string filter, int pageSize, string pageToken, string readMask, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1alpha/"+ (parent==null? "" : System.Uri.EscapeDataString(parent))+"/certificates&filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&pageSize="+pageSize+"&pageToken=" + (pageToken==null? "" : System.Uri.EscapeDataString(pageToken))+"&readMask=" + (readMask==null? "" : System.Uri.EscapeDataString(readMask));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -9832,13 +9780,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<GoogleCloudIntegrationsV1alphaListCertificatesResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<GoogleCloudIntegrationsV1alphaListCertificatesResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -9851,10 +9798,8 @@ namespace MyNS
 		public async Task<GoogleCloudIntegrationsV1alphaCertificate> Integrations_projects_locations_products_certificates_createAsync(string parent, GoogleCloudIntegrationsV1alphaCertificate requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1alpha/"+ (parent==null? "" : System.Uri.EscapeDataString(parent))+"/certificates";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -9865,13 +9810,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<GoogleCloudIntegrationsV1alphaCertificate>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<GoogleCloudIntegrationsV1alphaCertificate>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -9888,8 +9832,7 @@ namespace MyNS
 		public async Task<GoogleCloudIntegrationsV1alphaListConnectionsResponse> Integrations_projects_locations_connections_listAsync(string parent, string filter, string orderBy, int pageSize, string pageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1alpha/"+ (parent==null? "" : System.Uri.EscapeDataString(parent))+"/connections&filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&orderBy=" + (orderBy==null? "" : System.Uri.EscapeDataString(orderBy))+"&pageSize="+pageSize+"&pageToken=" + (pageToken==null? "" : System.Uri.EscapeDataString(pageToken));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -9899,13 +9842,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<GoogleCloudIntegrationsV1alphaListConnectionsResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<GoogleCloudIntegrationsV1alphaListConnectionsResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -9958,8 +9900,7 @@ namespace MyNS
 					Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1alpha/"+ (parent==null? "" : System.Uri.EscapeDataString(parent))+"/executions&filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&filterParams.customFilter=" + (filterParams_customFilter==null? "" : System.Uri.EscapeDataString(filterParams_customFilter))+"&filterParams.endTime=" + (filterParams_endTime==null? "" : System.Uri.EscapeDataString(filterParams_endTime))+"&"+string.Join("&", filterParams_eventStatuses.Select(z => $"filterParams.eventStatuses={System.Uri.EscapeDataString(z.ToString())}"))+"&filterParams.executionId=" + (filterParams_executionId==null? "" : System.Uri.EscapeDataString(filterParams_executionId))+"&filterParams.parameterKey=" + (filterParams_parameterKey==null? "" : System.Uri.EscapeDataString(filterParams_parameterKey))+"&filterParams.parameterPairKey=" + (filterParams_parameterPairKey==null? "" : System.Uri.EscapeDataString(filterParams_parameterPairKey))+"&filterParams.parameterPairValue=" + (filterParams_parameterPairValue==null? "" : System.Uri.EscapeDataString(filterParams_parameterPairValue))+"&filterParams.parameterType=" + (filterParams_parameterType==null? "" : System.Uri.EscapeDataString(filterParams_parameterType))+"&filterParams.parameterValue=" + (filterParams_parameterValue==null? "" : System.Uri.EscapeDataString(filterParams_parameterValue))+"&filterParams.startTime=" + (filterParams_startTime==null? "" : System.Uri.EscapeDataString(filterParams_startTime))+"&"+string.Join("&", filterParams_taskStatuses.Select(z => $"filterParams.taskStatuses={System.Uri.EscapeDataString(z.ToString())}"))+"&filterParams.workflowName=" + (filterParams_workflowName==null? "" : System.Uri.EscapeDataString(filterParams_workflowName))+"&orderBy=" + (orderBy==null? "" : System.Uri.EscapeDataString(orderBy))+"&pageSize="+pageSize+"&pageToken=" + (pageToken==null? "" : System.Uri.EscapeDataString(pageToken))+"&readMask=" + (readMask==null? "" : System.Uri.EscapeDataString(readMask))+"&refreshAcl="+refreshAcl+"&truncateParams="+truncateParams;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -9969,13 +9910,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<GoogleCloudIntegrationsV1alphaListExecutionsResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<GoogleCloudIntegrationsV1alphaListExecutionsResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -9992,8 +9932,7 @@ namespace MyNS
 		public async Task<GoogleCloudIntegrationsV1alphaListIntegrationsResponse> Integrations_projects_locations_products_integrations_listAsync(string parent, string filter, string orderBy, int pageSize, string pageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1alpha/"+ (parent==null? "" : System.Uri.EscapeDataString(parent))+"/integrations&filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&orderBy=" + (orderBy==null? "" : System.Uri.EscapeDataString(orderBy))+"&pageSize="+pageSize+"&pageToken=" + (pageToken==null? "" : System.Uri.EscapeDataString(pageToken));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -10003,13 +9942,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<GoogleCloudIntegrationsV1alphaListIntegrationsResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<GoogleCloudIntegrationsV1alphaListIntegrationsResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -10025,8 +9963,7 @@ namespace MyNS
 		public async Task<GoogleCloudIntegrationsV1alphaListRuntimeActionSchemasResponse> Integrations_projects_locations_connections_runtimeActionSchemas_listAsync(string parent, string filter, int pageSize, string pageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1alpha/"+ (parent==null? "" : System.Uri.EscapeDataString(parent))+"/runtimeActionSchemas&filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&pageSize="+pageSize+"&pageToken=" + (pageToken==null? "" : System.Uri.EscapeDataString(pageToken));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -10036,13 +9973,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<GoogleCloudIntegrationsV1alphaListRuntimeActionSchemasResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<GoogleCloudIntegrationsV1alphaListRuntimeActionSchemasResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -10058,8 +9994,7 @@ namespace MyNS
 		public async Task<GoogleCloudIntegrationsV1alphaListRuntimeEntitySchemasResponse> Integrations_projects_locations_connections_runtimeEntitySchemas_listAsync(string parent, string filter, int pageSize, string pageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1alpha/"+ (parent==null? "" : System.Uri.EscapeDataString(parent))+"/runtimeEntitySchemas&filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&pageSize="+pageSize+"&pageToken=" + (pageToken==null? "" : System.Uri.EscapeDataString(pageToken));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -10069,13 +10004,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<GoogleCloudIntegrationsV1alphaListRuntimeEntitySchemasResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<GoogleCloudIntegrationsV1alphaListRuntimeEntitySchemasResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -10092,8 +10026,7 @@ namespace MyNS
 		public async Task<GoogleCloudIntegrationsV1alphaListSfdcChannelsResponse> Integrations_projects_locations_sfdcInstances_sfdcChannels_listAsync(string parent, string filter, int pageSize, string pageToken, string readMask, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1alpha/"+ (parent==null? "" : System.Uri.EscapeDataString(parent))+"/sfdcChannels&filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&pageSize="+pageSize+"&pageToken=" + (pageToken==null? "" : System.Uri.EscapeDataString(pageToken))+"&readMask=" + (readMask==null? "" : System.Uri.EscapeDataString(readMask));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -10103,13 +10036,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<GoogleCloudIntegrationsV1alphaListSfdcChannelsResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<GoogleCloudIntegrationsV1alphaListSfdcChannelsResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -10122,10 +10054,8 @@ namespace MyNS
 		public async Task<GoogleCloudIntegrationsV1alphaSfdcChannel> Integrations_projects_locations_sfdcInstances_sfdcChannels_createAsync(string parent, GoogleCloudIntegrationsV1alphaSfdcChannel requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1alpha/"+ (parent==null? "" : System.Uri.EscapeDataString(parent))+"/sfdcChannels";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -10136,13 +10066,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<GoogleCloudIntegrationsV1alphaSfdcChannel>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<GoogleCloudIntegrationsV1alphaSfdcChannel>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -10159,8 +10088,7 @@ namespace MyNS
 		public async Task<GoogleCloudIntegrationsV1alphaListSfdcInstancesResponse> Integrations_projects_locations_sfdcInstances_listAsync(string parent, string filter, int pageSize, string pageToken, string readMask, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1alpha/"+ (parent==null? "" : System.Uri.EscapeDataString(parent))+"/sfdcInstances&filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&pageSize="+pageSize+"&pageToken=" + (pageToken==null? "" : System.Uri.EscapeDataString(pageToken))+"&readMask=" + (readMask==null? "" : System.Uri.EscapeDataString(readMask));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -10170,13 +10098,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<GoogleCloudIntegrationsV1alphaListSfdcInstancesResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<GoogleCloudIntegrationsV1alphaListSfdcInstancesResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -10189,10 +10116,8 @@ namespace MyNS
 		public async Task<GoogleCloudIntegrationsV1alphaSfdcInstance> Integrations_projects_locations_sfdcInstances_createAsync(string parent, GoogleCloudIntegrationsV1alphaSfdcInstance requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1alpha/"+ (parent==null? "" : System.Uri.EscapeDataString(parent))+"/sfdcInstances";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -10203,13 +10128,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<GoogleCloudIntegrationsV1alphaSfdcInstance>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<GoogleCloudIntegrationsV1alphaSfdcInstance>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -10226,8 +10150,7 @@ namespace MyNS
 		public async Task<GoogleCloudIntegrationsV1alphaListSuspensionsResponse> Integrations_projects_locations_products_integrations_executions_suspensions_listAsync(string parent, string filter, string orderBy, int pageSize, string pageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1alpha/"+ (parent==null? "" : System.Uri.EscapeDataString(parent))+"/suspensions&filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&orderBy=" + (orderBy==null? "" : System.Uri.EscapeDataString(orderBy))+"&pageSize="+pageSize+"&pageToken=" + (pageToken==null? "" : System.Uri.EscapeDataString(pageToken));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -10237,13 +10160,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<GoogleCloudIntegrationsV1alphaListSuspensionsResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<GoogleCloudIntegrationsV1alphaListSuspensionsResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -10259,8 +10181,7 @@ namespace MyNS
 		public async Task<GoogleCloudIntegrationsV1alphaListIntegrationTemplateVersionsResponse> Integrations_projects_locations_products_integrationtemplates_versions_listAsync(string parent, string filter, int pageSize, string pageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1alpha/"+ (parent==null? "" : System.Uri.EscapeDataString(parent))+"/versions&filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&pageSize="+pageSize+"&pageToken=" + (pageToken==null? "" : System.Uri.EscapeDataString(pageToken));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -10270,13 +10191,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<GoogleCloudIntegrationsV1alphaListIntegrationTemplateVersionsResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<GoogleCloudIntegrationsV1alphaListIntegrationTemplateVersionsResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -10290,10 +10210,8 @@ namespace MyNS
 		public async Task<GoogleCloudIntegrationsV1alphaIntegrationTemplateVersion> Integrations_projects_locations_products_integrationtemplates_versions_createAsync(string parent, bool newIntegration, GoogleCloudIntegrationsV1alphaIntegrationTemplateVersion requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1alpha/"+ (parent==null? "" : System.Uri.EscapeDataString(parent))+"/versions&newIntegration="+newIntegration;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -10304,13 +10222,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<GoogleCloudIntegrationsV1alphaIntegrationTemplateVersion>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<GoogleCloudIntegrationsV1alphaIntegrationTemplateVersion>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -10323,10 +10240,8 @@ namespace MyNS
 		public async Task<GoogleCloudIntegrationsV1alphaUploadIntegrationVersionResponse> Integrations_projects_locations_products_integrations_versions_uploadAsync(string parent, GoogleCloudIntegrationsV1alphaUploadIntegrationVersionRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1alpha/"+ (parent==null? "" : System.Uri.EscapeDataString(parent))+"/versions:upload";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -10337,13 +10252,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<GoogleCloudIntegrationsV1alphaUploadIntegrationVersionResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<GoogleCloudIntegrationsV1alphaUploadIntegrationVersionResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

@@ -93,8 +93,7 @@ namespace MyNS
 		public async Task<FindFormsReturn> FindFormsAsync(string query, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "forms?query=" + (query==null? "" : System.Uri.EscapeDataString(query));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -104,13 +103,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<FindFormsReturn>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<FindFormsReturn>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -124,8 +122,7 @@ namespace MyNS
 		public async Task<FindFormByFormNameReturn> FindFormByFormNameAsync(string form_name, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "forms/"+ (form_name==null? "" : System.Uri.EscapeDataString(form_name));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -135,13 +132,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<FindFormByFormNameReturn>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<FindFormByFormNameReturn>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

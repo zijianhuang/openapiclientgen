@@ -94,19 +94,17 @@ namespace MyNS
 		public async Task<QueueService> QueueServices_GetAsync(string subscriptionId, string resourceGroupName, string farmId, QueueServices_GetServiceType serviceType, string api_version)
 		{
 			var requestUri = "subscriptions/"+ (subscriptionId==null? "" : System.Uri.EscapeDataString(subscriptionId))+"/resourcegroups/"+ (resourceGroupName==null? "" : System.Uri.EscapeDataString(resourceGroupName))+"/providers/Microsoft.Storage.Admin/farms/"+ (farmId==null? "" : System.Uri.EscapeDataString(farmId))+"/queueservices/"+serviceType+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<QueueService>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<QueueService>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -123,19 +121,17 @@ namespace MyNS
 		public async Task<QueueServices_ListMetricDefinitionsReturn> QueueServices_ListMetricDefinitionsAsync(string subscriptionId, string resourceGroupName, string farmId, QueueServices_ListMetricDefinitionsServiceType serviceType, string api_version)
 		{
 			var requestUri = "subscriptions/"+ (subscriptionId==null? "" : System.Uri.EscapeDataString(subscriptionId))+"/resourcegroups/"+ (resourceGroupName==null? "" : System.Uri.EscapeDataString(resourceGroupName))+"/providers/Microsoft.Storage.Admin/farms/"+ (farmId==null? "" : System.Uri.EscapeDataString(farmId))+"/queueservices/"+serviceType+"/metricdefinitions&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<QueueServices_ListMetricDefinitionsReturn>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<QueueServices_ListMetricDefinitionsReturn>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -152,19 +148,17 @@ namespace MyNS
 		public async Task<QueueServices_ListMetricsReturn> QueueServices_ListMetricsAsync(string subscriptionId, string resourceGroupName, string farmId, QueueServices_ListMetricsServiceType serviceType, string api_version)
 		{
 			var requestUri = "subscriptions/"+ (subscriptionId==null? "" : System.Uri.EscapeDataString(subscriptionId))+"/resourcegroups/"+ (resourceGroupName==null? "" : System.Uri.EscapeDataString(resourceGroupName))+"/providers/Microsoft.Storage.Admin/farms/"+ (farmId==null? "" : System.Uri.EscapeDataString(farmId))+"/queueservices/"+serviceType+"/metrics&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<QueueServices_ListMetricsReturn>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<QueueServices_ListMetricsReturn>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

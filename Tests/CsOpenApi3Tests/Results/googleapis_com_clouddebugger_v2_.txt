@@ -894,10 +894,8 @@ namespace MyNS
 		public async Task<RegisterDebuggeeResponse> Clouddebugger_controller_debuggees_registerAsync(RegisterDebuggeeRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v2/controller/debuggees/register";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -908,13 +906,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<RegisterDebuggeeResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<RegisterDebuggeeResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -930,8 +927,7 @@ namespace MyNS
 		public async Task<ListActiveBreakpointsResponse> Clouddebugger_controller_debuggees_breakpoints_listAsync(string debuggeeId, string agentId, bool successOnTimeout, string waitToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v2/controller/debuggees/"+ (debuggeeId==null? "" : System.Uri.EscapeDataString(debuggeeId))+"/breakpoints&agentId=" + (agentId==null? "" : System.Uri.EscapeDataString(agentId))+"&successOnTimeout="+successOnTimeout+"&waitToken=" + (waitToken==null? "" : System.Uri.EscapeDataString(waitToken));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -941,13 +937,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ListActiveBreakpointsResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ListActiveBreakpointsResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -961,10 +956,8 @@ namespace MyNS
 		public async Task<UpdateActiveBreakpointResponse> Clouddebugger_controller_debuggees_breakpoints_updateAsync(string debuggeeId, string id, UpdateActiveBreakpointRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v2/controller/debuggees/"+ (debuggeeId==null? "" : System.Uri.EscapeDataString(debuggeeId))+"/breakpoints/"+ (id==null? "" : System.Uri.EscapeDataString(id));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -975,13 +968,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<UpdateActiveBreakpointResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<UpdateActiveBreakpointResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -996,8 +988,7 @@ namespace MyNS
 		public async Task<ListDebuggeesResponse> Clouddebugger_debugger_debuggees_listAsync(string clientVersion, bool includeInactive, string project, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v2/debugger/debuggees?clientVersion=" + (clientVersion==null? "" : System.Uri.EscapeDataString(clientVersion))+"&includeInactive="+includeInactive+"&project=" + (project==null? "" : System.Uri.EscapeDataString(project));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1007,13 +998,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ListDebuggeesResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ListDebuggeesResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1032,8 +1022,7 @@ namespace MyNS
 		public async Task<ListBreakpointsResponse> Clouddebugger_debugger_debuggees_breakpoints_listAsync(string debuggeeId, BreakpointAction action_value, string clientVersion, bool includeAllUsers, bool includeInactive, bool stripResults, string waitToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v2/debugger/debuggees/"+ (debuggeeId==null? "" : System.Uri.EscapeDataString(debuggeeId))+"/breakpoints&action.value=" + action_value+"&clientVersion=" + (clientVersion==null? "" : System.Uri.EscapeDataString(clientVersion))+"&includeAllUsers="+includeAllUsers+"&includeInactive="+includeInactive+"&stripResults="+stripResults+"&waitToken=" + (waitToken==null? "" : System.Uri.EscapeDataString(waitToken));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1043,13 +1032,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ListBreakpointsResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ListBreakpointsResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1064,10 +1052,8 @@ namespace MyNS
 		public async Task<SetBreakpointResponse> Clouddebugger_debugger_debuggees_breakpoints_setAsync(string debuggeeId, Clouddebugger_debugger_debuggees_breakpoints_setCanaryOption canaryOption, string clientVersion, Breakpoint requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v2/debugger/debuggees/"+ (debuggeeId==null? "" : System.Uri.EscapeDataString(debuggeeId))+"/breakpoints/set&canaryOption=" + canaryOption+"&clientVersion=" + (clientVersion==null? "" : System.Uri.EscapeDataString(clientVersion));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -1078,13 +1064,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<SetBreakpointResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<SetBreakpointResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1099,8 +1084,7 @@ namespace MyNS
 		public async Task<Empty> Clouddebugger_debugger_debuggees_breakpoints_deleteAsync(string debuggeeId, string breakpointId, string clientVersion, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v2/debugger/debuggees/"+ (debuggeeId==null? "" : System.Uri.EscapeDataString(debuggeeId))+"/breakpoints/"+ (breakpointId==null? "" : System.Uri.EscapeDataString(breakpointId))+"&clientVersion=" + (clientVersion==null? "" : System.Uri.EscapeDataString(clientVersion));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1110,13 +1094,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Empty>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Empty>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1131,8 +1114,7 @@ namespace MyNS
 		public async Task<GetBreakpointResponse> Clouddebugger_debugger_debuggees_breakpoints_getAsync(string debuggeeId, string breakpointId, string clientVersion, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v2/debugger/debuggees/"+ (debuggeeId==null? "" : System.Uri.EscapeDataString(debuggeeId))+"/breakpoints/"+ (breakpointId==null? "" : System.Uri.EscapeDataString(breakpointId))+"&clientVersion=" + (clientVersion==null? "" : System.Uri.EscapeDataString(clientVersion));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1142,13 +1124,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<GetBreakpointResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<GetBreakpointResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

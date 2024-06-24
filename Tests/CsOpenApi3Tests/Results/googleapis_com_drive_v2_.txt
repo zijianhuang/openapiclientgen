@@ -3740,8 +3740,7 @@ namespace MyNS
 		public async Task<About> Drive_about_getAsync(bool includeSubscribed, string maxChangeIdCount, string startChangeId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "about?includeSubscribed="+includeSubscribed+"&maxChangeIdCount=" + (maxChangeIdCount==null? "" : System.Uri.EscapeDataString(maxChangeIdCount))+"&startChangeId=" + (startChangeId==null? "" : System.Uri.EscapeDataString(startChangeId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3751,13 +3750,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<About>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<About>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3772,8 +3770,7 @@ namespace MyNS
 		public async Task<AppList> Drive_apps_listAsync(string appFilterExtensions, string appFilterMimeTypes, string languageCode, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "apps?appFilterExtensions=" + (appFilterExtensions==null? "" : System.Uri.EscapeDataString(appFilterExtensions))+"&appFilterMimeTypes=" + (appFilterMimeTypes==null? "" : System.Uri.EscapeDataString(appFilterMimeTypes))+"&languageCode=" + (languageCode==null? "" : System.Uri.EscapeDataString(languageCode));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3783,13 +3780,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<AppList>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<AppList>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3802,8 +3798,7 @@ namespace MyNS
 		public async Task<App> Drive_apps_getAsync(string appId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "apps/"+ (appId==null? "" : System.Uri.EscapeDataString(appId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3813,13 +3808,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<App>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<App>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3864,8 +3858,7 @@ namespace MyNS
 					Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "changes?driveId=" + (driveId==null? "" : System.Uri.EscapeDataString(driveId))+"&includeCorpusRemovals="+includeCorpusRemovals+"&includeDeleted="+includeDeleted+"&includeItemsFromAllDrives="+includeItemsFromAllDrives+"&includeLabels=" + (includeLabels==null? "" : System.Uri.EscapeDataString(includeLabels))+"&includePermissionsForView=" + (includePermissionsForView==null? "" : System.Uri.EscapeDataString(includePermissionsForView))+"&includeSubscribed="+includeSubscribed+"&includeTeamDriveItems="+includeTeamDriveItems+"&maxResults="+maxResults+"&pageToken=" + (pageToken==null? "" : System.Uri.EscapeDataString(pageToken))+"&spaces=" + (spaces==null? "" : System.Uri.EscapeDataString(spaces))+"&startChangeId=" + (startChangeId==null? "" : System.Uri.EscapeDataString(startChangeId))+"&supportsAllDrives="+supportsAllDrives+"&supportsTeamDrives="+supportsTeamDrives+"&teamDriveId=" + (teamDriveId==null? "" : System.Uri.EscapeDataString(teamDriveId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3875,13 +3868,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ChangeList>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ChangeList>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3897,8 +3889,7 @@ namespace MyNS
 		public async Task<StartPageToken> Drive_changes_getStartPageTokenAsync(string driveId, bool supportsAllDrives, bool supportsTeamDrives, string teamDriveId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "changes/startPageToken?driveId=" + (driveId==null? "" : System.Uri.EscapeDataString(driveId))+"&supportsAllDrives="+supportsAllDrives+"&supportsTeamDrives="+supportsTeamDrives+"&teamDriveId=" + (teamDriveId==null? "" : System.Uri.EscapeDataString(teamDriveId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3908,13 +3899,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<StartPageToken>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<StartPageToken>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3960,10 +3950,8 @@ namespace MyNS
 					Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "changes/watch?driveId=" + (driveId==null? "" : System.Uri.EscapeDataString(driveId))+"&includeCorpusRemovals="+includeCorpusRemovals+"&includeDeleted="+includeDeleted+"&includeItemsFromAllDrives="+includeItemsFromAllDrives+"&includeLabels=" + (includeLabels==null? "" : System.Uri.EscapeDataString(includeLabels))+"&includePermissionsForView=" + (includePermissionsForView==null? "" : System.Uri.EscapeDataString(includePermissionsForView))+"&includeSubscribed="+includeSubscribed+"&includeTeamDriveItems="+includeTeamDriveItems+"&maxResults="+maxResults+"&pageToken=" + (pageToken==null? "" : System.Uri.EscapeDataString(pageToken))+"&spaces=" + (spaces==null? "" : System.Uri.EscapeDataString(spaces))+"&startChangeId=" + (startChangeId==null? "" : System.Uri.EscapeDataString(startChangeId))+"&supportsAllDrives="+supportsAllDrives+"&supportsTeamDrives="+supportsTeamDrives+"&teamDriveId=" + (teamDriveId==null? "" : System.Uri.EscapeDataString(teamDriveId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -3974,13 +3962,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Channel>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Channel>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3997,8 +3984,7 @@ namespace MyNS
 		public async Task<Change> Drive_changes_getAsync(string changeId, string driveId, bool supportsAllDrives, bool supportsTeamDrives, string teamDriveId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "changes/"+ (changeId==null? "" : System.Uri.EscapeDataString(changeId))+"&driveId=" + (driveId==null? "" : System.Uri.EscapeDataString(driveId))+"&supportsAllDrives="+supportsAllDrives+"&supportsTeamDrives="+supportsTeamDrives+"&teamDriveId=" + (teamDriveId==null? "" : System.Uri.EscapeDataString(teamDriveId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4008,13 +3994,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Change>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Change>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4026,10 +4011,8 @@ namespace MyNS
 		public async Task Drive_channels_stopAsync(Channel requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "channels/stop";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -4044,7 +4027,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4063,8 +4045,7 @@ namespace MyNS
 		public async Task<DriveList> Drive_drives_listAsync(int maxResults, string pageToken, string q, bool useDomainAdminAccess, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "drives?maxResults="+maxResults+"&pageToken=" + (pageToken==null? "" : System.Uri.EscapeDataString(pageToken))+"&q=" + (q==null? "" : System.Uri.EscapeDataString(q))+"&useDomainAdminAccess="+useDomainAdminAccess;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4074,13 +4055,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<DriveList>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<DriveList>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4093,10 +4073,8 @@ namespace MyNS
 		public async Task<Drive> Drive_drives_insertAsync(string requestId, Drive requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "drives?requestId=" + (requestId==null? "" : System.Uri.EscapeDataString(requestId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -4107,13 +4085,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Drive>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Drive>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4128,8 +4105,7 @@ namespace MyNS
 		public async Task Drive_drives_deleteAsync(string driveId, bool allowItemDeletion, bool useDomainAdminAccess, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "drives/"+ (driveId==null? "" : System.Uri.EscapeDataString(driveId))+"&allowItemDeletion="+allowItemDeletion+"&useDomainAdminAccess="+useDomainAdminAccess;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4143,7 +4119,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4157,8 +4132,7 @@ namespace MyNS
 		public async Task<Drive> Drive_drives_getAsync(string driveId, bool useDomainAdminAccess, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "drives/"+ (driveId==null? "" : System.Uri.EscapeDataString(driveId))+"&useDomainAdminAccess="+useDomainAdminAccess;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4168,13 +4142,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Drive>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Drive>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4188,10 +4161,8 @@ namespace MyNS
 		public async Task<Drive> Drive_drives_updateAsync(string driveId, bool useDomainAdminAccess, Drive requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "drives/"+ (driveId==null? "" : System.Uri.EscapeDataString(driveId))+"&useDomainAdminAccess="+useDomainAdminAccess;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -4202,13 +4173,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Drive>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Drive>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4221,19 +4191,17 @@ namespace MyNS
 		public async Task<Drive> Drive_drives_hideAsync(string driveId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "drives/"+ (driveId==null? "" : System.Uri.EscapeDataString(driveId))+"/hide";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Drive>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Drive>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4246,19 +4214,17 @@ namespace MyNS
 		public async Task<Drive> Drive_drives_unhideAsync(string driveId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "drives/"+ (driveId==null? "" : System.Uri.EscapeDataString(driveId))+"/unhide";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Drive>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Drive>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4305,8 +4271,7 @@ namespace MyNS
 					Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "files?corpora=" + (corpora==null? "" : System.Uri.EscapeDataString(corpora))+"&corpus=" + corpus+"&driveId=" + (driveId==null? "" : System.Uri.EscapeDataString(driveId))+"&includeItemsFromAllDrives="+includeItemsFromAllDrives+"&includeLabels=" + (includeLabels==null? "" : System.Uri.EscapeDataString(includeLabels))+"&includePermissionsForView=" + (includePermissionsForView==null? "" : System.Uri.EscapeDataString(includePermissionsForView))+"&includeTeamDriveItems="+includeTeamDriveItems+"&maxResults="+maxResults+"&orderBy=" + (orderBy==null? "" : System.Uri.EscapeDataString(orderBy))+"&pageToken=" + (pageToken==null? "" : System.Uri.EscapeDataString(pageToken))+"&projection=" + projection+"&q=" + (q==null? "" : System.Uri.EscapeDataString(q))+"&spaces=" + (spaces==null? "" : System.Uri.EscapeDataString(spaces))+"&supportsAllDrives="+supportsAllDrives+"&supportsTeamDrives="+supportsTeamDrives+"&teamDriveId=" + (teamDriveId==null? "" : System.Uri.EscapeDataString(teamDriveId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4316,13 +4281,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<FileList>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<FileList>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4340,8 +4304,7 @@ namespace MyNS
 		public async Task<GeneratedIds> Drive_files_generateIdsAsync(int maxResults, string space, string type, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "files/generateIds?maxResults="+maxResults+"&space=" + (space==null? "" : System.Uri.EscapeDataString(space))+"&type=" + (type==null? "" : System.Uri.EscapeDataString(type));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4351,13 +4314,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<GeneratedIds>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<GeneratedIds>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4371,8 +4333,7 @@ namespace MyNS
 		public async Task Drive_files_emptyTrashAsync(string driveId, bool enforceSingleParent, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "files/trash?driveId=" + (driveId==null? "" : System.Uri.EscapeDataString(driveId))+"&enforceSingleParent="+enforceSingleParent;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4386,7 +4347,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4402,8 +4362,7 @@ namespace MyNS
 		public async Task Drive_files_deleteAsync(string fileId, bool enforceSingleParent, bool supportsAllDrives, bool supportsTeamDrives, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "files/"+ (fileId==null? "" : System.Uri.EscapeDataString(fileId))+"&enforceSingleParent="+enforceSingleParent+"&supportsAllDrives="+supportsAllDrives+"&supportsTeamDrives="+supportsTeamDrives;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4417,7 +4376,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4438,8 +4396,7 @@ namespace MyNS
 		public async Task<File> Drive_files_getAsync(string fileId, bool acknowledgeAbuse, string includeLabels, string includePermissionsForView, Drive_files_listProjection projection, string revisionId, bool supportsAllDrives, bool supportsTeamDrives, bool updateViewedDate, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "files/"+ (fileId==null? "" : System.Uri.EscapeDataString(fileId))+"&acknowledgeAbuse="+acknowledgeAbuse+"&includeLabels=" + (includeLabels==null? "" : System.Uri.EscapeDataString(includeLabels))+"&includePermissionsForView=" + (includePermissionsForView==null? "" : System.Uri.EscapeDataString(includePermissionsForView))+"&projection=" + projection+"&revisionId=" + (revisionId==null? "" : System.Uri.EscapeDataString(revisionId))+"&supportsAllDrives="+supportsAllDrives+"&supportsTeamDrives="+supportsTeamDrives+"&updateViewedDate="+updateViewedDate;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4449,13 +4406,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<File>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<File>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4507,10 +4463,8 @@ namespace MyNS
 					Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "files/"+ (fileId==null? "" : System.Uri.EscapeDataString(fileId))+"&addParents=" + (addParents==null? "" : System.Uri.EscapeDataString(addParents))+"&convert="+convert+"&enforceSingleParent="+enforceSingleParent+"&includeLabels=" + (includeLabels==null? "" : System.Uri.EscapeDataString(includeLabels))+"&includePermissionsForView=" + (includePermissionsForView==null? "" : System.Uri.EscapeDataString(includePermissionsForView))+"&modifiedDateBehavior=" + modifiedDateBehavior+"&newRevision="+newRevision+"&ocr="+ocr+"&ocrLanguage=" + (ocrLanguage==null? "" : System.Uri.EscapeDataString(ocrLanguage))+"&pinned="+pinned+"&removeParents=" + (removeParents==null? "" : System.Uri.EscapeDataString(removeParents))+"&setModifiedDate="+setModifiedDate+"&supportsAllDrives="+supportsAllDrives+"&supportsTeamDrives="+supportsTeamDrives+"&timedTextLanguage=" + (timedTextLanguage==null? "" : System.Uri.EscapeDataString(timedTextLanguage))+"&timedTextTrackName=" + (timedTextTrackName==null? "" : System.Uri.EscapeDataString(timedTextTrackName))+"&updateViewedDate="+updateViewedDate+"&useContentAsIndexableText="+useContentAsIndexableText;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -4521,13 +4475,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<File>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<File>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4547,8 +4500,7 @@ namespace MyNS
 		public async Task<CommentList> Drive_comments_listAsync(string fileId, bool includeDeleted, int maxResults, string pageToken, string updatedMin, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "files/"+ (fileId==null? "" : System.Uri.EscapeDataString(fileId))+"/comments&includeDeleted="+includeDeleted+"&maxResults="+maxResults+"&pageToken=" + (pageToken==null? "" : System.Uri.EscapeDataString(pageToken))+"&updatedMin=" + (updatedMin==null? "" : System.Uri.EscapeDataString(updatedMin));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4558,13 +4510,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<CommentList>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<CommentList>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4577,10 +4528,8 @@ namespace MyNS
 		public async Task<Comment> Drive_comments_insertAsync(string fileId, Comment requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "files/"+ (fileId==null? "" : System.Uri.EscapeDataString(fileId))+"/comments";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -4591,13 +4540,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Comment>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Comment>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4611,8 +4559,7 @@ namespace MyNS
 		public async Task Drive_comments_deleteAsync(string fileId, string commentId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "files/"+ (fileId==null? "" : System.Uri.EscapeDataString(fileId))+"/comments/"+ (commentId==null? "" : System.Uri.EscapeDataString(commentId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4626,7 +4573,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4641,8 +4587,7 @@ namespace MyNS
 		public async Task<Comment> Drive_comments_getAsync(string fileId, string commentId, bool includeDeleted, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "files/"+ (fileId==null? "" : System.Uri.EscapeDataString(fileId))+"/comments/"+ (commentId==null? "" : System.Uri.EscapeDataString(commentId))+"&includeDeleted="+includeDeleted;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4652,13 +4597,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Comment>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Comment>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4672,10 +4616,8 @@ namespace MyNS
 		public async Task<Comment> Drive_comments_patchAsync(string fileId, string commentId, Comment requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "files/"+ (fileId==null? "" : System.Uri.EscapeDataString(fileId))+"/comments/"+ (commentId==null? "" : System.Uri.EscapeDataString(commentId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -4686,13 +4628,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Comment>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Comment>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4706,10 +4647,8 @@ namespace MyNS
 		public async Task<Comment> Drive_comments_updateAsync(string fileId, string commentId, Comment requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "files/"+ (fileId==null? "" : System.Uri.EscapeDataString(fileId))+"/comments/"+ (commentId==null? "" : System.Uri.EscapeDataString(commentId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -4720,13 +4659,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Comment>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Comment>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4746,8 +4684,7 @@ namespace MyNS
 		public async Task<CommentReplyList> Drive_replies_listAsync(string fileId, string commentId, bool includeDeleted, int maxResults, string pageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "files/"+ (fileId==null? "" : System.Uri.EscapeDataString(fileId))+"/comments/"+ (commentId==null? "" : System.Uri.EscapeDataString(commentId))+"/replies&includeDeleted="+includeDeleted+"&maxResults="+maxResults+"&pageToken=" + (pageToken==null? "" : System.Uri.EscapeDataString(pageToken));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4757,13 +4694,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<CommentReplyList>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<CommentReplyList>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4777,10 +4713,8 @@ namespace MyNS
 		public async Task<CommentReply> Drive_replies_insertAsync(string fileId, string commentId, CommentReply requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "files/"+ (fileId==null? "" : System.Uri.EscapeDataString(fileId))+"/comments/"+ (commentId==null? "" : System.Uri.EscapeDataString(commentId))+"/replies";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -4791,13 +4725,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<CommentReply>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<CommentReply>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4812,8 +4745,7 @@ namespace MyNS
 		public async Task Drive_replies_deleteAsync(string fileId, string commentId, string replyId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "files/"+ (fileId==null? "" : System.Uri.EscapeDataString(fileId))+"/comments/"+ (commentId==null? "" : System.Uri.EscapeDataString(commentId))+"/replies/"+ (replyId==null? "" : System.Uri.EscapeDataString(replyId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4827,7 +4759,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4843,8 +4774,7 @@ namespace MyNS
 		public async Task<CommentReply> Drive_replies_getAsync(string fileId, string commentId, string replyId, bool includeDeleted, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "files/"+ (fileId==null? "" : System.Uri.EscapeDataString(fileId))+"/comments/"+ (commentId==null? "" : System.Uri.EscapeDataString(commentId))+"/replies/"+ (replyId==null? "" : System.Uri.EscapeDataString(replyId))+"&includeDeleted="+includeDeleted;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4854,13 +4784,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<CommentReply>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<CommentReply>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4875,10 +4804,8 @@ namespace MyNS
 		public async Task<CommentReply> Drive_replies_patchAsync(string fileId, string commentId, string replyId, CommentReply requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "files/"+ (fileId==null? "" : System.Uri.EscapeDataString(fileId))+"/comments/"+ (commentId==null? "" : System.Uri.EscapeDataString(commentId))+"/replies/"+ (replyId==null? "" : System.Uri.EscapeDataString(replyId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -4889,13 +4816,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<CommentReply>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<CommentReply>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4910,10 +4836,8 @@ namespace MyNS
 		public async Task<CommentReply> Drive_replies_updateAsync(string fileId, string commentId, string replyId, CommentReply requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "files/"+ (fileId==null? "" : System.Uri.EscapeDataString(fileId))+"/comments/"+ (commentId==null? "" : System.Uri.EscapeDataString(commentId))+"/replies/"+ (replyId==null? "" : System.Uri.EscapeDataString(replyId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -4924,13 +4848,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<CommentReply>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<CommentReply>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4955,10 +4878,8 @@ namespace MyNS
 		public async Task<File> Drive_files_copyAsync(string fileId, bool convert, bool enforceSingleParent, string includeLabels, string includePermissionsForView, bool ocr, string ocrLanguage, bool pinned, bool supportsAllDrives, bool supportsTeamDrives, string timedTextLanguage, string timedTextTrackName, Drive_files_insertVisibility visibility, File requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "files/"+ (fileId==null? "" : System.Uri.EscapeDataString(fileId))+"/copy&convert="+convert+"&enforceSingleParent="+enforceSingleParent+"&includeLabels=" + (includeLabels==null? "" : System.Uri.EscapeDataString(includeLabels))+"&includePermissionsForView=" + (includePermissionsForView==null? "" : System.Uri.EscapeDataString(includePermissionsForView))+"&ocr="+ocr+"&ocrLanguage=" + (ocrLanguage==null? "" : System.Uri.EscapeDataString(ocrLanguage))+"&pinned="+pinned+"&supportsAllDrives="+supportsAllDrives+"&supportsTeamDrives="+supportsTeamDrives+"&timedTextLanguage=" + (timedTextLanguage==null? "" : System.Uri.EscapeDataString(timedTextLanguage))+"&timedTextTrackName=" + (timedTextTrackName==null? "" : System.Uri.EscapeDataString(timedTextTrackName))+"&visibility=" + visibility;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -4969,13 +4890,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<File>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<File>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4989,8 +4909,7 @@ namespace MyNS
 		public async Task Drive_files_exportAsync(string fileId, string mimeType, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "files/"+ (fileId==null? "" : System.Uri.EscapeDataString(fileId))+"/export&mimeType=" + (mimeType==null? "" : System.Uri.EscapeDataString(mimeType));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5004,7 +4923,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5022,8 +4940,7 @@ namespace MyNS
 		public async Task<LabelList> Drive_files_listLabelsAsync(string fileId, int maxResults, string pageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "files/"+ (fileId==null? "" : System.Uri.EscapeDataString(fileId))+"/listLabels&maxResults="+maxResults+"&pageToken=" + (pageToken==null? "" : System.Uri.EscapeDataString(pageToken));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5033,13 +4950,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<LabelList>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<LabelList>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5052,10 +4968,8 @@ namespace MyNS
 		public async Task<ModifyLabelsResponse> Drive_files_modifyLabelsAsync(string fileId, ModifyLabelsRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "files/"+ (fileId==null? "" : System.Uri.EscapeDataString(fileId))+"/modifyLabels";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -5066,13 +4980,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ModifyLabelsResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ModifyLabelsResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5085,8 +4998,7 @@ namespace MyNS
 		public async Task<ParentList> Drive_parents_listAsync(string fileId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "files/"+ (fileId==null? "" : System.Uri.EscapeDataString(fileId))+"/parents";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5096,13 +5008,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ParentList>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ParentList>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5118,10 +5029,8 @@ namespace MyNS
 		public async Task<ParentReference> Drive_parents_insertAsync(string fileId, bool enforceSingleParent, bool supportsAllDrives, bool supportsTeamDrives, ParentReference requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "files/"+ (fileId==null? "" : System.Uri.EscapeDataString(fileId))+"/parents&enforceSingleParent="+enforceSingleParent+"&supportsAllDrives="+supportsAllDrives+"&supportsTeamDrives="+supportsTeamDrives;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -5132,13 +5041,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ParentReference>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ParentReference>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5153,8 +5061,7 @@ namespace MyNS
 		public async Task Drive_parents_deleteAsync(string fileId, string parentId, bool enforceSingleParent, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "files/"+ (fileId==null? "" : System.Uri.EscapeDataString(fileId))+"/parents/"+ (parentId==null? "" : System.Uri.EscapeDataString(parentId))+"&enforceSingleParent="+enforceSingleParent;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5168,7 +5075,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5182,8 +5088,7 @@ namespace MyNS
 		public async Task<ParentReference> Drive_parents_getAsync(string fileId, string parentId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "files/"+ (fileId==null? "" : System.Uri.EscapeDataString(fileId))+"/parents/"+ (parentId==null? "" : System.Uri.EscapeDataString(parentId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5193,13 +5098,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ParentReference>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ParentReference>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5221,8 +5125,7 @@ namespace MyNS
 		public async Task<PermissionList> Drive_permissions_listAsync(string fileId, string includePermissionsForView, int maxResults, string pageToken, bool supportsAllDrives, bool supportsTeamDrives, bool useDomainAdminAccess, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "files/"+ (fileId==null? "" : System.Uri.EscapeDataString(fileId))+"/permissions&includePermissionsForView=" + (includePermissionsForView==null? "" : System.Uri.EscapeDataString(includePermissionsForView))+"&maxResults="+maxResults+"&pageToken=" + (pageToken==null? "" : System.Uri.EscapeDataString(pageToken))+"&supportsAllDrives="+supportsAllDrives+"&supportsTeamDrives="+supportsTeamDrives+"&useDomainAdminAccess="+useDomainAdminAccess;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5232,13 +5135,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<PermissionList>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<PermissionList>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5258,10 +5160,8 @@ namespace MyNS
 		public async Task<Permission> Drive_permissions_insertAsync(string fileId, string emailMessage, bool enforceSingleParent, bool moveToNewOwnersRoot, bool sendNotificationEmails, bool supportsAllDrives, bool supportsTeamDrives, bool useDomainAdminAccess, Permission requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "files/"+ (fileId==null? "" : System.Uri.EscapeDataString(fileId))+"/permissions&emailMessage=" + (emailMessage==null? "" : System.Uri.EscapeDataString(emailMessage))+"&enforceSingleParent="+enforceSingleParent+"&moveToNewOwnersRoot="+moveToNewOwnersRoot+"&sendNotificationEmails="+sendNotificationEmails+"&supportsAllDrives="+supportsAllDrives+"&supportsTeamDrives="+supportsTeamDrives+"&useDomainAdminAccess="+useDomainAdminAccess;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -5272,13 +5172,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Permission>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Permission>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5295,8 +5194,7 @@ namespace MyNS
 		public async Task Drive_permissions_deleteAsync(string fileId, string permissionId, bool supportsAllDrives, bool supportsTeamDrives, bool useDomainAdminAccess, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "files/"+ (fileId==null? "" : System.Uri.EscapeDataString(fileId))+"/permissions/"+ (permissionId==null? "" : System.Uri.EscapeDataString(permissionId))+"&supportsAllDrives="+supportsAllDrives+"&supportsTeamDrives="+supportsTeamDrives+"&useDomainAdminAccess="+useDomainAdminAccess;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5310,7 +5208,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5327,8 +5224,7 @@ namespace MyNS
 		public async Task<Permission> Drive_permissions_getAsync(string fileId, string permissionId, bool supportsAllDrives, bool supportsTeamDrives, bool useDomainAdminAccess, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "files/"+ (fileId==null? "" : System.Uri.EscapeDataString(fileId))+"/permissions/"+ (permissionId==null? "" : System.Uri.EscapeDataString(permissionId))+"&supportsAllDrives="+supportsAllDrives+"&supportsTeamDrives="+supportsTeamDrives+"&useDomainAdminAccess="+useDomainAdminAccess;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5338,13 +5234,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Permission>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Permission>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5363,10 +5258,8 @@ namespace MyNS
 		public async Task<Permission> Drive_permissions_patchAsync(string fileId, string permissionId, bool removeExpiration, bool supportsAllDrives, bool supportsTeamDrives, bool transferOwnership, bool useDomainAdminAccess, Permission requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "files/"+ (fileId==null? "" : System.Uri.EscapeDataString(fileId))+"/permissions/"+ (permissionId==null? "" : System.Uri.EscapeDataString(permissionId))+"&removeExpiration="+removeExpiration+"&supportsAllDrives="+supportsAllDrives+"&supportsTeamDrives="+supportsTeamDrives+"&transferOwnership="+transferOwnership+"&useDomainAdminAccess="+useDomainAdminAccess;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -5377,13 +5270,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Permission>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Permission>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5402,10 +5294,8 @@ namespace MyNS
 		public async Task<Permission> Drive_permissions_updateAsync(string fileId, string permissionId, bool removeExpiration, bool supportsAllDrives, bool supportsTeamDrives, bool transferOwnership, bool useDomainAdminAccess, Permission requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "files/"+ (fileId==null? "" : System.Uri.EscapeDataString(fileId))+"/permissions/"+ (permissionId==null? "" : System.Uri.EscapeDataString(permissionId))+"&removeExpiration="+removeExpiration+"&supportsAllDrives="+supportsAllDrives+"&supportsTeamDrives="+supportsTeamDrives+"&transferOwnership="+transferOwnership+"&useDomainAdminAccess="+useDomainAdminAccess;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -5416,13 +5306,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Permission>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Permission>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5435,8 +5324,7 @@ namespace MyNS
 		public async Task<PropertyList> Drive_properties_listAsync(string fileId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "files/"+ (fileId==null? "" : System.Uri.EscapeDataString(fileId))+"/properties";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5446,13 +5334,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<PropertyList>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<PropertyList>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5465,10 +5352,8 @@ namespace MyNS
 		public async Task<Property> Drive_properties_insertAsync(string fileId, Property requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "files/"+ (fileId==null? "" : System.Uri.EscapeDataString(fileId))+"/properties";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -5479,13 +5364,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Property>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Property>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5500,8 +5384,7 @@ namespace MyNS
 		public async Task Drive_properties_deleteAsync(string fileId, string propertyKey, string visibility, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "files/"+ (fileId==null? "" : System.Uri.EscapeDataString(fileId))+"/properties/"+ (propertyKey==null? "" : System.Uri.EscapeDataString(propertyKey))+"&visibility=" + (visibility==null? "" : System.Uri.EscapeDataString(visibility));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5515,7 +5398,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5530,8 +5412,7 @@ namespace MyNS
 		public async Task<Property> Drive_properties_getAsync(string fileId, string propertyKey, string visibility, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "files/"+ (fileId==null? "" : System.Uri.EscapeDataString(fileId))+"/properties/"+ (propertyKey==null? "" : System.Uri.EscapeDataString(propertyKey))+"&visibility=" + (visibility==null? "" : System.Uri.EscapeDataString(visibility));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5541,13 +5422,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Property>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Property>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5562,10 +5442,8 @@ namespace MyNS
 		public async Task<Property> Drive_properties_patchAsync(string fileId, string propertyKey, string visibility, Property requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "files/"+ (fileId==null? "" : System.Uri.EscapeDataString(fileId))+"/properties/"+ (propertyKey==null? "" : System.Uri.EscapeDataString(propertyKey))+"&visibility=" + (visibility==null? "" : System.Uri.EscapeDataString(visibility));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -5576,13 +5454,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Property>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Property>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5597,10 +5474,8 @@ namespace MyNS
 		public async Task<Property> Drive_properties_updateAsync(string fileId, string propertyKey, string visibility, Property requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "files/"+ (fileId==null? "" : System.Uri.EscapeDataString(fileId))+"/properties/"+ (propertyKey==null? "" : System.Uri.EscapeDataString(propertyKey))+"&visibility=" + (visibility==null? "" : System.Uri.EscapeDataString(visibility));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -5611,13 +5486,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Property>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Property>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5635,8 +5509,7 @@ namespace MyNS
 		public async Task<RevisionList> Drive_revisions_listAsync(string fileId, int maxResults, string pageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "files/"+ (fileId==null? "" : System.Uri.EscapeDataString(fileId))+"/revisions&maxResults="+maxResults+"&pageToken=" + (pageToken==null? "" : System.Uri.EscapeDataString(pageToken));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5646,13 +5519,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<RevisionList>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<RevisionList>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5666,8 +5538,7 @@ namespace MyNS
 		public async Task Drive_revisions_deleteAsync(string fileId, string revisionId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "files/"+ (fileId==null? "" : System.Uri.EscapeDataString(fileId))+"/revisions/"+ (revisionId==null? "" : System.Uri.EscapeDataString(revisionId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5681,7 +5552,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5695,8 +5565,7 @@ namespace MyNS
 		public async Task<Revision> Drive_revisions_getAsync(string fileId, string revisionId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "files/"+ (fileId==null? "" : System.Uri.EscapeDataString(fileId))+"/revisions/"+ (revisionId==null? "" : System.Uri.EscapeDataString(revisionId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5706,13 +5575,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Revision>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Revision>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5726,10 +5594,8 @@ namespace MyNS
 		public async Task<Revision> Drive_revisions_patchAsync(string fileId, string revisionId, Revision requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "files/"+ (fileId==null? "" : System.Uri.EscapeDataString(fileId))+"/revisions/"+ (revisionId==null? "" : System.Uri.EscapeDataString(revisionId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -5740,13 +5606,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Revision>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Revision>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5760,10 +5625,8 @@ namespace MyNS
 		public async Task<Revision> Drive_revisions_updateAsync(string fileId, string revisionId, Revision requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "files/"+ (fileId==null? "" : System.Uri.EscapeDataString(fileId))+"/revisions/"+ (revisionId==null? "" : System.Uri.EscapeDataString(revisionId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -5774,13 +5637,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Revision>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Revision>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5797,19 +5659,17 @@ namespace MyNS
 		public async Task<File> Drive_files_touchAsync(string fileId, string includeLabels, string includePermissionsForView, bool supportsAllDrives, bool supportsTeamDrives, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "files/"+ (fileId==null? "" : System.Uri.EscapeDataString(fileId))+"/touch&includeLabels=" + (includeLabels==null? "" : System.Uri.EscapeDataString(includeLabels))+"&includePermissionsForView=" + (includePermissionsForView==null? "" : System.Uri.EscapeDataString(includePermissionsForView))+"&supportsAllDrives="+supportsAllDrives+"&supportsTeamDrives="+supportsTeamDrives;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<File>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<File>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5826,19 +5686,17 @@ namespace MyNS
 		public async Task<File> Drive_files_trashAsync(string fileId, string includeLabels, string includePermissionsForView, bool supportsAllDrives, bool supportsTeamDrives, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "files/"+ (fileId==null? "" : System.Uri.EscapeDataString(fileId))+"/trash&includeLabels=" + (includeLabels==null? "" : System.Uri.EscapeDataString(includeLabels))+"&includePermissionsForView=" + (includePermissionsForView==null? "" : System.Uri.EscapeDataString(includePermissionsForView))+"&supportsAllDrives="+supportsAllDrives+"&supportsTeamDrives="+supportsTeamDrives;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<File>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<File>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5855,19 +5713,17 @@ namespace MyNS
 		public async Task<File> Drive_files_untrashAsync(string fileId, string includeLabels, string includePermissionsForView, bool supportsAllDrives, bool supportsTeamDrives, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "files/"+ (fileId==null? "" : System.Uri.EscapeDataString(fileId))+"/untrash&includeLabels=" + (includeLabels==null? "" : System.Uri.EscapeDataString(includeLabels))+"&includePermissionsForView=" + (includePermissionsForView==null? "" : System.Uri.EscapeDataString(includePermissionsForView))+"&supportsAllDrives="+supportsAllDrives+"&supportsTeamDrives="+supportsTeamDrives;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<File>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<File>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5888,10 +5744,8 @@ namespace MyNS
 		public async Task<Channel> Drive_files_watchAsync(string fileId, bool acknowledgeAbuse, string includeLabels, string includePermissionsForView, Drive_files_listProjection projection, string revisionId, bool supportsAllDrives, bool supportsTeamDrives, bool updateViewedDate, Channel requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "files/"+ (fileId==null? "" : System.Uri.EscapeDataString(fileId))+"/watch&acknowledgeAbuse="+acknowledgeAbuse+"&includeLabels=" + (includeLabels==null? "" : System.Uri.EscapeDataString(includeLabels))+"&includePermissionsForView=" + (includePermissionsForView==null? "" : System.Uri.EscapeDataString(includePermissionsForView))+"&projection=" + projection+"&revisionId=" + (revisionId==null? "" : System.Uri.EscapeDataString(revisionId))+"&supportsAllDrives="+supportsAllDrives+"&supportsTeamDrives="+supportsTeamDrives+"&updateViewedDate="+updateViewedDate;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -5902,13 +5756,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Channel>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Channel>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5927,8 +5780,7 @@ namespace MyNS
 		public async Task<ChildList> Drive_children_listAsync(string folderId, int maxResults, string orderBy, string pageToken, string q, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "files/"+ (folderId==null? "" : System.Uri.EscapeDataString(folderId))+"/children&maxResults="+maxResults+"&orderBy=" + (orderBy==null? "" : System.Uri.EscapeDataString(orderBy))+"&pageToken=" + (pageToken==null? "" : System.Uri.EscapeDataString(pageToken))+"&q=" + (q==null? "" : System.Uri.EscapeDataString(q));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5938,13 +5790,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ChildList>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ChildList>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5960,10 +5811,8 @@ namespace MyNS
 		public async Task<ChildReference> Drive_children_insertAsync(string folderId, bool enforceSingleParent, bool supportsAllDrives, bool supportsTeamDrives, ChildReference requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "files/"+ (folderId==null? "" : System.Uri.EscapeDataString(folderId))+"/children&enforceSingleParent="+enforceSingleParent+"&supportsAllDrives="+supportsAllDrives+"&supportsTeamDrives="+supportsTeamDrives;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -5974,13 +5823,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ChildReference>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ChildReference>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5995,8 +5843,7 @@ namespace MyNS
 		public async Task Drive_children_deleteAsync(string folderId, string childId, bool enforceSingleParent, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "files/"+ (folderId==null? "" : System.Uri.EscapeDataString(folderId))+"/children/"+ (childId==null? "" : System.Uri.EscapeDataString(childId))+"&enforceSingleParent="+enforceSingleParent;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6010,7 +5857,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6024,8 +5870,7 @@ namespace MyNS
 		public async Task<ChildReference> Drive_children_getAsync(string folderId, string childId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "files/"+ (folderId==null? "" : System.Uri.EscapeDataString(folderId))+"/children/"+ (childId==null? "" : System.Uri.EscapeDataString(childId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6035,13 +5880,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ChildReference>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ChildReference>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6054,8 +5898,7 @@ namespace MyNS
 		public async Task<PermissionId> Drive_permissions_getIdForEmailAsync(string email, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "permissionIds/"+ (email==null? "" : System.Uri.EscapeDataString(email));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6065,13 +5908,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<PermissionId>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<PermissionId>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6090,8 +5932,7 @@ namespace MyNS
 		public async Task<TeamDriveList> Drive_teamdrives_listAsync(int maxResults, string pageToken, string q, bool useDomainAdminAccess, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "teamdrives?maxResults="+maxResults+"&pageToken=" + (pageToken==null? "" : System.Uri.EscapeDataString(pageToken))+"&q=" + (q==null? "" : System.Uri.EscapeDataString(q))+"&useDomainAdminAccess="+useDomainAdminAccess;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6101,13 +5942,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<TeamDriveList>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<TeamDriveList>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6120,10 +5960,8 @@ namespace MyNS
 		public async Task<TeamDrive> Drive_teamdrives_insertAsync(string requestId, TeamDrive requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "teamdrives?requestId=" + (requestId==null? "" : System.Uri.EscapeDataString(requestId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -6134,13 +5972,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<TeamDrive>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<TeamDrive>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6153,8 +5990,7 @@ namespace MyNS
 		public async Task Drive_teamdrives_deleteAsync(string teamDriveId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "teamdrives/"+ (teamDriveId==null? "" : System.Uri.EscapeDataString(teamDriveId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6168,7 +6004,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6182,8 +6017,7 @@ namespace MyNS
 		public async Task<TeamDrive> Drive_teamdrives_getAsync(string teamDriveId, bool useDomainAdminAccess, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "teamdrives/"+ (teamDriveId==null? "" : System.Uri.EscapeDataString(teamDriveId))+"&useDomainAdminAccess="+useDomainAdminAccess;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6193,13 +6027,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<TeamDrive>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<TeamDrive>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6213,10 +6046,8 @@ namespace MyNS
 		public async Task<TeamDrive> Drive_teamdrives_updateAsync(string teamDriveId, bool useDomainAdminAccess, TeamDrive requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "teamdrives/"+ (teamDriveId==null? "" : System.Uri.EscapeDataString(teamDriveId))+"&useDomainAdminAccess="+useDomainAdminAccess;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -6227,13 +6058,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<TeamDrive>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<TeamDrive>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

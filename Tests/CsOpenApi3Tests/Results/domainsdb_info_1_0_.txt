@@ -340,8 +340,7 @@ namespace MyNS
 		public async Task<Search_Results> DomainsSearchGetByApi_keyAndDateAndPageAndLimitAndDomainAndZoneAndCountryAndIsDeadAndAAndNSAndCNAMEAndMXAndTXTAsync(string api_key, string date, string page, int limit, string domain, string zone, string country, bool isDead, string A, string NS, string CNAME, string MX, string TXT, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "domains/search?api_key=" + (api_key==null? "" : System.Uri.EscapeDataString(api_key))+"&date=" + (date==null? "" : System.Uri.EscapeDataString(date))+"&page=" + (page==null? "" : System.Uri.EscapeDataString(page))+"&limit="+limit+"&domain=" + (domain==null? "" : System.Uri.EscapeDataString(domain))+"&zone=" + (zone==null? "" : System.Uri.EscapeDataString(zone))+"&country=" + (country==null? "" : System.Uri.EscapeDataString(country))+"&isDead="+isDead+"&A=" + (A==null? "" : System.Uri.EscapeDataString(A))+"&NS=" + (NS==null? "" : System.Uri.EscapeDataString(NS))+"&CNAME=" + (CNAME==null? "" : System.Uri.EscapeDataString(CNAME))+"&MX=" + (MX==null? "" : System.Uri.EscapeDataString(MX))+"&TXT=" + (TXT==null? "" : System.Uri.EscapeDataString(TXT));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -351,17 +350,14 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
-				{
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				using JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(streamContent));
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<Search_Results>(jsonReader);
-				}
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -385,8 +381,7 @@ namespace MyNS
 		public async Task<Search_Results> DomainsTld_zone_idGetByApi_keyAndDateAndPageAndLimitAndDomainAndCountryAndIsDeadAndAAndNSAndCNAMEAndMXAndTXTAsync(string api_key, string date, string page, int limit, string domain, string country, bool isDead, string A, string NS, string CNAME, string MX, string TXT, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "domains/tld/{zone_id}?api_key=" + (api_key==null? "" : System.Uri.EscapeDataString(api_key))+"&date=" + (date==null? "" : System.Uri.EscapeDataString(date))+"&page=" + (page==null? "" : System.Uri.EscapeDataString(page))+"&limit="+limit+"&domain=" + (domain==null? "" : System.Uri.EscapeDataString(domain))+"&country=" + (country==null? "" : System.Uri.EscapeDataString(country))+"&isDead="+isDead+"&A=" + (A==null? "" : System.Uri.EscapeDataString(A))+"&NS=" + (NS==null? "" : System.Uri.EscapeDataString(NS))+"&CNAME=" + (CNAME==null? "" : System.Uri.EscapeDataString(CNAME))+"&MX=" + (MX==null? "" : System.Uri.EscapeDataString(MX))+"&TXT=" + (TXT==null? "" : System.Uri.EscapeDataString(TXT));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -396,17 +391,14 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
-				{
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				using JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(streamContent));
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<Search_Results>(jsonReader);
-				}
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -419,8 +411,7 @@ namespace MyNS
 		public async Task DomainsTld_zone_idDownloadGetByApi_keyAndDateAsync(string api_key, string date, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "domains/tld/{zone_id}/download?api_key=" + (api_key==null? "" : System.Uri.EscapeDataString(api_key))+"&date=" + (date==null? "" : System.Uri.EscapeDataString(date));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -434,7 +425,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -458,8 +448,7 @@ namespace MyNS
 		public async Task<Search_Results> DomainsTld_zone_idSearchGetByApi_keyAndDateAndPageAndLimitAndDomainAndCountryAndIsDeadAndAAndNSAndCNAMEAndMXAndTXTAsync(string api_key, string date, string page, int limit, string domain, string country, bool isDead, string A, string NS, string CNAME, string MX, string TXT, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "domains/tld/{zone_id}/search?api_key=" + (api_key==null? "" : System.Uri.EscapeDataString(api_key))+"&date=" + (date==null? "" : System.Uri.EscapeDataString(date))+"&page=" + (page==null? "" : System.Uri.EscapeDataString(page))+"&limit="+limit+"&domain=" + (domain==null? "" : System.Uri.EscapeDataString(domain))+"&country=" + (country==null? "" : System.Uri.EscapeDataString(country))+"&isDead="+isDead+"&A=" + (A==null? "" : System.Uri.EscapeDataString(A))+"&NS=" + (NS==null? "" : System.Uri.EscapeDataString(NS))+"&CNAME=" + (CNAME==null? "" : System.Uri.EscapeDataString(CNAME))+"&MX=" + (MX==null? "" : System.Uri.EscapeDataString(MX))+"&TXT=" + (TXT==null? "" : System.Uri.EscapeDataString(TXT));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -469,17 +458,14 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
-				{
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				using JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(streamContent));
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<Search_Results>(jsonReader);
-				}
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -495,8 +481,7 @@ namespace MyNS
 		public async Task<Search_Results> DomainsUpdatesAddedGetByApi_keyAndDateAndPageAndLimitAsync(string api_key, string date, string page, int limit, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "domains/updates/added?api_key=" + (api_key==null? "" : System.Uri.EscapeDataString(api_key))+"&date=" + (date==null? "" : System.Uri.EscapeDataString(date))+"&page=" + (page==null? "" : System.Uri.EscapeDataString(page))+"&limit="+limit;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -506,17 +491,14 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
-				{
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				using JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(streamContent));
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<Search_Results>(jsonReader);
-				}
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -529,8 +511,7 @@ namespace MyNS
 		public async Task DomainsUpdatesAddedDownloadGetByApi_keyAndDateAsync(string api_key, string date, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "domains/updates/added/download?api_key=" + (api_key==null? "" : System.Uri.EscapeDataString(api_key))+"&date=" + (date==null? "" : System.Uri.EscapeDataString(date));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -544,7 +525,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -560,8 +540,7 @@ namespace MyNS
 		public async Task<Search_Results> DomainsUpdatesDeletedGetByApi_keyAndDateAndPageAndLimitAsync(string api_key, string date, string page, int limit, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "domains/updates/deleted?api_key=" + (api_key==null? "" : System.Uri.EscapeDataString(api_key))+"&date=" + (date==null? "" : System.Uri.EscapeDataString(date))+"&page=" + (page==null? "" : System.Uri.EscapeDataString(page))+"&limit="+limit;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -571,17 +550,14 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
-				{
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				using JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(streamContent));
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<Search_Results>(jsonReader);
-				}
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -594,8 +570,7 @@ namespace MyNS
 		public async Task DomainsUpdatesDeletedDownloadGetByApi_keyAndDateAsync(string api_key, string date, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "domains/updates/deleted/download?api_key=" + (api_key==null? "" : System.Uri.EscapeDataString(api_key))+"&date=" + (date==null? "" : System.Uri.EscapeDataString(date));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -609,7 +584,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -622,8 +596,7 @@ namespace MyNS
 		public async Task<Update_model> DomainsUpdatesListGetByApi_keyAsync(string api_key, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "domains/updates/list?api_key=" + (api_key==null? "" : System.Uri.EscapeDataString(api_key));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -633,17 +606,14 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
-				{
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				using JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(streamContent));
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<Update_model>(jsonReader);
-				}
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -655,8 +625,7 @@ namespace MyNS
 		public async Task<API_Key_Info> InfoApiGetByApi_keyAsync(string api_key, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "info/api?api_key=" + (api_key==null? "" : System.Uri.EscapeDataString(api_key));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -666,17 +635,14 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
-				{
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				using JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(streamContent));
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<API_Key_Info>(jsonReader);
-				}
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -690,8 +656,7 @@ namespace MyNS
 		public async Task<Zone_stats[]> InfoStatGetByPageAndLimitAsync(string page, int limit, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "info/stat/?page=" + (page==null? "" : System.Uri.EscapeDataString(page))+"&limit="+limit;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -701,17 +666,14 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
-				{
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				using JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(streamContent));
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<Zone_stats[]>(jsonReader);
-				}
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -725,8 +687,7 @@ namespace MyNS
 		public async Task<Zone_stats> InfoStat_zoneGetByPageAndLimitAsync(string page, int limit, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "info/stat/{zone}?page=" + (page==null? "" : System.Uri.EscapeDataString(page))+"&limit="+limit;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -736,17 +697,14 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
-				{
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				using JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(streamContent));
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<Zone_stats>(jsonReader);
-				}
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -758,8 +716,7 @@ namespace MyNS
 		public async Task<Zone_info[]> InfoTldGetAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "info/tld/";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -769,17 +726,14 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
-				{
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				using JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(streamContent));
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<Zone_info[]>(jsonReader);
-				}
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -793,8 +747,7 @@ namespace MyNS
 		public async Task<Zone_info> InfoTld_zoneGetByPageAndLimitAsync(string page, int limit, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "info/tld/{zone}?page=" + (page==null? "" : System.Uri.EscapeDataString(page))+"&limit="+limit;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -804,17 +757,14 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
-				{
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				using JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(streamContent));
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<Zone_info>(jsonReader);
-				}
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

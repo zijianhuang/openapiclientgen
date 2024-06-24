@@ -948,8 +948,7 @@ namespace MyNS
 		public async Task<GoogleFirebaseAppdistroV1alphaApp> Firebaseappdistribution_apps_getAsync(string mobilesdkAppId, Firebaseappdistribution_apps_getAppView appView, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1alpha/apps/"+ (mobilesdkAppId==null? "" : System.Uri.EscapeDataString(mobilesdkAppId))+"&appView=" + appView;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -959,13 +958,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<GoogleFirebaseAppdistroV1alphaApp>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<GoogleFirebaseAppdistroV1alphaApp>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -978,19 +976,17 @@ namespace MyNS
 		public async Task<GoogleFirebaseAppdistroV1alphaProvisionAppResponse> Firebaseappdistribution_apps_provisionAppAsync(string mobilesdkAppId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1alpha/apps/"+ (mobilesdkAppId==null? "" : System.Uri.EscapeDataString(mobilesdkAppId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<GoogleFirebaseAppdistroV1alphaProvisionAppResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<GoogleFirebaseAppdistroV1alphaProvisionAppResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1003,8 +999,7 @@ namespace MyNS
 		public async Task<GoogleFirebaseAppdistroV1alphaJwt> Firebaseappdistribution_apps_getJwtAsync(string mobilesdkAppId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1alpha/apps/"+ (mobilesdkAppId==null? "" : System.Uri.EscapeDataString(mobilesdkAppId))+"/jwt";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1014,13 +1009,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<GoogleFirebaseAppdistroV1alphaJwt>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<GoogleFirebaseAppdistroV1alphaJwt>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1034,8 +1028,7 @@ namespace MyNS
 		public async Task<GoogleFirebaseAppdistroV1alphaGetReleaseByUploadHashResponse> Firebaseappdistribution_apps_release_by_hash_getAsync(string mobilesdkAppId, string uploadHash, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1alpha/apps/"+ (mobilesdkAppId==null? "" : System.Uri.EscapeDataString(mobilesdkAppId))+"/release_by_hash/"+ (uploadHash==null? "" : System.Uri.EscapeDataString(uploadHash));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1045,13 +1038,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<GoogleFirebaseAppdistroV1alphaGetReleaseByUploadHashResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<GoogleFirebaseAppdistroV1alphaGetReleaseByUploadHashResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1065,10 +1057,8 @@ namespace MyNS
 		public async Task<GoogleFirebaseAppdistroV1alphaEnableAccessOnReleaseResponse> Firebaseappdistribution_apps_releases_enable_accessAsync(string mobilesdkAppId, string releaseId, GoogleFirebaseAppdistroV1alphaEnableAccessOnReleaseRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1alpha/apps/"+ (mobilesdkAppId==null? "" : System.Uri.EscapeDataString(mobilesdkAppId))+"/releases/"+ (releaseId==null? "" : System.Uri.EscapeDataString(releaseId))+"/enable_access";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -1079,13 +1069,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<GoogleFirebaseAppdistroV1alphaEnableAccessOnReleaseResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<GoogleFirebaseAppdistroV1alphaEnableAccessOnReleaseResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1099,10 +1088,8 @@ namespace MyNS
 		public async Task<GoogleFirebaseAppdistroV1alphaCreateReleaseNotesResponse> Firebaseappdistribution_apps_releases_notes_createAsync(string mobilesdkAppId, string releaseId, GoogleFirebaseAppdistroV1alphaCreateReleaseNotesRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1alpha/apps/"+ (mobilesdkAppId==null? "" : System.Uri.EscapeDataString(mobilesdkAppId))+"/releases/"+ (releaseId==null? "" : System.Uri.EscapeDataString(releaseId))+"/notes";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -1113,13 +1100,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<GoogleFirebaseAppdistroV1alphaCreateReleaseNotesResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<GoogleFirebaseAppdistroV1alphaCreateReleaseNotesResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1133,8 +1119,7 @@ namespace MyNS
 		public async Task<GoogleFirebaseAppdistroV1alphaGetTesterUdidsResponse> Firebaseappdistribution_apps_testers_getTesterUdidsAsync(string mobilesdkAppId, string project, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1alpha/apps/"+ (mobilesdkAppId==null? "" : System.Uri.EscapeDataString(mobilesdkAppId))+"/testers:getTesterUdids&project=" + (project==null? "" : System.Uri.EscapeDataString(project));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1144,13 +1129,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<GoogleFirebaseAppdistroV1alphaGetTesterUdidsResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<GoogleFirebaseAppdistroV1alphaGetTesterUdidsResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1164,8 +1148,7 @@ namespace MyNS
 		public async Task<GoogleFirebaseAppdistroV1alphaGetUploadStatusResponse> Firebaseappdistribution_apps_upload_status_getAsync(string mobilesdkAppId, string uploadToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1alpha/apps/"+ (mobilesdkAppId==null? "" : System.Uri.EscapeDataString(mobilesdkAppId))+"/upload_status/"+ (uploadToken==null? "" : System.Uri.EscapeDataString(uploadToken));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1175,13 +1158,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<GoogleFirebaseAppdistroV1alphaGetUploadStatusResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<GoogleFirebaseAppdistroV1alphaGetUploadStatusResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1194,8 +1176,7 @@ namespace MyNS
 		public async Task<GoogleFirebaseAppdistroV1alphaReleaseTest> Firebaseappdistribution_projects_apps_releases_tests_getAsync(string name, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1alpha/"+ (name==null? "" : System.Uri.EscapeDataString(name));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1205,13 +1186,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<GoogleFirebaseAppdistroV1alphaReleaseTest>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<GoogleFirebaseAppdistroV1alphaReleaseTest>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1225,10 +1205,8 @@ namespace MyNS
 		public async Task<GoogleFirebaseAppdistroV1alphaTestConfig> Firebaseappdistribution_projects_apps_updateTestConfigAsync(string name, string updateMask, GoogleFirebaseAppdistroV1alphaTestConfig requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1alpha/"+ (name==null? "" : System.Uri.EscapeDataString(name))+"&updateMask=" + (updateMask==null? "" : System.Uri.EscapeDataString(updateMask));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -1239,13 +1217,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<GoogleFirebaseAppdistroV1alphaTestConfig>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<GoogleFirebaseAppdistroV1alphaTestConfig>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1260,8 +1237,7 @@ namespace MyNS
 		public async Task<GoogleFirebaseAppdistroV1alphaListReleaseTestsResponse> Firebaseappdistribution_projects_apps_releases_tests_listAsync(string parent, int pageSize, string pageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1alpha/"+ (parent==null? "" : System.Uri.EscapeDataString(parent))+"/tests&pageSize="+pageSize+"&pageToken=" + (pageToken==null? "" : System.Uri.EscapeDataString(pageToken));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1271,13 +1247,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<GoogleFirebaseAppdistroV1alphaListReleaseTestsResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<GoogleFirebaseAppdistroV1alphaListReleaseTestsResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1291,10 +1266,8 @@ namespace MyNS
 		public async Task<GoogleFirebaseAppdistroV1alphaReleaseTest> Firebaseappdistribution_projects_apps_releases_tests_createAsync(string parent, string releaseTestId, GoogleFirebaseAppdistroV1alphaReleaseTest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1alpha/"+ (parent==null? "" : System.Uri.EscapeDataString(parent))+"/tests&releaseTestId=" + (releaseTestId==null? "" : System.Uri.EscapeDataString(releaseTestId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -1305,13 +1278,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<GoogleFirebaseAppdistroV1alphaReleaseTest>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<GoogleFirebaseAppdistroV1alphaReleaseTest>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1325,8 +1297,7 @@ namespace MyNS
 		public async Task<GoogleFirebaseAppdistroV1alphaGetTesterUdidsResponse> Firebaseappdistribution_projects_testers_getUdidsAsync(string project, string mobilesdkAppId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1alpha/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/testers:udids&mobilesdkAppId=" + (mobilesdkAppId==null? "" : System.Uri.EscapeDataString(mobilesdkAppId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1336,13 +1307,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<GoogleFirebaseAppdistroV1alphaGetTesterUdidsResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<GoogleFirebaseAppdistroV1alphaGetTesterUdidsResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

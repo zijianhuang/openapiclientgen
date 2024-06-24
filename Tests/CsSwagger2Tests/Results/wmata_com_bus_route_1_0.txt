@@ -177,8 +177,7 @@ namespace MyNS
 		public async Task BusPositionsGetByRouteIDAndLatAndLonAndRadiusAsync(BusPositionsGetByRouteIDAndLatAndLonAndRadiusRouteID RouteID, string Lat, string Lon, string Radius, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "BusPositions?RouteID=" + RouteID+"&Lat=" + (Lat==null? "" : System.Uri.EscapeDataString(Lat))+"&Lon=" + (Lon==null? "" : System.Uri.EscapeDataString(Lon))+"&Radius=" + (Radius==null? "" : System.Uri.EscapeDataString(Radius));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -192,7 +191,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -314,8 +312,7 @@ namespace MyNS
 		public async Task RouteDetailsGetByRouteIDAndDateAsync(RouteDetailsGetByRouteIDAndDateRouteID RouteID, string Date, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "RouteDetails?RouteID=" + RouteID+"&Date=" + (Date==null? "" : System.Uri.EscapeDataString(Date));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -329,7 +326,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -491,8 +487,7 @@ namespace MyNS
 		public async Task RouteScheduleGetByRouteIDAndDateAndIncludingVariationsAsync(RouteScheduleGetByRouteIDAndDateAndIncludingVariationsRouteID RouteID, string Date, RouteScheduleGetByRouteIDAndDateAndIncludingVariationsIncludingVariations IncludingVariations, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "RouteSchedule?RouteID=" + RouteID+"&Date=" + (Date==null? "" : System.Uri.EscapeDataString(Date))+"&IncludingVariations="+IncludingVariations;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -506,7 +501,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -573,8 +567,7 @@ namespace MyNS
 		public async Task RoutesGetAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "Routes";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -588,7 +581,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -751,8 +743,7 @@ namespace MyNS
 		public async Task StopScheduleGetByStopIDAndDateAsync(StopScheduleGetByStopIDAndDateStopID StopID, string Date, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "StopSchedule?StopID=" + StopID+"&Date=" + (Date==null? "" : System.Uri.EscapeDataString(Date));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -766,7 +757,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -849,8 +839,7 @@ namespace MyNS
 		public async Task StopsGetByLatAndLonAndRadiusAsync(StopsGetByLatAndLonAndRadiusLat Lat, StopsGetByLatAndLonAndRadiusLon Lon, StopsGetByLatAndLonAndRadiusRadius Radius, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "Stops?Lat=" + Lat+"&Lon=" + Lon+"&Radius=" + Radius;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -864,7 +853,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1008,8 +996,7 @@ namespace MyNS
 		public async Task JsonJBusPositionsGetByRouteIDAndLatAndLonAndRadiusAsync(JsonJBusPositionsGetByRouteIDAndLatAndLonAndRadiusRouteID RouteID, double Lat, double Lon, double Radius, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "json/jBusPositions?RouteID=" + RouteID+"&Lat="+Lat+"&Lon="+Lon+"&Radius="+Radius;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1023,7 +1010,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1201,8 +1187,7 @@ namespace MyNS
 		public async Task JsonJRouteDetailsGetByRouteIDAndDateAsync(JsonJRouteDetailsGetByRouteIDAndDateRouteID RouteID, string Date, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "json/jRouteDetails?RouteID=" + RouteID+"&Date=" + (Date==null? "" : System.Uri.EscapeDataString(Date));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1216,7 +1201,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1378,8 +1362,7 @@ namespace MyNS
 		public async Task JsonJRouteScheduleGetByRouteIDAndDateAndIncludingVariationsAsync(JsonJRouteScheduleGetByRouteIDAndDateAndIncludingVariationsRouteID RouteID, string Date, JsonJRouteScheduleGetByRouteIDAndDateAndIncludingVariationsIncludingVariations IncludingVariations, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "json/jRouteSchedule?RouteID=" + RouteID+"&Date=" + (Date==null? "" : System.Uri.EscapeDataString(Date))+"&IncludingVariations="+IncludingVariations;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1393,7 +1376,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1459,8 +1441,7 @@ namespace MyNS
 		public async Task JsonJRoutesGetAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "json/jRoutes";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1474,7 +1455,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1637,8 +1617,7 @@ namespace MyNS
 		public async Task JsonJStopScheduleGetByStopIDAndDateAsync(JsonJStopScheduleGetByStopIDAndDateStopID StopID, string Date, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "json/jStopSchedule?StopID=" + StopID+"&Date=" + (Date==null? "" : System.Uri.EscapeDataString(Date));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1652,7 +1631,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1735,8 +1713,7 @@ namespace MyNS
 		public async Task JsonJStopsGetByLatAndLonAndRadiusAsync(JsonJStopsGetByLatAndLonAndRadiusLat Lat, JsonJStopsGetByLatAndLonAndRadiusLon Lon, JsonJStopsGetByLatAndLonAndRadiusRadius Radius, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "json/jStops?Lat="+Lat+"&Lon="+Lon+"&Radius="+Radius;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1750,7 +1727,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

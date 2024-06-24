@@ -1876,19 +1876,17 @@ namespace MyNS
 		public async Task<DfsSlate[]> DfsSlatesByDateAsync(DfsSlatesByDateFormat format, string date)
 		{
 			var requestUri = ""+format+"/DfsSlatesByDate/"+ (date==null? "" : System.Uri.EscapeDataString(date));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<DfsSlate[]>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<DfsSlate[]>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1904,19 +1902,17 @@ namespace MyNS
 		public async Task<DfsSlate[]> DfsSlatesByWeekAsync(DfsSlatesByDateFormat format, string season, string week)
 		{
 			var requestUri = ""+format+"/DfsSlatesByWeek/"+ (season==null? "" : System.Uri.EscapeDataString(season))+"/"+ (week==null? "" : System.Uri.EscapeDataString(week));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<DfsSlate[]>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<DfsSlate[]>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1934,19 +1930,17 @@ namespace MyNS
 		public async Task<FantasyDefenseGameProjection[]> ProjectedFantasyDefenseGameStatsWDfsSalariesAsync(DfsSlatesByDateFormat format, string season, string week)
 		{
 			var requestUri = ""+format+"/FantasyDefenseProjectionsByGame/"+ (season==null? "" : System.Uri.EscapeDataString(season))+"/"+ (week==null? "" : System.Uri.EscapeDataString(week));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<FantasyDefenseGameProjection[]>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<FantasyDefenseGameProjection[]>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1961,19 +1955,17 @@ namespace MyNS
 		public async Task<FantasyDefenseSeasonProjection[]> ProjectedFantasyDefenseSeasonStatsWByeWeekAdpAsync(DfsSlatesByDateFormat format, string season)
 		{
 			var requestUri = ""+format+"/FantasyDefenseProjectionsBySeason/"+ (season==null? "" : System.Uri.EscapeDataString(season));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<FantasyDefenseSeasonProjection[]>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<FantasyDefenseSeasonProjection[]>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1992,19 +1984,17 @@ namespace MyNS
 		public async Task<PlayerGameProjection> IdpProjectedPlayerGameStatsByPlayerWInjuriesLineupsDfsSalariesAsync(DfsSlatesByDateFormat format, string season, string week, string playerid)
 		{
 			var requestUri = ""+format+"/IdpPlayerGameProjectionStatsByPlayerID/"+ (season==null? "" : System.Uri.EscapeDataString(season))+"/"+ (week==null? "" : System.Uri.EscapeDataString(week))+"/"+ (playerid==null? "" : System.Uri.EscapeDataString(playerid));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<PlayerGameProjection>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<PlayerGameProjection>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2023,19 +2013,17 @@ namespace MyNS
 		public async Task<PlayerGameProjection[]> IdpProjectedPlayerGameStatsByTeamWInjuriesLineupsDfsSalariesAsync(DfsSlatesByDateFormat format, string season, string week, string team)
 		{
 			var requestUri = ""+format+"/IdpPlayerGameProjectionStatsByTeam/"+ (season==null? "" : System.Uri.EscapeDataString(season))+"/"+ (week==null? "" : System.Uri.EscapeDataString(week))+"/"+ (team==null? "" : System.Uri.EscapeDataString(team));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<PlayerGameProjection[]>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<PlayerGameProjection[]>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2053,19 +2041,17 @@ namespace MyNS
 		public async Task<PlayerGameProjection[]> IdpProjectedPlayerGameStatsByWeekWInjuriesLineupsDfsSalariesAsync(DfsSlatesByDateFormat format, string season, string week)
 		{
 			var requestUri = ""+format+"/IdpPlayerGameProjectionStatsByWeek/"+ (season==null? "" : System.Uri.EscapeDataString(season))+"/"+ (week==null? "" : System.Uri.EscapeDataString(week));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<PlayerGameProjection[]>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<PlayerGameProjection[]>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2085,19 +2071,17 @@ namespace MyNS
 		public async Task<PlayerGameProjection> ProjectedPlayerGameStatsByPlayerWInjuriesLineupsDfsSalariesAsync(DfsSlatesByDateFormat format, string season, string week, string playerid)
 		{
 			var requestUri = ""+format+"/PlayerGameProjectionStatsByPlayerID/"+ (season==null? "" : System.Uri.EscapeDataString(season))+"/"+ (week==null? "" : System.Uri.EscapeDataString(week))+"/"+ (playerid==null? "" : System.Uri.EscapeDataString(playerid));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<PlayerGameProjection>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<PlayerGameProjection>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2116,19 +2100,17 @@ namespace MyNS
 		public async Task<PlayerGameProjection[]> ProjectedPlayerGameStatsByTeamWInjuriesLineupsDfsSalariesAsync(DfsSlatesByDateFormat format, string season, string week, string team)
 		{
 			var requestUri = ""+format+"/PlayerGameProjectionStatsByTeam/"+ (season==null? "" : System.Uri.EscapeDataString(season))+"/"+ (week==null? "" : System.Uri.EscapeDataString(week))+"/"+ (team==null? "" : System.Uri.EscapeDataString(team));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<PlayerGameProjection[]>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<PlayerGameProjection[]>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2147,19 +2129,17 @@ namespace MyNS
 		public async Task<PlayerGameProjection[]> ProjectedPlayerGameStatsByWeekWInjuriesLineupsDfsSalariesAsync(DfsSlatesByDateFormat format, string season, string week)
 		{
 			var requestUri = ""+format+"/PlayerGameProjectionStatsByWeek/"+ (season==null? "" : System.Uri.EscapeDataString(season))+"/"+ (week==null? "" : System.Uri.EscapeDataString(week));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<PlayerGameProjection[]>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<PlayerGameProjection[]>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2174,19 +2154,17 @@ namespace MyNS
 		public async Task<PlayerSeasonProjection[]> ProjectedPlayerSeasonStatsWByeWeekAdpAsync(DfsSlatesByDateFormat format, string season)
 		{
 			var requestUri = ""+format+"/PlayerSeasonProjectionStats/"+ (season==null? "" : System.Uri.EscapeDataString(season));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<PlayerSeasonProjection[]>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<PlayerSeasonProjection[]>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2202,19 +2180,17 @@ namespace MyNS
 		public async Task<PlayerSeasonProjection> ProjectedPlayerSeasonStatsByPlayerWByeWeekAdpAsync(DfsSlatesByDateFormat format, string season, string playerid)
 		{
 			var requestUri = ""+format+"/PlayerSeasonProjectionStatsByPlayerID/"+ (season==null? "" : System.Uri.EscapeDataString(season))+"/"+ (playerid==null? "" : System.Uri.EscapeDataString(playerid));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<PlayerSeasonProjection>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<PlayerSeasonProjection>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2230,19 +2206,17 @@ namespace MyNS
 		public async Task<PlayerSeasonProjection[]> ProjectedPlayerSeasonStatsByTeamWByeWeekAdpAsync(DfsSlatesByDateFormat format, string season, string team)
 		{
 			var requestUri = ""+format+"/PlayerSeasonProjectionStatsByTeam/"+ (season==null? "" : System.Uri.EscapeDataString(season))+"/"+ (team==null? "" : System.Uri.EscapeDataString(team));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<PlayerSeasonProjection[]>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<PlayerSeasonProjection[]>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

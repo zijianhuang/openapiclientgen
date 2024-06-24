@@ -600,19 +600,17 @@ namespace MyNS
 		public async Task<DfsSlate[]> DfsSlatesByDateAsync(DfsSlatesByDateFormat format, string date)
 		{
 			var requestUri = ""+format+"/DfsSlatesByDate/"+ (date==null? "" : System.Uri.EscapeDataString(date));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<DfsSlate[]>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<DfsSlate[]>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -627,19 +625,17 @@ namespace MyNS
 		public async Task<PlayerGameProjection[]> ProjectedPlayerGameStatsByDateWInjuriesDfsSalariesAsync(DfsSlatesByDateFormat format, string date)
 		{
 			var requestUri = ""+format+"/PlayerGameProjectionStatsByDate/"+ (date==null? "" : System.Uri.EscapeDataString(date));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<PlayerGameProjection[]>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<PlayerGameProjection[]>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -656,19 +652,17 @@ namespace MyNS
 		public async Task<PlayerGameProjection> ProjectedPlayerGameStatsByPlayerWInjuriesDfsSalariesAsync(DfsSlatesByDateFormat format, string date, string playerid)
 		{
 			var requestUri = ""+format+"/PlayerGameProjectionStatsByPlayer/"+ (date==null? "" : System.Uri.EscapeDataString(date))+"/"+ (playerid==null? "" : System.Uri.EscapeDataString(playerid));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<PlayerGameProjection>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<PlayerGameProjection>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

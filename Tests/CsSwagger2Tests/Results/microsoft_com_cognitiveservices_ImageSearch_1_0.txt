@@ -1677,19 +1677,17 @@ namespace MyNS
 		public async Task<ImageInsights> Images_DetailsAsync(float cab, float cal, float car, float cat, Images_DetailsCt ct, string cc, string id, string imgUrl, string insightsToken, string[] modules, string mkt, string q, Images_DetailsSafeSearch safeSearch, string setLang)
 		{
 			var requestUri = "images/details?cab="+cab+"&cal="+cal+"&car="+car+"&cat="+cat+"&ct=" + ct+"&cc=" + (cc==null? "" : System.Uri.EscapeDataString(cc))+"&id=" + (id==null? "" : System.Uri.EscapeDataString(id))+"&imgUrl=" + (imgUrl==null? "" : System.Uri.EscapeDataString(imgUrl))+"&insightsToken=" + (insightsToken==null? "" : System.Uri.EscapeDataString(insightsToken))+"&"+string.Join("&", modules.Select(z => $"modules={System.Uri.EscapeDataString(z.ToString())}"))+"&mkt=" + (mkt==null? "" : System.Uri.EscapeDataString(mkt))+"&q=" + (q==null? "" : System.Uri.EscapeDataString(q))+"&safeSearch=" + safeSearch+"&setLang=" + (setLang==null? "" : System.Uri.EscapeDataString(setLang));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ImageInsights>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ImageInsights>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1747,19 +1745,17 @@ namespace MyNS
 					int width)
 		{
 			var requestUri = "images/search?aspect=" + aspect+"&color=" + color+"&cc=" + (cc==null? "" : System.Uri.EscapeDataString(cc))+"&count="+count+"&freshness=" + freshness+"&height="+height+"&id=" + (id==null? "" : System.Uri.EscapeDataString(id))+"&imageContent=" + imageContent+"&imageType=" + imageType+"&license=" + license+"&mkt=" + (mkt==null? "" : System.Uri.EscapeDataString(mkt))+"&maxFileSize="+maxFileSize+"&maxHeight="+maxHeight+"&maxWidth="+maxWidth+"&minFileSize="+minFileSize+"&minHeight="+minHeight+"&minWidth="+minWidth+"&offset="+offset+"&q=" + (q==null? "" : System.Uri.EscapeDataString(q))+"&safeSearch=" + safeSearch+"&size=" + size+"&setLang=" + (setLang==null? "" : System.Uri.EscapeDataString(setLang))+"&width="+width;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Images>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Images>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1775,19 +1771,17 @@ namespace MyNS
 		public async Task<TrendingImages> Images_TrendingAsync(string cc, string mkt, Images_DetailsSafeSearch safeSearch, string setLang)
 		{
 			var requestUri = "images/trending?cc=" + (cc==null? "" : System.Uri.EscapeDataString(cc))+"&mkt=" + (mkt==null? "" : System.Uri.EscapeDataString(mkt))+"&safeSearch=" + safeSearch+"&setLang=" + (setLang==null? "" : System.Uri.EscapeDataString(setLang));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<TrendingImages>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<TrendingImages>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

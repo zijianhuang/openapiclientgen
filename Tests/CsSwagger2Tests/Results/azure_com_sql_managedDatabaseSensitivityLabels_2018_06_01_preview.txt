@@ -146,19 +146,17 @@ namespace MyNS
 		public async Task<SensitivityLabelListResult> ManagedDatabaseSensitivityLabels_ListCurrentByDatabaseAsync(string resourceGroupName, string managedInstanceName, string databaseName, string filter, string subscriptionId, string api_version)
 		{
 			var requestUri = "subscriptions/"+ (subscriptionId==null? "" : System.Uri.EscapeDataString(subscriptionId))+"/resourceGroups/"+ (resourceGroupName==null? "" : System.Uri.EscapeDataString(resourceGroupName))+"/providers/Microsoft.Sql/managedInstances/"+ (managedInstanceName==null? "" : System.Uri.EscapeDataString(managedInstanceName))+"/databases/"+ (databaseName==null? "" : System.Uri.EscapeDataString(databaseName))+"/currentSensitivityLabels&$filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<SensitivityLabelListResult>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<SensitivityLabelListResult>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -177,19 +175,17 @@ namespace MyNS
 		public async Task<SensitivityLabelListResult> ManagedDatabaseSensitivityLabels_ListRecommendedByDatabaseAsync(string resourceGroupName, string managedInstanceName, string databaseName, bool includeDisabledRecommendations, string skipToken, string filter, string subscriptionId, string api_version)
 		{
 			var requestUri = "subscriptions/"+ (subscriptionId==null? "" : System.Uri.EscapeDataString(subscriptionId))+"/resourceGroups/"+ (resourceGroupName==null? "" : System.Uri.EscapeDataString(resourceGroupName))+"/providers/Microsoft.Sql/managedInstances/"+ (managedInstanceName==null? "" : System.Uri.EscapeDataString(managedInstanceName))+"/databases/"+ (databaseName==null? "" : System.Uri.EscapeDataString(databaseName))+"/recommendedSensitivityLabels&includeDisabledRecommendations="+includeDisabledRecommendations+"&$skipToken=" + (skipToken==null? "" : System.Uri.EscapeDataString(skipToken))+"&$filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<SensitivityLabelListResult>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<SensitivityLabelListResult>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -210,19 +206,17 @@ namespace MyNS
 		public async Task<SensitivityLabel> ManagedDatabaseSensitivityLabels_GetAsync(string resourceGroupName, string managedInstanceName, string databaseName, string schemaName, string tableName, string columnName, ManagedDatabaseSensitivityLabels_GetSensitivityLabelSource sensitivityLabelSource, string subscriptionId, string api_version)
 		{
 			var requestUri = "subscriptions/"+ (subscriptionId==null? "" : System.Uri.EscapeDataString(subscriptionId))+"/resourceGroups/"+ (resourceGroupName==null? "" : System.Uri.EscapeDataString(resourceGroupName))+"/providers/Microsoft.Sql/managedInstances/"+ (managedInstanceName==null? "" : System.Uri.EscapeDataString(managedInstanceName))+"/databases/"+ (databaseName==null? "" : System.Uri.EscapeDataString(databaseName))+"/schemas/"+ (schemaName==null? "" : System.Uri.EscapeDataString(schemaName))+"/tables/"+ (tableName==null? "" : System.Uri.EscapeDataString(tableName))+"/columns/"+ (columnName==null? "" : System.Uri.EscapeDataString(columnName))+"/sensitivityLabels/"+sensitivityLabelSource+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<SensitivityLabel>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<SensitivityLabel>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -244,22 +238,19 @@ namespace MyNS
 		public async Task<SensitivityLabel> ManagedDatabaseSensitivityLabels_CreateOrUpdateAsync(string resourceGroupName, string managedInstanceName, string databaseName, string schemaName, string tableName, string columnName, ManagedDatabaseSensitivityLabels_CreateOrUpdateSensitivityLabelSource sensitivityLabelSource, string subscriptionId, string api_version, SensitivityLabel requestBody)
 		{
 			var requestUri = "subscriptions/"+ (subscriptionId==null? "" : System.Uri.EscapeDataString(subscriptionId))+"/resourceGroups/"+ (resourceGroupName==null? "" : System.Uri.EscapeDataString(resourceGroupName))+"/providers/Microsoft.Sql/managedInstances/"+ (managedInstanceName==null? "" : System.Uri.EscapeDataString(managedInstanceName))+"/databases/"+ (databaseName==null? "" : System.Uri.EscapeDataString(databaseName))+"/schemas/"+ (schemaName==null? "" : System.Uri.EscapeDataString(schemaName))+"/tables/"+ (tableName==null? "" : System.Uri.EscapeDataString(tableName))+"/columns/"+ (columnName==null? "" : System.Uri.EscapeDataString(columnName))+"/sensitivityLabels/"+sensitivityLabelSource+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<SensitivityLabel>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<SensitivityLabel>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -280,8 +271,7 @@ namespace MyNS
 		public async Task ManagedDatabaseSensitivityLabels_DeleteAsync(string resourceGroupName, string managedInstanceName, string databaseName, string schemaName, string tableName, string columnName, ManagedDatabaseSensitivityLabels_CreateOrUpdateSensitivityLabelSource sensitivityLabelSource, string subscriptionId, string api_version)
 		{
 			var requestUri = "subscriptions/"+ (subscriptionId==null? "" : System.Uri.EscapeDataString(subscriptionId))+"/resourceGroups/"+ (resourceGroupName==null? "" : System.Uri.EscapeDataString(resourceGroupName))+"/providers/Microsoft.Sql/managedInstances/"+ (managedInstanceName==null? "" : System.Uri.EscapeDataString(managedInstanceName))+"/databases/"+ (databaseName==null? "" : System.Uri.EscapeDataString(databaseName))+"/schemas/"+ (schemaName==null? "" : System.Uri.EscapeDataString(schemaName))+"/tables/"+ (tableName==null? "" : System.Uri.EscapeDataString(tableName))+"/columns/"+ (columnName==null? "" : System.Uri.EscapeDataString(columnName))+"/sensitivityLabels/"+sensitivityLabelSource+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -290,7 +280,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -310,8 +299,7 @@ namespace MyNS
 		public async Task ManagedDatabaseSensitivityLabels_DisableRecommendationAsync(string resourceGroupName, string managedInstanceName, string databaseName, string schemaName, string tableName, string columnName, ManagedDatabaseSensitivityLabels_DisableRecommendationSensitivityLabelSource sensitivityLabelSource, string subscriptionId, string api_version)
 		{
 			var requestUri = "subscriptions/"+ (subscriptionId==null? "" : System.Uri.EscapeDataString(subscriptionId))+"/resourceGroups/"+ (resourceGroupName==null? "" : System.Uri.EscapeDataString(resourceGroupName))+"/providers/Microsoft.Sql/managedInstances/"+ (managedInstanceName==null? "" : System.Uri.EscapeDataString(managedInstanceName))+"/databases/"+ (databaseName==null? "" : System.Uri.EscapeDataString(databaseName))+"/schemas/"+ (schemaName==null? "" : System.Uri.EscapeDataString(schemaName))+"/tables/"+ (tableName==null? "" : System.Uri.EscapeDataString(tableName))+"/columns/"+ (columnName==null? "" : System.Uri.EscapeDataString(columnName))+"/sensitivityLabels/"+sensitivityLabelSource+"/disable&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -320,7 +308,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -340,8 +327,7 @@ namespace MyNS
 		public async Task ManagedDatabaseSensitivityLabels_EnableRecommendationAsync(string resourceGroupName, string managedInstanceName, string databaseName, string schemaName, string tableName, string columnName, ManagedDatabaseSensitivityLabels_DisableRecommendationSensitivityLabelSource sensitivityLabelSource, string subscriptionId, string api_version)
 		{
 			var requestUri = "subscriptions/"+ (subscriptionId==null? "" : System.Uri.EscapeDataString(subscriptionId))+"/resourceGroups/"+ (resourceGroupName==null? "" : System.Uri.EscapeDataString(resourceGroupName))+"/providers/Microsoft.Sql/managedInstances/"+ (managedInstanceName==null? "" : System.Uri.EscapeDataString(managedInstanceName))+"/databases/"+ (databaseName==null? "" : System.Uri.EscapeDataString(databaseName))+"/schemas/"+ (schemaName==null? "" : System.Uri.EscapeDataString(schemaName))+"/tables/"+ (tableName==null? "" : System.Uri.EscapeDataString(tableName))+"/columns/"+ (columnName==null? "" : System.Uri.EscapeDataString(columnName))+"/sensitivityLabels/"+sensitivityLabelSource+"/enable&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -350,7 +336,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

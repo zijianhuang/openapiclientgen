@@ -463,19 +463,17 @@ namespace MyNS
 		public async Task<SearchResponse> CustomInstance_SearchAsync(string customConfig, string cc, int count, string mkt, int offset, string q, CustomInstance_SearchSafeSearch safeSearch, string setLang, bool textDecorations, CustomInstance_SearchTextFormat textFormat)
 		{
 			var requestUri = "search?customConfig=" + (customConfig==null? "" : System.Uri.EscapeDataString(customConfig))+"&cc=" + (cc==null? "" : System.Uri.EscapeDataString(cc))+"&count="+count+"&mkt=" + (mkt==null? "" : System.Uri.EscapeDataString(mkt))+"&offset="+offset+"&q=" + (q==null? "" : System.Uri.EscapeDataString(q))+"&safeSearch=" + safeSearch+"&setLang=" + (setLang==null? "" : System.Uri.EscapeDataString(setLang))+"&textDecorations="+textDecorations+"&textFormat=" + textFormat;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<SearchResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<SearchResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

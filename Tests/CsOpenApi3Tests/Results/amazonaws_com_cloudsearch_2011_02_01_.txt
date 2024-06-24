@@ -1497,8 +1497,7 @@ namespace MyNS
 		public async Task GET_CreateDomainAsync(string DomainName, GET_CreateDomainAction Action, GET_CreateDomainVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=CreateDomain?DomainName=" + (DomainName==null? "" : System.Uri.EscapeDataString(DomainName))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1512,7 +1511,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1527,8 +1525,7 @@ namespace MyNS
 		public async Task GET_DefineIndexFieldAsync(string DomainName, GET_DefineIndexFieldIndexField IndexField, GET_DefineIndexFieldAction Action, GET_DefineIndexFieldVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DefineIndexField?DomainName=" + (DomainName==null? "" : System.Uri.EscapeDataString(DomainName))+"&IndexField=" + IndexField+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1542,7 +1539,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1557,8 +1553,7 @@ namespace MyNS
 		public async Task GET_DefineRankExpressionAsync(string DomainName, GET_DefineRankExpressionRankExpression RankExpression, GET_DefineRankExpressionAction Action, GET_DefineRankExpressionVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DefineRankExpression?DomainName=" + (DomainName==null? "" : System.Uri.EscapeDataString(DomainName))+"&RankExpression=" + RankExpression+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1572,7 +1567,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1587,8 +1581,7 @@ namespace MyNS
 		public async Task GET_DeleteDomainAsync(string DomainName, GET_DeleteDomainAction Action, GET_DeleteDomainVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DeleteDomain?DomainName=" + (DomainName==null? "" : System.Uri.EscapeDataString(DomainName))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1602,7 +1595,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1620,8 +1612,7 @@ namespace MyNS
 		public async Task GET_DeleteIndexFieldAsync(string DomainName, string IndexFieldName, GET_DeleteIndexFieldAction Action, GET_DeleteIndexFieldVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DeleteIndexField?DomainName=" + (DomainName==null? "" : System.Uri.EscapeDataString(DomainName))+"&IndexFieldName=" + (IndexFieldName==null? "" : System.Uri.EscapeDataString(IndexFieldName))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1635,7 +1626,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1654,8 +1644,7 @@ namespace MyNS
 		public async Task GET_DeleteRankExpressionAsync(string DomainName, string RankName, GET_DeleteRankExpressionAction Action, GET_DeleteRankExpressionVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DeleteRankExpression?DomainName=" + (DomainName==null? "" : System.Uri.EscapeDataString(DomainName))+"&RankName=" + (RankName==null? "" : System.Uri.EscapeDataString(RankName))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1669,7 +1658,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1685,8 +1673,7 @@ namespace MyNS
 		public async Task GET_DescribeAvailabilityOptionsAsync(string DomainName, GET_DescribeAvailabilityOptionsAction Action, GET_DescribeAvailabilityOptionsVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribeAvailabilityOptions?DomainName=" + (DomainName==null? "" : System.Uri.EscapeDataString(DomainName))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1700,7 +1687,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1715,8 +1701,7 @@ namespace MyNS
 		public async Task GET_DescribeDefaultSearchFieldAsync(string DomainName, GET_DescribeDefaultSearchFieldAction Action, GET_DescribeDefaultSearchFieldVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribeDefaultSearchField?DomainName=" + (DomainName==null? "" : System.Uri.EscapeDataString(DomainName))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1730,7 +1715,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1743,8 +1727,7 @@ namespace MyNS
 		public async Task GET_DescribeDomainsAsync(string[] DomainNames, GET_DescribeDomainsAction Action, GET_DescribeDomainsVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribeDomains?"+string.Join("&", DomainNames.Select(z => $"DomainNames={System.Uri.EscapeDataString(z.ToString())}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1758,7 +1741,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1774,8 +1756,7 @@ namespace MyNS
 		public async Task GET_DescribeIndexFieldsAsync(string DomainName, string[] FieldNames, GET_DescribeIndexFieldsAction Action, GET_DescribeIndexFieldsVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribeIndexFields?DomainName=" + (DomainName==null? "" : System.Uri.EscapeDataString(DomainName))+"&"+string.Join("&", FieldNames.Select(z => $"FieldNames={System.Uri.EscapeDataString(z.ToString())}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1789,7 +1770,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1805,8 +1785,7 @@ namespace MyNS
 		public async Task GET_DescribeRankExpressionsAsync(string DomainName, string[] RankNames, GET_DescribeRankExpressionsAction Action, GET_DescribeRankExpressionsVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribeRankExpressions?DomainName=" + (DomainName==null? "" : System.Uri.EscapeDataString(DomainName))+"&"+string.Join("&", RankNames.Select(z => $"RankNames={System.Uri.EscapeDataString(z.ToString())}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1820,7 +1799,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1835,8 +1813,7 @@ namespace MyNS
 		public async Task GET_DescribeServiceAccessPoliciesAsync(string DomainName, GET_DescribeServiceAccessPoliciesAction Action, GET_DescribeServiceAccessPoliciesVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribeServiceAccessPolicies?DomainName=" + (DomainName==null? "" : System.Uri.EscapeDataString(DomainName))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1850,7 +1827,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1865,8 +1841,7 @@ namespace MyNS
 		public async Task GET_DescribeStemmingOptionsAsync(string DomainName, GET_DescribeStemmingOptionsAction Action, GET_DescribeStemmingOptionsVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribeStemmingOptions?DomainName=" + (DomainName==null? "" : System.Uri.EscapeDataString(DomainName))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1880,7 +1855,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1895,8 +1869,7 @@ namespace MyNS
 		public async Task GET_DescribeStopwordOptionsAsync(string DomainName, GET_DescribeStopwordOptionsAction Action, GET_DescribeStopwordOptionsVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribeStopwordOptions?DomainName=" + (DomainName==null? "" : System.Uri.EscapeDataString(DomainName))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1910,7 +1883,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1925,8 +1897,7 @@ namespace MyNS
 		public async Task GET_DescribeSynonymOptionsAsync(string DomainName, GET_DescribeSynonymOptionsAction Action, GET_DescribeSynonymOptionsVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribeSynonymOptions?DomainName=" + (DomainName==null? "" : System.Uri.EscapeDataString(DomainName))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1940,7 +1911,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1955,8 +1925,7 @@ namespace MyNS
 		public async Task GET_IndexDocumentsAsync(string DomainName, GET_IndexDocumentsAction Action, GET_IndexDocumentsVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=IndexDocuments?DomainName=" + (DomainName==null? "" : System.Uri.EscapeDataString(DomainName))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1970,7 +1939,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1986,8 +1954,7 @@ namespace MyNS
 		public async Task GET_UpdateAvailabilityOptionsAsync(string DomainName, bool MultiAZ, GET_UpdateAvailabilityOptionsAction Action, GET_UpdateAvailabilityOptionsVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=UpdateAvailabilityOptions?DomainName=" + (DomainName==null? "" : System.Uri.EscapeDataString(DomainName))+"&MultiAZ="+MultiAZ+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2001,7 +1968,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2017,8 +1983,7 @@ namespace MyNS
 		public async Task GET_UpdateDefaultSearchFieldAsync(string DomainName, string DefaultSearchField, GET_UpdateDefaultSearchFieldAction Action, GET_UpdateDefaultSearchFieldVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=UpdateDefaultSearchField?DomainName=" + (DomainName==null? "" : System.Uri.EscapeDataString(DomainName))+"&DefaultSearchField=" + (DefaultSearchField==null? "" : System.Uri.EscapeDataString(DefaultSearchField))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2032,7 +1997,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2047,8 +2011,7 @@ namespace MyNS
 		public async Task GET_UpdateServiceAccessPoliciesAsync(string DomainName, string AccessPolicies, GET_UpdateServiceAccessPoliciesAction Action, GET_UpdateServiceAccessPoliciesVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=UpdateServiceAccessPolicies?DomainName=" + (DomainName==null? "" : System.Uri.EscapeDataString(DomainName))+"&AccessPolicies=" + (AccessPolicies==null? "" : System.Uri.EscapeDataString(AccessPolicies))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2062,7 +2025,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2077,8 +2039,7 @@ namespace MyNS
 		public async Task GET_UpdateStemmingOptionsAsync(string DomainName, string Stems, GET_UpdateStemmingOptionsAction Action, GET_UpdateStemmingOptionsVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=UpdateStemmingOptions?DomainName=" + (DomainName==null? "" : System.Uri.EscapeDataString(DomainName))+"&Stems=" + (Stems==null? "" : System.Uri.EscapeDataString(Stems))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2092,7 +2053,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2107,8 +2067,7 @@ namespace MyNS
 		public async Task GET_UpdateStopwordOptionsAsync(string DomainName, string Stopwords, GET_UpdateStopwordOptionsAction Action, GET_UpdateStopwordOptionsVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=UpdateStopwordOptions?DomainName=" + (DomainName==null? "" : System.Uri.EscapeDataString(DomainName))+"&Stopwords=" + (Stopwords==null? "" : System.Uri.EscapeDataString(Stopwords))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2122,7 +2081,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2137,8 +2095,7 @@ namespace MyNS
 		public async Task GET_UpdateSynonymOptionsAsync(string DomainName, string Synonyms, GET_UpdateSynonymOptionsAction Action, GET_UpdateSynonymOptionsVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=UpdateSynonymOptions?DomainName=" + (DomainName==null? "" : System.Uri.EscapeDataString(DomainName))+"&Synonyms=" + (Synonyms==null? "" : System.Uri.EscapeDataString(Synonyms))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2152,7 +2109,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

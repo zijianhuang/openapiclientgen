@@ -469,8 +469,7 @@ namespace MyNS
 		public async Task<GoogleAdsHomeservicesLocalservicesV1SearchAccountReportsResponse> Localservices_accountReports_searchAsync(int endDate_day, int endDate_month, int endDate_year, int pageSize, string pageToken, string query, int startDate_day, int startDate_month, int startDate_year, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/accountReports:search?endDate.day="+endDate_day+"&endDate.month="+endDate_month+"&endDate.year="+endDate_year+"&pageSize="+pageSize+"&pageToken=" + (pageToken==null? "" : System.Uri.EscapeDataString(pageToken))+"&query=" + (query==null? "" : System.Uri.EscapeDataString(query))+"&startDate.day="+startDate_day+"&startDate.month="+startDate_month+"&startDate.year="+startDate_year;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -480,13 +479,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<GoogleAdsHomeservicesLocalservicesV1SearchAccountReportsResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<GoogleAdsHomeservicesLocalservicesV1SearchAccountReportsResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -507,8 +505,7 @@ namespace MyNS
 		public async Task<GoogleAdsHomeservicesLocalservicesV1SearchDetailedLeadReportsResponse> Localservices_detailedLeadReports_searchAsync(int endDate_day, int endDate_month, int endDate_year, int pageSize, string pageToken, string query, int startDate_day, int startDate_month, int startDate_year, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/detailedLeadReports:search?endDate.day="+endDate_day+"&endDate.month="+endDate_month+"&endDate.year="+endDate_year+"&pageSize="+pageSize+"&pageToken=" + (pageToken==null? "" : System.Uri.EscapeDataString(pageToken))+"&query=" + (query==null? "" : System.Uri.EscapeDataString(query))+"&startDate.day="+startDate_day+"&startDate.month="+startDate_month+"&startDate.year="+startDate_year;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -518,13 +515,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<GoogleAdsHomeservicesLocalservicesV1SearchDetailedLeadReportsResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<GoogleAdsHomeservicesLocalservicesV1SearchDetailedLeadReportsResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

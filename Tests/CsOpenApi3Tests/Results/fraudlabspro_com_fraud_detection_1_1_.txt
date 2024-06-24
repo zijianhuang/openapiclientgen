@@ -44,8 +44,7 @@ namespace MyNS
 		public async Task V1OrderFeedbackPostByIdAndKeyAndFormatAndActionAndNotesAsync(string id, string key, V1OrderFeedbackPostByIdAndKeyAndFormatAndActionAndNotesFormat format, V1OrderFeedbackPostByIdAndKeyAndFormatAndActionAndNotesAction action, string notes, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/order/feedback?id=" + (id==null? "" : System.Uri.EscapeDataString(id))+"&key=" + (key==null? "" : System.Uri.EscapeDataString(key))+"&format=" + format+"&action=" + action+"&notes=" + (notes==null? "" : System.Uri.EscapeDataString(notes));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -54,7 +53,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -100,8 +98,7 @@ namespace MyNS
 					Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/order/screen?ip=" + (ip==null? "" : System.Uri.EscapeDataString(ip))+"&key=" + (key==null? "" : System.Uri.EscapeDataString(key))+"&format=" + format+"&last_name=" + (last_name==null? "" : System.Uri.EscapeDataString(last_name))+"&first_name=" + (first_name==null? "" : System.Uri.EscapeDataString(first_name))+"&bill_addr=" + (bill_addr==null? "" : System.Uri.EscapeDataString(bill_addr))+"&bill_city=" + (bill_city==null? "" : System.Uri.EscapeDataString(bill_city))+"&bill_state=" + (bill_state==null? "" : System.Uri.EscapeDataString(bill_state))+"&bill_country=" + (bill_country==null? "" : System.Uri.EscapeDataString(bill_country))+"&bill_zip_code=" + (bill_zip_code==null? "" : System.Uri.EscapeDataString(bill_zip_code))+"&ship_addr=" + (ship_addr==null? "" : System.Uri.EscapeDataString(ship_addr))+"&ship_city=" + (ship_city==null? "" : System.Uri.EscapeDataString(ship_city))+"&ship_state=" + (ship_state==null? "" : System.Uri.EscapeDataString(ship_state))+"&ship_country=" + (ship_country==null? "" : System.Uri.EscapeDataString(ship_country))+"&ship_zip_code=" + (ship_zip_code==null? "" : System.Uri.EscapeDataString(ship_zip_code))+"&email_domain=" + (email_domain==null? "" : System.Uri.EscapeDataString(email_domain))+"&user_phone=" + (user_phone==null? "" : System.Uri.EscapeDataString(user_phone))+"&email=" + (email==null? "" : System.Uri.EscapeDataString(email))+"&email_hash=" + (email_hash==null? "" : System.Uri.EscapeDataString(email_hash))+"&username_hash=" + (username_hash==null? "" : System.Uri.EscapeDataString(username_hash))+"&password_hash=" + (password_hash==null? "" : System.Uri.EscapeDataString(password_hash))+"&bin_no=" + (bin_no==null? "" : System.Uri.EscapeDataString(bin_no))+"&card_hash=" + (card_hash==null? "" : System.Uri.EscapeDataString(card_hash))+"&avs_result=" + (avs_result==null? "" : System.Uri.EscapeDataString(avs_result))+"&cvv_result=" + (cvv_result==null? "" : System.Uri.EscapeDataString(cvv_result))+"&user_order_id=" + (user_order_id==null? "" : System.Uri.EscapeDataString(user_order_id))+"&user_order_memo=" + (user_order_memo==null? "" : System.Uri.EscapeDataString(user_order_memo))+"&amount="+amount+"&quantity="+quantity+"&currency=" + (currency==null? "" : System.Uri.EscapeDataString(currency))+"&department=" + (department==null? "" : System.Uri.EscapeDataString(department))+"&payment_mode=" + (payment_mode==null? "" : System.Uri.EscapeDataString(payment_mode))+"&flp_checksum=" + (flp_checksum==null? "" : System.Uri.EscapeDataString(flp_checksum));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -110,7 +107,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

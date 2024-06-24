@@ -2472,8 +2472,7 @@ namespace MyNS
 		public async Task<ListResponse_ApplicationOut_> List_applications_api_v1_app__getAsync(string iterator, int limit, Ordering order, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/v1/app/?iterator=" + (iterator==null? "" : System.Uri.EscapeDataString(iterator))+"&limit="+limit+"&order=" + order;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2483,13 +2482,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ListResponse_ApplicationOut_>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ListResponse_ApplicationOut_>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2503,10 +2501,8 @@ namespace MyNS
 		public async Task<ApplicationOut> Create_application_api_v1_app__postAsync(bool get_if_exists, ApplicationIn requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/v1/app/?get_if_exists="+get_if_exists;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -2517,13 +2513,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ApplicationOut>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ApplicationOut>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2538,8 +2533,7 @@ namespace MyNS
 		public async Task Delete_application_api_v1_app__app_id___deleteAsync(string app_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/v1/app/"+ (app_id==null? "" : System.Uri.EscapeDataString(app_id))+"/";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2553,7 +2547,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2569,8 +2562,7 @@ namespace MyNS
 		public async Task<ApplicationOut> Get_application_api_v1_app__app_id___getAsync(string app_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/v1/app/"+ (app_id==null? "" : System.Uri.EscapeDataString(app_id))+"/";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2580,13 +2572,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ApplicationOut>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ApplicationOut>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2602,10 +2593,8 @@ namespace MyNS
 		public async Task<ApplicationOut> Update_application_api_v1_app__app_id___putAsync(string app_id, ApplicationIn requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/v1/app/"+ (app_id==null? "" : System.Uri.EscapeDataString(app_id))+"/";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -2616,13 +2605,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ApplicationOut>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ApplicationOut>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2643,8 +2631,7 @@ namespace MyNS
 		public async Task<ListResponse_MessageAttemptOut_> List_attempts_by_endpoint_api_v1_app__app_id__attempt_endpoint__endpoint_id___getAsync(string app_id, string endpoint_id, string iterator, int limit, MessageStatus status, StatusCodeClass status_code_class, string[] event_types, string channel, System.DateTimeOffset before, System.DateTimeOffset after, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/v1/app/"+ (app_id==null? "" : System.Uri.EscapeDataString(app_id))+"/attempt/endpoint/"+ (endpoint_id==null? "" : System.Uri.EscapeDataString(endpoint_id))+"/&iterator=" + (iterator==null? "" : System.Uri.EscapeDataString(iterator))+"&limit="+limit+"&status="+status+"&status_code_class="+status_code_class+"&"+string.Join("&", event_types.Select(z => $"event_types={System.Uri.EscapeDataString(z.ToString())}"))+"&channel=" + (channel==null? "" : System.Uri.EscapeDataString(channel))+"&before=" + before.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&after=" + after.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ");
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2654,13 +2641,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ListResponse_MessageAttemptOut_>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ListResponse_MessageAttemptOut_>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2684,8 +2670,7 @@ namespace MyNS
 		public async Task<ListResponse_MessageAttemptOut_> List_attempts_by_msg_api_v1_app__app_id__attempt_msg__msg_id___getAsync(string app_id, string msg_id, string endpoint_id, string iterator, int limit, MessageStatus status, StatusCodeClass status_code_class, string[] event_types, string channel, System.DateTimeOffset before, System.DateTimeOffset after, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/v1/app/"+ (app_id==null? "" : System.Uri.EscapeDataString(app_id))+"/attempt/msg/"+ (msg_id==null? "" : System.Uri.EscapeDataString(msg_id))+"/&endpoint_id=" + (endpoint_id==null? "" : System.Uri.EscapeDataString(endpoint_id))+"&iterator=" + (iterator==null? "" : System.Uri.EscapeDataString(iterator))+"&limit="+limit+"&status="+status+"&status_code_class="+status_code_class+"&"+string.Join("&", event_types.Select(z => $"event_types={System.Uri.EscapeDataString(z.ToString())}"))+"&channel=" + (channel==null? "" : System.Uri.EscapeDataString(channel))+"&before=" + before.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&after=" + after.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ");
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2695,13 +2680,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ListResponse_MessageAttemptOut_>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ListResponse_MessageAttemptOut_>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2718,8 +2702,7 @@ namespace MyNS
 		public async Task<ListResponse_EndpointOut_> List_endpoints_api_v1_app__app_id__endpoint__getAsync(string app_id, string iterator, int limit, Ordering order, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/v1/app/"+ (app_id==null? "" : System.Uri.EscapeDataString(app_id))+"/endpoint/&iterator=" + (iterator==null? "" : System.Uri.EscapeDataString(iterator))+"&limit="+limit+"&order=" + order;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2729,13 +2712,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ListResponse_EndpointOut_>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ListResponse_EndpointOut_>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2752,10 +2734,8 @@ namespace MyNS
 		public async Task Create_endpoint_api_v1_app__app_id__endpoint__postAsync(string app_id, EndpointIn requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/v1/app/"+ (app_id==null? "" : System.Uri.EscapeDataString(app_id))+"/endpoint/";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -2770,7 +2750,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2788,8 +2767,7 @@ namespace MyNS
 		public async Task Delete_endpoint_api_v1_app__app_id__endpoint__endpoint_id___deleteAsync(string endpoint_id, string app_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/v1/app/"+ (app_id==null? "" : System.Uri.EscapeDataString(app_id))+"/endpoint/"+ (endpoint_id==null? "" : System.Uri.EscapeDataString(endpoint_id))+"/";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2803,7 +2781,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2822,8 +2799,7 @@ namespace MyNS
 		public async Task<EndpointOut> Get_endpoint_api_v1_app__app_id__endpoint__endpoint_id___getAsync(string endpoint_id, string app_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/v1/app/"+ (app_id==null? "" : System.Uri.EscapeDataString(app_id))+"/endpoint/"+ (endpoint_id==null? "" : System.Uri.EscapeDataString(endpoint_id))+"/";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2833,13 +2809,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<EndpointOut>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<EndpointOut>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2858,10 +2833,8 @@ namespace MyNS
 		public async Task<EndpointOut> Update_endpoint_api_v1_app__app_id__endpoint__endpoint_id___putAsync(string endpoint_id, string app_id, EndpointUpdate requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/v1/app/"+ (app_id==null? "" : System.Uri.EscapeDataString(app_id))+"/endpoint/"+ (endpoint_id==null? "" : System.Uri.EscapeDataString(endpoint_id))+"/";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -2872,13 +2845,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<EndpointOut>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<EndpointOut>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2897,8 +2869,7 @@ namespace MyNS
 		public async Task<EndpointHeadersOut> Get_endpoint_headers_api_v1_app__app_id__endpoint__endpoint_id__headers__getAsync(string endpoint_id, string app_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/v1/app/"+ (app_id==null? "" : System.Uri.EscapeDataString(app_id))+"/endpoint/"+ (endpoint_id==null? "" : System.Uri.EscapeDataString(endpoint_id))+"/headers/";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2908,13 +2879,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<EndpointHeadersOut>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<EndpointHeadersOut>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2932,10 +2902,8 @@ namespace MyNS
 		public async Task Patch_endpoint_headers_api_v1_app__app_id__endpoint__endpoint_id__headers__patchAsync(string app_id, string endpoint_id, EndpointHeadersPatchIn requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/v1/app/"+ (app_id==null? "" : System.Uri.EscapeDataString(app_id))+"/endpoint/"+ (endpoint_id==null? "" : System.Uri.EscapeDataString(endpoint_id))+"/headers/";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -2950,7 +2918,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2968,10 +2935,8 @@ namespace MyNS
 		public async Task Update_endpoint_headers_api_v1_app__app_id__endpoint__endpoint_id__headers__putAsync(string app_id, string endpoint_id, EndpointHeadersIn requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/v1/app/"+ (app_id==null? "" : System.Uri.EscapeDataString(app_id))+"/endpoint/"+ (endpoint_id==null? "" : System.Uri.EscapeDataString(endpoint_id))+"/headers/";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -2986,7 +2951,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3009,8 +2973,7 @@ namespace MyNS
 		public async Task<ListResponse_EndpointMessageOut_> List_attempted_messages_api_v1_app__app_id__endpoint__endpoint_id__msg__getAsync(string endpoint_id, string app_id, string iterator, int limit, string channel, MessageStatus status, System.DateTimeOffset before, System.DateTimeOffset after, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/v1/app/"+ (app_id==null? "" : System.Uri.EscapeDataString(app_id))+"/endpoint/"+ (endpoint_id==null? "" : System.Uri.EscapeDataString(endpoint_id))+"/msg/&iterator=" + (iterator==null? "" : System.Uri.EscapeDataString(iterator))+"&limit="+limit+"&channel=" + (channel==null? "" : System.Uri.EscapeDataString(channel))+"&status="+status+"&before=" + before.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&after=" + after.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ");
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3020,13 +2983,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ListResponse_EndpointMessageOut_>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ListResponse_EndpointMessageOut_>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3044,10 +3006,8 @@ namespace MyNS
 		public async Task Recover_failed_webhooks_api_v1_app__app_id__endpoint__endpoint_id__recover__postAsync(string app_id, string endpoint_id, RecoverIn requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/v1/app/"+ (app_id==null? "" : System.Uri.EscapeDataString(app_id))+"/endpoint/"+ (endpoint_id==null? "" : System.Uri.EscapeDataString(endpoint_id))+"/recover/";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -3062,7 +3022,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3080,10 +3039,8 @@ namespace MyNS
 		public async Task Replay_missing_webhooks_api_v1_app__app_id__endpoint__endpoint_id__replay_missing__postAsync(string app_id, string endpoint_id, ReplayIn requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/v1/app/"+ (app_id==null? "" : System.Uri.EscapeDataString(app_id))+"/endpoint/"+ (endpoint_id==null? "" : System.Uri.EscapeDataString(endpoint_id))+"/replay-missing/";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -3098,7 +3055,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3120,8 +3076,7 @@ namespace MyNS
 		public async Task<EndpointSecretOut> Get_endpoint_secret_api_v1_app__app_id__endpoint__endpoint_id__secret__getAsync(string endpoint_id, string app_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/v1/app/"+ (app_id==null? "" : System.Uri.EscapeDataString(app_id))+"/endpoint/"+ (endpoint_id==null? "" : System.Uri.EscapeDataString(endpoint_id))+"/secret/";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3131,13 +3086,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<EndpointSecretOut>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<EndpointSecretOut>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3155,10 +3109,8 @@ namespace MyNS
 		public async Task Rotate_endpoint_secret_api_v1_app__app_id__endpoint__endpoint_id__secret_rotate__postAsync(string endpoint_id, string app_id, EndpointSecretRotateIn requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/v1/app/"+ (app_id==null? "" : System.Uri.EscapeDataString(app_id))+"/endpoint/"+ (endpoint_id==null? "" : System.Uri.EscapeDataString(endpoint_id))+"/secret/rotate/";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -3173,7 +3125,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3191,10 +3142,8 @@ namespace MyNS
 		public async Task Send_event_type_example_message_api_v1_app__app_id__endpoint__endpoint_id__send_example__postAsync(string app_id, string endpoint_id, EventExampleIn requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/v1/app/"+ (app_id==null? "" : System.Uri.EscapeDataString(app_id))+"/endpoint/"+ (endpoint_id==null? "" : System.Uri.EscapeDataString(endpoint_id))+"/send-example/";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -3209,7 +3158,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3228,8 +3176,7 @@ namespace MyNS
 		public async Task<EndpointStats> Get_endpoint_stats_api_v1_app__app_id__endpoint__endpoint_id__stats__getAsync(string endpoint_id, string app_id, System.DateTimeOffset since, System.DateTimeOffset until, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/v1/app/"+ (app_id==null? "" : System.Uri.EscapeDataString(app_id))+"/endpoint/"+ (endpoint_id==null? "" : System.Uri.EscapeDataString(endpoint_id))+"/stats/&since=" + since.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&until=" + until.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ");
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3239,13 +3186,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<EndpointStats>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<EndpointStats>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3264,8 +3210,7 @@ namespace MyNS
 		public async Task<EndpointTransformationOut> Get_endpoint_transformation_api_v1_app__app_id__endpoint__endpoint_id__transformation__getAsync(string endpoint_id, string app_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/v1/app/"+ (app_id==null? "" : System.Uri.EscapeDataString(app_id))+"/endpoint/"+ (endpoint_id==null? "" : System.Uri.EscapeDataString(endpoint_id))+"/transformation/";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3275,13 +3220,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<EndpointTransformationOut>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<EndpointTransformationOut>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3299,10 +3243,8 @@ namespace MyNS
 		public async Task Set_endpoint_transformation_api_v1_app__app_id__endpoint__endpoint_id__transformation__patchAsync(string app_id, string endpoint_id, EndpointTransformationIn requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/v1/app/"+ (app_id==null? "" : System.Uri.EscapeDataString(app_id))+"/endpoint/"+ (endpoint_id==null? "" : System.Uri.EscapeDataString(endpoint_id))+"/transformation/";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -3317,7 +3259,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3333,8 +3274,7 @@ namespace MyNS
 		public async Task<ListResponse_IntegrationOut_> List_integrations_api_v1_app__app_id__integration__getAsync(string app_id, string iterator, int limit, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/v1/app/"+ (app_id==null? "" : System.Uri.EscapeDataString(app_id))+"/integration/&iterator=" + (iterator==null? "" : System.Uri.EscapeDataString(iterator))+"&limit="+limit;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3344,13 +3284,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ListResponse_IntegrationOut_>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ListResponse_IntegrationOut_>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3365,10 +3304,8 @@ namespace MyNS
 		public async Task Create_integration_api_v1_app__app_id__integration__postAsync(string app_id, IntegrationIn requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/v1/app/"+ (app_id==null? "" : System.Uri.EscapeDataString(app_id))+"/integration/";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -3384,7 +3321,6 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
-			}
 		}
 		
 		/// <summary>
@@ -3398,8 +3334,7 @@ namespace MyNS
 		public async Task Delete_integration_api_v1_app__app_id__integration__integ_id___deleteAsync(string integ_id, string app_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/v1/app/"+ (app_id==null? "" : System.Uri.EscapeDataString(app_id))+"/integration/"+ (integ_id==null? "" : System.Uri.EscapeDataString(integ_id))+"/";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3413,7 +3348,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3429,8 +3363,7 @@ namespace MyNS
 		public async Task<IntegrationOut> Get_integration_api_v1_app__app_id__integration__integ_id___getAsync(string integ_id, string app_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/v1/app/"+ (app_id==null? "" : System.Uri.EscapeDataString(app_id))+"/integration/"+ (integ_id==null? "" : System.Uri.EscapeDataString(integ_id))+"/";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3440,13 +3373,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<IntegrationOut>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<IntegrationOut>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3462,10 +3394,8 @@ namespace MyNS
 		public async Task<IntegrationOut> Update_integration_api_v1_app__app_id__integration__integ_id___putAsync(string integ_id, string app_id, IntegrationUpdate requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/v1/app/"+ (app_id==null? "" : System.Uri.EscapeDataString(app_id))+"/integration/"+ (integ_id==null? "" : System.Uri.EscapeDataString(integ_id))+"/";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -3476,13 +3406,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<IntegrationOut>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<IntegrationOut>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3498,8 +3427,7 @@ namespace MyNS
 		public async Task<IntegrationKeyOut> Get_integration_key_api_v1_app__app_id__integration__integ_id__key__getAsync(string integ_id, string app_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/v1/app/"+ (app_id==null? "" : System.Uri.EscapeDataString(app_id))+"/integration/"+ (integ_id==null? "" : System.Uri.EscapeDataString(integ_id))+"/key/";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3509,13 +3437,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<IntegrationKeyOut>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<IntegrationKeyOut>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3531,19 +3458,17 @@ namespace MyNS
 		public async Task<IntegrationKeyOut> Rotate_integration_key_api_v1_app__app_id__integration__integ_id__key_rotate__postAsync(string integ_id, string app_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/v1/app/"+ (app_id==null? "" : System.Uri.EscapeDataString(app_id))+"/integration/"+ (integ_id==null? "" : System.Uri.EscapeDataString(integ_id))+"/key/rotate/";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<IntegrationKeyOut>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<IntegrationKeyOut>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3565,8 +3490,7 @@ namespace MyNS
 		public async Task<ListResponse_MessageOut_> List_messages_api_v1_app__app_id__msg__getAsync(string app_id, string iterator, int limit, string[] event_types, string channel, System.DateTimeOffset before, System.DateTimeOffset after, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/v1/app/"+ (app_id==null? "" : System.Uri.EscapeDataString(app_id))+"/msg/&iterator=" + (iterator==null? "" : System.Uri.EscapeDataString(iterator))+"&limit="+limit+"&"+string.Join("&", event_types.Select(z => $"event_types={System.Uri.EscapeDataString(z.ToString())}"))+"&channel=" + (channel==null? "" : System.Uri.EscapeDataString(channel))+"&before=" + before.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&after=" + after.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ");
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3576,13 +3500,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ListResponse_MessageOut_>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ListResponse_MessageOut_>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3607,10 +3530,8 @@ namespace MyNS
 		public async Task Create_message_api_v1_app__app_id__msg__postAsync(string app_id, bool with_content, MessageIn requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/v1/app/"+ (app_id==null? "" : System.Uri.EscapeDataString(app_id))+"/msg/&with_content="+with_content;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -3625,7 +3546,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3644,8 +3564,7 @@ namespace MyNS
 		public async Task<MessageOut> Get_message_api_v1_app__app_id__msg__msg_id___getAsync(string msg_id, string app_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/v1/app/"+ (app_id==null? "" : System.Uri.EscapeDataString(app_id))+"/msg/"+ (msg_id==null? "" : System.Uri.EscapeDataString(msg_id))+"/";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3655,13 +3574,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<MessageOut>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<MessageOut>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3687,8 +3605,7 @@ namespace MyNS
 		public async Task<ListResponse_MessageAttemptOut_> List_attempts_api_v1_app__app_id__msg__msg_id__attempt__getAsync(string app_id, string msg_id, string iterator, int limit, string endpoint_id, string[] event_types, string channel, MessageStatus status, System.DateTimeOffset before, System.DateTimeOffset after, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/v1/app/"+ (app_id==null? "" : System.Uri.EscapeDataString(app_id))+"/msg/"+ (msg_id==null? "" : System.Uri.EscapeDataString(msg_id))+"/attempt/&iterator=" + (iterator==null? "" : System.Uri.EscapeDataString(iterator))+"&limit="+limit+"&endpoint_id=" + (endpoint_id==null? "" : System.Uri.EscapeDataString(endpoint_id))+"&"+string.Join("&", event_types.Select(z => $"event_types={System.Uri.EscapeDataString(z.ToString())}"))+"&channel=" + (channel==null? "" : System.Uri.EscapeDataString(channel))+"&status="+status+"&before=" + before.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&after=" + after.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ");
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3698,13 +3615,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ListResponse_MessageAttemptOut_>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ListResponse_MessageAttemptOut_>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3723,8 +3639,7 @@ namespace MyNS
 		public async Task<MessageAttemptOut> Get_attempt_api_v1_app__app_id__msg__msg_id__attempt__attempt_id___getAsync(string attempt_id, string msg_id, string app_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/v1/app/"+ (app_id==null? "" : System.Uri.EscapeDataString(app_id))+"/msg/"+ (msg_id==null? "" : System.Uri.EscapeDataString(msg_id))+"/attempt/"+ (attempt_id==null? "" : System.Uri.EscapeDataString(attempt_id))+"/";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3734,13 +3649,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<MessageAttemptOut>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<MessageAttemptOut>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3758,8 +3672,7 @@ namespace MyNS
 		public async Task Expunge_attempt_content_api_v1_app__app_id__msg__msg_id__attempt__attempt_id__content__deleteAsync(string attempt_id, string msg_id, string app_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/v1/app/"+ (app_id==null? "" : System.Uri.EscapeDataString(app_id))+"/msg/"+ (msg_id==null? "" : System.Uri.EscapeDataString(msg_id))+"/attempt/"+ (attempt_id==null? "" : System.Uri.EscapeDataString(attempt_id))+"/content/";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3773,7 +3686,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3793,8 +3705,7 @@ namespace MyNS
 		public async Task Expunge_message_payload_api_v1_app__app_id__msg__msg_id__content__deleteAsync(string msg_id, string app_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/v1/app/"+ (app_id==null? "" : System.Uri.EscapeDataString(app_id))+"/msg/"+ (msg_id==null? "" : System.Uri.EscapeDataString(msg_id))+"/content/";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3808,7 +3719,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3828,8 +3738,7 @@ namespace MyNS
 		public async Task<ListResponse_MessageEndpointOut_> List_attempted_destinations_api_v1_app__app_id__msg__msg_id__endpoint__getAsync(string msg_id, string app_id, string iterator, int limit, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/v1/app/"+ (app_id==null? "" : System.Uri.EscapeDataString(app_id))+"/msg/"+ (msg_id==null? "" : System.Uri.EscapeDataString(msg_id))+"/endpoint/&iterator=" + (iterator==null? "" : System.Uri.EscapeDataString(iterator))+"&limit="+limit;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3839,13 +3748,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ListResponse_MessageEndpointOut_>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ListResponse_MessageEndpointOut_>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3875,8 +3783,7 @@ namespace MyNS
 		public async Task<ListResponse_MessageAttemptEndpointOut_> List_attempts_for_endpoint_api_v1_app__app_id__msg__msg_id__endpoint__endpoint_id__attempt__getAsync(string msg_id, string app_id, string endpoint_id, string iterator, int limit, string[] event_types, string channel, MessageStatus status, System.DateTimeOffset before, System.DateTimeOffset after, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/v1/app/"+ (app_id==null? "" : System.Uri.EscapeDataString(app_id))+"/msg/"+ (msg_id==null? "" : System.Uri.EscapeDataString(msg_id))+"/endpoint/"+ (endpoint_id==null? "" : System.Uri.EscapeDataString(endpoint_id))+"/attempt/&iterator=" + (iterator==null? "" : System.Uri.EscapeDataString(iterator))+"&limit="+limit+"&"+string.Join("&", event_types.Select(z => $"event_types={System.Uri.EscapeDataString(z.ToString())}"))+"&channel=" + (channel==null? "" : System.Uri.EscapeDataString(channel))+"&status="+status+"&before=" + before.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&after=" + after.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ");
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3886,13 +3793,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ListResponse_MessageAttemptEndpointOut_>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ListResponse_MessageAttemptEndpointOut_>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3913,8 +3819,7 @@ namespace MyNS
 		public async Task Resend_webhook_api_v1_app__app_id__msg__msg_id__endpoint__endpoint_id__resend__postAsync(string endpoint_id, string msg_id, string app_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/v1/app/"+ (app_id==null? "" : System.Uri.EscapeDataString(app_id))+"/msg/"+ (msg_id==null? "" : System.Uri.EscapeDataString(msg_id))+"/endpoint/"+ (endpoint_id==null? "" : System.Uri.EscapeDataString(endpoint_id))+"/resend/";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -3923,7 +3828,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3939,10 +3843,8 @@ namespace MyNS
 		public async Task<AppPortalAccessOut> Get_app_portal_access_api_v1_auth_app_portal_access__app_id___postAsync(string app_id, AppPortalAccessIn requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/v1/auth/app-portal-access/"+ (app_id==null? "" : System.Uri.EscapeDataString(app_id))+"/";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -3953,13 +3855,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<AppPortalAccessOut>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<AppPortalAccessOut>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3974,10 +3875,8 @@ namespace MyNS
 		public async Task Expire_all_api_v1_auth_app__app_id__expire_all__postAsync(string app_id, ApplicationTokenExpireIn requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/v1/auth/app/"+ (app_id==null? "" : System.Uri.EscapeDataString(app_id))+"/expire-all/";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -3992,7 +3891,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4010,19 +3908,17 @@ namespace MyNS
 		public async Task<DashboardAccessOut> Get_dashboard_access_api_v1_auth_dashboard_access__app_id___postAsync(string app_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/v1/auth/dashboard-access/"+ (app_id==null? "" : System.Uri.EscapeDataString(app_id))+"/";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<DashboardAccessOut>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<DashboardAccessOut>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4036,8 +3932,7 @@ namespace MyNS
 		public async Task Logout_api_v1_auth_logout__postAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/v1/auth/logout/";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -4046,7 +3941,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4060,8 +3954,7 @@ namespace MyNS
 		public async Task<ListResponse_BackgroundTaskOut_> List_background_tasks_api_v1_background_task__getAsync(string iterator, int limit, Ordering order, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/v1/background-task/?iterator=" + (iterator==null? "" : System.Uri.EscapeDataString(iterator))+"&limit="+limit+"&order=" + order;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4071,13 +3964,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ListResponse_BackgroundTaskOut_>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ListResponse_BackgroundTaskOut_>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4090,8 +3982,7 @@ namespace MyNS
 		public async Task<BackgroundTaskOut> Get_background_task_api_v1_background_task__task_id___getAsync(string task_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/v1/background-task/"+ (task_id==null? "" : System.Uri.EscapeDataString(task_id))+"/";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4101,13 +3992,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<BackgroundTaskOut>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<BackgroundTaskOut>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4122,8 +4012,7 @@ namespace MyNS
 		public async Task<ListResponse_EventTypeOut_> List_event_types_api_v1_event_type__getAsync(string iterator, int limit, bool with_content, bool include_archived, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/v1/event-type/?iterator=" + (iterator==null? "" : System.Uri.EscapeDataString(iterator))+"&limit="+limit+"&with_content="+with_content+"&include_archived="+include_archived;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4133,13 +4022,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ListResponse_EventTypeOut_>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ListResponse_EventTypeOut_>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4155,10 +4043,8 @@ namespace MyNS
 		public async Task Create_event_type_api_v1_event_type__postAsync(EventTypeIn requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/v1/event-type/";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -4173,7 +4059,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4194,8 +4079,7 @@ namespace MyNS
 		public async Task Delete_event_type_api_v1_event_type__event_type_name___deleteAsync(string event_type_name, bool expunge, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/v1/event-type/"+ (event_type_name==null? "" : System.Uri.EscapeDataString(event_type_name))+"/&expunge="+expunge;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4209,7 +4093,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4223,8 +4106,7 @@ namespace MyNS
 		public async Task<EventTypeOut> Get_event_type_api_v1_event_type__event_type_name___getAsync(string event_type_name, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/v1/event-type/"+ (event_type_name==null? "" : System.Uri.EscapeDataString(event_type_name))+"/";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4234,13 +4116,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<EventTypeOut>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<EventTypeOut>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4254,10 +4135,8 @@ namespace MyNS
 		public async Task<EventTypeOut> Update_event_type_api_v1_event_type__event_type_name___putAsync(string event_type_name, EventTypeUpdate requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/v1/event-type/"+ (event_type_name==null? "" : System.Uri.EscapeDataString(event_type_name))+"/";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -4268,13 +4147,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<EventTypeOut>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<EventTypeOut>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4286,8 +4164,7 @@ namespace MyNS
 		public async Task Health_api_v1_health__getAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/v1/health/";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4301,7 +4178,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

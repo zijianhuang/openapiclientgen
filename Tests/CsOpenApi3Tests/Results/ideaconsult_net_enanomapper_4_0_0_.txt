@@ -292,8 +292,7 @@ namespace MyNS
 		public async Task<Investigation> GetInvestigationResultsAsync(GetInvestigationResultsDb db, GetInvestigationResultsType type, string search, string inchikey, string id, int page, int pagesize, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "enm/"+db+"/investigation?type=" + type+"&search=" + (search==null? "" : System.Uri.EscapeDataString(search))+"&inchikey=" + (inchikey==null? "" : System.Uri.EscapeDataString(inchikey))+"&id=" + (id==null? "" : System.Uri.EscapeDataString(id))+"&page="+page+"&pagesize="+pagesize;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -303,13 +302,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Investigation>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Investigation>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -331,8 +329,7 @@ namespace MyNS
 		public async Task<Dataset> SearchByIdentifierAsync(GetInvestigationResultsDb db, SearchByIdentifierTerm term, SearchByIdentifierRepresentation representation, string search, string b64search, bool casesens, string bundle_uri, string sameas, int page, int pagesize, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "enm/"+db+"/query/compound/"+term+"/"+representation+"?search=" + (search==null? "" : System.Uri.EscapeDataString(search))+"&b64search=" + (b64search==null? "" : System.Uri.EscapeDataString(b64search))+"&casesens="+casesens+"&bundle_uri=" + (bundle_uri==null? "" : System.Uri.EscapeDataString(bundle_uri))+"&sameas=" + (sameas==null? "" : System.Uri.EscapeDataString(sameas))+"&page="+page+"&pagesize="+pagesize;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -342,13 +339,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Dataset>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Dataset>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -373,8 +369,7 @@ namespace MyNS
 		public async Task<Dataset> SearchBySimilarityAsync(GetInvestigationResultsDb db, string search, string b64search, SearchBySimilarityType type, double threshold, string dataset_uri, bool filterBySubstance, string bundle_uri, string sameas, bool mol, int page, int pagesize, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "enm/"+db+"/query/similarity?search=" + (search==null? "" : System.Uri.EscapeDataString(search))+"&b64search=" + (b64search==null? "" : System.Uri.EscapeDataString(b64search))+"&type=" + type+"&threshold="+threshold+"&dataset_uri=" + (dataset_uri==null? "" : System.Uri.EscapeDataString(dataset_uri))+"&filterBySubstance="+filterBySubstance+"&bundle_uri=" + (bundle_uri==null? "" : System.Uri.EscapeDataString(bundle_uri))+"&sameas=" + (sameas==null? "" : System.Uri.EscapeDataString(sameas))+"&mol="+mol+"&page="+page+"&pagesize="+pagesize;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -384,13 +379,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Dataset>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Dataset>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -414,8 +408,7 @@ namespace MyNS
 		public async Task<Dataset> SearchBySmartsAsync(GetInvestigationResultsDb db, string search, string b64search, SearchBySimilarityType type, string dataset_uri, bool filterBySubstance, string bundle_uri, string sameas, bool mol, int page, int pagesize, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "enm/"+db+"/query/smarts?search=" + (search==null? "" : System.Uri.EscapeDataString(search))+"&b64search=" + (b64search==null? "" : System.Uri.EscapeDataString(b64search))+"&type=" + type+"&dataset_uri=" + (dataset_uri==null? "" : System.Uri.EscapeDataString(dataset_uri))+"&filterBySubstance="+filterBySubstance+"&bundle_uri=" + (bundle_uri==null? "" : System.Uri.EscapeDataString(bundle_uri))+"&sameas=" + (sameas==null? "" : System.Uri.EscapeDataString(sameas))+"&mol="+mol+"&page="+page+"&pagesize="+pagesize;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -425,13 +418,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Dataset>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Dataset>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -447,8 +439,7 @@ namespace MyNS
 		public async Task<Facet> GetEndpointSummaryAsync(GetInvestigationResultsDb db, GetEndpointSummaryTop top, string category, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "enm/"+db+"/query/study?top=" + top+"&category=" + (category==null? "" : System.Uri.EscapeDataString(category));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -458,13 +449,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Facet>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Facet>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -485,8 +475,7 @@ namespace MyNS
 		public async Task<Substance> GetSubstancesAsync(GetInvestigationResultsDb db, string search, GetSubstancesType type, string compound_uri, string bundle_uri, bool addDummySubstance, bool studysummary, int page, int pagesize, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "enm/"+db+"/substance?search=" + (search==null? "" : System.Uri.EscapeDataString(search))+"&type=" + type+"&compound_uri=" + (compound_uri==null? "" : System.Uri.EscapeDataString(compound_uri))+"&bundle_uri=" + (bundle_uri==null? "" : System.Uri.EscapeDataString(bundle_uri))+"&addDummySubstance="+addDummySubstance+"&studysummary="+studysummary+"&page="+page+"&pagesize="+pagesize;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -496,13 +485,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Substance>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Substance>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -520,8 +508,7 @@ namespace MyNS
 		public async Task<Substance> GetSubstanceByUUIDAsync(GetInvestigationResultsDb db, string uuid, string property_uris_, int page, int pagesize, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "enm/"+db+"/substance/"+ (uuid==null? "" : System.Uri.EscapeDataString(uuid))+"&property_uris[]=" + (property_uris_==null? "" : System.Uri.EscapeDataString(property_uris_))+"&page="+page+"&pagesize="+pagesize;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -531,13 +518,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Substance>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Substance>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -555,8 +541,7 @@ namespace MyNS
 		public async Task<SubstanceComposition> GetSubstanceCompositionAsync(GetInvestigationResultsDb db, string uuid, bool all, int page, int pagesize, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "enm/"+db+"/substance/"+ (uuid==null? "" : System.Uri.EscapeDataString(uuid))+"/composition&all="+all+"&page="+page+"&pagesize="+pagesize;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -566,13 +551,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<SubstanceComposition>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<SubstanceComposition>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -589,8 +573,7 @@ namespace MyNS
 		public async Task<Dataset> GetSubstanceStructuresAsync(GetInvestigationResultsDb db, string uuid, int page, int pagesize, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "enm/"+db+"/substance/"+ (uuid==null? "" : System.Uri.EscapeDataString(uuid))+"/structures&page="+page+"&pagesize="+pagesize;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -600,13 +583,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Dataset>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Dataset>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -628,8 +610,7 @@ namespace MyNS
 		public async Task<SubstanceStudy> GetSubstanceStudyAsync(GetInvestigationResultsDb db, string uuid, GetSubstanceStudyTop top, string category, string property_uri, string property, string investigation_uuid, int page, int pagesize, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "enm/"+db+"/substance/"+ (uuid==null? "" : System.Uri.EscapeDataString(uuid))+"/study&top=" + top+"&category=" + (category==null? "" : System.Uri.EscapeDataString(category))+"&property_uri=" + (property_uri==null? "" : System.Uri.EscapeDataString(property_uri))+"&property=" + (property==null? "" : System.Uri.EscapeDataString(property))+"&investigation_uuid=" + (investigation_uuid==null? "" : System.Uri.EscapeDataString(investigation_uuid))+"&page="+page+"&pagesize="+pagesize;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -639,13 +620,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<SubstanceStudy>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<SubstanceStudy>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -667,8 +647,7 @@ namespace MyNS
 		public async Task<SubstanceStudySummary> GetSubstanceStudySummaryAsync(GetInvestigationResultsDb db, string uuid, GetSubstanceStudySummaryTop top, string category, string property_uri, string property, bool result, int page, int pagesize, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "enm/"+db+"/substance/"+ (uuid==null? "" : System.Uri.EscapeDataString(uuid))+"/studySummary&top=" + top+"&category=" + (category==null? "" : System.Uri.EscapeDataString(category))+"&property_uri=" + (property_uri==null? "" : System.Uri.EscapeDataString(property_uri))+"&property=" + (property==null? "" : System.Uri.EscapeDataString(property))+"&result="+result+"&page="+page+"&pagesize="+pagesize;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -678,13 +657,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<SubstanceStudySummary>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<SubstanceStudySummary>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -703,8 +681,7 @@ namespace MyNS
 		public async Task<SolrResponse> Solrquery_getAsync(string q, string fq, string fl, int start, int rows, Solrquery_getWt wt, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "select?q=" + (q==null? "" : System.Uri.EscapeDataString(q))+"&fq=" + (fq==null? "" : System.Uri.EscapeDataString(fq))+"&fl=" + (fl==null? "" : System.Uri.EscapeDataString(fl))+"&start="+start+"&rows="+rows+"&wt=" + wt;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -714,13 +691,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<SolrResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<SolrResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -735,10 +711,8 @@ namespace MyNS
 		public async Task<SolrResponse> Solrquery_postAsync(Solrquery_postWt wt, QueryBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "select?wt=" + wt;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -749,13 +723,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<SolrResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<SolrResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

@@ -308,8 +308,7 @@ namespace MyNS
 		public async Task GetArticlesAsync(string q, int page, int per_page, string top, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/articles/search?q=" + (q==null? "" : System.Uri.EscapeDataString(q))+"&page="+page+"&per_page="+per_page+"&top=" + (top==null? "" : System.Uri.EscapeDataString(top));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -323,7 +322,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

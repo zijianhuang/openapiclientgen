@@ -195,8 +195,7 @@ namespace MyNS
 		public async Task<AvailabilityResults> WaybackV1AvailableGetByUrlAndTimestampAndCallbackAndTimeoutAndClosestAndStatus_codeAndTagAsync(string url, string timestamp, string callback, double timeout, WaybackV1AvailableGetByUrlAndTimestampAndCallbackAndTimeoutAndClosestAndStatus_codeAndTagClosest closest, WaybackV1AvailableGetByUrlAndTimestampAndCallbackAndTimeoutAndClosestAndStatus_codeAndTagStatus_code status_code, string tag, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "wayback/v1/available?url=" + (url==null? "" : System.Uri.EscapeDataString(url))+"&timestamp=" + (timestamp==null? "" : System.Uri.EscapeDataString(timestamp))+"&callback=" + (callback==null? "" : System.Uri.EscapeDataString(callback))+"&timeout="+timeout+"&closest=" + closest+"&status_code="+status_code+"&tag=" + (tag==null? "" : System.Uri.EscapeDataString(tag));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -206,17 +205,14 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
-				{
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				using JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(streamContent));
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<AvailabilityResults>(jsonReader);
-				}
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -245,10 +241,8 @@ namespace MyNS
 		public async Task<AvailabilityResults> WaybackV1AvailablePostByUrlAndTimestampAndCallbackAndTimeoutAndClosestAndStatus_codeAndTagAsync(string url, string timestamp, string callback, double timeout, WaybackV1AvailableGetByUrlAndTimestampAndCallbackAndTimeoutAndClosestAndStatus_codeAndTagClosest closest, WaybackV1AvailablePostByUrlAndTimestampAndCallbackAndTimeoutAndClosestAndStatus_codeAndTagStatus_code status_code, string tag, AvailabilityRequest[] requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "wayback/v1/available?url=" + (url==null? "" : System.Uri.EscapeDataString(url))+"&timestamp=" + (timestamp==null? "" : System.Uri.EscapeDataString(timestamp))+"&callback=" + (callback==null? "" : System.Uri.EscapeDataString(callback))+"&timeout="+timeout+"&closest=" + closest+"&status_code="+status_code+"&tag=" + (tag==null? "" : System.Uri.EscapeDataString(tag));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			using (var requestWriter = new System.IO.StringWriter())
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			using var requestWriter = new System.IO.StringWriter();
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
@@ -262,18 +256,14 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
-				{
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				using JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(streamContent));
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<AvailabilityResults>(jsonReader);
-				}
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
-			}
 			}
 		}
 	}

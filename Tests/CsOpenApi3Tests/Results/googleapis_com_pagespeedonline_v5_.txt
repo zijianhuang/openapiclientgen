@@ -1068,8 +1068,7 @@ namespace MyNS
 		public async Task<PagespeedApiPagespeedResponseV5> Pagespeedonline_pagespeedapi_runpagespeedAsync(string url, string captchaToken, string[] category, string locale, Pagespeedonline_pagespeedapi_runpagespeedStrategy strategy, string utm_campaign, string utm_source, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "pagespeedonline/v5/runPagespeed?url=" + (url==null? "" : System.Uri.EscapeDataString(url))+"&captchaToken=" + (captchaToken==null? "" : System.Uri.EscapeDataString(captchaToken))+"&"+string.Join("&", category.Select(z => $"category={System.Uri.EscapeDataString(z.ToString())}"))+"&locale=" + (locale==null? "" : System.Uri.EscapeDataString(locale))+"&strategy=" + strategy+"&utm_campaign=" + (utm_campaign==null? "" : System.Uri.EscapeDataString(utm_campaign))+"&utm_source=" + (utm_source==null? "" : System.Uri.EscapeDataString(utm_source));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1079,13 +1078,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<PagespeedApiPagespeedResponseV5>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<PagespeedApiPagespeedResponseV5>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

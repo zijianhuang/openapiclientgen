@@ -277,8 +277,7 @@ namespace MyNS
 		public async Task GetRecommendedLocationAsync(string cityCodes, string travelerCountryCode, string destinationCountryCodes, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "reference-data/recommended-locations?cityCodes=" + (cityCodes==null? "" : System.Uri.EscapeDataString(cityCodes))+"&travelerCountryCode=" + (travelerCountryCode==null? "" : System.Uri.EscapeDataString(travelerCountryCode))+"&destinationCountryCodes=" + (destinationCountryCodes==null? "" : System.Uri.EscapeDataString(destinationCountryCodes));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -292,7 +291,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

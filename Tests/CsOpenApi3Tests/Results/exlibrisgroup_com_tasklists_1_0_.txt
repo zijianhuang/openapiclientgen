@@ -52,8 +52,7 @@ namespace MyNS
 		public async Task<GetSlashalmawsSlashv1Slashtask_listsSlashprintoutsReturn> GetSlashalmawsSlashv1Slashtask_listsSlashprintoutsAsync(string letter, string status, string printer_id, string printout_id, int limit, int offset, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "almaws/v1/task-lists/printouts?letter=" + (letter==null? "" : System.Uri.EscapeDataString(letter))+"&status=" + (status==null? "" : System.Uri.EscapeDataString(status))+"&printer_id=" + (printer_id==null? "" : System.Uri.EscapeDataString(printer_id))+"&printout_id=" + (printout_id==null? "" : System.Uri.EscapeDataString(printout_id))+"&limit="+limit+"&offset="+offset;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -63,13 +62,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<GetSlashalmawsSlashv1Slashtask_listsSlashprintoutsReturn>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<GetSlashalmawsSlashv1Slashtask_listsSlashprintoutsReturn>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -87,8 +85,7 @@ namespace MyNS
 		public async Task PostSlashalmawsSlashv1Slashtask_listsSlashprintoutsAsync(string letter, string status, string printer_id, string printout_id, string op, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "almaws/v1/task-lists/printouts?letter=" + (letter==null? "" : System.Uri.EscapeDataString(letter))+"&status=" + (status==null? "" : System.Uri.EscapeDataString(status))+"&printer_id=" + (printer_id==null? "" : System.Uri.EscapeDataString(printer_id))+"&printout_id=" + (printout_id==null? "" : System.Uri.EscapeDataString(printout_id))+"&op=" + (op==null? "" : System.Uri.EscapeDataString(op));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -97,7 +94,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -111,8 +107,7 @@ namespace MyNS
 		public async Task GetSlashalmawsSlashv1Slashtask_listsSlashprintoutsSlashprintout_idAsync(string printout_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "almaws/v1/task-lists/printouts/"+ (printout_id==null? "" : System.Uri.EscapeDataString(printout_id));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -127,7 +122,6 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
-			}
 		}
 		
 		/// <summary>
@@ -141,8 +135,7 @@ namespace MyNS
 		public async Task PostSlashalmawsSlashv1Slashtask_listsSlashprintoutsSlashprintout_idAsync(string printout_id, string op, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "almaws/v1/task-lists/printouts/"+ (printout_id==null? "" : System.Uri.EscapeDataString(printout_id))+"&op=" + (op==null? "" : System.Uri.EscapeDataString(op));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -151,7 +144,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -174,8 +166,7 @@ namespace MyNS
 		public async Task<GetSlashalmawsSlashv1Slashtask_listsSlashrequested_resourcesReturn> GetSlashalmawsSlashv1Slashtask_listsSlashrequested_resourcesAsync(string library, string circ_desk, string location, string order_by, string direction, string pickup_inst, string reported, string printed, int limit, int offset, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "almaws/v1/task-lists/requested-resources?library=" + (library==null? "" : System.Uri.EscapeDataString(library))+"&circ_desk=" + (circ_desk==null? "" : System.Uri.EscapeDataString(circ_desk))+"&location=" + (location==null? "" : System.Uri.EscapeDataString(location))+"&order_by=" + (order_by==null? "" : System.Uri.EscapeDataString(order_by))+"&direction=" + (direction==null? "" : System.Uri.EscapeDataString(direction))+"&pickup_inst=" + (pickup_inst==null? "" : System.Uri.EscapeDataString(pickup_inst))+"&reported=" + (reported==null? "" : System.Uri.EscapeDataString(reported))+"&printed=" + (printed==null? "" : System.Uri.EscapeDataString(printed))+"&limit="+limit+"&offset="+offset;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -185,13 +176,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<GetSlashalmawsSlashv1Slashtask_listsSlashrequested_resourcesReturn>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<GetSlashalmawsSlashv1Slashtask_listsSlashrequested_resourcesReturn>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -211,8 +201,7 @@ namespace MyNS
 		public async Task PostSlashalmawsSlashv1Slashtask_listsSlashrequested_resourcesAsync(string library, string circ_desk, string op, string location, string pickup_inst, string reported, string printed, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "almaws/v1/task-lists/requested-resources?library=" + (library==null? "" : System.Uri.EscapeDataString(library))+"&circ_desk=" + (circ_desk==null? "" : System.Uri.EscapeDataString(circ_desk))+"&op=" + (op==null? "" : System.Uri.EscapeDataString(op))+"&location=" + (location==null? "" : System.Uri.EscapeDataString(location))+"&pickup_inst=" + (pickup_inst==null? "" : System.Uri.EscapeDataString(pickup_inst))+"&reported=" + (reported==null? "" : System.Uri.EscapeDataString(reported))+"&printed=" + (printed==null? "" : System.Uri.EscapeDataString(printed));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -221,7 +210,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -241,8 +229,7 @@ namespace MyNS
 		public async Task<GetSlashalmawsSlashv1Slashtask_listsSlashrsSlashlending_requestsReturn> GetSlashalmawsSlashv1Slashtask_listsSlashrsSlashlending_requestsAsync(string library, string status, string printed, string reported, string partner, string requested_format, string supplied_format, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "almaws/v1/task-lists/rs/lending-requests?library=" + (library==null? "" : System.Uri.EscapeDataString(library))+"&status=" + (status==null? "" : System.Uri.EscapeDataString(status))+"&printed=" + (printed==null? "" : System.Uri.EscapeDataString(printed))+"&reported=" + (reported==null? "" : System.Uri.EscapeDataString(reported))+"&partner=" + (partner==null? "" : System.Uri.EscapeDataString(partner))+"&requested_format=" + (requested_format==null? "" : System.Uri.EscapeDataString(requested_format))+"&supplied_format=" + (supplied_format==null? "" : System.Uri.EscapeDataString(supplied_format));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -252,13 +239,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<GetSlashalmawsSlashv1Slashtask_listsSlashrsSlashlending_requestsReturn>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<GetSlashalmawsSlashv1Slashtask_listsSlashrsSlashlending_requestsReturn>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -279,8 +265,7 @@ namespace MyNS
 		public async Task PostSlashalmawsSlashv1Slashtask_listsSlashrsSlashlending_requestsAsync(string library, string op, string status, string printed, string reported, string partner, string requested_format, string supplied_format, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "almaws/v1/task-lists/rs/lending-requests?library=" + (library==null? "" : System.Uri.EscapeDataString(library))+"&op=" + (op==null? "" : System.Uri.EscapeDataString(op))+"&status=" + (status==null? "" : System.Uri.EscapeDataString(status))+"&printed=" + (printed==null? "" : System.Uri.EscapeDataString(printed))+"&reported=" + (reported==null? "" : System.Uri.EscapeDataString(reported))+"&partner=" + (partner==null? "" : System.Uri.EscapeDataString(partner))+"&requested_format=" + (requested_format==null? "" : System.Uri.EscapeDataString(requested_format))+"&supplied_format=" + (supplied_format==null? "" : System.Uri.EscapeDataString(supplied_format));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -289,7 +274,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -302,8 +286,7 @@ namespace MyNS
 		public async Task<string> GetSlashalmawsSlashv1Slashtask_listsSlashtestAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "almaws/v1/task-lists/test";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -313,13 +296,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<string>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<string>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -332,19 +314,17 @@ namespace MyNS
 		public async Task<string> PostSlashalmawsSlashv1Slashtask_listsSlashtestAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "almaws/v1/task-lists/test";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<string>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<string>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

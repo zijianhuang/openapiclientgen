@@ -1735,22 +1735,19 @@ namespace MyNS
 		public async Task<DetectedFace[]> Face_DetectWithUrlAsync(bool returnFaceId, bool returnFaceLandmarks, string[] returnFaceAttributes, DetectedFaceRecognitionModel recognitionModel, bool returnRecognitionModel, Face_DetectWithUrlDetectionModel detectionModel, Face_DetectWithUrlPostBody requestBody)
 		{
 			var requestUri = "detect?returnFaceId="+returnFaceId+"&returnFaceLandmarks="+returnFaceLandmarks+"&"+string.Join("&", returnFaceAttributes.Select(z => $"returnFaceAttributes={System.Uri.EscapeDataString(z.ToString())}"))+"&recognitionModel=" + recognitionModel+"&returnRecognitionModel="+returnRecognitionModel+"&detectionModel=" + detectionModel;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<DetectedFace[]>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<DetectedFace[]>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1765,19 +1762,17 @@ namespace MyNS
 		public async Task<FaceList[]> FaceList_ListAsync(bool returnRecognitionModel)
 		{
 			var requestUri = "facelists?returnRecognitionModel="+returnRecognitionModel;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<FaceList[]>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<FaceList[]>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1794,19 +1789,17 @@ namespace MyNS
 		public async Task<FaceList> FaceList_GetAsync(string faceListId, bool returnRecognitionModel)
 		{
 			var requestUri = "facelists/"+ (faceListId==null? "" : System.Uri.EscapeDataString(faceListId))+"&returnRecognitionModel="+returnRecognitionModel;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<FaceList>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<FaceList>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1829,10 +1822,8 @@ namespace MyNS
 		public async Task FaceList_CreateAsync(string faceListId, MetaDataContract requestBody)
 		{
 			var requestUri = "facelists/"+ (faceListId==null? "" : System.Uri.EscapeDataString(faceListId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -1842,7 +1833,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1857,8 +1847,7 @@ namespace MyNS
 		public async Task FaceList_DeleteAsync(string faceListId)
 		{
 			var requestUri = "facelists/"+ (faceListId==null? "" : System.Uri.EscapeDataString(faceListId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -1867,7 +1856,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1883,10 +1871,8 @@ namespace MyNS
 		public async Task FaceList_UpdateAsync(string faceListId, NameAndUserDataContract requestBody)
 		{
 			var requestUri = "facelists/"+ (faceListId==null? "" : System.Uri.EscapeDataString(faceListId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -1896,7 +1882,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1930,22 +1915,19 @@ namespace MyNS
 		public async Task<PersistedFace> FaceList_AddFaceFromUrlAsync(string faceListId, string userData, int[] targetFace, Face_DetectWithUrlDetectionModel detectionModel, FaceList_AddFaceFromUrlPostBody requestBody)
 		{
 			var requestUri = "facelists/"+ (faceListId==null? "" : System.Uri.EscapeDataString(faceListId))+"/persistedfaces&userData=" + (userData==null? "" : System.Uri.EscapeDataString(userData))+"&"+string.Join("&", targetFace.Select(z => $"targetFace={z}"))+"&detectionModel=" + detectionModel;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<PersistedFace>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<PersistedFace>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1962,8 +1944,7 @@ namespace MyNS
 		public async Task FaceList_DeleteFaceAsync(string faceListId, string persistedFaceId)
 		{
 			var requestUri = "facelists/"+ (faceListId==null? "" : System.Uri.EscapeDataString(faceListId))+"/persistedfaces/"+ (persistedFaceId==null? "" : System.Uri.EscapeDataString(persistedFaceId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -1972,7 +1953,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1988,22 +1968,19 @@ namespace MyNS
 		public async Task<SimilarFace[]> Face_FindSimilarAsync(FindSimilarRequest requestBody)
 		{
 			var requestUri = "findsimilars";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<SimilarFace[]>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<SimilarFace[]>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2021,22 +1998,19 @@ namespace MyNS
 		public async Task<GroupResult> Face_GroupAsync(GroupRequest requestBody)
 		{
 			var requestUri = "group";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<GroupResult>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<GroupResult>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2060,22 +2034,19 @@ namespace MyNS
 		public async Task<IdentifyResult[]> Face_IdentifyAsync(IdentifyRequest requestBody)
 		{
 			var requestUri = "identify";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<IdentifyResult[]>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<IdentifyResult[]>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2098,19 +2069,17 @@ namespace MyNS
 		public async Task<LargeFaceList[]> LargeFaceList_ListAsync(bool returnRecognitionModel)
 		{
 			var requestUri = "largefacelists?returnRecognitionModel="+returnRecognitionModel;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<LargeFaceList[]>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<LargeFaceList[]>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2126,19 +2095,17 @@ namespace MyNS
 		public async Task<LargeFaceList> LargeFaceList_GetAsync(string largeFaceListId, bool returnRecognitionModel)
 		{
 			var requestUri = "largefacelists/"+ (largeFaceListId==null? "" : System.Uri.EscapeDataString(largeFaceListId))+"&returnRecognitionModel="+returnRecognitionModel;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<LargeFaceList>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<LargeFaceList>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2164,10 +2131,8 @@ namespace MyNS
 		public async Task LargeFaceList_CreateAsync(string largeFaceListId, MetaDataContract requestBody)
 		{
 			var requestUri = "largefacelists/"+ (largeFaceListId==null? "" : System.Uri.EscapeDataString(largeFaceListId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -2177,7 +2142,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2192,8 +2156,7 @@ namespace MyNS
 		public async Task LargeFaceList_DeleteAsync(string largeFaceListId)
 		{
 			var requestUri = "largefacelists/"+ (largeFaceListId==null? "" : System.Uri.EscapeDataString(largeFaceListId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -2202,7 +2165,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2218,10 +2180,8 @@ namespace MyNS
 		public async Task LargeFaceList_UpdateAsync(string largeFaceListId, NameAndUserDataContract requestBody)
 		{
 			var requestUri = "largefacelists/"+ (largeFaceListId==null? "" : System.Uri.EscapeDataString(largeFaceListId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -2231,7 +2191,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2251,19 +2210,17 @@ namespace MyNS
 		public async Task<PersistedFace[]> LargeFaceList_ListFacesAsync(string largeFaceListId, string start, int top)
 		{
 			var requestUri = "largefacelists/"+ (largeFaceListId==null? "" : System.Uri.EscapeDataString(largeFaceListId))+"/persistedfaces&start=" + (start==null? "" : System.Uri.EscapeDataString(start))+"&top="+top;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<PersistedFace[]>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<PersistedFace[]>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2301,22 +2258,19 @@ namespace MyNS
 		public async Task<PersistedFace> LargeFaceList_AddFaceFromUrlAsync(string largeFaceListId, string userData, int[] targetFace, Face_DetectWithUrlDetectionModel detectionModel, LargeFaceList_AddFaceFromUrlPostBody requestBody)
 		{
 			var requestUri = "largefacelists/"+ (largeFaceListId==null? "" : System.Uri.EscapeDataString(largeFaceListId))+"/persistedfaces&userData=" + (userData==null? "" : System.Uri.EscapeDataString(userData))+"&"+string.Join("&", targetFace.Select(z => $"targetFace={z}"))+"&detectionModel=" + detectionModel;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<PersistedFace>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<PersistedFace>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2332,19 +2286,17 @@ namespace MyNS
 		public async Task<PersistedFace> LargeFaceList_GetFaceAsync(string largeFaceListId, string persistedFaceId)
 		{
 			var requestUri = "largefacelists/"+ (largeFaceListId==null? "" : System.Uri.EscapeDataString(largeFaceListId))+"/persistedfaces/"+ (persistedFaceId==null? "" : System.Uri.EscapeDataString(persistedFaceId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<PersistedFace>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<PersistedFace>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2361,8 +2313,7 @@ namespace MyNS
 		public async Task LargeFaceList_DeleteFaceAsync(string largeFaceListId, string persistedFaceId)
 		{
 			var requestUri = "largefacelists/"+ (largeFaceListId==null? "" : System.Uri.EscapeDataString(largeFaceListId))+"/persistedfaces/"+ (persistedFaceId==null? "" : System.Uri.EscapeDataString(persistedFaceId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -2371,7 +2322,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2388,10 +2338,8 @@ namespace MyNS
 		public async Task LargeFaceList_UpdateFaceAsync(string largeFaceListId, string persistedFaceId, UpdateFaceRequest requestBody)
 		{
 			var requestUri = "largefacelists/"+ (largeFaceListId==null? "" : System.Uri.EscapeDataString(largeFaceListId))+"/persistedfaces/"+ (persistedFaceId==null? "" : System.Uri.EscapeDataString(persistedFaceId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -2401,7 +2349,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2415,8 +2362,7 @@ namespace MyNS
 		public async Task LargeFaceList_TrainAsync(string largeFaceListId)
 		{
 			var requestUri = "largefacelists/"+ (largeFaceListId==null? "" : System.Uri.EscapeDataString(largeFaceListId))+"/train";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -2425,7 +2371,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2440,19 +2385,17 @@ namespace MyNS
 		public async Task<TrainingStatus> LargeFaceList_GetTrainingStatusAsync(string largeFaceListId)
 		{
 			var requestUri = "largefacelists/"+ (largeFaceListId==null? "" : System.Uri.EscapeDataString(largeFaceListId))+"/training";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<TrainingStatus>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<TrainingStatus>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2481,19 +2424,17 @@ namespace MyNS
 		public async Task<LargePersonGroup[]> LargePersonGroup_ListAsync(string start, int top, bool returnRecognitionModel)
 		{
 			var requestUri = "largepersongroups?start=" + (start==null? "" : System.Uri.EscapeDataString(start))+"&top="+top+"&returnRecognitionModel="+returnRecognitionModel;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<LargePersonGroup[]>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<LargePersonGroup[]>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2510,19 +2451,17 @@ namespace MyNS
 		public async Task<LargePersonGroup> LargePersonGroup_GetAsync(string largePersonGroupId, bool returnRecognitionModel)
 		{
 			var requestUri = "largepersongroups/"+ (largePersonGroupId==null? "" : System.Uri.EscapeDataString(largePersonGroupId))+"&returnRecognitionModel="+returnRecognitionModel;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<LargePersonGroup>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<LargePersonGroup>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2549,10 +2488,8 @@ namespace MyNS
 		public async Task LargePersonGroup_CreateAsync(string largePersonGroupId, MetaDataContract requestBody)
 		{
 			var requestUri = "largepersongroups/"+ (largePersonGroupId==null? "" : System.Uri.EscapeDataString(largePersonGroupId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -2562,7 +2499,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2577,8 +2513,7 @@ namespace MyNS
 		public async Task LargePersonGroup_DeleteAsync(string largePersonGroupId)
 		{
 			var requestUri = "largepersongroups/"+ (largePersonGroupId==null? "" : System.Uri.EscapeDataString(largePersonGroupId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -2587,7 +2522,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2603,10 +2537,8 @@ namespace MyNS
 		public async Task LargePersonGroup_UpdateAsync(string largePersonGroupId, NameAndUserDataContract requestBody)
 		{
 			var requestUri = "largepersongroups/"+ (largePersonGroupId==null? "" : System.Uri.EscapeDataString(largePersonGroupId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -2616,7 +2548,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2636,19 +2567,17 @@ namespace MyNS
 		public async Task<Person[]> LargePersonGroupPerson_ListAsync(string largePersonGroupId, string start, int top)
 		{
 			var requestUri = "largepersongroups/"+ (largePersonGroupId==null? "" : System.Uri.EscapeDataString(largePersonGroupId))+"/persons&start=" + (start==null? "" : System.Uri.EscapeDataString(start))+"&top="+top;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Person[]>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Person[]>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2664,22 +2593,19 @@ namespace MyNS
 		public async Task<Person> LargePersonGroupPerson_CreateAsync(string largePersonGroupId, NameAndUserDataContract requestBody)
 		{
 			var requestUri = "largepersongroups/"+ (largePersonGroupId==null? "" : System.Uri.EscapeDataString(largePersonGroupId))+"/persons";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Person>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Person>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2695,19 +2621,17 @@ namespace MyNS
 		public async Task<Person> LargePersonGroupPerson_GetAsync(string largePersonGroupId, string personId)
 		{
 			var requestUri = "largepersongroups/"+ (largePersonGroupId==null? "" : System.Uri.EscapeDataString(largePersonGroupId))+"/persons/"+ (personId==null? "" : System.Uri.EscapeDataString(personId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Person>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Person>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2723,8 +2647,7 @@ namespace MyNS
 		public async Task LargePersonGroupPerson_DeleteAsync(string largePersonGroupId, string personId)
 		{
 			var requestUri = "largepersongroups/"+ (largePersonGroupId==null? "" : System.Uri.EscapeDataString(largePersonGroupId))+"/persons/"+ (personId==null? "" : System.Uri.EscapeDataString(personId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -2733,7 +2656,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2750,10 +2672,8 @@ namespace MyNS
 		public async Task LargePersonGroupPerson_UpdateAsync(string largePersonGroupId, string personId, NameAndUserDataContract requestBody)
 		{
 			var requestUri = "largepersongroups/"+ (largePersonGroupId==null? "" : System.Uri.EscapeDataString(largePersonGroupId))+"/persons/"+ (personId==null? "" : System.Uri.EscapeDataString(personId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -2763,7 +2683,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2798,22 +2717,19 @@ namespace MyNS
 		public async Task<PersistedFace> LargePersonGroupPerson_AddFaceFromUrlAsync(string largePersonGroupId, string personId, string userData, int[] targetFace, Face_DetectWithUrlDetectionModel detectionModel, LargePersonGroupPerson_AddFaceFromUrlPostBody requestBody)
 		{
 			var requestUri = "largepersongroups/"+ (largePersonGroupId==null? "" : System.Uri.EscapeDataString(largePersonGroupId))+"/persons/"+ (personId==null? "" : System.Uri.EscapeDataString(personId))+"/persistedfaces&userData=" + (userData==null? "" : System.Uri.EscapeDataString(userData))+"&"+string.Join("&", targetFace.Select(z => $"targetFace={z}"))+"&detectionModel=" + detectionModel;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<PersistedFace>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<PersistedFace>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2830,19 +2746,17 @@ namespace MyNS
 		public async Task<PersistedFace> LargePersonGroupPerson_GetFaceAsync(string largePersonGroupId, string personId, string persistedFaceId)
 		{
 			var requestUri = "largepersongroups/"+ (largePersonGroupId==null? "" : System.Uri.EscapeDataString(largePersonGroupId))+"/persons/"+ (personId==null? "" : System.Uri.EscapeDataString(personId))+"/persistedfaces/"+ (persistedFaceId==null? "" : System.Uri.EscapeDataString(persistedFaceId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<PersistedFace>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<PersistedFace>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2860,8 +2774,7 @@ namespace MyNS
 		public async Task LargePersonGroupPerson_DeleteFaceAsync(string largePersonGroupId, string personId, string persistedFaceId)
 		{
 			var requestUri = "largepersongroups/"+ (largePersonGroupId==null? "" : System.Uri.EscapeDataString(largePersonGroupId))+"/persons/"+ (personId==null? "" : System.Uri.EscapeDataString(personId))+"/persistedfaces/"+ (persistedFaceId==null? "" : System.Uri.EscapeDataString(persistedFaceId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -2870,7 +2783,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2888,10 +2800,8 @@ namespace MyNS
 		public async Task LargePersonGroupPerson_UpdateFaceAsync(string largePersonGroupId, string personId, string persistedFaceId, UpdateFaceRequest requestBody)
 		{
 			var requestUri = "largepersongroups/"+ (largePersonGroupId==null? "" : System.Uri.EscapeDataString(largePersonGroupId))+"/persons/"+ (personId==null? "" : System.Uri.EscapeDataString(personId))+"/persistedfaces/"+ (persistedFaceId==null? "" : System.Uri.EscapeDataString(persistedFaceId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -2901,7 +2811,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2915,8 +2824,7 @@ namespace MyNS
 		public async Task LargePersonGroup_TrainAsync(string largePersonGroupId)
 		{
 			var requestUri = "largepersongroups/"+ (largePersonGroupId==null? "" : System.Uri.EscapeDataString(largePersonGroupId))+"/train";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -2925,7 +2833,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2940,19 +2847,17 @@ namespace MyNS
 		public async Task<TrainingStatus> LargePersonGroup_GetTrainingStatusAsync(string largePersonGroupId)
 		{
 			var requestUri = "largepersongroups/"+ (largePersonGroupId==null? "" : System.Uri.EscapeDataString(largePersonGroupId))+"/training";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<TrainingStatus>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<TrainingStatus>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2965,19 +2870,17 @@ namespace MyNS
 		public async Task<OperationStatus> Snapshot_GetOperationStatusAsync(string operationId)
 		{
 			var requestUri = "operations/"+ (operationId==null? "" : System.Uri.EscapeDataString(operationId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<OperationStatus>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<OperationStatus>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3006,19 +2909,17 @@ namespace MyNS
 		public async Task<PersonGroup[]> PersonGroup_ListAsync(string start, int top, bool returnRecognitionModel)
 		{
 			var requestUri = "persongroups?start=" + (start==null? "" : System.Uri.EscapeDataString(start))+"&top="+top+"&returnRecognitionModel="+returnRecognitionModel;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<PersonGroup[]>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<PersonGroup[]>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3034,19 +2935,17 @@ namespace MyNS
 		public async Task<PersonGroup> PersonGroup_GetAsync(string personGroupId, bool returnRecognitionModel)
 		{
 			var requestUri = "persongroups/"+ (personGroupId==null? "" : System.Uri.EscapeDataString(personGroupId))+"&returnRecognitionModel="+returnRecognitionModel;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<PersonGroup>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<PersonGroup>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3073,10 +2972,8 @@ namespace MyNS
 		public async Task PersonGroup_CreateAsync(string personGroupId, MetaDataContract requestBody)
 		{
 			var requestUri = "persongroups/"+ (personGroupId==null? "" : System.Uri.EscapeDataString(personGroupId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -3086,7 +2983,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3101,8 +2997,7 @@ namespace MyNS
 		public async Task PersonGroup_DeleteAsync(string personGroupId)
 		{
 			var requestUri = "persongroups/"+ (personGroupId==null? "" : System.Uri.EscapeDataString(personGroupId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -3111,7 +3006,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3127,10 +3021,8 @@ namespace MyNS
 		public async Task PersonGroup_UpdateAsync(string personGroupId, NameAndUserDataContract requestBody)
 		{
 			var requestUri = "persongroups/"+ (personGroupId==null? "" : System.Uri.EscapeDataString(personGroupId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -3140,7 +3032,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3160,19 +3051,17 @@ namespace MyNS
 		public async Task<Person[]> PersonGroupPerson_ListAsync(string personGroupId, string start, int top)
 		{
 			var requestUri = "persongroups/"+ (personGroupId==null? "" : System.Uri.EscapeDataString(personGroupId))+"/persons&start=" + (start==null? "" : System.Uri.EscapeDataString(start))+"&top="+top;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Person[]>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Person[]>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3188,22 +3077,19 @@ namespace MyNS
 		public async Task<Person> PersonGroupPerson_CreateAsync(string personGroupId, NameAndUserDataContract requestBody)
 		{
 			var requestUri = "persongroups/"+ (personGroupId==null? "" : System.Uri.EscapeDataString(personGroupId))+"/persons";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Person>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Person>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3219,19 +3105,17 @@ namespace MyNS
 		public async Task<Person> PersonGroupPerson_GetAsync(string personGroupId, string personId)
 		{
 			var requestUri = "persongroups/"+ (personGroupId==null? "" : System.Uri.EscapeDataString(personGroupId))+"/persons/"+ (personId==null? "" : System.Uri.EscapeDataString(personId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Person>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Person>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3247,8 +3131,7 @@ namespace MyNS
 		public async Task PersonGroupPerson_DeleteAsync(string personGroupId, string personId)
 		{
 			var requestUri = "persongroups/"+ (personGroupId==null? "" : System.Uri.EscapeDataString(personGroupId))+"/persons/"+ (personId==null? "" : System.Uri.EscapeDataString(personId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -3257,7 +3140,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3274,10 +3156,8 @@ namespace MyNS
 		public async Task PersonGroupPerson_UpdateAsync(string personGroupId, string personId, NameAndUserDataContract requestBody)
 		{
 			var requestUri = "persongroups/"+ (personGroupId==null? "" : System.Uri.EscapeDataString(personGroupId))+"/persons/"+ (personId==null? "" : System.Uri.EscapeDataString(personId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -3287,7 +3167,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3322,22 +3201,19 @@ namespace MyNS
 		public async Task<PersistedFace> PersonGroupPerson_AddFaceFromUrlAsync(string personGroupId, string personId, string userData, int[] targetFace, Face_DetectWithUrlDetectionModel detectionModel, PersonGroupPerson_AddFaceFromUrlPostBody requestBody)
 		{
 			var requestUri = "persongroups/"+ (personGroupId==null? "" : System.Uri.EscapeDataString(personGroupId))+"/persons/"+ (personId==null? "" : System.Uri.EscapeDataString(personId))+"/persistedfaces&userData=" + (userData==null? "" : System.Uri.EscapeDataString(userData))+"&"+string.Join("&", targetFace.Select(z => $"targetFace={z}"))+"&detectionModel=" + detectionModel;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<PersistedFace>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<PersistedFace>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3354,19 +3230,17 @@ namespace MyNS
 		public async Task<PersistedFace> PersonGroupPerson_GetFaceAsync(string personGroupId, string personId, string persistedFaceId)
 		{
 			var requestUri = "persongroups/"+ (personGroupId==null? "" : System.Uri.EscapeDataString(personGroupId))+"/persons/"+ (personId==null? "" : System.Uri.EscapeDataString(personId))+"/persistedfaces/"+ (persistedFaceId==null? "" : System.Uri.EscapeDataString(persistedFaceId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<PersistedFace>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<PersistedFace>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3384,8 +3258,7 @@ namespace MyNS
 		public async Task PersonGroupPerson_DeleteFaceAsync(string personGroupId, string personId, string persistedFaceId)
 		{
 			var requestUri = "persongroups/"+ (personGroupId==null? "" : System.Uri.EscapeDataString(personGroupId))+"/persons/"+ (personId==null? "" : System.Uri.EscapeDataString(personId))+"/persistedfaces/"+ (persistedFaceId==null? "" : System.Uri.EscapeDataString(persistedFaceId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -3394,7 +3267,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3419,10 +3291,8 @@ namespace MyNS
 		public async Task PersonGroupPerson_UpdateFaceAsync(string personGroupId, string personId, string persistedFaceId, UpdateFaceRequest requestBody)
 		{
 			var requestUri = "persongroups/"+ (personGroupId==null? "" : System.Uri.EscapeDataString(personGroupId))+"/persons/"+ (personId==null? "" : System.Uri.EscapeDataString(personId))+"/persistedfaces/"+ (persistedFaceId==null? "" : System.Uri.EscapeDataString(persistedFaceId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -3432,7 +3302,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3446,8 +3315,7 @@ namespace MyNS
 		public async Task PersonGroup_TrainAsync(string personGroupId)
 		{
 			var requestUri = "persongroups/"+ (personGroupId==null? "" : System.Uri.EscapeDataString(personGroupId))+"/train";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -3456,7 +3324,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3471,19 +3338,17 @@ namespace MyNS
 		public async Task<TrainingStatus> PersonGroup_GetTrainingStatusAsync(string personGroupId)
 		{
 			var requestUri = "persongroups/"+ (personGroupId==null? "" : System.Uri.EscapeDataString(personGroupId))+"/training";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<TrainingStatus>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<TrainingStatus>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3497,19 +3362,17 @@ namespace MyNS
 		public async Task<Snapshot[]> Snapshot_ListAsync(SnapshotType type, string[] applyScope)
 		{
 			var requestUri = "snapshots?type=" + type+"&"+string.Join("&", applyScope.Select(z => $"applyScope={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Snapshot[]>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Snapshot[]>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3528,10 +3391,8 @@ namespace MyNS
 		public async Task Snapshot_TakeAsync(TakeSnapshotRequest requestBody)
 		{
 			var requestUri = "snapshots";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -3541,7 +3402,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3554,19 +3414,17 @@ namespace MyNS
 		public async Task<Snapshot> Snapshot_GetAsync(string snapshotId)
 		{
 			var requestUri = "snapshots/"+ (snapshotId==null? "" : System.Uri.EscapeDataString(snapshotId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Snapshot>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Snapshot>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3579,8 +3437,7 @@ namespace MyNS
 		public async Task Snapshot_DeleteAsync(string snapshotId)
 		{
 			var requestUri = "snapshots/"+ (snapshotId==null? "" : System.Uri.EscapeDataString(snapshotId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -3589,7 +3446,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3603,10 +3459,8 @@ namespace MyNS
 		public async Task Snapshot_UpdateAsync(string snapshotId, UpdateSnapshotRequest requestBody)
 		{
 			var requestUri = "snapshots/"+ (snapshotId==null? "" : System.Uri.EscapeDataString(snapshotId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -3616,7 +3470,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3637,10 +3490,8 @@ namespace MyNS
 		public async Task Snapshot_ApplyAsync(string snapshotId, ApplySnapshotRequest requestBody)
 		{
 			var requestUri = "snapshots/"+ (snapshotId==null? "" : System.Uri.EscapeDataString(snapshotId))+"/apply";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -3650,7 +3501,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3669,22 +3519,19 @@ namespace MyNS
 		public async Task<VerifyResult> Face_VerifyFaceToFaceAsync(VerifyFaceToFaceRequest requestBody)
 		{
 			var requestUri = "verify";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<VerifyResult>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<VerifyResult>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

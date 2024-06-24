@@ -2675,8 +2675,7 @@ namespace MyNS
 		public async Task<PartialFindResult_ActivityEntryForApiContract> ApiActivityEntriesGetByBeforeAndSinceAndUserIdAndEditEventAndMaxResultsAndGetTotalCountAndFieldsAndEntryFieldsAndLangAsync(System.DateTimeOffset before, System.DateTimeOffset since, int userId, ActivityEntryForApiContractEditEvent editEvent, int maxResults, bool getTotalCount, ApiActivityEntriesGetByBeforeAndSinceAndUserIdAndEditEventAndMaxResultsAndGetTotalCountAndFieldsAndEntryFieldsAndLangFields fields, ApiActivityEntriesGetByBeforeAndSinceAndUserIdAndEditEventAndMaxResultsAndGetTotalCountAndFieldsAndEntryFieldsAndLangEntryFields entryFields, ApiActivityEntriesGetByBeforeAndSinceAndUserIdAndEditEventAndMaxResultsAndGetTotalCountAndFieldsAndEntryFieldsAndLangLang lang, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/activityEntries?before=" + before.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&since=" + since.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&userId="+userId+"&editEvent=" + editEvent+"&maxResults="+maxResults+"&getTotalCount="+getTotalCount+"&fields=" + fields+"&entryFields=" + entryFields+"&lang=" + lang;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2686,13 +2685,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<PartialFindResult_ActivityEntryForApiContract>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<PartialFindResult_ActivityEntryForApiContract>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2760,8 +2758,7 @@ namespace MyNS
 					Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/albums?query=" + (query==null? "" : System.Uri.EscapeDataString(query))+"&discTypes=" + discTypes+"&"+string.Join("&", tagName.Select(z => $"tagName={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", tagId.Select(z => $"tagId={z}"))+"&childTags="+childTags+"&"+string.Join("&", artistId.Select(z => $"artistId={z}"))+"&artistParticipationStatus=" + artistParticipationStatus+"&childVoicebanks="+childVoicebanks+"&includeMembers="+includeMembers+"&barcode=" + (barcode==null? "" : System.Uri.EscapeDataString(barcode))+"&status=" + status+"&releaseDateAfter=" + releaseDateAfter.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&releaseDateBefore=" + releaseDateBefore.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&"+string.Join("&", advancedFilters.Select(z => $"advancedFilters={System.Uri.EscapeDataString(z.ToString())}"))+"&start="+start+"&maxResults="+maxResults+"&getTotalCount="+getTotalCount+"&sort=" + sort+"&preferAccurateMatches="+preferAccurateMatches+"&deleted="+deleted+"&nameMatchMode=" + nameMatchMode+"&fields=" + fields+"&lang=" + lang;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2771,13 +2768,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<PartialFindResult_AlbumForApiContract>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<PartialFindResult_AlbumForApiContract>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2792,10 +2788,8 @@ namespace MyNS
 		public async Task ApiAlbumsComments_commentIdPostAsync(int commentId, CommentForApiContract requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/albums/comments/"+commentId;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -2811,7 +2805,6 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
-			}
 		}
 		
 		/// <summary>
@@ -2824,8 +2817,7 @@ namespace MyNS
 		public async Task ApiAlbumsComments_commentIdDeleteAsync(int commentId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/albums/comments/"+commentId;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2839,7 +2831,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2854,8 +2845,7 @@ namespace MyNS
 		public async Task<string[]> ApiAlbumsNamesGetByQueryAndNameMatchModeAndMaxResultsAsync(string query, ApiAlbumsGetByQueryAndDiscTypesAndTagNameAndTagIdAndChildTagsAndArtistIdAndArtistParticipationStatusAndChildVoicebanksAndIncludeMembersAndBarcodeAndStatusAndReleaseDateAfterAndReleaseDateBeforeAndAdvancedFiltersAndStartAndMaxResultsAndGetTotalCountAndSortAndPreferAccurateMatchesAndDeletedAndNameMatchModeAndFieldsAndLangNameMatchMode nameMatchMode, int maxResults, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/albums/names?query=" + (query==null? "" : System.Uri.EscapeDataString(query))+"&nameMatchMode=" + nameMatchMode+"&maxResults="+maxResults;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2865,13 +2855,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<string[]>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<string[]>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2884,8 +2873,7 @@ namespace MyNS
 		public async Task<AlbumForApiContract[]> ApiAlbumsNewGetByLanguagePreferenceAndFieldsAsync(ApiActivityEntriesGetByBeforeAndSinceAndUserIdAndEditEventAndMaxResultsAndGetTotalCountAndFieldsAndEntryFieldsAndLangLang languagePreference, ApiAlbumsGetByQueryAndDiscTypesAndTagNameAndTagIdAndChildTagsAndArtistIdAndArtistParticipationStatusAndChildVoicebanksAndIncludeMembersAndBarcodeAndStatusAndReleaseDateAfterAndReleaseDateBeforeAndAdvancedFiltersAndStartAndMaxResultsAndGetTotalCountAndSortAndPreferAccurateMatchesAndDeletedAndNameMatchModeAndFieldsAndLangFields fields, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/albums/new?languagePreference=" + languagePreference+"&fields=" + fields;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2895,13 +2883,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<AlbumForApiContract[]>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<AlbumForApiContract[]>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2914,8 +2901,7 @@ namespace MyNS
 		public async Task<AlbumForApiContract[]> ApiAlbumsTopGetByLanguagePreferenceAndFieldsAsync(ApiActivityEntriesGetByBeforeAndSinceAndUserIdAndEditEventAndMaxResultsAndGetTotalCountAndFieldsAndEntryFieldsAndLangLang languagePreference, ApiAlbumsGetByQueryAndDiscTypesAndTagNameAndTagIdAndChildTagsAndArtistIdAndArtistParticipationStatusAndChildVoicebanksAndIncludeMembersAndBarcodeAndStatusAndReleaseDateAfterAndReleaseDateBeforeAndAdvancedFiltersAndStartAndMaxResultsAndGetTotalCountAndSortAndPreferAccurateMatchesAndDeletedAndNameMatchModeAndFieldsAndLangFields fields, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/albums/top?languagePreference=" + languagePreference+"&fields=" + fields;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2925,13 +2911,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<AlbumForApiContract[]>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<AlbumForApiContract[]>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2947,8 +2932,7 @@ namespace MyNS
 		public async Task<AlbumForApiContract> ApiAlbums_idGetByFieldsAndSongFieldsAndLangAsync(int id, ApiAlbumsGetByQueryAndDiscTypesAndTagNameAndTagIdAndChildTagsAndArtistIdAndArtistParticipationStatusAndChildVoicebanksAndIncludeMembersAndBarcodeAndStatusAndReleaseDateAfterAndReleaseDateBeforeAndAdvancedFiltersAndStartAndMaxResultsAndGetTotalCountAndSortAndPreferAccurateMatchesAndDeletedAndNameMatchModeAndFieldsAndLangFields fields, ApiAlbums_idGetByFieldsAndSongFieldsAndLangSongFields songFields, ApiActivityEntriesGetByBeforeAndSinceAndUserIdAndEditEventAndMaxResultsAndGetTotalCountAndFieldsAndEntryFieldsAndLangLang lang, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/albums/"+id+"?fields=" + fields+"&songFields=" + songFields+"&lang=" + lang;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2958,13 +2942,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<AlbumForApiContract>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<AlbumForApiContract>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2977,8 +2960,7 @@ namespace MyNS
 		public async Task ApiAlbums_idDeleteByNotesAsync(int id, string notes, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/albums/"+id+"?notes=" + (notes==null? "" : System.Uri.EscapeDataString(notes));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2992,7 +2974,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3006,8 +2987,7 @@ namespace MyNS
 		public async Task<CommentForApiContract[]> ApiAlbums_idCommentsGetAsync(int id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/albums/"+id+"/comments";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3017,13 +2997,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<CommentForApiContract[]>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<CommentForApiContract[]>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3037,10 +3016,8 @@ namespace MyNS
 		public async Task<CommentForApiContract> ApiAlbums_idCommentsPostAsync(int id, CommentForApiContract requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/albums/"+id+"/comments";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -3051,13 +3028,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<CommentForApiContract>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<CommentForApiContract>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3068,8 +3044,7 @@ namespace MyNS
 		public async Task<AlbumReviewContract[]> ApiAlbums_idReviewsGetByLanguageCodeAsync(int id, string languageCode, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/albums/"+id+"/reviews?languageCode=" + (languageCode==null? "" : System.Uri.EscapeDataString(languageCode));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3079,13 +3054,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<AlbumReviewContract[]>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<AlbumReviewContract[]>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3096,10 +3070,8 @@ namespace MyNS
 		public async Task<AlbumReviewContract> ApiAlbums_idReviewsPostAsync(int id, AlbumReviewContract requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/albums/"+id+"/reviews";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -3110,13 +3082,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<AlbumReviewContract>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<AlbumReviewContract>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3126,8 +3097,7 @@ namespace MyNS
 		public async Task ApiAlbums_idReviews_reviewIdDeleteAsync(int reviewId, string id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/albums/"+ (id==null? "" : System.Uri.EscapeDataString(id))+"/reviews/"+reviewId;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3141,7 +3111,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3156,8 +3125,7 @@ namespace MyNS
 		public async Task<SongInAlbumForApiContract[]> ApiAlbums_idTracksGetByFieldsAndLangAsync(int id, ApiAlbums_idGetByFieldsAndSongFieldsAndLangSongFields fields, ApiActivityEntriesGetByBeforeAndSinceAndUserIdAndEditEventAndMaxResultsAndGetTotalCountAndFieldsAndEntryFieldsAndLangLang lang, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/albums/"+id+"/tracks?fields=" + fields+"&lang=" + lang;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3167,13 +3135,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<SongInAlbumForApiContract[]>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<SongInAlbumForApiContract[]>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3184,8 +3151,7 @@ namespace MyNS
 		public async Task<string[]> ApiAlbums_idTracksFieldsGetByFieldAndDiscNumberAndLangAsync(int id, string[] field, int discNumber, ApiActivityEntriesGetByBeforeAndSinceAndUserIdAndEditEventAndMaxResultsAndGetTotalCountAndFieldsAndEntryFieldsAndLangLang lang, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/albums/"+id+"/tracks/fields?"+string.Join("&", field.Select(z => $"field={System.Uri.EscapeDataString(z.ToString())}"))+"&discNumber="+discNumber+"&lang=" + lang;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3195,13 +3161,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<string[]>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<string[]>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3212,8 +3177,7 @@ namespace MyNS
 		public async Task<AlbumForUserForApiContract[]> ApiAlbums_idUser_collectionsGetByLanguagePreferenceAsync(int id, ApiActivityEntriesGetByBeforeAndSinceAndUserIdAndEditEventAndMaxResultsAndGetTotalCountAndFieldsAndEntryFieldsAndLangLang languagePreference, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/albums/"+id+"/user-collections?languagePreference=" + languagePreference;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3223,13 +3187,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<AlbumForUserForApiContract[]>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<AlbumForUserForApiContract[]>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3279,8 +3242,7 @@ namespace MyNS
 					Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/artists?query=" + (query==null? "" : System.Uri.EscapeDataString(query))+"&artistTypes=" + (artistTypes==null? "" : System.Uri.EscapeDataString(artistTypes))+"&allowBaseVoicebanks="+allowBaseVoicebanks+"&"+string.Join("&", tagName.Select(z => $"tagName={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", tagId.Select(z => $"tagId={z}"))+"&childTags="+childTags+"&followedByUserId="+followedByUserId+"&status=" + status+"&"+string.Join("&", advancedFilters.Select(z => $"advancedFilters={System.Uri.EscapeDataString(z.ToString())}"))+"&start="+start+"&maxResults="+maxResults+"&getTotalCount="+getTotalCount+"&sort=" + sort+"&preferAccurateMatches="+preferAccurateMatches+"&nameMatchMode=" + nameMatchMode+"&fields=" + fields+"&lang=" + lang;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3290,13 +3252,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<PartialFindResult_ArtistForApiContract>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<PartialFindResult_ArtistForApiContract>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3311,10 +3272,8 @@ namespace MyNS
 		public async Task ApiArtistsComments_commentIdPostAsync(int commentId, CommentForApiContract requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/artists/comments/"+commentId;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -3330,7 +3289,6 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
-			}
 		}
 		
 		/// <summary>
@@ -3343,8 +3301,7 @@ namespace MyNS
 		public async Task ApiArtistsComments_commentIdDeleteAsync(int commentId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/artists/comments/"+commentId;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3358,7 +3315,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3373,8 +3329,7 @@ namespace MyNS
 		public async Task<string[]> ApiArtistsNamesGetByQueryAndNameMatchModeAndMaxResultsAsync(string query, ApiAlbumsGetByQueryAndDiscTypesAndTagNameAndTagIdAndChildTagsAndArtistIdAndArtistParticipationStatusAndChildVoicebanksAndIncludeMembersAndBarcodeAndStatusAndReleaseDateAfterAndReleaseDateBeforeAndAdvancedFiltersAndStartAndMaxResultsAndGetTotalCountAndSortAndPreferAccurateMatchesAndDeletedAndNameMatchModeAndFieldsAndLangNameMatchMode nameMatchMode, int maxResults, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/artists/names?query=" + (query==null? "" : System.Uri.EscapeDataString(query))+"&nameMatchMode=" + nameMatchMode+"&maxResults="+maxResults;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3384,13 +3339,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<string[]>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<string[]>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3406,8 +3360,7 @@ namespace MyNS
 		public async Task<ArtistForApiContract> ApiArtists_idGetByFieldsAndRelationsAndLangAsync(int id, ApiArtistsGetByQueryAndArtistTypesAndAllowBaseVoicebanksAndTagNameAndTagIdAndChildTagsAndFollowedByUserIdAndStatusAndAdvancedFiltersAndStartAndMaxResultsAndGetTotalCountAndSortAndPreferAccurateMatchesAndNameMatchModeAndFieldsAndLangFields fields, ApiArtists_idGetByFieldsAndRelationsAndLangRelations relations, ApiActivityEntriesGetByBeforeAndSinceAndUserIdAndEditEventAndMaxResultsAndGetTotalCountAndFieldsAndEntryFieldsAndLangLang lang, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/artists/"+id+"?fields=" + fields+"&relations=" + relations+"&lang=" + lang;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3417,13 +3370,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ArtistForApiContract>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ArtistForApiContract>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3436,8 +3388,7 @@ namespace MyNS
 		public async Task ApiArtists_idDeleteByNotesAsync(int id, string notes, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/artists/"+id+"?notes=" + (notes==null? "" : System.Uri.EscapeDataString(notes));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3451,7 +3402,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3465,8 +3415,7 @@ namespace MyNS
 		public async Task<CommentForApiContract[]> ApiArtists_idCommentsGetAsync(int id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/artists/"+id+"/comments";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3476,13 +3425,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<CommentForApiContract[]>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<CommentForApiContract[]>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3496,10 +3444,8 @@ namespace MyNS
 		public async Task<CommentForApiContract> ApiArtists_idCommentsPostAsync(int id, CommentForApiContract requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/artists/"+id+"/comments";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -3510,13 +3456,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<CommentForApiContract>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<CommentForApiContract>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3530,8 +3475,7 @@ namespace MyNS
 		public async Task<PartialFindResult_CommentForApiContract> ApiComments_entryType_commentsGetByEntryIdAsync(EntryForApiContractEntryType entryType, int entryId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/comments/"+entryType+"-comments?entryId="+entryId;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3541,13 +3485,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<PartialFindResult_CommentForApiContract>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<PartialFindResult_CommentForApiContract>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3561,10 +3504,8 @@ namespace MyNS
 		public async Task<CommentForApiContract> ApiComments_entryType_commentsPostAsync(EntryForApiContractEntryType entryType, CommentForApiContract requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/comments/"+entryType+"-comments";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -3575,13 +3516,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<CommentForApiContract>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<CommentForApiContract>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3597,10 +3537,8 @@ namespace MyNS
 		public async Task ApiComments_entryType_comments_commentIdPostAsync(EntryForApiContractEntryType entryType, int commentId, CommentForApiContract requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/comments/"+entryType+"-comments/"+commentId;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -3615,7 +3553,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3630,8 +3567,7 @@ namespace MyNS
 		public async Task ApiComments_entryType_comments_commentIdDeleteAsync(EntryForApiContractEntryType entryType, int commentId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/comments/"+entryType+"-comments/"+commentId;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3646,7 +3582,6 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
-			}
 		}
 		
 		/// <summary>
@@ -3655,10 +3590,8 @@ namespace MyNS
 		public async Task ApiDiscussionsComments_commentIdPostAsync(int commentId, CommentForApiContract requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/discussions/comments/"+commentId;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -3674,7 +3607,6 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
-			}
 		}
 		
 		/// <summary>
@@ -3683,8 +3615,7 @@ namespace MyNS
 		public async Task ApiDiscussionsComments_commentIdDeleteAsync(int commentId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/discussions/comments/"+commentId;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3698,7 +3629,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3709,8 +3639,7 @@ namespace MyNS
 		public async Task<DiscussionFolderContract[]> ApiDiscussionsFoldersGetByFieldsAsync(ApiDiscussionsFoldersGetByFieldsFields fields, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/discussions/folders?fields=" + fields;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3720,13 +3649,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<DiscussionFolderContract[]>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<DiscussionFolderContract[]>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3737,10 +3665,8 @@ namespace MyNS
 		public async Task<DiscussionFolderContract> ApiDiscussionsFoldersPostAsync(DiscussionFolderContract requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/discussions/folders";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -3751,13 +3677,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<DiscussionFolderContract>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<DiscussionFolderContract>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3768,8 +3693,7 @@ namespace MyNS
 		public async Task<DiscussionTopicContract[]> ApiDiscussionsFolders_folderIdTopicsGetByFieldsAsync(int folderId, ApiDiscussionsFolders_folderIdTopicsGetByFieldsFields fields, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/discussions/folders/"+folderId+"/topics?fields=" + fields;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3779,13 +3703,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<DiscussionTopicContract[]>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<DiscussionTopicContract[]>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3796,10 +3719,8 @@ namespace MyNS
 		public async Task<DiscussionTopicContract> ApiDiscussionsFolders_folderIdTopicsPostAsync(int folderId, DiscussionTopicContract requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/discussions/folders/"+folderId+"/topics";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -3810,13 +3731,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<DiscussionTopicContract>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<DiscussionTopicContract>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3827,8 +3747,7 @@ namespace MyNS
 		public async Task<PartialFindResult_DiscussionTopicContract> ApiDiscussionsTopicsGetByFolderIdAndStartAndMaxResultsAndGetTotalCountAndSortAndFieldsAsync(int folderId, int start, int maxResults, bool getTotalCount, ApiDiscussionsTopicsGetByFolderIdAndStartAndMaxResultsAndGetTotalCountAndSortAndFieldsSort sort, ApiDiscussionsFolders_folderIdTopicsGetByFieldsFields fields, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/discussions/topics?folderId="+folderId+"&start="+start+"&maxResults="+maxResults+"&getTotalCount="+getTotalCount+"&sort=" + sort+"&fields=" + fields;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3838,13 +3757,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<PartialFindResult_DiscussionTopicContract>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<PartialFindResult_DiscussionTopicContract>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3855,8 +3773,7 @@ namespace MyNS
 		public async Task<DiscussionTopicContract> ApiDiscussionsTopics_topicIdGetByFieldsAsync(int topicId, ApiDiscussionsFolders_folderIdTopicsGetByFieldsFields fields, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/discussions/topics/"+topicId+"?fields=" + fields;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3866,13 +3783,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<DiscussionTopicContract>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<DiscussionTopicContract>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3882,10 +3798,8 @@ namespace MyNS
 		public async Task ApiDiscussionsTopics_topicIdPostAsync(int topicId, DiscussionTopicContract requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/discussions/topics/"+topicId;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -3901,7 +3815,6 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
-			}
 		}
 		
 		/// <summary>
@@ -3910,8 +3823,7 @@ namespace MyNS
 		public async Task ApiDiscussionsTopics_topicIdDeleteAsync(int topicId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/discussions/topics/"+topicId;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3925,7 +3837,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3936,10 +3847,8 @@ namespace MyNS
 		public async Task<CommentForApiContract> ApiDiscussionsTopics_topicIdCommentsPostAsync(int topicId, CommentForApiContract requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/discussions/topics/"+topicId+"/comments";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -3950,13 +3859,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<CommentForApiContract>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<CommentForApiContract>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3981,8 +3889,7 @@ namespace MyNS
 		public async Task<PartialFindResult_EntryForApiContract> ApiEntriesGetByQueryAndTagNameAndTagIdAndChildTagsAndEntryTypesAndStatusAndStartAndMaxResultsAndGetTotalCountAndSortAndNameMatchModeAndFieldsAndLangAsync(string query, string[] tagName, int[] tagId, bool childTags, ApiEntriesGetByQueryAndTagNameAndTagIdAndChildTagsAndEntryTypesAndStatusAndStartAndMaxResultsAndGetTotalCountAndSortAndNameMatchModeAndFieldsAndLangEntryTypes entryTypes, EntryForApiContractStatus status, int start, int maxResults, bool getTotalCount, ApiEntriesGetByQueryAndTagNameAndTagIdAndChildTagsAndEntryTypesAndStatusAndStartAndMaxResultsAndGetTotalCountAndSortAndNameMatchModeAndFieldsAndLangSort sort, ApiAlbumsGetByQueryAndDiscTypesAndTagNameAndTagIdAndChildTagsAndArtistIdAndArtistParticipationStatusAndChildVoicebanksAndIncludeMembersAndBarcodeAndStatusAndReleaseDateAfterAndReleaseDateBeforeAndAdvancedFiltersAndStartAndMaxResultsAndGetTotalCountAndSortAndPreferAccurateMatchesAndDeletedAndNameMatchModeAndFieldsAndLangNameMatchMode nameMatchMode, ApiActivityEntriesGetByBeforeAndSinceAndUserIdAndEditEventAndMaxResultsAndGetTotalCountAndFieldsAndEntryFieldsAndLangEntryFields fields, ApiActivityEntriesGetByBeforeAndSinceAndUserIdAndEditEventAndMaxResultsAndGetTotalCountAndFieldsAndEntryFieldsAndLangLang lang, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/entries?query=" + (query==null? "" : System.Uri.EscapeDataString(query))+"&"+string.Join("&", tagName.Select(z => $"tagName={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", tagId.Select(z => $"tagId={z}"))+"&childTags="+childTags+"&entryTypes=" + entryTypes+"&status=" + status+"&start="+start+"&maxResults="+maxResults+"&getTotalCount="+getTotalCount+"&sort=" + sort+"&nameMatchMode=" + nameMatchMode+"&fields=" + fields+"&lang=" + lang;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3992,13 +3899,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<PartialFindResult_EntryForApiContract>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<PartialFindResult_EntryForApiContract>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4013,8 +3919,7 @@ namespace MyNS
 		public async Task<string[]> ApiEntriesNamesGetByQueryAndNameMatchModeAndMaxResultsAsync(string query, ApiAlbumsGetByQueryAndDiscTypesAndTagNameAndTagIdAndChildTagsAndArtistIdAndArtistParticipationStatusAndChildVoicebanksAndIncludeMembersAndBarcodeAndStatusAndReleaseDateAfterAndReleaseDateBeforeAndAdvancedFiltersAndStartAndMaxResultsAndGetTotalCountAndSortAndPreferAccurateMatchesAndDeletedAndNameMatchModeAndFieldsAndLangNameMatchMode nameMatchMode, int maxResults, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/entries/names?query=" + (query==null? "" : System.Uri.EscapeDataString(query))+"&nameMatchMode=" + nameMatchMode+"&maxResults="+maxResults;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4024,13 +3929,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<string[]>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<string[]>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4046,8 +3950,7 @@ namespace MyNS
 		public async Task<PartialFindResult_PVForSongContract> ApiPvsFor_songsGetByAuthorAndMaxResultsAndGetTotalCountAndLangAsync(string author, int maxResults, bool getTotalCount, ApiActivityEntriesGetByBeforeAndSinceAndUserIdAndEditEventAndMaxResultsAndGetTotalCountAndFieldsAndEntryFieldsAndLangLang lang, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/pvs/for-songs?author=" + (author==null? "" : System.Uri.EscapeDataString(author))+"&maxResults="+maxResults+"&getTotalCount="+getTotalCount+"&lang=" + lang;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4057,13 +3960,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<PartialFindResult_PVForSongContract>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<PartialFindResult_PVForSongContract>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4081,8 +3983,7 @@ namespace MyNS
 		public async Task<PartialFindResult_ReleaseEventSeriesContract> ApiReleaseEventSeriesGetByQueryAndStartAndMaxResultsAndGetTotalCountAndNameMatchModeAndLangAsync(string query, int start, int maxResults, bool getTotalCount, ApiAlbumsGetByQueryAndDiscTypesAndTagNameAndTagIdAndChildTagsAndArtistIdAndArtistParticipationStatusAndChildVoicebanksAndIncludeMembersAndBarcodeAndStatusAndReleaseDateAfterAndReleaseDateBeforeAndAdvancedFiltersAndStartAndMaxResultsAndGetTotalCountAndSortAndPreferAccurateMatchesAndDeletedAndNameMatchModeAndFieldsAndLangNameMatchMode nameMatchMode, ApiActivityEntriesGetByBeforeAndSinceAndUserIdAndEditEventAndMaxResultsAndGetTotalCountAndFieldsAndEntryFieldsAndLangLang lang, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/releaseEventSeries?query=" + (query==null? "" : System.Uri.EscapeDataString(query))+"&start="+start+"&maxResults="+maxResults+"&getTotalCount="+getTotalCount+"&nameMatchMode=" + nameMatchMode+"&lang=" + lang;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4092,13 +3993,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<PartialFindResult_ReleaseEventSeriesContract>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<PartialFindResult_ReleaseEventSeriesContract>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4113,8 +4013,7 @@ namespace MyNS
 		public async Task ApiReleaseEventSeries_idDeleteByNotesAndHardDeleteAsync(int id, string notes, bool hardDelete, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/releaseEventSeries/"+id+"?notes=" + (notes==null? "" : System.Uri.EscapeDataString(notes))+"&hardDelete="+hardDelete;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4128,7 +4027,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4180,8 +4078,7 @@ namespace MyNS
 					Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/releaseEvents?query=" + (query==null? "" : System.Uri.EscapeDataString(query))+"&nameMatchMode=" + nameMatchMode+"&seriesId="+seriesId+"&afterDate=" + afterDate.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&beforeDate=" + beforeDate.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&category=" + category+"&userCollectionId="+userCollectionId+"&"+string.Join("&", tagId.Select(z => $"tagId={z}"))+"&childTags="+childTags+"&"+string.Join("&", artistId.Select(z => $"artistId={z}"))+"&childVoicebanks="+childVoicebanks+"&includeMembers="+includeMembers+"&status=" + status+"&start="+start+"&maxResults="+maxResults+"&getTotalCount="+getTotalCount+"&sort=" + sort+"&fields=" + fields+"&lang=" + lang;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4191,13 +4088,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<PartialFindResult_ReleaseEventForApiContract>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<PartialFindResult_ReleaseEventForApiContract>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4213,8 +4109,7 @@ namespace MyNS
 		public async Task<string[]> ApiReleaseEventsNamesGetByQueryAndMaxResultsAsync(string query, int maxResults, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/releaseEvents/names?query=" + (query==null? "" : System.Uri.EscapeDataString(query))+"&maxResults="+maxResults;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4224,13 +4119,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<string[]>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<string[]>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4245,8 +4139,7 @@ namespace MyNS
 		public async Task<AlbumForApiContract[]> ApiReleaseEvents_eventIdAlbumsGetByFieldsAndLangAsync(int eventId, ApiAlbumsGetByQueryAndDiscTypesAndTagNameAndTagIdAndChildTagsAndArtistIdAndArtistParticipationStatusAndChildVoicebanksAndIncludeMembersAndBarcodeAndStatusAndReleaseDateAfterAndReleaseDateBeforeAndAdvancedFiltersAndStartAndMaxResultsAndGetTotalCountAndSortAndPreferAccurateMatchesAndDeletedAndNameMatchModeAndFieldsAndLangFields fields, ApiActivityEntriesGetByBeforeAndSinceAndUserIdAndEditEventAndMaxResultsAndGetTotalCountAndFieldsAndEntryFieldsAndLangLang lang, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/releaseEvents/"+eventId+"/albums?fields=" + fields+"&lang=" + lang;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4256,13 +4149,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<AlbumForApiContract[]>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<AlbumForApiContract[]>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4277,8 +4169,7 @@ namespace MyNS
 		public async Task<SongForApiContract[]> ApiReleaseEvents_eventIdPublished_songsGetByFieldsAndLangAsync(int eventId, ApiAlbums_idGetByFieldsAndSongFieldsAndLangSongFields fields, ApiActivityEntriesGetByBeforeAndSinceAndUserIdAndEditEventAndMaxResultsAndGetTotalCountAndFieldsAndEntryFieldsAndLangLang lang, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/releaseEvents/"+eventId+"/published-songs?fields=" + fields+"&lang=" + lang;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4288,13 +4179,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<SongForApiContract[]>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<SongForApiContract[]>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4309,8 +4199,7 @@ namespace MyNS
 		public async Task ApiReleaseEvents_eventIdReportsPostByReportTypeAndNotesAndVersionNumberAsync(int eventId, ApiReleaseEvents_eventIdReportsPostByReportTypeAndNotesAndVersionNumberReportType reportType, string notes, int versionNumber, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/releaseEvents/"+eventId+"/reports?reportType=" + reportType+"&notes=" + (notes==null? "" : System.Uri.EscapeDataString(notes))+"&versionNumber="+versionNumber;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -4319,7 +4208,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4330,8 +4218,7 @@ namespace MyNS
 		public async Task<ReleaseEventForApiContract> ApiReleaseEvents_idGetByFieldsAndLangAsync(int id, ApiReleaseEventsGetByQueryAndNameMatchModeAndSeriesIdAndAfterDateAndBeforeDateAndCategoryAndUserCollectionIdAndTagIdAndChildTagsAndArtistIdAndChildVoicebanksAndIncludeMembersAndStatusAndStartAndMaxResultsAndGetTotalCountAndSortAndFieldsAndLangFields fields, ApiActivityEntriesGetByBeforeAndSinceAndUserIdAndEditEventAndMaxResultsAndGetTotalCountAndFieldsAndEntryFieldsAndLangLang lang, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/releaseEvents/"+id+"?fields=" + fields+"&lang=" + lang;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4341,13 +4228,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ReleaseEventForApiContract>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ReleaseEventForApiContract>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4362,8 +4248,7 @@ namespace MyNS
 		public async Task ApiReleaseEvents_idDeleteByNotesAndHardDeleteAsync(int id, string notes, bool hardDelete, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/releaseEvents/"+id+"?notes=" + (notes==null? "" : System.Uri.EscapeDataString(notes))+"&hardDelete="+hardDelete;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4377,7 +4262,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4391,8 +4275,7 @@ namespace MyNS
 		public async Task<System.Collections.Generic.Dictionary<string, System.Collections.Generic.Dictionary<string, string>>> ApiResources_cultureCodeGetBySetNamesAsync(string cultureCode, string[] setNames, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/resources/"+ (cultureCode==null? "" : System.Uri.EscapeDataString(cultureCode))+"&"+string.Join("&", setNames.Select(z => $"setNames={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4402,13 +4285,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<System.Collections.Generic.Dictionary<string, System.Collections.Generic.Dictionary<string, string>>>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<System.Collections.Generic.Dictionary<string, System.Collections.Generic.Dictionary<string, string>>>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4421,10 +4303,8 @@ namespace MyNS
 		public async Task<int> ApiSongListsPostAsync(SongListForEditContract requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/songLists";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -4435,13 +4315,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<int>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<int>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4456,10 +4335,8 @@ namespace MyNS
 		public async Task ApiSongListsComments_commentIdPostAsync(int commentId, CommentForApiContract requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/songLists/comments/"+commentId;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -4475,7 +4352,6 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
-			}
 		}
 		
 		/// <summary>
@@ -4488,8 +4364,7 @@ namespace MyNS
 		public async Task ApiSongListsComments_commentIdDeleteAsync(int commentId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/songLists/comments/"+commentId;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4503,7 +4378,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4524,8 +4398,7 @@ namespace MyNS
 		public async Task<PartialFindResult_SongListForApiContract> ApiSongListsFeaturedGetByQueryAndTagIdAndChildTagsAndNameMatchModeAndFeaturedCategoryAndStartAndMaxResultsAndGetTotalCountAndSortAsync(string query, int[] tagId, bool childTags, ApiAlbumsGetByQueryAndDiscTypesAndTagNameAndTagIdAndChildTagsAndArtistIdAndArtistParticipationStatusAndChildVoicebanksAndIncludeMembersAndBarcodeAndStatusAndReleaseDateAfterAndReleaseDateBeforeAndAdvancedFiltersAndStartAndMaxResultsAndGetTotalCountAndSortAndPreferAccurateMatchesAndDeletedAndNameMatchModeAndFieldsAndLangNameMatchMode nameMatchMode, EntryForApiContractSongListFeaturedCategory featuredCategory, int start, int maxResults, bool getTotalCount, ApiSongListsFeaturedGetByQueryAndTagIdAndChildTagsAndNameMatchModeAndFeaturedCategoryAndStartAndMaxResultsAndGetTotalCountAndSortSort sort, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/songLists/featured?query=" + (query==null? "" : System.Uri.EscapeDataString(query))+"&"+string.Join("&", tagId.Select(z => $"tagId={z}"))+"&childTags="+childTags+"&nameMatchMode=" + nameMatchMode+"&featuredCategory=" + featuredCategory+"&start="+start+"&maxResults="+maxResults+"&getTotalCount="+getTotalCount+"&sort=" + sort;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4535,13 +4408,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<PartialFindResult_SongListForApiContract>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<PartialFindResult_SongListForApiContract>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4557,8 +4429,7 @@ namespace MyNS
 		public async Task<string[]> ApiSongListsFeaturedNamesGetByQueryAndNameMatchModeAndFeaturedCategoryAndMaxResultsAsync(string query, ApiAlbumsGetByQueryAndDiscTypesAndTagNameAndTagIdAndChildTagsAndArtistIdAndArtistParticipationStatusAndChildVoicebanksAndIncludeMembersAndBarcodeAndStatusAndReleaseDateAfterAndReleaseDateBeforeAndAdvancedFiltersAndStartAndMaxResultsAndGetTotalCountAndSortAndPreferAccurateMatchesAndDeletedAndNameMatchModeAndFieldsAndLangNameMatchMode nameMatchMode, EntryForApiContractSongListFeaturedCategory featuredCategory, int maxResults, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/songLists/featured/names?query=" + (query==null? "" : System.Uri.EscapeDataString(query))+"&nameMatchMode=" + nameMatchMode+"&featuredCategory=" + featuredCategory+"&maxResults="+maxResults;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4568,13 +4439,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<string[]>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<string[]>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4589,8 +4459,7 @@ namespace MyNS
 		public async Task ApiSongLists_idDeleteByNotesAndHardDeleteAsync(int id, string notes, bool hardDelete, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/songLists/"+id+"?notes=" + (notes==null? "" : System.Uri.EscapeDataString(notes))+"&hardDelete="+hardDelete;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4604,7 +4473,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4617,8 +4485,7 @@ namespace MyNS
 		public async Task<PartialFindResult_CommentForApiContract> ApiSongLists_listIdCommentsGetAsync(int listId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/songLists/"+listId+"/comments";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4628,13 +4495,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<PartialFindResult_CommentForApiContract>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<PartialFindResult_CommentForApiContract>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4648,10 +4514,8 @@ namespace MyNS
 		public async Task<CommentForApiContract> ApiSongLists_listIdCommentsPostAsync(int listId, CommentForApiContract requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/songLists/"+listId+"/comments";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -4662,13 +4526,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<CommentForApiContract>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<CommentForApiContract>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4711,8 +4574,7 @@ namespace MyNS
 					Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/songLists/"+listId+"/songs?query=" + (query==null? "" : System.Uri.EscapeDataString(query))+"&songTypes=" + (songTypes==null? "" : System.Uri.EscapeDataString(songTypes))+"&pvServices=" + pvServices+"&"+string.Join("&", tagId.Select(z => $"tagId={z}"))+"&"+string.Join("&", artistId.Select(z => $"artistId={z}"))+"&childVoicebanks="+childVoicebanks+"&"+string.Join("&", advancedFilters.Select(z => $"advancedFilters={System.Uri.EscapeDataString(z.ToString())}"))+"&start="+start+"&maxResults="+maxResults+"&getTotalCount="+getTotalCount+"&sort=" + sort+"&nameMatchMode=" + nameMatchMode+"&fields=" + fields+"&lang=" + lang;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4722,13 +4584,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<PartialFindResult_SongInListForApiContract>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<PartialFindResult_SongInListForApiContract>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4804,8 +4665,7 @@ namespace MyNS
 					Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/songs?query=" + (query==null? "" : System.Uri.EscapeDataString(query))+"&songTypes=" + (songTypes==null? "" : System.Uri.EscapeDataString(songTypes))+"&afterDate=" + afterDate.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&beforeDate=" + beforeDate.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&"+string.Join("&", tagName.Select(z => $"tagName={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", tagId.Select(z => $"tagId={z}"))+"&childTags="+childTags+"&"+string.Join("&", artistId.Select(z => $"artistId={z}"))+"&artistParticipationStatus=" + artistParticipationStatus+"&childVoicebanks="+childVoicebanks+"&includeMembers="+includeMembers+"&onlyWithPvs="+onlyWithPvs+"&pvServices=" + pvServices+"&since="+since+"&minScore="+minScore+"&userCollectionId="+userCollectionId+"&releaseEventId="+releaseEventId+"&parentSongId="+parentSongId+"&status=" + status+"&"+string.Join("&", advancedFilters.Select(z => $"advancedFilters={System.Uri.EscapeDataString(z.ToString())}"))+"&start="+start+"&maxResults="+maxResults+"&getTotalCount="+getTotalCount+"&sort=" + sort+"&preferAccurateMatches="+preferAccurateMatches+"&nameMatchMode=" + nameMatchMode+"&fields=" + fields+"&lang=" + lang;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4815,13 +4675,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<PartialFindResult_SongForApiContract>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<PartialFindResult_SongForApiContract>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4837,8 +4696,7 @@ namespace MyNS
 		public async Task<SongForApiContract> ApiSongsByPvGetByPvServiceAndPvIdAndFieldsAndLangAsync(PVContractService pvService, string pvId, ApiAlbums_idGetByFieldsAndSongFieldsAndLangSongFields fields, ApiActivityEntriesGetByBeforeAndSinceAndUserIdAndEditEventAndMaxResultsAndGetTotalCountAndFieldsAndEntryFieldsAndLangLang lang, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/songs/byPv?pvService=" + pvService+"&pvId=" + (pvId==null? "" : System.Uri.EscapeDataString(pvId))+"&fields=" + fields+"&lang=" + lang;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4848,13 +4706,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<SongForApiContract>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<SongForApiContract>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4869,10 +4726,8 @@ namespace MyNS
 		public async Task ApiSongsComments_commentIdPostAsync(int commentId, CommentForApiContract requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/songs/comments/"+commentId;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -4888,7 +4743,6 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
-			}
 		}
 		
 		/// <summary>
@@ -4901,8 +4755,7 @@ namespace MyNS
 		public async Task ApiSongsComments_commentIdDeleteAsync(int commentId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/songs/comments/"+commentId;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4916,7 +4769,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4929,8 +4781,7 @@ namespace MyNS
 		public async Task<SongForApiContract[]> ApiSongsHighlightedGetByLanguagePreferenceAndFieldsAsync(ApiActivityEntriesGetByBeforeAndSinceAndUserIdAndEditEventAndMaxResultsAndGetTotalCountAndFieldsAndEntryFieldsAndLangLang languagePreference, ApiAlbums_idGetByFieldsAndSongFieldsAndLangSongFields fields, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/songs/highlighted?languagePreference=" + languagePreference+"&fields=" + fields;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4940,13 +4791,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<SongForApiContract[]>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<SongForApiContract[]>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4960,8 +4810,7 @@ namespace MyNS
 		public async Task<LyricsForSongContract> ApiSongsLyrics_lyricsIdGetAsync(int lyricsId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/songs/lyrics/"+lyricsId;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4971,13 +4820,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<LyricsForSongContract>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<LyricsForSongContract>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4992,8 +4840,7 @@ namespace MyNS
 		public async Task<string[]> ApiSongsNamesGetByQueryAndNameMatchModeAndMaxResultsAsync(string query, ApiAlbumsGetByQueryAndDiscTypesAndTagNameAndTagIdAndChildTagsAndArtistIdAndArtistParticipationStatusAndChildVoicebanksAndIncludeMembersAndBarcodeAndStatusAndReleaseDateAfterAndReleaseDateBeforeAndAdvancedFiltersAndStartAndMaxResultsAndGetTotalCountAndSortAndPreferAccurateMatchesAndDeletedAndNameMatchModeAndFieldsAndLangNameMatchMode nameMatchMode, int maxResults, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/songs/names?query=" + (query==null? "" : System.Uri.EscapeDataString(query))+"&nameMatchMode=" + nameMatchMode+"&maxResults="+maxResults;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5003,13 +4850,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<string[]>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<string[]>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5028,8 +4874,7 @@ namespace MyNS
 		public async Task<SongForApiContract[]> ApiSongsTop_ratedGetByDurationHoursAndStartDateAndFilterByAndVocalistAndMaxResultsAndFieldsAndLanguagePreferenceAsync(int durationHours, System.DateTimeOffset startDate, ApiSongsTop_ratedGetByDurationHoursAndStartDateAndFilterByAndVocalistAndMaxResultsAndFieldsAndLanguagePreferenceFilterBy filterBy, ApiSongsTop_ratedGetByDurationHoursAndStartDateAndFilterByAndVocalistAndMaxResultsAndFieldsAndLanguagePreferenceVocalist vocalist, int maxResults, ApiAlbums_idGetByFieldsAndSongFieldsAndLangSongFields fields, ApiActivityEntriesGetByBeforeAndSinceAndUserIdAndEditEventAndMaxResultsAndGetTotalCountAndFieldsAndEntryFieldsAndLangLang languagePreference, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/songs/top-rated?durationHours="+durationHours+"&startDate=" + startDate.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&filterBy=" + filterBy+"&vocalist=" + vocalist+"&maxResults="+maxResults+"&fields=" + fields+"&languagePreference=" + languagePreference;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5039,13 +4884,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<SongForApiContract[]>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<SongForApiContract[]>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5061,8 +4905,7 @@ namespace MyNS
 		public async Task<SongForApiContract> ApiSongs_idGetByFieldsAndLangAsync(int id, ApiAlbums_idGetByFieldsAndSongFieldsAndLangSongFields fields, ApiActivityEntriesGetByBeforeAndSinceAndUserIdAndEditEventAndMaxResultsAndGetTotalCountAndFieldsAndEntryFieldsAndLangLang lang, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/songs/"+id+"?fields=" + fields+"&lang=" + lang;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5072,13 +4915,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<SongForApiContract>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<SongForApiContract>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5091,8 +4933,7 @@ namespace MyNS
 		public async Task ApiSongs_idDeleteByNotesAsync(int id, string notes, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/songs/"+id+"?notes=" + (notes==null? "" : System.Uri.EscapeDataString(notes));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5106,7 +4947,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5120,8 +4960,7 @@ namespace MyNS
 		public async Task<CommentForApiContract[]> ApiSongs_idCommentsGetAsync(int id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/songs/"+id+"/comments";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5131,13 +4970,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<CommentForApiContract[]>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<CommentForApiContract[]>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5151,10 +4989,8 @@ namespace MyNS
 		public async Task<CommentForApiContract> ApiSongs_idCommentsPostAsync(int id, CommentForApiContract requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/songs/"+id+"/comments";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -5165,13 +5001,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<CommentForApiContract>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<CommentForApiContract>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5188,8 +5023,7 @@ namespace MyNS
 		public async Task<SongForApiContract[]> ApiSongs_idDerivedGetByFieldsAndLangAsync(int id, ApiAlbums_idGetByFieldsAndSongFieldsAndLangSongFields fields, ApiActivityEntriesGetByBeforeAndSinceAndUserIdAndEditEventAndMaxResultsAndGetTotalCountAndFieldsAndEntryFieldsAndLangLang lang, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/songs/"+id+"/derived?fields=" + fields+"&lang=" + lang;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5199,13 +5033,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<SongForApiContract[]>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<SongForApiContract[]>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5222,8 +5055,7 @@ namespace MyNS
 		public async Task<RatedSongForUserForApiContract[]> ApiSongs_idRatingsGetByUserFieldsAndLangAsync(int id, ApiSongs_idRatingsGetByUserFieldsAndLangUserFields userFields, ApiActivityEntriesGetByBeforeAndSinceAndUserIdAndEditEventAndMaxResultsAndGetTotalCountAndFieldsAndEntryFieldsAndLangLang lang, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/songs/"+id+"/ratings?userFields=" + userFields+"&lang=" + lang;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5233,13 +5065,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<RatedSongForUserForApiContract[]>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<RatedSongForUserForApiContract[]>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5255,10 +5086,8 @@ namespace MyNS
 		public async Task ApiSongs_idRatingsPostAsync(int id, SongRatingContract requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/songs/"+id+"/ratings";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -5274,7 +5103,6 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
-			}
 		}
 		
 		/// <summary>
@@ -5288,8 +5116,7 @@ namespace MyNS
 		public async Task<RelatedSongsContract> ApiSongs_idRelatedGetByFieldsAndLangAsync(int id, ApiAlbums_idGetByFieldsAndSongFieldsAndLangSongFields fields, ApiActivityEntriesGetByBeforeAndSinceAndUserIdAndEditEventAndMaxResultsAndGetTotalCountAndFieldsAndEntryFieldsAndLangLang lang, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/songs/"+id+"/related?fields=" + fields+"&lang=" + lang;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5299,13 +5126,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<RelatedSongsContract>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<RelatedSongsContract>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5331,8 +5157,7 @@ namespace MyNS
 		public async Task<PartialFindResult_TagForApiContract> ApiTagsGetByQueryAndAllowChildrenAndCategoryNameAndStartAndMaxResultsAndGetTotalCountAndNameMatchModeAndSortAndPreferAccurateMatchesAndFieldsAndLangAndTargetAsync(string query, bool allowChildren, string categoryName, int start, int maxResults, bool getTotalCount, ApiAlbumsGetByQueryAndDiscTypesAndTagNameAndTagIdAndChildTagsAndArtistIdAndArtistParticipationStatusAndChildVoicebanksAndIncludeMembersAndBarcodeAndStatusAndReleaseDateAfterAndReleaseDateBeforeAndAdvancedFiltersAndStartAndMaxResultsAndGetTotalCountAndSortAndPreferAccurateMatchesAndDeletedAndNameMatchModeAndFieldsAndLangNameMatchMode nameMatchMode, ApiTagsGetByQueryAndAllowChildrenAndCategoryNameAndStartAndMaxResultsAndGetTotalCountAndNameMatchModeAndSortAndPreferAccurateMatchesAndFieldsAndLangAndTargetSort sort, bool preferAccurateMatches, ApiTagsGetByQueryAndAllowChildrenAndCategoryNameAndStartAndMaxResultsAndGetTotalCountAndNameMatchModeAndSortAndPreferAccurateMatchesAndFieldsAndLangAndTargetFields fields, ApiActivityEntriesGetByBeforeAndSinceAndUserIdAndEditEventAndMaxResultsAndGetTotalCountAndFieldsAndEntryFieldsAndLangLang lang, ApiTagsGetByQueryAndAllowChildrenAndCategoryNameAndStartAndMaxResultsAndGetTotalCountAndNameMatchModeAndSortAndPreferAccurateMatchesAndFieldsAndLangAndTargetTarget target, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/tags?query=" + (query==null? "" : System.Uri.EscapeDataString(query))+"&allowChildren="+allowChildren+"&categoryName=" + (categoryName==null? "" : System.Uri.EscapeDataString(categoryName))+"&start="+start+"&maxResults="+maxResults+"&getTotalCount="+getTotalCount+"&nameMatchMode=" + nameMatchMode+"&sort=" + sort+"&preferAccurateMatches="+preferAccurateMatches+"&fields=" + fields+"&lang=" + lang+"&target=" + target;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5342,13 +5167,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<PartialFindResult_TagForApiContract>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<PartialFindResult_TagForApiContract>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5361,19 +5185,17 @@ namespace MyNS
 		public async Task<TagBaseContract> ApiTagsPostByNameAsync(string name, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/tags?name=" + (name==null? "" : System.Uri.EscapeDataString(name));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<TagBaseContract>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<TagBaseContract>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5388,8 +5210,7 @@ namespace MyNS
 		public async Task<TagForApiContract> ApiTagsByName_nameGetByFieldsAndLangAsync(string name, ApiTagsGetByQueryAndAllowChildrenAndCategoryNameAndStartAndMaxResultsAndGetTotalCountAndNameMatchModeAndSortAndPreferAccurateMatchesAndFieldsAndLangAndTargetFields fields, ApiActivityEntriesGetByBeforeAndSinceAndUserIdAndEditEventAndMaxResultsAndGetTotalCountAndFieldsAndEntryFieldsAndLangLang lang, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/tags/byName/"+ (name==null? "" : System.Uri.EscapeDataString(name))+"&fields=" + fields+"&lang=" + lang;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5399,13 +5220,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<TagForApiContract>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<TagForApiContract>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5417,8 +5237,7 @@ namespace MyNS
 		public async Task<string[]> ApiTagsCategoryNamesGetByQueryAndNameMatchModeAsync(string query, ApiAlbumsGetByQueryAndDiscTypesAndTagNameAndTagIdAndChildTagsAndArtistIdAndArtistParticipationStatusAndChildVoicebanksAndIncludeMembersAndBarcodeAndStatusAndReleaseDateAfterAndReleaseDateBeforeAndAdvancedFiltersAndStartAndMaxResultsAndGetTotalCountAndSortAndPreferAccurateMatchesAndDeletedAndNameMatchModeAndFieldsAndLangNameMatchMode nameMatchMode, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/tags/categoryNames?query=" + (query==null? "" : System.Uri.EscapeDataString(query))+"&nameMatchMode=" + nameMatchMode;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5428,13 +5247,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<string[]>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<string[]>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5449,10 +5267,8 @@ namespace MyNS
 		public async Task ApiTagsComments_commentIdPostAsync(int commentId, CommentForApiContract requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/tags/comments/"+commentId;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -5468,7 +5284,6 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
-			}
 		}
 		
 		/// <summary>
@@ -5481,8 +5296,7 @@ namespace MyNS
 		public async Task ApiTagsComments_commentIdDeleteAsync(int commentId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/tags/comments/"+commentId;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5496,7 +5310,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5514,8 +5327,7 @@ namespace MyNS
 		public async Task<string[]> ApiTagsNamesGetByQueryAndAllowAliasesAndMaxResultsAsync(string query, bool allowAliases, int maxResults, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/tags/names?query=" + (query==null? "" : System.Uri.EscapeDataString(query))+"&allowAliases="+allowAliases+"&maxResults="+maxResults;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5525,13 +5337,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<string[]>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<string[]>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5546,8 +5357,7 @@ namespace MyNS
 		public async Task<TagBaseContract[]> ApiTagsTopGetByCategoryNameAndMaxResultsAndLangAsync(string categoryName, int maxResults, ApiActivityEntriesGetByBeforeAndSinceAndUserIdAndEditEventAndMaxResultsAndGetTotalCountAndFieldsAndEntryFieldsAndLangLang lang, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/tags/top?categoryName=" + (categoryName==null? "" : System.Uri.EscapeDataString(categoryName))+"&maxResults="+maxResults+"&lang=" + lang;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5557,13 +5367,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<TagBaseContract[]>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<TagBaseContract[]>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5578,8 +5387,7 @@ namespace MyNS
 		public async Task<TagForApiContract> ApiTags_idGetByFieldsAndLangAsync(int id, ApiTagsGetByQueryAndAllowChildrenAndCategoryNameAndStartAndMaxResultsAndGetTotalCountAndNameMatchModeAndSortAndPreferAccurateMatchesAndFieldsAndLangAndTargetFields fields, ApiActivityEntriesGetByBeforeAndSinceAndUserIdAndEditEventAndMaxResultsAndGetTotalCountAndFieldsAndEntryFieldsAndLangLang lang, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/tags/"+id+"?fields=" + fields+"&lang=" + lang;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5589,13 +5397,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<TagForApiContract>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<TagForApiContract>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5610,8 +5417,7 @@ namespace MyNS
 		public async Task ApiTags_idDeleteByNotesAndHardDeleteAsync(int id, string notes, bool hardDelete, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/tags/"+id+"?notes=" + (notes==null? "" : System.Uri.EscapeDataString(notes))+"&hardDelete="+hardDelete;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5625,7 +5431,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5641,8 +5446,7 @@ namespace MyNS
 		public async Task<TagForApiContract[]> ApiTags_tagIdChildrenGetByFieldsAndLangAsync(int tagId, ApiTagsGetByQueryAndAllowChildrenAndCategoryNameAndStartAndMaxResultsAndGetTotalCountAndNameMatchModeAndSortAndPreferAccurateMatchesAndFieldsAndLangAndTargetFields fields, ApiActivityEntriesGetByBeforeAndSinceAndUserIdAndEditEventAndMaxResultsAndGetTotalCountAndFieldsAndEntryFieldsAndLangLang lang, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/tags/"+tagId+"/children?fields=" + fields+"&lang=" + lang;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5652,13 +5456,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<TagForApiContract[]>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<TagForApiContract[]>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5672,8 +5475,7 @@ namespace MyNS
 		public async Task<PartialFindResult_CommentForApiContract> ApiTags_tagIdCommentsGetAsync(int tagId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/tags/"+tagId+"/comments";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5683,13 +5485,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<PartialFindResult_CommentForApiContract>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<PartialFindResult_CommentForApiContract>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5703,10 +5504,8 @@ namespace MyNS
 		public async Task<CommentForApiContract> ApiTags_tagIdCommentsPostAsync(int tagId, CommentForApiContract requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/tags/"+tagId+"/comments";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -5717,13 +5516,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<CommentForApiContract>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<CommentForApiContract>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5738,8 +5536,7 @@ namespace MyNS
 		public async Task ApiTags_tagIdReportsPostByReportTypeAndNotesAndVersionNumberAsync(int tagId, ApiReleaseEvents_eventIdReportsPostByReportTypeAndNotesAndVersionNumberReportType reportType, string notes, int versionNumber, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/tags/"+tagId+"/reports?reportType=" + reportType+"&notes=" + (notes==null? "" : System.Uri.EscapeDataString(notes))+"&versionNumber="+versionNumber;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -5748,7 +5545,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5773,8 +5569,7 @@ namespace MyNS
 		public async Task<PartialFindResult_UserForApiContract> ApiUsersGetByQueryAndGroupsAndJoinDateAfterAndJoinDateBeforeAndNameMatchModeAndStartAndMaxResultsAndGetTotalCountAndSortAndIncludeDisabledAndOnlyVerifiedAndKnowsLanguageAndFieldsAsync(string query, UserForApiContractGroupId groups, System.DateTimeOffset joinDateAfter, System.DateTimeOffset joinDateBefore, ApiAlbumsGetByQueryAndDiscTypesAndTagNameAndTagIdAndChildTagsAndArtistIdAndArtistParticipationStatusAndChildVoicebanksAndIncludeMembersAndBarcodeAndStatusAndReleaseDateAfterAndReleaseDateBeforeAndAdvancedFiltersAndStartAndMaxResultsAndGetTotalCountAndSortAndPreferAccurateMatchesAndDeletedAndNameMatchModeAndFieldsAndLangNameMatchMode nameMatchMode, int start, int maxResults, bool getTotalCount, ApiUsersGetByQueryAndGroupsAndJoinDateAfterAndJoinDateBeforeAndNameMatchModeAndStartAndMaxResultsAndGetTotalCountAndSortAndIncludeDisabledAndOnlyVerifiedAndKnowsLanguageAndFieldsSort sort, bool includeDisabled, bool onlyVerified, string knowsLanguage, ApiSongs_idRatingsGetByUserFieldsAndLangUserFields fields, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/users?query=" + (query==null? "" : System.Uri.EscapeDataString(query))+"&groups=" + groups+"&joinDateAfter=" + joinDateAfter.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&joinDateBefore=" + joinDateBefore.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&nameMatchMode=" + nameMatchMode+"&start="+start+"&maxResults="+maxResults+"&getTotalCount="+getTotalCount+"&sort=" + sort+"&includeDisabled="+includeDisabled+"&onlyVerified="+onlyVerified+"&knowsLanguage=" + (knowsLanguage==null? "" : System.Uri.EscapeDataString(knowsLanguage))+"&fields=" + fields;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5784,13 +5579,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<PartialFindResult_UserForApiContract>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<PartialFindResult_UserForApiContract>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5805,8 +5599,7 @@ namespace MyNS
 		public async Task<UserForApiContract> ApiUsersCurrentGetByFieldsAsync(ApiSongs_idRatingsGetByUserFieldsAndLangUserFields fields, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/users/current?fields=" + fields;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5816,13 +5609,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<UserForApiContract>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<UserForApiContract>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5840,19 +5632,17 @@ namespace MyNS
 		public async Task<string> ApiUsersCurrentAlbums_albumIdPostByCollectionStatusAndMediaTypeAndRatingAsync(int albumId, AlbumForUserForApiContractPurchaseStatus collectionStatus, AlbumForUserForApiContractMediaType mediaType, int rating, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/users/current/albums/"+albumId+"?collectionStatus=" + collectionStatus+"&mediaType=" + mediaType+"&rating="+rating;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<string>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<string>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5862,8 +5652,7 @@ namespace MyNS
 		public async Task ApiUsersCurrentFollowedTags_tagIdPostAsync(int tagId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/users/current/followedTags/"+tagId;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -5873,7 +5662,6 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
-			}
 		}
 		
 		/// <summary>
@@ -5882,8 +5670,7 @@ namespace MyNS
 		public async Task ApiUsersCurrentFollowedTags_tagIdDeleteAsync(int tagId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/users/current/followedTags/"+tagId;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5897,7 +5684,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5911,8 +5697,7 @@ namespace MyNS
 		public async Task<RatedSongForUserForApiContractRating> ApiUsersCurrentRatedSongs_songIdGetAsync(int songId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/users/current/ratedSongs/"+songId;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5922,13 +5707,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<RatedSongForUserForApiContractRating>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<RatedSongForUserForApiContractRating>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5941,8 +5725,7 @@ namespace MyNS
 		public async Task ApiUsersCurrentRefreshEntryEditPostByEntryTypeAndEntryIdAsync(EntryForApiContractEntryType entryType, int entryId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/users/current/refreshEntryEdit?entryType=" + entryType+"&entryId="+entryId;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -5951,7 +5734,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5967,10 +5749,8 @@ namespace MyNS
 		public async Task ApiUsersCurrentSongTags_songIdPostAsync(int songId, TagBaseContract[] requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/users/current/songTags/"+songId;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -5986,7 +5766,6 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
-			}
 		}
 		
 		/// <summary>
@@ -6000,8 +5779,7 @@ namespace MyNS
 		public async Task<UserMessageContract> ApiUsersMessages_messageIdGetAsync(int messageId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/users/messages/"+messageId;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6011,13 +5789,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<UserMessageContract>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<UserMessageContract>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6033,8 +5810,7 @@ namespace MyNS
 		public async Task<string[]> ApiUsersNamesGetByQueryAndNameMatchModeAndMaxResultsAndIncludeDisabledAsync(string query, ApiAlbumsGetByQueryAndDiscTypesAndTagNameAndTagIdAndChildTagsAndArtistIdAndArtistParticipationStatusAndChildVoicebanksAndIncludeMembersAndBarcodeAndStatusAndReleaseDateAfterAndReleaseDateBeforeAndAdvancedFiltersAndStartAndMaxResultsAndGetTotalCountAndSortAndPreferAccurateMatchesAndDeletedAndNameMatchModeAndFieldsAndLangNameMatchMode nameMatchMode, int maxResults, bool includeDisabled, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/users/names?query=" + (query==null? "" : System.Uri.EscapeDataString(query))+"&nameMatchMode=" + nameMatchMode+"&maxResults="+maxResults+"&includeDisabled="+includeDisabled;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6044,13 +5820,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<string[]>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<string[]>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6065,10 +5840,8 @@ namespace MyNS
 		public async Task ApiUsersProfileComments_commentIdPostAsync(int commentId, CommentForApiContract requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/users/profileComments/"+commentId;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -6084,7 +5857,6 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
-			}
 		}
 		
 		/// <summary>
@@ -6097,8 +5869,7 @@ namespace MyNS
 		public async Task ApiUsersProfileComments_commentIdDeleteAsync(int commentId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/users/profileComments/"+commentId;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6112,7 +5883,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6126,8 +5896,7 @@ namespace MyNS
 		public async Task<UserForApiContract> ApiUsers_idGetByFieldsAsync(int id, ApiSongs_idRatingsGetByUserFieldsAndLangUserFields fields, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/users/"+id+"?fields=" + fields;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6137,13 +5906,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<UserForApiContract>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<UserForApiContract>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6190,8 +5958,7 @@ namespace MyNS
 					Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/users/"+id+"/albums?query=" + (query==null? "" : System.Uri.EscapeDataString(query))+"&tagId="+tagId+"&tag=" + (tag==null? "" : System.Uri.EscapeDataString(tag))+"&artistId="+artistId+"&purchaseStatuses=" + purchaseStatuses+"&releaseEventId="+releaseEventId+"&albumTypes=" + albumTypes+"&"+string.Join("&", advancedFilters.Select(z => $"advancedFilters={System.Uri.EscapeDataString(z.ToString())}"))+"&start="+start+"&maxResults="+maxResults+"&getTotalCount="+getTotalCount+"&sort=" + sort+"&nameMatchMode=" + nameMatchMode+"&fields=" + fields+"&lang=" + lang;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6201,13 +5968,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<PartialFindResult_AlbumForUserForApiContract>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<PartialFindResult_AlbumForUserForApiContract>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6221,8 +5987,7 @@ namespace MyNS
 		public async Task<ReleaseEventForApiContract[]> ApiUsers_idEventsGetByRelationshipTypeAsync(int id, ApiUsers_idEventsGetByRelationshipTypeRelationshipType relationshipType, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/users/"+id+"/events?relationshipType=" + relationshipType;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6232,13 +5997,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ReleaseEventForApiContract[]>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ReleaseEventForApiContract[]>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6261,8 +6025,7 @@ namespace MyNS
 		public async Task<PartialFindResult_ArtistForUserForApiContract> ApiUsers_idFollowedArtistsGetByQueryAndTagIdAndArtistTypeAndStartAndMaxResultsAndGetTotalCountAndSortAndNameMatchModeAndFieldsAndLangAsync(int id, string query, int[] tagId, EntryForApiContractArtistType artistType, int start, int maxResults, bool getTotalCount, ApiArtistsGetByQueryAndArtistTypesAndAllowBaseVoicebanksAndTagNameAndTagIdAndChildTagsAndFollowedByUserIdAndStatusAndAdvancedFiltersAndStartAndMaxResultsAndGetTotalCountAndSortAndPreferAccurateMatchesAndNameMatchModeAndFieldsAndLangSort sort, ApiAlbumsGetByQueryAndDiscTypesAndTagNameAndTagIdAndChildTagsAndArtistIdAndArtistParticipationStatusAndChildVoicebanksAndIncludeMembersAndBarcodeAndStatusAndReleaseDateAfterAndReleaseDateBeforeAndAdvancedFiltersAndStartAndMaxResultsAndGetTotalCountAndSortAndPreferAccurateMatchesAndDeletedAndNameMatchModeAndFieldsAndLangNameMatchMode nameMatchMode, ApiArtistsGetByQueryAndArtistTypesAndAllowBaseVoicebanksAndTagNameAndTagIdAndChildTagsAndFollowedByUserIdAndStatusAndAdvancedFiltersAndStartAndMaxResultsAndGetTotalCountAndSortAndPreferAccurateMatchesAndNameMatchModeAndFieldsAndLangFields fields, ApiActivityEntriesGetByBeforeAndSinceAndUserIdAndEditEventAndMaxResultsAndGetTotalCountAndFieldsAndEntryFieldsAndLangLang lang, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/users/"+id+"/followedArtists?query=" + (query==null? "" : System.Uri.EscapeDataString(query))+"&"+string.Join("&", tagId.Select(z => $"tagId={z}"))+"&artistType=" + artistType+"&start="+start+"&maxResults="+maxResults+"&getTotalCount="+getTotalCount+"&sort=" + sort+"&nameMatchMode=" + nameMatchMode+"&fields=" + fields+"&lang=" + lang;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6272,13 +6035,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<PartialFindResult_ArtistForUserForApiContract>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<PartialFindResult_ArtistForUserForApiContract>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6297,8 +6059,7 @@ namespace MyNS
 		public async Task<PartialFindResult_UserMessageContract> ApiUsers_idMessagesGetByInboxAndUnreadAndAnotherUserIdAndStartAndMaxResultsAndGetTotalCountAsync(int id, UserMessageContractInbox inbox, bool unread, int anotherUserId, int start, int maxResults, bool getTotalCount, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/users/"+id+"/messages?inbox=" + inbox+"&unread="+unread+"&anotherUserId="+anotherUserId+"&start="+start+"&maxResults="+maxResults+"&getTotalCount="+getTotalCount;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6308,13 +6069,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<PartialFindResult_UserMessageContract>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<PartialFindResult_UserMessageContract>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6328,10 +6088,8 @@ namespace MyNS
 		public async Task<UserMessageContract> ApiUsers_idMessagesPostAsync(int id, UserMessageContract requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/users/"+id+"/messages";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -6342,13 +6100,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<UserMessageContract>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<UserMessageContract>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6361,8 +6118,7 @@ namespace MyNS
 		public async Task ApiUsers_idMessagesDeleteByMessageIdAsync(int id, int[] messageId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/users/"+id+"/messages?"+string.Join("&", messageId.Select(z => $"messageId={z}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6376,7 +6132,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6392,8 +6147,7 @@ namespace MyNS
 		public async Task<PartialFindResult_CommentForApiContract> ApiUsers_idProfileCommentsGetByStartAndMaxResultsAndGetTotalCountAsync(int id, int start, int maxResults, bool getTotalCount, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/users/"+id+"/profileComments?start="+start+"&maxResults="+maxResults+"&getTotalCount="+getTotalCount;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6403,13 +6157,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<PartialFindResult_CommentForApiContract>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<PartialFindResult_CommentForApiContract>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6423,10 +6176,8 @@ namespace MyNS
 		public async Task<CommentForApiContract> ApiUsers_idProfileCommentsPostAsync(int id, CommentForApiContract requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/users/"+id+"/profileComments";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -6437,13 +6188,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<CommentForApiContract>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<CommentForApiContract>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6494,8 +6244,7 @@ namespace MyNS
 					Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/users/"+id+"/ratedSongs?query=" + (query==null? "" : System.Uri.EscapeDataString(query))+"&tagName=" + (tagName==null? "" : System.Uri.EscapeDataString(tagName))+"&"+string.Join("&", tagId.Select(z => $"tagId={z}"))+"&"+string.Join("&", artistId.Select(z => $"artistId={z}"))+"&childVoicebanks="+childVoicebanks+"&artistGrouping=" + artistGrouping+"&rating=" + rating+"&songListId="+songListId+"&groupByRating="+groupByRating+"&pvServices=" + pvServices+"&"+string.Join("&", advancedFilters.Select(z => $"advancedFilters={System.Uri.EscapeDataString(z.ToString())}"))+"&start="+start+"&maxResults="+maxResults+"&getTotalCount="+getTotalCount+"&sort=" + sort+"&nameMatchMode=" + nameMatchMode+"&fields=" + fields+"&lang=" + lang;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6505,13 +6254,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<PartialFindResult_RatedSongForUserForApiContract>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<PartialFindResult_RatedSongForUserForApiContract>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6525,8 +6273,7 @@ namespace MyNS
 		public async Task<RatedSongForUserForApiContractRating> ApiUsers_idRatedSongs_songIdGetAsync(int id, int songId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/users/"+id+"/ratedSongs/"+songId;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6536,13 +6283,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<RatedSongForUserForApiContractRating>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<RatedSongForUserForApiContractRating>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6553,10 +6299,8 @@ namespace MyNS
 		public async Task<bool> ApiUsers_idReportsPostAsync(int id, CreateReportModel requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/users/"+id+"/reports";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -6567,13 +6311,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<bool>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<bool>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6587,10 +6330,8 @@ namespace MyNS
 		public async Task ApiUsers_idSettings_settingNamePostAsync(int id, string settingName, string requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/users/"+id+"/settings/"+ (settingName==null? "" : System.Uri.EscapeDataString(settingName));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -6606,7 +6347,6 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
-			}
 		}
 		
 		/// <summary>
@@ -6616,8 +6356,7 @@ namespace MyNS
 		public async Task<PartialFindResult_SongListForApiContract> ApiUsers_idSongListsGetByQueryAndTagIdAndChildTagsAndNameMatchModeAndStartAndMaxResultsAndGetTotalCountAndSortAndFieldsAsync(int id, string query, int[] tagId, bool childTags, ApiAlbumsGetByQueryAndDiscTypesAndTagNameAndTagIdAndChildTagsAndArtistIdAndArtistParticipationStatusAndChildVoicebanksAndIncludeMembersAndBarcodeAndStatusAndReleaseDateAfterAndReleaseDateBeforeAndAdvancedFiltersAndStartAndMaxResultsAndGetTotalCountAndSortAndPreferAccurateMatchesAndDeletedAndNameMatchModeAndFieldsAndLangNameMatchMode nameMatchMode, int start, int maxResults, bool getTotalCount, ApiSongListsFeaturedGetByQueryAndTagIdAndChildTagsAndNameMatchModeAndFeaturedCategoryAndStartAndMaxResultsAndGetTotalCountAndSortSort sort, ApiUsers_idSongListsGetByQueryAndTagIdAndChildTagsAndNameMatchModeAndStartAndMaxResultsAndGetTotalCountAndSortAndFieldsFields fields, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/users/"+id+"/songLists?query=" + (query==null? "" : System.Uri.EscapeDataString(query))+"&"+string.Join("&", tagId.Select(z => $"tagId={z}"))+"&childTags="+childTags+"&nameMatchMode=" + nameMatchMode+"&start="+start+"&maxResults="+maxResults+"&getTotalCount="+getTotalCount+"&sort=" + sort+"&fields=" + fields;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6627,13 +6366,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<PartialFindResult_SongListForApiContract>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<PartialFindResult_SongListForApiContract>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

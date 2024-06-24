@@ -256,19 +256,17 @@ namespace MyNS
 		public async Task<AssignmentOperationList> AssignmentOperations_ListAsync(string api_version, string scope, string assignmentName)
 		{
 			var requestUri = ""+ (scope==null? "" : System.Uri.EscapeDataString(scope))+"/providers/Microsoft.Blueprint/blueprintAssignments/"+ (assignmentName==null? "" : System.Uri.EscapeDataString(assignmentName))+"/assignmentOperations?api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<AssignmentOperationList>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<AssignmentOperationList>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -284,19 +282,17 @@ namespace MyNS
 		public async Task<AssignmentOperation> AssignmentOperations_GetAsync(string api_version, string scope, string assignmentName, string assignmentOperationName)
 		{
 			var requestUri = ""+ (scope==null? "" : System.Uri.EscapeDataString(scope))+"/providers/Microsoft.Blueprint/blueprintAssignments/"+ (assignmentName==null? "" : System.Uri.EscapeDataString(assignmentName))+"/assignmentOperations/"+ (assignmentOperationName==null? "" : System.Uri.EscapeDataString(assignmentOperationName))+"?api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<AssignmentOperation>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<AssignmentOperation>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

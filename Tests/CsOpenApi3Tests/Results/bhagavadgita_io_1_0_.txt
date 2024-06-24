@@ -94,8 +94,7 @@ namespace MyNS
 		public async Task<ChapterSchema> ChapterGetByAccess_tokenAndLanguageAsync(string access_token, ChapterGetByAccess_tokenAndLanguageLanguage language, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/v1/chapters?access_token=" + (access_token==null? "" : System.Uri.EscapeDataString(access_token))+"&language=" + language;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -105,13 +104,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ChapterSchema>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ChapterSchema>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -127,8 +125,7 @@ namespace MyNS
 		public async Task<ChapterSchema> ChapterGetByAccess_tokenAndChapter_numberAndLanguageAsync(string access_token, ChapterGetByAccess_tokenAndChapter_numberAndLanguageChapter_number chapter_number, ChapterGetByAccess_tokenAndLanguageLanguage language, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/v1/chapters/"+chapter_number+"?access_token=" + (access_token==null? "" : System.Uri.EscapeDataString(access_token))+"&language=" + language;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -138,13 +135,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ChapterSchema>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ChapterSchema>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -160,8 +156,7 @@ namespace MyNS
 		public async Task<VerseSchema> VerseGetByAccess_tokenAndChapter_numberAndLanguageAsync(string access_token, VerseGetByAccess_tokenAndChapter_numberAndLanguageChapter_number chapter_number, ChapterGetByAccess_tokenAndLanguageLanguage language, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/v1/chapters/"+chapter_number+"/verses?access_token=" + (access_token==null? "" : System.Uri.EscapeDataString(access_token))+"&language=" + language;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -171,13 +166,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<VerseSchema>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<VerseSchema>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -194,8 +188,7 @@ namespace MyNS
 		public async Task<VerseSchema> VerseGetByAccess_tokenAndChapter_numberAndVerse_numberAndLanguageAsync(string access_token, VerseGetByAccess_tokenAndChapter_numberAndVerse_numberAndLanguageChapter_number chapter_number, VerseGetByAccess_tokenAndChapter_numberAndVerse_numberAndLanguageVerse_number verse_number, ChapterGetByAccess_tokenAndLanguageLanguage language, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/v1/chapters/"+chapter_number+"/verses/"+verse_number+"?access_token=" + (access_token==null? "" : System.Uri.EscapeDataString(access_token))+"&language=" + language;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -205,13 +198,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<VerseSchema>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<VerseSchema>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -226,8 +218,7 @@ namespace MyNS
 		public async Task<VerseSchema> VerseGetByAccess_tokenAndLanguageAsync(string access_token, ChapterGetByAccess_tokenAndLanguageLanguage language, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/v1/verses?access_token=" + (access_token==null? "" : System.Uri.EscapeDataString(access_token))+"&language=" + language;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -237,13 +228,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<VerseSchema>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<VerseSchema>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

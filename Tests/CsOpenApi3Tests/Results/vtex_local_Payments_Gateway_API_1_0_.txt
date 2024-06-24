@@ -2892,10 +2892,8 @@ namespace MyNS
 		public async Task ApiPubTransactions_transactionIdPaymentsPostByOrderIdAsync(string orderId, string transactionId, _2SendPaymentsPublicRequest[] requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/pub/transactions/"+ (transactionId==null? "" : System.Uri.EscapeDataString(transactionId))+"/payments?orderId=" + (orderId==null? "" : System.Uri.EscapeDataString(orderId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			using (var requestWriter = new System.IO.StringWriter())
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			using var requestWriter = new System.IO.StringWriter();
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
@@ -2913,8 +2911,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
-			}
 			}
 		}
 		
@@ -2926,8 +2922,7 @@ namespace MyNS
 		public async Task ApiPvtAffiliationsGetAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/pvt/affiliations";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2941,7 +2936,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2953,10 +2947,8 @@ namespace MyNS
 		public async Task ApiPvtAffiliationsPostAsync(InsertAffiliationRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/pvt/affiliations";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			using (var requestWriter = new System.IO.StringWriter())
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			using var requestWriter = new System.IO.StringWriter();
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
@@ -2974,8 +2966,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
-			}
 			}
 		}
 		
@@ -2987,8 +2977,7 @@ namespace MyNS
 		public async Task ApiPvtAffiliations_affiliationIdGetAsync(string affiliationId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/pvt/affiliations/"+ (affiliationId==null? "" : System.Uri.EscapeDataString(affiliationId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3002,7 +2991,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3014,10 +3002,8 @@ namespace MyNS
 		public async Task ApiPvtAffiliations_affiliationIdPutAsync(string affiliationId, UpdateAffiliationRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/pvt/affiliations/"+ (affiliationId==null? "" : System.Uri.EscapeDataString(affiliationId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
-			{
-			using (var requestWriter = new System.IO.StringWriter())
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri);
+			using var requestWriter = new System.IO.StringWriter();
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
@@ -3035,8 +3021,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
-			}
 			}
 		}
 		
@@ -3048,8 +3032,7 @@ namespace MyNS
 		public async Task ApiPvtInstallmentsGetByRequest_valueAndRequest_salesChannelAndRequest_paymentDetails_0_idAndRequest_paymentDetails_0_valueAndRequest_paymentDetails_0_binAsync(int request_value, int request_salesChannel, int request_paymentDetails_0_id, int request_paymentDetails_0_value, int request_paymentDetails_0_bin, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/pvt/installments?request.value="+request_value+"&request.salesChannel="+request_salesChannel+"&request.paymentDetails[0].id="+request_paymentDetails_0_id+"&request.paymentDetails[0].value="+request_paymentDetails_0_value+"&request.paymentDetails[0].bin="+request_paymentDetails_0_bin;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3063,7 +3046,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3075,8 +3057,7 @@ namespace MyNS
 		public async Task ApiPvtMerchantsPayment_systemsGetAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/pvt/merchants/payment-systems";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3090,7 +3071,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3102,8 +3082,7 @@ namespace MyNS
 		public async Task ApiPvtRulesGetAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/pvt/rules";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3117,7 +3096,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3129,10 +3107,8 @@ namespace MyNS
 		public async Task ApiPvtRulesPostAsync(InsertRuleRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/pvt/rules";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			using (var requestWriter = new System.IO.StringWriter())
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			using var requestWriter = new System.IO.StringWriter();
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
@@ -3150,8 +3126,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
-			}
 			}
 		}
 		
@@ -3163,8 +3137,7 @@ namespace MyNS
 		public async Task ApiPvtRules_ruleIdDeleteAsync(string ruleId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/pvt/rules/"+ (ruleId==null? "" : System.Uri.EscapeDataString(ruleId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3178,7 +3151,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3190,8 +3162,7 @@ namespace MyNS
 		public async Task ApiPvtRules_ruleIdGetAsync(string ruleId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/pvt/rules/"+ (ruleId==null? "" : System.Uri.EscapeDataString(ruleId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3205,7 +3176,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3217,10 +3187,8 @@ namespace MyNS
 		public async Task ApiPvtRules_ruleIdPutAsync(string ruleId, RuleByIdRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/pvt/rules/"+ (ruleId==null? "" : System.Uri.EscapeDataString(ruleId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
-			{
-			using (var requestWriter = new System.IO.StringWriter())
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri);
+			using var requestWriter = new System.IO.StringWriter();
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
@@ -3238,8 +3206,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
-			}
 			}
 		}
 		
@@ -3251,10 +3217,8 @@ namespace MyNS
 		public async Task ApiPvtTransactionsPostAsync(_1CreateanewtransactionRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/pvt/transactions";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			using (var requestWriter = new System.IO.StringWriter())
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			using var requestWriter = new System.IO.StringWriter();
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
@@ -3273,8 +3237,6 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
-			}
-			}
 		}
 		
 		/// <summary>
@@ -3285,8 +3247,7 @@ namespace MyNS
 		public async Task ApiPvtTransactions_transactionIdGetAsync(string transactionId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/pvt/transactions/"+ (transactionId==null? "" : System.Uri.EscapeDataString(transactionId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3300,7 +3261,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3314,10 +3274,8 @@ namespace MyNS
 		public async Task ApiPvtTransactions_transactionIdAdditional_dataPostAsync(string transactionId, _3SendAdditionalDataRequest[] requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/pvt/transactions/"+ (transactionId==null? "" : System.Uri.EscapeDataString(transactionId))+"/additional-data";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			using (var requestWriter = new System.IO.StringWriter())
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			using var requestWriter = new System.IO.StringWriter();
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
@@ -3335,8 +3293,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
-			}
 			}
 		}
 		
@@ -3348,10 +3304,8 @@ namespace MyNS
 		public async Task ApiPvtTransactions_transactionIdAuthorization_requestPostAsync(string transactionId, _4DoauthorizationRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/pvt/transactions/"+ (transactionId==null? "" : System.Uri.EscapeDataString(transactionId))+"/authorization-request";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			using (var requestWriter = new System.IO.StringWriter())
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			using var requestWriter = new System.IO.StringWriter();
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
@@ -3369,8 +3323,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
-			}
 			}
 		}
 		
@@ -3382,10 +3334,8 @@ namespace MyNS
 		public async Task ApiPvtTransactions_transactionIdCancellation_requestPostAsync(string transactionId, CancelthetransactionRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/pvt/transactions/"+ (transactionId==null? "" : System.Uri.EscapeDataString(transactionId))+"/cancellation-request";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			using (var requestWriter = new System.IO.StringWriter())
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			using var requestWriter = new System.IO.StringWriter();
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
@@ -3403,8 +3353,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
-			}
 			}
 		}
 		
@@ -3416,10 +3364,8 @@ namespace MyNS
 		public async Task ApiPvtTransactions_transactionIdPaymentsPostAsync(string transactionId, _2SendPaymentsWithSavedCreditCardRequest[] requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/pvt/transactions/"+ (transactionId==null? "" : System.Uri.EscapeDataString(transactionId))+"/payments";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			using (var requestWriter = new System.IO.StringWriter())
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			using var requestWriter = new System.IO.StringWriter();
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
@@ -3437,8 +3383,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
-			}
 			}
 		}
 		
@@ -3450,8 +3394,7 @@ namespace MyNS
 		public async Task ApiPvtTransactions_transactionIdPayments_paymentIdGetAsync(string transactionId, string paymentId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/pvt/transactions/"+ (transactionId==null? "" : System.Uri.EscapeDataString(transactionId))+"/payments/"+ (paymentId==null? "" : System.Uri.EscapeDataString(paymentId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3465,7 +3408,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3477,10 +3419,8 @@ namespace MyNS
 		public async Task ApiPvtTransactions_transactionIdRefunding_requestPostAsync(string transactionId, RefundthetransactionRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/pvt/transactions/"+ (transactionId==null? "" : System.Uri.EscapeDataString(transactionId))+"/refunding-request";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			using (var requestWriter = new System.IO.StringWriter())
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			using var requestWriter = new System.IO.StringWriter();
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
@@ -3498,8 +3438,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
-			}
 			}
 		}
 		
@@ -3511,10 +3449,8 @@ namespace MyNS
 		public async Task<SettleResponse> ApiPvtTransactions_transactionIdSettlement_requestPostAsync(string transactionId, SettlethetransactionRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/pvt/transactions/"+ (transactionId==null? "" : System.Uri.EscapeDataString(transactionId))+"/settlement-request";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			using (var requestWriter = new System.IO.StringWriter())
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			using var requestWriter = new System.IO.StringWriter();
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
@@ -3528,18 +3464,14 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
-				{
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				using JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(streamContent));
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<SettleResponse>(jsonReader);
-				}
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
-			}
 			}
 		}
 		
@@ -3551,8 +3483,7 @@ namespace MyNS
 		public async Task<TransactionSettlementDetails> ApiPvtTransactions_transactionIdSettlementsGetAsync(string transactionId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/pvt/transactions/"+ (transactionId==null? "" : System.Uri.EscapeDataString(transactionId))+"/settlements";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3562,17 +3493,14 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
-				{
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				using JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(streamContent));
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<TransactionSettlementDetails>(jsonReader);
-				}
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

@@ -524,8 +524,7 @@ namespace MyNS
 		public async Task<Accounts> AccountGetByFieldsAndIncludeAndExcludeAndLanguageAsPerTerritoryAsync(string[] fields, string[] include, string[] exclude, string languageAsPerTerritory, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "account?"+string.Join("&", fields.Select(z => $"fields={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", include.Select(z => $"include={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", exclude.Select(z => $"exclude={System.Uri.EscapeDataString(z.ToString())}"))+"&languageAsPerTerritory=" + (languageAsPerTerritory==null? "" : System.Uri.EscapeDataString(languageAsPerTerritory));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -535,13 +534,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Accounts>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Accounts>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -558,8 +556,7 @@ namespace MyNS
 		public async Task<AccountBalance> AccountBalanceGetByFieldsAndIncludeAndExcludeAndLanguageAsPerTerritoryAsync(string[] fields, string[] include, string[] exclude, string languageAsPerTerritory, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "account/balance?"+string.Join("&", fields.Select(z => $"fields={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", include.Select(z => $"include={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", exclude.Select(z => $"exclude={System.Uri.EscapeDataString(z.ToString())}"))+"&languageAsPerTerritory=" + (languageAsPerTerritory==null? "" : System.Uri.EscapeDataString(languageAsPerTerritory));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -569,13 +566,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<AccountBalance>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<AccountBalance>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -590,10 +586,8 @@ namespace MyNS
 		public async Task<AccountFlagsSet> AccountFlagsPostByLanguageAsPerTerritoryAsync(string languageAsPerTerritory, AccountFlagsPostByLanguageAsPerTerritoryPostBody[] requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "account/flags?languageAsPerTerritory=" + (languageAsPerTerritory==null? "" : System.Uri.EscapeDataString(languageAsPerTerritory));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -604,13 +598,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<AccountFlagsSet>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<AccountFlagsSet>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -633,8 +626,7 @@ namespace MyNS
 		public async Task<GetPayments> AccountPaymentsGetByPageAndPageSizeAndDateFromAndDateToAndSortAndTransactionTypeAndFieldsAndIncludeAndExcludeAndLanguageAsPerTerritoryAsync(double page, double pageSize, string dateFrom, string dateTo, string sort, string transactionType, string[] fields, string[] include, string[] exclude, string languageAsPerTerritory, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "account/payments?page="+page+"&pageSize="+pageSize+"&dateFrom=" + (dateFrom==null? "" : System.Uri.EscapeDataString(dateFrom))+"&dateTo=" + (dateTo==null? "" : System.Uri.EscapeDataString(dateTo))+"&sort=" + (sort==null? "" : System.Uri.EscapeDataString(sort))+"&transactionType=" + (transactionType==null? "" : System.Uri.EscapeDataString(transactionType))+"&"+string.Join("&", fields.Select(z => $"fields={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", include.Select(z => $"include={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", exclude.Select(z => $"exclude={System.Uri.EscapeDataString(z.ToString())}"))+"&languageAsPerTerritory=" + (languageAsPerTerritory==null? "" : System.Uri.EscapeDataString(languageAsPerTerritory));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -644,13 +636,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<GetPayments>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<GetPayments>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -666,8 +657,7 @@ namespace MyNS
 		public async Task<PlusCardDetails> AccountPlusCardGetByFieldsAndIncludeAndExcludeAsync(string[] fields, string[] include, string[] exclude, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "account/plusCard?"+string.Join("&", fields.Select(z => $"fields={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", include.Select(z => $"include={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", exclude.Select(z => $"exclude={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -677,13 +667,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<PlusCardDetails>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<PlusCardDetails>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -695,8 +684,7 @@ namespace MyNS
 		public async Task AccountPlusCardLostStolenPostAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "account/plusCard/lostStolen";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -705,7 +693,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -719,10 +706,8 @@ namespace MyNS
 		public async Task AccountPlusCardPhone_oldPhoneNumberPostAsync(string oldPhoneNumber, Phone requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "account/plusCard/phone/"+ (oldPhoneNumber==null? "" : System.Uri.EscapeDataString(oldPhoneNumber));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -737,7 +722,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -750,10 +734,8 @@ namespace MyNS
 		public async Task AccountPlusCardPinPutAsync(double requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "account/plusCard/pin";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -768,7 +750,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -781,10 +762,8 @@ namespace MyNS
 		public async Task AccountPlusCardPinPostAsync(double requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "account/plusCard/pin";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -799,7 +778,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

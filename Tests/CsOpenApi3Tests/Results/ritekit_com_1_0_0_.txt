@@ -72,8 +72,7 @@ namespace MyNS
 		public async Task Auto_EmojifyAsync(string text, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/emoji/auto-emojify?text=" + (text==null? "" : System.Uri.EscapeDataString(text));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -87,7 +86,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -101,8 +99,7 @@ namespace MyNS
 		public async Task Emoji_SuggestionsAsync(string text, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/emoji/suggestions?text=" + (text==null? "" : System.Uri.EscapeDataString(text));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -116,7 +113,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -131,8 +127,7 @@ namespace MyNS
 		public async Task Animate_ImageAsync(string url, string type, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/images/animate?url=" + (url==null? "" : System.Uri.EscapeDataString(url))+"&type=" + (type==null? "" : System.Uri.EscapeDataString(type));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -146,7 +141,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -162,8 +156,7 @@ namespace MyNS
 		public async Task Company_LogoAsync(string domain, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/images/logo?domain=" + (domain==null? "" : System.Uri.EscapeDataString(domain));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -177,7 +170,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -225,8 +217,7 @@ namespace MyNS
 					Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/images/quote?quote=" + (quote==null? "" : System.Uri.EscapeDataString(quote))+"&author=" + (author==null? "" : System.Uri.EscapeDataString(author))+"&fontSize="+fontSize+"&quoteFont=" + (quoteFont==null? "" : System.Uri.EscapeDataString(quoteFont))+"&quoteFontColor=" + (quoteFontColor==null? "" : System.Uri.EscapeDataString(quoteFontColor))+"&authorFont=" + (authorFont==null? "" : System.Uri.EscapeDataString(authorFont))+"&authorFontColor=" + (authorFontColor==null? "" : System.Uri.EscapeDataString(authorFontColor))+"&enableHighlight="+enableHighlight+"&highlightColor=" + (highlightColor==null? "" : System.Uri.EscapeDataString(highlightColor))+"&bgType=" + (bgType==null? "" : System.Uri.EscapeDataString(bgType))+"&backgroundColor=" + (backgroundColor==null? "" : System.Uri.EscapeDataString(backgroundColor))+"&gradientType=" + (gradientType==null? "" : System.Uri.EscapeDataString(gradientType))+"&gradientColor1=" + (gradientColor1==null? "" : System.Uri.EscapeDataString(gradientColor1))+"&gradientColor2=" + (gradientColor2==null? "" : System.Uri.EscapeDataString(gradientColor2))+"&brandLogo=" + (brandLogo==null? "" : System.Uri.EscapeDataString(brandLogo))+"&animation=" + (animation==null? "" : System.Uri.EscapeDataString(animation))+"&showQuoteMark="+showQuoteMark;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -240,7 +231,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -253,8 +243,7 @@ namespace MyNS
 		public async Task List_of_CTAsAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/link/cta";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -268,7 +257,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -283,8 +271,7 @@ namespace MyNS
 		public async Task Shorten_LinkAsync(string url, int cta, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/link/short-link?url=" + (url==null? "" : System.Uri.EscapeDataString(url))+"&cta="+cta;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -298,7 +285,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -313,8 +299,7 @@ namespace MyNS
 		public async Task Trending_HashtagsAsync(bool green, bool latin, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/search/trending?green="+green+"&latin="+latin;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -328,7 +313,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -344,8 +328,7 @@ namespace MyNS
 		public async Task Auto_HashtagAsync(string post, int maxHashtags, string hashtagPosition, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/stats/auto-hashtag?post=" + (post==null? "" : System.Uri.EscapeDataString(post))+"&maxHashtags="+maxHashtags+"&hashtagPosition=" + (hashtagPosition==null? "" : System.Uri.EscapeDataString(hashtagPosition));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -359,7 +342,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -373,8 +355,7 @@ namespace MyNS
 		public async Task Hashtag_SuggestionsAsync(string text, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/stats/hashtag-suggestions?text=" + (text==null? "" : System.Uri.EscapeDataString(text));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -388,7 +369,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -402,8 +382,7 @@ namespace MyNS
 		public async Task Hashtag_HistoryAsync(string hashtag, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/stats/history/"+ (hashtag==null? "" : System.Uri.EscapeDataString(hashtag));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -417,7 +396,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -431,8 +409,7 @@ namespace MyNS
 		public async Task Hashtag_StatsAsync(string[] tags, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/stats/multiple-hashtags?"+string.Join("&", tags.Select(z => $"tags={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -446,7 +423,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -460,8 +436,7 @@ namespace MyNS
 		public async Task Hashtags_cleanerAsync(string post, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v2/instagram/hashtags-cleaner?post=" + (post==null? "" : System.Uri.EscapeDataString(post));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -475,7 +450,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

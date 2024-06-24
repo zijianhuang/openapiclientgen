@@ -486,19 +486,17 @@ namespace MyNS
 		public async Task<Suggestions> AutoSuggestAsync(string cc, string mkt, string q, AutoSuggestSafeSearch safeSearch, string setLang, string[] ResponseFormat)
 		{
 			var requestUri = "Suggestions?cc=" + (cc==null? "" : System.Uri.EscapeDataString(cc))+"&mkt=" + (mkt==null? "" : System.Uri.EscapeDataString(mkt))+"&q=" + (q==null? "" : System.Uri.EscapeDataString(q))+"&safeSearch=" + safeSearch+"&setLang=" + (setLang==null? "" : System.Uri.EscapeDataString(setLang))+"&"+string.Join("&", ResponseFormat.Select(z => $"ResponseFormat={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Suggestions>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Suggestions>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

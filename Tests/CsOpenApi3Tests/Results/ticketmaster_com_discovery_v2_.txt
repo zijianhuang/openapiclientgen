@@ -1986,8 +1986,7 @@ namespace MyNS
 		public async Task DiscoveryV2AttractionsGetBySortAndClassificationNameAndClassificationIdAndKeywordAndIdAndSourceAndIncludeTestAndPageAndSizeAndLocaleAndIncludeLicensedContentAndIncludeSpellcheckAsync(string sort, string[] classificationName, string[] classificationId, string keyword, string id, DiscoveryV2AttractionsGetBySortAndClassificationNameAndClassificationIdAndKeywordAndIdAndSourceAndIncludeTestAndPageAndSizeAndLocaleAndIncludeLicensedContentAndIncludeSpellcheckSource source, DiscoveryV2AttractionsGetBySortAndClassificationNameAndClassificationIdAndKeywordAndIdAndSourceAndIncludeTestAndPageAndSizeAndLocaleAndIncludeLicensedContentAndIncludeSpellcheckIncludeTest includeTest, string page, string size, string locale, DiscoveryV2AttractionsGetBySortAndClassificationNameAndClassificationIdAndKeywordAndIdAndSourceAndIncludeTestAndPageAndSizeAndLocaleAndIncludeLicensedContentAndIncludeSpellcheckIncludeLicensedContent includeLicensedContent, DiscoveryV2AttractionsGetBySortAndClassificationNameAndClassificationIdAndKeywordAndIdAndSourceAndIncludeTestAndPageAndSizeAndLocaleAndIncludeLicensedContentAndIncludeSpellcheckIncludeSpellcheck includeSpellcheck, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "discovery/v2/attractions?sort=" + (sort==null? "" : System.Uri.EscapeDataString(sort))+"&"+string.Join("&", classificationName.Select(z => $"classificationName={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", classificationId.Select(z => $"classificationId={System.Uri.EscapeDataString(z.ToString())}"))+"&keyword=" + (keyword==null? "" : System.Uri.EscapeDataString(keyword))+"&id=" + (id==null? "" : System.Uri.EscapeDataString(id))+"&source=" + source+"&includeTest=" + includeTest+"&page=" + (page==null? "" : System.Uri.EscapeDataString(page))+"&size=" + (size==null? "" : System.Uri.EscapeDataString(size))+"&locale=" + (locale==null? "" : System.Uri.EscapeDataString(locale))+"&includeLicensedContent=" + includeLicensedContent+"&includeSpellcheck=" + includeSpellcheck;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2001,7 +2000,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2017,8 +2015,7 @@ namespace MyNS
 		public async Task DiscoveryV2Attractions_idGetByLocaleAndIncludeLicensedContentAsync(string id, string locale, DiscoveryV2Attractions_idGetByLocaleAndIncludeLicensedContentIncludeLicensedContent includeLicensedContent, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "discovery/v2/attractions/"+ (id==null? "" : System.Uri.EscapeDataString(id))+"&locale=" + (locale==null? "" : System.Uri.EscapeDataString(locale))+"&includeLicensedContent=" + includeLicensedContent;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2032,7 +2029,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2060,8 +2056,7 @@ namespace MyNS
 		public async Task DiscoveryV2ClassificationsGetBySortAndKeywordAndIdAndSourceAndIncludeTestAndPageAndSizeAndLocaleAndIncludeLicensedContentAndIncludeSpellcheckAsync(string sort, string keyword, string id, DiscoveryV2ClassificationsGetBySortAndKeywordAndIdAndSourceAndIncludeTestAndPageAndSizeAndLocaleAndIncludeLicensedContentAndIncludeSpellcheckSource source, DiscoveryV2ClassificationsGetBySortAndKeywordAndIdAndSourceAndIncludeTestAndPageAndSizeAndLocaleAndIncludeLicensedContentAndIncludeSpellcheckIncludeTest includeTest, string page, string size, string locale, DiscoveryV2ClassificationsGetBySortAndKeywordAndIdAndSourceAndIncludeTestAndPageAndSizeAndLocaleAndIncludeLicensedContentAndIncludeSpellcheckIncludeLicensedContent includeLicensedContent, DiscoveryV2ClassificationsGetBySortAndKeywordAndIdAndSourceAndIncludeTestAndPageAndSizeAndLocaleAndIncludeLicensedContentAndIncludeSpellcheckIncludeSpellcheck includeSpellcheck, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "discovery/v2/classifications?sort=" + (sort==null? "" : System.Uri.EscapeDataString(sort))+"&keyword=" + (keyword==null? "" : System.Uri.EscapeDataString(keyword))+"&id=" + (id==null? "" : System.Uri.EscapeDataString(id))+"&source=" + source+"&includeTest=" + includeTest+"&page=" + (page==null? "" : System.Uri.EscapeDataString(page))+"&size=" + (size==null? "" : System.Uri.EscapeDataString(size))+"&locale=" + (locale==null? "" : System.Uri.EscapeDataString(locale))+"&includeLicensedContent=" + includeLicensedContent+"&includeSpellcheck=" + includeSpellcheck;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2075,7 +2070,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2091,8 +2085,7 @@ namespace MyNS
 		public async Task DiscoveryV2ClassificationsGenres_idGetByLocaleAndIncludeLicensedContentAsync(string id, string locale, DiscoveryV2ClassificationsGenres_idGetByLocaleAndIncludeLicensedContentIncludeLicensedContent includeLicensedContent, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "discovery/v2/classifications/genres/"+ (id==null? "" : System.Uri.EscapeDataString(id))+"&locale=" + (locale==null? "" : System.Uri.EscapeDataString(locale))+"&includeLicensedContent=" + includeLicensedContent;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2106,7 +2099,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2122,8 +2114,7 @@ namespace MyNS
 		public async Task DiscoveryV2ClassificationsSegments_idGetByLocaleAndIncludeLicensedContentAsync(string id, string locale, DiscoveryV2ClassificationsSegments_idGetByLocaleAndIncludeLicensedContentIncludeLicensedContent includeLicensedContent, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "discovery/v2/classifications/segments/"+ (id==null? "" : System.Uri.EscapeDataString(id))+"&locale=" + (locale==null? "" : System.Uri.EscapeDataString(locale))+"&includeLicensedContent=" + includeLicensedContent;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2137,7 +2128,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2153,8 +2143,7 @@ namespace MyNS
 		public async Task DiscoveryV2ClassificationsSubgenres_idGetByLocaleAndIncludeLicensedContentAsync(string id, string locale, DiscoveryV2ClassificationsSubgenres_idGetByLocaleAndIncludeLicensedContentIncludeLicensedContent includeLicensedContent, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "discovery/v2/classifications/subgenres/"+ (id==null? "" : System.Uri.EscapeDataString(id))+"&locale=" + (locale==null? "" : System.Uri.EscapeDataString(locale))+"&includeLicensedContent=" + includeLicensedContent;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2168,7 +2157,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2184,8 +2172,7 @@ namespace MyNS
 		public async Task DiscoveryV2Classifications_idGetByLocaleAndIncludeLicensedContentAsync(string id, string locale, DiscoveryV2Classifications_idGetByLocaleAndIncludeLicensedContentIncludeLicensedContent includeLicensedContent, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "discovery/v2/classifications/"+ (id==null? "" : System.Uri.EscapeDataString(id))+"&locale=" + (locale==null? "" : System.Uri.EscapeDataString(locale))+"&includeLicensedContent=" + includeLicensedContent;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2199,7 +2186,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2290,8 +2276,7 @@ namespace MyNS
 					Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "discovery/v2/events?sort=" + (sort==null? "" : System.Uri.EscapeDataString(sort))+"&startDateTime=" + (startDateTime==null? "" : System.Uri.EscapeDataString(startDateTime))+"&endDateTime=" + (endDateTime==null? "" : System.Uri.EscapeDataString(endDateTime))+"&onsaleStartDateTime=" + (onsaleStartDateTime==null? "" : System.Uri.EscapeDataString(onsaleStartDateTime))+"&onsaleOnStartDate=" + (onsaleOnStartDate==null? "" : System.Uri.EscapeDataString(onsaleOnStartDate))+"&onsaleOnAfterStartDate=" + (onsaleOnAfterStartDate==null? "" : System.Uri.EscapeDataString(onsaleOnAfterStartDate))+"&onsaleEndDateTime=" + (onsaleEndDateTime==null? "" : System.Uri.EscapeDataString(onsaleEndDateTime))+"&city=" + (city==null? "" : System.Uri.EscapeDataString(city))+"&countryCode=" + (countryCode==null? "" : System.Uri.EscapeDataString(countryCode))+"&stateCode=" + (stateCode==null? "" : System.Uri.EscapeDataString(stateCode))+"&postalCode=" + (postalCode==null? "" : System.Uri.EscapeDataString(postalCode))+"&venueId=" + (venueId==null? "" : System.Uri.EscapeDataString(venueId))+"&attractionId=" + (attractionId==null? "" : System.Uri.EscapeDataString(attractionId))+"&segmentId=" + (segmentId==null? "" : System.Uri.EscapeDataString(segmentId))+"&segmentName=" + (segmentName==null? "" : System.Uri.EscapeDataString(segmentName))+"&"+string.Join("&", classificationName.Select(z => $"classificationName={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", classificationId.Select(z => $"classificationId={System.Uri.EscapeDataString(z.ToString())}"))+"&marketId=" + (marketId==null? "" : System.Uri.EscapeDataString(marketId))+"&promoterId=" + (promoterId==null? "" : System.Uri.EscapeDataString(promoterId))+"&dmaId=" + (dmaId==null? "" : System.Uri.EscapeDataString(dmaId))+"&includeTBA=" + includeTBA+"&includeTBD=" + includeTBD+"&clientVisibility=" + (clientVisibility==null? "" : System.Uri.EscapeDataString(clientVisibility))+"&latlong=" + (latlong==null? "" : System.Uri.EscapeDataString(latlong))+"&radius=" + (radius==null? "" : System.Uri.EscapeDataString(radius))+"&unit=" + unit+"&geoPoint=" + (geoPoint==null? "" : System.Uri.EscapeDataString(geoPoint))+"&keyword=" + (keyword==null? "" : System.Uri.EscapeDataString(keyword))+"&id=" + (id==null? "" : System.Uri.EscapeDataString(id))+"&source=" + source+"&includeTest=" + includeTest+"&page=" + (page==null? "" : System.Uri.EscapeDataString(page))+"&size=" + (size==null? "" : System.Uri.EscapeDataString(size))+"&locale=" + (locale==null? "" : System.Uri.EscapeDataString(locale))+"&includeLicensedContent=" + includeLicensedContent+"&includeSpellcheck=" + includeSpellcheck;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2305,7 +2290,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2321,8 +2305,7 @@ namespace MyNS
 		public async Task DiscoveryV2Events_idGetByLocaleAndIncludeLicensedContentAsync(string id, string locale, DiscoveryV2Events_idGetByLocaleAndIncludeLicensedContentIncludeLicensedContent includeLicensedContent, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "discovery/v2/events/"+ (id==null? "" : System.Uri.EscapeDataString(id))+"&locale=" + (locale==null? "" : System.Uri.EscapeDataString(locale))+"&includeLicensedContent=" + includeLicensedContent;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2336,7 +2319,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2352,8 +2334,7 @@ namespace MyNS
 		public async Task DiscoveryV2Events_idImagesGetByLocaleAndIncludeLicensedContentAsync(string id, string locale, DiscoveryV2Events_idImagesGetByLocaleAndIncludeLicensedContentIncludeLicensedContent includeLicensedContent, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "discovery/v2/events/"+ (id==null? "" : System.Uri.EscapeDataString(id))+"/images&locale=" + (locale==null? "" : System.Uri.EscapeDataString(locale))+"&includeLicensedContent=" + includeLicensedContent;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2367,7 +2348,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2416,8 +2396,7 @@ namespace MyNS
 					Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "discovery/v2/suggest?keyword=" + (keyword==null? "" : System.Uri.EscapeDataString(keyword))+"&source=" + source+"&latlong=" + (latlong==null? "" : System.Uri.EscapeDataString(latlong))+"&radius=" + (radius==null? "" : System.Uri.EscapeDataString(radius))+"&unit=" + unit+"&size=" + (size==null? "" : System.Uri.EscapeDataString(size))+"&includeFuzzy=" + includeFuzzy+"&clientVisibility=" + (clientVisibility==null? "" : System.Uri.EscapeDataString(clientVisibility))+"&countryCode=" + (countryCode==null? "" : System.Uri.EscapeDataString(countryCode))+"&includeTBA=" + includeTBA+"&includeTBD=" + includeTBD+"&segmentId=" + (segmentId==null? "" : System.Uri.EscapeDataString(segmentId))+"&geoPoint=" + (geoPoint==null? "" : System.Uri.EscapeDataString(geoPoint))+"&locale=" + (locale==null? "" : System.Uri.EscapeDataString(locale))+"&includeLicensedContent=" + includeLicensedContent+"&includeSpellcheck=" + includeSpellcheck;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2431,7 +2410,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2482,8 +2460,7 @@ namespace MyNS
 					Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "discovery/v2/venues?sort=" + (sort==null? "" : System.Uri.EscapeDataString(sort))+"&stateCode=" + (stateCode==null? "" : System.Uri.EscapeDataString(stateCode))+"&countryCode=" + (countryCode==null? "" : System.Uri.EscapeDataString(countryCode))+"&latlong=" + (latlong==null? "" : System.Uri.EscapeDataString(latlong))+"&radius=" + (radius==null? "" : System.Uri.EscapeDataString(radius))+"&unit=" + unit+"&geoPoint=" + (geoPoint==null? "" : System.Uri.EscapeDataString(geoPoint))+"&keyword=" + (keyword==null? "" : System.Uri.EscapeDataString(keyword))+"&id=" + (id==null? "" : System.Uri.EscapeDataString(id))+"&source=" + source+"&includeTest=" + includeTest+"&page=" + (page==null? "" : System.Uri.EscapeDataString(page))+"&size=" + (size==null? "" : System.Uri.EscapeDataString(size))+"&locale=" + (locale==null? "" : System.Uri.EscapeDataString(locale))+"&includeLicensedContent=" + includeLicensedContent+"&includeSpellcheck=" + includeSpellcheck;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2497,7 +2474,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2513,8 +2489,7 @@ namespace MyNS
 		public async Task DiscoveryV2Venues_idGetByLocaleAndIncludeLicensedContentAsync(string id, string locale, DiscoveryV2Venues_idGetByLocaleAndIncludeLicensedContentIncludeLicensedContent includeLicensedContent, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "discovery/v2/venues/"+ (id==null? "" : System.Uri.EscapeDataString(id))+"&locale=" + (locale==null? "" : System.Uri.EscapeDataString(locale))+"&includeLicensedContent=" + includeLicensedContent;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2528,7 +2503,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

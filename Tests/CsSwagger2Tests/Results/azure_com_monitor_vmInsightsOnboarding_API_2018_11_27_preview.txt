@@ -244,19 +244,17 @@ namespace MyNS
 		public async Task<VMInsightsOnboardingStatus> VMInsights_GetOnboardingStatusAsync(string api_version, string resourceUri)
 		{
 			var requestUri = ""+ (resourceUri==null? "" : System.Uri.EscapeDataString(resourceUri))+"/providers/Microsoft.Insights/vmInsightsOnboardingStatuses/default?api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<VMInsightsOnboardingStatus>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<VMInsightsOnboardingStatus>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

@@ -776,8 +776,7 @@ namespace MyNS
 		public async Task<ListFlowReturn> ListFlowAsync(int PageSize, int Page, string PageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/Flows?PageSize="+PageSize+"&Page="+Page+"&PageToken=" + (PageToken==null? "" : System.Uri.EscapeDataString(PageToken));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -787,13 +786,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ListFlowReturn>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ListFlowReturn>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -817,8 +815,7 @@ namespace MyNS
 		public async Task<ListEngagementReturn> ListEngagementAsync(string FlowSid, int PageSize, int Page, string PageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/Flows/"+ (FlowSid==null? "" : System.Uri.EscapeDataString(FlowSid))+"/Engagements&PageSize="+PageSize+"&Page="+Page+"&PageToken=" + (PageToken==null? "" : System.Uri.EscapeDataString(PageToken));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -828,13 +825,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ListEngagementReturn>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ListEngagementReturn>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -854,8 +850,7 @@ namespace MyNS
 		public async Task<Studiov1flowengagementengagement_context> FetchEngagementContextAsync(string FlowSid, string EngagementSid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/Flows/"+ (FlowSid==null? "" : System.Uri.EscapeDataString(FlowSid))+"/Engagements/"+ (EngagementSid==null? "" : System.Uri.EscapeDataString(EngagementSid))+"/Context";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -865,13 +860,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Studiov1flowengagementengagement_context>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Studiov1flowengagementengagement_context>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -899,8 +893,7 @@ namespace MyNS
 		public async Task<ListStepReturn> ListStepAsync(string FlowSid, string EngagementSid, int PageSize, int Page, string PageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/Flows/"+ (FlowSid==null? "" : System.Uri.EscapeDataString(FlowSid))+"/Engagements/"+ (EngagementSid==null? "" : System.Uri.EscapeDataString(EngagementSid))+"/Steps&PageSize="+PageSize+"&Page="+Page+"&PageToken=" + (PageToken==null? "" : System.Uri.EscapeDataString(PageToken));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -910,13 +903,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ListStepReturn>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ListStepReturn>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -940,8 +932,7 @@ namespace MyNS
 		public async Task<Studiov1flowengagementstep> FetchStepAsync(string FlowSid, string EngagementSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/Flows/"+ (FlowSid==null? "" : System.Uri.EscapeDataString(FlowSid))+"/Engagements/"+ (EngagementSid==null? "" : System.Uri.EscapeDataString(EngagementSid))+"/Steps/"+ (Sid==null? "" : System.Uri.EscapeDataString(Sid));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -951,13 +942,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Studiov1flowengagementstep>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Studiov1flowengagementstep>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -981,8 +971,7 @@ namespace MyNS
 		public async Task<Studiov1flowengagementstepstep_context> FetchStepContextAsync(string FlowSid, string EngagementSid, string StepSid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/Flows/"+ (FlowSid==null? "" : System.Uri.EscapeDataString(FlowSid))+"/Engagements/"+ (EngagementSid==null? "" : System.Uri.EscapeDataString(EngagementSid))+"/Steps/"+ (StepSid==null? "" : System.Uri.EscapeDataString(StepSid))+"/Context";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -992,13 +981,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Studiov1flowengagementstepstep_context>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Studiov1flowengagementstepstep_context>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1017,8 +1005,7 @@ namespace MyNS
 		public async Task DeleteEngagementAsync(string FlowSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/Flows/"+ (FlowSid==null? "" : System.Uri.EscapeDataString(FlowSid))+"/Engagements/"+ (Sid==null? "" : System.Uri.EscapeDataString(Sid));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1032,7 +1019,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1052,8 +1038,7 @@ namespace MyNS
 		public async Task<Studiov1flowengagement> FetchEngagementAsync(string FlowSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/Flows/"+ (FlowSid==null? "" : System.Uri.EscapeDataString(FlowSid))+"/Engagements/"+ (Sid==null? "" : System.Uri.EscapeDataString(Sid));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1063,13 +1048,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Studiov1flowengagement>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Studiov1flowengagement>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1095,8 +1079,7 @@ namespace MyNS
 		public async Task<ListExecutionReturn> ListExecutionAsync(string FlowSid, System.DateTimeOffset DateCreatedFrom, System.DateTimeOffset DateCreatedTo, int PageSize, int Page, string PageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/Flows/"+ (FlowSid==null? "" : System.Uri.EscapeDataString(FlowSid))+"/Executions&DateCreatedFrom=" + DateCreatedFrom.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&DateCreatedTo=" + DateCreatedTo.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&PageSize="+PageSize+"&Page="+Page+"&PageToken=" + (PageToken==null? "" : System.Uri.EscapeDataString(PageToken));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1106,13 +1089,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ListExecutionReturn>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ListExecutionReturn>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1132,8 +1114,7 @@ namespace MyNS
 		public async Task<Studiov1flowexecutionexecution_context> FetchExecutionContextAsync(string FlowSid, string ExecutionSid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/Flows/"+ (FlowSid==null? "" : System.Uri.EscapeDataString(FlowSid))+"/Executions/"+ (ExecutionSid==null? "" : System.Uri.EscapeDataString(ExecutionSid))+"/Context";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1143,13 +1124,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Studiov1flowexecutionexecution_context>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Studiov1flowexecutionexecution_context>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1177,8 +1157,7 @@ namespace MyNS
 		public async Task<ListExecutionStepReturn> ListExecutionStepAsync(string FlowSid, string ExecutionSid, int PageSize, int Page, string PageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/Flows/"+ (FlowSid==null? "" : System.Uri.EscapeDataString(FlowSid))+"/Executions/"+ (ExecutionSid==null? "" : System.Uri.EscapeDataString(ExecutionSid))+"/Steps&PageSize="+PageSize+"&Page="+Page+"&PageToken=" + (PageToken==null? "" : System.Uri.EscapeDataString(PageToken));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1188,13 +1167,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ListExecutionStepReturn>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ListExecutionStepReturn>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1218,8 +1196,7 @@ namespace MyNS
 		public async Task<Studiov1flowexecutionexecution_step> FetchExecutionStepAsync(string FlowSid, string ExecutionSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/Flows/"+ (FlowSid==null? "" : System.Uri.EscapeDataString(FlowSid))+"/Executions/"+ (ExecutionSid==null? "" : System.Uri.EscapeDataString(ExecutionSid))+"/Steps/"+ (Sid==null? "" : System.Uri.EscapeDataString(Sid));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1229,13 +1206,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Studiov1flowexecutionexecution_step>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Studiov1flowexecutionexecution_step>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1259,8 +1235,7 @@ namespace MyNS
 		public async Task<Studiov1flowexecutionexecution_stepexecution_step_context> FetchExecutionStepContextAsync(string FlowSid, string ExecutionSid, string StepSid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/Flows/"+ (FlowSid==null? "" : System.Uri.EscapeDataString(FlowSid))+"/Executions/"+ (ExecutionSid==null? "" : System.Uri.EscapeDataString(ExecutionSid))+"/Steps/"+ (StepSid==null? "" : System.Uri.EscapeDataString(StepSid))+"/Context";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1270,13 +1245,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Studiov1flowexecutionexecution_stepexecution_step_context>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Studiov1flowexecutionexecution_stepexecution_step_context>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1295,8 +1269,7 @@ namespace MyNS
 		public async Task DeleteExecutionAsync(string FlowSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/Flows/"+ (FlowSid==null? "" : System.Uri.EscapeDataString(FlowSid))+"/Executions/"+ (Sid==null? "" : System.Uri.EscapeDataString(Sid));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1310,7 +1283,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1330,8 +1302,7 @@ namespace MyNS
 		public async Task<Studiov1flowexecution> FetchExecutionAsync(string FlowSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/Flows/"+ (FlowSid==null? "" : System.Uri.EscapeDataString(FlowSid))+"/Executions/"+ (Sid==null? "" : System.Uri.EscapeDataString(Sid));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1341,13 +1312,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Studiov1flowexecution>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Studiov1flowexecution>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1362,8 +1332,7 @@ namespace MyNS
 		public async Task DeleteFlowAsync(string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/Flows/"+ (Sid==null? "" : System.Uri.EscapeDataString(Sid));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1377,7 +1346,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1393,8 +1361,7 @@ namespace MyNS
 		public async Task<Studiov1flow> FetchFlowAsync(string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/Flows/"+ (Sid==null? "" : System.Uri.EscapeDataString(Sid));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1404,13 +1371,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Studiov1flow>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Studiov1flow>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

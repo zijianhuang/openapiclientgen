@@ -5300,8 +5300,7 @@ namespace MyNS
 		public async Task<CoursesPage> List_courses_v1_courses_getAsync(string[] region_codes, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/courses?"+string.Join("&", region_codes.Select(z => $"region_codes={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5311,13 +5310,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<CoursesPage>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<CoursesPage>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5330,8 +5328,7 @@ namespace MyNS
 		public async Task<Region[]> List_regions_v1_courses_regions_getAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/courses/regions";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5341,13 +5338,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Region[]>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Region[]>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5360,8 +5356,7 @@ namespace MyNS
 		public async Task<Dams> Search_dams_v1_dams_search_getAsync(string name, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/dams/search?name=" + (name==null? "" : System.Uri.EscapeDataString(name));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5371,13 +5366,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Dams>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Dams>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5401,8 +5395,7 @@ namespace MyNS
 		public async Task<DamClassAnalysis> Dam_class_analysis_v1_dams__dam_id__analysis_classes_getAsync(string dam_id, string start_date, string end_date, string[] region, string[] course, string[] type, string[] going, string[] race_class, int min_distance_y, int max_distance_y, string[] age_band, string[] sex_restriction, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/dams/"+ (dam_id==null? "" : System.Uri.EscapeDataString(dam_id))+"/analysis/classes&start_date=" + (start_date==null? "" : System.Uri.EscapeDataString(start_date))+"&end_date=" + (end_date==null? "" : System.Uri.EscapeDataString(end_date))+"&"+string.Join("&", region.Select(z => $"region={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", course.Select(z => $"course={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", type.Select(z => $"type={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", going.Select(z => $"going={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", race_class.Select(z => $"race_class={System.Uri.EscapeDataString(z.ToString())}"))+"&min_distance_y="+min_distance_y+"&max_distance_y="+max_distance_y+"&"+string.Join("&", age_band.Select(z => $"age_band={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", sex_restriction.Select(z => $"sex_restriction={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5412,13 +5405,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<DamClassAnalysis>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<DamClassAnalysis>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5442,8 +5434,7 @@ namespace MyNS
 		public async Task<DamDistanceAnalysis> Dam_distance_analysis_v1_dams__dam_id__analysis_distances_getAsync(string dam_id, string start_date, string end_date, string[] region, string[] course, string[] type, string[] going, string[] race_class, int min_distance_y, int max_distance_y, string[] age_band, string[] sex_restriction, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/dams/"+ (dam_id==null? "" : System.Uri.EscapeDataString(dam_id))+"/analysis/distances&start_date=" + (start_date==null? "" : System.Uri.EscapeDataString(start_date))+"&end_date=" + (end_date==null? "" : System.Uri.EscapeDataString(end_date))+"&"+string.Join("&", region.Select(z => $"region={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", course.Select(z => $"course={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", type.Select(z => $"type={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", going.Select(z => $"going={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", race_class.Select(z => $"race_class={System.Uri.EscapeDataString(z.ToString())}"))+"&min_distance_y="+min_distance_y+"&max_distance_y="+max_distance_y+"&"+string.Join("&", age_band.Select(z => $"age_band={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", sex_restriction.Select(z => $"sex_restriction={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5453,13 +5444,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<DamDistanceAnalysis>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<DamDistanceAnalysis>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5486,8 +5476,7 @@ namespace MyNS
 		public async Task<ResultsPage> Dam_results_v1_dams__dam_id__results_getAsync(string dam_id, string start_date, string end_date, string[] region, string[] course, string[] type, string[] going, string[] race_class, int min_distance_y, int max_distance_y, string[] age_band, string[] sex_restriction, int limit, int skip, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/dams/"+ (dam_id==null? "" : System.Uri.EscapeDataString(dam_id))+"/results&start_date=" + (start_date==null? "" : System.Uri.EscapeDataString(start_date))+"&end_date=" + (end_date==null? "" : System.Uri.EscapeDataString(end_date))+"&"+string.Join("&", region.Select(z => $"region={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", course.Select(z => $"course={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", type.Select(z => $"type={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", going.Select(z => $"going={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", race_class.Select(z => $"race_class={System.Uri.EscapeDataString(z.ToString())}"))+"&min_distance_y="+min_distance_y+"&max_distance_y="+max_distance_y+"&"+string.Join("&", age_band.Select(z => $"age_band={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", sex_restriction.Select(z => $"sex_restriction={System.Uri.EscapeDataString(z.ToString())}"))+"&limit="+limit+"&skip="+skip;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5497,13 +5486,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ResultsPage>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ResultsPage>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5516,8 +5504,7 @@ namespace MyNS
 		public async Task<Damsires> Search_damsires_v1_damsires_search_getAsync(string name, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/damsires/search?name=" + (name==null? "" : System.Uri.EscapeDataString(name));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5527,13 +5514,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Damsires>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Damsires>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5557,8 +5543,7 @@ namespace MyNS
 		public async Task<DamsireClassAnalysis> Damsire_class_analysis_v1_damsires__damsire_id__analysis_classes_getAsync(string damsire_id, string start_date, string end_date, string[] region, string[] course, string[] type, string[] going, string[] race_class, int min_distance_y, int max_distance_y, string[] age_band, string[] sex_restriction, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/damsires/"+ (damsire_id==null? "" : System.Uri.EscapeDataString(damsire_id))+"/analysis/classes&start_date=" + (start_date==null? "" : System.Uri.EscapeDataString(start_date))+"&end_date=" + (end_date==null? "" : System.Uri.EscapeDataString(end_date))+"&"+string.Join("&", region.Select(z => $"region={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", course.Select(z => $"course={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", type.Select(z => $"type={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", going.Select(z => $"going={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", race_class.Select(z => $"race_class={System.Uri.EscapeDataString(z.ToString())}"))+"&min_distance_y="+min_distance_y+"&max_distance_y="+max_distance_y+"&"+string.Join("&", age_band.Select(z => $"age_band={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", sex_restriction.Select(z => $"sex_restriction={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5568,13 +5553,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<DamsireClassAnalysis>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<DamsireClassAnalysis>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5598,8 +5582,7 @@ namespace MyNS
 		public async Task<DamsireDistanceAnalysis> Damsire_distance_analysis_v1_damsires__damsire_id__analysis_distances_getAsync(string damsire_id, string start_date, string end_date, string[] region, string[] course, string[] type, string[] going, string[] race_class, int min_distance_y, int max_distance_y, string[] age_band, string[] sex_restriction, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/damsires/"+ (damsire_id==null? "" : System.Uri.EscapeDataString(damsire_id))+"/analysis/distances&start_date=" + (start_date==null? "" : System.Uri.EscapeDataString(start_date))+"&end_date=" + (end_date==null? "" : System.Uri.EscapeDataString(end_date))+"&"+string.Join("&", region.Select(z => $"region={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", course.Select(z => $"course={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", type.Select(z => $"type={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", going.Select(z => $"going={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", race_class.Select(z => $"race_class={System.Uri.EscapeDataString(z.ToString())}"))+"&min_distance_y="+min_distance_y+"&max_distance_y="+max_distance_y+"&"+string.Join("&", age_band.Select(z => $"age_band={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", sex_restriction.Select(z => $"sex_restriction={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5609,13 +5592,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<DamsireDistanceAnalysis>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<DamsireDistanceAnalysis>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5642,8 +5624,7 @@ namespace MyNS
 		public async Task<ResultsPage> Damsire_results_v1_damsires__damsire_id__results_getAsync(string damsire_id, string start_date, string end_date, string[] region, string[] course, string[] type, string[] going, string[] race_class, int min_distance_y, int max_distance_y, string[] age_band, string[] sex_restriction, int limit, int skip, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/damsires/"+ (damsire_id==null? "" : System.Uri.EscapeDataString(damsire_id))+"/results&start_date=" + (start_date==null? "" : System.Uri.EscapeDataString(start_date))+"&end_date=" + (end_date==null? "" : System.Uri.EscapeDataString(end_date))+"&"+string.Join("&", region.Select(z => $"region={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", course.Select(z => $"course={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", type.Select(z => $"type={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", going.Select(z => $"going={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", race_class.Select(z => $"race_class={System.Uri.EscapeDataString(z.ToString())}"))+"&min_distance_y="+min_distance_y+"&max_distance_y="+max_distance_y+"&"+string.Join("&", age_band.Select(z => $"age_band={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", sex_restriction.Select(z => $"sex_restriction={System.Uri.EscapeDataString(z.ToString())}"))+"&limit="+limit+"&skip="+skip;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5653,13 +5634,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ResultsPage>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ResultsPage>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5672,8 +5652,7 @@ namespace MyNS
 		public async Task<Horses> Search_horses_v1_horses_search_getAsync(string name, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/horses/search?name=" + (name==null? "" : System.Uri.EscapeDataString(name));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5683,13 +5662,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Horses>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Horses>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5713,8 +5691,7 @@ namespace MyNS
 		public async Task<HorseDistanceTimeAnalysis> Horse_distance_time_analysis_v1_horses__horse_id__analysis_distance_times_getAsync(string horse_id, string start_date, string end_date, string[] region, string[] course, string[] type, string[] going, string[] race_class, int min_distance_y, int max_distance_y, string[] age_band, string[] sex_restriction, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/horses/"+ (horse_id==null? "" : System.Uri.EscapeDataString(horse_id))+"/analysis/distance-times&start_date=" + (start_date==null? "" : System.Uri.EscapeDataString(start_date))+"&end_date=" + (end_date==null? "" : System.Uri.EscapeDataString(end_date))+"&"+string.Join("&", region.Select(z => $"region={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", course.Select(z => $"course={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", type.Select(z => $"type={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", going.Select(z => $"going={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", race_class.Select(z => $"race_class={System.Uri.EscapeDataString(z.ToString())}"))+"&min_distance_y="+min_distance_y+"&max_distance_y="+max_distance_y+"&"+string.Join("&", age_band.Select(z => $"age_band={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", sex_restriction.Select(z => $"sex_restriction={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5724,13 +5701,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<HorseDistanceTimeAnalysis>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<HorseDistanceTimeAnalysis>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5757,8 +5733,7 @@ namespace MyNS
 		public async Task<ResultsPage> Horse_results_v1_horses__horse_id__results_getAsync(string horse_id, string start_date, string end_date, string[] region, string[] course, string[] type, string[] going, string[] race_class, int min_distance_y, int max_distance_y, string[] age_band, string[] sex_restriction, int limit, int skip, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/horses/"+ (horse_id==null? "" : System.Uri.EscapeDataString(horse_id))+"/results&start_date=" + (start_date==null? "" : System.Uri.EscapeDataString(start_date))+"&end_date=" + (end_date==null? "" : System.Uri.EscapeDataString(end_date))+"&"+string.Join("&", region.Select(z => $"region={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", course.Select(z => $"course={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", type.Select(z => $"type={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", going.Select(z => $"going={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", race_class.Select(z => $"race_class={System.Uri.EscapeDataString(z.ToString())}"))+"&min_distance_y="+min_distance_y+"&max_distance_y="+max_distance_y+"&"+string.Join("&", age_band.Select(z => $"age_band={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", sex_restriction.Select(z => $"sex_restriction={System.Uri.EscapeDataString(z.ToString())}"))+"&limit="+limit+"&skip="+skip;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5768,13 +5743,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ResultsPage>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ResultsPage>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5787,8 +5761,7 @@ namespace MyNS
 		public async Task<Jockeys> Search_jockeys_v1_jockeys_search_getAsync(string name, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/jockeys/search?name=" + (name==null? "" : System.Uri.EscapeDataString(name));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5798,13 +5771,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Jockeys>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Jockeys>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5828,8 +5800,7 @@ namespace MyNS
 		public async Task<JockeyCourseAnalysis> Jockey_course_analysis_v1_jockeys__jockey_id__analysis_courses_getAsync(string jockey_id, string start_date, string end_date, string[] region, string[] course, string[] type, string[] going, string[] race_class, int min_distance_y, int max_distance_y, string[] age_band, string[] sex_restriction, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/jockeys/"+ (jockey_id==null? "" : System.Uri.EscapeDataString(jockey_id))+"/analysis/courses&start_date=" + (start_date==null? "" : System.Uri.EscapeDataString(start_date))+"&end_date=" + (end_date==null? "" : System.Uri.EscapeDataString(end_date))+"&"+string.Join("&", region.Select(z => $"region={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", course.Select(z => $"course={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", type.Select(z => $"type={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", going.Select(z => $"going={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", race_class.Select(z => $"race_class={System.Uri.EscapeDataString(z.ToString())}"))+"&min_distance_y="+min_distance_y+"&max_distance_y="+max_distance_y+"&"+string.Join("&", age_band.Select(z => $"age_band={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", sex_restriction.Select(z => $"sex_restriction={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5839,13 +5810,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<JockeyCourseAnalysis>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<JockeyCourseAnalysis>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5869,8 +5839,7 @@ namespace MyNS
 		public async Task<JockeyDistanceAnalysis> Jockey_distance_analysis_v1_jockeys__jockey_id__analysis_distances_getAsync(string jockey_id, string start_date, string end_date, string[] region, string[] course, string[] type, string[] going, string[] race_class, int min_distance_y, int max_distance_y, string[] age_band, string[] sex_restriction, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/jockeys/"+ (jockey_id==null? "" : System.Uri.EscapeDataString(jockey_id))+"/analysis/distances&start_date=" + (start_date==null? "" : System.Uri.EscapeDataString(start_date))+"&end_date=" + (end_date==null? "" : System.Uri.EscapeDataString(end_date))+"&"+string.Join("&", region.Select(z => $"region={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", course.Select(z => $"course={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", type.Select(z => $"type={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", going.Select(z => $"going={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", race_class.Select(z => $"race_class={System.Uri.EscapeDataString(z.ToString())}"))+"&min_distance_y="+min_distance_y+"&max_distance_y="+max_distance_y+"&"+string.Join("&", age_band.Select(z => $"age_band={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", sex_restriction.Select(z => $"sex_restriction={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5880,13 +5849,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<JockeyDistanceAnalysis>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<JockeyDistanceAnalysis>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5910,8 +5878,7 @@ namespace MyNS
 		public async Task<JockeyOwnerAnalysis> Jockey_owner_analysis_v1_jockeys__jockey_id__analysis_owners_getAsync(string jockey_id, string start_date, string end_date, string[] region, string[] course, string[] type, string[] going, string[] race_class, int min_distance_y, int max_distance_y, string[] age_band, string[] sex_restriction, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/jockeys/"+ (jockey_id==null? "" : System.Uri.EscapeDataString(jockey_id))+"/analysis/owners&start_date=" + (start_date==null? "" : System.Uri.EscapeDataString(start_date))+"&end_date=" + (end_date==null? "" : System.Uri.EscapeDataString(end_date))+"&"+string.Join("&", region.Select(z => $"region={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", course.Select(z => $"course={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", type.Select(z => $"type={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", going.Select(z => $"going={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", race_class.Select(z => $"race_class={System.Uri.EscapeDataString(z.ToString())}"))+"&min_distance_y="+min_distance_y+"&max_distance_y="+max_distance_y+"&"+string.Join("&", age_band.Select(z => $"age_band={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", sex_restriction.Select(z => $"sex_restriction={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5921,13 +5888,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<JockeyOwnerAnalysis>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<JockeyOwnerAnalysis>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5951,8 +5917,7 @@ namespace MyNS
 		public async Task<JockeyTrainerAnalysis> Jockey_trainer_analysis_v1_jockeys__jockey_id__analysis_trainers_getAsync(string jockey_id, string start_date, string end_date, string[] region, string[] course, string[] type, string[] going, string[] race_class, int min_distance_y, int max_distance_y, string[] age_band, string[] sex_restriction, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/jockeys/"+ (jockey_id==null? "" : System.Uri.EscapeDataString(jockey_id))+"/analysis/trainers&start_date=" + (start_date==null? "" : System.Uri.EscapeDataString(start_date))+"&end_date=" + (end_date==null? "" : System.Uri.EscapeDataString(end_date))+"&"+string.Join("&", region.Select(z => $"region={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", course.Select(z => $"course={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", type.Select(z => $"type={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", going.Select(z => $"going={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", race_class.Select(z => $"race_class={System.Uri.EscapeDataString(z.ToString())}"))+"&min_distance_y="+min_distance_y+"&max_distance_y="+max_distance_y+"&"+string.Join("&", age_band.Select(z => $"age_band={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", sex_restriction.Select(z => $"sex_restriction={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5962,13 +5927,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<JockeyTrainerAnalysis>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<JockeyTrainerAnalysis>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5995,8 +5959,7 @@ namespace MyNS
 		public async Task<ResultsPage> Jockey_results_v1_jockeys__jockey_id__results_getAsync(string jockey_id, string start_date, string end_date, string[] region, string[] course, string[] type, string[] going, string[] race_class, int min_distance_y, int max_distance_y, string[] age_band, string[] sex_restriction, int limit, int skip, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/jockeys/"+ (jockey_id==null? "" : System.Uri.EscapeDataString(jockey_id))+"/results&start_date=" + (start_date==null? "" : System.Uri.EscapeDataString(start_date))+"&end_date=" + (end_date==null? "" : System.Uri.EscapeDataString(end_date))+"&"+string.Join("&", region.Select(z => $"region={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", course.Select(z => $"course={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", type.Select(z => $"type={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", going.Select(z => $"going={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", race_class.Select(z => $"race_class={System.Uri.EscapeDataString(z.ToString())}"))+"&min_distance_y="+min_distance_y+"&max_distance_y="+max_distance_y+"&"+string.Join("&", age_band.Select(z => $"age_band={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", sex_restriction.Select(z => $"sex_restriction={System.Uri.EscapeDataString(z.ToString())}"))+"&limit="+limit+"&skip="+skip;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6006,13 +5969,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ResultsPage>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ResultsPage>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6030,8 +5992,7 @@ namespace MyNS
 		public async Task<MeetsResponse> List_meets_v1_north_america_meets_getAsync(string start_date, string end_date, int limit, int skip, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/north-america/meets?start_date=" + (start_date==null? "" : System.Uri.EscapeDataString(start_date))+"&end_date=" + (end_date==null? "" : System.Uri.EscapeDataString(end_date))+"&limit="+limit+"&skip="+skip;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6041,13 +6002,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<MeetsResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<MeetsResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6060,8 +6020,7 @@ namespace MyNS
 		public async Task<EntriesResponse> Meet_entries_v1_north_america_meets__meet_id__entries_getAsync(string meet_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/north-america/meets/"+ (meet_id==null? "" : System.Uri.EscapeDataString(meet_id))+"/entries";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6071,13 +6030,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<EntriesResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<EntriesResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6090,8 +6048,7 @@ namespace MyNS
 		public async Task<ResultsResponse> Meet_results_v1_north_america_meets__meet_id__results_getAsync(string meet_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/north-america/meets/"+ (meet_id==null? "" : System.Uri.EscapeDataString(meet_id))+"/results";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6101,13 +6058,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ResultsResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ResultsResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6120,8 +6076,7 @@ namespace MyNS
 		public async Task<Owners> Search_owners_v1_owners_search_getAsync(string name, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/owners/search?name=" + (name==null? "" : System.Uri.EscapeDataString(name));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6131,13 +6086,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Owners>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Owners>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6161,8 +6115,7 @@ namespace MyNS
 		public async Task<OwnerCourseAnalysis> Owner_course_analysis_v1_owners__owner_id__analysis_courses_getAsync(string owner_id, string start_date, string end_date, string[] region, string[] course, string[] type, string[] going, string[] race_class, int min_distance_y, int max_distance_y, string[] age_band, string[] sex_restriction, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/owners/"+ (owner_id==null? "" : System.Uri.EscapeDataString(owner_id))+"/analysis/courses&start_date=" + (start_date==null? "" : System.Uri.EscapeDataString(start_date))+"&end_date=" + (end_date==null? "" : System.Uri.EscapeDataString(end_date))+"&"+string.Join("&", region.Select(z => $"region={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", course.Select(z => $"course={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", type.Select(z => $"type={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", going.Select(z => $"going={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", race_class.Select(z => $"race_class={System.Uri.EscapeDataString(z.ToString())}"))+"&min_distance_y="+min_distance_y+"&max_distance_y="+max_distance_y+"&"+string.Join("&", age_band.Select(z => $"age_band={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", sex_restriction.Select(z => $"sex_restriction={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6172,13 +6125,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<OwnerCourseAnalysis>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<OwnerCourseAnalysis>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6202,8 +6154,7 @@ namespace MyNS
 		public async Task<OwnerDistanceAnalysis> Owner_distance_analysis_v1_owners__owner_id__analysis_distances_getAsync(string owner_id, string start_date, string end_date, string[] region, string[] course, string[] type, string[] going, string[] race_class, int min_distance_y, int max_distance_y, string[] age_band, string[] sex_restriction, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/owners/"+ (owner_id==null? "" : System.Uri.EscapeDataString(owner_id))+"/analysis/distances&start_date=" + (start_date==null? "" : System.Uri.EscapeDataString(start_date))+"&end_date=" + (end_date==null? "" : System.Uri.EscapeDataString(end_date))+"&"+string.Join("&", region.Select(z => $"region={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", course.Select(z => $"course={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", type.Select(z => $"type={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", going.Select(z => $"going={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", race_class.Select(z => $"race_class={System.Uri.EscapeDataString(z.ToString())}"))+"&min_distance_y="+min_distance_y+"&max_distance_y="+max_distance_y+"&"+string.Join("&", age_band.Select(z => $"age_band={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", sex_restriction.Select(z => $"sex_restriction={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6213,13 +6164,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<OwnerDistanceAnalysis>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<OwnerDistanceAnalysis>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6243,8 +6193,7 @@ namespace MyNS
 		public async Task<OwnerJockeyAnalysis> Owner_jockey_analysis_v1_owners__owner_id__analysis_jockeys_getAsync(string owner_id, string start_date, string end_date, string[] region, string[] course, string[] type, string[] going, string[] race_class, int min_distance_y, int max_distance_y, string[] age_band, string[] sex_restriction, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/owners/"+ (owner_id==null? "" : System.Uri.EscapeDataString(owner_id))+"/analysis/jockeys&start_date=" + (start_date==null? "" : System.Uri.EscapeDataString(start_date))+"&end_date=" + (end_date==null? "" : System.Uri.EscapeDataString(end_date))+"&"+string.Join("&", region.Select(z => $"region={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", course.Select(z => $"course={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", type.Select(z => $"type={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", going.Select(z => $"going={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", race_class.Select(z => $"race_class={System.Uri.EscapeDataString(z.ToString())}"))+"&min_distance_y="+min_distance_y+"&max_distance_y="+max_distance_y+"&"+string.Join("&", age_band.Select(z => $"age_band={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", sex_restriction.Select(z => $"sex_restriction={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6254,13 +6203,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<OwnerJockeyAnalysis>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<OwnerJockeyAnalysis>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6284,8 +6232,7 @@ namespace MyNS
 		public async Task<OwnerTrainerAnalysis> Owner_trainer_analysis_v1_owners__owner_id__analysis_trainers_getAsync(string owner_id, string start_date, string end_date, string[] region, string[] course, string[] type, string[] going, string[] race_class, int min_distance_y, int max_distance_y, string[] age_band, string[] sex_restriction, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/owners/"+ (owner_id==null? "" : System.Uri.EscapeDataString(owner_id))+"/analysis/trainers&start_date=" + (start_date==null? "" : System.Uri.EscapeDataString(start_date))+"&end_date=" + (end_date==null? "" : System.Uri.EscapeDataString(end_date))+"&"+string.Join("&", region.Select(z => $"region={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", course.Select(z => $"course={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", type.Select(z => $"type={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", going.Select(z => $"going={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", race_class.Select(z => $"race_class={System.Uri.EscapeDataString(z.ToString())}"))+"&min_distance_y="+min_distance_y+"&max_distance_y="+max_distance_y+"&"+string.Join("&", age_band.Select(z => $"age_band={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", sex_restriction.Select(z => $"sex_restriction={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6295,13 +6242,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<OwnerTrainerAnalysis>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<OwnerTrainerAnalysis>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6328,8 +6274,7 @@ namespace MyNS
 		public async Task<ResultsPage> Owner_results_v1_owners__owner_id__results_getAsync(string owner_id, string start_date, string end_date, string[] region, string[] course, string[] type, string[] going, string[] race_class, int min_distance_y, int max_distance_y, string[] age_band, string[] sex_restriction, int limit, int skip, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/owners/"+ (owner_id==null? "" : System.Uri.EscapeDataString(owner_id))+"/results&start_date=" + (start_date==null? "" : System.Uri.EscapeDataString(start_date))+"&end_date=" + (end_date==null? "" : System.Uri.EscapeDataString(end_date))+"&"+string.Join("&", region.Select(z => $"region={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", course.Select(z => $"course={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", type.Select(z => $"type={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", going.Select(z => $"going={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", race_class.Select(z => $"race_class={System.Uri.EscapeDataString(z.ToString())}"))+"&min_distance_y="+min_distance_y+"&max_distance_y="+max_distance_y+"&"+string.Join("&", age_band.Select(z => $"age_band={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", sex_restriction.Select(z => $"sex_restriction={System.Uri.EscapeDataString(z.ToString())}"))+"&limit="+limit+"&skip="+skip;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6339,13 +6284,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ResultsPage>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ResultsPage>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6361,8 +6305,7 @@ namespace MyNS
 		public async Task<Racecards> List_racecards_basic_v1_racecards_basic_getAsync(string day, string[] region_codes, string[] course_ids, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/racecards/basic?day=" + (day==null? "" : System.Uri.EscapeDataString(day))+"&"+string.Join("&", region_codes.Select(z => $"region_codes={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", course_ids.Select(z => $"course_ids={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6372,13 +6315,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Racecards>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Racecards>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6395,8 +6337,7 @@ namespace MyNS
 		public async Task<RacecardsOdds> List_racecards_big_races_v1_racecards_big_races_getAsync(string start_date, string end_date, string[] region_codes, string[] course_ids, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/racecards/big-races?start_date=" + (start_date==null? "" : System.Uri.EscapeDataString(start_date))+"&end_date=" + (end_date==null? "" : System.Uri.EscapeDataString(end_date))+"&"+string.Join("&", region_codes.Select(z => $"region_codes={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", course_ids.Select(z => $"course_ids={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6406,13 +6347,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<RacecardsOdds>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<RacecardsOdds>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6428,8 +6368,7 @@ namespace MyNS
 		public async Task<RacecardsBasic> List_racecards_free_v1_racecards_free_getAsync(string day, string[] region_codes, string[] course_ids, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/racecards/free?day=" + (day==null? "" : System.Uri.EscapeDataString(day))+"&"+string.Join("&", region_codes.Select(z => $"region_codes={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", course_ids.Select(z => $"course_ids={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6439,13 +6378,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<RacecardsBasic>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<RacecardsBasic>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6461,8 +6399,7 @@ namespace MyNS
 		public async Task<RacecardsOdds> List_racecards_pro_v1_racecards_pro_getAsync(string date, string[] region_codes, string[] course_ids, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/racecards/pro?date=" + (date==null? "" : System.Uri.EscapeDataString(date))+"&"+string.Join("&", region_codes.Select(z => $"region_codes={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", course_ids.Select(z => $"course_ids={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6472,13 +6409,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<RacecardsOdds>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<RacecardsOdds>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6494,8 +6430,7 @@ namespace MyNS
 		public async Task<RacecardsOdds> List_racecards_standard_v1_racecards_standard_getAsync(string day, string[] region_codes, string[] course_ids, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/racecards/standard?day=" + (day==null? "" : System.Uri.EscapeDataString(day))+"&"+string.Join("&", region_codes.Select(z => $"region_codes={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", course_ids.Select(z => $"course_ids={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6505,13 +6440,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<RacecardsOdds>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<RacecardsOdds>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6527,8 +6461,7 @@ namespace MyNS
 		public async Task<RacecardsSummary> List_racecard_summaries_v1_racecards_summaries_getAsync(string date, string[] region_codes, string[] course_ids, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/racecards/summaries?date=" + (date==null? "" : System.Uri.EscapeDataString(date))+"&"+string.Join("&", region_codes.Select(z => $"region_codes={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", course_ids.Select(z => $"course_ids={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6538,13 +6471,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<RacecardsSummary>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<RacecardsSummary>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6571,8 +6503,7 @@ namespace MyNS
 		public async Task<ResultsPage> List_racecard_horse_results_v1_racecards__horse_id__results_getAsync(string horse_id, string start_date, string end_date, string[] region, string[] course, string[] type, string[] going, string[] race_class, int min_distance_y, int max_distance_y, string[] age_band, string[] sex_restriction, int limit, int skip, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/racecards/"+ (horse_id==null? "" : System.Uri.EscapeDataString(horse_id))+"/results&start_date=" + (start_date==null? "" : System.Uri.EscapeDataString(start_date))+"&end_date=" + (end_date==null? "" : System.Uri.EscapeDataString(end_date))+"&"+string.Join("&", region.Select(z => $"region={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", course.Select(z => $"course={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", type.Select(z => $"type={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", going.Select(z => $"going={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", race_class.Select(z => $"race_class={System.Uri.EscapeDataString(z.ToString())}"))+"&min_distance_y="+min_distance_y+"&max_distance_y="+max_distance_y+"&"+string.Join("&", age_band.Select(z => $"age_band={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", sex_restriction.Select(z => $"sex_restriction={System.Uri.EscapeDataString(z.ToString())}"))+"&limit="+limit+"&skip="+skip;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6582,13 +6513,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ResultsPage>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ResultsPage>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6601,8 +6531,7 @@ namespace MyNS
 		public async Task<RacecardOdds> Race_pro_v1_racecards__race_id__pro_getAsync(string race_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/racecards/"+ (race_id==null? "" : System.Uri.EscapeDataString(race_id))+"/pro";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6612,13 +6541,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<RacecardOdds>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<RacecardOdds>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6631,8 +6559,7 @@ namespace MyNS
 		public async Task<RacecardOdds> Race_standard_v1_racecards__race_id__standard_getAsync(string race_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/racecards/"+ (race_id==null? "" : System.Uri.EscapeDataString(race_id))+"/standard";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6642,13 +6569,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<RacecardOdds>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<RacecardOdds>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6675,8 +6601,7 @@ namespace MyNS
 		public async Task<ResultsPage> List_results_v1_results_getAsync(string start_date, string end_date, string[] region, string[] course, string[] type, string[] going, string[] race_class, int min_distance_y, int max_distance_y, string[] age_band, string[] sex_restriction, int limit, int skip, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/results?start_date=" + (start_date==null? "" : System.Uri.EscapeDataString(start_date))+"&end_date=" + (end_date==null? "" : System.Uri.EscapeDataString(end_date))+"&"+string.Join("&", region.Select(z => $"region={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", course.Select(z => $"course={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", type.Select(z => $"type={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", going.Select(z => $"going={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", race_class.Select(z => $"race_class={System.Uri.EscapeDataString(z.ToString())}"))+"&min_distance_y="+min_distance_y+"&max_distance_y="+max_distance_y+"&"+string.Join("&", age_band.Select(z => $"age_band={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", sex_restriction.Select(z => $"sex_restriction={System.Uri.EscapeDataString(z.ToString())}"))+"&limit="+limit+"&skip="+skip;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6686,13 +6611,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ResultsPage>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ResultsPage>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6709,8 +6633,7 @@ namespace MyNS
 		public async Task<ResultsPage> List_todays_results_v1_results_today_getAsync(string[] region, int limit, int skip, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/results/today?"+string.Join("&", region.Select(z => $"region={System.Uri.EscapeDataString(z.ToString())}"))+"&limit="+limit+"&skip="+skip;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6720,13 +6643,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ResultsPage>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ResultsPage>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6739,8 +6661,7 @@ namespace MyNS
 		public async Task<Result> Result_v1_results__race_id__getAsync(string race_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/results/"+ (race_id==null? "" : System.Uri.EscapeDataString(race_id));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6750,13 +6671,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Result>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Result>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6769,8 +6689,7 @@ namespace MyNS
 		public async Task<Sires> Search_sires_v1_sires_search_getAsync(string name, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/sires/search?name=" + (name==null? "" : System.Uri.EscapeDataString(name));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6780,13 +6699,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Sires>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Sires>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6810,8 +6728,7 @@ namespace MyNS
 		public async Task<SireClassAnalysis> Sire_class_analysis_v1_sires__sire_id__analysis_classes_getAsync(string sire_id, string start_date, string end_date, string[] region, string[] course, string[] type, string[] going, string[] race_class, int min_distance_y, int max_distance_y, string[] age_band, string[] sex_restriction, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/sires/"+ (sire_id==null? "" : System.Uri.EscapeDataString(sire_id))+"/analysis/classes&start_date=" + (start_date==null? "" : System.Uri.EscapeDataString(start_date))+"&end_date=" + (end_date==null? "" : System.Uri.EscapeDataString(end_date))+"&"+string.Join("&", region.Select(z => $"region={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", course.Select(z => $"course={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", type.Select(z => $"type={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", going.Select(z => $"going={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", race_class.Select(z => $"race_class={System.Uri.EscapeDataString(z.ToString())}"))+"&min_distance_y="+min_distance_y+"&max_distance_y="+max_distance_y+"&"+string.Join("&", age_band.Select(z => $"age_band={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", sex_restriction.Select(z => $"sex_restriction={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6821,13 +6738,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<SireClassAnalysis>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<SireClassAnalysis>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6851,8 +6767,7 @@ namespace MyNS
 		public async Task<SireDistanceAnalysis> Sire_distance_analysis_v1_sires__sire_id__analysis_distances_getAsync(string sire_id, string start_date, string end_date, string[] region, string[] course, string[] type, string[] going, string[] race_class, int min_distance_y, int max_distance_y, string[] age_band, string[] sex_restriction, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/sires/"+ (sire_id==null? "" : System.Uri.EscapeDataString(sire_id))+"/analysis/distances&start_date=" + (start_date==null? "" : System.Uri.EscapeDataString(start_date))+"&end_date=" + (end_date==null? "" : System.Uri.EscapeDataString(end_date))+"&"+string.Join("&", region.Select(z => $"region={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", course.Select(z => $"course={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", type.Select(z => $"type={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", going.Select(z => $"going={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", race_class.Select(z => $"race_class={System.Uri.EscapeDataString(z.ToString())}"))+"&min_distance_y="+min_distance_y+"&max_distance_y="+max_distance_y+"&"+string.Join("&", age_band.Select(z => $"age_band={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", sex_restriction.Select(z => $"sex_restriction={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6862,13 +6777,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<SireDistanceAnalysis>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<SireDistanceAnalysis>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6895,8 +6809,7 @@ namespace MyNS
 		public async Task<ResultsPage> Sire_results_v1_sires__sire_id__results_getAsync(string sire_id, string start_date, string end_date, string[] region, string[] course, string[] type, string[] going, string[] race_class, int min_distance_y, int max_distance_y, string[] age_band, string[] sex_restriction, int limit, int skip, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/sires/"+ (sire_id==null? "" : System.Uri.EscapeDataString(sire_id))+"/results&start_date=" + (start_date==null? "" : System.Uri.EscapeDataString(start_date))+"&end_date=" + (end_date==null? "" : System.Uri.EscapeDataString(end_date))+"&"+string.Join("&", region.Select(z => $"region={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", course.Select(z => $"course={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", type.Select(z => $"type={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", going.Select(z => $"going={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", race_class.Select(z => $"race_class={System.Uri.EscapeDataString(z.ToString())}"))+"&min_distance_y="+min_distance_y+"&max_distance_y="+max_distance_y+"&"+string.Join("&", age_band.Select(z => $"age_band={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", sex_restriction.Select(z => $"sex_restriction={System.Uri.EscapeDataString(z.ToString())}"))+"&limit="+limit+"&skip="+skip;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6906,13 +6819,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ResultsPage>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ResultsPage>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6925,8 +6837,7 @@ namespace MyNS
 		public async Task<Trainers> Search_trainers_v1_trainers_search_getAsync(string name, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/trainers/search?name=" + (name==null? "" : System.Uri.EscapeDataString(name));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6936,13 +6847,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Trainers>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Trainers>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6966,8 +6876,7 @@ namespace MyNS
 		public async Task<TrainerCourseAnalysis> Trainer_course_analysis_v1_trainers__trainer_id__analysis_courses_getAsync(string trainer_id, string start_date, string end_date, string[] region, string[] course, string[] type, string[] going, string[] race_class, int min_distance_y, int max_distance_y, string[] age_band, string[] sex_restriction, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/trainers/"+ (trainer_id==null? "" : System.Uri.EscapeDataString(trainer_id))+"/analysis/courses&start_date=" + (start_date==null? "" : System.Uri.EscapeDataString(start_date))+"&end_date=" + (end_date==null? "" : System.Uri.EscapeDataString(end_date))+"&"+string.Join("&", region.Select(z => $"region={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", course.Select(z => $"course={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", type.Select(z => $"type={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", going.Select(z => $"going={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", race_class.Select(z => $"race_class={System.Uri.EscapeDataString(z.ToString())}"))+"&min_distance_y="+min_distance_y+"&max_distance_y="+max_distance_y+"&"+string.Join("&", age_band.Select(z => $"age_band={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", sex_restriction.Select(z => $"sex_restriction={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6977,13 +6886,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<TrainerCourseAnalysis>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<TrainerCourseAnalysis>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -7007,8 +6915,7 @@ namespace MyNS
 		public async Task<TrainerDistanceAnalysis> Trainer_distance_analysis_v1_trainers__trainer_id__analysis_distances_getAsync(string trainer_id, string start_date, string end_date, string[] region, string[] course, string[] type, string[] going, string[] race_class, int min_distance_y, int max_distance_y, string[] age_band, string[] sex_restriction, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/trainers/"+ (trainer_id==null? "" : System.Uri.EscapeDataString(trainer_id))+"/analysis/distances&start_date=" + (start_date==null? "" : System.Uri.EscapeDataString(start_date))+"&end_date=" + (end_date==null? "" : System.Uri.EscapeDataString(end_date))+"&"+string.Join("&", region.Select(z => $"region={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", course.Select(z => $"course={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", type.Select(z => $"type={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", going.Select(z => $"going={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", race_class.Select(z => $"race_class={System.Uri.EscapeDataString(z.ToString())}"))+"&min_distance_y="+min_distance_y+"&max_distance_y="+max_distance_y+"&"+string.Join("&", age_band.Select(z => $"age_band={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", sex_restriction.Select(z => $"sex_restriction={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -7018,13 +6925,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<TrainerDistanceAnalysis>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<TrainerDistanceAnalysis>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -7048,8 +6954,7 @@ namespace MyNS
 		public async Task<TrainerHorseAgeAnalysis> Trainer_horse_age_analysis_v1_trainers__trainer_id__analysis_horse_age_getAsync(string trainer_id, string start_date, string end_date, string[] region, string[] course, string[] type, string[] going, string[] race_class, int min_distance_y, int max_distance_y, string[] age_band, string[] sex_restriction, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/trainers/"+ (trainer_id==null? "" : System.Uri.EscapeDataString(trainer_id))+"/analysis/horse-age&start_date=" + (start_date==null? "" : System.Uri.EscapeDataString(start_date))+"&end_date=" + (end_date==null? "" : System.Uri.EscapeDataString(end_date))+"&"+string.Join("&", region.Select(z => $"region={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", course.Select(z => $"course={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", type.Select(z => $"type={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", going.Select(z => $"going={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", race_class.Select(z => $"race_class={System.Uri.EscapeDataString(z.ToString())}"))+"&min_distance_y="+min_distance_y+"&max_distance_y="+max_distance_y+"&"+string.Join("&", age_band.Select(z => $"age_band={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", sex_restriction.Select(z => $"sex_restriction={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -7059,13 +6964,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<TrainerHorseAgeAnalysis>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<TrainerHorseAgeAnalysis>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -7089,8 +6993,7 @@ namespace MyNS
 		public async Task<TrainerJockeyAnalysis> Trainer_jockey_analysis_v1_trainers__trainer_id__analysis_jockeys_getAsync(string trainer_id, string start_date, string end_date, string[] region, string[] course, string[] type, string[] going, string[] race_class, int min_distance_y, int max_distance_y, string[] age_band, string[] sex_restriction, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/trainers/"+ (trainer_id==null? "" : System.Uri.EscapeDataString(trainer_id))+"/analysis/jockeys&start_date=" + (start_date==null? "" : System.Uri.EscapeDataString(start_date))+"&end_date=" + (end_date==null? "" : System.Uri.EscapeDataString(end_date))+"&"+string.Join("&", region.Select(z => $"region={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", course.Select(z => $"course={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", type.Select(z => $"type={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", going.Select(z => $"going={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", race_class.Select(z => $"race_class={System.Uri.EscapeDataString(z.ToString())}"))+"&min_distance_y="+min_distance_y+"&max_distance_y="+max_distance_y+"&"+string.Join("&", age_band.Select(z => $"age_band={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", sex_restriction.Select(z => $"sex_restriction={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -7100,13 +7003,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<TrainerJockeyAnalysis>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<TrainerJockeyAnalysis>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -7130,8 +7032,7 @@ namespace MyNS
 		public async Task<TrainerOwnerAnalysis> Trainer_owner_analysis_v1_trainers__trainer_id__analysis_owners_getAsync(string trainer_id, string start_date, string end_date, string[] region, string[] course, string[] type, string[] going, string[] race_class, int min_distance_y, int max_distance_y, string[] age_band, string[] sex_restriction, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/trainers/"+ (trainer_id==null? "" : System.Uri.EscapeDataString(trainer_id))+"/analysis/owners&start_date=" + (start_date==null? "" : System.Uri.EscapeDataString(start_date))+"&end_date=" + (end_date==null? "" : System.Uri.EscapeDataString(end_date))+"&"+string.Join("&", region.Select(z => $"region={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", course.Select(z => $"course={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", type.Select(z => $"type={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", going.Select(z => $"going={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", race_class.Select(z => $"race_class={System.Uri.EscapeDataString(z.ToString())}"))+"&min_distance_y="+min_distance_y+"&max_distance_y="+max_distance_y+"&"+string.Join("&", age_band.Select(z => $"age_band={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", sex_restriction.Select(z => $"sex_restriction={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -7141,13 +7042,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<TrainerOwnerAnalysis>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<TrainerOwnerAnalysis>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -7174,8 +7074,7 @@ namespace MyNS
 		public async Task<ResultsPage> Trainer_results_v1_trainers__trainer_id__results_getAsync(string trainer_id, string start_date, string end_date, string[] region, string[] course, string[] type, string[] going, string[] race_class, int min_distance_y, int max_distance_y, string[] age_band, string[] sex_restriction, int limit, int skip, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/trainers/"+ (trainer_id==null? "" : System.Uri.EscapeDataString(trainer_id))+"/results&start_date=" + (start_date==null? "" : System.Uri.EscapeDataString(start_date))+"&end_date=" + (end_date==null? "" : System.Uri.EscapeDataString(end_date))+"&"+string.Join("&", region.Select(z => $"region={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", course.Select(z => $"course={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", type.Select(z => $"type={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", going.Select(z => $"going={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", race_class.Select(z => $"race_class={System.Uri.EscapeDataString(z.ToString())}"))+"&min_distance_y="+min_distance_y+"&max_distance_y="+max_distance_y+"&"+string.Join("&", age_band.Select(z => $"age_band={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", sex_restriction.Select(z => $"sex_restriction={System.Uri.EscapeDataString(z.ToString())}"))+"&limit="+limit+"&skip="+skip;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -7185,13 +7084,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ResultsPage>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ResultsPage>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

@@ -113,8 +113,7 @@ namespace MyNS
 		public async Task<TaxRatesByCountryCodeReturn> TaxRatesByCountryCodeAsync(string domain, string country_code, string filter, string zip, string product_codes_, string province , string date, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/tax/countrycode?domain=" + (domain==null? "" : System.Uri.EscapeDataString(domain))+"&country_code=" + (country_code==null? "" : System.Uri.EscapeDataString(country_code))+"&filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&zip=" + (zip==null? "" : System.Uri.EscapeDataString(zip))+"&product_codes[]=" + (product_codes_==null? "" : System.Uri.EscapeDataString(product_codes_))+"&province =" + (province ==null? "" : System.Uri.EscapeDataString(province ))+"&date=" + (date==null? "" : System.Uri.EscapeDataString(date));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -124,13 +123,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<TaxRatesByCountryCodeReturn>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<TaxRatesByCountryCodeReturn>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -209,8 +207,7 @@ namespace MyNS
 		public async Task<TaxRatesByIpAddressReturn[]> TaxRatesByIpAddressAsync(string domain, string ip, string filter, string zip, string product_code, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/tax/ip?domain=" + (domain==null? "" : System.Uri.EscapeDataString(domain))+"&ip=" + (ip==null? "" : System.Uri.EscapeDataString(ip))+"&filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&zip=" + (zip==null? "" : System.Uri.EscapeDataString(zip))+"&product_code=" + (product_code==null? "" : System.Uri.EscapeDataString(product_code));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -220,13 +217,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<TaxRatesByIpAddressReturn[]>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<TaxRatesByIpAddressReturn[]>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -311,8 +307,7 @@ namespace MyNS
 		public async Task<AllTaxRatesReturn[]> AllTaxRatesAsync(string domain, string filter, string cursor, string Product_code, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v3/tax/rates?domain=" + (domain==null? "" : System.Uri.EscapeDataString(domain))+"&filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&cursor=" + (cursor==null? "" : System.Uri.EscapeDataString(cursor))+"&Product_code=" + (Product_code==null? "" : System.Uri.EscapeDataString(Product_code));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -322,13 +317,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<AllTaxRatesReturn[]>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<AllTaxRatesReturn[]>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

@@ -7304,8 +7304,7 @@ namespace MyNS
 		public async Task AssociateAlias2020_05_31Async(string TargetDistributionId, string Alias, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2020-05-31/distribution/"+ (TargetDistributionId==null? "" : System.Uri.EscapeDataString(TargetDistributionId))+"/associate-alias#Alias&Alias=" + (Alias==null? "" : System.Uri.EscapeDataString(Alias));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -7314,7 +7313,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -7329,8 +7327,7 @@ namespace MyNS
 		public async Task ListCachePolicies2020_05_31Async(CachePolicyType Type, string Marker, string MaxItems, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2020-05-31/cache-policy?Type=" + Type+"&Marker=" + (Marker==null? "" : System.Uri.EscapeDataString(Marker))+"&MaxItems=" + (MaxItems==null? "" : System.Uri.EscapeDataString(MaxItems));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -7344,7 +7341,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -7358,8 +7354,7 @@ namespace MyNS
 		public async Task ListCloudFrontOriginAccessIdentities2020_05_31Async(string Marker, string MaxItems, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2020-05-31/origin-access-identity/cloudfront?Marker=" + (Marker==null? "" : System.Uri.EscapeDataString(Marker))+"&MaxItems=" + (MaxItems==null? "" : System.Uri.EscapeDataString(MaxItems));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -7373,7 +7368,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -7387,8 +7381,7 @@ namespace MyNS
 		public async Task ListContinuousDeploymentPolicies2020_05_31Async(string Marker, string MaxItems, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2020-05-31/continuous-deployment-policy?Marker=" + (Marker==null? "" : System.Uri.EscapeDataString(Marker))+"&MaxItems=" + (MaxItems==null? "" : System.Uri.EscapeDataString(MaxItems));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -7402,7 +7395,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -7416,8 +7408,7 @@ namespace MyNS
 		public async Task ListDistributions2020_05_31Async(string Marker, string MaxItems, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2020-05-31/distribution?Marker=" + (Marker==null? "" : System.Uri.EscapeDataString(Marker))+"&MaxItems=" + (MaxItems==null? "" : System.Uri.EscapeDataString(MaxItems));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -7431,7 +7422,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -7445,8 +7435,7 @@ namespace MyNS
 		public async Task ListFieldLevelEncryptionConfigs2020_05_31Async(string Marker, string MaxItems, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2020-05-31/field-level-encryption?Marker=" + (Marker==null? "" : System.Uri.EscapeDataString(Marker))+"&MaxItems=" + (MaxItems==null? "" : System.Uri.EscapeDataString(MaxItems));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -7460,7 +7449,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -7474,8 +7462,7 @@ namespace MyNS
 		public async Task ListFieldLevelEncryptionProfiles2020_05_31Async(string Marker, string MaxItems, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2020-05-31/field-level-encryption-profile?Marker=" + (Marker==null? "" : System.Uri.EscapeDataString(Marker))+"&MaxItems=" + (MaxItems==null? "" : System.Uri.EscapeDataString(MaxItems));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -7489,7 +7476,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -7504,8 +7490,7 @@ namespace MyNS
 		public async Task ListFunctions2020_05_31Async(string Marker, string MaxItems, FunctionStage Stage, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2020-05-31/function?Marker=" + (Marker==null? "" : System.Uri.EscapeDataString(Marker))+"&MaxItems=" + (MaxItems==null? "" : System.Uri.EscapeDataString(MaxItems))+"&Stage=" + Stage;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -7519,7 +7504,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -7534,8 +7518,7 @@ namespace MyNS
 		public async Task ListInvalidations2020_05_31Async(string DistributionId, string Marker, string MaxItems, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2020-05-31/distribution/"+ (DistributionId==null? "" : System.Uri.EscapeDataString(DistributionId))+"/invalidation&Marker=" + (Marker==null? "" : System.Uri.EscapeDataString(Marker))+"&MaxItems=" + (MaxItems==null? "" : System.Uri.EscapeDataString(MaxItems));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -7549,7 +7532,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -7563,8 +7545,7 @@ namespace MyNS
 		public async Task ListKeyGroups2020_05_31Async(string Marker, string MaxItems, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2020-05-31/key-group?Marker=" + (Marker==null? "" : System.Uri.EscapeDataString(Marker))+"&MaxItems=" + (MaxItems==null? "" : System.Uri.EscapeDataString(MaxItems));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -7578,7 +7559,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -7591,8 +7571,7 @@ namespace MyNS
 		public async Task DeleteMonitoringSubscription2020_05_31Async(string DistributionId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2020-05-31/distributions/"+ (DistributionId==null? "" : System.Uri.EscapeDataString(DistributionId))+"/monitoring-subscription/";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -7606,7 +7585,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -7619,8 +7597,7 @@ namespace MyNS
 		public async Task GetMonitoringSubscription2020_05_31Async(string DistributionId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2020-05-31/distributions/"+ (DistributionId==null? "" : System.Uri.EscapeDataString(DistributionId))+"/monitoring-subscription/";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -7634,7 +7611,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -7648,8 +7624,7 @@ namespace MyNS
 		public async Task ListOriginAccessControls2020_05_31Async(string Marker, string MaxItems, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2020-05-31/origin-access-control?Marker=" + (Marker==null? "" : System.Uri.EscapeDataString(Marker))+"&MaxItems=" + (MaxItems==null? "" : System.Uri.EscapeDataString(MaxItems));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -7663,7 +7638,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -7678,8 +7652,7 @@ namespace MyNS
 		public async Task ListOriginRequestPolicies2020_05_31Async(CachePolicyType Type, string Marker, string MaxItems, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2020-05-31/origin-request-policy?Type=" + Type+"&Marker=" + (Marker==null? "" : System.Uri.EscapeDataString(Marker))+"&MaxItems=" + (MaxItems==null? "" : System.Uri.EscapeDataString(MaxItems));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -7693,7 +7666,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -7707,8 +7679,7 @@ namespace MyNS
 		public async Task ListPublicKeys2020_05_31Async(string Marker, string MaxItems, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2020-05-31/public-key?Marker=" + (Marker==null? "" : System.Uri.EscapeDataString(Marker))+"&MaxItems=" + (MaxItems==null? "" : System.Uri.EscapeDataString(MaxItems));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -7722,7 +7693,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -7736,8 +7706,7 @@ namespace MyNS
 		public async Task ListRealtimeLogConfigs2020_05_31Async(string MaxItems, string Marker, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2020-05-31/realtime-log-config?MaxItems=" + (MaxItems==null? "" : System.Uri.EscapeDataString(MaxItems))+"&Marker=" + (Marker==null? "" : System.Uri.EscapeDataString(Marker));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -7751,7 +7720,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -7766,8 +7734,7 @@ namespace MyNS
 		public async Task ListResponseHeadersPolicies2020_05_31Async(CachePolicyType Type, string Marker, string MaxItems, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2020-05-31/response-headers-policy?Type=" + Type+"&Marker=" + (Marker==null? "" : System.Uri.EscapeDataString(Marker))+"&MaxItems=" + (MaxItems==null? "" : System.Uri.EscapeDataString(MaxItems));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -7781,7 +7748,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -7795,8 +7761,7 @@ namespace MyNS
 		public async Task ListStreamingDistributions2020_05_31Async(string Marker, string MaxItems, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2020-05-31/streaming-distribution?Marker=" + (Marker==null? "" : System.Uri.EscapeDataString(Marker))+"&MaxItems=" + (MaxItems==null? "" : System.Uri.EscapeDataString(MaxItems));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -7810,7 +7775,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -7822,8 +7786,7 @@ namespace MyNS
 		public async Task DeleteCachePolicy2020_05_31Async(string Id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2020-05-31/cache-policy/"+ (Id==null? "" : System.Uri.EscapeDataString(Id));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -7837,7 +7800,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -7850,8 +7812,7 @@ namespace MyNS
 		public async Task GetCachePolicy2020_05_31Async(string Id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2020-05-31/cache-policy/"+ (Id==null? "" : System.Uri.EscapeDataString(Id));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -7865,7 +7826,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -7877,8 +7837,7 @@ namespace MyNS
 		public async Task DeleteCloudFrontOriginAccessIdentity2020_05_31Async(string Id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2020-05-31/origin-access-identity/cloudfront/"+ (Id==null? "" : System.Uri.EscapeDataString(Id));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -7892,7 +7851,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -7905,8 +7863,7 @@ namespace MyNS
 		public async Task GetCloudFrontOriginAccessIdentity2020_05_31Async(string Id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2020-05-31/origin-access-identity/cloudfront/"+ (Id==null? "" : System.Uri.EscapeDataString(Id));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -7920,7 +7877,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -7932,8 +7888,7 @@ namespace MyNS
 		public async Task DeleteContinuousDeploymentPolicy2020_05_31Async(string Id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2020-05-31/continuous-deployment-policy/"+ (Id==null? "" : System.Uri.EscapeDataString(Id));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -7947,7 +7902,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -7960,8 +7914,7 @@ namespace MyNS
 		public async Task GetContinuousDeploymentPolicy2020_05_31Async(string Id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2020-05-31/continuous-deployment-policy/"+ (Id==null? "" : System.Uri.EscapeDataString(Id));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -7975,7 +7928,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -7987,8 +7939,7 @@ namespace MyNS
 		public async Task DeleteDistribution2020_05_31Async(string Id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2020-05-31/distribution/"+ (Id==null? "" : System.Uri.EscapeDataString(Id));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -8002,7 +7953,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -8015,8 +7965,7 @@ namespace MyNS
 		public async Task GetDistribution2020_05_31Async(string Id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2020-05-31/distribution/"+ (Id==null? "" : System.Uri.EscapeDataString(Id));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -8030,7 +7979,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -8042,8 +7990,7 @@ namespace MyNS
 		public async Task DeleteFieldLevelEncryptionConfig2020_05_31Async(string Id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2020-05-31/field-level-encryption/"+ (Id==null? "" : System.Uri.EscapeDataString(Id));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -8057,7 +8004,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -8070,8 +8016,7 @@ namespace MyNS
 		public async Task GetFieldLevelEncryption2020_05_31Async(string Id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2020-05-31/field-level-encryption/"+ (Id==null? "" : System.Uri.EscapeDataString(Id));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -8085,7 +8030,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -8097,8 +8041,7 @@ namespace MyNS
 		public async Task DeleteFieldLevelEncryptionProfile2020_05_31Async(string Id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2020-05-31/field-level-encryption-profile/"+ (Id==null? "" : System.Uri.EscapeDataString(Id));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -8112,7 +8055,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -8125,8 +8067,7 @@ namespace MyNS
 		public async Task GetFieldLevelEncryptionProfile2020_05_31Async(string Id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2020-05-31/field-level-encryption-profile/"+ (Id==null? "" : System.Uri.EscapeDataString(Id));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -8140,7 +8081,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -8152,8 +8092,7 @@ namespace MyNS
 		public async Task DeleteFunction2020_05_31Async(string Name, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2020-05-31/function/"+ (Name==null? "" : System.Uri.EscapeDataString(Name))+"#If-Match";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -8167,7 +8106,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -8179,8 +8117,7 @@ namespace MyNS
 		public async Task DeleteKeyGroup2020_05_31Async(string Id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2020-05-31/key-group/"+ (Id==null? "" : System.Uri.EscapeDataString(Id));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -8194,7 +8131,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -8207,8 +8143,7 @@ namespace MyNS
 		public async Task GetKeyGroup2020_05_31Async(string Id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2020-05-31/key-group/"+ (Id==null? "" : System.Uri.EscapeDataString(Id));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -8222,7 +8157,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -8234,8 +8168,7 @@ namespace MyNS
 		public async Task DeleteOriginAccessControl2020_05_31Async(string Id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2020-05-31/origin-access-control/"+ (Id==null? "" : System.Uri.EscapeDataString(Id));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -8249,7 +8182,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -8262,8 +8194,7 @@ namespace MyNS
 		public async Task GetOriginAccessControl2020_05_31Async(string Id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2020-05-31/origin-access-control/"+ (Id==null? "" : System.Uri.EscapeDataString(Id));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -8277,7 +8208,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -8289,8 +8219,7 @@ namespace MyNS
 		public async Task DeleteOriginRequestPolicy2020_05_31Async(string Id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2020-05-31/origin-request-policy/"+ (Id==null? "" : System.Uri.EscapeDataString(Id));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -8304,7 +8233,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -8317,8 +8245,7 @@ namespace MyNS
 		public async Task GetOriginRequestPolicy2020_05_31Async(string Id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2020-05-31/origin-request-policy/"+ (Id==null? "" : System.Uri.EscapeDataString(Id));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -8332,7 +8259,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -8344,8 +8270,7 @@ namespace MyNS
 		public async Task DeletePublicKey2020_05_31Async(string Id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2020-05-31/public-key/"+ (Id==null? "" : System.Uri.EscapeDataString(Id));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -8359,7 +8284,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -8372,8 +8296,7 @@ namespace MyNS
 		public async Task GetPublicKey2020_05_31Async(string Id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2020-05-31/public-key/"+ (Id==null? "" : System.Uri.EscapeDataString(Id));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -8387,7 +8310,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -8399,8 +8321,7 @@ namespace MyNS
 		public async Task DeleteResponseHeadersPolicy2020_05_31Async(string Id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2020-05-31/response-headers-policy/"+ (Id==null? "" : System.Uri.EscapeDataString(Id));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -8414,7 +8335,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -8427,8 +8347,7 @@ namespace MyNS
 		public async Task GetResponseHeadersPolicy2020_05_31Async(string Id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2020-05-31/response-headers-policy/"+ (Id==null? "" : System.Uri.EscapeDataString(Id));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -8442,7 +8361,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -8454,8 +8372,7 @@ namespace MyNS
 		public async Task DeleteStreamingDistribution2020_05_31Async(string Id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2020-05-31/streaming-distribution/"+ (Id==null? "" : System.Uri.EscapeDataString(Id));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -8469,7 +8386,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -8482,8 +8398,7 @@ namespace MyNS
 		public async Task GetStreamingDistribution2020_05_31Async(string Id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2020-05-31/streaming-distribution/"+ (Id==null? "" : System.Uri.EscapeDataString(Id));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -8497,7 +8412,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -8511,8 +8425,7 @@ namespace MyNS
 		public async Task DescribeFunction2020_05_31Async(string Name, FunctionStage Stage, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2020-05-31/function/"+ (Name==null? "" : System.Uri.EscapeDataString(Name))+"/describe&Stage=" + Stage;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -8526,7 +8439,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -8539,8 +8451,7 @@ namespace MyNS
 		public async Task GetCachePolicyConfig2020_05_31Async(string Id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2020-05-31/cache-policy/"+ (Id==null? "" : System.Uri.EscapeDataString(Id))+"/config";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -8554,7 +8465,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -8567,8 +8477,7 @@ namespace MyNS
 		public async Task GetCloudFrontOriginAccessIdentityConfig2020_05_31Async(string Id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2020-05-31/origin-access-identity/cloudfront/"+ (Id==null? "" : System.Uri.EscapeDataString(Id))+"/config";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -8582,7 +8491,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -8595,8 +8503,7 @@ namespace MyNS
 		public async Task GetContinuousDeploymentPolicyConfig2020_05_31Async(string Id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2020-05-31/continuous-deployment-policy/"+ (Id==null? "" : System.Uri.EscapeDataString(Id))+"/config";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -8610,7 +8517,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -8623,8 +8529,7 @@ namespace MyNS
 		public async Task GetDistributionConfig2020_05_31Async(string Id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2020-05-31/distribution/"+ (Id==null? "" : System.Uri.EscapeDataString(Id))+"/config";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -8638,7 +8543,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -8651,8 +8555,7 @@ namespace MyNS
 		public async Task GetFieldLevelEncryptionConfig2020_05_31Async(string Id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2020-05-31/field-level-encryption/"+ (Id==null? "" : System.Uri.EscapeDataString(Id))+"/config";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -8666,7 +8569,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -8679,8 +8581,7 @@ namespace MyNS
 		public async Task GetFieldLevelEncryptionProfileConfig2020_05_31Async(string Id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2020-05-31/field-level-encryption-profile/"+ (Id==null? "" : System.Uri.EscapeDataString(Id))+"/config";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -8694,7 +8595,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -8708,8 +8608,7 @@ namespace MyNS
 		public async Task GetFunction2020_05_31Async(string Name, FunctionStage Stage, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2020-05-31/function/"+ (Name==null? "" : System.Uri.EscapeDataString(Name))+"&Stage=" + Stage;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -8723,7 +8622,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -8737,8 +8635,7 @@ namespace MyNS
 		public async Task GetInvalidation2020_05_31Async(string DistributionId, string Id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2020-05-31/distribution/"+ (DistributionId==null? "" : System.Uri.EscapeDataString(DistributionId))+"/invalidation/"+ (Id==null? "" : System.Uri.EscapeDataString(Id));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -8752,7 +8649,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -8765,8 +8661,7 @@ namespace MyNS
 		public async Task GetKeyGroupConfig2020_05_31Async(string Id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2020-05-31/key-group/"+ (Id==null? "" : System.Uri.EscapeDataString(Id))+"/config";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -8780,7 +8675,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -8793,8 +8687,7 @@ namespace MyNS
 		public async Task GetOriginAccessControlConfig2020_05_31Async(string Id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2020-05-31/origin-access-control/"+ (Id==null? "" : System.Uri.EscapeDataString(Id))+"/config";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -8808,7 +8701,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -8821,8 +8713,7 @@ namespace MyNS
 		public async Task GetOriginRequestPolicyConfig2020_05_31Async(string Id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2020-05-31/origin-request-policy/"+ (Id==null? "" : System.Uri.EscapeDataString(Id))+"/config";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -8836,7 +8727,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -8849,8 +8739,7 @@ namespace MyNS
 		public async Task GetPublicKeyConfig2020_05_31Async(string Id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2020-05-31/public-key/"+ (Id==null? "" : System.Uri.EscapeDataString(Id))+"/config";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -8864,7 +8753,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -8877,8 +8765,7 @@ namespace MyNS
 		public async Task GetResponseHeadersPolicyConfig2020_05_31Async(string Id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2020-05-31/response-headers-policy/"+ (Id==null? "" : System.Uri.EscapeDataString(Id))+"/config";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -8892,7 +8779,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -8905,8 +8791,7 @@ namespace MyNS
 		public async Task GetStreamingDistributionConfig2020_05_31Async(string Id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2020-05-31/streaming-distribution/"+ (Id==null? "" : System.Uri.EscapeDataString(Id))+"/config";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -8920,7 +8805,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -8942,8 +8826,7 @@ namespace MyNS
 		public async Task ListConflictingAliases2020_05_31Async(string DistributionId, string Alias, string Marker, int MaxItems, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2020-05-31/conflicting-alias#DistributionId&Alias?DistributionId=" + (DistributionId==null? "" : System.Uri.EscapeDataString(DistributionId))+"&Alias=" + (Alias==null? "" : System.Uri.EscapeDataString(Alias))+"&Marker=" + (Marker==null? "" : System.Uri.EscapeDataString(Marker))+"&MaxItems="+MaxItems;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -8957,7 +8840,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -8972,8 +8854,7 @@ namespace MyNS
 		public async Task ListDistributionsByCachePolicyId2020_05_31Async(string Marker, string MaxItems, string CachePolicyId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2020-05-31/distributionsByCachePolicyId/"+ (CachePolicyId==null? "" : System.Uri.EscapeDataString(CachePolicyId))+"?Marker=" + (Marker==null? "" : System.Uri.EscapeDataString(Marker))+"&MaxItems=" + (MaxItems==null? "" : System.Uri.EscapeDataString(MaxItems));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -8987,7 +8868,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -9002,8 +8882,7 @@ namespace MyNS
 		public async Task ListDistributionsByKeyGroup2020_05_31Async(string Marker, string MaxItems, string KeyGroupId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2020-05-31/distributionsByKeyGroupId/"+ (KeyGroupId==null? "" : System.Uri.EscapeDataString(KeyGroupId))+"?Marker=" + (Marker==null? "" : System.Uri.EscapeDataString(Marker))+"&MaxItems=" + (MaxItems==null? "" : System.Uri.EscapeDataString(MaxItems));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -9017,7 +8896,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -9032,8 +8910,7 @@ namespace MyNS
 		public async Task ListDistributionsByOriginRequestPolicyId2020_05_31Async(string Marker, string MaxItems, string OriginRequestPolicyId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2020-05-31/distributionsByOriginRequestPolicyId/"+ (OriginRequestPolicyId==null? "" : System.Uri.EscapeDataString(OriginRequestPolicyId))+"?Marker=" + (Marker==null? "" : System.Uri.EscapeDataString(Marker))+"&MaxItems=" + (MaxItems==null? "" : System.Uri.EscapeDataString(MaxItems));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -9047,7 +8924,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -9062,8 +8938,7 @@ namespace MyNS
 		public async Task ListDistributionsByResponseHeadersPolicyId2020_05_31Async(string Marker, string MaxItems, string ResponseHeadersPolicyId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2020-05-31/distributionsByResponseHeadersPolicyId/"+ (ResponseHeadersPolicyId==null? "" : System.Uri.EscapeDataString(ResponseHeadersPolicyId))+"?Marker=" + (Marker==null? "" : System.Uri.EscapeDataString(Marker))+"&MaxItems=" + (MaxItems==null? "" : System.Uri.EscapeDataString(MaxItems));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -9077,7 +8952,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -9092,8 +8966,7 @@ namespace MyNS
 		public async Task ListDistributionsByWebACLId2020_05_31Async(string Marker, string MaxItems, string WebACLId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2020-05-31/distributionsByWebACLId/"+ (WebACLId==null? "" : System.Uri.EscapeDataString(WebACLId))+"?Marker=" + (Marker==null? "" : System.Uri.EscapeDataString(Marker))+"&MaxItems=" + (MaxItems==null? "" : System.Uri.EscapeDataString(MaxItems));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -9107,7 +8980,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -9120,8 +8992,7 @@ namespace MyNS
 		public async Task ListTagsForResource2020_05_31Async(string Resource, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2020-05-31/tagging#Resource?Resource=" + (Resource==null? "" : System.Uri.EscapeDataString(Resource));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -9136,7 +9007,6 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
-			}
 		}
 		
 		/// <summary>
@@ -9148,8 +9018,7 @@ namespace MyNS
 		public async Task PublishFunction2020_05_31Async(string Name, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2020-05-31/function/"+ (Name==null? "" : System.Uri.EscapeDataString(Name))+"/publish#If-Match";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -9158,7 +9027,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -9172,8 +9040,7 @@ namespace MyNS
 		public async Task UpdateDistributionWithStagingConfig2020_05_31Async(string Id, string StagingDistributionId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2020-05-31/distribution/"+ (Id==null? "" : System.Uri.EscapeDataString(Id))+"/promote-staging-config&StagingDistributionId=" + (StagingDistributionId==null? "" : System.Uri.EscapeDataString(StagingDistributionId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -9182,7 +9049,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

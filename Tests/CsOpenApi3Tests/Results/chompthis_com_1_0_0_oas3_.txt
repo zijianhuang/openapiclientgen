@@ -806,8 +806,7 @@ namespace MyNS
 		public async Task<BrandedFoodObject> FoodBrandedBarcode_phpGetByCodeAsync(string code, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "food/branded/barcode.php?code=" + (code==null? "" : System.Uri.EscapeDataString(code));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -817,17 +816,14 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
-				{
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				using JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(streamContent));
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<BrandedFoodObject>(jsonReader);
-				}
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -865,8 +861,7 @@ namespace MyNS
 		public async Task<BrandedFoodObject> FoodBrandedName_phpGetByNameAndLimitAndPageAsync(string name, FoodBrandedName_phpGetByNameAndLimitAndPageLimit limit, int page, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "food/branded/name.php?name=" + (name==null? "" : System.Uri.EscapeDataString(name))+"&limit="+limit+"&page="+page;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -876,17 +871,14 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
-				{
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				using JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(streamContent));
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<BrandedFoodObject>(jsonReader);
-				}
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -988,8 +980,7 @@ namespace MyNS
 		public async Task<BrandedFoodObject> FoodBrandedSearch_phpGetByAllergenAndBrandAndCategoryAndCountryAndDietAndIngredientAndKeywordAndMineralAndNutrientAndPalm_oilAndTraceAndVitaminAndLimitAndPageAsync(string allergen, string brand, string category, string country, FoodBrandedSearch_phpGetByAllergenAndBrandAndCategoryAndCountryAndDietAndIngredientAndKeywordAndMineralAndNutrientAndPalm_oilAndTraceAndVitaminAndLimitAndPageDiet diet, string ingredient, string keyword, string mineral, string nutrient, string palm_oil, string trace, string vitamin, FoodBrandedSearch_phpGetByAllergenAndBrandAndCategoryAndCountryAndDietAndIngredientAndKeywordAndMineralAndNutrientAndPalm_oilAndTraceAndVitaminAndLimitAndPageLimit limit, int page, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "food/branded/search.php?allergen=" + (allergen==null? "" : System.Uri.EscapeDataString(allergen))+"&brand=" + (brand==null? "" : System.Uri.EscapeDataString(brand))+"&category=" + (category==null? "" : System.Uri.EscapeDataString(category))+"&country=" + (country==null? "" : System.Uri.EscapeDataString(country))+"&diet=" + diet+"&ingredient=" + (ingredient==null? "" : System.Uri.EscapeDataString(ingredient))+"&keyword=" + (keyword==null? "" : System.Uri.EscapeDataString(keyword))+"&mineral=" + (mineral==null? "" : System.Uri.EscapeDataString(mineral))+"&nutrient=" + (nutrient==null? "" : System.Uri.EscapeDataString(nutrient))+"&palm_oil=" + (palm_oil==null? "" : System.Uri.EscapeDataString(palm_oil))+"&trace=" + (trace==null? "" : System.Uri.EscapeDataString(trace))+"&vitamin=" + (vitamin==null? "" : System.Uri.EscapeDataString(vitamin))+"&limit="+limit+"&page="+page;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -999,17 +990,14 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
-				{
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				using JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(streamContent));
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<BrandedFoodObject>(jsonReader);
-				}
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1051,8 +1039,7 @@ namespace MyNS
 		public async Task<IngredientObject> FoodIngredientSearch_phpGetByFindAndLimitAsync(string find, FoodIngredientSearch_phpGetByFindAndLimitLimit limit, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "food/ingredient/search.php?find=" + (find==null? "" : System.Uri.EscapeDataString(find))+"&limit="+limit;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1062,17 +1049,14 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
-				{
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				using JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(streamContent));
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<IngredientObject>(jsonReader);
-				}
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

@@ -239,19 +239,17 @@ namespace MyNS
 		public async Task<BaselineResponse> Baseline_GetAsync(string resourceUri, string metricnames, string timespan, string interval, string aggregation, string sensitivities, Baseline_GetResultType resultType, string api_version, string metricnamespace, string filter)
 		{
 			var requestUri = ""+ (resourceUri==null? "" : System.Uri.EscapeDataString(resourceUri))+"/providers/microsoft.insights/baseline&metricnames=" + (metricnames==null? "" : System.Uri.EscapeDataString(metricnames))+"&timespan=" + (timespan==null? "" : System.Uri.EscapeDataString(timespan))+"&interval=" + (interval==null? "" : System.Uri.EscapeDataString(interval))+"&aggregation=" + (aggregation==null? "" : System.Uri.EscapeDataString(aggregation))+"&sensitivities=" + (sensitivities==null? "" : System.Uri.EscapeDataString(sensitivities))+"&resultType=" + resultType+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version))+"&metricnamespace=" + (metricnamespace==null? "" : System.Uri.EscapeDataString(metricnamespace))+"&$filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<BaselineResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<BaselineResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -273,19 +271,17 @@ namespace MyNS
 		public async Task<BaselineResponse> MetricBaseline_GetAsync(string resourceUri, string metricName, string timespan, string interval, string aggregation, string sensitivities, Baseline_GetResultType resultType, string api_version, string metricnamespace, string filter)
 		{
 			var requestUri = ""+ (resourceUri==null? "" : System.Uri.EscapeDataString(resourceUri))+"/providers/microsoft.insights/baseline/"+ (metricName==null? "" : System.Uri.EscapeDataString(metricName))+"&timespan=" + (timespan==null? "" : System.Uri.EscapeDataString(timespan))+"&interval=" + (interval==null? "" : System.Uri.EscapeDataString(interval))+"&aggregation=" + (aggregation==null? "" : System.Uri.EscapeDataString(aggregation))+"&sensitivities=" + (sensitivities==null? "" : System.Uri.EscapeDataString(sensitivities))+"&resultType=" + resultType+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version))+"&metricnamespace=" + (metricnamespace==null? "" : System.Uri.EscapeDataString(metricnamespace))+"&$filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<BaselineResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<BaselineResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

@@ -684,8 +684,7 @@ namespace MyNS
 		public async Task<ListApisResponse> Registry_ListApisAsync(string project, string location, int pageSize, string pageToken, string filter, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/projects/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/locations/"+ (location==null? "" : System.Uri.EscapeDataString(location))+"/apis&pageSize="+pageSize+"&pageToken=" + (pageToken==null? "" : System.Uri.EscapeDataString(pageToken))+"&filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -695,13 +694,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ListApisResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ListApisResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -716,10 +714,8 @@ namespace MyNS
 		public async Task<Api> Registry_CreateApiAsync(string project, string location, string apiId, Api requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/projects/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/locations/"+ (location==null? "" : System.Uri.EscapeDataString(location))+"/apis&apiId=" + (apiId==null? "" : System.Uri.EscapeDataString(apiId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -730,13 +726,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Api>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Api>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -753,8 +748,7 @@ namespace MyNS
 		public async Task Registry_DeleteApiAsync(string project, string location, string api, bool force, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/projects/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/locations/"+ (location==null? "" : System.Uri.EscapeDataString(location))+"/apis/"+ (api==null? "" : System.Uri.EscapeDataString(api))+"&force="+force;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -768,7 +762,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -783,8 +776,7 @@ namespace MyNS
 		public async Task<Api> Registry_GetApiAsync(string project, string location, string api, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/projects/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/locations/"+ (location==null? "" : System.Uri.EscapeDataString(location))+"/apis/"+ (api==null? "" : System.Uri.EscapeDataString(api));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -794,13 +786,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Api>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Api>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -817,10 +808,8 @@ namespace MyNS
 		public async Task<Api> Registry_UpdateApiAsync(string project, string location, string api, string updateMask, bool allowMissing, Api requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/projects/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/locations/"+ (location==null? "" : System.Uri.EscapeDataString(location))+"/apis/"+ (api==null? "" : System.Uri.EscapeDataString(api))+"&updateMask=" + (updateMask==null? "" : System.Uri.EscapeDataString(updateMask))+"&allowMissing="+allowMissing;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -831,13 +820,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Api>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Api>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -855,8 +843,7 @@ namespace MyNS
 		public async Task<ListApiDeploymentsResponse> Registry_ListApiDeploymentsAsync(string project, string location, string api, int pageSize, string pageToken, string filter, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/projects/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/locations/"+ (location==null? "" : System.Uri.EscapeDataString(location))+"/apis/"+ (api==null? "" : System.Uri.EscapeDataString(api))+"/deployments&pageSize="+pageSize+"&pageToken=" + (pageToken==null? "" : System.Uri.EscapeDataString(pageToken))+"&filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -866,13 +853,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ListApiDeploymentsResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ListApiDeploymentsResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -888,10 +874,8 @@ namespace MyNS
 		public async Task<ApiDeployment> Registry_CreateApiDeploymentAsync(string project, string location, string api, string apiDeploymentId, ApiDeployment requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/projects/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/locations/"+ (location==null? "" : System.Uri.EscapeDataString(location))+"/apis/"+ (api==null? "" : System.Uri.EscapeDataString(api))+"/deployments&apiDeploymentId=" + (apiDeploymentId==null? "" : System.Uri.EscapeDataString(apiDeploymentId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -902,13 +886,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ApiDeployment>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ApiDeployment>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -926,8 +909,7 @@ namespace MyNS
 		public async Task Registry_DeleteApiDeploymentAsync(string project, string location, string api, string deployment, bool force, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/projects/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/locations/"+ (location==null? "" : System.Uri.EscapeDataString(location))+"/apis/"+ (api==null? "" : System.Uri.EscapeDataString(api))+"/deployments/"+ (deployment==null? "" : System.Uri.EscapeDataString(deployment))+"&force="+force;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -941,7 +923,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -957,8 +938,7 @@ namespace MyNS
 		public async Task<ApiDeployment> Registry_GetApiDeploymentAsync(string project, string location, string api, string deployment, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/projects/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/locations/"+ (location==null? "" : System.Uri.EscapeDataString(location))+"/apis/"+ (api==null? "" : System.Uri.EscapeDataString(api))+"/deployments/"+ (deployment==null? "" : System.Uri.EscapeDataString(deployment));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -968,13 +948,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ApiDeployment>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ApiDeployment>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -992,10 +971,8 @@ namespace MyNS
 		public async Task<ApiDeployment> Registry_UpdateApiDeploymentAsync(string project, string location, string api, string deployment, string updateMask, bool allowMissing, ApiDeployment requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/projects/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/locations/"+ (location==null? "" : System.Uri.EscapeDataString(location))+"/apis/"+ (api==null? "" : System.Uri.EscapeDataString(api))+"/deployments/"+ (deployment==null? "" : System.Uri.EscapeDataString(deployment))+"&updateMask=" + (updateMask==null? "" : System.Uri.EscapeDataString(updateMask))+"&allowMissing="+allowMissing;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -1006,13 +983,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ApiDeployment>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ApiDeployment>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1028,8 +1004,7 @@ namespace MyNS
 		public async Task<ApiDeployment> Registry_DeleteApiDeploymentRevisionAsync(string project, string location, string api, string deployment, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/projects/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/locations/"+ (location==null? "" : System.Uri.EscapeDataString(location))+"/apis/"+ (api==null? "" : System.Uri.EscapeDataString(api))+"/deployments/"+ (deployment==null? "" : System.Uri.EscapeDataString(deployment))+":deleteRevision";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1039,13 +1014,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ApiDeployment>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ApiDeployment>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1064,8 +1038,7 @@ namespace MyNS
 		public async Task<ListApiDeploymentRevisionsResponse> Registry_ListApiDeploymentRevisionsAsync(string project, string location, string api, string deployment, int pageSize, string pageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/projects/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/locations/"+ (location==null? "" : System.Uri.EscapeDataString(location))+"/apis/"+ (api==null? "" : System.Uri.EscapeDataString(api))+"/deployments/"+ (deployment==null? "" : System.Uri.EscapeDataString(deployment))+":listRevisions&pageSize="+pageSize+"&pageToken=" + (pageToken==null? "" : System.Uri.EscapeDataString(pageToken));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1075,13 +1048,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ListApiDeploymentRevisionsResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ListApiDeploymentRevisionsResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1098,10 +1070,8 @@ namespace MyNS
 		public async Task<ApiDeployment> Registry_RollbackApiDeploymentAsync(string project, string location, string api, string deployment, RollbackApiDeploymentRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/projects/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/locations/"+ (location==null? "" : System.Uri.EscapeDataString(location))+"/apis/"+ (api==null? "" : System.Uri.EscapeDataString(api))+"/deployments/"+ (deployment==null? "" : System.Uri.EscapeDataString(deployment))+":rollback";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -1112,13 +1082,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ApiDeployment>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ApiDeployment>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1135,10 +1104,8 @@ namespace MyNS
 		public async Task<ApiDeployment> Registry_TagApiDeploymentRevisionAsync(string project, string location, string api, string deployment, TagApiDeploymentRevisionRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/projects/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/locations/"+ (location==null? "" : System.Uri.EscapeDataString(location))+"/apis/"+ (api==null? "" : System.Uri.EscapeDataString(api))+"/deployments/"+ (deployment==null? "" : System.Uri.EscapeDataString(deployment))+":tagRevision";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -1149,13 +1116,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ApiDeployment>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ApiDeployment>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1173,8 +1139,7 @@ namespace MyNS
 		public async Task<ListApiVersionsResponse> Registry_ListApiVersionsAsync(string project, string location, string api, int pageSize, string pageToken, string filter, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/projects/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/locations/"+ (location==null? "" : System.Uri.EscapeDataString(location))+"/apis/"+ (api==null? "" : System.Uri.EscapeDataString(api))+"/versions&pageSize="+pageSize+"&pageToken=" + (pageToken==null? "" : System.Uri.EscapeDataString(pageToken))+"&filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1184,13 +1149,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ListApiVersionsResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ListApiVersionsResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1206,10 +1170,8 @@ namespace MyNS
 		public async Task<ApiVersion> Registry_CreateApiVersionAsync(string project, string location, string api, string apiVersionId, ApiVersion requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/projects/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/locations/"+ (location==null? "" : System.Uri.EscapeDataString(location))+"/apis/"+ (api==null? "" : System.Uri.EscapeDataString(api))+"/versions&apiVersionId=" + (apiVersionId==null? "" : System.Uri.EscapeDataString(apiVersionId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -1220,13 +1182,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ApiVersion>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ApiVersion>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1244,8 +1205,7 @@ namespace MyNS
 		public async Task Registry_DeleteApiVersionAsync(string project, string location, string api, string version, bool force, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/projects/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/locations/"+ (location==null? "" : System.Uri.EscapeDataString(location))+"/apis/"+ (api==null? "" : System.Uri.EscapeDataString(api))+"/versions/"+ (version==null? "" : System.Uri.EscapeDataString(version))+"&force="+force;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1259,7 +1219,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1275,8 +1234,7 @@ namespace MyNS
 		public async Task<ApiVersion> Registry_GetApiVersionAsync(string project, string location, string api, string version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/projects/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/locations/"+ (location==null? "" : System.Uri.EscapeDataString(location))+"/apis/"+ (api==null? "" : System.Uri.EscapeDataString(api))+"/versions/"+ (version==null? "" : System.Uri.EscapeDataString(version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1286,13 +1244,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ApiVersion>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ApiVersion>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1310,10 +1267,8 @@ namespace MyNS
 		public async Task<ApiVersion> Registry_UpdateApiVersionAsync(string project, string location, string api, string version, string updateMask, bool allowMissing, ApiVersion requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/projects/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/locations/"+ (location==null? "" : System.Uri.EscapeDataString(location))+"/apis/"+ (api==null? "" : System.Uri.EscapeDataString(api))+"/versions/"+ (version==null? "" : System.Uri.EscapeDataString(version))+"&updateMask=" + (updateMask==null? "" : System.Uri.EscapeDataString(updateMask))+"&allowMissing="+allowMissing;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -1324,13 +1279,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ApiVersion>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ApiVersion>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1349,8 +1303,7 @@ namespace MyNS
 		public async Task<ListApiSpecsResponse> Registry_ListApiSpecsAsync(string project, string location, string api, string version, int pageSize, string pageToken, string filter, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/projects/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/locations/"+ (location==null? "" : System.Uri.EscapeDataString(location))+"/apis/"+ (api==null? "" : System.Uri.EscapeDataString(api))+"/versions/"+ (version==null? "" : System.Uri.EscapeDataString(version))+"/specs&pageSize="+pageSize+"&pageToken=" + (pageToken==null? "" : System.Uri.EscapeDataString(pageToken))+"&filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1360,13 +1313,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ListApiSpecsResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ListApiSpecsResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1383,10 +1335,8 @@ namespace MyNS
 		public async Task<ApiSpec> Registry_CreateApiSpecAsync(string project, string location, string api, string version, string apiSpecId, ApiSpec requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/projects/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/locations/"+ (location==null? "" : System.Uri.EscapeDataString(location))+"/apis/"+ (api==null? "" : System.Uri.EscapeDataString(api))+"/versions/"+ (version==null? "" : System.Uri.EscapeDataString(version))+"/specs&apiSpecId=" + (apiSpecId==null? "" : System.Uri.EscapeDataString(apiSpecId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -1397,13 +1347,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ApiSpec>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ApiSpec>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1422,8 +1371,7 @@ namespace MyNS
 		public async Task Registry_DeleteApiSpecAsync(string project, string location, string api, string version, string spec, bool force, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/projects/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/locations/"+ (location==null? "" : System.Uri.EscapeDataString(location))+"/apis/"+ (api==null? "" : System.Uri.EscapeDataString(api))+"/versions/"+ (version==null? "" : System.Uri.EscapeDataString(version))+"/specs/"+ (spec==null? "" : System.Uri.EscapeDataString(spec))+"&force="+force;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1437,7 +1385,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1454,8 +1401,7 @@ namespace MyNS
 		public async Task<ApiSpec> Registry_GetApiSpecAsync(string project, string location, string api, string version, string spec, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/projects/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/locations/"+ (location==null? "" : System.Uri.EscapeDataString(location))+"/apis/"+ (api==null? "" : System.Uri.EscapeDataString(api))+"/versions/"+ (version==null? "" : System.Uri.EscapeDataString(version))+"/specs/"+ (spec==null? "" : System.Uri.EscapeDataString(spec));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1465,13 +1411,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ApiSpec>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ApiSpec>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1490,10 +1435,8 @@ namespace MyNS
 		public async Task<ApiSpec> Registry_UpdateApiSpecAsync(string project, string location, string api, string version, string spec, string updateMask, bool allowMissing, ApiSpec requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/projects/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/locations/"+ (location==null? "" : System.Uri.EscapeDataString(location))+"/apis/"+ (api==null? "" : System.Uri.EscapeDataString(api))+"/versions/"+ (version==null? "" : System.Uri.EscapeDataString(version))+"/specs/"+ (spec==null? "" : System.Uri.EscapeDataString(spec))+"&updateMask=" + (updateMask==null? "" : System.Uri.EscapeDataString(updateMask))+"&allowMissing="+allowMissing;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -1504,13 +1447,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ApiSpec>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ApiSpec>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1527,8 +1469,7 @@ namespace MyNS
 		public async Task<ApiSpec> Registry_DeleteApiSpecRevisionAsync(string project, string location, string api, string version, string spec, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/projects/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/locations/"+ (location==null? "" : System.Uri.EscapeDataString(location))+"/apis/"+ (api==null? "" : System.Uri.EscapeDataString(api))+"/versions/"+ (version==null? "" : System.Uri.EscapeDataString(version))+"/specs/"+ (spec==null? "" : System.Uri.EscapeDataString(spec))+":deleteRevision";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1538,13 +1479,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ApiSpec>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ApiSpec>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1564,8 +1504,7 @@ namespace MyNS
 		public async Task Registry_GetApiSpecContentsAsync(string project, string location, string api, string version, string spec, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/projects/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/locations/"+ (location==null? "" : System.Uri.EscapeDataString(location))+"/apis/"+ (api==null? "" : System.Uri.EscapeDataString(api))+"/versions/"+ (version==null? "" : System.Uri.EscapeDataString(version))+"/specs/"+ (spec==null? "" : System.Uri.EscapeDataString(spec))+":getContents";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1579,7 +1518,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1599,8 +1537,7 @@ namespace MyNS
 		public async Task<ListApiSpecRevisionsResponse> Registry_ListApiSpecRevisionsAsync(string project, string location, string api, string version, string spec, int pageSize, string pageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/projects/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/locations/"+ (location==null? "" : System.Uri.EscapeDataString(location))+"/apis/"+ (api==null? "" : System.Uri.EscapeDataString(api))+"/versions/"+ (version==null? "" : System.Uri.EscapeDataString(version))+"/specs/"+ (spec==null? "" : System.Uri.EscapeDataString(spec))+":listRevisions&pageSize="+pageSize+"&pageToken=" + (pageToken==null? "" : System.Uri.EscapeDataString(pageToken));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1610,13 +1547,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ListApiSpecRevisionsResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ListApiSpecRevisionsResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1634,10 +1570,8 @@ namespace MyNS
 		public async Task<ApiSpec> Registry_RollbackApiSpecAsync(string project, string location, string api, string version, string spec, RollbackApiSpecRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/projects/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/locations/"+ (location==null? "" : System.Uri.EscapeDataString(location))+"/apis/"+ (api==null? "" : System.Uri.EscapeDataString(api))+"/versions/"+ (version==null? "" : System.Uri.EscapeDataString(version))+"/specs/"+ (spec==null? "" : System.Uri.EscapeDataString(spec))+":rollback";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -1648,13 +1582,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ApiSpec>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ApiSpec>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1671,10 +1604,8 @@ namespace MyNS
 		public async Task<ApiSpec> Registry_TagApiSpecRevisionAsync(string project, string location, string api, string version, string spec, TagApiSpecRevisionRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/projects/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/locations/"+ (location==null? "" : System.Uri.EscapeDataString(location))+"/apis/"+ (api==null? "" : System.Uri.EscapeDataString(api))+"/versions/"+ (version==null? "" : System.Uri.EscapeDataString(version))+"/specs/"+ (spec==null? "" : System.Uri.EscapeDataString(spec))+":tagRevision";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -1685,13 +1616,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ApiSpec>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ApiSpec>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1708,8 +1638,7 @@ namespace MyNS
 		public async Task<ListArtifactsResponse> Registry_ListArtifactsAsync(string project, string location, int pageSize, string pageToken, string filter, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/projects/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/locations/"+ (location==null? "" : System.Uri.EscapeDataString(location))+"/artifacts&pageSize="+pageSize+"&pageToken=" + (pageToken==null? "" : System.Uri.EscapeDataString(pageToken))+"&filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1719,13 +1648,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ListArtifactsResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ListArtifactsResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1740,10 +1668,8 @@ namespace MyNS
 		public async Task<Artifact> Registry_CreateArtifactAsync(string project, string location, string artifactId, Artifact requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/projects/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/locations/"+ (location==null? "" : System.Uri.EscapeDataString(location))+"/artifacts&artifactId=" + (artifactId==null? "" : System.Uri.EscapeDataString(artifactId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -1754,13 +1680,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Artifact>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Artifact>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1775,8 +1700,7 @@ namespace MyNS
 		public async Task Registry_DeleteArtifactAsync(string project, string location, string artifact, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/projects/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/locations/"+ (location==null? "" : System.Uri.EscapeDataString(location))+"/artifacts/"+ (artifact==null? "" : System.Uri.EscapeDataString(artifact));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1790,7 +1714,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1805,8 +1728,7 @@ namespace MyNS
 		public async Task<Artifact> Registry_GetArtifactAsync(string project, string location, string artifact, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/projects/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/locations/"+ (location==null? "" : System.Uri.EscapeDataString(location))+"/artifacts/"+ (artifact==null? "" : System.Uri.EscapeDataString(artifact));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1816,13 +1738,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Artifact>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Artifact>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1837,10 +1758,8 @@ namespace MyNS
 		public async Task<Artifact> Registry_ReplaceArtifactAsync(string project, string location, string artifact, Artifact requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/projects/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/locations/"+ (location==null? "" : System.Uri.EscapeDataString(location))+"/artifacts/"+ (artifact==null? "" : System.Uri.EscapeDataString(artifact));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -1851,13 +1770,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Artifact>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Artifact>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1875,8 +1793,7 @@ namespace MyNS
 		public async Task Registry_GetArtifactContentsAsync(string project, string location, string artifact, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/projects/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/locations/"+ (location==null? "" : System.Uri.EscapeDataString(location))+"/artifacts/"+ (artifact==null? "" : System.Uri.EscapeDataString(artifact))+":getContents";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1890,7 +1807,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

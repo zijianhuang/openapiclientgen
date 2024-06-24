@@ -158,8 +158,7 @@ namespace MyNS
 		public async Task<Single_comparison_test[]> Screenshots_target_screenshot_test_id_target_version_idComparisonParallel_base_version_idGetByFormatAndCallbackAndToleranceAsync(int target_screenshot_test_id, int target_version_id, int base_version_id, string format, string callback, string tolerance, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "screenshots/"+target_screenshot_test_id+"/"+target_version_id+"/comparison/parallel/"+base_version_id+"?format=" + (format==null? "" : System.Uri.EscapeDataString(format))+"&callback=" + (callback==null? "" : System.Uri.EscapeDataString(callback))+"&tolerance=" + (tolerance==null? "" : System.Uri.EscapeDataString(tolerance));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -169,17 +168,14 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
-				{
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				using JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(streamContent));
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<Single_comparison_test[]>(jsonReader);
-				}
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -198,8 +194,7 @@ namespace MyNS
 		public async Task<Full_comparison_test> Screenshots_target_screenshot_test_id_target_version_idComparison_base_result_idGetByFormatAndCallbackAndToleranceAsync(int target_screenshot_test_id, int target_version_id, int base_result_id, string format, string callback, string tolerance, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "screenshots/"+target_screenshot_test_id+"/"+target_version_id+"/comparison/"+base_result_id+"?format=" + (format==null? "" : System.Uri.EscapeDataString(format))+"&callback=" + (callback==null? "" : System.Uri.EscapeDataString(callback))+"&tolerance=" + (tolerance==null? "" : System.Uri.EscapeDataString(tolerance));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -209,17 +204,14 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
-				{
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				using JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(streamContent));
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<Full_comparison_test>(jsonReader);
-				}
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -239,8 +231,7 @@ namespace MyNS
 		public async Task<Single_comparison_test> Screenshots_target_screenshot_test_id_target_version_id_target_result_idComparison_base_result_idGetByFormatAndCallbackAndToleranceAsync(int target_screenshot_test_id, int target_version_id, int target_result_id, int base_result_id, string format, string callback, string tolerance, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "screenshots/"+target_screenshot_test_id+"/"+target_version_id+"/"+target_result_id+"/comparison/"+base_result_id+"?format=" + (format==null? "" : System.Uri.EscapeDataString(format))+"&callback=" + (callback==null? "" : System.Uri.EscapeDataString(callback))+"&tolerance=" + (tolerance==null? "" : System.Uri.EscapeDataString(tolerance));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -250,17 +241,14 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
-				{
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				using JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(streamContent));
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<Single_comparison_test>(jsonReader);
-				}
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

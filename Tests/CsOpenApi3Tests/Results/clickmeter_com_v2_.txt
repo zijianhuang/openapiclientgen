@@ -1454,8 +1454,7 @@ namespace MyNS
 		public async Task<ApiCoreDtoAccountingUser> Account_GetAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "account";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1465,13 +1464,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ApiCoreDtoAccountingUser>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ApiCoreDtoAccountingUser>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1482,10 +1480,8 @@ namespace MyNS
 		public async Task<ApiCoreDtoAccountingUser> Account_PostAsync(ApiCoreDtoAccountingUser requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "account";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -1496,13 +1492,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ApiCoreDtoAccountingUser>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ApiCoreDtoAccountingUser>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1520,8 +1515,7 @@ namespace MyNS
 		public async Task<ApiCoreResponsesEntitiesResponse_ApiCoreDtoAccountingDomainWhitelistEntry_> Account_GetDomainWhitelistAsync(int offset, int limit, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "account/domainwhitelist?offset="+offset+"&limit="+limit;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1531,13 +1525,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ApiCoreResponsesEntitiesResponse_ApiCoreDtoAccountingDomainWhitelistEntry_>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ApiCoreResponsesEntitiesResponse_ApiCoreDtoAccountingDomainWhitelistEntry_>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1549,10 +1542,8 @@ namespace MyNS
 		public async Task<ApiCoreDtoAccountingDomainWhitelistEntry> Account_PutDomainWhitelistAsync(ApiCoreDtoAccountingDomainWhitelistEntry requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "account/domainwhitelist";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -1563,13 +1554,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ApiCoreDtoAccountingDomainWhitelistEntry>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ApiCoreDtoAccountingDomainWhitelistEntry>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1581,8 +1571,7 @@ namespace MyNS
 		public async Task<ApiCoreDtoAccountingDomainWhitelistEntry> Account_DeleteDomainWhitelistAsync(string whitelistId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "account/domainwhitelist/"+ (whitelistId==null? "" : System.Uri.EscapeDataString(whitelistId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1592,13 +1581,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ApiCoreDtoAccountingDomainWhitelistEntry>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ApiCoreDtoAccountingDomainWhitelistEntry>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1619,8 +1607,7 @@ namespace MyNS
 		public async Task<ApiCoreResponsesEntitiesResponse_ApiCoreResponsesEntityUri_SystemInt64_> Account_GetGuestsAsync(int offset, int limit, string sortBy, Account_GetGuestsSortDirection sortDirection, string textSearch, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "account/guests?offset="+offset+"&limit="+limit+"&sortBy=" + (sortBy==null? "" : System.Uri.EscapeDataString(sortBy))+"&sortDirection=" + sortDirection+"&textSearch=" + (textSearch==null? "" : System.Uri.EscapeDataString(textSearch));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1630,13 +1617,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ApiCoreResponsesEntitiesResponse_ApiCoreResponsesEntityUri_SystemInt64_>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ApiCoreResponsesEntitiesResponse_ApiCoreResponsesEntityUri_SystemInt64_>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1648,10 +1634,8 @@ namespace MyNS
 		public async Task<ApiCoreDtoAccountingGuest> Account_PutGuestAsync(ApiCoreDtoAccountingGuest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "account/guests";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -1662,13 +1646,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ApiCoreDtoAccountingGuest>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ApiCoreDtoAccountingGuest>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1680,8 +1663,7 @@ namespace MyNS
 		public async Task<ApiCoreResponsesCountResponce> Account_GetGuestsCountAsync(string textSearch, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "account/guests/count?textSearch=" + (textSearch==null? "" : System.Uri.EscapeDataString(textSearch));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1691,13 +1673,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ApiCoreResponsesCountResponce>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ApiCoreResponsesCountResponce>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1709,8 +1690,7 @@ namespace MyNS
 		public async Task<ApiCoreResponsesEntityUri_SystemInt64_> Account_DeleteGuestAsync(long guestId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "account/guests/"+guestId;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1720,13 +1700,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ApiCoreResponsesEntityUri_SystemInt64_>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ApiCoreResponsesEntityUri_SystemInt64_>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1738,8 +1717,7 @@ namespace MyNS
 		public async Task<ApiCoreDtoAccountingGuest> Account_GetGuestAsync(long guestId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "account/guests/"+guestId;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1749,13 +1727,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ApiCoreDtoAccountingGuest>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ApiCoreDtoAccountingGuest>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1768,10 +1745,8 @@ namespace MyNS
 		public async Task<ApiCoreDtoAccountingGuest> Account_PostGuestAsync(long guestId, ApiCoreDtoAccountingGuest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "account/guests/"+guestId;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -1782,13 +1757,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ApiCoreDtoAccountingGuest>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ApiCoreDtoAccountingGuest>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1810,8 +1784,7 @@ namespace MyNS
 		public async Task<ApiCoreResponsesEntitiesResponse_ApiCoreDtoGrantsGrant_> Account_GetPermissionsAsync(long guestId, Account_GetPermissionsEntityType entityType, int offset, int limit, Account_GetPermissionsType type, long entityId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "account/guests/"+guestId+"/permissions?entityType=" + entityType+"&offset="+offset+"&limit="+limit+"&type=" + type+"&entityId="+entityId;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1821,13 +1794,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ApiCoreResponsesEntitiesResponse_ApiCoreDtoGrantsGrant_>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ApiCoreResponsesEntitiesResponse_ApiCoreDtoGrantsGrant_>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1842,8 +1814,7 @@ namespace MyNS
 		public async Task<ApiCoreResponsesCountResponce> Account_GetPermissionsCountAsync(long guestId, Account_GetPermissionsEntityType entityType, Account_GetPermissionsType type, long entityId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "account/guests/"+guestId+"/permissions/count?entityType=" + entityType+"&type=" + type+"&entityId="+entityId;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1853,13 +1824,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ApiCoreResponsesCountResponce>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ApiCoreResponsesCountResponce>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1873,10 +1843,8 @@ namespace MyNS
 		public async Task<ApiCoreResponsesEntityUri_SystemInt64_> AccountPostByGuestIdAndTypeAsync(long guestId, Account_GetPermissionsEntityType type, ApiCoreRequestsPermissionPatchRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "account/guests/"+guestId+"/"+type+"/permissions/patch";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -1887,13 +1855,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ApiCoreResponsesEntityUri_SystemInt64_>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ApiCoreResponsesEntityUri_SystemInt64_>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1907,10 +1874,8 @@ namespace MyNS
 		public async Task<ApiCoreResponsesEntityUri_SystemInt64_> Account_PatchPermissionsAsync(long guestId, Account_GetPermissionsEntityType type, ApiCoreRequestsPermissionPatchRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "account/guests/"+guestId+"/"+type+"/permissions/patch";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -1921,13 +1886,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ApiCoreResponsesEntityUri_SystemInt64_>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ApiCoreResponsesEntityUri_SystemInt64_>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1945,8 +1909,7 @@ namespace MyNS
 		public async Task<ApiCoreResponsesEntitiesResponse_ApiCoreDtoAccountingIpBlacklistEntry_> Account_GetIpBlacklistAsync(int offset, int limit, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "account/ipblacklist?offset="+offset+"&limit="+limit;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1956,13 +1919,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ApiCoreResponsesEntitiesResponse_ApiCoreDtoAccountingIpBlacklistEntry_>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ApiCoreResponsesEntitiesResponse_ApiCoreDtoAccountingIpBlacklistEntry_>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1974,10 +1936,8 @@ namespace MyNS
 		public async Task<ApiCoreDtoAccountingIpBlacklistEntry> Account_PutIpBlacklistAsync(ApiCoreDtoAccountingIpBlacklistEntry requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "account/ipblacklist";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -1988,13 +1948,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ApiCoreDtoAccountingIpBlacklistEntry>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ApiCoreDtoAccountingIpBlacklistEntry>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2006,8 +1965,7 @@ namespace MyNS
 		public async Task<ApiCoreDtoAccountingIpBlacklistEntry> Account_DeleteIpBlacklistAsync(string blacklistId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "account/ipblacklist/"+ (blacklistId==null? "" : System.Uri.EscapeDataString(blacklistId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2017,13 +1975,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ApiCoreDtoAccountingIpBlacklistEntry>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ApiCoreDtoAccountingIpBlacklistEntry>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2034,8 +1991,7 @@ namespace MyNS
 		public async Task<ApiCoreDtoAccountingPlan> Account_GetPlanAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "account/plan";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2045,13 +2001,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ApiCoreDtoAccountingPlan>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ApiCoreDtoAccountingPlan>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2066,8 +2021,7 @@ namespace MyNS
 		public async Task<ApiCoreDtoAggregatedAggregatedResult> Aggregated_GetStatisticsSingleAsync(Aggregated_GetStatisticsSingleTimeFrame timeFrame, string fromDay, string toDay, bool hourly, string onlyFavorites, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "aggregated?timeFrame=" + timeFrame+"&fromDay=" + (fromDay==null? "" : System.Uri.EscapeDataString(fromDay))+"&toDay=" + (toDay==null? "" : System.Uri.EscapeDataString(toDay))+"&hourly="+hourly+"&onlyFavorites=" + (onlyFavorites==null? "" : System.Uri.EscapeDataString(onlyFavorites));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2077,13 +2031,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ApiCoreDtoAggregatedAggregatedResult>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ApiCoreDtoAggregatedAggregatedResult>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2098,8 +2051,7 @@ namespace MyNS
 		public async Task<ApiCoreResponsesEntitiesResponse_ApiCoreDtoAggregatedAggregatedResult_> Aggregated_GetStatisticsListAsync(Aggregated_GetStatisticsSingleTimeFrame timeFrame, string fromDay, string toDay, Aggregated_GetStatisticsListGroupBy groupBy, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "aggregated/list?timeFrame=" + timeFrame+"&fromDay=" + (fromDay==null? "" : System.Uri.EscapeDataString(fromDay))+"&toDay=" + (toDay==null? "" : System.Uri.EscapeDataString(toDay))+"&groupBy=" + groupBy;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2109,13 +2061,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ApiCoreResponsesEntitiesResponse_ApiCoreDtoAggregatedAggregatedResult_>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ApiCoreResponsesEntitiesResponse_ApiCoreDtoAggregatedAggregatedResult_>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2140,8 +2091,7 @@ namespace MyNS
 		public async Task<ApiCoreDtoAggregatedAggregatedSummaryResult> Aggregated_GetConversionsSummaryAsync(Aggregated_GetStatisticsSingleTimeFrame timeFrame, string fromDay, string toDay, Aggregated_GetConversionsSummaryStatus status, string sortBy, Account_GetGuestsSortDirection sortDirection, int offset, int limit, string textSearch, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "aggregated/summary/conversions?timeFrame=" + timeFrame+"&fromDay=" + (fromDay==null? "" : System.Uri.EscapeDataString(fromDay))+"&toDay=" + (toDay==null? "" : System.Uri.EscapeDataString(toDay))+"&status=" + status+"&sortBy=" + (sortBy==null? "" : System.Uri.EscapeDataString(sortBy))+"&sortDirection=" + sortDirection+"&offset="+offset+"&limit="+limit+"&textSearch=" + (textSearch==null? "" : System.Uri.EscapeDataString(textSearch));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2151,13 +2101,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ApiCoreDtoAggregatedAggregatedSummaryResult>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ApiCoreDtoAggregatedAggregatedSummaryResult>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2186,8 +2135,7 @@ namespace MyNS
 		public async Task<ApiCoreDtoAggregatedAggregatedSummaryResult> Aggregated_GetDatapointsSummaryAsync(Aggregated_GetStatisticsSingleTimeFrame timeFrame, Aggregated_GetDatapointsSummaryType type, string fromDay, string toDay, Aggregated_GetDatapointsSummaryStatus status, string tag, bool favourite, string sortBy, Account_GetGuestsSortDirection sortDirection, int offset, int limit, long groupId, string textSearch, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "aggregated/summary/datapoints?timeFrame=" + timeFrame+"&type=" + type+"&fromDay=" + (fromDay==null? "" : System.Uri.EscapeDataString(fromDay))+"&toDay=" + (toDay==null? "" : System.Uri.EscapeDataString(toDay))+"&status=" + status+"&tag=" + (tag==null? "" : System.Uri.EscapeDataString(tag))+"&favourite="+favourite+"&sortBy=" + (sortBy==null? "" : System.Uri.EscapeDataString(sortBy))+"&sortDirection=" + sortDirection+"&offset="+offset+"&limit="+limit+"&groupId="+groupId+"&textSearch=" + (textSearch==null? "" : System.Uri.EscapeDataString(textSearch));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2197,13 +2145,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ApiCoreDtoAggregatedAggregatedSummaryResult>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ApiCoreDtoAggregatedAggregatedSummaryResult>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2230,8 +2177,7 @@ namespace MyNS
 		public async Task<ApiCoreDtoAggregatedAggregatedSummaryResult> Aggregated_GetGroupsSummaryAsync(Aggregated_GetStatisticsSingleTimeFrame timeFrame, string fromDay, string toDay, Aggregated_GetConversionsSummaryStatus status, string tag, bool favourite, string sortBy, Account_GetGuestsSortDirection sortDirection, int offset, int limit, string textSearch, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "aggregated/summary/groups?timeFrame=" + timeFrame+"&fromDay=" + (fromDay==null? "" : System.Uri.EscapeDataString(fromDay))+"&toDay=" + (toDay==null? "" : System.Uri.EscapeDataString(toDay))+"&status=" + status+"&tag=" + (tag==null? "" : System.Uri.EscapeDataString(tag))+"&favourite="+favourite+"&sortBy=" + (sortBy==null? "" : System.Uri.EscapeDataString(sortBy))+"&sortDirection=" + sortDirection+"&offset="+offset+"&limit="+limit+"&textSearch=" + (textSearch==null? "" : System.Uri.EscapeDataString(textSearch));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2241,13 +2187,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ApiCoreDtoAggregatedAggregatedSummaryResult>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ApiCoreDtoAggregatedAggregatedSummaryResult>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2263,8 +2208,7 @@ namespace MyNS
 		public async Task<ApiCoreResponsesEntitiesResponse_ApiCoreDtoClickStreamHit_> ClickStream_GetAsync(long group, long datapoint, long conversion, int pageSize, ClickStream_GetFilter filter, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "clickstream?group="+group+"&datapoint="+datapoint+"&conversion="+conversion+"&pageSize="+pageSize+"&filter=" + filter;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2274,13 +2218,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ApiCoreResponsesEntitiesResponse_ApiCoreDtoClickStreamHit_>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ApiCoreResponsesEntitiesResponse_ApiCoreDtoClickStreamHit_>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2302,8 +2245,7 @@ namespace MyNS
 		public async Task<ApiCoreResponsesEntitiesResponse_ApiCoreResponsesEntityUri_SystemInt64_> Conversions_GetAsync(int offset, int limit, Aggregated_GetConversionsSummaryStatus status, string textSearch, string createdAfter, string createdBefore, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "conversions?offset="+offset+"&limit="+limit+"&status=" + status+"&textSearch=" + (textSearch==null? "" : System.Uri.EscapeDataString(textSearch))+"&createdAfter=" + (createdAfter==null? "" : System.Uri.EscapeDataString(createdAfter))+"&createdBefore=" + (createdBefore==null? "" : System.Uri.EscapeDataString(createdBefore));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2313,13 +2255,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ApiCoreResponsesEntitiesResponse_ApiCoreResponsesEntityUri_SystemInt64_>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ApiCoreResponsesEntitiesResponse_ApiCoreResponsesEntityUri_SystemInt64_>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2331,10 +2272,8 @@ namespace MyNS
 		public async Task<ApiCoreResponsesEntityUri_SystemInt64_> Conversions_PutAsync(ApiCoreDtoConversionsConversion requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "conversions";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -2345,13 +2284,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ApiCoreResponsesEntityUri_SystemInt64_>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ApiCoreResponsesEntityUri_SystemInt64_>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2367,8 +2305,7 @@ namespace MyNS
 		public async Task<ApiCoreResponsesEntitiesResponse_ApiCoreDtoAggregatedAggregatedResult_> Conversions_GetStatisticsAllListAsync(Aggregated_GetStatisticsSingleTimeFrame timeFrame, string fromDay, string toDay, Aggregated_GetConversionsSummaryStatus status, Aggregated_GetStatisticsListGroupBy groupBy, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "conversions/aggregated/list?timeFrame=" + timeFrame+"&fromDay=" + (fromDay==null? "" : System.Uri.EscapeDataString(fromDay))+"&toDay=" + (toDay==null? "" : System.Uri.EscapeDataString(toDay))+"&status=" + status+"&groupBy=" + groupBy;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2378,13 +2315,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ApiCoreResponsesEntitiesResponse_ApiCoreDtoAggregatedAggregatedResult_>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ApiCoreResponsesEntitiesResponse_ApiCoreDtoAggregatedAggregatedResult_>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2399,8 +2335,7 @@ namespace MyNS
 		public async Task<ApiCoreResponsesCountResponce> Conversions_CountAsync(Aggregated_GetConversionsSummaryStatus status, string textSearch, string createdAfter, string createdBefore, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "conversions/count?status=" + status+"&textSearch=" + (textSearch==null? "" : System.Uri.EscapeDataString(textSearch))+"&createdAfter=" + (createdAfter==null? "" : System.Uri.EscapeDataString(createdAfter))+"&createdBefore=" + (createdBefore==null? "" : System.Uri.EscapeDataString(createdBefore));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2410,13 +2345,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ApiCoreResponsesCountResponce>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ApiCoreResponsesCountResponce>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2428,8 +2362,7 @@ namespace MyNS
 		public async Task<ApiCoreResponsesEntityUri_SystemInt64_> Conversions_DeleteAsync(long conversionId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "conversions/"+conversionId;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2439,13 +2372,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ApiCoreResponsesEntityUri_SystemInt64_>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ApiCoreResponsesEntityUri_SystemInt64_>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2457,8 +2389,7 @@ namespace MyNS
 		public async Task<ApiCoreDtoConversionsConversion> ConversionsGetByConversionIdAsync(long conversionId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "conversions/"+conversionId;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2468,13 +2399,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ApiCoreDtoConversionsConversion>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ApiCoreDtoConversionsConversion>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2487,10 +2417,8 @@ namespace MyNS
 		public async Task<ApiCoreResponsesEntityUri_SystemInt64_> Conversions_PostAsync(long conversionId, ApiCoreDtoConversionsConversion requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "conversions/"+conversionId;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -2501,13 +2429,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ApiCoreResponsesEntityUri_SystemInt64_>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ApiCoreResponsesEntityUri_SystemInt64_>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2525,8 +2452,7 @@ namespace MyNS
 		public async Task<ApiCoreDtoAggregatedAggregatedResult> Conversions_GetStatisticsSingleAsync(long conversionId, Aggregated_GetStatisticsSingleTimeFrame timeFrame, string fromDay, string toDay, string tag, bool favourite, bool hourly, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "conversions/"+conversionId+"/aggregated?timeFrame=" + timeFrame+"&fromDay=" + (fromDay==null? "" : System.Uri.EscapeDataString(fromDay))+"&toDay=" + (toDay==null? "" : System.Uri.EscapeDataString(toDay))+"&tag=" + (tag==null? "" : System.Uri.EscapeDataString(tag))+"&favourite="+favourite+"&hourly="+hourly;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2536,13 +2462,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ApiCoreDtoAggregatedAggregatedResult>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ApiCoreDtoAggregatedAggregatedResult>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2558,8 +2483,7 @@ namespace MyNS
 		public async Task<ApiCoreResponsesEntitiesResponse_ApiCoreDtoAggregatedAggregatedResult_> Conversions_GetStatisticsListAsync(long conversionId, Aggregated_GetStatisticsSingleTimeFrame timeFrame, string fromDay, string toDay, Aggregated_GetStatisticsListGroupBy groupBy, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "conversions/"+conversionId+"/aggregated/list?timeFrame=" + timeFrame+"&fromDay=" + (fromDay==null? "" : System.Uri.EscapeDataString(fromDay))+"&toDay=" + (toDay==null? "" : System.Uri.EscapeDataString(toDay))+"&groupBy=" + groupBy;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2569,13 +2493,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ApiCoreResponsesEntitiesResponse_ApiCoreDtoAggregatedAggregatedResult_>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ApiCoreResponsesEntitiesResponse_ApiCoreDtoAggregatedAggregatedResult_>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2600,8 +2523,7 @@ namespace MyNS
 		public async Task<ApiCoreResponsesEntitiesResponse_ApiCoreResponsesEntityUri_SystemInt64_> Conversions_GetDatapointsAsync(long conversionId, int offset, int limit, Aggregated_GetDatapointsSummaryType type, Aggregated_GetDatapointsSummaryStatus status, string tags, string textSearch, string createdAfter, string createdBefore, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "conversions/"+conversionId+"/datapoints?offset="+offset+"&limit="+limit+"&type=" + type+"&status=" + status+"&tags=" + (tags==null? "" : System.Uri.EscapeDataString(tags))+"&textSearch=" + (textSearch==null? "" : System.Uri.EscapeDataString(textSearch))+"&createdAfter=" + (createdAfter==null? "" : System.Uri.EscapeDataString(createdAfter))+"&createdBefore=" + (createdBefore==null? "" : System.Uri.EscapeDataString(createdBefore));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2611,13 +2533,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ApiCoreResponsesEntitiesResponse_ApiCoreResponsesEntityUri_SystemInt64_>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ApiCoreResponsesEntitiesResponse_ApiCoreResponsesEntityUri_SystemInt64_>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2630,10 +2551,8 @@ namespace MyNS
 		public async Task<ApiCoreResponsesEntityUri_SystemInt64_> ConversionsPutByConversionIdAsync(long conversionId, ApiCoreRequestsPatchBodyBatch requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "conversions/"+conversionId+"/datapoints/batch/patch";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -2644,13 +2563,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ApiCoreResponsesEntityUri_SystemInt64_>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ApiCoreResponsesEntityUri_SystemInt64_>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2668,8 +2586,7 @@ namespace MyNS
 		public async Task<ApiCoreResponsesCountResponce> Conversions_GetDatapointsCountAsync(long conversionId, string type, string status, string tags, string textSearch, string createdAfter, string createdBefore, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "conversions/"+conversionId+"/datapoints/count?type=" + (type==null? "" : System.Uri.EscapeDataString(type))+"&status=" + (status==null? "" : System.Uri.EscapeDataString(status))+"&tags=" + (tags==null? "" : System.Uri.EscapeDataString(tags))+"&textSearch=" + (textSearch==null? "" : System.Uri.EscapeDataString(textSearch))+"&createdAfter=" + (createdAfter==null? "" : System.Uri.EscapeDataString(createdAfter))+"&createdBefore=" + (createdBefore==null? "" : System.Uri.EscapeDataString(createdBefore));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2679,13 +2596,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ApiCoreResponsesCountResponce>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ApiCoreResponsesCountResponce>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2698,10 +2614,8 @@ namespace MyNS
 		public async Task<ApiCoreResponsesEntityUri_SystemInt64_> Conversions_PatchAsync(long conversionId, ApiCoreRequestsConversionPatchBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "conversions/"+conversionId+"/datapoints/patch";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -2712,13 +2626,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ApiCoreResponsesEntityUri_SystemInt64_>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ApiCoreResponsesEntityUri_SystemInt64_>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2739,8 +2652,7 @@ namespace MyNS
 		public async Task<ApiCoreDtoClickStreamHitListPage> Conversions_GetHitsAsync(long conversionId, Conversions_GetHitsTimeframe timeframe, int limit, string offset, string fromDay, string toDay, Conversions_GetHitsFilter filter, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "conversions/"+conversionId+"/hits?timeframe=" + timeframe+"&limit="+limit+"&offset=" + (offset==null? "" : System.Uri.EscapeDataString(offset))+"&fromDay=" + (fromDay==null? "" : System.Uri.EscapeDataString(fromDay))+"&toDay=" + (toDay==null? "" : System.Uri.EscapeDataString(toDay))+"&filter=" + filter;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2750,13 +2662,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ApiCoreDtoClickStreamHitListPage>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ApiCoreDtoClickStreamHitListPage>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2769,10 +2680,8 @@ namespace MyNS
 		public async Task<ApiCoreResponsesEntityUri_SystemInt64_> Conversions_PatchNotesAsync(long conversionId, ApiCoreRequestsGenericTextPatch requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "conversions/"+conversionId+"/notes";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -2783,13 +2692,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ApiCoreResponsesEntityUri_SystemInt64_>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ApiCoreResponsesEntityUri_SystemInt64_>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2816,8 +2724,7 @@ namespace MyNS
 		public async Task<ApiCoreResponsesEntitiesResponse_ApiCoreResponsesEntityUri_SystemInt64_> DataPoints_GetAsync(int offset, int limit, Aggregated_GetDatapointsSummaryType type, Aggregated_GetDatapointsSummaryStatus status, string tags, string textSearch, bool onlyFavorites, string sortBy, Account_GetGuestsSortDirection sortDirection, string createdAfter, string createdBefore, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "datapoints?offset="+offset+"&limit="+limit+"&type=" + type+"&status=" + status+"&tags=" + (tags==null? "" : System.Uri.EscapeDataString(tags))+"&textSearch=" + (textSearch==null? "" : System.Uri.EscapeDataString(textSearch))+"&onlyFavorites="+onlyFavorites+"&sortBy=" + (sortBy==null? "" : System.Uri.EscapeDataString(sortBy))+"&sortDirection=" + sortDirection+"&createdAfter=" + (createdAfter==null? "" : System.Uri.EscapeDataString(createdAfter))+"&createdBefore=" + (createdBefore==null? "" : System.Uri.EscapeDataString(createdBefore));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2827,13 +2734,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ApiCoreResponsesEntitiesResponse_ApiCoreResponsesEntityUri_SystemInt64_>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ApiCoreResponsesEntitiesResponse_ApiCoreResponsesEntityUri_SystemInt64_>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2845,10 +2751,8 @@ namespace MyNS
 		public async Task<ApiCoreResponsesEntityUri_SystemInt64_> DataPoints_PutAsync(ApiCoreDtoDatapointsDatapoint requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "datapoints";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -2859,13 +2763,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ApiCoreResponsesEntityUri_SystemInt64_>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ApiCoreResponsesEntityUri_SystemInt64_>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2884,8 +2787,7 @@ namespace MyNS
 		public async Task<ApiCoreDtoAggregatedAggregatedResult> DataPoints_GetStatisticsAggregatedSingleAsync(Aggregated_GetStatisticsSingleTimeFrame timeFrame, Aggregated_GetDatapointsSummaryType type, string fromDay, string toDay, bool hourly, Aggregated_GetDatapointsSummaryStatus status, string tag, bool favourite, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "datapoints/aggregated?timeFrame=" + timeFrame+"&type=" + type+"&fromDay=" + (fromDay==null? "" : System.Uri.EscapeDataString(fromDay))+"&toDay=" + (toDay==null? "" : System.Uri.EscapeDataString(toDay))+"&hourly="+hourly+"&status=" + status+"&tag=" + (tag==null? "" : System.Uri.EscapeDataString(tag))+"&favourite="+favourite;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2895,13 +2797,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ApiCoreDtoAggregatedAggregatedResult>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ApiCoreDtoAggregatedAggregatedResult>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2920,8 +2821,7 @@ namespace MyNS
 		public async Task<ApiCoreResponsesEntitiesResponse_ApiCoreDtoAggregatedAggregatedResult_> DataPoints_GetStatisticsAllListAsync(Aggregated_GetDatapointsSummaryType type, Aggregated_GetStatisticsSingleTimeFrame timeFrame, string fromDay, string toDay, Aggregated_GetDatapointsSummaryStatus status, string tag, bool favourite, Aggregated_GetStatisticsListGroupBy groupBy, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "datapoints/aggregated/list?type=" + type+"&timeFrame=" + timeFrame+"&fromDay=" + (fromDay==null? "" : System.Uri.EscapeDataString(fromDay))+"&toDay=" + (toDay==null? "" : System.Uri.EscapeDataString(toDay))+"&status=" + status+"&tag=" + (tag==null? "" : System.Uri.EscapeDataString(tag))+"&favourite="+favourite+"&groupBy=" + groupBy;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2931,13 +2831,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ApiCoreResponsesEntitiesResponse_ApiCoreDtoAggregatedAggregatedResult_>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ApiCoreResponsesEntitiesResponse_ApiCoreDtoAggregatedAggregatedResult_>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2948,8 +2847,7 @@ namespace MyNS
 		public async Task<ApiCoreResponsesModifyBatchItemResponce_ApiCoreDtoDatapointsDatapoint_SystemInt64_> DataPoints_BatchDeleteAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "datapoints/batch";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2959,13 +2857,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ApiCoreResponsesModifyBatchItemResponce_ApiCoreDtoDatapointsDatapoint_SystemInt64_>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ApiCoreResponsesModifyBatchItemResponce_ApiCoreDtoDatapointsDatapoint_SystemInt64_>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2977,10 +2874,8 @@ namespace MyNS
 		public async Task<ApiCoreResponsesModifyBatchItemResponce_ApiCoreDtoDatapointsDatapoint_SystemInt64_> DataPoints_BatchPostAsync(ApiCoreRequestsDatapointsBatch requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "datapoints/batch";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -2991,13 +2886,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ApiCoreResponsesModifyBatchItemResponce_ApiCoreDtoDatapointsDatapoint_SystemInt64_>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ApiCoreResponsesModifyBatchItemResponce_ApiCoreDtoDatapointsDatapoint_SystemInt64_>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3009,10 +2903,8 @@ namespace MyNS
 		public async Task<ApiCoreResponsesModifyBatchItemResponce_ApiCoreDtoDatapointsDatapoint_SystemInt64_> DataPoints_BatchPutAsync(ApiCoreRequestsDatapointsBatch requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "datapoints/batch";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -3023,13 +2915,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ApiCoreResponsesModifyBatchItemResponce_ApiCoreDtoDatapointsDatapoint_SystemInt64_>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ApiCoreResponsesModifyBatchItemResponce_ApiCoreDtoDatapointsDatapoint_SystemInt64_>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3047,8 +2938,7 @@ namespace MyNS
 		public async Task<ApiCoreResponsesCountResponce> DataPoints_CountAsync(Aggregated_GetDatapointsSummaryType type, Aggregated_GetDatapointsSummaryStatus status, string tags, string textSearch, bool onlyFavorites, string createdAfter, string createdBefore, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "datapoints/count?type=" + type+"&status=" + status+"&tags=" + (tags==null? "" : System.Uri.EscapeDataString(tags))+"&textSearch=" + (textSearch==null? "" : System.Uri.EscapeDataString(textSearch))+"&onlyFavorites="+onlyFavorites+"&createdAfter=" + (createdAfter==null? "" : System.Uri.EscapeDataString(createdAfter))+"&createdBefore=" + (createdBefore==null? "" : System.Uri.EscapeDataString(createdBefore));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3058,13 +2948,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ApiCoreResponsesCountResponce>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ApiCoreResponsesCountResponce>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3076,8 +2965,7 @@ namespace MyNS
 		public async Task<ApiCoreResponsesEntityUri_SystemInt64_> DataPoints_DeleteAsync(long id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "datapoints/"+id;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3087,13 +2975,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ApiCoreResponsesEntityUri_SystemInt64_>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ApiCoreResponsesEntityUri_SystemInt64_>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3105,8 +2992,7 @@ namespace MyNS
 		public async Task<ApiCoreDtoDatapointsDatapoint> DataPointsGetByIdAsync(long id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "datapoints/"+id;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3116,13 +3002,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ApiCoreDtoDatapointsDatapoint>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ApiCoreDtoDatapointsDatapoint>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3135,10 +3020,8 @@ namespace MyNS
 		public async Task<ApiCoreResponsesEntityUri_SystemInt64_> DataPoints_PostAsync(long id, ApiCoreDtoDatapointsDatapoint requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "datapoints/"+id;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -3149,13 +3032,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ApiCoreResponsesEntityUri_SystemInt64_>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ApiCoreResponsesEntityUri_SystemInt64_>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3171,8 +3053,7 @@ namespace MyNS
 		public async Task<ApiCoreDtoAggregatedAggregatedResult> DataPoints_GetStatisticsSingleAsync(long id, Aggregated_GetStatisticsSingleTimeFrame timeFrame, string fromDay, string toDay, bool hourly, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "datapoints/"+id+"/aggregated?timeFrame=" + timeFrame+"&fromDay=" + (fromDay==null? "" : System.Uri.EscapeDataString(fromDay))+"&toDay=" + (toDay==null? "" : System.Uri.EscapeDataString(toDay))+"&hourly="+hourly;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3182,13 +3063,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ApiCoreDtoAggregatedAggregatedResult>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ApiCoreDtoAggregatedAggregatedResult>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3204,8 +3084,7 @@ namespace MyNS
 		public async Task<ApiCoreResponsesEntitiesResponse_ApiCoreDtoAggregatedAggregatedResult_> DataPoints_GetStatisticsListAsync(long id, Aggregated_GetStatisticsSingleTimeFrame timeFrame, string fromDay, string toDay, Aggregated_GetStatisticsListGroupBy groupBy, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "datapoints/"+id+"/aggregated/list?timeFrame=" + timeFrame+"&fromDay=" + (fromDay==null? "" : System.Uri.EscapeDataString(fromDay))+"&toDay=" + (toDay==null? "" : System.Uri.EscapeDataString(toDay))+"&groupBy=" + groupBy;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3215,13 +3094,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ApiCoreResponsesEntitiesResponse_ApiCoreDtoAggregatedAggregatedResult_>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ApiCoreResponsesEntitiesResponse_ApiCoreDtoAggregatedAggregatedResult_>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3233,19 +3111,17 @@ namespace MyNS
 		public async Task<ApiCoreResponsesEntityUri_SystemInt64_> DataPoints_PatchFavouriteAsync(long id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "datapoints/"+id+"/favourite";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ApiCoreResponsesEntityUri_SystemInt64_>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ApiCoreResponsesEntityUri_SystemInt64_>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3266,8 +3142,7 @@ namespace MyNS
 		public async Task<ApiCoreDtoClickStreamHitListPage> DataPoints_GetHitsAsync(long id, Conversions_GetHitsTimeframe timeframe, int limit, string offset, string fromDay, string toDay, Conversions_GetHitsFilter filter, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "datapoints/"+id+"/hits?timeframe=" + timeframe+"&limit="+limit+"&offset=" + (offset==null? "" : System.Uri.EscapeDataString(offset))+"&fromDay=" + (fromDay==null? "" : System.Uri.EscapeDataString(fromDay))+"&toDay=" + (toDay==null? "" : System.Uri.EscapeDataString(toDay))+"&filter=" + filter;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3277,13 +3152,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ApiCoreDtoClickStreamHitListPage>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ApiCoreDtoClickStreamHitListPage>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3296,10 +3170,8 @@ namespace MyNS
 		public async Task<ApiCoreResponsesEntityUri_SystemInt64_> DataPoints_PatchNotesAsync(long id, ApiCoreRequestsGenericTextPatch requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "datapoints/"+id+"/notes";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -3310,13 +3182,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ApiCoreResponsesEntityUri_SystemInt64_>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ApiCoreResponsesEntityUri_SystemInt64_>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3336,8 +3207,7 @@ namespace MyNS
 		public async Task<ApiCoreResponsesEntitiesResponse_ApiCoreResponsesEntityUri_SystemInt64_> Domains_GetAsync(int offset, int limit, Domains_GetType type, string name, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "domains?offset="+offset+"&limit="+limit+"&type=" + type+"&name=" + (name==null? "" : System.Uri.EscapeDataString(name));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3347,13 +3217,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ApiCoreResponsesEntitiesResponse_ApiCoreResponsesEntityUri_SystemInt64_>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ApiCoreResponsesEntitiesResponse_ApiCoreResponsesEntityUri_SystemInt64_>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3365,10 +3234,8 @@ namespace MyNS
 		public async Task<ApiCoreResponsesEntityUri_SystemInt64_> Domains_PutAsync(ApiCoreDtoDomainsDomain requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "domains";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -3379,13 +3246,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ApiCoreResponsesEntityUri_SystemInt64_>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ApiCoreResponsesEntityUri_SystemInt64_>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3398,8 +3264,7 @@ namespace MyNS
 		public async Task<ApiCoreResponsesCountResponce> Domains_CountAsync(Domains_GetType type, string name, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "domains/count?type=" + type+"&name=" + (name==null? "" : System.Uri.EscapeDataString(name));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3409,13 +3274,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ApiCoreResponsesCountResponce>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ApiCoreResponsesCountResponce>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3427,8 +3291,7 @@ namespace MyNS
 		public async Task<ApiCoreResponsesEntityUri_SystemInt64_> Domains_DeleteAsync(long id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "domains/"+id;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3438,13 +3301,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ApiCoreResponsesEntityUri_SystemInt64_>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ApiCoreResponsesEntityUri_SystemInt64_>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3456,8 +3318,7 @@ namespace MyNS
 		public async Task<ApiCoreDtoDomainsDomain> DomainsGetByIdAsync(long id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "domains/"+id;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3467,13 +3328,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ApiCoreDtoDomainsDomain>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ApiCoreDtoDomainsDomain>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3486,10 +3346,8 @@ namespace MyNS
 		public async Task<ApiCoreResponsesEntityUri_SystemInt64_> Domains_UpdateAsync(long id, ApiCoreDtoDomainsDomain requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "domains/"+id;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -3500,13 +3358,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ApiCoreResponsesEntityUri_SystemInt64_>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ApiCoreResponsesEntityUri_SystemInt64_>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3530,8 +3387,7 @@ namespace MyNS
 		public async Task<ApiCoreResponsesEntitiesResponse_ApiCoreResponsesEntityUri_SystemInt64_> Groups_GetAsync(int offset, int limit, Aggregated_GetConversionsSummaryStatus status, string tags, string textSearch, string createdAfter, string createdBefore, bool write, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "groups?offset="+offset+"&limit="+limit+"&status=" + status+"&tags=" + (tags==null? "" : System.Uri.EscapeDataString(tags))+"&textSearch=" + (textSearch==null? "" : System.Uri.EscapeDataString(textSearch))+"&createdAfter=" + (createdAfter==null? "" : System.Uri.EscapeDataString(createdAfter))+"&createdBefore=" + (createdBefore==null? "" : System.Uri.EscapeDataString(createdBefore))+"&write="+write;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3541,13 +3397,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ApiCoreResponsesEntitiesResponse_ApiCoreResponsesEntityUri_SystemInt64_>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ApiCoreResponsesEntitiesResponse_ApiCoreResponsesEntityUri_SystemInt64_>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3559,10 +3414,8 @@ namespace MyNS
 		public async Task<ApiCoreResponsesEntityUri_SystemInt64_> Groups_PutAsync(ApiCoreDtoGroupsGroup requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "groups";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -3573,13 +3426,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ApiCoreResponsesEntityUri_SystemInt64_>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ApiCoreResponsesEntityUri_SystemInt64_>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3597,8 +3449,7 @@ namespace MyNS
 		public async Task<ApiCoreDtoAggregatedAggregatedResult> Groups_GetStatisticsAggregatedSingleAsync(Aggregated_GetStatisticsSingleTimeFrame timeFrame, string fromDay, string toDay, bool hourly, Aggregated_GetConversionsSummaryStatus status, string tag, bool favourite, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "groups/aggregated?timeFrame=" + timeFrame+"&fromDay=" + (fromDay==null? "" : System.Uri.EscapeDataString(fromDay))+"&toDay=" + (toDay==null? "" : System.Uri.EscapeDataString(toDay))+"&hourly="+hourly+"&status=" + status+"&tag=" + (tag==null? "" : System.Uri.EscapeDataString(tag))+"&favourite="+favourite;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3608,13 +3459,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ApiCoreDtoAggregatedAggregatedResult>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ApiCoreDtoAggregatedAggregatedResult>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3632,8 +3482,7 @@ namespace MyNS
 		public async Task<ApiCoreResponsesEntitiesResponse_ApiCoreDtoAggregatedAggregatedResult_> Groups_GetStatisticsAllListAsync(Aggregated_GetStatisticsSingleTimeFrame timeFrame, string fromDay, string toDay, string status, string tag, bool favourite, Aggregated_GetConversionsSummaryStatus groupBy, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "groups/aggregated/list?timeFrame=" + timeFrame+"&fromDay=" + (fromDay==null? "" : System.Uri.EscapeDataString(fromDay))+"&toDay=" + (toDay==null? "" : System.Uri.EscapeDataString(toDay))+"&status=" + (status==null? "" : System.Uri.EscapeDataString(status))+"&tag=" + (tag==null? "" : System.Uri.EscapeDataString(tag))+"&favourite="+favourite+"&groupBy=" + groupBy;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3643,13 +3492,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ApiCoreResponsesEntitiesResponse_ApiCoreDtoAggregatedAggregatedResult_>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ApiCoreResponsesEntitiesResponse_ApiCoreDtoAggregatedAggregatedResult_>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3666,8 +3514,7 @@ namespace MyNS
 		public async Task<ApiCoreResponsesCountResponce> Groups_CountAsync(Aggregated_GetConversionsSummaryStatus status, string tags, string textSearch, string createdAfter, string createdBefore, bool write, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "groups/count?status=" + status+"&tags=" + (tags==null? "" : System.Uri.EscapeDataString(tags))+"&textSearch=" + (textSearch==null? "" : System.Uri.EscapeDataString(textSearch))+"&createdAfter=" + (createdAfter==null? "" : System.Uri.EscapeDataString(createdAfter))+"&createdBefore=" + (createdBefore==null? "" : System.Uri.EscapeDataString(createdBefore))+"&write="+write;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3677,13 +3524,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ApiCoreResponsesCountResponce>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ApiCoreResponsesCountResponce>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3695,8 +3541,7 @@ namespace MyNS
 		public async Task<ApiCoreResponsesEntityUri_SystemInt64_> Groups_DeleteAsync(long id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "groups/"+id;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3706,13 +3551,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ApiCoreResponsesEntityUri_SystemInt64_>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ApiCoreResponsesEntityUri_SystemInt64_>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3724,8 +3568,7 @@ namespace MyNS
 		public async Task<ApiCoreDtoGroupsGroup> GroupsGetByIdAsync(long id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "groups/"+id;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3735,13 +3578,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ApiCoreDtoGroupsGroup>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ApiCoreDtoGroupsGroup>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3754,10 +3596,8 @@ namespace MyNS
 		public async Task<ApiCoreResponsesEntityUri_SystemInt64_> Groups_PostAsync(long id, ApiCoreDtoGroupsGroup requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "groups/"+id;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -3768,13 +3608,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ApiCoreResponsesEntityUri_SystemInt64_>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ApiCoreResponsesEntityUri_SystemInt64_>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3790,8 +3629,7 @@ namespace MyNS
 		public async Task<ApiCoreDtoAggregatedAggregatedResult> Groups_GetStatisticsSingleAsync(long id, Aggregated_GetStatisticsSingleTimeFrame timeFrame, string fromDay, string toDay, bool hourly, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "groups/"+id+"/aggregated?timeFrame=" + timeFrame+"&fromDay=" + (fromDay==null? "" : System.Uri.EscapeDataString(fromDay))+"&toDay=" + (toDay==null? "" : System.Uri.EscapeDataString(toDay))+"&hourly="+hourly;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3801,13 +3639,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ApiCoreDtoAggregatedAggregatedResult>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ApiCoreDtoAggregatedAggregatedResult>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3823,8 +3660,7 @@ namespace MyNS
 		public async Task<ApiCoreResponsesEntitiesResponse_ApiCoreDtoAggregatedAggregatedResult_> Groups_GetStatisticsListAsync(long id, Aggregated_GetStatisticsSingleTimeFrame timeFrame, string fromDay, string toDay, Aggregated_GetStatisticsListGroupBy groupBy, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "groups/"+id+"/aggregated/list?timeFrame=" + timeFrame+"&fromDay=" + (fromDay==null? "" : System.Uri.EscapeDataString(fromDay))+"&toDay=" + (toDay==null? "" : System.Uri.EscapeDataString(toDay))+"&groupBy=" + groupBy;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3834,13 +3670,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ApiCoreResponsesEntitiesResponse_ApiCoreDtoAggregatedAggregatedResult_>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ApiCoreResponsesEntitiesResponse_ApiCoreDtoAggregatedAggregatedResult_>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3869,8 +3704,7 @@ namespace MyNS
 		public async Task<ApiCoreDtoAggregatedAggregatedSummaryResult> Groups_GetDatapointsSummaryAsync(long id, Aggregated_GetStatisticsSingleTimeFrame timeFrame, Aggregated_GetDatapointsSummaryType type, string fromDay, string toDay, Aggregated_GetConversionsSummaryStatus status, string tag, bool favourite, string sortBy, Account_GetGuestsSortDirection sortDirection, int offset, int limit, string textSearch, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "groups/"+id+"/aggregated/summary?timeFrame=" + timeFrame+"&type=" + type+"&fromDay=" + (fromDay==null? "" : System.Uri.EscapeDataString(fromDay))+"&toDay=" + (toDay==null? "" : System.Uri.EscapeDataString(toDay))+"&status=" + status+"&tag=" + (tag==null? "" : System.Uri.EscapeDataString(tag))+"&favourite="+favourite+"&sortBy=" + (sortBy==null? "" : System.Uri.EscapeDataString(sortBy))+"&sortDirection=" + sortDirection+"&offset="+offset+"&limit="+limit+"&textSearch=" + (textSearch==null? "" : System.Uri.EscapeDataString(textSearch));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3880,13 +3714,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ApiCoreDtoAggregatedAggregatedSummaryResult>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ApiCoreDtoAggregatedAggregatedSummaryResult>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3914,8 +3747,7 @@ namespace MyNS
 		public async Task<ApiCoreResponsesEntitiesResponse_ApiCoreResponsesEntityUri_SystemInt64_> Groups_GetDatapointsAsync(long id, int offset, int limit, Aggregated_GetDatapointsSummaryType type, Aggregated_GetDatapointsSummaryStatus status, string tags, string textSearch, bool onlyFavorites, string sortBy, Account_GetGuestsSortDirection sortDirection, string createdAfter, string createdBefore, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "groups/"+id+"/datapoints?offset="+offset+"&limit="+limit+"&type=" + type+"&status=" + status+"&tags=" + (tags==null? "" : System.Uri.EscapeDataString(tags))+"&textSearch=" + (textSearch==null? "" : System.Uri.EscapeDataString(textSearch))+"&onlyFavorites="+onlyFavorites+"&sortBy=" + (sortBy==null? "" : System.Uri.EscapeDataString(sortBy))+"&sortDirection=" + sortDirection+"&createdAfter=" + (createdAfter==null? "" : System.Uri.EscapeDataString(createdAfter))+"&createdBefore=" + (createdBefore==null? "" : System.Uri.EscapeDataString(createdBefore));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3925,13 +3757,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ApiCoreResponsesEntitiesResponse_ApiCoreResponsesEntityUri_SystemInt64_>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ApiCoreResponsesEntitiesResponse_ApiCoreResponsesEntityUri_SystemInt64_>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3944,10 +3775,8 @@ namespace MyNS
 		public async Task<ApiCoreResponsesEntityUri_SystemInt64_> Groups_PutDatapointAsync(long id, ApiCoreDtoDatapointsDatapoint requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "groups/"+id+"/datapoints";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -3958,13 +3787,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ApiCoreResponsesEntityUri_SystemInt64_>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ApiCoreResponsesEntityUri_SystemInt64_>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3983,8 +3811,7 @@ namespace MyNS
 		public async Task<ApiCoreResponsesCountResponce> Groups_GetDatapointsCountAsync(long id, Aggregated_GetDatapointsSummaryType type, Aggregated_GetDatapointsSummaryStatus status, string tags, string textSearch, bool onlyFavorites, string createdAfter, string createdBefore, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "groups/"+id+"/datapoints/count?type=" + type+"&status=" + status+"&tags=" + (tags==null? "" : System.Uri.EscapeDataString(tags))+"&textSearch=" + (textSearch==null? "" : System.Uri.EscapeDataString(textSearch))+"&onlyFavorites="+onlyFavorites+"&createdAfter=" + (createdAfter==null? "" : System.Uri.EscapeDataString(createdAfter))+"&createdBefore=" + (createdBefore==null? "" : System.Uri.EscapeDataString(createdBefore));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3994,13 +3821,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ApiCoreResponsesCountResponce>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ApiCoreResponsesCountResponce>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4012,19 +3838,17 @@ namespace MyNS
 		public async Task<ApiCoreResponsesEntityUri_SystemInt64_> Groups_PatchFavouriteAsync(long id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "groups/"+id+"/favourite";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ApiCoreResponsesEntityUri_SystemInt64_>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ApiCoreResponsesEntityUri_SystemInt64_>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4045,8 +3869,7 @@ namespace MyNS
 		public async Task<ApiCoreDtoClickStreamHitListPage> Groups_GetHitsAsync(long id, Conversions_GetHitsTimeframe timeframe, int limit, string offset, string fromDay, string toDay, Conversions_GetHitsFilter filter, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "groups/"+id+"/hits?timeframe=" + timeframe+"&limit="+limit+"&offset=" + (offset==null? "" : System.Uri.EscapeDataString(offset))+"&fromDay=" + (fromDay==null? "" : System.Uri.EscapeDataString(fromDay))+"&toDay=" + (toDay==null? "" : System.Uri.EscapeDataString(toDay))+"&filter=" + filter;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4056,13 +3879,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ApiCoreDtoClickStreamHitListPage>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ApiCoreDtoClickStreamHitListPage>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4075,10 +3897,8 @@ namespace MyNS
 		public async Task<ApiCoreResponsesEntityUri_SystemInt64_> Groups_PatchNotesAsync(long id, ApiCoreRequestsGenericTextPatch requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "groups/"+id+"/notes";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -4089,13 +3909,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ApiCoreResponsesEntityUri_SystemInt64_>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ApiCoreResponsesEntityUri_SystemInt64_>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4112,8 +3931,7 @@ namespace MyNS
 		public async Task<ApiCoreDtoClickStreamHitListPage> Hits_GetHitsAsync(Conversions_GetHitsTimeframe timeframe, int limit, string offset, string fromDay, string toDay, Conversions_GetHitsFilter filter, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "hits?timeframe=" + timeframe+"&limit="+limit+"&offset=" + (offset==null? "" : System.Uri.EscapeDataString(offset))+"&fromDay=" + (fromDay==null? "" : System.Uri.EscapeDataString(fromDay))+"&toDay=" + (toDay==null? "" : System.Uri.EscapeDataString(toDay))+"&filter=" + filter;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4123,13 +3941,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ApiCoreDtoClickStreamHitListPage>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ApiCoreDtoClickStreamHitListPage>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4140,8 +3957,7 @@ namespace MyNS
 		public async Task<ApiCoreDtoAccountingUser> Me_GetMeAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "me";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4151,13 +3967,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ApiCoreDtoAccountingUser>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ApiCoreDtoAccountingUser>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4168,8 +3983,7 @@ namespace MyNS
 		public async Task<ApiCoreDtoAccountingPlan> Me_GetMePlanAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "me/plan";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4179,13 +3993,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ApiCoreDtoAccountingPlan>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ApiCoreDtoAccountingPlan>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4203,8 +4016,7 @@ namespace MyNS
 		public async Task<ApiCoreResponsesEntitiesResponse_ApiCoreResponsesEntityUri_SystemInt64_> Retargeting_GetAsync(int offset, int limit, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "retargeting?offset="+offset+"&limit="+limit;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4214,13 +4026,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ApiCoreResponsesEntitiesResponse_ApiCoreResponsesEntityUri_SystemInt64_>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ApiCoreResponsesEntitiesResponse_ApiCoreResponsesEntityUri_SystemInt64_>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4232,10 +4043,8 @@ namespace MyNS
 		public async Task<ApiCoreResponsesEntityUri_SystemInt64_> Retargeting_PutAsync(ApiCoreDtoRetargetingRetargetingScript requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "retargeting";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -4246,13 +4055,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ApiCoreResponsesEntityUri_SystemInt64_>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ApiCoreResponsesEntityUri_SystemInt64_>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4263,8 +4071,7 @@ namespace MyNS
 		public async Task<ApiCoreResponsesCountResponce> Retargeting_CountAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "retargeting/count";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4274,13 +4081,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ApiCoreResponsesCountResponce>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ApiCoreResponsesCountResponce>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4292,8 +4098,7 @@ namespace MyNS
 		public async Task<ApiCoreResponsesEntityUri_SystemInt64_> Retargeting_DeleteAsync(long id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "retargeting/"+id;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4303,13 +4108,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ApiCoreResponsesEntityUri_SystemInt64_>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ApiCoreResponsesEntityUri_SystemInt64_>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4321,8 +4125,7 @@ namespace MyNS
 		public async Task<ApiCoreDtoRetargetingRetargetingScript> RetargetingGetByIdAsync(long id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "retargeting/"+id;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4332,13 +4135,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ApiCoreDtoRetargetingRetargetingScript>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ApiCoreDtoRetargetingRetargetingScript>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4351,10 +4153,8 @@ namespace MyNS
 		public async Task<ApiCoreResponsesEntityUri_SystemInt64_> Retargeting_PostAsync(long id, ApiCoreDtoRetargetingRetargetingScript requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "retargeting/"+id;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -4365,13 +4165,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ApiCoreResponsesEntityUri_SystemInt64_>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ApiCoreResponsesEntityUri_SystemInt64_>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4398,8 +4197,7 @@ namespace MyNS
 		public async Task<ApiCoreResponsesEntitiesResponse_ApiCoreResponsesEntityUri_SystemInt64_> Retargeting_GetDatapointsAsync(long id, int offset, int limit, Aggregated_GetDatapointsSummaryStatus status, string tags, string textSearch, bool onlyFavorites, string sortBy, Account_GetGuestsSortDirection sortDirection, string createdAfter, string createdBefore, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "retargeting/"+id+"/datapoints?offset="+offset+"&limit="+limit+"&status=" + status+"&tags=" + (tags==null? "" : System.Uri.EscapeDataString(tags))+"&textSearch=" + (textSearch==null? "" : System.Uri.EscapeDataString(textSearch))+"&onlyFavorites="+onlyFavorites+"&sortBy=" + (sortBy==null? "" : System.Uri.EscapeDataString(sortBy))+"&sortDirection=" + sortDirection+"&createdAfter=" + (createdAfter==null? "" : System.Uri.EscapeDataString(createdAfter))+"&createdBefore=" + (createdBefore==null? "" : System.Uri.EscapeDataString(createdBefore));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4409,13 +4207,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ApiCoreResponsesEntitiesResponse_ApiCoreResponsesEntityUri_SystemInt64_>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ApiCoreResponsesEntitiesResponse_ApiCoreResponsesEntityUri_SystemInt64_>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4433,8 +4230,7 @@ namespace MyNS
 		public async Task<ApiCoreResponsesCountResponce> Retargeting_GetDatapointsCountAsync(long id, Aggregated_GetDatapointsSummaryStatus status, string tags, string textSearch, bool onlyFavorites, string createdAfter, string createdBefore, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "retargeting/"+id+"/datapoints/count?status=" + status+"&tags=" + (tags==null? "" : System.Uri.EscapeDataString(tags))+"&textSearch=" + (textSearch==null? "" : System.Uri.EscapeDataString(textSearch))+"&onlyFavorites="+onlyFavorites+"&createdAfter=" + (createdAfter==null? "" : System.Uri.EscapeDataString(createdAfter))+"&createdBefore=" + (createdBefore==null? "" : System.Uri.EscapeDataString(createdBefore));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4444,13 +4240,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ApiCoreResponsesCountResponce>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ApiCoreResponsesCountResponce>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4472,8 +4267,7 @@ namespace MyNS
 		public async Task<ApiCoreResponsesEntitiesResponse_ApiCoreResponsesEntityUri_SystemInt64_> Tags_GetAsync(int offset, int limit, string name, string datapoints, string groups, Tags_GetType type, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "tags?offset="+offset+"&limit="+limit+"&name=" + (name==null? "" : System.Uri.EscapeDataString(name))+"&datapoints=" + (datapoints==null? "" : System.Uri.EscapeDataString(datapoints))+"&groups=" + (groups==null? "" : System.Uri.EscapeDataString(groups))+"&type=" + type;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4483,13 +4277,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ApiCoreResponsesEntitiesResponse_ApiCoreResponsesEntityUri_SystemInt64_>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ApiCoreResponsesEntitiesResponse_ApiCoreResponsesEntityUri_SystemInt64_>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4501,10 +4294,8 @@ namespace MyNS
 		public async Task<ApiCoreResponsesEntityUri_SystemInt64_> Tags_PutAsync(ApiCoreDtoTagsTag requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "tags";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -4515,13 +4306,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ApiCoreResponsesEntityUri_SystemInt64_>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ApiCoreResponsesEntityUri_SystemInt64_>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4536,8 +4326,7 @@ namespace MyNS
 		public async Task<SystemObject> Tags_CountAsync(string name, string datapoints, string groups, Tags_GetType type, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "tags/count?name=" + (name==null? "" : System.Uri.EscapeDataString(name))+"&datapoints=" + (datapoints==null? "" : System.Uri.EscapeDataString(datapoints))+"&groups=" + (groups==null? "" : System.Uri.EscapeDataString(groups))+"&type=" + type;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4547,13 +4336,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<SystemObject>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<SystemObject>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4565,8 +4353,7 @@ namespace MyNS
 		public async Task<SystemObject> Tags_DeleteAsync(long tagId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "tags/"+tagId;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4576,13 +4363,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<SystemObject>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<SystemObject>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4594,8 +4380,7 @@ namespace MyNS
 		public async Task<ApiCoreDtoTagsTag> TagsGetByTagIdAsync(long tagId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "tags/"+tagId;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4605,13 +4390,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ApiCoreDtoTagsTag>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ApiCoreDtoTagsTag>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4623,8 +4407,7 @@ namespace MyNS
 		public async Task<ApiCoreResponsesEntityUri_SystemInt64_> Tags_DeleteRelatedDatapointsAsync(long tagId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "tags/"+tagId+"/datapoints";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4634,13 +4417,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ApiCoreResponsesEntityUri_SystemInt64_>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ApiCoreResponsesEntityUri_SystemInt64_>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4664,8 +4446,7 @@ namespace MyNS
 		public async Task<ApiCoreResponsesEntitiesResponse_ApiCoreResponsesEntityUri_SystemInt64_> Tags_GetDatapointsAsync(long tagId, int offset, int limit, Aggregated_GetDatapointsSummaryType type, Aggregated_GetDatapointsSummaryStatus status, string textSearch, string createdAfter, string createdBefore, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "tags/"+tagId+"/datapoints?offset="+offset+"&limit="+limit+"&type=" + type+"&status=" + status+"&textSearch=" + (textSearch==null? "" : System.Uri.EscapeDataString(textSearch))+"&createdAfter=" + (createdAfter==null? "" : System.Uri.EscapeDataString(createdAfter))+"&createdBefore=" + (createdBefore==null? "" : System.Uri.EscapeDataString(createdBefore));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4675,13 +4456,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ApiCoreResponsesEntitiesResponse_ApiCoreResponsesEntityUri_SystemInt64_>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ApiCoreResponsesEntitiesResponse_ApiCoreResponsesEntityUri_SystemInt64_>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4698,8 +4478,7 @@ namespace MyNS
 		public async Task<ApiCoreResponsesCountResponce> Tags_GetDatapointsCountAsync(long tagId, Aggregated_GetDatapointsSummaryType type, Aggregated_GetDatapointsSummaryStatus status, string textSearch, string createdAfter, string createdBefore, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "tags/"+tagId+"/datapoints/count?type=" + type+"&status=" + status+"&textSearch=" + (textSearch==null? "" : System.Uri.EscapeDataString(textSearch))+"&createdAfter=" + (createdAfter==null? "" : System.Uri.EscapeDataString(createdAfter))+"&createdBefore=" + (createdBefore==null? "" : System.Uri.EscapeDataString(createdBefore));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4709,13 +4488,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ApiCoreResponsesCountResponce>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ApiCoreResponsesCountResponce>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4728,10 +4506,8 @@ namespace MyNS
 		public async Task<ApiCoreResponsesEntityUri_SystemInt64_> Tags_PatchDataPointAsync(long tagId, ApiCoreRequestsPatchBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "tags/"+tagId+"/datapoints/patch";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -4742,13 +4518,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ApiCoreResponsesEntityUri_SystemInt64_>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ApiCoreResponsesEntityUri_SystemInt64_>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4760,8 +4535,7 @@ namespace MyNS
 		public async Task<ApiCoreResponsesEntityUri_SystemInt64_> Tags_DeleteRelatedGroupsAsync(long tagId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "tags/"+tagId+"/groups";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4771,13 +4545,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ApiCoreResponsesEntityUri_SystemInt64_>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ApiCoreResponsesEntityUri_SystemInt64_>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4800,8 +4573,7 @@ namespace MyNS
 		public async Task<ApiCoreResponsesEntitiesResponse_ApiCoreResponsesEntityUri_SystemInt64_> Tags_GetGroupsAsync(long tagId, int offset, int limit, Aggregated_GetConversionsSummaryStatus status, string textSearch, string createdAfter, string createdBefore, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "tags/"+tagId+"/groups?offset="+offset+"&limit="+limit+"&status=" + status+"&textSearch=" + (textSearch==null? "" : System.Uri.EscapeDataString(textSearch))+"&createdAfter=" + (createdAfter==null? "" : System.Uri.EscapeDataString(createdAfter))+"&createdBefore=" + (createdBefore==null? "" : System.Uri.EscapeDataString(createdBefore));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4811,13 +4583,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ApiCoreResponsesEntitiesResponse_ApiCoreResponsesEntityUri_SystemInt64_>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ApiCoreResponsesEntitiesResponse_ApiCoreResponsesEntityUri_SystemInt64_>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4833,8 +4604,7 @@ namespace MyNS
 		public async Task<ApiCoreResponsesCountResponce> Tags_GetGroupsCountAsync(long tagId, Aggregated_GetConversionsSummaryStatus status, string textSearch, string createdAfter, string createdBefore, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "tags/"+tagId+"/groups/count?status=" + status+"&textSearch=" + (textSearch==null? "" : System.Uri.EscapeDataString(textSearch))+"&createdAfter=" + (createdAfter==null? "" : System.Uri.EscapeDataString(createdAfter))+"&createdBefore=" + (createdBefore==null? "" : System.Uri.EscapeDataString(createdBefore));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4844,13 +4614,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ApiCoreResponsesCountResponce>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ApiCoreResponsesCountResponce>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4863,10 +4632,8 @@ namespace MyNS
 		public async Task<ApiCoreResponsesEntityUri_SystemInt64_> Tags_PatchGroupAsync(long tagId, ApiCoreRequestsPatchBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "tags/"+tagId+"/groups/patch";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -4877,13 +4644,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ApiCoreResponsesEntityUri_SystemInt64_>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ApiCoreResponsesEntityUri_SystemInt64_>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4896,10 +4662,8 @@ namespace MyNS
 		public async Task<ApiCoreResponsesEntityUri_SystemInt64_> Tags_PatchTagNameAsync(long tagId, ApiCoreRequestsGenericTextPatch requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "tags/"+tagId+"/name";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -4910,13 +4674,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ApiCoreResponsesEntityUri_SystemInt64_>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ApiCoreResponsesEntityUri_SystemInt64_>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

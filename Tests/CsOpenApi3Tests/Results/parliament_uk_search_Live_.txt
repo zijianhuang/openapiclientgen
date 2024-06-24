@@ -45,8 +45,7 @@ namespace MyNS
 		public async Task DescriptionGetAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "description";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -60,7 +59,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -72,8 +70,7 @@ namespace MyNS
 		public async Task QueryGetByQAndStartAndCountAndSubdomainsAndInUrlPrefixesAsync(string q, double start, double count, string subdomains, string inUrlPrefixes, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "query?q=" + (q==null? "" : System.Uri.EscapeDataString(q))+"&start="+start+"&count="+count+"&subdomains=" + (subdomains==null? "" : System.Uri.EscapeDataString(subdomains))+"&inUrlPrefixes=" + (inUrlPrefixes==null? "" : System.Uri.EscapeDataString(inUrlPrefixes));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -87,7 +84,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -100,8 +96,7 @@ namespace MyNS
 		public async Task QueryGetByExtensionAndQAndStartAndCountAndSubdomainsAndInUrlPrefixesAsync(QueryGetByExtensionAndQAndStartAndCountAndSubdomainsAndInUrlPrefixesExtension extension, string q, double start, double count, string subdomains, string inUrlPrefixes, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "query."+extension+"?q=" + (q==null? "" : System.Uri.EscapeDataString(q))+"&start="+start+"&count="+count+"&subdomains=" + (subdomains==null? "" : System.Uri.EscapeDataString(subdomains))+"&inUrlPrefixes=" + (inUrlPrefixes==null? "" : System.Uri.EscapeDataString(inUrlPrefixes));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -115,7 +110,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

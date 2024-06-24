@@ -2231,8 +2231,7 @@ namespace MyNS
 		public async Task GET_AddListenerCertificatesAsync(string ListenerArn, Certificate[] Certificates, GET_AddListenerCertificatesAction Action, GET_AddListenerCertificatesVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=AddListenerCertificates?ListenerArn=" + (ListenerArn==null? "" : System.Uri.EscapeDataString(ListenerArn))+"&"+string.Join("&", Certificates.Select(z => $"Certificates={z}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2246,7 +2245,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2262,8 +2260,7 @@ namespace MyNS
 		public async Task GET_AddTagsAsync(string[] ResourceArns, Tag[] Tags, GET_AddTagsAction Action, GET_AddTagsVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=AddTags?"+string.Join("&", ResourceArns.Select(z => $"ResourceArns={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", Tags.Select(z => $"Tags={z}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2277,7 +2274,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2302,8 +2298,7 @@ namespace MyNS
 		public async Task GET_CreateListenerAsync(string LoadBalancerArn, ProtocolEnum Protocol, int Port, string SslPolicy, Certificate[] Certificates, Action[] DefaultActions, string[] AlpnPolicy, Tag[] Tags, GET_CreateListenerAction Action, GET_CreateListenerVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=CreateListener?LoadBalancerArn=" + (LoadBalancerArn==null? "" : System.Uri.EscapeDataString(LoadBalancerArn))+"&Protocol=" + Protocol+"&Port="+Port+"&SslPolicy=" + (SslPolicy==null? "" : System.Uri.EscapeDataString(SslPolicy))+"&"+string.Join("&", Certificates.Select(z => $"Certificates={z}"))+"&"+string.Join("&", DefaultActions.Select(z => $"DefaultActions={z}"))+"&"+string.Join("&", AlpnPolicy.Select(z => $"AlpnPolicy={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", Tags.Select(z => $"Tags={z}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2317,7 +2312,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2342,8 +2336,7 @@ namespace MyNS
 		public async Task GET_CreateLoadBalancerAsync(string Name, string[] Subnets, SubnetMapping[] SubnetMappings, string[] SecurityGroups, GET_CreateLoadBalancerScheme Scheme, Tag[] Tags, LoadBalancerTypeEnum Type, IpAddressType IpAddressType, string CustomerOwnedIpv4Pool, GET_CreateLoadBalancerAction Action, GET_CreateLoadBalancerVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=CreateLoadBalancer?Name=" + (Name==null? "" : System.Uri.EscapeDataString(Name))+"&"+string.Join("&", Subnets.Select(z => $"Subnets={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", SubnetMappings.Select(z => $"SubnetMappings={z}"))+"&"+string.Join("&", SecurityGroups.Select(z => $"SecurityGroups={System.Uri.EscapeDataString(z.ToString())}"))+"&Scheme=" + Scheme+"&"+string.Join("&", Tags.Select(z => $"Tags={z}"))+"&Type=" + Type+"&IpAddressType=" + IpAddressType+"&CustomerOwnedIpv4Pool=" + (CustomerOwnedIpv4Pool==null? "" : System.Uri.EscapeDataString(CustomerOwnedIpv4Pool))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2357,7 +2350,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2379,8 +2371,7 @@ namespace MyNS
 		public async Task GET_CreateRuleAsync(string ListenerArn, RuleCondition[] Conditions, int Priority, Action[] Actions, Tag[] Tags, GET_CreateRuleAction Action, GET_CreateRuleVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=CreateRule?ListenerArn=" + (ListenerArn==null? "" : System.Uri.EscapeDataString(ListenerArn))+"&"+string.Join("&", Conditions.Select(z => $"Conditions={z}"))+"&Priority="+Priority+"&"+string.Join("&", Actions.Select(z => $"Actions={z}"))+"&"+string.Join("&", Tags.Select(z => $"Tags={z}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2394,7 +2385,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2463,8 +2453,7 @@ namespace MyNS
 					Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=CreateTargetGroup?Name=" + (Name==null? "" : System.Uri.EscapeDataString(Name))+"&Protocol=" + Protocol+"&ProtocolVersion=" + (ProtocolVersion==null? "" : System.Uri.EscapeDataString(ProtocolVersion))+"&Port="+Port+"&VpcId=" + (VpcId==null? "" : System.Uri.EscapeDataString(VpcId))+"&HealthCheckProtocol=" + HealthCheckProtocol+"&HealthCheckPort=" + (HealthCheckPort==null? "" : System.Uri.EscapeDataString(HealthCheckPort))+"&HealthCheckEnabled="+HealthCheckEnabled+"&HealthCheckPath=" + (HealthCheckPath==null? "" : System.Uri.EscapeDataString(HealthCheckPath))+"&HealthCheckIntervalSeconds="+HealthCheckIntervalSeconds+"&HealthCheckTimeoutSeconds="+HealthCheckTimeoutSeconds+"&HealthyThresholdCount="+HealthyThresholdCount+"&UnhealthyThresholdCount="+UnhealthyThresholdCount+"&Matcher=" + Matcher+"&TargetType=" + TargetType+"&"+string.Join("&", Tags.Select(z => $"Tags={z}"))+"&IpAddressType=" + IpAddressType+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2478,7 +2467,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2491,8 +2479,7 @@ namespace MyNS
 		public async Task GET_DeleteListenerAsync(string ListenerArn, GET_DeleteListenerAction Action, GET_DeleteListenerVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DeleteListener?ListenerArn=" + (ListenerArn==null? "" : System.Uri.EscapeDataString(ListenerArn))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2506,7 +2493,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2519,8 +2505,7 @@ namespace MyNS
 		public async Task GET_DeleteLoadBalancerAsync(string LoadBalancerArn, GET_DeleteLoadBalancerAction Action, GET_DeleteLoadBalancerVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DeleteLoadBalancer?LoadBalancerArn=" + (LoadBalancerArn==null? "" : System.Uri.EscapeDataString(LoadBalancerArn))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2534,7 +2519,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2547,8 +2531,7 @@ namespace MyNS
 		public async Task GET_DeleteRuleAsync(string RuleArn, GET_DeleteRuleAction Action, GET_DeleteRuleVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DeleteRule?RuleArn=" + (RuleArn==null? "" : System.Uri.EscapeDataString(RuleArn))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2562,7 +2545,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2575,8 +2557,7 @@ namespace MyNS
 		public async Task GET_DeleteTargetGroupAsync(string TargetGroupArn, GET_DeleteTargetGroupAction Action, GET_DeleteTargetGroupVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DeleteTargetGroup?TargetGroupArn=" + (TargetGroupArn==null? "" : System.Uri.EscapeDataString(TargetGroupArn))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2590,7 +2571,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2604,8 +2584,7 @@ namespace MyNS
 		public async Task GET_DeregisterTargetsAsync(string TargetGroupArn, TargetDescription[] Targets, GET_DeregisterTargetsAction Action, GET_DeregisterTargetsVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DeregisterTargets?TargetGroupArn=" + (TargetGroupArn==null? "" : System.Uri.EscapeDataString(TargetGroupArn))+"&"+string.Join("&", Targets.Select(z => $"Targets={z}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2619,7 +2598,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2636,8 +2614,7 @@ namespace MyNS
 		public async Task GET_DescribeAccountLimitsAsync(string Marker, int PageSize, GET_DescribeAccountLimitsAction Action, GET_DescribeAccountLimitsVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribeAccountLimits?Marker=" + (Marker==null? "" : System.Uri.EscapeDataString(Marker))+"&PageSize="+PageSize+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2651,7 +2628,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2669,8 +2645,7 @@ namespace MyNS
 		public async Task GET_DescribeListenerCertificatesAsync(string ListenerArn, string Marker, int PageSize, GET_DescribeListenerCertificatesAction Action, GET_DescribeListenerCertificatesVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribeListenerCertificates?ListenerArn=" + (ListenerArn==null? "" : System.Uri.EscapeDataString(ListenerArn))+"&Marker=" + (Marker==null? "" : System.Uri.EscapeDataString(Marker))+"&PageSize="+PageSize+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2684,7 +2659,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2703,8 +2677,7 @@ namespace MyNS
 		public async Task GET_DescribeListenersAsync(string LoadBalancerArn, string[] ListenerArns, string Marker, int PageSize, GET_DescribeListenersAction Action, GET_DescribeListenersVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribeListeners?LoadBalancerArn=" + (LoadBalancerArn==null? "" : System.Uri.EscapeDataString(LoadBalancerArn))+"&"+string.Join("&", ListenerArns.Select(z => $"ListenerArns={System.Uri.EscapeDataString(z.ToString())}"))+"&Marker=" + (Marker==null? "" : System.Uri.EscapeDataString(Marker))+"&PageSize="+PageSize+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2718,7 +2691,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2731,8 +2703,7 @@ namespace MyNS
 		public async Task GET_DescribeLoadBalancerAttributesAsync(string LoadBalancerArn, GET_DescribeLoadBalancerAttributesAction Action, GET_DescribeLoadBalancerAttributesVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribeLoadBalancerAttributes?LoadBalancerArn=" + (LoadBalancerArn==null? "" : System.Uri.EscapeDataString(LoadBalancerArn))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2746,7 +2717,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2765,8 +2735,7 @@ namespace MyNS
 		public async Task GET_DescribeLoadBalancersAsync(string[] LoadBalancerArns, string[] Names, string Marker, int PageSize, GET_DescribeLoadBalancersAction Action, GET_DescribeLoadBalancersVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribeLoadBalancers?"+string.Join("&", LoadBalancerArns.Select(z => $"LoadBalancerArns={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", Names.Select(z => $"Names={System.Uri.EscapeDataString(z.ToString())}"))+"&Marker=" + (Marker==null? "" : System.Uri.EscapeDataString(Marker))+"&PageSize="+PageSize+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2780,7 +2749,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2799,8 +2767,7 @@ namespace MyNS
 		public async Task GET_DescribeRulesAsync(string ListenerArn, string[] RuleArns, string Marker, int PageSize, GET_DescribeRulesAction Action, GET_DescribeRulesVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribeRules?ListenerArn=" + (ListenerArn==null? "" : System.Uri.EscapeDataString(ListenerArn))+"&"+string.Join("&", RuleArns.Select(z => $"RuleArns={System.Uri.EscapeDataString(z.ToString())}"))+"&Marker=" + (Marker==null? "" : System.Uri.EscapeDataString(Marker))+"&PageSize="+PageSize+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2814,7 +2781,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2833,8 +2799,7 @@ namespace MyNS
 		public async Task GET_DescribeSSLPoliciesAsync(string[] Names, string Marker, int PageSize, LoadBalancerTypeEnum LoadBalancerType, GET_DescribeSSLPoliciesAction Action, GET_DescribeSSLPoliciesVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribeSSLPolicies?"+string.Join("&", Names.Select(z => $"Names={System.Uri.EscapeDataString(z.ToString())}"))+"&Marker=" + (Marker==null? "" : System.Uri.EscapeDataString(Marker))+"&PageSize="+PageSize+"&LoadBalancerType=" + LoadBalancerType+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2848,7 +2813,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2861,8 +2825,7 @@ namespace MyNS
 		public async Task GET_DescribeTagsAsync(string[] ResourceArns, GET_DescribeTagsAction Action, GET_DescribeTagsVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribeTags?"+string.Join("&", ResourceArns.Select(z => $"ResourceArns={System.Uri.EscapeDataString(z.ToString())}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2876,7 +2839,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2889,8 +2851,7 @@ namespace MyNS
 		public async Task GET_DescribeTargetGroupAttributesAsync(string TargetGroupArn, GET_DescribeTargetGroupAttributesAction Action, GET_DescribeTargetGroupAttributesVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribeTargetGroupAttributes?TargetGroupArn=" + (TargetGroupArn==null? "" : System.Uri.EscapeDataString(TargetGroupArn))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2904,7 +2865,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2924,8 +2884,7 @@ namespace MyNS
 		public async Task GET_DescribeTargetGroupsAsync(string LoadBalancerArn, string[] TargetGroupArns, string[] Names, string Marker, int PageSize, GET_DescribeTargetGroupsAction Action, GET_DescribeTargetGroupsVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribeTargetGroups?LoadBalancerArn=" + (LoadBalancerArn==null? "" : System.Uri.EscapeDataString(LoadBalancerArn))+"&"+string.Join("&", TargetGroupArns.Select(z => $"TargetGroupArns={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", Names.Select(z => $"Names={System.Uri.EscapeDataString(z.ToString())}"))+"&Marker=" + (Marker==null? "" : System.Uri.EscapeDataString(Marker))+"&PageSize="+PageSize+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2939,7 +2898,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2953,8 +2911,7 @@ namespace MyNS
 		public async Task GET_DescribeTargetHealthAsync(string TargetGroupArn, TargetDescription[] Targets, GET_DescribeTargetHealthAction Action, GET_DescribeTargetHealthVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribeTargetHealth?TargetGroupArn=" + (TargetGroupArn==null? "" : System.Uri.EscapeDataString(TargetGroupArn))+"&"+string.Join("&", Targets.Select(z => $"Targets={z}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2968,7 +2925,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2990,8 +2946,7 @@ namespace MyNS
 		public async Task GET_ModifyListenerAsync(string ListenerArn, int Port, ProtocolEnum Protocol, string SslPolicy, Certificate[] Certificates, Action[] DefaultActions, string[] AlpnPolicy, GET_ModifyListenerAction Action, GET_ModifyListenerVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=ModifyListener?ListenerArn=" + (ListenerArn==null? "" : System.Uri.EscapeDataString(ListenerArn))+"&Port="+Port+"&Protocol=" + Protocol+"&SslPolicy=" + (SslPolicy==null? "" : System.Uri.EscapeDataString(SslPolicy))+"&"+string.Join("&", Certificates.Select(z => $"Certificates={z}"))+"&"+string.Join("&", DefaultActions.Select(z => $"DefaultActions={z}"))+"&"+string.Join("&", AlpnPolicy.Select(z => $"AlpnPolicy={System.Uri.EscapeDataString(z.ToString())}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3005,7 +2960,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3021,8 +2975,7 @@ namespace MyNS
 		public async Task GET_ModifyLoadBalancerAttributesAsync(string LoadBalancerArn, LoadBalancerAttribute[] Attributes, GET_ModifyLoadBalancerAttributesAction Action, GET_ModifyLoadBalancerAttributesVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=ModifyLoadBalancerAttributes?LoadBalancerArn=" + (LoadBalancerArn==null? "" : System.Uri.EscapeDataString(LoadBalancerArn))+"&"+string.Join("&", Attributes.Select(z => $"Attributes={z}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3036,7 +2989,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3051,8 +3003,7 @@ namespace MyNS
 		public async Task GET_ModifyRuleAsync(string RuleArn, RuleCondition[] Conditions, Action[] Actions, GET_ModifyRuleAction Action, GET_ModifyRuleVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=ModifyRule?RuleArn=" + (RuleArn==null? "" : System.Uri.EscapeDataString(RuleArn))+"&"+string.Join("&", Conditions.Select(z => $"Conditions={z}"))+"&"+string.Join("&", Actions.Select(z => $"Actions={z}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3066,7 +3017,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3103,8 +3053,7 @@ namespace MyNS
 		public async Task GET_ModifyTargetGroupAsync(string TargetGroupArn, ProtocolEnum HealthCheckProtocol, string HealthCheckPort, string HealthCheckPath, bool HealthCheckEnabled, int HealthCheckIntervalSeconds, int HealthCheckTimeoutSeconds, int HealthyThresholdCount, int UnhealthyThresholdCount, GET_ModifyTargetGroupMatcher Matcher, GET_ModifyTargetGroupAction Action, GET_ModifyTargetGroupVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=ModifyTargetGroup?TargetGroupArn=" + (TargetGroupArn==null? "" : System.Uri.EscapeDataString(TargetGroupArn))+"&HealthCheckProtocol=" + HealthCheckProtocol+"&HealthCheckPort=" + (HealthCheckPort==null? "" : System.Uri.EscapeDataString(HealthCheckPort))+"&HealthCheckPath=" + (HealthCheckPath==null? "" : System.Uri.EscapeDataString(HealthCheckPath))+"&HealthCheckEnabled="+HealthCheckEnabled+"&HealthCheckIntervalSeconds="+HealthCheckIntervalSeconds+"&HealthCheckTimeoutSeconds="+HealthCheckTimeoutSeconds+"&HealthyThresholdCount="+HealthyThresholdCount+"&UnhealthyThresholdCount="+UnhealthyThresholdCount+"&Matcher=" + Matcher+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3118,7 +3067,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3132,8 +3080,7 @@ namespace MyNS
 		public async Task GET_ModifyTargetGroupAttributesAsync(string TargetGroupArn, TargetGroupAttribute[] Attributes, GET_ModifyTargetGroupAttributesAction Action, GET_ModifyTargetGroupAttributesVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=ModifyTargetGroupAttributes?TargetGroupArn=" + (TargetGroupArn==null? "" : System.Uri.EscapeDataString(TargetGroupArn))+"&"+string.Join("&", Attributes.Select(z => $"Attributes={z}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3147,7 +3094,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3161,8 +3107,7 @@ namespace MyNS
 		public async Task GET_RegisterTargetsAsync(string TargetGroupArn, TargetDescription[] Targets, GET_RegisterTargetsAction Action, GET_RegisterTargetsVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=RegisterTargets?TargetGroupArn=" + (TargetGroupArn==null? "" : System.Uri.EscapeDataString(TargetGroupArn))+"&"+string.Join("&", Targets.Select(z => $"Targets={z}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3176,7 +3121,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3190,8 +3134,7 @@ namespace MyNS
 		public async Task GET_RemoveListenerCertificatesAsync(string ListenerArn, Certificate[] Certificates, GET_RemoveListenerCertificatesAction Action, GET_RemoveListenerCertificatesVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=RemoveListenerCertificates?ListenerArn=" + (ListenerArn==null? "" : System.Uri.EscapeDataString(ListenerArn))+"&"+string.Join("&", Certificates.Select(z => $"Certificates={z}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3205,7 +3148,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3219,8 +3161,7 @@ namespace MyNS
 		public async Task GET_RemoveTagsAsync(string[] ResourceArns, string[] TagKeys, GET_RemoveTagsAction Action, GET_RemoveTagsVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=RemoveTags?"+string.Join("&", ResourceArns.Select(z => $"ResourceArns={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", TagKeys.Select(z => $"TagKeys={System.Uri.EscapeDataString(z.ToString())}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3234,7 +3175,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3248,8 +3188,7 @@ namespace MyNS
 		public async Task GET_SetIpAddressTypeAsync(string LoadBalancerArn, IpAddressType IpAddressType, GET_SetIpAddressTypeAction Action, GET_SetIpAddressTypeVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=SetIpAddressType?LoadBalancerArn=" + (LoadBalancerArn==null? "" : System.Uri.EscapeDataString(LoadBalancerArn))+"&IpAddressType=" + IpAddressType+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3263,7 +3202,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3276,8 +3214,7 @@ namespace MyNS
 		public async Task GET_SetRulePrioritiesAsync(RulePriorityPair[] RulePriorities, GET_SetRulePrioritiesAction Action, GET_SetRulePrioritiesVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=SetRulePriorities?"+string.Join("&", RulePriorities.Select(z => $"RulePriorities={z}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3291,7 +3228,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3305,8 +3241,7 @@ namespace MyNS
 		public async Task GET_SetSecurityGroupsAsync(string LoadBalancerArn, string[] SecurityGroups, GET_SetSecurityGroupsAction Action, GET_SetSecurityGroupsVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=SetSecurityGroups?LoadBalancerArn=" + (LoadBalancerArn==null? "" : System.Uri.EscapeDataString(LoadBalancerArn))+"&"+string.Join("&", SecurityGroups.Select(z => $"SecurityGroups={System.Uri.EscapeDataString(z.ToString())}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3320,7 +3255,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3336,8 +3270,7 @@ namespace MyNS
 		public async Task GET_SetSubnetsAsync(string LoadBalancerArn, string[] Subnets, SubnetMapping[] SubnetMappings, IpAddressType IpAddressType, GET_SetSubnetsAction Action, GET_SetSubnetsVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=SetSubnets?LoadBalancerArn=" + (LoadBalancerArn==null? "" : System.Uri.EscapeDataString(LoadBalancerArn))+"&"+string.Join("&", Subnets.Select(z => $"Subnets={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", SubnetMappings.Select(z => $"SubnetMappings={z}"))+"&IpAddressType=" + IpAddressType+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3351,7 +3284,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

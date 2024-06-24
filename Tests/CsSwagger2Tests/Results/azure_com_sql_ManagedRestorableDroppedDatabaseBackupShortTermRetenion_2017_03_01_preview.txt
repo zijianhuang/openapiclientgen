@@ -131,19 +131,17 @@ namespace MyNS
 		public async Task<ManagedBackupShortTermRetentionPolicyListResult> ManagedRestorableDroppedDatabaseBackupShortTermRetentionPolicies_ListByRestorableDroppedDatabaseAsync(string resourceGroupName, string managedInstanceName, string restorableDroppedDatabaseId, string subscriptionId, string api_version)
 		{
 			var requestUri = "subscriptions/"+ (subscriptionId==null? "" : System.Uri.EscapeDataString(subscriptionId))+"/resourceGroups/"+ (resourceGroupName==null? "" : System.Uri.EscapeDataString(resourceGroupName))+"/providers/Microsoft.Sql/managedInstances/"+ (managedInstanceName==null? "" : System.Uri.EscapeDataString(managedInstanceName))+"/restorableDroppedDatabases/"+ (restorableDroppedDatabaseId==null? "" : System.Uri.EscapeDataString(restorableDroppedDatabaseId))+"/backupShortTermRetentionPolicies&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ManagedBackupShortTermRetentionPolicyListResult>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ManagedBackupShortTermRetentionPolicyListResult>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -160,19 +158,17 @@ namespace MyNS
 		public async Task<ManagedBackupShortTermRetentionPolicy> ManagedRestorableDroppedDatabaseBackupShortTermRetentionPolicies_GetAsync(string resourceGroupName, string managedInstanceName, string restorableDroppedDatabaseId, ManagedRestorableDroppedDatabaseBackupShortTermRetentionPolicies_GetPolicyName policyName, string subscriptionId, string api_version)
 		{
 			var requestUri = "subscriptions/"+ (subscriptionId==null? "" : System.Uri.EscapeDataString(subscriptionId))+"/resourceGroups/"+ (resourceGroupName==null? "" : System.Uri.EscapeDataString(resourceGroupName))+"/providers/Microsoft.Sql/managedInstances/"+ (managedInstanceName==null? "" : System.Uri.EscapeDataString(managedInstanceName))+"/restorableDroppedDatabases/"+ (restorableDroppedDatabaseId==null? "" : System.Uri.EscapeDataString(restorableDroppedDatabaseId))+"/backupShortTermRetentionPolicies/"+policyName+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ManagedBackupShortTermRetentionPolicy>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ManagedBackupShortTermRetentionPolicy>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -190,22 +186,19 @@ namespace MyNS
 		public async Task<ManagedBackupShortTermRetentionPolicy> ManagedRestorableDroppedDatabaseBackupShortTermRetentionPolicies_CreateOrUpdateAsync(string resourceGroupName, string managedInstanceName, string restorableDroppedDatabaseId, ManagedRestorableDroppedDatabaseBackupShortTermRetentionPolicies_CreateOrUpdatePolicyName policyName, string subscriptionId, string api_version, ManagedBackupShortTermRetentionPolicy requestBody)
 		{
 			var requestUri = "subscriptions/"+ (subscriptionId==null? "" : System.Uri.EscapeDataString(subscriptionId))+"/resourceGroups/"+ (resourceGroupName==null? "" : System.Uri.EscapeDataString(resourceGroupName))+"/providers/Microsoft.Sql/managedInstances/"+ (managedInstanceName==null? "" : System.Uri.EscapeDataString(managedInstanceName))+"/restorableDroppedDatabases/"+ (restorableDroppedDatabaseId==null? "" : System.Uri.EscapeDataString(restorableDroppedDatabaseId))+"/backupShortTermRetentionPolicies/"+policyName+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ManagedBackupShortTermRetentionPolicy>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ManagedBackupShortTermRetentionPolicy>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -223,22 +216,19 @@ namespace MyNS
 		public async Task<ManagedBackupShortTermRetentionPolicy> ManagedRestorableDroppedDatabaseBackupShortTermRetentionPolicies_UpdateAsync(string resourceGroupName, string managedInstanceName, string restorableDroppedDatabaseId, ManagedRestorableDroppedDatabaseBackupShortTermRetentionPolicies_UpdatePolicyName policyName, string subscriptionId, string api_version, ManagedBackupShortTermRetentionPolicy requestBody)
 		{
 			var requestUri = "subscriptions/"+ (subscriptionId==null? "" : System.Uri.EscapeDataString(subscriptionId))+"/resourceGroups/"+ (resourceGroupName==null? "" : System.Uri.EscapeDataString(resourceGroupName))+"/providers/Microsoft.Sql/managedInstances/"+ (managedInstanceName==null? "" : System.Uri.EscapeDataString(managedInstanceName))+"/restorableDroppedDatabases/"+ (restorableDroppedDatabaseId==null? "" : System.Uri.EscapeDataString(restorableDroppedDatabaseId))+"/backupShortTermRetentionPolicies/"+policyName+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ManagedBackupShortTermRetentionPolicy>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ManagedBackupShortTermRetentionPolicy>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

@@ -977,19 +977,17 @@ namespace MyNS
 		public async Task<SearchResponse> Web_SearchAsync(int answerCount, string cc, int count, Web_SearchFreshness freshness, string mkt, int offset, RankingRankingItemAnswerType[] promote, string q, RankingRankingItemAnswerType[] responseFilter, Web_SearchSafeSearch safeSearch, string setLang, bool textDecorations, Web_SearchTextFormat textFormat)
 		{
 			var requestUri = "search?answerCount="+answerCount+"&cc=" + (cc==null? "" : System.Uri.EscapeDataString(cc))+"&count="+count+"&freshness=" + freshness+"&mkt=" + (mkt==null? "" : System.Uri.EscapeDataString(mkt))+"&offset="+offset+"&"+string.Join("&", promote.Select(z => $"promote={z}"))+"&q=" + (q==null? "" : System.Uri.EscapeDataString(q))+"&"+string.Join("&", responseFilter.Select(z => $"responseFilter={z}"))+"&safeSearch=" + safeSearch+"&setLang=" + (setLang==null? "" : System.Uri.EscapeDataString(setLang))+"&textDecorations="+textDecorations+"&textFormat=" + textFormat;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<SearchResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<SearchResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

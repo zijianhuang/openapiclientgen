@@ -47,8 +47,7 @@ namespace MyNS
 		public async Task GetCollectionByIdAsync(int id)
 		{
 			var requestUri = "collection/"+id;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -57,7 +56,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -74,8 +72,7 @@ namespace MyNS
 		public async Task GetCollectionIconsByIdAsync(int id, int limit, int offset, int page)
 		{
 			var requestUri = "collection/"+id+"/icons?limit="+limit+"&offset="+offset+"&page="+page;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -84,7 +81,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -98,8 +94,7 @@ namespace MyNS
 		public async Task GetCollectionBySlugAsync(string slug)
 		{
 			var requestUri = "collection/"+ (slug==null? "" : System.Uri.EscapeDataString(slug));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -108,7 +103,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -125,8 +119,7 @@ namespace MyNS
 		public async Task GetCollectionIconsBySlugAsync(string slug, int limit, int offset, int page)
 		{
 			var requestUri = "collection/"+ (slug==null? "" : System.Uri.EscapeDataString(slug))+"/icons&limit="+limit+"&offset="+offset+"&page="+page;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -135,7 +128,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -151,8 +143,7 @@ namespace MyNS
 		public async Task GetAllCollectionsAsync(int limit, int offset, int page)
 		{
 			var requestUri = "collections?limit="+limit+"&offset="+offset+"&page="+page;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -161,7 +152,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -175,8 +165,7 @@ namespace MyNS
 		public async Task GetIconByIdAsync(int id)
 		{
 			var requestUri = "icon/"+id;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -185,7 +174,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -199,8 +187,7 @@ namespace MyNS
 		public async Task GetIconByTermAsync(string term)
 		{
 			var requestUri = "icon/"+ (term==null? "" : System.Uri.EscapeDataString(term));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -209,7 +196,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -225,8 +211,7 @@ namespace MyNS
 		public async Task GetRecentIconsAsync(int limit, int offset, int page)
 		{
 			var requestUri = "icons/recent_uploads?limit="+limit+"&offset="+offset+"&page="+page;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -235,7 +220,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -253,8 +237,7 @@ namespace MyNS
 		public async Task GetIconsByTermAsync(string term, int limit_to_public_domain, int limit, int offset, int page)
 		{
 			var requestUri = "icons/"+ (term==null? "" : System.Uri.EscapeDataString(term))+"&limit_to_public_domain="+limit_to_public_domain+"&limit="+limit+"&offset="+offset+"&page="+page;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -263,7 +246,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -276,8 +258,7 @@ namespace MyNS
 		public async Task GetApiQuotaStatusAsync()
 		{
 			var requestUri = "oauth/usage";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -286,7 +267,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -300,8 +280,7 @@ namespace MyNS
 		public async Task GetUserCollectionsAsync(int user_id)
 		{
 			var requestUri = "user/"+user_id+"/collections";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -310,7 +289,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -325,8 +303,7 @@ namespace MyNS
 		public async Task GetUserCollectionAsync(int user_id, string slug)
 		{
 			var requestUri = "user/"+user_id+"/collections/"+ (slug==null? "" : System.Uri.EscapeDataString(slug));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -335,7 +312,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -352,8 +328,7 @@ namespace MyNS
 		public async Task GetUserUploadsWithUserAsync(string username, int limit, int offset, int page)
 		{
 			var requestUri = "user/"+ (username==null? "" : System.Uri.EscapeDataString(username))+"/uploads&limit="+limit+"&offset="+offset+"&page="+page;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -362,7 +337,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

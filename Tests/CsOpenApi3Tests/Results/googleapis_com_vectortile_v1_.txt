@@ -733,8 +733,7 @@ namespace MyNS
 					Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/"+ (name==null? "" : System.Uri.EscapeDataString(name))+"&altitudePrecisionCentimeters="+altitudePrecisionCentimeters+"&clientInfo.apiClient=" + (clientInfo_apiClient==null? "" : System.Uri.EscapeDataString(clientInfo_apiClient))+"&clientInfo.applicationId=" + (clientInfo_applicationId==null? "" : System.Uri.EscapeDataString(clientInfo_applicationId))+"&clientInfo.applicationVersion=" + (clientInfo_applicationVersion==null? "" : System.Uri.EscapeDataString(clientInfo_applicationVersion))+"&clientInfo.deviceModel=" + (clientInfo_deviceModel==null? "" : System.Uri.EscapeDataString(clientInfo_deviceModel))+"&clientInfo.operatingSystem=" + (clientInfo_operatingSystem==null? "" : System.Uri.EscapeDataString(clientInfo_operatingSystem))+"&clientInfo.platform=" + clientInfo_platform+"&clientInfo.userId=" + (clientInfo_userId==null? "" : System.Uri.EscapeDataString(clientInfo_userId))+"&maxElevationResolutionCells="+maxElevationResolutionCells+"&minElevationResolutionCells="+minElevationResolutionCells+"&"+string.Join("&", terrainFormats.Select(z => $"terrainFormats={System.Uri.EscapeDataString(z.ToString())}"))+"&enableModeledVolumes="+enableModeledVolumes+"&enablePoliticalFeatures="+enablePoliticalFeatures+"&enablePrivateRoads="+enablePrivateRoads+"&enableUnclippedBuildings="+enableUnclippedBuildings+"&languageCode=" + (languageCode==null? "" : System.Uri.EscapeDataString(languageCode))+"&regionCode=" + (regionCode==null? "" : System.Uri.EscapeDataString(regionCode));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -744,13 +743,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<TerrainTile>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<TerrainTile>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

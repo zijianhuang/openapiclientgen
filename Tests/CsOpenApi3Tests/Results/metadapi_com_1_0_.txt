@@ -636,8 +636,7 @@ namespace MyNS
 		public async Task Get_zipc_v1Async(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "zipc/v1";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -651,7 +650,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -666,8 +664,7 @@ namespace MyNS
 		public async Task<Get_distanceReturn> Get_distanceAsync(string zipCode1, string zipCode2, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "zipc/v1/distance?zipCode1=" + (zipCode1==null? "" : System.Uri.EscapeDataString(zipCode1))+"&zipCode2=" + (zipCode2==null? "" : System.Uri.EscapeDataString(zipCode2));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -677,13 +674,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Get_distanceReturn>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Get_distanceReturn>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -707,8 +703,7 @@ namespace MyNS
 		public async Task<Get_msagroupsReturn> Get_msagroupsAsync(int limit, int offset, string stateCode, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "zipc/v1/msagroups?limit="+limit+"&offset="+offset+"&stateCode=" + (stateCode==null? "" : System.Uri.EscapeDataString(stateCode));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -718,13 +713,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Get_msagroupsReturn>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Get_msagroupsReturn>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -737,8 +731,7 @@ namespace MyNS
 		public async Task<Get_msagroups_msacodeReturn> Get_msagroups_msacodeAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "zipc/v1/msagroups/{msaCode}";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -748,13 +741,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Get_msagroups_msacodeReturn>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Get_msagroups_msacodeReturn>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -776,8 +768,7 @@ namespace MyNS
 		public async Task<Get_radiusReturn> Get_radiusAsync(string zipCode, int radius, Get_radiusUom uom, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "zipc/v1/radius?zipCode=" + (zipCode==null? "" : System.Uri.EscapeDataString(zipCode))+"&radius="+radius+"&uom=" + uom;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -787,13 +778,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Get_radiusReturn>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Get_radiusReturn>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -850,8 +840,7 @@ namespace MyNS
 					Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "zipc/v1/zipcodes?offset="+offset+"&limit="+limit+"&zipcode=" + (zipcode==null? "" : System.Uri.EscapeDataString(zipcode))+"&uspsMainCityKey=" + (uspsMainCityKey==null? "" : System.Uri.EscapeDataString(uspsMainCityKey))+"&zipClassificationCode=" + (zipClassificationCode==null? "" : System.Uri.EscapeDataString(zipClassificationCode))+"&uspsFacilityCode=" + (uspsFacilityCode==null? "" : System.Uri.EscapeDataString(uspsFacilityCode))+"&uspsDeliveryCode=" + (uspsDeliveryCode==null? "" : System.Uri.EscapeDataString(uspsDeliveryCode))+"&uspsCarrierRouteSortCode=" + (uspsCarrierRouteSortCode==null? "" : System.Uri.EscapeDataString(uspsCarrierRouteSortCode))+"&uniqueZipNameInd="+uniqueZipNameInd+"&uspsFinanceNumber=" + (uspsFinanceNumber==null? "" : System.Uri.EscapeDataString(uspsFinanceNumber))+"&stateCode=" + (stateCode==null? "" : System.Uri.EscapeDataString(stateCode))+"&stateFipsCode=" + (stateFipsCode==null? "" : System.Uri.EscapeDataString(stateFipsCode))+"&countyFipsCode=" + (countyFipsCode==null? "" : System.Uri.EscapeDataString(countyFipsCode))+"&divisionCode=" + (divisionCode==null? "" : System.Uri.EscapeDataString(divisionCode))+"&regionCode=" + (regionCode==null? "" : System.Uri.EscapeDataString(regionCode))+"&msaCode=" + (msaCode==null? "" : System.Uri.EscapeDataString(msaCode));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -861,13 +850,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ZipCodeResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ZipCodeResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -880,8 +868,7 @@ namespace MyNS
 		public async Task<Get_zipcodeReturn> Get_zipcodeAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "zipc/v1/zipcodes/{zipcode}";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -891,13 +878,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Get_zipcodeReturn>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Get_zipcodeReturn>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

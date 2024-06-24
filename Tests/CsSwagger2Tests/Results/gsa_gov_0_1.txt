@@ -51,8 +51,7 @@ namespace MyNS
 		public async Task List_Contracts_GETAsync(string duns, string naics, string sort, string direction, string page)
 		{
 			var requestUri = "api/contracts/?duns=" + (duns==null? "" : System.Uri.EscapeDataString(duns))+"&naics=" + (naics==null? "" : System.Uri.EscapeDataString(naics))+"&sort=" + (sort==null? "" : System.Uri.EscapeDataString(sort))+"&direction=" + (direction==null? "" : System.Uri.EscapeDataString(direction))+"&page=" + (page==null? "" : System.Uri.EscapeDataString(page));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -61,7 +60,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -74,8 +72,7 @@ namespace MyNS
 		public async Task Metadata_GETAsync()
 		{
 			var requestUri = "api/metadata/";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -84,7 +81,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -97,8 +93,7 @@ namespace MyNS
 		public async Task List_Naics_GETAsync()
 		{
 			var requestUri = "api/naics/";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -107,7 +102,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -121,8 +115,7 @@ namespace MyNS
 		public async Task Get_Vendor_GETAsync(string duns)
 		{
 			var requestUri = "api/vendor/"+ (duns==null? "" : System.Uri.EscapeDataString(duns));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -131,7 +124,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -157,8 +149,7 @@ namespace MyNS
 		public async Task List_Vendors_GETAsync(string naics, string[] setasides, string vehicle)
 		{
 			var requestUri = "api/vendors/?naics=" + (naics==null? "" : System.Uri.EscapeDataString(naics))+"&"+string.Join("&", setasides.Select(z => $"setasides={System.Uri.EscapeDataString(z.ToString())}"))+"&vehicle=" + (vehicle==null? "" : System.Uri.EscapeDataString(vehicle));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -167,7 +158,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

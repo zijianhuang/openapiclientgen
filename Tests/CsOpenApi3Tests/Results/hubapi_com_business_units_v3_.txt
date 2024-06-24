@@ -211,8 +211,7 @@ namespace MyNS
 		public async Task<CollectionResponsePublicBusinessUnitNoPaging> Get_Slashbusiness_unitsSlashv3Slashbusiness_unitsSlashuserSlashuserId_getByUserIDAsync(string userId, string[] properties, string[] name, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "business-units/v3/business-units/user/"+ (userId==null? "" : System.Uri.EscapeDataString(userId))+"&"+string.Join("&", properties.Select(z => $"properties={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", name.Select(z => $"name={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -222,13 +221,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<CollectionResponsePublicBusinessUnitNoPaging>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<CollectionResponsePublicBusinessUnitNoPaging>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

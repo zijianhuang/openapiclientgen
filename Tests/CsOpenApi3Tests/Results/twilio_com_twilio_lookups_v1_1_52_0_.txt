@@ -110,8 +110,7 @@ namespace MyNS
 		public async Task<Lookupsv1phone_number> FetchPhoneNumberAsync(string PhoneNumber, string CountryCode, string[] Type, string[] AddOns, string AddOnsData, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/PhoneNumbers/"+ (PhoneNumber==null? "" : System.Uri.EscapeDataString(PhoneNumber))+"&CountryCode=" + (CountryCode==null? "" : System.Uri.EscapeDataString(CountryCode))+"&"+string.Join("&", Type.Select(z => $"Type={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", AddOns.Select(z => $"AddOns={System.Uri.EscapeDataString(z.ToString())}"))+"&AddOnsData=" + (AddOnsData==null? "" : System.Uri.EscapeDataString(AddOnsData));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -121,13 +120,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Lookupsv1phone_number>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Lookupsv1phone_number>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

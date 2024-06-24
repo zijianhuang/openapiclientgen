@@ -107,19 +107,17 @@ namespace MyNS
 		public async Task<Success> GetRandomNumbersAsync(string gameCode, int highest, int lowest, int count, bool unique)
 		{
 			var requestUri = "generate/integers?gameCode=" + (gameCode==null? "" : System.Uri.EscapeDataString(gameCode))+"&highest="+highest+"&lowest="+lowest+"&count="+count+"&unique="+unique;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Success>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Success>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

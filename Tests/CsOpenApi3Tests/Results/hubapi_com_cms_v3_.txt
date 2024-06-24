@@ -295,8 +295,7 @@ namespace MyNS
 		public async Task<CollectionResponseWithTotalDomainForwardPaging> Get_SlashcmsSlashv3SlashdomainsSlash_getPageAsync(System.DateTimeOffset createdAt, System.DateTimeOffset createdAfter, System.DateTimeOffset createdBefore, System.DateTimeOffset updatedAt, System.DateTimeOffset updatedAfter, System.DateTimeOffset updatedBefore, string[] sort, string after, int limit, bool archived, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "cms/v3/domains/?createdAt=" + createdAt.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&createdAfter=" + createdAfter.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&createdBefore=" + createdBefore.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&updatedAt=" + updatedAt.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&updatedAfter=" + updatedAfter.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&updatedBefore=" + updatedBefore.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&"+string.Join("&", sort.Select(z => $"sort={System.Uri.EscapeDataString(z.ToString())}"))+"&after=" + (after==null? "" : System.Uri.EscapeDataString(after))+"&limit="+limit+"&archived="+archived;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -306,13 +305,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<CollectionResponseWithTotalDomainForwardPaging>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<CollectionResponseWithTotalDomainForwardPaging>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -326,8 +324,7 @@ namespace MyNS
 		public async Task<Domain> Get_SlashcmsSlashv3SlashdomainsSlashdomainId_getByIdAsync(string domainId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "cms/v3/domains/"+ (domainId==null? "" : System.Uri.EscapeDataString(domainId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -337,13 +334,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Domain>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Domain>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

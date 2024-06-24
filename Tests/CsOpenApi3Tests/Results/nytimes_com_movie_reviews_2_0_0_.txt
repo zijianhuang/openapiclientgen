@@ -172,8 +172,7 @@ namespace MyNS
 		public async Task<Critics_resource_type_jsonGetReturn> Critics_resource_type_jsonGetAsync(string resource_type, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "critics/{resource_type}.json";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -183,17 +182,14 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
-				{
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				using JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(streamContent));
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<Critics_resource_type_jsonGetReturn>(jsonReader);
-				}
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -235,8 +231,7 @@ namespace MyNS
 		public async Task<ReviewsSearch_jsonGetByQueryAndCritics_pickAndReviewerAndPublication_dateAndOpening_dateAndOffsetAndOrderReturn> ReviewsSearch_jsonGetByQueryAndCritics_pickAndReviewerAndPublication_dateAndOpening_dateAndOffsetAndOrderAsync(string query, ReviewsSearch_jsonGetByQueryAndCritics_pickAndReviewerAndPublication_dateAndOpening_dateAndOffsetAndOrderCritics_pick critics_pick, string reviewer, string publication_date, string opening_date, int offset, string order, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "reviews/search.json?query=" + (query==null? "" : System.Uri.EscapeDataString(query))+"&critics-pick=" + critics_pick+"&reviewer=" + (reviewer==null? "" : System.Uri.EscapeDataString(reviewer))+"&publication-date=" + (publication_date==null? "" : System.Uri.EscapeDataString(publication_date))+"&opening-date=" + (opening_date==null? "" : System.Uri.EscapeDataString(opening_date))+"&offset="+offset+"&order=" + (order==null? "" : System.Uri.EscapeDataString(order));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -246,17 +241,14 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
-				{
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				using JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(streamContent));
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<ReviewsSearch_jsonGetByQueryAndCritics_pickAndReviewerAndPublication_dateAndOpening_dateAndOffsetAndOrderReturn>(jsonReader);
-				}
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -279,8 +271,7 @@ namespace MyNS
 		public async Task<Reviews_resource_type_jsonGetByOffsetAndOrderReturn> Reviews_resource_type_jsonGetByOffsetAndOrderAsync(Reviews_resource_type_jsonGetByOffsetAndOrderResource_type resource_type, int offset, Reviews_resource_type_jsonGetByOffsetAndOrderOrder order, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "reviews/{resource_type}.json?offset="+offset+"&order=" + order;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -290,17 +281,14 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
-				{
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				using JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(streamContent));
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<Reviews_resource_type_jsonGetByOffsetAndOrderReturn>(jsonReader);
-				}
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

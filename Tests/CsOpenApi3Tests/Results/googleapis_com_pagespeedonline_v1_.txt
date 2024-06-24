@@ -415,8 +415,7 @@ namespace MyNS
 		public async Task Pagespeedonline_pagespeedapi_runpagespeedAsync(string url, bool filter_third_party_resources, string locale, string[] rule, bool screenshot, Pagespeedonline_pagespeedapi_runpagespeedStrategy strategy, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "runPagespeed?url=" + (url==null? "" : System.Uri.EscapeDataString(url))+"&filter_third_party_resources="+filter_third_party_resources+"&locale=" + (locale==null? "" : System.Uri.EscapeDataString(locale))+"&"+string.Join("&", rule.Select(z => $"rule={System.Uri.EscapeDataString(z.ToString())}"))+"&screenshot="+screenshot+"&strategy=" + strategy;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -430,7 +429,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

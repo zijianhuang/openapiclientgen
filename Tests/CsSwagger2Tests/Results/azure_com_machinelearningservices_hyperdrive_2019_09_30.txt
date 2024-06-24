@@ -377,19 +377,17 @@ namespace MyNS
 		public async Task<HyperDriveCancelExperimentResponse> HyperparameterTuning_CancelExperimentAsync(string armScope, string runId)
 		{
 			var requestUri = "hyperdrive/v1.0/"+ (armScope==null? "" : System.Uri.EscapeDataString(armScope))+"/runs/"+ (runId==null? "" : System.Uri.EscapeDataString(runId))+"/cancel";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<HyperDriveCancelExperimentResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<HyperDriveCancelExperimentResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

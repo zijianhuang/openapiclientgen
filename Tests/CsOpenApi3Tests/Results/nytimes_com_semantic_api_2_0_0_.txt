@@ -303,8 +303,7 @@ namespace MyNS
 		public async Task<Name_concept_type_specific_concept_jsonGetByFieldsAndQueryReturn> Name_concept_type_specific_concept_jsonGetByFieldsAndQueryAsync(Name_concept_type_specific_concept_jsonGetByFieldsAndQueryConcept_type concept_type, string specific_concept, Name_concept_type_specific_concept_jsonGetByFieldsAndQueryFields fields, string query, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "name/{concept_type}/{specific_concept}.json?fields=" + fields+"&query=" + (query==null? "" : System.Uri.EscapeDataString(query));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -314,17 +313,14 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
-				{
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				using JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(streamContent));
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<Name_concept_type_specific_concept_jsonGetByFieldsAndQueryReturn>(jsonReader);
-				}
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -351,8 +347,7 @@ namespace MyNS
 		public async Task<Search_jsonGetByQueryAndOffsetAndFieldsReturn> Search_jsonGetByQueryAndOffsetAndFieldsAsync(string query, int offset, Name_concept_type_specific_concept_jsonGetByFieldsAndQueryFields fields, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "search.json?query=" + (query==null? "" : System.Uri.EscapeDataString(query))+"&offset="+offset+"&fields=" + fields;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -362,17 +357,14 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
-				{
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				using JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(streamContent));
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<Search_jsonGetByQueryAndOffsetAndFieldsReturn>(jsonReader);
-				}
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

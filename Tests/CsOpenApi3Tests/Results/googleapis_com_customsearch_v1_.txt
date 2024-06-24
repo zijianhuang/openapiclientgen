@@ -1166,8 +1166,7 @@ namespace MyNS
 					Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "customsearch/v1?c2coff=" + (c2coff==null? "" : System.Uri.EscapeDataString(c2coff))+"&cr=" + (cr==null? "" : System.Uri.EscapeDataString(cr))+"&cx=" + (cx==null? "" : System.Uri.EscapeDataString(cx))+"&dateRestrict=" + (dateRestrict==null? "" : System.Uri.EscapeDataString(dateRestrict))+"&exactTerms=" + (exactTerms==null? "" : System.Uri.EscapeDataString(exactTerms))+"&excludeTerms=" + (excludeTerms==null? "" : System.Uri.EscapeDataString(excludeTerms))+"&fileType=" + (fileType==null? "" : System.Uri.EscapeDataString(fileType))+"&filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&gl=" + (gl==null? "" : System.Uri.EscapeDataString(gl))+"&googlehost=" + (googlehost==null? "" : System.Uri.EscapeDataString(googlehost))+"&highRange=" + (highRange==null? "" : System.Uri.EscapeDataString(highRange))+"&hl=" + (hl==null? "" : System.Uri.EscapeDataString(hl))+"&hq=" + (hq==null? "" : System.Uri.EscapeDataString(hq))+"&imgColorType=" + imgColorType+"&imgDominantColor=" + imgDominantColor+"&imgSize=" + imgSize+"&imgType=" + imgType+"&linkSite=" + (linkSite==null? "" : System.Uri.EscapeDataString(linkSite))+"&lowRange=" + (lowRange==null? "" : System.Uri.EscapeDataString(lowRange))+"&lr=" + (lr==null? "" : System.Uri.EscapeDataString(lr))+"&num="+num+"&orTerms=" + (orTerms==null? "" : System.Uri.EscapeDataString(orTerms))+"&q=" + (q==null? "" : System.Uri.EscapeDataString(q))+"&relatedSite=" + (relatedSite==null? "" : System.Uri.EscapeDataString(relatedSite))+"&rights=" + (rights==null? "" : System.Uri.EscapeDataString(rights))+"&safe=" + safe+"&searchType=" + searchType+"&siteSearch=" + (siteSearch==null? "" : System.Uri.EscapeDataString(siteSearch))+"&siteSearchFilter=" + siteSearchFilter+"&sort=" + (sort==null? "" : System.Uri.EscapeDataString(sort))+"&start="+start;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1177,13 +1176,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Search>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Search>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1258,8 +1256,7 @@ namespace MyNS
 					Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "customsearch/v1/siterestrict?c2coff=" + (c2coff==null? "" : System.Uri.EscapeDataString(c2coff))+"&cr=" + (cr==null? "" : System.Uri.EscapeDataString(cr))+"&cx=" + (cx==null? "" : System.Uri.EscapeDataString(cx))+"&dateRestrict=" + (dateRestrict==null? "" : System.Uri.EscapeDataString(dateRestrict))+"&exactTerms=" + (exactTerms==null? "" : System.Uri.EscapeDataString(exactTerms))+"&excludeTerms=" + (excludeTerms==null? "" : System.Uri.EscapeDataString(excludeTerms))+"&fileType=" + (fileType==null? "" : System.Uri.EscapeDataString(fileType))+"&filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&gl=" + (gl==null? "" : System.Uri.EscapeDataString(gl))+"&googlehost=" + (googlehost==null? "" : System.Uri.EscapeDataString(googlehost))+"&highRange=" + (highRange==null? "" : System.Uri.EscapeDataString(highRange))+"&hl=" + (hl==null? "" : System.Uri.EscapeDataString(hl))+"&hq=" + (hq==null? "" : System.Uri.EscapeDataString(hq))+"&imgColorType=" + imgColorType+"&imgDominantColor=" + imgDominantColor+"&imgSize=" + imgSize+"&imgType=" + imgType+"&linkSite=" + (linkSite==null? "" : System.Uri.EscapeDataString(linkSite))+"&lowRange=" + (lowRange==null? "" : System.Uri.EscapeDataString(lowRange))+"&lr=" + (lr==null? "" : System.Uri.EscapeDataString(lr))+"&num="+num+"&orTerms=" + (orTerms==null? "" : System.Uri.EscapeDataString(orTerms))+"&q=" + (q==null? "" : System.Uri.EscapeDataString(q))+"&relatedSite=" + (relatedSite==null? "" : System.Uri.EscapeDataString(relatedSite))+"&rights=" + (rights==null? "" : System.Uri.EscapeDataString(rights))+"&safe=" + safe+"&searchType=" + searchType+"&siteSearch=" + (siteSearch==null? "" : System.Uri.EscapeDataString(siteSearch))+"&siteSearchFilter=" + siteSearchFilter+"&sort=" + (sort==null? "" : System.Uri.EscapeDataString(sort))+"&start="+start;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1269,13 +1266,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Search>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Search>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

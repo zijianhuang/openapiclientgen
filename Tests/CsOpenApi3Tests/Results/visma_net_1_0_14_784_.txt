@@ -4023,8 +4023,7 @@ namespace MyNS
 		public async Task<CustomerDtoPagedResult> Customers_GetList_Async(string filter, int pageSize, int pageIndex, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/v3/Customers?filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&pageSize="+pageSize+"&pageIndex="+pageIndex;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4034,13 +4033,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<CustomerDtoPagedResult>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<CustomerDtoPagedResult>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4056,8 +4054,7 @@ namespace MyNS
 		public async Task<CustomerLocationItemDto[]> Customers_GetCustomerLocationList_customerIdlocationsAsync(string customerId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/v3/Customers/"+ (customerId==null? "" : System.Uri.EscapeDataString(customerId))+"/locations";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4067,13 +4064,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<CustomerLocationItemDto[]>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<CustomerLocationItemDto[]>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4104,8 +4100,7 @@ namespace MyNS
 		public async Task<InventoryItemAvailabilityDtoPagedResult> Inventory_GetList_Async(string[] inventoryId, string[] warehouseId, string[] locationId, InventoryAvailabilityExpansions[] expand, System.DateTimeOffset modifiedSince, string[] attributeFilter, int pageSize, int pageIndex, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/v3/Inventory?"+string.Join("&", inventoryId.Select(z => $"inventoryId={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", warehouseId.Select(z => $"warehouseId={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", locationId.Select(z => $"locationId={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", expand.Select(z => $"expand={z}"))+"&modifiedSince=" + modifiedSince.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&"+string.Join("&", attributeFilter.Select(z => $"attributeFilter={System.Uri.EscapeDataString(z.ToString())}"))+"&pageSize="+pageSize+"&pageIndex="+pageIndex;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4115,13 +4110,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<InventoryItemAvailabilityDtoPagedResult>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<InventoryItemAvailabilityDtoPagedResult>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4148,8 +4142,7 @@ namespace MyNS
 		public async Task<SalesOrderListDtoPagedResult> SalesOrders_GetList_Async(string customerId, string status, System.DateTimeOffset modifiedSince, int pageSize, int pageIndex, string orderBy, string filter, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/v3/SalesOrders?customerId=" + (customerId==null? "" : System.Uri.EscapeDataString(customerId))+"&status=" + (status==null? "" : System.Uri.EscapeDataString(status))+"&modifiedSince=" + modifiedSince.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&pageSize="+pageSize+"&pageIndex="+pageIndex+"&orderBy=" + (orderBy==null? "" : System.Uri.EscapeDataString(orderBy))+"&filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4159,13 +4152,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<SalesOrderListDtoPagedResult>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<SalesOrderListDtoPagedResult>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4207,10 +4199,8 @@ namespace MyNS
 		public async Task SalesOrders_CreateNewItem_Async(NewSalesOrderCommand requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/v3/SalesOrders";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -4225,7 +4215,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4253,8 +4242,7 @@ namespace MyNS
 		public async Task<SalesOrderListDtoPagedResult> SalesOrders_GetList_typeAsync(string type, string customerId, string status, System.DateTimeOffset modifiedSince, int pageSize, int pageIndex, string orderBy, string filter, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/v3/SalesOrders/"+ (type==null? "" : System.Uri.EscapeDataString(type))+"&customerId=" + (customerId==null? "" : System.Uri.EscapeDataString(customerId))+"&status=" + (status==null? "" : System.Uri.EscapeDataString(status))+"&modifiedSince=" + modifiedSince.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&pageSize="+pageSize+"&pageIndex="+pageIndex+"&orderBy=" + (orderBy==null? "" : System.Uri.EscapeDataString(orderBy))+"&filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4264,13 +4252,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<SalesOrderListDtoPagedResult>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<SalesOrderListDtoPagedResult>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4285,8 +4272,7 @@ namespace MyNS
 		public async Task SalesOrders_Delete_typeorderIdAsync(string type, string orderId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/v3/SalesOrders/"+ (type==null? "" : System.Uri.EscapeDataString(type))+"/"+ (orderId==null? "" : System.Uri.EscapeDataString(orderId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4300,7 +4286,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4321,8 +4306,7 @@ namespace MyNS
 		public async Task<SalesOrderDto> SalesOrders_GetItemAsync_typeorderIdAsync(string type, string orderId, SalesOrderExpansions[] expand, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/v3/SalesOrders/"+ (type==null? "" : System.Uri.EscapeDataString(type))+"/"+ (orderId==null? "" : System.Uri.EscapeDataString(orderId))+"&"+string.Join("&", expand.Select(z => $"expand={z}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4332,13 +4316,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<SalesOrderDto>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<SalesOrderDto>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4354,10 +4337,8 @@ namespace MyNS
 		public async Task SalesOrders_Patch_typeorderIdAsync(string type, string orderId, PatchSalesOrderCommand requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/v3/SalesOrders/"+ (type==null? "" : System.Uri.EscapeDataString(type))+"/"+ (orderId==null? "" : System.Uri.EscapeDataString(orderId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -4372,7 +4353,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4389,8 +4369,7 @@ namespace MyNS
 		public async Task<SalesOrderCommissionDto[]> SalesOrders_GetItemCommissions_typeorderIdcommissionsAsync(string type, string orderId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/v3/SalesOrders/"+ (type==null? "" : System.Uri.EscapeDataString(type))+"/"+ (orderId==null? "" : System.Uri.EscapeDataString(orderId))+"/commissions";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4400,13 +4379,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<SalesOrderCommissionDto[]>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<SalesOrderCommissionDto[]>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4423,8 +4401,7 @@ namespace MyNS
 		public async Task<SalesOrderDiscountDto[]> SalesOrders_GetItemDiscounts_typeorderIddiscountsAsync(string type, string orderId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/v3/SalesOrders/"+ (type==null? "" : System.Uri.EscapeDataString(type))+"/"+ (orderId==null? "" : System.Uri.EscapeDataString(orderId))+"/discounts";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4434,13 +4411,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<SalesOrderDiscountDto[]>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<SalesOrderDiscountDto[]>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4456,8 +4432,7 @@ namespace MyNS
 		public async Task SalesOrders_DeleteLines_typeorderIdlinesAsync(string type, string orderId, int[] ids, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/v3/SalesOrders/"+ (type==null? "" : System.Uri.EscapeDataString(type))+"/"+ (orderId==null? "" : System.Uri.EscapeDataString(orderId))+"/lines&"+string.Join("&", ids.Select(z => $"ids={z}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4471,7 +4446,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4490,8 +4464,7 @@ namespace MyNS
 		public async Task<SalesOrderLineDtoPagedResult> SalesOrders_GetItemLines_typeorderIdlinesAsync(string type, string orderId, int pageSize, int pageIndex, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/v3/SalesOrders/"+ (type==null? "" : System.Uri.EscapeDataString(type))+"/"+ (orderId==null? "" : System.Uri.EscapeDataString(orderId))+"/lines&pageSize="+pageSize+"&pageIndex="+pageIndex;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4501,13 +4474,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<SalesOrderLineDtoPagedResult>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<SalesOrderLineDtoPagedResult>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4523,10 +4495,8 @@ namespace MyNS
 		public async Task SalesOrders_PatchLines_typeorderIdlinesAsync(string type, string orderId, PatchSalesOrderLinesCommand requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/v3/SalesOrders/"+ (type==null? "" : System.Uri.EscapeDataString(type))+"/"+ (orderId==null? "" : System.Uri.EscapeDataString(orderId))+"/lines";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -4541,7 +4511,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4555,10 +4524,8 @@ namespace MyNS
 		public async Task SalesOrders_AddLines_typeorderIdlinesAsync(string type, string orderId, AddSalesOrderLinesCommand requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/v3/SalesOrders/"+ (type==null? "" : System.Uri.EscapeDataString(type))+"/"+ (orderId==null? "" : System.Uri.EscapeDataString(orderId))+"/lines";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -4573,7 +4540,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4591,8 +4557,7 @@ namespace MyNS
 		public async Task<SalesOrderLineDto> SalesOrders_GetItemLine_typeorderIdlineslineIdAsync(string type, string orderId, int lineId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/v3/SalesOrders/"+ (type==null? "" : System.Uri.EscapeDataString(type))+"/"+ (orderId==null? "" : System.Uri.EscapeDataString(orderId))+"/lines/"+lineId;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4602,13 +4567,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<SalesOrderLineDto>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<SalesOrderLineDto>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4625,8 +4589,7 @@ namespace MyNS
 		public async Task<SalesOrderRotRutDto> SalesOrders_GetItemRotRut_typeorderIdrotrutAsync(string type, string orderId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/v3/SalesOrders/"+ (type==null? "" : System.Uri.EscapeDataString(type))+"/"+ (orderId==null? "" : System.Uri.EscapeDataString(orderId))+"/rotrut";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4636,13 +4599,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<SalesOrderRotRutDto>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<SalesOrderRotRutDto>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4659,8 +4621,7 @@ namespace MyNS
 		public async Task<SalesOrderShipmentDto[]> SalesOrders_GetSalesOrderShipment_typeorderIdshipmentAsync(string type, string orderId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/v3/SalesOrders/"+ (type==null? "" : System.Uri.EscapeDataString(type))+"/"+ (orderId==null? "" : System.Uri.EscapeDataString(orderId))+"/shipment";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4670,13 +4631,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<SalesOrderShipmentDto[]>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<SalesOrderShipmentDto[]>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4693,8 +4653,7 @@ namespace MyNS
 		public async Task<SalesOrderTaxDto[]> SalesOrders_GetItemTax_typeorderIdtaxAsync(string type, string orderId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/v3/SalesOrders/"+ (type==null? "" : System.Uri.EscapeDataString(type))+"/"+ (orderId==null? "" : System.Uri.EscapeDataString(orderId))+"/tax";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4704,13 +4663,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<SalesOrderTaxDto[]>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<SalesOrderTaxDto[]>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

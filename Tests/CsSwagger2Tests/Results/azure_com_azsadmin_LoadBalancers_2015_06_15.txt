@@ -100,19 +100,17 @@ namespace MyNS
 		public async Task<LoadBalancerList> LoadBalancers_ListAsync(string subscriptionId, string api_version, string filter, string orderBy, string top, string skip, string inlineCount)
 		{
 			var requestUri = "subscriptions/"+ (subscriptionId==null? "" : System.Uri.EscapeDataString(subscriptionId))+"/providers/Microsoft.Network.Admin/adminLoadBalancers&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version))+"&$filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&$orderBy=" + (orderBy==null? "" : System.Uri.EscapeDataString(orderBy))+"&$top=" + (top==null? "" : System.Uri.EscapeDataString(top))+"&$skip=" + (skip==null? "" : System.Uri.EscapeDataString(skip))+"&$inlineCount=" + (inlineCount==null? "" : System.Uri.EscapeDataString(inlineCount));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<LoadBalancerList>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<LoadBalancerList>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

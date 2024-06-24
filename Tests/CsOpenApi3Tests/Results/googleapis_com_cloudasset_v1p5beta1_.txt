@@ -1353,8 +1353,7 @@ namespace MyNS
 		public async Task<ListAssetsResponse> Cloudasset_assets_listAsync(string parent, string[] assetTypes, Cloudasset_assets_listContentType contentType, int pageSize, string pageToken, string readTime, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1p5beta1/"+ (parent==null? "" : System.Uri.EscapeDataString(parent))+"/assets&"+string.Join("&", assetTypes.Select(z => $"assetTypes={System.Uri.EscapeDataString(z.ToString())}"))+"&contentType=" + contentType+"&pageSize="+pageSize+"&pageToken=" + (pageToken==null? "" : System.Uri.EscapeDataString(pageToken))+"&readTime=" + (readTime==null? "" : System.Uri.EscapeDataString(readTime));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1364,13 +1363,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ListAssetsResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ListAssetsResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

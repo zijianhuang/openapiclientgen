@@ -441,8 +441,7 @@ namespace MyNS
 		public async Task<ListActivitiesResponse> Appsactivity_activities_listAsync(string drive_ancestorId, string drive_fileId, Appsactivity_activities_listGroupingStrategy groupingStrategy, int pageSize, string pageToken, string source, string userId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "activities?drive.ancestorId=" + (drive_ancestorId==null? "" : System.Uri.EscapeDataString(drive_ancestorId))+"&drive.fileId=" + (drive_fileId==null? "" : System.Uri.EscapeDataString(drive_fileId))+"&groupingStrategy=" + groupingStrategy+"&pageSize="+pageSize+"&pageToken=" + (pageToken==null? "" : System.Uri.EscapeDataString(pageToken))+"&source=" + (source==null? "" : System.Uri.EscapeDataString(source))+"&userId=" + (userId==null? "" : System.Uri.EscapeDataString(userId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -452,13 +451,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ListActivitiesResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ListActivitiesResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

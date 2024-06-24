@@ -78,8 +78,7 @@ namespace MyNS
 		public async Task<SearchResponse> Kgsearch_entities_searchAsync(string[] ids, bool indent, string[] languages, int limit, bool prefix, string query, string[] types, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/entities:search?"+string.Join("&", ids.Select(z => $"ids={System.Uri.EscapeDataString(z.ToString())}"))+"&indent="+indent+"&"+string.Join("&", languages.Select(z => $"languages={System.Uri.EscapeDataString(z.ToString())}"))+"&limit="+limit+"&prefix="+prefix+"&query=" + (query==null? "" : System.Uri.EscapeDataString(query))+"&"+string.Join("&", types.Select(z => $"types={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -89,13 +88,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<SearchResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<SearchResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

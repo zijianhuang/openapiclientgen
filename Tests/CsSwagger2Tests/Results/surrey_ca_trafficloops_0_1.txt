@@ -47,8 +47,7 @@ namespace MyNS
 		public async Task CountsGetByStartdatetimeAndEnddatetimeAsync(double startdatetime, double enddatetime)
 		{
 			var requestUri = "TrafficLoopCounts.fmw?startdatetime="+startdatetime+"&enddatetime="+enddatetime;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -57,7 +56,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -70,8 +68,7 @@ namespace MyNS
 		public async Task LoopsGetByProj_epsgAsync(double proj_epsg)
 		{
 			var requestUri = "TrafficLoops.fmw?proj_epsg="+proj_epsg;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -80,7 +77,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

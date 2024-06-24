@@ -45,8 +45,7 @@ namespace MyNS
 		public async Task GET_layers___format_Async()
 		{
 			var requestUri = "layers";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -55,7 +54,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -67,8 +65,7 @@ namespace MyNS
 		public async Task POST_layers___format_Async()
 		{
 			var requestUri = "layers";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -77,7 +74,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -89,8 +85,7 @@ namespace MyNS
 		public async Task GET_layers__layer___format_Async(string layer)
 		{
 			var requestUri = "layers/"+ (layer==null? "" : System.Uri.EscapeDataString(layer));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -99,7 +94,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -111,8 +105,7 @@ namespace MyNS
 		public async Task DELETE_layers__layer___format_Async(string layer)
 		{
 			var requestUri = "layers/"+ (layer==null? "" : System.Uri.EscapeDataString(layer));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -121,7 +114,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -133,8 +125,7 @@ namespace MyNS
 		public async Task PATCH_layers__layer___format_Async(string layer)
 		{
 			var requestUri = "layers/"+ (layer==null? "" : System.Uri.EscapeDataString(layer));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -143,7 +134,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -155,8 +145,7 @@ namespace MyNS
 		public async Task GET_layers__layer_context___format_Async(string layer)
 		{
 			var requestUri = "layers/"+ (layer==null? "" : System.Uri.EscapeDataString(layer))+"/context";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -165,7 +154,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -177,8 +165,7 @@ namespace MyNS
 		public async Task PUT_layers__layer_context___format_Async(string layer)
 		{
 			var requestUri = "layers/"+ (layer==null? "" : System.Uri.EscapeDataString(layer))+"/context";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -187,7 +174,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -199,8 +185,7 @@ namespace MyNS
 		public async Task GET_layers__layer_fields___format_Async(string layer)
 		{
 			var requestUri = "layers/"+ (layer==null? "" : System.Uri.EscapeDataString(layer))+"/fields";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -209,7 +194,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -221,8 +205,7 @@ namespace MyNS
 		public async Task POST_layers__layer_fields___format_Async(string layer)
 		{
 			var requestUri = "layers/"+ (layer==null? "" : System.Uri.EscapeDataString(layer))+"/fields";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -231,7 +214,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -243,8 +225,7 @@ namespace MyNS
 		public async Task GET_layers__layer_fields__field___format_Async(string layer, string field)
 		{
 			var requestUri = "layers/"+ (layer==null? "" : System.Uri.EscapeDataString(layer))+"/fields/"+ (field==null? "" : System.Uri.EscapeDataString(field));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -253,7 +234,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -265,8 +245,7 @@ namespace MyNS
 		public async Task PUT_layers__layer_fields__field___format_Async(string layer, string field)
 		{
 			var requestUri = "layers/"+ (layer==null? "" : System.Uri.EscapeDataString(layer))+"/fields/"+ (field==null? "" : System.Uri.EscapeDataString(field));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -275,7 +254,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -287,8 +265,7 @@ namespace MyNS
 		public async Task DELETE_layers__layer_fields__field___format_Async(string layer, string field)
 		{
 			var requestUri = "layers/"+ (layer==null? "" : System.Uri.EscapeDataString(layer))+"/fields/"+ (field==null? "" : System.Uri.EscapeDataString(field));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -297,7 +274,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -309,8 +285,7 @@ namespace MyNS
 		public async Task PATCH_layers__layer_fields__field___format_Async(string layer, string field)
 		{
 			var requestUri = "layers/"+ (layer==null? "" : System.Uri.EscapeDataString(layer))+"/fields/"+ (field==null? "" : System.Uri.EscapeDataString(field));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -319,7 +294,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -331,8 +305,7 @@ namespace MyNS
 		public async Task GET_layers__layer_objects___format_Async(string layer)
 		{
 			var requestUri = "layers/"+ (layer==null? "" : System.Uri.EscapeDataString(layer))+"/objects";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -341,7 +314,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -353,8 +325,7 @@ namespace MyNS
 		public async Task POST_layers__layer_objects___format_Async(string layer)
 		{
 			var requestUri = "layers/"+ (layer==null? "" : System.Uri.EscapeDataString(layer))+"/objects";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -363,7 +334,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -375,8 +345,7 @@ namespace MyNS
 		public async Task DELETE_layers__layer_objects___format_Async(string layer)
 		{
 			var requestUri = "layers/"+ (layer==null? "" : System.Uri.EscapeDataString(layer))+"/objects";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -385,7 +354,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -397,8 +365,7 @@ namespace MyNS
 		public async Task PATCH_layers__layer_objects___format_Async(string layer)
 		{
 			var requestUri = "layers/"+ (layer==null? "" : System.Uri.EscapeDataString(layer))+"/objects";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -407,7 +374,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -419,8 +385,7 @@ namespace MyNS
 		public async Task GET_layers__layer_objects__cdk_id___format_Async(string layer, string cdk_id)
 		{
 			var requestUri = "layers/"+ (layer==null? "" : System.Uri.EscapeDataString(layer))+"/objects/"+ (cdk_id==null? "" : System.Uri.EscapeDataString(cdk_id));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -429,7 +394,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -441,8 +405,7 @@ namespace MyNS
 		public async Task GET_layers__layer_owners___format_Async(string layer)
 		{
 			var requestUri = "layers/"+ (layer==null? "" : System.Uri.EscapeDataString(layer))+"/owners";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -451,7 +414,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -463,8 +425,7 @@ namespace MyNS
 		public async Task GET_ngsi10_contextEntities__entity___format_Async(string entity)
 		{
 			var requestUri = "ngsi10/contextEntities/"+ (entity==null? "" : System.Uri.EscapeDataString(entity));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -473,7 +434,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -485,8 +445,7 @@ namespace MyNS
 		public async Task PUT_ngsi10_contextEntities__entity_attributes___format_Async(string entity)
 		{
 			var requestUri = "ngsi10/contextEntities/"+ (entity==null? "" : System.Uri.EscapeDataString(entity))+"/attributes";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -495,7 +454,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -507,8 +465,7 @@ namespace MyNS
 		public async Task GET_ngsi10_contextEntities__entity_attributes__attribute___format_Async(string entity, string attribute)
 		{
 			var requestUri = "ngsi10/contextEntities/"+ (entity==null? "" : System.Uri.EscapeDataString(entity))+"/attributes/"+ (attribute==null? "" : System.Uri.EscapeDataString(attribute));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -517,7 +474,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -529,8 +485,7 @@ namespace MyNS
 		public async Task GET_ngsi10_contextEntityTypes__cetype___format_Async(string cetype)
 		{
 			var requestUri = "ngsi10/contextEntityTypes/"+ (cetype==null? "" : System.Uri.EscapeDataString(cetype));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -539,7 +494,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -551,8 +505,7 @@ namespace MyNS
 		public async Task GET_ngsi10_contextEntityTypes__cetype_attributes__attribute___format_Async(string cetype, string attribute)
 		{
 			var requestUri = "ngsi10/contextEntityTypes/"+ (cetype==null? "" : System.Uri.EscapeDataString(cetype))+"/attributes/"+ (attribute==null? "" : System.Uri.EscapeDataString(attribute));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -561,7 +514,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -573,8 +525,7 @@ namespace MyNS
 		public async Task POST_ngsi10_queryContext___format_Async()
 		{
 			var requestUri = "ngsi10/queryContext";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -583,7 +534,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -595,8 +545,7 @@ namespace MyNS
 		public async Task POST_ngsi10_subscribeContext___format_Async()
 		{
 			var requestUri = "ngsi10/subscribeContext";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -605,7 +554,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -617,8 +565,7 @@ namespace MyNS
 		public async Task POST_ngsi10_unsubscribeContext___format_Async()
 		{
 			var requestUri = "ngsi10/unsubscribeContext";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -627,7 +574,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -639,8 +585,7 @@ namespace MyNS
 		public async Task POST_ngsi10_updateContext___format_Async()
 		{
 			var requestUri = "ngsi10/updateContext";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -649,7 +594,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -661,8 +605,7 @@ namespace MyNS
 		public async Task POST_ngsi10_updateContextSubscription___format_Async()
 		{
 			var requestUri = "ngsi10/updateContextSubscription";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -671,7 +614,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -683,8 +625,7 @@ namespace MyNS
 		public async Task GET_objects___format_Async()
 		{
 			var requestUri = "objects";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -693,7 +634,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -705,8 +645,7 @@ namespace MyNS
 		public async Task GET_objects__cdk_id___format_Async(string cdk_id)
 		{
 			var requestUri = "objects/"+ (cdk_id==null? "" : System.Uri.EscapeDataString(cdk_id));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -715,7 +654,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -727,8 +665,7 @@ namespace MyNS
 		public async Task DELETE_objects__cdk_id___format_Async(string cdk_id)
 		{
 			var requestUri = "objects/"+ (cdk_id==null? "" : System.Uri.EscapeDataString(cdk_id));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -737,7 +674,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -749,8 +685,7 @@ namespace MyNS
 		public async Task PATCH_objects__cdk_id___format_Async(string cdk_id)
 		{
 			var requestUri = "objects/"+ (cdk_id==null? "" : System.Uri.EscapeDataString(cdk_id));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -759,7 +694,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -771,8 +705,7 @@ namespace MyNS
 		public async Task GET_objects__cdk_id_layers___format_Async(string cdk_id)
 		{
 			var requestUri = "objects/"+ (cdk_id==null? "" : System.Uri.EscapeDataString(cdk_id))+"/layers";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -781,7 +714,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -793,8 +725,7 @@ namespace MyNS
 		public async Task GET_objects__cdk_id_layers__layer___format_Async(string cdk_id, string layer)
 		{
 			var requestUri = "objects/"+ (cdk_id==null? "" : System.Uri.EscapeDataString(cdk_id))+"/layers/"+ (layer==null? "" : System.Uri.EscapeDataString(layer));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -803,7 +734,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -815,8 +745,7 @@ namespace MyNS
 		public async Task PUT_objects__cdk_id_layers__layer___format_Async(string cdk_id, string layer)
 		{
 			var requestUri = "objects/"+ (cdk_id==null? "" : System.Uri.EscapeDataString(cdk_id))+"/layers/"+ (layer==null? "" : System.Uri.EscapeDataString(layer));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -825,7 +754,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -837,8 +765,7 @@ namespace MyNS
 		public async Task POST_objects__cdk_id_layers__layer___format_Async(string cdk_id, string layer)
 		{
 			var requestUri = "objects/"+ (cdk_id==null? "" : System.Uri.EscapeDataString(cdk_id))+"/layers/"+ (layer==null? "" : System.Uri.EscapeDataString(layer));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -847,7 +774,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -859,8 +785,7 @@ namespace MyNS
 		public async Task DELETE_objects__cdk_id_layers__layer___format_Async(string cdk_id, string layer)
 		{
 			var requestUri = "objects/"+ (cdk_id==null? "" : System.Uri.EscapeDataString(cdk_id))+"/layers/"+ (layer==null? "" : System.Uri.EscapeDataString(layer));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -869,7 +794,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -881,8 +805,7 @@ namespace MyNS
 		public async Task PATCH_objects__cdk_id_layers__layer___format_Async(string cdk_id, string layer)
 		{
 			var requestUri = "objects/"+ (cdk_id==null? "" : System.Uri.EscapeDataString(cdk_id))+"/layers/"+ (layer==null? "" : System.Uri.EscapeDataString(layer));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -891,7 +814,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -903,8 +825,7 @@ namespace MyNS
 		public async Task GET_owners___format_Async()
 		{
 			var requestUri = "owners";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -913,7 +834,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -925,8 +845,7 @@ namespace MyNS
 		public async Task POST_owners___format_Async()
 		{
 			var requestUri = "owners";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -935,7 +854,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -947,8 +865,7 @@ namespace MyNS
 		public async Task GET_owners__owner___format_Async(string owner)
 		{
 			var requestUri = "owners/"+ (owner==null? "" : System.Uri.EscapeDataString(owner));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -957,7 +874,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -969,8 +885,7 @@ namespace MyNS
 		public async Task DELETE_owners__owner___format_Async(string owner)
 		{
 			var requestUri = "owners/"+ (owner==null? "" : System.Uri.EscapeDataString(owner));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -979,7 +894,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -991,8 +905,7 @@ namespace MyNS
 		public async Task PATCH_owners__owner___format_Async(string owner)
 		{
 			var requestUri = "owners/"+ (owner==null? "" : System.Uri.EscapeDataString(owner));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -1001,7 +914,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1013,8 +925,7 @@ namespace MyNS
 		public async Task GET_owners__owner_layers___format_Async(string owner)
 		{
 			var requestUri = "owners/"+ (owner==null? "" : System.Uri.EscapeDataString(owner))+"/layers";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -1023,7 +934,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1037,8 +947,7 @@ namespace MyNS
 		public async Task GET_session___format_Async(string name, string password)
 		{
 			var requestUri = "session?name=" + (name==null? "" : System.Uri.EscapeDataString(name))+"&password=" + (password==null? "" : System.Uri.EscapeDataString(password));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -1047,7 +956,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1059,8 +967,7 @@ namespace MyNS
 		public async Task DELETE_session___format_Async()
 		{
 			var requestUri = "session";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -1069,7 +976,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

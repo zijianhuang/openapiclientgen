@@ -4189,8 +4189,7 @@ namespace MyNS
 		public async Task ActivateKeySigningKeyAsync(string HostedZoneId, string Name, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2013-04-01/keysigningkey/"+ (HostedZoneId==null? "" : System.Uri.EscapeDataString(HostedZoneId))+"/"+ (Name==null? "" : System.Uri.EscapeDataString(Name))+"/activate";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -4199,7 +4198,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4212,8 +4210,7 @@ namespace MyNS
 		public async Task DeleteCidrCollectionAsync(string CidrCollectionId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2013-04-01/cidrcollection/"+ (CidrCollectionId==null? "" : System.Uri.EscapeDataString(CidrCollectionId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4227,7 +4224,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4246,8 +4242,7 @@ namespace MyNS
 		public async Task ListCidrLocationsAsync(string CidrCollectionId, string nexttoken, string maxresults, string MaxResults, string NextToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2013-04-01/cidrcollection/"+ (CidrCollectionId==null? "" : System.Uri.EscapeDataString(CidrCollectionId))+"&nexttoken=" + (nexttoken==null? "" : System.Uri.EscapeDataString(nexttoken))+"&maxresults=" + (maxresults==null? "" : System.Uri.EscapeDataString(maxresults))+"&MaxResults=" + (MaxResults==null? "" : System.Uri.EscapeDataString(MaxResults))+"&NextToken=" + (NextToken==null? "" : System.Uri.EscapeDataString(NextToken));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4261,7 +4256,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4277,8 +4271,7 @@ namespace MyNS
 		public async Task ListTagsForResourceAsync(TagResourceType ResourceType, string ResourceId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2013-04-01/tags/"+ResourceType+"/"+ (ResourceId==null? "" : System.Uri.EscapeDataString(ResourceId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4292,7 +4285,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4310,8 +4302,7 @@ namespace MyNS
 		public async Task ListCidrCollectionsAsync(string nexttoken, string maxresults, string MaxResults, string NextToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2013-04-01/cidrcollection?nexttoken=" + (nexttoken==null? "" : System.Uri.EscapeDataString(nexttoken))+"&maxresults=" + (maxresults==null? "" : System.Uri.EscapeDataString(maxresults))+"&MaxResults=" + (MaxResults==null? "" : System.Uri.EscapeDataString(MaxResults))+"&NextToken=" + (NextToken==null? "" : System.Uri.EscapeDataString(NextToken));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4325,7 +4316,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4343,8 +4333,7 @@ namespace MyNS
 		public async Task ListHealthChecksAsync(string marker, string maxitems, string MaxItems, string Marker, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2013-04-01/healthcheck?marker=" + (marker==null? "" : System.Uri.EscapeDataString(marker))+"&maxitems=" + (maxitems==null? "" : System.Uri.EscapeDataString(maxitems))+"&MaxItems=" + (MaxItems==null? "" : System.Uri.EscapeDataString(MaxItems))+"&Marker=" + (Marker==null? "" : System.Uri.EscapeDataString(Marker));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4358,7 +4347,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4379,8 +4367,7 @@ namespace MyNS
 		public async Task ListHostedZonesAsync(string marker, string maxitems, string delegationsetid, string MaxItems, string Marker, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2013-04-01/hostedzone?marker=" + (marker==null? "" : System.Uri.EscapeDataString(marker))+"&maxitems=" + (maxitems==null? "" : System.Uri.EscapeDataString(maxitems))+"&delegationsetid=" + (delegationsetid==null? "" : System.Uri.EscapeDataString(delegationsetid))+"&MaxItems=" + (MaxItems==null? "" : System.Uri.EscapeDataString(MaxItems))+"&Marker=" + (Marker==null? "" : System.Uri.EscapeDataString(Marker));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4394,7 +4381,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4415,8 +4401,7 @@ namespace MyNS
 		public async Task ListQueryLoggingConfigsAsync(string hostedzoneid, string nexttoken, string maxresults, string MaxResults, string NextToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2013-04-01/queryloggingconfig?hostedzoneid=" + (hostedzoneid==null? "" : System.Uri.EscapeDataString(hostedzoneid))+"&nexttoken=" + (nexttoken==null? "" : System.Uri.EscapeDataString(nexttoken))+"&maxresults=" + (maxresults==null? "" : System.Uri.EscapeDataString(maxresults))+"&MaxResults=" + (MaxResults==null? "" : System.Uri.EscapeDataString(MaxResults))+"&NextToken=" + (NextToken==null? "" : System.Uri.EscapeDataString(NextToken));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4430,7 +4415,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4446,8 +4430,7 @@ namespace MyNS
 		public async Task ListReusableDelegationSetsAsync(string marker, string maxitems, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2013-04-01/delegationset?marker=" + (marker==null? "" : System.Uri.EscapeDataString(marker))+"&maxitems=" + (maxitems==null? "" : System.Uri.EscapeDataString(maxitems));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4461,7 +4444,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4480,8 +4462,7 @@ namespace MyNS
 		public async Task ListVPCAssociationAuthorizationsAsync(string Id, string nexttoken, string maxresults, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2013-04-01/hostedzone/"+ (Id==null? "" : System.Uri.EscapeDataString(Id))+"/authorizevpcassociation&nexttoken=" + (nexttoken==null? "" : System.Uri.EscapeDataString(nexttoken))+"&maxresults=" + (maxresults==null? "" : System.Uri.EscapeDataString(maxresults));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4495,7 +4476,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4514,8 +4494,7 @@ namespace MyNS
 		public async Task DeactivateKeySigningKeyAsync(string HostedZoneId, string Name, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2013-04-01/keysigningkey/"+ (HostedZoneId==null? "" : System.Uri.EscapeDataString(HostedZoneId))+"/"+ (Name==null? "" : System.Uri.EscapeDataString(Name))+"/deactivate";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -4524,7 +4503,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4539,8 +4517,7 @@ namespace MyNS
 		public async Task DeleteHealthCheckAsync(string HealthCheckId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2013-04-01/healthcheck/"+ (HealthCheckId==null? "" : System.Uri.EscapeDataString(HealthCheckId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4554,7 +4531,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4569,8 +4545,7 @@ namespace MyNS
 		public async Task GetHealthCheckAsync(string HealthCheckId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2013-04-01/healthcheck/"+ (HealthCheckId==null? "" : System.Uri.EscapeDataString(HealthCheckId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4584,7 +4559,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4599,8 +4573,7 @@ namespace MyNS
 		public async Task DeleteHostedZoneAsync(string Id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2013-04-01/hostedzone/"+ (Id==null? "" : System.Uri.EscapeDataString(Id));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4614,7 +4587,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4629,8 +4601,7 @@ namespace MyNS
 		public async Task GetHostedZoneAsync(string Id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2013-04-01/hostedzone/"+ (Id==null? "" : System.Uri.EscapeDataString(Id));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4644,7 +4615,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4663,8 +4633,7 @@ namespace MyNS
 		public async Task DeleteKeySigningKeyAsync(string HostedZoneId, string Name, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2013-04-01/keysigningkey/"+ (HostedZoneId==null? "" : System.Uri.EscapeDataString(HostedZoneId))+"/"+ (Name==null? "" : System.Uri.EscapeDataString(Name));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4678,7 +4647,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4694,8 +4662,7 @@ namespace MyNS
 		public async Task DeleteQueryLoggingConfigAsync(string Id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2013-04-01/queryloggingconfig/"+ (Id==null? "" : System.Uri.EscapeDataString(Id));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4709,7 +4676,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4725,8 +4691,7 @@ namespace MyNS
 		public async Task GetQueryLoggingConfigAsync(string Id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2013-04-01/queryloggingconfig/"+ (Id==null? "" : System.Uri.EscapeDataString(Id));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4740,7 +4705,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4755,8 +4719,7 @@ namespace MyNS
 		public async Task DeleteReusableDelegationSetAsync(string Id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2013-04-01/delegationset/"+ (Id==null? "" : System.Uri.EscapeDataString(Id));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4770,7 +4733,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4785,8 +4747,7 @@ namespace MyNS
 		public async Task GetReusableDelegationSetAsync(string Id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2013-04-01/delegationset/"+ (Id==null? "" : System.Uri.EscapeDataString(Id));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4800,7 +4761,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4820,8 +4780,7 @@ namespace MyNS
 		public async Task DeleteTrafficPolicyAsync(string Id, int Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2013-04-01/trafficpolicy/"+ (Id==null? "" : System.Uri.EscapeDataString(Id))+"/"+Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4835,7 +4794,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4855,8 +4813,7 @@ namespace MyNS
 		public async Task GetTrafficPolicyAsync(string Id, int Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2013-04-01/trafficpolicy/"+ (Id==null? "" : System.Uri.EscapeDataString(Id))+"/"+Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4870,7 +4827,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4886,8 +4842,7 @@ namespace MyNS
 		public async Task DeleteTrafficPolicyInstanceAsync(string Id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2013-04-01/trafficpolicyinstance/"+ (Id==null? "" : System.Uri.EscapeDataString(Id));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4901,7 +4856,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4917,8 +4871,7 @@ namespace MyNS
 		public async Task GetTrafficPolicyInstanceAsync(string Id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2013-04-01/trafficpolicyinstance/"+ (Id==null? "" : System.Uri.EscapeDataString(Id));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4932,7 +4885,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4947,8 +4899,7 @@ namespace MyNS
 		public async Task DisableHostedZoneDNSSECAsync(string Id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2013-04-01/hostedzone/"+ (Id==null? "" : System.Uri.EscapeDataString(Id))+"/disable-dnssec";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -4957,7 +4908,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4972,8 +4922,7 @@ namespace MyNS
 		public async Task EnableHostedZoneDNSSECAsync(string Id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2013-04-01/hostedzone/"+ (Id==null? "" : System.Uri.EscapeDataString(Id))+"/enable-dnssec";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -4982,7 +4931,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4995,8 +4943,7 @@ namespace MyNS
 		public async Task GetAccountLimitAsync(AccountLimitType Type, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2013-04-01/accountlimit/"+Type;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5010,7 +4957,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5026,8 +4972,7 @@ namespace MyNS
 		public async Task GetChangeAsync(string Id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2013-04-01/change/"+ (Id==null? "" : System.Uri.EscapeDataString(Id));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5041,7 +4986,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5053,8 +4997,7 @@ namespace MyNS
 		public async Task GetCheckerIpRangesAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2013-04-01/checkeripranges";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5068,7 +5011,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5083,8 +5025,7 @@ namespace MyNS
 		public async Task GetDNSSECAsync(string Id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2013-04-01/hostedzone/"+ (Id==null? "" : System.Uri.EscapeDataString(Id))+"/dnssec";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5098,7 +5039,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5122,8 +5062,7 @@ namespace MyNS
 		public async Task GetGeoLocationAsync(string continentcode, string countrycode, string subdivisioncode, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2013-04-01/geolocation?continentcode=" + (continentcode==null? "" : System.Uri.EscapeDataString(continentcode))+"&countrycode=" + (countrycode==null? "" : System.Uri.EscapeDataString(countrycode))+"&subdivisioncode=" + (subdivisioncode==null? "" : System.Uri.EscapeDataString(subdivisioncode));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5137,7 +5076,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5149,8 +5087,7 @@ namespace MyNS
 		public async Task GetHealthCheckCountAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2013-04-01/healthcheckcount";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5164,7 +5101,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5179,8 +5115,7 @@ namespace MyNS
 		public async Task GetHealthCheckLastFailureReasonAsync(string HealthCheckId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2013-04-01/healthcheck/"+ (HealthCheckId==null? "" : System.Uri.EscapeDataString(HealthCheckId))+"/lastfailurereason";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5194,7 +5129,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5209,8 +5143,7 @@ namespace MyNS
 		public async Task GetHealthCheckStatusAsync(string HealthCheckId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2013-04-01/healthcheck/"+ (HealthCheckId==null? "" : System.Uri.EscapeDataString(HealthCheckId))+"/status";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5224,7 +5157,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5236,8 +5168,7 @@ namespace MyNS
 		public async Task GetHostedZoneCountAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2013-04-01/hostedzonecount";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5251,7 +5182,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5267,8 +5197,7 @@ namespace MyNS
 		public async Task GetHostedZoneLimitAsync(HostedZoneLimitType Type, string Id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2013-04-01/hostedzonelimit/"+ (Id==null? "" : System.Uri.EscapeDataString(Id))+"/"+Type;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5282,7 +5211,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5298,8 +5226,7 @@ namespace MyNS
 		public async Task GetReusableDelegationSetLimitAsync(ReusableDelegationSetLimitType Type, string Id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2013-04-01/reusabledelegationsetlimit/"+ (Id==null? "" : System.Uri.EscapeDataString(Id))+"/"+Type;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5313,7 +5240,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5325,8 +5251,7 @@ namespace MyNS
 		public async Task GetTrafficPolicyInstanceCountAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2013-04-01/trafficpolicyinstancecount";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5340,7 +5265,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5363,8 +5287,7 @@ namespace MyNS
 		public async Task ListCidrBlocksAsync(string CidrCollectionId, string location, string nexttoken, string maxresults, string MaxResults, string NextToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2013-04-01/cidrcollection/"+ (CidrCollectionId==null? "" : System.Uri.EscapeDataString(CidrCollectionId))+"/cidrblocks&location=" + (location==null? "" : System.Uri.EscapeDataString(location))+"&nexttoken=" + (nexttoken==null? "" : System.Uri.EscapeDataString(nexttoken))+"&maxresults=" + (maxresults==null? "" : System.Uri.EscapeDataString(maxresults))+"&MaxResults=" + (MaxResults==null? "" : System.Uri.EscapeDataString(MaxResults))+"&NextToken=" + (NextToken==null? "" : System.Uri.EscapeDataString(NextToken));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5378,7 +5301,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5403,8 +5325,7 @@ namespace MyNS
 		public async Task ListGeoLocationsAsync(string startcontinentcode, string startcountrycode, string startsubdivisioncode, string maxitems, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2013-04-01/geolocations?startcontinentcode=" + (startcontinentcode==null? "" : System.Uri.EscapeDataString(startcontinentcode))+"&startcountrycode=" + (startcountrycode==null? "" : System.Uri.EscapeDataString(startcountrycode))+"&startsubdivisioncode=" + (startsubdivisioncode==null? "" : System.Uri.EscapeDataString(startsubdivisioncode))+"&maxitems=" + (maxitems==null? "" : System.Uri.EscapeDataString(maxitems));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5418,7 +5339,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5437,8 +5357,7 @@ namespace MyNS
 		public async Task ListHostedZonesByNameAsync(string dnsname, string hostedzoneid, string maxitems, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2013-04-01/hostedzonesbyname?dnsname=" + (dnsname==null? "" : System.Uri.EscapeDataString(dnsname))+"&hostedzoneid=" + (hostedzoneid==null? "" : System.Uri.EscapeDataString(hostedzoneid))+"&maxitems=" + (maxitems==null? "" : System.Uri.EscapeDataString(maxitems));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5452,7 +5371,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5475,8 +5393,7 @@ namespace MyNS
 		public async Task ListHostedZonesByVPCAsync(string vpcid, ListHostedZonesByVPCVpcregion vpcregion, string maxitems, string nexttoken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2013-04-01/hostedzonesbyvpc#vpcid&vpcregion?vpcid=" + (vpcid==null? "" : System.Uri.EscapeDataString(vpcid))+"&vpcregion=" + vpcregion+"&maxitems=" + (maxitems==null? "" : System.Uri.EscapeDataString(maxitems))+"&nexttoken=" + (nexttoken==null? "" : System.Uri.EscapeDataString(nexttoken));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5490,7 +5407,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5518,8 +5434,7 @@ namespace MyNS
 		public async Task ListResourceRecordSetsAsync(string Id, string name, RRType type, string identifier, string maxitems, string MaxItems, string StartRecordName, string StartRecordType, string StartRecordIdentifier, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2013-04-01/hostedzone/"+ (Id==null? "" : System.Uri.EscapeDataString(Id))+"/rrset&name=" + (name==null? "" : System.Uri.EscapeDataString(name))+"&type=" + type+"&identifier=" + (identifier==null? "" : System.Uri.EscapeDataString(identifier))+"&maxitems=" + (maxitems==null? "" : System.Uri.EscapeDataString(maxitems))+"&MaxItems=" + (MaxItems==null? "" : System.Uri.EscapeDataString(MaxItems))+"&StartRecordName=" + (StartRecordName==null? "" : System.Uri.EscapeDataString(StartRecordName))+"&StartRecordType=" + (StartRecordType==null? "" : System.Uri.EscapeDataString(StartRecordType))+"&StartRecordIdentifier=" + (StartRecordIdentifier==null? "" : System.Uri.EscapeDataString(StartRecordIdentifier));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5533,7 +5448,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5550,8 +5464,7 @@ namespace MyNS
 		public async Task ListTrafficPoliciesAsync(string trafficpolicyid, string maxitems, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2013-04-01/trafficpolicies?trafficpolicyid=" + (trafficpolicyid==null? "" : System.Uri.EscapeDataString(trafficpolicyid))+"&maxitems=" + (maxitems==null? "" : System.Uri.EscapeDataString(maxitems));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5565,7 +5478,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5585,8 +5497,7 @@ namespace MyNS
 		public async Task ListTrafficPolicyInstancesAsync(string hostedzoneid, string trafficpolicyinstancename, RRType trafficpolicyinstancetype, string maxitems, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2013-04-01/trafficpolicyinstances?hostedzoneid=" + (hostedzoneid==null? "" : System.Uri.EscapeDataString(hostedzoneid))+"&trafficpolicyinstancename=" + (trafficpolicyinstancename==null? "" : System.Uri.EscapeDataString(trafficpolicyinstancename))+"&trafficpolicyinstancetype=" + trafficpolicyinstancetype+"&maxitems=" + (maxitems==null? "" : System.Uri.EscapeDataString(maxitems));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5600,7 +5511,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5620,8 +5530,7 @@ namespace MyNS
 		public async Task ListTrafficPolicyInstancesByHostedZoneAsync(string id, string trafficpolicyinstancename, RRType trafficpolicyinstancetype, string maxitems, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2013-04-01/trafficpolicyinstances/hostedzone#id?id=" + (id==null? "" : System.Uri.EscapeDataString(id))+"&trafficpolicyinstancename=" + (trafficpolicyinstancename==null? "" : System.Uri.EscapeDataString(trafficpolicyinstancename))+"&trafficpolicyinstancetype=" + trafficpolicyinstancetype+"&maxitems=" + (maxitems==null? "" : System.Uri.EscapeDataString(maxitems));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5635,7 +5544,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5663,8 +5571,7 @@ namespace MyNS
 		public async Task ListTrafficPolicyInstancesByPolicyAsync(string id, int version, string hostedzoneid, string trafficpolicyinstancename, RRType trafficpolicyinstancetype, string maxitems, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2013-04-01/trafficpolicyinstances/trafficpolicy#id&version?id=" + (id==null? "" : System.Uri.EscapeDataString(id))+"&version="+version+"&hostedzoneid=" + (hostedzoneid==null? "" : System.Uri.EscapeDataString(hostedzoneid))+"&trafficpolicyinstancename=" + (trafficpolicyinstancename==null? "" : System.Uri.EscapeDataString(trafficpolicyinstancename))+"&trafficpolicyinstancetype=" + trafficpolicyinstancetype+"&maxitems=" + (maxitems==null? "" : System.Uri.EscapeDataString(maxitems));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5678,7 +5585,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5698,8 +5604,7 @@ namespace MyNS
 		public async Task ListTrafficPolicyVersionsAsync(string Id, string trafficpolicyversion, string maxitems, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2013-04-01/trafficpolicies/"+ (Id==null? "" : System.Uri.EscapeDataString(Id))+"/versions&trafficpolicyversion=" + (trafficpolicyversion==null? "" : System.Uri.EscapeDataString(trafficpolicyversion))+"&maxitems=" + (maxitems==null? "" : System.Uri.EscapeDataString(maxitems));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5713,7 +5618,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5742,8 +5646,7 @@ namespace MyNS
 		public async Task TestDNSAnswerAsync(string hostedzoneid, string recordname, RRType recordtype, string resolverip, string edns0clientsubnetip, string edns0clientsubnetmask, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2013-04-01/testdnsanswer#hostedzoneid&recordname&recordtype?hostedzoneid=" + (hostedzoneid==null? "" : System.Uri.EscapeDataString(hostedzoneid))+"&recordname=" + (recordname==null? "" : System.Uri.EscapeDataString(recordname))+"&recordtype=" + recordtype+"&resolverip=" + (resolverip==null? "" : System.Uri.EscapeDataString(resolverip))+"&edns0clientsubnetip=" + (edns0clientsubnetip==null? "" : System.Uri.EscapeDataString(edns0clientsubnetip))+"&edns0clientsubnetmask=" + (edns0clientsubnetmask==null? "" : System.Uri.EscapeDataString(edns0clientsubnetmask));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5757,7 +5660,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

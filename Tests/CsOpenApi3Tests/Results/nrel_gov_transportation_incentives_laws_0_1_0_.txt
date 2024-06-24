@@ -579,8 +579,7 @@ namespace MyNS
 		public async Task Transportation_incentives_laws_allAsync(Transportation_incentives_laws_allOutput_format output_format, string api_key, int limit, string jurisdiction, string technology, string incentive_type, string regulation_type, string user_type, bool poc, bool recent, bool expired, string law_type, string keyword, bool local, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1."+output_format+"?api_key=" + (api_key==null? "" : System.Uri.EscapeDataString(api_key))+"&limit="+limit+"&jurisdiction=" + (jurisdiction==null? "" : System.Uri.EscapeDataString(jurisdiction))+"&technology=" + (technology==null? "" : System.Uri.EscapeDataString(technology))+"&incentive_type=" + (incentive_type==null? "" : System.Uri.EscapeDataString(incentive_type))+"&regulation_type=" + (regulation_type==null? "" : System.Uri.EscapeDataString(regulation_type))+"&user_type=" + (user_type==null? "" : System.Uri.EscapeDataString(user_type))+"&poc="+poc+"&recent="+recent+"&expired="+expired+"&law_type=" + (law_type==null? "" : System.Uri.EscapeDataString(law_type))+"&keyword=" + (keyword==null? "" : System.Uri.EscapeDataString(keyword))+"&local="+local;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -594,7 +593,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -609,8 +607,7 @@ namespace MyNS
 		public async Task Transportation_incentives_laws_categoriesAsync(Transportation_incentives_laws_categoriesOutput_format output_format, string api_key, Transportation_incentives_laws_categoriesType type, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/category-list."+output_format+"?api_key=" + (api_key==null? "" : System.Uri.EscapeDataString(api_key))+"&type=" + type;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -624,7 +621,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -639,8 +635,7 @@ namespace MyNS
 		public async Task Transportation_incentives_laws_pocsAsync(Transportation_incentives_laws_categoriesOutput_format output_format, string api_key, string jurisdiction, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/pocs."+output_format+"?api_key=" + (api_key==null? "" : System.Uri.EscapeDataString(api_key))+"&jurisdiction=" + (jurisdiction==null? "" : System.Uri.EscapeDataString(jurisdiction));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -654,7 +649,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -671,8 +665,7 @@ namespace MyNS
 		public async Task Transportation_incentives_laws_idAsync(Transportation_incentives_laws_categoriesOutput_format output_format, string api_key, int id, bool poc, bool expired, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/"+id+"."+output_format+"?api_key=" + (api_key==null? "" : System.Uri.EscapeDataString(api_key))+"&poc="+poc+"&expired="+expired;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -686,7 +679,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

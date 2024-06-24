@@ -808,8 +808,7 @@ namespace MyNS
 		public async Task<object> Favico_favicon_ico_getAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "favicon.ico";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -819,13 +818,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<object>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<object>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -841,8 +839,7 @@ namespace MyNS
 		public async Task<object> Pong_ping_getAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "ping";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -852,13 +849,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<object>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<object>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -898,8 +894,7 @@ namespace MyNS
 		public async Task<OpenAQCitiesResult> Cities_getv1_v1_cities_getAsync(int limit, int page, int offset, Sort sort, string country_id, string[] country, string[] city, CitiesOrder order_by, string entity, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/cities?limit="+limit+"&page="+page+"&offset="+offset+"&sort=" + sort+"&country_id=" + (country_id==null? "" : System.Uri.EscapeDataString(country_id))+"&"+string.Join("&", country.Select(z => $"country={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", city.Select(z => $"city={System.Uri.EscapeDataString(z.ToString())}"))+"&order_by=" + order_by+"&entity=" + (entity==null? "" : System.Uri.EscapeDataString(entity));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -909,13 +904,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<OpenAQCitiesResult>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<OpenAQCitiesResult>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -946,8 +940,7 @@ namespace MyNS
 		public async Task<OpenAQCountriesResult> Countries_getv1_v1_countries_getAsync(int limit, int page, int offset, Sort sort, string country_id, string[] country, CountriesOrder order_by, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/countries?limit="+limit+"&page="+page+"&offset="+offset+"&sort=" + sort+"&country_id=" + (country_id==null? "" : System.Uri.EscapeDataString(country_id))+"&"+string.Join("&", country.Select(z => $"country={System.Uri.EscapeDataString(z.ToString())}"))+"&order_by=" + order_by;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -957,13 +950,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<OpenAQCountriesResult>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<OpenAQCountriesResult>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -990,8 +982,7 @@ namespace MyNS
 		public async Task<OpenAQCountriesResult> Countries_get_v1_countries__country_id__getAsync(string country_id, int limit, int page, int offset, Sort sort, string[] country, CountriesOrder order_by, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/countries/"+ (country_id==null? "" : System.Uri.EscapeDataString(country_id))+"&limit="+limit+"&page="+page+"&offset="+offset+"&sort=" + sort+"&"+string.Join("&", country.Select(z => $"country={System.Uri.EscapeDataString(z.ToString())}"))+"&order_by=" + order_by;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1001,13 +992,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<OpenAQCountriesResult>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<OpenAQCountriesResult>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1082,8 +1072,7 @@ namespace MyNS
 					Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/latest?limit="+limit+"&page="+page+"&offset="+offset+"&sort=" + sort+"&has_geo="+has_geo+"&parameter_id="+parameter_id+"&"+string.Join("&", parameter.Select(z => $"parameter={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", unit.Select(z => $"unit={System.Uri.EscapeDataString(z.ToString())}"))+"&coordinates=" + (coordinates==null? "" : System.Uri.EscapeDataString(coordinates))+"&radius="+radius+"&country_id=" + (country_id==null? "" : System.Uri.EscapeDataString(country_id))+"&"+string.Join("&", country.Select(z => $"country={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", city.Select(z => $"city={System.Uri.EscapeDataString(z.ToString())}"))+"&location_id="+location_id+"&"+string.Join("&", location.Select(z => $"location={System.Uri.EscapeDataString(z.ToString())}"))+"&order_by=" + order_by+"&isMobile="+isMobile+"&isAnalysis="+isAnalysis+"&"+string.Join("&", sourceName.Select(z => $"sourceName={System.Uri.EscapeDataString(z.ToString())}"))+"&entity=" + entity+"&sensorType=" + sensorType+"&"+string.Join("&", modelName.Select(z => $"modelName={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", manufacturerName.Select(z => $"manufacturerName={System.Uri.EscapeDataString(z.ToString())}"))+"&dumpRaw="+dumpRaw;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1093,13 +1082,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<OpenAQResult>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<OpenAQResult>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1174,8 +1162,7 @@ namespace MyNS
 					Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/latest/"+location_id+"?limit="+limit+"&page="+page+"&offset="+offset+"&sort=" + sort+"&has_geo="+has_geo+"&parameter_id="+parameter_id+"&"+string.Join("&", parameter.Select(z => $"parameter={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", unit.Select(z => $"unit={System.Uri.EscapeDataString(z.ToString())}"))+"&coordinates=" + (coordinates==null? "" : System.Uri.EscapeDataString(coordinates))+"&radius="+radius+"&country_id=" + (country_id==null? "" : System.Uri.EscapeDataString(country_id))+"&"+string.Join("&", country.Select(z => $"country={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", city.Select(z => $"city={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", location.Select(z => $"location={System.Uri.EscapeDataString(z.ToString())}"))+"&order_by=" + order_by+"&isMobile="+isMobile+"&isAnalysis="+isAnalysis+"&"+string.Join("&", sourceName.Select(z => $"sourceName={System.Uri.EscapeDataString(z.ToString())}"))+"&entity=" + entity+"&sensorType=" + sensorType+"&"+string.Join("&", modelName.Select(z => $"modelName={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", manufacturerName.Select(z => $"manufacturerName={System.Uri.EscapeDataString(z.ToString())}"))+"&dumpRaw="+dumpRaw;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1185,13 +1172,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<OpenAQResult>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<OpenAQResult>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1266,8 +1252,7 @@ namespace MyNS
 					Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/locations?limit="+limit+"&page="+page+"&offset="+offset+"&sort=" + sort+"&has_geo="+has_geo+"&parameter_id="+parameter_id+"&"+string.Join("&", parameter.Select(z => $"parameter={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", unit.Select(z => $"unit={System.Uri.EscapeDataString(z.ToString())}"))+"&coordinates=" + (coordinates==null? "" : System.Uri.EscapeDataString(coordinates))+"&radius="+radius+"&country_id=" + (country_id==null? "" : System.Uri.EscapeDataString(country_id))+"&"+string.Join("&", country.Select(z => $"country={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", city.Select(z => $"city={System.Uri.EscapeDataString(z.ToString())}"))+"&location_id="+location_id+"&"+string.Join("&", location.Select(z => $"location={System.Uri.EscapeDataString(z.ToString())}"))+"&order_by=" + order_by+"&isMobile="+isMobile+"&isAnalysis="+isAnalysis+"&"+string.Join("&", sourceName.Select(z => $"sourceName={System.Uri.EscapeDataString(z.ToString())}"))+"&entity=" + entity+"&sensorType=" + sensorType+"&"+string.Join("&", modelName.Select(z => $"modelName={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", manufacturerName.Select(z => $"manufacturerName={System.Uri.EscapeDataString(z.ToString())}"))+"&dumpRaw="+dumpRaw;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1277,13 +1262,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<OpenAQResult>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<OpenAQResult>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1358,8 +1342,7 @@ namespace MyNS
 					Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/locations/"+location_id+"?limit="+limit+"&page="+page+"&offset="+offset+"&sort=" + sort+"&has_geo="+has_geo+"&parameter_id="+parameter_id+"&"+string.Join("&", parameter.Select(z => $"parameter={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", unit.Select(z => $"unit={System.Uri.EscapeDataString(z.ToString())}"))+"&coordinates=" + (coordinates==null? "" : System.Uri.EscapeDataString(coordinates))+"&radius="+radius+"&country_id=" + (country_id==null? "" : System.Uri.EscapeDataString(country_id))+"&"+string.Join("&", country.Select(z => $"country={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", city.Select(z => $"city={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", location.Select(z => $"location={System.Uri.EscapeDataString(z.ToString())}"))+"&order_by=" + order_by+"&isMobile="+isMobile+"&isAnalysis="+isAnalysis+"&"+string.Join("&", sourceName.Select(z => $"sourceName={System.Uri.EscapeDataString(z.ToString())}"))+"&entity=" + entity+"&sensorType=" + sensorType+"&"+string.Join("&", modelName.Select(z => $"modelName={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", manufacturerName.Select(z => $"manufacturerName={System.Uri.EscapeDataString(z.ToString())}"))+"&dumpRaw="+dumpRaw;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1369,13 +1352,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<OpenAQResult>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<OpenAQResult>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1444,8 +1426,7 @@ namespace MyNS
 					Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/measurements?format=" + (format==null? "" : System.Uri.EscapeDataString(format))+"&date_from=" + date_from+"&date_to=" + date_to+"&limit="+limit+"&page="+page+"&offset="+offset+"&sort=" + sort+"&has_geo="+has_geo+"&parameter_id="+parameter_id+"&"+string.Join("&", parameter.Select(z => $"parameter={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", unit.Select(z => $"unit={System.Uri.EscapeDataString(z.ToString())}"))+"&coordinates=" + (coordinates==null? "" : System.Uri.EscapeDataString(coordinates))+"&radius="+radius+"&country_id=" + (country_id==null? "" : System.Uri.EscapeDataString(country_id))+"&"+string.Join("&", country.Select(z => $"country={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", city.Select(z => $"city={System.Uri.EscapeDataString(z.ToString())}"))+"&location_id="+location_id+"&"+string.Join("&", location.Select(z => $"location={System.Uri.EscapeDataString(z.ToString())}"))+"&order_by=" + order_by+"&isMobile="+isMobile+"&isAnalysis="+isAnalysis+"&project="+project+"&entity=" + entity+"&sensorType=" + sensorType+"&value_from="+value_from+"&value_to="+value_to+"&include_fields=" + (include_fields==null? "" : System.Uri.EscapeDataString(include_fields));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1455,13 +1436,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<object>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<object>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1485,8 +1465,7 @@ namespace MyNS
 		public async Task<OpenAQParametersResult> Parameters_getv1_v1_parameters_getAsync(int limit, int page, int offset, Sort sort, string[] sourceName, int[] sourceId, string[] sourceSlug, string order_by, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/parameters?limit="+limit+"&page="+page+"&offset="+offset+"&sort=" + sort+"&"+string.Join("&", sourceName.Select(z => $"sourceName={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", sourceId.Select(z => $"sourceId={z}"))+"&"+string.Join("&", sourceSlug.Select(z => $"sourceSlug={System.Uri.EscapeDataString(z.ToString())}"))+"&order_by=" + (order_by==null? "" : System.Uri.EscapeDataString(order_by));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1496,13 +1475,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<OpenAQParametersResult>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<OpenAQParametersResult>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1526,8 +1504,7 @@ namespace MyNS
 		public async Task<OpenAQResult> Sources_v1_get_v1_sources_getAsync(int limit, int page, int offset, Sort sort, string name, SourcesV1Order order_by, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/sources?limit="+limit+"&page="+page+"&offset="+offset+"&sort=" + sort+"&name=" + (name==null? "" : System.Uri.EscapeDataString(name))+"&order_by=" + order_by;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1537,13 +1514,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<OpenAQResult>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<OpenAQResult>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1596,8 +1572,7 @@ namespace MyNS
 					Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v2/averages?date_from=" + date_from+"&date_to=" + date_to+"&parameter_id="+parameter_id+"&"+string.Join("&", parameter.Select(z => $"parameter={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", unit.Select(z => $"unit={System.Uri.EscapeDataString(z.ToString())}"))+"&project_id="+project_id+"&"+string.Join("&", project.Select(z => $"project={System.Uri.EscapeDataString(z.ToString())}"))+"&country_id=" + (country_id==null? "" : System.Uri.EscapeDataString(country_id))+"&"+string.Join("&", country.Select(z => $"country={System.Uri.EscapeDataString(z.ToString())}"))+"&limit="+limit+"&page="+page+"&offset="+offset+"&sort=" + sort+"&spatial=" + spatial+"&temporal=" + temporal+"&"+string.Join("&", location.Select(z => $"location={System.Uri.EscapeDataString(z.ToString())}"))+"&group="+group;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1607,13 +1582,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<OpenAQResult>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<OpenAQResult>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1653,8 +1627,7 @@ namespace MyNS
 		public async Task<OpenAQCitiesResult> Cities_get_v2_cities_getAsync(int limit, int page, int offset, Sort sort, string country_id, string[] country, string[] city, CitiesOrder order_by, string entity, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v2/cities?limit="+limit+"&page="+page+"&offset="+offset+"&sort=" + sort+"&country_id=" + (country_id==null? "" : System.Uri.EscapeDataString(country_id))+"&"+string.Join("&", country.Select(z => $"country={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", city.Select(z => $"city={System.Uri.EscapeDataString(z.ToString())}"))+"&order_by=" + order_by+"&entity=" + (entity==null? "" : System.Uri.EscapeDataString(entity));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1664,13 +1637,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<OpenAQCitiesResult>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<OpenAQCitiesResult>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1701,8 +1673,7 @@ namespace MyNS
 		public async Task<OpenAQCountriesResult> Countries_get_v2_countries_getAsync(int limit, int page, int offset, Sort sort, string country_id, string[] country, CountriesOrder order_by, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v2/countries?limit="+limit+"&page="+page+"&offset="+offset+"&sort=" + sort+"&country_id=" + (country_id==null? "" : System.Uri.EscapeDataString(country_id))+"&"+string.Join("&", country.Select(z => $"country={System.Uri.EscapeDataString(z.ToString())}"))+"&order_by=" + order_by;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1712,13 +1683,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<OpenAQCountriesResult>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<OpenAQCountriesResult>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1745,8 +1715,7 @@ namespace MyNS
 		public async Task<OpenAQCountriesResult> Countries_get_v2_countries__country_id__getAsync(string country_id, int limit, int page, int offset, Sort sort, string[] country, CountriesOrder order_by, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v2/countries/"+ (country_id==null? "" : System.Uri.EscapeDataString(country_id))+"&limit="+limit+"&page="+page+"&offset="+offset+"&sort=" + sort+"&"+string.Join("&", country.Select(z => $"country={System.Uri.EscapeDataString(z.ToString())}"))+"&order_by=" + order_by;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1756,13 +1725,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<OpenAQCountriesResult>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<OpenAQCountriesResult>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1837,8 +1805,7 @@ namespace MyNS
 					Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v2/latest?limit="+limit+"&page="+page+"&offset="+offset+"&sort=" + sort+"&has_geo="+has_geo+"&parameter_id="+parameter_id+"&"+string.Join("&", parameter.Select(z => $"parameter={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", unit.Select(z => $"unit={System.Uri.EscapeDataString(z.ToString())}"))+"&coordinates=" + (coordinates==null? "" : System.Uri.EscapeDataString(coordinates))+"&radius="+radius+"&country_id=" + (country_id==null? "" : System.Uri.EscapeDataString(country_id))+"&"+string.Join("&", country.Select(z => $"country={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", city.Select(z => $"city={System.Uri.EscapeDataString(z.ToString())}"))+"&location_id="+location_id+"&"+string.Join("&", location.Select(z => $"location={System.Uri.EscapeDataString(z.ToString())}"))+"&order_by=" + order_by+"&isMobile="+isMobile+"&isAnalysis="+isAnalysis+"&"+string.Join("&", sourceName.Select(z => $"sourceName={System.Uri.EscapeDataString(z.ToString())}"))+"&entity=" + entity+"&sensorType=" + sensorType+"&"+string.Join("&", modelName.Select(z => $"modelName={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", manufacturerName.Select(z => $"manufacturerName={System.Uri.EscapeDataString(z.ToString())}"))+"&dumpRaw="+dumpRaw;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1848,13 +1815,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<OpenAQResult>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<OpenAQResult>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1929,8 +1895,7 @@ namespace MyNS
 					Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v2/latest/"+location_id+"?limit="+limit+"&page="+page+"&offset="+offset+"&sort=" + sort+"&has_geo="+has_geo+"&parameter_id="+parameter_id+"&"+string.Join("&", parameter.Select(z => $"parameter={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", unit.Select(z => $"unit={System.Uri.EscapeDataString(z.ToString())}"))+"&coordinates=" + (coordinates==null? "" : System.Uri.EscapeDataString(coordinates))+"&radius="+radius+"&country_id=" + (country_id==null? "" : System.Uri.EscapeDataString(country_id))+"&"+string.Join("&", country.Select(z => $"country={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", city.Select(z => $"city={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", location.Select(z => $"location={System.Uri.EscapeDataString(z.ToString())}"))+"&order_by=" + order_by+"&isMobile="+isMobile+"&isAnalysis="+isAnalysis+"&"+string.Join("&", sourceName.Select(z => $"sourceName={System.Uri.EscapeDataString(z.ToString())}"))+"&entity=" + entity+"&sensorType=" + sensorType+"&"+string.Join("&", modelName.Select(z => $"modelName={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", manufacturerName.Select(z => $"manufacturerName={System.Uri.EscapeDataString(z.ToString())}"))+"&dumpRaw="+dumpRaw;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1940,13 +1905,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<OpenAQResult>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<OpenAQResult>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2021,8 +1985,7 @@ namespace MyNS
 					Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v2/locations?limit="+limit+"&page="+page+"&offset="+offset+"&sort=" + sort+"&has_geo="+has_geo+"&parameter_id="+parameter_id+"&"+string.Join("&", parameter.Select(z => $"parameter={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", unit.Select(z => $"unit={System.Uri.EscapeDataString(z.ToString())}"))+"&coordinates=" + (coordinates==null? "" : System.Uri.EscapeDataString(coordinates))+"&radius="+radius+"&country_id=" + (country_id==null? "" : System.Uri.EscapeDataString(country_id))+"&"+string.Join("&", country.Select(z => $"country={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", city.Select(z => $"city={System.Uri.EscapeDataString(z.ToString())}"))+"&location_id="+location_id+"&"+string.Join("&", location.Select(z => $"location={System.Uri.EscapeDataString(z.ToString())}"))+"&order_by=" + order_by+"&isMobile="+isMobile+"&isAnalysis="+isAnalysis+"&"+string.Join("&", sourceName.Select(z => $"sourceName={System.Uri.EscapeDataString(z.ToString())}"))+"&entity=" + entity+"&sensorType=" + sensorType+"&"+string.Join("&", modelName.Select(z => $"modelName={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", manufacturerName.Select(z => $"manufacturerName={System.Uri.EscapeDataString(z.ToString())}"))+"&dumpRaw="+dumpRaw;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2032,13 +1995,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<OpenAQResult>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<OpenAQResult>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2050,8 +2012,7 @@ namespace MyNS
 		public async Task<TileJSON> Mobilegentilejson_v2_locations_tiles_mobile_generalized_tiles_json_getAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v2/locations/tiles/mobile-generalized/tiles.json";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2061,13 +2022,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<TileJSON>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<TileJSON>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2080,8 +2040,7 @@ namespace MyNS
 		public async Task Get_mobilegentile_v2_locations_tiles_mobile_generalized__z___x___y__pbf_getAsync(int z, int x, int y, int parameter, int[] location, System.DateTimeOffset lastUpdatedFrom, System.DateTimeOffset lastUpdatedTo, bool isMobile, int project, bool isAnalysis, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v2/locations/tiles/mobile-generalized/"+z+"/"+x+"/"+y+".pbf?parameter=" + parameter+"&"+string.Join("&", location.Select(z => $"location={z}"))+"&lastUpdatedFrom=" + lastUpdatedFrom+"&lastUpdatedTo=" + lastUpdatedTo+"&isMobile="+isMobile+"&project="+project+"&isAnalysis="+isAnalysis;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2095,7 +2054,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2107,8 +2065,7 @@ namespace MyNS
 		public async Task<TileJSON> Mobiletilejson_v2_locations_tiles_mobile_tiles_json_getAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v2/locations/tiles/mobile/tiles.json";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2118,13 +2075,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<TileJSON>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<TileJSON>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2137,8 +2093,7 @@ namespace MyNS
 		public async Task Get_mobiletile_v2_locations_tiles_mobile__z___x___y__pbf_getAsync(int z, int x, int y, System.DateTimeOffset dateFrom, System.DateTimeOffset dateTo, int parameter, int[] location, System.DateTimeOffset lastUpdatedFrom, System.DateTimeOffset lastUpdatedTo, bool isMobile, int project, bool isAnalysis, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v2/locations/tiles/mobile/"+z+"/"+x+"/"+y+".pbf?dateFrom=" + dateFrom+"&dateTo=" + dateTo+"&parameter=" + parameter+"&"+string.Join("&", location.Select(z => $"location={z}"))+"&lastUpdatedFrom=" + lastUpdatedFrom+"&lastUpdatedTo=" + lastUpdatedTo+"&isMobile="+isMobile+"&project="+project+"&isAnalysis="+isAnalysis;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2152,7 +2107,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2164,8 +2118,7 @@ namespace MyNS
 		public async Task<TileJSON> Tilejson_v2_locations_tiles_tiles_json_getAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v2/locations/tiles/tiles.json";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2175,13 +2128,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<TileJSON>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<TileJSON>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2193,8 +2145,7 @@ namespace MyNS
 		public async Task Demo_v2_locations_tiles_viewer_getAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v2/locations/tiles/viewer";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2208,7 +2159,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2221,8 +2171,7 @@ namespace MyNS
 		public async Task Get_tile_v2_locations_tiles__z___x___y__pbf_getAsync(int z, int x, int y, int parameter, int[] location, System.DateTimeOffset lastUpdatedFrom, System.DateTimeOffset lastUpdatedTo, bool isMobile, int project, bool isAnalysis, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v2/locations/tiles/"+z+"/"+x+"/"+y+".pbf?parameter=" + parameter+"&"+string.Join("&", location.Select(z => $"location={z}"))+"&lastUpdatedFrom=" + lastUpdatedFrom+"&lastUpdatedTo=" + lastUpdatedTo+"&isMobile="+isMobile+"&project="+project+"&isAnalysis="+isAnalysis;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2236,7 +2185,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2311,8 +2259,7 @@ namespace MyNS
 					Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v2/locations/"+location_id+"?limit="+limit+"&page="+page+"&offset="+offset+"&sort=" + sort+"&has_geo="+has_geo+"&parameter_id="+parameter_id+"&"+string.Join("&", parameter.Select(z => $"parameter={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", unit.Select(z => $"unit={System.Uri.EscapeDataString(z.ToString())}"))+"&coordinates=" + (coordinates==null? "" : System.Uri.EscapeDataString(coordinates))+"&radius="+radius+"&country_id=" + (country_id==null? "" : System.Uri.EscapeDataString(country_id))+"&"+string.Join("&", country.Select(z => $"country={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", city.Select(z => $"city={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", location.Select(z => $"location={System.Uri.EscapeDataString(z.ToString())}"))+"&order_by=" + order_by+"&isMobile="+isMobile+"&isAnalysis="+isAnalysis+"&"+string.Join("&", sourceName.Select(z => $"sourceName={System.Uri.EscapeDataString(z.ToString())}"))+"&entity=" + entity+"&sensorType=" + sensorType+"&"+string.Join("&", modelName.Select(z => $"modelName={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", manufacturerName.Select(z => $"manufacturerName={System.Uri.EscapeDataString(z.ToString())}"))+"&dumpRaw="+dumpRaw;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2322,13 +2269,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<OpenAQResult>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<OpenAQResult>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2340,8 +2286,7 @@ namespace MyNS
 		public async Task<OpenAQResult> Mfr_get_v2_manufacturers_getAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v2/manufacturers";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2351,13 +2296,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<OpenAQResult>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<OpenAQResult>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2426,8 +2370,7 @@ namespace MyNS
 					Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v2/measurements?format=" + (format==null? "" : System.Uri.EscapeDataString(format))+"&date_from=" + date_from+"&date_to=" + date_to+"&limit="+limit+"&page="+page+"&offset="+offset+"&sort=" + sort+"&has_geo="+has_geo+"&parameter_id="+parameter_id+"&"+string.Join("&", parameter.Select(z => $"parameter={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", unit.Select(z => $"unit={System.Uri.EscapeDataString(z.ToString())}"))+"&coordinates=" + (coordinates==null? "" : System.Uri.EscapeDataString(coordinates))+"&radius="+radius+"&country_id=" + (country_id==null? "" : System.Uri.EscapeDataString(country_id))+"&"+string.Join("&", country.Select(z => $"country={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", city.Select(z => $"city={System.Uri.EscapeDataString(z.ToString())}"))+"&location_id="+location_id+"&"+string.Join("&", location.Select(z => $"location={System.Uri.EscapeDataString(z.ToString())}"))+"&order_by=" + order_by+"&isMobile="+isMobile+"&isAnalysis="+isAnalysis+"&project="+project+"&entity=" + entity+"&sensorType=" + sensorType+"&value_from="+value_from+"&value_to="+value_to+"&include_fields=" + (include_fields==null? "" : System.Uri.EscapeDataString(include_fields));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2437,13 +2380,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<object>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<object>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2455,8 +2397,7 @@ namespace MyNS
 		public async Task<OpenAQResult> Model_get_v2_models_getAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v2/models";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2466,13 +2407,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<OpenAQResult>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<OpenAQResult>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2496,8 +2436,7 @@ namespace MyNS
 		public async Task<OpenAQParametersResult> Parameters_get_v2_parameters_getAsync(int limit, int page, int offset, Sort sort, string[] sourceName, int[] sourceId, string[] sourceSlug, string order_by, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v2/parameters?limit="+limit+"&page="+page+"&offset="+offset+"&sort=" + sort+"&"+string.Join("&", sourceName.Select(z => $"sourceName={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", sourceId.Select(z => $"sourceId={z}"))+"&"+string.Join("&", sourceSlug.Select(z => $"sourceSlug={System.Uri.EscapeDataString(z.ToString())}"))+"&order_by=" + (order_by==null? "" : System.Uri.EscapeDataString(order_by));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2507,13 +2446,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<OpenAQParametersResult>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<OpenAQParametersResult>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2566,8 +2504,7 @@ namespace MyNS
 					Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v2/projects?country_id=" + (country_id==null? "" : System.Uri.EscapeDataString(country_id))+"&"+string.Join("&", country.Select(z => $"country={System.Uri.EscapeDataString(z.ToString())}"))+"&limit="+limit+"&page="+page+"&offset="+offset+"&sort=" + sort+"&parameter_id="+parameter_id+"&"+string.Join("&", parameter.Select(z => $"parameter={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", unit.Select(z => $"unit={System.Uri.EscapeDataString(z.ToString())}"))+"&project_id="+project_id+"&"+string.Join("&", project.Select(z => $"project={System.Uri.EscapeDataString(z.ToString())}"))+"&order_by=" + order_by+"&isMobile="+isMobile+"&isAnalysis="+isAnalysis+"&entity=" + (entity==null? "" : System.Uri.EscapeDataString(entity))+"&sensorType=" + (sensorType==null? "" : System.Uri.EscapeDataString(sensorType))+"&"+string.Join("&", sourceName.Select(z => $"sourceName={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2577,13 +2514,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<OpenAQProjectsResult>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<OpenAQProjectsResult>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2636,8 +2572,7 @@ namespace MyNS
 					Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v2/projects/"+project_id+"?country_id=" + (country_id==null? "" : System.Uri.EscapeDataString(country_id))+"&"+string.Join("&", country.Select(z => $"country={System.Uri.EscapeDataString(z.ToString())}"))+"&limit="+limit+"&page="+page+"&offset="+offset+"&sort=" + sort+"&parameter_id="+parameter_id+"&"+string.Join("&", parameter.Select(z => $"parameter={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", unit.Select(z => $"unit={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", project.Select(z => $"project={System.Uri.EscapeDataString(z.ToString())}"))+"&order_by=" + order_by+"&isMobile="+isMobile+"&isAnalysis="+isAnalysis+"&entity=" + (entity==null? "" : System.Uri.EscapeDataString(entity))+"&sensorType=" + (sensorType==null? "" : System.Uri.EscapeDataString(sensorType))+"&"+string.Join("&", sourceName.Select(z => $"sourceName={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2647,13 +2582,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<OpenAQProjectsResult>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<OpenAQProjectsResult>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2677,8 +2611,7 @@ namespace MyNS
 		public async Task<OpenAQResult> Sources_get_v2_sources_getAsync(int limit, int page, int offset, Sort sort, string[] sourceName, int[] sourceId, string[] sourceSlug, SourcesOrder order_by, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v2/sources?limit="+limit+"&page="+page+"&offset="+offset+"&sort=" + sort+"&"+string.Join("&", sourceName.Select(z => $"sourceName={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", sourceId.Select(z => $"sourceId={z}"))+"&"+string.Join("&", sourceSlug.Select(z => $"sourceSlug={System.Uri.EscapeDataString(z.ToString())}"))+"&order_by=" + order_by;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2688,13 +2621,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<OpenAQResult>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<OpenAQResult>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2706,8 +2638,7 @@ namespace MyNS
 		public async Task<object> Readme_get_v2_sources_readme__slug__getAsync(string slug, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v2/sources/readme/"+ (slug==null? "" : System.Uri.EscapeDataString(slug));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2717,13 +2648,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<object>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<object>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2735,8 +2665,7 @@ namespace MyNS
 		public async Task<OpenAQResult> Summary_get_v2_summary_getAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v2/summary";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2746,13 +2675,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<OpenAQResult>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<OpenAQResult>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

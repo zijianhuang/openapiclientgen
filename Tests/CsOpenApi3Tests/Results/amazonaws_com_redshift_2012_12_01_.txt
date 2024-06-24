@@ -6870,8 +6870,7 @@ namespace MyNS
 		public async Task GET_AcceptReservedNodeExchangeAsync(string ReservedNodeId, string TargetReservedNodeOfferingId, GET_AcceptReservedNodeExchangeAction Action, GET_AcceptReservedNodeExchangeVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=AcceptReservedNodeExchange?ReservedNodeId=" + (ReservedNodeId==null? "" : System.Uri.EscapeDataString(ReservedNodeId))+"&TargetReservedNodeOfferingId=" + (TargetReservedNodeOfferingId==null? "" : System.Uri.EscapeDataString(TargetReservedNodeOfferingId))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6885,7 +6884,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6910,8 +6908,7 @@ namespace MyNS
 		public async Task GET_AddPartnerAsync(string AccountId, string ClusterIdentifier, string DatabaseName, string PartnerName, GET_AddPartnerAction Action, GET_AddPartnerVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=AddPartner?AccountId=" + (AccountId==null? "" : System.Uri.EscapeDataString(AccountId))+"&ClusterIdentifier=" + (ClusterIdentifier==null? "" : System.Uri.EscapeDataString(ClusterIdentifier))+"&DatabaseName=" + (DatabaseName==null? "" : System.Uri.EscapeDataString(DatabaseName))+"&PartnerName=" + (PartnerName==null? "" : System.Uri.EscapeDataString(PartnerName))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6925,7 +6922,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6947,8 +6943,7 @@ namespace MyNS
 		public async Task GET_AssociateDataShareConsumerAsync(string DataShareArn, bool AssociateEntireAccount, string ConsumerArn, string ConsumerRegion, GET_AssociateDataShareConsumerAction Action, GET_AssociateDataShareConsumerVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=AssociateDataShareConsumer?DataShareArn=" + (DataShareArn==null? "" : System.Uri.EscapeDataString(DataShareArn))+"&AssociateEntireAccount="+AssociateEntireAccount+"&ConsumerArn=" + (ConsumerArn==null? "" : System.Uri.EscapeDataString(ConsumerArn))+"&ConsumerRegion=" + (ConsumerRegion==null? "" : System.Uri.EscapeDataString(ConsumerRegion))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6962,7 +6957,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6986,8 +6980,7 @@ namespace MyNS
 		public async Task GET_AuthorizeClusterSecurityGroupIngressAsync(string ClusterSecurityGroupName, string CIDRIP, string EC2SecurityGroupName, string EC2SecurityGroupOwnerId, GET_AuthorizeClusterSecurityGroupIngressAction Action, GET_AuthorizeClusterSecurityGroupIngressVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=AuthorizeClusterSecurityGroupIngress?ClusterSecurityGroupName=" + (ClusterSecurityGroupName==null? "" : System.Uri.EscapeDataString(ClusterSecurityGroupName))+"&CIDRIP=" + (CIDRIP==null? "" : System.Uri.EscapeDataString(CIDRIP))+"&EC2SecurityGroupName=" + (EC2SecurityGroupName==null? "" : System.Uri.EscapeDataString(EC2SecurityGroupName))+"&EC2SecurityGroupOwnerId=" + (EC2SecurityGroupOwnerId==null? "" : System.Uri.EscapeDataString(EC2SecurityGroupOwnerId))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -7001,7 +6994,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -7019,8 +7011,7 @@ namespace MyNS
 		public async Task GET_AuthorizeDataShareAsync(string DataShareArn, string ConsumerIdentifier, GET_AuthorizeDataShareAction Action, GET_AuthorizeDataShareVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=AuthorizeDataShare?DataShareArn=" + (DataShareArn==null? "" : System.Uri.EscapeDataString(DataShareArn))+"&ConsumerIdentifier=" + (ConsumerIdentifier==null? "" : System.Uri.EscapeDataString(ConsumerIdentifier))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -7034,7 +7025,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -7053,8 +7043,7 @@ namespace MyNS
 		public async Task GET_AuthorizeEndpointAccessAsync(string ClusterIdentifier, string Account, string[] VpcIds, GET_AuthorizeEndpointAccessAction Action, GET_AuthorizeEndpointAccessVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=AuthorizeEndpointAccess?ClusterIdentifier=" + (ClusterIdentifier==null? "" : System.Uri.EscapeDataString(ClusterIdentifier))+"&Account=" + (Account==null? "" : System.Uri.EscapeDataString(Account))+"&"+string.Join("&", VpcIds.Select(z => $"VpcIds={System.Uri.EscapeDataString(z.ToString())}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -7068,7 +7057,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -7092,8 +7080,7 @@ namespace MyNS
 		public async Task GET_AuthorizeSnapshotAccessAsync(string SnapshotIdentifier, string SnapshotArn, string SnapshotClusterIdentifier, string AccountWithRestoreAccess, GET_AuthorizeSnapshotAccessAction Action, GET_AuthorizeSnapshotAccessVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=AuthorizeSnapshotAccess?SnapshotIdentifier=" + (SnapshotIdentifier==null? "" : System.Uri.EscapeDataString(SnapshotIdentifier))+"&SnapshotArn=" + (SnapshotArn==null? "" : System.Uri.EscapeDataString(SnapshotArn))+"&SnapshotClusterIdentifier=" + (SnapshotClusterIdentifier==null? "" : System.Uri.EscapeDataString(SnapshotClusterIdentifier))+"&AccountWithRestoreAccess=" + (AccountWithRestoreAccess==null? "" : System.Uri.EscapeDataString(AccountWithRestoreAccess))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -7107,7 +7094,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -7120,8 +7106,7 @@ namespace MyNS
 		public async Task GET_BatchDeleteClusterSnapshotsAsync(string[] Identifiers, GET_BatchDeleteClusterSnapshotsAction Action, GET_BatchDeleteClusterSnapshotsVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=BatchDeleteClusterSnapshots?"+string.Join("&", Identifiers.Select(z => $"Identifiers={System.Uri.EscapeDataString(z.ToString())}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -7135,7 +7120,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -7150,8 +7134,7 @@ namespace MyNS
 		public async Task GET_BatchModifyClusterSnapshotsAsync(string[] SnapshotIdentifierList, int ManualSnapshotRetentionPeriod, bool Force, GET_BatchModifyClusterSnapshotsAction Action, GET_BatchModifyClusterSnapshotsVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=BatchModifyClusterSnapshots?"+string.Join("&", SnapshotIdentifierList.Select(z => $"SnapshotIdentifierList={System.Uri.EscapeDataString(z.ToString())}"))+"&ManualSnapshotRetentionPeriod="+ManualSnapshotRetentionPeriod+"&Force="+Force+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -7165,7 +7148,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -7180,8 +7162,7 @@ namespace MyNS
 		public async Task GET_CancelResizeAsync(string ClusterIdentifier, GET_CancelResizeAction Action, GET_CancelResizeVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=CancelResize?ClusterIdentifier=" + (ClusterIdentifier==null? "" : System.Uri.EscapeDataString(ClusterIdentifier))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -7195,7 +7176,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -7217,8 +7197,7 @@ namespace MyNS
 		public async Task GET_CopyClusterSnapshotAsync(string SourceSnapshotIdentifier, string SourceSnapshotClusterIdentifier, string TargetSnapshotIdentifier, int ManualSnapshotRetentionPeriod, GET_CopyClusterSnapshotAction Action, GET_CopyClusterSnapshotVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=CopyClusterSnapshot?SourceSnapshotIdentifier=" + (SourceSnapshotIdentifier==null? "" : System.Uri.EscapeDataString(SourceSnapshotIdentifier))+"&SourceSnapshotClusterIdentifier=" + (SourceSnapshotClusterIdentifier==null? "" : System.Uri.EscapeDataString(SourceSnapshotClusterIdentifier))+"&TargetSnapshotIdentifier=" + (TargetSnapshotIdentifier==null? "" : System.Uri.EscapeDataString(TargetSnapshotIdentifier))+"&ManualSnapshotRetentionPeriod="+ManualSnapshotRetentionPeriod+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -7232,7 +7211,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -7250,8 +7228,7 @@ namespace MyNS
 		public async Task GET_CreateAuthenticationProfileAsync(string AuthenticationProfileName, string AuthenticationProfileContent, GET_CreateAuthenticationProfileAction Action, GET_CreateAuthenticationProfileVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=CreateAuthenticationProfile?AuthenticationProfileName=" + (AuthenticationProfileName==null? "" : System.Uri.EscapeDataString(AuthenticationProfileName))+"&AuthenticationProfileContent=" + (AuthenticationProfileContent==null? "" : System.Uri.EscapeDataString(AuthenticationProfileContent))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -7265,7 +7242,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -7388,8 +7364,7 @@ namespace MyNS
 					Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=CreateCluster?DBName=" + (DBName==null? "" : System.Uri.EscapeDataString(DBName))+"&ClusterIdentifier=" + (ClusterIdentifier==null? "" : System.Uri.EscapeDataString(ClusterIdentifier))+"&ClusterType=" + (ClusterType==null? "" : System.Uri.EscapeDataString(ClusterType))+"&NodeType=" + (NodeType==null? "" : System.Uri.EscapeDataString(NodeType))+"&MasterUsername=" + (MasterUsername==null? "" : System.Uri.EscapeDataString(MasterUsername))+"&MasterUserPassword=" + (MasterUserPassword==null? "" : System.Uri.EscapeDataString(MasterUserPassword))+"&"+string.Join("&", ClusterSecurityGroups.Select(z => $"ClusterSecurityGroups={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", VpcSecurityGroupIds.Select(z => $"VpcSecurityGroupIds={System.Uri.EscapeDataString(z.ToString())}"))+"&ClusterSubnetGroupName=" + (ClusterSubnetGroupName==null? "" : System.Uri.EscapeDataString(ClusterSubnetGroupName))+"&AvailabilityZone=" + (AvailabilityZone==null? "" : System.Uri.EscapeDataString(AvailabilityZone))+"&PreferredMaintenanceWindow=" + (PreferredMaintenanceWindow==null? "" : System.Uri.EscapeDataString(PreferredMaintenanceWindow))+"&ClusterParameterGroupName=" + (ClusterParameterGroupName==null? "" : System.Uri.EscapeDataString(ClusterParameterGroupName))+"&AutomatedSnapshotRetentionPeriod="+AutomatedSnapshotRetentionPeriod+"&ManualSnapshotRetentionPeriod="+ManualSnapshotRetentionPeriod+"&Port="+Port+"&ClusterVersion=" + (ClusterVersion==null? "" : System.Uri.EscapeDataString(ClusterVersion))+"&AllowVersionUpgrade="+AllowVersionUpgrade+"&NumberOfNodes="+NumberOfNodes+"&PubliclyAccessible="+PubliclyAccessible+"&Encrypted="+Encrypted+"&HsmClientCertificateIdentifier=" + (HsmClientCertificateIdentifier==null? "" : System.Uri.EscapeDataString(HsmClientCertificateIdentifier))+"&HsmConfigurationIdentifier=" + (HsmConfigurationIdentifier==null? "" : System.Uri.EscapeDataString(HsmConfigurationIdentifier))+"&ElasticIp=" + (ElasticIp==null? "" : System.Uri.EscapeDataString(ElasticIp))+"&"+string.Join("&", Tags.Select(z => $"Tags={System.Uri.EscapeDataString(z.ToString())}"))+"&KmsKeyId=" + (KmsKeyId==null? "" : System.Uri.EscapeDataString(KmsKeyId))+"&EnhancedVpcRouting="+EnhancedVpcRouting+"&AdditionalInfo=" + (AdditionalInfo==null? "" : System.Uri.EscapeDataString(AdditionalInfo))+"&"+string.Join("&", IamRoles.Select(z => $"IamRoles={System.Uri.EscapeDataString(z.ToString())}"))+"&MaintenanceTrackName=" + (MaintenanceTrackName==null? "" : System.Uri.EscapeDataString(MaintenanceTrackName))+"&SnapshotScheduleIdentifier=" + (SnapshotScheduleIdentifier==null? "" : System.Uri.EscapeDataString(SnapshotScheduleIdentifier))+"&AvailabilityZoneRelocation="+AvailabilityZoneRelocation+"&AquaConfigurationStatus=" + AquaConfigurationStatus+"&DefaultIamRoleArn=" + (DefaultIamRoleArn==null? "" : System.Uri.EscapeDataString(DefaultIamRoleArn))+"&LoadSampleData=" + (LoadSampleData==null? "" : System.Uri.EscapeDataString(LoadSampleData))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -7403,7 +7378,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -7425,8 +7399,7 @@ namespace MyNS
 		public async Task GET_CreateClusterParameterGroupAsync(string ParameterGroupName, string ParameterGroupFamily, string Description, string[] Tags, GET_CreateClusterParameterGroupAction Action, GET_CreateClusterParameterGroupVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=CreateClusterParameterGroup?ParameterGroupName=" + (ParameterGroupName==null? "" : System.Uri.EscapeDataString(ParameterGroupName))+"&ParameterGroupFamily=" + (ParameterGroupFamily==null? "" : System.Uri.EscapeDataString(ParameterGroupFamily))+"&Description=" + (Description==null? "" : System.Uri.EscapeDataString(Description))+"&"+string.Join("&", Tags.Select(z => $"Tags={System.Uri.EscapeDataString(z.ToString())}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -7440,7 +7413,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -7459,8 +7431,7 @@ namespace MyNS
 		public async Task GET_CreateClusterSecurityGroupAsync(string ClusterSecurityGroupName, string Description, string[] Tags, GET_CreateClusterSecurityGroupAction Action, GET_CreateClusterSecurityGroupVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=CreateClusterSecurityGroup?ClusterSecurityGroupName=" + (ClusterSecurityGroupName==null? "" : System.Uri.EscapeDataString(ClusterSecurityGroupName))+"&Description=" + (Description==null? "" : System.Uri.EscapeDataString(Description))+"&"+string.Join("&", Tags.Select(z => $"Tags={System.Uri.EscapeDataString(z.ToString())}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -7474,7 +7445,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -7494,8 +7464,7 @@ namespace MyNS
 		public async Task GET_CreateClusterSnapshotAsync(string SnapshotIdentifier, string ClusterIdentifier, int ManualSnapshotRetentionPeriod, string[] Tags, GET_CreateClusterSnapshotAction Action, GET_CreateClusterSnapshotVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=CreateClusterSnapshot?SnapshotIdentifier=" + (SnapshotIdentifier==null? "" : System.Uri.EscapeDataString(SnapshotIdentifier))+"&ClusterIdentifier=" + (ClusterIdentifier==null? "" : System.Uri.EscapeDataString(ClusterIdentifier))+"&ManualSnapshotRetentionPeriod="+ManualSnapshotRetentionPeriod+"&"+string.Join("&", Tags.Select(z => $"Tags={System.Uri.EscapeDataString(z.ToString())}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -7509,7 +7478,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -7529,8 +7497,7 @@ namespace MyNS
 		public async Task GET_CreateClusterSubnetGroupAsync(string ClusterSubnetGroupName, string Description, string[] SubnetIds, string[] Tags, GET_CreateClusterSubnetGroupAction Action, GET_CreateClusterSubnetGroupVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=CreateClusterSubnetGroup?ClusterSubnetGroupName=" + (ClusterSubnetGroupName==null? "" : System.Uri.EscapeDataString(ClusterSubnetGroupName))+"&Description=" + (Description==null? "" : System.Uri.EscapeDataString(Description))+"&"+string.Join("&", SubnetIds.Select(z => $"SubnetIds={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", Tags.Select(z => $"Tags={System.Uri.EscapeDataString(z.ToString())}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -7544,7 +7511,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -7567,8 +7533,7 @@ namespace MyNS
 		public async Task GET_CreateCustomDomainAssociationAsync(string CustomDomainName, string CustomDomainCertificateArn, string ClusterIdentifier, GET_CreateCustomDomainAssociationAction Action, GET_CreateCustomDomainAssociationVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=CreateCustomDomainAssociation?CustomDomainName=" + (CustomDomainName==null? "" : System.Uri.EscapeDataString(CustomDomainName))+"&CustomDomainCertificateArn=" + (CustomDomainCertificateArn==null? "" : System.Uri.EscapeDataString(CustomDomainCertificateArn))+"&ClusterIdentifier=" + (ClusterIdentifier==null? "" : System.Uri.EscapeDataString(ClusterIdentifier))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -7582,7 +7547,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -7607,8 +7571,7 @@ namespace MyNS
 		public async Task GET_CreateEndpointAccessAsync(string ClusterIdentifier, string ResourceOwner, string EndpointName, string SubnetGroupName, string[] VpcSecurityGroupIds, GET_CreateEndpointAccessAction Action, GET_CreateEndpointAccessVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=CreateEndpointAccess?ClusterIdentifier=" + (ClusterIdentifier==null? "" : System.Uri.EscapeDataString(ClusterIdentifier))+"&ResourceOwner=" + (ResourceOwner==null? "" : System.Uri.EscapeDataString(ResourceOwner))+"&EndpointName=" + (EndpointName==null? "" : System.Uri.EscapeDataString(EndpointName))+"&SubnetGroupName=" + (SubnetGroupName==null? "" : System.Uri.EscapeDataString(SubnetGroupName))+"&"+string.Join("&", VpcSecurityGroupIds.Select(z => $"VpcSecurityGroupIds={System.Uri.EscapeDataString(z.ToString())}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -7622,7 +7585,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -7650,8 +7612,7 @@ namespace MyNS
 		public async Task GET_CreateEventSubscriptionAsync(string SubscriptionName, string SnsTopicArn, string SourceType, string[] SourceIds, string[] EventCategories, string Severity, bool Enabled, string[] Tags, GET_CreateEventSubscriptionAction Action, GET_CreateEventSubscriptionVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=CreateEventSubscription?SubscriptionName=" + (SubscriptionName==null? "" : System.Uri.EscapeDataString(SubscriptionName))+"&SnsTopicArn=" + (SnsTopicArn==null? "" : System.Uri.EscapeDataString(SnsTopicArn))+"&SourceType=" + (SourceType==null? "" : System.Uri.EscapeDataString(SourceType))+"&"+string.Join("&", SourceIds.Select(z => $"SourceIds={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", EventCategories.Select(z => $"EventCategories={System.Uri.EscapeDataString(z.ToString())}"))+"&Severity=" + (Severity==null? "" : System.Uri.EscapeDataString(Severity))+"&Enabled="+Enabled+"&"+string.Join("&", Tags.Select(z => $"Tags={System.Uri.EscapeDataString(z.ToString())}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -7665,7 +7626,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -7681,8 +7641,7 @@ namespace MyNS
 		public async Task GET_CreateHsmClientCertificateAsync(string HsmClientCertificateIdentifier, string[] Tags, GET_CreateHsmClientCertificateAction Action, GET_CreateHsmClientCertificateVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=CreateHsmClientCertificate?HsmClientCertificateIdentifier=" + (HsmClientCertificateIdentifier==null? "" : System.Uri.EscapeDataString(HsmClientCertificateIdentifier))+"&"+string.Join("&", Tags.Select(z => $"Tags={System.Uri.EscapeDataString(z.ToString())}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -7696,7 +7655,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -7727,8 +7685,7 @@ namespace MyNS
 		public async Task GET_CreateHsmConfigurationAsync(string HsmConfigurationIdentifier, string Description, string HsmIpAddress, string HsmPartitionName, string HsmPartitionPassword, string HsmServerPublicCertificate, string[] Tags, GET_CreateHsmConfigurationAction Action, GET_CreateHsmConfigurationVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=CreateHsmConfiguration?HsmConfigurationIdentifier=" + (HsmConfigurationIdentifier==null? "" : System.Uri.EscapeDataString(HsmConfigurationIdentifier))+"&Description=" + (Description==null? "" : System.Uri.EscapeDataString(Description))+"&HsmIpAddress=" + (HsmIpAddress==null? "" : System.Uri.EscapeDataString(HsmIpAddress))+"&HsmPartitionName=" + (HsmPartitionName==null? "" : System.Uri.EscapeDataString(HsmPartitionName))+"&HsmPartitionPassword=" + (HsmPartitionPassword==null? "" : System.Uri.EscapeDataString(HsmPartitionPassword))+"&HsmServerPublicCertificate=" + (HsmServerPublicCertificate==null? "" : System.Uri.EscapeDataString(HsmServerPublicCertificate))+"&"+string.Join("&", Tags.Select(z => $"Tags={System.Uri.EscapeDataString(z.ToString())}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -7742,7 +7699,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -7770,8 +7726,7 @@ namespace MyNS
 		public async Task GET_CreateScheduledActionAsync(string ScheduledActionName, GET_CreateScheduledActionTargetAction TargetAction, string Schedule, string IamRole, string ScheduledActionDescription, System.DateTimeOffset StartTime, System.DateTimeOffset EndTime, bool Enable, GET_CreateScheduledActionAction Action, GET_CreateScheduledActionVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=CreateScheduledAction?ScheduledActionName=" + (ScheduledActionName==null? "" : System.Uri.EscapeDataString(ScheduledActionName))+"&TargetAction=" + TargetAction+"&Schedule=" + (Schedule==null? "" : System.Uri.EscapeDataString(Schedule))+"&IamRole=" + (IamRole==null? "" : System.Uri.EscapeDataString(IamRole))+"&ScheduledActionDescription=" + (ScheduledActionDescription==null? "" : System.Uri.EscapeDataString(ScheduledActionDescription))+"&StartTime=" + StartTime.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&EndTime=" + EndTime.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&Enable="+Enable+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -7785,7 +7740,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -7804,8 +7758,7 @@ namespace MyNS
 		public async Task GET_CreateSnapshotCopyGrantAsync(string SnapshotCopyGrantName, string KmsKeyId, string[] Tags, GET_CreateSnapshotCopyGrantAction Action, GET_CreateSnapshotCopyGrantVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=CreateSnapshotCopyGrant?SnapshotCopyGrantName=" + (SnapshotCopyGrantName==null? "" : System.Uri.EscapeDataString(SnapshotCopyGrantName))+"&KmsKeyId=" + (KmsKeyId==null? "" : System.Uri.EscapeDataString(KmsKeyId))+"&"+string.Join("&", Tags.Select(z => $"Tags={System.Uri.EscapeDataString(z.ToString())}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -7819,7 +7772,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -7841,8 +7793,7 @@ namespace MyNS
 		public async Task GET_CreateSnapshotScheduleAsync(string[] ScheduleDefinitions, string ScheduleIdentifier, string ScheduleDescription, string[] Tags, bool DryRun, int NextInvocations, GET_CreateSnapshotScheduleAction Action, GET_CreateSnapshotScheduleVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=CreateSnapshotSchedule?"+string.Join("&", ScheduleDefinitions.Select(z => $"ScheduleDefinitions={System.Uri.EscapeDataString(z.ToString())}"))+"&ScheduleIdentifier=" + (ScheduleIdentifier==null? "" : System.Uri.EscapeDataString(ScheduleIdentifier))+"&ScheduleDescription=" + (ScheduleDescription==null? "" : System.Uri.EscapeDataString(ScheduleDescription))+"&"+string.Join("&", Tags.Select(z => $"Tags={System.Uri.EscapeDataString(z.ToString())}"))+"&DryRun="+DryRun+"&NextInvocations="+NextInvocations+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -7856,7 +7807,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -7872,8 +7822,7 @@ namespace MyNS
 		public async Task GET_CreateTagsAsync(string ResourceName, string[] Tags, GET_CreateTagsAction Action, GET_CreateTagsVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=CreateTags?ResourceName=" + (ResourceName==null? "" : System.Uri.EscapeDataString(ResourceName))+"&"+string.Join("&", Tags.Select(z => $"Tags={System.Uri.EscapeDataString(z.ToString())}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -7887,7 +7836,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -7908,8 +7856,7 @@ namespace MyNS
 		public async Task GET_CreateUsageLimitAsync(string ClusterIdentifier, GET_CreateUsageLimitFeatureType FeatureType, GET_CreateUsageLimitLimitType LimitType, int Amount, UsageLimitPeriod Period, GET_CreateUsageLimitBreachAction BreachAction, string[] Tags, GET_CreateUsageLimitAction Action, GET_CreateUsageLimitVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=CreateUsageLimit?ClusterIdentifier=" + (ClusterIdentifier==null? "" : System.Uri.EscapeDataString(ClusterIdentifier))+"&FeatureType=" + FeatureType+"&LimitType=" + LimitType+"&Amount="+Amount+"&Period=" + Period+"&BreachAction=" + BreachAction+"&"+string.Join("&", Tags.Select(z => $"Tags={System.Uri.EscapeDataString(z.ToString())}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -7923,7 +7870,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -7941,8 +7887,7 @@ namespace MyNS
 		public async Task GET_DeauthorizeDataShareAsync(string DataShareArn, string ConsumerIdentifier, GET_DeauthorizeDataShareAction Action, GET_DeauthorizeDataShareVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DeauthorizeDataShare?DataShareArn=" + (DataShareArn==null? "" : System.Uri.EscapeDataString(DataShareArn))+"&ConsumerIdentifier=" + (ConsumerIdentifier==null? "" : System.Uri.EscapeDataString(ConsumerIdentifier))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -7956,7 +7901,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -7971,8 +7915,7 @@ namespace MyNS
 		public async Task GET_DeleteAuthenticationProfileAsync(string AuthenticationProfileName, GET_DeleteAuthenticationProfileAction Action, GET_DeleteAuthenticationProfileVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DeleteAuthenticationProfile?AuthenticationProfileName=" + (AuthenticationProfileName==null? "" : System.Uri.EscapeDataString(AuthenticationProfileName))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -7986,7 +7929,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -8006,8 +7948,7 @@ namespace MyNS
 		public async Task GET_DeleteClusterAsync(string ClusterIdentifier, bool SkipFinalClusterSnapshot, string FinalClusterSnapshotIdentifier, int FinalClusterSnapshotRetentionPeriod, GET_DeleteClusterAction Action, GET_DeleteClusterVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DeleteCluster?ClusterIdentifier=" + (ClusterIdentifier==null? "" : System.Uri.EscapeDataString(ClusterIdentifier))+"&SkipFinalClusterSnapshot="+SkipFinalClusterSnapshot+"&FinalClusterSnapshotIdentifier=" + (FinalClusterSnapshotIdentifier==null? "" : System.Uri.EscapeDataString(FinalClusterSnapshotIdentifier))+"&FinalClusterSnapshotRetentionPeriod="+FinalClusterSnapshotRetentionPeriod+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -8021,7 +7962,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -8036,8 +7976,7 @@ namespace MyNS
 		public async Task GET_DeleteClusterParameterGroupAsync(string ParameterGroupName, GET_DeleteClusterParameterGroupAction Action, GET_DeleteClusterParameterGroupVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DeleteClusterParameterGroup?ParameterGroupName=" + (ParameterGroupName==null? "" : System.Uri.EscapeDataString(ParameterGroupName))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -8051,7 +7990,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -8066,8 +8004,7 @@ namespace MyNS
 		public async Task GET_DeleteClusterSecurityGroupAsync(string ClusterSecurityGroupName, GET_DeleteClusterSecurityGroupAction Action, GET_DeleteClusterSecurityGroupVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DeleteClusterSecurityGroup?ClusterSecurityGroupName=" + (ClusterSecurityGroupName==null? "" : System.Uri.EscapeDataString(ClusterSecurityGroupName))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -8081,7 +8018,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -8099,8 +8035,7 @@ namespace MyNS
 		public async Task GET_DeleteClusterSnapshotAsync(string SnapshotIdentifier, string SnapshotClusterIdentifier, GET_DeleteClusterSnapshotAction Action, GET_DeleteClusterSnapshotVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DeleteClusterSnapshot?SnapshotIdentifier=" + (SnapshotIdentifier==null? "" : System.Uri.EscapeDataString(SnapshotIdentifier))+"&SnapshotClusterIdentifier=" + (SnapshotClusterIdentifier==null? "" : System.Uri.EscapeDataString(SnapshotClusterIdentifier))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -8114,7 +8049,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -8129,8 +8063,7 @@ namespace MyNS
 		public async Task GET_DeleteClusterSubnetGroupAsync(string ClusterSubnetGroupName, GET_DeleteClusterSubnetGroupAction Action, GET_DeleteClusterSubnetGroupVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DeleteClusterSubnetGroup?ClusterSubnetGroupName=" + (ClusterSubnetGroupName==null? "" : System.Uri.EscapeDataString(ClusterSubnetGroupName))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -8144,7 +8077,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -8159,8 +8091,7 @@ namespace MyNS
 		public async Task GET_DeleteCustomDomainAssociationAsync(string ClusterIdentifier, GET_DeleteCustomDomainAssociationAction Action, GET_DeleteCustomDomainAssociationVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DeleteCustomDomainAssociation?ClusterIdentifier=" + (ClusterIdentifier==null? "" : System.Uri.EscapeDataString(ClusterIdentifier))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -8174,7 +8105,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -8189,8 +8119,7 @@ namespace MyNS
 		public async Task GET_DeleteEndpointAccessAsync(string EndpointName, GET_DeleteEndpointAccessAction Action, GET_DeleteEndpointAccessVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DeleteEndpointAccess?EndpointName=" + (EndpointName==null? "" : System.Uri.EscapeDataString(EndpointName))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -8204,7 +8133,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -8219,8 +8147,7 @@ namespace MyNS
 		public async Task GET_DeleteEventSubscriptionAsync(string SubscriptionName, GET_DeleteEventSubscriptionAction Action, GET_DeleteEventSubscriptionVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DeleteEventSubscription?SubscriptionName=" + (SubscriptionName==null? "" : System.Uri.EscapeDataString(SubscriptionName))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -8234,7 +8161,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -8249,8 +8175,7 @@ namespace MyNS
 		public async Task GET_DeleteHsmClientCertificateAsync(string HsmClientCertificateIdentifier, GET_DeleteHsmClientCertificateAction Action, GET_DeleteHsmClientCertificateVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DeleteHsmClientCertificate?HsmClientCertificateIdentifier=" + (HsmClientCertificateIdentifier==null? "" : System.Uri.EscapeDataString(HsmClientCertificateIdentifier))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -8264,7 +8189,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -8279,8 +8203,7 @@ namespace MyNS
 		public async Task GET_DeleteHsmConfigurationAsync(string HsmConfigurationIdentifier, GET_DeleteHsmConfigurationAction Action, GET_DeleteHsmConfigurationVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DeleteHsmConfiguration?HsmConfigurationIdentifier=" + (HsmConfigurationIdentifier==null? "" : System.Uri.EscapeDataString(HsmConfigurationIdentifier))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -8294,7 +8217,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -8319,8 +8241,7 @@ namespace MyNS
 		public async Task GET_DeletePartnerAsync(string AccountId, string ClusterIdentifier, string DatabaseName, string PartnerName, GET_DeletePartnerAction Action, GET_DeletePartnerVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DeletePartner?AccountId=" + (AccountId==null? "" : System.Uri.EscapeDataString(AccountId))+"&ClusterIdentifier=" + (ClusterIdentifier==null? "" : System.Uri.EscapeDataString(ClusterIdentifier))+"&DatabaseName=" + (DatabaseName==null? "" : System.Uri.EscapeDataString(DatabaseName))+"&PartnerName=" + (PartnerName==null? "" : System.Uri.EscapeDataString(PartnerName))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -8334,7 +8255,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -8349,8 +8269,7 @@ namespace MyNS
 		public async Task GET_DeleteScheduledActionAsync(string ScheduledActionName, GET_DeleteScheduledActionAction Action, GET_DeleteScheduledActionVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DeleteScheduledAction?ScheduledActionName=" + (ScheduledActionName==null? "" : System.Uri.EscapeDataString(ScheduledActionName))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -8364,7 +8283,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -8379,8 +8297,7 @@ namespace MyNS
 		public async Task GET_DeleteSnapshotCopyGrantAsync(string SnapshotCopyGrantName, GET_DeleteSnapshotCopyGrantAction Action, GET_DeleteSnapshotCopyGrantVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DeleteSnapshotCopyGrant?SnapshotCopyGrantName=" + (SnapshotCopyGrantName==null? "" : System.Uri.EscapeDataString(SnapshotCopyGrantName))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -8394,7 +8311,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -8409,8 +8325,7 @@ namespace MyNS
 		public async Task GET_DeleteSnapshotScheduleAsync(string ScheduleIdentifier, GET_DeleteSnapshotScheduleAction Action, GET_DeleteSnapshotScheduleVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DeleteSnapshotSchedule?ScheduleIdentifier=" + (ScheduleIdentifier==null? "" : System.Uri.EscapeDataString(ScheduleIdentifier))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -8424,7 +8339,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -8440,8 +8354,7 @@ namespace MyNS
 		public async Task GET_DeleteTagsAsync(string ResourceName, string[] TagKeys, GET_DeleteTagsAction Action, GET_DeleteTagsVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DeleteTags?ResourceName=" + (ResourceName==null? "" : System.Uri.EscapeDataString(ResourceName))+"&"+string.Join("&", TagKeys.Select(z => $"TagKeys={System.Uri.EscapeDataString(z.ToString())}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -8455,7 +8368,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -8470,8 +8382,7 @@ namespace MyNS
 		public async Task GET_DeleteUsageLimitAsync(string UsageLimitId, GET_DeleteUsageLimitAction Action, GET_DeleteUsageLimitVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DeleteUsageLimit?UsageLimitId=" + (UsageLimitId==null? "" : System.Uri.EscapeDataString(UsageLimitId))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -8485,7 +8396,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -8498,8 +8408,7 @@ namespace MyNS
 		public async Task GET_DescribeAccountAttributesAsync(string[] AttributeNames, GET_DescribeAccountAttributesAction Action, GET_DescribeAccountAttributesVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribeAccountAttributes?"+string.Join("&", AttributeNames.Select(z => $"AttributeNames={System.Uri.EscapeDataString(z.ToString())}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -8513,7 +8422,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -8528,8 +8436,7 @@ namespace MyNS
 		public async Task GET_DescribeAuthenticationProfilesAsync(string AuthenticationProfileName, GET_DescribeAuthenticationProfilesAction Action, GET_DescribeAuthenticationProfilesVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribeAuthenticationProfiles?AuthenticationProfileName=" + (AuthenticationProfileName==null? "" : System.Uri.EscapeDataString(AuthenticationProfileName))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -8543,7 +8450,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -8562,8 +8468,7 @@ namespace MyNS
 		public async Task GET_DescribeClusterDbRevisionsAsync(string ClusterIdentifier, int MaxRecords, string Marker, GET_DescribeClusterDbRevisionsAction Action, GET_DescribeClusterDbRevisionsVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribeClusterDbRevisions?ClusterIdentifier=" + (ClusterIdentifier==null? "" : System.Uri.EscapeDataString(ClusterIdentifier))+"&MaxRecords="+MaxRecords+"&Marker=" + (Marker==null? "" : System.Uri.EscapeDataString(Marker))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -8577,7 +8482,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -8598,8 +8502,7 @@ namespace MyNS
 		public async Task GET_DescribeClusterParameterGroupsAsync(string ParameterGroupName, int MaxRecords, string Marker, string[] TagKeys, string[] TagValues, GET_DescribeClusterParameterGroupsAction Action, GET_DescribeClusterParameterGroupsVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribeClusterParameterGroups?ParameterGroupName=" + (ParameterGroupName==null? "" : System.Uri.EscapeDataString(ParameterGroupName))+"&MaxRecords="+MaxRecords+"&Marker=" + (Marker==null? "" : System.Uri.EscapeDataString(Marker))+"&"+string.Join("&", TagKeys.Select(z => $"TagKeys={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", TagValues.Select(z => $"TagValues={System.Uri.EscapeDataString(z.ToString())}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -8613,7 +8516,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -8635,8 +8537,7 @@ namespace MyNS
 		public async Task GET_DescribeClusterParametersAsync(string ParameterGroupName, string Source, int MaxRecords, string Marker, GET_DescribeClusterParametersAction Action, GET_DescribeClusterParametersVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribeClusterParameters?ParameterGroupName=" + (ParameterGroupName==null? "" : System.Uri.EscapeDataString(ParameterGroupName))+"&Source=" + (Source==null? "" : System.Uri.EscapeDataString(Source))+"&MaxRecords="+MaxRecords+"&Marker=" + (Marker==null? "" : System.Uri.EscapeDataString(Marker))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -8650,7 +8551,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -8671,8 +8571,7 @@ namespace MyNS
 		public async Task GET_DescribeClusterSecurityGroupsAsync(string ClusterSecurityGroupName, int MaxRecords, string Marker, string[] TagKeys, string[] TagValues, GET_DescribeClusterSecurityGroupsAction Action, GET_DescribeClusterSecurityGroupsVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribeClusterSecurityGroups?ClusterSecurityGroupName=" + (ClusterSecurityGroupName==null? "" : System.Uri.EscapeDataString(ClusterSecurityGroupName))+"&MaxRecords="+MaxRecords+"&Marker=" + (Marker==null? "" : System.Uri.EscapeDataString(Marker))+"&"+string.Join("&", TagKeys.Select(z => $"TagKeys={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", TagValues.Select(z => $"TagValues={System.Uri.EscapeDataString(z.ToString())}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -8686,7 +8585,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -8739,8 +8637,7 @@ namespace MyNS
 					Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribeClusterSnapshots?ClusterIdentifier=" + (ClusterIdentifier==null? "" : System.Uri.EscapeDataString(ClusterIdentifier))+"&SnapshotIdentifier=" + (SnapshotIdentifier==null? "" : System.Uri.EscapeDataString(SnapshotIdentifier))+"&SnapshotArn=" + (SnapshotArn==null? "" : System.Uri.EscapeDataString(SnapshotArn))+"&SnapshotType=" + (SnapshotType==null? "" : System.Uri.EscapeDataString(SnapshotType))+"&StartTime=" + StartTime.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&EndTime=" + EndTime.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&MaxRecords="+MaxRecords+"&Marker=" + (Marker==null? "" : System.Uri.EscapeDataString(Marker))+"&OwnerAccount=" + (OwnerAccount==null? "" : System.Uri.EscapeDataString(OwnerAccount))+"&"+string.Join("&", TagKeys.Select(z => $"TagKeys={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", TagValues.Select(z => $"TagValues={System.Uri.EscapeDataString(z.ToString())}"))+"&ClusterExists="+ClusterExists+"&"+string.Join("&", SortingEntities.Select(z => $"SortingEntities={System.Uri.EscapeDataString(z.ToString())}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -8754,7 +8651,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -8775,8 +8671,7 @@ namespace MyNS
 		public async Task GET_DescribeClusterSubnetGroupsAsync(string ClusterSubnetGroupName, int MaxRecords, string Marker, string[] TagKeys, string[] TagValues, GET_DescribeClusterSubnetGroupsAction Action, GET_DescribeClusterSubnetGroupsVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribeClusterSubnetGroups?ClusterSubnetGroupName=" + (ClusterSubnetGroupName==null? "" : System.Uri.EscapeDataString(ClusterSubnetGroupName))+"&MaxRecords="+MaxRecords+"&Marker=" + (Marker==null? "" : System.Uri.EscapeDataString(Marker))+"&"+string.Join("&", TagKeys.Select(z => $"TagKeys={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", TagValues.Select(z => $"TagValues={System.Uri.EscapeDataString(z.ToString())}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -8790,7 +8685,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -8809,8 +8703,7 @@ namespace MyNS
 		public async Task GET_DescribeClusterTracksAsync(string MaintenanceTrackName, int MaxRecords, string Marker, GET_DescribeClusterTracksAction Action, GET_DescribeClusterTracksVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribeClusterTracks?MaintenanceTrackName=" + (MaintenanceTrackName==null? "" : System.Uri.EscapeDataString(MaintenanceTrackName))+"&MaxRecords="+MaxRecords+"&Marker=" + (Marker==null? "" : System.Uri.EscapeDataString(Marker))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -8824,7 +8717,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -8846,8 +8738,7 @@ namespace MyNS
 		public async Task GET_DescribeClusterVersionsAsync(string ClusterVersion, string ClusterParameterGroupFamily, int MaxRecords, string Marker, GET_DescribeClusterVersionsAction Action, GET_DescribeClusterVersionsVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribeClusterVersions?ClusterVersion=" + (ClusterVersion==null? "" : System.Uri.EscapeDataString(ClusterVersion))+"&ClusterParameterGroupFamily=" + (ClusterParameterGroupFamily==null? "" : System.Uri.EscapeDataString(ClusterParameterGroupFamily))+"&MaxRecords="+MaxRecords+"&Marker=" + (Marker==null? "" : System.Uri.EscapeDataString(Marker))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -8861,7 +8752,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -8882,8 +8772,7 @@ namespace MyNS
 		public async Task GET_DescribeClustersAsync(string ClusterIdentifier, int MaxRecords, string Marker, string[] TagKeys, string[] TagValues, GET_DescribeClustersAction Action, GET_DescribeClustersVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribeClusters?ClusterIdentifier=" + (ClusterIdentifier==null? "" : System.Uri.EscapeDataString(ClusterIdentifier))+"&MaxRecords="+MaxRecords+"&Marker=" + (Marker==null? "" : System.Uri.EscapeDataString(Marker))+"&"+string.Join("&", TagKeys.Select(z => $"TagKeys={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", TagValues.Select(z => $"TagValues={System.Uri.EscapeDataString(z.ToString())}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -8897,7 +8786,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -8921,8 +8809,7 @@ namespace MyNS
 		public async Task GET_DescribeCustomDomainAssociationsAsync(string CustomDomainName, string CustomDomainCertificateArn, int MaxRecords, string Marker, GET_DescribeCustomDomainAssociationsAction Action, GET_DescribeCustomDomainAssociationsVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribeCustomDomainAssociations?CustomDomainName=" + (CustomDomainName==null? "" : System.Uri.EscapeDataString(CustomDomainName))+"&CustomDomainCertificateArn=" + (CustomDomainCertificateArn==null? "" : System.Uri.EscapeDataString(CustomDomainCertificateArn))+"&MaxRecords="+MaxRecords+"&Marker=" + (Marker==null? "" : System.Uri.EscapeDataString(Marker))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -8936,7 +8823,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -8955,8 +8841,7 @@ namespace MyNS
 		public async Task GET_DescribeDataSharesAsync(string DataShareArn, int MaxRecords, string Marker, GET_DescribeDataSharesAction Action, GET_DescribeDataSharesVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribeDataShares?DataShareArn=" + (DataShareArn==null? "" : System.Uri.EscapeDataString(DataShareArn))+"&MaxRecords="+MaxRecords+"&Marker=" + (Marker==null? "" : System.Uri.EscapeDataString(Marker))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -8970,7 +8855,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -8990,8 +8874,7 @@ namespace MyNS
 		public async Task GET_DescribeDataSharesForConsumerAsync(string ConsumerArn, DataShareStatusForConsumer Status, int MaxRecords, string Marker, GET_DescribeDataSharesForConsumerAction Action, GET_DescribeDataSharesForConsumerVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribeDataSharesForConsumer?ConsumerArn=" + (ConsumerArn==null? "" : System.Uri.EscapeDataString(ConsumerArn))+"&Status=" + Status+"&MaxRecords="+MaxRecords+"&Marker=" + (Marker==null? "" : System.Uri.EscapeDataString(Marker))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -9005,7 +8888,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -9025,8 +8907,7 @@ namespace MyNS
 		public async Task GET_DescribeDataSharesForProducerAsync(string ProducerArn, DataShareStatusForProducer Status, int MaxRecords, string Marker, GET_DescribeDataSharesForProducerAction Action, GET_DescribeDataSharesForProducerVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribeDataSharesForProducer?ProducerArn=" + (ProducerArn==null? "" : System.Uri.EscapeDataString(ProducerArn))+"&Status=" + Status+"&MaxRecords="+MaxRecords+"&Marker=" + (Marker==null? "" : System.Uri.EscapeDataString(Marker))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -9040,7 +8921,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -9059,8 +8939,7 @@ namespace MyNS
 		public async Task GET_DescribeDefaultClusterParametersAsync(string ParameterGroupFamily, int MaxRecords, string Marker, GET_DescribeDefaultClusterParametersAction Action, GET_DescribeDefaultClusterParametersVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribeDefaultClusterParameters?ParameterGroupFamily=" + (ParameterGroupFamily==null? "" : System.Uri.EscapeDataString(ParameterGroupFamily))+"&MaxRecords="+MaxRecords+"&Marker=" + (Marker==null? "" : System.Uri.EscapeDataString(Marker))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -9074,7 +8953,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -9102,8 +8980,7 @@ namespace MyNS
 		public async Task GET_DescribeEndpointAccessAsync(string ClusterIdentifier, string ResourceOwner, string EndpointName, string VpcId, int MaxRecords, string Marker, GET_DescribeEndpointAccessAction Action, GET_DescribeEndpointAccessVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribeEndpointAccess?ClusterIdentifier=" + (ClusterIdentifier==null? "" : System.Uri.EscapeDataString(ClusterIdentifier))+"&ResourceOwner=" + (ResourceOwner==null? "" : System.Uri.EscapeDataString(ResourceOwner))+"&EndpointName=" + (EndpointName==null? "" : System.Uri.EscapeDataString(EndpointName))+"&VpcId=" + (VpcId==null? "" : System.Uri.EscapeDataString(VpcId))+"&MaxRecords="+MaxRecords+"&Marker=" + (Marker==null? "" : System.Uri.EscapeDataString(Marker))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -9117,7 +8994,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -9140,8 +9016,7 @@ namespace MyNS
 		public async Task GET_DescribeEndpointAuthorizationAsync(string ClusterIdentifier, string Account, bool Grantee, int MaxRecords, string Marker, GET_DescribeEndpointAuthorizationAction Action, GET_DescribeEndpointAuthorizationVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribeEndpointAuthorization?ClusterIdentifier=" + (ClusterIdentifier==null? "" : System.Uri.EscapeDataString(ClusterIdentifier))+"&Account=" + (Account==null? "" : System.Uri.EscapeDataString(Account))+"&Grantee="+Grantee+"&MaxRecords="+MaxRecords+"&Marker=" + (Marker==null? "" : System.Uri.EscapeDataString(Marker))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -9155,7 +9030,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -9170,8 +9044,7 @@ namespace MyNS
 		public async Task GET_DescribeEventCategoriesAsync(string SourceType, GET_DescribeEventCategoriesAction Action, GET_DescribeEventCategoriesVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribeEventCategories?SourceType=" + (SourceType==null? "" : System.Uri.EscapeDataString(SourceType))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -9185,7 +9058,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -9206,8 +9078,7 @@ namespace MyNS
 		public async Task GET_DescribeEventSubscriptionsAsync(string SubscriptionName, int MaxRecords, string Marker, string[] TagKeys, string[] TagValues, GET_DescribeEventSubscriptionsAction Action, GET_DescribeEventSubscriptionsVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribeEventSubscriptions?SubscriptionName=" + (SubscriptionName==null? "" : System.Uri.EscapeDataString(SubscriptionName))+"&MaxRecords="+MaxRecords+"&Marker=" + (Marker==null? "" : System.Uri.EscapeDataString(Marker))+"&"+string.Join("&", TagKeys.Select(z => $"TagKeys={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", TagValues.Select(z => $"TagValues={System.Uri.EscapeDataString(z.ToString())}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -9221,7 +9092,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -9244,8 +9114,7 @@ namespace MyNS
 		public async Task GET_DescribeEventsAsync(string SourceIdentifier, GET_DescribeEventsSourceType SourceType, System.DateTimeOffset StartTime, System.DateTimeOffset EndTime, int Duration, int MaxRecords, string Marker, GET_DescribeEventsAction Action, GET_DescribeEventsVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribeEvents?SourceIdentifier=" + (SourceIdentifier==null? "" : System.Uri.EscapeDataString(SourceIdentifier))+"&SourceType=" + SourceType+"&StartTime=" + StartTime.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&EndTime=" + EndTime.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&Duration="+Duration+"&MaxRecords="+MaxRecords+"&Marker=" + (Marker==null? "" : System.Uri.EscapeDataString(Marker))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -9259,7 +9128,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -9280,8 +9148,7 @@ namespace MyNS
 		public async Task GET_DescribeHsmClientCertificatesAsync(string HsmClientCertificateIdentifier, int MaxRecords, string Marker, string[] TagKeys, string[] TagValues, GET_DescribeHsmClientCertificatesAction Action, GET_DescribeHsmClientCertificatesVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribeHsmClientCertificates?HsmClientCertificateIdentifier=" + (HsmClientCertificateIdentifier==null? "" : System.Uri.EscapeDataString(HsmClientCertificateIdentifier))+"&MaxRecords="+MaxRecords+"&Marker=" + (Marker==null? "" : System.Uri.EscapeDataString(Marker))+"&"+string.Join("&", TagKeys.Select(z => $"TagKeys={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", TagValues.Select(z => $"TagValues={System.Uri.EscapeDataString(z.ToString())}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -9295,7 +9162,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -9316,8 +9182,7 @@ namespace MyNS
 		public async Task GET_DescribeHsmConfigurationsAsync(string HsmConfigurationIdentifier, int MaxRecords, string Marker, string[] TagKeys, string[] TagValues, GET_DescribeHsmConfigurationsAction Action, GET_DescribeHsmConfigurationsVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribeHsmConfigurations?HsmConfigurationIdentifier=" + (HsmConfigurationIdentifier==null? "" : System.Uri.EscapeDataString(HsmConfigurationIdentifier))+"&MaxRecords="+MaxRecords+"&Marker=" + (Marker==null? "" : System.Uri.EscapeDataString(Marker))+"&"+string.Join("&", TagKeys.Select(z => $"TagKeys={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", TagValues.Select(z => $"TagValues={System.Uri.EscapeDataString(z.ToString())}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -9331,7 +9196,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -9346,8 +9210,7 @@ namespace MyNS
 		public async Task GET_DescribeLoggingStatusAsync(string ClusterIdentifier, GET_DescribeLoggingStatusAction Action, GET_DescribeLoggingStatusVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribeLoggingStatus?ClusterIdentifier=" + (ClusterIdentifier==null? "" : System.Uri.EscapeDataString(ClusterIdentifier))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -9361,7 +9224,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -9391,8 +9253,7 @@ namespace MyNS
 		public async Task GET_DescribeNodeConfigurationOptionsAsync(GET_DescribeNodeConfigurationOptionsActionType ActionType, string ClusterIdentifier, string SnapshotIdentifier, string SnapshotArn, string OwnerAccount, string[] Filter, string Marker, int MaxRecords, GET_DescribeNodeConfigurationOptionsAction Action, GET_DescribeNodeConfigurationOptionsVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribeNodeConfigurationOptions?ActionType=" + ActionType+"&ClusterIdentifier=" + (ClusterIdentifier==null? "" : System.Uri.EscapeDataString(ClusterIdentifier))+"&SnapshotIdentifier=" + (SnapshotIdentifier==null? "" : System.Uri.EscapeDataString(SnapshotIdentifier))+"&SnapshotArn=" + (SnapshotArn==null? "" : System.Uri.EscapeDataString(SnapshotArn))+"&OwnerAccount=" + (OwnerAccount==null? "" : System.Uri.EscapeDataString(OwnerAccount))+"&"+string.Join("&", Filter.Select(z => $"Filter={System.Uri.EscapeDataString(z.ToString())}"))+"&Marker=" + (Marker==null? "" : System.Uri.EscapeDataString(Marker))+"&MaxRecords="+MaxRecords+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -9406,7 +9267,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -9428,8 +9288,7 @@ namespace MyNS
 		public async Task GET_DescribeOrderableClusterOptionsAsync(string ClusterVersion, string NodeType, int MaxRecords, string Marker, GET_DescribeOrderableClusterOptionsAction Action, GET_DescribeOrderableClusterOptionsVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribeOrderableClusterOptions?ClusterVersion=" + (ClusterVersion==null? "" : System.Uri.EscapeDataString(ClusterVersion))+"&NodeType=" + (NodeType==null? "" : System.Uri.EscapeDataString(NodeType))+"&MaxRecords="+MaxRecords+"&Marker=" + (Marker==null? "" : System.Uri.EscapeDataString(Marker))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -9443,7 +9302,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -9468,8 +9326,7 @@ namespace MyNS
 		public async Task GET_DescribePartnersAsync(string AccountId, string ClusterIdentifier, string DatabaseName, string PartnerName, GET_DescribePartnersAction Action, GET_DescribePartnersVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribePartners?AccountId=" + (AccountId==null? "" : System.Uri.EscapeDataString(AccountId))+"&ClusterIdentifier=" + (ClusterIdentifier==null? "" : System.Uri.EscapeDataString(ClusterIdentifier))+"&DatabaseName=" + (DatabaseName==null? "" : System.Uri.EscapeDataString(DatabaseName))+"&PartnerName=" + (PartnerName==null? "" : System.Uri.EscapeDataString(PartnerName))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -9483,7 +9340,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -9505,8 +9361,7 @@ namespace MyNS
 		public async Task GET_DescribeReservedNodeExchangeStatusAsync(string ReservedNodeId, string ReservedNodeExchangeRequestId, int MaxRecords, string Marker, GET_DescribeReservedNodeExchangeStatusAction Action, GET_DescribeReservedNodeExchangeStatusVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribeReservedNodeExchangeStatus?ReservedNodeId=" + (ReservedNodeId==null? "" : System.Uri.EscapeDataString(ReservedNodeId))+"&ReservedNodeExchangeRequestId=" + (ReservedNodeExchangeRequestId==null? "" : System.Uri.EscapeDataString(ReservedNodeExchangeRequestId))+"&MaxRecords="+MaxRecords+"&Marker=" + (Marker==null? "" : System.Uri.EscapeDataString(Marker))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -9520,7 +9375,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -9539,8 +9393,7 @@ namespace MyNS
 		public async Task GET_DescribeReservedNodeOfferingsAsync(string ReservedNodeOfferingId, int MaxRecords, string Marker, GET_DescribeReservedNodeOfferingsAction Action, GET_DescribeReservedNodeOfferingsVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribeReservedNodeOfferings?ReservedNodeOfferingId=" + (ReservedNodeOfferingId==null? "" : System.Uri.EscapeDataString(ReservedNodeOfferingId))+"&MaxRecords="+MaxRecords+"&Marker=" + (Marker==null? "" : System.Uri.EscapeDataString(Marker))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -9554,7 +9407,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -9573,8 +9425,7 @@ namespace MyNS
 		public async Task GET_DescribeReservedNodesAsync(string ReservedNodeId, int MaxRecords, string Marker, GET_DescribeReservedNodesAction Action, GET_DescribeReservedNodesVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribeReservedNodes?ReservedNodeId=" + (ReservedNodeId==null? "" : System.Uri.EscapeDataString(ReservedNodeId))+"&MaxRecords="+MaxRecords+"&Marker=" + (Marker==null? "" : System.Uri.EscapeDataString(Marker))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -9588,7 +9439,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -9603,8 +9453,7 @@ namespace MyNS
 		public async Task GET_DescribeResizeAsync(string ClusterIdentifier, GET_DescribeResizeAction Action, GET_DescribeResizeVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribeResize?ClusterIdentifier=" + (ClusterIdentifier==null? "" : System.Uri.EscapeDataString(ClusterIdentifier))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -9618,7 +9467,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -9642,8 +9490,7 @@ namespace MyNS
 		public async Task GET_DescribeScheduledActionsAsync(string ScheduledActionName, ScheduledActionTypeValues TargetActionType, System.DateTimeOffset StartTime, System.DateTimeOffset EndTime, bool Active, string[] Filters, string Marker, int MaxRecords, GET_DescribeScheduledActionsAction Action, GET_DescribeScheduledActionsVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribeScheduledActions?ScheduledActionName=" + (ScheduledActionName==null? "" : System.Uri.EscapeDataString(ScheduledActionName))+"&TargetActionType=" + TargetActionType+"&StartTime=" + StartTime.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&EndTime=" + EndTime.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&Active="+Active+"&"+string.Join("&", Filters.Select(z => $"Filters={System.Uri.EscapeDataString(z.ToString())}"))+"&Marker=" + (Marker==null? "" : System.Uri.EscapeDataString(Marker))+"&MaxRecords="+MaxRecords+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -9657,7 +9504,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -9678,8 +9524,7 @@ namespace MyNS
 		public async Task GET_DescribeSnapshotCopyGrantsAsync(string SnapshotCopyGrantName, int MaxRecords, string Marker, string[] TagKeys, string[] TagValues, GET_DescribeSnapshotCopyGrantsAction Action, GET_DescribeSnapshotCopyGrantsVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribeSnapshotCopyGrants?SnapshotCopyGrantName=" + (SnapshotCopyGrantName==null? "" : System.Uri.EscapeDataString(SnapshotCopyGrantName))+"&MaxRecords="+MaxRecords+"&Marker=" + (Marker==null? "" : System.Uri.EscapeDataString(Marker))+"&"+string.Join("&", TagKeys.Select(z => $"TagKeys={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", TagValues.Select(z => $"TagValues={System.Uri.EscapeDataString(z.ToString())}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -9693,7 +9538,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -9717,8 +9561,7 @@ namespace MyNS
 		public async Task GET_DescribeSnapshotSchedulesAsync(string ClusterIdentifier, string ScheduleIdentifier, string[] TagKeys, string[] TagValues, string Marker, int MaxRecords, GET_DescribeSnapshotSchedulesAction Action, GET_DescribeSnapshotSchedulesVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribeSnapshotSchedules?ClusterIdentifier=" + (ClusterIdentifier==null? "" : System.Uri.EscapeDataString(ClusterIdentifier))+"&ScheduleIdentifier=" + (ScheduleIdentifier==null? "" : System.Uri.EscapeDataString(ScheduleIdentifier))+"&"+string.Join("&", TagKeys.Select(z => $"TagKeys={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", TagValues.Select(z => $"TagValues={System.Uri.EscapeDataString(z.ToString())}"))+"&Marker=" + (Marker==null? "" : System.Uri.EscapeDataString(Marker))+"&MaxRecords="+MaxRecords+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -9732,7 +9575,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -9744,8 +9586,7 @@ namespace MyNS
 		public async Task GET_DescribeStorageAsync(GET_DescribeStorageAction Action, GET_DescribeStorageVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribeStorage?Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -9760,7 +9601,6 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
-			}
 		}
 		
 		/// <summary>
@@ -9771,8 +9611,7 @@ namespace MyNS
 		public async Task POST_DescribeStorageAsync(GET_DescribeStorageAction Action, POST_DescribeStorageVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribeStorage?Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -9781,7 +9620,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -9803,8 +9641,7 @@ namespace MyNS
 		public async Task GET_DescribeTableRestoreStatusAsync(string ClusterIdentifier, string TableRestoreRequestId, int MaxRecords, string Marker, GET_DescribeTableRestoreStatusAction Action, GET_DescribeTableRestoreStatusVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribeTableRestoreStatus?ClusterIdentifier=" + (ClusterIdentifier==null? "" : System.Uri.EscapeDataString(ClusterIdentifier))+"&TableRestoreRequestId=" + (TableRestoreRequestId==null? "" : System.Uri.EscapeDataString(TableRestoreRequestId))+"&MaxRecords="+MaxRecords+"&Marker=" + (Marker==null? "" : System.Uri.EscapeDataString(Marker))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -9818,7 +9655,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -9842,8 +9678,7 @@ namespace MyNS
 		public async Task GET_DescribeTagsAsync(string ResourceName, string ResourceType, int MaxRecords, string Marker, string[] TagKeys, string[] TagValues, GET_DescribeTagsAction Action, GET_DescribeTagsVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribeTags?ResourceName=" + (ResourceName==null? "" : System.Uri.EscapeDataString(ResourceName))+"&ResourceType=" + (ResourceType==null? "" : System.Uri.EscapeDataString(ResourceType))+"&MaxRecords="+MaxRecords+"&Marker=" + (Marker==null? "" : System.Uri.EscapeDataString(Marker))+"&"+string.Join("&", TagKeys.Select(z => $"TagKeys={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", TagValues.Select(z => $"TagValues={System.Uri.EscapeDataString(z.ToString())}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -9857,7 +9692,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -9882,8 +9716,7 @@ namespace MyNS
 		public async Task GET_DescribeUsageLimitsAsync(string UsageLimitId, string ClusterIdentifier, GET_DescribeUsageLimitsFeatureType FeatureType, int MaxRecords, string Marker, string[] TagKeys, string[] TagValues, GET_DescribeUsageLimitsAction Action, GET_DescribeUsageLimitsVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribeUsageLimits?UsageLimitId=" + (UsageLimitId==null? "" : System.Uri.EscapeDataString(UsageLimitId))+"&ClusterIdentifier=" + (ClusterIdentifier==null? "" : System.Uri.EscapeDataString(ClusterIdentifier))+"&FeatureType=" + FeatureType+"&MaxRecords="+MaxRecords+"&Marker=" + (Marker==null? "" : System.Uri.EscapeDataString(Marker))+"&"+string.Join("&", TagKeys.Select(z => $"TagKeys={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", TagValues.Select(z => $"TagValues={System.Uri.EscapeDataString(z.ToString())}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -9897,7 +9730,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -9912,8 +9744,7 @@ namespace MyNS
 		public async Task GET_DisableLoggingAsync(string ClusterIdentifier, GET_DisableLoggingAction Action, GET_DisableLoggingVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DisableLogging?ClusterIdentifier=" + (ClusterIdentifier==null? "" : System.Uri.EscapeDataString(ClusterIdentifier))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -9927,7 +9758,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -9942,8 +9772,7 @@ namespace MyNS
 		public async Task GET_DisableSnapshotCopyAsync(string ClusterIdentifier, GET_DisableSnapshotCopyAction Action, GET_DisableSnapshotCopyVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DisableSnapshotCopy?ClusterIdentifier=" + (ClusterIdentifier==null? "" : System.Uri.EscapeDataString(ClusterIdentifier))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -9957,7 +9786,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -9979,8 +9807,7 @@ namespace MyNS
 		public async Task GET_DisassociateDataShareConsumerAsync(string DataShareArn, bool DisassociateEntireAccount, string ConsumerArn, string ConsumerRegion, GET_DisassociateDataShareConsumerAction Action, GET_DisassociateDataShareConsumerVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DisassociateDataShareConsumer?DataShareArn=" + (DataShareArn==null? "" : System.Uri.EscapeDataString(DataShareArn))+"&DisassociateEntireAccount="+DisassociateEntireAccount+"&ConsumerArn=" + (ConsumerArn==null? "" : System.Uri.EscapeDataString(ConsumerArn))+"&ConsumerRegion=" + (ConsumerRegion==null? "" : System.Uri.EscapeDataString(ConsumerRegion))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -9994,7 +9821,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -10017,8 +9843,7 @@ namespace MyNS
 		public async Task GET_EnableLoggingAsync(string ClusterIdentifier, string BucketName, string S3KeyPrefix, LogDestinationType LogDestinationType, string[] LogExports, GET_EnableLoggingAction Action, GET_EnableLoggingVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=EnableLogging?ClusterIdentifier=" + (ClusterIdentifier==null? "" : System.Uri.EscapeDataString(ClusterIdentifier))+"&BucketName=" + (BucketName==null? "" : System.Uri.EscapeDataString(BucketName))+"&S3KeyPrefix=" + (S3KeyPrefix==null? "" : System.Uri.EscapeDataString(S3KeyPrefix))+"&LogDestinationType=" + LogDestinationType+"&"+string.Join("&", LogExports.Select(z => $"LogExports={System.Uri.EscapeDataString(z.ToString())}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -10032,7 +9857,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -10055,8 +9879,7 @@ namespace MyNS
 		public async Task GET_EnableSnapshotCopyAsync(string ClusterIdentifier, string DestinationRegion, int RetentionPeriod, string SnapshotCopyGrantName, int ManualSnapshotRetentionPeriod, GET_EnableSnapshotCopyAction Action, GET_EnableSnapshotCopyVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=EnableSnapshotCopy?ClusterIdentifier=" + (ClusterIdentifier==null? "" : System.Uri.EscapeDataString(ClusterIdentifier))+"&DestinationRegion=" + (DestinationRegion==null? "" : System.Uri.EscapeDataString(DestinationRegion))+"&RetentionPeriod="+RetentionPeriod+"&SnapshotCopyGrantName=" + (SnapshotCopyGrantName==null? "" : System.Uri.EscapeDataString(SnapshotCopyGrantName))+"&ManualSnapshotRetentionPeriod="+ManualSnapshotRetentionPeriod+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -10070,7 +9893,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -10097,8 +9919,7 @@ namespace MyNS
 		public async Task GET_GetClusterCredentialsAsync(string DbUser, string DbName, string ClusterIdentifier, int DurationSeconds, bool AutoCreate, string[] DbGroups, string CustomDomainName, GET_GetClusterCredentialsAction Action, GET_GetClusterCredentialsVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=GetClusterCredentials?DbUser=" + (DbUser==null? "" : System.Uri.EscapeDataString(DbUser))+"&DbName=" + (DbName==null? "" : System.Uri.EscapeDataString(DbName))+"&ClusterIdentifier=" + (ClusterIdentifier==null? "" : System.Uri.EscapeDataString(ClusterIdentifier))+"&DurationSeconds="+DurationSeconds+"&AutoCreate="+AutoCreate+"&"+string.Join("&", DbGroups.Select(z => $"DbGroups={System.Uri.EscapeDataString(z.ToString())}"))+"&CustomDomainName=" + (CustomDomainName==null? "" : System.Uri.EscapeDataString(CustomDomainName))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -10112,7 +9933,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -10134,8 +9954,7 @@ namespace MyNS
 		public async Task GET_GetClusterCredentialsWithIAMAsync(string DbName, string ClusterIdentifier, int DurationSeconds, string CustomDomainName, GET_GetClusterCredentialsWithIAMAction Action, GET_GetClusterCredentialsWithIAMVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=GetClusterCredentialsWithIAM?DbName=" + (DbName==null? "" : System.Uri.EscapeDataString(DbName))+"&ClusterIdentifier=" + (ClusterIdentifier==null? "" : System.Uri.EscapeDataString(ClusterIdentifier))+"&DurationSeconds="+DurationSeconds+"&CustomDomainName=" + (CustomDomainName==null? "" : System.Uri.EscapeDataString(CustomDomainName))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -10149,7 +9968,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -10172,8 +9990,7 @@ namespace MyNS
 		public async Task GET_GetReservedNodeExchangeConfigurationOptionsAsync(GET_GetReservedNodeExchangeConfigurationOptionsActionType ActionType, string ClusterIdentifier, string SnapshotIdentifier, int MaxRecords, string Marker, GET_GetReservedNodeExchangeConfigurationOptionsAction Action, GET_GetReservedNodeExchangeConfigurationOptionsVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=GetReservedNodeExchangeConfigurationOptions?ActionType=" + ActionType+"&ClusterIdentifier=" + (ClusterIdentifier==null? "" : System.Uri.EscapeDataString(ClusterIdentifier))+"&SnapshotIdentifier=" + (SnapshotIdentifier==null? "" : System.Uri.EscapeDataString(SnapshotIdentifier))+"&MaxRecords="+MaxRecords+"&Marker=" + (Marker==null? "" : System.Uri.EscapeDataString(Marker))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -10187,7 +10004,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -10206,8 +10022,7 @@ namespace MyNS
 		public async Task GET_GetReservedNodeExchangeOfferingsAsync(string ReservedNodeId, int MaxRecords, string Marker, GET_GetReservedNodeExchangeOfferingsAction Action, GET_GetReservedNodeExchangeOfferingsVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=GetReservedNodeExchangeOfferings?ReservedNodeId=" + (ReservedNodeId==null? "" : System.Uri.EscapeDataString(ReservedNodeId))+"&MaxRecords="+MaxRecords+"&Marker=" + (Marker==null? "" : System.Uri.EscapeDataString(Marker))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -10221,7 +10036,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -10237,8 +10051,7 @@ namespace MyNS
 		public async Task GET_ModifyAquaConfigurationAsync(string ClusterIdentifier, AquaConfigurationStatus AquaConfigurationStatus, GET_ModifyAquaConfigurationAction Action, GET_ModifyAquaConfigurationVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=ModifyAquaConfiguration?ClusterIdentifier=" + (ClusterIdentifier==null? "" : System.Uri.EscapeDataString(ClusterIdentifier))+"&AquaConfigurationStatus=" + AquaConfigurationStatus+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -10252,7 +10065,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -10270,8 +10082,7 @@ namespace MyNS
 		public async Task GET_ModifyAuthenticationProfileAsync(string AuthenticationProfileName, string AuthenticationProfileContent, GET_ModifyAuthenticationProfileAction Action, GET_ModifyAuthenticationProfileVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=ModifyAuthenticationProfile?AuthenticationProfileName=" + (AuthenticationProfileName==null? "" : System.Uri.EscapeDataString(AuthenticationProfileName))+"&AuthenticationProfileContent=" + (AuthenticationProfileContent==null? "" : System.Uri.EscapeDataString(AuthenticationProfileContent))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -10285,7 +10096,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -10378,8 +10188,7 @@ namespace MyNS
 					Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=ModifyCluster?ClusterIdentifier=" + (ClusterIdentifier==null? "" : System.Uri.EscapeDataString(ClusterIdentifier))+"&ClusterType=" + (ClusterType==null? "" : System.Uri.EscapeDataString(ClusterType))+"&NodeType=" + (NodeType==null? "" : System.Uri.EscapeDataString(NodeType))+"&NumberOfNodes="+NumberOfNodes+"&"+string.Join("&", ClusterSecurityGroups.Select(z => $"ClusterSecurityGroups={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", VpcSecurityGroupIds.Select(z => $"VpcSecurityGroupIds={System.Uri.EscapeDataString(z.ToString())}"))+"&MasterUserPassword=" + (MasterUserPassword==null? "" : System.Uri.EscapeDataString(MasterUserPassword))+"&ClusterParameterGroupName=" + (ClusterParameterGroupName==null? "" : System.Uri.EscapeDataString(ClusterParameterGroupName))+"&AutomatedSnapshotRetentionPeriod="+AutomatedSnapshotRetentionPeriod+"&ManualSnapshotRetentionPeriod="+ManualSnapshotRetentionPeriod+"&PreferredMaintenanceWindow=" + (PreferredMaintenanceWindow==null? "" : System.Uri.EscapeDataString(PreferredMaintenanceWindow))+"&ClusterVersion=" + (ClusterVersion==null? "" : System.Uri.EscapeDataString(ClusterVersion))+"&AllowVersionUpgrade="+AllowVersionUpgrade+"&HsmClientCertificateIdentifier=" + (HsmClientCertificateIdentifier==null? "" : System.Uri.EscapeDataString(HsmClientCertificateIdentifier))+"&HsmConfigurationIdentifier=" + (HsmConfigurationIdentifier==null? "" : System.Uri.EscapeDataString(HsmConfigurationIdentifier))+"&NewClusterIdentifier=" + (NewClusterIdentifier==null? "" : System.Uri.EscapeDataString(NewClusterIdentifier))+"&PubliclyAccessible="+PubliclyAccessible+"&ElasticIp=" + (ElasticIp==null? "" : System.Uri.EscapeDataString(ElasticIp))+"&EnhancedVpcRouting="+EnhancedVpcRouting+"&MaintenanceTrackName=" + (MaintenanceTrackName==null? "" : System.Uri.EscapeDataString(MaintenanceTrackName))+"&Encrypted="+Encrypted+"&KmsKeyId=" + (KmsKeyId==null? "" : System.Uri.EscapeDataString(KmsKeyId))+"&AvailabilityZoneRelocation="+AvailabilityZoneRelocation+"&AvailabilityZone=" + (AvailabilityZone==null? "" : System.Uri.EscapeDataString(AvailabilityZone))+"&Port="+Port+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -10393,7 +10202,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -10411,8 +10219,7 @@ namespace MyNS
 		public async Task GET_ModifyClusterDbRevisionAsync(string ClusterIdentifier, string RevisionTarget, GET_ModifyClusterDbRevisionAction Action, GET_ModifyClusterDbRevisionVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=ModifyClusterDbRevision?ClusterIdentifier=" + (ClusterIdentifier==null? "" : System.Uri.EscapeDataString(ClusterIdentifier))+"&RevisionTarget=" + (RevisionTarget==null? "" : System.Uri.EscapeDataString(RevisionTarget))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -10426,7 +10233,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -10446,8 +10252,7 @@ namespace MyNS
 		public async Task GET_ModifyClusterIamRolesAsync(string ClusterIdentifier, string[] AddIamRoles, string[] RemoveIamRoles, string DefaultIamRoleArn, GET_ModifyClusterIamRolesAction Action, GET_ModifyClusterIamRolesVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=ModifyClusterIamRoles?ClusterIdentifier=" + (ClusterIdentifier==null? "" : System.Uri.EscapeDataString(ClusterIdentifier))+"&"+string.Join("&", AddIamRoles.Select(z => $"AddIamRoles={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", RemoveIamRoles.Select(z => $"RemoveIamRoles={System.Uri.EscapeDataString(z.ToString())}"))+"&DefaultIamRoleArn=" + (DefaultIamRoleArn==null? "" : System.Uri.EscapeDataString(DefaultIamRoleArn))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -10461,7 +10266,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -10483,8 +10287,7 @@ namespace MyNS
 		public async Task GET_ModifyClusterMaintenanceAsync(string ClusterIdentifier, bool DeferMaintenance, string DeferMaintenanceIdentifier, System.DateTimeOffset DeferMaintenanceStartTime, System.DateTimeOffset DeferMaintenanceEndTime, int DeferMaintenanceDuration, GET_ModifyClusterMaintenanceAction Action, GET_ModifyClusterMaintenanceVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=ModifyClusterMaintenance?ClusterIdentifier=" + (ClusterIdentifier==null? "" : System.Uri.EscapeDataString(ClusterIdentifier))+"&DeferMaintenance="+DeferMaintenance+"&DeferMaintenanceIdentifier=" + (DeferMaintenanceIdentifier==null? "" : System.Uri.EscapeDataString(DeferMaintenanceIdentifier))+"&DeferMaintenanceStartTime=" + DeferMaintenanceStartTime.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&DeferMaintenanceEndTime=" + DeferMaintenanceEndTime.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&DeferMaintenanceDuration="+DeferMaintenanceDuration+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -10498,7 +10301,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -10514,8 +10316,7 @@ namespace MyNS
 		public async Task GET_ModifyClusterParameterGroupAsync(string ParameterGroupName, string[] Parameters, GET_ModifyClusterParameterGroupAction Action, GET_ModifyClusterParameterGroupVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=ModifyClusterParameterGroup?ParameterGroupName=" + (ParameterGroupName==null? "" : System.Uri.EscapeDataString(ParameterGroupName))+"&"+string.Join("&", Parameters.Select(z => $"Parameters={System.Uri.EscapeDataString(z.ToString())}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -10529,7 +10330,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -10546,8 +10346,7 @@ namespace MyNS
 		public async Task GET_ModifyClusterSnapshotAsync(string SnapshotIdentifier, int ManualSnapshotRetentionPeriod, bool Force, GET_ModifyClusterSnapshotAction Action, GET_ModifyClusterSnapshotVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=ModifyClusterSnapshot?SnapshotIdentifier=" + (SnapshotIdentifier==null? "" : System.Uri.EscapeDataString(SnapshotIdentifier))+"&ManualSnapshotRetentionPeriod="+ManualSnapshotRetentionPeriod+"&Force="+Force+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -10561,7 +10360,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -10580,8 +10378,7 @@ namespace MyNS
 		public async Task GET_ModifyClusterSnapshotScheduleAsync(string ClusterIdentifier, string ScheduleIdentifier, bool DisassociateSchedule, GET_ModifyClusterSnapshotScheduleAction Action, GET_ModifyClusterSnapshotScheduleVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=ModifyClusterSnapshotSchedule?ClusterIdentifier=" + (ClusterIdentifier==null? "" : System.Uri.EscapeDataString(ClusterIdentifier))+"&ScheduleIdentifier=" + (ScheduleIdentifier==null? "" : System.Uri.EscapeDataString(ScheduleIdentifier))+"&DisassociateSchedule="+DisassociateSchedule+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -10595,7 +10392,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -10614,8 +10410,7 @@ namespace MyNS
 		public async Task GET_ModifyClusterSubnetGroupAsync(string ClusterSubnetGroupName, string Description, string[] SubnetIds, GET_ModifyClusterSubnetGroupAction Action, GET_ModifyClusterSubnetGroupVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=ModifyClusterSubnetGroup?ClusterSubnetGroupName=" + (ClusterSubnetGroupName==null? "" : System.Uri.EscapeDataString(ClusterSubnetGroupName))+"&Description=" + (Description==null? "" : System.Uri.EscapeDataString(Description))+"&"+string.Join("&", SubnetIds.Select(z => $"SubnetIds={System.Uri.EscapeDataString(z.ToString())}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -10629,7 +10424,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -10652,8 +10446,7 @@ namespace MyNS
 		public async Task GET_ModifyCustomDomainAssociationAsync(string CustomDomainName, string CustomDomainCertificateArn, string ClusterIdentifier, GET_ModifyCustomDomainAssociationAction Action, GET_ModifyCustomDomainAssociationVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=ModifyCustomDomainAssociation?CustomDomainName=" + (CustomDomainName==null? "" : System.Uri.EscapeDataString(CustomDomainName))+"&CustomDomainCertificateArn=" + (CustomDomainCertificateArn==null? "" : System.Uri.EscapeDataString(CustomDomainCertificateArn))+"&ClusterIdentifier=" + (ClusterIdentifier==null? "" : System.Uri.EscapeDataString(ClusterIdentifier))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -10667,7 +10460,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -10683,8 +10475,7 @@ namespace MyNS
 		public async Task GET_ModifyEndpointAccessAsync(string EndpointName, string[] VpcSecurityGroupIds, GET_ModifyEndpointAccessAction Action, GET_ModifyEndpointAccessVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=ModifyEndpointAccess?EndpointName=" + (EndpointName==null? "" : System.Uri.EscapeDataString(EndpointName))+"&"+string.Join("&", VpcSecurityGroupIds.Select(z => $"VpcSecurityGroupIds={System.Uri.EscapeDataString(z.ToString())}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -10698,7 +10489,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -10725,8 +10515,7 @@ namespace MyNS
 		public async Task GET_ModifyEventSubscriptionAsync(string SubscriptionName, string SnsTopicArn, string SourceType, string[] SourceIds, string[] EventCategories, string Severity, bool Enabled, GET_ModifyEventSubscriptionAction Action, GET_ModifyEventSubscriptionVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=ModifyEventSubscription?SubscriptionName=" + (SubscriptionName==null? "" : System.Uri.EscapeDataString(SubscriptionName))+"&SnsTopicArn=" + (SnsTopicArn==null? "" : System.Uri.EscapeDataString(SnsTopicArn))+"&SourceType=" + (SourceType==null? "" : System.Uri.EscapeDataString(SourceType))+"&"+string.Join("&", SourceIds.Select(z => $"SourceIds={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", EventCategories.Select(z => $"EventCategories={System.Uri.EscapeDataString(z.ToString())}"))+"&Severity=" + (Severity==null? "" : System.Uri.EscapeDataString(Severity))+"&Enabled="+Enabled+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -10740,7 +10529,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -10768,8 +10556,7 @@ namespace MyNS
 		public async Task GET_ModifyScheduledActionAsync(string ScheduledActionName, GET_ModifyScheduledActionTargetAction TargetAction, string Schedule, string IamRole, string ScheduledActionDescription, System.DateTimeOffset StartTime, System.DateTimeOffset EndTime, bool Enable, GET_ModifyScheduledActionAction Action, GET_ModifyScheduledActionVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=ModifyScheduledAction?ScheduledActionName=" + (ScheduledActionName==null? "" : System.Uri.EscapeDataString(ScheduledActionName))+"&TargetAction=" + TargetAction+"&Schedule=" + (Schedule==null? "" : System.Uri.EscapeDataString(Schedule))+"&IamRole=" + (IamRole==null? "" : System.Uri.EscapeDataString(IamRole))+"&ScheduledActionDescription=" + (ScheduledActionDescription==null? "" : System.Uri.EscapeDataString(ScheduledActionDescription))+"&StartTime=" + StartTime.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&EndTime=" + EndTime.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&Enable="+Enable+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -10783,7 +10570,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -10800,8 +10586,7 @@ namespace MyNS
 		public async Task GET_ModifySnapshotCopyRetentionPeriodAsync(string ClusterIdentifier, int RetentionPeriod, bool Manual, GET_ModifySnapshotCopyRetentionPeriodAction Action, GET_ModifySnapshotCopyRetentionPeriodVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=ModifySnapshotCopyRetentionPeriod?ClusterIdentifier=" + (ClusterIdentifier==null? "" : System.Uri.EscapeDataString(ClusterIdentifier))+"&RetentionPeriod="+RetentionPeriod+"&Manual="+Manual+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -10815,7 +10600,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -10831,8 +10615,7 @@ namespace MyNS
 		public async Task GET_ModifySnapshotScheduleAsync(string ScheduleIdentifier, string[] ScheduleDefinitions, GET_ModifySnapshotScheduleAction Action, GET_ModifySnapshotScheduleVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=ModifySnapshotSchedule?ScheduleIdentifier=" + (ScheduleIdentifier==null? "" : System.Uri.EscapeDataString(ScheduleIdentifier))+"&"+string.Join("&", ScheduleDefinitions.Select(z => $"ScheduleDefinitions={System.Uri.EscapeDataString(z.ToString())}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -10846,7 +10629,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -10863,8 +10645,7 @@ namespace MyNS
 		public async Task GET_ModifyUsageLimitAsync(string UsageLimitId, int Amount, GET_ModifyUsageLimitBreachAction BreachAction, GET_ModifyUsageLimitAction Action, GET_ModifyUsageLimitVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=ModifyUsageLimit?UsageLimitId=" + (UsageLimitId==null? "" : System.Uri.EscapeDataString(UsageLimitId))+"&Amount="+Amount+"&BreachAction=" + BreachAction+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -10878,7 +10659,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -10893,8 +10673,7 @@ namespace MyNS
 		public async Task GET_PauseClusterAsync(string ClusterIdentifier, GET_PauseClusterAction Action, GET_PauseClusterVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=PauseCluster?ClusterIdentifier=" + (ClusterIdentifier==null? "" : System.Uri.EscapeDataString(ClusterIdentifier))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -10908,7 +10687,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -10924,8 +10702,7 @@ namespace MyNS
 		public async Task GET_PurchaseReservedNodeOfferingAsync(string ReservedNodeOfferingId, int NodeCount, GET_PurchaseReservedNodeOfferingAction Action, GET_PurchaseReservedNodeOfferingVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=PurchaseReservedNodeOffering?ReservedNodeOfferingId=" + (ReservedNodeOfferingId==null? "" : System.Uri.EscapeDataString(ReservedNodeOfferingId))+"&NodeCount="+NodeCount+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -10939,7 +10716,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -10954,8 +10730,7 @@ namespace MyNS
 		public async Task GET_RebootClusterAsync(string ClusterIdentifier, GET_RebootClusterAction Action, GET_RebootClusterVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=RebootCluster?ClusterIdentifier=" + (ClusterIdentifier==null? "" : System.Uri.EscapeDataString(ClusterIdentifier))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -10969,7 +10744,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -10984,8 +10758,7 @@ namespace MyNS
 		public async Task GET_RejectDataShareAsync(string DataShareArn, GET_RejectDataShareAction Action, GET_RejectDataShareVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=RejectDataShare?DataShareArn=" + (DataShareArn==null? "" : System.Uri.EscapeDataString(DataShareArn))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -10999,7 +10772,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -11016,8 +10788,7 @@ namespace MyNS
 		public async Task GET_ResetClusterParameterGroupAsync(string ParameterGroupName, bool ResetAllParameters, string[] Parameters, GET_ResetClusterParameterGroupAction Action, GET_ResetClusterParameterGroupVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=ResetClusterParameterGroup?ParameterGroupName=" + (ParameterGroupName==null? "" : System.Uri.EscapeDataString(ParameterGroupName))+"&ResetAllParameters="+ResetAllParameters+"&"+string.Join("&", Parameters.Select(z => $"Parameters={System.Uri.EscapeDataString(z.ToString())}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -11031,7 +10802,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -11060,8 +10830,7 @@ namespace MyNS
 		public async Task GET_ResizeClusterAsync(string ClusterIdentifier, string ClusterType, string NodeType, int NumberOfNodes, bool Classic, string ReservedNodeId, string TargetReservedNodeOfferingId, GET_ResizeClusterAction Action, GET_ResizeClusterVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=ResizeCluster?ClusterIdentifier=" + (ClusterIdentifier==null? "" : System.Uri.EscapeDataString(ClusterIdentifier))+"&ClusterType=" + (ClusterType==null? "" : System.Uri.EscapeDataString(ClusterType))+"&NodeType=" + (NodeType==null? "" : System.Uri.EscapeDataString(NodeType))+"&NumberOfNodes="+NumberOfNodes+"&Classic="+Classic+"&ReservedNodeId=" + (ReservedNodeId==null? "" : System.Uri.EscapeDataString(ReservedNodeId))+"&TargetReservedNodeOfferingId=" + (TargetReservedNodeOfferingId==null? "" : System.Uri.EscapeDataString(TargetReservedNodeOfferingId))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -11075,7 +10844,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -11196,8 +10964,7 @@ namespace MyNS
 					Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=RestoreFromClusterSnapshot?ClusterIdentifier=" + (ClusterIdentifier==null? "" : System.Uri.EscapeDataString(ClusterIdentifier))+"&SnapshotIdentifier=" + (SnapshotIdentifier==null? "" : System.Uri.EscapeDataString(SnapshotIdentifier))+"&SnapshotArn=" + (SnapshotArn==null? "" : System.Uri.EscapeDataString(SnapshotArn))+"&SnapshotClusterIdentifier=" + (SnapshotClusterIdentifier==null? "" : System.Uri.EscapeDataString(SnapshotClusterIdentifier))+"&Port="+Port+"&AvailabilityZone=" + (AvailabilityZone==null? "" : System.Uri.EscapeDataString(AvailabilityZone))+"&AllowVersionUpgrade="+AllowVersionUpgrade+"&ClusterSubnetGroupName=" + (ClusterSubnetGroupName==null? "" : System.Uri.EscapeDataString(ClusterSubnetGroupName))+"&PubliclyAccessible="+PubliclyAccessible+"&OwnerAccount=" + (OwnerAccount==null? "" : System.Uri.EscapeDataString(OwnerAccount))+"&HsmClientCertificateIdentifier=" + (HsmClientCertificateIdentifier==null? "" : System.Uri.EscapeDataString(HsmClientCertificateIdentifier))+"&HsmConfigurationIdentifier=" + (HsmConfigurationIdentifier==null? "" : System.Uri.EscapeDataString(HsmConfigurationIdentifier))+"&ElasticIp=" + (ElasticIp==null? "" : System.Uri.EscapeDataString(ElasticIp))+"&ClusterParameterGroupName=" + (ClusterParameterGroupName==null? "" : System.Uri.EscapeDataString(ClusterParameterGroupName))+"&"+string.Join("&", ClusterSecurityGroups.Select(z => $"ClusterSecurityGroups={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", VpcSecurityGroupIds.Select(z => $"VpcSecurityGroupIds={System.Uri.EscapeDataString(z.ToString())}"))+"&PreferredMaintenanceWindow=" + (PreferredMaintenanceWindow==null? "" : System.Uri.EscapeDataString(PreferredMaintenanceWindow))+"&AutomatedSnapshotRetentionPeriod="+AutomatedSnapshotRetentionPeriod+"&ManualSnapshotRetentionPeriod="+ManualSnapshotRetentionPeriod+"&KmsKeyId=" + (KmsKeyId==null? "" : System.Uri.EscapeDataString(KmsKeyId))+"&NodeType=" + (NodeType==null? "" : System.Uri.EscapeDataString(NodeType))+"&EnhancedVpcRouting="+EnhancedVpcRouting+"&AdditionalInfo=" + (AdditionalInfo==null? "" : System.Uri.EscapeDataString(AdditionalInfo))+"&"+string.Join("&", IamRoles.Select(z => $"IamRoles={System.Uri.EscapeDataString(z.ToString())}"))+"&MaintenanceTrackName=" + (MaintenanceTrackName==null? "" : System.Uri.EscapeDataString(MaintenanceTrackName))+"&SnapshotScheduleIdentifier=" + (SnapshotScheduleIdentifier==null? "" : System.Uri.EscapeDataString(SnapshotScheduleIdentifier))+"&NumberOfNodes="+NumberOfNodes+"&AvailabilityZoneRelocation="+AvailabilityZoneRelocation+"&AquaConfigurationStatus=" + AquaConfigurationStatus+"&DefaultIamRoleArn=" + (DefaultIamRoleArn==null? "" : System.Uri.EscapeDataString(DefaultIamRoleArn))+"&ReservedNodeId=" + (ReservedNodeId==null? "" : System.Uri.EscapeDataString(ReservedNodeId))+"&TargetReservedNodeOfferingId=" + (TargetReservedNodeOfferingId==null? "" : System.Uri.EscapeDataString(TargetReservedNodeOfferingId))+"&Encrypted="+Encrypted+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -11211,7 +10978,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -11248,8 +11014,7 @@ namespace MyNS
 		public async Task GET_RestoreTableFromClusterSnapshotAsync(string ClusterIdentifier, string SnapshotIdentifier, string SourceDatabaseName, string SourceSchemaName, string SourceTableName, string TargetDatabaseName, string TargetSchemaName, string NewTableName, bool EnableCaseSensitiveIdentifier, GET_RestoreTableFromClusterSnapshotAction Action, GET_RestoreTableFromClusterSnapshotVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=RestoreTableFromClusterSnapshot?ClusterIdentifier=" + (ClusterIdentifier==null? "" : System.Uri.EscapeDataString(ClusterIdentifier))+"&SnapshotIdentifier=" + (SnapshotIdentifier==null? "" : System.Uri.EscapeDataString(SnapshotIdentifier))+"&SourceDatabaseName=" + (SourceDatabaseName==null? "" : System.Uri.EscapeDataString(SourceDatabaseName))+"&SourceSchemaName=" + (SourceSchemaName==null? "" : System.Uri.EscapeDataString(SourceSchemaName))+"&SourceTableName=" + (SourceTableName==null? "" : System.Uri.EscapeDataString(SourceTableName))+"&TargetDatabaseName=" + (TargetDatabaseName==null? "" : System.Uri.EscapeDataString(TargetDatabaseName))+"&TargetSchemaName=" + (TargetSchemaName==null? "" : System.Uri.EscapeDataString(TargetSchemaName))+"&NewTableName=" + (NewTableName==null? "" : System.Uri.EscapeDataString(NewTableName))+"&EnableCaseSensitiveIdentifier="+EnableCaseSensitiveIdentifier+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -11263,7 +11028,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -11278,8 +11042,7 @@ namespace MyNS
 		public async Task GET_ResumeClusterAsync(string ClusterIdentifier, GET_ResumeClusterAction Action, GET_ResumeClusterVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=ResumeCluster?ClusterIdentifier=" + (ClusterIdentifier==null? "" : System.Uri.EscapeDataString(ClusterIdentifier))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -11293,7 +11056,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -11317,8 +11079,7 @@ namespace MyNS
 		public async Task GET_RevokeClusterSecurityGroupIngressAsync(string ClusterSecurityGroupName, string CIDRIP, string EC2SecurityGroupName, string EC2SecurityGroupOwnerId, GET_RevokeClusterSecurityGroupIngressAction Action, GET_RevokeClusterSecurityGroupIngressVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=RevokeClusterSecurityGroupIngress?ClusterSecurityGroupName=" + (ClusterSecurityGroupName==null? "" : System.Uri.EscapeDataString(ClusterSecurityGroupName))+"&CIDRIP=" + (CIDRIP==null? "" : System.Uri.EscapeDataString(CIDRIP))+"&EC2SecurityGroupName=" + (EC2SecurityGroupName==null? "" : System.Uri.EscapeDataString(EC2SecurityGroupName))+"&EC2SecurityGroupOwnerId=" + (EC2SecurityGroupOwnerId==null? "" : System.Uri.EscapeDataString(EC2SecurityGroupOwnerId))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -11332,7 +11093,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -11352,8 +11112,7 @@ namespace MyNS
 		public async Task GET_RevokeEndpointAccessAsync(string ClusterIdentifier, string Account, string[] VpcIds, bool Force, GET_RevokeEndpointAccessAction Action, GET_RevokeEndpointAccessVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=RevokeEndpointAccess?ClusterIdentifier=" + (ClusterIdentifier==null? "" : System.Uri.EscapeDataString(ClusterIdentifier))+"&Account=" + (Account==null? "" : System.Uri.EscapeDataString(Account))+"&"+string.Join("&", VpcIds.Select(z => $"VpcIds={System.Uri.EscapeDataString(z.ToString())}"))+"&Force="+Force+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -11367,7 +11126,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -11391,8 +11149,7 @@ namespace MyNS
 		public async Task GET_RevokeSnapshotAccessAsync(string SnapshotIdentifier, string SnapshotArn, string SnapshotClusterIdentifier, string AccountWithRestoreAccess, GET_RevokeSnapshotAccessAction Action, GET_RevokeSnapshotAccessVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=RevokeSnapshotAccess?SnapshotIdentifier=" + (SnapshotIdentifier==null? "" : System.Uri.EscapeDataString(SnapshotIdentifier))+"&SnapshotArn=" + (SnapshotArn==null? "" : System.Uri.EscapeDataString(SnapshotArn))+"&SnapshotClusterIdentifier=" + (SnapshotClusterIdentifier==null? "" : System.Uri.EscapeDataString(SnapshotClusterIdentifier))+"&AccountWithRestoreAccess=" + (AccountWithRestoreAccess==null? "" : System.Uri.EscapeDataString(AccountWithRestoreAccess))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -11406,7 +11163,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -11421,8 +11177,7 @@ namespace MyNS
 		public async Task GET_RotateEncryptionKeyAsync(string ClusterIdentifier, GET_RotateEncryptionKeyAction Action, GET_RotateEncryptionKeyVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=RotateEncryptionKey?ClusterIdentifier=" + (ClusterIdentifier==null? "" : System.Uri.EscapeDataString(ClusterIdentifier))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -11436,7 +11191,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -11465,8 +11219,7 @@ namespace MyNS
 		public async Task GET_UpdatePartnerStatusAsync(string AccountId, string ClusterIdentifier, string DatabaseName, string PartnerName, PartnerIntegrationStatus Status, string StatusMessage, GET_UpdatePartnerStatusAction Action, GET_UpdatePartnerStatusVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=UpdatePartnerStatus?AccountId=" + (AccountId==null? "" : System.Uri.EscapeDataString(AccountId))+"&ClusterIdentifier=" + (ClusterIdentifier==null? "" : System.Uri.EscapeDataString(ClusterIdentifier))+"&DatabaseName=" + (DatabaseName==null? "" : System.Uri.EscapeDataString(DatabaseName))+"&PartnerName=" + (PartnerName==null? "" : System.Uri.EscapeDataString(PartnerName))+"&Status=" + Status+"&StatusMessage=" + (StatusMessage==null? "" : System.Uri.EscapeDataString(StatusMessage))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -11480,7 +11233,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

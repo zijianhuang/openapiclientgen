@@ -168,8 +168,7 @@ namespace MyNS
 		public async Task<QODResponse> QodGetByCategoryAndLanguageAndIdAsync(string category, string language, string id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "qod?category=" + (category==null? "" : System.Uri.EscapeDataString(category))+"&language=" + (language==null? "" : System.Uri.EscapeDataString(language))+"&id=" + (id==null? "" : System.Uri.EscapeDataString(id));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -179,17 +178,14 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
-				{
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				using JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(streamContent));
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<QODResponse>(jsonReader);
-				}
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -208,23 +204,19 @@ namespace MyNS
 		public async Task<QuoteResponse> QodPatchByRepeat_afterAndAuthorsAndTitleAnd_privateAndLanguageAndSfwAsync(string repeat_after, string authors, string title, string _private, string language, string sfw, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "qod?repeat_after=" + (repeat_after==null? "" : System.Uri.EscapeDataString(repeat_after))+"&authors=" + (authors==null? "" : System.Uri.EscapeDataString(authors))+"&title=" + (title==null? "" : System.Uri.EscapeDataString(title))+"&private=" + (_private==null? "" : System.Uri.EscapeDataString(_private))+"&language=" + (language==null? "" : System.Uri.EscapeDataString(language))+"&sfw=" + (sfw==null? "" : System.Uri.EscapeDataString(sfw));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
-				{
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				using JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(streamContent));
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<QuoteResponse>(jsonReader);
-				}
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -243,23 +235,19 @@ namespace MyNS
 		public async Task<SuccessResponse> QodPutByRepeat_afterAndAuthorsAndTitleAnd_privateAndLanguageAndSfwAsync(string repeat_after, string authors, string title, string _private, string language, string sfw, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "qod?repeat_after=" + (repeat_after==null? "" : System.Uri.EscapeDataString(repeat_after))+"&authors=" + (authors==null? "" : System.Uri.EscapeDataString(authors))+"&title=" + (title==null? "" : System.Uri.EscapeDataString(title))+"&private=" + (_private==null? "" : System.Uri.EscapeDataString(_private))+"&language=" + (language==null? "" : System.Uri.EscapeDataString(language))+"&sfw=" + (sfw==null? "" : System.Uri.EscapeDataString(sfw));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
-				{
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				using JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(streamContent));
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<SuccessResponse>(jsonReader);
-				}
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -274,8 +262,7 @@ namespace MyNS
 		public async Task QodCategoriesGetByLanguageAndDetailedAsync(string language, string detailed, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "qod/categories?language=" + (language==null? "" : System.Uri.EscapeDataString(language))+"&detailed=" + (detailed==null? "" : System.Uri.EscapeDataString(detailed));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -289,7 +276,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -302,8 +288,7 @@ namespace MyNS
 		public async Task QodLanguagesGetAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "qod/languages";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -317,7 +302,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -331,8 +315,7 @@ namespace MyNS
 		public async Task QshowDeleteByIdAsync(string id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "qshow?id=" + (id==null? "" : System.Uri.EscapeDataString(id));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -346,7 +329,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -360,8 +342,7 @@ namespace MyNS
 		public async Task QshowGetByIdAsync(string id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "qshow?id=" + (id==null? "" : System.Uri.EscapeDataString(id));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -375,7 +356,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -391,8 +371,7 @@ namespace MyNS
 		public async Task QshowPatchByIdAndTitleAndDescriptionAndTagsAsync(string id, string title, string description, string[] tags, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "qshow?id=" + (id==null? "" : System.Uri.EscapeDataString(id))+"&title=" + (title==null? "" : System.Uri.EscapeDataString(title))+"&description=" + (description==null? "" : System.Uri.EscapeDataString(description))+"&"+string.Join("&", tags.Select(z => $"tags={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -401,7 +380,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -416,8 +394,7 @@ namespace MyNS
 		public async Task QshowPutByTitleAndDescriptionAndTagsAsync(string title, string description, string[] tags, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "qshow?title=" + (title==null? "" : System.Uri.EscapeDataString(title))+"&description=" + (description==null? "" : System.Uri.EscapeDataString(description))+"&"+string.Join("&", tags.Select(z => $"tags={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -426,7 +403,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -440,8 +416,7 @@ namespace MyNS
 		public async Task QshowListGetByStartAnd_publicAsync(int start, string _public, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "qshow/list?start="+start+"&public=" + (_public==null? "" : System.Uri.EscapeDataString(_public));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -455,7 +430,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -468,8 +442,7 @@ namespace MyNS
 		public async Task QshowQuotesGetByIdAsync(string id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "qshow/quotes?id=" + (id==null? "" : System.Uri.EscapeDataString(id));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -483,7 +456,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -497,8 +469,7 @@ namespace MyNS
 		public async Task QshowQuotesAddPostByIdAndQuoteidAsync(string id, string quoteid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "qshow/quotes/add?id=" + (id==null? "" : System.Uri.EscapeDataString(id))+"&quoteid=" + (quoteid==null? "" : System.Uri.EscapeDataString(quoteid));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -507,7 +478,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -521,8 +491,7 @@ namespace MyNS
 		public async Task QshowQuotesRemovePostByIdAndQuoteidAsync(string id, string quoteid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "qshow/quotes/remove?id=" + (id==null? "" : System.Uri.EscapeDataString(id))+"&quoteid=" + (quoteid==null? "" : System.Uri.EscapeDataString(quoteid));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -531,7 +500,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -545,8 +513,7 @@ namespace MyNS
 		public async Task QuoteDeleteByIdAsync(string id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "quote?id=" + (id==null? "" : System.Uri.EscapeDataString(id));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -560,7 +527,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -573,8 +539,7 @@ namespace MyNS
 		public async Task<QuoteResponse> QuoteGetByIdAsync(string id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "quote?id=" + (id==null? "" : System.Uri.EscapeDataString(id));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -584,17 +549,14 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
-				{
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				using JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(streamContent));
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<QuoteResponse>(jsonReader);
-				}
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -611,8 +573,7 @@ namespace MyNS
 		public async Task QuotePatchByIdAndQuoteAndAuthorAndLanguageAndTagsAsync(string id, string quote, string author, string language, string tags, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "quote?id=" + (id==null? "" : System.Uri.EscapeDataString(id))+"&quote=" + (quote==null? "" : System.Uri.EscapeDataString(quote))+"&author=" + (author==null? "" : System.Uri.EscapeDataString(author))+"&language=" + (language==null? "" : System.Uri.EscapeDataString(language))+"&tags=" + (tags==null? "" : System.Uri.EscapeDataString(tags));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -621,7 +582,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -637,8 +597,7 @@ namespace MyNS
 		public async Task QuotePostByQuoteAndAuthorAndTagsAndLanguageAsync(string quote, string author, string tags, string language, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "quote?quote=" + (quote==null? "" : System.Uri.EscapeDataString(quote))+"&author=" + (author==null? "" : System.Uri.EscapeDataString(author))+"&tags=" + (tags==null? "" : System.Uri.EscapeDataString(tags))+"&language=" + (language==null? "" : System.Uri.EscapeDataString(language));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -647,7 +606,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -663,8 +621,7 @@ namespace MyNS
 		public async Task QuotePutByQuoteAndAuthorAndTagsAndLanguageAsync(string quote, string author, string tags, string language, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "quote?quote=" + (quote==null? "" : System.Uri.EscapeDataString(quote))+"&author=" + (author==null? "" : System.Uri.EscapeDataString(author))+"&tags=" + (tags==null? "" : System.Uri.EscapeDataString(tags))+"&language=" + (language==null? "" : System.Uri.EscapeDataString(language));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -673,7 +630,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -690,8 +646,7 @@ namespace MyNS
 		public async Task QuoteAuthorsPopularGetByLanguageAndDetailedAndStartAndLimitAsync(string language, string detailed, int start, int limit, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "quote/authors/popular?language=" + (language==null? "" : System.Uri.EscapeDataString(language))+"&detailed=" + (detailed==null? "" : System.Uri.EscapeDataString(detailed))+"&start="+start+"&limit="+limit;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -705,7 +660,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -723,8 +677,7 @@ namespace MyNS
 		public async Task QuoteAuthorsSearchGetByQueryAndLanguageAndDetailedAndStartAndLimitAsync(string query, string language, string detailed, int start, int limit, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "quote/authors/search?query=" + (query==null? "" : System.Uri.EscapeDataString(query))+"&language=" + (language==null? "" : System.Uri.EscapeDataString(language))+"&detailed=" + (detailed==null? "" : System.Uri.EscapeDataString(detailed))+"&start="+start+"&limit="+limit;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -738,7 +691,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -751,8 +703,7 @@ namespace MyNS
 		public async Task QuoteBookmarkToggleGetByQuote_idAsync(string quote_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "quote/bookmark/toggle?quote_id=" + (quote_id==null? "" : System.Uri.EscapeDataString(quote_id));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -766,7 +717,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -781,8 +731,7 @@ namespace MyNS
 		public async Task QuoteCategoriesPopularGetByStartAndLimitAsync(int start, int limit, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "quote/categories/popular?start="+start+"&limit="+limit;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -796,7 +745,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -812,8 +760,7 @@ namespace MyNS
 		public async Task QuoteCategoriesSearchGetByQueryAndStartAndLimitAsync(string query, int start, int limit, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "quote/categories/search?query=" + (query==null? "" : System.Uri.EscapeDataString(query))+"&start="+start+"&limit="+limit;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -827,7 +774,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -841,8 +787,7 @@ namespace MyNS
 		public async Task QuoteImageDeleteByIdAsync(string id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "quote/image?id=" + (id==null? "" : System.Uri.EscapeDataString(id));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -856,7 +801,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -871,8 +815,7 @@ namespace MyNS
 		public async Task QuoteImageGetByIdAndBinaryAsync(string id, string binary, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "quote/image?id=" + (id==null? "" : System.Uri.EscapeDataString(id))+"&binary=" + (binary==null? "" : System.Uri.EscapeDataString(binary));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -886,7 +829,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -911,8 +853,7 @@ namespace MyNS
 		public async Task QuoteImagePutByQuote_idAndBgimage_idAndBg_colorAndFont_idAndText_colorAndText_sizeAndHalignAndValignAndWidthAndHeightAndBrandingAndInclude_transparent_layerAsync(string quote_id, string bgimage_id, string bg_color, string font_id, string text_color, string text_size, string halign, string valign, string width, string height, string branding, string include_transparent_layer, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "quote/image?quote_id=" + (quote_id==null? "" : System.Uri.EscapeDataString(quote_id))+"&bgimage_id=" + (bgimage_id==null? "" : System.Uri.EscapeDataString(bgimage_id))+"&bg_color=" + (bg_color==null? "" : System.Uri.EscapeDataString(bg_color))+"&font_id=" + (font_id==null? "" : System.Uri.EscapeDataString(font_id))+"&text_color=" + (text_color==null? "" : System.Uri.EscapeDataString(text_color))+"&text_size=" + (text_size==null? "" : System.Uri.EscapeDataString(text_size))+"&halign=" + (halign==null? "" : System.Uri.EscapeDataString(halign))+"&valign=" + (valign==null? "" : System.Uri.EscapeDataString(valign))+"&width=" + (width==null? "" : System.Uri.EscapeDataString(width))+"&height=" + (height==null? "" : System.Uri.EscapeDataString(height))+"&branding=" + (branding==null? "" : System.Uri.EscapeDataString(branding))+"&include_transparent_layer=" + (include_transparent_layer==null? "" : System.Uri.EscapeDataString(include_transparent_layer));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -921,7 +862,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -935,8 +875,7 @@ namespace MyNS
 		public async Task QuoteImageBackgroundDeleteByIdAsync(string id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "quote/image/background?id=" + (id==null? "" : System.Uri.EscapeDataString(id));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -950,7 +889,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -964,8 +902,7 @@ namespace MyNS
 		public async Task QuoteImageBackgroundListGetByStartAsync(string start, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "quote/image/background/list?start=" + (start==null? "" : System.Uri.EscapeDataString(start));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -979,7 +916,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -993,8 +929,7 @@ namespace MyNS
 		public async Task QuoteImageBackgroundSearchGetByQueryAsync(string query, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "quote/image/background/search?query=" + (query==null? "" : System.Uri.EscapeDataString(query));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1008,7 +943,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1022,8 +956,7 @@ namespace MyNS
 		public async Task QuoteImageBackgroundTagsAddPostByIdAndTagsAsync(string id, string tags, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "quote/image/background/tags/add?id=" + (id==null? "" : System.Uri.EscapeDataString(id))+"&tags=" + (tags==null? "" : System.Uri.EscapeDataString(tags));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -1032,7 +965,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1046,8 +978,7 @@ namespace MyNS
 		public async Task QuoteImageBackgroundTagsRemovePostByIdAndTagsAsync(string id, string tags, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "quote/image/background/tags/remove?id=" + (id==null? "" : System.Uri.EscapeDataString(id))+"&tags=" + (tags==null? "" : System.Uri.EscapeDataString(tags));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -1056,7 +987,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1070,8 +1000,7 @@ namespace MyNS
 		public async Task QuoteImageFontDeleteByIdAsync(string id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "quote/image/font?id=" + (id==null? "" : System.Uri.EscapeDataString(id));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1085,7 +1014,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1099,8 +1027,7 @@ namespace MyNS
 		public async Task QuoteImageFontListGetByStartAsync(string start, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "quote/image/font/list?start=" + (start==null? "" : System.Uri.EscapeDataString(start));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1114,7 +1041,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1128,8 +1054,7 @@ namespace MyNS
 		public async Task QuoteImageFontSearchGetByQueryAsync(string query, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "quote/image/font/search?query=" + (query==null? "" : System.Uri.EscapeDataString(query));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1144,7 +1069,6 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
-			}
 		}
 		
 		/// <summary>
@@ -1157,8 +1081,7 @@ namespace MyNS
 		public async Task QuoteImageFontTagsAddPostByIdAndTagsAsync(string id, string tags, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "quote/image/font/tags/add?id=" + (id==null? "" : System.Uri.EscapeDataString(id))+"&tags=" + (tags==null? "" : System.Uri.EscapeDataString(tags));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -1167,7 +1090,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1181,8 +1103,7 @@ namespace MyNS
 		public async Task QuoteImageFontTagsRemovePostByIdAndTagsAsync(string id, string tags, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "quote/image/font/tags/remove?id=" + (id==null? "" : System.Uri.EscapeDataString(id))+"&tags=" + (tags==null? "" : System.Uri.EscapeDataString(tags));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -1191,7 +1112,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1207,8 +1127,7 @@ namespace MyNS
 		public async Task QuoteImageSearchGetByCategoryAndAuthorAnd_privateAsync(string category, string author, string _private, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "quote/image/search?category=" + (category==null? "" : System.Uri.EscapeDataString(category))+"&author=" + (author==null? "" : System.Uri.EscapeDataString(author))+"&private=" + (_private==null? "" : System.Uri.EscapeDataString(_private));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1222,7 +1141,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1235,8 +1153,7 @@ namespace MyNS
 		public async Task QuoteLikeToggleGetByQuote_idAsync(string quote_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "quote/like/toggle?quote_id=" + (quote_id==null? "" : System.Uri.EscapeDataString(quote_id));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1250,7 +1167,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1264,8 +1180,7 @@ namespace MyNS
 		public async Task QuoteListGetByStartAndLimitAsync(int start, int limit, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "quote/list?start="+start+"&limit="+limit;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1279,7 +1194,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1293,8 +1207,7 @@ namespace MyNS
 		public async Task<QuoteResponse> QuoteRandomGetByLanguageAndLimitAsync(string language, string limit, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "quote/random?language=" + (language==null? "" : System.Uri.EscapeDataString(language))+"&limit=" + (limit==null? "" : System.Uri.EscapeDataString(limit));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1304,17 +1217,14 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
-				{
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				using JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(streamContent));
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<QuoteResponse>(jsonReader);
-				}
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1335,8 +1245,7 @@ namespace MyNS
 		public async Task<QuoteResponse> QuoteSearchGetByCategoryAndAuthorAndMinlengthAndMaxlengthAndQueryAnd_privateAndLanguageAndLimitAndSfwAsync(string category, string author, int minlength, int maxlength, string query, string _private, string language, string limit, string sfw, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "quote/search?category=" + (category==null? "" : System.Uri.EscapeDataString(category))+"&author=" + (author==null? "" : System.Uri.EscapeDataString(author))+"&minlength="+minlength+"&maxlength="+maxlength+"&query=" + (query==null? "" : System.Uri.EscapeDataString(query))+"&private=" + (_private==null? "" : System.Uri.EscapeDataString(_private))+"&language=" + (language==null? "" : System.Uri.EscapeDataString(language))+"&limit=" + (limit==null? "" : System.Uri.EscapeDataString(limit))+"&sfw=" + (sfw==null? "" : System.Uri.EscapeDataString(sfw));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1346,17 +1255,14 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
-				{
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				using JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(streamContent));
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<QuoteResponse>(jsonReader);
-				}
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1370,8 +1276,7 @@ namespace MyNS
 		public async Task QuoteTagsAddPostByIdAndTagsAsync(string id, string tags, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "quote/tags/add?id=" + (id==null? "" : System.Uri.EscapeDataString(id))+"&tags=" + (tags==null? "" : System.Uri.EscapeDataString(tags));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -1380,7 +1285,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1394,8 +1298,7 @@ namespace MyNS
 		public async Task QuoteTagsRemovePostByIdAndTagsAsync(string id, string tags, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "quote/tags/remove?id=" + (id==null? "" : System.Uri.EscapeDataString(id))+"&tags=" + (tags==null? "" : System.Uri.EscapeDataString(tags));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -1404,7 +1307,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

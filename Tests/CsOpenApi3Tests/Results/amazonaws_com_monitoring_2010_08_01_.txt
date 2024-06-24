@@ -2481,8 +2481,7 @@ namespace MyNS
 		public async Task GET_DeleteAlarmsAsync(string[] AlarmNames, GET_DeleteAlarmsAction Action, GET_DeleteAlarmsVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DeleteAlarms?"+string.Join("&", AlarmNames.Select(z => $"AlarmNames={System.Uri.EscapeDataString(z.ToString())}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2496,7 +2495,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2524,8 +2522,7 @@ namespace MyNS
 		public async Task GET_DeleteAnomalyDetectorAsync(string Namespace, string MetricName, Dimension[] Dimensions, string Stat, GET_DeleteAnomalyDetectorSingleMetricAnomalyDetector SingleMetricAnomalyDetector, GET_DeleteAnomalyDetectorMetricMathAnomalyDetector MetricMathAnomalyDetector, GET_DeleteAnomalyDetectorAction Action, GET_DeleteAnomalyDetectorVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DeleteAnomalyDetector?Namespace=" + (Namespace==null? "" : System.Uri.EscapeDataString(Namespace))+"&MetricName=" + (MetricName==null? "" : System.Uri.EscapeDataString(MetricName))+"&"+string.Join("&", Dimensions.Select(z => $"Dimensions={z}"))+"&Stat=" + (Stat==null? "" : System.Uri.EscapeDataString(Stat))+"&SingleMetricAnomalyDetector=" + SingleMetricAnomalyDetector+"&MetricMathAnomalyDetector=" + MetricMathAnomalyDetector+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2539,7 +2536,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2552,8 +2548,7 @@ namespace MyNS
 		public async Task GET_DeleteDashboardsAsync(string[] DashboardNames, GET_DeleteDashboardsAction Action, GET_DeleteDashboardsVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DeleteDashboards?"+string.Join("&", DashboardNames.Select(z => $"DashboardNames={System.Uri.EscapeDataString(z.ToString())}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2567,7 +2562,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2580,8 +2574,7 @@ namespace MyNS
 		public async Task GET_DeleteInsightRulesAsync(string[] RuleNames, GET_DeleteInsightRulesAction Action, GET_DeleteInsightRulesVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DeleteInsightRules?"+string.Join("&", RuleNames.Select(z => $"RuleNames={System.Uri.EscapeDataString(z.ToString())}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2595,7 +2588,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2611,8 +2603,7 @@ namespace MyNS
 		public async Task GET_DeleteMetricStreamAsync(string Name, GET_DeleteMetricStreamAction Action, GET_DeleteMetricStreamVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DeleteMetricStream?Name=" + (Name==null? "" : System.Uri.EscapeDataString(Name))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2626,7 +2617,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2652,8 +2642,7 @@ namespace MyNS
 		public async Task GET_DescribeAlarmHistoryAsync(string AlarmName, AlarmType[] AlarmTypes, HistoryItemType HistoryItemType, System.DateTimeOffset StartDate, System.DateTimeOffset EndDate, int MaxRecords, string NextToken, ScanBy ScanBy, GET_DescribeAlarmHistoryAction Action, GET_DescribeAlarmHistoryVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribeAlarmHistory?AlarmName=" + (AlarmName==null? "" : System.Uri.EscapeDataString(AlarmName))+"&"+string.Join("&", AlarmTypes.Select(z => $"AlarmTypes={z}"))+"&HistoryItemType=" + HistoryItemType+"&StartDate=" + StartDate.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&EndDate=" + EndDate.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&MaxRecords="+MaxRecords+"&NextToken=" + (NextToken==null? "" : System.Uri.EscapeDataString(NextToken))+"&ScanBy=" + ScanBy+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2667,7 +2656,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2705,8 +2693,7 @@ namespace MyNS
 		public async Task GET_DescribeAlarmsAsync(string[] AlarmNames, string AlarmNamePrefix, AlarmType[] AlarmTypes, string ChildrenOfAlarmName, string ParentsOfAlarmName, StateValue StateValue, string ActionPrefix, int MaxRecords, string NextToken, GET_DescribeAlarmsAction Action, GET_DescribeAlarmsVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribeAlarms?"+string.Join("&", AlarmNames.Select(z => $"AlarmNames={System.Uri.EscapeDataString(z.ToString())}"))+"&AlarmNamePrefix=" + (AlarmNamePrefix==null? "" : System.Uri.EscapeDataString(AlarmNamePrefix))+"&"+string.Join("&", AlarmTypes.Select(z => $"AlarmTypes={z}"))+"&ChildrenOfAlarmName=" + (ChildrenOfAlarmName==null? "" : System.Uri.EscapeDataString(ChildrenOfAlarmName))+"&ParentsOfAlarmName=" + (ParentsOfAlarmName==null? "" : System.Uri.EscapeDataString(ParentsOfAlarmName))+"&StateValue=" + StateValue+"&ActionPrefix=" + (ActionPrefix==null? "" : System.Uri.EscapeDataString(ActionPrefix))+"&MaxRecords="+MaxRecords+"&NextToken=" + (NextToken==null? "" : System.Uri.EscapeDataString(NextToken))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2720,7 +2707,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2749,8 +2735,7 @@ namespace MyNS
 		public async Task GET_DescribeAlarmsForMetricAsync(string MetricName, string Namespace, Statistic Statistic, string ExtendedStatistic, Dimension[] Dimensions, int Period, GET_DescribeAlarmsForMetricUnit Unit, GET_DescribeAlarmsForMetricAction Action, GET_DescribeAlarmsForMetricVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribeAlarmsForMetric?MetricName=" + (MetricName==null? "" : System.Uri.EscapeDataString(MetricName))+"&Namespace=" + (Namespace==null? "" : System.Uri.EscapeDataString(Namespace))+"&Statistic=" + Statistic+"&ExtendedStatistic=" + (ExtendedStatistic==null? "" : System.Uri.EscapeDataString(ExtendedStatistic))+"&"+string.Join("&", Dimensions.Select(z => $"Dimensions={z}"))+"&Period="+Period+"&Unit=" + Unit+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2764,7 +2749,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2794,8 +2778,7 @@ namespace MyNS
 		public async Task GET_DescribeAnomalyDetectorsAsync(string NextToken, int MaxResults, string Namespace, string MetricName, Dimension[] Dimensions, AnomalyDetectorType[] AnomalyDetectorTypes, GET_DescribeAnomalyDetectorsAction Action, GET_DescribeAnomalyDetectorsVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribeAnomalyDetectors?NextToken=" + (NextToken==null? "" : System.Uri.EscapeDataString(NextToken))+"&MaxResults="+MaxResults+"&Namespace=" + (Namespace==null? "" : System.Uri.EscapeDataString(Namespace))+"&MetricName=" + (MetricName==null? "" : System.Uri.EscapeDataString(MetricName))+"&"+string.Join("&", Dimensions.Select(z => $"Dimensions={z}"))+"&"+string.Join("&", AnomalyDetectorTypes.Select(z => $"AnomalyDetectorTypes={z}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2809,7 +2792,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2826,8 +2808,7 @@ namespace MyNS
 		public async Task GET_DescribeInsightRulesAsync(string NextToken, int MaxResults, GET_DescribeInsightRulesAction Action, GET_DescribeInsightRulesVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribeInsightRules?NextToken=" + (NextToken==null? "" : System.Uri.EscapeDataString(NextToken))+"&MaxResults="+MaxResults+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2841,7 +2822,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2856,8 +2836,7 @@ namespace MyNS
 		public async Task GET_DisableAlarmActionsAsync(string[] AlarmNames, GET_DisableAlarmActionsAction Action, GET_DisableAlarmActionsVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DisableAlarmActions?"+string.Join("&", AlarmNames.Select(z => $"AlarmNames={System.Uri.EscapeDataString(z.ToString())}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2871,7 +2850,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2884,8 +2862,7 @@ namespace MyNS
 		public async Task GET_DisableInsightRulesAsync(string[] RuleNames, GET_DisableInsightRulesAction Action, GET_DisableInsightRulesVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DisableInsightRules?"+string.Join("&", RuleNames.Select(z => $"RuleNames={System.Uri.EscapeDataString(z.ToString())}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2899,7 +2876,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2914,8 +2890,7 @@ namespace MyNS
 		public async Task GET_EnableAlarmActionsAsync(string[] AlarmNames, GET_EnableAlarmActionsAction Action, GET_EnableAlarmActionsVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=EnableAlarmActions?"+string.Join("&", AlarmNames.Select(z => $"AlarmNames={System.Uri.EscapeDataString(z.ToString())}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2929,7 +2904,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2942,8 +2916,7 @@ namespace MyNS
 		public async Task GET_EnableInsightRulesAsync(string[] RuleNames, GET_EnableInsightRulesAction Action, GET_EnableInsightRulesVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=EnableInsightRules?"+string.Join("&", RuleNames.Select(z => $"RuleNames={System.Uri.EscapeDataString(z.ToString())}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2957,7 +2930,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2970,8 +2942,7 @@ namespace MyNS
 		public async Task GET_GetDashboardAsync(string DashboardName, GET_GetDashboardAction Action, GET_GetDashboardVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=GetDashboard?DashboardName=" + (DashboardName==null? "" : System.Uri.EscapeDataString(DashboardName))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2985,7 +2956,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3012,8 +2982,7 @@ namespace MyNS
 		public async Task GET_GetInsightRuleReportAsync(string RuleName, System.DateTimeOffset StartTime, System.DateTimeOffset EndTime, int Period, int MaxContributorCount, string[] Metrics, string OrderBy, GET_GetInsightRuleReportAction Action, GET_GetInsightRuleReportVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=GetInsightRuleReport?RuleName=" + (RuleName==null? "" : System.Uri.EscapeDataString(RuleName))+"&StartTime=" + StartTime.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&EndTime=" + EndTime.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&Period="+Period+"&MaxContributorCount="+MaxContributorCount+"&"+string.Join("&", Metrics.Select(z => $"Metrics={System.Uri.EscapeDataString(z.ToString())}"))+"&OrderBy=" + (OrderBy==null? "" : System.Uri.EscapeDataString(OrderBy))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3027,7 +2996,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3046,8 +3014,7 @@ namespace MyNS
 		public async Task GET_GetMetricDataAsync(MetricDataQuery[] MetricDataQueries, System.DateTimeOffset StartTime, System.DateTimeOffset EndTime, string NextToken, ScanBy ScanBy, int MaxDatapoints, GET_GetMetricDataLabelOptions LabelOptions, GET_GetMetricDataAction Action, GET_GetMetricDataVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=GetMetricData?"+string.Join("&", MetricDataQueries.Select(z => $"MetricDataQueries={z}"))+"&StartTime=" + StartTime.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&EndTime=" + EndTime.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&NextToken=" + (NextToken==null? "" : System.Uri.EscapeDataString(NextToken))+"&ScanBy=" + ScanBy+"&MaxDatapoints="+MaxDatapoints+"&LabelOptions=" + LabelOptions+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3061,7 +3028,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3098,8 +3064,7 @@ namespace MyNS
 		public async Task GET_GetMetricStatisticsAsync(string Namespace, string MetricName, Dimension[] Dimensions, System.DateTimeOffset StartTime, System.DateTimeOffset EndTime, int Period, Statistic[] Statistics, string[] ExtendedStatistics, GET_GetMetricStatisticsUnit Unit, GET_GetMetricStatisticsAction Action, GET_GetMetricStatisticsVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=GetMetricStatistics?Namespace=" + (Namespace==null? "" : System.Uri.EscapeDataString(Namespace))+"&MetricName=" + (MetricName==null? "" : System.Uri.EscapeDataString(MetricName))+"&"+string.Join("&", Dimensions.Select(z => $"Dimensions={z}"))+"&StartTime=" + StartTime.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&EndTime=" + EndTime.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&Period="+Period+"&"+string.Join("&", Statistics.Select(z => $"Statistics={z}"))+"&"+string.Join("&", ExtendedStatistics.Select(z => $"ExtendedStatistics={System.Uri.EscapeDataString(z.ToString())}"))+"&Unit=" + Unit+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3113,7 +3078,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3129,8 +3093,7 @@ namespace MyNS
 		public async Task GET_GetMetricStreamAsync(string Name, GET_GetMetricStreamAction Action, GET_GetMetricStreamVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=GetMetricStream?Name=" + (Name==null? "" : System.Uri.EscapeDataString(Name))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3144,7 +3107,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3158,8 +3120,7 @@ namespace MyNS
 		public async Task GET_GetMetricWidgetImageAsync(string MetricWidget, string OutputFormat, GET_GetMetricWidgetImageAction Action, GET_GetMetricWidgetImageVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=GetMetricWidgetImage?MetricWidget=" + (MetricWidget==null? "" : System.Uri.EscapeDataString(MetricWidget))+"&OutputFormat=" + (OutputFormat==null? "" : System.Uri.EscapeDataString(OutputFormat))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3173,7 +3134,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3187,8 +3147,7 @@ namespace MyNS
 		public async Task GET_ListDashboardsAsync(string DashboardNamePrefix, string NextToken, GET_ListDashboardsAction Action, GET_ListDashboardsVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=ListDashboards?DashboardNamePrefix=" + (DashboardNamePrefix==null? "" : System.Uri.EscapeDataString(DashboardNamePrefix))+"&NextToken=" + (NextToken==null? "" : System.Uri.EscapeDataString(NextToken))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3202,7 +3161,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3223,8 +3181,7 @@ namespace MyNS
 		public async Task GET_ListManagedInsightRulesAsync(string ResourceARN, string NextToken, int MaxResults, GET_ListManagedInsightRulesAction Action, GET_ListManagedInsightRulesVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=ListManagedInsightRules?ResourceARN=" + (ResourceARN==null? "" : System.Uri.EscapeDataString(ResourceARN))+"&NextToken=" + (NextToken==null? "" : System.Uri.EscapeDataString(NextToken))+"&MaxResults="+MaxResults+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3238,7 +3195,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3255,8 +3211,7 @@ namespace MyNS
 		public async Task GET_ListMetricStreamsAsync(string NextToken, int MaxResults, GET_ListMetricStreamsAction Action, GET_ListMetricStreamsVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=ListMetricStreams?NextToken=" + (NextToken==null? "" : System.Uri.EscapeDataString(NextToken))+"&MaxResults="+MaxResults+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3270,7 +3225,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3300,8 +3254,7 @@ namespace MyNS
 		public async Task GET_ListMetricsAsync(string Namespace, string MetricName, DimensionFilter[] Dimensions, string NextToken, RecentlyActive RecentlyActive, bool IncludeLinkedAccounts, string OwningAccount, GET_ListMetricsAction Action, GET_ListMetricsVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=ListMetrics?Namespace=" + (Namespace==null? "" : System.Uri.EscapeDataString(Namespace))+"&MetricName=" + (MetricName==null? "" : System.Uri.EscapeDataString(MetricName))+"&"+string.Join("&", Dimensions.Select(z => $"Dimensions={z}"))+"&NextToken=" + (NextToken==null? "" : System.Uri.EscapeDataString(NextToken))+"&RecentlyActive=" + RecentlyActive+"&IncludeLinkedAccounts="+IncludeLinkedAccounts+"&OwningAccount=" + (OwningAccount==null? "" : System.Uri.EscapeDataString(OwningAccount))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3315,7 +3268,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3331,8 +3283,7 @@ namespace MyNS
 		public async Task GET_ListTagsForResourceAsync(string ResourceARN, GET_ListTagsForResourceAction Action, GET_ListTagsForResourceVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=ListTagsForResource?ResourceARN=" + (ResourceARN==null? "" : System.Uri.EscapeDataString(ResourceARN))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3346,7 +3297,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3375,8 +3325,7 @@ namespace MyNS
 		public async Task GET_PutAnomalyDetectorAsync(string Namespace, string MetricName, Dimension[] Dimensions, string Stat, GET_PutAnomalyDetectorConfiguration Configuration, GET_PutAnomalyDetectorSingleMetricAnomalyDetector SingleMetricAnomalyDetector, GET_PutAnomalyDetectorMetricMathAnomalyDetector MetricMathAnomalyDetector, GET_PutAnomalyDetectorAction Action, GET_PutAnomalyDetectorVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=PutAnomalyDetector?Namespace=" + (Namespace==null? "" : System.Uri.EscapeDataString(Namespace))+"&MetricName=" + (MetricName==null? "" : System.Uri.EscapeDataString(MetricName))+"&"+string.Join("&", Dimensions.Select(z => $"Dimensions={z}"))+"&Stat=" + (Stat==null? "" : System.Uri.EscapeDataString(Stat))+"&Configuration=" + Configuration+"&SingleMetricAnomalyDetector=" + SingleMetricAnomalyDetector+"&MetricMathAnomalyDetector=" + MetricMathAnomalyDetector+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3390,7 +3339,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3431,8 +3379,7 @@ namespace MyNS
 		public async Task GET_PutCompositeAlarmAsync(bool ActionsEnabled, string[] AlarmActions, string AlarmDescription, string AlarmName, string AlarmRule, string[] InsufficientDataActions, string[] OKActions, Tag[] Tags, string ActionsSuppressor, int ActionsSuppressorWaitPeriod, int ActionsSuppressorExtensionPeriod, GET_PutCompositeAlarmAction Action, GET_PutCompositeAlarmVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=PutCompositeAlarm?ActionsEnabled="+ActionsEnabled+"&"+string.Join("&", AlarmActions.Select(z => $"AlarmActions={System.Uri.EscapeDataString(z.ToString())}"))+"&AlarmDescription=" + (AlarmDescription==null? "" : System.Uri.EscapeDataString(AlarmDescription))+"&AlarmName=" + (AlarmName==null? "" : System.Uri.EscapeDataString(AlarmName))+"&AlarmRule=" + (AlarmRule==null? "" : System.Uri.EscapeDataString(AlarmRule))+"&"+string.Join("&", InsufficientDataActions.Select(z => $"InsufficientDataActions={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", OKActions.Select(z => $"OKActions={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", Tags.Select(z => $"Tags={z}"))+"&ActionsSuppressor=" + (ActionsSuppressor==null? "" : System.Uri.EscapeDataString(ActionsSuppressor))+"&ActionsSuppressorWaitPeriod="+ActionsSuppressorWaitPeriod+"&ActionsSuppressorExtensionPeriod="+ActionsSuppressorExtensionPeriod+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3446,7 +3393,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3460,8 +3406,7 @@ namespace MyNS
 		public async Task GET_PutDashboardAsync(string DashboardName, string DashboardBody, GET_PutDashboardAction Action, GET_PutDashboardVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=PutDashboard?DashboardName=" + (DashboardName==null? "" : System.Uri.EscapeDataString(DashboardName))+"&DashboardBody=" + (DashboardBody==null? "" : System.Uri.EscapeDataString(DashboardBody))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3475,7 +3420,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3500,8 +3444,7 @@ namespace MyNS
 		public async Task GET_PutInsightRuleAsync(string RuleName, string RuleState, string RuleDefinition, Tag[] Tags, GET_PutInsightRuleAction Action, GET_PutInsightRuleVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=PutInsightRule?RuleName=" + (RuleName==null? "" : System.Uri.EscapeDataString(RuleName))+"&RuleState=" + (RuleState==null? "" : System.Uri.EscapeDataString(RuleState))+"&RuleDefinition=" + (RuleDefinition==null? "" : System.Uri.EscapeDataString(RuleDefinition))+"&"+string.Join("&", Tags.Select(z => $"Tags={z}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3515,7 +3458,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3528,8 +3470,7 @@ namespace MyNS
 		public async Task GET_PutManagedInsightRulesAsync(ManagedRule[] ManagedRules, GET_PutManagedInsightRulesAction Action, GET_PutManagedInsightRulesVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=PutManagedInsightRules?"+string.Join("&", ManagedRules.Select(z => $"ManagedRules={z}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3543,7 +3484,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3637,8 +3577,7 @@ namespace MyNS
 					Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=PutMetricAlarm?AlarmName=" + (AlarmName==null? "" : System.Uri.EscapeDataString(AlarmName))+"&AlarmDescription=" + (AlarmDescription==null? "" : System.Uri.EscapeDataString(AlarmDescription))+"&ActionsEnabled="+ActionsEnabled+"&"+string.Join("&", OKActions.Select(z => $"OKActions={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", AlarmActions.Select(z => $"AlarmActions={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", InsufficientDataActions.Select(z => $"InsufficientDataActions={System.Uri.EscapeDataString(z.ToString())}"))+"&MetricName=" + (MetricName==null? "" : System.Uri.EscapeDataString(MetricName))+"&Namespace=" + (Namespace==null? "" : System.Uri.EscapeDataString(Namespace))+"&Statistic=" + Statistic+"&ExtendedStatistic=" + (ExtendedStatistic==null? "" : System.Uri.EscapeDataString(ExtendedStatistic))+"&"+string.Join("&", Dimensions.Select(z => $"Dimensions={z}"))+"&Period="+Period+"&Unit=" + Unit+"&EvaluationPeriods="+EvaluationPeriods+"&DatapointsToAlarm="+DatapointsToAlarm+"&Threshold="+Threshold+"&ComparisonOperator=" + ComparisonOperator+"&TreatMissingData=" + (TreatMissingData==null? "" : System.Uri.EscapeDataString(TreatMissingData))+"&EvaluateLowSampleCountPercentile=" + (EvaluateLowSampleCountPercentile==null? "" : System.Uri.EscapeDataString(EvaluateLowSampleCountPercentile))+"&"+string.Join("&", Metrics.Select(z => $"Metrics={z}"))+"&"+string.Join("&", Tags.Select(z => $"Tags={z}"))+"&ThresholdMetricId=" + (ThresholdMetricId==null? "" : System.Uri.EscapeDataString(ThresholdMetricId))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3652,7 +3591,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3669,8 +3607,7 @@ namespace MyNS
 		public async Task GET_PutMetricDataAsync(string Namespace, MetricDatum[] MetricData, GET_PutMetricDataAction Action, GET_PutMetricDataVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=PutMetricData?Namespace=" + (Namespace==null? "" : System.Uri.EscapeDataString(Namespace))+"&"+string.Join("&", MetricData.Select(z => $"MetricData={z}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3684,7 +3621,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3717,8 +3653,7 @@ namespace MyNS
 		public async Task GET_PutMetricStreamAsync(string Name, MetricStreamFilter[] IncludeFilters, MetricStreamFilter[] ExcludeFilters, string FirehoseArn, string RoleArn, GET_PutMetricStreamOutputFormat OutputFormat, Tag[] Tags, MetricStreamStatisticsConfiguration[] StatisticsConfigurations, bool IncludeLinkedAccountsMetrics, GET_PutMetricStreamAction Action, GET_PutMetricStreamVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=PutMetricStream?Name=" + (Name==null? "" : System.Uri.EscapeDataString(Name))+"&"+string.Join("&", IncludeFilters.Select(z => $"IncludeFilters={z}"))+"&"+string.Join("&", ExcludeFilters.Select(z => $"ExcludeFilters={z}"))+"&FirehoseArn=" + (FirehoseArn==null? "" : System.Uri.EscapeDataString(FirehoseArn))+"&RoleArn=" + (RoleArn==null? "" : System.Uri.EscapeDataString(RoleArn))+"&OutputFormat=" + OutputFormat+"&"+string.Join("&", Tags.Select(z => $"Tags={z}"))+"&"+string.Join("&", StatisticsConfigurations.Select(z => $"StatisticsConfigurations={z}"))+"&IncludeLinkedAccountsMetrics="+IncludeLinkedAccountsMetrics+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3732,7 +3667,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3757,8 +3691,7 @@ namespace MyNS
 		public async Task GET_SetAlarmStateAsync(string AlarmName, StateValue StateValue, string StateReason, string StateReasonData, GET_SetAlarmStateAction Action, GET_SetAlarmStateVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=SetAlarmState?AlarmName=" + (AlarmName==null? "" : System.Uri.EscapeDataString(AlarmName))+"&StateValue=" + StateValue+"&StateReason=" + (StateReason==null? "" : System.Uri.EscapeDataString(StateReason))+"&StateReasonData=" + (StateReasonData==null? "" : System.Uri.EscapeDataString(StateReasonData))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3772,7 +3705,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3785,8 +3717,7 @@ namespace MyNS
 		public async Task GET_StartMetricStreamsAsync(string[] Names, GET_StartMetricStreamsAction Action, GET_StartMetricStreamsVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=StartMetricStreams?"+string.Join("&", Names.Select(z => $"Names={System.Uri.EscapeDataString(z.ToString())}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3800,7 +3731,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3813,8 +3743,7 @@ namespace MyNS
 		public async Task GET_StopMetricStreamsAsync(string[] Names, GET_StopMetricStreamsAction Action, GET_StopMetricStreamsVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=StopMetricStreams?"+string.Join("&", Names.Select(z => $"Names={System.Uri.EscapeDataString(z.ToString())}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3828,7 +3757,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3845,8 +3773,7 @@ namespace MyNS
 		public async Task GET_TagResourceAsync(string ResourceARN, Tag[] Tags, GET_TagResourceAction Action, GET_TagResourceVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=TagResource?ResourceARN=" + (ResourceARN==null? "" : System.Uri.EscapeDataString(ResourceARN))+"&"+string.Join("&", Tags.Select(z => $"Tags={z}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3860,7 +3787,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3877,8 +3803,7 @@ namespace MyNS
 		public async Task GET_UntagResourceAsync(string ResourceARN, string[] TagKeys, GET_UntagResourceAction Action, GET_UntagResourceVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=UntagResource?ResourceARN=" + (ResourceARN==null? "" : System.Uri.EscapeDataString(ResourceARN))+"&"+string.Join("&", TagKeys.Select(z => $"TagKeys={System.Uri.EscapeDataString(z.ToString())}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3892,7 +3817,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

@@ -191,19 +191,17 @@ namespace MyNS
 		public async Task<RecommendedActionSessionsOperationStatus> LocationBasedRecommendedActionSessionsOperationStatus_GetAsync(string api_version, string subscriptionId, string locationName, string operationId)
 		{
 			var requestUri = "subscriptions/"+ (subscriptionId==null? "" : System.Uri.EscapeDataString(subscriptionId))+"/providers/Microsoft.DBforMySQL/locations/"+ (locationName==null? "" : System.Uri.EscapeDataString(locationName))+"/recommendedActionSessionsAzureAsyncOperation/"+ (operationId==null? "" : System.Uri.EscapeDataString(operationId))+"?api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<RecommendedActionSessionsOperationStatus>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<RecommendedActionSessionsOperationStatus>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -223,19 +221,17 @@ namespace MyNS
 		public async Task<RecommendationActionsResultList> LocationBasedRecommendedActionSessionsResult_ListAsync(string api_version, string subscriptionId, string locationName, string operationId)
 		{
 			var requestUri = "subscriptions/"+ (subscriptionId==null? "" : System.Uri.EscapeDataString(subscriptionId))+"/providers/Microsoft.DBforMySQL/locations/"+ (locationName==null? "" : System.Uri.EscapeDataString(locationName))+"/recommendedActionSessionsOperationResults/"+ (operationId==null? "" : System.Uri.EscapeDataString(operationId))+"?api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<RecommendationActionsResultList>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<RecommendationActionsResultList>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -258,19 +254,17 @@ namespace MyNS
 		public async Task<AdvisorsResultList> Advisors_ListByServerAsync(string api_version, string subscriptionId, string resourceGroupName, string serverName)
 		{
 			var requestUri = "subscriptions/"+ (subscriptionId==null? "" : System.Uri.EscapeDataString(subscriptionId))+"/resourceGroups/"+ (resourceGroupName==null? "" : System.Uri.EscapeDataString(resourceGroupName))+"/providers/Microsoft.DBforMySQL/servers/"+ (serverName==null? "" : System.Uri.EscapeDataString(serverName))+"/advisors?api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<AdvisorsResultList>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<AdvisorsResultList>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -294,19 +288,17 @@ namespace MyNS
 		public async Task<Advisor> Advisors_GetAsync(string api_version, string subscriptionId, string resourceGroupName, string serverName, string advisorName)
 		{
 			var requestUri = "subscriptions/"+ (subscriptionId==null? "" : System.Uri.EscapeDataString(subscriptionId))+"/resourceGroups/"+ (resourceGroupName==null? "" : System.Uri.EscapeDataString(resourceGroupName))+"/providers/Microsoft.DBforMySQL/servers/"+ (serverName==null? "" : System.Uri.EscapeDataString(serverName))+"/advisors/"+ (advisorName==null? "" : System.Uri.EscapeDataString(advisorName))+"?api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Advisor>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Advisor>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -331,8 +323,7 @@ namespace MyNS
 		public async Task CreateRecommendedActionSessionAsync(string api_version, string subscriptionId, string resourceGroupName, string serverName, string advisorName, string databaseName)
 		{
 			var requestUri = "subscriptions/"+ (subscriptionId==null? "" : System.Uri.EscapeDataString(subscriptionId))+"/resourceGroups/"+ (resourceGroupName==null? "" : System.Uri.EscapeDataString(resourceGroupName))+"/providers/Microsoft.DBforMySQL/servers/"+ (serverName==null? "" : System.Uri.EscapeDataString(serverName))+"/advisors/"+ (advisorName==null? "" : System.Uri.EscapeDataString(advisorName))+"/createRecommendedActionSession?api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version))+"&databaseName=" + (databaseName==null? "" : System.Uri.EscapeDataString(databaseName));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -341,7 +332,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -366,19 +356,17 @@ namespace MyNS
 		public async Task<RecommendationActionsResultList> RecommendedActions_ListByServerAsync(string api_version, string subscriptionId, string resourceGroupName, string serverName, string advisorName, string sessionId)
 		{
 			var requestUri = "subscriptions/"+ (subscriptionId==null? "" : System.Uri.EscapeDataString(subscriptionId))+"/resourceGroups/"+ (resourceGroupName==null? "" : System.Uri.EscapeDataString(resourceGroupName))+"/providers/Microsoft.DBforMySQL/servers/"+ (serverName==null? "" : System.Uri.EscapeDataString(serverName))+"/advisors/"+ (advisorName==null? "" : System.Uri.EscapeDataString(advisorName))+"/recommendedActions?api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version))+"&sessionId=" + (sessionId==null? "" : System.Uri.EscapeDataString(sessionId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<RecommendationActionsResultList>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<RecommendationActionsResultList>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -403,19 +391,17 @@ namespace MyNS
 		public async Task<RecommendationAction> RecommendedActions_GetAsync(string api_version, string subscriptionId, string resourceGroupName, string serverName, string advisorName, string recommendedActionName)
 		{
 			var requestUri = "subscriptions/"+ (subscriptionId==null? "" : System.Uri.EscapeDataString(subscriptionId))+"/resourceGroups/"+ (resourceGroupName==null? "" : System.Uri.EscapeDataString(resourceGroupName))+"/providers/Microsoft.DBforMySQL/servers/"+ (serverName==null? "" : System.Uri.EscapeDataString(serverName))+"/advisors/"+ (advisorName==null? "" : System.Uri.EscapeDataString(advisorName))+"/recommendedActions/"+ (recommendedActionName==null? "" : System.Uri.EscapeDataString(recommendedActionName))+"?api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<RecommendationAction>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<RecommendationAction>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

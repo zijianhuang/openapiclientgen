@@ -311,19 +311,17 @@ namespace MyNS
 		public async Task<MetricDefinitionCollection> MetricDefinitions_ListAsync(string resourceUri, string api_version, string metricnamespace)
 		{
 			var requestUri = ""+ (resourceUri==null? "" : System.Uri.EscapeDataString(resourceUri))+"/providers/microsoft.insights/metricDefinitions&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version))+"&metricnamespace=" + (metricnamespace==null? "" : System.Uri.EscapeDataString(metricnamespace));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<MetricDefinitionCollection>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<MetricDefinitionCollection>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

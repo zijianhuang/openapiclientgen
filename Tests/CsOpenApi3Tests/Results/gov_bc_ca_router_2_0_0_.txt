@@ -55,8 +55,7 @@ namespace MyNS
 		public async Task Directions__outputFormatGetByPointsAndOutputSRSAndCriteriaAndDistanceUnitAndRoundTripAndDepartureAndCorrectSideAndDisableAndRouteDescriptionAsync(Directions__outputFormatGetByPointsAndOutputSRSAndCriteriaAndDistanceUnitAndRoundTripAndDepartureAndCorrectSideAndDisableAndRouteDescriptionOutputFormat outputFormat, string points, Directions__outputFormatGetByPointsAndOutputSRSAndCriteriaAndDistanceUnitAndRoundTripAndDepartureAndCorrectSideAndDisableAndRouteDescriptionOutputSRS outputSRS, Directions__outputFormatGetByPointsAndOutputSRSAndCriteriaAndDistanceUnitAndRoundTripAndDepartureAndCorrectSideAndDisableAndRouteDescriptionCriteria criteria, Directions__outputFormatGetByPointsAndOutputSRSAndCriteriaAndDistanceUnitAndRoundTripAndDepartureAndCorrectSideAndDisableAndRouteDescriptionDistanceUnit distanceUnit, bool roundTrip, System.DateTimeOffset departure, bool correctSide, string disable, string routeDescription, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "directions."+outputFormat+"?points=" + (points==null? "" : System.Uri.EscapeDataString(points))+"&outputSRS="+outputSRS+"&criteria=" + criteria+"&distanceUnit=" + distanceUnit+"&roundTrip="+roundTrip+"&departure=" + departure.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&correctSide="+correctSide+"&disable=" + (disable==null? "" : System.Uri.EscapeDataString(disable))+"&routeDescription=" + (routeDescription==null? "" : System.Uri.EscapeDataString(routeDescription));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -70,7 +69,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -93,8 +91,7 @@ namespace MyNS
 		public async Task Directions__outputFormatPostByPointsAndOutputSRSAndCriteriaAndDistanceUnitAndRoundTripAndDepartureAndCorrectSideAndDisableAndRouteDescriptionAsync(Directions__outputFormatGetByPointsAndOutputSRSAndCriteriaAndDistanceUnitAndRoundTripAndDepartureAndCorrectSideAndDisableAndRouteDescriptionOutputFormat outputFormat, string points, Directions__outputFormatPostByPointsAndOutputSRSAndCriteriaAndDistanceUnitAndRoundTripAndDepartureAndCorrectSideAndDisableAndRouteDescriptionOutputSRS outputSRS, Directions__outputFormatGetByPointsAndOutputSRSAndCriteriaAndDistanceUnitAndRoundTripAndDepartureAndCorrectSideAndDisableAndRouteDescriptionCriteria criteria, Directions__outputFormatGetByPointsAndOutputSRSAndCriteriaAndDistanceUnitAndRoundTripAndDepartureAndCorrectSideAndDisableAndRouteDescriptionDistanceUnit distanceUnit, bool roundTrip, System.DateTimeOffset departure, bool correctSide, string disable, string routeDescription, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "directions."+outputFormat+"?points=" + (points==null? "" : System.Uri.EscapeDataString(points))+"&outputSRS="+outputSRS+"&criteria=" + criteria+"&distanceUnit=" + distanceUnit+"&roundTrip="+roundTrip+"&departure=" + departure.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&correctSide="+correctSide+"&disable=" + (disable==null? "" : System.Uri.EscapeDataString(disable))+"&routeDescription=" + (routeDescription==null? "" : System.Uri.EscapeDataString(routeDescription));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -103,7 +100,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -126,8 +122,7 @@ namespace MyNS
 		public async Task Distance__outputFormatGetByPointsAndOutputSRSAndCriteriaAndDistanceUnitAndRoundTripAndDepartureAndCorrectSideAndDisableAndRouteDescriptionAsync(Directions__outputFormatGetByPointsAndOutputSRSAndCriteriaAndDistanceUnitAndRoundTripAndDepartureAndCorrectSideAndDisableAndRouteDescriptionOutputFormat outputFormat, string points, Distance__outputFormatGetByPointsAndOutputSRSAndCriteriaAndDistanceUnitAndRoundTripAndDepartureAndCorrectSideAndDisableAndRouteDescriptionOutputSRS outputSRS, Directions__outputFormatGetByPointsAndOutputSRSAndCriteriaAndDistanceUnitAndRoundTripAndDepartureAndCorrectSideAndDisableAndRouteDescriptionCriteria criteria, Directions__outputFormatGetByPointsAndOutputSRSAndCriteriaAndDistanceUnitAndRoundTripAndDepartureAndCorrectSideAndDisableAndRouteDescriptionDistanceUnit distanceUnit, bool roundTrip, System.DateTimeOffset departure, bool correctSide, string disable, string routeDescription, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "distance."+outputFormat+"?points=" + (points==null? "" : System.Uri.EscapeDataString(points))+"&outputSRS="+outputSRS+"&criteria=" + criteria+"&distanceUnit=" + distanceUnit+"&roundTrip="+roundTrip+"&departure=" + departure.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&correctSide="+correctSide+"&disable=" + (disable==null? "" : System.Uri.EscapeDataString(disable))+"&routeDescription=" + (routeDescription==null? "" : System.Uri.EscapeDataString(routeDescription));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -141,7 +136,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -164,8 +158,7 @@ namespace MyNS
 		public async Task Distance__outputFormatPostByPointsAndOutputSRSAndCriteriaAndDistanceUnitAndRoundTripAndDepartureAndCorrectSideAndDisableAndRouteDescriptionAsync(Directions__outputFormatGetByPointsAndOutputSRSAndCriteriaAndDistanceUnitAndRoundTripAndDepartureAndCorrectSideAndDisableAndRouteDescriptionOutputFormat outputFormat, string points, Distance__outputFormatPostByPointsAndOutputSRSAndCriteriaAndDistanceUnitAndRoundTripAndDepartureAndCorrectSideAndDisableAndRouteDescriptionOutputSRS outputSRS, Directions__outputFormatGetByPointsAndOutputSRSAndCriteriaAndDistanceUnitAndRoundTripAndDepartureAndCorrectSideAndDisableAndRouteDescriptionCriteria criteria, Directions__outputFormatGetByPointsAndOutputSRSAndCriteriaAndDistanceUnitAndRoundTripAndDepartureAndCorrectSideAndDisableAndRouteDescriptionDistanceUnit distanceUnit, bool roundTrip, System.DateTimeOffset departure, bool correctSide, string disable, string routeDescription, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "distance."+outputFormat+"?points=" + (points==null? "" : System.Uri.EscapeDataString(points))+"&outputSRS="+outputSRS+"&criteria=" + criteria+"&distanceUnit=" + distanceUnit+"&roundTrip="+roundTrip+"&departure=" + departure.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&correctSide="+correctSide+"&disable=" + (disable==null? "" : System.Uri.EscapeDataString(disable))+"&routeDescription=" + (routeDescription==null? "" : System.Uri.EscapeDataString(routeDescription));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -174,7 +167,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -198,8 +190,7 @@ namespace MyNS
 		public async Task DistanceBetweenPairs__outputFormatGetByFromPointsAndToPointsAndOutputSRSAndCriteriaAndDistanceUnitAndDepartureAndCorrectSideAndDisableAndRouteDescriptionAndMaxPairsAsync(DistanceBetweenPairs__outputFormatGetByFromPointsAndToPointsAndOutputSRSAndCriteriaAndDistanceUnitAndDepartureAndCorrectSideAndDisableAndRouteDescriptionAndMaxPairsOutputFormat outputFormat, string fromPoints, string toPoints, DistanceBetweenPairs__outputFormatGetByFromPointsAndToPointsAndOutputSRSAndCriteriaAndDistanceUnitAndDepartureAndCorrectSideAndDisableAndRouteDescriptionAndMaxPairsOutputSRS outputSRS, Directions__outputFormatGetByPointsAndOutputSRSAndCriteriaAndDistanceUnitAndRoundTripAndDepartureAndCorrectSideAndDisableAndRouteDescriptionCriteria criteria, Directions__outputFormatGetByPointsAndOutputSRSAndCriteriaAndDistanceUnitAndRoundTripAndDepartureAndCorrectSideAndDisableAndRouteDescriptionDistanceUnit distanceUnit, System.DateTimeOffset departure, bool correctSide, string disable, string routeDescription, int maxPairs, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "distance/betweenPairs."+outputFormat+"?fromPoints=" + (fromPoints==null? "" : System.Uri.EscapeDataString(fromPoints))+"&toPoints=" + (toPoints==null? "" : System.Uri.EscapeDataString(toPoints))+"&outputSRS="+outputSRS+"&criteria=" + criteria+"&distanceUnit=" + distanceUnit+"&departure=" + departure.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&correctSide="+correctSide+"&disable=" + (disable==null? "" : System.Uri.EscapeDataString(disable))+"&routeDescription=" + (routeDescription==null? "" : System.Uri.EscapeDataString(routeDescription))+"&maxPairs="+maxPairs;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -213,7 +204,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -237,8 +227,7 @@ namespace MyNS
 		public async Task DistanceBetweenPairs__outputFormatPostByFromPointsAndToPointsAndOutputSRSAndCriteriaAndDistanceUnitAndDepartureAndCorrectSideAndDisableAndRouteDescriptionAndMaxPairsAsync(DistanceBetweenPairs__outputFormatGetByFromPointsAndToPointsAndOutputSRSAndCriteriaAndDistanceUnitAndDepartureAndCorrectSideAndDisableAndRouteDescriptionAndMaxPairsOutputFormat outputFormat, string fromPoints, string toPoints, DistanceBetweenPairs__outputFormatPostByFromPointsAndToPointsAndOutputSRSAndCriteriaAndDistanceUnitAndDepartureAndCorrectSideAndDisableAndRouteDescriptionAndMaxPairsOutputSRS outputSRS, Directions__outputFormatGetByPointsAndOutputSRSAndCriteriaAndDistanceUnitAndRoundTripAndDepartureAndCorrectSideAndDisableAndRouteDescriptionCriteria criteria, Directions__outputFormatGetByPointsAndOutputSRSAndCriteriaAndDistanceUnitAndRoundTripAndDepartureAndCorrectSideAndDisableAndRouteDescriptionDistanceUnit distanceUnit, System.DateTimeOffset departure, bool correctSide, string disable, string routeDescription, int maxPairs, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "distance/betweenPairs."+outputFormat+"?fromPoints=" + (fromPoints==null? "" : System.Uri.EscapeDataString(fromPoints))+"&toPoints=" + (toPoints==null? "" : System.Uri.EscapeDataString(toPoints))+"&outputSRS="+outputSRS+"&criteria=" + criteria+"&distanceUnit=" + distanceUnit+"&departure=" + departure.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&correctSide="+correctSide+"&disable=" + (disable==null? "" : System.Uri.EscapeDataString(disable))+"&routeDescription=" + (routeDescription==null? "" : System.Uri.EscapeDataString(routeDescription))+"&maxPairs="+maxPairs;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -247,7 +236,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -270,8 +258,7 @@ namespace MyNS
 		public async Task OptimalDirections__outputFormatGetByPointsAndOutputSRSAndCriteriaAndDistanceUnitAndRoundTripAndDepartureAndCorrectSideAndDisableAndRouteDescriptionAsync(Directions__outputFormatGetByPointsAndOutputSRSAndCriteriaAndDistanceUnitAndRoundTripAndDepartureAndCorrectSideAndDisableAndRouteDescriptionOutputFormat outputFormat, string points, OptimalDirections__outputFormatGetByPointsAndOutputSRSAndCriteriaAndDistanceUnitAndRoundTripAndDepartureAndCorrectSideAndDisableAndRouteDescriptionOutputSRS outputSRS, Directions__outputFormatGetByPointsAndOutputSRSAndCriteriaAndDistanceUnitAndRoundTripAndDepartureAndCorrectSideAndDisableAndRouteDescriptionCriteria criteria, Directions__outputFormatGetByPointsAndOutputSRSAndCriteriaAndDistanceUnitAndRoundTripAndDepartureAndCorrectSideAndDisableAndRouteDescriptionDistanceUnit distanceUnit, bool roundTrip, System.DateTimeOffset departure, bool correctSide, string disable, string routeDescription, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "optimalDirections."+outputFormat+"?points=" + (points==null? "" : System.Uri.EscapeDataString(points))+"&outputSRS="+outputSRS+"&criteria=" + criteria+"&distanceUnit=" + distanceUnit+"&roundTrip="+roundTrip+"&departure=" + departure.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&correctSide="+correctSide+"&disable=" + (disable==null? "" : System.Uri.EscapeDataString(disable))+"&routeDescription=" + (routeDescription==null? "" : System.Uri.EscapeDataString(routeDescription));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -285,7 +272,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -308,8 +294,7 @@ namespace MyNS
 		public async Task OptimalDirections__outputFormatPostByPointsAndOutputSRSAndCriteriaAndDistanceUnitAndRoundTripAndDepartureAndCorrectSideAndDisableAndRouteDescriptionAsync(Directions__outputFormatGetByPointsAndOutputSRSAndCriteriaAndDistanceUnitAndRoundTripAndDepartureAndCorrectSideAndDisableAndRouteDescriptionOutputFormat outputFormat, string points, OptimalDirections__outputFormatPostByPointsAndOutputSRSAndCriteriaAndDistanceUnitAndRoundTripAndDepartureAndCorrectSideAndDisableAndRouteDescriptionOutputSRS outputSRS, Directions__outputFormatGetByPointsAndOutputSRSAndCriteriaAndDistanceUnitAndRoundTripAndDepartureAndCorrectSideAndDisableAndRouteDescriptionCriteria criteria, Directions__outputFormatGetByPointsAndOutputSRSAndCriteriaAndDistanceUnitAndRoundTripAndDepartureAndCorrectSideAndDisableAndRouteDescriptionDistanceUnit distanceUnit, bool roundTrip, System.DateTimeOffset departure, bool correctSide, string disable, string routeDescription, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "optimalDirections."+outputFormat+"?points=" + (points==null? "" : System.Uri.EscapeDataString(points))+"&outputSRS="+outputSRS+"&criteria=" + criteria+"&distanceUnit=" + distanceUnit+"&roundTrip="+roundTrip+"&departure=" + departure.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&correctSide="+correctSide+"&disable=" + (disable==null? "" : System.Uri.EscapeDataString(disable))+"&routeDescription=" + (routeDescription==null? "" : System.Uri.EscapeDataString(routeDescription));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -318,7 +303,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -341,8 +325,7 @@ namespace MyNS
 		public async Task OptimalRoute__outputFormatGetByPointsAndOutputSRSAndCriteriaAndDistanceUnitAndRoundTripAndDepartureAndCorrectSideAndDisableAndRouteDescriptionAsync(Directions__outputFormatGetByPointsAndOutputSRSAndCriteriaAndDistanceUnitAndRoundTripAndDepartureAndCorrectSideAndDisableAndRouteDescriptionOutputFormat outputFormat, string points, OptimalRoute__outputFormatGetByPointsAndOutputSRSAndCriteriaAndDistanceUnitAndRoundTripAndDepartureAndCorrectSideAndDisableAndRouteDescriptionOutputSRS outputSRS, Directions__outputFormatGetByPointsAndOutputSRSAndCriteriaAndDistanceUnitAndRoundTripAndDepartureAndCorrectSideAndDisableAndRouteDescriptionCriteria criteria, Directions__outputFormatGetByPointsAndOutputSRSAndCriteriaAndDistanceUnitAndRoundTripAndDepartureAndCorrectSideAndDisableAndRouteDescriptionDistanceUnit distanceUnit, bool roundTrip, System.DateTimeOffset departure, bool correctSide, string disable, string routeDescription, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "optimalRoute."+outputFormat+"?points=" + (points==null? "" : System.Uri.EscapeDataString(points))+"&outputSRS="+outputSRS+"&criteria=" + criteria+"&distanceUnit=" + distanceUnit+"&roundTrip="+roundTrip+"&departure=" + departure.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&correctSide="+correctSide+"&disable=" + (disable==null? "" : System.Uri.EscapeDataString(disable))+"&routeDescription=" + (routeDescription==null? "" : System.Uri.EscapeDataString(routeDescription));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -356,7 +339,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -379,8 +361,7 @@ namespace MyNS
 		public async Task OptimalRoute__outputFormatPostByPointsAndOutputSRSAndCriteriaAndDistanceUnitAndRoundTripAndDepartureAndCorrectSideAndDisableAndRouteDescriptionAsync(Directions__outputFormatGetByPointsAndOutputSRSAndCriteriaAndDistanceUnitAndRoundTripAndDepartureAndCorrectSideAndDisableAndRouteDescriptionOutputFormat outputFormat, string points, OptimalRoute__outputFormatPostByPointsAndOutputSRSAndCriteriaAndDistanceUnitAndRoundTripAndDepartureAndCorrectSideAndDisableAndRouteDescriptionOutputSRS outputSRS, Directions__outputFormatGetByPointsAndOutputSRSAndCriteriaAndDistanceUnitAndRoundTripAndDepartureAndCorrectSideAndDisableAndRouteDescriptionCriteria criteria, Directions__outputFormatGetByPointsAndOutputSRSAndCriteriaAndDistanceUnitAndRoundTripAndDepartureAndCorrectSideAndDisableAndRouteDescriptionDistanceUnit distanceUnit, bool roundTrip, System.DateTimeOffset departure, bool correctSide, string disable, string routeDescription, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "optimalRoute."+outputFormat+"?points=" + (points==null? "" : System.Uri.EscapeDataString(points))+"&outputSRS="+outputSRS+"&criteria=" + criteria+"&distanceUnit=" + distanceUnit+"&roundTrip="+roundTrip+"&departure=" + departure.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&correctSide="+correctSide+"&disable=" + (disable==null? "" : System.Uri.EscapeDataString(disable))+"&routeDescription=" + (routeDescription==null? "" : System.Uri.EscapeDataString(routeDescription));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -389,7 +370,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -412,8 +392,7 @@ namespace MyNS
 		public async Task Route__outputFormatGetByPointsAndOutputSRSAndCriteriaAndDistanceUnitAndRoundTripAndDepartureAndCorrectSideAndDisableAndRouteDescriptionAsync(Directions__outputFormatGetByPointsAndOutputSRSAndCriteriaAndDistanceUnitAndRoundTripAndDepartureAndCorrectSideAndDisableAndRouteDescriptionOutputFormat outputFormat, string points, Route__outputFormatGetByPointsAndOutputSRSAndCriteriaAndDistanceUnitAndRoundTripAndDepartureAndCorrectSideAndDisableAndRouteDescriptionOutputSRS outputSRS, Directions__outputFormatGetByPointsAndOutputSRSAndCriteriaAndDistanceUnitAndRoundTripAndDepartureAndCorrectSideAndDisableAndRouteDescriptionCriteria criteria, Directions__outputFormatGetByPointsAndOutputSRSAndCriteriaAndDistanceUnitAndRoundTripAndDepartureAndCorrectSideAndDisableAndRouteDescriptionDistanceUnit distanceUnit, bool roundTrip, System.DateTimeOffset departure, bool correctSide, string disable, string routeDescription, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "route."+outputFormat+"?points=" + (points==null? "" : System.Uri.EscapeDataString(points))+"&outputSRS="+outputSRS+"&criteria=" + criteria+"&distanceUnit=" + distanceUnit+"&roundTrip="+roundTrip+"&departure=" + departure.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&correctSide="+correctSide+"&disable=" + (disable==null? "" : System.Uri.EscapeDataString(disable))+"&routeDescription=" + (routeDescription==null? "" : System.Uri.EscapeDataString(routeDescription));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -427,7 +406,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -450,8 +428,7 @@ namespace MyNS
 		public async Task Route__outputFormatPostByPointsAndOutputSRSAndCriteriaAndDistanceUnitAndRoundTripAndDepartureAndCorrectSideAndDisableAndRouteDescriptionAsync(Directions__outputFormatGetByPointsAndOutputSRSAndCriteriaAndDistanceUnitAndRoundTripAndDepartureAndCorrectSideAndDisableAndRouteDescriptionOutputFormat outputFormat, string points, Route__outputFormatPostByPointsAndOutputSRSAndCriteriaAndDistanceUnitAndRoundTripAndDepartureAndCorrectSideAndDisableAndRouteDescriptionOutputSRS outputSRS, Directions__outputFormatGetByPointsAndOutputSRSAndCriteriaAndDistanceUnitAndRoundTripAndDepartureAndCorrectSideAndDisableAndRouteDescriptionCriteria criteria, Directions__outputFormatGetByPointsAndOutputSRSAndCriteriaAndDistanceUnitAndRoundTripAndDepartureAndCorrectSideAndDisableAndRouteDescriptionDistanceUnit distanceUnit, bool roundTrip, System.DateTimeOffset departure, bool correctSide, string disable, string routeDescription, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "route."+outputFormat+"?points=" + (points==null? "" : System.Uri.EscapeDataString(points))+"&outputSRS="+outputSRS+"&criteria=" + criteria+"&distanceUnit=" + distanceUnit+"&roundTrip="+roundTrip+"&departure=" + departure.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&correctSide="+correctSide+"&disable=" + (disable==null? "" : System.Uri.EscapeDataString(disable))+"&routeDescription=" + (routeDescription==null? "" : System.Uri.EscapeDataString(routeDescription));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -460,7 +437,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -485,8 +461,7 @@ namespace MyNS
 		public async Task TruckDirections__outputFormatGetByPointsAndOutputSRSAndCriteriaAndDistanceUnitAndRoundTripAndDepartureAndCorrectSideAndTruckRouteMultiplierAndPartitionAndDisableAndRouteDescriptionAsync(Directions__outputFormatGetByPointsAndOutputSRSAndCriteriaAndDistanceUnitAndRoundTripAndDepartureAndCorrectSideAndDisableAndRouteDescriptionOutputFormat outputFormat, string points, TruckDirections__outputFormatGetByPointsAndOutputSRSAndCriteriaAndDistanceUnitAndRoundTripAndDepartureAndCorrectSideAndTruckRouteMultiplierAndPartitionAndDisableAndRouteDescriptionOutputSRS outputSRS, Directions__outputFormatGetByPointsAndOutputSRSAndCriteriaAndDistanceUnitAndRoundTripAndDepartureAndCorrectSideAndDisableAndRouteDescriptionCriteria criteria, Directions__outputFormatGetByPointsAndOutputSRSAndCriteriaAndDistanceUnitAndRoundTripAndDepartureAndCorrectSideAndDisableAndRouteDescriptionDistanceUnit distanceUnit, bool roundTrip, System.DateTimeOffset departure, bool correctSide, int truckRouteMultiplier, string partition, string disable, string routeDescription, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "truck/directions."+outputFormat+"?points=" + (points==null? "" : System.Uri.EscapeDataString(points))+"&outputSRS="+outputSRS+"&criteria=" + criteria+"&distanceUnit=" + distanceUnit+"&roundTrip="+roundTrip+"&departure=" + departure.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&correctSide="+correctSide+"&truckRouteMultiplier="+truckRouteMultiplier+"&partition=" + (partition==null? "" : System.Uri.EscapeDataString(partition))+"&disable=" + (disable==null? "" : System.Uri.EscapeDataString(disable))+"&routeDescription=" + (routeDescription==null? "" : System.Uri.EscapeDataString(routeDescription));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -500,7 +475,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -525,8 +499,7 @@ namespace MyNS
 		public async Task TruckDirections__outputFormatPostByPointsAndOutputSRSAndCriteriaAndDistanceUnitAndRoundTripAndDepartureAndCorrectSideAndTruckRouteMultiplierAndPartitionAndDisableAndRouteDescriptionAsync(Directions__outputFormatGetByPointsAndOutputSRSAndCriteriaAndDistanceUnitAndRoundTripAndDepartureAndCorrectSideAndDisableAndRouteDescriptionOutputFormat outputFormat, string points, TruckDirections__outputFormatPostByPointsAndOutputSRSAndCriteriaAndDistanceUnitAndRoundTripAndDepartureAndCorrectSideAndTruckRouteMultiplierAndPartitionAndDisableAndRouteDescriptionOutputSRS outputSRS, Directions__outputFormatGetByPointsAndOutputSRSAndCriteriaAndDistanceUnitAndRoundTripAndDepartureAndCorrectSideAndDisableAndRouteDescriptionCriteria criteria, Directions__outputFormatGetByPointsAndOutputSRSAndCriteriaAndDistanceUnitAndRoundTripAndDepartureAndCorrectSideAndDisableAndRouteDescriptionDistanceUnit distanceUnit, bool roundTrip, System.DateTimeOffset departure, bool correctSide, int truckRouteMultiplier, string partition, string disable, string routeDescription, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "truck/directions."+outputFormat+"?points=" + (points==null? "" : System.Uri.EscapeDataString(points))+"&outputSRS="+outputSRS+"&criteria=" + criteria+"&distanceUnit=" + distanceUnit+"&roundTrip="+roundTrip+"&departure=" + departure.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&correctSide="+correctSide+"&truckRouteMultiplier="+truckRouteMultiplier+"&partition=" + (partition==null? "" : System.Uri.EscapeDataString(partition))+"&disable=" + (disable==null? "" : System.Uri.EscapeDataString(disable))+"&routeDescription=" + (routeDescription==null? "" : System.Uri.EscapeDataString(routeDescription));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -535,7 +508,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -559,8 +531,7 @@ namespace MyNS
 		public async Task TruckDistance__outputFormatGetByPointsAndOutputSRSAndCriteriaAndDistanceUnitAndRoundTripAndDepartureAndCorrectSideAndTruckRouteMultiplierAndDisableAndRouteDescriptionAsync(Directions__outputFormatGetByPointsAndOutputSRSAndCriteriaAndDistanceUnitAndRoundTripAndDepartureAndCorrectSideAndDisableAndRouteDescriptionOutputFormat outputFormat, string points, TruckDistance__outputFormatGetByPointsAndOutputSRSAndCriteriaAndDistanceUnitAndRoundTripAndDepartureAndCorrectSideAndTruckRouteMultiplierAndDisableAndRouteDescriptionOutputSRS outputSRS, Directions__outputFormatGetByPointsAndOutputSRSAndCriteriaAndDistanceUnitAndRoundTripAndDepartureAndCorrectSideAndDisableAndRouteDescriptionCriteria criteria, Directions__outputFormatGetByPointsAndOutputSRSAndCriteriaAndDistanceUnitAndRoundTripAndDepartureAndCorrectSideAndDisableAndRouteDescriptionDistanceUnit distanceUnit, bool roundTrip, System.DateTimeOffset departure, bool correctSide, int truckRouteMultiplier, string disable, string routeDescription, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "truck/distance."+outputFormat+"?points=" + (points==null? "" : System.Uri.EscapeDataString(points))+"&outputSRS="+outputSRS+"&criteria=" + criteria+"&distanceUnit=" + distanceUnit+"&roundTrip="+roundTrip+"&departure=" + departure.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&correctSide="+correctSide+"&truckRouteMultiplier="+truckRouteMultiplier+"&disable=" + (disable==null? "" : System.Uri.EscapeDataString(disable))+"&routeDescription=" + (routeDescription==null? "" : System.Uri.EscapeDataString(routeDescription));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -574,7 +545,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -597,8 +567,7 @@ namespace MyNS
 		public async Task TruckDistance__outputFormatPostByPointsAndOutputSRSAndCriteriaAndDistanceUnitAndRoundTripAndDepartureAndCorrectSideAndDisableAndRouteDescriptionAsync(Directions__outputFormatGetByPointsAndOutputSRSAndCriteriaAndDistanceUnitAndRoundTripAndDepartureAndCorrectSideAndDisableAndRouteDescriptionOutputFormat outputFormat, string points, TruckDistance__outputFormatPostByPointsAndOutputSRSAndCriteriaAndDistanceUnitAndRoundTripAndDepartureAndCorrectSideAndDisableAndRouteDescriptionOutputSRS outputSRS, Directions__outputFormatGetByPointsAndOutputSRSAndCriteriaAndDistanceUnitAndRoundTripAndDepartureAndCorrectSideAndDisableAndRouteDescriptionCriteria criteria, Directions__outputFormatGetByPointsAndOutputSRSAndCriteriaAndDistanceUnitAndRoundTripAndDepartureAndCorrectSideAndDisableAndRouteDescriptionDistanceUnit distanceUnit, bool roundTrip, System.DateTimeOffset departure, bool correctSide, string disable, string routeDescription, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "truck/distance."+outputFormat+"?points=" + (points==null? "" : System.Uri.EscapeDataString(points))+"&outputSRS="+outputSRS+"&criteria=" + criteria+"&distanceUnit=" + distanceUnit+"&roundTrip="+roundTrip+"&departure=" + departure.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&correctSide="+correctSide+"&disable=" + (disable==null? "" : System.Uri.EscapeDataString(disable))+"&routeDescription=" + (routeDescription==null? "" : System.Uri.EscapeDataString(routeDescription));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -607,7 +576,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -631,8 +599,7 @@ namespace MyNS
 		public async Task TruckDistanceBetweenPairs__outputFormatGetByFromPointsAndToPointsAndOutputSRSAndCriteriaAndDistanceUnitAndDepartureAndCorrectSideAndDisableAndRouteDescriptionAndMaxPairsAsync(DistanceBetweenPairs__outputFormatGetByFromPointsAndToPointsAndOutputSRSAndCriteriaAndDistanceUnitAndDepartureAndCorrectSideAndDisableAndRouteDescriptionAndMaxPairsOutputFormat outputFormat, string fromPoints, string toPoints, TruckDistanceBetweenPairs__outputFormatGetByFromPointsAndToPointsAndOutputSRSAndCriteriaAndDistanceUnitAndDepartureAndCorrectSideAndDisableAndRouteDescriptionAndMaxPairsOutputSRS outputSRS, Directions__outputFormatGetByPointsAndOutputSRSAndCriteriaAndDistanceUnitAndRoundTripAndDepartureAndCorrectSideAndDisableAndRouteDescriptionCriteria criteria, Directions__outputFormatGetByPointsAndOutputSRSAndCriteriaAndDistanceUnitAndRoundTripAndDepartureAndCorrectSideAndDisableAndRouteDescriptionDistanceUnit distanceUnit, System.DateTimeOffset departure, bool correctSide, string disable, string routeDescription, int maxPairs, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "truck/distance/betweenPairs."+outputFormat+"?fromPoints=" + (fromPoints==null? "" : System.Uri.EscapeDataString(fromPoints))+"&toPoints=" + (toPoints==null? "" : System.Uri.EscapeDataString(toPoints))+"&outputSRS="+outputSRS+"&criteria=" + criteria+"&distanceUnit=" + distanceUnit+"&departure=" + departure.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&correctSide="+correctSide+"&disable=" + (disable==null? "" : System.Uri.EscapeDataString(disable))+"&routeDescription=" + (routeDescription==null? "" : System.Uri.EscapeDataString(routeDescription))+"&maxPairs="+maxPairs;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -646,7 +613,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -670,8 +636,7 @@ namespace MyNS
 		public async Task TruckDistanceBetweenPairs__outputFormatPostByFromPointsAndToPointsAndOutputSRSAndCriteriaAndDistanceUnitAndDepartureAndCorrectSideAndDisableAndRouteDescriptionAndMaxPairsAsync(DistanceBetweenPairs__outputFormatGetByFromPointsAndToPointsAndOutputSRSAndCriteriaAndDistanceUnitAndDepartureAndCorrectSideAndDisableAndRouteDescriptionAndMaxPairsOutputFormat outputFormat, string fromPoints, string toPoints, TruckDistanceBetweenPairs__outputFormatPostByFromPointsAndToPointsAndOutputSRSAndCriteriaAndDistanceUnitAndDepartureAndCorrectSideAndDisableAndRouteDescriptionAndMaxPairsOutputSRS outputSRS, Directions__outputFormatGetByPointsAndOutputSRSAndCriteriaAndDistanceUnitAndRoundTripAndDepartureAndCorrectSideAndDisableAndRouteDescriptionCriteria criteria, Directions__outputFormatGetByPointsAndOutputSRSAndCriteriaAndDistanceUnitAndRoundTripAndDepartureAndCorrectSideAndDisableAndRouteDescriptionDistanceUnit distanceUnit, System.DateTimeOffset departure, bool correctSide, string disable, string routeDescription, int maxPairs, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "truck/distance/betweenPairs."+outputFormat+"?fromPoints=" + (fromPoints==null? "" : System.Uri.EscapeDataString(fromPoints))+"&toPoints=" + (toPoints==null? "" : System.Uri.EscapeDataString(toPoints))+"&outputSRS="+outputSRS+"&criteria=" + criteria+"&distanceUnit=" + distanceUnit+"&departure=" + departure.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&correctSide="+correctSide+"&disable=" + (disable==null? "" : System.Uri.EscapeDataString(disable))+"&routeDescription=" + (routeDescription==null? "" : System.Uri.EscapeDataString(routeDescription))+"&maxPairs="+maxPairs;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -680,7 +645,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -705,8 +669,7 @@ namespace MyNS
 		public async Task TruckOptimalDirections__outputFormatGetByPointsAndOutputSRSAndCriteriaAndDistanceUnitAndRoundTripAndDepartureAndCorrectSideAndTruckRouteMultiplierAndPartitionAndDisableAndRouteDescriptionAsync(Directions__outputFormatGetByPointsAndOutputSRSAndCriteriaAndDistanceUnitAndRoundTripAndDepartureAndCorrectSideAndDisableAndRouteDescriptionOutputFormat outputFormat, string points, TruckOptimalDirections__outputFormatGetByPointsAndOutputSRSAndCriteriaAndDistanceUnitAndRoundTripAndDepartureAndCorrectSideAndTruckRouteMultiplierAndPartitionAndDisableAndRouteDescriptionOutputSRS outputSRS, Directions__outputFormatGetByPointsAndOutputSRSAndCriteriaAndDistanceUnitAndRoundTripAndDepartureAndCorrectSideAndDisableAndRouteDescriptionCriteria criteria, Directions__outputFormatGetByPointsAndOutputSRSAndCriteriaAndDistanceUnitAndRoundTripAndDepartureAndCorrectSideAndDisableAndRouteDescriptionDistanceUnit distanceUnit, bool roundTrip, System.DateTimeOffset departure, bool correctSide, int truckRouteMultiplier, string partition, string disable, string routeDescription, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "truck/optimalDirections."+outputFormat+"?points=" + (points==null? "" : System.Uri.EscapeDataString(points))+"&outputSRS="+outputSRS+"&criteria=" + criteria+"&distanceUnit=" + distanceUnit+"&roundTrip="+roundTrip+"&departure=" + departure.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&correctSide="+correctSide+"&truckRouteMultiplier="+truckRouteMultiplier+"&partition=" + (partition==null? "" : System.Uri.EscapeDataString(partition))+"&disable=" + (disable==null? "" : System.Uri.EscapeDataString(disable))+"&routeDescription=" + (routeDescription==null? "" : System.Uri.EscapeDataString(routeDescription));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -720,7 +683,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -745,8 +707,7 @@ namespace MyNS
 		public async Task TruckOptimalDirections__outputFormatPostByPointsAndOutputSRSAndCriteriaAndDistanceUnitAndRoundTripAndDepartureAndCorrectSideAndTruckRouteMultiplierAndPartitionAndDisableAndRouteDescriptionAsync(Directions__outputFormatGetByPointsAndOutputSRSAndCriteriaAndDistanceUnitAndRoundTripAndDepartureAndCorrectSideAndDisableAndRouteDescriptionOutputFormat outputFormat, string points, TruckOptimalDirections__outputFormatPostByPointsAndOutputSRSAndCriteriaAndDistanceUnitAndRoundTripAndDepartureAndCorrectSideAndTruckRouteMultiplierAndPartitionAndDisableAndRouteDescriptionOutputSRS outputSRS, Directions__outputFormatGetByPointsAndOutputSRSAndCriteriaAndDistanceUnitAndRoundTripAndDepartureAndCorrectSideAndDisableAndRouteDescriptionCriteria criteria, Directions__outputFormatGetByPointsAndOutputSRSAndCriteriaAndDistanceUnitAndRoundTripAndDepartureAndCorrectSideAndDisableAndRouteDescriptionDistanceUnit distanceUnit, bool roundTrip, System.DateTimeOffset departure, bool correctSide, int truckRouteMultiplier, string partition, string disable, string routeDescription, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "truck/optimalDirections."+outputFormat+"?points=" + (points==null? "" : System.Uri.EscapeDataString(points))+"&outputSRS="+outputSRS+"&criteria=" + criteria+"&distanceUnit=" + distanceUnit+"&roundTrip="+roundTrip+"&departure=" + departure.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&correctSide="+correctSide+"&truckRouteMultiplier="+truckRouteMultiplier+"&partition=" + (partition==null? "" : System.Uri.EscapeDataString(partition))+"&disable=" + (disable==null? "" : System.Uri.EscapeDataString(disable))+"&routeDescription=" + (routeDescription==null? "" : System.Uri.EscapeDataString(routeDescription));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -755,7 +716,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -780,8 +740,7 @@ namespace MyNS
 		public async Task TruckOptimalRoute__outputFormatGetByPointsAndOutputSRSAndCriteriaAndDistanceUnitAndRoundTripAndDepartureAndCorrectSideAndTruckRouteMultiplierAndPartitionAndDisableAndRouteDescriptionAsync(Directions__outputFormatGetByPointsAndOutputSRSAndCriteriaAndDistanceUnitAndRoundTripAndDepartureAndCorrectSideAndDisableAndRouteDescriptionOutputFormat outputFormat, string points, TruckOptimalRoute__outputFormatGetByPointsAndOutputSRSAndCriteriaAndDistanceUnitAndRoundTripAndDepartureAndCorrectSideAndTruckRouteMultiplierAndPartitionAndDisableAndRouteDescriptionOutputSRS outputSRS, Directions__outputFormatGetByPointsAndOutputSRSAndCriteriaAndDistanceUnitAndRoundTripAndDepartureAndCorrectSideAndDisableAndRouteDescriptionCriteria criteria, Directions__outputFormatGetByPointsAndOutputSRSAndCriteriaAndDistanceUnitAndRoundTripAndDepartureAndCorrectSideAndDisableAndRouteDescriptionDistanceUnit distanceUnit, bool roundTrip, System.DateTimeOffset departure, bool correctSide, int truckRouteMultiplier, string partition, string disable, string routeDescription, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "truck/optimalRoute."+outputFormat+"?points=" + (points==null? "" : System.Uri.EscapeDataString(points))+"&outputSRS="+outputSRS+"&criteria=" + criteria+"&distanceUnit=" + distanceUnit+"&roundTrip="+roundTrip+"&departure=" + departure.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&correctSide="+correctSide+"&truckRouteMultiplier="+truckRouteMultiplier+"&partition=" + (partition==null? "" : System.Uri.EscapeDataString(partition))+"&disable=" + (disable==null? "" : System.Uri.EscapeDataString(disable))+"&routeDescription=" + (routeDescription==null? "" : System.Uri.EscapeDataString(routeDescription));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -795,7 +754,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -820,8 +778,7 @@ namespace MyNS
 		public async Task TruckOptimalRoute__outputFormatPostByPointsAndOutputSRSAndCriteriaAndDistanceUnitAndRoundTripAndDepartureAndCorrectSideAndTruckRouteMultiplierAndPartitionAndDisableAndRouteDescriptionAsync(Directions__outputFormatGetByPointsAndOutputSRSAndCriteriaAndDistanceUnitAndRoundTripAndDepartureAndCorrectSideAndDisableAndRouteDescriptionOutputFormat outputFormat, string points, TruckOptimalRoute__outputFormatPostByPointsAndOutputSRSAndCriteriaAndDistanceUnitAndRoundTripAndDepartureAndCorrectSideAndTruckRouteMultiplierAndPartitionAndDisableAndRouteDescriptionOutputSRS outputSRS, Directions__outputFormatGetByPointsAndOutputSRSAndCriteriaAndDistanceUnitAndRoundTripAndDepartureAndCorrectSideAndDisableAndRouteDescriptionCriteria criteria, Directions__outputFormatGetByPointsAndOutputSRSAndCriteriaAndDistanceUnitAndRoundTripAndDepartureAndCorrectSideAndDisableAndRouteDescriptionDistanceUnit distanceUnit, bool roundTrip, System.DateTimeOffset departure, bool correctSide, int truckRouteMultiplier, string partition, string disable, string routeDescription, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "truck/optimalRoute."+outputFormat+"?points=" + (points==null? "" : System.Uri.EscapeDataString(points))+"&outputSRS="+outputSRS+"&criteria=" + criteria+"&distanceUnit=" + distanceUnit+"&roundTrip="+roundTrip+"&departure=" + departure.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&correctSide="+correctSide+"&truckRouteMultiplier="+truckRouteMultiplier+"&partition=" + (partition==null? "" : System.Uri.EscapeDataString(partition))+"&disable=" + (disable==null? "" : System.Uri.EscapeDataString(disable))+"&routeDescription=" + (routeDescription==null? "" : System.Uri.EscapeDataString(routeDescription));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -830,7 +787,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -855,8 +811,7 @@ namespace MyNS
 		public async Task TruckRoute__outputFormatGetByPointsAndOutputSRSAndCriteriaAndDistanceUnitAndRoundTripAndDepartureAndCorrectSideAndTruckRouteMultiplierAndPartitionAndDisableAndRouteDescriptionAsync(Directions__outputFormatGetByPointsAndOutputSRSAndCriteriaAndDistanceUnitAndRoundTripAndDepartureAndCorrectSideAndDisableAndRouteDescriptionOutputFormat outputFormat, string points, TruckRoute__outputFormatGetByPointsAndOutputSRSAndCriteriaAndDistanceUnitAndRoundTripAndDepartureAndCorrectSideAndTruckRouteMultiplierAndPartitionAndDisableAndRouteDescriptionOutputSRS outputSRS, Directions__outputFormatGetByPointsAndOutputSRSAndCriteriaAndDistanceUnitAndRoundTripAndDepartureAndCorrectSideAndDisableAndRouteDescriptionCriteria criteria, Directions__outputFormatGetByPointsAndOutputSRSAndCriteriaAndDistanceUnitAndRoundTripAndDepartureAndCorrectSideAndDisableAndRouteDescriptionDistanceUnit distanceUnit, bool roundTrip, System.DateTimeOffset departure, bool correctSide, int truckRouteMultiplier, string partition, string disable, string routeDescription, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "truck/route."+outputFormat+"?points=" + (points==null? "" : System.Uri.EscapeDataString(points))+"&outputSRS="+outputSRS+"&criteria=" + criteria+"&distanceUnit=" + distanceUnit+"&roundTrip="+roundTrip+"&departure=" + departure.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&correctSide="+correctSide+"&truckRouteMultiplier="+truckRouteMultiplier+"&partition=" + (partition==null? "" : System.Uri.EscapeDataString(partition))+"&disable=" + (disable==null? "" : System.Uri.EscapeDataString(disable))+"&routeDescription=" + (routeDescription==null? "" : System.Uri.EscapeDataString(routeDescription));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -870,7 +825,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -895,8 +849,7 @@ namespace MyNS
 		public async Task TruckRoute__outputFormatPostByPointsAndOutputSRSAndCriteriaAndDistanceUnitAndRoundTripAndDepartureAndCorrectSideAndTruckRouteMultiplierAndPartitionAndDisableAndRouteDescriptionAsync(Directions__outputFormatGetByPointsAndOutputSRSAndCriteriaAndDistanceUnitAndRoundTripAndDepartureAndCorrectSideAndDisableAndRouteDescriptionOutputFormat outputFormat, string points, TruckRoute__outputFormatPostByPointsAndOutputSRSAndCriteriaAndDistanceUnitAndRoundTripAndDepartureAndCorrectSideAndTruckRouteMultiplierAndPartitionAndDisableAndRouteDescriptionOutputSRS outputSRS, Directions__outputFormatGetByPointsAndOutputSRSAndCriteriaAndDistanceUnitAndRoundTripAndDepartureAndCorrectSideAndDisableAndRouteDescriptionCriteria criteria, Directions__outputFormatGetByPointsAndOutputSRSAndCriteriaAndDistanceUnitAndRoundTripAndDepartureAndCorrectSideAndDisableAndRouteDescriptionDistanceUnit distanceUnit, bool roundTrip, System.DateTimeOffset departure, bool correctSide, int truckRouteMultiplier, string partition, string disable, string routeDescription, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "truck/route."+outputFormat+"?points=" + (points==null? "" : System.Uri.EscapeDataString(points))+"&outputSRS="+outputSRS+"&criteria=" + criteria+"&distanceUnit=" + distanceUnit+"&roundTrip="+roundTrip+"&departure=" + departure.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&correctSide="+correctSide+"&truckRouteMultiplier="+truckRouteMultiplier+"&partition=" + (partition==null? "" : System.Uri.EscapeDataString(partition))+"&disable=" + (disable==null? "" : System.Uri.EscapeDataString(disable))+"&routeDescription=" + (routeDescription==null? "" : System.Uri.EscapeDataString(routeDescription));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -905,7 +858,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

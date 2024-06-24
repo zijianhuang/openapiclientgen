@@ -66,8 +66,7 @@ namespace MyNS
 		public async Task GetAccountByAccessKeyUsingGETAsync(string accessKey, string secretKey)
 		{
 			var requestUri = "rest/v1.1/account/account?accessKey=" + (accessKey==null? "" : System.Uri.EscapeDataString(accessKey))+"&secretKey=" + (secretKey==null? "" : System.Uri.EscapeDataString(secretKey));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -76,7 +75,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -93,8 +91,7 @@ namespace MyNS
 		public async Task GetBillingPerAccountUsingGETAsync(string accessKey, string secretKey, System.DateTimeOffset startDateTime, System.DateTimeOffset endDateTime, string dateTemplate)
 		{
 			var requestUri = "rest/v1.1/account/billing?accessKey=" + (accessKey==null? "" : System.Uri.EscapeDataString(accessKey))+"&secretKey=" + (secretKey==null? "" : System.Uri.EscapeDataString(secretKey))+"&startDateTime=" + startDateTime.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&endDateTime=" + endDateTime.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&dateTemplate=" + (dateTemplate==null? "" : System.Uri.EscapeDataString(dateTemplate));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -103,7 +100,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -118,8 +114,7 @@ namespace MyNS
 		public async Task ChangePasswordUsingPOSTAsync(string email, string oldPassword, string newPassword)
 		{
 			var requestUri = "rest/v1.1/account/changePassword?email=" + (email==null? "" : System.Uri.EscapeDataString(email))+"&oldPassword=" + (oldPassword==null? "" : System.Uri.EscapeDataString(oldPassword))+"&newPassword=" + (newPassword==null? "" : System.Uri.EscapeDataString(newPassword));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -128,7 +123,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -142,8 +136,7 @@ namespace MyNS
 		public async Task LoginWithEmailUsingPOSTAsync(string email, string password)
 		{
 			var requestUri = "rest/v1.1/account/login?email=" + (email==null? "" : System.Uri.EscapeDataString(email))+"&password=" + (password==null? "" : System.Uri.EscapeDataString(password));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -152,7 +145,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -168,19 +160,17 @@ namespace MyNS
 		public async Task<RestResponse> CompareFacesUsingGETAsync(string accessKey, string secretKey, string[] faceHashes, bool showDetails)
 		{
 			var requestUri = "rest/v1.1/analysis/compare?accessKey=" + (accessKey==null? "" : System.Uri.EscapeDataString(accessKey))+"&secretKey=" + (secretKey==null? "" : System.Uri.EscapeDataString(secretKey))+"&"+string.Join("&", faceHashes.Select(z => $"faceHashes={System.Uri.EscapeDataString(z.ToString())}"))+"&showDetails="+showDetails;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<RestResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<RestResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -195,19 +185,17 @@ namespace MyNS
 		public async Task<RestResponse> RetriveLatestUsingGETAsync(string accessKey, string secretKey, int count)
 		{
 			var requestUri = "rest/v1.1/analysis/listLatest?accessKey=" + (accessKey==null? "" : System.Uri.EscapeDataString(accessKey))+"&secretKey=" + (secretKey==null? "" : System.Uri.EscapeDataString(secretKey))+"&count="+count;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<RestResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<RestResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -222,19 +210,17 @@ namespace MyNS
 		public async Task<RestResponse> RetrieveAnalysisUsingGETAsync(string accessKey, string secretKey, string analysisId)
 		{
 			var requestUri = "rest/v1.1/analysis/retrieve?accessKey=" + (accessKey==null? "" : System.Uri.EscapeDataString(accessKey))+"&secretKey=" + (secretKey==null? "" : System.Uri.EscapeDataString(secretKey))+"&analysisId=" + (analysisId==null? "" : System.Uri.EscapeDataString(analysisId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<RestResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<RestResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -258,19 +244,17 @@ namespace MyNS
 		public async Task<RestResponse> CounterUsingPOSTAsync(string accessKey, string secretKey, string[] collectionIds, string[] streamIds, System.DateTimeOffset startDateTime, System.DateTimeOffset endDateTime, long visitDuration, int maxIterations, int maxBatchIterations, int minNeighborsMergedPerIteration, double mergingStep, bool shuffling)
 		{
 			var requestUri = "rest/v1.1/analytics/counting?accessKey=" + (accessKey==null? "" : System.Uri.EscapeDataString(accessKey))+"&secretKey=" + (secretKey==null? "" : System.Uri.EscapeDataString(secretKey))+"&"+string.Join("&", collectionIds.Select(z => $"collectionIds={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", streamIds.Select(z => $"streamIds={System.Uri.EscapeDataString(z.ToString())}"))+"&startDateTime=" + startDateTime.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&endDateTime=" + endDateTime.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&visitDuration="+visitDuration+"&maxIterations="+maxIterations+"&maxBatchIterations="+maxBatchIterations+"&minNeighborsMergedPerIteration="+minNeighborsMergedPerIteration+"&mergingStep="+mergingStep+"&shuffling="+shuffling;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<RestResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<RestResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -289,19 +273,17 @@ namespace MyNS
 		public async Task<RestResponse> PresenceTimeseriesUsingPOSTAsync(string accessKey, string secretKey, string[] streamIds, System.DateTimeOffset startDateTime, System.DateTimeOffset endDateTime, long step, string[] attributes)
 		{
 			var requestUri = "rest/v1.1/analytics/presence/timeseries?accessKey=" + (accessKey==null? "" : System.Uri.EscapeDataString(accessKey))+"&secretKey=" + (secretKey==null? "" : System.Uri.EscapeDataString(secretKey))+"&"+string.Join("&", streamIds.Select(z => $"streamIds={System.Uri.EscapeDataString(z.ToString())}"))+"&startDateTime=" + startDateTime.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&endDateTime=" + endDateTime.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&step="+step+"&"+string.Join("&", attributes.Select(z => $"attributes={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<RestResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<RestResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -319,19 +301,17 @@ namespace MyNS
 		public async Task<RestResponse> PresenceTotalUsingPOSTAsync(string accessKey, string secretKey, string[] streamIds, System.DateTimeOffset startDateTime, System.DateTimeOffset endDateTime, string[] attributes)
 		{
 			var requestUri = "rest/v1.1/analytics/presence/total?accessKey=" + (accessKey==null? "" : System.Uri.EscapeDataString(accessKey))+"&secretKey=" + (secretKey==null? "" : System.Uri.EscapeDataString(secretKey))+"&"+string.Join("&", streamIds.Select(z => $"streamIds={System.Uri.EscapeDataString(z.ToString())}"))+"&startDateTime=" + startDateTime.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&endDateTime=" + endDateTime.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&"+string.Join("&", attributes.Select(z => $"attributes={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<RestResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<RestResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -346,19 +326,17 @@ namespace MyNS
 		public async Task<RestResponse> GetClassiferFullUsingGETAsync(string accessKey, string secretKey, string id)
 		{
 			var requestUri = "rest/v1.1/classifier/svm?accessKey=" + (accessKey==null? "" : System.Uri.EscapeDataString(accessKey))+"&secretKey=" + (secretKey==null? "" : System.Uri.EscapeDataString(secretKey))+"&id=" + (id==null? "" : System.Uri.EscapeDataString(id));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<RestResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<RestResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -404,19 +382,17 @@ namespace MyNS
 					double epsParameter)
 		{
 			var requestUri = "rest/v1.1/classifier/svm?accessKey=" + (accessKey==null? "" : System.Uri.EscapeDataString(accessKey))+"&secretKey=" + (secretKey==null? "" : System.Uri.EscapeDataString(secretKey))+"&name=" + (name==null? "" : System.Uri.EscapeDataString(name))+"&"+string.Join("&", collectionIds.Select(z => $"collectionIds={System.Uri.EscapeDataString(z.ToString())}"))+"&preprocessor=" + (preprocessor==null? "" : System.Uri.EscapeDataString(preprocessor))+"&classificationAttributeName=" + (classificationAttributeName==null? "" : System.Uri.EscapeDataString(classificationAttributeName))+"&considerViewPoints="+considerViewPoints+"&seed="+seed+"&trainingRatio="+trainingRatio+"&probabilityParameter="+probabilityParameter+"&gammaParameter="+gammaParameter+"&nuParameter="+nuParameter+"&cParameter="+cParameter+"&svmTypeParameter="+svmTypeParameter+"&kernelTypeParameter="+kernelTypeParameter+"&cacheSizeParameter="+cacheSizeParameter+"&epsParameter="+epsParameter;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<RestResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<RestResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -431,19 +407,17 @@ namespace MyNS
 		public async Task<RestResponse> RemoveClassiferUsingDELETEAsync(string accessKey, string secretKey, string id)
 		{
 			var requestUri = "rest/v1.1/classifier/svm?accessKey=" + (accessKey==null? "" : System.Uri.EscapeDataString(accessKey))+"&secretKey=" + (secretKey==null? "" : System.Uri.EscapeDataString(secretKey))+"&id=" + (id==null? "" : System.Uri.EscapeDataString(id));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<RestResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<RestResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -458,19 +432,17 @@ namespace MyNS
 		public async Task<RestResponse> GetClassiferStatusUsingGETAsync(string accessKey, string secretKey, string id)
 		{
 			var requestUri = "rest/v1.1/classifier/svm/status?accessKey=" + (accessKey==null? "" : System.Uri.EscapeDataString(accessKey))+"&secretKey=" + (secretKey==null? "" : System.Uri.EscapeDataString(secretKey))+"&id=" + (id==null? "" : System.Uri.EscapeDataString(id));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<RestResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<RestResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -484,19 +456,17 @@ namespace MyNS
 		public async Task<RestResponse> GetAllCollectionsUsingGETAsync(string accessKey, string secretKey)
 		{
 			var requestUri = "rest/v1.1/collection/?accessKey=" + (accessKey==null? "" : System.Uri.EscapeDataString(accessKey))+"&secretKey=" + (secretKey==null? "" : System.Uri.EscapeDataString(secretKey));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<RestResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<RestResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -510,19 +480,17 @@ namespace MyNS
 		public async Task<RestResponse> GetAllCollections2UsingGETAsync(string accessKey, string secretKey)
 		{
 			var requestUri = "rest/v1.1/collection/all?accessKey=" + (accessKey==null? "" : System.Uri.EscapeDataString(accessKey))+"&secretKey=" + (secretKey==null? "" : System.Uri.EscapeDataString(secretKey));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<RestResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<RestResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -537,19 +505,17 @@ namespace MyNS
 		public async Task<RestResponse> GetCollection2UsingGETAsync(string accessKey, string secretKey, string collectionId)
 		{
 			var requestUri = "rest/v1.1/collection/collection?accessKey=" + (accessKey==null? "" : System.Uri.EscapeDataString(accessKey))+"&secretKey=" + (secretKey==null? "" : System.Uri.EscapeDataString(secretKey))+"&collectionId=" + (collectionId==null? "" : System.Uri.EscapeDataString(collectionId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<RestResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<RestResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -567,19 +533,17 @@ namespace MyNS
 		public async Task<RestResponse> AddCollection2UsingPOSTAsync(string accessKey, string secretKey, string collectionName, bool preload, bool evictable, string[] purposes)
 		{
 			var requestUri = "rest/v1.1/collection/collection?accessKey=" + (accessKey==null? "" : System.Uri.EscapeDataString(accessKey))+"&secretKey=" + (secretKey==null? "" : System.Uri.EscapeDataString(secretKey))+"&collectionName=" + (collectionName==null? "" : System.Uri.EscapeDataString(collectionName))+"&preload="+preload+"&evictable="+evictable+"&"+string.Join("&", purposes.Select(z => $"purposes={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<RestResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<RestResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -594,19 +558,17 @@ namespace MyNS
 		public async Task<RestResponse> DeleteCollection2UsingDELETEAsync(string accessKey, string secretKey, string collectionId)
 		{
 			var requestUri = "rest/v1.1/collection/collection?accessKey=" + (accessKey==null? "" : System.Uri.EscapeDataString(accessKey))+"&secretKey=" + (secretKey==null? "" : System.Uri.EscapeDataString(secretKey))+"&collectionId=" + (collectionId==null? "" : System.Uri.EscapeDataString(collectionId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<RestResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<RestResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -621,19 +583,17 @@ namespace MyNS
 		public async Task<string> ExportCSVUsingGETAsync(string accessKey, string secretKey, string collectionId)
 		{
 			var requestUri = "rest/v1.1/collection/export/csv?accessKey=" + (accessKey==null? "" : System.Uri.EscapeDataString(accessKey))+"&secretKey=" + (secretKey==null? "" : System.Uri.EscapeDataString(secretKey))+"&collectionId=" + (collectionId==null? "" : System.Uri.EscapeDataString(collectionId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<string>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<string>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -649,19 +609,17 @@ namespace MyNS
 		public async Task<RestResponse> RepurposeCollectionUsingPUTAsync(string accessKey, string secretKey, string collectionId, string[] purposes)
 		{
 			var requestUri = "rest/v1.1/collection/purpose?accessKey=" + (accessKey==null? "" : System.Uri.EscapeDataString(accessKey))+"&secretKey=" + (secretKey==null? "" : System.Uri.EscapeDataString(secretKey))+"&collectionId=" + (collectionId==null? "" : System.Uri.EscapeDataString(collectionId))+"&"+string.Join("&", purposes.Select(z => $"purposes={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<RestResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<RestResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -676,19 +634,17 @@ namespace MyNS
 		public async Task<RestResponse> GetCollectionUsingGETAsync(string accessKey, string secretKey, string id)
 		{
 			var requestUri = "rest/v1.1/collection/"+ (id==null? "" : System.Uri.EscapeDataString(id))+"?accessKey=" + (accessKey==null? "" : System.Uri.EscapeDataString(accessKey))+"&secretKey=" + (secretKey==null? "" : System.Uri.EscapeDataString(secretKey));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<RestResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<RestResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -705,19 +661,17 @@ namespace MyNS
 		public async Task<RestResponse> UpdateCollection2UsingPOSTAsync(string accessKey, string secretKey, string name, string[] purposes, string id)
 		{
 			var requestUri = "rest/v1.1/collection/"+ (id==null? "" : System.Uri.EscapeDataString(id))+"?accessKey=" + (accessKey==null? "" : System.Uri.EscapeDataString(accessKey))+"&secretKey=" + (secretKey==null? "" : System.Uri.EscapeDataString(secretKey))+"&name=" + (name==null? "" : System.Uri.EscapeDataString(name))+"&"+string.Join("&", purposes.Select(z => $"purposes={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<RestResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<RestResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -732,19 +686,17 @@ namespace MyNS
 		public async Task<RestResponse> DeleteCollectionUsingDELETEAsync(string accessKey, string secretKey, string id)
 		{
 			var requestUri = "rest/v1.1/collection/"+ (id==null? "" : System.Uri.EscapeDataString(id))+"?accessKey=" + (accessKey==null? "" : System.Uri.EscapeDataString(accessKey))+"&secretKey=" + (secretKey==null? "" : System.Uri.EscapeDataString(secretKey));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<RestResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<RestResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -761,19 +713,17 @@ namespace MyNS
 		public async Task<RestResponse> UpdateCollectionUsingPATCHAsync(string accessKey, string secretKey, string name, string[] purposes, string id)
 		{
 			var requestUri = "rest/v1.1/collection/"+ (id==null? "" : System.Uri.EscapeDataString(id))+"?accessKey=" + (accessKey==null? "" : System.Uri.EscapeDataString(accessKey))+"&secretKey=" + (secretKey==null? "" : System.Uri.EscapeDataString(secretKey))+"&name=" + (name==null? "" : System.Uri.EscapeDataString(name))+"&"+string.Join("&", purposes.Select(z => $"purposes={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<RestResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<RestResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -788,19 +738,17 @@ namespace MyNS
 		public async Task<RestResponse> GetAllCollectionProfilesUsingGETAsync(string accessKey, string secretKey, string id)
 		{
 			var requestUri = "rest/v1.1/collection/"+ (id==null? "" : System.Uri.EscapeDataString(id))+"/profile?accessKey=" + (accessKey==null? "" : System.Uri.EscapeDataString(accessKey))+"&secretKey=" + (secretKey==null? "" : System.Uri.EscapeDataString(secretKey));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<RestResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<RestResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -816,8 +764,7 @@ namespace MyNS
 		public async Task GetClassificationAttributesFromProfileUsingGETAsync(string accessKey, string secretKey, string profileId, string collectionId)
 		{
 			var requestUri = "rest/v1.1/profile/classificationAttributes?accessKey=" + (accessKey==null? "" : System.Uri.EscapeDataString(accessKey))+"&secretKey=" + (secretKey==null? "" : System.Uri.EscapeDataString(secretKey))+"&profileId=" + (profileId==null? "" : System.Uri.EscapeDataString(profileId))+"&collectionId=" + (collectionId==null? "" : System.Uri.EscapeDataString(collectionId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -826,7 +773,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -843,8 +789,7 @@ namespace MyNS
 		public async Task MapClassificationAttributesToProfileUsingPUTAsync(string accessKey, string secretKey, string profileId, string collectionId, string classificationAttributes)
 		{
 			var requestUri = "rest/v1.1/profile/classificationAttributes?accessKey=" + (accessKey==null? "" : System.Uri.EscapeDataString(accessKey))+"&secretKey=" + (secretKey==null? "" : System.Uri.EscapeDataString(secretKey))+"&profileId=" + (profileId==null? "" : System.Uri.EscapeDataString(profileId))+"&collectionId=" + (collectionId==null? "" : System.Uri.EscapeDataString(collectionId))+"&classificationAttributes=" + (classificationAttributes==null? "" : System.Uri.EscapeDataString(classificationAttributes));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -853,7 +798,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -869,8 +813,7 @@ namespace MyNS
 		public async Task RemoveClassificationAttributesFromProfileUsingDELETEAsync(string accessKey, string secretKey, string profileId, string collectionId)
 		{
 			var requestUri = "rest/v1.1/profile/classificationAttributes?accessKey=" + (accessKey==null? "" : System.Uri.EscapeDataString(accessKey))+"&secretKey=" + (secretKey==null? "" : System.Uri.EscapeDataString(secretKey))+"&profileId=" + (profileId==null? "" : System.Uri.EscapeDataString(profileId))+"&collectionId=" + (collectionId==null? "" : System.Uri.EscapeDataString(collectionId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -879,7 +822,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -895,19 +837,17 @@ namespace MyNS
 		public async Task<RestResponse> GetProfileEnrollmentStatusUsingGETAsync(string accessKey, string secretKey, string profileId, string collectionId)
 		{
 			var requestUri = "rest/v1.1/profile/enrollmentStatus?accessKey=" + (accessKey==null? "" : System.Uri.EscapeDataString(accessKey))+"&secretKey=" + (secretKey==null? "" : System.Uri.EscapeDataString(secretKey))+"&profileId=" + (profileId==null? "" : System.Uri.EscapeDataString(profileId))+"&collectionId=" + (collectionId==null? "" : System.Uri.EscapeDataString(collectionId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<RestResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<RestResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -923,19 +863,17 @@ namespace MyNS
 		public async Task<RestResponse> GetFacesFromProfileUsingGETAsync(string accessKey, string secretKey, string profileId, string collectionId)
 		{
 			var requestUri = "rest/v1.1/profile/map?accessKey=" + (accessKey==null? "" : System.Uri.EscapeDataString(accessKey))+"&secretKey=" + (secretKey==null? "" : System.Uri.EscapeDataString(secretKey))+"&profileId=" + (profileId==null? "" : System.Uri.EscapeDataString(profileId))+"&collectionId=" + (collectionId==null? "" : System.Uri.EscapeDataString(collectionId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<RestResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<RestResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -952,19 +890,17 @@ namespace MyNS
 		public async Task<RestResponse> MapFacesToProfileUsingPOSTAsync(string accessKey, string secretKey, string faceHashes, string profileId, string collectionId)
 		{
 			var requestUri = "rest/v1.1/profile/map?accessKey=" + (accessKey==null? "" : System.Uri.EscapeDataString(accessKey))+"&secretKey=" + (secretKey==null? "" : System.Uri.EscapeDataString(secretKey))+"&faceHashes=" + (faceHashes==null? "" : System.Uri.EscapeDataString(faceHashes))+"&profileId=" + (profileId==null? "" : System.Uri.EscapeDataString(profileId))+"&collectionId=" + (collectionId==null? "" : System.Uri.EscapeDataString(collectionId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<RestResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<RestResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -981,19 +917,17 @@ namespace MyNS
 		public async Task<RestResponse> RemoveFacesFromProfileUsingDELETEAsync(string accessKey, string secretKey, string faceHashes, string profileId, string collectionId)
 		{
 			var requestUri = "rest/v1.1/profile/map?accessKey=" + (accessKey==null? "" : System.Uri.EscapeDataString(accessKey))+"&secretKey=" + (secretKey==null? "" : System.Uri.EscapeDataString(secretKey))+"&faceHashes=" + (faceHashes==null? "" : System.Uri.EscapeDataString(faceHashes))+"&profileId=" + (profileId==null? "" : System.Uri.EscapeDataString(profileId))+"&collectionId=" + (collectionId==null? "" : System.Uri.EscapeDataString(collectionId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<RestResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<RestResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1013,19 +947,17 @@ namespace MyNS
 		public async Task<RestResponse> AddProfileUsingPOSTAsync(string accessKey, string secretKey, string collectionId, string externalId, string screenName, string[] labels, string classificationAttributes, string details)
 		{
 			var requestUri = "rest/v1.1/profile/profile?accessKey=" + (accessKey==null? "" : System.Uri.EscapeDataString(accessKey))+"&secretKey=" + (secretKey==null? "" : System.Uri.EscapeDataString(secretKey))+"&collectionId=" + (collectionId==null? "" : System.Uri.EscapeDataString(collectionId))+"&externalId=" + (externalId==null? "" : System.Uri.EscapeDataString(externalId))+"&screenName=" + (screenName==null? "" : System.Uri.EscapeDataString(screenName))+"&"+string.Join("&", labels.Select(z => $"labels={System.Uri.EscapeDataString(z.ToString())}"))+"&classificationAttributes=" + (classificationAttributes==null? "" : System.Uri.EscapeDataString(classificationAttributes))+"&details=" + (details==null? "" : System.Uri.EscapeDataString(details));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<RestResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<RestResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1041,19 +973,17 @@ namespace MyNS
 		public async Task<RestResponse> DeleteProfile2UsingDELETEAsync(string accessKey, string secretKey, string collectionId, string profileId)
 		{
 			var requestUri = "rest/v1.1/profile/profile?accessKey=" + (accessKey==null? "" : System.Uri.EscapeDataString(accessKey))+"&secretKey=" + (secretKey==null? "" : System.Uri.EscapeDataString(secretKey))+"&collectionId=" + (collectionId==null? "" : System.Uri.EscapeDataString(collectionId))+"&profileId=" + (profileId==null? "" : System.Uri.EscapeDataString(profileId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<RestResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<RestResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1070,19 +1000,17 @@ namespace MyNS
 		public async Task<RestResponse> GetProfileUsingGETAsync(string accessKey, string secretKey, string collectionId, string withFaces, string id)
 		{
 			var requestUri = "rest/v1.1/profile/"+ (id==null? "" : System.Uri.EscapeDataString(id))+"?accessKey=" + (accessKey==null? "" : System.Uri.EscapeDataString(accessKey))+"&secretKey=" + (secretKey==null? "" : System.Uri.EscapeDataString(secretKey))+"&collectionId=" + (collectionId==null? "" : System.Uri.EscapeDataString(collectionId))+"&withFaces=" + (withFaces==null? "" : System.Uri.EscapeDataString(withFaces));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<RestResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<RestResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1098,19 +1026,17 @@ namespace MyNS
 		public async Task<RestResponse> DeleteProfileUsingDELETEAsync(string accessKey, string secretKey, string collectionId, string id)
 		{
 			var requestUri = "rest/v1.1/profile/"+ (id==null? "" : System.Uri.EscapeDataString(id))+"?accessKey=" + (accessKey==null? "" : System.Uri.EscapeDataString(accessKey))+"&secretKey=" + (secretKey==null? "" : System.Uri.EscapeDataString(secretKey))+"&collectionId=" + (collectionId==null? "" : System.Uri.EscapeDataString(collectionId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<RestResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<RestResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1131,19 +1057,17 @@ namespace MyNS
 		public async Task<RestResponse> UpdateProfileUsingPATCHAsync(string accessKey, string secretKey, string id, string collectionId, string externalId, string screenName, string[] labels, string classificationAttributes, string details)
 		{
 			var requestUri = "rest/v1.1/profile/"+ (id==null? "" : System.Uri.EscapeDataString(id))+"?accessKey=" + (accessKey==null? "" : System.Uri.EscapeDataString(accessKey))+"&secretKey=" + (secretKey==null? "" : System.Uri.EscapeDataString(secretKey))+"&collectionId=" + (collectionId==null? "" : System.Uri.EscapeDataString(collectionId))+"&externalId=" + (externalId==null? "" : System.Uri.EscapeDataString(externalId))+"&screenName=" + (screenName==null? "" : System.Uri.EscapeDataString(screenName))+"&"+string.Join("&", labels.Select(z => $"labels={System.Uri.EscapeDataString(z.ToString())}"))+"&classificationAttributes=" + (classificationAttributes==null? "" : System.Uri.EscapeDataString(classificationAttributes))+"&details=" + (details==null? "" : System.Uri.EscapeDataString(details));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<RestResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<RestResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1157,19 +1081,17 @@ namespace MyNS
 		public async Task<RestResponse> StreamsByAccountUsingGETAsync(string accessKey, string secretKey)
 		{
 			var requestUri = "rest/v1.1/stream/all?accessKey=" + (accessKey==null? "" : System.Uri.EscapeDataString(accessKey))+"&secretKey=" + (secretKey==null? "" : System.Uri.EscapeDataString(secretKey));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<RestResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<RestResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1185,19 +1107,17 @@ namespace MyNS
 		public async Task<RestResponse> GetLastNAttedanceUsingGETAsync(string accessKey, string secretKey, string[] streamIds, int count)
 		{
 			var requestUri = "rest/v1.1/stream/attendance?accessKey=" + (accessKey==null? "" : System.Uri.EscapeDataString(accessKey))+"&secretKey=" + (secretKey==null? "" : System.Uri.EscapeDataString(secretKey))+"&"+string.Join("&", streamIds.Select(z => $"streamIds={System.Uri.EscapeDataString(z.ToString())}"))+"&count="+count;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<RestResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<RestResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1213,19 +1133,17 @@ namespace MyNS
 		public async Task<RestResponse> CleanupStreamUsingPATCHAsync(string accessKey, string secretKey, string streamId, int interval)
 		{
 			var requestUri = "rest/v1.1/stream/cleanup?accessKey=" + (accessKey==null? "" : System.Uri.EscapeDataString(accessKey))+"&secretKey=" + (secretKey==null? "" : System.Uri.EscapeDataString(secretKey))+"&streamId=" + (streamId==null? "" : System.Uri.EscapeDataString(streamId))+"&interval="+interval;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<RestResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<RestResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1241,8 +1159,7 @@ namespace MyNS
 		public async Task GetFrameImageUsingGETAsync(string accessKey, string secretKey, string streamId, long timestamp)
 		{
 			var requestUri = "rest/v1.1/stream/frameImage?accessKey=" + (accessKey==null? "" : System.Uri.EscapeDataString(accessKey))+"&secretKey=" + (secretKey==null? "" : System.Uri.EscapeDataString(secretKey))+"&streamId=" + (streamId==null? "" : System.Uri.EscapeDataString(streamId))+"&timestamp="+timestamp;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -1251,7 +1168,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1270,19 +1186,17 @@ namespace MyNS
 		public async Task<RestResponse> GetLastNFramesUsingGETAsync(string accessKey, string secretKey, string streamId, int count, string collectionId, string[] labels, string[] attributeFilters)
 		{
 			var requestUri = "rest/v1.1/stream/frames?accessKey=" + (accessKey==null? "" : System.Uri.EscapeDataString(accessKey))+"&secretKey=" + (secretKey==null? "" : System.Uri.EscapeDataString(secretKey))+"&streamId=" + (streamId==null? "" : System.Uri.EscapeDataString(streamId))+"&count="+count+"&collectionId=" + (collectionId==null? "" : System.Uri.EscapeDataString(collectionId))+"&"+string.Join("&", labels.Select(z => $"labels={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", attributeFilters.Select(z => $"attributeFilters={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<RestResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<RestResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1297,19 +1211,17 @@ namespace MyNS
 		public async Task<RestResponse> StartStreamUsingPATCHAsync(string accessKey, string secretKey, string streamId)
 		{
 			var requestUri = "rest/v1.1/stream/start?accessKey=" + (accessKey==null? "" : System.Uri.EscapeDataString(accessKey))+"&secretKey=" + (secretKey==null? "" : System.Uri.EscapeDataString(secretKey))+"&streamId=" + (streamId==null? "" : System.Uri.EscapeDataString(streamId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<RestResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<RestResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1324,19 +1236,17 @@ namespace MyNS
 		public async Task<RestResponse> StopStreamUsingPATCHAsync(string accessKey, string secretKey, string streamId)
 		{
 			var requestUri = "rest/v1.1/stream/stop?accessKey=" + (accessKey==null? "" : System.Uri.EscapeDataString(accessKey))+"&secretKey=" + (secretKey==null? "" : System.Uri.EscapeDataString(secretKey))+"&streamId=" + (streamId==null? "" : System.Uri.EscapeDataString(streamId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<RestResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<RestResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1363,19 +1273,17 @@ namespace MyNS
 		public async Task<RestResponse> AddStreamUsingPOSTAsync(string accessKey, string secretKey, string name, string url, AddStreamUsingPOSTMethod method, string username, string password, bool skipFramesWithNoFaces, int retentionTime, bool storeOriginalFrames, bool storeAttendanceFaces, bool storeAttendanceFrames, bool isActive, string[] associatedCollections, string attributes)
 		{
 			var requestUri = "rest/v1.1/stream/stream?accessKey=" + (accessKey==null? "" : System.Uri.EscapeDataString(accessKey))+"&secretKey=" + (secretKey==null? "" : System.Uri.EscapeDataString(secretKey))+"&name=" + (name==null? "" : System.Uri.EscapeDataString(name))+"&url=" + (url==null? "" : System.Uri.EscapeDataString(url))+"&method=" + method+"&username=" + (username==null? "" : System.Uri.EscapeDataString(username))+"&password=" + (password==null? "" : System.Uri.EscapeDataString(password))+"&skipFramesWithNoFaces="+skipFramesWithNoFaces+"&retentionTime="+retentionTime+"&storeOriginalFrames="+storeOriginalFrames+"&storeAttendanceFaces="+storeAttendanceFaces+"&storeAttendanceFrames="+storeAttendanceFrames+"&isActive="+isActive+"&"+string.Join("&", associatedCollections.Select(z => $"associatedCollections={System.Uri.EscapeDataString(z.ToString())}"))+"&attributes=" + (attributes==null? "" : System.Uri.EscapeDataString(attributes));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<RestResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<RestResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1390,19 +1298,17 @@ namespace MyNS
 		public async Task<RestResponse> RemoveStreamUsingDELETEAsync(string accessKey, string secretKey, string id)
 		{
 			var requestUri = "rest/v1.1/stream/"+ (id==null? "" : System.Uri.EscapeDataString(id))+"?accessKey=" + (accessKey==null? "" : System.Uri.EscapeDataString(accessKey))+"&secretKey=" + (secretKey==null? "" : System.Uri.EscapeDataString(secretKey));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<RestResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<RestResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1417,19 +1323,17 @@ namespace MyNS
 		public async Task<RestResponse> GetStreamUsingGETAsync(string accessKey, string secretKey, string streamId)
 		{
 			var requestUri = "rest/v1.1/stream/"+ (streamId==null? "" : System.Uri.EscapeDataString(streamId))+"?accessKey=" + (accessKey==null? "" : System.Uri.EscapeDataString(accessKey))+"&secretKey=" + (secretKey==null? "" : System.Uri.EscapeDataString(secretKey));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<RestResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<RestResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1473,19 +1377,17 @@ namespace MyNS
 					string attributes)
 		{
 			var requestUri = "rest/v1.1/stream/"+ (streamId==null? "" : System.Uri.EscapeDataString(streamId))+"?accessKey=" + (accessKey==null? "" : System.Uri.EscapeDataString(accessKey))+"&secretKey=" + (secretKey==null? "" : System.Uri.EscapeDataString(secretKey))+"&name=" + (name==null? "" : System.Uri.EscapeDataString(name))+"&url=" + (url==null? "" : System.Uri.EscapeDataString(url))+"&method=" + method+"&username=" + (username==null? "" : System.Uri.EscapeDataString(username))+"&password=" + (password==null? "" : System.Uri.EscapeDataString(password))+"&skipFramesWithNoFaces="+skipFramesWithNoFaces+"&retentionTime="+retentionTime+"&storeOriginalFrames="+storeOriginalFrames+"&storeAttendanceFaces="+storeAttendanceFaces+"&storeAttendanceFrames="+storeAttendanceFrames+"&isActive="+isActive+"&"+string.Join("&", associatedCollections.Select(z => $"associatedCollections={System.Uri.EscapeDataString(z.ToString())}"))+"&attributes=" + (attributes==null? "" : System.Uri.EscapeDataString(attributes));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<RestResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<RestResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

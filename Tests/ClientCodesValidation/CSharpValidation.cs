@@ -60,6 +60,7 @@ namespace Fonlow.OpenApiClientGen.CS
 					CreateFromName("System.Runtime"),
 					CreateFromName("netstandard"),
 					CreateFromName("System.Net.Http"),
+					CreateFromName("System.Net.Http.Json"), //.NET 5 feature
 					CreateFromName("System.Private.Uri"),
 					CreateFromName("System.Runtime.Extensions"),
 					CreateFromName("System.Runtime.Serialization.Primitives"),

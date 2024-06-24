@@ -3575,8 +3575,7 @@ namespace MyNS
 		public async Task<V3DeparturesResponse> Departures_GetForStopAsync(Departures_GetForStopRoute_type route_type, int stop_id, int[] platform_numbers, int direction_id, bool gtfs, System.DateTimeOffset date_utc, int max_results, bool include_cancelled, bool look_backwards, string[] expand, bool include_geopath, string token, string devid, string signature, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v3/departures/route_type/"+route_type+"/stop/"+stop_id+"?"+string.Join("&", platform_numbers.Select(z => $"platform_numbers={z}"))+"&direction_id="+direction_id+"&gtfs="+gtfs+"&date_utc=" + date_utc.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&max_results="+max_results+"&include_cancelled="+include_cancelled+"&look_backwards="+look_backwards+"&"+string.Join("&", expand.Select(z => $"expand={System.Uri.EscapeDataString(z.ToString())}"))+"&include_geopath="+include_geopath+"&token=" + (token==null? "" : System.Uri.EscapeDataString(token))+"&devid=" + (devid==null? "" : System.Uri.EscapeDataString(devid))+"&signature=" + (signature==null? "" : System.Uri.EscapeDataString(signature));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3586,13 +3585,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<V3DeparturesResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<V3DeparturesResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3619,8 +3617,7 @@ namespace MyNS
 		public async Task<V3DeparturesResponse> Departures_GetForStopAndRouteAsync(Departures_GetForStopAndRouteRoute_type route_type, int stop_id, string route_id, int direction_id, bool gtfs, System.DateTimeOffset date_utc, int max_results, bool include_cancelled, bool look_backwards, string[] expand, bool include_geopath, string token, string devid, string signature, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v3/departures/route_type/"+route_type+"/stop/"+stop_id+"/route/"+ (route_id==null? "" : System.Uri.EscapeDataString(route_id))+"&direction_id="+direction_id+"&gtfs="+gtfs+"&date_utc=" + date_utc.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&max_results="+max_results+"&include_cancelled="+include_cancelled+"&look_backwards="+look_backwards+"&"+string.Join("&", expand.Select(z => $"expand={System.Uri.EscapeDataString(z.ToString())}"))+"&include_geopath="+include_geopath+"&token=" + (token==null? "" : System.Uri.EscapeDataString(token))+"&devid=" + (devid==null? "" : System.Uri.EscapeDataString(devid))+"&signature=" + (signature==null? "" : System.Uri.EscapeDataString(signature));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3630,13 +3627,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<V3DeparturesResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<V3DeparturesResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3652,8 +3648,7 @@ namespace MyNS
 		public async Task<V3DirectionsResponse> Directions_ForRouteAsync(int route_id, string token, string devid, string signature, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v3/directions/route/"+route_id+"?token=" + (token==null? "" : System.Uri.EscapeDataString(token))+"&devid=" + (devid==null? "" : System.Uri.EscapeDataString(devid))+"&signature=" + (signature==null? "" : System.Uri.EscapeDataString(signature));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3663,13 +3658,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<V3DirectionsResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<V3DirectionsResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3685,8 +3679,7 @@ namespace MyNS
 		public async Task<V3DirectionsResponse> Directions_ForDirectionAsync(int direction_id, string token, string devid, string signature, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v3/directions/"+direction_id+"?token=" + (token==null? "" : System.Uri.EscapeDataString(token))+"&devid=" + (devid==null? "" : System.Uri.EscapeDataString(devid))+"&signature=" + (signature==null? "" : System.Uri.EscapeDataString(signature));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3696,13 +3689,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<V3DirectionsResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<V3DirectionsResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3719,8 +3711,7 @@ namespace MyNS
 		public async Task<V3DirectionsResponse> Directions_ForDirectionAndTypeAsync(int direction_id, Directions_ForDirectionAndTypeRoute_type route_type, string token, string devid, string signature, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v3/directions/"+direction_id+"/route_type/"+route_type+"?token=" + (token==null? "" : System.Uri.EscapeDataString(token))+"&devid=" + (devid==null? "" : System.Uri.EscapeDataString(devid))+"&signature=" + (signature==null? "" : System.Uri.EscapeDataString(signature));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3730,13 +3721,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<V3DirectionsResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<V3DirectionsResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3754,8 +3744,7 @@ namespace MyNS
 		public async Task<V3DisruptionsResponse> Disruptions_GetAllDisruptionsAsync(V3StopDepartureRequestRoute_type[] route_types, int[] disruption_modes, Disruptions_GetAllDisruptionsDisruption_status disruption_status, string token, string devid, string signature, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v3/disruptions?"+string.Join("&", route_types.Select(z => $"route_types={z}"))+"&"+string.Join("&", disruption_modes.Select(z => $"disruption_modes={z}"))+"&disruption_status=" + disruption_status+"&token=" + (token==null? "" : System.Uri.EscapeDataString(token))+"&devid=" + (devid==null? "" : System.Uri.EscapeDataString(devid))+"&signature=" + (signature==null? "" : System.Uri.EscapeDataString(signature));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3765,13 +3754,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<V3DisruptionsResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<V3DisruptionsResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3786,8 +3774,7 @@ namespace MyNS
 		public async Task<V3DisruptionModesResponse> Disruptions_GetDisruptionModesAsync(string token, string devid, string signature, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v3/disruptions/modes?token=" + (token==null? "" : System.Uri.EscapeDataString(token))+"&devid=" + (devid==null? "" : System.Uri.EscapeDataString(devid))+"&signature=" + (signature==null? "" : System.Uri.EscapeDataString(signature));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3797,13 +3784,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<V3DisruptionModesResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<V3DisruptionModesResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3820,8 +3806,7 @@ namespace MyNS
 		public async Task<V3DisruptionsResponse> Disruptions_GetDisruptionsByRouteAsync(int route_id, Disruptions_GetAllDisruptionsDisruption_status disruption_status, string token, string devid, string signature, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v3/disruptions/route/"+route_id+"?disruption_status=" + disruption_status+"&token=" + (token==null? "" : System.Uri.EscapeDataString(token))+"&devid=" + (devid==null? "" : System.Uri.EscapeDataString(devid))+"&signature=" + (signature==null? "" : System.Uri.EscapeDataString(signature));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3831,13 +3816,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<V3DisruptionsResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<V3DisruptionsResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3855,8 +3839,7 @@ namespace MyNS
 		public async Task<V3DisruptionsResponse> Disruptions_GetDisruptionsByRouteAndStopAsync(int route_id, int stop_id, Disruptions_GetAllDisruptionsDisruption_status disruption_status, string token, string devid, string signature, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v3/disruptions/route/"+route_id+"/stop/"+stop_id+"?disruption_status=" + disruption_status+"&token=" + (token==null? "" : System.Uri.EscapeDataString(token))+"&devid=" + (devid==null? "" : System.Uri.EscapeDataString(devid))+"&signature=" + (signature==null? "" : System.Uri.EscapeDataString(signature));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3866,13 +3849,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<V3DisruptionsResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<V3DisruptionsResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3889,8 +3871,7 @@ namespace MyNS
 		public async Task<V3DisruptionsResponse> Disruptions_GetDisruptionsByStopAsync(int stop_id, Disruptions_GetAllDisruptionsDisruption_status disruption_status, string token, string devid, string signature, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v3/disruptions/stop/"+stop_id+"?disruption_status=" + disruption_status+"&token=" + (token==null? "" : System.Uri.EscapeDataString(token))+"&devid=" + (devid==null? "" : System.Uri.EscapeDataString(devid))+"&signature=" + (signature==null? "" : System.Uri.EscapeDataString(signature));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3900,13 +3881,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<V3DisruptionsResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<V3DisruptionsResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3922,8 +3902,7 @@ namespace MyNS
 		public async Task<V3DisruptionResponse> Disruptions_GetDisruptionByIdAsync(long disruption_id, string token, string devid, string signature, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v3/disruptions/"+disruption_id+"?token=" + (token==null? "" : System.Uri.EscapeDataString(token))+"&devid=" + (devid==null? "" : System.Uri.EscapeDataString(devid))+"&signature=" + (signature==null? "" : System.Uri.EscapeDataString(signature));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3933,13 +3912,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<V3DisruptionResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<V3DisruptionResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3958,8 +3936,7 @@ namespace MyNS
 		public async Task<V3FareEstimateResponse> FareEstimate_GetFareEstimateByZoneAsync(int minZone, int maxZone, System.DateTimeOffset journey_touch_on_utc, System.DateTimeOffset journey_touch_off_utc, bool is_journey_in_free_tram_zone, V3StopDepartureRequestRoute_type[] travelled_route_types, string token, string devid, string signature, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v3/fare_estimate/min_zone/"+minZone+"/max_zone/"+maxZone+"?journey_touch_on_utc=" + journey_touch_on_utc.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&journey_touch_off_utc=" + journey_touch_off_utc.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&is_journey_in_free_tram_zone="+is_journey_in_free_tram_zone+"&"+string.Join("&", travelled_route_types.Select(z => $"travelled_route_types={z}"))+"&token=" + (token==null? "" : System.Uri.EscapeDataString(token))+"&devid=" + (devid==null? "" : System.Uri.EscapeDataString(devid))+"&signature=" + (signature==null? "" : System.Uri.EscapeDataString(signature));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3969,13 +3946,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<V3FareEstimateResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<V3FareEstimateResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3991,8 +3967,7 @@ namespace MyNS
 		public async Task<V3OutletResponse> Outlets_GetAllOutletsAsync(int max_results, string token, string devid, string signature, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v3/outlets?max_results="+max_results+"&token=" + (token==null? "" : System.Uri.EscapeDataString(token))+"&devid=" + (devid==null? "" : System.Uri.EscapeDataString(devid))+"&signature=" + (signature==null? "" : System.Uri.EscapeDataString(signature));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4002,13 +3977,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<V3OutletResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<V3OutletResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4027,8 +4001,7 @@ namespace MyNS
 		public async Task<V3OutletGeolocationResponse> Outlets_GetOutletsByGeolocationAsync(float latitude, float longitude, double max_distance, int max_results, string token, string devid, string signature, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v3/outlets/location/"+latitude+","+longitude+"?max_distance="+max_distance+"&max_results="+max_results+"&token=" + (token==null? "" : System.Uri.EscapeDataString(token))+"&devid=" + (devid==null? "" : System.Uri.EscapeDataString(devid))+"&signature=" + (signature==null? "" : System.Uri.EscapeDataString(signature));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4038,13 +4011,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<V3OutletGeolocationResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<V3OutletGeolocationResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4066,8 +4038,7 @@ namespace MyNS
 		public async Task<V3StoppingPattern> Patterns_GetPatternByRunAsync(string run_ref, Patterns_GetPatternByRunRoute_type route_type, string[] expand, int stop_id, System.DateTimeOffset date_utc, bool include_skipped_stops, bool include_geopath, string token, string devid, string signature, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v3/pattern/run/"+ (run_ref==null? "" : System.Uri.EscapeDataString(run_ref))+"/route_type/"+route_type+"&"+string.Join("&", expand.Select(z => $"expand={System.Uri.EscapeDataString(z.ToString())}"))+"&stop_id="+stop_id+"&date_utc=" + date_utc.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&include_skipped_stops="+include_skipped_stops+"&include_geopath="+include_geopath+"&token=" + (token==null? "" : System.Uri.EscapeDataString(token))+"&devid=" + (devid==null? "" : System.Uri.EscapeDataString(devid))+"&signature=" + (signature==null? "" : System.Uri.EscapeDataString(signature));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4077,13 +4048,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<V3StoppingPattern>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<V3StoppingPattern>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4098,8 +4068,7 @@ namespace MyNS
 		public async Task<V3RouteTypesResponse> RouteTypes_GetRouteTypesAsync(string token, string devid, string signature, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v3/route_types?token=" + (token==null? "" : System.Uri.EscapeDataString(token))+"&devid=" + (devid==null? "" : System.Uri.EscapeDataString(devid))+"&signature=" + (signature==null? "" : System.Uri.EscapeDataString(signature));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4109,13 +4078,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<V3RouteTypesResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<V3RouteTypesResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4132,8 +4100,7 @@ namespace MyNS
 		public async Task<V3RouteResponse> Routes_OneOrMoreRoutesAsync(V3StopDepartureRequestRoute_type[] route_types, string route_name, string token, string devid, string signature, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v3/routes?"+string.Join("&", route_types.Select(z => $"route_types={z}"))+"&route_name=" + (route_name==null? "" : System.Uri.EscapeDataString(route_name))+"&token=" + (token==null? "" : System.Uri.EscapeDataString(token))+"&devid=" + (devid==null? "" : System.Uri.EscapeDataString(devid))+"&signature=" + (signature==null? "" : System.Uri.EscapeDataString(signature));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4143,13 +4110,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<V3RouteResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<V3RouteResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4167,8 +4133,7 @@ namespace MyNS
 		public async Task<V3RouteResponse> Routes_RouteFromIdAsync(int route_id, bool include_geopath, System.DateTimeOffset geopath_utc, string token, string devid, string signature, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v3/routes/"+route_id+"?include_geopath="+include_geopath+"&geopath_utc=" + geopath_utc.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&token=" + (token==null? "" : System.Uri.EscapeDataString(token))+"&devid=" + (devid==null? "" : System.Uri.EscapeDataString(devid))+"&signature=" + (signature==null? "" : System.Uri.EscapeDataString(signature));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4178,13 +4143,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<V3RouteResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<V3RouteResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4202,8 +4166,7 @@ namespace MyNS
 		public async Task<V3RunsResponse> Runs_ForRouteAsync(int route_id, string[] expand, System.DateTimeOffset date_utc, string token, string devid, string signature, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v3/runs/route/"+route_id+"?"+string.Join("&", expand.Select(z => $"expand={System.Uri.EscapeDataString(z.ToString())}"))+"&date_utc=" + date_utc.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&token=" + (token==null? "" : System.Uri.EscapeDataString(token))+"&devid=" + (devid==null? "" : System.Uri.EscapeDataString(devid))+"&signature=" + (signature==null? "" : System.Uri.EscapeDataString(signature));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4213,13 +4176,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<V3RunsResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<V3RunsResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4238,8 +4200,7 @@ namespace MyNS
 		public async Task<V3RunsResponse> Runs_ForRouteAndRouteTypeAsync(int route_id, Runs_ForRouteAndRouteTypeRoute_type route_type, string[] expand, System.DateTimeOffset date_utc, string token, string devid, string signature, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v3/runs/route/"+route_id+"/route_type/"+route_type+"?"+string.Join("&", expand.Select(z => $"expand={System.Uri.EscapeDataString(z.ToString())}"))+"&date_utc=" + date_utc.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&token=" + (token==null? "" : System.Uri.EscapeDataString(token))+"&devid=" + (devid==null? "" : System.Uri.EscapeDataString(devid))+"&signature=" + (signature==null? "" : System.Uri.EscapeDataString(signature));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4249,13 +4210,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<V3RunsResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<V3RunsResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4274,8 +4234,7 @@ namespace MyNS
 		public async Task<V3RunsResponse> Runs_ForRunAsync(string run_ref, string[] expand, System.DateTimeOffset date_utc, bool include_geopath, string token, string devid, string signature, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v3/runs/"+ (run_ref==null? "" : System.Uri.EscapeDataString(run_ref))+"&"+string.Join("&", expand.Select(z => $"expand={System.Uri.EscapeDataString(z.ToString())}"))+"&date_utc=" + date_utc.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&include_geopath="+include_geopath+"&token=" + (token==null? "" : System.Uri.EscapeDataString(token))+"&devid=" + (devid==null? "" : System.Uri.EscapeDataString(devid))+"&signature=" + (signature==null? "" : System.Uri.EscapeDataString(signature));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4285,13 +4244,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<V3RunsResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<V3RunsResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4311,8 +4269,7 @@ namespace MyNS
 		public async Task<V3RunResponse> Runs_ForRunAndRouteTypeAsync(string run_ref, Runs_ForRunAndRouteTypeRoute_type route_type, string[] expand, System.DateTimeOffset date_utc, bool include_geopath, string token, string devid, string signature, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v3/runs/"+ (run_ref==null? "" : System.Uri.EscapeDataString(run_ref))+"/route_type/"+route_type+"&"+string.Join("&", expand.Select(z => $"expand={System.Uri.EscapeDataString(z.ToString())}"))+"&date_utc=" + date_utc.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&include_geopath="+include_geopath+"&token=" + (token==null? "" : System.Uri.EscapeDataString(token))+"&devid=" + (devid==null? "" : System.Uri.EscapeDataString(devid))+"&signature=" + (signature==null? "" : System.Uri.EscapeDataString(signature));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4322,13 +4279,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<V3RunResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<V3RunResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4353,8 +4309,7 @@ namespace MyNS
 		public async Task<V3SearchResult> Search_SearchAsync(string search_term, V3StopDepartureRequestRoute_type[] route_types, float latitude, float longitude, float max_distance, bool include_addresses, bool include_outlets, bool match_stop_by_suburb, bool match_route_by_suburb, bool match_stop_by_gtfs_stop_id, string token, string devid, string signature, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v3/search/"+ (search_term==null? "" : System.Uri.EscapeDataString(search_term))+"&"+string.Join("&", route_types.Select(z => $"route_types={z}"))+"&latitude="+latitude+"&longitude="+longitude+"&max_distance="+max_distance+"&include_addresses="+include_addresses+"&include_outlets="+include_outlets+"&match_stop_by_suburb="+match_stop_by_suburb+"&match_route_by_suburb="+match_route_by_suburb+"&match_stop_by_gtfs_stop_id="+match_stop_by_gtfs_stop_id+"&token=" + (token==null? "" : System.Uri.EscapeDataString(token))+"&devid=" + (devid==null? "" : System.Uri.EscapeDataString(devid))+"&signature=" + (signature==null? "" : System.Uri.EscapeDataString(signature));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4364,13 +4319,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<V3SearchResult>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<V3SearchResult>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4391,8 +4345,7 @@ namespace MyNS
 		public async Task<V3StopsByDistanceResponse> Stops_StopsByGeolocationAsync(float latitude, float longitude, V3StopDepartureRequestRoute_type[] route_types, int max_results, double max_distance, bool stop_disruptions, string token, string devid, string signature, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v3/stops/location/"+latitude+","+longitude+"?"+string.Join("&", route_types.Select(z => $"route_types={z}"))+"&max_results="+max_results+"&max_distance="+max_distance+"&stop_disruptions="+stop_disruptions+"&token=" + (token==null? "" : System.Uri.EscapeDataString(token))+"&devid=" + (devid==null? "" : System.Uri.EscapeDataString(devid))+"&signature=" + (signature==null? "" : System.Uri.EscapeDataString(signature));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4402,13 +4355,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<V3StopsByDistanceResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<V3StopsByDistanceResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4429,8 +4381,7 @@ namespace MyNS
 		public async Task<V3StopsOnRouteResponse> Stops_StopsForRouteAsync(int route_id, Stops_StopsForRouteRoute_type route_type, int direction_id, bool stop_disruptions, bool include_geopath, System.DateTimeOffset geopath_utc, string token, string devid, string signature, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v3/stops/route/"+route_id+"/route_type/"+route_type+"?direction_id="+direction_id+"&stop_disruptions="+stop_disruptions+"&include_geopath="+include_geopath+"&geopath_utc=" + geopath_utc.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&token=" + (token==null? "" : System.Uri.EscapeDataString(token))+"&devid=" + (devid==null? "" : System.Uri.EscapeDataString(devid))+"&signature=" + (signature==null? "" : System.Uri.EscapeDataString(signature));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4440,13 +4391,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<V3StopsOnRouteResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<V3StopsOnRouteResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4471,8 +4421,7 @@ namespace MyNS
 		public async Task<V3StopResponse> Stops_StopDetailsAsync(int stop_id, Stops_StopDetailsRoute_type route_type, bool stop_location, bool stop_amenities, bool stop_accessibility, bool stop_contact, bool stop_ticket, bool gtfs, bool stop_staffing, bool stop_disruptions, string token, string devid, string signature, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v3/stops/"+stop_id+"/route_type/"+route_type+"?stop_location="+stop_location+"&stop_amenities="+stop_amenities+"&stop_accessibility="+stop_accessibility+"&stop_contact="+stop_contact+"&stop_ticket="+stop_ticket+"&gtfs="+gtfs+"&stop_staffing="+stop_staffing+"&stop_disruptions="+stop_disruptions+"&token=" + (token==null? "" : System.Uri.EscapeDataString(token))+"&devid=" + (devid==null? "" : System.Uri.EscapeDataString(devid))+"&signature=" + (signature==null? "" : System.Uri.EscapeDataString(signature));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4482,13 +4431,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<V3StopResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<V3StopResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

@@ -202,19 +202,17 @@ namespace MyNS
 		public async Task<SourceControlSyncJobStreamsListBySyncJob> SourceControlSyncJobStreams_ListBySyncJobAsync(string resourceGroupName, string automationAccountName, string sourceControlName, string sourceControlSyncJobId, string filter, string subscriptionId, string api_version)
 		{
 			var requestUri = "subscriptions/"+ (subscriptionId==null? "" : System.Uri.EscapeDataString(subscriptionId))+"/resourceGroups/"+ (resourceGroupName==null? "" : System.Uri.EscapeDataString(resourceGroupName))+"/providers/Microsoft.Automation/automationAccounts/"+ (automationAccountName==null? "" : System.Uri.EscapeDataString(automationAccountName))+"/sourceControls/"+ (sourceControlName==null? "" : System.Uri.EscapeDataString(sourceControlName))+"/sourceControlSyncJobs/"+ (sourceControlSyncJobId==null? "" : System.Uri.EscapeDataString(sourceControlSyncJobId))+"/streams&$filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<SourceControlSyncJobStreamsListBySyncJob>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<SourceControlSyncJobStreamsListBySyncJob>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -236,19 +234,17 @@ namespace MyNS
 		public async Task<SourceControlSyncJobStreamById> SourceControlSyncJobStreams_GetAsync(string resourceGroupName, string automationAccountName, string sourceControlName, string sourceControlSyncJobId, string streamId, string subscriptionId, string api_version)
 		{
 			var requestUri = "subscriptions/"+ (subscriptionId==null? "" : System.Uri.EscapeDataString(subscriptionId))+"/resourceGroups/"+ (resourceGroupName==null? "" : System.Uri.EscapeDataString(resourceGroupName))+"/providers/Microsoft.Automation/automationAccounts/"+ (automationAccountName==null? "" : System.Uri.EscapeDataString(automationAccountName))+"/sourceControls/"+ (sourceControlName==null? "" : System.Uri.EscapeDataString(sourceControlName))+"/sourceControlSyncJobs/"+ (sourceControlSyncJobId==null? "" : System.Uri.EscapeDataString(sourceControlSyncJobId))+"/streams/"+ (streamId==null? "" : System.Uri.EscapeDataString(streamId))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<SourceControlSyncJobStreamById>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<SourceControlSyncJobStreamById>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

@@ -47,8 +47,7 @@ namespace MyNS
 		public async Task CreatePathwayPostByGpmlAndAuthAndUsernameAndFormatAsync(string gpml, string auth, string username, CreatePathwayPostByGpmlAndAuthAndUsernameAndFormatFormat format, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "createPathway?gpml=" + (gpml==null? "" : System.Uri.EscapeDataString(gpml))+"&auth=" + (auth==null? "" : System.Uri.EscapeDataString(auth))+"&username=" + (username==null? "" : System.Uri.EscapeDataString(username))+"&format=" + format;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -57,7 +56,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -70,8 +68,7 @@ namespace MyNS
 		public async Task FindInteractionsGetByQueryAndFormatAsync(string query, CreatePathwayPostByGpmlAndAuthAndUsernameAndFormatFormat format, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "findInteractions?query=" + (query==null? "" : System.Uri.EscapeDataString(query))+"&format=" + format;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -85,7 +82,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -98,8 +94,7 @@ namespace MyNS
 		public async Task FindPathwaysByLiteratureGetByQueryAndFormatAsync(string query, CreatePathwayPostByGpmlAndAuthAndUsernameAndFormatFormat format, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "findPathwaysByLiterature?query=" + (query==null? "" : System.Uri.EscapeDataString(query))+"&format=" + format;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -113,7 +108,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -127,8 +121,7 @@ namespace MyNS
 		public async Task FindPathwaysByTextGetByQueryAndSpeciesAndFormatAsync(string query, string species, CreatePathwayPostByGpmlAndAuthAndUsernameAndFormatFormat format, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "findPathwaysByText?query=" + (query==null? "" : System.Uri.EscapeDataString(query))+"&species=" + (species==null? "" : System.Uri.EscapeDataString(species))+"&format=" + format;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -142,7 +135,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -156,8 +148,7 @@ namespace MyNS
 		public async Task FindPathwaysByXrefGetByIdsAndCodesAndFormatAsync(string[] ids, string[] codes, CreatePathwayPostByGpmlAndAuthAndUsernameAndFormatFormat format, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "findPathwaysByXref?"+string.Join("&", ids.Select(z => $"ids={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", codes.Select(z => $"codes={System.Uri.EscapeDataString(z.ToString())}"))+"&format=" + format;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -171,7 +162,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -188,8 +178,7 @@ namespace MyNS
 		public async Task GetColoredPathwayGetByPwIdAndRevisionAndGraphIdAndColorAndFileTypeAndFormatAsync(string pwId, string revision, string[] graphId, string[] color, string fileType, CreatePathwayPostByGpmlAndAuthAndUsernameAndFormatFormat format, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "getColoredPathway?pwId=" + (pwId==null? "" : System.Uri.EscapeDataString(pwId))+"&revision=" + (revision==null? "" : System.Uri.EscapeDataString(revision))+"&"+string.Join("&", graphId.Select(z => $"graphId={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", color.Select(z => $"color={System.Uri.EscapeDataString(z.ToString())}"))+"&fileType=" + (fileType==null? "" : System.Uri.EscapeDataString(fileType))+"&format=" + format;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -203,7 +192,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -217,8 +205,7 @@ namespace MyNS
 		public async Task GetCurationTagHistoryGetByPwIdAndTimestampAndFormatAsync(string pwId, string timestamp, CreatePathwayPostByGpmlAndAuthAndUsernameAndFormatFormat format, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "getCurationTagHistory?pwId=" + (pwId==null? "" : System.Uri.EscapeDataString(pwId))+"&timestamp=" + (timestamp==null? "" : System.Uri.EscapeDataString(timestamp))+"&format=" + format;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -232,7 +219,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -245,8 +231,7 @@ namespace MyNS
 		public async Task GetCurationTagsGetByPwIdAndFormatAsync(string pwId, CreatePathwayPostByGpmlAndAuthAndUsernameAndFormatFormat format, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "getCurationTags?pwId=" + (pwId==null? "" : System.Uri.EscapeDataString(pwId))+"&format=" + format;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -260,7 +245,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -273,8 +257,7 @@ namespace MyNS
 		public async Task GetCurationTagsByNameGetByTagNameAndFormatAsync(string tagName, CreatePathwayPostByGpmlAndAuthAndUsernameAndFormatFormat format, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "getCurationTagsByName?tagName=" + (tagName==null? "" : System.Uri.EscapeDataString(tagName))+"&format=" + format;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -288,7 +271,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -301,8 +283,7 @@ namespace MyNS
 		public async Task GetOntologyTermsByPathwayGetByPwIdAndFormatAsync(string pwId, CreatePathwayPostByGpmlAndAuthAndUsernameAndFormatFormat format, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "getOntologyTermsByPathway?pwId=" + (pwId==null? "" : System.Uri.EscapeDataString(pwId))+"&format=" + format;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -316,7 +297,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -330,8 +310,7 @@ namespace MyNS
 		public async Task GetPathwayGetByPwIdAndRevisionAndFormatAsync(string pwId, int revision, CreatePathwayPostByGpmlAndAuthAndUsernameAndFormatFormat format, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "getPathway?pwId=" + (pwId==null? "" : System.Uri.EscapeDataString(pwId))+"&revision="+revision+"&format=" + format;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -345,7 +324,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -360,8 +338,7 @@ namespace MyNS
 		public async Task GetPathwayAsGetByFileTypeAndPwIdAndRevisionAndFormatAsync(string fileType, string pwId, int revision, CreatePathwayPostByGpmlAndAuthAndUsernameAndFormatFormat format, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "getPathwayAs?fileType=" + (fileType==null? "" : System.Uri.EscapeDataString(fileType))+"&pwId=" + (pwId==null? "" : System.Uri.EscapeDataString(pwId))+"&revision="+revision+"&format=" + format;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -375,7 +352,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -389,8 +365,7 @@ namespace MyNS
 		public async Task GetPathwayHistoryGetByPwIdAndTimestampAndFormatAsync(string pwId, string timestamp, CreatePathwayPostByGpmlAndAuthAndUsernameAndFormatFormat format, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "getPathwayHistory?pwId=" + (pwId==null? "" : System.Uri.EscapeDataString(pwId))+"&timestamp=" + (timestamp==null? "" : System.Uri.EscapeDataString(timestamp))+"&format=" + format;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -404,7 +379,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -417,8 +391,7 @@ namespace MyNS
 		public async Task GetPathwayInfoGetByPwIdAndFormatAsync(string pwId, CreatePathwayPostByGpmlAndAuthAndUsernameAndFormatFormat format, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "getPathwayInfo?pwId=" + (pwId==null? "" : System.Uri.EscapeDataString(pwId))+"&format=" + format;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -432,7 +405,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -445,8 +417,7 @@ namespace MyNS
 		public async Task GetPathwaysByOntologyTermGetByTermAndFormatAsync(string term, CreatePathwayPostByGpmlAndAuthAndUsernameAndFormatFormat format, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "getPathwaysByOntologyTerm?term=" + (term==null? "" : System.Uri.EscapeDataString(term))+"&format=" + format;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -460,7 +431,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -473,8 +443,7 @@ namespace MyNS
 		public async Task GetPathwaysByParentOntologyTermGetByTermAndFormatAsync(string term, CreatePathwayPostByGpmlAndAuthAndUsernameAndFormatFormat format, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "getPathwaysByParentOntologyTerm?term=" + (term==null? "" : System.Uri.EscapeDataString(term))+"&format=" + format;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -488,7 +457,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -501,8 +469,7 @@ namespace MyNS
 		public async Task GetRecentChangesGetByTimestampAndFormatAsync(string timestamp, CreatePathwayPostByGpmlAndAuthAndUsernameAndFormatFormat format, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "getRecentChanges?timestamp=" + (timestamp==null? "" : System.Uri.EscapeDataString(timestamp))+"&format=" + format;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -516,7 +483,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -529,8 +495,7 @@ namespace MyNS
 		public async Task GetUserByOrcidGetByOrcidAndFormatAsync(string orcid, CreatePathwayPostByGpmlAndAuthAndUsernameAndFormatFormat format, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "getUserByOrcid?orcid=" + (orcid==null? "" : System.Uri.EscapeDataString(orcid))+"&format=" + format;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -544,7 +509,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -558,8 +522,7 @@ namespace MyNS
 		public async Task GetXrefListGetByPwIdAndCodeAndFormatAsync(string pwId, string code, CreatePathwayPostByGpmlAndAuthAndUsernameAndFormatFormat format, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "getXrefList?pwId=" + (pwId==null? "" : System.Uri.EscapeDataString(pwId))+"&code=" + (code==null? "" : System.Uri.EscapeDataString(code))+"&format=" + format;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -573,7 +536,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -585,8 +547,7 @@ namespace MyNS
 		public async Task ListOrganismsGetByFormatAsync(CreatePathwayPostByGpmlAndAuthAndUsernameAndFormatFormat format, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "listOrganisms?format=" + format;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -600,7 +561,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -613,8 +573,7 @@ namespace MyNS
 		public async Task ListPathwaysGetByOrganismAndFormatAsync(string organism, CreatePathwayPostByGpmlAndAuthAndUsernameAndFormatFormat format, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "listPathways?organism=" + (organism==null? "" : System.Uri.EscapeDataString(organism))+"&format=" + format;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -628,7 +587,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -642,8 +600,7 @@ namespace MyNS
 		public async Task LoginGetByNameAndPassAndFormatAsync(string name, string pass, CreatePathwayPostByGpmlAndAuthAndUsernameAndFormatFormat format, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "login?name=" + (name==null? "" : System.Uri.EscapeDataString(name))+"&pass=" + (pass==null? "" : System.Uri.EscapeDataString(pass))+"&format=" + format;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -657,7 +614,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -673,8 +629,7 @@ namespace MyNS
 		public async Task RemoveCurationTagGetByPwIdAndTagNameAndAuthAndUsernameAndFormatAsync(string pwId, string tagName, string auth, string username, CreatePathwayPostByGpmlAndAuthAndUsernameAndFormatFormat format, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "removeCurationTag?pwId=" + (pwId==null? "" : System.Uri.EscapeDataString(pwId))+"&tagName=" + (tagName==null? "" : System.Uri.EscapeDataString(tagName))+"&auth=" + (auth==null? "" : System.Uri.EscapeDataString(auth))+"&username=" + (username==null? "" : System.Uri.EscapeDataString(username))+"&format=" + format;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -688,7 +643,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -704,8 +658,7 @@ namespace MyNS
 		public async Task RemoveOntologyTagGetByPwIdAndTermIdAndAuthAndUserAndFormatAsync(string pwId, string termId, string auth, string user, CreatePathwayPostByGpmlAndAuthAndUsernameAndFormatFormat format, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "removeOntologyTag?pwId=" + (pwId==null? "" : System.Uri.EscapeDataString(pwId))+"&termId=" + (termId==null? "" : System.Uri.EscapeDataString(termId))+"&auth=" + (auth==null? "" : System.Uri.EscapeDataString(auth))+"&user=" + (user==null? "" : System.Uri.EscapeDataString(user))+"&format=" + format;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -719,7 +672,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -737,8 +689,7 @@ namespace MyNS
 		public async Task SaveCurationTagGetByPwIdAndTagNameAndTextAndRevisionAndAuthAndUsernameAndFormatAsync(string pwId, string tagName, string text, int revision, string auth, string username, CreatePathwayPostByGpmlAndAuthAndUsernameAndFormatFormat format, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "saveCurationTag?pwId=" + (pwId==null? "" : System.Uri.EscapeDataString(pwId))+"&tagName=" + (tagName==null? "" : System.Uri.EscapeDataString(tagName))+"&text=" + (text==null? "" : System.Uri.EscapeDataString(text))+"&revision="+revision+"&auth=" + (auth==null? "" : System.Uri.EscapeDataString(auth))+"&username=" + (username==null? "" : System.Uri.EscapeDataString(username))+"&format=" + format;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -752,7 +703,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -769,8 +719,7 @@ namespace MyNS
 		public async Task SaveOntologyTagGetByPwIdAndTermAndTermIdAndAuthAndUserAndFormatAsync(string pwId, string term, string termId, string auth, string user, CreatePathwayPostByGpmlAndAuthAndUsernameAndFormatFormat format, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "saveOntologyTag?pwId=" + (pwId==null? "" : System.Uri.EscapeDataString(pwId))+"&term=" + (term==null? "" : System.Uri.EscapeDataString(term))+"&termId=" + (termId==null? "" : System.Uri.EscapeDataString(termId))+"&auth=" + (auth==null? "" : System.Uri.EscapeDataString(auth))+"&user=" + (user==null? "" : System.Uri.EscapeDataString(user))+"&format=" + format;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -784,7 +733,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -802,8 +750,7 @@ namespace MyNS
 		public async Task UpdatePathwayGetByPwIdAndDescriptionAndGpmlAndRevisionAndAuthAndUsernameAndFormatAsync(string pwId, string description, string gpml, int revision, string auth, string username, CreatePathwayPostByGpmlAndAuthAndUsernameAndFormatFormat format, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "updatePathway?pwId=" + (pwId==null? "" : System.Uri.EscapeDataString(pwId))+"&description=" + (description==null? "" : System.Uri.EscapeDataString(description))+"&gpml=" + (gpml==null? "" : System.Uri.EscapeDataString(gpml))+"&revision="+revision+"&auth=" + (auth==null? "" : System.Uri.EscapeDataString(auth))+"&username=" + (username==null? "" : System.Uri.EscapeDataString(username))+"&format=" + format;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -817,7 +764,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

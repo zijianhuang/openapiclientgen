@@ -193,22 +193,19 @@ namespace MyNS
 		public async Task<Session> LogInAsync(string[] fields, string[] include, string[] exclude, string languageAsPerTerritory, LoginRequest requestBody)
 		{
 			var requestUri = "tickets?"+string.Join("&", fields.Select(z => $"fields={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", include.Select(z => $"include={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", exclude.Select(z => $"exclude={System.Uri.EscapeDataString(z.ToString())}"))+"&languageAsPerTerritory=" + (languageAsPerTerritory==null? "" : System.Uri.EscapeDataString(languageAsPerTerritory));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Session>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Session>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -223,8 +220,7 @@ namespace MyNS
 		public async Task ValidateSessionAsync(string tgt, string languageAsPerTerritory)
 		{
 			var requestUri = "tickets/"+ (tgt==null? "" : System.Uri.EscapeDataString(tgt))+"&languageAsPerTerritory=" + (languageAsPerTerritory==null? "" : System.Uri.EscapeDataString(languageAsPerTerritory));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -233,7 +229,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -248,19 +243,17 @@ namespace MyNS
 		public async Task<Logoutresponse> LogOutAsync(string tgt, string languageAsPerTerritory)
 		{
 			var requestUri = "tickets/"+ (tgt==null? "" : System.Uri.EscapeDataString(tgt))+"&languageAsPerTerritory=" + (languageAsPerTerritory==null? "" : System.Uri.EscapeDataString(languageAsPerTerritory));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Logoutresponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Logoutresponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -279,19 +272,17 @@ namespace MyNS
 		public async Task<ServiceTicket> GetServiceTicketAsync(string tgt, string languageAsPerTerritory, string target, string[] fields, string[] include, string[] exclude)
 		{
 			var requestUri = "tickets/"+ (tgt==null? "" : System.Uri.EscapeDataString(tgt))+"/serviceTicket&languageAsPerTerritory=" + (languageAsPerTerritory==null? "" : System.Uri.EscapeDataString(languageAsPerTerritory))+"&target=" + (target==null? "" : System.Uri.EscapeDataString(target))+"&"+string.Join("&", fields.Select(z => $"fields={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", include.Select(z => $"include={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", exclude.Select(z => $"exclude={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ServiceTicket>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ServiceTicket>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

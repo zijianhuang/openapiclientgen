@@ -1584,8 +1584,7 @@ namespace MyNS
 		public async Task GetFlightOffersAsync(string originLocationCode, string destinationLocationCode, System.DateOnly departureDate, System.DateOnly returnDate, int adults, int children, int infants, Co2EmissionCabin travelClass, string includedAirlineCodes, string excludedAirlineCodes, bool nonStop, string currencyCode, int maxPrice, int max, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "shopping/flight-offers?originLocationCode=" + (originLocationCode==null? "" : System.Uri.EscapeDataString(originLocationCode))+"&destinationLocationCode=" + (destinationLocationCode==null? "" : System.Uri.EscapeDataString(destinationLocationCode))+"&departureDate="+departureDate+"&returnDate="+returnDate+"&adults="+adults+"&children="+children+"&infants="+infants+"&travelClass=" + travelClass+"&includedAirlineCodes=" + (includedAirlineCodes==null? "" : System.Uri.EscapeDataString(includedAirlineCodes))+"&excludedAirlineCodes=" + (excludedAirlineCodes==null? "" : System.Uri.EscapeDataString(excludedAirlineCodes))+"&nonStop="+nonStop+"&currencyCode=" + (currencyCode==null? "" : System.Uri.EscapeDataString(currencyCode))+"&maxPrice="+maxPrice+"&max="+max;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1599,7 +1598,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

@@ -44,8 +44,7 @@ namespace MyNS
 		public async Task BarcodeDecodeTypesGetAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "barcode/decode/types";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -59,7 +58,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -76,8 +74,7 @@ namespace MyNS
 		public async Task BarcodeEncodeGetByNumberAndBarcodeformatAndOutputformatAndWidthfactorAndTotalheightAsync(string number, string barcodeformat, string outputformat, string widthfactor, string totalheight, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "barcode/encode?number=" + (number==null? "" : System.Uri.EscapeDataString(number))+"&barcodeformat=" + (barcodeformat==null? "" : System.Uri.EscapeDataString(barcodeformat))+"&outputformat=" + (outputformat==null? "" : System.Uri.EscapeDataString(outputformat))+"&widthfactor=" + (widthfactor==null? "" : System.Uri.EscapeDataString(widthfactor))+"&totalheight=" + (totalheight==null? "" : System.Uri.EscapeDataString(totalheight));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -91,7 +88,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -103,8 +99,7 @@ namespace MyNS
 		public async Task BarcodeEncodeTypesGetAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "barcode/encode/types";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -118,7 +113,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

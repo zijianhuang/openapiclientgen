@@ -4854,8 +4854,7 @@ namespace MyNS
 		public async Task GET_AddTagsToResourceAsync(string ResourceName, string[] Tags, GET_AddTagsToResourceAction Action, GET_AddTagsToResourceVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=AddTagsToResource?ResourceName=" + (ResourceName==null? "" : System.Uri.EscapeDataString(ResourceName))+"&"+string.Join("&", Tags.Select(z => $"Tags={System.Uri.EscapeDataString(z.ToString())}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4869,7 +4868,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4884,8 +4882,7 @@ namespace MyNS
 		public async Task GET_AuthorizeCacheSecurityGroupIngressAsync(string CacheSecurityGroupName, string EC2SecurityGroupName, string EC2SecurityGroupOwnerId, GET_AuthorizeCacheSecurityGroupIngressAction Action, GET_AuthorizeCacheSecurityGroupIngressVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=AuthorizeCacheSecurityGroupIngress?CacheSecurityGroupName=" + (CacheSecurityGroupName==null? "" : System.Uri.EscapeDataString(CacheSecurityGroupName))+"&EC2SecurityGroupName=" + (EC2SecurityGroupName==null? "" : System.Uri.EscapeDataString(EC2SecurityGroupName))+"&EC2SecurityGroupOwnerId=" + (EC2SecurityGroupOwnerId==null? "" : System.Uri.EscapeDataString(EC2SecurityGroupOwnerId))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4899,7 +4896,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4918,8 +4914,7 @@ namespace MyNS
 		public async Task GET_BatchApplyUpdateActionAsync(string[] ReplicationGroupIds, string[] CacheClusterIds, string ServiceUpdateName, GET_BatchApplyUpdateActionAction Action, GET_BatchApplyUpdateActionVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=BatchApplyUpdateAction?"+string.Join("&", ReplicationGroupIds.Select(z => $"ReplicationGroupIds={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", CacheClusterIds.Select(z => $"CacheClusterIds={System.Uri.EscapeDataString(z.ToString())}"))+"&ServiceUpdateName=" + (ServiceUpdateName==null? "" : System.Uri.EscapeDataString(ServiceUpdateName))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4933,7 +4928,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4952,8 +4946,7 @@ namespace MyNS
 		public async Task GET_BatchStopUpdateActionAsync(string[] ReplicationGroupIds, string[] CacheClusterIds, string ServiceUpdateName, GET_BatchStopUpdateActionAction Action, GET_BatchStopUpdateActionVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=BatchStopUpdateAction?"+string.Join("&", ReplicationGroupIds.Select(z => $"ReplicationGroupIds={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", CacheClusterIds.Select(z => $"CacheClusterIds={System.Uri.EscapeDataString(z.ToString())}"))+"&ServiceUpdateName=" + (ServiceUpdateName==null? "" : System.Uri.EscapeDataString(ServiceUpdateName))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4967,7 +4960,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4981,8 +4973,7 @@ namespace MyNS
 		public async Task GET_CompleteMigrationAsync(string ReplicationGroupId, bool Force, GET_CompleteMigrationAction Action, GET_CompleteMigrationVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=CompleteMigration?ReplicationGroupId=" + (ReplicationGroupId==null? "" : System.Uri.EscapeDataString(ReplicationGroupId))+"&Force="+Force+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4996,7 +4987,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5013,8 +5003,7 @@ namespace MyNS
 		public async Task GET_CopySnapshotAsync(string SourceSnapshotName, string TargetSnapshotName, string TargetBucket, string KmsKeyId, string[] Tags, GET_CopySnapshotAction Action, GET_CopySnapshotVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=CopySnapshot?SourceSnapshotName=" + (SourceSnapshotName==null? "" : System.Uri.EscapeDataString(SourceSnapshotName))+"&TargetSnapshotName=" + (TargetSnapshotName==null? "" : System.Uri.EscapeDataString(TargetSnapshotName))+"&TargetBucket=" + (TargetBucket==null? "" : System.Uri.EscapeDataString(TargetBucket))+"&KmsKeyId=" + (KmsKeyId==null? "" : System.Uri.EscapeDataString(KmsKeyId))+"&"+string.Join("&", Tags.Select(z => $"Tags={System.Uri.EscapeDataString(z.ToString())}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5028,7 +5017,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5103,8 +5091,7 @@ namespace MyNS
 					Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=CreateCacheCluster?CacheClusterId=" + (CacheClusterId==null? "" : System.Uri.EscapeDataString(CacheClusterId))+"&ReplicationGroupId=" + (ReplicationGroupId==null? "" : System.Uri.EscapeDataString(ReplicationGroupId))+"&AZMode=" + AZMode+"&PreferredAvailabilityZone=" + (PreferredAvailabilityZone==null? "" : System.Uri.EscapeDataString(PreferredAvailabilityZone))+"&"+string.Join("&", PreferredAvailabilityZones.Select(z => $"PreferredAvailabilityZones={System.Uri.EscapeDataString(z.ToString())}"))+"&NumCacheNodes="+NumCacheNodes+"&CacheNodeType=" + (CacheNodeType==null? "" : System.Uri.EscapeDataString(CacheNodeType))+"&Engine=" + (Engine==null? "" : System.Uri.EscapeDataString(Engine))+"&EngineVersion=" + (EngineVersion==null? "" : System.Uri.EscapeDataString(EngineVersion))+"&CacheParameterGroupName=" + (CacheParameterGroupName==null? "" : System.Uri.EscapeDataString(CacheParameterGroupName))+"&CacheSubnetGroupName=" + (CacheSubnetGroupName==null? "" : System.Uri.EscapeDataString(CacheSubnetGroupName))+"&"+string.Join("&", CacheSecurityGroupNames.Select(z => $"CacheSecurityGroupNames={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", SecurityGroupIds.Select(z => $"SecurityGroupIds={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", Tags.Select(z => $"Tags={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", SnapshotArns.Select(z => $"SnapshotArns={System.Uri.EscapeDataString(z.ToString())}"))+"&SnapshotName=" + (SnapshotName==null? "" : System.Uri.EscapeDataString(SnapshotName))+"&PreferredMaintenanceWindow=" + (PreferredMaintenanceWindow==null? "" : System.Uri.EscapeDataString(PreferredMaintenanceWindow))+"&Port="+Port+"&NotificationTopicArn=" + (NotificationTopicArn==null? "" : System.Uri.EscapeDataString(NotificationTopicArn))+"&AutoMinorVersionUpgrade="+AutoMinorVersionUpgrade+"&SnapshotRetentionLimit="+SnapshotRetentionLimit+"&SnapshotWindow=" + (SnapshotWindow==null? "" : System.Uri.EscapeDataString(SnapshotWindow))+"&AuthToken=" + (AuthToken==null? "" : System.Uri.EscapeDataString(AuthToken))+"&OutpostMode=" + OutpostMode+"&PreferredOutpostArn=" + (PreferredOutpostArn==null? "" : System.Uri.EscapeDataString(PreferredOutpostArn))+"&"+string.Join("&", PreferredOutpostArns.Select(z => $"PreferredOutpostArns={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", LogDeliveryConfigurations.Select(z => $"LogDeliveryConfigurations={System.Uri.EscapeDataString(z.ToString())}"))+"&TransitEncryptionEnabled="+TransitEncryptionEnabled+"&NetworkType=" + NetworkType+"&IpDiscovery=" + IpDiscovery+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5118,7 +5105,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5134,8 +5120,7 @@ namespace MyNS
 		public async Task GET_CreateCacheParameterGroupAsync(string CacheParameterGroupName, string CacheParameterGroupFamily, string Description, string[] Tags, GET_CreateCacheParameterGroupAction Action, GET_CreateCacheParameterGroupVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=CreateCacheParameterGroup?CacheParameterGroupName=" + (CacheParameterGroupName==null? "" : System.Uri.EscapeDataString(CacheParameterGroupName))+"&CacheParameterGroupFamily=" + (CacheParameterGroupFamily==null? "" : System.Uri.EscapeDataString(CacheParameterGroupFamily))+"&Description=" + (Description==null? "" : System.Uri.EscapeDataString(Description))+"&"+string.Join("&", Tags.Select(z => $"Tags={System.Uri.EscapeDataString(z.ToString())}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5149,7 +5134,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5164,8 +5148,7 @@ namespace MyNS
 		public async Task GET_CreateCacheSecurityGroupAsync(string CacheSecurityGroupName, string Description, string[] Tags, GET_CreateCacheSecurityGroupAction Action, GET_CreateCacheSecurityGroupVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=CreateCacheSecurityGroup?CacheSecurityGroupName=" + (CacheSecurityGroupName==null? "" : System.Uri.EscapeDataString(CacheSecurityGroupName))+"&Description=" + (Description==null? "" : System.Uri.EscapeDataString(Description))+"&"+string.Join("&", Tags.Select(z => $"Tags={System.Uri.EscapeDataString(z.ToString())}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5179,7 +5162,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5195,8 +5177,7 @@ namespace MyNS
 		public async Task GET_CreateCacheSubnetGroupAsync(string CacheSubnetGroupName, string CacheSubnetGroupDescription, string[] SubnetIds, string[] Tags, GET_CreateCacheSubnetGroupAction Action, GET_CreateCacheSubnetGroupVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=CreateCacheSubnetGroup?CacheSubnetGroupName=" + (CacheSubnetGroupName==null? "" : System.Uri.EscapeDataString(CacheSubnetGroupName))+"&CacheSubnetGroupDescription=" + (CacheSubnetGroupDescription==null? "" : System.Uri.EscapeDataString(CacheSubnetGroupDescription))+"&"+string.Join("&", SubnetIds.Select(z => $"SubnetIds={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", Tags.Select(z => $"Tags={System.Uri.EscapeDataString(z.ToString())}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5210,7 +5191,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5225,8 +5205,7 @@ namespace MyNS
 		public async Task GET_CreateGlobalReplicationGroupAsync(string GlobalReplicationGroupIdSuffix, string GlobalReplicationGroupDescription, string PrimaryReplicationGroupId, GET_CreateGlobalReplicationGroupAction Action, GET_CreateGlobalReplicationGroupVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=CreateGlobalReplicationGroup?GlobalReplicationGroupIdSuffix=" + (GlobalReplicationGroupIdSuffix==null? "" : System.Uri.EscapeDataString(GlobalReplicationGroupIdSuffix))+"&GlobalReplicationGroupDescription=" + (GlobalReplicationGroupDescription==null? "" : System.Uri.EscapeDataString(GlobalReplicationGroupDescription))+"&PrimaryReplicationGroupId=" + (PrimaryReplicationGroupId==null? "" : System.Uri.EscapeDataString(PrimaryReplicationGroupId))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5240,7 +5219,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5333,8 +5311,7 @@ namespace MyNS
 					Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=CreateReplicationGroup?ReplicationGroupId=" + (ReplicationGroupId==null? "" : System.Uri.EscapeDataString(ReplicationGroupId))+"&ReplicationGroupDescription=" + (ReplicationGroupDescription==null? "" : System.Uri.EscapeDataString(ReplicationGroupDescription))+"&GlobalReplicationGroupId=" + (GlobalReplicationGroupId==null? "" : System.Uri.EscapeDataString(GlobalReplicationGroupId))+"&PrimaryClusterId=" + (PrimaryClusterId==null? "" : System.Uri.EscapeDataString(PrimaryClusterId))+"&AutomaticFailoverEnabled="+AutomaticFailoverEnabled+"&MultiAZEnabled="+MultiAZEnabled+"&NumCacheClusters="+NumCacheClusters+"&"+string.Join("&", PreferredCacheClusterAZs.Select(z => $"PreferredCacheClusterAZs={System.Uri.EscapeDataString(z.ToString())}"))+"&NumNodeGroups="+NumNodeGroups+"&ReplicasPerNodeGroup="+ReplicasPerNodeGroup+"&"+string.Join("&", NodeGroupConfiguration.Select(z => $"NodeGroupConfiguration={System.Uri.EscapeDataString(z.ToString())}"))+"&CacheNodeType=" + (CacheNodeType==null? "" : System.Uri.EscapeDataString(CacheNodeType))+"&Engine=" + (Engine==null? "" : System.Uri.EscapeDataString(Engine))+"&EngineVersion=" + (EngineVersion==null? "" : System.Uri.EscapeDataString(EngineVersion))+"&CacheParameterGroupName=" + (CacheParameterGroupName==null? "" : System.Uri.EscapeDataString(CacheParameterGroupName))+"&CacheSubnetGroupName=" + (CacheSubnetGroupName==null? "" : System.Uri.EscapeDataString(CacheSubnetGroupName))+"&"+string.Join("&", CacheSecurityGroupNames.Select(z => $"CacheSecurityGroupNames={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", SecurityGroupIds.Select(z => $"SecurityGroupIds={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", Tags.Select(z => $"Tags={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", SnapshotArns.Select(z => $"SnapshotArns={System.Uri.EscapeDataString(z.ToString())}"))+"&SnapshotName=" + (SnapshotName==null? "" : System.Uri.EscapeDataString(SnapshotName))+"&PreferredMaintenanceWindow=" + (PreferredMaintenanceWindow==null? "" : System.Uri.EscapeDataString(PreferredMaintenanceWindow))+"&Port="+Port+"&NotificationTopicArn=" + (NotificationTopicArn==null? "" : System.Uri.EscapeDataString(NotificationTopicArn))+"&AutoMinorVersionUpgrade="+AutoMinorVersionUpgrade+"&SnapshotRetentionLimit="+SnapshotRetentionLimit+"&SnapshotWindow=" + (SnapshotWindow==null? "" : System.Uri.EscapeDataString(SnapshotWindow))+"&AuthToken=" + (AuthToken==null? "" : System.Uri.EscapeDataString(AuthToken))+"&TransitEncryptionEnabled="+TransitEncryptionEnabled+"&AtRestEncryptionEnabled="+AtRestEncryptionEnabled+"&KmsKeyId=" + (KmsKeyId==null? "" : System.Uri.EscapeDataString(KmsKeyId))+"&"+string.Join("&", UserGroupIds.Select(z => $"UserGroupIds={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", LogDeliveryConfigurations.Select(z => $"LogDeliveryConfigurations={System.Uri.EscapeDataString(z.ToString())}"))+"&DataTieringEnabled="+DataTieringEnabled+"&NetworkType=" + NetworkType+"&IpDiscovery=" + IpDiscovery+"&TransitEncryptionMode=" + TransitEncryptionMode+"&ClusterMode=" + ClusterMode+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5348,7 +5325,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5365,8 +5341,7 @@ namespace MyNS
 		public async Task GET_CreateSnapshotAsync(string ReplicationGroupId, string CacheClusterId, string SnapshotName, string KmsKeyId, string[] Tags, GET_CreateSnapshotAction Action, GET_CreateSnapshotVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=CreateSnapshot?ReplicationGroupId=" + (ReplicationGroupId==null? "" : System.Uri.EscapeDataString(ReplicationGroupId))+"&CacheClusterId=" + (CacheClusterId==null? "" : System.Uri.EscapeDataString(CacheClusterId))+"&SnapshotName=" + (SnapshotName==null? "" : System.Uri.EscapeDataString(SnapshotName))+"&KmsKeyId=" + (KmsKeyId==null? "" : System.Uri.EscapeDataString(KmsKeyId))+"&"+string.Join("&", Tags.Select(z => $"Tags={System.Uri.EscapeDataString(z.ToString())}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5380,7 +5355,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5406,8 +5380,7 @@ namespace MyNS
 		public async Task GET_CreateUserAsync(string UserId, string UserName, string Engine, string[] Passwords, string AccessString, bool NoPasswordRequired, string[] Tags, GET_CreateUserAuthenticationMode AuthenticationMode, GET_CreateUserAction Action, GET_CreateUserVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=CreateUser?UserId=" + (UserId==null? "" : System.Uri.EscapeDataString(UserId))+"&UserName=" + (UserName==null? "" : System.Uri.EscapeDataString(UserName))+"&Engine=" + (Engine==null? "" : System.Uri.EscapeDataString(Engine))+"&"+string.Join("&", Passwords.Select(z => $"Passwords={System.Uri.EscapeDataString(z.ToString())}"))+"&AccessString=" + (AccessString==null? "" : System.Uri.EscapeDataString(AccessString))+"&NoPasswordRequired="+NoPasswordRequired+"&"+string.Join("&", Tags.Select(z => $"Tags={System.Uri.EscapeDataString(z.ToString())}"))+"&AuthenticationMode=" + AuthenticationMode+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5421,7 +5394,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5439,8 +5411,7 @@ namespace MyNS
 		public async Task GET_CreateUserGroupAsync(string UserGroupId, string Engine, string[] UserIds, string[] Tags, GET_CreateUserGroupAction Action, GET_CreateUserGroupVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=CreateUserGroup?UserGroupId=" + (UserGroupId==null? "" : System.Uri.EscapeDataString(UserGroupId))+"&Engine=" + (Engine==null? "" : System.Uri.EscapeDataString(Engine))+"&"+string.Join("&", UserIds.Select(z => $"UserIds={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", Tags.Select(z => $"Tags={System.Uri.EscapeDataString(z.ToString())}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5454,7 +5425,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5471,8 +5441,7 @@ namespace MyNS
 		public async Task GET_DecreaseNodeGroupsInGlobalReplicationGroupAsync(string GlobalReplicationGroupId, int NodeGroupCount, string[] GlobalNodeGroupsToRemove, string[] GlobalNodeGroupsToRetain, bool ApplyImmediately, GET_DecreaseNodeGroupsInGlobalReplicationGroupAction Action, GET_DecreaseNodeGroupsInGlobalReplicationGroupVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DecreaseNodeGroupsInGlobalReplicationGroup?GlobalReplicationGroupId=" + (GlobalReplicationGroupId==null? "" : System.Uri.EscapeDataString(GlobalReplicationGroupId))+"&NodeGroupCount="+NodeGroupCount+"&"+string.Join("&", GlobalNodeGroupsToRemove.Select(z => $"GlobalNodeGroupsToRemove={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", GlobalNodeGroupsToRetain.Select(z => $"GlobalNodeGroupsToRetain={System.Uri.EscapeDataString(z.ToString())}"))+"&ApplyImmediately="+ApplyImmediately+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5486,7 +5455,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5503,8 +5471,7 @@ namespace MyNS
 		public async Task GET_DecreaseReplicaCountAsync(string ReplicationGroupId, int NewReplicaCount, string[] ReplicaConfiguration, string[] ReplicasToRemove, bool ApplyImmediately, GET_DecreaseReplicaCountAction Action, GET_DecreaseReplicaCountVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DecreaseReplicaCount?ReplicationGroupId=" + (ReplicationGroupId==null? "" : System.Uri.EscapeDataString(ReplicationGroupId))+"&NewReplicaCount="+NewReplicaCount+"&"+string.Join("&", ReplicaConfiguration.Select(z => $"ReplicaConfiguration={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", ReplicasToRemove.Select(z => $"ReplicasToRemove={System.Uri.EscapeDataString(z.ToString())}"))+"&ApplyImmediately="+ApplyImmediately+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5518,7 +5485,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5532,8 +5498,7 @@ namespace MyNS
 		public async Task GET_DeleteCacheClusterAsync(string CacheClusterId, string FinalSnapshotIdentifier, GET_DeleteCacheClusterAction Action, GET_DeleteCacheClusterVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DeleteCacheCluster?CacheClusterId=" + (CacheClusterId==null? "" : System.Uri.EscapeDataString(CacheClusterId))+"&FinalSnapshotIdentifier=" + (FinalSnapshotIdentifier==null? "" : System.Uri.EscapeDataString(FinalSnapshotIdentifier))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5547,7 +5512,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5560,8 +5524,7 @@ namespace MyNS
 		public async Task GET_DeleteCacheParameterGroupAsync(string CacheParameterGroupName, GET_DeleteCacheParameterGroupAction Action, GET_DeleteCacheParameterGroupVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DeleteCacheParameterGroup?CacheParameterGroupName=" + (CacheParameterGroupName==null? "" : System.Uri.EscapeDataString(CacheParameterGroupName))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5575,7 +5538,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5588,8 +5550,7 @@ namespace MyNS
 		public async Task GET_DeleteCacheSecurityGroupAsync(string CacheSecurityGroupName, GET_DeleteCacheSecurityGroupAction Action, GET_DeleteCacheSecurityGroupVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DeleteCacheSecurityGroup?CacheSecurityGroupName=" + (CacheSecurityGroupName==null? "" : System.Uri.EscapeDataString(CacheSecurityGroupName))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5603,7 +5564,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5616,8 +5576,7 @@ namespace MyNS
 		public async Task GET_DeleteCacheSubnetGroupAsync(string CacheSubnetGroupName, GET_DeleteCacheSubnetGroupAction Action, GET_DeleteCacheSubnetGroupVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DeleteCacheSubnetGroup?CacheSubnetGroupName=" + (CacheSubnetGroupName==null? "" : System.Uri.EscapeDataString(CacheSubnetGroupName))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5631,7 +5590,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5645,8 +5603,7 @@ namespace MyNS
 		public async Task GET_DeleteGlobalReplicationGroupAsync(string GlobalReplicationGroupId, bool RetainPrimaryReplicationGroup, GET_DeleteGlobalReplicationGroupAction Action, GET_DeleteGlobalReplicationGroupVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DeleteGlobalReplicationGroup?GlobalReplicationGroupId=" + (GlobalReplicationGroupId==null? "" : System.Uri.EscapeDataString(GlobalReplicationGroupId))+"&RetainPrimaryReplicationGroup="+RetainPrimaryReplicationGroup+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5660,7 +5617,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5675,8 +5631,7 @@ namespace MyNS
 		public async Task GET_DeleteReplicationGroupAsync(string ReplicationGroupId, bool RetainPrimaryCluster, string FinalSnapshotIdentifier, GET_DeleteReplicationGroupAction Action, GET_DeleteReplicationGroupVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DeleteReplicationGroup?ReplicationGroupId=" + (ReplicationGroupId==null? "" : System.Uri.EscapeDataString(ReplicationGroupId))+"&RetainPrimaryCluster="+RetainPrimaryCluster+"&FinalSnapshotIdentifier=" + (FinalSnapshotIdentifier==null? "" : System.Uri.EscapeDataString(FinalSnapshotIdentifier))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5690,7 +5645,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5703,8 +5657,7 @@ namespace MyNS
 		public async Task GET_DeleteSnapshotAsync(string SnapshotName, GET_DeleteSnapshotAction Action, GET_DeleteSnapshotVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DeleteSnapshot?SnapshotName=" + (SnapshotName==null? "" : System.Uri.EscapeDataString(SnapshotName))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5718,7 +5671,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5733,8 +5685,7 @@ namespace MyNS
 		public async Task GET_DeleteUserAsync(string UserId, GET_DeleteUserAction Action, GET_DeleteUserVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DeleteUser?UserId=" + (UserId==null? "" : System.Uri.EscapeDataString(UserId))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5748,7 +5699,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5761,8 +5711,7 @@ namespace MyNS
 		public async Task GET_DeleteUserGroupAsync(string UserGroupId, GET_DeleteUserGroupAction Action, GET_DeleteUserGroupVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DeleteUserGroup?UserGroupId=" + (UserGroupId==null? "" : System.Uri.EscapeDataString(UserGroupId))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5776,7 +5725,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5793,8 +5741,7 @@ namespace MyNS
 		public async Task GET_DescribeCacheClustersAsync(string CacheClusterId, int MaxRecords, string Marker, bool ShowCacheNodeInfo, bool ShowCacheClustersNotInReplicationGroups, GET_DescribeCacheClustersAction Action, GET_DescribeCacheClustersVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribeCacheClusters?CacheClusterId=" + (CacheClusterId==null? "" : System.Uri.EscapeDataString(CacheClusterId))+"&MaxRecords="+MaxRecords+"&Marker=" + (Marker==null? "" : System.Uri.EscapeDataString(Marker))+"&ShowCacheNodeInfo="+ShowCacheNodeInfo+"&ShowCacheClustersNotInReplicationGroups="+ShowCacheClustersNotInReplicationGroups+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5808,7 +5755,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5826,8 +5772,7 @@ namespace MyNS
 		public async Task GET_DescribeCacheEngineVersionsAsync(string Engine, string EngineVersion, string CacheParameterGroupFamily, int MaxRecords, string Marker, bool DefaultOnly, GET_DescribeCacheEngineVersionsAction Action, GET_DescribeCacheEngineVersionsVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribeCacheEngineVersions?Engine=" + (Engine==null? "" : System.Uri.EscapeDataString(Engine))+"&EngineVersion=" + (EngineVersion==null? "" : System.Uri.EscapeDataString(EngineVersion))+"&CacheParameterGroupFamily=" + (CacheParameterGroupFamily==null? "" : System.Uri.EscapeDataString(CacheParameterGroupFamily))+"&MaxRecords="+MaxRecords+"&Marker=" + (Marker==null? "" : System.Uri.EscapeDataString(Marker))+"&DefaultOnly="+DefaultOnly+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5841,7 +5786,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5856,8 +5800,7 @@ namespace MyNS
 		public async Task GET_DescribeCacheParameterGroupsAsync(string CacheParameterGroupName, int MaxRecords, string Marker, GET_DescribeCacheParameterGroupsAction Action, GET_DescribeCacheParameterGroupsVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribeCacheParameterGroups?CacheParameterGroupName=" + (CacheParameterGroupName==null? "" : System.Uri.EscapeDataString(CacheParameterGroupName))+"&MaxRecords="+MaxRecords+"&Marker=" + (Marker==null? "" : System.Uri.EscapeDataString(Marker))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5871,7 +5814,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5887,8 +5829,7 @@ namespace MyNS
 		public async Task GET_DescribeCacheParametersAsync(string CacheParameterGroupName, string Source, int MaxRecords, string Marker, GET_DescribeCacheParametersAction Action, GET_DescribeCacheParametersVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribeCacheParameters?CacheParameterGroupName=" + (CacheParameterGroupName==null? "" : System.Uri.EscapeDataString(CacheParameterGroupName))+"&Source=" + (Source==null? "" : System.Uri.EscapeDataString(Source))+"&MaxRecords="+MaxRecords+"&Marker=" + (Marker==null? "" : System.Uri.EscapeDataString(Marker))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5902,7 +5843,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5917,8 +5857,7 @@ namespace MyNS
 		public async Task GET_DescribeCacheSecurityGroupsAsync(string CacheSecurityGroupName, int MaxRecords, string Marker, GET_DescribeCacheSecurityGroupsAction Action, GET_DescribeCacheSecurityGroupsVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribeCacheSecurityGroups?CacheSecurityGroupName=" + (CacheSecurityGroupName==null? "" : System.Uri.EscapeDataString(CacheSecurityGroupName))+"&MaxRecords="+MaxRecords+"&Marker=" + (Marker==null? "" : System.Uri.EscapeDataString(Marker))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5932,7 +5871,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5947,8 +5885,7 @@ namespace MyNS
 		public async Task GET_DescribeCacheSubnetGroupsAsync(string CacheSubnetGroupName, int MaxRecords, string Marker, GET_DescribeCacheSubnetGroupsAction Action, GET_DescribeCacheSubnetGroupsVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribeCacheSubnetGroups?CacheSubnetGroupName=" + (CacheSubnetGroupName==null? "" : System.Uri.EscapeDataString(CacheSubnetGroupName))+"&MaxRecords="+MaxRecords+"&Marker=" + (Marker==null? "" : System.Uri.EscapeDataString(Marker))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5962,7 +5899,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5977,8 +5913,7 @@ namespace MyNS
 		public async Task GET_DescribeEngineDefaultParametersAsync(string CacheParameterGroupFamily, int MaxRecords, string Marker, GET_DescribeEngineDefaultParametersAction Action, GET_DescribeEngineDefaultParametersVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribeEngineDefaultParameters?CacheParameterGroupFamily=" + (CacheParameterGroupFamily==null? "" : System.Uri.EscapeDataString(CacheParameterGroupFamily))+"&MaxRecords="+MaxRecords+"&Marker=" + (Marker==null? "" : System.Uri.EscapeDataString(Marker))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5992,7 +5927,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6011,8 +5945,7 @@ namespace MyNS
 		public async Task GET_DescribeEventsAsync(string SourceIdentifier, GET_DescribeEventsSourceType SourceType, System.DateTimeOffset StartTime, System.DateTimeOffset EndTime, int Duration, int MaxRecords, string Marker, GET_DescribeEventsAction Action, GET_DescribeEventsVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribeEvents?SourceIdentifier=" + (SourceIdentifier==null? "" : System.Uri.EscapeDataString(SourceIdentifier))+"&SourceType=" + SourceType+"&StartTime=" + StartTime.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&EndTime=" + EndTime.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&Duration="+Duration+"&MaxRecords="+MaxRecords+"&Marker=" + (Marker==null? "" : System.Uri.EscapeDataString(Marker))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6026,7 +5959,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6042,8 +5974,7 @@ namespace MyNS
 		public async Task GET_DescribeGlobalReplicationGroupsAsync(string GlobalReplicationGroupId, int MaxRecords, string Marker, bool ShowMemberInfo, GET_DescribeGlobalReplicationGroupsAction Action, GET_DescribeGlobalReplicationGroupsVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribeGlobalReplicationGroups?GlobalReplicationGroupId=" + (GlobalReplicationGroupId==null? "" : System.Uri.EscapeDataString(GlobalReplicationGroupId))+"&MaxRecords="+MaxRecords+"&Marker=" + (Marker==null? "" : System.Uri.EscapeDataString(Marker))+"&ShowMemberInfo="+ShowMemberInfo+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6057,7 +5988,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6072,8 +6002,7 @@ namespace MyNS
 		public async Task GET_DescribeReplicationGroupsAsync(string ReplicationGroupId, int MaxRecords, string Marker, GET_DescribeReplicationGroupsAction Action, GET_DescribeReplicationGroupsVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribeReplicationGroups?ReplicationGroupId=" + (ReplicationGroupId==null? "" : System.Uri.EscapeDataString(ReplicationGroupId))+"&MaxRecords="+MaxRecords+"&Marker=" + (Marker==null? "" : System.Uri.EscapeDataString(Marker))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6087,7 +6016,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6107,8 +6035,7 @@ namespace MyNS
 		public async Task GET_DescribeReservedCacheNodesAsync(string ReservedCacheNodeId, string ReservedCacheNodesOfferingId, string CacheNodeType, string Duration, string ProductDescription, string OfferingType, int MaxRecords, string Marker, GET_DescribeReservedCacheNodesAction Action, GET_DescribeReservedCacheNodesVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribeReservedCacheNodes?ReservedCacheNodeId=" + (ReservedCacheNodeId==null? "" : System.Uri.EscapeDataString(ReservedCacheNodeId))+"&ReservedCacheNodesOfferingId=" + (ReservedCacheNodesOfferingId==null? "" : System.Uri.EscapeDataString(ReservedCacheNodesOfferingId))+"&CacheNodeType=" + (CacheNodeType==null? "" : System.Uri.EscapeDataString(CacheNodeType))+"&Duration=" + (Duration==null? "" : System.Uri.EscapeDataString(Duration))+"&ProductDescription=" + (ProductDescription==null? "" : System.Uri.EscapeDataString(ProductDescription))+"&OfferingType=" + (OfferingType==null? "" : System.Uri.EscapeDataString(OfferingType))+"&MaxRecords="+MaxRecords+"&Marker=" + (Marker==null? "" : System.Uri.EscapeDataString(Marker))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6122,7 +6049,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6141,8 +6067,7 @@ namespace MyNS
 		public async Task GET_DescribeReservedCacheNodesOfferingsAsync(string ReservedCacheNodesOfferingId, string CacheNodeType, string Duration, string ProductDescription, string OfferingType, int MaxRecords, string Marker, GET_DescribeReservedCacheNodesOfferingsAction Action, GET_DescribeReservedCacheNodesOfferingsVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribeReservedCacheNodesOfferings?ReservedCacheNodesOfferingId=" + (ReservedCacheNodesOfferingId==null? "" : System.Uri.EscapeDataString(ReservedCacheNodesOfferingId))+"&CacheNodeType=" + (CacheNodeType==null? "" : System.Uri.EscapeDataString(CacheNodeType))+"&Duration=" + (Duration==null? "" : System.Uri.EscapeDataString(Duration))+"&ProductDescription=" + (ProductDescription==null? "" : System.Uri.EscapeDataString(ProductDescription))+"&OfferingType=" + (OfferingType==null? "" : System.Uri.EscapeDataString(OfferingType))+"&MaxRecords="+MaxRecords+"&Marker=" + (Marker==null? "" : System.Uri.EscapeDataString(Marker))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6156,7 +6081,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6174,8 +6098,7 @@ namespace MyNS
 		public async Task GET_DescribeServiceUpdatesAsync(string ServiceUpdateName, ServiceUpdateStatus[] ServiceUpdateStatus, int MaxRecords, string Marker, GET_DescribeServiceUpdatesAction Action, GET_DescribeServiceUpdatesVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribeServiceUpdates?ServiceUpdateName=" + (ServiceUpdateName==null? "" : System.Uri.EscapeDataString(ServiceUpdateName))+"&"+string.Join("&", ServiceUpdateStatus.Select(z => $"ServiceUpdateStatus={z}"))+"&MaxRecords="+MaxRecords+"&Marker=" + (Marker==null? "" : System.Uri.EscapeDataString(Marker))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6189,7 +6112,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6208,8 +6130,7 @@ namespace MyNS
 		public async Task GET_DescribeSnapshotsAsync(string ReplicationGroupId, string CacheClusterId, string SnapshotName, string SnapshotSource, string Marker, int MaxRecords, bool ShowNodeGroupConfig, GET_DescribeSnapshotsAction Action, GET_DescribeSnapshotsVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribeSnapshots?ReplicationGroupId=" + (ReplicationGroupId==null? "" : System.Uri.EscapeDataString(ReplicationGroupId))+"&CacheClusterId=" + (CacheClusterId==null? "" : System.Uri.EscapeDataString(CacheClusterId))+"&SnapshotName=" + (SnapshotName==null? "" : System.Uri.EscapeDataString(SnapshotName))+"&SnapshotSource=" + (SnapshotSource==null? "" : System.Uri.EscapeDataString(SnapshotSource))+"&Marker=" + (Marker==null? "" : System.Uri.EscapeDataString(Marker))+"&MaxRecords="+MaxRecords+"&ShowNodeGroupConfig="+ShowNodeGroupConfig+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6223,7 +6144,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6253,8 +6173,7 @@ namespace MyNS
 		public async Task GET_DescribeUpdateActionsAsync(string ServiceUpdateName, string[] ReplicationGroupIds, string[] CacheClusterIds, string Engine, ServiceUpdateStatus[] ServiceUpdateStatus, GET_DescribeUpdateActionsServiceUpdateTimeRange ServiceUpdateTimeRange, UpdateActionStatus[] UpdateActionStatus, bool ShowNodeLevelUpdateStatus, int MaxRecords, string Marker, GET_DescribeUpdateActionsAction Action, GET_DescribeUpdateActionsVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribeUpdateActions?ServiceUpdateName=" + (ServiceUpdateName==null? "" : System.Uri.EscapeDataString(ServiceUpdateName))+"&"+string.Join("&", ReplicationGroupIds.Select(z => $"ReplicationGroupIds={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", CacheClusterIds.Select(z => $"CacheClusterIds={System.Uri.EscapeDataString(z.ToString())}"))+"&Engine=" + (Engine==null? "" : System.Uri.EscapeDataString(Engine))+"&"+string.Join("&", ServiceUpdateStatus.Select(z => $"ServiceUpdateStatus={z}"))+"&ServiceUpdateTimeRange=" + ServiceUpdateTimeRange+"&"+string.Join("&", UpdateActionStatus.Select(z => $"UpdateActionStatus={z}"))+"&ShowNodeLevelUpdateStatus="+ShowNodeLevelUpdateStatus+"&MaxRecords="+MaxRecords+"&Marker=" + (Marker==null? "" : System.Uri.EscapeDataString(Marker))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6268,7 +6187,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6283,8 +6201,7 @@ namespace MyNS
 		public async Task GET_DescribeUserGroupsAsync(string UserGroupId, int MaxRecords, string Marker, GET_DescribeUserGroupsAction Action, GET_DescribeUserGroupsVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribeUserGroups?UserGroupId=" + (UserGroupId==null? "" : System.Uri.EscapeDataString(UserGroupId))+"&MaxRecords="+MaxRecords+"&Marker=" + (Marker==null? "" : System.Uri.EscapeDataString(Marker))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6298,7 +6215,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6317,8 +6233,7 @@ namespace MyNS
 		public async Task GET_DescribeUsersAsync(string Engine, string UserId, Filter[] Filters, int MaxRecords, string Marker, GET_DescribeUsersAction Action, GET_DescribeUsersVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribeUsers?Engine=" + (Engine==null? "" : System.Uri.EscapeDataString(Engine))+"&UserId=" + (UserId==null? "" : System.Uri.EscapeDataString(UserId))+"&"+string.Join("&", Filters.Select(z => $"Filters={z}"))+"&MaxRecords="+MaxRecords+"&Marker=" + (Marker==null? "" : System.Uri.EscapeDataString(Marker))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6332,7 +6247,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6347,8 +6261,7 @@ namespace MyNS
 		public async Task GET_DisassociateGlobalReplicationGroupAsync(string GlobalReplicationGroupId, string ReplicationGroupId, string ReplicationGroupRegion, GET_DisassociateGlobalReplicationGroupAction Action, GET_DisassociateGlobalReplicationGroupVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DisassociateGlobalReplicationGroup?GlobalReplicationGroupId=" + (GlobalReplicationGroupId==null? "" : System.Uri.EscapeDataString(GlobalReplicationGroupId))+"&ReplicationGroupId=" + (ReplicationGroupId==null? "" : System.Uri.EscapeDataString(ReplicationGroupId))+"&ReplicationGroupRegion=" + (ReplicationGroupRegion==null? "" : System.Uri.EscapeDataString(ReplicationGroupRegion))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6362,7 +6275,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6377,8 +6289,7 @@ namespace MyNS
 		public async Task GET_FailoverGlobalReplicationGroupAsync(string GlobalReplicationGroupId, string PrimaryRegion, string PrimaryReplicationGroupId, GET_FailoverGlobalReplicationGroupAction Action, GET_FailoverGlobalReplicationGroupVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=FailoverGlobalReplicationGroup?GlobalReplicationGroupId=" + (GlobalReplicationGroupId==null? "" : System.Uri.EscapeDataString(GlobalReplicationGroupId))+"&PrimaryRegion=" + (PrimaryRegion==null? "" : System.Uri.EscapeDataString(PrimaryRegion))+"&PrimaryReplicationGroupId=" + (PrimaryReplicationGroupId==null? "" : System.Uri.EscapeDataString(PrimaryReplicationGroupId))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6392,7 +6303,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6408,8 +6318,7 @@ namespace MyNS
 		public async Task GET_IncreaseNodeGroupsInGlobalReplicationGroupAsync(string GlobalReplicationGroupId, int NodeGroupCount, string[] RegionalConfigurations, bool ApplyImmediately, GET_IncreaseNodeGroupsInGlobalReplicationGroupAction Action, GET_IncreaseNodeGroupsInGlobalReplicationGroupVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=IncreaseNodeGroupsInGlobalReplicationGroup?GlobalReplicationGroupId=" + (GlobalReplicationGroupId==null? "" : System.Uri.EscapeDataString(GlobalReplicationGroupId))+"&NodeGroupCount="+NodeGroupCount+"&"+string.Join("&", RegionalConfigurations.Select(z => $"RegionalConfigurations={System.Uri.EscapeDataString(z.ToString())}"))+"&ApplyImmediately="+ApplyImmediately+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6423,7 +6332,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6439,8 +6347,7 @@ namespace MyNS
 		public async Task GET_IncreaseReplicaCountAsync(string ReplicationGroupId, int NewReplicaCount, string[] ReplicaConfiguration, bool ApplyImmediately, GET_IncreaseReplicaCountAction Action, GET_IncreaseReplicaCountVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=IncreaseReplicaCount?ReplicationGroupId=" + (ReplicationGroupId==null? "" : System.Uri.EscapeDataString(ReplicationGroupId))+"&NewReplicaCount="+NewReplicaCount+"&"+string.Join("&", ReplicaConfiguration.Select(z => $"ReplicaConfiguration={System.Uri.EscapeDataString(z.ToString())}"))+"&ApplyImmediately="+ApplyImmediately+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6454,7 +6361,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6468,8 +6374,7 @@ namespace MyNS
 		public async Task GET_ListAllowedNodeTypeModificationsAsync(string CacheClusterId, string ReplicationGroupId, GET_ListAllowedNodeTypeModificationsAction Action, GET_ListAllowedNodeTypeModificationsVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=ListAllowedNodeTypeModifications?CacheClusterId=" + (CacheClusterId==null? "" : System.Uri.EscapeDataString(CacheClusterId))+"&ReplicationGroupId=" + (ReplicationGroupId==null? "" : System.Uri.EscapeDataString(ReplicationGroupId))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6483,7 +6388,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6496,8 +6400,7 @@ namespace MyNS
 		public async Task GET_ListTagsForResourceAsync(string ResourceName, GET_ListTagsForResourceAction Action, GET_ListTagsForResourceVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=ListTagsForResource?ResourceName=" + (ResourceName==null? "" : System.Uri.EscapeDataString(ResourceName))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6511,7 +6414,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6568,8 +6470,7 @@ namespace MyNS
 					Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=ModifyCacheCluster?CacheClusterId=" + (CacheClusterId==null? "" : System.Uri.EscapeDataString(CacheClusterId))+"&NumCacheNodes="+NumCacheNodes+"&"+string.Join("&", CacheNodeIdsToRemove.Select(z => $"CacheNodeIdsToRemove={System.Uri.EscapeDataString(z.ToString())}"))+"&AZMode=" + AZMode+"&"+string.Join("&", NewAvailabilityZones.Select(z => $"NewAvailabilityZones={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", CacheSecurityGroupNames.Select(z => $"CacheSecurityGroupNames={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", SecurityGroupIds.Select(z => $"SecurityGroupIds={System.Uri.EscapeDataString(z.ToString())}"))+"&PreferredMaintenanceWindow=" + (PreferredMaintenanceWindow==null? "" : System.Uri.EscapeDataString(PreferredMaintenanceWindow))+"&NotificationTopicArn=" + (NotificationTopicArn==null? "" : System.Uri.EscapeDataString(NotificationTopicArn))+"&CacheParameterGroupName=" + (CacheParameterGroupName==null? "" : System.Uri.EscapeDataString(CacheParameterGroupName))+"&NotificationTopicStatus=" + (NotificationTopicStatus==null? "" : System.Uri.EscapeDataString(NotificationTopicStatus))+"&ApplyImmediately="+ApplyImmediately+"&EngineVersion=" + (EngineVersion==null? "" : System.Uri.EscapeDataString(EngineVersion))+"&AutoMinorVersionUpgrade="+AutoMinorVersionUpgrade+"&SnapshotRetentionLimit="+SnapshotRetentionLimit+"&SnapshotWindow=" + (SnapshotWindow==null? "" : System.Uri.EscapeDataString(SnapshotWindow))+"&CacheNodeType=" + (CacheNodeType==null? "" : System.Uri.EscapeDataString(CacheNodeType))+"&AuthToken=" + (AuthToken==null? "" : System.Uri.EscapeDataString(AuthToken))+"&AuthTokenUpdateStrategy=" + AuthTokenUpdateStrategy+"&"+string.Join("&", LogDeliveryConfigurations.Select(z => $"LogDeliveryConfigurations={System.Uri.EscapeDataString(z.ToString())}"))+"&IpDiscovery=" + IpDiscovery+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6583,7 +6484,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6597,8 +6497,7 @@ namespace MyNS
 		public async Task GET_ModifyCacheParameterGroupAsync(string CacheParameterGroupName, string[] ParameterNameValues, GET_ModifyCacheParameterGroupAction Action, GET_ModifyCacheParameterGroupVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=ModifyCacheParameterGroup?CacheParameterGroupName=" + (CacheParameterGroupName==null? "" : System.Uri.EscapeDataString(CacheParameterGroupName))+"&"+string.Join("&", ParameterNameValues.Select(z => $"ParameterNameValues={System.Uri.EscapeDataString(z.ToString())}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6612,7 +6511,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6627,8 +6525,7 @@ namespace MyNS
 		public async Task GET_ModifyCacheSubnetGroupAsync(string CacheSubnetGroupName, string CacheSubnetGroupDescription, string[] SubnetIds, GET_ModifyCacheSubnetGroupAction Action, GET_ModifyCacheSubnetGroupVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=ModifyCacheSubnetGroup?CacheSubnetGroupName=" + (CacheSubnetGroupName==null? "" : System.Uri.EscapeDataString(CacheSubnetGroupName))+"&CacheSubnetGroupDescription=" + (CacheSubnetGroupDescription==null? "" : System.Uri.EscapeDataString(CacheSubnetGroupDescription))+"&"+string.Join("&", SubnetIds.Select(z => $"SubnetIds={System.Uri.EscapeDataString(z.ToString())}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6642,7 +6539,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6661,8 +6557,7 @@ namespace MyNS
 		public async Task GET_ModifyGlobalReplicationGroupAsync(string GlobalReplicationGroupId, bool ApplyImmediately, string CacheNodeType, string EngineVersion, string CacheParameterGroupName, string GlobalReplicationGroupDescription, bool AutomaticFailoverEnabled, GET_ModifyGlobalReplicationGroupAction Action, GET_ModifyGlobalReplicationGroupVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=ModifyGlobalReplicationGroup?GlobalReplicationGroupId=" + (GlobalReplicationGroupId==null? "" : System.Uri.EscapeDataString(GlobalReplicationGroupId))+"&ApplyImmediately="+ApplyImmediately+"&CacheNodeType=" + (CacheNodeType==null? "" : System.Uri.EscapeDataString(CacheNodeType))+"&EngineVersion=" + (EngineVersion==null? "" : System.Uri.EscapeDataString(EngineVersion))+"&CacheParameterGroupName=" + (CacheParameterGroupName==null? "" : System.Uri.EscapeDataString(CacheParameterGroupName))+"&GlobalReplicationGroupDescription=" + (GlobalReplicationGroupDescription==null? "" : System.Uri.EscapeDataString(GlobalReplicationGroupDescription))+"&AutomaticFailoverEnabled="+AutomaticFailoverEnabled+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6676,7 +6571,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6749,8 +6643,7 @@ namespace MyNS
 					Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=ModifyReplicationGroup?ReplicationGroupId=" + (ReplicationGroupId==null? "" : System.Uri.EscapeDataString(ReplicationGroupId))+"&ReplicationGroupDescription=" + (ReplicationGroupDescription==null? "" : System.Uri.EscapeDataString(ReplicationGroupDescription))+"&PrimaryClusterId=" + (PrimaryClusterId==null? "" : System.Uri.EscapeDataString(PrimaryClusterId))+"&SnapshottingClusterId=" + (SnapshottingClusterId==null? "" : System.Uri.EscapeDataString(SnapshottingClusterId))+"&AutomaticFailoverEnabled="+AutomaticFailoverEnabled+"&MultiAZEnabled="+MultiAZEnabled+"&NodeGroupId=" + (NodeGroupId==null? "" : System.Uri.EscapeDataString(NodeGroupId))+"&"+string.Join("&", CacheSecurityGroupNames.Select(z => $"CacheSecurityGroupNames={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", SecurityGroupIds.Select(z => $"SecurityGroupIds={System.Uri.EscapeDataString(z.ToString())}"))+"&PreferredMaintenanceWindow=" + (PreferredMaintenanceWindow==null? "" : System.Uri.EscapeDataString(PreferredMaintenanceWindow))+"&NotificationTopicArn=" + (NotificationTopicArn==null? "" : System.Uri.EscapeDataString(NotificationTopicArn))+"&CacheParameterGroupName=" + (CacheParameterGroupName==null? "" : System.Uri.EscapeDataString(CacheParameterGroupName))+"&NotificationTopicStatus=" + (NotificationTopicStatus==null? "" : System.Uri.EscapeDataString(NotificationTopicStatus))+"&ApplyImmediately="+ApplyImmediately+"&EngineVersion=" + (EngineVersion==null? "" : System.Uri.EscapeDataString(EngineVersion))+"&AutoMinorVersionUpgrade="+AutoMinorVersionUpgrade+"&SnapshotRetentionLimit="+SnapshotRetentionLimit+"&SnapshotWindow=" + (SnapshotWindow==null? "" : System.Uri.EscapeDataString(SnapshotWindow))+"&CacheNodeType=" + (CacheNodeType==null? "" : System.Uri.EscapeDataString(CacheNodeType))+"&AuthToken=" + (AuthToken==null? "" : System.Uri.EscapeDataString(AuthToken))+"&AuthTokenUpdateStrategy=" + AuthTokenUpdateStrategy+"&"+string.Join("&", UserGroupIdsToAdd.Select(z => $"UserGroupIdsToAdd={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", UserGroupIdsToRemove.Select(z => $"UserGroupIdsToRemove={System.Uri.EscapeDataString(z.ToString())}"))+"&RemoveUserGroups="+RemoveUserGroups+"&"+string.Join("&", LogDeliveryConfigurations.Select(z => $"LogDeliveryConfigurations={System.Uri.EscapeDataString(z.ToString())}"))+"&IpDiscovery=" + IpDiscovery+"&TransitEncryptionEnabled="+TransitEncryptionEnabled+"&TransitEncryptionMode=" + TransitEncryptionMode+"&ClusterMode=" + ClusterMode+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6764,7 +6657,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6782,8 +6674,7 @@ namespace MyNS
 		public async Task GET_ModifyReplicationGroupShardConfigurationAsync(string ReplicationGroupId, int NodeGroupCount, bool ApplyImmediately, string[] ReshardingConfiguration, string[] NodeGroupsToRemove, string[] NodeGroupsToRetain, GET_ModifyReplicationGroupShardConfigurationAction Action, GET_ModifyReplicationGroupShardConfigurationVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=ModifyReplicationGroupShardConfiguration?ReplicationGroupId=" + (ReplicationGroupId==null? "" : System.Uri.EscapeDataString(ReplicationGroupId))+"&NodeGroupCount="+NodeGroupCount+"&ApplyImmediately="+ApplyImmediately+"&"+string.Join("&", ReshardingConfiguration.Select(z => $"ReshardingConfiguration={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", NodeGroupsToRemove.Select(z => $"NodeGroupsToRemove={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", NodeGroupsToRetain.Select(z => $"NodeGroupsToRetain={System.Uri.EscapeDataString(z.ToString())}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6797,7 +6688,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6819,8 +6709,7 @@ namespace MyNS
 		public async Task GET_ModifyUserAsync(string UserId, string AccessString, string AppendAccessString, string[] Passwords, bool NoPasswordRequired, GET_ModifyUserAuthenticationMode AuthenticationMode, GET_ModifyUserAction Action, GET_ModifyUserVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=ModifyUser?UserId=" + (UserId==null? "" : System.Uri.EscapeDataString(UserId))+"&AccessString=" + (AccessString==null? "" : System.Uri.EscapeDataString(AccessString))+"&AppendAccessString=" + (AppendAccessString==null? "" : System.Uri.EscapeDataString(AppendAccessString))+"&"+string.Join("&", Passwords.Select(z => $"Passwords={System.Uri.EscapeDataString(z.ToString())}"))+"&NoPasswordRequired="+NoPasswordRequired+"&AuthenticationMode=" + AuthenticationMode+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6834,7 +6723,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6853,8 +6741,7 @@ namespace MyNS
 		public async Task GET_ModifyUserGroupAsync(string UserGroupId, string[] UserIdsToAdd, string[] UserIdsToRemove, GET_ModifyUserGroupAction Action, GET_ModifyUserGroupVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=ModifyUserGroup?UserGroupId=" + (UserGroupId==null? "" : System.Uri.EscapeDataString(UserGroupId))+"&"+string.Join("&", UserIdsToAdd.Select(z => $"UserIdsToAdd={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", UserIdsToRemove.Select(z => $"UserIdsToRemove={System.Uri.EscapeDataString(z.ToString())}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6868,7 +6755,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6884,8 +6770,7 @@ namespace MyNS
 		public async Task GET_PurchaseReservedCacheNodesOfferingAsync(string ReservedCacheNodesOfferingId, string ReservedCacheNodeId, int CacheNodeCount, string[] Tags, GET_PurchaseReservedCacheNodesOfferingAction Action, GET_PurchaseReservedCacheNodesOfferingVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=PurchaseReservedCacheNodesOffering?ReservedCacheNodesOfferingId=" + (ReservedCacheNodesOfferingId==null? "" : System.Uri.EscapeDataString(ReservedCacheNodesOfferingId))+"&ReservedCacheNodeId=" + (ReservedCacheNodeId==null? "" : System.Uri.EscapeDataString(ReservedCacheNodeId))+"&CacheNodeCount="+CacheNodeCount+"&"+string.Join("&", Tags.Select(z => $"Tags={System.Uri.EscapeDataString(z.ToString())}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6899,7 +6784,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6913,8 +6797,7 @@ namespace MyNS
 		public async Task GET_RebalanceSlotsInGlobalReplicationGroupAsync(string GlobalReplicationGroupId, bool ApplyImmediately, GET_RebalanceSlotsInGlobalReplicationGroupAction Action, GET_RebalanceSlotsInGlobalReplicationGroupVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=RebalanceSlotsInGlobalReplicationGroup?GlobalReplicationGroupId=" + (GlobalReplicationGroupId==null? "" : System.Uri.EscapeDataString(GlobalReplicationGroupId))+"&ApplyImmediately="+ApplyImmediately+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6928,7 +6811,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6942,8 +6824,7 @@ namespace MyNS
 		public async Task GET_RebootCacheClusterAsync(string CacheClusterId, string[] CacheNodeIdsToReboot, GET_RebootCacheClusterAction Action, GET_RebootCacheClusterVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=RebootCacheCluster?CacheClusterId=" + (CacheClusterId==null? "" : System.Uri.EscapeDataString(CacheClusterId))+"&"+string.Join("&", CacheNodeIdsToReboot.Select(z => $"CacheNodeIdsToReboot={System.Uri.EscapeDataString(z.ToString())}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6957,7 +6838,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6971,8 +6851,7 @@ namespace MyNS
 		public async Task GET_RemoveTagsFromResourceAsync(string ResourceName, string[] TagKeys, GET_RemoveTagsFromResourceAction Action, GET_RemoveTagsFromResourceVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=RemoveTagsFromResource?ResourceName=" + (ResourceName==null? "" : System.Uri.EscapeDataString(ResourceName))+"&"+string.Join("&", TagKeys.Select(z => $"TagKeys={System.Uri.EscapeDataString(z.ToString())}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6986,7 +6865,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -7001,8 +6879,7 @@ namespace MyNS
 		public async Task GET_ResetCacheParameterGroupAsync(string CacheParameterGroupName, bool ResetAllParameters, string[] ParameterNameValues, GET_ResetCacheParameterGroupAction Action, GET_ResetCacheParameterGroupVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=ResetCacheParameterGroup?CacheParameterGroupName=" + (CacheParameterGroupName==null? "" : System.Uri.EscapeDataString(CacheParameterGroupName))+"&ResetAllParameters="+ResetAllParameters+"&"+string.Join("&", ParameterNameValues.Select(z => $"ParameterNameValues={System.Uri.EscapeDataString(z.ToString())}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -7016,7 +6893,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -7031,8 +6907,7 @@ namespace MyNS
 		public async Task GET_RevokeCacheSecurityGroupIngressAsync(string CacheSecurityGroupName, string EC2SecurityGroupName, string EC2SecurityGroupOwnerId, GET_RevokeCacheSecurityGroupIngressAction Action, GET_RevokeCacheSecurityGroupIngressVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=RevokeCacheSecurityGroupIngress?CacheSecurityGroupName=" + (CacheSecurityGroupName==null? "" : System.Uri.EscapeDataString(CacheSecurityGroupName))+"&EC2SecurityGroupName=" + (EC2SecurityGroupName==null? "" : System.Uri.EscapeDataString(EC2SecurityGroupName))+"&EC2SecurityGroupOwnerId=" + (EC2SecurityGroupOwnerId==null? "" : System.Uri.EscapeDataString(EC2SecurityGroupOwnerId))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -7046,7 +6921,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -7060,8 +6934,7 @@ namespace MyNS
 		public async Task GET_StartMigrationAsync(string ReplicationGroupId, CustomerNodeEndpoint[] CustomerNodeEndpointList, GET_StartMigrationAction Action, GET_StartMigrationVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=StartMigration?ReplicationGroupId=" + (ReplicationGroupId==null? "" : System.Uri.EscapeDataString(ReplicationGroupId))+"&"+string.Join("&", CustomerNodeEndpointList.Select(z => $"CustomerNodeEndpointList={z}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -7075,7 +6948,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -7092,8 +6964,7 @@ namespace MyNS
 		public async Task GET_TestFailoverAsync(string ReplicationGroupId, string NodeGroupId, GET_TestFailoverAction Action, GET_TestFailoverVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=TestFailover?ReplicationGroupId=" + (ReplicationGroupId==null? "" : System.Uri.EscapeDataString(ReplicationGroupId))+"&NodeGroupId=" + (NodeGroupId==null? "" : System.Uri.EscapeDataString(NodeGroupId))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -7107,7 +6978,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

@@ -942,10 +942,8 @@ namespace MyNS
 		public async Task Post_SlashfilesSlashv3SlashfilesSlashimport_from_urlSlashasync_importFromUrlAsync(ImportFromUrlInput requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "files/v3/files/import-from-url/async";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -961,7 +959,6 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
-			}
 		}
 		
 		/// <summary>
@@ -974,8 +971,7 @@ namespace MyNS
 		public async Task<FileActionResponse> Get_SlashfilesSlashv3SlashfilesSlashimport_from_urlSlashasyncSlashtasksSlashtaskIdSlashstatus_checkImportAsync(string taskId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "files/v3/files/import-from-url/async/tasks/"+ (taskId==null? "" : System.Uri.EscapeDataString(taskId))+"/status";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -985,13 +981,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<FileActionResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<FileActionResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1048,8 +1043,7 @@ namespace MyNS
 					Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "files/v3/files/search?"+string.Join("&", properties.Select(z => $"properties={System.Uri.EscapeDataString(z.ToString())}"))+"&after=" + (after==null? "" : System.Uri.EscapeDataString(after))+"&before=" + (before==null? "" : System.Uri.EscapeDataString(before))+"&limit="+limit+"&"+string.Join("&", sort.Select(z => $"sort={System.Uri.EscapeDataString(z.ToString())}"))+"&id=" + (id==null? "" : System.Uri.EscapeDataString(id))+"&createdAt=" + createdAt.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&createdAtLte=" + createdAtLte.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&createdAtGte=" + createdAtGte.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&updatedAt=" + updatedAt.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&updatedAtLte=" + updatedAtLte.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&updatedAtGte=" + updatedAtGte.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&name=" + (name==null? "" : System.Uri.EscapeDataString(name))+"&path=" + (path==null? "" : System.Uri.EscapeDataString(path))+"&parentFolderId="+parentFolderId+"&size="+size+"&height="+height+"&width="+width+"&encoding=" + (encoding==null? "" : System.Uri.EscapeDataString(encoding))+"&type=" + (type==null? "" : System.Uri.EscapeDataString(type))+"&extension=" + (extension==null? "" : System.Uri.EscapeDataString(extension))+"&url=" + (url==null? "" : System.Uri.EscapeDataString(url))+"&isUsableInContent="+isUsableInContent+"&allowsAnonymousAccess="+allowsAnonymousAccess;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1059,13 +1053,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<CollectionResponseFile>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<CollectionResponseFile>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1076,8 +1069,7 @@ namespace MyNS
 		public async Task<FileStat> Get_SlashfilesSlashv3SlashfilesSlashstatSlashpath_getMetadataAsync(string path, string[] properties, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "files/v3/files/stat/"+ (path==null? "" : System.Uri.EscapeDataString(path))+"&"+string.Join("&", properties.Select(z => $"properties={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1087,13 +1079,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<FileStat>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<FileStat>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1106,8 +1097,7 @@ namespace MyNS
 		public async Task Delete_SlashfilesSlashv3SlashfilesSlashfileId_archiveAsync(string fileId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "files/v3/files/"+ (fileId==null? "" : System.Uri.EscapeDataString(fileId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1121,7 +1111,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1135,8 +1124,7 @@ namespace MyNS
 		public async Task<File> Get_SlashfilesSlashv3SlashfilesSlashfileId_getByIdAsync(string fileId, string[] properties, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "files/v3/files/"+ (fileId==null? "" : System.Uri.EscapeDataString(fileId))+"&"+string.Join("&", properties.Select(z => $"properties={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1146,13 +1134,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<File>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<File>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1167,10 +1154,8 @@ namespace MyNS
 		public async Task<File> Patch_SlashfilesSlashv3SlashfilesSlashfileId_updatePropertiesAsync(string fileId, FileUpdateInput requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "files/v3/files/"+ (fileId==null? "" : System.Uri.EscapeDataString(fileId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -1181,13 +1166,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<File>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<File>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1200,8 +1184,7 @@ namespace MyNS
 		public async Task Delete_SlashfilesSlashv3SlashfilesSlashfileIdSlashgdpr_delete_archiveGDPRAsync(string fileId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "files/v3/files/"+ (fileId==null? "" : System.Uri.EscapeDataString(fileId))+"/gdpr-delete";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1215,7 +1198,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1232,8 +1214,7 @@ namespace MyNS
 		public async Task<SignedUrl> Get_SlashfilesSlashv3SlashfilesSlashfileIdSlashsigned_url_getSignedUrlAsync(string fileId, Get_SlashfilesSlashv3SlashfilesSlashfileIdSlashsigned_url_getSignedUrlSize size, long expirationSeconds, bool upscale, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "files/v3/files/"+ (fileId==null? "" : System.Uri.EscapeDataString(fileId))+"/signed-url&size=" + size+"&expirationSeconds="+expirationSeconds+"&upscale="+upscale;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1243,13 +1224,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<SignedUrl>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<SignedUrl>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1262,10 +1242,8 @@ namespace MyNS
 		public async Task Post_SlashfilesSlashv3Slashfolders_createAsync(FolderInput requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "files/v3/folders";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -1280,7 +1258,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1319,8 +1296,7 @@ namespace MyNS
 					Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "files/v3/folders/search?"+string.Join("&", properties.Select(z => $"properties={System.Uri.EscapeDataString(z.ToString())}"))+"&after=" + (after==null? "" : System.Uri.EscapeDataString(after))+"&before=" + (before==null? "" : System.Uri.EscapeDataString(before))+"&limit="+limit+"&"+string.Join("&", sort.Select(z => $"sort={System.Uri.EscapeDataString(z.ToString())}"))+"&id=" + (id==null? "" : System.Uri.EscapeDataString(id))+"&createdAt=" + createdAt.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&createdAtLte=" + createdAtLte.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&createdAtGte=" + createdAtGte.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&updatedAt=" + updatedAt.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&updatedAtLte=" + updatedAtLte.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&updatedAtGte=" + updatedAtGte.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&name=" + (name==null? "" : System.Uri.EscapeDataString(name))+"&path=" + (path==null? "" : System.Uri.EscapeDataString(path))+"&parentFolderId="+parentFolderId;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1330,13 +1306,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<CollectionResponseFolder>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<CollectionResponseFolder>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1349,10 +1324,8 @@ namespace MyNS
 		public async Task Post_SlashfilesSlashv3SlashfoldersSlashupdateSlashasync_updatePropertiesAsync(FolderUpdateInput requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "files/v3/folders/update/async";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -1368,7 +1341,6 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
-			}
 		}
 		
 		/// <summary>
@@ -1381,8 +1353,7 @@ namespace MyNS
 		public async Task<FolderActionResponse> Get_SlashfilesSlashv3SlashfoldersSlashupdateSlashasyncSlashtasksSlashtaskIdSlashstatus_checkUpdateStatusAsync(string taskId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "files/v3/folders/update/async/tasks/"+ (taskId==null? "" : System.Uri.EscapeDataString(taskId))+"/status";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1392,13 +1363,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<FolderActionResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<FolderActionResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1411,8 +1381,7 @@ namespace MyNS
 		public async Task Delete_SlashfilesSlashv3SlashfoldersSlashfolderId_archiveAsync(string folderId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "files/v3/folders/"+ (folderId==null? "" : System.Uri.EscapeDataString(folderId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1426,7 +1395,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1441,8 +1409,7 @@ namespace MyNS
 		public async Task<Folder> Get_SlashfilesSlashv3SlashfoldersSlashfolderId_getByIdAsync(string folderId, string[] properties, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "files/v3/folders/"+ (folderId==null? "" : System.Uri.EscapeDataString(folderId))+"&"+string.Join("&", properties.Select(z => $"properties={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1452,13 +1419,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Folder>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Folder>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1471,8 +1437,7 @@ namespace MyNS
 		public async Task Delete_SlashfilesSlashv3SlashfoldersSlashfolderPath_archiveByPathAsync(string folderPath, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "files/v3/folders/"+ (folderPath==null? "" : System.Uri.EscapeDataString(folderPath));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1486,7 +1451,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1501,8 +1465,7 @@ namespace MyNS
 		public async Task<Folder> Get_SlashfilesSlashv3SlashfoldersSlashfolderPath_getByPathAsync(string folderPath, string[] properties, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "files/v3/folders/"+ (folderPath==null? "" : System.Uri.EscapeDataString(folderPath))+"&"+string.Join("&", properties.Select(z => $"properties={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1512,13 +1475,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Folder>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Folder>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

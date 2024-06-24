@@ -269,8 +269,7 @@ namespace MyNS
 		public async Task<DivisionGroupByPartyViewModel> DataDivisionsGroupedbypartyGetBySearchTermAndMemberIdAndIncludeWhenMemberWasTellerAndStartDateAndEndDateAndDivisionNumberAndTotalVotesCast_ComparatorAndTotalVotesCast_ValueToCompareAndMajority_ComparatorAndMajority_ValueToCompareAsync(string SearchTerm, int MemberId, bool IncludeWhenMemberWasTeller, System.DateTimeOffset StartDate, System.DateTimeOffset EndDate, int DivisionNumber, Comparators TotalVotesCast_Comparator, int TotalVotesCast_ValueToCompare, Comparators Majority_Comparator, int Majority_ValueToCompare, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "data/Divisions/groupedbyparty?SearchTerm=" + (SearchTerm==null? "" : System.Uri.EscapeDataString(SearchTerm))+"&MemberId="+MemberId+"&IncludeWhenMemberWasTeller="+IncludeWhenMemberWasTeller+"&StartDate=" + StartDate.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&EndDate=" + EndDate.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&DivisionNumber="+DivisionNumber+"&TotalVotesCast.Comparator=" + TotalVotesCast_Comparator+"&TotalVotesCast.ValueToCompare="+TotalVotesCast_ValueToCompare+"&Majority.Comparator=" + Majority_Comparator+"&Majority.ValueToCompare="+Majority_ValueToCompare;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -280,17 +279,14 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
-				{
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				using JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(streamContent));
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<DivisionGroupByPartyViewModel>(jsonReader);
-				}
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -318,8 +314,7 @@ namespace MyNS
 		public async Task<MemberVotingRecordViewModel> DataDivisionsMembervotingGetByMemberIdAndSearchTermAndIncludeWhenMemberWasTellerAndStartDateAndEndDateAndDivisionNumberAndTotalVotesCast_ComparatorAndTotalVotesCast_ValueToCompareAndMajority_ComparatorAndMajority_ValueToCompareAndSkipAndTakeAsync(int MemberId, string SearchTerm, bool IncludeWhenMemberWasTeller, System.DateTimeOffset StartDate, System.DateTimeOffset EndDate, int DivisionNumber, Comparators TotalVotesCast_Comparator, int TotalVotesCast_ValueToCompare, Comparators Majority_Comparator, int Majority_ValueToCompare, int skip, int take, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "data/Divisions/membervoting?MemberId="+MemberId+"&SearchTerm=" + (SearchTerm==null? "" : System.Uri.EscapeDataString(SearchTerm))+"&IncludeWhenMemberWasTeller="+IncludeWhenMemberWasTeller+"&StartDate=" + StartDate.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&EndDate=" + EndDate.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&DivisionNumber="+DivisionNumber+"&TotalVotesCast.Comparator=" + TotalVotesCast_Comparator+"&TotalVotesCast.ValueToCompare="+TotalVotesCast_ValueToCompare+"&Majority.Comparator=" + Majority_Comparator+"&Majority.ValueToCompare="+Majority_ValueToCompare+"&skip="+skip+"&take="+take;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -329,17 +324,14 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
-				{
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				using JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(streamContent));
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<MemberVotingRecordViewModel>(jsonReader);
-				}
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -364,8 +356,7 @@ namespace MyNS
 		public async Task<DivisionViewModel[]> DataDivisionsSearchGetBySearchTermAndMemberIdAndIncludeWhenMemberWasTellerAndStartDateAndEndDateAndDivisionNumberAndTotalVotesCast_ComparatorAndTotalVotesCast_ValueToCompareAndMajority_ComparatorAndMajority_ValueToCompareAndSkipAndTakeAsync(string SearchTerm, int MemberId, bool IncludeWhenMemberWasTeller, System.DateTimeOffset StartDate, System.DateTimeOffset EndDate, int DivisionNumber, Comparators TotalVotesCast_Comparator, int TotalVotesCast_ValueToCompare, Comparators Majority_Comparator, int Majority_ValueToCompare, int skip, int take, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "data/Divisions/search?SearchTerm=" + (SearchTerm==null? "" : System.Uri.EscapeDataString(SearchTerm))+"&MemberId="+MemberId+"&IncludeWhenMemberWasTeller="+IncludeWhenMemberWasTeller+"&StartDate=" + StartDate.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&EndDate=" + EndDate.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&DivisionNumber="+DivisionNumber+"&TotalVotesCast.Comparator=" + TotalVotesCast_Comparator+"&TotalVotesCast.ValueToCompare="+TotalVotesCast_ValueToCompare+"&Majority.Comparator=" + Majority_Comparator+"&Majority.ValueToCompare="+Majority_ValueToCompare+"&skip="+skip+"&take="+take;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -375,17 +366,14 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
-				{
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				using JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(streamContent));
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<DivisionViewModel[]>(jsonReader);
-				}
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -408,8 +396,7 @@ namespace MyNS
 		public async Task<int> DataDivisionsSearchTotalResultsGetBySearchTermAndMemberIdAndIncludeWhenMemberWasTellerAndStartDateAndEndDateAndDivisionNumberAndTotalVotesCast_ComparatorAndTotalVotesCast_ValueToCompareAndMajority_ComparatorAndMajority_ValueToCompareAsync(string SearchTerm, int MemberId, bool IncludeWhenMemberWasTeller, System.DateTimeOffset StartDate, System.DateTimeOffset EndDate, int DivisionNumber, Comparators TotalVotesCast_Comparator, int TotalVotesCast_ValueToCompare, Comparators Majority_Comparator, int Majority_ValueToCompare, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "data/Divisions/searchTotalResults?SearchTerm=" + (SearchTerm==null? "" : System.Uri.EscapeDataString(SearchTerm))+"&MemberId="+MemberId+"&IncludeWhenMemberWasTeller="+IncludeWhenMemberWasTeller+"&StartDate=" + StartDate.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&EndDate=" + EndDate.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&DivisionNumber="+DivisionNumber+"&TotalVotesCast.Comparator=" + TotalVotesCast_Comparator+"&TotalVotesCast.ValueToCompare="+TotalVotesCast_ValueToCompare+"&Majority.Comparator=" + Majority_Comparator+"&Majority.ValueToCompare="+Majority_ValueToCompare;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -419,17 +406,14 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
-				{
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				using JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(streamContent));
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<int>(jsonReader);
-				}
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -443,8 +427,7 @@ namespace MyNS
 		public async Task<DivisionViewModel> DataDivisions_divisionIdGetAsync(int divisionId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "data/Divisions/"+divisionId;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -454,17 +437,14 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
-				{
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				using JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(streamContent));
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<DivisionViewModel>(jsonReader);
-				}
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

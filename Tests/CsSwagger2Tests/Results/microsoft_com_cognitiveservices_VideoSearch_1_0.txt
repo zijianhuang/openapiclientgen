@@ -620,19 +620,17 @@ namespace MyNS
 		public async Task<VideoDetails> Videos_DetailsAsync(string cc, string id, string[] modules, string mkt, string q, Videos_DetailsResolution resolution, Videos_DetailsSafeSearch safeSearch, string setLang, bool textDecorations, Videos_DetailsTextFormat textFormat)
 		{
 			var requestUri = "videos/details?cc=" + (cc==null? "" : System.Uri.EscapeDataString(cc))+"&id=" + (id==null? "" : System.Uri.EscapeDataString(id))+"&"+string.Join("&", modules.Select(z => $"modules={System.Uri.EscapeDataString(z.ToString())}"))+"&mkt=" + (mkt==null? "" : System.Uri.EscapeDataString(mkt))+"&q=" + (q==null? "" : System.Uri.EscapeDataString(q))+"&resolution=" + resolution+"&safeSearch=" + safeSearch+"&setLang=" + (setLang==null? "" : System.Uri.EscapeDataString(setLang))+"&textDecorations="+textDecorations+"&textFormat=" + textFormat;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<VideoDetails>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<VideoDetails>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -658,19 +656,17 @@ namespace MyNS
 		public async Task<Videos> Videos_SearchAsync(string cc, int count, Videos_SearchFreshness freshness, string id, Videos_SearchLength length, string mkt, int offset, Videos_SearchPricing pricing, string q, Videos_DetailsResolution resolution, Videos_DetailsSafeSearch safeSearch, string setLang, bool textDecorations, Videos_DetailsTextFormat textFormat)
 		{
 			var requestUri = "videos/search?cc=" + (cc==null? "" : System.Uri.EscapeDataString(cc))+"&count="+count+"&freshness=" + freshness+"&id=" + (id==null? "" : System.Uri.EscapeDataString(id))+"&length=" + length+"&mkt=" + (mkt==null? "" : System.Uri.EscapeDataString(mkt))+"&offset="+offset+"&pricing=" + pricing+"&q=" + (q==null? "" : System.Uri.EscapeDataString(q))+"&resolution=" + resolution+"&safeSearch=" + safeSearch+"&setLang=" + (setLang==null? "" : System.Uri.EscapeDataString(setLang))+"&textDecorations="+textDecorations+"&textFormat=" + textFormat;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Videos>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Videos>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -688,19 +684,17 @@ namespace MyNS
 		public async Task<TrendingVideos> Videos_TrendingAsync(string cc, string mkt, Videos_DetailsSafeSearch safeSearch, string setLang, bool textDecorations, Videos_DetailsTextFormat textFormat)
 		{
 			var requestUri = "videos/trending?cc=" + (cc==null? "" : System.Uri.EscapeDataString(cc))+"&mkt=" + (mkt==null? "" : System.Uri.EscapeDataString(mkt))+"&safeSearch=" + safeSearch+"&setLang=" + (setLang==null? "" : System.Uri.EscapeDataString(setLang))+"&textDecorations="+textDecorations+"&textFormat=" + textFormat;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<TrendingVideos>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<TrendingVideos>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

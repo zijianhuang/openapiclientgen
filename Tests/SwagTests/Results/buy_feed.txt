@@ -845,8 +845,7 @@ namespace MyNS
 		public async Task GetItemFeedAsync(string feed_scope, string category_id, string date)
 		{
 			var requestUri = "item?feed_scope=" + (feed_scope==null? "" : System.Uri.EscapeDataString(feed_scope))+"&category_id=" + (category_id==null? "" : System.Uri.EscapeDataString(category_id))+"&date=" + (date==null? "" : System.Uri.EscapeDataString(date));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -855,7 +854,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -870,8 +868,7 @@ namespace MyNS
 		public void GetItemFeed(string feed_scope, string category_id, string date)
 		{
 			var requestUri = "item?feed_scope=" + (feed_scope==null? "" : System.Uri.EscapeDataString(feed_scope))+"&category_id=" + (category_id==null? "" : System.Uri.EscapeDataString(category_id))+"&date=" + (date==null? "" : System.Uri.EscapeDataString(date));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = httpClient.Send(httpRequestMessage);
 			try
 			{
@@ -880,7 +877,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -895,8 +891,7 @@ namespace MyNS
 		public async Task GetItemGroupFeedAsync(string feed_scope, string category_id, string date)
 		{
 			var requestUri = "item_group?feed_scope=" + (feed_scope==null? "" : System.Uri.EscapeDataString(feed_scope))+"&category_id=" + (category_id==null? "" : System.Uri.EscapeDataString(category_id))+"&date=" + (date==null? "" : System.Uri.EscapeDataString(date));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -905,7 +900,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -920,8 +914,7 @@ namespace MyNS
 		public void GetItemGroupFeed(string feed_scope, string category_id, string date)
 		{
 			var requestUri = "item_group?feed_scope=" + (feed_scope==null? "" : System.Uri.EscapeDataString(feed_scope))+"&category_id=" + (category_id==null? "" : System.Uri.EscapeDataString(category_id))+"&date=" + (date==null? "" : System.Uri.EscapeDataString(date));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = httpClient.Send(httpRequestMessage);
 			try
 			{
@@ -930,7 +923,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -944,8 +936,7 @@ namespace MyNS
 		public async Task GetItemSnapshotFeedAsync(string category_id, string snapshot_date)
 		{
 			var requestUri = "item_snapshot?category_id=" + (category_id==null? "" : System.Uri.EscapeDataString(category_id))+"&snapshot_date=" + (snapshot_date==null? "" : System.Uri.EscapeDataString(snapshot_date));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -954,7 +945,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -968,8 +958,7 @@ namespace MyNS
 		public void GetItemSnapshotFeed(string category_id, string snapshot_date)
 		{
 			var requestUri = "item_snapshot?category_id=" + (category_id==null? "" : System.Uri.EscapeDataString(category_id))+"&snapshot_date=" + (snapshot_date==null? "" : System.Uri.EscapeDataString(snapshot_date));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = httpClient.Send(httpRequestMessage);
 			try
 			{
@@ -978,7 +967,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

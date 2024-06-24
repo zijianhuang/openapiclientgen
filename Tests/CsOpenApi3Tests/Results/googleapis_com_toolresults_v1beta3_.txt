@@ -3020,8 +3020,7 @@ namespace MyNS
 		public async Task<ListHistoriesResponse> Toolresults_projects_histories_listAsync(string projectId, string filterByName, int pageSize, string pageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "toolresults/v1beta3/projects/"+ (projectId==null? "" : System.Uri.EscapeDataString(projectId))+"/histories&filterByName=" + (filterByName==null? "" : System.Uri.EscapeDataString(filterByName))+"&pageSize="+pageSize+"&pageToken=" + (pageToken==null? "" : System.Uri.EscapeDataString(pageToken));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3031,13 +3030,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ListHistoriesResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ListHistoriesResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3051,10 +3049,8 @@ namespace MyNS
 		public async Task<History> Toolresults_projects_histories_createAsync(string projectId, string requestId, History requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "toolresults/v1beta3/projects/"+ (projectId==null? "" : System.Uri.EscapeDataString(projectId))+"/histories&requestId=" + (requestId==null? "" : System.Uri.EscapeDataString(requestId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -3065,13 +3061,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<History>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<History>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3085,8 +3080,7 @@ namespace MyNS
 		public async Task<History> Toolresults_projects_histories_getAsync(string projectId, string historyId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "toolresults/v1beta3/projects/"+ (projectId==null? "" : System.Uri.EscapeDataString(projectId))+"/histories/"+ (historyId==null? "" : System.Uri.EscapeDataString(historyId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3096,13 +3090,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<History>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<History>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3118,8 +3111,7 @@ namespace MyNS
 		public async Task<ListExecutionsResponse> Toolresults_projects_histories_executions_listAsync(string projectId, string historyId, int pageSize, string pageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "toolresults/v1beta3/projects/"+ (projectId==null? "" : System.Uri.EscapeDataString(projectId))+"/histories/"+ (historyId==null? "" : System.Uri.EscapeDataString(historyId))+"/executions&pageSize="+pageSize+"&pageToken=" + (pageToken==null? "" : System.Uri.EscapeDataString(pageToken));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3129,13 +3121,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ListExecutionsResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ListExecutionsResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3150,10 +3141,8 @@ namespace MyNS
 		public async Task<Execution> Toolresults_projects_histories_executions_createAsync(string projectId, string historyId, string requestId, Execution requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "toolresults/v1beta3/projects/"+ (projectId==null? "" : System.Uri.EscapeDataString(projectId))+"/histories/"+ (historyId==null? "" : System.Uri.EscapeDataString(historyId))+"/executions&requestId=" + (requestId==null? "" : System.Uri.EscapeDataString(requestId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -3164,13 +3153,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Execution>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Execution>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3185,8 +3173,7 @@ namespace MyNS
 		public async Task<Execution> Toolresults_projects_histories_executions_getAsync(string projectId, string historyId, string executionId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "toolresults/v1beta3/projects/"+ (projectId==null? "" : System.Uri.EscapeDataString(projectId))+"/histories/"+ (historyId==null? "" : System.Uri.EscapeDataString(historyId))+"/executions/"+ (executionId==null? "" : System.Uri.EscapeDataString(executionId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3196,13 +3183,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Execution>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Execution>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3218,10 +3204,8 @@ namespace MyNS
 		public async Task<Execution> Toolresults_projects_histories_executions_patchAsync(string projectId, string historyId, string executionId, string requestId, Execution requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "toolresults/v1beta3/projects/"+ (projectId==null? "" : System.Uri.EscapeDataString(projectId))+"/histories/"+ (historyId==null? "" : System.Uri.EscapeDataString(historyId))+"/executions/"+ (executionId==null? "" : System.Uri.EscapeDataString(executionId))+"&requestId=" + (requestId==null? "" : System.Uri.EscapeDataString(requestId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -3232,13 +3216,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Execution>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Execution>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3253,8 +3236,7 @@ namespace MyNS
 		public async Task<ListScreenshotClustersResponse> Toolresults_projects_histories_executions_clusters_listAsync(string projectId, string historyId, string executionId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "toolresults/v1beta3/projects/"+ (projectId==null? "" : System.Uri.EscapeDataString(projectId))+"/histories/"+ (historyId==null? "" : System.Uri.EscapeDataString(historyId))+"/executions/"+ (executionId==null? "" : System.Uri.EscapeDataString(executionId))+"/clusters";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3264,13 +3246,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ListScreenshotClustersResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ListScreenshotClustersResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3286,8 +3267,7 @@ namespace MyNS
 		public async Task<ScreenshotCluster> Toolresults_projects_histories_executions_clusters_getAsync(string projectId, string historyId, string executionId, string clusterId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "toolresults/v1beta3/projects/"+ (projectId==null? "" : System.Uri.EscapeDataString(projectId))+"/histories/"+ (historyId==null? "" : System.Uri.EscapeDataString(historyId))+"/executions/"+ (executionId==null? "" : System.Uri.EscapeDataString(executionId))+"/clusters/"+ (clusterId==null? "" : System.Uri.EscapeDataString(clusterId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3297,13 +3277,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ScreenshotCluster>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ScreenshotCluster>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3320,8 +3299,7 @@ namespace MyNS
 		public async Task<ListEnvironmentsResponse> Toolresults_projects_histories_executions_environments_listAsync(string projectId, string historyId, string executionId, int pageSize, string pageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "toolresults/v1beta3/projects/"+ (projectId==null? "" : System.Uri.EscapeDataString(projectId))+"/histories/"+ (historyId==null? "" : System.Uri.EscapeDataString(historyId))+"/executions/"+ (executionId==null? "" : System.Uri.EscapeDataString(executionId))+"/environments&pageSize="+pageSize+"&pageToken=" + (pageToken==null? "" : System.Uri.EscapeDataString(pageToken));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3331,13 +3309,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ListEnvironmentsResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ListEnvironmentsResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3353,8 +3330,7 @@ namespace MyNS
 		public async Task<Environment> Toolresults_projects_histories_executions_environments_getAsync(string projectId, string historyId, string executionId, string environmentId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "toolresults/v1beta3/projects/"+ (projectId==null? "" : System.Uri.EscapeDataString(projectId))+"/histories/"+ (historyId==null? "" : System.Uri.EscapeDataString(historyId))+"/executions/"+ (executionId==null? "" : System.Uri.EscapeDataString(executionId))+"/environments/"+ (environmentId==null? "" : System.Uri.EscapeDataString(environmentId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3364,13 +3340,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Environment>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Environment>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3387,8 +3362,7 @@ namespace MyNS
 		public async Task<ListStepsResponse> Toolresults_projects_histories_executions_steps_listAsync(string projectId, string historyId, string executionId, int pageSize, string pageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "toolresults/v1beta3/projects/"+ (projectId==null? "" : System.Uri.EscapeDataString(projectId))+"/histories/"+ (historyId==null? "" : System.Uri.EscapeDataString(historyId))+"/executions/"+ (executionId==null? "" : System.Uri.EscapeDataString(executionId))+"/steps&pageSize="+pageSize+"&pageToken=" + (pageToken==null? "" : System.Uri.EscapeDataString(pageToken));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3398,13 +3372,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ListStepsResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ListStepsResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3420,10 +3393,8 @@ namespace MyNS
 		public async Task<Step> Toolresults_projects_histories_executions_steps_createAsync(string projectId, string historyId, string executionId, string requestId, Step requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "toolresults/v1beta3/projects/"+ (projectId==null? "" : System.Uri.EscapeDataString(projectId))+"/histories/"+ (historyId==null? "" : System.Uri.EscapeDataString(historyId))+"/executions/"+ (executionId==null? "" : System.Uri.EscapeDataString(executionId))+"/steps&requestId=" + (requestId==null? "" : System.Uri.EscapeDataString(requestId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -3434,13 +3405,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Step>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Step>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3456,8 +3426,7 @@ namespace MyNS
 		public async Task<Step> Toolresults_projects_histories_executions_steps_getAsync(string projectId, string historyId, string executionId, string stepId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "toolresults/v1beta3/projects/"+ (projectId==null? "" : System.Uri.EscapeDataString(projectId))+"/histories/"+ (historyId==null? "" : System.Uri.EscapeDataString(historyId))+"/executions/"+ (executionId==null? "" : System.Uri.EscapeDataString(executionId))+"/steps/"+ (stepId==null? "" : System.Uri.EscapeDataString(stepId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3467,13 +3436,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Step>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Step>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3490,10 +3458,8 @@ namespace MyNS
 		public async Task<Step> Toolresults_projects_histories_executions_steps_patchAsync(string projectId, string historyId, string executionId, string stepId, string requestId, Step requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "toolresults/v1beta3/projects/"+ (projectId==null? "" : System.Uri.EscapeDataString(projectId))+"/histories/"+ (historyId==null? "" : System.Uri.EscapeDataString(historyId))+"/executions/"+ (executionId==null? "" : System.Uri.EscapeDataString(executionId))+"/steps/"+ (stepId==null? "" : System.Uri.EscapeDataString(stepId))+"&requestId=" + (requestId==null? "" : System.Uri.EscapeDataString(requestId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -3504,13 +3470,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Step>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Step>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3526,8 +3491,7 @@ namespace MyNS
 		public async Task<PerfMetricsSummary> Toolresults_projects_histories_executions_steps_getPerfMetricsSummaryAsync(string projectId, string historyId, string executionId, string stepId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "toolresults/v1beta3/projects/"+ (projectId==null? "" : System.Uri.EscapeDataString(projectId))+"/histories/"+ (historyId==null? "" : System.Uri.EscapeDataString(historyId))+"/executions/"+ (executionId==null? "" : System.Uri.EscapeDataString(executionId))+"/steps/"+ (stepId==null? "" : System.Uri.EscapeDataString(stepId))+"/perfMetricsSummary";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3537,13 +3501,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<PerfMetricsSummary>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<PerfMetricsSummary>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3559,10 +3522,8 @@ namespace MyNS
 		public async Task<PerfMetricsSummary> Toolresults_projects_histories_executions_steps_perfMetricsSummary_createAsync(string projectId, string historyId, string executionId, string stepId, PerfMetricsSummary requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "toolresults/v1beta3/projects/"+ (projectId==null? "" : System.Uri.EscapeDataString(projectId))+"/histories/"+ (historyId==null? "" : System.Uri.EscapeDataString(historyId))+"/executions/"+ (executionId==null? "" : System.Uri.EscapeDataString(executionId))+"/steps/"+ (stepId==null? "" : System.Uri.EscapeDataString(stepId))+"/perfMetricsSummary";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -3573,13 +3534,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<PerfMetricsSummary>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<PerfMetricsSummary>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3596,8 +3556,7 @@ namespace MyNS
 		public async Task<ListPerfSampleSeriesResponse> Toolresults_projects_histories_executions_steps_perfSampleSeries_listAsync(string projectId, string historyId, string executionId, string stepId, BasicPerfSampleSeriesPerfMetricType[] filter, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "toolresults/v1beta3/projects/"+ (projectId==null? "" : System.Uri.EscapeDataString(projectId))+"/histories/"+ (historyId==null? "" : System.Uri.EscapeDataString(historyId))+"/executions/"+ (executionId==null? "" : System.Uri.EscapeDataString(executionId))+"/steps/"+ (stepId==null? "" : System.Uri.EscapeDataString(stepId))+"/perfSampleSeries&"+string.Join("&", filter.Select(z => $"filter={z}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3607,13 +3566,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ListPerfSampleSeriesResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ListPerfSampleSeriesResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3629,10 +3587,8 @@ namespace MyNS
 		public async Task<PerfSampleSeries> Toolresults_projects_histories_executions_steps_perfSampleSeries_createAsync(string projectId, string historyId, string executionId, string stepId, PerfSampleSeries requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "toolresults/v1beta3/projects/"+ (projectId==null? "" : System.Uri.EscapeDataString(projectId))+"/histories/"+ (historyId==null? "" : System.Uri.EscapeDataString(historyId))+"/executions/"+ (executionId==null? "" : System.Uri.EscapeDataString(executionId))+"/steps/"+ (stepId==null? "" : System.Uri.EscapeDataString(stepId))+"/perfSampleSeries";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -3643,13 +3599,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<PerfSampleSeries>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<PerfSampleSeries>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3666,8 +3621,7 @@ namespace MyNS
 		public async Task<PerfSampleSeries> Toolresults_projects_histories_executions_steps_perfSampleSeries_getAsync(string projectId, string historyId, string executionId, string stepId, string sampleSeriesId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "toolresults/v1beta3/projects/"+ (projectId==null? "" : System.Uri.EscapeDataString(projectId))+"/histories/"+ (historyId==null? "" : System.Uri.EscapeDataString(historyId))+"/executions/"+ (executionId==null? "" : System.Uri.EscapeDataString(executionId))+"/steps/"+ (stepId==null? "" : System.Uri.EscapeDataString(stepId))+"/perfSampleSeries/"+ (sampleSeriesId==null? "" : System.Uri.EscapeDataString(sampleSeriesId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3677,13 +3631,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<PerfSampleSeries>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<PerfSampleSeries>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3702,8 +3655,7 @@ namespace MyNS
 		public async Task<ListPerfSamplesResponse> Toolresults_projects_histories_executions_steps_perfSampleSeries_samples_listAsync(string projectId, string historyId, string executionId, string stepId, string sampleSeriesId, int pageSize, string pageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "toolresults/v1beta3/projects/"+ (projectId==null? "" : System.Uri.EscapeDataString(projectId))+"/histories/"+ (historyId==null? "" : System.Uri.EscapeDataString(historyId))+"/executions/"+ (executionId==null? "" : System.Uri.EscapeDataString(executionId))+"/steps/"+ (stepId==null? "" : System.Uri.EscapeDataString(stepId))+"/perfSampleSeries/"+ (sampleSeriesId==null? "" : System.Uri.EscapeDataString(sampleSeriesId))+"/samples&pageSize="+pageSize+"&pageToken=" + (pageToken==null? "" : System.Uri.EscapeDataString(pageToken));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3713,13 +3665,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ListPerfSamplesResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ListPerfSamplesResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3736,10 +3687,8 @@ namespace MyNS
 		public async Task<BatchCreatePerfSamplesResponse> Toolresults_projects_histories_executions_steps_perfSampleSeries_samples_batchCreateAsync(string projectId, string historyId, string executionId, string stepId, string sampleSeriesId, BatchCreatePerfSamplesRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "toolresults/v1beta3/projects/"+ (projectId==null? "" : System.Uri.EscapeDataString(projectId))+"/histories/"+ (historyId==null? "" : System.Uri.EscapeDataString(historyId))+"/executions/"+ (executionId==null? "" : System.Uri.EscapeDataString(executionId))+"/steps/"+ (stepId==null? "" : System.Uri.EscapeDataString(stepId))+"/perfSampleSeries/"+ (sampleSeriesId==null? "" : System.Uri.EscapeDataString(sampleSeriesId))+"/samples:batchCreate";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -3750,13 +3699,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<BatchCreatePerfSamplesResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<BatchCreatePerfSamplesResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3774,8 +3722,7 @@ namespace MyNS
 		public async Task<ListTestCasesResponse> Toolresults_projects_histories_executions_steps_testCases_listAsync(string projectId, string historyId, string executionId, string stepId, int pageSize, string pageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "toolresults/v1beta3/projects/"+ (projectId==null? "" : System.Uri.EscapeDataString(projectId))+"/histories/"+ (historyId==null? "" : System.Uri.EscapeDataString(historyId))+"/executions/"+ (executionId==null? "" : System.Uri.EscapeDataString(executionId))+"/steps/"+ (stepId==null? "" : System.Uri.EscapeDataString(stepId))+"/testCases&pageSize="+pageSize+"&pageToken=" + (pageToken==null? "" : System.Uri.EscapeDataString(pageToken));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3785,13 +3732,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ListTestCasesResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ListTestCasesResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3808,8 +3754,7 @@ namespace MyNS
 		public async Task<TestCase> Toolresults_projects_histories_executions_steps_testCases_getAsync(string projectId, string historyId, string executionId, string stepId, string testCaseId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "toolresults/v1beta3/projects/"+ (projectId==null? "" : System.Uri.EscapeDataString(projectId))+"/histories/"+ (historyId==null? "" : System.Uri.EscapeDataString(historyId))+"/executions/"+ (executionId==null? "" : System.Uri.EscapeDataString(executionId))+"/steps/"+ (stepId==null? "" : System.Uri.EscapeDataString(stepId))+"/testCases/"+ (testCaseId==null? "" : System.Uri.EscapeDataString(testCaseId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3819,13 +3764,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<TestCase>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<TestCase>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3843,8 +3787,7 @@ namespace MyNS
 		public async Task<ListStepThumbnailsResponse> Toolresults_projects_histories_executions_steps_thumbnails_listAsync(string projectId, string historyId, string executionId, string stepId, int pageSize, string pageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "toolresults/v1beta3/projects/"+ (projectId==null? "" : System.Uri.EscapeDataString(projectId))+"/histories/"+ (historyId==null? "" : System.Uri.EscapeDataString(historyId))+"/executions/"+ (executionId==null? "" : System.Uri.EscapeDataString(executionId))+"/steps/"+ (stepId==null? "" : System.Uri.EscapeDataString(stepId))+"/thumbnails&pageSize="+pageSize+"&pageToken=" + (pageToken==null? "" : System.Uri.EscapeDataString(pageToken));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3854,13 +3797,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ListStepThumbnailsResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ListStepThumbnailsResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3876,10 +3818,8 @@ namespace MyNS
 		public async Task<Step> Toolresults_projects_histories_executions_steps_publishXunitXmlFilesAsync(string projectId, string historyId, string executionId, string stepId, PublishXunitXmlFilesRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "toolresults/v1beta3/projects/"+ (projectId==null? "" : System.Uri.EscapeDataString(projectId))+"/histories/"+ (historyId==null? "" : System.Uri.EscapeDataString(historyId))+"/executions/"+ (executionId==null? "" : System.Uri.EscapeDataString(executionId))+"/steps/"+ (stepId==null? "" : System.Uri.EscapeDataString(stepId))+":publishXunitXmlFiles";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -3890,13 +3830,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Step>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Step>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3909,8 +3848,7 @@ namespace MyNS
 		public async Task<ProjectSettings> Toolresults_projects_getSettingsAsync(string projectId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "toolresults/v1beta3/projects/"+ (projectId==null? "" : System.Uri.EscapeDataString(projectId))+"/settings";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3920,13 +3858,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ProjectSettings>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ProjectSettings>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3939,19 +3876,17 @@ namespace MyNS
 		public async Task<ProjectSettings> Toolresults_projects_initializeSettingsAsync(string projectId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "toolresults/v1beta3/projects/"+ (projectId==null? "" : System.Uri.EscapeDataString(projectId))+":initializeSettings";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ProjectSettings>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ProjectSettings>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3965,8 +3900,7 @@ namespace MyNS
 		public async Task<ListStepAccessibilityClustersResponse> Toolresults_projects_histories_executions_steps_accessibilityClustersAsync(string name, string locale, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "toolresults/v1beta3/"+ (name==null? "" : System.Uri.EscapeDataString(name))+":accessibilityClusters&locale=" + (locale==null? "" : System.Uri.EscapeDataString(locale));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3976,13 +3910,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ListStepAccessibilityClustersResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ListStepAccessibilityClustersResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

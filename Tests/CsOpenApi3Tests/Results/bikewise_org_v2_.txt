@@ -68,8 +68,7 @@ namespace MyNS
 		public async Task GET__version_incidents___format_Async(int page, int per_page, int occurred_before, int occurred_after, GET__version_incidents___format_Incident_type incident_type, string proximity, int proximity_square, string query, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v2/incidents?page="+page+"&per_page="+per_page+"&occurred_before="+occurred_before+"&occurred_after="+occurred_after+"&incident_type=" + incident_type+"&proximity=" + (proximity==null? "" : System.Uri.EscapeDataString(proximity))+"&proximity_square="+proximity_square+"&query=" + (query==null? "" : System.Uri.EscapeDataString(query));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -83,7 +82,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -96,8 +94,7 @@ namespace MyNS
 		public async Task GET__version_incidents__id___format_Async(int id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v2/incidents/"+id;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -111,7 +108,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -163,8 +159,7 @@ namespace MyNS
 		public async Task GET__version_locations___format_Async(int occurred_before, int occurred_after, GET__version_incidents___format_Incident_type incident_type, string proximity, int proximity_square, string query, int limit, bool all, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v2/locations?occurred_before="+occurred_before+"&occurred_after="+occurred_after+"&incident_type=" + incident_type+"&proximity=" + (proximity==null? "" : System.Uri.EscapeDataString(proximity))+"&proximity_square="+proximity_square+"&query=" + (query==null? "" : System.Uri.EscapeDataString(query))+"&limit="+limit+"&all="+all;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -178,7 +173,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -210,8 +204,7 @@ namespace MyNS
 		public async Task GET__version_locations_markers___format_Async(int occurred_before, int occurred_after, GET__version_incidents___format_Incident_type incident_type, string proximity, int proximity_square, string query, int limit, bool all, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v2/locations/markers?occurred_before="+occurred_before+"&occurred_after="+occurred_after+"&incident_type=" + incident_type+"&proximity=" + (proximity==null? "" : System.Uri.EscapeDataString(proximity))+"&proximity_square="+proximity_square+"&query=" + (query==null? "" : System.Uri.EscapeDataString(query))+"&limit="+limit+"&all="+all;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -225,7 +218,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

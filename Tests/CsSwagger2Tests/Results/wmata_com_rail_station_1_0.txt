@@ -124,8 +124,7 @@ namespace MyNS
 		public async Task LinesGetAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "Lines";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -139,7 +138,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -224,8 +222,7 @@ namespace MyNS
 		public async Task PathGetByFromStationCodeAndToStationCodeAsync(PathGetByFromStationCodeAndToStationCodeFromStationCode FromStationCode, PathGetByFromStationCodeAndToStationCodeToStationCode ToStationCode, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "Path?FromStationCode=" + FromStationCode+"&ToStationCode=" + ToStationCode;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -239,7 +236,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -357,8 +353,7 @@ namespace MyNS
 		public async Task SrcStationToDstStationInfoGetByFromStationCodeAndToStationCodeAsync(SrcStationToDstStationInfoGetByFromStationCodeAndToStationCodeFromStationCode FromStationCode, SrcStationToDstStationInfoGetByFromStationCodeAndToStationCodeToStationCode ToStationCode, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "SrcStationToDstStationInfo?FromStationCode=" + FromStationCode+"&ToStationCode=" + ToStationCode;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -372,7 +367,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -471,8 +465,7 @@ namespace MyNS
 		public async Task StationEntrancesGetByLatAndLonAndRadiusAsync(StationEntrancesGetByLatAndLonAndRadiusLat Lat, StationEntrancesGetByLatAndLonAndRadiusLon Lon, StationEntrancesGetByLatAndLonAndRadiusRadius Radius, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "StationEntrances?Lat="+Lat+"&Lon="+Lon+"&Radius="+Radius;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -486,7 +479,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -623,8 +615,7 @@ namespace MyNS
 		public async Task StationInfoGetByStationCodeAsync(StationInfoGetByStationCodeStationCode StationCode, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "StationInfo?StationCode=" + StationCode;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -638,7 +629,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -796,8 +786,7 @@ namespace MyNS
 		public async Task StationParkingGetByStationCodeAsync(StationParkingGetByStationCodeStationCode StationCode, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "StationParking?StationCode=" + StationCode;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -811,7 +800,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -966,8 +954,7 @@ namespace MyNS
 		public async Task StationTimesGetByStationCodeAsync(SrcStationToDstStationInfoGetByFromStationCodeAndToStationCodeFromStationCode StationCode, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "StationTimes?StationCode=" + StationCode;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -981,7 +968,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1145,8 +1131,7 @@ namespace MyNS
 		public async Task StationsGetByLineCodeAsync(StationsGetByLineCodeLineCode LineCode, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "Stations?LineCode=" + LineCode;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1160,7 +1145,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1251,8 +1235,7 @@ namespace MyNS
 		public async Task JsonJLinesGetAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "json/jLines";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1266,7 +1249,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1351,8 +1333,7 @@ namespace MyNS
 		public async Task JsonJPathGetByFromStationCodeAndToStationCodeAsync(PathGetByFromStationCodeAndToStationCodeFromStationCode FromStationCode, PathGetByFromStationCodeAndToStationCodeToStationCode ToStationCode, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "json/jPath?FromStationCode=" + FromStationCode+"&ToStationCode=" + ToStationCode;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1366,7 +1347,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1484,8 +1464,7 @@ namespace MyNS
 		public async Task JsonJSrcStationToDstStationInfoGetByFromStationCodeAndToStationCodeAsync(SrcStationToDstStationInfoGetByFromStationCodeAndToStationCodeFromStationCode FromStationCode, SrcStationToDstStationInfoGetByFromStationCodeAndToStationCodeToStationCode ToStationCode, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "json/jSrcStationToDstStationInfo?FromStationCode=" + FromStationCode+"&ToStationCode=" + ToStationCode;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1499,7 +1478,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1598,8 +1576,7 @@ namespace MyNS
 		public async Task JsonJStationEntrancesGetByLatAndLonAndRadiusAsync(JsonJStationEntrancesGetByLatAndLonAndRadiusLat Lat, JsonJStationEntrancesGetByLatAndLonAndRadiusLon Lon, JsonJStationEntrancesGetByLatAndLonAndRadiusRadius Radius, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "json/jStationEntrances?Lat="+Lat+"&Lon="+Lon+"&Radius="+Radius;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1613,7 +1590,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1750,8 +1726,7 @@ namespace MyNS
 		public async Task JsonJStationInfoGetByStationCodeAsync(StationInfoGetByStationCodeStationCode StationCode, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "json/jStationInfo?StationCode=" + StationCode;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1765,7 +1740,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1923,8 +1897,7 @@ namespace MyNS
 		public async Task JsonJStationParkingGetByStationCodeAsync(StationParkingGetByStationCodeStationCode StationCode, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "json/jStationParking?StationCode=" + StationCode;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1938,7 +1911,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2093,8 +2065,7 @@ namespace MyNS
 		public async Task JsonJStationTimesGetByStationCodeAsync(SrcStationToDstStationInfoGetByFromStationCodeAndToStationCodeFromStationCode StationCode, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "json/jStationTimes?StationCode=" + StationCode;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2108,7 +2079,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2272,8 +2242,7 @@ namespace MyNS
 		public async Task JsonJStationsGetByLineCodeAsync(StationsGetByLineCodeLineCode LineCode, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "json/jStations?LineCode=" + LineCode;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2287,7 +2256,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

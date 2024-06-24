@@ -2587,8 +2587,7 @@ namespace MyNS
 		public async Task AppsGetByQueryAndSortAndPageNumberAndLimitAndUserIdAndIsOwnerAsync(string query, string sort, int pageNumber, int limit, string userId, bool isOwner, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "apps?query=" + (query==null? "" : System.Uri.EscapeDataString(query))+"&sort=" + (sort==null? "" : System.Uri.EscapeDataString(sort))+"&pageNumber="+pageNumber+"&limit="+limit+"&userId=" + (userId==null? "" : System.Uri.EscapeDataString(userId))+"&isOwner="+isOwner;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2602,7 +2601,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2626,8 +2624,7 @@ namespace MyNS
 		public async Task AppsPostByDeveloperIdAndNameAndTypeAndModelAndCustomDataAndAttributesAndRestrictAndAllowAndAccessAsync(string developerId, string name, string type, string model, string customData, string attributes, string restrict, string allow, string access, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "apps?developerId=" + (developerId==null? "" : System.Uri.EscapeDataString(developerId))+"&name=" + (name==null? "" : System.Uri.EscapeDataString(name))+"&type=" + (type==null? "" : System.Uri.EscapeDataString(type))+"&model=" + (model==null? "" : System.Uri.EscapeDataString(model))+"&customData=" + (customData==null? "" : System.Uri.EscapeDataString(customData))+"&attributes=" + (attributes==null? "" : System.Uri.EscapeDataString(attributes))+"&restrict=" + (restrict==null? "" : System.Uri.EscapeDataString(restrict))+"&allow=" + (allow==null? "" : System.Uri.EscapeDataString(allow))+"&access=" + (access==null? "" : System.Uri.EscapeDataString(access));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -2636,7 +2633,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2652,8 +2648,7 @@ namespace MyNS
 		public async Task AppsBySafeName_safeNameGetByUserIdAndTrackViewsAsync(string safeName, string userId, bool trackViews, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "apps/bySafeName/"+ (safeName==null? "" : System.Uri.EscapeDataString(safeName))+"&userId=" + (userId==null? "" : System.Uri.EscapeDataString(userId))+"&trackViews="+trackViews;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2667,7 +2662,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2687,8 +2681,7 @@ namespace MyNS
 		public async Task AppsTextSearchGetByQueryAndTextAndFieldsAndPageNumberAndLimitAndUserIdAndIsOwnedAsync(string query, string text, string fields, int pageNumber, int limit, string userId, bool isOwned, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "apps/textSearch?query=" + (query==null? "" : System.Uri.EscapeDataString(query))+"&text=" + (text==null? "" : System.Uri.EscapeDataString(text))+"&fields=" + (fields==null? "" : System.Uri.EscapeDataString(fields))+"&pageNumber="+pageNumber+"&limit="+limit+"&userId=" + (userId==null? "" : System.Uri.EscapeDataString(userId))+"&isOwned="+isOwned;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2702,7 +2695,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2722,8 +2714,7 @@ namespace MyNS
 		public async Task AppsVersionsGetByQueryAndSortAndPageNumberAndLimitAndDeveloperIdAsync(string query, string sort, int pageNumber, int limit, string developerId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "apps/versions?query=" + (query==null? "" : System.Uri.EscapeDataString(query))+"&sort=" + (sort==null? "" : System.Uri.EscapeDataString(sort))+"&pageNumber="+pageNumber+"&limit="+limit+"&developerId=" + (developerId==null? "" : System.Uri.EscapeDataString(developerId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2737,7 +2728,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2752,8 +2742,7 @@ namespace MyNS
 		public async Task Apps_appIdDeleteByDeveloperIdAsync(string appId, string developerId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "apps/"+ (appId==null? "" : System.Uri.EscapeDataString(appId))+"&developerId=" + (developerId==null? "" : System.Uri.EscapeDataString(developerId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2767,7 +2756,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2783,8 +2771,7 @@ namespace MyNS
 		public async Task Apps_appIdGetByUserIdAndTrackViewsAsync(string appId, string userId, bool trackViews, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "apps/"+ (appId==null? "" : System.Uri.EscapeDataString(appId))+"&userId=" + (userId==null? "" : System.Uri.EscapeDataString(userId))+"&trackViews="+trackViews;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2798,7 +2785,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2814,8 +2800,7 @@ namespace MyNS
 		public async Task Apps_appIdLivePostByDeveloperIdAndVersionAsync(string appId, string developerId, string version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "apps/"+ (appId==null? "" : System.Uri.EscapeDataString(appId))+"/live&developerId=" + (developerId==null? "" : System.Uri.EscapeDataString(developerId))+"&version=" + (version==null? "" : System.Uri.EscapeDataString(version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -2824,7 +2809,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2842,8 +2826,7 @@ namespace MyNS
 		public async Task Apps_appIdPublishPostByDeveloperIdAndVersionAndAutoApproveAsync(string appId, string developerId, int version, bool autoApprove, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "apps/"+ (appId==null? "" : System.Uri.EscapeDataString(appId))+"/publish&developerId=" + (developerId==null? "" : System.Uri.EscapeDataString(developerId))+"&version="+version+"&autoApprove="+autoApprove;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -2852,7 +2835,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2868,8 +2850,7 @@ namespace MyNS
 		public async Task Apps_appIdVersions_versionDeleteByDeveloperIdAsync(string appId, string version, string developerId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "apps/"+ (appId==null? "" : System.Uri.EscapeDataString(appId))+"/versions/"+ (version==null? "" : System.Uri.EscapeDataString(version))+"&developerId=" + (developerId==null? "" : System.Uri.EscapeDataString(developerId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2883,7 +2864,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2899,8 +2879,7 @@ namespace MyNS
 		public async Task Apps_appIdVersions_versionGetByDeveloperIdAsync(string appId, int version, string developerId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "apps/"+ (appId==null? "" : System.Uri.EscapeDataString(appId))+"/versions/"+version+"&developerId=" + (developerId==null? "" : System.Uri.EscapeDataString(developerId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2914,7 +2893,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2942,8 +2920,7 @@ namespace MyNS
 		public async Task Apps_appIdVersions_versionPatchByDeveloperIdAndNameAndTypeAndModelAndCustomDataAndAttributesAndRestrictAndAllowAndAccessAndApprovalRequiredAsync(string appId, string version, string developerId, string name, string type, string model, string customData, string attributes, string restrict, string allow, string access, string approvalRequired, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "apps/"+ (appId==null? "" : System.Uri.EscapeDataString(appId))+"/versions/"+ (version==null? "" : System.Uri.EscapeDataString(version))+"&developerId=" + (developerId==null? "" : System.Uri.EscapeDataString(developerId))+"&name=" + (name==null? "" : System.Uri.EscapeDataString(name))+"&type=" + (type==null? "" : System.Uri.EscapeDataString(type))+"&model=" + (model==null? "" : System.Uri.EscapeDataString(model))+"&customData=" + (customData==null? "" : System.Uri.EscapeDataString(customData))+"&attributes=" + (attributes==null? "" : System.Uri.EscapeDataString(attributes))+"&restrict=" + (restrict==null? "" : System.Uri.EscapeDataString(restrict))+"&allow=" + (allow==null? "" : System.Uri.EscapeDataString(allow))+"&access=" + (access==null? "" : System.Uri.EscapeDataString(access))+"&approvalRequired=" + (approvalRequired==null? "" : System.Uri.EscapeDataString(approvalRequired));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -2952,7 +2929,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2980,8 +2956,7 @@ namespace MyNS
 		public async Task Apps_appIdVersions_versionPostByDeveloperIdAndNameAndTypeAndModelAndCustomDataAndAttributesAndRestrictAndAllowAndAccessAndApprovalRequiredAsync(string appId, string version, string developerId, string name, string type, string model, string customData, string attributes, string restrict, string allow, string access, string approvalRequired, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "apps/"+ (appId==null? "" : System.Uri.EscapeDataString(appId))+"/versions/"+ (version==null? "" : System.Uri.EscapeDataString(version))+"&developerId=" + (developerId==null? "" : System.Uri.EscapeDataString(developerId))+"&name=" + (name==null? "" : System.Uri.EscapeDataString(name))+"&type=" + (type==null? "" : System.Uri.EscapeDataString(type))+"&model=" + (model==null? "" : System.Uri.EscapeDataString(model))+"&customData=" + (customData==null? "" : System.Uri.EscapeDataString(customData))+"&attributes=" + (attributes==null? "" : System.Uri.EscapeDataString(attributes))+"&restrict=" + (restrict==null? "" : System.Uri.EscapeDataString(restrict))+"&allow=" + (allow==null? "" : System.Uri.EscapeDataString(allow))+"&access=" + (access==null? "" : System.Uri.EscapeDataString(access))+"&approvalRequired=" + (approvalRequired==null? "" : System.Uri.EscapeDataString(approvalRequired));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -2990,7 +2965,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3009,8 +2983,7 @@ namespace MyNS
 		public async Task Apps_appIdVersions_versionStatusPostByDeveloperIdAndStatusAndModifiedByAndReasonAsync(string appId, int version, string developerId, Apps_appIdVersions_versionStatusPostByDeveloperIdAndStatusAndModifiedByAndReasonStatus status, Apps_appIdVersions_versionStatusPostByDeveloperIdAndStatusAndModifiedByAndReasonModifiedBy modifiedBy, string reason, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "apps/"+ (appId==null? "" : System.Uri.EscapeDataString(appId))+"/versions/"+version+"/status&developerId=" + (developerId==null? "" : System.Uri.EscapeDataString(developerId))+"&status=" + status+"&modifiedBy=" + modifiedBy+"&reason=" + (reason==null? "" : System.Uri.EscapeDataString(reason));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -3019,7 +2992,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3040,8 +3012,7 @@ namespace MyNS
 		public async Task Custom_gatewayPayment_ownershipIdPostByAmountAndDateAndFeeAmountAndMarketplaceAmountAndDeveloperAmountAndCustomDataAsync(string ownershipId, int amount, long date, int feeAmount, int marketplaceAmount, int developerAmount, string customData, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "custom-gateway/payment/"+ (ownershipId==null? "" : System.Uri.EscapeDataString(ownershipId))+"&amount="+amount+"&date="+date+"&feeAmount="+feeAmount+"&marketplaceAmount="+marketplaceAmount+"&developerAmount="+developerAmount+"&customData=" + (customData==null? "" : System.Uri.EscapeDataString(customData));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -3050,7 +3021,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3071,8 +3041,7 @@ namespace MyNS
 		public async Task Custom_gatewayRefund_ownershipIdPostByAmountAndDateAndFeeAmountAndMarketplaceAmountAndDeveloperAmountAndCustomDataAsync(string ownershipId, int amount, long date, int feeAmount, int marketplaceAmount, int developerAmount, string customData, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "custom-gateway/refund/"+ (ownershipId==null? "" : System.Uri.EscapeDataString(ownershipId))+"&amount="+amount+"&date="+date+"&feeAmount="+feeAmount+"&marketplaceAmount="+marketplaceAmount+"&developerAmount="+developerAmount+"&customData=" + (customData==null? "" : System.Uri.EscapeDataString(customData));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -3081,7 +3050,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3098,8 +3066,7 @@ namespace MyNS
 		public async Task DeveloperAccountsGetByQueryAndSortAndPageNumberAndLimitAsync(string query, string sort, int pageNumber, int limit, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "developerAccounts?query=" + (query==null? "" : System.Uri.EscapeDataString(query))+"&sort=" + (sort==null? "" : System.Uri.EscapeDataString(sort))+"&pageNumber="+pageNumber+"&limit="+limit;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3113,7 +3080,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3125,8 +3091,7 @@ namespace MyNS
 		public async Task DeveloperAccounts_developerAccountIdDeleteAsync(string developerAccountId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "developerAccounts/"+ (developerAccountId==null? "" : System.Uri.EscapeDataString(developerAccountId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3140,7 +3105,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3152,8 +3116,7 @@ namespace MyNS
 		public async Task DeveloperAccounts_developerAccountIdGetAsync(string developerAccountId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "developerAccounts/"+ (developerAccountId==null? "" : System.Uri.EscapeDataString(developerAccountId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3167,7 +3130,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3183,8 +3145,7 @@ namespace MyNS
 		public async Task DeveloperAccounts_developerAccountIdPatchByDeveloperIdAndEmailAndNameAndCustomDataAsync(string developerAccountId, string developerId, string email, string name, string customData, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "developerAccounts/"+ (developerAccountId==null? "" : System.Uri.EscapeDataString(developerAccountId))+"&developerId=" + (developerId==null? "" : System.Uri.EscapeDataString(developerId))+"&email=" + (email==null? "" : System.Uri.EscapeDataString(email))+"&name=" + (name==null? "" : System.Uri.EscapeDataString(name))+"&customData=" + (customData==null? "" : System.Uri.EscapeDataString(customData));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -3193,7 +3154,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3209,8 +3169,7 @@ namespace MyNS
 		public async Task DeveloperAccounts_developerAccountIdPostByDeveloperIdAndEmailAndNameAndCustomDataAsync(string developerAccountId, string developerId, string email, string name, string customData, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "developerAccounts/"+ (developerAccountId==null? "" : System.Uri.EscapeDataString(developerAccountId))+"&developerId=" + (developerId==null? "" : System.Uri.EscapeDataString(developerId))+"&email=" + (email==null? "" : System.Uri.EscapeDataString(email))+"&name=" + (name==null? "" : System.Uri.EscapeDataString(name))+"&customData=" + (customData==null? "" : System.Uri.EscapeDataString(customData));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -3219,7 +3178,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3236,8 +3194,7 @@ namespace MyNS
 		public async Task DevelopersGetByQueryAndSortAndPageNumberAndLimitAsync(string query, string sort, int pageNumber, int limit, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "developers?query=" + (query==null? "" : System.Uri.EscapeDataString(query))+"&sort=" + (sort==null? "" : System.Uri.EscapeDataString(sort))+"&pageNumber="+pageNumber+"&limit="+limit;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3251,7 +3208,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3263,8 +3219,7 @@ namespace MyNS
 		public async Task Developers_developerIdDeleteAsync(string developerId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "developers/"+ (developerId==null? "" : System.Uri.EscapeDataString(developerId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3278,7 +3233,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3290,8 +3244,7 @@ namespace MyNS
 		public async Task Developers_developerIdGetAsync(string developerId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "developers/"+ (developerId==null? "" : System.Uri.EscapeDataString(developerId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3305,7 +3258,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3322,8 +3274,7 @@ namespace MyNS
 		public async Task Developers_developerIdPatchByTypeAndEmailAndUsernameAndNameAndCustomDataAsync(string developerId, string type, string email, string username, string name, string customData, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "developers/"+ (developerId==null? "" : System.Uri.EscapeDataString(developerId))+"&type=" + (type==null? "" : System.Uri.EscapeDataString(type))+"&email=" + (email==null? "" : System.Uri.EscapeDataString(email))+"&username=" + (username==null? "" : System.Uri.EscapeDataString(username))+"&name=" + (name==null? "" : System.Uri.EscapeDataString(name))+"&customData=" + (customData==null? "" : System.Uri.EscapeDataString(customData));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -3332,7 +3283,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3349,8 +3299,7 @@ namespace MyNS
 		public async Task Developers_developerIdPostByTypeAndEmailAndUsernameAndNameAndCustomDataAsync(string developerId, string type, string email, string username, string name, string customData, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "developers/"+ (developerId==null? "" : System.Uri.EscapeDataString(developerId))+"&type=" + (type==null? "" : System.Uri.EscapeDataString(type))+"&email=" + (email==null? "" : System.Uri.EscapeDataString(email))+"&username=" + (username==null? "" : System.Uri.EscapeDataString(username))+"&name=" + (name==null? "" : System.Uri.EscapeDataString(name))+"&customData=" + (customData==null? "" : System.Uri.EscapeDataString(customData));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -3359,7 +3308,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3373,8 +3321,7 @@ namespace MyNS
 		public async Task Events_eventIdGetAsync(string eventId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "events/"+ (eventId==null? "" : System.Uri.EscapeDataString(eventId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3388,7 +3335,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3403,8 +3349,7 @@ namespace MyNS
 		public async Task FilesGetByQueryAndSortAndPageNumberAndLimitAsync(string query, string sort, int pageNumber, int limit, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "files?query=" + (query==null? "" : System.Uri.EscapeDataString(query))+"&sort=" + (sort==null? "" : System.Uri.EscapeDataString(sort))+"&pageNumber="+pageNumber+"&limit="+limit;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3418,7 +3363,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3430,8 +3374,7 @@ namespace MyNS
 		public async Task FilesByIdOrUrlGetByFileIdOrUrlAsync(string fileIdOrUrl, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "files/byIdOrUrl?fileIdOrUrl=" + (fileIdOrUrl==null? "" : System.Uri.EscapeDataString(fileIdOrUrl));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3445,7 +3388,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3458,8 +3400,7 @@ namespace MyNS
 		public async Task FilesDownloadGetByFileIdAndValidSecondsAsync(string fileId, int validSeconds, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "files/download?fileId=" + (fileId==null? "" : System.Uri.EscapeDataString(fileId))+"&validSeconds="+validSeconds;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3473,7 +3414,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3489,8 +3429,7 @@ namespace MyNS
 		public async Task FilesUrlPostByUrlAndIsPrivateAsync(string url, bool isPrivate, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "files/url?url=" + (url==null? "" : System.Uri.EscapeDataString(url))+"&isPrivate="+isPrivate;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -3499,7 +3438,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3510,8 +3448,7 @@ namespace MyNS
 		public async Task MarketsThisGetAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "markets/this";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3525,7 +3462,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3541,8 +3477,7 @@ namespace MyNS
 		public async Task OwnershipGetByQueryAndSortAndPageNumberAndLimitAsync(string query, string sort, int pageNumber, int limit, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "ownership?query=" + (query==null? "" : System.Uri.EscapeDataString(query))+"&sort=" + (sort==null? "" : System.Uri.EscapeDataString(sort))+"&pageNumber="+pageNumber+"&limit="+limit;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3556,7 +3491,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3573,8 +3507,7 @@ namespace MyNS
 		public async Task OwnershipInstallPostByAppIdAndUserIdAndModelIdAndModelAndCustomDataAsync(string appId, string userId, string modelId, string model, string customData, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "ownership/install?appId=" + (appId==null? "" : System.Uri.EscapeDataString(appId))+"&userId=" + (userId==null? "" : System.Uri.EscapeDataString(userId))+"&modelId=" + (modelId==null? "" : System.Uri.EscapeDataString(modelId))+"&model=" + (model==null? "" : System.Uri.EscapeDataString(model))+"&customData=" + (customData==null? "" : System.Uri.EscapeDataString(customData));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -3583,7 +3516,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3599,8 +3531,7 @@ namespace MyNS
 		public async Task OwnershipUninstall_ownershipIdPostByUserIdAndCancelOwnershipAndCustomDataAsync(string ownershipId, string userId, bool cancelOwnership, string customData, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "ownership/uninstall/"+ (ownershipId==null? "" : System.Uri.EscapeDataString(ownershipId))+"&userId=" + (userId==null? "" : System.Uri.EscapeDataString(userId))+"&cancelOwnership="+cancelOwnership+"&customData=" + (customData==null? "" : System.Uri.EscapeDataString(customData));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -3609,7 +3540,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3622,8 +3552,7 @@ namespace MyNS
 		public async Task Ownership_ownershipIdGetAsync(string ownershipId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "ownership/"+ (ownershipId==null? "" : System.Uri.EscapeDataString(ownershipId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3637,7 +3566,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3652,8 +3580,7 @@ namespace MyNS
 		public async Task Ownership_ownershipIdPatchByCustomDataAndExpiresAsync(string ownershipId, string customData, long expires, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "ownership/"+ (ownershipId==null? "" : System.Uri.EscapeDataString(ownershipId))+"&customData=" + (customData==null? "" : System.Uri.EscapeDataString(customData))+"&expires="+expires;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -3662,7 +3589,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3677,8 +3603,7 @@ namespace MyNS
 		public async Task Ownership_ownershipIdPostByCustomDataAndExpiresAsync(string ownershipId, string customData, long expires, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "ownership/"+ (ownershipId==null? "" : System.Uri.EscapeDataString(ownershipId))+"&customData=" + (customData==null? "" : System.Uri.EscapeDataString(customData))+"&expires="+expires;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -3687,7 +3612,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3700,8 +3624,7 @@ namespace MyNS
 		public async Task PermissionApps_appIdDeleteByUserIdAsync(string appId, string userId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "permission/apps/"+ (appId==null? "" : System.Uri.EscapeDataString(appId))+"&userId=" + (userId==null? "" : System.Uri.EscapeDataString(userId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3715,7 +3638,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3728,8 +3650,7 @@ namespace MyNS
 		public async Task PermissionApps_appIdGetByUserIdAsync(string appId, string userId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "permission/apps/"+ (appId==null? "" : System.Uri.EscapeDataString(appId))+"&userId=" + (userId==null? "" : System.Uri.EscapeDataString(userId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3743,7 +3664,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3758,8 +3678,7 @@ namespace MyNS
 		public async Task PermissionApps_appIdPostByUserIdAndDateAndIpAsync(string appId, string userId, long date, string ip, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "permission/apps/"+ (appId==null? "" : System.Uri.EscapeDataString(appId))+"&userId=" + (userId==null? "" : System.Uri.EscapeDataString(userId))+"&date="+date+"&ip=" + (ip==null? "" : System.Uri.EscapeDataString(ip));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -3768,7 +3687,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3785,8 +3703,7 @@ namespace MyNS
 		public async Task ReviewsGetByQueryAndSortAndPageNumberAndLimitAsync(string query, string sort, int pageNumber, int limit, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "reviews?query=" + (query==null? "" : System.Uri.EscapeDataString(query))+"&sort=" + (sort==null? "" : System.Uri.EscapeDataString(sort))+"&pageNumber="+pageNumber+"&limit="+limit;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3800,7 +3717,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3827,8 +3743,7 @@ namespace MyNS
 		public async Task ReviewsPostByAppIdAndUserIdAndUserAccountIdAndHeadlineAndRatingAndDescriptionAndTypeAndMustOwnAppAndAutoApproveAndCustomDataAsync(string appId, string userId, string userAccountId, string headline, int rating, string description, string type, bool mustOwnApp, bool autoApprove, string customData, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "reviews?appId=" + (appId==null? "" : System.Uri.EscapeDataString(appId))+"&userId=" + (userId==null? "" : System.Uri.EscapeDataString(userId))+"&userAccountId=" + (userAccountId==null? "" : System.Uri.EscapeDataString(userAccountId))+"&headline=" + (headline==null? "" : System.Uri.EscapeDataString(headline))+"&rating="+rating+"&description=" + (description==null? "" : System.Uri.EscapeDataString(description))+"&type=" + (type==null? "" : System.Uri.EscapeDataString(type))+"&mustOwnApp="+mustOwnApp+"&autoApprove="+autoApprove+"&customData=" + (customData==null? "" : System.Uri.EscapeDataString(customData));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -3837,7 +3752,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3853,8 +3767,7 @@ namespace MyNS
 		public async Task Reviews_reviewIdDeleteByUserIdAndUserAccountIdAsync(string reviewId, string userId, string userAccountId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "reviews/"+ (reviewId==null? "" : System.Uri.EscapeDataString(reviewId))+"&userId=" + (userId==null? "" : System.Uri.EscapeDataString(userId))+"&userAccountId=" + (userAccountId==null? "" : System.Uri.EscapeDataString(userAccountId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3868,7 +3781,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3880,8 +3792,7 @@ namespace MyNS
 		public async Task Reviews_reviewIdGetAsync(string reviewId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "reviews/"+ (reviewId==null? "" : System.Uri.EscapeDataString(reviewId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3895,7 +3806,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3919,8 +3829,7 @@ namespace MyNS
 		public async Task Reviews_reviewIdPatchByUserIdAndUserAccountIdAndHeadlineAndRatingAndDescriptionAndCustomDataAsync(string reviewId, string userId, string userAccountId, string headline, int rating, string description, string customData, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "reviews/"+ (reviewId==null? "" : System.Uri.EscapeDataString(reviewId))+"&userId=" + (userId==null? "" : System.Uri.EscapeDataString(userId))+"&userAccountId=" + (userAccountId==null? "" : System.Uri.EscapeDataString(userAccountId))+"&headline=" + (headline==null? "" : System.Uri.EscapeDataString(headline))+"&rating="+rating+"&description=" + (description==null? "" : System.Uri.EscapeDataString(description))+"&customData=" + (customData==null? "" : System.Uri.EscapeDataString(customData));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -3929,7 +3838,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3953,8 +3861,7 @@ namespace MyNS
 		public async Task Reviews_reviewIdPostByUserIdAndUserAccountIdAndHeadlineAndRatingAndDescriptionAndCustomDataAsync(string reviewId, string userId, string userAccountId, string headline, int rating, string description, string customData, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "reviews/"+ (reviewId==null? "" : System.Uri.EscapeDataString(reviewId))+"&userId=" + (userId==null? "" : System.Uri.EscapeDataString(userId))+"&userAccountId=" + (userAccountId==null? "" : System.Uri.EscapeDataString(userAccountId))+"&headline=" + (headline==null? "" : System.Uri.EscapeDataString(headline))+"&rating="+rating+"&description=" + (description==null? "" : System.Uri.EscapeDataString(description))+"&customData=" + (customData==null? "" : System.Uri.EscapeDataString(customData));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -3963,7 +3870,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3980,8 +3886,7 @@ namespace MyNS
 		public async Task StatsIncrement_fieldPostByAppIdAndUserIdAndValueAndDateAsync(string field, string appId, string userId, int value, long date, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "stats/increment/"+ (field==null? "" : System.Uri.EscapeDataString(field))+"&appId=" + (appId==null? "" : System.Uri.EscapeDataString(appId))+"&userId=" + (userId==null? "" : System.Uri.EscapeDataString(userId))+"&value="+value+"&date="+date;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -3990,7 +3895,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4007,8 +3911,7 @@ namespace MyNS
 		public async Task StatsSeries_period_fieldsGetByStartAndEndAndQueryAsync(StatsSeries_period_fieldsGetByStartAndEndAndQueryPeriod period, string fields, long start, long end, string query, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "stats/series/"+period+"/"+ (fields==null? "" : System.Uri.EscapeDataString(fields))+"&start="+start+"&end="+end+"&query=" + (query==null? "" : System.Uri.EscapeDataString(query));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4022,7 +3925,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4037,8 +3939,7 @@ namespace MyNS
 		public async Task StatsTotalGetByFieldsAndQueryAndStartAndEndAsync(string fields, string query, long start, long end, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "stats/total?fields=" + (fields==null? "" : System.Uri.EscapeDataString(fields))+"&query=" + (query==null? "" : System.Uri.EscapeDataString(query))+"&start="+start+"&end="+end;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4052,7 +3953,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4066,8 +3966,7 @@ namespace MyNS
 		public async Task Stripe_gatewayDeveloper_developerIdAccountsGetAsync(string developerId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "stripe-gateway/developer/"+ (developerId==null? "" : System.Uri.EscapeDataString(developerId))+"/accounts";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4081,7 +3980,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4097,8 +3995,7 @@ namespace MyNS
 		public async Task Stripe_gatewayDeveloper_developerIdAccountsPostByRedirectUrlAsync(string developerId, string redirectUrl, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "stripe-gateway/developer/"+ (developerId==null? "" : System.Uri.EscapeDataString(developerId))+"/accounts&redirectUrl=" + (redirectUrl==null? "" : System.Uri.EscapeDataString(redirectUrl));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -4107,7 +4004,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4123,8 +4019,7 @@ namespace MyNS
 		public async Task Stripe_gatewayDeveloper_developerIdAccounts_stripeIdDeleteAsync(string developerId, string stripeId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "stripe-gateway/developer/"+ (developerId==null? "" : System.Uri.EscapeDataString(developerId))+"/accounts/"+ (stripeId==null? "" : System.Uri.EscapeDataString(stripeId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4138,7 +4033,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4152,8 +4046,7 @@ namespace MyNS
 		public async Task Stripe_gatewayUser_userIdCardsGetAsync(string userId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "stripe-gateway/user/"+ (userId==null? "" : System.Uri.EscapeDataString(userId))+"/cards";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4167,7 +4060,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4183,8 +4075,7 @@ namespace MyNS
 		public async Task Stripe_gatewayUser_userIdCardsPostByTokenAndIsDefaultAsync(string userId, string token, bool isDefault, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "stripe-gateway/user/"+ (userId==null? "" : System.Uri.EscapeDataString(userId))+"/cards&token=" + (token==null? "" : System.Uri.EscapeDataString(token))+"&isDefault="+isDefault;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -4193,7 +4084,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4206,8 +4096,7 @@ namespace MyNS
 		public async Task Stripe_gatewayUser_userIdCards_cardIdDeleteAsync(string userId, string cardId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "stripe-gateway/user/"+ (userId==null? "" : System.Uri.EscapeDataString(userId))+"/cards/"+ (cardId==null? "" : System.Uri.EscapeDataString(cardId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4221,7 +4110,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4244,8 +4132,7 @@ namespace MyNS
 		public async Task Stripe_gatewayUser_userIdCards_cardIdPostByIsDefaultAndAddress_cityAndAddress_countryAndAddress_line1AndAddress_line2AndAddress_stateAndAddress_zipAsync(string userId, string cardId, bool isDefault, string address_city, string address_country, string address_line1, string address_line2, string address_state, string address_zip, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "stripe-gateway/user/"+ (userId==null? "" : System.Uri.EscapeDataString(userId))+"/cards/"+ (cardId==null? "" : System.Uri.EscapeDataString(cardId))+"&isDefault="+isDefault+"&address_city=" + (address_city==null? "" : System.Uri.EscapeDataString(address_city))+"&address_country=" + (address_country==null? "" : System.Uri.EscapeDataString(address_country))+"&address_line1=" + (address_line1==null? "" : System.Uri.EscapeDataString(address_line1))+"&address_line2=" + (address_line2==null? "" : System.Uri.EscapeDataString(address_line2))+"&address_state=" + (address_state==null? "" : System.Uri.EscapeDataString(address_state))+"&address_zip=" + (address_zip==null? "" : System.Uri.EscapeDataString(address_zip));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -4254,7 +4141,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4271,8 +4157,7 @@ namespace MyNS
 		public async Task TransactionsGetByQueryAndSortAndPageNumberAndLimitAsync(string query, string sort, int pageNumber, int limit, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "transactions?query=" + (query==null? "" : System.Uri.EscapeDataString(query))+"&sort=" + (sort==null? "" : System.Uri.EscapeDataString(sort))+"&pageNumber="+pageNumber+"&limit="+limit;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4286,7 +4171,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4300,8 +4184,7 @@ namespace MyNS
 		public async Task Transactions_transactionIdDeleteAsync(string transactionId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "transactions/"+ (transactionId==null? "" : System.Uri.EscapeDataString(transactionId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4315,7 +4198,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4329,8 +4211,7 @@ namespace MyNS
 		public async Task Transactions_transactionIdGetAsync(string transactionId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "transactions/"+ (transactionId==null? "" : System.Uri.EscapeDataString(transactionId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4344,7 +4225,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4359,8 +4239,7 @@ namespace MyNS
 		public async Task Transactions_transactionIdPostByCustomDataAsync(string transactionId, string customData, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "transactions/"+ (transactionId==null? "" : System.Uri.EscapeDataString(transactionId))+"&customData=" + (customData==null? "" : System.Uri.EscapeDataString(customData));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -4369,7 +4248,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4386,8 +4264,7 @@ namespace MyNS
 		public async Task UserAccountsGetByQueryAndSortAndPageNumberAndLimitAsync(string query, string sort, int pageNumber, int limit, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "userAccounts?query=" + (query==null? "" : System.Uri.EscapeDataString(query))+"&sort=" + (sort==null? "" : System.Uri.EscapeDataString(sort))+"&pageNumber="+pageNumber+"&limit="+limit;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4401,7 +4278,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4413,8 +4289,7 @@ namespace MyNS
 		public async Task UserAccounts_userAccountIdDeleteAsync(string userAccountId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "userAccounts/"+ (userAccountId==null? "" : System.Uri.EscapeDataString(userAccountId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4428,7 +4303,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4440,8 +4314,7 @@ namespace MyNS
 		public async Task UserAccounts_userAccountIdGetAsync(string userAccountId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "userAccounts/"+ (userAccountId==null? "" : System.Uri.EscapeDataString(userAccountId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4455,7 +4328,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4471,8 +4343,7 @@ namespace MyNS
 		public async Task UserAccounts_userAccountIdPatchByUserIdAndEmailAndNameAndCustomDataAsync(string userAccountId, string userId, string email, string name, string customData, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "userAccounts/"+ (userAccountId==null? "" : System.Uri.EscapeDataString(userAccountId))+"&userId=" + (userId==null? "" : System.Uri.EscapeDataString(userId))+"&email=" + (email==null? "" : System.Uri.EscapeDataString(email))+"&name=" + (name==null? "" : System.Uri.EscapeDataString(name))+"&customData=" + (customData==null? "" : System.Uri.EscapeDataString(customData));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -4481,7 +4352,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4497,8 +4367,7 @@ namespace MyNS
 		public async Task UserAccounts_userAccountIdPostByUserIdAndEmailAndNameAndCustomDataAsync(string userAccountId, string userId, string email, string name, string customData, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "userAccounts/"+ (userAccountId==null? "" : System.Uri.EscapeDataString(userAccountId))+"&userId=" + (userId==null? "" : System.Uri.EscapeDataString(userId))+"&email=" + (email==null? "" : System.Uri.EscapeDataString(email))+"&name=" + (name==null? "" : System.Uri.EscapeDataString(name))+"&customData=" + (customData==null? "" : System.Uri.EscapeDataString(customData));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -4507,7 +4376,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4524,8 +4392,7 @@ namespace MyNS
 		public async Task UsersGetByQueryAndSortAndPageNumberAndLimitAsync(string query, string sort, int pageNumber, int limit, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "users?query=" + (query==null? "" : System.Uri.EscapeDataString(query))+"&sort=" + (sort==null? "" : System.Uri.EscapeDataString(sort))+"&pageNumber="+pageNumber+"&limit="+limit;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4539,7 +4406,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4553,8 +4419,7 @@ namespace MyNS
 		public async Task Users_userIdDeleteAsync(string userId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "users/"+ (userId==null? "" : System.Uri.EscapeDataString(userId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4568,7 +4433,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4582,8 +4446,7 @@ namespace MyNS
 		public async Task Users_userIdGetAsync(string userId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "users/"+ (userId==null? "" : System.Uri.EscapeDataString(userId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4597,7 +4460,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4614,8 +4476,7 @@ namespace MyNS
 		public async Task Users_userIdPatchByTypeAndEmailAndUsernameAndNameAndCustomDataAsync(string userId, string type, string email, string username, string name, string customData, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "users/"+ (userId==null? "" : System.Uri.EscapeDataString(userId))+"&type=" + (type==null? "" : System.Uri.EscapeDataString(type))+"&email=" + (email==null? "" : System.Uri.EscapeDataString(email))+"&username=" + (username==null? "" : System.Uri.EscapeDataString(username))+"&name=" + (name==null? "" : System.Uri.EscapeDataString(name))+"&customData=" + (customData==null? "" : System.Uri.EscapeDataString(customData));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -4624,7 +4485,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4641,8 +4501,7 @@ namespace MyNS
 		public async Task Users_userIdPostByTypeAndEmailAndUsernameAndNameAndCustomDataAsync(string userId, string type, string email, string username, string name, string customData, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "users/"+ (userId==null? "" : System.Uri.EscapeDataString(userId))+"&type=" + (type==null? "" : System.Uri.EscapeDataString(type))+"&email=" + (email==null? "" : System.Uri.EscapeDataString(email))+"&username=" + (username==null? "" : System.Uri.EscapeDataString(username))+"&name=" + (name==null? "" : System.Uri.EscapeDataString(name))+"&customData=" + (customData==null? "" : System.Uri.EscapeDataString(customData));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -4651,7 +4510,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

@@ -4667,8 +4667,7 @@ namespace MyNS
 		public async Task<AffiliateImageSearchResponse> V3AffiliatesSearchImagesGetByPhraseAndStyleAsync(string phrase, AffiliateSearchStyle style, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v3/affiliates/search/images?phrase=" + (phrase==null? "" : System.Uri.EscapeDataString(phrase))+"&style=" + style;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4678,17 +4677,14 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
-				{
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				using JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(streamContent));
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<AffiliateImageSearchResponse>(jsonReader);
-				}
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4699,8 +4695,7 @@ namespace MyNS
 		public async Task<AffiliateVideoSearchResponse> V3AffiliatesSearchVideosGetByPhraseAsync(string phrase, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v3/affiliates/search/videos?phrase=" + (phrase==null? "" : System.Uri.EscapeDataString(phrase));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4710,17 +4705,14 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
-				{
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				using JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(streamContent));
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<AffiliateVideoSearchResponse>(jsonReader);
-				}
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4736,8 +4728,7 @@ namespace MyNS
 		public async Task V3ArtistsImagesGetByArtist_nameAndFieldsAndPageAndPage_sizeAsync(string artist_name, ArtistsImageSearchFieldValues[] fields, int page, int page_size, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v3/artists/images?artist_name=" + (artist_name==null? "" : System.Uri.EscapeDataString(artist_name))+"&"+string.Join("&", fields.Select(z => $"fields={z}"))+"&page="+page+"&page_size="+page_size;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4751,7 +4742,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4767,8 +4757,7 @@ namespace MyNS
 		public async Task V3ArtistsVideosGetByArtist_nameAndFieldsAndPageAndPage_sizeAsync(string artist_name, ArtistsVideoSearchFieldValues[] fields, int page, int page_size, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v3/artists/videos?artist_name=" + (artist_name==null? "" : System.Uri.EscapeDataString(artist_name))+"&"+string.Join("&", fields.Select(z => $"fields={z}"))+"&page="+page+"&page_size="+page_size;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4782,7 +4771,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4816,23 +4804,19 @@ namespace MyNS
 		public async Task<AssetChanges> V3Asset_changesChange_setsPutByChannel_idAndBatch_sizeAsync(int channel_id, int batch_size, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v3/asset-changes/change-sets?channel_id="+channel_id+"&batch_size="+batch_size;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
-				{
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				using JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(streamContent));
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<AssetChanges>(jsonReader);
-				}
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4855,8 +4839,7 @@ namespace MyNS
 		public async Task V3Asset_changesChange_sets_change_set_idDeleteAsync(long change_set_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v3/asset-changes/change-sets/{change_set_id}";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4870,7 +4853,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4893,8 +4875,7 @@ namespace MyNS
 		public async Task<Channel[]> V3Asset_changesChannelsGetAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v3/asset-changes/channels";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4904,17 +4885,14 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
-				{
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				using JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(streamContent));
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<Channel[]>(jsonReader);
-				}
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4929,10 +4907,8 @@ namespace MyNS
 		public async Task<AssetLicensingResponse> V3Asset_licensing_assetIdPostAsync(string assetId, AcquireAssetLicensesRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v3/asset-licensing/"+ (assetId==null? "" : System.Uri.EscapeDataString(assetId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			using (var requestWriter = new System.IO.StringWriter())
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			using var requestWriter = new System.IO.StringWriter();
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
@@ -4946,18 +4922,14 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
-				{
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				using JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(streamContent));
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<AssetLicensingResponse>(jsonReader);
-				}
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
-			}
 			}
 		}
 		
@@ -4971,8 +4943,7 @@ namespace MyNS
 		public async Task<GetSendEventsResponse> V3Asset_managementAssetsSend_eventsGetByLast_offsetAndEvent_countAsync(System.DateTimeOffset last_offset, int event_count, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v3/asset-management/assets/send-events?last_offset=" + last_offset.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&event_count="+event_count;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4982,17 +4953,14 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
-				{
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				using JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(streamContent));
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<GetSendEventsResponse>(jsonReader);
-				}
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5008,8 +4976,7 @@ namespace MyNS
 		public async Task<BoardList> V3BoardsGetByPageAndBoard_relationshipAndSort_orderAndPageSizeAsync(int page, BoardRelationship board_relationship, BoardSortOrder sort_order, int pageSize, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v3/boards?page="+page+"&board_relationship=" + board_relationship+"&sort_order=" + sort_order+"&pageSize="+pageSize;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5019,17 +4986,14 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
-				{
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				using JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(streamContent));
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<BoardList>(jsonReader);
-				}
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5041,10 +5005,8 @@ namespace MyNS
 		public async Task V3BoardsPostAsync(BoardInfo requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v3/boards";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			using (var requestWriter = new System.IO.StringWriter())
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			using var requestWriter = new System.IO.StringWriter();
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
@@ -5063,8 +5025,6 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
-			}
-			}
 		}
 		
 		/// <summary>
@@ -5076,8 +5036,7 @@ namespace MyNS
 		public async Task V3Boards_board_idDeleteAsync(string board_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v3/boards/"+ (board_id==null? "" : System.Uri.EscapeDataString(board_id));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5091,7 +5050,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5104,8 +5062,7 @@ namespace MyNS
 		public async Task<BoardDetail> V3Boards_board_idGetAsync(string board_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v3/boards/"+ (board_id==null? "" : System.Uri.EscapeDataString(board_id));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5115,17 +5072,14 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
-				{
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				using JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(streamContent));
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<BoardDetail>(jsonReader);
-				}
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5139,10 +5093,8 @@ namespace MyNS
 		public async Task V3Boards_board_idPutAsync(string board_id, BoardInfo requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v3/boards/"+ (board_id==null? "" : System.Uri.EscapeDataString(board_id));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
-			{
-			using (var requestWriter = new System.IO.StringWriter())
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri);
+			using var requestWriter = new System.IO.StringWriter();
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
@@ -5160,8 +5112,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
-			}
 			}
 		}
 		
@@ -5175,8 +5125,7 @@ namespace MyNS
 		public async Task V3Boards_board_idAssetsDeleteByAsset_idsAsync(string board_id, string[] asset_ids, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v3/boards/"+ (board_id==null? "" : System.Uri.EscapeDataString(board_id))+"/assets&"+string.Join("&", asset_ids.Select(z => $"asset_ids={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5191,7 +5140,6 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
-			}
 		}
 		
 		/// <summary>
@@ -5203,10 +5151,8 @@ namespace MyNS
 		public async Task V3Boards_board_idAssetsPutAsync(string board_id, BoardAsset[] requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v3/boards/"+ (board_id==null? "" : System.Uri.EscapeDataString(board_id))+"/assets";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
-			{
-			using (var requestWriter = new System.IO.StringWriter())
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri);
+			using var requestWriter = new System.IO.StringWriter();
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
@@ -5224,8 +5170,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
-			}
 			}
 		}
 		
@@ -5239,8 +5183,7 @@ namespace MyNS
 		public async Task V3Boards_board_idAssets_asset_idDeleteAsync(string board_id, string asset_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v3/boards/"+ (board_id==null? "" : System.Uri.EscapeDataString(board_id))+"/assets/"+ (asset_id==null? "" : System.Uri.EscapeDataString(asset_id));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5254,7 +5197,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5267,8 +5209,7 @@ namespace MyNS
 		public async Task V3Boards_board_idAssets_asset_idPutAsync(string board_id, string asset_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v3/boards/"+ (board_id==null? "" : System.Uri.EscapeDataString(board_id))+"/assets/"+ (asset_id==null? "" : System.Uri.EscapeDataString(asset_id));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -5277,7 +5218,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5290,8 +5230,7 @@ namespace MyNS
 		public async Task<CommentsList> V3Boards_board_idCommentsGetAsync(string board_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v3/boards/"+ (board_id==null? "" : System.Uri.EscapeDataString(board_id))+"/comments";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5301,17 +5240,14 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
-				{
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				using JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(streamContent));
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<CommentsList>(jsonReader);
-				}
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5324,10 +5260,8 @@ namespace MyNS
 		public async Task V3Boards_board_idCommentsPostAsync(string board_id, CommentRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v3/boards/"+ (board_id==null? "" : System.Uri.EscapeDataString(board_id))+"/comments";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			using (var requestWriter = new System.IO.StringWriter())
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			using var requestWriter = new System.IO.StringWriter();
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
@@ -5346,8 +5280,6 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
-			}
-			}
 		}
 		
 		/// <summary>
@@ -5360,8 +5292,7 @@ namespace MyNS
 		public async Task V3Boards_board_idComments_comment_idDeleteAsync(string board_id, string comment_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v3/boards/"+ (board_id==null? "" : System.Uri.EscapeDataString(board_id))+"/comments/"+ (comment_id==null? "" : System.Uri.EscapeDataString(comment_id));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5375,7 +5306,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5391,8 +5321,7 @@ namespace MyNS
 		public async Task<CollectionsList> V3CollectionsGetAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v3/collections";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5402,17 +5331,14 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
-				{
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				using JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(streamContent));
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<CollectionsList>(jsonReader);
-				}
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5428,8 +5354,7 @@ namespace MyNS
 		public async Task<CountriesList> V3CountriesGetAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v3/countries";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5439,17 +5364,14 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
-				{
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				using JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(streamContent));
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<CountriesList>(jsonReader);
-				}
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5467,8 +5389,7 @@ namespace MyNS
 		public async Task<CustomerInfoResponse> V3CustomersCurrentGetAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v3/customers/current";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5478,17 +5399,14 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
-				{
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				using JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(streamContent));
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<CustomerInfoResponse>(jsonReader);
-				}
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5522,8 +5440,7 @@ namespace MyNS
 		public async Task<GetDownloadsResponse> V3DownloadsGetByDate_fromAndDate_toAndUse_timeAndPageAndPage_sizeAndProduct_typeAndCompany_downloadsAsync(System.DateTimeOffset date_from, System.DateTimeOffset date_to, bool use_time, int page, int page_size, ProductType product_type, bool company_downloads, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v3/downloads?date_from=" + date_from.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&date_to=" + date_to.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&use_time="+use_time+"&page="+page+"&page_size="+page_size+"&product_type=" + product_type+"&company_downloads="+company_downloads;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5533,17 +5450,14 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
-				{
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				using JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(streamContent));
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<GetDownloadsResponse>(jsonReader);
-				}
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5646,10 +5560,8 @@ namespace MyNS
 		public async Task V3DownloadsImages_idPostByAuto_downloadAndFile_typeAndHeightAndProduct_idAndProduct_typeAndUse_team_creditsAsync(string id, bool auto_download, DownloadFileType file_type, string height, int product_id, ProductType product_type, bool use_team_credits, PremiumAccessDownloadData requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v3/downloads/images/"+ (id==null? "" : System.Uri.EscapeDataString(id))+"&auto_download="+auto_download+"&file_type=" + file_type+"&height=" + (height==null? "" : System.Uri.EscapeDataString(height))+"&product_id="+product_id+"&product_type=" + product_type+"&use_team_credits="+use_team_credits;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			using (var requestWriter = new System.IO.StringWriter())
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			using var requestWriter = new System.IO.StringWriter();
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
@@ -5667,8 +5579,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
-			}
 			}
 		}
 		
@@ -5765,10 +5675,8 @@ namespace MyNS
 		public async Task V3DownloadsVideos_idPostByAuto_downloadAndSizeAndProduct_idAndProduct_typeAndUse_team_creditsAsync(string id, bool auto_download, string size, int product_id, ProductType product_type, bool use_team_credits, PremiumAccessDownloadData requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v3/downloads/videos/"+ (id==null? "" : System.Uri.EscapeDataString(id))+"&auto_download="+auto_download+"&size=" + (size==null? "" : System.Uri.EscapeDataString(size))+"&product_id="+product_id+"&product_type=" + product_type+"&use_team_credits="+use_team_credits;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			using (var requestWriter = new System.IO.StringWriter())
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			using var requestWriter = new System.IO.StringWriter();
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
@@ -5786,8 +5694,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
-			}
 			}
 		}
 		
@@ -5810,8 +5716,7 @@ namespace MyNS
 		public async Task V3EventsGetByIdsAndFieldsAsync(int[] ids, EventDetailFieldValues[] fields, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v3/events?"+string.Join("&", ids.Select(z => $"ids={z}"))+"&"+string.Join("&", fields.Select(z => $"fields={z}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5825,7 +5730,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5849,8 +5753,7 @@ namespace MyNS
 		public async Task V3Events_idGetByFieldsAsync(int id, EventDetailFieldValues[] fields, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v3/events/"+id+"?"+string.Join("&", fields.Select(z => $"fields={z}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5864,7 +5767,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5987,8 +5889,7 @@ namespace MyNS
 		public async Task<ImagesDetailResults> V3ImagesGetByIdsAndFieldsAsync(string[] ids, ImageDetailFieldValues[] fields, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v3/images?"+string.Join("&", ids.Select(z => $"ids={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", fields.Select(z => $"fields={z}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5998,17 +5899,14 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
-				{
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				using JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(streamContent));
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<ImagesDetailResults>(jsonReader);
-				}
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6137,8 +6035,7 @@ namespace MyNS
 		public async Task<ImagesDetailResults> V3Images_idGetByFieldsAsync(string id, ImageDetailFieldValues[] fields, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v3/images/"+ (id==null? "" : System.Uri.EscapeDataString(id))+"&"+string.Join("&", fields.Select(z => $"fields={z}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6148,17 +6045,14 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
-				{
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				using JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(streamContent));
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<ImagesDetailResults>(jsonReader);
-				}
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6173,8 +6067,7 @@ namespace MyNS
 		public async Task<AssetDownloadHistoryResults> V3Images_idDownloadhistoryGetByCompany_downloadsAsync(string id, bool company_downloads, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v3/images/"+ (id==null? "" : System.Uri.EscapeDataString(id))+"/downloadhistory&company_downloads="+company_downloads;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6184,17 +6077,14 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
-				{
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				using JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(streamContent));
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<AssetDownloadHistoryResults>(jsonReader);
-				}
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6324,8 +6214,7 @@ namespace MyNS
 		public async Task<ImageSearchItemSearchResults> V3Images_idSame_seriesGetByFieldsAndPageAndPage_sizeAsync(string id, ImagesFieldValues[] fields, int page, int page_size, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v3/images/"+ (id==null? "" : System.Uri.EscapeDataString(id))+"/same-series&"+string.Join("&", fields.Select(z => $"fields={z}"))+"&page="+page+"&page_size="+page_size;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6335,17 +6224,14 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
-				{
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				using JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(streamContent));
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<ImageSearchItemSearchResults>(jsonReader);
-				}
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6476,8 +6362,7 @@ namespace MyNS
 		public async Task<ImageSearchItemSearchResults> V3Images_idSimilarGetByFieldsAndPageAndPage_sizeAsync(string id, ImagesFieldValues[] fields, int page, int page_size, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v3/images/"+ (id==null? "" : System.Uri.EscapeDataString(id))+"/similar&"+string.Join("&", fields.Select(z => $"fields={z}"))+"&page="+page+"&page_size="+page_size;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6487,17 +6372,14 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
-				{
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				using JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(streamContent));
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<ImageSearchItemSearchResults>(jsonReader);
-				}
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6514,8 +6396,7 @@ namespace MyNS
 		public async Task<OrderDetail> V3Orders_idGetAsync(int id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v3/orders/"+id;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6525,17 +6406,14 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
-				{
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				using JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(streamContent));
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<OrderDetail>(jsonReader);
-				}
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6553,8 +6431,7 @@ namespace MyNS
 		public async Task<ProductsResult> V3ProductsGetByFieldsAsync(ProductFieldValues[] fields, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v3/products?"+string.Join("&", fields.Select(z => $"fields={z}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6564,17 +6441,14 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
-				{
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				using JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(streamContent));
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<ProductsResult>(jsonReader);
-				}
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6597,8 +6471,7 @@ namespace MyNS
 		public async Task<PreviousAssetPurchases> V3Purchased_assetsGetByDate_toAndPageAndPage_sizeAndDate_fromAndCompany_purchasesAsync(System.DateTimeOffset date_to, int page, int page_size, System.DateTimeOffset date_from, bool company_purchases, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v3/purchased-assets?date_to=" + date_to.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&page="+page+"&page_size="+page_size+"&date_from=" + date_from.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&company_purchases="+company_purchases;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6608,17 +6481,14 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
-				{
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				using JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(streamContent));
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<PreviousAssetPurchases>(jsonReader);
-				}
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6646,8 +6516,7 @@ namespace MyNS
 		public async Task<EventsSearchResult> V3SearchEventsGetByEditorial_segmentAndDate_fromAndDate_toAndFieldsAndPageAndPage_sizeAndPhraseAndSort_orderAsync(EditorialSegmentContract editorial_segment, System.DateTimeOffset date_from, System.DateTimeOffset date_to, EventFieldValues[] fields, int page, int page_size, string phrase, EventSearchSortOrder sort_order, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v3/search/events?editorial_segment=" + editorial_segment+"&date_from=" + date_from.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&date_to=" + date_to.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&"+string.Join("&", fields.Select(z => $"fields={z}"))+"&page="+page+"&page_size="+page_size+"&phrase=" + (phrase==null? "" : System.Uri.EscapeDataString(phrase))+"&sort_order=" + sort_order;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6657,17 +6526,14 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
-				{
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				using JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(streamContent));
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<EventsSearchResult>(jsonReader);
-				}
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6861,8 +6727,7 @@ namespace MyNS
 					Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v3/search/images?"+string.Join("&", age_of_people.Select(z => $"age_of_people={z}"))+"&artists=" + (artists==null? "" : System.Uri.EscapeDataString(artists))+"&"+string.Join("&", collection_codes.Select(z => $"collection_codes={System.Uri.EscapeDataString(z.ToString())}"))+"&collections_filter_type=" + collections_filter_type+"&color=" + (color==null? "" : System.Uri.EscapeDataString(color))+"&"+string.Join("&", compositions.Select(z => $"compositions={z}"))+"&download_product=" + (download_product==null? "" : System.Uri.EscapeDataString(download_product))+"&embed_content_only="+embed_content_only+"&"+string.Join("&", event_ids.Select(z => $"event_ids={z}"))+"&"+string.Join("&", ethnicity.Select(z => $"ethnicity={z}"))+"&exclude_nudity="+exclude_nudity+"&"+string.Join("&", fields.Select(z => $"fields={z}"))+"&"+string.Join("&", file_types.Select(z => $"file_types={z}"))+"&"+string.Join("&", graphical_styles.Select(z => $"graphical_styles={z}"))+"&graphical_styles_filter_type=" + graphical_styles_filter_type+"&include_related_searches="+include_related_searches+"&"+string.Join("&", keyword_ids.Select(z => $"keyword_ids={z}"))+"&minimum_size=" + minimum_size+"&"+string.Join("&", number_of_people.Select(z => $"number_of_people={z}"))+"&"+string.Join("&", orientations.Select(z => $"orientations={z}"))+"&page="+page+"&page_size="+page_size+"&phrase=" + (phrase==null? "" : System.Uri.EscapeDataString(phrase))+"&sort_order=" + sort_order+"&"+string.Join("&", specific_people.Select(z => $"specific_people={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6872,17 +6737,14 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
-				{
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				using JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(streamContent));
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<ImageSearchItemSearchResults>(jsonReader);
-				}
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -7076,8 +6938,7 @@ namespace MyNS
 					Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v3/search/images/creative?"+string.Join("&", age_of_people.Select(z => $"age_of_people={z}"))+"&artists=" + (artists==null? "" : System.Uri.EscapeDataString(artists))+"&"+string.Join("&", collection_codes.Select(z => $"collection_codes={System.Uri.EscapeDataString(z.ToString())}"))+"&collections_filter_type=" + collections_filter_type+"&color=" + (color==null? "" : System.Uri.EscapeDataString(color))+"&"+string.Join("&", compositions.Select(z => $"compositions={z}"))+"&download_product=" + (download_product==null? "" : System.Uri.EscapeDataString(download_product))+"&embed_content_only="+embed_content_only+"&"+string.Join("&", ethnicity.Select(z => $"ethnicity={z}"))+"&"+string.Join("&", exclude_keyword_ids.Select(z => $"exclude_keyword_ids={z}"))+"&exclude_nudity="+exclude_nudity+"&exclude_editorial_use_only="+exclude_editorial_use_only+"&"+string.Join("&", fields.Select(z => $"fields={z}"))+"&"+string.Join("&", file_types.Select(z => $"file_types={z}"))+"&"+string.Join("&", graphical_styles.Select(z => $"graphical_styles={z}"))+"&graphical_styles_filter_type=" + graphical_styles_filter_type+"&include_related_searches="+include_related_searches+"&"+string.Join("&", keyword_ids.Select(z => $"keyword_ids={z}"))+"&minimum_size=" + minimum_size+"&"+string.Join("&", number_of_people.Select(z => $"number_of_people={z}"))+"&"+string.Join("&", orientations.Select(z => $"orientations={z}"))+"&page="+page+"&page_size="+page_size+"&phrase=" + (phrase==null? "" : System.Uri.EscapeDataString(phrase))+"&safe_search="+safe_search+"&sort_order=" + sort_order+"&"+string.Join("&", facet_fields.Select(z => $"facet_fields={z}"))+"&include_facets="+include_facets+"&facet_max_count="+facet_max_count;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -7087,17 +6948,14 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
-				{
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				using JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(streamContent));
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<CreativeImageSearchResults>(jsonReader);
-				}
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -7147,8 +7005,7 @@ namespace MyNS
 		public async Task<SearchByImageResourceResults> V3SearchImagesCreativeBy_imageGetByAsset_idAndExclude_editorial_use_onlyAndFacet_fieldsAndFacet_max_countAndFieldsAndImage_urlAndInclude_facetsAndPageAndPage_sizeAndProduct_typesAsync(string asset_id, bool exclude_editorial_use_only, CreateImageSearchFacetsFields[] facet_fields, int facet_max_count, CreativeImagesFieldValues[] fields, string image_url, bool include_facets, int page, int page_size, string[] product_types, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v3/search/images/creative/by-image?asset_id=" + (asset_id==null? "" : System.Uri.EscapeDataString(asset_id))+"&exclude_editorial_use_only="+exclude_editorial_use_only+"&"+string.Join("&", facet_fields.Select(z => $"facet_fields={z}"))+"&facet_max_count="+facet_max_count+"&"+string.Join("&", fields.Select(z => $"fields={z}"))+"&image_url=" + (image_url==null? "" : System.Uri.EscapeDataString(image_url))+"&include_facets="+include_facets+"&page="+page+"&page_size="+page_size+"&"+string.Join("&", product_types.Select(z => $"product_types={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -7158,17 +7015,14 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
-				{
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				using JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(streamContent));
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<SearchByImageResourceResults>(jsonReader);
-				}
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -7365,8 +7219,7 @@ namespace MyNS
 					Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v3/search/images/editorial?"+string.Join("&", age_of_people.Select(z => $"age_of_people={z}"))+"&artists=" + (artists==null? "" : System.Uri.EscapeDataString(artists))+"&"+string.Join("&", collection_codes.Select(z => $"collection_codes={System.Uri.EscapeDataString(z.ToString())}"))+"&collections_filter_type=" + collections_filter_type+"&"+string.Join("&", compositions.Select(z => $"compositions={z}"))+"&date_from=" + date_from.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&date_to=" + date_to.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&download_product=" + (download_product==null? "" : System.Uri.EscapeDataString(download_product))+"&"+string.Join("&", editorial_segments.Select(z => $"editorial_segments={z}"))+"&embed_content_only="+embed_content_only+"&"+string.Join("&", ethnicity.Select(z => $"ethnicity={z}"))+"&"+string.Join("&", event_ids.Select(z => $"event_ids={z}"))+"&"+string.Join("&", exclude_keyword_ids.Select(z => $"exclude_keyword_ids={z}"))+"&"+string.Join("&", fields.Select(z => $"fields={z}"))+"&"+string.Join("&", file_types.Select(z => $"file_types={z}"))+"&"+string.Join("&", graphical_styles.Select(z => $"graphical_styles={z}"))+"&graphical_styles_filter_type=" + graphical_styles_filter_type+"&include_related_searches="+include_related_searches+"&"+string.Join("&", keyword_ids.Select(z => $"keyword_ids={z}"))+"&minimum_size=" + minimum_size+"&"+string.Join("&", number_of_people.Select(z => $"number_of_people={z}"))+"&"+string.Join("&", orientations.Select(z => $"orientations={z}"))+"&page="+page+"&page_size="+page_size+"&phrase=" + (phrase==null? "" : System.Uri.EscapeDataString(phrase))+"&sort_order=" + sort_order+"&"+string.Join("&", specific_people.Select(z => $"specific_people={System.Uri.EscapeDataString(z.ToString())}"))+"&minimum_quality_rank="+minimum_quality_rank+"&"+string.Join("&", facet_fields.Select(z => $"facet_fields={z}"))+"&include_facets="+include_facets+"&facet_max_count="+facet_max_count;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -7376,17 +7229,14 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
-				{
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				using JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(streamContent));
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<EditorialImageSearchResults>(jsonReader);
-				}
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -7590,8 +7440,7 @@ namespace MyNS
 					Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v3/search/videos/creative?"+string.Join("&", age_of_people.Select(z => $"age_of_people={z}"))+"&artists=" + (artists==null? "" : System.Uri.EscapeDataString(artists))+"&"+string.Join("&", aspect_ratios.Select(z => $"aspect_ratios={z}"))+"&"+string.Join("&", collection_codes.Select(z => $"collection_codes={System.Uri.EscapeDataString(z.ToString())}"))+"&collections_filter_type=" + collections_filter_type+"&"+string.Join("&", compositions.Select(z => $"compositions={z}"))+"&download_product=" + (download_product==null? "" : System.Uri.EscapeDataString(download_product))+"&exclude_nudity="+exclude_nudity+"&exclude_editorial_use_only="+exclude_editorial_use_only+"&"+string.Join("&", exclude_keyword_ids.Select(z => $"exclude_keyword_ids={z}"))+"&"+string.Join("&", fields.Select(z => $"fields={z}"))+"&format_available=" + format_available+"&"+string.Join("&", frame_rates.Select(z => $"frame_rates={z}"))+"&"+string.Join("&", image_techniques.Select(z => $"image_techniques={z}"))+"&include_related_searches="+include_related_searches+"&"+string.Join("&", keyword_ids.Select(z => $"keyword_ids={z}"))+"&"+string.Join("&", license_models.Select(z => $"license_models={z}"))+"&"+string.Join("&", orientations.Select(z => $"orientations={z}"))+"&min_clip_length="+min_clip_length+"&max_clip_length="+max_clip_length+"&page="+page+"&page_size="+page_size+"&phrase=" + (phrase==null? "" : System.Uri.EscapeDataString(phrase))+"&safe_search="+safe_search+"&sort_order=" + sort_order+"&release_status=" + release_status+"&"+string.Join("&", facet_fields.Select(z => $"facet_fields={z}"))+"&facet_max_count="+facet_max_count+"&include_facets="+include_facets+"&"+string.Join("&", viewpoints.Select(z => $"viewpoints={z}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -7601,17 +7450,14 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
-				{
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				using JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(streamContent));
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<CreativeVideoSearchResults>(jsonReader);
-				}
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -7661,8 +7507,7 @@ namespace MyNS
 		public async Task<CreativeVideoSearchResults> V3SearchVideosCreativeBy_imageGetByAsset_idAndExclude_editorial_use_onlyAndFacet_fieldsAndFacet_max_countAndFieldsAndImage_urlAndInclude_facetsAndPageAndPage_sizeAndProduct_typesAsync(string asset_id, bool exclude_editorial_use_only, CreateVideoSearchFacetsFields[] facet_fields, int facet_max_count, CreativeVideosFieldValues[] fields, string image_url, bool include_facets, int page, int page_size, string[] product_types, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v3/search/videos/creative/by-image?asset_id=" + (asset_id==null? "" : System.Uri.EscapeDataString(asset_id))+"&exclude_editorial_use_only="+exclude_editorial_use_only+"&"+string.Join("&", facet_fields.Select(z => $"facet_fields={z}"))+"&facet_max_count="+facet_max_count+"&"+string.Join("&", fields.Select(z => $"fields={z}"))+"&image_url=" + (image_url==null? "" : System.Uri.EscapeDataString(image_url))+"&include_facets="+include_facets+"&page="+page+"&page_size="+page_size+"&"+string.Join("&", product_types.Select(z => $"product_types={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -7672,17 +7517,14 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
-				{
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				using JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(streamContent));
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<CreativeVideoSearchResults>(jsonReader);
-				}
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -7878,8 +7720,7 @@ namespace MyNS
 					Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v3/search/videos/editorial?"+string.Join("&", age_of_people.Select(z => $"age_of_people={z}"))+"&artists=" + (artists==null? "" : System.Uri.EscapeDataString(artists))+"&"+string.Join("&", aspect_ratios.Select(z => $"aspect_ratios={z}"))+"&"+string.Join("&", collection_codes.Select(z => $"collection_codes={System.Uri.EscapeDataString(z.ToString())}"))+"&collections_filter_type=" + collections_filter_type+"&"+string.Join("&", compositions.Select(z => $"compositions={z}"))+"&date_from=" + date_from.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&date_to=" + date_to.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&download_product=" + (download_product==null? "" : System.Uri.EscapeDataString(download_product))+"&"+string.Join("&", editorial_video_types.Select(z => $"editorial_video_types={z}"))+"&"+string.Join("&", fields.Select(z => $"fields={z}"))+"&format_available=" + format_available+"&"+string.Join("&", frame_rates.Select(z => $"frame_rates={z}"))+"&"+string.Join("&", image_techniques.Select(z => $"image_techniques={z}"))+"&include_related_searches="+include_related_searches+"&"+string.Join("&", keyword_ids.Select(z => $"keyword_ids={z}"))+"&min_clip_length="+min_clip_length+"&max_clip_length="+max_clip_length+"&"+string.Join("&", orientations.Select(z => $"orientations={z}"))+"&page="+page+"&page_size="+page_size+"&phrase=" + (phrase==null? "" : System.Uri.EscapeDataString(phrase))+"&sort_order=" + sort_order+"&"+string.Join("&", specific_people.Select(z => $"specific_people={System.Uri.EscapeDataString(z.ToString())}"))+"&release_status=" + release_status+"&"+string.Join("&", facet_fields.Select(z => $"facet_fields={z}"))+"&include_facets="+include_facets+"&facet_max_count="+facet_max_count+"&"+string.Join("&", viewpoints.Select(z => $"viewpoints={z}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -7889,17 +7730,14 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
-				{
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				using JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(streamContent));
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<EditorialVideoSearchResults>(jsonReader);
-				}
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -7925,10 +7763,8 @@ namespace MyNS
 		public async Task V3Usage_batches_idPutAsync(string id, Report_usage_batch_request requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v3/usage-batches/"+ (id==null? "" : System.Uri.EscapeDataString(id));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
-			{
-			using (var requestWriter = new System.IO.StringWriter())
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri);
+			using var requestWriter = new System.IO.StringWriter();
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
@@ -7946,8 +7782,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
-			}
 			}
 		}
 		
@@ -8104,8 +7938,7 @@ namespace MyNS
 		public async Task V3VideosGetByIdsAndFieldsAsync(string[] ids, VideoDetailFieldValues[] fields, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v3/videos?"+string.Join("&", ids.Select(z => $"ids={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", fields.Select(z => $"fields={z}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -8119,7 +7952,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -8270,8 +8102,7 @@ namespace MyNS
 		public async Task V3Videos_idGetByFieldsAsync(string id, VideoDetailFieldValues[] fields, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v3/videos/"+ (id==null? "" : System.Uri.EscapeDataString(id))+"&"+string.Join("&", fields.Select(z => $"fields={z}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -8285,7 +8116,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -8300,8 +8130,7 @@ namespace MyNS
 		public async Task<AssetDownloadHistoryResults> V3Videos_idDownloadhistoryGetByCompany_downloadsAsync(string id, bool company_downloads, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v3/videos/"+ (id==null? "" : System.Uri.EscapeDataString(id))+"/downloadhistory&company_downloads="+company_downloads;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -8311,17 +8140,14 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
-				{
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				using JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(streamContent));
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<AssetDownloadHistoryResults>(jsonReader);
-				}
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -8453,8 +8279,7 @@ namespace MyNS
 		public async Task V3Videos_idSame_seriesGetByFieldsAndPageAndPage_sizeAsync(string id, AssociatedVideoDetailFieldValues[] fields, int page, int page_size, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v3/videos/"+ (id==null? "" : System.Uri.EscapeDataString(id))+"/same-series&"+string.Join("&", fields.Select(z => $"fields={z}"))+"&page="+page+"&page_size="+page_size;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -8468,7 +8293,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -8600,8 +8424,7 @@ namespace MyNS
 		public async Task V3Videos_idSimilarGetByFieldsAndPageAndPage_sizeAsync(string id, AssociatedVideoDetailFieldValues[] fields, int page, int page_size, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v3/videos/"+ (id==null? "" : System.Uri.EscapeDataString(id))+"/similar&"+string.Join("&", fields.Select(z => $"fields={z}"))+"&page="+page+"&page_size="+page_size;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -8615,7 +8438,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

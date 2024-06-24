@@ -147,19 +147,17 @@ namespace MyNS
 		public async Task<ApplicationGetByDocTypeReturn> ApplicationGetByDocTypeAsync(string[] docType)
 		{
 			var requestUri = "application/newID?"+string.Join("&", docType.Select(z => $"docType={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ApplicationGetByDocTypeReturn>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ApplicationGetByDocTypeReturn>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -171,19 +169,17 @@ namespace MyNS
 		public async Task<ApplicationGetReturn> ApplicationGetAsync()
 		{
 			var requestUri = "application/status";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ApplicationGetReturn>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ApplicationGetReturn>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -204,19 +200,17 @@ namespace MyNS
 		public async Task<CodeSample[]> Code_SamplesGetByElementAnd_namespaceAndDocTypeAndOffsetAndLimitAsync(string element, string _namespace, string[] docType, int offset, int limit)
 		{
 			var requestUri = "code/findByElement/"+ (element==null? "" : System.Uri.EscapeDataString(element))+"&namespace=" + (_namespace==null? "" : System.Uri.EscapeDataString(_namespace))+"&"+string.Join("&", docType.Select(z => $"docType={System.Uri.EscapeDataString(z.ToString())}"))+"&offset="+offset+"&limit="+limit;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<CodeSample[]>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<CodeSample[]>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -237,19 +231,17 @@ namespace MyNS
 		public async Task<Document[]> DocumentsGetByDocTypeAndOffsetAndLimitAsync(string[] docType, int offset, int limit)
 		{
 			var requestUri = "documents?"+string.Join("&", docType.Select(z => $"docType={System.Uri.EscapeDataString(z.ToString())}"))+"&offset="+offset+"&limit="+limit;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Document[]>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Document[]>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -272,19 +264,17 @@ namespace MyNS
 		public async Task<Document[]> DocumentsGetByAuthorIDAndDocTypeAndOffsetAndLimitAsync(string authorID, string[] docType, int offset, int limit)
 		{
 			var requestUri = "documents/findByAuthor/"+ (authorID==null? "" : System.Uri.EscapeDataString(authorID))+"&"+string.Join("&", docType.Select(z => $"docType={System.Uri.EscapeDataString(z.ToString())}"))+"&offset="+offset+"&limit="+limit;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Document[]>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Document[]>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -307,19 +297,17 @@ namespace MyNS
 		public async Task<Document[]> DocumentsGetByFromDateAndToDateAndDocTypeAndOffsetAndLimitAsync(System.DateOnly fromDate, System.DateOnly toDate, string[] docType, int offset, int limit)
 		{
 			var requestUri = "documents/findByDate?fromDate="+fromDate+"&toDate="+toDate+"&"+string.Join("&", docType.Select(z => $"docType={System.Uri.EscapeDataString(z.ToString())}"))+"&offset="+offset+"&limit="+limit;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Document[]>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Document[]>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -342,19 +330,17 @@ namespace MyNS
 		public async Task<Document[]> DocumentsGetByDocIDAndDocTypeAndOffsetAndLimitAsync(string docID, string[] docType, int offset, int limit)
 		{
 			var requestUri = "documents/findByMention/"+ (docID==null? "" : System.Uri.EscapeDataString(docID))+"&"+string.Join("&", docType.Select(z => $"docType={System.Uri.EscapeDataString(z.ToString())}"))+"&offset="+offset+"&limit="+limit;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Document[]>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Document[]>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -370,19 +356,17 @@ namespace MyNS
 		public async Task<Document[]> DocumentsGetByDocIDAsync(string docID)
 		{
 			var requestUri = "documents/"+ (docID==null? "" : System.Uri.EscapeDataString(docID));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Document[]>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Document[]>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

@@ -50,8 +50,7 @@ namespace MyNS
 		public async Task GetByPackageAndAddonAndIpAndFormatAndLangAndKeyAsync(GetByPackageAndAddonAndIpAndFormatAndLangAndKeyPackage package, string[] addon, string ip, GetByPackageAndAddonAndIpAndFormatAndLangAndKeyFormat format, GetByPackageAndAddonAndIpAndFormatAndLangAndKeyLang lang, string key, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "?package=" + package+"&"+string.Join("&", addon.Select(z => $"addon={System.Uri.EscapeDataString(z.ToString())}"))+"&ip=" + (ip==null? "" : System.Uri.EscapeDataString(ip))+"&format=" + format+"&lang=" + lang+"&key=" + (key==null? "" : System.Uri.EscapeDataString(key));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -65,7 +64,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

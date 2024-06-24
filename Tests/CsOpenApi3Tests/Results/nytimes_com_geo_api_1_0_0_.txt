@@ -124,8 +124,7 @@ namespace MyNS
 		public async Task<EventsGetByNameAndLatitudeAndLongitudeAndElevationAndSwAndQueryAndFilterAndDate_rangeAndFacetsAndSortAndLimitAndOffsetReturn> EventsGetByNameAndLatitudeAndLongitudeAndElevationAndSwAndQueryAndFilterAndDate_rangeAndFacetsAndSortAndLimitAndOffsetAsync(string name, string latitude, string longitude, int elevation, string sw, string query, string filter, string date_range, EventsGetByNameAndLatitudeAndLongitudeAndElevationAndSwAndQueryAndFilterAndDate_rangeAndFacetsAndSortAndLimitAndOffsetFacets facets, string sort, int limit, int offset, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "query.json?name=" + (name==null? "" : System.Uri.EscapeDataString(name))+"&latitude=" + (latitude==null? "" : System.Uri.EscapeDataString(latitude))+"&longitude=" + (longitude==null? "" : System.Uri.EscapeDataString(longitude))+"&elevation="+elevation+"&sw=" + (sw==null? "" : System.Uri.EscapeDataString(sw))+"&query=" + (query==null? "" : System.Uri.EscapeDataString(query))+"&filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&date_range=" + (date_range==null? "" : System.Uri.EscapeDataString(date_range))+"&facets="+facets+"&sort=" + (sort==null? "" : System.Uri.EscapeDataString(sort))+"&limit="+limit+"&offset="+offset;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -135,13 +134,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<EventsGetByNameAndLatitudeAndLongitudeAndElevationAndSwAndQueryAndFilterAndDate_rangeAndFacetsAndSortAndLimitAndOffsetReturn>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<EventsGetByNameAndLatitudeAndLongitudeAndElevationAndSwAndQueryAndFilterAndDate_rangeAndFacetsAndSortAndLimitAndOffsetReturn>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

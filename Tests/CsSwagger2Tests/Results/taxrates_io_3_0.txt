@@ -266,22 +266,19 @@ namespace MyNS
 		public async Task<Rates> Tax_servicePostByDomainAndFilterAsync(string domain, string filter, Address requestBody)
 		{
 			var requestUri = "v1/tax/byaddress?domain=" + (domain==null? "" : System.Uri.EscapeDataString(domain))+"&filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Rates>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Rates>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -350,19 +347,17 @@ namespace MyNS
 		public async Task<Rates> Tax_serviceGetByDomainAndCountry_codeAndFilterAndZipAsync(string domain, string country_code, string filter, string zip)
 		{
 			var requestUri = "v1/tax/countrycode?domain=" + (domain==null? "" : System.Uri.EscapeDataString(domain))+"&country_code=" + (country_code==null? "" : System.Uri.EscapeDataString(country_code))+"&filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&zip=" + (zip==null? "" : System.Uri.EscapeDataString(zip));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Rates>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Rates>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -431,19 +426,17 @@ namespace MyNS
 		public async Task<Rates[]> Tax_serviceGetByDomainAndIpAndFilterAndZipAsync(string domain, string ip, string filter, string zip)
 		{
 			var requestUri = "v1/tax/ip?domain=" + (domain==null? "" : System.Uri.EscapeDataString(domain))+"&ip=" + (ip==null? "" : System.Uri.EscapeDataString(ip))+"&filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&zip=" + (zip==null? "" : System.Uri.EscapeDataString(zip));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Rates[]>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Rates[]>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -512,19 +505,17 @@ namespace MyNS
 		public async Task<Location[]> Tax_serviceGetByDomainAndFilterAndCursorAsync(string domain, string filter, string cursor)
 		{
 			var requestUri = "v3/tax/rates?domain=" + (domain==null? "" : System.Uri.EscapeDataString(domain))+"&filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&cursor=" + (cursor==null? "" : System.Uri.EscapeDataString(cursor));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Location[]>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Location[]>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

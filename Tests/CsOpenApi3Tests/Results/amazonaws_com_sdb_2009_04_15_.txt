@@ -607,8 +607,7 @@ namespace MyNS
 		public async Task GET_BatchDeleteAttributesAsync(string DomainName, string[] Items, GET_BatchDeleteAttributesAction Action, GET_BatchDeleteAttributesVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=BatchDeleteAttributes?DomainName=" + (DomainName==null? "" : System.Uri.EscapeDataString(DomainName))+"&"+string.Join("&", Items.Select(z => $"Items={System.Uri.EscapeDataString(z.ToString())}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -622,7 +621,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -636,8 +634,7 @@ namespace MyNS
 		public async Task GET_BatchPutAttributesAsync(string DomainName, string[] Items, GET_BatchPutAttributesAction Action, GET_BatchPutAttributesVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=BatchPutAttributes?DomainName=" + (DomainName==null? "" : System.Uri.EscapeDataString(DomainName))+"&"+string.Join("&", Items.Select(z => $"Items={System.Uri.EscapeDataString(z.ToString())}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -651,7 +648,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -664,8 +660,7 @@ namespace MyNS
 		public async Task GET_CreateDomainAsync(string DomainName, GET_CreateDomainAction Action, GET_CreateDomainVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=CreateDomain?DomainName=" + (DomainName==null? "" : System.Uri.EscapeDataString(DomainName))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -679,7 +674,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -695,8 +689,7 @@ namespace MyNS
 		public async Task GET_DeleteAttributesAsync(string DomainName, string ItemName, string[] Attributes, GET_DeleteAttributesExpected Expected, GET_DeleteAttributesAction Action, GET_DeleteAttributesVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DeleteAttributes?DomainName=" + (DomainName==null? "" : System.Uri.EscapeDataString(DomainName))+"&ItemName=" + (ItemName==null? "" : System.Uri.EscapeDataString(ItemName))+"&"+string.Join("&", Attributes.Select(z => $"Attributes={System.Uri.EscapeDataString(z.ToString())}"))+"&Expected=" + Expected+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -710,7 +703,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -723,8 +715,7 @@ namespace MyNS
 		public async Task GET_DeleteDomainAsync(string DomainName, GET_DeleteDomainAction Action, GET_DeleteDomainVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DeleteDomain?DomainName=" + (DomainName==null? "" : System.Uri.EscapeDataString(DomainName))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -738,7 +729,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -751,8 +741,7 @@ namespace MyNS
 		public async Task GET_DomainMetadataAsync(string DomainName, GET_DomainMetadataAction Action, GET_DomainMetadataVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DomainMetadata?DomainName=" + (DomainName==null? "" : System.Uri.EscapeDataString(DomainName))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -766,7 +755,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -782,8 +770,7 @@ namespace MyNS
 		public async Task GET_GetAttributesAsync(string DomainName, string ItemName, string[] AttributeNames, bool ConsistentRead, GET_GetAttributesAction Action, GET_GetAttributesVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=GetAttributes?DomainName=" + (DomainName==null? "" : System.Uri.EscapeDataString(DomainName))+"&ItemName=" + (ItemName==null? "" : System.Uri.EscapeDataString(ItemName))+"&"+string.Join("&", AttributeNames.Select(z => $"AttributeNames={System.Uri.EscapeDataString(z.ToString())}"))+"&ConsistentRead="+ConsistentRead+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -797,7 +784,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -811,8 +797,7 @@ namespace MyNS
 		public async Task GET_ListDomainsAsync(int MaxNumberOfDomains, string NextToken, GET_ListDomainsAction Action, GET_ListDomainsVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=ListDomains?MaxNumberOfDomains="+MaxNumberOfDomains+"&NextToken=" + (NextToken==null? "" : System.Uri.EscapeDataString(NextToken))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -826,7 +811,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -842,8 +826,7 @@ namespace MyNS
 		public async Task GET_PutAttributesAsync(string DomainName, string ItemName, string[] Attributes, GET_PutAttributesExpected Expected, GET_PutAttributesAction Action, GET_PutAttributesVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=PutAttributes?DomainName=" + (DomainName==null? "" : System.Uri.EscapeDataString(DomainName))+"&ItemName=" + (ItemName==null? "" : System.Uri.EscapeDataString(ItemName))+"&"+string.Join("&", Attributes.Select(z => $"Attributes={System.Uri.EscapeDataString(z.ToString())}"))+"&Expected=" + Expected+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -857,7 +840,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -872,8 +854,7 @@ namespace MyNS
 		public async Task GET_SelectAsync(string SelectExpression, string NextToken, bool ConsistentRead, GET_SelectAction Action, GET_SelectVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=Select?SelectExpression=" + (SelectExpression==null? "" : System.Uri.EscapeDataString(SelectExpression))+"&NextToken=" + (NextToken==null? "" : System.Uri.EscapeDataString(NextToken))+"&ConsistentRead="+ConsistentRead+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -887,7 +868,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

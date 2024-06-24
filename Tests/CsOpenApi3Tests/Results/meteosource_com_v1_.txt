@@ -2993,8 +2993,7 @@ namespace MyNS
 		public async Task<AirQuality_PointData> Air_quality_air_quality_getAsync(string place_id, string lat, string lon, string timezone, string key, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "air_quality?place_id=" + (place_id==null? "" : System.Uri.EscapeDataString(place_id))+"&lat=" + (lat==null? "" : System.Uri.EscapeDataString(lat))+"&lon=" + (lon==null? "" : System.Uri.EscapeDataString(lon))+"&timezone=" + (timezone==null? "" : System.Uri.EscapeDataString(timezone))+"&key=" + (key==null? "" : System.Uri.EscapeDataString(key));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3004,13 +3003,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<AirQuality_PointData>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<AirQuality_PointData>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3042,8 +3040,7 @@ namespace MyNS
 		public async Task<FindPlacesModel[]> Find_places_find_places_getAsync(string text, Language language, string key, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "find_places?text=" + (text==null? "" : System.Uri.EscapeDataString(text))+"&language=" + language+"&key=" + (key==null? "" : System.Uri.EscapeDataString(key));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3053,13 +3050,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<FindPlacesModel[]>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<FindPlacesModel[]>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3088,8 +3084,7 @@ namespace MyNS
 		public async Task<FindPlacesModel[]> Find_places_prefix_find_places_prefix_getAsync(string text, Language language, string key, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "find_places_prefix?text=" + (text==null? "" : System.Uri.EscapeDataString(text))+"&language=" + language+"&key=" + (key==null? "" : System.Uri.EscapeDataString(key));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3099,13 +3094,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<FindPlacesModel[]>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<FindPlacesModel[]>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3165,8 +3159,7 @@ namespace MyNS
 		public async Task Map_map_getAsync(int tile_x, int tile_y, int tile_zoom, string min_lat, string min_lon, string max_lat, string max_lon, string variable, string datetime, string key, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "map?tile_x="+tile_x+"&tile_y="+tile_y+"&tile_zoom="+tile_zoom+"&min_lat=" + (min_lat==null? "" : System.Uri.EscapeDataString(min_lat))+"&min_lon=" + (min_lon==null? "" : System.Uri.EscapeDataString(min_lon))+"&max_lat=" + (max_lat==null? "" : System.Uri.EscapeDataString(max_lat))+"&max_lon=" + (max_lon==null? "" : System.Uri.EscapeDataString(max_lon))+"&variable=" + (variable==null? "" : System.Uri.EscapeDataString(variable))+"&datetime=" + (datetime==null? "" : System.Uri.EscapeDataString(datetime))+"&key=" + (key==null? "" : System.Uri.EscapeDataString(key));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3180,7 +3173,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3210,8 +3202,7 @@ namespace MyNS
 		public async Task<FindPlacesModel> Nearest_place_nearest_place_getAsync(string lat, string lon, Language language, string key, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "nearest_place?lat=" + (lat==null? "" : System.Uri.EscapeDataString(lat))+"&lon=" + (lon==null? "" : System.Uri.EscapeDataString(lon))+"&language=" + language+"&key=" + (key==null? "" : System.Uri.EscapeDataString(key));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3221,13 +3212,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<FindPlacesModel>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<FindPlacesModel>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3306,8 +3296,7 @@ namespace MyNS
 		public async Task<Point_PointData> Point_point_getAsync(string place_id, string lat, string lon, string sections, string timezone, Language language, Units units, string key, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "point?place_id=" + (place_id==null? "" : System.Uri.EscapeDataString(place_id))+"&lat=" + (lat==null? "" : System.Uri.EscapeDataString(lat))+"&lon=" + (lon==null? "" : System.Uri.EscapeDataString(lon))+"&sections=" + (sections==null? "" : System.Uri.EscapeDataString(sections))+"&timezone=" + (timezone==null? "" : System.Uri.EscapeDataString(timezone))+"&language=" + language+"&units=" + units+"&key=" + (key==null? "" : System.Uri.EscapeDataString(key));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3317,13 +3306,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Point_PointData>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Point_PointData>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3364,8 +3352,7 @@ namespace MyNS
 		public async Task<TimeMachine_TimeMachine> Time_machine_time_machine_getAsync(string place_id, string lat, string lon, System.DateOnly date, string timezone, Units units, string key, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "time_machine?place_id=" + (place_id==null? "" : System.Uri.EscapeDataString(place_id))+"&lat=" + (lat==null? "" : System.Uri.EscapeDataString(lat))+"&lon=" + (lon==null? "" : System.Uri.EscapeDataString(lon))+"&date="+date+"&timezone=" + (timezone==null? "" : System.Uri.EscapeDataString(timezone))+"&units=" + units+"&key=" + (key==null? "" : System.Uri.EscapeDataString(key));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3375,13 +3362,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<TimeMachine_TimeMachine>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<TimeMachine_TimeMachine>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

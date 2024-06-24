@@ -170,8 +170,7 @@ namespace MyNS
 		public async Task<Proxy> ProxyGetByTokenAndAddressAndPortAndProtocolAndAccessTypeAndResponseTimeAndIsSslAndUptimeAndCountryAndContinentAndTimezoneAndLastTestedAsync(string Token, string Address, string Port, string Protocol, string AccessType, string ResponseTime, string IsSsl, string Uptime, string Country, string Continent, string Timezone, string LastTested, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "proxy?Token=" + (Token==null? "" : System.Uri.EscapeDataString(Token))+"&Address=" + (Address==null? "" : System.Uri.EscapeDataString(Address))+"&Port=" + (Port==null? "" : System.Uri.EscapeDataString(Port))+"&Protocol=" + (Protocol==null? "" : System.Uri.EscapeDataString(Protocol))+"&AccessType=" + (AccessType==null? "" : System.Uri.EscapeDataString(AccessType))+"&ResponseTime=" + (ResponseTime==null? "" : System.Uri.EscapeDataString(ResponseTime))+"&IsSsl=" + (IsSsl==null? "" : System.Uri.EscapeDataString(IsSsl))+"&Uptime=" + (Uptime==null? "" : System.Uri.EscapeDataString(Uptime))+"&Country=" + (Country==null? "" : System.Uri.EscapeDataString(Country))+"&Continent=" + (Continent==null? "" : System.Uri.EscapeDataString(Continent))+"&Timezone=" + (Timezone==null? "" : System.Uri.EscapeDataString(Timezone))+"&LastTested=" + (LastTested==null? "" : System.Uri.EscapeDataString(LastTested));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -181,13 +180,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Proxy>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Proxy>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

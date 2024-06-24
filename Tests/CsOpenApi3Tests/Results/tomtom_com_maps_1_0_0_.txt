@@ -50,8 +50,7 @@ namespace MyNS
 		public async Task Map_versionNumberCopyrights__formatGetByCallbackAsync(Map_versionNumberCopyrights__formatGetByCallbackVersionNumber versionNumber, Map_versionNumberCopyrights__formatGetByCallbackFormat format, string callback, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "map/"+versionNumber+"/copyrights."+format+"?callback=" + (callback==null? "" : System.Uri.EscapeDataString(callback));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -65,7 +64,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -81,8 +79,7 @@ namespace MyNS
 		public async Task Map_versionNumberCopyrightsCaption__formatGetByCallbackAsync(Map_versionNumberCopyrightsCaption__formatGetByCallbackVersionNumber versionNumber, Map_versionNumberCopyrights__formatGetByCallbackFormat format, string callback, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "map/"+versionNumber+"/copyrights/caption."+format+"?callback=" + (callback==null? "" : System.Uri.EscapeDataString(callback));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -96,7 +93,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -118,8 +114,7 @@ namespace MyNS
 		public async Task Map_versionNumberCopyrights_minLon_minLat_maxLon_maxLat__formatGetByCallbackAsync(Map_versionNumberCopyrights_minLon_minLat_maxLon_maxLat__formatGetByCallbackVersionNumber versionNumber, Map_versionNumberCopyrights__formatGetByCallbackFormat format, double minLon, double minLat, double maxLon, double maxLat, string callback, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "map/"+versionNumber+"/copyrights/"+minLon+"/"+minLat+"/"+maxLon+"/"+maxLat+"."+format+"?callback=" + (callback==null? "" : System.Uri.EscapeDataString(callback));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -133,7 +128,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -157,8 +151,7 @@ namespace MyNS
 		public async Task Map_versionNumberCopyrights_zoom_X_Y__formatGetByCallbackAsync(Map_versionNumberCopyrights_zoom_X_Y__formatGetByCallbackVersionNumber versionNumber, Map_versionNumberCopyrights__formatGetByCallbackFormat format, Map_versionNumberCopyrights_zoom_X_Y__formatGetByCallbackZoom zoom, int X, int Y, string callback, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "map/"+versionNumber+"/copyrights/"+zoom+"/"+X+"/"+Y+"."+format+"?callback=" + (callback==null? "" : System.Uri.EscapeDataString(callback));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -172,7 +165,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -210,8 +202,7 @@ namespace MyNS
 		public async Task Map_versionNumberStaticimageGetByLayerAndStyleAndFormatAndZoomAndCenterAndWidthAndHeightAndBboxAndViewAsync(Map_versionNumberStaticimageGetByLayerAndStyleAndFormatAndZoomAndCenterAndWidthAndHeightAndBboxAndViewVersionNumber versionNumber, Map_versionNumberStaticimageGetByLayerAndStyleAndFormatAndZoomAndCenterAndWidthAndHeightAndBboxAndViewLayer layer, Map_versionNumberStaticimageGetByLayerAndStyleAndFormatAndZoomAndCenterAndWidthAndHeightAndBboxAndViewStyle style, Map_versionNumberStaticimageGetByLayerAndStyleAndFormatAndZoomAndCenterAndWidthAndHeightAndBboxAndViewFormat format, Map_versionNumberStaticimageGetByLayerAndStyleAndFormatAndZoomAndCenterAndWidthAndHeightAndBboxAndViewZoom zoom, string center, int width, int height, string bbox, Map_versionNumberStaticimageGetByLayerAndStyleAndFormatAndZoomAndCenterAndWidthAndHeightAndBboxAndViewView view, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "map/"+versionNumber+"/staticimage?layer=" + layer+"&style=" + style+"&format=" + format+"&zoom="+zoom+"&center=" + (center==null? "" : System.Uri.EscapeDataString(center))+"&width="+width+"&height="+height+"&bbox=" + (bbox==null? "" : System.Uri.EscapeDataString(bbox))+"&view=" + view;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -225,7 +216,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -246,8 +236,7 @@ namespace MyNS
 		public async Task Map_versionNumberTile_layer_style_zoom_X_Y_pbfGetByViewAndLanguageAsync(Map_versionNumberTile_layer_style_zoom_X_Y_pbfGetByViewAndLanguageVersionNumber versionNumber, Map_versionNumberStaticimageGetByLayerAndStyleAndFormatAndZoomAndCenterAndWidthAndHeightAndBboxAndViewLayer layer, Map_versionNumberTile_layer_style_zoom_X_Y_pbfGetByViewAndLanguageStyle style, Map_versionNumberTile_layer_style_zoom_X_Y_pbfGetByViewAndLanguageZoom zoom, int X, int Y, Map_versionNumberTile_layer_style_zoom_X_Y_pbfGetByViewAndLanguageView view, string language, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "map/"+versionNumber+"/tile/"+layer+"/"+style+"/"+zoom+"/"+X+"/"+Y+".pbf?view=" + view+"&language=" + (language==null? "" : System.Uri.EscapeDataString(language));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -261,7 +250,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -283,8 +271,7 @@ namespace MyNS
 		public async Task Map_versionNumberTile_layer_style_zoom_X_Y__formatGetByTileSizeAndViewAsync(Map_versionNumberTile_layer_style_zoom_X_Y__formatGetByTileSizeAndViewVersionNumber versionNumber, Map_versionNumberStaticimageGetByLayerAndStyleAndFormatAndZoomAndCenterAndWidthAndHeightAndBboxAndViewLayer layer, Map_versionNumberStaticimageGetByLayerAndStyleAndFormatAndZoomAndCenterAndWidthAndHeightAndBboxAndViewStyle style, Map_versionNumberTile_layer_style_zoom_X_Y__formatGetByTileSizeAndViewZoom zoom, int X, int Y, Map_versionNumberTile_layer_style_zoom_X_Y__formatGetByTileSizeAndViewFormat format, Map_versionNumberTile_layer_style_zoom_X_Y__formatGetByTileSizeAndViewTileSize tileSize, Map_versionNumberStaticimageGetByLayerAndStyleAndFormatAndZoomAndCenterAndWidthAndHeightAndBboxAndViewView view, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "map/"+versionNumber+"/tile/"+layer+"/"+style+"/"+zoom+"/"+X+"/"+Y+"."+format+"?tileSize="+tileSize+"&view=" + view;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -298,7 +285,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -329,8 +315,7 @@ namespace MyNS
 		public async Task Map_versionNumberWmsGetByRequestAndSrsAndBboxAndWidthAndHeightAndFormatAndLayersAndStylesAndServiceAndVersionAsync(Map_versionNumberWmsGetByRequestAndSrsAndBboxAndWidthAndHeightAndFormatAndLayersAndStylesAndServiceAndVersionVersionNumber versionNumber, Map_versionNumberWmsGetByRequestAndSrsAndBboxAndWidthAndHeightAndFormatAndLayersAndStylesAndServiceAndVersionRequest request, Map_versionNumberWmsGetByRequestAndSrsAndBboxAndWidthAndHeightAndFormatAndLayersAndStylesAndServiceAndVersionSrs srs, string bbox, int width, int height, Map_versionNumberWmsGetByRequestAndSrsAndBboxAndWidthAndHeightAndFormatAndLayersAndStylesAndServiceAndVersionFormat format, Map_versionNumberWmsGetByRequestAndSrsAndBboxAndWidthAndHeightAndFormatAndLayersAndStylesAndServiceAndVersionLayers layers, Map_versionNumberWmsGetByRequestAndSrsAndBboxAndWidthAndHeightAndFormatAndLayersAndStylesAndServiceAndVersionStyles styles, Map_versionNumberWmsGetByRequestAndSrsAndBboxAndWidthAndHeightAndFormatAndLayersAndStylesAndServiceAndVersionService service, Map_versionNumberWmsGetByRequestAndSrsAndBboxAndWidthAndHeightAndFormatAndLayersAndStylesAndServiceAndVersionVersion version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "map/"+versionNumber+"/wms/?request=" + request+"&srs=" + srs+"&bbox=" + (bbox==null? "" : System.Uri.EscapeDataString(bbox))+"&width="+width+"&height="+height+"&format=" + format+"&layers=" + layers+"&styles=" + styles+"&service=" + service+"&version=" + version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -344,7 +329,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -360,8 +344,7 @@ namespace MyNS
 		public async Task Map_versionNumberWmsGetByServiceAndRequestAndVersionAsync(Map_versionNumberWmsGetByServiceAndRequestAndVersionVersionNumber versionNumber, Map_versionNumberWmsGetByRequestAndSrsAndBboxAndWidthAndHeightAndFormatAndLayersAndStylesAndServiceAndVersionService service, Map_versionNumberWmsGetByServiceAndRequestAndVersionRequest request, Map_versionNumberWmsGetByServiceAndRequestAndVersionVersion version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "map/"+versionNumber+"/wms//?service=" + service+"&request=" + request+"&version=" + version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -375,7 +358,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -395,8 +377,7 @@ namespace MyNS
 		public async Task Map_versionNumberWmts_key_wmtsVersionWMTSCapabilities_xmlGetAsync(Map_versionNumberWmts_key_wmtsVersionWMTSCapabilities_xmlGetVersionNumber versionNumber, string key, Map_versionNumberWmts_key_wmtsVersionWMTSCapabilities_xmlGetWmtsVersion wmtsVersion, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "map/"+versionNumber+"/wmts/"+ (key==null? "" : System.Uri.EscapeDataString(key))+"/"+wmtsVersion+"/WMTSCapabilities.xml";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -410,7 +391,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

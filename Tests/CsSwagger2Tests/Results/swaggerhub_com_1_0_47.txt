@@ -320,8 +320,7 @@ namespace MyNS
 		public async Task SearchApisAsync(string query, SearchApisState state, string[] tag, int page, int limit, SearchApisSort sort, SearchApisOrder order)
 		{
 			var requestUri = "apis?query=" + (query==null? "" : System.Uri.EscapeDataString(query))+"&state=" + state+"&"+string.Join("&", tag.Select(z => $"tag={System.Uri.EscapeDataString(z.ToString())}"))+"&page="+page+"&limit="+limit+"&sort=" + sort+"&order=" + order;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -330,7 +329,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -352,19 +350,17 @@ namespace MyNS
 		public async Task<ApisJson> GetOwnerApisAsync(string owner, int page, int limit, SearchApisSort sort, SearchApisOrder order)
 		{
 			var requestUri = "apis/"+ (owner==null? "" : System.Uri.EscapeDataString(owner))+"&page="+page+"&limit="+limit+"&sort=" + sort+"&order=" + order;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ApisJson>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ApisJson>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -378,19 +374,17 @@ namespace MyNS
 		public async Task<ApisJson> GetApiVersionsAsync(string owner, string api)
 		{
 			var requestUri = "apis/"+ (owner==null? "" : System.Uri.EscapeDataString(owner))+"/"+ (api==null? "" : System.Uri.EscapeDataString(api));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ApisJson>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ApisJson>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -414,10 +408,8 @@ namespace MyNS
 		public async Task SaveDefinitionAsync(string owner, string api, bool isPrivate, string version, SaveDefinitionOas oas, bool force, string requestBody)
 		{
 			var requestUri = "apis/"+ (owner==null? "" : System.Uri.EscapeDataString(owner))+"/"+ (api==null? "" : System.Uri.EscapeDataString(api))+"&isPrivate="+isPrivate+"&version=" + (version==null? "" : System.Uri.EscapeDataString(version))+"&oas=" + oas+"&force="+force;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -427,7 +419,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -441,8 +432,7 @@ namespace MyNS
 		public async Task DeleteApiAsync(string owner, string api)
 		{
 			var requestUri = "apis/"+ (owner==null? "" : System.Uri.EscapeDataString(owner))+"/"+ (api==null? "" : System.Uri.EscapeDataString(api));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -451,7 +441,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -465,19 +454,17 @@ namespace MyNS
 		public async Task<Collaboration> GetCollaborationAsync(string owner, string api, bool expandTeams)
 		{
 			var requestUri = "apis/"+ (owner==null? "" : System.Uri.EscapeDataString(owner))+"/"+ (api==null? "" : System.Uri.EscapeDataString(api))+"/.collaboration&expandTeams="+expandTeams;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Collaboration>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Collaboration>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -490,10 +477,8 @@ namespace MyNS
 		public async Task UpdateCollaborationAsync(string owner, string api, Collaboration requestBody)
 		{
 			var requestUri = "apis/"+ (owner==null? "" : System.Uri.EscapeDataString(owner))+"/"+ (api==null? "" : System.Uri.EscapeDataString(api))+"/.collaboration";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -503,7 +488,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -516,8 +500,7 @@ namespace MyNS
 		public async Task DeleteCollaborationAsync(string owner, string api)
 		{
 			var requestUri = "apis/"+ (owner==null? "" : System.Uri.EscapeDataString(owner))+"/"+ (api==null? "" : System.Uri.EscapeDataString(api))+"/.collaboration";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -526,7 +509,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -541,19 +523,17 @@ namespace MyNS
 		public async Task<string> GetDefinitionAsync(string owner, string api, string version)
 		{
 			var requestUri = "apis/"+ (owner==null? "" : System.Uri.EscapeDataString(owner))+"/"+ (api==null? "" : System.Uri.EscapeDataString(api))+"/"+ (version==null? "" : System.Uri.EscapeDataString(version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<string>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<string>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -568,8 +548,7 @@ namespace MyNS
 		public async Task DeleteApiVersionAsync(string owner, string api, string version)
 		{
 			var requestUri = "apis/"+ (owner==null? "" : System.Uri.EscapeDataString(owner))+"/"+ (api==null? "" : System.Uri.EscapeDataString(api))+"/"+ (version==null? "" : System.Uri.EscapeDataString(version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -578,7 +557,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -595,19 +573,17 @@ namespace MyNS
 		public async Task<ClosableComment[]> GetApiCommentsAsync(string owner, string api, string version)
 		{
 			var requestUri = "apis/"+ (owner==null? "" : System.Uri.EscapeDataString(owner))+"/"+ (api==null? "" : System.Uri.EscapeDataString(api))+"/"+ (version==null? "" : System.Uri.EscapeDataString(version))+"/.comment";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ClosableComment[]>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ClosableComment[]>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -622,19 +598,17 @@ namespace MyNS
 		public async Task<string> GetJsonDefinitionAsync(string owner, string api, string version)
 		{
 			var requestUri = "apis/"+ (owner==null? "" : System.Uri.EscapeDataString(owner))+"/"+ (api==null? "" : System.Uri.EscapeDataString(api))+"/"+ (version==null? "" : System.Uri.EscapeDataString(version))+"/swagger.json";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<string>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<string>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -649,8 +623,7 @@ namespace MyNS
 		public async Task GetYamlDefinitionAsync(string owner, string api, string version)
 		{
 			var requestUri = "apis/"+ (owner==null? "" : System.Uri.EscapeDataString(owner))+"/"+ (api==null? "" : System.Uri.EscapeDataString(api))+"/"+ (version==null? "" : System.Uri.EscapeDataString(version))+"/swagger.yaml";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -659,7 +632,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -686,8 +658,7 @@ namespace MyNS
 		public async Task SearchDomainsAsync(string query, SearchApisState state, string[] tag, int page, int limit, SearchApisSort sort, SearchApisOrder order)
 		{
 			var requestUri = "domains?query=" + (query==null? "" : System.Uri.EscapeDataString(query))+"&state=" + state+"&"+string.Join("&", tag.Select(z => $"tag={System.Uri.EscapeDataString(z.ToString())}"))+"&page="+page+"&limit="+limit+"&sort=" + sort+"&order=" + order;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -696,7 +667,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -718,19 +688,17 @@ namespace MyNS
 		public async Task<ApisJson> GetOwnerDomainsAsync(string owner, int page, int limit, SearchApisSort sort, SearchApisOrder order)
 		{
 			var requestUri = "domains/"+ (owner==null? "" : System.Uri.EscapeDataString(owner))+"&page="+page+"&limit="+limit+"&sort=" + sort+"&order=" + order;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ApisJson>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ApisJson>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -744,19 +712,17 @@ namespace MyNS
 		public async Task<ApisJson> GetDomainVersionsAsync(string owner, string domain)
 		{
 			var requestUri = "domains/"+ (owner==null? "" : System.Uri.EscapeDataString(owner))+"/"+ (domain==null? "" : System.Uri.EscapeDataString(domain));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ApisJson>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ApisJson>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -774,10 +740,8 @@ namespace MyNS
 		public async Task SaveDomainDefinitionAsync(string owner, string domain, bool isPrivate, string version, bool force, string requestBody)
 		{
 			var requestUri = "domains/"+ (owner==null? "" : System.Uri.EscapeDataString(owner))+"/"+ (domain==null? "" : System.Uri.EscapeDataString(domain))+"&isPrivate="+isPrivate+"&version=" + (version==null? "" : System.Uri.EscapeDataString(version))+"&force="+force;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -787,7 +751,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -802,8 +765,7 @@ namespace MyNS
 		public async Task DeleteDomainAsync(string owner, string domain, bool force)
 		{
 			var requestUri = "domains/"+ (owner==null? "" : System.Uri.EscapeDataString(owner))+"/"+ (domain==null? "" : System.Uri.EscapeDataString(domain))+"&force="+force;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -812,7 +774,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -827,19 +788,17 @@ namespace MyNS
 		public async Task<string> GetDomainDefinitionAsync(string owner, string domain, string version)
 		{
 			var requestUri = "domains/"+ (owner==null? "" : System.Uri.EscapeDataString(owner))+"/"+ (domain==null? "" : System.Uri.EscapeDataString(domain))+"/"+ (version==null? "" : System.Uri.EscapeDataString(version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<string>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<string>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -855,8 +814,7 @@ namespace MyNS
 		public async Task DeleteDomainVersionAsync(string owner, string domain, string version, bool force)
 		{
 			var requestUri = "domains/"+ (owner==null? "" : System.Uri.EscapeDataString(owner))+"/"+ (domain==null? "" : System.Uri.EscapeDataString(domain))+"/"+ (version==null? "" : System.Uri.EscapeDataString(version))+"&force="+force;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -865,7 +823,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -882,19 +839,17 @@ namespace MyNS
 		public async Task<ClosableComment[]> GetDomainCommentsAsync(string owner, string domain, string version)
 		{
 			var requestUri = "domains/"+ (owner==null? "" : System.Uri.EscapeDataString(owner))+"/"+ (domain==null? "" : System.Uri.EscapeDataString(domain))+"/"+ (version==null? "" : System.Uri.EscapeDataString(version))+"/.comment";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ClosableComment[]>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ClosableComment[]>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -909,19 +864,17 @@ namespace MyNS
 		public async Task<string> GetDomainJsonDefinitionAsync(string owner, string domain, string version)
 		{
 			var requestUri = "domains/"+ (owner==null? "" : System.Uri.EscapeDataString(owner))+"/"+ (domain==null? "" : System.Uri.EscapeDataString(domain))+"/"+ (version==null? "" : System.Uri.EscapeDataString(version))+"/domain.json";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<string>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<string>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -936,8 +889,7 @@ namespace MyNS
 		public async Task GetDomainYamlDefinitionAsync(string owner, string domain, string version)
 		{
 			var requestUri = "domains/"+ (owner==null? "" : System.Uri.EscapeDataString(owner))+"/"+ (domain==null? "" : System.Uri.EscapeDataString(domain))+"/"+ (version==null? "" : System.Uri.EscapeDataString(version))+"/domain.yaml";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -946,7 +898,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -984,19 +935,17 @@ namespace MyNS
 		public async Task<ApisJson> SearchApisAndDomainsAsync(SearchApisAndDomainsSpecType specType, SearchApisAndDomainsVisibility visibility, SearchApisState state, string owner, string query, int page, int limit, SearchApisSort sort, SearchApisOrder order)
 		{
 			var requestUri = "specs?specType=" + specType+"&visibility=" + visibility+"&state=" + state+"&owner=" + (owner==null? "" : System.Uri.EscapeDataString(owner))+"&query=" + (query==null? "" : System.Uri.EscapeDataString(query))+"&page="+page+"&limit="+limit+"&sort=" + sort+"&order=" + order;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ApisJson>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ApisJson>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

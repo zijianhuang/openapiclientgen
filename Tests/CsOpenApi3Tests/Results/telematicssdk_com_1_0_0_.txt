@@ -46,8 +46,7 @@ namespace MyNS
 		public async Task<TripsTripDetailsReturn> TripsTripDetailsAsync(string trackToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "mobilesdk/stage/track/get_track/v1?trackToken=" + (trackToken==null? "" : System.Uri.EscapeDataString(trackToken));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -57,13 +56,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<TripsTripDetailsReturn>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<TripsTripDetailsReturn>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -76,8 +74,7 @@ namespace MyNS
 		public async Task Slashv1SlashscoringsSlashconsolidatedAsync(string DeviceToken, string StartDate, string EndDate, string Tag, string InstanceId, string AppId, string CompanyId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "statistics/v1/Scorings/consolidated?DeviceToken=" + (DeviceToken==null? "" : System.Uri.EscapeDataString(DeviceToken))+"&StartDate=" + (StartDate==null? "" : System.Uri.EscapeDataString(StartDate))+"&EndDate=" + (EndDate==null? "" : System.Uri.EscapeDataString(EndDate))+"&Tag=" + (Tag==null? "" : System.Uri.EscapeDataString(Tag))+"&InstanceId=" + (InstanceId==null? "" : System.Uri.EscapeDataString(InstanceId))+"&AppId=" + (AppId==null? "" : System.Uri.EscapeDataString(AppId))+"&CompanyId=" + (CompanyId==null? "" : System.Uri.EscapeDataString(CompanyId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -91,7 +88,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -104,8 +100,7 @@ namespace MyNS
 		public async Task<Slashv1SlashscoringsSlashconsolidatedSlashdailyReturn> Slashv1SlashscoringsSlashconsolidatedSlashdailyAsync(string DeviceToken, string StartDate, string EndDate, string Tag, string InstanceId, string AppId, string CompanyId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "statistics/v1/Scorings/consolidated/daily?DeviceToken=" + (DeviceToken==null? "" : System.Uri.EscapeDataString(DeviceToken))+"&StartDate=" + (StartDate==null? "" : System.Uri.EscapeDataString(StartDate))+"&EndDate=" + (EndDate==null? "" : System.Uri.EscapeDataString(EndDate))+"&Tag=" + (Tag==null? "" : System.Uri.EscapeDataString(Tag))+"&InstanceId=" + (InstanceId==null? "" : System.Uri.EscapeDataString(InstanceId))+"&AppId=" + (AppId==null? "" : System.Uri.EscapeDataString(AppId))+"&CompanyId=" + (CompanyId==null? "" : System.Uri.EscapeDataString(CompanyId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -115,13 +110,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Slashv1SlashscoringsSlashconsolidatedSlashdailyReturn>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Slashv1SlashscoringsSlashconsolidatedSlashdailyReturn>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -139,8 +133,7 @@ namespace MyNS
 		public async Task<UserSafeScoringAccumulatedValueV1SlashscoringsSlashindividualReturn> UserSafeScoringAccumulatedValueV1SlashscoringsSlashindividualAsync(string startDate, string endDate, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "statistics/v1/Scorings/individual/?startDate=" + (startDate==null? "" : System.Uri.EscapeDataString(startDate))+"&endDate=" + (endDate==null? "" : System.Uri.EscapeDataString(endDate));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -150,13 +143,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<UserSafeScoringAccumulatedValueV1SlashscoringsSlashindividualReturn>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<UserSafeScoringAccumulatedValueV1SlashscoringsSlashindividualReturn>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -172,8 +164,7 @@ namespace MyNS
 		public async Task<UserSafeScoringDailyValueSlashv1SlashscoringsSlashindividualSlashdailyReturn> UserSafeScoringDailyValueSlashv1SlashscoringsSlashindividualSlashdailyAsync(string Tag, string StartDate, string EndDate, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "statistics/v1/Scorings/individual/daily?Tag=" + (Tag==null? "" : System.Uri.EscapeDataString(Tag))+"&StartDate=" + (StartDate==null? "" : System.Uri.EscapeDataString(StartDate))+"&EndDate=" + (EndDate==null? "" : System.Uri.EscapeDataString(EndDate));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -183,13 +174,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<UserSafeScoringDailyValueSlashv1SlashscoringsSlashindividualSlashdailyReturn>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<UserSafeScoringDailyValueSlashv1SlashscoringsSlashindividualSlashdailyReturn>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -202,8 +192,7 @@ namespace MyNS
 		public async Task Slashv1SlashstatisticsSlashconsolidatedAsync(string DeviceToken, string StartDate, string EndDate, string Tag, string InstanceId, string AppId, string CompanyId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "statistics/v1/Statistics/consolidated?DeviceToken=" + (DeviceToken==null? "" : System.Uri.EscapeDataString(DeviceToken))+"&StartDate=" + (StartDate==null? "" : System.Uri.EscapeDataString(StartDate))+"&EndDate=" + (EndDate==null? "" : System.Uri.EscapeDataString(EndDate))+"&Tag=" + (Tag==null? "" : System.Uri.EscapeDataString(Tag))+"&InstanceId=" + (InstanceId==null? "" : System.Uri.EscapeDataString(InstanceId))+"&AppId=" + (AppId==null? "" : System.Uri.EscapeDataString(AppId))+"&CompanyId=" + (CompanyId==null? "" : System.Uri.EscapeDataString(CompanyId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -217,7 +206,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -230,8 +218,7 @@ namespace MyNS
 		public async Task Slashv1SlashstatisticsSlashconsolidatedSlashdailyAsync(string DeviceToken, string StartDate, string EndDate, string Tag, string InstanceId, string AppId, string CompanyId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "statistics/v1/Statistics/consolidated/daily?DeviceToken=" + (DeviceToken==null? "" : System.Uri.EscapeDataString(DeviceToken))+"&StartDate=" + (StartDate==null? "" : System.Uri.EscapeDataString(StartDate))+"&EndDate=" + (EndDate==null? "" : System.Uri.EscapeDataString(EndDate))+"&Tag=" + (Tag==null? "" : System.Uri.EscapeDataString(Tag))+"&InstanceId=" + (InstanceId==null? "" : System.Uri.EscapeDataString(InstanceId))+"&AppId=" + (AppId==null? "" : System.Uri.EscapeDataString(AppId))+"&CompanyId=" + (CompanyId==null? "" : System.Uri.EscapeDataString(CompanyId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -245,7 +232,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -258,8 +244,7 @@ namespace MyNS
 		public async Task<UserStatisticsAccumulatedValueSlashv1SlashstatisticsSlashindividualReturn> UserStatisticsAccumulatedValueSlashv1SlashstatisticsSlashindividualAsync(string startDate, string endDate, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "statistics/v1/Statistics/individual/?startDate=" + (startDate==null? "" : System.Uri.EscapeDataString(startDate))+"&endDate=" + (endDate==null? "" : System.Uri.EscapeDataString(endDate));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -269,13 +254,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<UserStatisticsAccumulatedValueSlashv1SlashstatisticsSlashindividualReturn>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<UserStatisticsAccumulatedValueSlashv1SlashstatisticsSlashindividualReturn>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -288,8 +272,7 @@ namespace MyNS
 		public async Task<UserStatisticeDailyValueV1SlashstatisticsSlashindividualSlashdailyReturn> UserStatisticeDailyValueV1SlashstatisticsSlashindividualSlashdailyAsync(string startDate, string endDate, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "statistics/v1/Statistics/individual/daily/?startDate=" + (startDate==null? "" : System.Uri.EscapeDataString(startDate))+"&endDate=" + (endDate==null? "" : System.Uri.EscapeDataString(endDate));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -299,13 +282,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<UserStatisticeDailyValueV1SlashstatisticsSlashindividualSlashdailyReturn>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<UserStatisticeDailyValueV1SlashstatisticsSlashindividualSlashdailyReturn>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

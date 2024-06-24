@@ -55,8 +55,7 @@ namespace MyNS
 		public async Task FacetsAsync(string searchTerms, int count, int startIndex, string spatial, FacetsSortKeys sortKeys, System.DateOnly startDate, System.DateOnly endDate, string facetFilters, FacetsSource source, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "Facets?searchTerms=" + (searchTerms==null? "" : System.Uri.EscapeDataString(searchTerms))+"&count="+count+"&startIndex="+startIndex+"&spatial=" + (spatial==null? "" : System.Uri.EscapeDataString(spatial))+"&sortKeys=" + sortKeys+"&startDate="+startDate+"&endDate="+endDate+"&facetFilters=" + (facetFilters==null? "" : System.Uri.EscapeDataString(facetFilters))+"&source=" + source;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -70,7 +69,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -92,8 +90,7 @@ namespace MyNS
 		public async Task Open_searchAsync(string searchTerms, int count, int startIndex, string spatial, Open_searchSortKeys sortKeys, System.DateOnly startDate, System.DateOnly endDate, string facetFilters, FacetsSource source, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "OpenSearch?searchTerms=" + (searchTerms==null? "" : System.Uri.EscapeDataString(searchTerms))+"&count="+count+"&startIndex="+startIndex+"&spatial=" + (spatial==null? "" : System.Uri.EscapeDataString(spatial))+"&sortKeys=" + sortKeys+"&startDate="+startDate+"&endDate="+endDate+"&facetFilters=" + (facetFilters==null? "" : System.Uri.EscapeDataString(facetFilters))+"&source=" + source;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -107,7 +104,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -119,8 +115,7 @@ namespace MyNS
 		public async Task Opensearch_descriptionAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "OpenSearchDescription";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -134,7 +129,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -149,8 +143,7 @@ namespace MyNS
 		public async Task IdAsync(string q, FacetsSource source, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "suggest?q=" + (q==null? "" : System.Uri.EscapeDataString(q))+"&source=" + source;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -164,7 +157,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

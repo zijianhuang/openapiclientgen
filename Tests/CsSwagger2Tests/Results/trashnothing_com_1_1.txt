@@ -882,19 +882,17 @@ namespace MyNS
 		public async Task<Get_conversationsReturn> Get_conversationsAsync(string category, int page, int per_page, int num_messages, int include_num_unread, double device_pixel_ratio)
 		{
 			var requestUri = "conversations?category=" + (category==null? "" : System.Uri.EscapeDataString(category))+"&page="+page+"&per_page="+per_page+"&num_messages="+num_messages+"&include_num_unread="+include_num_unread+"&device_pixel_ratio="+device_pixel_ratio;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Get_conversationsReturn>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Get_conversationsReturn>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -916,19 +914,17 @@ namespace MyNS
 		public async Task<Search_conversationsReturn> Search_conversationsAsync(string search, int page, int per_page, double device_pixel_ratio)
 		{
 			var requestUri = "conversations/search?search=" + (search==null? "" : System.Uri.EscapeDataString(search))+"&page="+page+"&per_page="+per_page+"&device_pixel_ratio="+device_pixel_ratio;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Search_conversationsReturn>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Search_conversationsReturn>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -941,8 +937,7 @@ namespace MyNS
 		public async Task Archive_conversationAsync(string conversation_id)
 		{
 			var requestUri = "conversations/"+ (conversation_id==null? "" : System.Uri.EscapeDataString(conversation_id))+"/archive";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -951,7 +946,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -964,8 +958,7 @@ namespace MyNS
 		public async Task Block_conversationAsync(string conversation_id)
 		{
 			var requestUri = "conversations/"+ (conversation_id==null? "" : System.Uri.EscapeDataString(conversation_id))+"/block";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -974,7 +967,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -997,19 +989,17 @@ namespace MyNS
 		public async Task<Get_conversation_messagesReturn> Get_conversation_messagesAsync(string conversation_id, int page, int per_page, double device_pixel_ratio, int include_conversation)
 		{
 			var requestUri = "conversations/"+ (conversation_id==null? "" : System.Uri.EscapeDataString(conversation_id))+"/messages&page="+page+"&per_page="+per_page+"&device_pixel_ratio="+device_pixel_ratio+"&include_conversation="+include_conversation;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Get_conversation_messagesReturn>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Get_conversation_messagesReturn>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1022,8 +1012,7 @@ namespace MyNS
 		public async Task Unarchive_conversationAsync(string conversation_id)
 		{
 			var requestUri = "conversations/"+ (conversation_id==null? "" : System.Uri.EscapeDataString(conversation_id))+"/unarchive";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -1032,7 +1021,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1045,8 +1033,7 @@ namespace MyNS
 		public async Task Unblock_conversationAsync(string conversation_id)
 		{
 			var requestUri = "conversations/"+ (conversation_id==null? "" : System.Uri.EscapeDataString(conversation_id))+"/unblock";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -1055,7 +1042,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1088,19 +1074,17 @@ namespace MyNS
 		public async Task<Search_groupsReturn> Search_groupsAsync(string name, double latitude, double longitude, double distance, string country, string region, string postal_code, int page, int per_page)
 		{
 			var requestUri = "groups?name=" + (name==null? "" : System.Uri.EscapeDataString(name))+"&latitude="+latitude+"&longitude="+longitude+"&distance="+distance+"&country=" + (country==null? "" : System.Uri.EscapeDataString(country))+"&region=" + (region==null? "" : System.Uri.EscapeDataString(region))+"&postal_code=" + (postal_code==null? "" : System.Uri.EscapeDataString(postal_code))+"&page="+page+"&per_page="+per_page;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Search_groupsReturn>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Search_groupsReturn>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1113,19 +1097,17 @@ namespace MyNS
 		public async Task<Group[]> Get_groups_by_idsAsync(string group_ids)
 		{
 			var requestUri = "groups/multiple?group_ids=" + (group_ids==null? "" : System.Uri.EscapeDataString(group_ids));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Group[]>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Group[]>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1138,19 +1120,17 @@ namespace MyNS
 		public async Task<Group> Get_groupAsync(string group_id)
 		{
 			var requestUri = "groups/"+ (group_id==null? "" : System.Uri.EscapeDataString(group_id));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Group>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Group>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1167,22 +1147,19 @@ namespace MyNS
 		public async Task<Group> Submit_answersAsync(string group_id, System.Collections.Generic.Dictionary<string, string> requestBody)
 		{
 			var requestUri = "groups/"+ (group_id==null? "" : System.Uri.EscapeDataString(group_id))+"/answers";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Group>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Group>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1195,19 +1172,17 @@ namespace MyNS
 		public async Task<Group> Leave_groupAsync(string group_id)
 		{
 			var requestUri = "groups/"+ (group_id==null? "" : System.Uri.EscapeDataString(group_id))+"/unsubscribe";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Group>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Group>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1221,19 +1196,17 @@ namespace MyNS
 		public async Task<PhotoResult[]> Get_photos_by_idsAsync(string photo_ids, double device_pixel_ratio)
 		{
 			var requestUri = "photos/multiple?photo_ids=" + (photo_ids==null? "" : System.Uri.EscapeDataString(photo_ids))+"&device_pixel_ratio="+device_pixel_ratio;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<PhotoResult[]>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<PhotoResult[]>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1245,8 +1218,7 @@ namespace MyNS
 		public async Task Delete_photoAsync(string photo_id)
 		{
 			var requestUri = "photos/"+ (photo_id==null? "" : System.Uri.EscapeDataString(photo_id));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -1255,7 +1227,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1269,19 +1240,17 @@ namespace MyNS
 		public async Task<PhotoResult> Rotate_photoAsync(string photo_id, int degrees, double device_pixel_ratio)
 		{
 			var requestUri = "photos/"+ (photo_id==null? "" : System.Uri.EscapeDataString(photo_id))+"/rotate&degrees="+degrees+"&device_pixel_ratio="+device_pixel_ratio;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<PhotoResult>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<PhotoResult>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1324,19 +1293,17 @@ namespace MyNS
 		public async Task<Get_postsReturn> Get_postsAsync(string types, string sources, string group_ids, int per_page, int page, double device_pixel_ratio, double latitude, double longitude, double radius, System.DateTimeOffset date_min, System.DateTimeOffset date_max, string outcomes)
 		{
 			var requestUri = "posts?types=" + (types==null? "" : System.Uri.EscapeDataString(types))+"&sources=" + (sources==null? "" : System.Uri.EscapeDataString(sources))+"&group_ids=" + (group_ids==null? "" : System.Uri.EscapeDataString(group_ids))+"&per_page="+per_page+"&page="+page+"&device_pixel_ratio="+device_pixel_ratio+"&latitude="+latitude+"&longitude="+longitude+"&radius="+radius+"&date_min=" + date_min.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&date_max=" + date_max.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&outcomes=" + (outcomes==null? "" : System.Uri.EscapeDataString(outcomes));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Get_postsReturn>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Get_postsReturn>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1364,19 +1331,17 @@ namespace MyNS
 		public async Task<Get_all_postsReturn> Get_all_postsAsync(string types, System.DateTimeOffset date_min, System.DateTimeOffset date_max, int per_page, int page, double device_pixel_ratio)
 		{
 			var requestUri = "posts/all?types=" + (types==null? "" : System.Uri.EscapeDataString(types))+"&date_min=" + date_min.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&date_max=" + date_max.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&per_page="+per_page+"&page="+page+"&device_pixel_ratio="+device_pixel_ratio;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Get_all_postsReturn>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Get_all_postsReturn>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1490,8 +1455,7 @@ namespace MyNS
 		public async Task Get_post_client_javascriptAsync(string group_ids, string callback, string access_token)
 		{
 			var requestUri = "posts/client.js?group_ids=" + (group_ids==null? "" : System.Uri.EscapeDataString(group_ids))+"&callback=" + (callback==null? "" : System.Uri.EscapeDataString(callback))+"&access_token=" + (access_token==null? "" : System.Uri.EscapeDataString(access_token));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -1500,7 +1464,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1514,19 +1477,17 @@ namespace MyNS
 		public async Task<Post[]> Get_posts_by_idsAsync(string post_ids)
 		{
 			var requestUri = "posts/multiple?post_ids=" + (post_ids==null? "" : System.Uri.EscapeDataString(post_ids));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Post[]>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Post[]>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1572,19 +1533,17 @@ namespace MyNS
 		public async Task<Search_postsReturn> Search_postsAsync(string search, string sort_by, string types, string sources, string group_ids, int per_page, int page, double device_pixel_ratio, double latitude, double longitude, double radius, System.DateTimeOffset date_min, System.DateTimeOffset date_max, string outcomes)
 		{
 			var requestUri = "posts/search?search=" + (search==null? "" : System.Uri.EscapeDataString(search))+"&sort_by=" + (sort_by==null? "" : System.Uri.EscapeDataString(sort_by))+"&types=" + (types==null? "" : System.Uri.EscapeDataString(types))+"&sources=" + (sources==null? "" : System.Uri.EscapeDataString(sources))+"&group_ids=" + (group_ids==null? "" : System.Uri.EscapeDataString(group_ids))+"&per_page="+per_page+"&page="+page+"&device_pixel_ratio="+device_pixel_ratio+"&latitude="+latitude+"&longitude="+longitude+"&radius="+radius+"&date_min=" + date_min.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&date_max=" + date_max.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&outcomes=" + (outcomes==null? "" : System.Uri.EscapeDataString(outcomes));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Search_postsReturn>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Search_postsReturn>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1597,19 +1556,17 @@ namespace MyNS
 		public async Task<Post> Get_postAsync(string post_id)
 		{
 			var requestUri = "posts/"+ (post_id==null? "" : System.Uri.EscapeDataString(post_id));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Post>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Post>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1624,19 +1581,17 @@ namespace MyNS
 		public async Task<Get_post_and_related_dataReturn> Get_post_and_related_dataAsync(string post_id)
 		{
 			var requestUri = "posts/"+ (post_id==null? "" : System.Uri.EscapeDataString(post_id))+"/display";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Get_post_and_related_dataReturn>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Get_post_and_related_dataReturn>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1650,19 +1605,17 @@ namespace MyNS
 		public async Task<Post> Satisfy_postAsync(string post_id)
 		{
 			var requestUri = "posts/"+ (post_id==null? "" : System.Uri.EscapeDataString(post_id))+"/satisfy";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Post>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Post>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1676,19 +1629,17 @@ namespace MyNS
 		public async Task<Get_post_share_contentReturn> Get_post_share_contentAsync(string post_id)
 		{
 			var requestUri = "posts/"+ (post_id==null? "" : System.Uri.EscapeDataString(post_id))+"/share";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Get_post_share_contentReturn>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Get_post_share_contentReturn>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1702,8 +1653,7 @@ namespace MyNS
 		public async Task Share_postAsync(string post_id)
 		{
 			var requestUri = "posts/"+ (post_id==null? "" : System.Uri.EscapeDataString(post_id))+"/share";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -1712,7 +1662,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1726,19 +1675,17 @@ namespace MyNS
 		public async Task<Post> Withdraw_postAsync(string post_id)
 		{
 			var requestUri = "posts/"+ (post_id==null? "" : System.Uri.EscapeDataString(post_id))+"/withdraw";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Post>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Post>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1750,19 +1697,17 @@ namespace MyNS
 		public async Task<CurrentUser> Get_current_userAsync()
 		{
 			var requestUri = "users/me";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<CurrentUser>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<CurrentUser>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1774,19 +1719,17 @@ namespace MyNS
 		public async Task<Alert[]> Get_alertsAsync()
 		{
 			var requestUri = "users/me/alerts";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Alert[]>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Alert[]>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1799,8 +1742,7 @@ namespace MyNS
 		public async Task Delete_alertAsync(string alert_id)
 		{
 			var requestUri = "users/me/alerts/"+ (alert_id==null? "" : System.Uri.EscapeDataString(alert_id));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -1809,7 +1751,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1823,19 +1764,17 @@ namespace MyNS
 		public async Task<CurrentUser> Set_email_not_bouncingAsync()
 		{
 			var requestUri = "users/me/email/not-bouncing";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<CurrentUser>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<CurrentUser>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1849,19 +1788,17 @@ namespace MyNS
 		public async Task<Group[]> Get_current_user_groupsAsync(string membership)
 		{
 			var requestUri = "users/me/groups?membership=" + (membership==null? "" : System.Uri.EscapeDataString(membership));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Group[]>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Group[]>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1874,19 +1811,17 @@ namespace MyNS
 		public async Task<GroupNotice[]> Get_user_group_noticesAsync(string group_ids)
 		{
 			var requestUri = "users/me/notices?group_ids=" + (group_ids==null? "" : System.Uri.EscapeDataString(group_ids));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<GroupNotice[]>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<GroupNotice[]>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1928,19 +1863,17 @@ namespace MyNS
 		public async Task<Get_current_user_postsReturn> Get_current_user_postsAsync(string types, string sources, string group_ids, int per_page, int page, double device_pixel_ratio, double latitude, double longitude, double radius, System.DateTimeOffset date_min, System.DateTimeOffset date_max, string outcomes)
 		{
 			var requestUri = "users/me/posts?types=" + (types==null? "" : System.Uri.EscapeDataString(types))+"&sources=" + (sources==null? "" : System.Uri.EscapeDataString(sources))+"&group_ids=" + (group_ids==null? "" : System.Uri.EscapeDataString(group_ids))+"&per_page="+per_page+"&page="+page+"&device_pixel_ratio="+device_pixel_ratio+"&latitude="+latitude+"&longitude="+longitude+"&radius="+radius+"&date_min=" + date_min.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&date_max=" + date_max.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&outcomes=" + (outcomes==null? "" : System.Uri.EscapeDataString(outcomes));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Get_current_user_postsReturn>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Get_current_user_postsReturn>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1985,19 +1918,17 @@ namespace MyNS
 		public async Task<Search_current_user_postsReturn> Search_current_user_postsAsync(string search, string sort_by, string types, string sources, string group_ids, int per_page, int page, double device_pixel_ratio, double latitude, double longitude, double radius, System.DateTimeOffset date_min, System.DateTimeOffset date_max, string outcomes)
 		{
 			var requestUri = "users/me/posts/search?search=" + (search==null? "" : System.Uri.EscapeDataString(search))+"&sort_by=" + (sort_by==null? "" : System.Uri.EscapeDataString(sort_by))+"&types=" + (types==null? "" : System.Uri.EscapeDataString(types))+"&sources=" + (sources==null? "" : System.Uri.EscapeDataString(sources))+"&group_ids=" + (group_ids==null? "" : System.Uri.EscapeDataString(group_ids))+"&per_page="+per_page+"&page="+page+"&device_pixel_ratio="+device_pixel_ratio+"&latitude="+latitude+"&longitude="+longitude+"&radius="+radius+"&date_min=" + date_min.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&date_max=" + date_max.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&outcomes=" + (outcomes==null? "" : System.Uri.EscapeDataString(outcomes));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Search_current_user_postsReturn>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Search_current_user_postsReturn>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2009,19 +1940,17 @@ namespace MyNS
 		public async Task<Get_profile_imagesReturn[]> Get_profile_imagesAsync()
 		{
 			var requestUri = "users/me/profile-images";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Get_profile_imagesReturn[]>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Get_profile_imagesReturn[]>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2033,8 +1962,7 @@ namespace MyNS
 		public async Task Resend_account_verification_emailAsync()
 		{
 			var requestUri = "users/me/resend-verification";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -2043,7 +1971,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2055,8 +1982,7 @@ namespace MyNS
 		public async Task Send_password_reset_emailAsync()
 		{
 			var requestUri = "users/me/reset-password";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -2065,7 +1991,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2078,19 +2003,17 @@ namespace MyNS
 		public async Task<User> Get_userAsync(string user_id)
 		{
 			var requestUri = "users/"+ (user_id==null? "" : System.Uri.EscapeDataString(user_id));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<User>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<User>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2134,19 +2057,17 @@ namespace MyNS
 		public async Task<Get_user_postsReturn> Get_user_postsAsync(string user_id, string types, string sources, string group_ids, int per_page, int page, double device_pixel_ratio, double latitude, double longitude, double radius, System.DateTimeOffset date_min, System.DateTimeOffset date_max, string outcomes)
 		{
 			var requestUri = "users/"+ (user_id==null? "" : System.Uri.EscapeDataString(user_id))+"/posts&types=" + (types==null? "" : System.Uri.EscapeDataString(types))+"&sources=" + (sources==null? "" : System.Uri.EscapeDataString(sources))+"&group_ids=" + (group_ids==null? "" : System.Uri.EscapeDataString(group_ids))+"&per_page="+per_page+"&page="+page+"&device_pixel_ratio="+device_pixel_ratio+"&latitude="+latitude+"&longitude="+longitude+"&radius="+radius+"&date_min=" + date_min.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&date_max=" + date_max.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&outcomes=" + (outcomes==null? "" : System.Uri.EscapeDataString(outcomes));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Get_user_postsReturn>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Get_user_postsReturn>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2193,19 +2114,17 @@ namespace MyNS
 		public async Task<Search_user_postsReturn> Search_user_postsAsync(string user_id, string search, string sort_by, string types, string sources, string group_ids, int per_page, int page, double device_pixel_ratio, double latitude, double longitude, double radius, System.DateTimeOffset date_min, System.DateTimeOffset date_max, string outcomes)
 		{
 			var requestUri = "users/"+ (user_id==null? "" : System.Uri.EscapeDataString(user_id))+"/posts/search&search=" + (search==null? "" : System.Uri.EscapeDataString(search))+"&sort_by=" + (sort_by==null? "" : System.Uri.EscapeDataString(sort_by))+"&types=" + (types==null? "" : System.Uri.EscapeDataString(types))+"&sources=" + (sources==null? "" : System.Uri.EscapeDataString(sources))+"&group_ids=" + (group_ids==null? "" : System.Uri.EscapeDataString(group_ids))+"&per_page="+per_page+"&page="+page+"&device_pixel_ratio="+device_pixel_ratio+"&latitude="+latitude+"&longitude="+longitude+"&radius="+radius+"&date_min=" + date_min.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&date_max=" + date_max.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&outcomes=" + (outcomes==null? "" : System.Uri.EscapeDataString(outcomes));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Search_user_postsReturn>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Search_user_postsReturn>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2221,8 +2140,7 @@ namespace MyNS
 		public async Task Get_profile_image_fileAsync(string user_id, string _default)
 		{
 			var requestUri = "users/"+ (user_id==null? "" : System.Uri.EscapeDataString(user_id))+"/profile-image&default=" + (_default==null? "" : System.Uri.EscapeDataString(_default));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -2231,7 +2149,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

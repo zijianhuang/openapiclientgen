@@ -854,19 +854,17 @@ namespace MyNS
 		public async Task<LocationCollection> GetLocationsAsync(string api_version)
 		{
 			var requestUri = "providers/Microsoft.Intune/locations?api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<LocationCollection>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<LocationCollection>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -879,19 +877,17 @@ namespace MyNS
 		public async Task<Location> GetLocationByHostNameAsync(string api_version)
 		{
 			var requestUri = "providers/Microsoft.Intune/locations/hostName?api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Location>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Location>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -908,19 +904,17 @@ namespace MyNS
 		public async Task<ApplicationCollection> Android_GetAppForMAMPolicyAsync(string hostName, string policyName, string api_version, string filter, int top, string select)
 		{
 			var requestUri = "providers/Microsoft.Intune/locations/"+ (hostName==null? "" : System.Uri.EscapeDataString(hostName))+"/AndroidPolicies/"+ (policyName==null? "" : System.Uri.EscapeDataString(policyName))+"/apps&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version))+"&$filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&$top="+top+"&$select=" + (select==null? "" : System.Uri.EscapeDataString(select));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ApplicationCollection>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ApplicationCollection>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -936,19 +930,17 @@ namespace MyNS
 		public async Task<AndroidMAMPolicyCollection> Android_GetMAMPoliciesAsync(string hostName, string api_version, string filter, int top, string select)
 		{
 			var requestUri = "providers/Microsoft.Intune/locations/"+ (hostName==null? "" : System.Uri.EscapeDataString(hostName))+"/androidPolicies&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version))+"&$filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&$top="+top+"&$select=" + (select==null? "" : System.Uri.EscapeDataString(select));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<AndroidMAMPolicyCollection>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<AndroidMAMPolicyCollection>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -964,19 +956,17 @@ namespace MyNS
 		public async Task<AndroidMAMPolicy> Android_GetMAMPolicyByNameAsync(string hostName, string policyName, string api_version, string select)
 		{
 			var requestUri = "providers/Microsoft.Intune/locations/"+ (hostName==null? "" : System.Uri.EscapeDataString(hostName))+"/androidPolicies/"+ (policyName==null? "" : System.Uri.EscapeDataString(policyName))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version))+"&$select=" + (select==null? "" : System.Uri.EscapeDataString(select));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<AndroidMAMPolicy>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<AndroidMAMPolicy>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -992,22 +982,19 @@ namespace MyNS
 		public async Task<AndroidMAMPolicy> Android_CreateOrUpdateMAMPolicyAsync(string hostName, string policyName, string api_version, AndroidMAMPolicy requestBody)
 		{
 			var requestUri = "providers/Microsoft.Intune/locations/"+ (hostName==null? "" : System.Uri.EscapeDataString(hostName))+"/androidPolicies/"+ (policyName==null? "" : System.Uri.EscapeDataString(policyName))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<AndroidMAMPolicy>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<AndroidMAMPolicy>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1022,8 +1009,7 @@ namespace MyNS
 		public async Task Android_DeleteMAMPolicyAsync(string hostName, string policyName, string api_version)
 		{
 			var requestUri = "providers/Microsoft.Intune/locations/"+ (hostName==null? "" : System.Uri.EscapeDataString(hostName))+"/androidPolicies/"+ (policyName==null? "" : System.Uri.EscapeDataString(policyName))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -1032,7 +1018,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1048,22 +1033,19 @@ namespace MyNS
 		public async Task<AndroidMAMPolicy> Android_PatchMAMPolicyAsync(string hostName, string policyName, string api_version, AndroidMAMPolicy requestBody)
 		{
 			var requestUri = "providers/Microsoft.Intune/locations/"+ (hostName==null? "" : System.Uri.EscapeDataString(hostName))+"/androidPolicies/"+ (policyName==null? "" : System.Uri.EscapeDataString(policyName))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<AndroidMAMPolicy>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<AndroidMAMPolicy>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1080,10 +1062,8 @@ namespace MyNS
 		public async Task Android_AddAppForMAMPolicyAsync(string hostName, string policyName, string appName, string api_version, MAMPolicyAppIdOrGroupIdPayload requestBody)
 		{
 			var requestUri = "providers/Microsoft.Intune/locations/"+ (hostName==null? "" : System.Uri.EscapeDataString(hostName))+"/androidPolicies/"+ (policyName==null? "" : System.Uri.EscapeDataString(policyName))+"/apps/"+ (appName==null? "" : System.Uri.EscapeDataString(appName))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -1093,7 +1073,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1109,8 +1088,7 @@ namespace MyNS
 		public async Task Android_DeleteAppForMAMPolicyAsync(string hostName, string policyName, string appName, string api_version)
 		{
 			var requestUri = "providers/Microsoft.Intune/locations/"+ (hostName==null? "" : System.Uri.EscapeDataString(hostName))+"/androidPolicies/"+ (policyName==null? "" : System.Uri.EscapeDataString(policyName))+"/apps/"+ (appName==null? "" : System.Uri.EscapeDataString(appName))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -1119,7 +1097,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1134,19 +1111,17 @@ namespace MyNS
 		public async Task<GroupsCollection> Android_GetGroupsForMAMPolicyAsync(string hostName, string policyName, string api_version)
 		{
 			var requestUri = "providers/Microsoft.Intune/locations/"+ (hostName==null? "" : System.Uri.EscapeDataString(hostName))+"/androidPolicies/"+ (policyName==null? "" : System.Uri.EscapeDataString(policyName))+"/groups&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<GroupsCollection>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<GroupsCollection>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1163,10 +1138,8 @@ namespace MyNS
 		public async Task Android_AddGroupForMAMPolicyAsync(string hostName, string policyName, string groupId, string api_version, MAMPolicyAppIdOrGroupIdPayload requestBody)
 		{
 			var requestUri = "providers/Microsoft.Intune/locations/"+ (hostName==null? "" : System.Uri.EscapeDataString(hostName))+"/androidPolicies/"+ (policyName==null? "" : System.Uri.EscapeDataString(policyName))+"/groups/"+ (groupId==null? "" : System.Uri.EscapeDataString(groupId))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -1176,7 +1149,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1192,8 +1164,7 @@ namespace MyNS
 		public async Task Android_DeleteGroupForMAMPolicyAsync(string hostName, string policyName, string groupId, string api_version)
 		{
 			var requestUri = "providers/Microsoft.Intune/locations/"+ (hostName==null? "" : System.Uri.EscapeDataString(hostName))+"/androidPolicies/"+ (policyName==null? "" : System.Uri.EscapeDataString(policyName))+"/groups/"+ (groupId==null? "" : System.Uri.EscapeDataString(groupId))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -1202,7 +1173,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1218,19 +1188,17 @@ namespace MyNS
 		public async Task<ApplicationCollection> GetAppsAsync(string hostName, string api_version, string filter, int top, string select)
 		{
 			var requestUri = "providers/Microsoft.Intune/locations/"+ (hostName==null? "" : System.Uri.EscapeDataString(hostName))+"/apps&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version))+"&$filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&$top="+top+"&$select=" + (select==null? "" : System.Uri.EscapeDataString(select));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ApplicationCollection>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ApplicationCollection>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1246,19 +1214,17 @@ namespace MyNS
 		public async Task<FlaggedUserCollection> GetMAMFlaggedUsersAsync(string hostName, string api_version, string filter, int top, string select)
 		{
 			var requestUri = "providers/Microsoft.Intune/locations/"+ (hostName==null? "" : System.Uri.EscapeDataString(hostName))+"/flaggedUsers&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version))+"&$filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&$top="+top+"&$select=" + (select==null? "" : System.Uri.EscapeDataString(select));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<FlaggedUserCollection>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<FlaggedUserCollection>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1274,19 +1240,17 @@ namespace MyNS
 		public async Task<FlaggedUser> GetMAMFlaggedUserByNameAsync(string hostName, string userName, string api_version, string select)
 		{
 			var requestUri = "providers/Microsoft.Intune/locations/"+ (hostName==null? "" : System.Uri.EscapeDataString(hostName))+"/flaggedUsers/"+ (userName==null? "" : System.Uri.EscapeDataString(userName))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version))+"&$select=" + (select==null? "" : System.Uri.EscapeDataString(select));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<FlaggedUser>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<FlaggedUser>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1303,19 +1267,17 @@ namespace MyNS
 		public async Task<FlaggedEnrolledAppCollection> GetMAMUserFlaggedEnrolledAppsAsync(string hostName, string userName, string api_version, string filter, int top, string select)
 		{
 			var requestUri = "providers/Microsoft.Intune/locations/"+ (hostName==null? "" : System.Uri.EscapeDataString(hostName))+"/flaggedUsers/"+ (userName==null? "" : System.Uri.EscapeDataString(userName))+"/flaggedEnrolledApps&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version))+"&$filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&$top="+top+"&$select=" + (select==null? "" : System.Uri.EscapeDataString(select));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<FlaggedEnrolledAppCollection>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<FlaggedEnrolledAppCollection>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1331,19 +1293,17 @@ namespace MyNS
 		public async Task<IOSMAMPolicyCollection> Ios_GetMAMPoliciesAsync(string hostName, string api_version, string filter, int top, string select)
 		{
 			var requestUri = "providers/Microsoft.Intune/locations/"+ (hostName==null? "" : System.Uri.EscapeDataString(hostName))+"/iosPolicies&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version))+"&$filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&$top="+top+"&$select=" + (select==null? "" : System.Uri.EscapeDataString(select));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<IOSMAMPolicyCollection>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<IOSMAMPolicyCollection>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1359,19 +1319,17 @@ namespace MyNS
 		public async Task<IOSMAMPolicy> Ios_GetMAMPolicyByNameAsync(string hostName, string policyName, string api_version, string select)
 		{
 			var requestUri = "providers/Microsoft.Intune/locations/"+ (hostName==null? "" : System.Uri.EscapeDataString(hostName))+"/iosPolicies/"+ (policyName==null? "" : System.Uri.EscapeDataString(policyName))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version))+"&$select=" + (select==null? "" : System.Uri.EscapeDataString(select));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<IOSMAMPolicy>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<IOSMAMPolicy>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1387,22 +1345,19 @@ namespace MyNS
 		public async Task<IOSMAMPolicy> Ios_CreateOrUpdateMAMPolicyAsync(string hostName, string policyName, string api_version, IOSMAMPolicy requestBody)
 		{
 			var requestUri = "providers/Microsoft.Intune/locations/"+ (hostName==null? "" : System.Uri.EscapeDataString(hostName))+"/iosPolicies/"+ (policyName==null? "" : System.Uri.EscapeDataString(policyName))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<IOSMAMPolicy>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<IOSMAMPolicy>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1417,8 +1372,7 @@ namespace MyNS
 		public async Task Ios_DeleteMAMPolicyAsync(string hostName, string policyName, string api_version)
 		{
 			var requestUri = "providers/Microsoft.Intune/locations/"+ (hostName==null? "" : System.Uri.EscapeDataString(hostName))+"/iosPolicies/"+ (policyName==null? "" : System.Uri.EscapeDataString(policyName))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -1427,7 +1381,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1443,22 +1396,19 @@ namespace MyNS
 		public async Task<IOSMAMPolicy> Ios_PatchMAMPolicyAsync(string hostName, string policyName, string api_version, IOSMAMPolicy requestBody)
 		{
 			var requestUri = "providers/Microsoft.Intune/locations/"+ (hostName==null? "" : System.Uri.EscapeDataString(hostName))+"/iosPolicies/"+ (policyName==null? "" : System.Uri.EscapeDataString(policyName))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<IOSMAMPolicy>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<IOSMAMPolicy>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1475,19 +1425,17 @@ namespace MyNS
 		public async Task<ApplicationCollection> Ios_GetAppForMAMPolicyAsync(string hostName, string policyName, string api_version, string filter, int top, string select)
 		{
 			var requestUri = "providers/Microsoft.Intune/locations/"+ (hostName==null? "" : System.Uri.EscapeDataString(hostName))+"/iosPolicies/"+ (policyName==null? "" : System.Uri.EscapeDataString(policyName))+"/apps&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version))+"&$filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&$top="+top+"&$select=" + (select==null? "" : System.Uri.EscapeDataString(select));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ApplicationCollection>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ApplicationCollection>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1504,10 +1452,8 @@ namespace MyNS
 		public async Task Ios_AddAppForMAMPolicyAsync(string hostName, string policyName, string appName, string api_version, MAMPolicyAppIdOrGroupIdPayload requestBody)
 		{
 			var requestUri = "providers/Microsoft.Intune/locations/"+ (hostName==null? "" : System.Uri.EscapeDataString(hostName))+"/iosPolicies/"+ (policyName==null? "" : System.Uri.EscapeDataString(policyName))+"/apps/"+ (appName==null? "" : System.Uri.EscapeDataString(appName))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -1517,7 +1463,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1533,8 +1478,7 @@ namespace MyNS
 		public async Task Ios_DeleteAppForMAMPolicyAsync(string hostName, string policyName, string appName, string api_version)
 		{
 			var requestUri = "providers/Microsoft.Intune/locations/"+ (hostName==null? "" : System.Uri.EscapeDataString(hostName))+"/iosPolicies/"+ (policyName==null? "" : System.Uri.EscapeDataString(policyName))+"/apps/"+ (appName==null? "" : System.Uri.EscapeDataString(appName))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -1543,7 +1487,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1558,19 +1501,17 @@ namespace MyNS
 		public async Task<GroupsCollection> Ios_GetGroupsForMAMPolicyAsync(string hostName, string policyName, string api_version)
 		{
 			var requestUri = "providers/Microsoft.Intune/locations/"+ (hostName==null? "" : System.Uri.EscapeDataString(hostName))+"/iosPolicies/"+ (policyName==null? "" : System.Uri.EscapeDataString(policyName))+"/groups&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<GroupsCollection>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<GroupsCollection>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1587,10 +1528,8 @@ namespace MyNS
 		public async Task Ios_AddGroupForMAMPolicyAsync(string hostName, string policyName, string groupId, string api_version, MAMPolicyAppIdOrGroupIdPayload requestBody)
 		{
 			var requestUri = "providers/Microsoft.Intune/locations/"+ (hostName==null? "" : System.Uri.EscapeDataString(hostName))+"/iosPolicies/"+ (policyName==null? "" : System.Uri.EscapeDataString(policyName))+"/groups/"+ (groupId==null? "" : System.Uri.EscapeDataString(groupId))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -1600,7 +1539,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1616,8 +1554,7 @@ namespace MyNS
 		public async Task Ios_DeleteGroupForMAMPolicyAsync(string hostName, string policyName, string groupId, string api_version)
 		{
 			var requestUri = "providers/Microsoft.Intune/locations/"+ (hostName==null? "" : System.Uri.EscapeDataString(hostName))+"/iosPolicies/"+ (policyName==null? "" : System.Uri.EscapeDataString(policyName))+"/groups/"+ (groupId==null? "" : System.Uri.EscapeDataString(groupId))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -1626,7 +1563,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1642,19 +1578,17 @@ namespace MyNS
 		public async Task<OperationResultCollection> GetOperationResultsAsync(string hostName, string api_version, string filter, int top, string select)
 		{
 			var requestUri = "providers/Microsoft.Intune/locations/"+ (hostName==null? "" : System.Uri.EscapeDataString(hostName))+"/operationResults&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version))+"&$filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&$top="+top+"&$select=" + (select==null? "" : System.Uri.EscapeDataString(select));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<OperationResultCollection>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<OperationResultCollection>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1668,19 +1602,17 @@ namespace MyNS
 		public async Task<StatusesDefault> GetMAMStatusesAsync(string hostName, string api_version)
 		{
 			var requestUri = "providers/Microsoft.Intune/locations/"+ (hostName==null? "" : System.Uri.EscapeDataString(hostName))+"/statuses/default&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<StatusesDefault>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<StatusesDefault>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1697,19 +1629,17 @@ namespace MyNS
 		public async Task<DeviceCollection> GetMAMUserDevicesAsync(string hostName, string userName, string api_version, string filter, int top, string select)
 		{
 			var requestUri = "providers/Microsoft.Intune/locations/"+ (hostName==null? "" : System.Uri.EscapeDataString(hostName))+"/users/"+ (userName==null? "" : System.Uri.EscapeDataString(userName))+"/devices&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version))+"&$filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&$top="+top+"&$select=" + (select==null? "" : System.Uri.EscapeDataString(select));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<DeviceCollection>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<DeviceCollection>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1726,19 +1656,17 @@ namespace MyNS
 		public async Task<Device> GetMAMUserDeviceByDeviceNameAsync(string hostName, string userName, string deviceName, string api_version, string select)
 		{
 			var requestUri = "providers/Microsoft.Intune/locations/"+ (hostName==null? "" : System.Uri.EscapeDataString(hostName))+"/users/"+ (userName==null? "" : System.Uri.EscapeDataString(userName))+"/devices/"+ (deviceName==null? "" : System.Uri.EscapeDataString(deviceName))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version))+"&$select=" + (select==null? "" : System.Uri.EscapeDataString(select));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Device>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Device>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1754,19 +1682,17 @@ namespace MyNS
 		public async Task<WipeDeviceOperationResult> WipeMAMUserDeviceAsync(string hostName, string userName, string deviceName, string api_version)
 		{
 			var requestUri = "providers/Microsoft.Intune/locations/"+ (hostName==null? "" : System.Uri.EscapeDataString(hostName))+"/users/"+ (userName==null? "" : System.Uri.EscapeDataString(userName))+"/devices/"+ (deviceName==null? "" : System.Uri.EscapeDataString(deviceName))+"/wipe&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<WipeDeviceOperationResult>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<WipeDeviceOperationResult>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

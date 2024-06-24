@@ -48,8 +48,7 @@ namespace MyNS
 		public async Task V1VerificationResultGetByTran_idAndKeyAndFormatAndOtpAsync(string tran_id, string key, V1VerificationResultGetByTran_idAndKeyAndFormatAndOtpFormat format, string otp, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/verification/result?tran_id=" + (tran_id==null? "" : System.Uri.EscapeDataString(tran_id))+"&key=" + (key==null? "" : System.Uri.EscapeDataString(key))+"&format=" + format+"&otp=" + (otp==null? "" : System.Uri.EscapeDataString(otp));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -63,7 +62,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -80,8 +78,7 @@ namespace MyNS
 		public async Task V1VerificationSendPostByCountry_codeAndFormatAndTelAndKeyAndMesgAsync(string country_code, V1VerificationResultGetByTran_idAndKeyAndFormatAndOtpFormat format, string tel, string key, string mesg, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/verification/send?country_code=" + (country_code==null? "" : System.Uri.EscapeDataString(country_code))+"&format=" + format+"&tel=" + (tel==null? "" : System.Uri.EscapeDataString(tel))+"&key=" + (key==null? "" : System.Uri.EscapeDataString(key))+"&mesg=" + (mesg==null? "" : System.Uri.EscapeDataString(mesg));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -90,7 +87,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

@@ -115,8 +115,7 @@ namespace MyNS
 		public async Task<FluxAtEnergy> App_api_endpoints_GCR_calculate_dlr_fluxAsync(int year, int month, int day, double z, double energy, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "gcr/flux_dlr?year="+year+"&month="+month+"&day="+day+"&z="+z+"&energy="+energy;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -126,13 +125,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<FluxAtEnergy>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<FluxAtEnergy>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -163,8 +161,7 @@ namespace MyNS
 		public async Task<Flux> App_api_endpoints_TrappedRadiation_calculate_flux_meanAsync(App_api_endpoints_TrappedRadiation_calculate_flux_meanModel model, App_api_endpoints_TrappedRadiation_calculate_flux_meanCoord_sys coord_sys, App_api_endpoints_TrappedRadiation_calculate_flux_meanCoord_units coord_units, double coord1, double coord2, double coord3, int year, int month, int day, int hour, int minute, int second, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "trapped/flux_mean?model=" + model+"&coord_sys=" + coord_sys+"&coord_units=" + coord_units+"&coord1="+coord1+"&coord2="+coord2+"&coord3="+coord3+"&year="+year+"&month="+month+"&day="+day+"&hour="+hour+"&minute="+minute+"&second="+second;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -174,13 +171,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Flux>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Flux>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -213,8 +209,7 @@ namespace MyNS
 		public async Task<Flux> App_api_endpoints_TrappedRadiation_calculate_flux_percentileAsync(App_api_endpoints_TrappedRadiation_calculate_flux_meanModel model, App_api_endpoints_TrappedRadiation_calculate_flux_meanCoord_sys coord_sys, App_api_endpoints_TrappedRadiation_calculate_flux_meanCoord_units coord_units, double coord1, double coord2, double coord3, int year, int month, int day, int hour, int minute, int second, int percentile, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "trapped/flux_percentile?model=" + model+"&coord_sys=" + coord_sys+"&coord_units=" + coord_units+"&coord1="+coord1+"&coord2="+coord2+"&coord3="+coord3+"&year="+year+"&month="+month+"&day="+day+"&hour="+hour+"&minute="+minute+"&second="+second+"&percentile="+percentile;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -224,13 +219,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Flux>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Flux>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

@@ -747,8 +747,7 @@ namespace MyNS
 		public async Task<ControllersAdvisoriesResponse> ListAdvisoriesAsync(int limit, int offset, ListAdvisoriesSort sort, string search, string filter_id, string filter_description, string filter_public_date, string filter_synopsis, string filter_advisory_type, string filter_severity, string filter_applicable_systems, string[] tags, string filter_system_profile_sap_system, string[] filter_system_profile_sap_sids_in, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/patch/v1/advisories?limit="+limit+"&offset="+offset+"&sort=" + sort+"&search=" + (search==null? "" : System.Uri.EscapeDataString(search))+"&filter[id]=" + (filter_id==null? "" : System.Uri.EscapeDataString(filter_id))+"&filter[description]=" + (filter_description==null? "" : System.Uri.EscapeDataString(filter_description))+"&filter[public_date]=" + (filter_public_date==null? "" : System.Uri.EscapeDataString(filter_public_date))+"&filter[synopsis]=" + (filter_synopsis==null? "" : System.Uri.EscapeDataString(filter_synopsis))+"&filter[advisory_type]=" + (filter_advisory_type==null? "" : System.Uri.EscapeDataString(filter_advisory_type))+"&filter[severity]=" + (filter_severity==null? "" : System.Uri.EscapeDataString(filter_severity))+"&filter[applicable_systems]=" + (filter_applicable_systems==null? "" : System.Uri.EscapeDataString(filter_applicable_systems))+"&"+string.Join("&", tags.Select(z => $"tags={System.Uri.EscapeDataString(z.ToString())}"))+"&filter[system_profile][sap_system]=" + (filter_system_profile_sap_system==null? "" : System.Uri.EscapeDataString(filter_system_profile_sap_system))+"&"+string.Join("&", filter_system_profile_sap_sids_in.Select(z => $"filter[system_profile][sap_sids][in]={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -758,13 +757,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ControllersAdvisoriesResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ControllersAdvisoriesResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -778,8 +776,7 @@ namespace MyNS
 		public async Task<ControllersAdvisoryDetailResponse> DetailAdvisoryAsync(string advisory_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/patch/v1/advisories/"+ (advisory_id==null? "" : System.Uri.EscapeDataString(advisory_id));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -789,13 +786,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ControllersAdvisoryDetailResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ControllersAdvisoryDetailResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -853,8 +849,7 @@ namespace MyNS
 					Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/patch/v1/advisories/"+ (advisory_id==null? "" : System.Uri.EscapeDataString(advisory_id))+"/systems&limit="+limit+"&offset="+offset+"&sort=" + sort+"&search=" + (search==null? "" : System.Uri.EscapeDataString(search))+"&filter[id]=" + (filter_id==null? "" : System.Uri.EscapeDataString(filter_id))+"&filter[insights_id]=" + (filter_insights_id==null? "" : System.Uri.EscapeDataString(filter_insights_id))+"&filter[display_name]=" + (filter_display_name==null? "" : System.Uri.EscapeDataString(filter_display_name))+"&filter[last_evaluation]=" + (filter_last_evaluation==null? "" : System.Uri.EscapeDataString(filter_last_evaluation))+"&filter[last_upload]=" + (filter_last_upload==null? "" : System.Uri.EscapeDataString(filter_last_upload))+"&filter[rhsa_count]=" + (filter_rhsa_count==null? "" : System.Uri.EscapeDataString(filter_rhsa_count))+"&filter[rhba_count]=" + (filter_rhba_count==null? "" : System.Uri.EscapeDataString(filter_rhba_count))+"&filter[rhea_count]=" + (filter_rhea_count==null? "" : System.Uri.EscapeDataString(filter_rhea_count))+"&filter[other_count]=" + (filter_other_count==null? "" : System.Uri.EscapeDataString(filter_other_count))+"&filter[stale]=" + (filter_stale==null? "" : System.Uri.EscapeDataString(filter_stale))+"&filter[stale_timestamp]=" + (filter_stale_timestamp==null? "" : System.Uri.EscapeDataString(filter_stale_timestamp))+"&filter[stale_warning_timestamp]=" + (filter_stale_warning_timestamp==null? "" : System.Uri.EscapeDataString(filter_stale_warning_timestamp))+"&filter[culled_timestamp]=" + (filter_culled_timestamp==null? "" : System.Uri.EscapeDataString(filter_culled_timestamp))+"&filter[created]=" + (filter_created==null? "" : System.Uri.EscapeDataString(filter_created))+"&"+string.Join("&", tags.Select(z => $"tags={System.Uri.EscapeDataString(z.ToString())}"))+"&filter[system_profile][sap_system]=" + (filter_system_profile_sap_system==null? "" : System.Uri.EscapeDataString(filter_system_profile_sap_system))+"&"+string.Join("&", filter_system_profile_sap_sids_in.Select(z => $"filter[system_profile][sap_sids][in]={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -864,13 +859,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ControllersAdvisorySystemsResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ControllersAdvisorySystemsResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -891,8 +885,7 @@ namespace MyNS
 		public async Task<ControllersAdvisoryInlineItem[]> ExportAdvisoriesAsync(string search, string filter_id, string filter_description, string filter_public_date, string filter_synopsis, string filter_advisory_type, string filter_severity, string filter_applicable_systems, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/patch/v1/export/advisories?search=" + (search==null? "" : System.Uri.EscapeDataString(search))+"&filter[id]=" + (filter_id==null? "" : System.Uri.EscapeDataString(filter_id))+"&filter[description]=" + (filter_description==null? "" : System.Uri.EscapeDataString(filter_description))+"&filter[public_date]=" + (filter_public_date==null? "" : System.Uri.EscapeDataString(filter_public_date))+"&filter[synopsis]=" + (filter_synopsis==null? "" : System.Uri.EscapeDataString(filter_synopsis))+"&filter[advisory_type]=" + (filter_advisory_type==null? "" : System.Uri.EscapeDataString(filter_advisory_type))+"&filter[severity]=" + (filter_severity==null? "" : System.Uri.EscapeDataString(filter_severity))+"&filter[applicable_systems]=" + (filter_applicable_systems==null? "" : System.Uri.EscapeDataString(filter_applicable_systems));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -902,13 +895,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ControllersAdvisoryInlineItem[]>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ControllersAdvisoryInlineItem[]>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -954,8 +946,7 @@ namespace MyNS
 					Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/patch/v1/export/advisories/"+ (advisory_id==null? "" : System.Uri.EscapeDataString(advisory_id))+"/systems&search=" + (search==null? "" : System.Uri.EscapeDataString(search))+"&filter[id]=" + (filter_id==null? "" : System.Uri.EscapeDataString(filter_id))+"&filter[display_name]=" + (filter_display_name==null? "" : System.Uri.EscapeDataString(filter_display_name))+"&filter[last_evaluation]=" + (filter_last_evaluation==null? "" : System.Uri.EscapeDataString(filter_last_evaluation))+"&filter[last_upload]=" + (filter_last_upload==null? "" : System.Uri.EscapeDataString(filter_last_upload))+"&filter[rhsa_count]=" + (filter_rhsa_count==null? "" : System.Uri.EscapeDataString(filter_rhsa_count))+"&filter[rhba_count]=" + (filter_rhba_count==null? "" : System.Uri.EscapeDataString(filter_rhba_count))+"&filter[rhea_count]=" + (filter_rhea_count==null? "" : System.Uri.EscapeDataString(filter_rhea_count))+"&filter[other_count]=" + (filter_other_count==null? "" : System.Uri.EscapeDataString(filter_other_count))+"&filter[stale]=" + (filter_stale==null? "" : System.Uri.EscapeDataString(filter_stale))+"&filter[packages_installed]=" + (filter_packages_installed==null? "" : System.Uri.EscapeDataString(filter_packages_installed))+"&filter[packages_updatable]=" + (filter_packages_updatable==null? "" : System.Uri.EscapeDataString(filter_packages_updatable))+"&filter[system_profile][sap_system]=" + (filter_system_profile_sap_system==null? "" : System.Uri.EscapeDataString(filter_system_profile_sap_system))+"&"+string.Join("&", filter_system_profile_sap_sids_in.Select(z => $"filter[system_profile][sap_sids][in]={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", tags.Select(z => $"tags={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -965,13 +956,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ControllersSystemInlineItem[]>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ControllersSystemInlineItem[]>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -990,8 +980,7 @@ namespace MyNS
 		public async Task<ControllersPackageItem[]> ExportPackagesAsync(ExportPackagesSort sort, string search, string filter_name, string filter_systems_installed, string filter_systems_updatable, string filter_summary, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/patch/v1/export/packages?sort=" + sort+"&search=" + (search==null? "" : System.Uri.EscapeDataString(search))+"&filter[name]=" + (filter_name==null? "" : System.Uri.EscapeDataString(filter_name))+"&filter[systems_installed]=" + (filter_systems_installed==null? "" : System.Uri.EscapeDataString(filter_systems_installed))+"&filter[systems_updatable]=" + (filter_systems_updatable==null? "" : System.Uri.EscapeDataString(filter_systems_updatable))+"&filter[summary]=" + (filter_summary==null? "" : System.Uri.EscapeDataString(filter_summary));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1001,13 +990,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ControllersPackageItem[]>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ControllersPackageItem[]>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1024,8 +1012,7 @@ namespace MyNS
 		public async Task<ControllersPackageSystemItem[]> ExportPackageSystemsAsync(string package_name, string filter_system_profile_sap_system, string[] filter_system_profile_sap_sids_in, string[] tags, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/patch/v1/export/packages/"+ (package_name==null? "" : System.Uri.EscapeDataString(package_name))+"/systems&filter[system_profile][sap_system]=" + (filter_system_profile_sap_system==null? "" : System.Uri.EscapeDataString(filter_system_profile_sap_system))+"&"+string.Join("&", filter_system_profile_sap_sids_in.Select(z => $"filter[system_profile][sap_sids][in]={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", tags.Select(z => $"tags={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1035,13 +1022,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ControllersPackageSystemItem[]>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ControllersPackageSystemItem[]>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1085,8 +1071,7 @@ namespace MyNS
 					Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/patch/v1/export/systems?search=" + (search==null? "" : System.Uri.EscapeDataString(search))+"&filter[id]=" + (filter_id==null? "" : System.Uri.EscapeDataString(filter_id))+"&filter[display_name]=" + (filter_display_name==null? "" : System.Uri.EscapeDataString(filter_display_name))+"&filter[last_evaluation]=" + (filter_last_evaluation==null? "" : System.Uri.EscapeDataString(filter_last_evaluation))+"&filter[last_upload]=" + (filter_last_upload==null? "" : System.Uri.EscapeDataString(filter_last_upload))+"&filter[rhsa_count]=" + (filter_rhsa_count==null? "" : System.Uri.EscapeDataString(filter_rhsa_count))+"&filter[rhba_count]=" + (filter_rhba_count==null? "" : System.Uri.EscapeDataString(filter_rhba_count))+"&filter[rhea_count]=" + (filter_rhea_count==null? "" : System.Uri.EscapeDataString(filter_rhea_count))+"&filter[other_count]=" + (filter_other_count==null? "" : System.Uri.EscapeDataString(filter_other_count))+"&filter[stale]=" + (filter_stale==null? "" : System.Uri.EscapeDataString(filter_stale))+"&filter[packages_installed]=" + (filter_packages_installed==null? "" : System.Uri.EscapeDataString(filter_packages_installed))+"&filter[packages_updatable]=" + (filter_packages_updatable==null? "" : System.Uri.EscapeDataString(filter_packages_updatable))+"&filter[system_profile][sap_system]=" + (filter_system_profile_sap_system==null? "" : System.Uri.EscapeDataString(filter_system_profile_sap_system))+"&"+string.Join("&", filter_system_profile_sap_sids_in.Select(z => $"filter[system_profile][sap_sids][in]={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", tags.Select(z => $"tags={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1096,13 +1081,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ControllersSystemInlineItem[]>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ControllersSystemInlineItem[]>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1123,8 +1107,7 @@ namespace MyNS
 		public async Task<ControllersSystemAdvisoriesDBLookup[]> ExportSystemAdvisoriesAsync(string inventory_id, string search, string filter_id, string filter_description, string filter_public_date, string filter_synopsis, string filter_advisory_type, string filter_severity, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/patch/v1/export/systems/"+ (inventory_id==null? "" : System.Uri.EscapeDataString(inventory_id))+"/advisories&search=" + (search==null? "" : System.Uri.EscapeDataString(search))+"&filter[id]=" + (filter_id==null? "" : System.Uri.EscapeDataString(filter_id))+"&filter[description]=" + (filter_description==null? "" : System.Uri.EscapeDataString(filter_description))+"&filter[public_date]=" + (filter_public_date==null? "" : System.Uri.EscapeDataString(filter_public_date))+"&filter[synopsis]=" + (filter_synopsis==null? "" : System.Uri.EscapeDataString(filter_synopsis))+"&filter[advisory_type]=" + (filter_advisory_type==null? "" : System.Uri.EscapeDataString(filter_advisory_type))+"&filter[severity]=" + (filter_severity==null? "" : System.Uri.EscapeDataString(filter_severity));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1134,13 +1117,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ControllersSystemAdvisoriesDBLookup[]>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ControllersSystemAdvisoriesDBLookup[]>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1160,8 +1142,7 @@ namespace MyNS
 		public async Task<ControllersSystemPackageInline[]> ExportSystemPackagesAsync(string inventory_id, string search, string filter_name, string filter_description, string filter_evra, string filter_summary, bool filter_updatable, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/patch/v1/export/systems/"+ (inventory_id==null? "" : System.Uri.EscapeDataString(inventory_id))+"/packages&search=" + (search==null? "" : System.Uri.EscapeDataString(search))+"&filter[name]=" + (filter_name==null? "" : System.Uri.EscapeDataString(filter_name))+"&filter[description]=" + (filter_description==null? "" : System.Uri.EscapeDataString(filter_description))+"&filter[evra]=" + (filter_evra==null? "" : System.Uri.EscapeDataString(filter_evra))+"&filter[summary]=" + (filter_summary==null? "" : System.Uri.EscapeDataString(filter_summary))+"&filter[updatable]="+filter_updatable;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1171,13 +1152,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ControllersSystemPackageInline[]>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ControllersSystemPackageInline[]>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1201,8 +1181,7 @@ namespace MyNS
 		public async Task<ControllersPackagesResponse> ListPackagesAsync(int limit, int offset, ExportPackagesSort sort, string search, string filter_name, string filter_systems_installed, string filter_systems_updatable, string filter_summary, string[] tags, string filter_system_profile_sap_system, string[] filter_system_profile_sap_sids_in, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/patch/v1/packages/?limit="+limit+"&offset="+offset+"&sort=" + sort+"&search=" + (search==null? "" : System.Uri.EscapeDataString(search))+"&filter[name]=" + (filter_name==null? "" : System.Uri.EscapeDataString(filter_name))+"&filter[systems_installed]=" + (filter_systems_installed==null? "" : System.Uri.EscapeDataString(filter_systems_installed))+"&filter[systems_updatable]=" + (filter_systems_updatable==null? "" : System.Uri.EscapeDataString(filter_systems_updatable))+"&filter[summary]=" + (filter_summary==null? "" : System.Uri.EscapeDataString(filter_summary))+"&"+string.Join("&", tags.Select(z => $"tags={System.Uri.EscapeDataString(z.ToString())}"))+"&filter[system_profile][sap_system]=" + (filter_system_profile_sap_system==null? "" : System.Uri.EscapeDataString(filter_system_profile_sap_system))+"&"+string.Join("&", filter_system_profile_sap_sids_in.Select(z => $"filter[system_profile][sap_sids][in]={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1212,13 +1191,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ControllersPackagesResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ControllersPackagesResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1232,8 +1210,7 @@ namespace MyNS
 		public async Task<ControllersPackageDetailResponse> LatestPackageAsync(string package_name, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/patch/v1/packages/"+ (package_name==null? "" : System.Uri.EscapeDataString(package_name));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1243,13 +1220,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ControllersPackageDetailResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ControllersPackageDetailResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1268,8 +1244,7 @@ namespace MyNS
 		public async Task<ControllersPackageSystemsResponse> PackageSystemsAsync(int limit, int offset, string package_name, string[] tags, string filter_system_profile_sap_system, string[] filter_system_profile_sap_sids_in, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/patch/v1/packages/"+ (package_name==null? "" : System.Uri.EscapeDataString(package_name))+"/systems?limit="+limit+"&offset="+offset+"&"+string.Join("&", tags.Select(z => $"tags={System.Uri.EscapeDataString(z.ToString())}"))+"&filter[system_profile][sap_system]=" + (filter_system_profile_sap_system==null? "" : System.Uri.EscapeDataString(filter_system_profile_sap_system))+"&"+string.Join("&", filter_system_profile_sap_sids_in.Select(z => $"filter[system_profile][sap_sids][in]={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1279,13 +1254,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ControllersPackageSystemsResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ControllersPackageSystemsResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1301,8 +1275,7 @@ namespace MyNS
 		public async Task<ControllersPackageVersionsResponse> PackageVersionsAsync(int limit, int offset, string package_name, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/patch/v1/packages/"+ (package_name==null? "" : System.Uri.EscapeDataString(package_name))+"/versions?limit="+limit+"&offset="+offset;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1312,13 +1285,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ControllersPackageVersionsResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ControllersPackageVersionsResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1378,8 +1350,7 @@ namespace MyNS
 					Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/patch/v1/systems?limit="+limit+"&offset="+offset+"&sort=" + sort+"&search=" + (search==null? "" : System.Uri.EscapeDataString(search))+"&filter[insights_id]=" + (filter_insights_id==null? "" : System.Uri.EscapeDataString(filter_insights_id))+"&filter[id]=" + (filter_id==null? "" : System.Uri.EscapeDataString(filter_id))+"&filter[display_name]=" + (filter_display_name==null? "" : System.Uri.EscapeDataString(filter_display_name))+"&filter[last_evaluation]=" + (filter_last_evaluation==null? "" : System.Uri.EscapeDataString(filter_last_evaluation))+"&filter[last_upload]=" + (filter_last_upload==null? "" : System.Uri.EscapeDataString(filter_last_upload))+"&filter[rhsa_count]=" + (filter_rhsa_count==null? "" : System.Uri.EscapeDataString(filter_rhsa_count))+"&filter[rhba_count]=" + (filter_rhba_count==null? "" : System.Uri.EscapeDataString(filter_rhba_count))+"&filter[rhea_count]=" + (filter_rhea_count==null? "" : System.Uri.EscapeDataString(filter_rhea_count))+"&filter[other_count]=" + (filter_other_count==null? "" : System.Uri.EscapeDataString(filter_other_count))+"&filter[stale]=" + (filter_stale==null? "" : System.Uri.EscapeDataString(filter_stale))+"&filter[packages_installed]=" + (filter_packages_installed==null? "" : System.Uri.EscapeDataString(filter_packages_installed))+"&filter[packages_updatable]=" + (filter_packages_updatable==null? "" : System.Uri.EscapeDataString(filter_packages_updatable))+"&filter[stale_timestamp]=" + (filter_stale_timestamp==null? "" : System.Uri.EscapeDataString(filter_stale_timestamp))+"&filter[stale_warning_timestamp]=" + (filter_stale_warning_timestamp==null? "" : System.Uri.EscapeDataString(filter_stale_warning_timestamp))+"&filter[culled_timestamp]=" + (filter_culled_timestamp==null? "" : System.Uri.EscapeDataString(filter_culled_timestamp))+"&filter[created]=" + (filter_created==null? "" : System.Uri.EscapeDataString(filter_created))+"&"+string.Join("&", tags.Select(z => $"tags={System.Uri.EscapeDataString(z.ToString())}"))+"&filter[system_profile][sap_system]=" + (filter_system_profile_sap_system==null? "" : System.Uri.EscapeDataString(filter_system_profile_sap_system))+"&"+string.Join("&", filter_system_profile_sap_sids_in.Select(z => $"filter[system_profile][sap_sids][in]={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1389,13 +1360,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ControllersSystemsResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ControllersSystemsResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1409,8 +1379,7 @@ namespace MyNS
 		public async Task DeletesystemAsync(string inventory_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/patch/v1/systems/"+ (inventory_id==null? "" : System.Uri.EscapeDataString(inventory_id));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1424,7 +1393,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1438,8 +1406,7 @@ namespace MyNS
 		public async Task<ControllersSystemDetailResponse> DetailSystemAsync(string inventory_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/patch/v1/systems/"+ (inventory_id==null? "" : System.Uri.EscapeDataString(inventory_id));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1449,13 +1416,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ControllersSystemDetailResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ControllersSystemDetailResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1479,8 +1445,7 @@ namespace MyNS
 		public async Task<ControllersSystemAdvisoriesResponse> ListSystemAdvisoriesAsync(string inventory_id, int limit, int offset, ListSystemAdvisoriesSort sort, string search, string filter_id, string filter_description, string filter_public_date, string filter_synopsis, string filter_advisory_type, string filter_severity, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/patch/v1/systems/"+ (inventory_id==null? "" : System.Uri.EscapeDataString(inventory_id))+"/advisories&limit="+limit+"&offset="+offset+"&sort=" + sort+"&search=" + (search==null? "" : System.Uri.EscapeDataString(search))+"&filter[id]=" + (filter_id==null? "" : System.Uri.EscapeDataString(filter_id))+"&filter[description]=" + (filter_description==null? "" : System.Uri.EscapeDataString(filter_description))+"&filter[public_date]=" + (filter_public_date==null? "" : System.Uri.EscapeDataString(filter_public_date))+"&filter[synopsis]=" + (filter_synopsis==null? "" : System.Uri.EscapeDataString(filter_synopsis))+"&filter[advisory_type]=" + (filter_advisory_type==null? "" : System.Uri.EscapeDataString(filter_advisory_type))+"&filter[severity]=" + (filter_severity==null? "" : System.Uri.EscapeDataString(filter_severity));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1490,13 +1455,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ControllersSystemAdvisoriesResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ControllersSystemAdvisoriesResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1518,8 +1482,7 @@ namespace MyNS
 		public async Task<ControllersSystemPackageResponse> SystemPackagesAsync(string inventory_id, int limit, int offset, string search, string filter_name, string filter_description, string filter_evra, string filter_summary, bool filter_updatable, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/patch/v1/systems/"+ (inventory_id==null? "" : System.Uri.EscapeDataString(inventory_id))+"/packages&limit="+limit+"&offset="+offset+"&search=" + (search==null? "" : System.Uri.EscapeDataString(search))+"&filter[name]=" + (filter_name==null? "" : System.Uri.EscapeDataString(filter_name))+"&filter[description]=" + (filter_description==null? "" : System.Uri.EscapeDataString(filter_description))+"&filter[evra]=" + (filter_evra==null? "" : System.Uri.EscapeDataString(filter_evra))+"&filter[summary]=" + (filter_summary==null? "" : System.Uri.EscapeDataString(filter_summary))+"&filter[updatable]="+filter_updatable;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1529,13 +1492,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ControllersSystemPackageResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ControllersSystemPackageResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1549,10 +1511,8 @@ namespace MyNS
 		public async Task<ControllersAdvisoriesSystemsResponse> ViewAdvisoriesSystemsAsync(ControllersSystemsAdvisoriesRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/patch/v1/views/advisories/systems";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -1563,13 +1523,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ControllersAdvisoriesSystemsResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ControllersAdvisoriesSystemsResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1583,10 +1542,8 @@ namespace MyNS
 		public async Task<ControllersSystemsAdvisoriesResponse> ViewSystemsAdvisoriesAsync(ControllersSystemsAdvisoriesRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/patch/v1/views/systems/advisories";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -1597,13 +1554,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ControllersSystemsAdvisoriesResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ControllersSystemsAdvisoriesResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

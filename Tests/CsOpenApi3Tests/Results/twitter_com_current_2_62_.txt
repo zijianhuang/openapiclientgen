@@ -6482,8 +6482,7 @@ namespace MyNS
 		public async Task<Get2ComplianceJobsResponse> ListBatchComplianceJobsAsync(ComplianceJobType type, ListBatchComplianceJobsStatus status, string[] compliance_job_fields, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2/compliance/jobs?type=" + type+"&status=" + status+"&"+string.Join("&", compliance_job_fields.Select(z => $"compliance_job.fields={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6493,13 +6492,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Get2ComplianceJobsResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Get2ComplianceJobsResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6512,10 +6510,8 @@ namespace MyNS
 		public async Task<CreateComplianceJobResponse> CreateBatchComplianceJobAsync(CreateComplianceJobRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2/compliance/jobs";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -6526,13 +6522,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<CreateComplianceJobResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<CreateComplianceJobResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6549,8 +6544,7 @@ namespace MyNS
 		public async Task<Get2ComplianceJobsIdResponse> GetBatchComplianceJobAsync(string id, string[] compliance_job_fields, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2/compliance/jobs/"+ (id==null? "" : System.Uri.EscapeDataString(id))+"&"+string.Join("&", compliance_job_fields.Select(z => $"compliance_job.fields={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6560,13 +6554,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Get2ComplianceJobsIdResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Get2ComplianceJobsIdResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6578,10 +6571,8 @@ namespace MyNS
 		public async Task DmConversationIdCreateAsync(CreateDmConversationRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2/dm_conversations";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -6596,7 +6587,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6635,8 +6625,7 @@ namespace MyNS
 		public async Task<Get2DmConversationsWithParticipantIdDmEventsResponse> GetDmConversationsWithParticipantIdDmEventsAsync(string participant_id, int max_results, string pagination_token, string[] event_types, string[] dm_event_fields, string[] expansions, string[] media_fields, string[] user_fields, string[] tweet_fields, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2/dm_conversations/with/"+ (participant_id==null? "" : System.Uri.EscapeDataString(participant_id))+"/dm_events&max_results="+max_results+"&pagination_token=" + (pagination_token==null? "" : System.Uri.EscapeDataString(pagination_token))+"&"+string.Join("&", event_types.Select(z => $"event_types={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", dm_event_fields.Select(z => $"dm_event.fields={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", expansions.Select(z => $"expansions={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", media_fields.Select(z => $"media.fields={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", user_fields.Select(z => $"user.fields={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", tweet_fields.Select(z => $"tweet.fields={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6646,13 +6635,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Get2DmConversationsWithParticipantIdDmEventsResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Get2DmConversationsWithParticipantIdDmEventsResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6665,10 +6653,8 @@ namespace MyNS
 		public async Task DmConversationWithUserEventIdCreateAsync(string participant_id, CreateMessageRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2/dm_conversations/with/"+ (participant_id==null? "" : System.Uri.EscapeDataString(participant_id))+"/messages";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -6683,7 +6669,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6696,10 +6681,8 @@ namespace MyNS
 		public async Task DmConversationByIdEventIdCreateAsync(string dm_conversation_id, CreateMessageRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2/dm_conversations/"+ (dm_conversation_id==null? "" : System.Uri.EscapeDataString(dm_conversation_id))+"/messages";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -6714,7 +6697,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6753,8 +6735,7 @@ namespace MyNS
 		public async Task<Get2DmConversationsIdDmEventsResponse> GetDmConversationsIdDmEventsAsync(string id, int max_results, string pagination_token, string[] event_types, string[] dm_event_fields, string[] expansions, string[] media_fields, string[] user_fields, string[] tweet_fields, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2/dm_conversations/"+ (id==null? "" : System.Uri.EscapeDataString(id))+"/dm_events&max_results="+max_results+"&pagination_token=" + (pagination_token==null? "" : System.Uri.EscapeDataString(pagination_token))+"&"+string.Join("&", event_types.Select(z => $"event_types={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", dm_event_fields.Select(z => $"dm_event.fields={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", expansions.Select(z => $"expansions={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", media_fields.Select(z => $"media.fields={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", user_fields.Select(z => $"user.fields={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", tweet_fields.Select(z => $"tweet.fields={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6764,13 +6745,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Get2DmConversationsIdDmEventsResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Get2DmConversationsIdDmEventsResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6808,8 +6788,7 @@ namespace MyNS
 		public async Task<Get2DmEventsResponse> GetDmEventsAsync(int max_results, string pagination_token, string[] event_types, string[] dm_event_fields, string[] expansions, string[] media_fields, string[] user_fields, string[] tweet_fields, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2/dm_events?max_results="+max_results+"&pagination_token=" + (pagination_token==null? "" : System.Uri.EscapeDataString(pagination_token))+"&"+string.Join("&", event_types.Select(z => $"event_types={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", dm_event_fields.Select(z => $"dm_event.fields={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", expansions.Select(z => $"expansions={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", media_fields.Select(z => $"media.fields={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", user_fields.Select(z => $"user.fields={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", tweet_fields.Select(z => $"tweet.fields={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6819,13 +6798,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Get2DmEventsResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Get2DmEventsResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6838,10 +6816,8 @@ namespace MyNS
 		public async Task<ListCreateResponse> ListIdCreateAsync(ListCreateRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2/lists";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -6852,13 +6828,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ListCreateResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ListCreateResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6872,8 +6847,7 @@ namespace MyNS
 		public async Task<ListDeleteResponse> ListIdDeleteAsync(string id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2/lists/"+ (id==null? "" : System.Uri.EscapeDataString(id));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6883,13 +6857,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ListDeleteResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ListDeleteResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6912,8 +6885,7 @@ namespace MyNS
 		public async Task<Get2ListsIdResponse> ListIdGetAsync(string id, string[] list_fields, string[] expansions, string[] user_fields, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2/lists/"+ (id==null? "" : System.Uri.EscapeDataString(id))+"&"+string.Join("&", list_fields.Select(z => $"list.fields={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", expansions.Select(z => $"expansions={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", user_fields.Select(z => $"user.fields={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6923,13 +6895,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Get2ListsIdResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Get2ListsIdResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6943,10 +6914,8 @@ namespace MyNS
 		public async Task<ListUpdateResponse> ListIdUpdateAsync(string id, ListUpdateRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2/lists/"+ (id==null? "" : System.Uri.EscapeDataString(id));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -6957,13 +6926,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ListUpdateResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ListUpdateResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6994,8 +6962,7 @@ namespace MyNS
 		public async Task<Get2ListsIdFollowersResponse> ListGetFollowersAsync(string id, int max_results, string pagination_token, string[] user_fields, string[] expansions, string[] tweet_fields, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2/lists/"+ (id==null? "" : System.Uri.EscapeDataString(id))+"/followers&max_results="+max_results+"&pagination_token=" + (pagination_token==null? "" : System.Uri.EscapeDataString(pagination_token))+"&"+string.Join("&", user_fields.Select(z => $"user.fields={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", expansions.Select(z => $"expansions={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", tweet_fields.Select(z => $"tweet.fields={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -7005,13 +6972,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Get2ListsIdFollowersResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Get2ListsIdFollowersResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -7042,8 +7008,7 @@ namespace MyNS
 		public async Task<Get2ListsIdMembersResponse> ListGetMembersAsync(string id, int max_results, string pagination_token, string[] user_fields, string[] expansions, string[] tweet_fields, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2/lists/"+ (id==null? "" : System.Uri.EscapeDataString(id))+"/members&max_results="+max_results+"&pagination_token=" + (pagination_token==null? "" : System.Uri.EscapeDataString(pagination_token))+"&"+string.Join("&", user_fields.Select(z => $"user.fields={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", expansions.Select(z => $"expansions={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", tweet_fields.Select(z => $"tweet.fields={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -7053,13 +7018,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Get2ListsIdMembersResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Get2ListsIdMembersResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -7073,10 +7037,8 @@ namespace MyNS
 		public async Task<ListMutateResponse> ListAddMemberAsync(string id, ListAddUserRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2/lists/"+ (id==null? "" : System.Uri.EscapeDataString(id))+"/members";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -7087,13 +7049,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ListMutateResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ListMutateResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -7108,8 +7069,7 @@ namespace MyNS
 		public async Task<ListMutateResponse> ListRemoveMemberAsync(string id, string user_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2/lists/"+ (id==null? "" : System.Uri.EscapeDataString(id))+"/members/"+ (user_id==null? "" : System.Uri.EscapeDataString(user_id));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -7119,13 +7079,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ListMutateResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ListMutateResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -7164,8 +7123,7 @@ namespace MyNS
 		public async Task<Get2ListsIdTweetsResponse> ListsIdTweetsAsync(string id, int max_results, string pagination_token, string[] tweet_fields, string[] expansions, string[] media_fields, string[] poll_fields, string[] user_fields, string[] place_fields, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2/lists/"+ (id==null? "" : System.Uri.EscapeDataString(id))+"/tweets&max_results="+max_results+"&pagination_token=" + (pagination_token==null? "" : System.Uri.EscapeDataString(pagination_token))+"&"+string.Join("&", tweet_fields.Select(z => $"tweet.fields={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", expansions.Select(z => $"expansions={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", media_fields.Select(z => $"media.fields={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", poll_fields.Select(z => $"poll.fields={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", user_fields.Select(z => $"user.fields={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", place_fields.Select(z => $"place.fields={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -7175,13 +7133,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Get2ListsIdTweetsResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Get2ListsIdTweetsResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -7194,8 +7151,7 @@ namespace MyNS
 		public async Task<string> GetOpenApiSpecAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2/openapi.json";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -7205,13 +7161,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<string>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<string>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -7240,8 +7195,7 @@ namespace MyNS
 		public async Task<Get2SpacesResponse> FindSpacesByIdsAsync(string[] ids, string[] space_fields, string[] expansions, string[] user_fields, string[] topic_fields, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2/spaces?"+string.Join("&", ids.Select(z => $"ids={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", space_fields.Select(z => $"space.fields={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", expansions.Select(z => $"expansions={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", user_fields.Select(z => $"user.fields={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", topic_fields.Select(z => $"topic.fields={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -7251,13 +7205,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Get2SpacesResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Get2SpacesResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -7286,8 +7239,7 @@ namespace MyNS
 		public async Task<Get2SpacesByCreatorIdsResponse> FindSpacesByCreatorIdsAsync(string[] user_ids, string[] space_fields, string[] expansions, string[] user_fields, string[] topic_fields, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2/spaces/by/creator_ids?"+string.Join("&", user_ids.Select(z => $"user_ids={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", space_fields.Select(z => $"space.fields={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", expansions.Select(z => $"expansions={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", user_fields.Select(z => $"user.fields={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", topic_fields.Select(z => $"topic.fields={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -7297,13 +7249,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Get2SpacesByCreatorIdsResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Get2SpacesByCreatorIdsResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -7337,8 +7288,7 @@ namespace MyNS
 		public async Task<Get2SpacesSearchResponse> SearchSpacesAsync(string query, SearchSpacesState state, int max_results, string[] space_fields, string[] expansions, string[] user_fields, string[] topic_fields, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2/spaces/search?query=" + (query==null? "" : System.Uri.EscapeDataString(query))+"&state=" + state+"&max_results="+max_results+"&"+string.Join("&", space_fields.Select(z => $"space.fields={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", expansions.Select(z => $"expansions={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", user_fields.Select(z => $"user.fields={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", topic_fields.Select(z => $"topic.fields={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -7348,13 +7298,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Get2SpacesSearchResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Get2SpacesSearchResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -7380,8 +7329,7 @@ namespace MyNS
 		public async Task<Get2SpacesIdResponse> FindSpaceByIdAsync(string id, string[] space_fields, string[] expansions, string[] user_fields, string[] topic_fields, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2/spaces/"+ (id==null? "" : System.Uri.EscapeDataString(id))+"&"+string.Join("&", space_fields.Select(z => $"space.fields={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", expansions.Select(z => $"expansions={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", user_fields.Select(z => $"user.fields={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", topic_fields.Select(z => $"topic.fields={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -7391,13 +7339,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Get2SpacesIdResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Get2SpacesIdResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -7427,8 +7374,7 @@ namespace MyNS
 		public async Task<Get2SpacesIdBuyersResponse> SpaceBuyersAsync(string id, string pagination_token, int max_results, string[] user_fields, string[] expansions, string[] tweet_fields, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2/spaces/"+ (id==null? "" : System.Uri.EscapeDataString(id))+"/buyers&pagination_token=" + (pagination_token==null? "" : System.Uri.EscapeDataString(pagination_token))+"&max_results="+max_results+"&"+string.Join("&", user_fields.Select(z => $"user.fields={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", expansions.Select(z => $"expansions={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", tweet_fields.Select(z => $"tweet.fields={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -7438,13 +7384,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Get2SpacesIdBuyersResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Get2SpacesIdBuyersResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -7480,8 +7425,7 @@ namespace MyNS
 		public async Task<Get2SpacesIdTweetsResponse> SpaceTweetsAsync(string id, int max_results, string[] tweet_fields, string[] expansions, string[] media_fields, string[] poll_fields, string[] user_fields, string[] place_fields, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2/spaces/"+ (id==null? "" : System.Uri.EscapeDataString(id))+"/tweets&max_results="+max_results+"&"+string.Join("&", tweet_fields.Select(z => $"tweet.fields={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", expansions.Select(z => $"expansions={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", media_fields.Select(z => $"media.fields={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", poll_fields.Select(z => $"poll.fields={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", user_fields.Select(z => $"user.fields={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", place_fields.Select(z => $"place.fields={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -7491,13 +7435,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Get2SpacesIdTweetsResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Get2SpacesIdTweetsResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -7532,8 +7475,7 @@ namespace MyNS
 		public async Task<Get2TweetsResponse> FindTweetsByIdAsync(string[] ids, string[] tweet_fields, string[] expansions, string[] media_fields, string[] poll_fields, string[] user_fields, string[] place_fields, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2/tweets?"+string.Join("&", ids.Select(z => $"ids={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", tweet_fields.Select(z => $"tweet.fields={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", expansions.Select(z => $"expansions={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", media_fields.Select(z => $"media.fields={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", poll_fields.Select(z => $"poll.fields={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", user_fields.Select(z => $"user.fields={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", place_fields.Select(z => $"place.fields={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -7543,13 +7485,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Get2TweetsResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Get2TweetsResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -7561,10 +7502,8 @@ namespace MyNS
 		public async Task CreateTweetAsync(TweetCreateRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2/tweets";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -7579,7 +7518,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -7602,8 +7540,7 @@ namespace MyNS
 		public async Task<TweetComplianceStreamResponse> GetTweetsComplianceStreamAsync(int backfill_minutes, int partition, System.DateTimeOffset start_time, System.DateTimeOffset end_time, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2/tweets/compliance/stream?backfill_minutes="+backfill_minutes+"&partition="+partition+"&start_time=" + start_time.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&end_time=" + end_time.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ");
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -7613,13 +7550,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<TweetComplianceStreamResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<TweetComplianceStreamResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -7650,8 +7586,7 @@ namespace MyNS
 		public async Task<Get2TweetsCountsAllResponse> TweetCountsFullArchiveSearchAsync(string query, System.DateTimeOffset start_time, System.DateTimeOffset end_time, string since_id, string until_id, string next_token, string pagination_token, TweetCountsFullArchiveSearchGranularity granularity, string[] search_count_fields, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2/tweets/counts/all?query=" + (query==null? "" : System.Uri.EscapeDataString(query))+"&start_time=" + start_time.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&end_time=" + end_time.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&since_id=" + (since_id==null? "" : System.Uri.EscapeDataString(since_id))+"&until_id=" + (until_id==null? "" : System.Uri.EscapeDataString(until_id))+"&next_token=" + (next_token==null? "" : System.Uri.EscapeDataString(next_token))+"&pagination_token=" + (pagination_token==null? "" : System.Uri.EscapeDataString(pagination_token))+"&granularity=" + granularity+"&"+string.Join("&", search_count_fields.Select(z => $"search_count.fields={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -7661,13 +7596,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Get2TweetsCountsAllResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Get2TweetsCountsAllResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -7698,8 +7632,7 @@ namespace MyNS
 		public async Task<Get2TweetsCountsRecentResponse> TweetCountsRecentSearchAsync(string query, System.DateTimeOffset start_time, System.DateTimeOffset end_time, string since_id, string until_id, string next_token, string pagination_token, TweetCountsFullArchiveSearchGranularity granularity, string[] search_count_fields, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2/tweets/counts/recent?query=" + (query==null? "" : System.Uri.EscapeDataString(query))+"&start_time=" + start_time.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&end_time=" + end_time.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&since_id=" + (since_id==null? "" : System.Uri.EscapeDataString(since_id))+"&until_id=" + (until_id==null? "" : System.Uri.EscapeDataString(until_id))+"&next_token=" + (next_token==null? "" : System.Uri.EscapeDataString(next_token))+"&pagination_token=" + (pagination_token==null? "" : System.Uri.EscapeDataString(pagination_token))+"&granularity=" + granularity+"&"+string.Join("&", search_count_fields.Select(z => $"search_count.fields={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -7709,13 +7642,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Get2TweetsCountsRecentResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Get2TweetsCountsRecentResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -7756,8 +7688,7 @@ namespace MyNS
 		public async Task<StreamingTweetResponse> GetTweetsFirehoseStreamAsync(int backfill_minutes, int partition, System.DateTimeOffset start_time, System.DateTimeOffset end_time, string[] tweet_fields, string[] expansions, string[] media_fields, string[] poll_fields, string[] user_fields, string[] place_fields, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2/tweets/firehose/stream?backfill_minutes="+backfill_minutes+"&partition="+partition+"&start_time=" + start_time.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&end_time=" + end_time.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&"+string.Join("&", tweet_fields.Select(z => $"tweet.fields={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", expansions.Select(z => $"expansions={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", media_fields.Select(z => $"media.fields={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", poll_fields.Select(z => $"poll.fields={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", user_fields.Select(z => $"user.fields={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", place_fields.Select(z => $"place.fields={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -7767,13 +7698,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<StreamingTweetResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<StreamingTweetResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -7792,8 +7722,7 @@ namespace MyNS
 		public async Task<TweetLabelStreamResponse> GetTweetsLabelStreamAsync(int backfill_minutes, System.DateTimeOffset start_time, System.DateTimeOffset end_time, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2/tweets/label/stream?backfill_minutes="+backfill_minutes+"&start_time=" + start_time.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&end_time=" + end_time.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ");
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -7803,13 +7732,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<TweetLabelStreamResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<TweetLabelStreamResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -7844,8 +7772,7 @@ namespace MyNS
 		public async Task<StreamingTweetResponse> SampleStreamAsync(int backfill_minutes, string[] tweet_fields, string[] expansions, string[] media_fields, string[] poll_fields, string[] user_fields, string[] place_fields, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2/tweets/sample/stream?backfill_minutes="+backfill_minutes+"&"+string.Join("&", tweet_fields.Select(z => $"tweet.fields={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", expansions.Select(z => $"expansions={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", media_fields.Select(z => $"media.fields={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", poll_fields.Select(z => $"poll.fields={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", user_fields.Select(z => $"user.fields={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", place_fields.Select(z => $"place.fields={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -7855,13 +7782,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<StreamingTweetResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<StreamingTweetResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -7902,8 +7828,7 @@ namespace MyNS
 		public async Task<Get2TweetsSample10StreamResponse> GetTweetsSample10StreamAsync(int backfill_minutes, int partition, System.DateTimeOffset start_time, System.DateTimeOffset end_time, string[] tweet_fields, string[] expansions, string[] media_fields, string[] poll_fields, string[] user_fields, string[] place_fields, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2/tweets/sample10/stream?backfill_minutes="+backfill_minutes+"&partition="+partition+"&start_time=" + start_time.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&end_time=" + end_time.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&"+string.Join("&", tweet_fields.Select(z => $"tweet.fields={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", expansions.Select(z => $"expansions={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", media_fields.Select(z => $"media.fields={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", poll_fields.Select(z => $"poll.fields={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", user_fields.Select(z => $"user.fields={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", place_fields.Select(z => $"place.fields={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -7913,13 +7838,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Get2TweetsSample10StreamResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Get2TweetsSample10StreamResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -7985,8 +7909,7 @@ namespace MyNS
 					Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2/tweets/search/all?query=" + (query==null? "" : System.Uri.EscapeDataString(query))+"&start_time=" + start_time.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&end_time=" + end_time.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&since_id=" + (since_id==null? "" : System.Uri.EscapeDataString(since_id))+"&until_id=" + (until_id==null? "" : System.Uri.EscapeDataString(until_id))+"&max_results="+max_results+"&next_token=" + (next_token==null? "" : System.Uri.EscapeDataString(next_token))+"&pagination_token=" + (pagination_token==null? "" : System.Uri.EscapeDataString(pagination_token))+"&sort_order=" + sort_order+"&"+string.Join("&", tweet_fields.Select(z => $"tweet.fields={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", expansions.Select(z => $"expansions={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", media_fields.Select(z => $"media.fields={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", poll_fields.Select(z => $"poll.fields={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", user_fields.Select(z => $"user.fields={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", place_fields.Select(z => $"place.fields={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -7996,13 +7919,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Get2TweetsSearchAllResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Get2TweetsSearchAllResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -8068,8 +7990,7 @@ namespace MyNS
 					Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2/tweets/search/recent?query=" + (query==null? "" : System.Uri.EscapeDataString(query))+"&start_time=" + start_time.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&end_time=" + end_time.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&since_id=" + (since_id==null? "" : System.Uri.EscapeDataString(since_id))+"&until_id=" + (until_id==null? "" : System.Uri.EscapeDataString(until_id))+"&max_results="+max_results+"&next_token=" + (next_token==null? "" : System.Uri.EscapeDataString(next_token))+"&pagination_token=" + (pagination_token==null? "" : System.Uri.EscapeDataString(pagination_token))+"&sort_order=" + sort_order+"&"+string.Join("&", tweet_fields.Select(z => $"tweet.fields={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", expansions.Select(z => $"expansions={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", media_fields.Select(z => $"media.fields={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", poll_fields.Select(z => $"poll.fields={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", user_fields.Select(z => $"user.fields={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", place_fields.Select(z => $"place.fields={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -8079,13 +8000,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Get2TweetsSearchRecentResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Get2TweetsSearchRecentResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -8122,8 +8042,7 @@ namespace MyNS
 		public async Task<FilteredStreamingTweetResponse> SearchStreamAsync(int backfill_minutes, System.DateTimeOffset start_time, System.DateTimeOffset end_time, string[] tweet_fields, string[] expansions, string[] media_fields, string[] poll_fields, string[] user_fields, string[] place_fields, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2/tweets/search/stream?backfill_minutes="+backfill_minutes+"&start_time=" + start_time.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&end_time=" + end_time.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&"+string.Join("&", tweet_fields.Select(z => $"tweet.fields={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", expansions.Select(z => $"expansions={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", media_fields.Select(z => $"media.fields={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", poll_fields.Select(z => $"poll.fields={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", user_fields.Select(z => $"user.fields={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", place_fields.Select(z => $"place.fields={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -8133,13 +8052,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<FilteredStreamingTweetResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<FilteredStreamingTweetResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -8161,8 +8079,7 @@ namespace MyNS
 		public async Task<RulesLookupResponse> GetRulesAsync(string[] ids, int max_results, string pagination_token, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2/tweets/search/stream/rules?"+string.Join("&", ids.Select(z => $"ids={System.Uri.EscapeDataString(z.ToString())}"))+"&max_results="+max_results+"&pagination_token=" + (pagination_token==null? "" : System.Uri.EscapeDataString(pagination_token));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -8172,13 +8089,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<RulesLookupResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<RulesLookupResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -8192,10 +8108,8 @@ namespace MyNS
 		public async Task<AddOrDeleteRulesResponse> AddOrDeleteRulesAsync(bool dry_run, AddOrDeleteRulesRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2/tweets/search/stream/rules?dry_run="+dry_run;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -8206,13 +8120,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<AddOrDeleteRulesResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<AddOrDeleteRulesResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -8226,8 +8139,7 @@ namespace MyNS
 		public async Task<TweetDeleteResponse> DeleteTweetByIdAsync(string id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2/tweets/"+ (id==null? "" : System.Uri.EscapeDataString(id));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -8237,13 +8149,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<TweetDeleteResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<TweetDeleteResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -8275,8 +8186,7 @@ namespace MyNS
 		public async Task<Get2TweetsIdResponse> FindTweetByIdAsync(string id, string[] tweet_fields, string[] expansions, string[] media_fields, string[] poll_fields, string[] user_fields, string[] place_fields, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2/tweets/"+ (id==null? "" : System.Uri.EscapeDataString(id))+"&"+string.Join("&", tweet_fields.Select(z => $"tweet.fields={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", expansions.Select(z => $"expansions={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", media_fields.Select(z => $"media.fields={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", poll_fields.Select(z => $"poll.fields={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", user_fields.Select(z => $"user.fields={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", place_fields.Select(z => $"place.fields={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -8286,13 +8196,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Get2TweetsIdResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Get2TweetsIdResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -8322,8 +8231,7 @@ namespace MyNS
 		public async Task<Get2TweetsIdLikingUsersResponse> TweetsIdLikingUsersAsync(string id, int max_results, string pagination_token, string[] user_fields, string[] expansions, string[] tweet_fields, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2/tweets/"+ (id==null? "" : System.Uri.EscapeDataString(id))+"/liking_users&max_results="+max_results+"&pagination_token=" + (pagination_token==null? "" : System.Uri.EscapeDataString(pagination_token))+"&"+string.Join("&", user_fields.Select(z => $"user.fields={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", expansions.Select(z => $"expansions={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", tweet_fields.Select(z => $"tweet.fields={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -8333,13 +8241,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Get2TweetsIdLikingUsersResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Get2TweetsIdLikingUsersResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -8381,8 +8288,7 @@ namespace MyNS
 		public async Task<Get2TweetsIdQuoteTweetsResponse> FindTweetsThatQuoteATweetAsync(string id, int max_results, string pagination_token, string[] exclude, string[] tweet_fields, string[] expansions, string[] media_fields, string[] poll_fields, string[] user_fields, string[] place_fields, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2/tweets/"+ (id==null? "" : System.Uri.EscapeDataString(id))+"/quote_tweets&max_results="+max_results+"&pagination_token=" + (pagination_token==null? "" : System.Uri.EscapeDataString(pagination_token))+"&"+string.Join("&", exclude.Select(z => $"exclude={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", tweet_fields.Select(z => $"tweet.fields={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", expansions.Select(z => $"expansions={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", media_fields.Select(z => $"media.fields={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", poll_fields.Select(z => $"poll.fields={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", user_fields.Select(z => $"user.fields={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", place_fields.Select(z => $"place.fields={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -8392,13 +8298,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Get2TweetsIdQuoteTweetsResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Get2TweetsIdQuoteTweetsResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -8428,8 +8333,7 @@ namespace MyNS
 		public async Task<Get2TweetsIdRetweetedByResponse> TweetsIdRetweetingUsersAsync(string id, int max_results, string pagination_token, string[] user_fields, string[] expansions, string[] tweet_fields, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2/tweets/"+ (id==null? "" : System.Uri.EscapeDataString(id))+"/retweeted_by&max_results="+max_results+"&pagination_token=" + (pagination_token==null? "" : System.Uri.EscapeDataString(pagination_token))+"&"+string.Join("&", user_fields.Select(z => $"user.fields={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", expansions.Select(z => $"expansions={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", tweet_fields.Select(z => $"tweet.fields={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -8439,13 +8343,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Get2TweetsIdRetweetedByResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Get2TweetsIdRetweetedByResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -8459,10 +8362,8 @@ namespace MyNS
 		public async Task<TweetHideResponse> HideReplyByIdAsync(string tweet_id, TweetHideRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2/tweets/"+ (tweet_id==null? "" : System.Uri.EscapeDataString(tweet_id))+"/hidden";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -8473,13 +8374,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<TweetHideResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<TweetHideResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -8505,8 +8405,7 @@ namespace MyNS
 		public async Task<Get2UsersResponse> FindUsersByIdAsync(string[] ids, string[] user_fields, string[] expansions, string[] tweet_fields, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2/users?"+string.Join("&", ids.Select(z => $"ids={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", user_fields.Select(z => $"user.fields={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", expansions.Select(z => $"expansions={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", tweet_fields.Select(z => $"tweet.fields={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -8516,13 +8415,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Get2UsersResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Get2UsersResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -8548,8 +8446,7 @@ namespace MyNS
 		public async Task<Get2UsersByResponse> FindUsersByUsernameAsync(string[] usernames, string[] user_fields, string[] expansions, string[] tweet_fields, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2/users/by?"+string.Join("&", usernames.Select(z => $"usernames={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", user_fields.Select(z => $"user.fields={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", expansions.Select(z => $"expansions={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", tweet_fields.Select(z => $"tweet.fields={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -8559,13 +8456,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Get2UsersByResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Get2UsersByResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -8588,8 +8484,7 @@ namespace MyNS
 		public async Task<Get2UsersByUsernameUsernameResponse> FindUserByUsernameAsync(string username, string[] user_fields, string[] expansions, string[] tweet_fields, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2/users/by/username/"+ (username==null? "" : System.Uri.EscapeDataString(username))+"&"+string.Join("&", user_fields.Select(z => $"user.fields={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", expansions.Select(z => $"expansions={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", tweet_fields.Select(z => $"tweet.fields={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -8599,13 +8494,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Get2UsersByUsernameUsernameResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Get2UsersByUsernameUsernameResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -8628,8 +8522,7 @@ namespace MyNS
 		public async Task<UserComplianceStreamResponse> GetUsersComplianceStreamAsync(int backfill_minutes, int partition, System.DateTimeOffset start_time, System.DateTimeOffset end_time, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2/users/compliance/stream?backfill_minutes="+backfill_minutes+"&partition="+partition+"&start_time=" + start_time.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&end_time=" + end_time.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ");
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -8639,13 +8532,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<UserComplianceStreamResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<UserComplianceStreamResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -8667,8 +8559,7 @@ namespace MyNS
 		public async Task<Get2UsersMeResponse> FindMyUserAsync(string[] user_fields, string[] expansions, string[] tweet_fields, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2/users/me?"+string.Join("&", user_fields.Select(z => $"user.fields={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", expansions.Select(z => $"expansions={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", tweet_fields.Select(z => $"tweet.fields={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -8678,13 +8569,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Get2UsersMeResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Get2UsersMeResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -8707,8 +8597,7 @@ namespace MyNS
 		public async Task<Get2UsersIdResponse> FindUserByIdAsync(string id, string[] user_fields, string[] expansions, string[] tweet_fields, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2/users/"+ (id==null? "" : System.Uri.EscapeDataString(id))+"&"+string.Join("&", user_fields.Select(z => $"user.fields={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", expansions.Select(z => $"expansions={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", tweet_fields.Select(z => $"tweet.fields={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -8718,13 +8607,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Get2UsersIdResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Get2UsersIdResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -8754,8 +8642,7 @@ namespace MyNS
 		public async Task<Get2UsersIdBlockingResponse> UsersIdBlockingAsync(string id, int max_results, string pagination_token, string[] user_fields, string[] expansions, string[] tweet_fields, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2/users/"+ (id==null? "" : System.Uri.EscapeDataString(id))+"/blocking&max_results="+max_results+"&pagination_token=" + (pagination_token==null? "" : System.Uri.EscapeDataString(pagination_token))+"&"+string.Join("&", user_fields.Select(z => $"user.fields={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", expansions.Select(z => $"expansions={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", tweet_fields.Select(z => $"tweet.fields={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -8765,13 +8652,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Get2UsersIdBlockingResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Get2UsersIdBlockingResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -8785,10 +8671,8 @@ namespace MyNS
 		public async Task<BlockUserMutationResponse> UsersIdBlockAsync(string id, BlockUserRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2/users/"+ (id==null? "" : System.Uri.EscapeDataString(id))+"/blocking";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -8799,13 +8683,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<BlockUserMutationResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<BlockUserMutationResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -8844,8 +8727,7 @@ namespace MyNS
 		public async Task<Get2UsersIdBookmarksResponse> GetUsersIdBookmarksAsync(string id, int max_results, string pagination_token, string[] tweet_fields, string[] expansions, string[] media_fields, string[] poll_fields, string[] user_fields, string[] place_fields, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2/users/"+ (id==null? "" : System.Uri.EscapeDataString(id))+"/bookmarks&max_results="+max_results+"&pagination_token=" + (pagination_token==null? "" : System.Uri.EscapeDataString(pagination_token))+"&"+string.Join("&", tweet_fields.Select(z => $"tweet.fields={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", expansions.Select(z => $"expansions={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", media_fields.Select(z => $"media.fields={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", poll_fields.Select(z => $"poll.fields={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", user_fields.Select(z => $"user.fields={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", place_fields.Select(z => $"place.fields={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -8855,13 +8737,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Get2UsersIdBookmarksResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Get2UsersIdBookmarksResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -8875,10 +8756,8 @@ namespace MyNS
 		public async Task<BookmarkMutationResponse> PostUsersIdBookmarksAsync(string id, BookmarkAddRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2/users/"+ (id==null? "" : System.Uri.EscapeDataString(id))+"/bookmarks";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -8889,13 +8768,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<BookmarkMutationResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<BookmarkMutationResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -8910,8 +8788,7 @@ namespace MyNS
 		public async Task<BookmarkMutationResponse> UsersIdBookmarksDeleteAsync(string id, string tweet_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2/users/"+ (id==null? "" : System.Uri.EscapeDataString(id))+"/bookmarks/"+ (tweet_id==null? "" : System.Uri.EscapeDataString(tweet_id));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -8921,13 +8798,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<BookmarkMutationResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<BookmarkMutationResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -8958,8 +8834,7 @@ namespace MyNS
 		public async Task<Get2UsersIdFollowedListsResponse> UserFollowedListsAsync(string id, int max_results, string pagination_token, string[] list_fields, string[] expansions, string[] user_fields, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2/users/"+ (id==null? "" : System.Uri.EscapeDataString(id))+"/followed_lists&max_results="+max_results+"&pagination_token=" + (pagination_token==null? "" : System.Uri.EscapeDataString(pagination_token))+"&"+string.Join("&", list_fields.Select(z => $"list.fields={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", expansions.Select(z => $"expansions={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", user_fields.Select(z => $"user.fields={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -8969,13 +8844,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Get2UsersIdFollowedListsResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Get2UsersIdFollowedListsResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -8989,10 +8863,8 @@ namespace MyNS
 		public async Task<ListFollowedResponse> ListUserFollowAsync(string id, ListFollowedRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2/users/"+ (id==null? "" : System.Uri.EscapeDataString(id))+"/followed_lists";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -9003,13 +8875,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ListFollowedResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ListFollowedResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -9024,8 +8895,7 @@ namespace MyNS
 		public async Task<ListFollowedResponse> ListUserUnfollowAsync(string id, string list_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2/users/"+ (id==null? "" : System.Uri.EscapeDataString(id))+"/followed_lists/"+ (list_id==null? "" : System.Uri.EscapeDataString(list_id));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -9035,13 +8905,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ListFollowedResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ListFollowedResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -9071,8 +8940,7 @@ namespace MyNS
 		public async Task<Get2UsersIdFollowersResponse> UsersIdFollowersAsync(string id, int max_results, string pagination_token, string[] user_fields, string[] expansions, string[] tweet_fields, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2/users/"+ (id==null? "" : System.Uri.EscapeDataString(id))+"/followers&max_results="+max_results+"&pagination_token=" + (pagination_token==null? "" : System.Uri.EscapeDataString(pagination_token))+"&"+string.Join("&", user_fields.Select(z => $"user.fields={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", expansions.Select(z => $"expansions={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", tweet_fields.Select(z => $"tweet.fields={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -9082,13 +8950,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Get2UsersIdFollowersResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Get2UsersIdFollowersResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -9118,8 +8985,7 @@ namespace MyNS
 		public async Task<Get2UsersIdFollowingResponse> UsersIdFollowingAsync(string id, int max_results, string pagination_token, string[] user_fields, string[] expansions, string[] tweet_fields, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2/users/"+ (id==null? "" : System.Uri.EscapeDataString(id))+"/following&max_results="+max_results+"&pagination_token=" + (pagination_token==null? "" : System.Uri.EscapeDataString(pagination_token))+"&"+string.Join("&", user_fields.Select(z => $"user.fields={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", expansions.Select(z => $"expansions={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", tweet_fields.Select(z => $"tweet.fields={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -9129,13 +8995,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Get2UsersIdFollowingResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Get2UsersIdFollowingResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -9149,10 +9014,8 @@ namespace MyNS
 		public async Task<UsersFollowingCreateResponse> UsersIdFollowAsync(string id, UsersFollowingCreateRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2/users/"+ (id==null? "" : System.Uri.EscapeDataString(id))+"/following";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -9163,13 +9026,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<UsersFollowingCreateResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<UsersFollowingCreateResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -9208,8 +9070,7 @@ namespace MyNS
 		public async Task<Get2UsersIdLikedTweetsResponse> UsersIdLikedTweetsAsync(string id, int max_results, string pagination_token, string[] tweet_fields, string[] expansions, string[] media_fields, string[] poll_fields, string[] user_fields, string[] place_fields, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2/users/"+ (id==null? "" : System.Uri.EscapeDataString(id))+"/liked_tweets&max_results="+max_results+"&pagination_token=" + (pagination_token==null? "" : System.Uri.EscapeDataString(pagination_token))+"&"+string.Join("&", tweet_fields.Select(z => $"tweet.fields={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", expansions.Select(z => $"expansions={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", media_fields.Select(z => $"media.fields={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", poll_fields.Select(z => $"poll.fields={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", user_fields.Select(z => $"user.fields={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", place_fields.Select(z => $"place.fields={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -9219,13 +9080,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Get2UsersIdLikedTweetsResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Get2UsersIdLikedTweetsResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -9239,10 +9099,8 @@ namespace MyNS
 		public async Task<UsersLikesCreateResponse> UsersIdLikeAsync(string id, UsersLikesCreateRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2/users/"+ (id==null? "" : System.Uri.EscapeDataString(id))+"/likes";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -9253,13 +9111,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<UsersLikesCreateResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<UsersLikesCreateResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -9274,8 +9131,7 @@ namespace MyNS
 		public async Task<UsersLikesDeleteResponse> UsersIdUnlikeAsync(string id, string tweet_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2/users/"+ (id==null? "" : System.Uri.EscapeDataString(id))+"/likes/"+ (tweet_id==null? "" : System.Uri.EscapeDataString(tweet_id));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -9285,13 +9141,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<UsersLikesDeleteResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<UsersLikesDeleteResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -9322,8 +9177,7 @@ namespace MyNS
 		public async Task<Get2UsersIdListMembershipsResponse> GetUserListMembershipsAsync(string id, int max_results, string pagination_token, string[] list_fields, string[] expansions, string[] user_fields, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2/users/"+ (id==null? "" : System.Uri.EscapeDataString(id))+"/list_memberships&max_results="+max_results+"&pagination_token=" + (pagination_token==null? "" : System.Uri.EscapeDataString(pagination_token))+"&"+string.Join("&", list_fields.Select(z => $"list.fields={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", expansions.Select(z => $"expansions={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", user_fields.Select(z => $"user.fields={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -9333,13 +9187,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Get2UsersIdListMembershipsResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Get2UsersIdListMembershipsResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -9382,8 +9235,7 @@ namespace MyNS
 		public async Task<Get2UsersIdMentionsResponse> UsersIdMentionsAsync(string id, string since_id, string until_id, int max_results, string pagination_token, System.DateTimeOffset start_time, System.DateTimeOffset end_time, string[] tweet_fields, string[] expansions, string[] media_fields, string[] poll_fields, string[] user_fields, string[] place_fields, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2/users/"+ (id==null? "" : System.Uri.EscapeDataString(id))+"/mentions&since_id=" + (since_id==null? "" : System.Uri.EscapeDataString(since_id))+"&until_id=" + (until_id==null? "" : System.Uri.EscapeDataString(until_id))+"&max_results="+max_results+"&pagination_token=" + (pagination_token==null? "" : System.Uri.EscapeDataString(pagination_token))+"&start_time=" + start_time.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&end_time=" + end_time.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&"+string.Join("&", tweet_fields.Select(z => $"tweet.fields={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", expansions.Select(z => $"expansions={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", media_fields.Select(z => $"media.fields={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", poll_fields.Select(z => $"poll.fields={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", user_fields.Select(z => $"user.fields={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", place_fields.Select(z => $"place.fields={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -9393,13 +9245,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Get2UsersIdMentionsResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Get2UsersIdMentionsResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -9430,8 +9281,7 @@ namespace MyNS
 		public async Task<Get2UsersIdMutingResponse> UsersIdMutingAsync(string id, int max_results, string pagination_token, string[] user_fields, string[] expansions, string[] tweet_fields, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2/users/"+ (id==null? "" : System.Uri.EscapeDataString(id))+"/muting&max_results="+max_results+"&pagination_token=" + (pagination_token==null? "" : System.Uri.EscapeDataString(pagination_token))+"&"+string.Join("&", user_fields.Select(z => $"user.fields={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", expansions.Select(z => $"expansions={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", tweet_fields.Select(z => $"tweet.fields={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -9441,13 +9291,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Get2UsersIdMutingResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Get2UsersIdMutingResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -9461,10 +9310,8 @@ namespace MyNS
 		public async Task<MuteUserMutationResponse> UsersIdMuteAsync(string id, MuteUserRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2/users/"+ (id==null? "" : System.Uri.EscapeDataString(id))+"/muting";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -9475,13 +9322,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<MuteUserMutationResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<MuteUserMutationResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -9512,8 +9358,7 @@ namespace MyNS
 		public async Task<Get2UsersIdOwnedListsResponse> ListUserOwnedListsAsync(string id, int max_results, string pagination_token, string[] list_fields, string[] expansions, string[] user_fields, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2/users/"+ (id==null? "" : System.Uri.EscapeDataString(id))+"/owned_lists&max_results="+max_results+"&pagination_token=" + (pagination_token==null? "" : System.Uri.EscapeDataString(pagination_token))+"&"+string.Join("&", list_fields.Select(z => $"list.fields={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", expansions.Select(z => $"expansions={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", user_fields.Select(z => $"user.fields={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -9523,13 +9368,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Get2UsersIdOwnedListsResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Get2UsersIdOwnedListsResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -9552,8 +9396,7 @@ namespace MyNS
 		public async Task<Get2UsersIdPinnedListsResponse> ListUserPinnedListsAsync(string id, string[] list_fields, string[] expansions, string[] user_fields, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2/users/"+ (id==null? "" : System.Uri.EscapeDataString(id))+"/pinned_lists&"+string.Join("&", list_fields.Select(z => $"list.fields={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", expansions.Select(z => $"expansions={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", user_fields.Select(z => $"user.fields={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -9563,13 +9406,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Get2UsersIdPinnedListsResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Get2UsersIdPinnedListsResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -9583,10 +9425,8 @@ namespace MyNS
 		public async Task<ListPinnedResponse> ListUserPinAsync(string id, ListPinnedRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2/users/"+ (id==null? "" : System.Uri.EscapeDataString(id))+"/pinned_lists";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -9597,13 +9437,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ListPinnedResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ListPinnedResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -9618,8 +9457,7 @@ namespace MyNS
 		public async Task<ListUnpinResponse> ListUserUnpinAsync(string id, string list_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2/users/"+ (id==null? "" : System.Uri.EscapeDataString(id))+"/pinned_lists/"+ (list_id==null? "" : System.Uri.EscapeDataString(list_id));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -9629,13 +9467,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ListUnpinResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ListUnpinResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -9649,10 +9486,8 @@ namespace MyNS
 		public async Task<UsersRetweetsCreateResponse> UsersIdRetweetsAsync(string id, UsersRetweetsCreateRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2/users/"+ (id==null? "" : System.Uri.EscapeDataString(id))+"/retweets";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -9663,13 +9498,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<UsersRetweetsCreateResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<UsersRetweetsCreateResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -9684,8 +9518,7 @@ namespace MyNS
 		public async Task<UsersRetweetsDeleteResponse> UsersIdUnretweetsAsync(string id, string source_tweet_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2/users/"+ (id==null? "" : System.Uri.EscapeDataString(id))+"/retweets/"+ (source_tweet_id==null? "" : System.Uri.EscapeDataString(source_tweet_id));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -9695,13 +9528,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<UsersRetweetsDeleteResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<UsersRetweetsDeleteResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -9745,8 +9577,7 @@ namespace MyNS
 		public async Task<Get2UsersIdTimelinesReverseChronologicalResponse> UsersIdTimelineAsync(string id, string since_id, string until_id, int max_results, string pagination_token, string[] exclude, System.DateTimeOffset start_time, System.DateTimeOffset end_time, string[] tweet_fields, string[] expansions, string[] media_fields, string[] poll_fields, string[] user_fields, string[] place_fields, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2/users/"+ (id==null? "" : System.Uri.EscapeDataString(id))+"/timelines/reverse_chronological&since_id=" + (since_id==null? "" : System.Uri.EscapeDataString(since_id))+"&until_id=" + (until_id==null? "" : System.Uri.EscapeDataString(until_id))+"&max_results="+max_results+"&pagination_token=" + (pagination_token==null? "" : System.Uri.EscapeDataString(pagination_token))+"&"+string.Join("&", exclude.Select(z => $"exclude={System.Uri.EscapeDataString(z.ToString())}"))+"&start_time=" + start_time.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&end_time=" + end_time.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&"+string.Join("&", tweet_fields.Select(z => $"tweet.fields={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", expansions.Select(z => $"expansions={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", media_fields.Select(z => $"media.fields={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", poll_fields.Select(z => $"poll.fields={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", user_fields.Select(z => $"user.fields={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", place_fields.Select(z => $"place.fields={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -9756,13 +9587,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Get2UsersIdTimelinesReverseChronologicalResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Get2UsersIdTimelinesReverseChronologicalResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -9808,8 +9638,7 @@ namespace MyNS
 		public async Task<Get2UsersIdTweetsResponse> UsersIdTweetsAsync(string id, string since_id, string until_id, int max_results, string pagination_token, string[] exclude, System.DateTimeOffset start_time, System.DateTimeOffset end_time, string[] tweet_fields, string[] expansions, string[] media_fields, string[] poll_fields, string[] user_fields, string[] place_fields, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2/users/"+ (id==null? "" : System.Uri.EscapeDataString(id))+"/tweets&since_id=" + (since_id==null? "" : System.Uri.EscapeDataString(since_id))+"&until_id=" + (until_id==null? "" : System.Uri.EscapeDataString(until_id))+"&max_results="+max_results+"&pagination_token=" + (pagination_token==null? "" : System.Uri.EscapeDataString(pagination_token))+"&"+string.Join("&", exclude.Select(z => $"exclude={System.Uri.EscapeDataString(z.ToString())}"))+"&start_time=" + start_time.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&end_time=" + end_time.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&"+string.Join("&", tweet_fields.Select(z => $"tweet.fields={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", expansions.Select(z => $"expansions={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", media_fields.Select(z => $"media.fields={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", poll_fields.Select(z => $"poll.fields={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", user_fields.Select(z => $"user.fields={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", place_fields.Select(z => $"place.fields={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -9819,13 +9648,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Get2UsersIdTweetsResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Get2UsersIdTweetsResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -9840,8 +9668,7 @@ namespace MyNS
 		public async Task<BlockUserMutationResponse> UsersIdUnblockAsync(string source_user_id, string target_user_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2/users/"+ (source_user_id==null? "" : System.Uri.EscapeDataString(source_user_id))+"/blocking/"+ (target_user_id==null? "" : System.Uri.EscapeDataString(target_user_id));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -9851,13 +9678,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<BlockUserMutationResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<BlockUserMutationResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -9872,8 +9698,7 @@ namespace MyNS
 		public async Task<UsersFollowingDeleteResponse> UsersIdUnfollowAsync(string source_user_id, string target_user_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2/users/"+ (source_user_id==null? "" : System.Uri.EscapeDataString(source_user_id))+"/following/"+ (target_user_id==null? "" : System.Uri.EscapeDataString(target_user_id));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -9883,13 +9708,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<UsersFollowingDeleteResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<UsersFollowingDeleteResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -9904,8 +9728,7 @@ namespace MyNS
 		public async Task<MuteUserMutationResponse> UsersIdUnmuteAsync(string source_user_id, string target_user_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2/users/"+ (source_user_id==null? "" : System.Uri.EscapeDataString(source_user_id))+"/muting/"+ (target_user_id==null? "" : System.Uri.EscapeDataString(target_user_id));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -9915,13 +9738,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<MuteUserMutationResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<MuteUserMutationResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

@@ -174,19 +174,17 @@ namespace MyNS
 		public async Task<LongTermRetentionBackupListResult> LongTermRetentionBackups_ListByLocationAsync(string locationName, bool onlyLatestPerDatabase, LongTermRetentionBackups_ListByLocationDatabaseState databaseState, string subscriptionId, string api_version)
 		{
 			var requestUri = "subscriptions/"+ (subscriptionId==null? "" : System.Uri.EscapeDataString(subscriptionId))+"/providers/Microsoft.Sql/locations/"+ (locationName==null? "" : System.Uri.EscapeDataString(locationName))+"/longTermRetentionBackups&onlyLatestPerDatabase="+onlyLatestPerDatabase+"&databaseState=" + databaseState+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<LongTermRetentionBackupListResult>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<LongTermRetentionBackupListResult>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -204,19 +202,17 @@ namespace MyNS
 		public async Task<LongTermRetentionBackupListResult> LongTermRetentionBackups_ListByServerAsync(string locationName, string longTermRetentionServerName, bool onlyLatestPerDatabase, LongTermRetentionBackups_ListByLocationDatabaseState databaseState, string subscriptionId, string api_version)
 		{
 			var requestUri = "subscriptions/"+ (subscriptionId==null? "" : System.Uri.EscapeDataString(subscriptionId))+"/providers/Microsoft.Sql/locations/"+ (locationName==null? "" : System.Uri.EscapeDataString(locationName))+"/longTermRetentionServers/"+ (longTermRetentionServerName==null? "" : System.Uri.EscapeDataString(longTermRetentionServerName))+"/longTermRetentionBackups&onlyLatestPerDatabase="+onlyLatestPerDatabase+"&databaseState=" + databaseState+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<LongTermRetentionBackupListResult>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<LongTermRetentionBackupListResult>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -235,19 +231,17 @@ namespace MyNS
 		public async Task<LongTermRetentionBackupListResult> LongTermRetentionBackups_ListByDatabaseAsync(string locationName, string longTermRetentionServerName, string longTermRetentionDatabaseName, bool onlyLatestPerDatabase, LongTermRetentionBackups_ListByLocationDatabaseState databaseState, string subscriptionId, string api_version)
 		{
 			var requestUri = "subscriptions/"+ (subscriptionId==null? "" : System.Uri.EscapeDataString(subscriptionId))+"/providers/Microsoft.Sql/locations/"+ (locationName==null? "" : System.Uri.EscapeDataString(locationName))+"/longTermRetentionServers/"+ (longTermRetentionServerName==null? "" : System.Uri.EscapeDataString(longTermRetentionServerName))+"/longTermRetentionDatabases/"+ (longTermRetentionDatabaseName==null? "" : System.Uri.EscapeDataString(longTermRetentionDatabaseName))+"/longTermRetentionBackups&onlyLatestPerDatabase="+onlyLatestPerDatabase+"&databaseState=" + databaseState+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<LongTermRetentionBackupListResult>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<LongTermRetentionBackupListResult>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -265,19 +259,17 @@ namespace MyNS
 		public async Task<LongTermRetentionBackup> LongTermRetentionBackups_GetAsync(string locationName, string longTermRetentionServerName, string longTermRetentionDatabaseName, string backupName, string subscriptionId, string api_version)
 		{
 			var requestUri = "subscriptions/"+ (subscriptionId==null? "" : System.Uri.EscapeDataString(subscriptionId))+"/providers/Microsoft.Sql/locations/"+ (locationName==null? "" : System.Uri.EscapeDataString(locationName))+"/longTermRetentionServers/"+ (longTermRetentionServerName==null? "" : System.Uri.EscapeDataString(longTermRetentionServerName))+"/longTermRetentionDatabases/"+ (longTermRetentionDatabaseName==null? "" : System.Uri.EscapeDataString(longTermRetentionDatabaseName))+"/longTermRetentionBackups/"+ (backupName==null? "" : System.Uri.EscapeDataString(backupName))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<LongTermRetentionBackup>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<LongTermRetentionBackup>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -295,8 +287,7 @@ namespace MyNS
 		public async Task LongTermRetentionBackups_DeleteAsync(string locationName, string longTermRetentionServerName, string longTermRetentionDatabaseName, string backupName, string subscriptionId, string api_version)
 		{
 			var requestUri = "subscriptions/"+ (subscriptionId==null? "" : System.Uri.EscapeDataString(subscriptionId))+"/providers/Microsoft.Sql/locations/"+ (locationName==null? "" : System.Uri.EscapeDataString(locationName))+"/longTermRetentionServers/"+ (longTermRetentionServerName==null? "" : System.Uri.EscapeDataString(longTermRetentionServerName))+"/longTermRetentionDatabases/"+ (longTermRetentionDatabaseName==null? "" : System.Uri.EscapeDataString(longTermRetentionDatabaseName))+"/longTermRetentionBackups/"+ (backupName==null? "" : System.Uri.EscapeDataString(backupName))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -305,7 +296,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -323,19 +313,17 @@ namespace MyNS
 		public async Task<LongTermRetentionBackupListResult> LongTermRetentionBackups_ListByResourceGroupLocationAsync(string resourceGroupName, string locationName, bool onlyLatestPerDatabase, LongTermRetentionBackups_ListByLocationDatabaseState databaseState, string subscriptionId, string api_version)
 		{
 			var requestUri = "subscriptions/"+ (subscriptionId==null? "" : System.Uri.EscapeDataString(subscriptionId))+"/resourceGroups/"+ (resourceGroupName==null? "" : System.Uri.EscapeDataString(resourceGroupName))+"/providers/Microsoft.Sql/locations/"+ (locationName==null? "" : System.Uri.EscapeDataString(locationName))+"/longTermRetentionBackups&onlyLatestPerDatabase="+onlyLatestPerDatabase+"&databaseState=" + databaseState+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<LongTermRetentionBackupListResult>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<LongTermRetentionBackupListResult>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -354,19 +342,17 @@ namespace MyNS
 		public async Task<LongTermRetentionBackupListResult> LongTermRetentionBackups_ListByResourceGroupServerAsync(string resourceGroupName, string locationName, string longTermRetentionServerName, bool onlyLatestPerDatabase, LongTermRetentionBackups_ListByLocationDatabaseState databaseState, string subscriptionId, string api_version)
 		{
 			var requestUri = "subscriptions/"+ (subscriptionId==null? "" : System.Uri.EscapeDataString(subscriptionId))+"/resourceGroups/"+ (resourceGroupName==null? "" : System.Uri.EscapeDataString(resourceGroupName))+"/providers/Microsoft.Sql/locations/"+ (locationName==null? "" : System.Uri.EscapeDataString(locationName))+"/longTermRetentionServers/"+ (longTermRetentionServerName==null? "" : System.Uri.EscapeDataString(longTermRetentionServerName))+"/longTermRetentionBackups&onlyLatestPerDatabase="+onlyLatestPerDatabase+"&databaseState=" + databaseState+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<LongTermRetentionBackupListResult>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<LongTermRetentionBackupListResult>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -386,19 +372,17 @@ namespace MyNS
 		public async Task<LongTermRetentionBackupListResult> LongTermRetentionBackups_ListByResourceGroupDatabaseAsync(string resourceGroupName, string locationName, string longTermRetentionServerName, string longTermRetentionDatabaseName, bool onlyLatestPerDatabase, LongTermRetentionBackups_ListByLocationDatabaseState databaseState, string subscriptionId, string api_version)
 		{
 			var requestUri = "subscriptions/"+ (subscriptionId==null? "" : System.Uri.EscapeDataString(subscriptionId))+"/resourceGroups/"+ (resourceGroupName==null? "" : System.Uri.EscapeDataString(resourceGroupName))+"/providers/Microsoft.Sql/locations/"+ (locationName==null? "" : System.Uri.EscapeDataString(locationName))+"/longTermRetentionServers/"+ (longTermRetentionServerName==null? "" : System.Uri.EscapeDataString(longTermRetentionServerName))+"/longTermRetentionDatabases/"+ (longTermRetentionDatabaseName==null? "" : System.Uri.EscapeDataString(longTermRetentionDatabaseName))+"/longTermRetentionBackups&onlyLatestPerDatabase="+onlyLatestPerDatabase+"&databaseState=" + databaseState+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<LongTermRetentionBackupListResult>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<LongTermRetentionBackupListResult>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -417,19 +401,17 @@ namespace MyNS
 		public async Task<LongTermRetentionBackup> LongTermRetentionBackups_GetByResourceGroupAsync(string resourceGroupName, string locationName, string longTermRetentionServerName, string longTermRetentionDatabaseName, string backupName, string subscriptionId, string api_version)
 		{
 			var requestUri = "subscriptions/"+ (subscriptionId==null? "" : System.Uri.EscapeDataString(subscriptionId))+"/resourceGroups/"+ (resourceGroupName==null? "" : System.Uri.EscapeDataString(resourceGroupName))+"/providers/Microsoft.Sql/locations/"+ (locationName==null? "" : System.Uri.EscapeDataString(locationName))+"/longTermRetentionServers/"+ (longTermRetentionServerName==null? "" : System.Uri.EscapeDataString(longTermRetentionServerName))+"/longTermRetentionDatabases/"+ (longTermRetentionDatabaseName==null? "" : System.Uri.EscapeDataString(longTermRetentionDatabaseName))+"/longTermRetentionBackups/"+ (backupName==null? "" : System.Uri.EscapeDataString(backupName))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<LongTermRetentionBackup>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<LongTermRetentionBackup>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -448,8 +430,7 @@ namespace MyNS
 		public async Task LongTermRetentionBackups_DeleteByResourceGroupAsync(string resourceGroupName, string locationName, string longTermRetentionServerName, string longTermRetentionDatabaseName, string backupName, string subscriptionId, string api_version)
 		{
 			var requestUri = "subscriptions/"+ (subscriptionId==null? "" : System.Uri.EscapeDataString(subscriptionId))+"/resourceGroups/"+ (resourceGroupName==null? "" : System.Uri.EscapeDataString(resourceGroupName))+"/providers/Microsoft.Sql/locations/"+ (locationName==null? "" : System.Uri.EscapeDataString(locationName))+"/longTermRetentionServers/"+ (longTermRetentionServerName==null? "" : System.Uri.EscapeDataString(longTermRetentionServerName))+"/longTermRetentionDatabases/"+ (longTermRetentionDatabaseName==null? "" : System.Uri.EscapeDataString(longTermRetentionDatabaseName))+"/longTermRetentionBackups/"+ (backupName==null? "" : System.Uri.EscapeDataString(backupName))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -458,7 +439,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -475,19 +455,17 @@ namespace MyNS
 		public async Task<BackupLongTermRetentionPolicy> BackupLongTermRetentionPolicies_ListByDatabaseAsync(string resourceGroupName, string serverName, string databaseName, string subscriptionId, string api_version)
 		{
 			var requestUri = "subscriptions/"+ (subscriptionId==null? "" : System.Uri.EscapeDataString(subscriptionId))+"/resourceGroups/"+ (resourceGroupName==null? "" : System.Uri.EscapeDataString(resourceGroupName))+"/providers/Microsoft.Sql/servers/"+ (serverName==null? "" : System.Uri.EscapeDataString(serverName))+"/databases/"+ (databaseName==null? "" : System.Uri.EscapeDataString(databaseName))+"/backupLongTermRetentionPolicies&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<BackupLongTermRetentionPolicy>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<BackupLongTermRetentionPolicy>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -505,19 +483,17 @@ namespace MyNS
 		public async Task<BackupLongTermRetentionPolicy> BackupLongTermRetentionPolicies_GetAsync(string resourceGroupName, string serverName, string databaseName, BackupLongTermRetentionPolicies_GetPolicyName policyName, string subscriptionId, string api_version)
 		{
 			var requestUri = "subscriptions/"+ (subscriptionId==null? "" : System.Uri.EscapeDataString(subscriptionId))+"/resourceGroups/"+ (resourceGroupName==null? "" : System.Uri.EscapeDataString(resourceGroupName))+"/providers/Microsoft.Sql/servers/"+ (serverName==null? "" : System.Uri.EscapeDataString(serverName))+"/databases/"+ (databaseName==null? "" : System.Uri.EscapeDataString(databaseName))+"/backupLongTermRetentionPolicies/"+policyName+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<BackupLongTermRetentionPolicy>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<BackupLongTermRetentionPolicy>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -536,22 +512,19 @@ namespace MyNS
 		public async Task<BackupLongTermRetentionPolicy> BackupLongTermRetentionPolicies_CreateOrUpdateAsync(string resourceGroupName, string serverName, string databaseName, BackupLongTermRetentionPolicies_CreateOrUpdatePolicyName policyName, string subscriptionId, string api_version, BackupLongTermRetentionPolicy requestBody)
 		{
 			var requestUri = "subscriptions/"+ (subscriptionId==null? "" : System.Uri.EscapeDataString(subscriptionId))+"/resourceGroups/"+ (resourceGroupName==null? "" : System.Uri.EscapeDataString(resourceGroupName))+"/providers/Microsoft.Sql/servers/"+ (serverName==null? "" : System.Uri.EscapeDataString(serverName))+"/databases/"+ (databaseName==null? "" : System.Uri.EscapeDataString(databaseName))+"/backupLongTermRetentionPolicies/"+policyName+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<BackupLongTermRetentionPolicy>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<BackupLongTermRetentionPolicy>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

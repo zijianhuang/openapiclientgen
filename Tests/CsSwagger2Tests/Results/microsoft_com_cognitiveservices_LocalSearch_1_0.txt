@@ -738,19 +738,17 @@ namespace MyNS
 		public async Task<SearchResponse> Local_SearchAsync(string cc, string mkt, string q, string localcategories, string localcircularview, string localmapview, string count, string first, string[] ResponseFormat, Local_SearchSafeSearch SafeSearch, string SetLang)
 		{
 			var requestUri = "v7.0/localbusinesses/search?cc=" + (cc==null? "" : System.Uri.EscapeDataString(cc))+"&mkt=" + (mkt==null? "" : System.Uri.EscapeDataString(mkt))+"&q=" + (q==null? "" : System.Uri.EscapeDataString(q))+"&localcategories=" + (localcategories==null? "" : System.Uri.EscapeDataString(localcategories))+"&localcircularview=" + (localcircularview==null? "" : System.Uri.EscapeDataString(localcircularview))+"&localmapview=" + (localmapview==null? "" : System.Uri.EscapeDataString(localmapview))+"&count=" + (count==null? "" : System.Uri.EscapeDataString(count))+"&first=" + (first==null? "" : System.Uri.EscapeDataString(first))+"&"+string.Join("&", ResponseFormat.Select(z => $"ResponseFormat={System.Uri.EscapeDataString(z.ToString())}"))+"&SafeSearch=" + SafeSearch+"&SetLang=" + (SetLang==null? "" : System.Uri.EscapeDataString(SetLang));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<SearchResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<SearchResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

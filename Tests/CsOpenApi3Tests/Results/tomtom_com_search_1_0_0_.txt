@@ -48,8 +48,7 @@ namespace MyNS
 		public async Task Search_versionNumberAdditionalData__extGetByGeometriesAndGeometriesZoomAsync(Search_versionNumberAdditionalData__extGetByGeometriesAndGeometriesZoomVersionNumber versionNumber, Search_versionNumberAdditionalData__extGetByGeometriesAndGeometriesZoomExt ext, string geometries, Search_versionNumberAdditionalData__extGetByGeometriesAndGeometriesZoomGeometriesZoom geometriesZoom, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "search/"+versionNumber+"/additionalData."+ext+"?geometries=" + (geometries==null? "" : System.Uri.EscapeDataString(geometries))+"&geometriesZoom="+geometriesZoom;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -63,7 +62,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -118,8 +116,7 @@ namespace MyNS
 					Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "search/"+versionNumber+"/cS/"+ (category==null? "" : System.Uri.EscapeDataString(category))+"."+ext+"&typeahead="+typeahead+"&limit="+limit+"&ofs="+ofs+"&countrySet=" + (countrySet==null? "" : System.Uri.EscapeDataString(countrySet))+"&lat="+lat+"&lon="+lon+"&radius="+radius+"&topLeft=" + (topLeft==null? "" : System.Uri.EscapeDataString(topLeft))+"&btmRight=" + (btmRight==null? "" : System.Uri.EscapeDataString(btmRight))+"&language=" + (language==null? "" : System.Uri.EscapeDataString(language))+"&idxSet=" + (idxSet==null? "" : System.Uri.EscapeDataString(idxSet))+"&view=" + view;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -133,7 +130,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -188,8 +184,7 @@ namespace MyNS
 					Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "search/"+versionNumber+"/categorySearch/"+ (query==null? "" : System.Uri.EscapeDataString(query))+"."+ext+"&typeahead="+typeahead+"&limit="+limit+"&ofs="+ofs+"&countrySet=" + (countrySet==null? "" : System.Uri.EscapeDataString(countrySet))+"&lat="+lat+"&lon="+lon+"&radius="+radius+"&topLeft=" + (topLeft==null? "" : System.Uri.EscapeDataString(topLeft))+"&btmRight=" + (btmRight==null? "" : System.Uri.EscapeDataString(btmRight))+"&language=" + (language==null? "" : System.Uri.EscapeDataString(language))+"&extendedPostalCodesFor=" + (extendedPostalCodesFor==null? "" : System.Uri.EscapeDataString(extendedPostalCodesFor))+"&view=" + view;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -203,7 +198,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -260,8 +254,7 @@ namespace MyNS
 					Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "search/"+versionNumber+"/geocode/"+ (query==null? "" : System.Uri.EscapeDataString(query))+"."+ext+"&storeResult="+storeResult+"&typeahead="+typeahead+"&limit="+limit+"&ofs="+ofs+"&countrySet=" + (countrySet==null? "" : System.Uri.EscapeDataString(countrySet))+"&lat="+lat+"&lon="+lon+"&radius="+radius+"&topLeft=" + (topLeft==null? "" : System.Uri.EscapeDataString(topLeft))+"&btmRight=" + (btmRight==null? "" : System.Uri.EscapeDataString(btmRight))+"&language=" + (language==null? "" : System.Uri.EscapeDataString(language))+"&extendedPostalCodesFor=" + (extendedPostalCodesFor==null? "" : System.Uri.EscapeDataString(extendedPostalCodesFor))+"&view=" + view;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -275,7 +268,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -291,8 +283,7 @@ namespace MyNS
 		public async Task Search_versionNumberGeometryFilter__extGetByGeometryListAndPoiListAsync(Search_versionNumberGeometryFilter__extGetByGeometryListAndPoiListVersionNumber versionNumber, Search_versionNumberCS_category__extGetByTypeaheadAndLimitAndOfsAndCountrySetAndLatAndLonAndRadiusAndTopLeftAndBtmRightAndLanguageAndIdxSetAndViewExt ext, string geometryList, string poiList, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "search/"+versionNumber+"/geometryFilter."+ext+"?geometryList=" + (geometryList==null? "" : System.Uri.EscapeDataString(geometryList))+"&poiList=" + (poiList==null? "" : System.Uri.EscapeDataString(poiList));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -307,7 +298,6 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
-			}
 		}
 		
 		/// <summary>
@@ -320,10 +310,8 @@ namespace MyNS
 		public async Task Search_versionNumberGeometryFilter__extPostAsync(Search_versionNumberGeometryFilter__extPostVersionNumber versionNumber, Search_versionNumberCS_category__extGetByTypeaheadAndLimitAndOfsAndCountrySetAndLatAndLonAndRadiusAndTopLeftAndBtmRightAndLanguageAndIdxSetAndViewExt ext, Search_versionNumberGeometryFilter__extPostPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "search/"+versionNumber+"/geometryFilter."+ext;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			using (var requestWriter = new System.IO.StringWriter())
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			using var requestWriter = new System.IO.StringWriter();
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
@@ -341,8 +329,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
-			}
 			}
 		}
 		
@@ -376,8 +362,7 @@ namespace MyNS
 		public async Task Search_versionNumberGeometrySearch_query__extGetByGeometryListAndLimitAndLanguageAndExtendedPostalCodesForAndIdxSetAsync(Search_versionNumberGeometrySearch_query__extGetByGeometryListAndLimitAndLanguageAndExtendedPostalCodesForAndIdxSetVersionNumber versionNumber, string query, Search_versionNumberCS_category__extGetByTypeaheadAndLimitAndOfsAndCountrySetAndLatAndLonAndRadiusAndTopLeftAndBtmRightAndLanguageAndIdxSetAndViewExt ext, string geometryList, int limit, string language, string extendedPostalCodesFor, string idxSet, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "search/"+versionNumber+"/geometrySearch/"+ (query==null? "" : System.Uri.EscapeDataString(query))+"."+ext+"&geometryList=" + (geometryList==null? "" : System.Uri.EscapeDataString(geometryList))+"&limit="+limit+"&language=" + (language==null? "" : System.Uri.EscapeDataString(language))+"&extendedPostalCodesFor=" + (extendedPostalCodesFor==null? "" : System.Uri.EscapeDataString(extendedPostalCodesFor))+"&idxSet=" + (idxSet==null? "" : System.Uri.EscapeDataString(idxSet));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -391,7 +376,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -424,10 +408,8 @@ namespace MyNS
 		public async Task Search_versionNumberGeometrySearch_query__extPostByLimitAndLanguageAndExtendedPostalCodesForAndIdxSetAsync(Search_versionNumberGeometrySearch_query__extPostByLimitAndLanguageAndExtendedPostalCodesForAndIdxSetVersionNumber versionNumber, string query, Search_versionNumberCS_category__extGetByTypeaheadAndLimitAndOfsAndCountrySetAndLatAndLonAndRadiusAndTopLeftAndBtmRightAndLanguageAndIdxSetAndViewExt ext, int limit, string language, string extendedPostalCodesFor, string idxSet, Search_versionNumberGeometrySearch_query__extPostByLimitAndLanguageAndExtendedPostalCodesForAndIdxSetPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "search/"+versionNumber+"/geometrySearch/"+ (query==null? "" : System.Uri.EscapeDataString(query))+"."+ext+"&limit="+limit+"&language=" + (language==null? "" : System.Uri.EscapeDataString(language))+"&extendedPostalCodesFor=" + (extendedPostalCodesFor==null? "" : System.Uri.EscapeDataString(extendedPostalCodesFor))+"&idxSet=" + (idxSet==null? "" : System.Uri.EscapeDataString(idxSet));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			using (var requestWriter = new System.IO.StringWriter())
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			using var requestWriter = new System.IO.StringWriter();
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
@@ -445,8 +427,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
-			}
 			}
 		}
 		
@@ -517,8 +497,7 @@ namespace MyNS
 					Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "search/"+versionNumber+"/nearbySearch/."+ext+"?lat="+lat+"&lon="+lon+"&limit="+limit+"&ofs="+ofs+"&countrySet=" + (countrySet==null? "" : System.Uri.EscapeDataString(countrySet))+"&radius="+radius+"&topLeft=" + (topLeft==null? "" : System.Uri.EscapeDataString(topLeft))+"&btmRight=" + (btmRight==null? "" : System.Uri.EscapeDataString(btmRight))+"&language=" + (language==null? "" : System.Uri.EscapeDataString(language))+"&extendedPostalCodesFor=" + (extendedPostalCodesFor==null? "" : System.Uri.EscapeDataString(extendedPostalCodesFor))+"&minFuzzyLevel="+minFuzzyLevel+"&maxFuzzyLevel="+maxFuzzyLevel+"&idxSet=" + (idxSet==null? "" : System.Uri.EscapeDataString(idxSet))+"&view=" + view;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -532,7 +511,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -587,8 +565,7 @@ namespace MyNS
 					Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "search/"+versionNumber+"/poiSearch/"+ (query==null? "" : System.Uri.EscapeDataString(query))+"."+ext+"&typeahead="+typeahead+"&limit="+limit+"&ofs="+ofs+"&countrySet=" + (countrySet==null? "" : System.Uri.EscapeDataString(countrySet))+"&lat="+lat+"&lon="+lon+"&radius="+radius+"&topLeft=" + (topLeft==null? "" : System.Uri.EscapeDataString(topLeft))+"&btmRight=" + (btmRight==null? "" : System.Uri.EscapeDataString(btmRight))+"&language=" + (language==null? "" : System.Uri.EscapeDataString(language))+"&extendedPostalCodesFor=" + (extendedPostalCodesFor==null? "" : System.Uri.EscapeDataString(extendedPostalCodesFor))+"&view=" + view;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -602,7 +579,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -625,8 +601,7 @@ namespace MyNS
 		public async Task Search_versionNumberReverseGeocodeCrossStreet_position__extGetByLimitAndSpatialKeysAndHeadingAndRadiusAndLanguageAsync(Search_versionNumberReverseGeocodeCrossStreet_position__extGetByLimitAndSpatialKeysAndHeadingAndRadiusAndLanguageVersionNumber versionNumber, string position, Search_versionNumberCS_category__extGetByTypeaheadAndLimitAndOfsAndCountrySetAndLatAndLonAndRadiusAndTopLeftAndBtmRightAndLanguageAndIdxSetAndViewExt ext, int limit, bool spatialKeys, float heading, int radius, string language, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "search/"+versionNumber+"/reverseGeocode/crossStreet/"+ (position==null? "" : System.Uri.EscapeDataString(position))+"."+ext+"&limit="+limit+"&spatialKeys="+spatialKeys+"&heading="+heading+"&radius="+radius+"&language=" + (language==null? "" : System.Uri.EscapeDataString(language));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -640,7 +615,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -663,8 +637,7 @@ namespace MyNS
 		public async Task Search_versionNumberReverseGeocode_position__extGetBySpatialKeysAndReturnSpeedLimitAndHeadingAndRadiusAndNumberAndReturnRoadUseAndRoadUseAndCallbackAsync(Search_versionNumberReverseGeocode_position__extGetBySpatialKeysAndReturnSpeedLimitAndHeadingAndRadiusAndNumberAndReturnRoadUseAndRoadUseAndCallbackVersionNumber versionNumber, string position, Search_versionNumberCS_category__extGetByTypeaheadAndLimitAndOfsAndCountrySetAndLatAndLonAndRadiusAndTopLeftAndBtmRightAndLanguageAndIdxSetAndViewExt ext, bool spatialKeys, bool returnSpeedLimit, float heading, int radius, string number, bool returnRoadUse, string roadUse, string callback, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "search/"+versionNumber+"/reverseGeocode/"+ (position==null? "" : System.Uri.EscapeDataString(position))+"."+ext+"&spatialKeys="+spatialKeys+"&returnSpeedLimit="+returnSpeedLimit+"&heading="+heading+"&radius="+radius+"&number=" + (number==null? "" : System.Uri.EscapeDataString(number))+"&returnRoadUse="+returnRoadUse+"&roadUse=" + (roadUse==null? "" : System.Uri.EscapeDataString(roadUse))+"&callback=" + (callback==null? "" : System.Uri.EscapeDataString(callback));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -678,7 +651,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -696,8 +668,7 @@ namespace MyNS
 		public async Task Search_versionNumberRoutedFilter_position_heading__extGetByPoiListAndRoutingTimeoutAsync(Search_versionNumberRoutedFilter_position_heading__extGetByPoiListAndRoutingTimeoutVersionNumber versionNumber, string position, float heading, Search_versionNumberCS_category__extGetByTypeaheadAndLimitAndOfsAndCountrySetAndLatAndLonAndRadiusAndTopLeftAndBtmRightAndLanguageAndIdxSetAndViewExt ext, string poiList, int routingTimeout, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "search/"+versionNumber+"/routedFilter/"+ (position==null? "" : System.Uri.EscapeDataString(position))+"/"+heading+"."+ext+"&poiList=" + (poiList==null? "" : System.Uri.EscapeDataString(poiList))+"&routingTimeout="+routingTimeout;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -711,7 +682,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -728,10 +698,8 @@ namespace MyNS
 		public async Task Search_versionNumberRoutedFilter_position_heading__extPostByRoutingTimeoutAsync(Search_versionNumberRoutedFilter_position_heading__extPostByRoutingTimeoutVersionNumber versionNumber, string position, float heading, Search_versionNumberCS_category__extGetByTypeaheadAndLimitAndOfsAndCountrySetAndLatAndLonAndRadiusAndTopLeftAndBtmRightAndLanguageAndIdxSetAndViewExt ext, int routingTimeout, Search_versionNumberRoutedFilter_position_heading__extPostByRoutingTimeoutPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "search/"+versionNumber+"/routedFilter/"+ (position==null? "" : System.Uri.EscapeDataString(position))+"/"+heading+"."+ext+"&routingTimeout="+routingTimeout;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			using (var requestWriter = new System.IO.StringWriter())
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			using var requestWriter = new System.IO.StringWriter();
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
@@ -749,8 +717,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
-			}
 			}
 		}
 		
@@ -788,8 +754,7 @@ namespace MyNS
 		public async Task Search_versionNumberRoutedSearch_query_position_heading__extGetByTypeaheadAndLimitAndMultiplierAndRoutingTimeoutAndLanguageAndExtendedPostalCodesForAndIdxSetAsync(Search_versionNumberRoutedSearch_query_position_heading__extGetByTypeaheadAndLimitAndMultiplierAndRoutingTimeoutAndLanguageAndExtendedPostalCodesForAndIdxSetVersionNumber versionNumber, string query, string position, float heading, Search_versionNumberCS_category__extGetByTypeaheadAndLimitAndOfsAndCountrySetAndLatAndLonAndRadiusAndTopLeftAndBtmRightAndLanguageAndIdxSetAndViewExt ext, bool typeahead, int limit, int multiplier, int routingTimeout, string language, string extendedPostalCodesFor, string idxSet, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "search/"+versionNumber+"/routedSearch/"+ (query==null? "" : System.Uri.EscapeDataString(query))+"/"+ (position==null? "" : System.Uri.EscapeDataString(position))+"/"+heading+"."+ext+"&typeahead="+typeahead+"&limit="+limit+"&multiplier="+multiplier+"&routingTimeout="+routingTimeout+"&language=" + (language==null? "" : System.Uri.EscapeDataString(language))+"&extendedPostalCodesFor=" + (extendedPostalCodesFor==null? "" : System.Uri.EscapeDataString(extendedPostalCodesFor))+"&idxSet=" + (idxSet==null? "" : System.Uri.EscapeDataString(idxSet));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -803,7 +768,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -858,8 +822,7 @@ namespace MyNS
 					Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "search/"+versionNumber+"/s/"+ (query==null? "" : System.Uri.EscapeDataString(query))+"."+ext+"&typeahead="+typeahead+"&limit="+limit+"&ofs="+ofs+"&countrySet=" + (countrySet==null? "" : System.Uri.EscapeDataString(countrySet))+"&lat="+lat+"&lon="+lon+"&radius="+radius+"&topLeft=" + (topLeft==null? "" : System.Uri.EscapeDataString(topLeft))+"&btmRight=" + (btmRight==null? "" : System.Uri.EscapeDataString(btmRight))+"&language=" + (language==null? "" : System.Uri.EscapeDataString(language))+"&idxSet=" + (idxSet==null? "" : System.Uri.EscapeDataString(idxSet))+"&view=" + view;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -873,7 +836,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -948,8 +910,7 @@ namespace MyNS
 					Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "search/"+versionNumber+"/search/"+ (query==null? "" : System.Uri.EscapeDataString(query))+"."+ext+"&typeahead="+typeahead+"&limit="+limit+"&ofs="+ofs+"&countrySet=" + (countrySet==null? "" : System.Uri.EscapeDataString(countrySet))+"&lat="+lat+"&lon="+lon+"&radius="+radius+"&topLeft=" + (topLeft==null? "" : System.Uri.EscapeDataString(topLeft))+"&btmRight=" + (btmRight==null? "" : System.Uri.EscapeDataString(btmRight))+"&language=" + (language==null? "" : System.Uri.EscapeDataString(language))+"&extendedPostalCodesFor=" + (extendedPostalCodesFor==null? "" : System.Uri.EscapeDataString(extendedPostalCodesFor))+"&minFuzzyLevel="+minFuzzyLevel+"&maxFuzzyLevel="+maxFuzzyLevel+"&idxSet=" + (idxSet==null? "" : System.Uri.EscapeDataString(idxSet))+"&view=" + view;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -963,7 +924,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -984,10 +944,8 @@ namespace MyNS
 		public async Task Search_versionNumberSearchAlongRoute_query__extPostByMaxDetourTimeAndLimitAsync(Search_versionNumberSearchAlongRoute_query__extPostByMaxDetourTimeAndLimitVersionNumber versionNumber, string query, Search_versionNumberCS_category__extGetByTypeaheadAndLimitAndOfsAndCountrySetAndLatAndLonAndRadiusAndTopLeftAndBtmRightAndLanguageAndIdxSetAndViewExt ext, int maxDetourTime, int limit, Search_versionNumberSearchAlongRoute_query__extPostByMaxDetourTimeAndLimitPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "search/"+versionNumber+"/searchAlongRoute/"+ (query==null? "" : System.Uri.EscapeDataString(query))+"."+ext+"&maxDetourTime="+maxDetourTime+"&limit="+limit;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			using (var requestWriter = new System.IO.StringWriter())
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			using var requestWriter = new System.IO.StringWriter();
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
@@ -1005,8 +963,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
-			}
 			}
 		}
 		
@@ -1061,8 +1017,7 @@ namespace MyNS
 					Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "search/"+versionNumber+"/structuredGeocode."+ext+"?countryCode=" + (countryCode==null? "" : System.Uri.EscapeDataString(countryCode))+"&limit="+limit+"&ofs="+ofs+"&streetNumber=" + (streetNumber==null? "" : System.Uri.EscapeDataString(streetNumber))+"&streetName=" + (streetName==null? "" : System.Uri.EscapeDataString(streetName))+"&crossStreet=" + (crossStreet==null? "" : System.Uri.EscapeDataString(crossStreet))+"&municipality=" + (municipality==null? "" : System.Uri.EscapeDataString(municipality))+"&municipalitySubdivision=" + (municipalitySubdivision==null? "" : System.Uri.EscapeDataString(municipalitySubdivision))+"&countryTertiarySubdivision=" + (countryTertiarySubdivision==null? "" : System.Uri.EscapeDataString(countryTertiarySubdivision))+"&countrySecondarySubdivision=" + (countrySecondarySubdivision==null? "" : System.Uri.EscapeDataString(countrySecondarySubdivision))+"&countrySubdivision=" + (countrySubdivision==null? "" : System.Uri.EscapeDataString(countrySubdivision))+"&postalCode=" + (postalCode==null? "" : System.Uri.EscapeDataString(postalCode))+"&language=" + (language==null? "" : System.Uri.EscapeDataString(language))+"&extendedPostalCodesFor=" + (extendedPostalCodesFor==null? "" : System.Uri.EscapeDataString(extendedPostalCodesFor));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1076,7 +1031,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

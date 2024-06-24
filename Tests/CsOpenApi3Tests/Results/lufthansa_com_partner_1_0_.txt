@@ -46,8 +46,7 @@ namespace MyNS
 		public async Task<string> Baggage_Trip_and_ContactAsync(string searchID, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "baggage/baggagetripandcontact/"+ (searchID==null? "" : System.Uri.EscapeDataString(searchID));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -57,13 +56,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<string>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<string>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -84,8 +82,7 @@ namespace MyNS
 		public async Task<string> All_FaresAsync(string catalogues, string origin, string destination, string travel_date, string return_date, string cabin_class, string travelers, string fare_family, string trackingid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "offers/fares/allfares?catalogues=" + (catalogues==null? "" : System.Uri.EscapeDataString(catalogues))+"&origin=" + (origin==null? "" : System.Uri.EscapeDataString(origin))+"&destination=" + (destination==null? "" : System.Uri.EscapeDataString(destination))+"&travel-date=" + (travel_date==null? "" : System.Uri.EscapeDataString(travel_date))+"&return-date=" + (return_date==null? "" : System.Uri.EscapeDataString(return_date))+"&cabin-class=" + (cabin_class==null? "" : System.Uri.EscapeDataString(cabin_class))+"&travelers=" + (travelers==null? "" : System.Uri.EscapeDataString(travelers))+"&fare-family=" + (fare_family==null? "" : System.Uri.EscapeDataString(fare_family))+"&trackingid=" + (trackingid==null? "" : System.Uri.EscapeDataString(trackingid));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -95,13 +92,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<string>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<string>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -123,8 +119,7 @@ namespace MyNS
 		public async Task<string> Best_FaresAsync(string catalogues, string origin, string destination, string travel_date, string trip_duration, string range, string cabin_class, string country, string trackingid, string fare_family, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "offers/fares/bestfares?catalogues=" + (catalogues==null? "" : System.Uri.EscapeDataString(catalogues))+"&origin=" + (origin==null? "" : System.Uri.EscapeDataString(origin))+"&destination=" + (destination==null? "" : System.Uri.EscapeDataString(destination))+"&travel-date=" + (travel_date==null? "" : System.Uri.EscapeDataString(travel_date))+"&trip-duration=" + (trip_duration==null? "" : System.Uri.EscapeDataString(trip_duration))+"&range=" + (range==null? "" : System.Uri.EscapeDataString(range))+"&cabin-class=" + (cabin_class==null? "" : System.Uri.EscapeDataString(cabin_class))+"&country=" + (country==null? "" : System.Uri.EscapeDataString(country))+"&trackingid=" + (trackingid==null? "" : System.Uri.EscapeDataString(trackingid))+"&fare-family=" + (fare_family==null? "" : System.Uri.EscapeDataString(fare_family));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -134,13 +129,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<string>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<string>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -191,8 +185,7 @@ namespace MyNS
 					Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "offers/fares/deeplink?catalogues=" + (catalogues==null? "" : System.Uri.EscapeDataString(catalogues))+"&trackingid=" + (trackingid==null? "" : System.Uri.EscapeDataString(trackingid))+"&country=" + (country==null? "" : System.Uri.EscapeDataString(country))+"&lang=" + (lang==null? "" : System.Uri.EscapeDataString(lang))+"&origin=" + (origin==null? "" : System.Uri.EscapeDataString(origin))+"&origin-name=" + (origin_name==null? "" : System.Uri.EscapeDataString(origin_name))+"&destination=" + (destination==null? "" : System.Uri.EscapeDataString(destination))+"&destination-name=" + (destination_name==null? "" : System.Uri.EscapeDataString(destination_name))+"&travel-date=" + (travel_date==null? "" : System.Uri.EscapeDataString(travel_date))+"&return-date=" + (return_date==null? "" : System.Uri.EscapeDataString(return_date))+"&cabin-class=" + (cabin_class==null? "" : System.Uri.EscapeDataString(cabin_class))+"&outbound-segments=" + (outbound_segments==null? "" : System.Uri.EscapeDataString(outbound_segments))+"&return-segments=" + (return_segments==null? "" : System.Uri.EscapeDataString(return_segments))+"&travelers=" + (travelers==null? "" : System.Uri.EscapeDataString(travelers))+"&fare=" + (fare==null? "" : System.Uri.EscapeDataString(fare))+"&net-fare=" + (net_fare==null? "" : System.Uri.EscapeDataString(net_fare))+"&fare-currency=" + (fare_currency==null? "" : System.Uri.EscapeDataString(fare_currency))+"&partnerid=" + (partnerid==null? "" : System.Uri.EscapeDataString(partnerid))+"&encryption-key=" + (encryption_key==null? "" : System.Uri.EscapeDataString(encryption_key));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -202,13 +195,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<string>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<string>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -232,8 +224,7 @@ namespace MyNS
 		public async Task<string> LH_Deep_Links___FFPAsync(string catalogues, string origin, string destination, string travel_date, string trackingid, string country, string lang, string return_date, string cabin_class, string travelers, string partnerid, string encryption_key, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "offers/fares/deeplink/ffp?catalogues=" + (catalogues==null? "" : System.Uri.EscapeDataString(catalogues))+"&origin=" + (origin==null? "" : System.Uri.EscapeDataString(origin))+"&destination=" + (destination==null? "" : System.Uri.EscapeDataString(destination))+"&travel-date=" + (travel_date==null? "" : System.Uri.EscapeDataString(travel_date))+"&trackingid=" + (trackingid==null? "" : System.Uri.EscapeDataString(trackingid))+"&country=" + (country==null? "" : System.Uri.EscapeDataString(country))+"&lang=" + (lang==null? "" : System.Uri.EscapeDataString(lang))+"&return-date=" + (return_date==null? "" : System.Uri.EscapeDataString(return_date))+"&cabin-class=" + (cabin_class==null? "" : System.Uri.EscapeDataString(cabin_class))+"&travelers=" + (travelers==null? "" : System.Uri.EscapeDataString(travelers))+"&partnerid=" + (partnerid==null? "" : System.Uri.EscapeDataString(partnerid))+"&encryption-key=" + (encryption_key==null? "" : System.Uri.EscapeDataString(encryption_key));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -243,13 +234,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<string>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<string>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -296,8 +286,7 @@ namespace MyNS
 					Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "offers/fares/deeplink/itco?catalogues=" + (catalogues==null? "" : System.Uri.EscapeDataString(catalogues))+"&origin=" + (origin==null? "" : System.Uri.EscapeDataString(origin))+"&destination=" + (destination==null? "" : System.Uri.EscapeDataString(destination))+"&travel-date=" + (travel_date==null? "" : System.Uri.EscapeDataString(travel_date))+"&outbound-segments=" + (outbound_segments==null? "" : System.Uri.EscapeDataString(outbound_segments))+"&fare=" + (fare==null? "" : System.Uri.EscapeDataString(fare))+"&fare-currency=" + (fare_currency==null? "" : System.Uri.EscapeDataString(fare_currency))+"&trackingid=" + (trackingid==null? "" : System.Uri.EscapeDataString(trackingid))+"&country=" + (country==null? "" : System.Uri.EscapeDataString(country))+"&lang=" + (lang==null? "" : System.Uri.EscapeDataString(lang))+"&return-date=" + (return_date==null? "" : System.Uri.EscapeDataString(return_date))+"&cabin-class=" + (cabin_class==null? "" : System.Uri.EscapeDataString(cabin_class))+"&return-segments=" + (return_segments==null? "" : System.Uri.EscapeDataString(return_segments))+"&travelers=" + (travelers==null? "" : System.Uri.EscapeDataString(travelers))+"&net-fare=" + (net_fare==null? "" : System.Uri.EscapeDataString(net_fare))+"&partnerid=" + (partnerid==null? "" : System.Uri.EscapeDataString(partnerid))+"&encryption-key=" + (encryption_key==null? "" : System.Uri.EscapeDataString(encryption_key));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -307,13 +296,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<string>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<string>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -330,8 +318,7 @@ namespace MyNS
 		public async Task<string> FaresAsync(string catalogues, string segments, string carriers, string travelers, string fare_types, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "offers/fares/fares?catalogues=" + (catalogues==null? "" : System.Uri.EscapeDataString(catalogues))+"&segments=" + (segments==null? "" : System.Uri.EscapeDataString(segments))+"&carriers=" + (carriers==null? "" : System.Uri.EscapeDataString(carriers))+"&travelers=" + (travelers==null? "" : System.Uri.EscapeDataString(travelers))+"&fare-types=" + (fare_types==null? "" : System.Uri.EscapeDataString(fare_types));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -341,13 +328,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<string>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<string>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -368,8 +354,7 @@ namespace MyNS
 		public async Task<string> Lowest_FaresAsync(string catalogues, string origin, string destination, string travel_date, string return_date, string cabin_class, string travelers, string fare_family, string country, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "offers/fares/lowestfares?catalogues=" + (catalogues==null? "" : System.Uri.EscapeDataString(catalogues))+"&origin=" + (origin==null? "" : System.Uri.EscapeDataString(origin))+"&destination=" + (destination==null? "" : System.Uri.EscapeDataString(destination))+"&travel-date=" + (travel_date==null? "" : System.Uri.EscapeDataString(travel_date))+"&return-date=" + (return_date==null? "" : System.Uri.EscapeDataString(return_date))+"&cabin-class=" + (cabin_class==null? "" : System.Uri.EscapeDataString(cabin_class))+"&travelers=" + (travelers==null? "" : System.Uri.EscapeDataString(travelers))+"&fare-family=" + (fare_family==null? "" : System.Uri.EscapeDataString(fare_family))+"&country=" + (country==null? "" : System.Uri.EscapeDataString(country));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -379,13 +364,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<string>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<string>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -405,8 +389,7 @@ namespace MyNS
 		public async Task<string> Fares_SubscriptionsAsync(string origin, string destination, string cabin_class, string trip_duration, string email, string lang, string country, string trackingid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "offers/fares/subscriptions?origin=" + (origin==null? "" : System.Uri.EscapeDataString(origin))+"&destination=" + (destination==null? "" : System.Uri.EscapeDataString(destination))+"&cabin-class=" + (cabin_class==null? "" : System.Uri.EscapeDataString(cabin_class))+"&trip-duration=" + (trip_duration==null? "" : System.Uri.EscapeDataString(trip_duration))+"&email=" + (email==null? "" : System.Uri.EscapeDataString(email))+"&lang=" + (lang==null? "" : System.Uri.EscapeDataString(lang))+"&country=" + (country==null? "" : System.Uri.EscapeDataString(country))+"&trackingid=" + (trackingid==null? "" : System.Uri.EscapeDataString(trackingid));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -416,13 +399,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<string>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<string>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -439,8 +421,7 @@ namespace MyNS
 		public async Task<string> OND_RouteAsync(string origin, string destination, string catalogues, string limit, string offset, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "offers/ond/route/"+ (origin==null? "" : System.Uri.EscapeDataString(origin))+"/"+ (destination==null? "" : System.Uri.EscapeDataString(destination))+"&catalogues=" + (catalogues==null? "" : System.Uri.EscapeDataString(catalogues))+"&limit=" + (limit==null? "" : System.Uri.EscapeDataString(limit))+"&offset=" + (offset==null? "" : System.Uri.EscapeDataString(offset));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -450,13 +431,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<string>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<string>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -471,8 +451,7 @@ namespace MyNS
 		public async Task<string> OND_StatusAsync(string catalogues, string new_routes, string old_routes, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "offers/ond/status?catalogues=" + (catalogues==null? "" : System.Uri.EscapeDataString(catalogues))+"&new-routes=" + (new_routes==null? "" : System.Uri.EscapeDataString(new_routes))+"&old-routes=" + (old_routes==null? "" : System.Uri.EscapeDataString(old_routes));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -482,13 +461,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<string>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<string>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -502,8 +480,7 @@ namespace MyNS
 		public async Task<string> Top_ONDAsync(string catalogues, string origin, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "offers/ond/top?catalogues=" + (catalogues==null? "" : System.Uri.EscapeDataString(catalogues))+"&origin=" + (origin==null? "" : System.Uri.EscapeDataString(origin));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -513,13 +490,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<string>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<string>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -533,8 +509,7 @@ namespace MyNS
 		public async Task<string> OrdersAsync(string orderID, string name, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "orders/orders/"+ (orderID==null? "" : System.Uri.EscapeDataString(orderID))+"/"+ (name==null? "" : System.Uri.EscapeDataString(name));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -544,13 +519,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<string>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<string>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -564,19 +538,17 @@ namespace MyNS
 		public async Task<string> Auto_Check_InAsync(string ticketnumber, string emailAddress, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "preflight/autocheckin/"+ (ticketnumber==null? "" : System.Uri.EscapeDataString(ticketnumber))+"&emailAddress=" + (emailAddress==null? "" : System.Uri.EscapeDataString(emailAddress));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<string>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<string>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -593,8 +565,7 @@ namespace MyNS
 		public async Task<string> Price_OffersAsync(string origin, string destination, string departureDate, string returnDate, string service, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "promotions/priceoffers/flights/ond/"+ (origin==null? "" : System.Uri.EscapeDataString(origin))+"/"+ (destination==null? "" : System.Uri.EscapeDataString(destination))+"&departureDate=" + (departureDate==null? "" : System.Uri.EscapeDataString(departureDate))+"&returnDate=" + (returnDate==null? "" : System.Uri.EscapeDataString(returnDate))+"&service=" + (service==null? "" : System.Uri.EscapeDataString(service));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -604,13 +575,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<string>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<string>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -625,8 +595,7 @@ namespace MyNS
 		public async Task<string> Seat_DetailsAsync(string aircraftCode, string cabinCode, string lang, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "references/seatdetails/"+ (aircraftCode==null? "" : System.Uri.EscapeDataString(aircraftCode))+"/"+ (cabinCode==null? "" : System.Uri.EscapeDataString(cabinCode))+"&lang=" + (lang==null? "" : System.Uri.EscapeDataString(lang));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -636,13 +605,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<string>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<string>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

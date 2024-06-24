@@ -411,8 +411,7 @@ namespace MyNS
 		public async Task FileSystem_SetFileExpiryAsync(string path, FileSystem_SetFileExpiryExpiryOption expiryOption, long expireTime, FileSystem_SetFileExpiryOp op, string api_version)
 		{
 			var requestUri = "WebHdfsExt/"+ (path==null? "" : System.Uri.EscapeDataString(path))+"&expiryOption=" + expiryOption+"&expireTime="+expireTime+"&op=" + op+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -421,7 +420,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -437,8 +435,7 @@ namespace MyNS
 		public async Task FileSystem_CheckAccessAsync(string path, string fsaction, FileSystem_CheckAccessOp op, string api_version)
 		{
 			var requestUri = "webhdfs/v1/"+ (path==null? "" : System.Uri.EscapeDataString(path))+"&fsaction=" + (fsaction==null? "" : System.Uri.EscapeDataString(fsaction))+"&op=" + op+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -447,7 +444,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

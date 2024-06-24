@@ -1327,8 +1327,7 @@ namespace MyNS
 		public async Task<Article_Reviews> Article_reviewsGetByArticleIdAndArticleModelIdAndMinStarRatingAndMaxStarRatingAndSortAndPageAndPageSizeAndFieldsAsync(string[] articleId, string[] articleModelId, string minStarRating, string maxStarRating, Article_reviewsGetByArticleIdAndArticleModelIdAndMinStarRatingAndMaxStarRatingAndSortAndPageAndPageSizeAndFieldsSort sort, string page, string pageSize, string[] fields, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "article-reviews?"+string.Join("&", articleId.Select(z => $"articleId={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", articleModelId.Select(z => $"articleModelId={System.Uri.EscapeDataString(z.ToString())}"))+"&minStarRating=" + (minStarRating==null? "" : System.Uri.EscapeDataString(minStarRating))+"&maxStarRating=" + (maxStarRating==null? "" : System.Uri.EscapeDataString(maxStarRating))+"&sort=" + sort+"&page=" + (page==null? "" : System.Uri.EscapeDataString(page))+"&pageSize=" + (pageSize==null? "" : System.Uri.EscapeDataString(pageSize))+"&"+string.Join("&", fields.Select(z => $"fields={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1338,13 +1337,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Article_Reviews>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Article_Reviews>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1363,8 +1361,7 @@ namespace MyNS
 		public async Task<Article_Reviews_Summaries> Article_reviews_summariesGetByArticleModelIdAndPageAndPageSizeAndFieldsAsync(string[] articleModelId, string page, string pageSize, string[] fields, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "article-reviews-summaries?"+string.Join("&", articleModelId.Select(z => $"articleModelId={System.Uri.EscapeDataString(z.ToString())}"))+"&page=" + (page==null? "" : System.Uri.EscapeDataString(page))+"&pageSize=" + (pageSize==null? "" : System.Uri.EscapeDataString(pageSize))+"&"+string.Join("&", fields.Select(z => $"fields={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1374,13 +1371,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Article_Reviews_Summaries>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Article_Reviews_Summaries>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1397,8 +1393,7 @@ namespace MyNS
 		public async Task<Article_Reviews_Summary> Article_reviews_summaries_articleModelIdGetByFieldsAsync(string articleModelId, string[] fields, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "article-reviews-summaries/"+ (articleModelId==null? "" : System.Uri.EscapeDataString(articleModelId))+"&"+string.Join("&", fields.Select(z => $"fields={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1408,13 +1403,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Article_Reviews_Summary>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Article_Reviews_Summary>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1431,8 +1425,7 @@ namespace MyNS
 		public async Task<Article_Review> Article_reviews_reviewIdGetByFieldsAsync(string reviewId, string[] fields, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "article-reviews/"+ (reviewId==null? "" : System.Uri.EscapeDataString(reviewId))+"&"+string.Join("&", fields.Select(z => $"fields={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1442,13 +1435,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Article_Review>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Article_Review>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1550,8 +1542,7 @@ namespace MyNS
 					Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "articles?"+string.Join("&", articleId.Select(z => $"articleId={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", articleModelId.Select(z => $"articleModelId={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", articleUnitId.Select(z => $"articleUnitId={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", activationDate.Select(z => $"activationDate={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", ageGroup.Select(z => $"ageGroup={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", assortmentArea.Select(z => $"assortmentArea={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", brand.Select(z => $"brand={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", brandfamily.Select(z => $"brandfamily={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", category.Select(z => $"category={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", color.Select(z => $"color={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", den.Select(z => $"den={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", filling.Select(z => $"filling={System.Uri.EscapeDataString(z.ToString())}"))+"&fullText=" + (fullText==null? "" : System.Uri.EscapeDataString(fullText))+"&"+string.Join("&", gender.Select(z => $"gender={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", heelForm.Select(z => $"heelForm={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", heelHeight.Select(z => $"heelHeight={System.Uri.EscapeDataString(z.ToString())}"))+"&length=" + (length==null? "" : System.Uri.EscapeDataString(length))+"&"+string.Join("&", occasion.Select(z => $"occasion={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", pattern.Select(z => $"pattern={System.Uri.EscapeDataString(z.ToString())}"))+"&price=" + (price==null? "" : System.Uri.EscapeDataString(price))+"&"+string.Join("&", sale.Select(z => $"sale={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", season.Select(z => $"season={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", shaftHeight.Select(z => $"shaftHeight={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", shaftWidth.Select(z => $"shaftWidth={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", shirtCollar.Select(z => $"shirtCollar={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", shoeFastener.Select(z => $"shoeFastener={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", shoeToecap.Select(z => $"shoeToecap={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", shopArea.Select(z => $"shopArea={System.Uri.EscapeDataString(z.ToString())}"))+"&size=" + (size==null? "" : System.Uri.EscapeDataString(size))+"&"+string.Join("&", sports.Select(z => $"sports={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", technology.Select(z => $"technology={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", trouserRise.Select(z => $"trouserRise={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", upperMaterial.Select(z => $"upperMaterial={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", volume.Select(z => $"volume={System.Uri.EscapeDataString(z.ToString())}"))+"&page=" + (page==null? "" : System.Uri.EscapeDataString(page))+"&pageSize=" + (pageSize==null? "" : System.Uri.EscapeDataString(pageSize))+"&sort=" + sort+"&"+string.Join("&", fields.Select(z => $"fields={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1561,13 +1552,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Articles>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Articles>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1584,8 +1574,7 @@ namespace MyNS
 		public async Task<Article> Articles_articleIdGetByFieldsAsync(string articleId, string[] fields, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "articles/"+ (articleId==null? "" : System.Uri.EscapeDataString(articleId))+"&"+string.Join("&", fields.Select(z => $"fields={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1595,13 +1584,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Article>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Article>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1618,8 +1606,7 @@ namespace MyNS
 		public async Task<Article_Media> Articles_articleIdMediaGetByFieldsAsync(string articleId, string[] fields, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "articles/"+ (articleId==null? "" : System.Uri.EscapeDataString(articleId))+"/media&"+string.Join("&", fields.Select(z => $"fields={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1629,13 +1616,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Article_Media>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Article_Media>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1657,8 +1643,7 @@ namespace MyNS
 		public async Task<Article_Reviews> Articles_articleIdReviewsGetByMinStarRatingAndMaxStarRatingAndSortAndPageAndPageSizeAndFieldsAsync(string articleId, string minStarRating, string maxStarRating, Article_reviewsGetByArticleIdAndArticleModelIdAndMinStarRatingAndMaxStarRatingAndSortAndPageAndPageSizeAndFieldsSort sort, string page, string pageSize, string[] fields, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "articles/"+ (articleId==null? "" : System.Uri.EscapeDataString(articleId))+"/reviews&minStarRating=" + (minStarRating==null? "" : System.Uri.EscapeDataString(minStarRating))+"&maxStarRating=" + (maxStarRating==null? "" : System.Uri.EscapeDataString(maxStarRating))+"&sort=" + sort+"&page=" + (page==null? "" : System.Uri.EscapeDataString(page))+"&pageSize=" + (pageSize==null? "" : System.Uri.EscapeDataString(pageSize))+"&"+string.Join("&", fields.Select(z => $"fields={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1668,13 +1653,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Article_Reviews>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Article_Reviews>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1691,8 +1675,7 @@ namespace MyNS
 		public async Task<Article_Reviews_Summary> Articles_articleIdReviews_summaryGetByFieldsAsync(string articleId, string[] fields, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "articles/"+ (articleId==null? "" : System.Uri.EscapeDataString(articleId))+"/reviews-summary&"+string.Join("&", fields.Select(z => $"fields={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1702,13 +1685,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Article_Reviews_Summary>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Article_Reviews_Summary>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1725,8 +1707,7 @@ namespace MyNS
 		public async Task<Article_Unit[]> Articles_articleIdUnitsGetByFieldsAsync(string articleId, string[] fields, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "articles/"+ (articleId==null? "" : System.Uri.EscapeDataString(articleId))+"/units&"+string.Join("&", fields.Select(z => $"fields={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1736,13 +1717,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Article_Unit[]>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Article_Unit[]>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1760,8 +1740,7 @@ namespace MyNS
 		public async Task<Article_Unit> Articles_articleIdUnits_unitIdGetByFieldsAsync(string articleId, string unitId, string[] fields, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "articles/"+ (articleId==null? "" : System.Uri.EscapeDataString(articleId))+"/units/"+ (unitId==null? "" : System.Uri.EscapeDataString(unitId))+"&"+string.Join("&", fields.Select(z => $"fields={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1771,13 +1750,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Article_Unit>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Article_Unit>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1799,8 +1777,7 @@ namespace MyNS
 		public async Task<Brands> BrandsGetByKeyAndNameAndBrandFamilyNameAndBrandFamilyKeyAndPageAndPageSizeAndFieldsAsync(string[] key, string[] name, string[] brandFamilyName, string[] brandFamilyKey, string page, string pageSize, string[] fields, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "brands?"+string.Join("&", key.Select(z => $"key={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", name.Select(z => $"name={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", brandFamilyName.Select(z => $"brandFamilyName={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", brandFamilyKey.Select(z => $"brandFamilyKey={System.Uri.EscapeDataString(z.ToString())}"))+"&page=" + (page==null? "" : System.Uri.EscapeDataString(page))+"&pageSize=" + (pageSize==null? "" : System.Uri.EscapeDataString(pageSize))+"&"+string.Join("&", fields.Select(z => $"fields={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1810,13 +1787,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Brands>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Brands>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1833,8 +1809,7 @@ namespace MyNS
 		public async Task<Brand> Brands_keyGetByFieldsAsync(string key, string[] fields, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "brands/"+ (key==null? "" : System.Uri.EscapeDataString(key))+"&"+string.Join("&", fields.Select(z => $"fields={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1844,13 +1819,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Brand>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Brand>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1877,8 +1851,7 @@ namespace MyNS
 		public async Task<Categories> CategoriesGetByNameAndTypeAndOutletAndHiddenAndTargetGroupAndKeyAndParentKeyAndChildKeyAndSuggestedFilterAndPageAndPageSizeAndFieldsAsync(string[] name, string type, string outlet, string hidden, string targetGroup, string[] key, string[] parentKey, string[] childKey, string[] suggestedFilter, string page, string pageSize, string[] fields, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "categories?"+string.Join("&", name.Select(z => $"name={System.Uri.EscapeDataString(z.ToString())}"))+"&type=" + (type==null? "" : System.Uri.EscapeDataString(type))+"&outlet=" + (outlet==null? "" : System.Uri.EscapeDataString(outlet))+"&hidden=" + (hidden==null? "" : System.Uri.EscapeDataString(hidden))+"&targetGroup=" + (targetGroup==null? "" : System.Uri.EscapeDataString(targetGroup))+"&"+string.Join("&", key.Select(z => $"key={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", parentKey.Select(z => $"parentKey={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", childKey.Select(z => $"childKey={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", suggestedFilter.Select(z => $"suggestedFilter={System.Uri.EscapeDataString(z.ToString())}"))+"&page=" + (page==null? "" : System.Uri.EscapeDataString(page))+"&pageSize=" + (pageSize==null? "" : System.Uri.EscapeDataString(pageSize))+"&"+string.Join("&", fields.Select(z => $"fields={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1888,13 +1861,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Categories>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Categories>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1911,8 +1883,7 @@ namespace MyNS
 		public async Task<Category> Categories_keyGetByFieldsAsync(string[] key, string[] fields, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "categories/{key}"+string.Join("&", key.Select(z => $"key={System.Uri.EscapeDataString(z.ToString())}"))+"?"+string.Join("&", fields.Select(z => $"fields={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1922,13 +1893,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Category>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Category>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1941,8 +1911,7 @@ namespace MyNS
 		public async Task<Domain[]> DomainsGetAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "domains";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1952,13 +1921,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Domain[]>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Domain[]>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2043,8 +2011,7 @@ namespace MyNS
 					Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "facets?"+string.Join("&", ageGroup.Select(z => $"ageGroup={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", articleId.Select(z => $"articleId={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", activationDate.Select(z => $"activationDate={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", articleModelId.Select(z => $"articleModelId={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", assortmentArea.Select(z => $"assortmentArea={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", brand.Select(z => $"brand={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", brandfamily.Select(z => $"brandfamily={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", category.Select(z => $"category={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", color.Select(z => $"color={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", den.Select(z => $"den={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", filling.Select(z => $"filling={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", gender.Select(z => $"gender={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", heelForm.Select(z => $"heelForm={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", heelHeight.Select(z => $"heelHeight={System.Uri.EscapeDataString(z.ToString())}"))+"&length=" + (length==null? "" : System.Uri.EscapeDataString(length))+"&"+string.Join("&", occasion.Select(z => $"occasion={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", pattern.Select(z => $"pattern={System.Uri.EscapeDataString(z.ToString())}"))+"&price=" + (price==null? "" : System.Uri.EscapeDataString(price))+"&"+string.Join("&", sale.Select(z => $"sale={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", season.Select(z => $"season={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", shaftHeight.Select(z => $"shaftHeight={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", shaftWidth.Select(z => $"shaftWidth={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", shirtCollar.Select(z => $"shirtCollar={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", shoeFastener.Select(z => $"shoeFastener={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", shoeToecap.Select(z => $"shoeToecap={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", shopArea.Select(z => $"shopArea={System.Uri.EscapeDataString(z.ToString())}"))+"&size=" + (size==null? "" : System.Uri.EscapeDataString(size))+"&"+string.Join("&", sports.Select(z => $"sports={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", technology.Select(z => $"technology={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", trouserRise.Select(z => $"trouserRise={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", upperMaterial.Select(z => $"upperMaterial={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", volume.Select(z => $"volume={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", fields.Select(z => $"fields={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2054,13 +2021,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Facet[]>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Facet[]>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2076,8 +2042,7 @@ namespace MyNS
 		public async Task<Filter[]> FiltersGetByFieldsAsync(string[] fields, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "filters?"+string.Join("&", fields.Select(z => $"fields={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2087,13 +2052,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Filter[]>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Filter[]>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2110,8 +2074,7 @@ namespace MyNS
 		public async Task<Filter> Filters_filterNameGetByFieldsAsync(string filterName, string[] fields, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "filters/"+ (filterName==null? "" : System.Uri.EscapeDataString(filterName))+"&"+string.Join("&", fields.Select(z => $"fields={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2121,13 +2084,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Filter>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Filter>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2145,8 +2107,7 @@ namespace MyNS
 		public async Task<Recommendations_Article[]> Recommendations_articleIdsGetByMaxResultsAndFieldsAsync(string[] articleIds, string maxResults, string[] fields, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "recommendations/{articleIds}"+string.Join("&", articleIds.Select(z => $"articleIds={System.Uri.EscapeDataString(z.ToString())}"))+"?maxResults=" + (maxResults==null? "" : System.Uri.EscapeDataString(maxResults))+"&"+string.Join("&", fields.Select(z => $"fields={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2156,13 +2117,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Recommendations_Article[]>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Recommendations_Article[]>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

@@ -859,8 +859,7 @@ namespace MyNS
 		public async Task GET_CancelJobAsync(string JobId, string APIVersion, GET_CancelJobOperation Operation, GET_CancelJobOperation Action, GET_CancelJobVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Operation=CancelJob&Action=CancelJob?JobId=" + (JobId==null? "" : System.Uri.EscapeDataString(JobId))+"&APIVersion=" + (APIVersion==null? "" : System.Uri.EscapeDataString(APIVersion))+"&Operation=" + Operation+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -874,7 +873,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -886,8 +884,7 @@ namespace MyNS
 		public async Task GET_CreateJobAsync(CreateJobOutputJobType JobType, string Manifest, string ManifestAddendum, bool ValidateOnly, string APIVersion, GET_CreateJobOperation Operation, GET_CreateJobOperation Action, GET_CreateJobVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Operation=CreateJob&Action=CreateJob?JobType=" + JobType+"&Manifest=" + (Manifest==null? "" : System.Uri.EscapeDataString(Manifest))+"&ManifestAddendum=" + (ManifestAddendum==null? "" : System.Uri.EscapeDataString(ManifestAddendum))+"&ValidateOnly="+ValidateOnly+"&APIVersion=" + (APIVersion==null? "" : System.Uri.EscapeDataString(APIVersion))+"&Operation=" + Operation+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -901,7 +898,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -929,8 +925,7 @@ namespace MyNS
 					Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Operation=GetShippingLabel&Action=GetShippingLabel?"+string.Join("&", jobIds.Select(z => $"jobIds={System.Uri.EscapeDataString(z.ToString())}"))+"&name=" + (name==null? "" : System.Uri.EscapeDataString(name))+"&company=" + (company==null? "" : System.Uri.EscapeDataString(company))+"&phoneNumber=" + (phoneNumber==null? "" : System.Uri.EscapeDataString(phoneNumber))+"&country=" + (country==null? "" : System.Uri.EscapeDataString(country))+"&stateOrProvince=" + (stateOrProvince==null? "" : System.Uri.EscapeDataString(stateOrProvince))+"&city=" + (city==null? "" : System.Uri.EscapeDataString(city))+"&postalCode=" + (postalCode==null? "" : System.Uri.EscapeDataString(postalCode))+"&street1=" + (street1==null? "" : System.Uri.EscapeDataString(street1))+"&street2=" + (street2==null? "" : System.Uri.EscapeDataString(street2))+"&street3=" + (street3==null? "" : System.Uri.EscapeDataString(street3))+"&APIVersion=" + (APIVersion==null? "" : System.Uri.EscapeDataString(APIVersion))+"&Operation=" + Operation+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -944,7 +939,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -956,8 +950,7 @@ namespace MyNS
 		public async Task GET_GetStatusAsync(string JobId, string APIVersion, GET_GetStatusOperation Operation, GET_GetStatusOperation Action, GET_GetStatusVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Operation=GetStatus&Action=GetStatus?JobId=" + (JobId==null? "" : System.Uri.EscapeDataString(JobId))+"&APIVersion=" + (APIVersion==null? "" : System.Uri.EscapeDataString(APIVersion))+"&Operation=" + Operation+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -971,7 +964,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -983,8 +975,7 @@ namespace MyNS
 		public async Task GET_ListJobsAsync(int MaxJobs, string Marker, string APIVersion, GET_ListJobsOperation Operation, GET_ListJobsOperation Action, GET_ListJobsVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Operation=ListJobs&Action=ListJobs?MaxJobs="+MaxJobs+"&Marker=" + (Marker==null? "" : System.Uri.EscapeDataString(Marker))+"&APIVersion=" + (APIVersion==null? "" : System.Uri.EscapeDataString(APIVersion))+"&Operation=" + Operation+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -998,7 +989,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1010,8 +1000,7 @@ namespace MyNS
 		public async Task GET_UpdateJobAsync(string JobId, string Manifest, CreateJobOutputJobType JobType, bool ValidateOnly, string APIVersion, GET_UpdateJobOperation Operation, GET_UpdateJobOperation Action, GET_UpdateJobVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Operation=UpdateJob&Action=UpdateJob?JobId=" + (JobId==null? "" : System.Uri.EscapeDataString(JobId))+"&Manifest=" + (Manifest==null? "" : System.Uri.EscapeDataString(Manifest))+"&JobType=" + JobType+"&ValidateOnly="+ValidateOnly+"&APIVersion=" + (APIVersion==null? "" : System.Uri.EscapeDataString(APIVersion))+"&Operation=" + Operation+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1025,7 +1014,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

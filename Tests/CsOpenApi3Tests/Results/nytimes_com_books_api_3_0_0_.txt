@@ -60,8 +60,7 @@ namespace MyNS
 		public async Task<GET_lists_formatReturn> GET_lists_formatAsync(string list, int weeks_on_list, System.DateTimeOffset bestsellers_date, string date, string isbn, string published_date, int rank, int rank_last_week, int offset, GET_lists_formatSort_order sort_order, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "lists.{format}?list=" + (list==null? "" : System.Uri.EscapeDataString(list))+"&weeks-on-list="+weeks_on_list+"&bestsellers-date=" + bestsellers_date.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&date=" + (date==null? "" : System.Uri.EscapeDataString(date))+"&isbn=" + (isbn==null? "" : System.Uri.EscapeDataString(isbn))+"&published-date=" + (published_date==null? "" : System.Uri.EscapeDataString(published_date))+"&rank="+rank+"&rank-last-week="+rank_last_week+"&offset="+offset+"&sort-order=" + sort_order;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -71,13 +70,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<GET_lists_formatReturn>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<GET_lists_formatReturn>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -107,8 +105,7 @@ namespace MyNS
 		public async Task<GET_lists_best_sellers_history_jsonReturn> GET_lists_best_sellers_history_jsonAsync(string age_group, string author, string contributor, string isbn, string price, string publisher, string title, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "lists/best-sellers/history.json?age-group=" + (age_group==null? "" : System.Uri.EscapeDataString(age_group))+"&author=" + (author==null? "" : System.Uri.EscapeDataString(author))+"&contributor=" + (contributor==null? "" : System.Uri.EscapeDataString(contributor))+"&isbn=" + (isbn==null? "" : System.Uri.EscapeDataString(isbn))+"&price=" + (price==null? "" : System.Uri.EscapeDataString(price))+"&publisher=" + (publisher==null? "" : System.Uri.EscapeDataString(publisher))+"&title=" + (title==null? "" : System.Uri.EscapeDataString(title));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -118,13 +115,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<GET_lists_best_sellers_history_jsonReturn>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<GET_lists_best_sellers_history_jsonReturn>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -135,8 +131,7 @@ namespace MyNS
 		public async Task<GET_lists_names_formatReturn> GET_lists_names_formatAsync(string api_key, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "lists/names.{format}?api-key=" + (api_key==null? "" : System.Uri.EscapeDataString(api_key));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -146,13 +141,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<GET_lists_names_formatReturn>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<GET_lists_names_formatReturn>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -168,8 +162,7 @@ namespace MyNS
 		public async Task<GET_lists_overview_formatReturn> GET_lists_overview_formatAsync(string published_date, string api_key, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "lists/overview.{format}?published_date=" + (published_date==null? "" : System.Uri.EscapeDataString(published_date))+"&api-key=" + (api_key==null? "" : System.Uri.EscapeDataString(api_key));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -179,13 +172,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<GET_lists_overview_formatReturn>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<GET_lists_overview_formatReturn>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -211,8 +203,7 @@ namespace MyNS
 		public async Task<GET_lists_date_list_jsonReturn> GET_lists_date_list_jsonAsync(int isbn, string list_name, System.DateTimeOffset published_date, string bestsellers_date, int weeks_on_list, string rank, int rank_last_week, int offset, GET_lists_formatSort_order sort_order, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "lists/{date}/{list}.json?isbn="+isbn+"&list-name=" + (list_name==null? "" : System.Uri.EscapeDataString(list_name))+"&published-date=" + published_date.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&bestsellers-date=" + (bestsellers_date==null? "" : System.Uri.EscapeDataString(bestsellers_date))+"&weeks-on-list="+weeks_on_list+"&rank=" + (rank==null? "" : System.Uri.EscapeDataString(rank))+"&rank-last-week="+rank_last_week+"&offset="+offset+"&sort-order=" + sort_order;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -222,13 +213,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<GET_lists_date_list_jsonReturn>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<GET_lists_date_list_jsonReturn>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -242,8 +232,7 @@ namespace MyNS
 		public async Task<GET_reviews_formatReturn> GET_reviews_formatAsync(int isbn, string title, string author, string api_key, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "reviews.{format}?isbn="+isbn+"&title=" + (title==null? "" : System.Uri.EscapeDataString(title))+"&author=" + (author==null? "" : System.Uri.EscapeDataString(author))+"&api-key=" + (api_key==null? "" : System.Uri.EscapeDataString(api_key));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -253,13 +242,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<GET_reviews_formatReturn>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<GET_reviews_formatReturn>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

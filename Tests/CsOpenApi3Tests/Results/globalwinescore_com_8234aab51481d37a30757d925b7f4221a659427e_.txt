@@ -62,8 +62,7 @@ namespace MyNS
 		public async Task ListHistoricalGWSAsync(int[] wine_id, string vintage, ListHistoricalGWSColor color, bool is_primeurs, string lwin, string lwin_11, int limit, int offset, ListHistoricalGWSOrdering ordering, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "globalwinescores/?"+string.Join("&", wine_id.Select(z => $"wine_id={z}"))+"&vintage=" + (vintage==null? "" : System.Uri.EscapeDataString(vintage))+"&color=" + color+"&is_primeurs="+is_primeurs+"&lwin=" + (lwin==null? "" : System.Uri.EscapeDataString(lwin))+"&lwin_11=" + (lwin_11==null? "" : System.Uri.EscapeDataString(lwin_11))+"&limit="+limit+"&offset="+offset+"&ordering=" + ordering;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -77,7 +76,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -106,8 +104,7 @@ namespace MyNS
 		public async Task GlobalWineScoreGetByWine_idAndVintageAndColorAndIs_primeursAndLwinAndLwin_11AndLimitAndOffsetAndOrderingAsync(int[] wine_id, string vintage, ListHistoricalGWSColor color, bool is_primeurs, string lwin, string lwin_11, int limit, int offset, GlobalWineScoreGetByWine_idAndVintageAndColorAndIs_primeursAndLwinAndLwin_11AndLimitAndOffsetAndOrderingOrdering ordering, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "globalwinescores/latest/?"+string.Join("&", wine_id.Select(z => $"wine_id={z}"))+"&vintage=" + (vintage==null? "" : System.Uri.EscapeDataString(vintage))+"&color=" + color+"&is_primeurs="+is_primeurs+"&lwin=" + (lwin==null? "" : System.Uri.EscapeDataString(lwin))+"&lwin_11=" + (lwin_11==null? "" : System.Uri.EscapeDataString(lwin_11))+"&limit="+limit+"&offset="+offset+"&ordering=" + ordering;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -121,7 +118,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

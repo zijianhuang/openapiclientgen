@@ -1548,19 +1548,17 @@ namespace MyNS
 		public async Task<AclList> Catalog_ListAclsAsync(string filter, int top, int skip, string select, string orderby, bool count, string api_version)
 		{
 			var requestUri = "catalog/usql/acl?$filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&$top="+top+"&$skip="+skip+"&$select=" + (select==null? "" : System.Uri.EscapeDataString(select))+"&$orderby=" + (orderby==null? "" : System.Uri.EscapeDataString(orderby))+"&$count="+count+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<AclList>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<AclList>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1583,19 +1581,17 @@ namespace MyNS
 		public async Task<USqlDatabaseList> Catalog_ListDatabasesAsync(string filter, int top, int skip, string select, string orderby, bool count, string api_version)
 		{
 			var requestUri = "catalog/usql/databases?$filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&$top="+top+"&$skip="+skip+"&$select=" + (select==null? "" : System.Uri.EscapeDataString(select))+"&$orderby=" + (orderby==null? "" : System.Uri.EscapeDataString(orderby))+"&$count="+count+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<USqlDatabaseList>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<USqlDatabaseList>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1609,19 +1605,17 @@ namespace MyNS
 		public async Task<USqlDatabase> Catalog_GetDatabaseAsync(string databaseName, string api_version)
 		{
 			var requestUri = "catalog/usql/databases/"+ (databaseName==null? "" : System.Uri.EscapeDataString(databaseName))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<USqlDatabase>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<USqlDatabase>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1645,19 +1639,17 @@ namespace MyNS
 		public async Task<AclList> Catalog_ListAclsByDatabaseAsync(string databaseName, string filter, int top, int skip, string select, string orderby, bool count, string api_version)
 		{
 			var requestUri = "catalog/usql/databases/"+ (databaseName==null? "" : System.Uri.EscapeDataString(databaseName))+"/acl&$filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&$top="+top+"&$skip="+skip+"&$select=" + (select==null? "" : System.Uri.EscapeDataString(select))+"&$orderby=" + (orderby==null? "" : System.Uri.EscapeDataString(orderby))+"&$count="+count+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<AclList>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<AclList>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1681,19 +1673,17 @@ namespace MyNS
 		public async Task<USqlAssemblyList> Catalog_ListAssembliesAsync(string databaseName, string filter, int top, int skip, string select, string orderby, bool count, string api_version)
 		{
 			var requestUri = "catalog/usql/databases/"+ (databaseName==null? "" : System.Uri.EscapeDataString(databaseName))+"/assemblies&$filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&$top="+top+"&$skip="+skip+"&$select=" + (select==null? "" : System.Uri.EscapeDataString(select))+"&$orderby=" + (orderby==null? "" : System.Uri.EscapeDataString(orderby))+"&$count="+count+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<USqlAssemblyList>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<USqlAssemblyList>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1708,19 +1698,17 @@ namespace MyNS
 		public async Task<USqlAssembly> Catalog_GetAssemblyAsync(string databaseName, string assemblyName, string api_version)
 		{
 			var requestUri = "catalog/usql/databases/"+ (databaseName==null? "" : System.Uri.EscapeDataString(databaseName))+"/assemblies/"+ (assemblyName==null? "" : System.Uri.EscapeDataString(assemblyName))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<USqlAssembly>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<USqlAssembly>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1744,19 +1732,17 @@ namespace MyNS
 		public async Task<USqlCredentialList> Catalog_ListCredentialsAsync(string databaseName, string filter, int top, int skip, string select, string orderby, bool count, string api_version)
 		{
 			var requestUri = "catalog/usql/databases/"+ (databaseName==null? "" : System.Uri.EscapeDataString(databaseName))+"/credentials&$filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&$top="+top+"&$skip="+skip+"&$select=" + (select==null? "" : System.Uri.EscapeDataString(select))+"&$orderby=" + (orderby==null? "" : System.Uri.EscapeDataString(orderby))+"&$count="+count+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<USqlCredentialList>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<USqlCredentialList>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1771,19 +1757,17 @@ namespace MyNS
 		public async Task<USqlCredential> Catalog_GetCredentialAsync(string databaseName, string credentialName, string api_version)
 		{
 			var requestUri = "catalog/usql/databases/"+ (databaseName==null? "" : System.Uri.EscapeDataString(databaseName))+"/credentials/"+ (credentialName==null? "" : System.Uri.EscapeDataString(credentialName))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<USqlCredential>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<USqlCredential>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1799,10 +1783,8 @@ namespace MyNS
 		public async Task Catalog_CreateCredentialAsync(string databaseName, string credentialName, string api_version, DataLakeAnalyticsCatalogCredentialCreateParameters requestBody)
 		{
 			var requestUri = "catalog/usql/databases/"+ (databaseName==null? "" : System.Uri.EscapeDataString(databaseName))+"/credentials/"+ (credentialName==null? "" : System.Uri.EscapeDataString(credentialName))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -1812,7 +1794,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1829,10 +1810,8 @@ namespace MyNS
 		public async Task Catalog_DeleteCredentialAsync(string databaseName, string credentialName, bool cascade, string api_version, DataLakeAnalyticsCatalogCredentialDeleteParameters requestBody)
 		{
 			var requestUri = "catalog/usql/databases/"+ (databaseName==null? "" : System.Uri.EscapeDataString(databaseName))+"/credentials/"+ (credentialName==null? "" : System.Uri.EscapeDataString(credentialName))+"&cascade="+cascade+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -1842,7 +1821,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1858,10 +1836,8 @@ namespace MyNS
 		public async Task Catalog_UpdateCredentialAsync(string databaseName, string credentialName, string api_version, DataLakeAnalyticsCatalogCredentialUpdateParameters requestBody)
 		{
 			var requestUri = "catalog/usql/databases/"+ (databaseName==null? "" : System.Uri.EscapeDataString(databaseName))+"/credentials/"+ (credentialName==null? "" : System.Uri.EscapeDataString(credentialName))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -1871,7 +1847,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1895,19 +1870,17 @@ namespace MyNS
 		public async Task<USqlExternalDataSourceList> Catalog_ListExternalDataSourcesAsync(string databaseName, string filter, int top, int skip, string select, string orderby, bool count, string api_version)
 		{
 			var requestUri = "catalog/usql/databases/"+ (databaseName==null? "" : System.Uri.EscapeDataString(databaseName))+"/externaldatasources&$filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&$top="+top+"&$skip="+skip+"&$select=" + (select==null? "" : System.Uri.EscapeDataString(select))+"&$orderby=" + (orderby==null? "" : System.Uri.EscapeDataString(orderby))+"&$count="+count+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<USqlExternalDataSourceList>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<USqlExternalDataSourceList>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1922,19 +1895,17 @@ namespace MyNS
 		public async Task<USqlExternalDataSource> Catalog_GetExternalDataSourceAsync(string databaseName, string externalDataSourceName, string api_version)
 		{
 			var requestUri = "catalog/usql/databases/"+ (databaseName==null? "" : System.Uri.EscapeDataString(databaseName))+"/externaldatasources/"+ (externalDataSourceName==null? "" : System.Uri.EscapeDataString(externalDataSourceName))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<USqlExternalDataSource>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<USqlExternalDataSource>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1958,19 +1929,17 @@ namespace MyNS
 		public async Task<USqlSchemaList> Catalog_ListSchemasAsync(string databaseName, string filter, int top, int skip, string select, string orderby, bool count, string api_version)
 		{
 			var requestUri = "catalog/usql/databases/"+ (databaseName==null? "" : System.Uri.EscapeDataString(databaseName))+"/schemas&$filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&$top="+top+"&$skip="+skip+"&$select=" + (select==null? "" : System.Uri.EscapeDataString(select))+"&$orderby=" + (orderby==null? "" : System.Uri.EscapeDataString(orderby))+"&$count="+count+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<USqlSchemaList>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<USqlSchemaList>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1985,19 +1954,17 @@ namespace MyNS
 		public async Task<USqlSchema> Catalog_GetSchemaAsync(string databaseName, string schemaName, string api_version)
 		{
 			var requestUri = "catalog/usql/databases/"+ (databaseName==null? "" : System.Uri.EscapeDataString(databaseName))+"/schemas/"+ (schemaName==null? "" : System.Uri.EscapeDataString(schemaName))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<USqlSchema>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<USqlSchema>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2022,19 +1989,17 @@ namespace MyNS
 		public async Task<USqlPackageList> Catalog_ListPackagesAsync(string databaseName, string schemaName, string filter, int top, int skip, string select, string orderby, bool count, string api_version)
 		{
 			var requestUri = "catalog/usql/databases/"+ (databaseName==null? "" : System.Uri.EscapeDataString(databaseName))+"/schemas/"+ (schemaName==null? "" : System.Uri.EscapeDataString(schemaName))+"/packages&$filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&$top="+top+"&$skip="+skip+"&$select=" + (select==null? "" : System.Uri.EscapeDataString(select))+"&$orderby=" + (orderby==null? "" : System.Uri.EscapeDataString(orderby))+"&$count="+count+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<USqlPackageList>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<USqlPackageList>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2050,19 +2015,17 @@ namespace MyNS
 		public async Task<USqlPackage> Catalog_GetPackageAsync(string databaseName, string schemaName, string packageName, string api_version)
 		{
 			var requestUri = "catalog/usql/databases/"+ (databaseName==null? "" : System.Uri.EscapeDataString(databaseName))+"/schemas/"+ (schemaName==null? "" : System.Uri.EscapeDataString(schemaName))+"/packages/"+ (packageName==null? "" : System.Uri.EscapeDataString(packageName))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<USqlPackage>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<USqlPackage>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2087,19 +2050,17 @@ namespace MyNS
 		public async Task<USqlProcedureList> Catalog_ListProceduresAsync(string databaseName, string schemaName, string filter, int top, int skip, string select, string orderby, bool count, string api_version)
 		{
 			var requestUri = "catalog/usql/databases/"+ (databaseName==null? "" : System.Uri.EscapeDataString(databaseName))+"/schemas/"+ (schemaName==null? "" : System.Uri.EscapeDataString(schemaName))+"/procedures&$filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&$top="+top+"&$skip="+skip+"&$select=" + (select==null? "" : System.Uri.EscapeDataString(select))+"&$orderby=" + (orderby==null? "" : System.Uri.EscapeDataString(orderby))+"&$count="+count+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<USqlProcedureList>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<USqlProcedureList>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2115,19 +2076,17 @@ namespace MyNS
 		public async Task<USqlProcedure> Catalog_GetProcedureAsync(string databaseName, string schemaName, string procedureName, string api_version)
 		{
 			var requestUri = "catalog/usql/databases/"+ (databaseName==null? "" : System.Uri.EscapeDataString(databaseName))+"/schemas/"+ (schemaName==null? "" : System.Uri.EscapeDataString(schemaName))+"/procedures/"+ (procedureName==null? "" : System.Uri.EscapeDataString(procedureName))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<USqlProcedure>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<USqlProcedure>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2152,19 +2111,17 @@ namespace MyNS
 		public async Task<USqlTableStatisticsList> Catalog_ListTableStatisticsByDatabaseAndSchemaAsync(string databaseName, string schemaName, string filter, int top, int skip, string select, string orderby, bool count, string api_version)
 		{
 			var requestUri = "catalog/usql/databases/"+ (databaseName==null? "" : System.Uri.EscapeDataString(databaseName))+"/schemas/"+ (schemaName==null? "" : System.Uri.EscapeDataString(schemaName))+"/statistics&$filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&$top="+top+"&$skip="+skip+"&$select=" + (select==null? "" : System.Uri.EscapeDataString(select))+"&$orderby=" + (orderby==null? "" : System.Uri.EscapeDataString(orderby))+"&$count="+count+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<USqlTableStatisticsList>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<USqlTableStatisticsList>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2190,19 +2147,17 @@ namespace MyNS
 		public async Task<USqlTableList> Catalog_ListTablesAsync(string databaseName, string schemaName, string filter, int top, int skip, string select, string orderby, bool count, bool basic, string api_version)
 		{
 			var requestUri = "catalog/usql/databases/"+ (databaseName==null? "" : System.Uri.EscapeDataString(databaseName))+"/schemas/"+ (schemaName==null? "" : System.Uri.EscapeDataString(schemaName))+"/tables&$filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&$top="+top+"&$skip="+skip+"&$select=" + (select==null? "" : System.Uri.EscapeDataString(select))+"&$orderby=" + (orderby==null? "" : System.Uri.EscapeDataString(orderby))+"&$count="+count+"&basic="+basic+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<USqlTableList>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<USqlTableList>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2218,19 +2173,17 @@ namespace MyNS
 		public async Task<USqlTable> Catalog_GetTableAsync(string databaseName, string schemaName, string tableName, string api_version)
 		{
 			var requestUri = "catalog/usql/databases/"+ (databaseName==null? "" : System.Uri.EscapeDataString(databaseName))+"/schemas/"+ (schemaName==null? "" : System.Uri.EscapeDataString(schemaName))+"/tables/"+ (tableName==null? "" : System.Uri.EscapeDataString(tableName))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<USqlTable>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<USqlTable>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2256,19 +2209,17 @@ namespace MyNS
 		public async Task<USqlTablePartitionList> Catalog_ListTablePartitionsAsync(string databaseName, string schemaName, string tableName, string filter, int top, int skip, string select, string orderby, bool count, string api_version)
 		{
 			var requestUri = "catalog/usql/databases/"+ (databaseName==null? "" : System.Uri.EscapeDataString(databaseName))+"/schemas/"+ (schemaName==null? "" : System.Uri.EscapeDataString(schemaName))+"/tables/"+ (tableName==null? "" : System.Uri.EscapeDataString(tableName))+"/partitions&$filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&$top="+top+"&$skip="+skip+"&$select=" + (select==null? "" : System.Uri.EscapeDataString(select))+"&$orderby=" + (orderby==null? "" : System.Uri.EscapeDataString(orderby))+"&$count="+count+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<USqlTablePartitionList>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<USqlTablePartitionList>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2285,19 +2236,17 @@ namespace MyNS
 		public async Task<USqlTablePartition> Catalog_GetTablePartitionAsync(string databaseName, string schemaName, string tableName, string partitionName, string api_version)
 		{
 			var requestUri = "catalog/usql/databases/"+ (databaseName==null? "" : System.Uri.EscapeDataString(databaseName))+"/schemas/"+ (schemaName==null? "" : System.Uri.EscapeDataString(schemaName))+"/tables/"+ (tableName==null? "" : System.Uri.EscapeDataString(tableName))+"/partitions/"+ (partitionName==null? "" : System.Uri.EscapeDataString(partitionName))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<USqlTablePartition>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<USqlTablePartition>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2316,19 +2265,17 @@ namespace MyNS
 		public async Task<USqlTablePreview> Catalog_PreviewTablePartitionAsync(string databaseName, string schemaName, string tableName, string partitionName, long maxRows, long maxColumns, string api_version)
 		{
 			var requestUri = "catalog/usql/databases/"+ (databaseName==null? "" : System.Uri.EscapeDataString(databaseName))+"/schemas/"+ (schemaName==null? "" : System.Uri.EscapeDataString(schemaName))+"/tables/"+ (tableName==null? "" : System.Uri.EscapeDataString(tableName))+"/partitions/"+ (partitionName==null? "" : System.Uri.EscapeDataString(partitionName))+"/previewrows&maxRows="+maxRows+"&maxColumns="+maxColumns+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<USqlTablePreview>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<USqlTablePreview>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2346,19 +2293,17 @@ namespace MyNS
 		public async Task<USqlTablePreview> Catalog_PreviewTableAsync(string databaseName, string schemaName, string tableName, long maxRows, long maxColumns, string api_version)
 		{
 			var requestUri = "catalog/usql/databases/"+ (databaseName==null? "" : System.Uri.EscapeDataString(databaseName))+"/schemas/"+ (schemaName==null? "" : System.Uri.EscapeDataString(schemaName))+"/tables/"+ (tableName==null? "" : System.Uri.EscapeDataString(tableName))+"/previewrows&maxRows="+maxRows+"&maxColumns="+maxColumns+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<USqlTablePreview>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<USqlTablePreview>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2384,19 +2329,17 @@ namespace MyNS
 		public async Task<USqlTableStatisticsList> Catalog_ListTableStatisticsAsync(string databaseName, string schemaName, string tableName, string filter, int top, int skip, string select, string orderby, bool count, string api_version)
 		{
 			var requestUri = "catalog/usql/databases/"+ (databaseName==null? "" : System.Uri.EscapeDataString(databaseName))+"/schemas/"+ (schemaName==null? "" : System.Uri.EscapeDataString(schemaName))+"/tables/"+ (tableName==null? "" : System.Uri.EscapeDataString(tableName))+"/statistics&$filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&$top="+top+"&$skip="+skip+"&$select=" + (select==null? "" : System.Uri.EscapeDataString(select))+"&$orderby=" + (orderby==null? "" : System.Uri.EscapeDataString(orderby))+"&$count="+count+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<USqlTableStatisticsList>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<USqlTableStatisticsList>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2413,19 +2356,17 @@ namespace MyNS
 		public async Task<USqlTableStatistics> Catalog_GetTableStatisticAsync(string databaseName, string schemaName, string tableName, string statisticsName, string api_version)
 		{
 			var requestUri = "catalog/usql/databases/"+ (databaseName==null? "" : System.Uri.EscapeDataString(databaseName))+"/schemas/"+ (schemaName==null? "" : System.Uri.EscapeDataString(schemaName))+"/tables/"+ (tableName==null? "" : System.Uri.EscapeDataString(tableName))+"/statistics/"+ (statisticsName==null? "" : System.Uri.EscapeDataString(statisticsName))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<USqlTableStatistics>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<USqlTableStatistics>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2451,19 +2392,17 @@ namespace MyNS
 		public async Task<USqlTableFragmentList> Catalog_ListTableFragmentsAsync(string databaseName, string schemaName, string tableName, string filter, int top, int skip, string select, string orderby, bool count, string api_version)
 		{
 			var requestUri = "catalog/usql/databases/"+ (databaseName==null? "" : System.Uri.EscapeDataString(databaseName))+"/schemas/"+ (schemaName==null? "" : System.Uri.EscapeDataString(schemaName))+"/tables/"+ (tableName==null? "" : System.Uri.EscapeDataString(tableName))+"/tablefragments&$filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&$top="+top+"&$skip="+skip+"&$select=" + (select==null? "" : System.Uri.EscapeDataString(select))+"&$orderby=" + (orderby==null? "" : System.Uri.EscapeDataString(orderby))+"&$count="+count+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<USqlTableFragmentList>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<USqlTableFragmentList>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2488,19 +2427,17 @@ namespace MyNS
 		public async Task<USqlTableTypeList> Catalog_ListTableTypesAsync(string databaseName, string schemaName, string filter, int top, int skip, string select, string orderby, bool count, string api_version)
 		{
 			var requestUri = "catalog/usql/databases/"+ (databaseName==null? "" : System.Uri.EscapeDataString(databaseName))+"/schemas/"+ (schemaName==null? "" : System.Uri.EscapeDataString(schemaName))+"/tabletypes&$filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&$top="+top+"&$skip="+skip+"&$select=" + (select==null? "" : System.Uri.EscapeDataString(select))+"&$orderby=" + (orderby==null? "" : System.Uri.EscapeDataString(orderby))+"&$count="+count+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<USqlTableTypeList>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<USqlTableTypeList>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2516,19 +2453,17 @@ namespace MyNS
 		public async Task<USqlTableType> Catalog_GetTableTypeAsync(string databaseName, string schemaName, string tableTypeName, string api_version)
 		{
 			var requestUri = "catalog/usql/databases/"+ (databaseName==null? "" : System.Uri.EscapeDataString(databaseName))+"/schemas/"+ (schemaName==null? "" : System.Uri.EscapeDataString(schemaName))+"/tabletypes/"+ (tableTypeName==null? "" : System.Uri.EscapeDataString(tableTypeName))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<USqlTableType>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<USqlTableType>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2553,19 +2488,17 @@ namespace MyNS
 		public async Task<USqlTableValuedFunctionList> Catalog_ListTableValuedFunctionsAsync(string databaseName, string schemaName, string filter, int top, int skip, string select, string orderby, bool count, string api_version)
 		{
 			var requestUri = "catalog/usql/databases/"+ (databaseName==null? "" : System.Uri.EscapeDataString(databaseName))+"/schemas/"+ (schemaName==null? "" : System.Uri.EscapeDataString(schemaName))+"/tablevaluedfunctions&$filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&$top="+top+"&$skip="+skip+"&$select=" + (select==null? "" : System.Uri.EscapeDataString(select))+"&$orderby=" + (orderby==null? "" : System.Uri.EscapeDataString(orderby))+"&$count="+count+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<USqlTableValuedFunctionList>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<USqlTableValuedFunctionList>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2581,19 +2514,17 @@ namespace MyNS
 		public async Task<USqlTableValuedFunction> Catalog_GetTableValuedFunctionAsync(string databaseName, string schemaName, string tableValuedFunctionName, string api_version)
 		{
 			var requestUri = "catalog/usql/databases/"+ (databaseName==null? "" : System.Uri.EscapeDataString(databaseName))+"/schemas/"+ (schemaName==null? "" : System.Uri.EscapeDataString(schemaName))+"/tablevaluedfunctions/"+ (tableValuedFunctionName==null? "" : System.Uri.EscapeDataString(tableValuedFunctionName))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<USqlTableValuedFunction>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<USqlTableValuedFunction>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2618,19 +2549,17 @@ namespace MyNS
 		public async Task<USqlTypeList> Catalog_ListTypesAsync(string databaseName, string schemaName, string filter, int top, int skip, string select, string orderby, bool count, string api_version)
 		{
 			var requestUri = "catalog/usql/databases/"+ (databaseName==null? "" : System.Uri.EscapeDataString(databaseName))+"/schemas/"+ (schemaName==null? "" : System.Uri.EscapeDataString(schemaName))+"/types&$filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&$top="+top+"&$skip="+skip+"&$select=" + (select==null? "" : System.Uri.EscapeDataString(select))+"&$orderby=" + (orderby==null? "" : System.Uri.EscapeDataString(orderby))+"&$count="+count+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<USqlTypeList>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<USqlTypeList>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2655,19 +2584,17 @@ namespace MyNS
 		public async Task<USqlViewList> Catalog_ListViewsAsync(string databaseName, string schemaName, string filter, int top, int skip, string select, string orderby, bool count, string api_version)
 		{
 			var requestUri = "catalog/usql/databases/"+ (databaseName==null? "" : System.Uri.EscapeDataString(databaseName))+"/schemas/"+ (schemaName==null? "" : System.Uri.EscapeDataString(schemaName))+"/views&$filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&$top="+top+"&$skip="+skip+"&$select=" + (select==null? "" : System.Uri.EscapeDataString(select))+"&$orderby=" + (orderby==null? "" : System.Uri.EscapeDataString(orderby))+"&$count="+count+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<USqlViewList>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<USqlViewList>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2683,19 +2610,17 @@ namespace MyNS
 		public async Task<USqlView> Catalog_GetViewAsync(string databaseName, string schemaName, string viewName, string api_version)
 		{
 			var requestUri = "catalog/usql/databases/"+ (databaseName==null? "" : System.Uri.EscapeDataString(databaseName))+"/schemas/"+ (schemaName==null? "" : System.Uri.EscapeDataString(schemaName))+"/views/"+ (viewName==null? "" : System.Uri.EscapeDataString(viewName))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<USqlView>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<USqlView>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2709,8 +2634,7 @@ namespace MyNS
 		public async Task Catalog_DeleteAllSecretsAsync(string databaseName, string api_version)
 		{
 			var requestUri = "catalog/usql/databases/"+ (databaseName==null? "" : System.Uri.EscapeDataString(databaseName))+"/secrets&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -2719,7 +2643,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2734,19 +2657,17 @@ namespace MyNS
 		public async Task<USqlSecret> Catalog_GetSecretAsync(string databaseName, string secretName, string api_version)
 		{
 			var requestUri = "catalog/usql/databases/"+ (databaseName==null? "" : System.Uri.EscapeDataString(databaseName))+"/secrets/"+ (secretName==null? "" : System.Uri.EscapeDataString(secretName))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<USqlSecret>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<USqlSecret>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2762,10 +2683,8 @@ namespace MyNS
 		public async Task Catalog_CreateSecretAsync(string databaseName, string secretName, string api_version, DataLakeAnalyticsCatalogSecretCreateOrUpdateParameters requestBody)
 		{
 			var requestUri = "catalog/usql/databases/"+ (databaseName==null? "" : System.Uri.EscapeDataString(databaseName))+"/secrets/"+ (secretName==null? "" : System.Uri.EscapeDataString(secretName))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -2775,7 +2694,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2790,8 +2708,7 @@ namespace MyNS
 		public async Task Catalog_DeleteSecretAsync(string databaseName, string secretName, string api_version)
 		{
 			var requestUri = "catalog/usql/databases/"+ (databaseName==null? "" : System.Uri.EscapeDataString(databaseName))+"/secrets/"+ (secretName==null? "" : System.Uri.EscapeDataString(secretName))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -2800,7 +2717,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2816,10 +2732,8 @@ namespace MyNS
 		public async Task Catalog_UpdateSecretAsync(string databaseName, string secretName, string api_version, DataLakeAnalyticsCatalogSecretCreateOrUpdateParameters requestBody)
 		{
 			var requestUri = "catalog/usql/databases/"+ (databaseName==null? "" : System.Uri.EscapeDataString(databaseName))+"/secrets/"+ (secretName==null? "" : System.Uri.EscapeDataString(secretName))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -2829,7 +2743,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2853,19 +2766,17 @@ namespace MyNS
 		public async Task<USqlTableStatisticsList> Catalog_ListTableStatisticsByDatabaseAsync(string databaseName, string filter, int top, int skip, string select, string orderby, bool count, string api_version)
 		{
 			var requestUri = "catalog/usql/databases/"+ (databaseName==null? "" : System.Uri.EscapeDataString(databaseName))+"/statistics&$filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&$top="+top+"&$skip="+skip+"&$select=" + (select==null? "" : System.Uri.EscapeDataString(select))+"&$orderby=" + (orderby==null? "" : System.Uri.EscapeDataString(orderby))+"&$count="+count+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<USqlTableStatisticsList>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<USqlTableStatisticsList>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2890,19 +2801,17 @@ namespace MyNS
 		public async Task<USqlTableList> Catalog_ListTablesByDatabaseAsync(string databaseName, string filter, int top, int skip, string select, string orderby, bool count, bool basic, string api_version)
 		{
 			var requestUri = "catalog/usql/databases/"+ (databaseName==null? "" : System.Uri.EscapeDataString(databaseName))+"/tables&$filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&$top="+top+"&$skip="+skip+"&$select=" + (select==null? "" : System.Uri.EscapeDataString(select))+"&$orderby=" + (orderby==null? "" : System.Uri.EscapeDataString(orderby))+"&$count="+count+"&basic="+basic+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<USqlTableList>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<USqlTableList>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2926,19 +2835,17 @@ namespace MyNS
 		public async Task<USqlTableValuedFunctionList> Catalog_ListTableValuedFunctionsByDatabaseAsync(string databaseName, string filter, int top, int skip, string select, string orderby, bool count, string api_version)
 		{
 			var requestUri = "catalog/usql/databases/"+ (databaseName==null? "" : System.Uri.EscapeDataString(databaseName))+"/tablevaluedfunctions&$filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&$top="+top+"&$skip="+skip+"&$select=" + (select==null? "" : System.Uri.EscapeDataString(select))+"&$orderby=" + (orderby==null? "" : System.Uri.EscapeDataString(orderby))+"&$count="+count+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<USqlTableValuedFunctionList>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<USqlTableValuedFunctionList>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2962,19 +2869,17 @@ namespace MyNS
 		public async Task<USqlViewList> Catalog_ListViewsByDatabaseAsync(string databaseName, string filter, int top, int skip, string select, string orderby, bool count, string api_version)
 		{
 			var requestUri = "catalog/usql/databases/"+ (databaseName==null? "" : System.Uri.EscapeDataString(databaseName))+"/views&$filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&$top="+top+"&$skip="+skip+"&$select=" + (select==null? "" : System.Uri.EscapeDataString(select))+"&$orderby=" + (orderby==null? "" : System.Uri.EscapeDataString(orderby))+"&$count="+count+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<USqlViewList>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<USqlViewList>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

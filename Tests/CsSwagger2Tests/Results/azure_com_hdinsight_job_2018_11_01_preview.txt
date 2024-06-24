@@ -538,19 +538,17 @@ namespace MyNS
 		public async Task<JobListJsonObject[]> Job_ListAsync(string user_name, Job_ListShowall showall, Job_ListFields fields)
 		{
 			var requestUri = "templeton/v1/jobs?user.name=" + (user_name==null? "" : System.Uri.EscapeDataString(user_name))+"&showall=" + showall+"&fields=" + fields;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<JobListJsonObject[]>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<JobListJsonObject[]>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -565,19 +563,17 @@ namespace MyNS
 		public async Task<JobDetailRootJsonObject> Job_GetAsync(string user_name, string jobId, Job_GetFields fields)
 		{
 			var requestUri = "templeton/v1/jobs/"+ (jobId==null? "" : System.Uri.EscapeDataString(jobId))+"?user.name=" + (user_name==null? "" : System.Uri.EscapeDataString(user_name))+"&fields=" + fields;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<JobDetailRootJsonObject>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<JobDetailRootJsonObject>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -593,19 +589,17 @@ namespace MyNS
 		public async Task<JobDetailRootJsonObject> Job_KillAsync(string user_name, string jobId)
 		{
 			var requestUri = "templeton/v1/jobs/"+ (jobId==null? "" : System.Uri.EscapeDataString(jobId))+"?user.name=" + (user_name==null? "" : System.Uri.EscapeDataString(user_name));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<JobDetailRootJsonObject>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<JobDetailRootJsonObject>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -624,19 +618,17 @@ namespace MyNS
 		public async Task<JobListJsonObject[]> Job_ListAfterJobIdAsync(string user_name, string jobid, int numrecords, Job_ListAfterJobIdShowall showall, Job_ListAfterJobIdFields fields)
 		{
 			var requestUri = "templeton/v1/jobs?op=LISTAFTERID&user.name=" + (user_name==null? "" : System.Uri.EscapeDataString(user_name))+"&jobid=" + (jobid==null? "" : System.Uri.EscapeDataString(jobid))+"&numrecords="+numrecords+"&showall=" + showall+"&fields=" + fields;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<JobListJsonObject[]>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<JobListJsonObject[]>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -649,19 +641,17 @@ namespace MyNS
 		public async Task<AppState> Job_GetAppStateAsync(string appId)
 		{
 			var requestUri = "ws/v1/cluster/apps/"+ (appId==null? "" : System.Uri.EscapeDataString(appId))+"/state";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<AppState>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<AppState>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

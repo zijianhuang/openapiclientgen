@@ -3078,8 +3078,7 @@ namespace MyNS
 		public async Task GET_AbortEnvironmentUpdateAsync(string EnvironmentId, string EnvironmentName, GET_AbortEnvironmentUpdateAction Action, GET_AbortEnvironmentUpdateVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=AbortEnvironmentUpdate?EnvironmentId=" + (EnvironmentId==null? "" : System.Uri.EscapeDataString(EnvironmentId))+"&EnvironmentName=" + (EnvironmentName==null? "" : System.Uri.EscapeDataString(EnvironmentName))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3093,7 +3092,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3108,8 +3106,7 @@ namespace MyNS
 		public async Task GET_ApplyEnvironmentManagedActionAsync(string EnvironmentName, string EnvironmentId, string ActionId, GET_ApplyEnvironmentManagedActionAction Action, GET_ApplyEnvironmentManagedActionVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=ApplyEnvironmentManagedAction?EnvironmentName=" + (EnvironmentName==null? "" : System.Uri.EscapeDataString(EnvironmentName))+"&EnvironmentId=" + (EnvironmentId==null? "" : System.Uri.EscapeDataString(EnvironmentId))+"&ActionId=" + (ActionId==null? "" : System.Uri.EscapeDataString(ActionId))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3123,7 +3120,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3143,8 +3139,7 @@ namespace MyNS
 		public async Task GET_AssociateEnvironmentOperationsRoleAsync(string EnvironmentName, string OperationsRole, GET_AssociateEnvironmentOperationsRoleAction Action, GET_AssociateEnvironmentOperationsRoleVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=AssociateEnvironmentOperationsRole?EnvironmentName=" + (EnvironmentName==null? "" : System.Uri.EscapeDataString(EnvironmentName))+"&OperationsRole=" + (OperationsRole==null? "" : System.Uri.EscapeDataString(OperationsRole))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3158,7 +3153,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3174,8 +3168,7 @@ namespace MyNS
 		public async Task GET_CheckDNSAvailabilityAsync(string CNAMEPrefix, GET_CheckDNSAvailabilityAction Action, GET_CheckDNSAvailabilityVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=CheckDNSAvailability?CNAMEPrefix=" + (CNAMEPrefix==null? "" : System.Uri.EscapeDataString(CNAMEPrefix))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3189,7 +3182,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3210,8 +3202,7 @@ namespace MyNS
 		public async Task GET_ComposeEnvironmentsAsync(string ApplicationName, string GroupName, string[] VersionLabels, GET_ComposeEnvironmentsAction Action, GET_ComposeEnvironmentsVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=ComposeEnvironments?ApplicationName=" + (ApplicationName==null? "" : System.Uri.EscapeDataString(ApplicationName))+"&GroupName=" + (GroupName==null? "" : System.Uri.EscapeDataString(GroupName))+"&"+string.Join("&", VersionLabels.Select(z => $"VersionLabels={System.Uri.EscapeDataString(z.ToString())}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3225,7 +3216,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3246,8 +3236,7 @@ namespace MyNS
 		public async Task GET_CreateApplicationAsync(string ApplicationName, string Description, GET_CreateApplicationResourceLifecycleConfig ResourceLifecycleConfig, Tag[] Tags, GET_CreateApplicationAction Action, GET_CreateApplicationVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=CreateApplication?ApplicationName=" + (ApplicationName==null? "" : System.Uri.EscapeDataString(ApplicationName))+"&Description=" + (Description==null? "" : System.Uri.EscapeDataString(Description))+"&ResourceLifecycleConfig=" + ResourceLifecycleConfig+"&"+string.Join("&", Tags.Select(z => $"Tags={z}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3261,7 +3250,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3290,8 +3278,7 @@ namespace MyNS
 		public async Task GET_CreateApplicationVersionAsync(string ApplicationName, string VersionLabel, string Description, GET_CreateApplicationVersionSourceBuildInformation SourceBuildInformation, GET_CreateApplicationVersionSourceBundle SourceBundle, GET_CreateApplicationVersionBuildConfiguration BuildConfiguration, bool AutoCreateApplication, bool Process, Tag[] Tags, GET_CreateApplicationVersionAction Action, GET_CreateApplicationVersionVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=CreateApplicationVersion?ApplicationName=" + (ApplicationName==null? "" : System.Uri.EscapeDataString(ApplicationName))+"&VersionLabel=" + (VersionLabel==null? "" : System.Uri.EscapeDataString(VersionLabel))+"&Description=" + (Description==null? "" : System.Uri.EscapeDataString(Description))+"&SourceBuildInformation=" + SourceBuildInformation+"&SourceBundle=" + SourceBundle+"&BuildConfiguration=" + BuildConfiguration+"&AutoCreateApplication="+AutoCreateApplication+"&Process="+Process+"&"+string.Join("&", Tags.Select(z => $"Tags={z}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3305,7 +3292,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3334,8 +3320,7 @@ namespace MyNS
 		public async Task GET_CreateConfigurationTemplateAsync(string ApplicationName, string TemplateName, string SolutionStackName, string PlatformArn, GET_CreateConfigurationTemplateSourceConfiguration SourceConfiguration, string EnvironmentId, string Description, ConfigurationOptionSetting[] OptionSettings, Tag[] Tags, GET_CreateConfigurationTemplateAction Action, GET_CreateConfigurationTemplateVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=CreateConfigurationTemplate?ApplicationName=" + (ApplicationName==null? "" : System.Uri.EscapeDataString(ApplicationName))+"&TemplateName=" + (TemplateName==null? "" : System.Uri.EscapeDataString(TemplateName))+"&SolutionStackName=" + (SolutionStackName==null? "" : System.Uri.EscapeDataString(SolutionStackName))+"&PlatformArn=" + (PlatformArn==null? "" : System.Uri.EscapeDataString(PlatformArn))+"&SourceConfiguration=" + SourceConfiguration+"&EnvironmentId=" + (EnvironmentId==null? "" : System.Uri.EscapeDataString(EnvironmentId))+"&Description=" + (Description==null? "" : System.Uri.EscapeDataString(Description))+"&"+string.Join("&", OptionSettings.Select(z => $"OptionSettings={z}"))+"&"+string.Join("&", Tags.Select(z => $"Tags={z}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3349,7 +3334,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3415,8 +3399,7 @@ namespace MyNS
 					Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=CreateEnvironment?ApplicationName=" + (ApplicationName==null? "" : System.Uri.EscapeDataString(ApplicationName))+"&EnvironmentName=" + (EnvironmentName==null? "" : System.Uri.EscapeDataString(EnvironmentName))+"&GroupName=" + (GroupName==null? "" : System.Uri.EscapeDataString(GroupName))+"&Description=" + (Description==null? "" : System.Uri.EscapeDataString(Description))+"&CNAMEPrefix=" + (CNAMEPrefix==null? "" : System.Uri.EscapeDataString(CNAMEPrefix))+"&Tier=" + Tier+"&"+string.Join("&", Tags.Select(z => $"Tags={z}"))+"&VersionLabel=" + (VersionLabel==null? "" : System.Uri.EscapeDataString(VersionLabel))+"&TemplateName=" + (TemplateName==null? "" : System.Uri.EscapeDataString(TemplateName))+"&SolutionStackName=" + (SolutionStackName==null? "" : System.Uri.EscapeDataString(SolutionStackName))+"&PlatformArn=" + (PlatformArn==null? "" : System.Uri.EscapeDataString(PlatformArn))+"&"+string.Join("&", OptionSettings.Select(z => $"OptionSettings={z}"))+"&"+string.Join("&", OptionsToRemove.Select(z => $"OptionsToRemove={z}"))+"&OperationsRole=" + (OperationsRole==null? "" : System.Uri.EscapeDataString(OperationsRole))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3430,7 +3413,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3451,8 +3433,7 @@ namespace MyNS
 		public async Task GET_CreatePlatformVersionAsync(string PlatformName, string PlatformVersion, GET_CreatePlatformVersionPlatformDefinitionBundle PlatformDefinitionBundle, string EnvironmentName, ConfigurationOptionSetting[] OptionSettings, Tag[] Tags, GET_CreatePlatformVersionAction Action, GET_CreatePlatformVersionVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=CreatePlatformVersion?PlatformName=" + (PlatformName==null? "" : System.Uri.EscapeDataString(PlatformName))+"&PlatformVersion=" + (PlatformVersion==null? "" : System.Uri.EscapeDataString(PlatformVersion))+"&PlatformDefinitionBundle=" + PlatformDefinitionBundle+"&EnvironmentName=" + (EnvironmentName==null? "" : System.Uri.EscapeDataString(EnvironmentName))+"&"+string.Join("&", OptionSettings.Select(z => $"OptionSettings={z}"))+"&"+string.Join("&", Tags.Select(z => $"Tags={z}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3466,7 +3447,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3478,8 +3458,7 @@ namespace MyNS
 		public async Task GET_CreateStorageLocationAsync(GET_CreateStorageLocationAction Action, GET_CreateStorageLocationVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=CreateStorageLocation?Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3494,7 +3473,6 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
-			}
 		}
 		
 		/// <summary>
@@ -3505,8 +3483,7 @@ namespace MyNS
 		public async Task POST_CreateStorageLocationAsync(GET_CreateStorageLocationAction Action, POST_CreateStorageLocationVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=CreateStorageLocation?Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -3515,7 +3492,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3532,8 +3508,7 @@ namespace MyNS
 		public async Task GET_DeleteApplicationAsync(string ApplicationName, bool TerminateEnvByForce, GET_DeleteApplicationAction Action, GET_DeleteApplicationVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DeleteApplication?ApplicationName=" + (ApplicationName==null? "" : System.Uri.EscapeDataString(ApplicationName))+"&TerminateEnvByForce="+TerminateEnvByForce+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3547,7 +3522,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3568,8 +3542,7 @@ namespace MyNS
 		public async Task GET_DeleteApplicationVersionAsync(string ApplicationName, string VersionLabel, bool DeleteSourceBundle, GET_DeleteApplicationVersionAction Action, GET_DeleteApplicationVersionVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DeleteApplicationVersion?ApplicationName=" + (ApplicationName==null? "" : System.Uri.EscapeDataString(ApplicationName))+"&VersionLabel=" + (VersionLabel==null? "" : System.Uri.EscapeDataString(VersionLabel))+"&DeleteSourceBundle="+DeleteSourceBundle+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3583,7 +3556,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3603,8 +3575,7 @@ namespace MyNS
 		public async Task GET_DeleteConfigurationTemplateAsync(string ApplicationName, string TemplateName, GET_DeleteConfigurationTemplateAction Action, GET_DeleteConfigurationTemplateVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DeleteConfigurationTemplate?ApplicationName=" + (ApplicationName==null? "" : System.Uri.EscapeDataString(ApplicationName))+"&TemplateName=" + (TemplateName==null? "" : System.Uri.EscapeDataString(TemplateName))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3618,7 +3589,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3638,8 +3608,7 @@ namespace MyNS
 		public async Task GET_DeleteEnvironmentConfigurationAsync(string ApplicationName, string EnvironmentName, GET_DeleteEnvironmentConfigurationAction Action, GET_DeleteEnvironmentConfigurationVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DeleteEnvironmentConfiguration?ApplicationName=" + (ApplicationName==null? "" : System.Uri.EscapeDataString(ApplicationName))+"&EnvironmentName=" + (EnvironmentName==null? "" : System.Uri.EscapeDataString(EnvironmentName))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3653,7 +3622,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3666,8 +3634,7 @@ namespace MyNS
 		public async Task GET_DeletePlatformVersionAsync(string PlatformArn, GET_DeletePlatformVersionAction Action, GET_DeletePlatformVersionVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DeletePlatformVersion?PlatformArn=" + (PlatformArn==null? "" : System.Uri.EscapeDataString(PlatformArn))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3681,7 +3648,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3693,8 +3659,7 @@ namespace MyNS
 		public async Task GET_DescribeAccountAttributesAsync(GET_DescribeAccountAttributesAction Action, GET_DescribeAccountAttributesVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribeAccountAttributes?Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3709,7 +3674,6 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
-			}
 		}
 		
 		/// <summary>
@@ -3720,8 +3684,7 @@ namespace MyNS
 		public async Task POST_DescribeAccountAttributesAsync(GET_DescribeAccountAttributesAction Action, POST_DescribeAccountAttributesVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribeAccountAttributes?Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -3730,7 +3693,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3752,8 +3714,7 @@ namespace MyNS
 		public async Task GET_DescribeApplicationVersionsAsync(string ApplicationName, string[] VersionLabels, int MaxRecords, string NextToken, GET_DescribeApplicationVersionsAction Action, GET_DescribeApplicationVersionsVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribeApplicationVersions?ApplicationName=" + (ApplicationName==null? "" : System.Uri.EscapeDataString(ApplicationName))+"&"+string.Join("&", VersionLabels.Select(z => $"VersionLabels={System.Uri.EscapeDataString(z.ToString())}"))+"&MaxRecords="+MaxRecords+"&NextToken=" + (NextToken==null? "" : System.Uri.EscapeDataString(NextToken))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3767,7 +3728,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3780,8 +3740,7 @@ namespace MyNS
 		public async Task GET_DescribeApplicationsAsync(string[] ApplicationNames, GET_DescribeApplicationsAction Action, GET_DescribeApplicationsVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribeApplications?"+string.Join("&", ApplicationNames.Select(z => $"ApplicationNames={System.Uri.EscapeDataString(z.ToString())}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3795,7 +3754,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3822,8 +3780,7 @@ namespace MyNS
 		public async Task GET_DescribeConfigurationOptionsAsync(string ApplicationName, string TemplateName, string EnvironmentName, string SolutionStackName, string PlatformArn, OptionSpecification[] Options, GET_DescribeConfigurationOptionsAction Action, GET_DescribeConfigurationOptionsVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribeConfigurationOptions?ApplicationName=" + (ApplicationName==null? "" : System.Uri.EscapeDataString(ApplicationName))+"&TemplateName=" + (TemplateName==null? "" : System.Uri.EscapeDataString(TemplateName))+"&EnvironmentName=" + (EnvironmentName==null? "" : System.Uri.EscapeDataString(EnvironmentName))+"&SolutionStackName=" + (SolutionStackName==null? "" : System.Uri.EscapeDataString(SolutionStackName))+"&PlatformArn=" + (PlatformArn==null? "" : System.Uri.EscapeDataString(PlatformArn))+"&"+string.Join("&", Options.Select(z => $"Options={z}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3837,7 +3794,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3861,8 +3817,7 @@ namespace MyNS
 		public async Task GET_DescribeConfigurationSettingsAsync(string ApplicationName, string TemplateName, string EnvironmentName, GET_DescribeConfigurationSettingsAction Action, GET_DescribeConfigurationSettingsVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribeConfigurationSettings?ApplicationName=" + (ApplicationName==null? "" : System.Uri.EscapeDataString(ApplicationName))+"&TemplateName=" + (TemplateName==null? "" : System.Uri.EscapeDataString(TemplateName))+"&EnvironmentName=" + (EnvironmentName==null? "" : System.Uri.EscapeDataString(EnvironmentName))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3876,7 +3831,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3894,8 +3848,7 @@ namespace MyNS
 		public async Task GET_DescribeEnvironmentHealthAsync(string EnvironmentName, string EnvironmentId, EnvironmentHealthAttribute[] AttributeNames, GET_DescribeEnvironmentHealthAction Action, GET_DescribeEnvironmentHealthVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribeEnvironmentHealth?EnvironmentName=" + (EnvironmentName==null? "" : System.Uri.EscapeDataString(EnvironmentName))+"&EnvironmentId=" + (EnvironmentId==null? "" : System.Uri.EscapeDataString(EnvironmentId))+"&"+string.Join("&", AttributeNames.Select(z => $"AttributeNames={z}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3909,7 +3862,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3931,8 +3883,7 @@ namespace MyNS
 		public async Task GET_DescribeEnvironmentManagedActionHistoryAsync(string EnvironmentId, string EnvironmentName, string NextToken, int MaxItems, GET_DescribeEnvironmentManagedActionHistoryAction Action, GET_DescribeEnvironmentManagedActionHistoryVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribeEnvironmentManagedActionHistory?EnvironmentId=" + (EnvironmentId==null? "" : System.Uri.EscapeDataString(EnvironmentId))+"&EnvironmentName=" + (EnvironmentName==null? "" : System.Uri.EscapeDataString(EnvironmentName))+"&NextToken=" + (NextToken==null? "" : System.Uri.EscapeDataString(NextToken))+"&MaxItems="+MaxItems+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3946,7 +3897,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3961,8 +3911,7 @@ namespace MyNS
 		public async Task GET_DescribeEnvironmentManagedActionsAsync(string EnvironmentName, string EnvironmentId, ActionStatus Status, GET_DescribeEnvironmentManagedActionsAction Action, GET_DescribeEnvironmentManagedActionsVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribeEnvironmentManagedActions?EnvironmentName=" + (EnvironmentName==null? "" : System.Uri.EscapeDataString(EnvironmentName))+"&EnvironmentId=" + (EnvironmentId==null? "" : System.Uri.EscapeDataString(EnvironmentId))+"&Status=" + Status+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3976,7 +3925,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3993,8 +3941,7 @@ namespace MyNS
 		public async Task GET_DescribeEnvironmentResourcesAsync(string EnvironmentId, string EnvironmentName, GET_DescribeEnvironmentResourcesAction Action, GET_DescribeEnvironmentResourcesVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribeEnvironmentResources?EnvironmentId=" + (EnvironmentId==null? "" : System.Uri.EscapeDataString(EnvironmentId))+"&EnvironmentName=" + (EnvironmentName==null? "" : System.Uri.EscapeDataString(EnvironmentName))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4008,7 +3955,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4037,8 +3983,7 @@ namespace MyNS
 		public async Task GET_DescribeEnvironmentsAsync(string ApplicationName, string VersionLabel, string[] EnvironmentIds, string[] EnvironmentNames, bool IncludeDeleted, System.DateTimeOffset IncludedDeletedBackTo, int MaxRecords, string NextToken, GET_DescribeEnvironmentsAction Action, GET_DescribeEnvironmentsVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribeEnvironments?ApplicationName=" + (ApplicationName==null? "" : System.Uri.EscapeDataString(ApplicationName))+"&VersionLabel=" + (VersionLabel==null? "" : System.Uri.EscapeDataString(VersionLabel))+"&"+string.Join("&", EnvironmentIds.Select(z => $"EnvironmentIds={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", EnvironmentNames.Select(z => $"EnvironmentNames={System.Uri.EscapeDataString(z.ToString())}"))+"&IncludeDeleted="+IncludeDeleted+"&IncludedDeletedBackTo=" + IncludedDeletedBackTo.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&MaxRecords="+MaxRecords+"&NextToken=" + (NextToken==null? "" : System.Uri.EscapeDataString(NextToken))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4052,7 +3997,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4091,8 +4035,7 @@ namespace MyNS
 		public async Task GET_DescribeEventsAsync(string ApplicationName, string VersionLabel, string TemplateName, string EnvironmentId, string EnvironmentName, string PlatformArn, string RequestId, EventSeverity Severity, System.DateTimeOffset StartTime, System.DateTimeOffset EndTime, int MaxRecords, string NextToken, GET_DescribeEventsAction Action, GET_DescribeEventsVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribeEvents?ApplicationName=" + (ApplicationName==null? "" : System.Uri.EscapeDataString(ApplicationName))+"&VersionLabel=" + (VersionLabel==null? "" : System.Uri.EscapeDataString(VersionLabel))+"&TemplateName=" + (TemplateName==null? "" : System.Uri.EscapeDataString(TemplateName))+"&EnvironmentId=" + (EnvironmentId==null? "" : System.Uri.EscapeDataString(EnvironmentId))+"&EnvironmentName=" + (EnvironmentName==null? "" : System.Uri.EscapeDataString(EnvironmentName))+"&PlatformArn=" + (PlatformArn==null? "" : System.Uri.EscapeDataString(PlatformArn))+"&RequestId=" + (RequestId==null? "" : System.Uri.EscapeDataString(RequestId))+"&Severity=" + Severity+"&StartTime=" + StartTime.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&EndTime=" + EndTime.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&MaxRecords="+MaxRecords+"&NextToken=" + (NextToken==null? "" : System.Uri.EscapeDataString(NextToken))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4106,7 +4049,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4128,8 +4070,7 @@ namespace MyNS
 		public async Task GET_DescribeInstancesHealthAsync(string EnvironmentName, string EnvironmentId, InstancesHealthAttribute[] AttributeNames, string NextToken, GET_DescribeInstancesHealthAction Action, GET_DescribeInstancesHealthVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribeInstancesHealth?EnvironmentName=" + (EnvironmentName==null? "" : System.Uri.EscapeDataString(EnvironmentName))+"&EnvironmentId=" + (EnvironmentId==null? "" : System.Uri.EscapeDataString(EnvironmentId))+"&"+string.Join("&", AttributeNames.Select(z => $"AttributeNames={z}"))+"&NextToken=" + (NextToken==null? "" : System.Uri.EscapeDataString(NextToken))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4143,7 +4084,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4156,8 +4096,7 @@ namespace MyNS
 		public async Task GET_DescribePlatformVersionAsync(string PlatformArn, GET_DescribePlatformVersionAction Action, GET_DescribePlatformVersionVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribePlatformVersion?PlatformArn=" + (PlatformArn==null? "" : System.Uri.EscapeDataString(PlatformArn))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4171,7 +4110,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4187,8 +4125,7 @@ namespace MyNS
 		public async Task GET_DisassociateEnvironmentOperationsRoleAsync(string EnvironmentName, GET_DisassociateEnvironmentOperationsRoleAction Action, GET_DisassociateEnvironmentOperationsRoleVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DisassociateEnvironmentOperationsRole?EnvironmentName=" + (EnvironmentName==null? "" : System.Uri.EscapeDataString(EnvironmentName))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4202,7 +4139,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4214,8 +4150,7 @@ namespace MyNS
 		public async Task GET_ListAvailableSolutionStacksAsync(GET_ListAvailableSolutionStacksAction Action, GET_ListAvailableSolutionStacksVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=ListAvailableSolutionStacks?Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4230,7 +4165,6 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
-			}
 		}
 		
 		/// <summary>
@@ -4241,8 +4175,7 @@ namespace MyNS
 		public async Task POST_ListAvailableSolutionStacksAsync(GET_ListAvailableSolutionStacksAction Action, POST_ListAvailableSolutionStacksVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=ListAvailableSolutionStacks?Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -4251,7 +4184,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4268,8 +4200,7 @@ namespace MyNS
 		public async Task GET_ListPlatformBranchesAsync(SearchFilter[] Filters, int MaxRecords, string NextToken, GET_ListPlatformBranchesAction Action, GET_ListPlatformBranchesVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=ListPlatformBranches?"+string.Join("&", Filters.Select(z => $"Filters={z}"))+"&MaxRecords="+MaxRecords+"&NextToken=" + (NextToken==null? "" : System.Uri.EscapeDataString(NextToken))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4283,7 +4214,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4300,8 +4230,7 @@ namespace MyNS
 		public async Task GET_ListPlatformVersionsAsync(PlatformFilter[] Filters, int MaxRecords, string NextToken, GET_ListPlatformVersionsAction Action, GET_ListPlatformVersionsVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=ListPlatformVersions?"+string.Join("&", Filters.Select(z => $"Filters={z}"))+"&MaxRecords="+MaxRecords+"&NextToken=" + (NextToken==null? "" : System.Uri.EscapeDataString(NextToken))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4315,7 +4244,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4328,8 +4256,7 @@ namespace MyNS
 		public async Task GET_ListTagsForResourceAsync(string ResourceArn, GET_ListTagsForResourceAction Action, GET_ListTagsForResourceVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=ListTagsForResource?ResourceArn=" + (ResourceArn==null? "" : System.Uri.EscapeDataString(ResourceArn))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4343,7 +4270,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4360,8 +4286,7 @@ namespace MyNS
 		public async Task GET_RebuildEnvironmentAsync(string EnvironmentId, string EnvironmentName, GET_RebuildEnvironmentAction Action, GET_RebuildEnvironmentVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=RebuildEnvironment?EnvironmentId=" + (EnvironmentId==null? "" : System.Uri.EscapeDataString(EnvironmentId))+"&EnvironmentName=" + (EnvironmentName==null? "" : System.Uri.EscapeDataString(EnvironmentName))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4375,7 +4300,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4393,8 +4317,7 @@ namespace MyNS
 		public async Task GET_RequestEnvironmentInfoAsync(string EnvironmentId, string EnvironmentName, EnvironmentInfoType InfoType, GET_RequestEnvironmentInfoAction Action, GET_RequestEnvironmentInfoVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=RequestEnvironmentInfo?EnvironmentId=" + (EnvironmentId==null? "" : System.Uri.EscapeDataString(EnvironmentId))+"&EnvironmentName=" + (EnvironmentName==null? "" : System.Uri.EscapeDataString(EnvironmentName))+"&InfoType=" + InfoType+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4408,7 +4331,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4425,8 +4347,7 @@ namespace MyNS
 		public async Task GET_RestartAppServerAsync(string EnvironmentId, string EnvironmentName, GET_RestartAppServerAction Action, GET_RestartAppServerVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=RestartAppServer?EnvironmentId=" + (EnvironmentId==null? "" : System.Uri.EscapeDataString(EnvironmentId))+"&EnvironmentName=" + (EnvironmentName==null? "" : System.Uri.EscapeDataString(EnvironmentName))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4440,7 +4361,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4458,8 +4378,7 @@ namespace MyNS
 		public async Task GET_RetrieveEnvironmentInfoAsync(string EnvironmentId, string EnvironmentName, EnvironmentInfoType InfoType, GET_RetrieveEnvironmentInfoAction Action, GET_RetrieveEnvironmentInfoVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=RetrieveEnvironmentInfo?EnvironmentId=" + (EnvironmentId==null? "" : System.Uri.EscapeDataString(EnvironmentId))+"&EnvironmentName=" + (EnvironmentName==null? "" : System.Uri.EscapeDataString(EnvironmentName))+"&InfoType=" + InfoType+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4473,7 +4392,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4495,8 +4413,7 @@ namespace MyNS
 		public async Task GET_SwapEnvironmentCNAMEsAsync(string SourceEnvironmentId, string SourceEnvironmentName, string DestinationEnvironmentId, string DestinationEnvironmentName, GET_SwapEnvironmentCNAMEsAction Action, GET_SwapEnvironmentCNAMEsVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=SwapEnvironmentCNAMEs?SourceEnvironmentId=" + (SourceEnvironmentId==null? "" : System.Uri.EscapeDataString(SourceEnvironmentId))+"&SourceEnvironmentName=" + (SourceEnvironmentName==null? "" : System.Uri.EscapeDataString(SourceEnvironmentName))+"&DestinationEnvironmentId=" + (DestinationEnvironmentId==null? "" : System.Uri.EscapeDataString(DestinationEnvironmentId))+"&DestinationEnvironmentName=" + (DestinationEnvironmentName==null? "" : System.Uri.EscapeDataString(DestinationEnvironmentName))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4510,7 +4427,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4529,8 +4445,7 @@ namespace MyNS
 		public async Task GET_TerminateEnvironmentAsync(string EnvironmentId, string EnvironmentName, bool TerminateResources, bool ForceTerminate, GET_TerminateEnvironmentAction Action, GET_TerminateEnvironmentVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=TerminateEnvironment?EnvironmentId=" + (EnvironmentId==null? "" : System.Uri.EscapeDataString(EnvironmentId))+"&EnvironmentName=" + (EnvironmentName==null? "" : System.Uri.EscapeDataString(EnvironmentName))+"&TerminateResources="+TerminateResources+"&ForceTerminate="+ForceTerminate+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4544,7 +4459,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4563,8 +4477,7 @@ namespace MyNS
 		public async Task GET_UpdateApplicationAsync(string ApplicationName, string Description, GET_UpdateApplicationAction Action, GET_UpdateApplicationVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=UpdateApplication?ApplicationName=" + (ApplicationName==null? "" : System.Uri.EscapeDataString(ApplicationName))+"&Description=" + (Description==null? "" : System.Uri.EscapeDataString(Description))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4578,7 +4491,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4595,8 +4507,7 @@ namespace MyNS
 		public async Task GET_UpdateApplicationResourceLifecycleAsync(string ApplicationName, GET_UpdateApplicationResourceLifecycleResourceLifecycleConfig ResourceLifecycleConfig, GET_UpdateApplicationResourceLifecycleAction Action, GET_UpdateApplicationResourceLifecycleVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=UpdateApplicationResourceLifecycle?ApplicationName=" + (ApplicationName==null? "" : System.Uri.EscapeDataString(ApplicationName))+"&ResourceLifecycleConfig=" + ResourceLifecycleConfig+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4610,7 +4521,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4633,8 +4543,7 @@ namespace MyNS
 		public async Task GET_UpdateApplicationVersionAsync(string ApplicationName, string VersionLabel, string Description, GET_UpdateApplicationVersionAction Action, GET_UpdateApplicationVersionVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=UpdateApplicationVersion?ApplicationName=" + (ApplicationName==null? "" : System.Uri.EscapeDataString(ApplicationName))+"&VersionLabel=" + (VersionLabel==null? "" : System.Uri.EscapeDataString(VersionLabel))+"&Description=" + (Description==null? "" : System.Uri.EscapeDataString(Description))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4648,7 +4557,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4673,8 +4581,7 @@ namespace MyNS
 		public async Task GET_UpdateConfigurationTemplateAsync(string ApplicationName, string TemplateName, string Description, ConfigurationOptionSetting[] OptionSettings, OptionSpecification[] OptionsToRemove, GET_UpdateConfigurationTemplateAction Action, GET_UpdateConfigurationTemplateVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=UpdateConfigurationTemplate?ApplicationName=" + (ApplicationName==null? "" : System.Uri.EscapeDataString(ApplicationName))+"&TemplateName=" + (TemplateName==null? "" : System.Uri.EscapeDataString(TemplateName))+"&Description=" + (Description==null? "" : System.Uri.EscapeDataString(Description))+"&"+string.Join("&", OptionSettings.Select(z => $"OptionSettings={z}"))+"&"+string.Join("&", OptionsToRemove.Select(z => $"OptionsToRemove={z}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4688,7 +4595,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4729,8 +4635,7 @@ namespace MyNS
 		public async Task GET_UpdateEnvironmentAsync(string ApplicationName, string EnvironmentId, string EnvironmentName, string GroupName, string Description, GET_UpdateEnvironmentTier Tier, string VersionLabel, string TemplateName, string SolutionStackName, string PlatformArn, ConfigurationOptionSetting[] OptionSettings, OptionSpecification[] OptionsToRemove, GET_UpdateEnvironmentAction Action, GET_UpdateEnvironmentVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=UpdateEnvironment?ApplicationName=" + (ApplicationName==null? "" : System.Uri.EscapeDataString(ApplicationName))+"&EnvironmentId=" + (EnvironmentId==null? "" : System.Uri.EscapeDataString(EnvironmentId))+"&EnvironmentName=" + (EnvironmentName==null? "" : System.Uri.EscapeDataString(EnvironmentName))+"&GroupName=" + (GroupName==null? "" : System.Uri.EscapeDataString(GroupName))+"&Description=" + (Description==null? "" : System.Uri.EscapeDataString(Description))+"&Tier=" + Tier+"&VersionLabel=" + (VersionLabel==null? "" : System.Uri.EscapeDataString(VersionLabel))+"&TemplateName=" + (TemplateName==null? "" : System.Uri.EscapeDataString(TemplateName))+"&SolutionStackName=" + (SolutionStackName==null? "" : System.Uri.EscapeDataString(SolutionStackName))+"&PlatformArn=" + (PlatformArn==null? "" : System.Uri.EscapeDataString(PlatformArn))+"&"+string.Join("&", OptionSettings.Select(z => $"OptionSettings={z}"))+"&"+string.Join("&", OptionsToRemove.Select(z => $"OptionsToRemove={z}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4744,7 +4649,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4759,8 +4663,7 @@ namespace MyNS
 		public async Task GET_UpdateTagsForResourceAsync(string ResourceArn, Tag[] TagsToAdd, string[] TagsToRemove, GET_UpdateTagsForResourceAction Action, GET_UpdateTagsForResourceVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=UpdateTagsForResource?ResourceArn=" + (ResourceArn==null? "" : System.Uri.EscapeDataString(ResourceArn))+"&"+string.Join("&", TagsToAdd.Select(z => $"TagsToAdd={z}"))+"&"+string.Join("&", TagsToRemove.Select(z => $"TagsToRemove={System.Uri.EscapeDataString(z.ToString())}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4774,7 +4677,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4799,8 +4701,7 @@ namespace MyNS
 		public async Task GET_ValidateConfigurationSettingsAsync(string ApplicationName, string TemplateName, string EnvironmentName, ConfigurationOptionSetting[] OptionSettings, GET_ValidateConfigurationSettingsAction Action, GET_ValidateConfigurationSettingsVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=ValidateConfigurationSettings?ApplicationName=" + (ApplicationName==null? "" : System.Uri.EscapeDataString(ApplicationName))+"&TemplateName=" + (TemplateName==null? "" : System.Uri.EscapeDataString(TemplateName))+"&EnvironmentName=" + (EnvironmentName==null? "" : System.Uri.EscapeDataString(EnvironmentName))+"&"+string.Join("&", OptionSettings.Select(z => $"OptionSettings={z}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4814,7 +4715,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

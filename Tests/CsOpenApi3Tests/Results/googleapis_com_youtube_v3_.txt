@@ -10186,10 +10186,8 @@ namespace MyNS
 		public async Task<AbuseReport> Youtube_abuseReports_insertAsync(string[] part, AbuseReport requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "youtube/v3/abuseReports?"+string.Join("&", part.Select(z => $"part={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -10200,13 +10198,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<AbuseReport>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<AbuseReport>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -10224,8 +10221,7 @@ namespace MyNS
 		public async Task<ActivityListResponse> Youtube_activities_listAsync(string[] part, string channelId, bool home, int maxResults, bool mine, string pageToken, string publishedAfter, string publishedBefore, string regionCode, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "youtube/v3/activities?"+string.Join("&", part.Select(z => $"part={System.Uri.EscapeDataString(z.ToString())}"))+"&channelId=" + (channelId==null? "" : System.Uri.EscapeDataString(channelId))+"&home="+home+"&maxResults="+maxResults+"&mine="+mine+"&pageToken=" + (pageToken==null? "" : System.Uri.EscapeDataString(pageToken))+"&publishedAfter=" + (publishedAfter==null? "" : System.Uri.EscapeDataString(publishedAfter))+"&publishedBefore=" + (publishedBefore==null? "" : System.Uri.EscapeDataString(publishedBefore))+"&regionCode=" + (regionCode==null? "" : System.Uri.EscapeDataString(regionCode));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -10235,13 +10231,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ActivityListResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ActivityListResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -10255,8 +10250,7 @@ namespace MyNS
 		public async Task Youtube_captions_deleteAsync(string id, string onBehalfOf, string onBehalfOfContentOwner, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "youtube/v3/captions?id=" + (id==null? "" : System.Uri.EscapeDataString(id))+"&onBehalfOf=" + (onBehalfOf==null? "" : System.Uri.EscapeDataString(onBehalfOf))+"&onBehalfOfContentOwner=" + (onBehalfOfContentOwner==null? "" : System.Uri.EscapeDataString(onBehalfOfContentOwner));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -10270,7 +10264,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -10287,8 +10280,7 @@ namespace MyNS
 		public async Task<CaptionListResponse> Youtube_captions_listAsync(string[] part, string videoId, string[] id, string onBehalfOf, string onBehalfOfContentOwner, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "youtube/v3/captions?"+string.Join("&", part.Select(z => $"part={System.Uri.EscapeDataString(z.ToString())}"))+"&videoId=" + (videoId==null? "" : System.Uri.EscapeDataString(videoId))+"&"+string.Join("&", id.Select(z => $"id={System.Uri.EscapeDataString(z.ToString())}"))+"&onBehalfOf=" + (onBehalfOf==null? "" : System.Uri.EscapeDataString(onBehalfOf))+"&onBehalfOfContentOwner=" + (onBehalfOfContentOwner==null? "" : System.Uri.EscapeDataString(onBehalfOfContentOwner));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -10298,13 +10290,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<CaptionListResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<CaptionListResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -10321,8 +10312,7 @@ namespace MyNS
 		public async Task Youtube_captions_downloadAsync(string id, string onBehalfOf, string onBehalfOfContentOwner, string tfmt, string tlang, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "youtube/v3/captions/"+ (id==null? "" : System.Uri.EscapeDataString(id))+"&onBehalfOf=" + (onBehalfOf==null? "" : System.Uri.EscapeDataString(onBehalfOf))+"&onBehalfOfContentOwner=" + (onBehalfOfContentOwner==null? "" : System.Uri.EscapeDataString(onBehalfOfContentOwner))+"&tfmt=" + (tfmt==null? "" : System.Uri.EscapeDataString(tfmt))+"&tlang=" + (tlang==null? "" : System.Uri.EscapeDataString(tlang));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -10336,7 +10326,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -10349,8 +10338,7 @@ namespace MyNS
 		public async Task Youtube_channelSections_deleteAsync(string id, string onBehalfOfContentOwner, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "youtube/v3/channelSections?id=" + (id==null? "" : System.Uri.EscapeDataString(id))+"&onBehalfOfContentOwner=" + (onBehalfOfContentOwner==null? "" : System.Uri.EscapeDataString(onBehalfOfContentOwner));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -10364,7 +10352,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -10382,8 +10369,7 @@ namespace MyNS
 		public async Task<ChannelSectionListResponse> Youtube_channelSections_listAsync(string[] part, string channelId, string hl, string[] id, bool mine, string onBehalfOfContentOwner, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "youtube/v3/channelSections?"+string.Join("&", part.Select(z => $"part={System.Uri.EscapeDataString(z.ToString())}"))+"&channelId=" + (channelId==null? "" : System.Uri.EscapeDataString(channelId))+"&hl=" + (hl==null? "" : System.Uri.EscapeDataString(hl))+"&"+string.Join("&", id.Select(z => $"id={System.Uri.EscapeDataString(z.ToString())}"))+"&mine="+mine+"&onBehalfOfContentOwner=" + (onBehalfOfContentOwner==null? "" : System.Uri.EscapeDataString(onBehalfOfContentOwner));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -10393,13 +10379,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ChannelSectionListResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ChannelSectionListResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -10414,10 +10399,8 @@ namespace MyNS
 		public async Task<ChannelSection> Youtube_channelSections_insertAsync(string[] part, string onBehalfOfContentOwner, string onBehalfOfContentOwnerChannel, ChannelSection requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "youtube/v3/channelSections?"+string.Join("&", part.Select(z => $"part={System.Uri.EscapeDataString(z.ToString())}"))+"&onBehalfOfContentOwner=" + (onBehalfOfContentOwner==null? "" : System.Uri.EscapeDataString(onBehalfOfContentOwner))+"&onBehalfOfContentOwnerChannel=" + (onBehalfOfContentOwnerChannel==null? "" : System.Uri.EscapeDataString(onBehalfOfContentOwnerChannel));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -10428,13 +10411,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ChannelSection>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ChannelSection>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -10448,10 +10430,8 @@ namespace MyNS
 		public async Task<ChannelSection> Youtube_channelSections_updateAsync(string[] part, string onBehalfOfContentOwner, ChannelSection requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "youtube/v3/channelSections?"+string.Join("&", part.Select(z => $"part={System.Uri.EscapeDataString(z.ToString())}"))+"&onBehalfOfContentOwner=" + (onBehalfOfContentOwner==null? "" : System.Uri.EscapeDataString(onBehalfOfContentOwner));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -10462,13 +10442,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ChannelSection>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ChannelSection>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -10494,8 +10473,7 @@ namespace MyNS
 		public async Task<ChannelListResponse> Youtube_channels_listAsync(string[] part, string categoryId, string forUsername, string hl, string[] id, bool managedByMe, int maxResults, bool mine, bool mySubscribers, string onBehalfOfContentOwner, string pageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "youtube/v3/channels?"+string.Join("&", part.Select(z => $"part={System.Uri.EscapeDataString(z.ToString())}"))+"&categoryId=" + (categoryId==null? "" : System.Uri.EscapeDataString(categoryId))+"&forUsername=" + (forUsername==null? "" : System.Uri.EscapeDataString(forUsername))+"&hl=" + (hl==null? "" : System.Uri.EscapeDataString(hl))+"&"+string.Join("&", id.Select(z => $"id={System.Uri.EscapeDataString(z.ToString())}"))+"&managedByMe="+managedByMe+"&maxResults="+maxResults+"&mine="+mine+"&mySubscribers="+mySubscribers+"&onBehalfOfContentOwner=" + (onBehalfOfContentOwner==null? "" : System.Uri.EscapeDataString(onBehalfOfContentOwner))+"&pageToken=" + (pageToken==null? "" : System.Uri.EscapeDataString(pageToken));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -10505,13 +10483,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ChannelListResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ChannelListResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -10525,10 +10502,8 @@ namespace MyNS
 		public async Task<Channel> Youtube_channels_updateAsync(string[] part, string onBehalfOfContentOwner, Channel requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "youtube/v3/channels?"+string.Join("&", part.Select(z => $"part={System.Uri.EscapeDataString(z.ToString())}"))+"&onBehalfOfContentOwner=" + (onBehalfOfContentOwner==null? "" : System.Uri.EscapeDataString(onBehalfOfContentOwner));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -10539,13 +10514,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Channel>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Channel>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -10570,8 +10544,7 @@ namespace MyNS
 		public async Task<CommentThreadListResponse> Youtube_commentThreads_listAsync(string[] part, string allThreadsRelatedToChannelId, string channelId, string[] id, int maxResults, CommentSnippetModerationStatus moderationStatus, Youtube_commentThreads_listOrder order, string pageToken, string searchTerms, Youtube_commentThreads_listTextFormat textFormat, string videoId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "youtube/v3/commentThreads?"+string.Join("&", part.Select(z => $"part={System.Uri.EscapeDataString(z.ToString())}"))+"&allThreadsRelatedToChannelId=" + (allThreadsRelatedToChannelId==null? "" : System.Uri.EscapeDataString(allThreadsRelatedToChannelId))+"&channelId=" + (channelId==null? "" : System.Uri.EscapeDataString(channelId))+"&"+string.Join("&", id.Select(z => $"id={System.Uri.EscapeDataString(z.ToString())}"))+"&maxResults="+maxResults+"&moderationStatus=" + moderationStatus+"&order=" + order+"&pageToken=" + (pageToken==null? "" : System.Uri.EscapeDataString(pageToken))+"&searchTerms=" + (searchTerms==null? "" : System.Uri.EscapeDataString(searchTerms))+"&textFormat=" + textFormat+"&videoId=" + (videoId==null? "" : System.Uri.EscapeDataString(videoId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -10581,13 +10554,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<CommentThreadListResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<CommentThreadListResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -10600,10 +10572,8 @@ namespace MyNS
 		public async Task<CommentThread> Youtube_commentThreads_insertAsync(string[] part, CommentThread requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "youtube/v3/commentThreads?"+string.Join("&", part.Select(z => $"part={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -10614,13 +10584,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<CommentThread>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<CommentThread>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -10633,10 +10602,8 @@ namespace MyNS
 		public async Task<CommentThread> Youtube_youtube_v3_updateCommentThreadsAsync(string[] part, CommentThread requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "youtube/v3/commentThreads?"+string.Join("&", part.Select(z => $"part={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -10647,13 +10614,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<CommentThread>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<CommentThread>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -10665,8 +10631,7 @@ namespace MyNS
 		public async Task Youtube_comments_deleteAsync(string id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "youtube/v3/comments?id=" + (id==null? "" : System.Uri.EscapeDataString(id));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -10680,7 +10645,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -10701,8 +10665,7 @@ namespace MyNS
 		public async Task<CommentListResponse> Youtube_comments_listAsync(string[] part, string[] id, int maxResults, string pageToken, string parentId, Youtube_commentThreads_listTextFormat textFormat, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "youtube/v3/comments?"+string.Join("&", part.Select(z => $"part={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", id.Select(z => $"id={System.Uri.EscapeDataString(z.ToString())}"))+"&maxResults="+maxResults+"&pageToken=" + (pageToken==null? "" : System.Uri.EscapeDataString(pageToken))+"&parentId=" + (parentId==null? "" : System.Uri.EscapeDataString(parentId))+"&textFormat=" + textFormat;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -10712,13 +10675,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<CommentListResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<CommentListResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -10731,10 +10693,8 @@ namespace MyNS
 		public async Task<Comment> Youtube_comments_insertAsync(string[] part, Comment requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "youtube/v3/comments?"+string.Join("&", part.Select(z => $"part={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -10745,13 +10705,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Comment>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Comment>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -10764,10 +10723,8 @@ namespace MyNS
 		public async Task<Comment> Youtube_comments_updateAsync(string[] part, Comment requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "youtube/v3/comments?"+string.Join("&", part.Select(z => $"part={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -10778,13 +10735,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Comment>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Comment>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -10797,8 +10753,7 @@ namespace MyNS
 		public async Task Youtube_comments_markAsSpamAsync(string[] id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "youtube/v3/comments/markAsSpam?"+string.Join("&", id.Select(z => $"id={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -10807,7 +10762,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -10822,8 +10776,7 @@ namespace MyNS
 		public async Task Youtube_comments_setModerationStatusAsync(string[] id, CommentSnippetModerationStatus moderationStatus, bool banAuthor, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "youtube/v3/comments/setModerationStatus?"+string.Join("&", id.Select(z => $"id={System.Uri.EscapeDataString(z.ToString())}"))+"&moderationStatus=" + moderationStatus+"&banAuthor="+banAuthor;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -10832,7 +10785,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -10845,8 +10797,7 @@ namespace MyNS
 		public async Task<I18nLanguageListResponse> Youtube_i18nLanguages_listAsync(string[] part, string hl, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "youtube/v3/i18nLanguages?"+string.Join("&", part.Select(z => $"part={System.Uri.EscapeDataString(z.ToString())}"))+"&hl=" + (hl==null? "" : System.Uri.EscapeDataString(hl));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -10856,13 +10807,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<I18nLanguageListResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<I18nLanguageListResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -10875,8 +10825,7 @@ namespace MyNS
 		public async Task<I18nRegionListResponse> Youtube_i18nRegions_listAsync(string[] part, string hl, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "youtube/v3/i18nRegions?"+string.Join("&", part.Select(z => $"part={System.Uri.EscapeDataString(z.ToString())}"))+"&hl=" + (hl==null? "" : System.Uri.EscapeDataString(hl));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -10886,13 +10835,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<I18nRegionListResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<I18nRegionListResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -10907,8 +10855,7 @@ namespace MyNS
 		public async Task Youtube_liveBroadcasts_deleteAsync(string id, string onBehalfOfContentOwner, string onBehalfOfContentOwnerChannel, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "youtube/v3/liveBroadcasts?id=" + (id==null? "" : System.Uri.EscapeDataString(id))+"&onBehalfOfContentOwner=" + (onBehalfOfContentOwner==null? "" : System.Uri.EscapeDataString(onBehalfOfContentOwner))+"&onBehalfOfContentOwnerChannel=" + (onBehalfOfContentOwnerChannel==null? "" : System.Uri.EscapeDataString(onBehalfOfContentOwnerChannel));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -10922,7 +10869,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -10945,8 +10891,7 @@ namespace MyNS
 		public async Task<LiveBroadcastListResponse> Youtube_liveBroadcasts_listAsync(string[] part, Youtube_liveBroadcasts_listBroadcastStatus broadcastStatus, Youtube_liveBroadcasts_listBroadcastType broadcastType, string[] id, int maxResults, bool mine, string onBehalfOfContentOwner, string onBehalfOfContentOwnerChannel, string pageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "youtube/v3/liveBroadcasts?"+string.Join("&", part.Select(z => $"part={System.Uri.EscapeDataString(z.ToString())}"))+"&broadcastStatus=" + broadcastStatus+"&broadcastType=" + broadcastType+"&"+string.Join("&", id.Select(z => $"id={System.Uri.EscapeDataString(z.ToString())}"))+"&maxResults="+maxResults+"&mine="+mine+"&onBehalfOfContentOwner=" + (onBehalfOfContentOwner==null? "" : System.Uri.EscapeDataString(onBehalfOfContentOwner))+"&onBehalfOfContentOwnerChannel=" + (onBehalfOfContentOwnerChannel==null? "" : System.Uri.EscapeDataString(onBehalfOfContentOwnerChannel))+"&pageToken=" + (pageToken==null? "" : System.Uri.EscapeDataString(pageToken));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -10956,13 +10901,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<LiveBroadcastListResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<LiveBroadcastListResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -10977,10 +10921,8 @@ namespace MyNS
 		public async Task<LiveBroadcast> Youtube_liveBroadcasts_insertAsync(string[] part, string onBehalfOfContentOwner, string onBehalfOfContentOwnerChannel, LiveBroadcast requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "youtube/v3/liveBroadcasts?"+string.Join("&", part.Select(z => $"part={System.Uri.EscapeDataString(z.ToString())}"))+"&onBehalfOfContentOwner=" + (onBehalfOfContentOwner==null? "" : System.Uri.EscapeDataString(onBehalfOfContentOwner))+"&onBehalfOfContentOwnerChannel=" + (onBehalfOfContentOwnerChannel==null? "" : System.Uri.EscapeDataString(onBehalfOfContentOwnerChannel));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -10991,13 +10933,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<LiveBroadcast>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<LiveBroadcast>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -11012,10 +10953,8 @@ namespace MyNS
 		public async Task<LiveBroadcast> Youtube_liveBroadcasts_updateAsync(string[] part, string onBehalfOfContentOwner, string onBehalfOfContentOwnerChannel, LiveBroadcast requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "youtube/v3/liveBroadcasts?"+string.Join("&", part.Select(z => $"part={System.Uri.EscapeDataString(z.ToString())}"))+"&onBehalfOfContentOwner=" + (onBehalfOfContentOwner==null? "" : System.Uri.EscapeDataString(onBehalfOfContentOwner))+"&onBehalfOfContentOwnerChannel=" + (onBehalfOfContentOwnerChannel==null? "" : System.Uri.EscapeDataString(onBehalfOfContentOwnerChannel));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -11026,13 +10965,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<LiveBroadcast>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<LiveBroadcast>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -11049,19 +10987,17 @@ namespace MyNS
 		public async Task<LiveBroadcast> Youtube_liveBroadcasts_bindAsync(string id, string[] part, string onBehalfOfContentOwner, string onBehalfOfContentOwnerChannel, string streamId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "youtube/v3/liveBroadcasts/bind?id=" + (id==null? "" : System.Uri.EscapeDataString(id))+"&"+string.Join("&", part.Select(z => $"part={System.Uri.EscapeDataString(z.ToString())}"))+"&onBehalfOfContentOwner=" + (onBehalfOfContentOwner==null? "" : System.Uri.EscapeDataString(onBehalfOfContentOwner))+"&onBehalfOfContentOwnerChannel=" + (onBehalfOfContentOwnerChannel==null? "" : System.Uri.EscapeDataString(onBehalfOfContentOwnerChannel))+"&streamId=" + (streamId==null? "" : System.Uri.EscapeDataString(streamId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<LiveBroadcast>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<LiveBroadcast>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -11077,10 +11013,8 @@ namespace MyNS
 		public async Task<Cuepoint> Youtube_liveBroadcasts_insertCuepointAsync(string id, string onBehalfOfContentOwner, string onBehalfOfContentOwnerChannel, string[] part, Cuepoint requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "youtube/v3/liveBroadcasts/cuepoint?id=" + (id==null? "" : System.Uri.EscapeDataString(id))+"&onBehalfOfContentOwner=" + (onBehalfOfContentOwner==null? "" : System.Uri.EscapeDataString(onBehalfOfContentOwner))+"&onBehalfOfContentOwnerChannel=" + (onBehalfOfContentOwnerChannel==null? "" : System.Uri.EscapeDataString(onBehalfOfContentOwnerChannel))+"&"+string.Join("&", part.Select(z => $"part={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -11091,13 +11025,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Cuepoint>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Cuepoint>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -11114,19 +11047,17 @@ namespace MyNS
 		public async Task<LiveBroadcast> Youtube_liveBroadcasts_transitionAsync(Youtube_liveBroadcasts_transitionBroadcastStatus broadcastStatus, string id, string[] part, string onBehalfOfContentOwner, string onBehalfOfContentOwnerChannel, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "youtube/v3/liveBroadcasts/transition?broadcastStatus=" + broadcastStatus+"&id=" + (id==null? "" : System.Uri.EscapeDataString(id))+"&"+string.Join("&", part.Select(z => $"part={System.Uri.EscapeDataString(z.ToString())}"))+"&onBehalfOfContentOwner=" + (onBehalfOfContentOwner==null? "" : System.Uri.EscapeDataString(onBehalfOfContentOwner))+"&onBehalfOfContentOwnerChannel=" + (onBehalfOfContentOwnerChannel==null? "" : System.Uri.EscapeDataString(onBehalfOfContentOwnerChannel));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<LiveBroadcast>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<LiveBroadcast>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -11138,8 +11069,7 @@ namespace MyNS
 		public async Task Youtube_liveChatBans_deleteAsync(string id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "youtube/v3/liveChat/bans?id=" + (id==null? "" : System.Uri.EscapeDataString(id));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -11153,7 +11083,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -11166,10 +11095,8 @@ namespace MyNS
 		public async Task<LiveChatBan> Youtube_liveChatBans_insertAsync(string[] part, LiveChatBan requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "youtube/v3/liveChat/bans?"+string.Join("&", part.Select(z => $"part={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -11180,13 +11107,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<LiveChatBan>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<LiveChatBan>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -11198,8 +11124,7 @@ namespace MyNS
 		public async Task Youtube_liveChatMessages_deleteAsync(string id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "youtube/v3/liveChat/messages?id=" + (id==null? "" : System.Uri.EscapeDataString(id));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -11213,7 +11138,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -11237,8 +11161,7 @@ namespace MyNS
 		public async Task<LiveChatMessageListResponse> Youtube_liveChatMessages_listAsync(string liveChatId, string[] part, string hl, int maxResults, string pageToken, int profileImageSize, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "youtube/v3/liveChat/messages?liveChatId=" + (liveChatId==null? "" : System.Uri.EscapeDataString(liveChatId))+"&"+string.Join("&", part.Select(z => $"part={System.Uri.EscapeDataString(z.ToString())}"))+"&hl=" + (hl==null? "" : System.Uri.EscapeDataString(hl))+"&maxResults="+maxResults+"&pageToken=" + (pageToken==null? "" : System.Uri.EscapeDataString(pageToken))+"&profileImageSize="+profileImageSize;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -11248,13 +11171,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<LiveChatMessageListResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<LiveChatMessageListResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -11267,10 +11189,8 @@ namespace MyNS
 		public async Task<LiveChatMessage> Youtube_liveChatMessages_insertAsync(string[] part, LiveChatMessage requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "youtube/v3/liveChat/messages?"+string.Join("&", part.Select(z => $"part={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -11281,13 +11201,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<LiveChatMessage>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<LiveChatMessage>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -11299,8 +11218,7 @@ namespace MyNS
 		public async Task Youtube_liveChatModerators_deleteAsync(string id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "youtube/v3/liveChat/moderators?id=" + (id==null? "" : System.Uri.EscapeDataString(id));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -11314,7 +11232,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -11333,8 +11250,7 @@ namespace MyNS
 		public async Task<LiveChatModeratorListResponse> Youtube_liveChatModerators_listAsync(string liveChatId, string[] part, int maxResults, string pageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "youtube/v3/liveChat/moderators?liveChatId=" + (liveChatId==null? "" : System.Uri.EscapeDataString(liveChatId))+"&"+string.Join("&", part.Select(z => $"part={System.Uri.EscapeDataString(z.ToString())}"))+"&maxResults="+maxResults+"&pageToken=" + (pageToken==null? "" : System.Uri.EscapeDataString(pageToken));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -11344,13 +11260,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<LiveChatModeratorListResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<LiveChatModeratorListResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -11363,10 +11278,8 @@ namespace MyNS
 		public async Task<LiveChatModerator> Youtube_liveChatModerators_insertAsync(string[] part, LiveChatModerator requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "youtube/v3/liveChat/moderators?"+string.Join("&", part.Select(z => $"part={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -11377,13 +11290,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<LiveChatModerator>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<LiveChatModerator>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -11397,8 +11309,7 @@ namespace MyNS
 		public async Task Youtube_liveStreams_deleteAsync(string id, string onBehalfOfContentOwner, string onBehalfOfContentOwnerChannel, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "youtube/v3/liveStreams?id=" + (id==null? "" : System.Uri.EscapeDataString(id))+"&onBehalfOfContentOwner=" + (onBehalfOfContentOwner==null? "" : System.Uri.EscapeDataString(onBehalfOfContentOwner))+"&onBehalfOfContentOwnerChannel=" + (onBehalfOfContentOwnerChannel==null? "" : System.Uri.EscapeDataString(onBehalfOfContentOwnerChannel));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -11412,7 +11323,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -11433,8 +11343,7 @@ namespace MyNS
 		public async Task<LiveStreamListResponse> Youtube_liveStreams_listAsync(string[] part, string[] id, int maxResults, bool mine, string onBehalfOfContentOwner, string onBehalfOfContentOwnerChannel, string pageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "youtube/v3/liveStreams?"+string.Join("&", part.Select(z => $"part={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", id.Select(z => $"id={System.Uri.EscapeDataString(z.ToString())}"))+"&maxResults="+maxResults+"&mine="+mine+"&onBehalfOfContentOwner=" + (onBehalfOfContentOwner==null? "" : System.Uri.EscapeDataString(onBehalfOfContentOwner))+"&onBehalfOfContentOwnerChannel=" + (onBehalfOfContentOwnerChannel==null? "" : System.Uri.EscapeDataString(onBehalfOfContentOwnerChannel))+"&pageToken=" + (pageToken==null? "" : System.Uri.EscapeDataString(pageToken));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -11444,13 +11353,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<LiveStreamListResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<LiveStreamListResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -11465,10 +11373,8 @@ namespace MyNS
 		public async Task<LiveStream> Youtube_liveStreams_insertAsync(string[] part, string onBehalfOfContentOwner, string onBehalfOfContentOwnerChannel, LiveStream requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "youtube/v3/liveStreams?"+string.Join("&", part.Select(z => $"part={System.Uri.EscapeDataString(z.ToString())}"))+"&onBehalfOfContentOwner=" + (onBehalfOfContentOwner==null? "" : System.Uri.EscapeDataString(onBehalfOfContentOwner))+"&onBehalfOfContentOwnerChannel=" + (onBehalfOfContentOwnerChannel==null? "" : System.Uri.EscapeDataString(onBehalfOfContentOwnerChannel));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -11479,13 +11385,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<LiveStream>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<LiveStream>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -11500,10 +11405,8 @@ namespace MyNS
 		public async Task<LiveStream> Youtube_liveStreams_updateAsync(string[] part, string onBehalfOfContentOwner, string onBehalfOfContentOwnerChannel, LiveStream requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "youtube/v3/liveStreams?"+string.Join("&", part.Select(z => $"part={System.Uri.EscapeDataString(z.ToString())}"))+"&onBehalfOfContentOwner=" + (onBehalfOfContentOwner==null? "" : System.Uri.EscapeDataString(onBehalfOfContentOwner))+"&onBehalfOfContentOwnerChannel=" + (onBehalfOfContentOwnerChannel==null? "" : System.Uri.EscapeDataString(onBehalfOfContentOwnerChannel));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -11514,13 +11417,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<LiveStream>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<LiveStream>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -11541,8 +11443,7 @@ namespace MyNS
 		public async Task<MemberListResponse> Youtube_members_listAsync(string[] part, string filterByMemberChannelId, string hasAccessToLevel, int maxResults, Youtube_members_listMode mode, string pageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "youtube/v3/members?"+string.Join("&", part.Select(z => $"part={System.Uri.EscapeDataString(z.ToString())}"))+"&filterByMemberChannelId=" + (filterByMemberChannelId==null? "" : System.Uri.EscapeDataString(filterByMemberChannelId))+"&hasAccessToLevel=" + (hasAccessToLevel==null? "" : System.Uri.EscapeDataString(hasAccessToLevel))+"&maxResults="+maxResults+"&mode=" + mode+"&pageToken=" + (pageToken==null? "" : System.Uri.EscapeDataString(pageToken));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -11552,13 +11453,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<MemberListResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<MemberListResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -11571,8 +11471,7 @@ namespace MyNS
 		public async Task<MembershipsLevelListResponse> Youtube_membershipsLevels_listAsync(string[] part, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "youtube/v3/membershipsLevels?"+string.Join("&", part.Select(z => $"part={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -11582,13 +11481,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<MembershipsLevelListResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<MembershipsLevelListResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -11602,8 +11500,7 @@ namespace MyNS
 		public async Task Youtube_playlistImages_deleteAsync(string id, string onBehalfOfContentOwner, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "youtube/v3/playlistImages?id=" + (id==null? "" : System.Uri.EscapeDataString(id))+"&onBehalfOfContentOwner=" + (onBehalfOfContentOwner==null? "" : System.Uri.EscapeDataString(onBehalfOfContentOwner));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -11617,7 +11514,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -11638,8 +11534,7 @@ namespace MyNS
 		public async Task<PlaylistImageListResponse> Youtube_playlistImages_listAsync(int maxResults, string onBehalfOfContentOwner, string onBehalfOfContentOwnerChannel, string pageToken, string parent, string[] part, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "youtube/v3/playlistImages?maxResults="+maxResults+"&onBehalfOfContentOwner=" + (onBehalfOfContentOwner==null? "" : System.Uri.EscapeDataString(onBehalfOfContentOwner))+"&onBehalfOfContentOwnerChannel=" + (onBehalfOfContentOwnerChannel==null? "" : System.Uri.EscapeDataString(onBehalfOfContentOwnerChannel))+"&pageToken=" + (pageToken==null? "" : System.Uri.EscapeDataString(pageToken))+"&parent=" + (parent==null? "" : System.Uri.EscapeDataString(parent))+"&"+string.Join("&", part.Select(z => $"part={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -11649,13 +11544,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<PlaylistImageListResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<PlaylistImageListResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -11670,10 +11564,8 @@ namespace MyNS
 		public async Task<PlaylistImage> Youtube_playlistImages_insertAsync(string onBehalfOfContentOwner, string onBehalfOfContentOwnerChannel, string[] part, PlaylistImage requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "youtube/v3/playlistImages?onBehalfOfContentOwner=" + (onBehalfOfContentOwner==null? "" : System.Uri.EscapeDataString(onBehalfOfContentOwner))+"&onBehalfOfContentOwnerChannel=" + (onBehalfOfContentOwnerChannel==null? "" : System.Uri.EscapeDataString(onBehalfOfContentOwnerChannel))+"&"+string.Join("&", part.Select(z => $"part={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -11684,13 +11576,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<PlaylistImage>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<PlaylistImage>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -11704,10 +11595,8 @@ namespace MyNS
 		public async Task<PlaylistImage> Youtube_playlistImages_updateAsync(string onBehalfOfContentOwner, string[] part, PlaylistImage requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "youtube/v3/playlistImages?onBehalfOfContentOwner=" + (onBehalfOfContentOwner==null? "" : System.Uri.EscapeDataString(onBehalfOfContentOwner))+"&"+string.Join("&", part.Select(z => $"part={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -11718,13 +11607,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<PlaylistImage>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<PlaylistImage>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -11737,8 +11625,7 @@ namespace MyNS
 		public async Task Youtube_playlistItems_deleteAsync(string id, string onBehalfOfContentOwner, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "youtube/v3/playlistItems?id=" + (id==null? "" : System.Uri.EscapeDataString(id))+"&onBehalfOfContentOwner=" + (onBehalfOfContentOwner==null? "" : System.Uri.EscapeDataString(onBehalfOfContentOwner));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -11752,7 +11639,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -11773,8 +11659,7 @@ namespace MyNS
 		public async Task<PlaylistItemListResponse> Youtube_playlistItems_listAsync(string[] part, string[] id, int maxResults, string onBehalfOfContentOwner, string pageToken, string playlistId, string videoId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "youtube/v3/playlistItems?"+string.Join("&", part.Select(z => $"part={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", id.Select(z => $"id={System.Uri.EscapeDataString(z.ToString())}"))+"&maxResults="+maxResults+"&onBehalfOfContentOwner=" + (onBehalfOfContentOwner==null? "" : System.Uri.EscapeDataString(onBehalfOfContentOwner))+"&pageToken=" + (pageToken==null? "" : System.Uri.EscapeDataString(pageToken))+"&playlistId=" + (playlistId==null? "" : System.Uri.EscapeDataString(playlistId))+"&videoId=" + (videoId==null? "" : System.Uri.EscapeDataString(videoId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -11784,13 +11669,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<PlaylistItemListResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<PlaylistItemListResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -11804,10 +11688,8 @@ namespace MyNS
 		public async Task<PlaylistItem> Youtube_playlistItems_insertAsync(string[] part, string onBehalfOfContentOwner, PlaylistItem requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "youtube/v3/playlistItems?"+string.Join("&", part.Select(z => $"part={System.Uri.EscapeDataString(z.ToString())}"))+"&onBehalfOfContentOwner=" + (onBehalfOfContentOwner==null? "" : System.Uri.EscapeDataString(onBehalfOfContentOwner));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -11818,13 +11700,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<PlaylistItem>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<PlaylistItem>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -11838,10 +11719,8 @@ namespace MyNS
 		public async Task<PlaylistItem> Youtube_playlistItems_updateAsync(string[] part, string onBehalfOfContentOwner, PlaylistItem requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "youtube/v3/playlistItems?"+string.Join("&", part.Select(z => $"part={System.Uri.EscapeDataString(z.ToString())}"))+"&onBehalfOfContentOwner=" + (onBehalfOfContentOwner==null? "" : System.Uri.EscapeDataString(onBehalfOfContentOwner));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -11852,13 +11731,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<PlaylistItem>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<PlaylistItem>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -11871,8 +11749,7 @@ namespace MyNS
 		public async Task Youtube_playlists_deleteAsync(string id, string onBehalfOfContentOwner, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "youtube/v3/playlists?id=" + (id==null? "" : System.Uri.EscapeDataString(id))+"&onBehalfOfContentOwner=" + (onBehalfOfContentOwner==null? "" : System.Uri.EscapeDataString(onBehalfOfContentOwner));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -11886,7 +11763,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -11910,8 +11786,7 @@ namespace MyNS
 		public async Task<PlaylistListResponse> Youtube_playlists_listAsync(string[] part, string channelId, string hl, string[] id, int maxResults, bool mine, string onBehalfOfContentOwner, string onBehalfOfContentOwnerChannel, string pageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "youtube/v3/playlists?"+string.Join("&", part.Select(z => $"part={System.Uri.EscapeDataString(z.ToString())}"))+"&channelId=" + (channelId==null? "" : System.Uri.EscapeDataString(channelId))+"&hl=" + (hl==null? "" : System.Uri.EscapeDataString(hl))+"&"+string.Join("&", id.Select(z => $"id={System.Uri.EscapeDataString(z.ToString())}"))+"&maxResults="+maxResults+"&mine="+mine+"&onBehalfOfContentOwner=" + (onBehalfOfContentOwner==null? "" : System.Uri.EscapeDataString(onBehalfOfContentOwner))+"&onBehalfOfContentOwnerChannel=" + (onBehalfOfContentOwnerChannel==null? "" : System.Uri.EscapeDataString(onBehalfOfContentOwnerChannel))+"&pageToken=" + (pageToken==null? "" : System.Uri.EscapeDataString(pageToken));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -11921,13 +11796,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<PlaylistListResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<PlaylistListResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -11942,10 +11816,8 @@ namespace MyNS
 		public async Task<Playlist> Youtube_playlists_insertAsync(string[] part, string onBehalfOfContentOwner, string onBehalfOfContentOwnerChannel, Playlist requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "youtube/v3/playlists?"+string.Join("&", part.Select(z => $"part={System.Uri.EscapeDataString(z.ToString())}"))+"&onBehalfOfContentOwner=" + (onBehalfOfContentOwner==null? "" : System.Uri.EscapeDataString(onBehalfOfContentOwner))+"&onBehalfOfContentOwnerChannel=" + (onBehalfOfContentOwnerChannel==null? "" : System.Uri.EscapeDataString(onBehalfOfContentOwnerChannel));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -11956,13 +11828,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Playlist>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Playlist>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -11976,10 +11847,8 @@ namespace MyNS
 		public async Task<Playlist> Youtube_playlists_updateAsync(string[] part, string onBehalfOfContentOwner, Playlist requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "youtube/v3/playlists?"+string.Join("&", part.Select(z => $"part={System.Uri.EscapeDataString(z.ToString())}"))+"&onBehalfOfContentOwner=" + (onBehalfOfContentOwner==null? "" : System.Uri.EscapeDataString(onBehalfOfContentOwner));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -11990,13 +11859,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Playlist>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Playlist>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -12073,8 +11941,7 @@ namespace MyNS
 					Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "youtube/v3/search?"+string.Join("&", part.Select(z => $"part={System.Uri.EscapeDataString(z.ToString())}"))+"&channelId=" + (channelId==null? "" : System.Uri.EscapeDataString(channelId))+"&channelType=" + channelType+"&eventType=" + eventType+"&forContentOwner="+forContentOwner+"&forDeveloper="+forDeveloper+"&forMine="+forMine+"&location=" + (location==null? "" : System.Uri.EscapeDataString(location))+"&locationRadius=" + (locationRadius==null? "" : System.Uri.EscapeDataString(locationRadius))+"&maxResults="+maxResults+"&onBehalfOfContentOwner=" + (onBehalfOfContentOwner==null? "" : System.Uri.EscapeDataString(onBehalfOfContentOwner))+"&order=" + order+"&pageToken=" + (pageToken==null? "" : System.Uri.EscapeDataString(pageToken))+"&publishedAfter=" + (publishedAfter==null? "" : System.Uri.EscapeDataString(publishedAfter))+"&publishedBefore=" + (publishedBefore==null? "" : System.Uri.EscapeDataString(publishedBefore))+"&q=" + (q==null? "" : System.Uri.EscapeDataString(q))+"&regionCode=" + (regionCode==null? "" : System.Uri.EscapeDataString(regionCode))+"&relevanceLanguage=" + (relevanceLanguage==null? "" : System.Uri.EscapeDataString(relevanceLanguage))+"&safeSearch=" + safeSearch+"&topicId=" + (topicId==null? "" : System.Uri.EscapeDataString(topicId))+"&"+string.Join("&", type.Select(z => $"type={System.Uri.EscapeDataString(z.ToString())}"))+"&videoCaption=" + videoCaption+"&videoCategoryId=" + (videoCategoryId==null? "" : System.Uri.EscapeDataString(videoCategoryId))+"&videoDefinition=" + videoDefinition+"&videoDimension=" + videoDimension+"&videoDuration=" + videoDuration+"&videoEmbeddable=" + videoEmbeddable+"&videoLicense=" + videoLicense+"&videoPaidProductPlacement=" + videoPaidProductPlacement+"&videoSyndicated=" + videoSyndicated+"&videoType=" + videoType;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -12084,13 +11951,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<SearchListResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<SearchListResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -12102,8 +11968,7 @@ namespace MyNS
 		public async Task Youtube_subscriptions_deleteAsync(string id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "youtube/v3/subscriptions?id=" + (id==null? "" : System.Uri.EscapeDataString(id));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -12117,7 +11982,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -12143,8 +12007,7 @@ namespace MyNS
 		public async Task<SubscriptionListResponse> Youtube_subscriptions_listAsync(string[] part, string channelId, string forChannelId, string[] id, int maxResults, bool mine, bool myRecentSubscribers, bool mySubscribers, string onBehalfOfContentOwner, string onBehalfOfContentOwnerChannel, Youtube_subscriptions_listOrder order, string pageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "youtube/v3/subscriptions?"+string.Join("&", part.Select(z => $"part={System.Uri.EscapeDataString(z.ToString())}"))+"&channelId=" + (channelId==null? "" : System.Uri.EscapeDataString(channelId))+"&forChannelId=" + (forChannelId==null? "" : System.Uri.EscapeDataString(forChannelId))+"&"+string.Join("&", id.Select(z => $"id={System.Uri.EscapeDataString(z.ToString())}"))+"&maxResults="+maxResults+"&mine="+mine+"&myRecentSubscribers="+myRecentSubscribers+"&mySubscribers="+mySubscribers+"&onBehalfOfContentOwner=" + (onBehalfOfContentOwner==null? "" : System.Uri.EscapeDataString(onBehalfOfContentOwner))+"&onBehalfOfContentOwnerChannel=" + (onBehalfOfContentOwnerChannel==null? "" : System.Uri.EscapeDataString(onBehalfOfContentOwnerChannel))+"&order=" + order+"&pageToken=" + (pageToken==null? "" : System.Uri.EscapeDataString(pageToken));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -12154,13 +12017,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<SubscriptionListResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<SubscriptionListResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -12173,10 +12035,8 @@ namespace MyNS
 		public async Task<Subscription> Youtube_subscriptions_insertAsync(string[] part, Subscription requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "youtube/v3/subscriptions?"+string.Join("&", part.Select(z => $"part={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -12187,13 +12047,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Subscription>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Subscription>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -12212,8 +12071,7 @@ namespace MyNS
 		public async Task<SuperChatEventListResponse> Youtube_superChatEvents_listAsync(string[] part, string hl, int maxResults, string pageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "youtube/v3/superChatEvents?"+string.Join("&", part.Select(z => $"part={System.Uri.EscapeDataString(z.ToString())}"))+"&hl=" + (hl==null? "" : System.Uri.EscapeDataString(hl))+"&maxResults="+maxResults+"&pageToken=" + (pageToken==null? "" : System.Uri.EscapeDataString(pageToken));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -12223,13 +12081,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<SuperChatEventListResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<SuperChatEventListResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -12241,10 +12098,8 @@ namespace MyNS
 		public async Task<TestItem> Youtube_tests_insertAsync(string[] part, string externalChannelId, TestItem requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "youtube/v3/tests?"+string.Join("&", part.Select(z => $"part={System.Uri.EscapeDataString(z.ToString())}"))+"&externalChannelId=" + (externalChannelId==null? "" : System.Uri.EscapeDataString(externalChannelId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -12255,13 +12110,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<TestItem>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<TestItem>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -12277,8 +12131,7 @@ namespace MyNS
 		public async Task Youtube_thirdPartyLinks_deleteAsync(string linkingToken, ThirdPartyLinkSnippetType type, string externalChannelId, string[] part, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "youtube/v3/thirdPartyLinks?linkingToken=" + (linkingToken==null? "" : System.Uri.EscapeDataString(linkingToken))+"&type=" + type+"&externalChannelId=" + (externalChannelId==null? "" : System.Uri.EscapeDataString(externalChannelId))+"&"+string.Join("&", part.Select(z => $"part={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -12292,7 +12145,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -12308,8 +12160,7 @@ namespace MyNS
 		public async Task<ThirdPartyLinkListResponse> Youtube_thirdPartyLinks_listAsync(string[] part, string externalChannelId, string linkingToken, ThirdPartyLinkSnippetType type, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "youtube/v3/thirdPartyLinks?"+string.Join("&", part.Select(z => $"part={System.Uri.EscapeDataString(z.ToString())}"))+"&externalChannelId=" + (externalChannelId==null? "" : System.Uri.EscapeDataString(externalChannelId))+"&linkingToken=" + (linkingToken==null? "" : System.Uri.EscapeDataString(linkingToken))+"&type=" + type;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -12319,13 +12170,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ThirdPartyLinkListResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ThirdPartyLinkListResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -12339,10 +12189,8 @@ namespace MyNS
 		public async Task<ThirdPartyLink> Youtube_thirdPartyLinks_insertAsync(string[] part, string externalChannelId, ThirdPartyLink requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "youtube/v3/thirdPartyLinks?"+string.Join("&", part.Select(z => $"part={System.Uri.EscapeDataString(z.ToString())}"))+"&externalChannelId=" + (externalChannelId==null? "" : System.Uri.EscapeDataString(externalChannelId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -12353,13 +12201,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ThirdPartyLink>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ThirdPartyLink>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -12373,10 +12220,8 @@ namespace MyNS
 		public async Task<ThirdPartyLink> Youtube_thirdPartyLinks_updateAsync(string[] part, string externalChannelId, ThirdPartyLink requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "youtube/v3/thirdPartyLinks?"+string.Join("&", part.Select(z => $"part={System.Uri.EscapeDataString(z.ToString())}"))+"&externalChannelId=" + (externalChannelId==null? "" : System.Uri.EscapeDataString(externalChannelId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -12387,13 +12232,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ThirdPartyLink>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ThirdPartyLink>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -12407,19 +12251,17 @@ namespace MyNS
 		public async Task<ThumbnailSetResponse> Youtube_thumbnails_setAsync(string videoId, string onBehalfOfContentOwner, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "youtube/v3/thumbnails/set?videoId=" + (videoId==null? "" : System.Uri.EscapeDataString(videoId))+"&onBehalfOfContentOwner=" + (onBehalfOfContentOwner==null? "" : System.Uri.EscapeDataString(onBehalfOfContentOwner));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ThumbnailSetResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ThumbnailSetResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -12432,8 +12274,7 @@ namespace MyNS
 		public async Task<VideoAbuseReportReasonListResponse> Youtube_videoAbuseReportReasons_listAsync(string[] part, string hl, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "youtube/v3/videoAbuseReportReasons?"+string.Join("&", part.Select(z => $"part={System.Uri.EscapeDataString(z.ToString())}"))+"&hl=" + (hl==null? "" : System.Uri.EscapeDataString(hl));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -12443,13 +12284,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<VideoAbuseReportReasonListResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<VideoAbuseReportReasonListResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -12463,8 +12303,7 @@ namespace MyNS
 		public async Task<VideoCategoryListResponse> Youtube_videoCategories_listAsync(string[] part, string hl, string[] id, string regionCode, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "youtube/v3/videoCategories?"+string.Join("&", part.Select(z => $"part={System.Uri.EscapeDataString(z.ToString())}"))+"&hl=" + (hl==null? "" : System.Uri.EscapeDataString(hl))+"&"+string.Join("&", id.Select(z => $"id={System.Uri.EscapeDataString(z.ToString())}"))+"&regionCode=" + (regionCode==null? "" : System.Uri.EscapeDataString(regionCode));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -12474,13 +12313,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<VideoCategoryListResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<VideoCategoryListResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -12493,8 +12331,7 @@ namespace MyNS
 		public async Task Youtube_videos_deleteAsync(string id, string onBehalfOfContentOwner, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "youtube/v3/videos?id=" + (id==null? "" : System.Uri.EscapeDataString(id))+"&onBehalfOfContentOwner=" + (onBehalfOfContentOwner==null? "" : System.Uri.EscapeDataString(onBehalfOfContentOwner));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -12508,7 +12345,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -12540,8 +12376,7 @@ namespace MyNS
 		public async Task<VideoListResponse> Youtube_videos_listAsync(string[] part, Youtube_videos_listChart chart, string hl, string[] id, string locale, int maxHeight, int maxResults, int maxWidth, CommentSnippetViewerRating myRating, string onBehalfOfContentOwner, string pageToken, string regionCode, string videoCategoryId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "youtube/v3/videos?"+string.Join("&", part.Select(z => $"part={System.Uri.EscapeDataString(z.ToString())}"))+"&chart=" + chart+"&hl=" + (hl==null? "" : System.Uri.EscapeDataString(hl))+"&"+string.Join("&", id.Select(z => $"id={System.Uri.EscapeDataString(z.ToString())}"))+"&locale=" + (locale==null? "" : System.Uri.EscapeDataString(locale))+"&maxHeight="+maxHeight+"&maxResults="+maxResults+"&maxWidth="+maxWidth+"&myRating=" + myRating+"&onBehalfOfContentOwner=" + (onBehalfOfContentOwner==null? "" : System.Uri.EscapeDataString(onBehalfOfContentOwner))+"&pageToken=" + (pageToken==null? "" : System.Uri.EscapeDataString(pageToken))+"&regionCode=" + (regionCode==null? "" : System.Uri.EscapeDataString(regionCode))+"&videoCategoryId=" + (videoCategoryId==null? "" : System.Uri.EscapeDataString(videoCategoryId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -12551,13 +12386,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<VideoListResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<VideoListResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -12571,10 +12405,8 @@ namespace MyNS
 		public async Task<Video> Youtube_videos_updateAsync(string[] part, string onBehalfOfContentOwner, Video requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "youtube/v3/videos?"+string.Join("&", part.Select(z => $"part={System.Uri.EscapeDataString(z.ToString())}"))+"&onBehalfOfContentOwner=" + (onBehalfOfContentOwner==null? "" : System.Uri.EscapeDataString(onBehalfOfContentOwner));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -12585,13 +12417,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Video>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Video>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -12604,8 +12435,7 @@ namespace MyNS
 		public async Task<VideoGetRatingResponse> Youtube_videos_getRatingAsync(string[] id, string onBehalfOfContentOwner, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "youtube/v3/videos/getRating?"+string.Join("&", id.Select(z => $"id={System.Uri.EscapeDataString(z.ToString())}"))+"&onBehalfOfContentOwner=" + (onBehalfOfContentOwner==null? "" : System.Uri.EscapeDataString(onBehalfOfContentOwner));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -12615,13 +12445,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<VideoGetRatingResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<VideoGetRatingResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -12633,8 +12462,7 @@ namespace MyNS
 		public async Task Youtube_videos_rateAsync(string id, CommentSnippetViewerRating rating, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "youtube/v3/videos/rate?id=" + (id==null? "" : System.Uri.EscapeDataString(id))+"&rating=" + rating;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -12643,7 +12471,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -12656,10 +12483,8 @@ namespace MyNS
 		public async Task Youtube_videos_reportAbuseAsync(string onBehalfOfContentOwner, VideoAbuseReport requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "youtube/v3/videos/reportAbuse?onBehalfOfContentOwner=" + (onBehalfOfContentOwner==null? "" : System.Uri.EscapeDataString(onBehalfOfContentOwner));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -12675,7 +12500,6 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
-			}
 		}
 		
 		/// <summary>
@@ -12687,8 +12511,7 @@ namespace MyNS
 		public async Task Youtube_watermarks_unsetAsync(string channelId, string onBehalfOfContentOwner, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "youtube/v3/watermarks/unset?channelId=" + (channelId==null? "" : System.Uri.EscapeDataString(channelId))+"&onBehalfOfContentOwner=" + (onBehalfOfContentOwner==null? "" : System.Uri.EscapeDataString(onBehalfOfContentOwner));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -12697,7 +12520,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

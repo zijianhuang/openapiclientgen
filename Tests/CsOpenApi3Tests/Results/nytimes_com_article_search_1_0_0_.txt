@@ -259,8 +259,7 @@ namespace MyNS
 		public async Task<StoriesGetByQAndFqAndBegin_dateAndEnd_dateAndSortAndFlAndHlAndPageAndFacet_fieldAndFacet_filterReturn> StoriesGetByQAndFqAndBegin_dateAndEnd_dateAndSortAndFlAndHlAndPageAndFacet_fieldAndFacet_filterAsync(string q, string fq, string begin_date, string end_date, StoriesGetByQAndFqAndBegin_dateAndEnd_dateAndSortAndFlAndHlAndPageAndFacet_fieldAndFacet_filterSort sort, string fl, bool hl, int page, string facet_field, bool facet_filter, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "articlesearch.json?q=" + (q==null? "" : System.Uri.EscapeDataString(q))+"&fq=" + (fq==null? "" : System.Uri.EscapeDataString(fq))+"&begin_date=" + (begin_date==null? "" : System.Uri.EscapeDataString(begin_date))+"&end_date=" + (end_date==null? "" : System.Uri.EscapeDataString(end_date))+"&sort=" + sort+"&fl=" + (fl==null? "" : System.Uri.EscapeDataString(fl))+"&hl="+hl+"&page="+page+"&facet_field=" + (facet_field==null? "" : System.Uri.EscapeDataString(facet_field))+"&facet_filter="+facet_filter;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -270,13 +269,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<StoriesGetByQAndFqAndBegin_dateAndEnd_dateAndSortAndFlAndHlAndPageAndFacet_fieldAndFacet_filterReturn>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<StoriesGetByQAndFqAndBegin_dateAndEnd_dateAndSortAndFlAndHlAndPageAndFacet_fieldAndFacet_filterReturn>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

@@ -58,8 +58,7 @@ namespace MyNS
 		public async Task<App_api_cari7_endpoints_CARI7_ambient_doseReturn> App_api_cari7_endpoints_CARI7_ambient_doseAsync(double altitude, double latitude, double longitude, int year, int month, int day, int utc, App_api_cari7_endpoints_CARI7_ambient_doseParticle particle, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "cari7/ambient_dose?altitude="+altitude+"&latitude="+latitude+"&longitude="+longitude+"&year="+year+"&month="+month+"&day="+day+"&utc="+utc+"&particle=" + particle;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -69,13 +68,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<App_api_cari7_endpoints_CARI7_ambient_doseReturn>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<App_api_cari7_endpoints_CARI7_ambient_doseReturn>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -103,8 +101,7 @@ namespace MyNS
 		public async Task<App_api_cari7_endpoints_CARI7_effective_doseReturn> App_api_cari7_endpoints_CARI7_effective_doseAsync(double altitude, double latitude, double longitude, int year, int month, int day, int utc, App_api_cari7_endpoints_CARI7_effective_doseParticle particle, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "cari7/effective_dose?altitude="+altitude+"&latitude="+latitude+"&longitude="+longitude+"&year="+year+"&month="+month+"&day="+day+"&utc="+utc+"&particle=" + particle;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -114,13 +111,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<App_api_cari7_endpoints_CARI7_effective_doseReturn>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<App_api_cari7_endpoints_CARI7_effective_doseReturn>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -146,8 +142,7 @@ namespace MyNS
 		public async Task<App_api_parma_endpoints_PARMA_ambient_doseReturn> App_api_parma_endpoints_PARMA_ambient_doseAsync(double altitude, double atmospheric_depth, double latitude, double longitude, int year, int month, int day, App_api_parma_endpoints_PARMA_ambient_doseParticle particle, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "parma/ambient_dose?altitude="+altitude+"&atmospheric_depth="+atmospheric_depth+"&latitude="+latitude+"&longitude="+longitude+"&year="+year+"&month="+month+"&day="+day+"&particle=" + particle;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -157,13 +152,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<App_api_parma_endpoints_PARMA_ambient_doseReturn>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<App_api_parma_endpoints_PARMA_ambient_doseReturn>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -188,8 +182,7 @@ namespace MyNS
 		public async Task<App_api_parma_endpoints_PARMA_differential_intensityReturn> App_api_parma_endpoints_PARMA_differential_intensityAsync(double altitude, double atmospheric_depth, double latitude, double longitude, int year, int month, int day, App_api_parma_endpoints_PARMA_differential_intensityParticle particle, double angle, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "parma/differential_intensity?altitude="+altitude+"&atmospheric_depth="+atmospheric_depth+"&latitude="+latitude+"&longitude="+longitude+"&year="+year+"&month="+month+"&day="+day+"&particle=" + particle+"&angle="+angle;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -199,13 +192,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<App_api_parma_endpoints_PARMA_differential_intensityReturn>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<App_api_parma_endpoints_PARMA_differential_intensityReturn>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -231,8 +223,7 @@ namespace MyNS
 		public async Task<App_api_parma_endpoints_PARMA_effective_doseReturn> App_api_parma_endpoints_PARMA_effective_doseAsync(double altitude, double atmospheric_depth, double latitude, double longitude, int year, int month, int day, App_api_parma_endpoints_PARMA_effective_doseParticle particle, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "parma/effective_dose?altitude="+altitude+"&atmospheric_depth="+atmospheric_depth+"&latitude="+latitude+"&longitude="+longitude+"&year="+year+"&month="+month+"&day="+day+"&particle=" + particle;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -242,13 +233,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<App_api_parma_endpoints_PARMA_effective_doseReturn>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<App_api_parma_endpoints_PARMA_effective_doseReturn>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -276,8 +266,7 @@ namespace MyNS
 		public async Task<App_api_icaro_endpoints_ICARO_ambient_doseReturn> App_api_icaro_endpoints_ICARO_ambient_doseAsync(string origin, string destination, double altitude, double duration, double initial_altitude, double[] cruising_altitudes, double[] climb_times, double[] cruising_times, double descent_time, double final_altitude, int year, int month, int day, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "route/ambient_dose?origin=" + (origin==null? "" : System.Uri.EscapeDataString(origin))+"&destination=" + (destination==null? "" : System.Uri.EscapeDataString(destination))+"&altitude="+altitude+"&duration="+duration+"&initial_altitude="+initial_altitude+"&"+string.Join("&", cruising_altitudes.Select(z => $"cruising_altitudes={z}"))+"&"+string.Join("&", climb_times.Select(z => $"climb_times={z}"))+"&"+string.Join("&", cruising_times.Select(z => $"cruising_times={z}"))+"&descent_time="+descent_time+"&final_altitude="+final_altitude+"&year="+year+"&month="+month+"&day="+day;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -287,13 +276,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<App_api_icaro_endpoints_ICARO_ambient_doseReturn>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<App_api_icaro_endpoints_ICARO_ambient_doseReturn>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -324,8 +312,7 @@ namespace MyNS
 		public async Task<App_api_icaro_endpoints_ICARO_effective_doseReturn> App_api_icaro_endpoints_ICARO_effective_doseAsync(string origin, string destination, double altitude, double duration, double initial_altitude, double[] cruising_altitudes, double[] climb_times, double[] cruising_times, double descent_time, double final_altitude, int year, int month, int day, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "route/effective_dose?origin=" + (origin==null? "" : System.Uri.EscapeDataString(origin))+"&destination=" + (destination==null? "" : System.Uri.EscapeDataString(destination))+"&altitude="+altitude+"&duration="+duration+"&initial_altitude="+initial_altitude+"&"+string.Join("&", cruising_altitudes.Select(z => $"cruising_altitudes={z}"))+"&"+string.Join("&", climb_times.Select(z => $"climb_times={z}"))+"&"+string.Join("&", cruising_times.Select(z => $"cruising_times={z}"))+"&descent_time="+descent_time+"&final_altitude="+final_altitude+"&year="+year+"&month="+month+"&day="+day;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -335,13 +322,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<App_api_icaro_endpoints_ICARO_effective_doseReturn>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<App_api_icaro_endpoints_ICARO_effective_doseReturn>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

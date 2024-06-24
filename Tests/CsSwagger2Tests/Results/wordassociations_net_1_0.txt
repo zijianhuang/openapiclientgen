@@ -154,8 +154,7 @@ namespace MyNS
 		public async Task<Body> JsonSearchGetByTextAndLangAndTypeAndLimitAndPosAndIndentAsync(string[] text, JsonSearchGetByTextAndLangAndTypeAndLimitAndPosAndIndentLang lang, JsonSearchGetByTextAndLangAndTypeAndLimitAndPosAndIndentType type, int limit, string[] pos, JsonSearchGetByTextAndLangAndTypeAndLimitAndPosAndIndentIndent indent, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "json/search?"+string.Join("&", text.Select(z => $"text={System.Uri.EscapeDataString(z.ToString())}"))+"&lang=" + lang+"&type=" + type+"&limit="+limit+"&"+string.Join("&", pos.Select(z => $"pos={System.Uri.EscapeDataString(z.ToString())}"))+"&indent=" + indent;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -165,13 +164,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Body>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Body>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

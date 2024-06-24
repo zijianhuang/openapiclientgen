@@ -253,8 +253,7 @@ namespace MyNS
 		public async Task<IntervalCollectionResponse[]> Currencies_History_GETAsync(string pairs, System.DateTimeOffset start, System.DateTimeOffset end, string interval, Currencies_History_GETFormat format, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/v1/Currencies/history?pairs=" + (pairs==null? "" : System.Uri.EscapeDataString(pairs))+"&start=" + start.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&end=" + end.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&interval=" + (interval==null? "" : System.Uri.EscapeDataString(interval))+"&format=" + format;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -264,13 +263,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<IntervalCollectionResponse[]>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<IntervalCollectionResponse[]>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -285,8 +283,7 @@ namespace MyNS
 		public async Task<string[]> Currencies_SupportedCurrencies_History_GETAsync(Currencies_History_GETFormat format, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/v1/Currencies/history/supported?format=" + format;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -296,13 +293,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<string[]>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<string[]>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -317,8 +313,7 @@ namespace MyNS
 		public async Task<RateResponse[]> Currencies_Rate_GETAsync(string pairs, Currencies_History_GETFormat format, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/v1/Currencies/rate?pairs=" + (pairs==null? "" : System.Uri.EscapeDataString(pairs))+"&format=" + format;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -328,13 +323,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<RateResponse[]>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<RateResponse[]>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -349,8 +343,7 @@ namespace MyNS
 		public async Task<string[]> Currencies_SupportedCurrencies_Rate_GETAsync(Currencies_History_GETFormat format, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/v1/Currencies/rate/supported?format=" + format;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -360,13 +353,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<string[]>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<string[]>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -381,8 +373,7 @@ namespace MyNS
 		public async Task<SummaryResponse[]> Currencies_Summary_GETAsync(string pairs, Currencies_History_GETFormat format, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/v1/Currencies/summary?pairs=" + (pairs==null? "" : System.Uri.EscapeDataString(pairs))+"&format=" + format;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -392,13 +383,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<SummaryResponse[]>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<SummaryResponse[]>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -413,8 +403,7 @@ namespace MyNS
 		public async Task<string[]> Currencies_SupportedCurrencies_Summary_GETAsync(Currencies_History_GETFormat format, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/v1/Currencies/summary/supported?format=" + format;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -424,13 +413,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<string[]>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<string[]>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -475,8 +463,7 @@ namespace MyNS
 		public async Task<IntervalCollectionResponse[]> Metals_BenchmarkHistory_GETAsync(string metals, System.DateTimeOffset start, System.DateTimeOffset end, string interval, bool historicalfx, string currency, Metals_BenchmarkHistory_GETUnitofmeasure unitofmeasure, Currencies_History_GETFormat format, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/v1/Metals/benchmark/history?metals=" + (metals==null? "" : System.Uri.EscapeDataString(metals))+"&start=" + start.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&end=" + end.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&interval=" + (interval==null? "" : System.Uri.EscapeDataString(interval))+"&historicalfx="+historicalfx+"&currency=" + (currency==null? "" : System.Uri.EscapeDataString(currency))+"&unitofmeasure=" + unitofmeasure+"&format=" + format;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -486,13 +473,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<IntervalCollectionResponse[]>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<IntervalCollectionResponse[]>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -517,8 +503,7 @@ namespace MyNS
 		public async Task<SummaryResponse[]> Metals_BenchmarkSummary_GETAsync(string metals, string currency, Metals_BenchmarkHistory_GETUnitofmeasure unitofmeasure, Currencies_History_GETFormat format, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/v1/Metals/benchmark/summary?metals=" + (metals==null? "" : System.Uri.EscapeDataString(metals))+"&currency=" + (currency==null? "" : System.Uri.EscapeDataString(currency))+"&unitofmeasure=" + unitofmeasure+"&format=" + format;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -528,13 +513,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<SummaryResponse[]>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<SummaryResponse[]>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -547,8 +531,7 @@ namespace MyNS
 		public async Task<string[]> Metals_BenchmarkSupportedMetals_GETAsync(Currencies_History_GETFormat format, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/v1/Metals/benchmark/supported?format=" + format;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -558,13 +541,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<string[]>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<string[]>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -609,8 +591,7 @@ namespace MyNS
 		public async Task<IntervalCollectionResponse[]> Metals_SpotHistory_GETAsync(string metals, System.DateTimeOffset start, System.DateTimeOffset end, string interval, bool historicalfx, string currency, Metals_BenchmarkHistory_GETUnitofmeasure unitofmeasure, Currencies_History_GETFormat format, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/v1/Metals/spot/history?metals=" + (metals==null? "" : System.Uri.EscapeDataString(metals))+"&start=" + start.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&end=" + end.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&interval=" + (interval==null? "" : System.Uri.EscapeDataString(interval))+"&historicalfx="+historicalfx+"&currency=" + (currency==null? "" : System.Uri.EscapeDataString(currency))+"&unitofmeasure=" + unitofmeasure+"&format=" + format;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -620,13 +601,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<IntervalCollectionResponse[]>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<IntervalCollectionResponse[]>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -651,8 +631,7 @@ namespace MyNS
 		public async Task<IntervalCollectionResponse[]> Metals_SpotHistoricalPerformance_GETAsync(string metals, string currency, Metals_BenchmarkHistory_GETUnitofmeasure unitofmeasure, Currencies_History_GETFormat format, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/v1/Metals/spot/performance?metals=" + (metals==null? "" : System.Uri.EscapeDataString(metals))+"&currency=" + (currency==null? "" : System.Uri.EscapeDataString(currency))+"&unitofmeasure=" + unitofmeasure+"&format=" + format;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -662,13 +641,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<IntervalCollectionResponse[]>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<IntervalCollectionResponse[]>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -694,8 +672,7 @@ namespace MyNS
 		public async Task<IntervalCollectionResponse[]> Metals_SpotAnnualHistoricalPerformance_GETAsync(string metals, string currency, Metals_BenchmarkHistory_GETUnitofmeasure unitofmeasure, Currencies_History_GETFormat format, int years, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/v1/Metals/spot/performance/annual?metals=" + (metals==null? "" : System.Uri.EscapeDataString(metals))+"&currency=" + (currency==null? "" : System.Uri.EscapeDataString(currency))+"&unitofmeasure=" + unitofmeasure+"&format=" + format+"&years="+years;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -705,13 +682,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<IntervalCollectionResponse[]>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<IntervalCollectionResponse[]>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -743,8 +719,7 @@ namespace MyNS
 		public async Task<IntervalCollectionResponse[]> Metals_SpotRatioHistory_GETAsync(string pairs, System.DateTimeOffset start, System.DateTimeOffset end, string interval, Currencies_History_GETFormat format, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/v1/Metals/spot/ratio/history?pairs=" + (pairs==null? "" : System.Uri.EscapeDataString(pairs))+"&start=" + start.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&end=" + end.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&interval=" + (interval==null? "" : System.Uri.EscapeDataString(interval))+"&format=" + format;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -754,13 +729,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<IntervalCollectionResponse[]>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<IntervalCollectionResponse[]>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -775,8 +749,7 @@ namespace MyNS
 		public async Task<SummaryResponse[]> Metals_SpotRatioSummary_GETAsync(string pairs, Currencies_History_GETFormat format, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/v1/Metals/spot/ratio/summary?pairs=" + (pairs==null? "" : System.Uri.EscapeDataString(pairs))+"&format=" + format;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -786,13 +759,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<SummaryResponse[]>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<SummaryResponse[]>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -817,8 +789,7 @@ namespace MyNS
 		public async Task<SummaryResponse[]> Metals_SpotSummary_GETAsync(string metals, string currency, Metals_BenchmarkHistory_GETUnitofmeasure unitofmeasure, Currencies_History_GETFormat format, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/v1/Metals/spot/summary?metals=" + (metals==null? "" : System.Uri.EscapeDataString(metals))+"&currency=" + (currency==null? "" : System.Uri.EscapeDataString(currency))+"&unitofmeasure=" + unitofmeasure+"&format=" + format;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -828,13 +799,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<SummaryResponse[]>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<SummaryResponse[]>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -847,8 +817,7 @@ namespace MyNS
 		public async Task<string[]> Metals_SpotSupportedMetals_GETAsync(Currencies_History_GETFormat format, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/v1/Metals/spot/supported?format=" + format;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -858,13 +827,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<string[]>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<string[]>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -877,8 +845,7 @@ namespace MyNS
 		public async Task<string[]> Metals_SupportedCurrencies_Metals_GETAsync(Currencies_History_GETFormat format, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/v1/Metals/supported/currency?format=" + format;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -888,13 +855,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<string[]>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<string[]>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

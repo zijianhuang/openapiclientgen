@@ -224,8 +224,7 @@ namespace MyNS
 		public async Task CampaignAnalyticsAsync(string campaign_id, string length, string ending_at, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "campaigns/data_series?campaign_id=" + (campaign_id==null? "" : System.Uri.EscapeDataString(campaign_id))+"&length=" + (length==null? "" : System.Uri.EscapeDataString(length))+"&ending_at=" + (ending_at==null? "" : System.Uri.EscapeDataString(ending_at));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -239,7 +238,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -431,8 +429,7 @@ namespace MyNS
 		public async Task CampaignDetailsAsync(string campaign_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "campaigns/details?campaign_id=" + (campaign_id==null? "" : System.Uri.EscapeDataString(campaign_id));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -446,7 +443,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -490,8 +486,7 @@ namespace MyNS
 		public async Task CampaignListAsync(string page, string include_archived, string sort_direction, string last_edit_time_gt, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "campaigns/list?page=" + (page==null? "" : System.Uri.EscapeDataString(page))+"&include_archived=" + (include_archived==null? "" : System.Uri.EscapeDataString(include_archived))+"&sort_direction=" + (sort_direction==null? "" : System.Uri.EscapeDataString(sort_direction))+"&last_edit.time[gt]=" + (last_edit_time_gt==null? "" : System.Uri.EscapeDataString(last_edit_time_gt));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -505,7 +500,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -596,8 +590,7 @@ namespace MyNS
 		public async Task CanvasDataSeriesAnalyticsAsync(string canvas_id, string ending_at, string starting_at, string length, string include_variant_breakdown, string include_step_breakdown, string include_deleted_step_data, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "canvas/data_series?canvas_id=" + (canvas_id==null? "" : System.Uri.EscapeDataString(canvas_id))+"&ending_at=" + (ending_at==null? "" : System.Uri.EscapeDataString(ending_at))+"&starting_at=" + (starting_at==null? "" : System.Uri.EscapeDataString(starting_at))+"&length=" + (length==null? "" : System.Uri.EscapeDataString(length))+"&include_variant_breakdown=" + (include_variant_breakdown==null? "" : System.Uri.EscapeDataString(include_variant_breakdown))+"&include_step_breakdown=" + (include_step_breakdown==null? "" : System.Uri.EscapeDataString(include_step_breakdown))+"&include_deleted_step_data=" + (include_deleted_step_data==null? "" : System.Uri.EscapeDataString(include_deleted_step_data));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -611,7 +604,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -696,8 +688,7 @@ namespace MyNS
 		public async Task CanvasDataAnalyticsSummaryAsync(string canvas_id, string ending_at, string starting_at, string length, string include_variant_breakdown, string include_step_breakdown, string include_deleted_step_data, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "canvas/data_summary?canvas_id=" + (canvas_id==null? "" : System.Uri.EscapeDataString(canvas_id))+"&ending_at=" + (ending_at==null? "" : System.Uri.EscapeDataString(ending_at))+"&starting_at=" + (starting_at==null? "" : System.Uri.EscapeDataString(starting_at))+"&length=" + (length==null? "" : System.Uri.EscapeDataString(length))+"&include_variant_breakdown=" + (include_variant_breakdown==null? "" : System.Uri.EscapeDataString(include_variant_breakdown))+"&include_step_breakdown=" + (include_step_breakdown==null? "" : System.Uri.EscapeDataString(include_step_breakdown))+"&include_deleted_step_data=" + (include_deleted_step_data==null? "" : System.Uri.EscapeDataString(include_deleted_step_data));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -711,7 +702,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -774,8 +764,7 @@ namespace MyNS
 		public async Task CanvasDetailsAsync(string canvas_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "canvas/details?canvas_id=" + (canvas_id==null? "" : System.Uri.EscapeDataString(canvas_id));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -789,7 +778,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -835,8 +823,7 @@ namespace MyNS
 		public async Task CanvasListAsync(string page, string include_archived, string sort_direction, string last_edit_time_gt, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "canvas/list?page=" + (page==null? "" : System.Uri.EscapeDataString(page))+"&include_archived=" + (include_archived==null? "" : System.Uri.EscapeDataString(include_archived))+"&sort_direction=" + (sort_direction==null? "" : System.Uri.EscapeDataString(sort_direction))+"&last_edit.time[gt]=" + (last_edit_time_gt==null? "" : System.Uri.EscapeDataString(last_edit_time_gt));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -850,7 +837,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -884,10 +870,8 @@ namespace MyNS
 		public async Task ScheduleApiTriggeredCanvasesAsync(ScheduleApiTriggeredCanvasesPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "canvas/trigger/schedule/create";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -902,7 +886,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -947,8 +930,7 @@ namespace MyNS
 		public async Task SeeContentBlockInformationAsync(string content_block_id, string include_inclusion_data, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "content_blocks/info?content_block_id=" + (content_block_id==null? "" : System.Uri.EscapeDataString(content_block_id))+"&include_inclusion_data=" + (include_inclusion_data==null? "" : System.Uri.EscapeDataString(include_inclusion_data));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -962,7 +944,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1031,8 +1012,7 @@ namespace MyNS
 		public async Task ListAvailableContentBlocksAsync(string modified_after, string modified_before, string limit, string offset, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "content_blocks/list?modified_after=" + (modified_after==null? "" : System.Uri.EscapeDataString(modified_after))+"&modified_before=" + (modified_before==null? "" : System.Uri.EscapeDataString(modified_before))+"&limit=" + (limit==null? "" : System.Uri.EscapeDataString(limit))+"&offset=" + (offset==null? "" : System.Uri.EscapeDataString(offset));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1046,7 +1026,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1108,8 +1087,7 @@ namespace MyNS
 		public async Task QueryHardBouncedEmailsAsync(string start_date, string end_date, string limit, string offset, string email, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "email/hard_bounces?start_date=" + (start_date==null? "" : System.Uri.EscapeDataString(start_date))+"&end_date=" + (end_date==null? "" : System.Uri.EscapeDataString(end_date))+"&limit=" + (limit==null? "" : System.Uri.EscapeDataString(limit))+"&offset=" + (offset==null? "" : System.Uri.EscapeDataString(offset))+"&email=" + (email==null? "" : System.Uri.EscapeDataString(email));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1123,7 +1101,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1155,8 +1132,7 @@ namespace MyNS
 		public async Task QueryListOfUnsubscribedEmailAddressesAsync(string start_date, string end_date, string limit, string offset, string sort_direction, string email, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "email/unsubscribes?start_date=" + (start_date==null? "" : System.Uri.EscapeDataString(start_date))+"&end_date=" + (end_date==null? "" : System.Uri.EscapeDataString(end_date))+"&limit=" + (limit==null? "" : System.Uri.EscapeDataString(limit))+"&offset=" + (offset==null? "" : System.Uri.EscapeDataString(offset))+"&sort_direction=" + (sort_direction==null? "" : System.Uri.EscapeDataString(sort_direction))+"&email=" + (email==null? "" : System.Uri.EscapeDataString(email));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1170,7 +1146,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1231,8 +1206,7 @@ namespace MyNS
 		public async Task CustomEventsAnalyticsAsync(string _event, string length, string unit, string ending_at, string app_id, string segment_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "events/data_series?event=" + (_event==null? "" : System.Uri.EscapeDataString(_event))+"&length=" + (length==null? "" : System.Uri.EscapeDataString(length))+"&unit=" + (unit==null? "" : System.Uri.EscapeDataString(unit))+"&ending_at=" + (ending_at==null? "" : System.Uri.EscapeDataString(ending_at))+"&app_id=" + (app_id==null? "" : System.Uri.EscapeDataString(app_id))+"&segment_id=" + (segment_id==null? "" : System.Uri.EscapeDataString(segment_id));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1246,7 +1220,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1289,8 +1262,7 @@ namespace MyNS
 		public async Task CustomEventsListAsync(string page, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "events/list?page=" + (page==null? "" : System.Uri.EscapeDataString(page));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1304,7 +1276,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1352,8 +1323,7 @@ namespace MyNS
 		public async Task NewsFeedCardAnalyticsAsync(string card_id, string length, string unit, string ending_at, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "feed/data_series?card_id=" + (card_id==null? "" : System.Uri.EscapeDataString(card_id))+"&length=" + (length==null? "" : System.Uri.EscapeDataString(length))+"&unit=" + (unit==null? "" : System.Uri.EscapeDataString(unit))+"&ending_at=" + (ending_at==null? "" : System.Uri.EscapeDataString(ending_at));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1367,7 +1337,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1409,8 +1378,7 @@ namespace MyNS
 		public async Task NewsFeedCardsDetailsAsync(string card_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "feed/details?card_id=" + (card_id==null? "" : System.Uri.EscapeDataString(card_id));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1424,7 +1392,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1465,8 +1432,7 @@ namespace MyNS
 		public async Task NewsFeedCardsListAsync(string page, string include_archived, string sort_direction, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "feed/list?page=" + (page==null? "" : System.Uri.EscapeDataString(page))+"&include_archived=" + (include_archived==null? "" : System.Uri.EscapeDataString(include_archived))+"&sort_direction=" + (sort_direction==null? "" : System.Uri.EscapeDataString(sort_direction));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1480,7 +1446,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1519,8 +1484,7 @@ namespace MyNS
 		public async Task DailyActiveUsersByDateAsync(string length, string ending_at, string app_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "kpi/dau/data_series?length=" + (length==null? "" : System.Uri.EscapeDataString(length))+"&ending_at=" + (ending_at==null? "" : System.Uri.EscapeDataString(ending_at))+"&app_id=" + (app_id==null? "" : System.Uri.EscapeDataString(app_id));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1534,7 +1498,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1572,8 +1535,7 @@ namespace MyNS
 		public async Task MonthlyActiveUsersForLast30DaysAsync(string length, string ending_at, string app_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "kpi/mau/data_series?length=" + (length==null? "" : System.Uri.EscapeDataString(length))+"&ending_at=" + (ending_at==null? "" : System.Uri.EscapeDataString(ending_at))+"&app_id=" + (app_id==null? "" : System.Uri.EscapeDataString(app_id));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1587,7 +1549,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1626,8 +1587,7 @@ namespace MyNS
 		public async Task DailyNewUsersByDateAsync(string length, string ending_at, string app_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "kpi/new_users/data_series?length=" + (length==null? "" : System.Uri.EscapeDataString(length))+"&ending_at=" + (ending_at==null? "" : System.Uri.EscapeDataString(ending_at))+"&app_id=" + (app_id==null? "" : System.Uri.EscapeDataString(app_id));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1641,7 +1601,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1679,8 +1638,7 @@ namespace MyNS
 		public async Task KpIsForDailyAppUninstallsByDateAsync(string length, string ending_at, string app_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "kpi/uninstalls/data_series?length=" + (length==null? "" : System.Uri.EscapeDataString(length))+"&ending_at=" + (ending_at==null? "" : System.Uri.EscapeDataString(ending_at))+"&app_id=" + (app_id==null? "" : System.Uri.EscapeDataString(app_id));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1694,7 +1652,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1738,8 +1695,7 @@ namespace MyNS
 		public async Task GetUpcomingScheduledCampaignsAndCanvasesAsync(string end_time, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "messages/scheduled_broadcasts?end_time=" + (end_time==null? "" : System.Uri.EscapeDataString(end_time));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1753,7 +1709,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1794,8 +1749,7 @@ namespace MyNS
 		public async Task SegmentAnalyticsAsync(string segment_id, string length, string ending_at, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "segments/data_series?segment_id=" + (segment_id==null? "" : System.Uri.EscapeDataString(segment_id))+"&length=" + (length==null? "" : System.Uri.EscapeDataString(length))+"&ending_at=" + (ending_at==null? "" : System.Uri.EscapeDataString(ending_at));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1809,7 +1763,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1843,8 +1796,7 @@ namespace MyNS
 		public async Task SegmentDetailsAsync(string segment_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "segments/details?segment_id=" + (segment_id==null? "" : System.Uri.EscapeDataString(segment_id));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1858,7 +1810,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1899,8 +1850,7 @@ namespace MyNS
 		public async Task SegmentListAsync(string page, string sort_direction, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "segments/list?page=" + (page==null? "" : System.Uri.EscapeDataString(page))+"&sort_direction=" + (sort_direction==null? "" : System.Uri.EscapeDataString(sort_direction));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1914,7 +1864,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1989,8 +1938,7 @@ namespace MyNS
 		public async Task SendAnalyticsAsync(string campaign_id, string send_id, string length, string ending_at, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "sends/data_series?campaign_id=" + (campaign_id==null? "" : System.Uri.EscapeDataString(campaign_id))+"&send_id=" + (send_id==null? "" : System.Uri.EscapeDataString(send_id))+"&length=" + (length==null? "" : System.Uri.EscapeDataString(length))+"&ending_at=" + (ending_at==null? "" : System.Uri.EscapeDataString(ending_at));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2004,7 +1952,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2051,8 +1998,7 @@ namespace MyNS
 		public async Task AppSessionsByTimeAsync(string length, string unit, string ending_at, string app_id, string segment_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "sessions/data_series?length=" + (length==null? "" : System.Uri.EscapeDataString(length))+"&unit=" + (unit==null? "" : System.Uri.EscapeDataString(unit))+"&ending_at=" + (ending_at==null? "" : System.Uri.EscapeDataString(ending_at))+"&app_id=" + (app_id==null? "" : System.Uri.EscapeDataString(app_id))+"&segment_id=" + (segment_id==null? "" : System.Uri.EscapeDataString(segment_id));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2066,7 +2012,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2111,8 +2056,7 @@ namespace MyNS
 		public async Task ListUser_sSubscriptionGroupStatusSmsAsync(string subscription_group_id, string external_id, string phone, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "subscription/status/get?subscription_group_id=" + (subscription_group_id==null? "" : System.Uri.EscapeDataString(subscription_group_id))+"&external_id=" + (external_id==null? "" : System.Uri.EscapeDataString(external_id))+"&phone=" + (phone==null? "" : System.Uri.EscapeDataString(phone));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2126,7 +2070,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2153,8 +2096,7 @@ namespace MyNS
 		public async Task ListUser_sSubscriptionGroupSmsAsync(string external_id, string limit, string offset, string phone, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "subscription/user/status?external_id=" + (external_id==null? "" : System.Uri.EscapeDataString(external_id))+"&limit=" + (limit==null? "" : System.Uri.EscapeDataString(limit))+"&offset=" + (offset==null? "" : System.Uri.EscapeDataString(offset))+"&phone=" + (phone==null? "" : System.Uri.EscapeDataString(phone));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2168,7 +2110,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2188,8 +2129,7 @@ namespace MyNS
 		public async Task SeeEmailTemplateInformationAsync(string email_template_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "templates/email/info?email_template_id=" + (email_template_id==null? "" : System.Uri.EscapeDataString(email_template_id));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2203,7 +2143,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2242,8 +2181,7 @@ namespace MyNS
 		public async Task ListAvailableEmailTemplatesAsync(string modified_after, string modified_before, string limit, string offset, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "templates/email/list?modified_after=" + (modified_after==null? "" : System.Uri.EscapeDataString(modified_after))+"&modified_before=" + (modified_before==null? "" : System.Uri.EscapeDataString(modified_before))+"&limit=" + (limit==null? "" : System.Uri.EscapeDataString(limit))+"&offset=" + (offset==null? "" : System.Uri.EscapeDataString(offset));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2257,7 +2195,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

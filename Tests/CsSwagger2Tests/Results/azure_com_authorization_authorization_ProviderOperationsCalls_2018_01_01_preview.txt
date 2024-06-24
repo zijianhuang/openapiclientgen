@@ -181,19 +181,17 @@ namespace MyNS
 		public async Task<ProviderOperationsMetadataListResult> ProviderOperationsMetadata_ListAsync(string api_version, string expand)
 		{
 			var requestUri = "providers/Microsoft.Authorization/providerOperations?api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version))+"&$expand=" + (expand==null? "" : System.Uri.EscapeDataString(expand));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ProviderOperationsMetadataListResult>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ProviderOperationsMetadataListResult>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -208,19 +206,17 @@ namespace MyNS
 		public async Task<ProviderOperationsMetadata> ProviderOperationsMetadata_GetAsync(string resourceProviderNamespace, string api_version, string expand)
 		{
 			var requestUri = "providers/Microsoft.Authorization/providerOperations/"+ (resourceProviderNamespace==null? "" : System.Uri.EscapeDataString(resourceProviderNamespace))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version))+"&$expand=" + (expand==null? "" : System.Uri.EscapeDataString(expand));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ProviderOperationsMetadata>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ProviderOperationsMetadata>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

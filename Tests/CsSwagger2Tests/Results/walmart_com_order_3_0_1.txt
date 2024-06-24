@@ -55,8 +55,7 @@ namespace MyNS
 		public async Task GetAllOrdersAsync(string shipNode, string sku, string customerOrderId, string purchaseOrderId, string status, string createdStartDate, string createdEndDate, string fromExpectedShipDate, string toExpectedShipDate, int limit)
 		{
 			var requestUri = "v3/orders?shipNode=" + (shipNode==null? "" : System.Uri.EscapeDataString(shipNode))+"&sku=" + (sku==null? "" : System.Uri.EscapeDataString(sku))+"&customerOrderId=" + (customerOrderId==null? "" : System.Uri.EscapeDataString(customerOrderId))+"&purchaseOrderId=" + (purchaseOrderId==null? "" : System.Uri.EscapeDataString(purchaseOrderId))+"&status=" + (status==null? "" : System.Uri.EscapeDataString(status))+"&createdStartDate=" + (createdStartDate==null? "" : System.Uri.EscapeDataString(createdStartDate))+"&createdEndDate=" + (createdEndDate==null? "" : System.Uri.EscapeDataString(createdEndDate))+"&fromExpectedShipDate=" + (fromExpectedShipDate==null? "" : System.Uri.EscapeDataString(fromExpectedShipDate))+"&toExpectedShipDate=" + (toExpectedShipDate==null? "" : System.Uri.EscapeDataString(toExpectedShipDate))+"&limit="+limit;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -65,7 +64,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -80,8 +78,7 @@ namespace MyNS
 		public async Task GetReleasedOrdersAsync(string shipNode, string createdStartDate, int limit)
 		{
 			var requestUri = "v3/orders/released?shipNode=" + (shipNode==null? "" : System.Uri.EscapeDataString(shipNode))+"&createdStartDate=" + (createdStartDate==null? "" : System.Uri.EscapeDataString(createdStartDate))+"&limit="+limit;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -90,7 +87,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -103,8 +99,7 @@ namespace MyNS
 		public async Task GetNextCursorReleasedOrdersAsync(string nextCursor)
 		{
 			var requestUri = "v3/orders/released"+ (nextCursor==null? "" : System.Uri.EscapeDataString(nextCursor));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -113,7 +108,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -127,8 +121,7 @@ namespace MyNS
 		public async Task GetOrderByPurchaseOrderIdAsync(string purchaseOrderId, string shipNode)
 		{
 			var requestUri = "v3/orders/"+ (purchaseOrderId==null? "" : System.Uri.EscapeDataString(purchaseOrderId))+"&shipNode=" + (shipNode==null? "" : System.Uri.EscapeDataString(shipNode));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -137,7 +130,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -151,8 +143,7 @@ namespace MyNS
 		public async Task AcknowledgeOrdersAsync(string purchaseOrderId, string shipNode)
 		{
 			var requestUri = "v3/orders/"+ (purchaseOrderId==null? "" : System.Uri.EscapeDataString(purchaseOrderId))+"/acknowledge&shipNode=" + (shipNode==null? "" : System.Uri.EscapeDataString(shipNode));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -161,7 +152,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -176,10 +166,8 @@ namespace MyNS
 		public async Task CancelOrderAsync(string purchaseOrderId, string shipNode, string requestBody)
 		{
 			var requestUri = "v3/orders/"+ (purchaseOrderId==null? "" : System.Uri.EscapeDataString(purchaseOrderId))+"/cancel&shipNode=" + (shipNode==null? "" : System.Uri.EscapeDataString(shipNode));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -189,7 +177,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -204,10 +191,8 @@ namespace MyNS
 		public async Task RefundOrderAsync(string purchaseOrderId, string shipNode, string requestBody)
 		{
 			var requestUri = "v3/orders/"+ (purchaseOrderId==null? "" : System.Uri.EscapeDataString(purchaseOrderId))+"/refund&shipNode=" + (shipNode==null? "" : System.Uri.EscapeDataString(shipNode));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -217,7 +202,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -232,10 +216,8 @@ namespace MyNS
 		public async Task ShippingOrderAsync(string purchaseOrderId, string shipNode, string requestBody)
 		{
 			var requestUri = "v3/orders/"+ (purchaseOrderId==null? "" : System.Uri.EscapeDataString(purchaseOrderId))+"/shipping&shipNode=" + (shipNode==null? "" : System.Uri.EscapeDataString(shipNode));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -245,7 +227,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -258,8 +239,7 @@ namespace MyNS
 		public async Task GetAllOrdersNextAsync(string nextCursor)
 		{
 			var requestUri = "v3/orders"+ (nextCursor==null? "" : System.Uri.EscapeDataString(nextCursor));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -268,7 +248,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

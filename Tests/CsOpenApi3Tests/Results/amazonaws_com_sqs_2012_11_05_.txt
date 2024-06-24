@@ -1254,8 +1254,7 @@ namespace MyNS
 		public async Task GET_AddPermissionAsync(string Label, string[] AWSAccountIds, string[] Actions, int AccountNumber, string QueueName, GET_AddPermissionAction Action, GET_AddPermissionVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = ""+AccountNumber+"/"+ (QueueName==null? "" : System.Uri.EscapeDataString(QueueName))+"/#Action=AddPermission?Label=" + (Label==null? "" : System.Uri.EscapeDataString(Label))+"&"+string.Join("&", AWSAccountIds.Select(z => $"AWSAccountIds={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", Actions.Select(z => $"Actions={System.Uri.EscapeDataString(z.ToString())}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1269,7 +1268,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1282,8 +1280,7 @@ namespace MyNS
 		public async Task GET_CancelMessageMoveTaskAsync(string TaskHandle, GET_CancelMessageMoveTaskAction Action, GET_CancelMessageMoveTaskVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=CancelMessageMoveTask?TaskHandle=" + (TaskHandle==null? "" : System.Uri.EscapeDataString(TaskHandle))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1297,7 +1294,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1313,8 +1309,7 @@ namespace MyNS
 		public async Task GET_ChangeMessageVisibilityAsync(string ReceiptHandle, int VisibilityTimeout, int AccountNumber, string QueueName, GET_ChangeMessageVisibilityAction Action, GET_ChangeMessageVisibilityVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = ""+AccountNumber+"/"+ (QueueName==null? "" : System.Uri.EscapeDataString(QueueName))+"/#Action=ChangeMessageVisibility?ReceiptHandle=" + (ReceiptHandle==null? "" : System.Uri.EscapeDataString(ReceiptHandle))+"&VisibilityTimeout="+VisibilityTimeout+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1328,7 +1323,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1343,8 +1337,7 @@ namespace MyNS
 		public async Task GET_ChangeMessageVisibilityBatchAsync(string[] Entries, int AccountNumber, string QueueName, GET_ChangeMessageVisibilityBatchAction Action, GET_ChangeMessageVisibilityBatchVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = ""+AccountNumber+"/"+ (QueueName==null? "" : System.Uri.EscapeDataString(QueueName))+"/#Action=ChangeMessageVisibilityBatch?"+string.Join("&", Entries.Select(z => $"Entries={System.Uri.EscapeDataString(z.ToString())}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1358,7 +1351,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1373,8 +1365,7 @@ namespace MyNS
 		public async Task GET_CreateQueueAsync(string QueueName, System.Collections.Generic.Dictionary<string, string> Attribute, System.Collections.Generic.Dictionary<string, string> Tag, GET_CreateQueueAction Action, GET_CreateQueueVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=CreateQueue?QueueName=" + (QueueName==null? "" : System.Uri.EscapeDataString(QueueName))+"&Attribute=" + Attribute+"&Tag=" + Tag+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1388,7 +1379,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1403,8 +1393,7 @@ namespace MyNS
 		public async Task GET_DeleteMessageAsync(string ReceiptHandle, int AccountNumber, string QueueName, GET_DeleteMessageAction Action, GET_DeleteMessageVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = ""+AccountNumber+"/"+ (QueueName==null? "" : System.Uri.EscapeDataString(QueueName))+"/#Action=DeleteMessage?ReceiptHandle=" + (ReceiptHandle==null? "" : System.Uri.EscapeDataString(ReceiptHandle))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1418,7 +1407,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1433,8 +1421,7 @@ namespace MyNS
 		public async Task GET_DeleteMessageBatchAsync(string[] Entries, int AccountNumber, string QueueName, GET_DeleteMessageBatchAction Action, GET_DeleteMessageBatchVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = ""+AccountNumber+"/"+ (QueueName==null? "" : System.Uri.EscapeDataString(QueueName))+"/#Action=DeleteMessageBatch?"+string.Join("&", Entries.Select(z => $"Entries={System.Uri.EscapeDataString(z.ToString())}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1448,7 +1435,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1462,8 +1448,7 @@ namespace MyNS
 		public async Task GET_DeleteQueueAsync(int AccountNumber, string QueueName, GET_DeleteQueueAction Action, GET_DeleteQueueVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = ""+AccountNumber+"/"+ (QueueName==null? "" : System.Uri.EscapeDataString(QueueName))+"/#Action=DeleteQueue&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1477,7 +1462,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1492,8 +1476,7 @@ namespace MyNS
 		public async Task GET_GetQueueAttributesAsync(string[] AttributeNames, int AccountNumber, string QueueName, GET_GetQueueAttributesAction Action, GET_GetQueueAttributesVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = ""+AccountNumber+"/"+ (QueueName==null? "" : System.Uri.EscapeDataString(QueueName))+"/#Action=GetQueueAttributes?"+string.Join("&", AttributeNames.Select(z => $"AttributeNames={System.Uri.EscapeDataString(z.ToString())}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1507,7 +1490,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1521,8 +1503,7 @@ namespace MyNS
 		public async Task GET_GetQueueUrlAsync(string QueueName, string QueueOwnerAWSAccountId, GET_GetQueueUrlAction Action, GET_GetQueueUrlVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=GetQueueUrl?QueueName=" + (QueueName==null? "" : System.Uri.EscapeDataString(QueueName))+"&QueueOwnerAWSAccountId=" + (QueueOwnerAWSAccountId==null? "" : System.Uri.EscapeDataString(QueueOwnerAWSAccountId))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1536,7 +1517,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1552,8 +1532,7 @@ namespace MyNS
 		public async Task GET_ListDeadLetterSourceQueuesAsync(string NextToken, int MaxResults, int AccountNumber, string QueueName, GET_ListDeadLetterSourceQueuesAction Action, GET_ListDeadLetterSourceQueuesVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = ""+AccountNumber+"/"+ (QueueName==null? "" : System.Uri.EscapeDataString(QueueName))+"/#Action=ListDeadLetterSourceQueues?NextToken=" + (NextToken==null? "" : System.Uri.EscapeDataString(NextToken))+"&MaxResults="+MaxResults+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1567,7 +1546,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1581,8 +1559,7 @@ namespace MyNS
 		public async Task GET_ListMessageMoveTasksAsync(string SourceArn, int MaxResults, GET_ListMessageMoveTasksAction Action, GET_ListMessageMoveTasksVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=ListMessageMoveTasks?SourceArn=" + (SourceArn==null? "" : System.Uri.EscapeDataString(SourceArn))+"&MaxResults="+MaxResults+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1596,7 +1573,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1610,8 +1586,7 @@ namespace MyNS
 		public async Task GET_ListQueueTagsAsync(int AccountNumber, string QueueName, GET_ListQueueTagsAction Action, GET_ListQueueTagsVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = ""+AccountNumber+"/"+ (QueueName==null? "" : System.Uri.EscapeDataString(QueueName))+"/#Action=ListQueueTags&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1625,7 +1600,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1640,8 +1614,7 @@ namespace MyNS
 		public async Task GET_ListQueuesAsync(string QueueNamePrefix, string NextToken, int MaxResults, GET_ListQueuesAction Action, GET_ListQueuesVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=ListQueues?QueueNamePrefix=" + (QueueNamePrefix==null? "" : System.Uri.EscapeDataString(QueueNamePrefix))+"&NextToken=" + (NextToken==null? "" : System.Uri.EscapeDataString(NextToken))+"&MaxResults="+MaxResults+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1655,7 +1628,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1669,8 +1641,7 @@ namespace MyNS
 		public async Task GET_PurgeQueueAsync(int AccountNumber, string QueueName, GET_PurgeQueueAction Action, GET_PurgeQueueVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = ""+AccountNumber+"/"+ (QueueName==null? "" : System.Uri.EscapeDataString(QueueName))+"/#Action=PurgeQueue&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1684,7 +1655,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1704,8 +1674,7 @@ namespace MyNS
 		public async Task GET_ReceiveMessageAsync(string[] AttributeNames, string[] MessageAttributeNames, int MaxNumberOfMessages, int VisibilityTimeout, int WaitTimeSeconds, string ReceiveRequestAttemptId, int AccountNumber, string QueueName, GET_ReceiveMessageAction Action, GET_ReceiveMessageVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = ""+AccountNumber+"/"+ (QueueName==null? "" : System.Uri.EscapeDataString(QueueName))+"/#Action=ReceiveMessage?"+string.Join("&", AttributeNames.Select(z => $"AttributeNames={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", MessageAttributeNames.Select(z => $"MessageAttributeNames={System.Uri.EscapeDataString(z.ToString())}"))+"&MaxNumberOfMessages="+MaxNumberOfMessages+"&VisibilityTimeout="+VisibilityTimeout+"&WaitTimeSeconds="+WaitTimeSeconds+"&ReceiveRequestAttemptId=" + (ReceiveRequestAttemptId==null? "" : System.Uri.EscapeDataString(ReceiveRequestAttemptId))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1719,7 +1688,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1734,8 +1702,7 @@ namespace MyNS
 		public async Task GET_RemovePermissionAsync(string Label, int AccountNumber, string QueueName, GET_RemovePermissionAction Action, GET_RemovePermissionVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = ""+AccountNumber+"/"+ (QueueName==null? "" : System.Uri.EscapeDataString(QueueName))+"/#Action=RemovePermission?Label=" + (Label==null? "" : System.Uri.EscapeDataString(Label))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1749,7 +1716,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1769,8 +1735,7 @@ namespace MyNS
 		public async Task GET_SendMessageAsync(string MessageBody, int DelaySeconds, System.Collections.Generic.Dictionary<string, MessageAttributeValue> MessageAttribute, System.Collections.Generic.Dictionary<string, MessageSystemAttributeValue> MessageSystemAttribute, string MessageDeduplicationId, string MessageGroupId, int AccountNumber, string QueueName, GET_SendMessageAction Action, GET_SendMessageVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = ""+AccountNumber+"/"+ (QueueName==null? "" : System.Uri.EscapeDataString(QueueName))+"/#Action=SendMessage?MessageBody=" + (MessageBody==null? "" : System.Uri.EscapeDataString(MessageBody))+"&DelaySeconds="+DelaySeconds+"&MessageAttribute=" + MessageAttribute+"&MessageSystemAttribute=" + MessageSystemAttribute+"&MessageDeduplicationId=" + (MessageDeduplicationId==null? "" : System.Uri.EscapeDataString(MessageDeduplicationId))+"&MessageGroupId=" + (MessageGroupId==null? "" : System.Uri.EscapeDataString(MessageGroupId))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1784,7 +1749,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1799,8 +1763,7 @@ namespace MyNS
 		public async Task GET_SendMessageBatchAsync(string[] Entries, int AccountNumber, string QueueName, GET_SendMessageBatchAction Action, GET_SendMessageBatchVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = ""+AccountNumber+"/"+ (QueueName==null? "" : System.Uri.EscapeDataString(QueueName))+"/#Action=SendMessageBatch?"+string.Join("&", Entries.Select(z => $"Entries={System.Uri.EscapeDataString(z.ToString())}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1814,7 +1777,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1829,8 +1791,7 @@ namespace MyNS
 		public async Task GET_SetQueueAttributesAsync(System.Collections.Generic.Dictionary<string, string> Attribute, int AccountNumber, string QueueName, GET_SetQueueAttributesAction Action, GET_SetQueueAttributesVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = ""+AccountNumber+"/"+ (QueueName==null? "" : System.Uri.EscapeDataString(QueueName))+"/#Action=SetQueueAttributes?Attribute=" + Attribute+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1844,7 +1805,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1859,8 +1819,7 @@ namespace MyNS
 		public async Task GET_StartMessageMoveTaskAsync(string SourceArn, string DestinationArn, int MaxNumberOfMessagesPerSecond, GET_StartMessageMoveTaskAction Action, GET_StartMessageMoveTaskVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=StartMessageMoveTask?SourceArn=" + (SourceArn==null? "" : System.Uri.EscapeDataString(SourceArn))+"&DestinationArn=" + (DestinationArn==null? "" : System.Uri.EscapeDataString(DestinationArn))+"&MaxNumberOfMessagesPerSecond="+MaxNumberOfMessagesPerSecond+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1874,7 +1833,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1889,8 +1847,7 @@ namespace MyNS
 		public async Task GET_TagQueueAsync(System.Collections.Generic.Dictionary<string, string> Tags, int AccountNumber, string QueueName, GET_TagQueueAction Action, GET_TagQueueVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = ""+AccountNumber+"/"+ (QueueName==null? "" : System.Uri.EscapeDataString(QueueName))+"/#Action=TagQueue?Tags=" + Tags+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1904,7 +1861,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1919,8 +1875,7 @@ namespace MyNS
 		public async Task GET_UntagQueueAsync(string[] TagKeys, int AccountNumber, string QueueName, GET_UntagQueueAction Action, GET_UntagQueueVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = ""+AccountNumber+"/"+ (QueueName==null? "" : System.Uri.EscapeDataString(QueueName))+"/#Action=UntagQueue?"+string.Join("&", TagKeys.Select(z => $"TagKeys={System.Uri.EscapeDataString(z.ToString())}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1934,7 +1889,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

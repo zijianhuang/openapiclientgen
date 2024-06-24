@@ -476,8 +476,7 @@ namespace MyNS
 		public async Task<DailyReportViewModelSearchResult> DailyReportsGetByDateFromAndDateToAndHouseAndSkipAndTakeAsync(System.DateTimeOffset dateFrom, System.DateTimeOffset dateTo, DailyReportViewModelHouse house, int skip, int take, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/dailyreports/dailyreports?dateFrom=" + dateFrom.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&dateTo=" + dateTo.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&house=" + house+"&skip="+skip+"&take="+take;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -487,13 +486,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<DailyReportViewModelSearchResult>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<DailyReportViewModelSearchResult>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -556,8 +554,7 @@ namespace MyNS
 					Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/writtenquestions/questions?askingMemberId="+askingMemberId+"&answeringMemberId="+answeringMemberId+"&tabledWhenFrom=" + tabledWhenFrom.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&tabledWhenTo=" + tabledWhenTo.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&answered=" + answered+"&answeredWhenFrom=" + answeredWhenFrom.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&answeredWhenTo=" + answeredWhenTo.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&questionStatus=" + questionStatus+"&includeWithdrawn="+includeWithdrawn+"&expandMember="+expandMember+"&correctedWhenFrom=" + correctedWhenFrom.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&correctedWhenTo=" + correctedWhenTo.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&searchTerm=" + (searchTerm==null? "" : System.Uri.EscapeDataString(searchTerm))+"&uIN=" + (uIN==null? "" : System.Uri.EscapeDataString(uIN))+"&"+string.Join("&", answeringBodies.Select(z => $"answeringBodies={z}"))+"&"+string.Join("&", members.Select(z => $"members={z}"))+"&house=" + house+"&skip="+skip+"&take="+take;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -567,13 +564,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<QuestionsViewModelSearchResult>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<QuestionsViewModelSearchResult>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -588,8 +584,7 @@ namespace MyNS
 		public async Task<QuestionsViewModelItem> WrittenQuestionsGetByDateAndUinAndExpandMemberAsync(System.DateTimeOffset date, string uin, bool expandMember, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/writtenquestions/questions/"+date.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"/"+ (uin==null? "" : System.Uri.EscapeDataString(uin))+"&expandMember="+expandMember;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -599,13 +594,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<QuestionsViewModelItem>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<QuestionsViewModelItem>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -619,8 +613,7 @@ namespace MyNS
 		public async Task<QuestionsViewModelItem> WrittenQuestionsGetByIdAndExpandMemberAsync(int id, bool expandMember, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/writtenquestions/questions/"+id+"?expandMember="+expandMember;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -630,13 +623,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<QuestionsViewModelItem>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<QuestionsViewModelItem>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -664,8 +656,7 @@ namespace MyNS
 		public async Task<StatementsViewModelSearchResult> WrittenStatementsGetByMadeWhenFromAndMadeWhenToAndSearchTermAndUINAndAnsweringBodiesAndMembersAndHouseAndSkipAndTakeAndExpandMemberAsync(System.DateTimeOffset madeWhenFrom, System.DateTimeOffset madeWhenTo, string searchTerm, string uIN, int[] answeringBodies, int[] members, DailyReportViewModelHouse house, int skip, int take, bool expandMember, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/writtenstatements/statements?madeWhenFrom=" + madeWhenFrom.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&madeWhenTo=" + madeWhenTo.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&searchTerm=" + (searchTerm==null? "" : System.Uri.EscapeDataString(searchTerm))+"&uIN=" + (uIN==null? "" : System.Uri.EscapeDataString(uIN))+"&"+string.Join("&", answeringBodies.Select(z => $"answeringBodies={z}"))+"&"+string.Join("&", members.Select(z => $"members={z}"))+"&house=" + house+"&skip="+skip+"&take="+take+"&expandMember="+expandMember;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -675,13 +666,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<StatementsViewModelSearchResult>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<StatementsViewModelSearchResult>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -696,8 +686,7 @@ namespace MyNS
 		public async Task<StatementsViewModelItem> WrittenStatementsGetByDateAndUinAndExpandMemberAsync(System.DateTimeOffset date, string uin, bool expandMember, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/writtenstatements/statements/"+date.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"/"+ (uin==null? "" : System.Uri.EscapeDataString(uin))+"&expandMember="+expandMember;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -707,13 +696,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<StatementsViewModelItem>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<StatementsViewModelItem>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -727,8 +715,7 @@ namespace MyNS
 		public async Task<StatementsViewModelSearchResult> WrittenStatementsGetByIdAndExpandMemberAsync(int id, bool expandMember, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/writtenstatements/statements/"+id+"?expandMember="+expandMember;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -738,13 +725,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<StatementsViewModelSearchResult>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<StatementsViewModelSearchResult>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

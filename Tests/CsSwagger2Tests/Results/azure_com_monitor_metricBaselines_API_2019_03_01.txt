@@ -305,19 +305,17 @@ namespace MyNS
 		public async Task<MetricBaselinesResponse> Baselines_ListAsync(string resourceUri, string metricnames, string metricnamespace, string timespan, string interval, string aggregation, string sensitivities, string filter, Baselines_ListResultType resultType, string api_version)
 		{
 			var requestUri = ""+ (resourceUri==null? "" : System.Uri.EscapeDataString(resourceUri))+"/providers/microsoft.insights/metricBaselines&metricnames=" + (metricnames==null? "" : System.Uri.EscapeDataString(metricnames))+"&metricnamespace=" + (metricnamespace==null? "" : System.Uri.EscapeDataString(metricnamespace))+"&timespan=" + (timespan==null? "" : System.Uri.EscapeDataString(timespan))+"&interval=" + (interval==null? "" : System.Uri.EscapeDataString(interval))+"&aggregation=" + (aggregation==null? "" : System.Uri.EscapeDataString(aggregation))+"&sensitivities=" + (sensitivities==null? "" : System.Uri.EscapeDataString(sensitivities))+"&$filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&resultType=" + resultType+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<MetricBaselinesResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<MetricBaselinesResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

@@ -412,8 +412,7 @@ namespace MyNS
 		public async Task<Inbound_numbers> GetOwnedNumbersAsync(string application_id, bool has_application, string country, string pattern, GetOwnedNumbersSearch_pattern search_pattern, int size, int index, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "account/numbers?application_id=" + (application_id==null? "" : System.Uri.EscapeDataString(application_id))+"&has_application="+has_application+"&country=" + (country==null? "" : System.Uri.EscapeDataString(country))+"&pattern=" + (pattern==null? "" : System.Uri.EscapeDataString(pattern))+"&search_pattern="+search_pattern+"&size="+size+"&index="+index;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -423,13 +422,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Inbound_numbers>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Inbound_numbers>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -460,8 +458,7 @@ namespace MyNS
 		public async Task<Available_numbers> GetAvailableNumbersAsync(string country, GetAvailableNumbersType type, string pattern, GetAvailableNumbersSearch_pattern search_pattern, GetAvailableNumbersFeatures features, int size, int index, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "number/search?country=" + (country==null? "" : System.Uri.EscapeDataString(country))+"&type=" + type+"&pattern=" + (pattern==null? "" : System.Uri.EscapeDataString(pattern))+"&search_pattern="+search_pattern+"&features=" + features+"&size="+size+"&index="+index;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -471,13 +468,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Available_numbers>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Available_numbers>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

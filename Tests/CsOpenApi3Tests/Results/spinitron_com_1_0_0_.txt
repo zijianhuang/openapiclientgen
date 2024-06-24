@@ -581,8 +581,7 @@ namespace MyNS
 		public async Task<BaseIndexResponse> PersonaGetByNameAndCountAndPageAndFieldsAndExpandAsync(string name, int count, int page, string[] fields, string[] expand, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "personas?name=" + (name==null? "" : System.Uri.EscapeDataString(name))+"&count="+count+"&page="+page+"&"+string.Join("&", fields.Select(z => $"fields={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", expand.Select(z => $"expand={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -592,13 +591,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<BaseIndexResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<BaseIndexResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -612,8 +610,7 @@ namespace MyNS
 		public async Task<Persona> PersonaGetByIdAndFieldsAndExpandAsync(int id, string[] fields, string[] expand, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "personas/"+id+"?"+string.Join("&", fields.Select(z => $"fields={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", expand.Select(z => $"expand={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -623,13 +620,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Persona>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Persona>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -660,8 +656,7 @@ namespace MyNS
 		public async Task<BaseIndexResponse> PlaylistGetByStartAndEndAndShow_idAndPersona_idAndCountAndPageAndFieldsAndExpandAsync(System.DateTimeOffset start, System.DateTimeOffset end, int show_id, int persona_id, int count, int page, string[] fields, string[] expand, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "playlists?start=" + start.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&end=" + end.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&show_id="+show_id+"&persona_id="+persona_id+"&count="+count+"&page="+page+"&"+string.Join("&", fields.Select(z => $"fields={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", expand.Select(z => $"expand={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -671,13 +666,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<BaseIndexResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<BaseIndexResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -695,8 +689,7 @@ namespace MyNS
 		public async Task<Playlist> PlaylistGetByIdAndFieldsAndExpandAsync(int id, string[] fields, string[] expand, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "playlists/"+id+"?"+string.Join("&", fields.Select(z => $"fields={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", expand.Select(z => $"expand={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -706,13 +699,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Playlist>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Playlist>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -765,8 +757,7 @@ namespace MyNS
 		public async Task<BaseIndexResponse> ShowGetByStartAndEndAndCountAndPageAndFieldsAndExpandAsync(System.DateTimeOffset start, System.DateTimeOffset end, int count, int page, string[] fields, string[] expand, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "shows?start=" + start.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&end=" + end.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&count="+count+"&page="+page+"&"+string.Join("&", fields.Select(z => $"fields={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", expand.Select(z => $"expand={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -776,13 +767,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<BaseIndexResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<BaseIndexResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -800,8 +790,7 @@ namespace MyNS
 		public async Task<Show> ShowGetByIdAndFieldsAndExpandAsync(int id, string[] fields, string[] expand, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "shows/"+id+"?"+string.Join("&", fields.Select(z => $"fields={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", expand.Select(z => $"expand={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -811,13 +800,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Show>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Show>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -845,8 +833,7 @@ namespace MyNS
 		public async Task<BaseIndexResponse> SpinGetByStartAndEndAndPlaylist_idAndShow_idAndCountAndPageAndFieldsAndExpandAsync(System.DateTimeOffset start, System.DateTimeOffset end, int playlist_id, int show_id, int count, int page, string[] fields, string[] expand, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "spins?start=" + start.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&end=" + end.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&playlist_id="+playlist_id+"&show_id="+show_id+"&count="+count+"&page="+page+"&"+string.Join("&", fields.Select(z => $"fields={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", expand.Select(z => $"expand={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -856,13 +843,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<BaseIndexResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<BaseIndexResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -876,8 +862,7 @@ namespace MyNS
 		public async Task<Spin> SpinGetByIdAndFieldsAndExpandAsync(int id, string[] fields, string[] expand, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "spins/"+id+"?"+string.Join("&", fields.Select(z => $"fields={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", expand.Select(z => $"expand={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -887,13 +872,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Spin>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Spin>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

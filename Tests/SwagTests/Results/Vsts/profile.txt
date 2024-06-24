@@ -311,23 +311,19 @@ namespace MyNS
 		public async Task<Profile> Profiles_GetAsync(string id, bool details, bool withAttributes, string partition, string coreAttributes, bool forceRefresh, string api_version)
 		{
 			var requestUri = "_apis/profile/profiles/"+ (id==null? "" : System.Uri.EscapeDataString(id))+"&details="+details+"&withAttributes="+withAttributes+"&partition=" + (partition==null? "" : System.Uri.EscapeDataString(partition))+"&coreAttributes=" + (coreAttributes==null? "" : System.Uri.EscapeDataString(coreAttributes))+"&forceRefresh="+forceRefresh+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-				{
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				using JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(streamContent));
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<Profile>(jsonReader);
-				}
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -346,23 +342,19 @@ namespace MyNS
 		public Profile Profiles_Get(string id, bool details, bool withAttributes, string partition, string coreAttributes, bool forceRefresh, string api_version)
 		{
 			var requestUri = "_apis/profile/profiles/"+ (id==null? "" : System.Uri.EscapeDataString(id))+"&details="+details+"&withAttributes="+withAttributes+"&partition=" + (partition==null? "" : System.Uri.EscapeDataString(partition))+"&coreAttributes=" + (coreAttributes==null? "" : System.Uri.EscapeDataString(coreAttributes))+"&forceRefresh="+forceRefresh+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = httpClient.Send(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = responseMessage.Content.ReadAsStream();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-				{
+				var streamContent = responseMessage.Content.ReadAsStream();
+				using JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(streamContent));
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<Profile>(jsonReader);
-				}
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

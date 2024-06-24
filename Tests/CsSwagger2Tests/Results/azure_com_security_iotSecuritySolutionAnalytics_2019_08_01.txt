@@ -525,19 +525,17 @@ namespace MyNS
 		public async Task<IoTSecuritySolutionAnalyticsModelList> IotSecuritySolutionAnalytics_ListAsync(string api_version, string subscriptionId, string resourceGroupName, string solutionName)
 		{
 			var requestUri = "subscriptions/"+ (subscriptionId==null? "" : System.Uri.EscapeDataString(subscriptionId))+"/resourceGroups/"+ (resourceGroupName==null? "" : System.Uri.EscapeDataString(resourceGroupName))+"/providers/Microsoft.Security/iotSecuritySolutions/"+ (solutionName==null? "" : System.Uri.EscapeDataString(solutionName))+"/analyticsModels?api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<IoTSecuritySolutionAnalyticsModelList>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<IoTSecuritySolutionAnalyticsModelList>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -556,19 +554,17 @@ namespace MyNS
 		public async Task<IoTSecuritySolutionAnalyticsModel> IotSecuritySolutionAnalytics_GetAsync(string api_version, string subscriptionId, string resourceGroupName, string solutionName)
 		{
 			var requestUri = "subscriptions/"+ (subscriptionId==null? "" : System.Uri.EscapeDataString(subscriptionId))+"/resourceGroups/"+ (resourceGroupName==null? "" : System.Uri.EscapeDataString(resourceGroupName))+"/providers/Microsoft.Security/iotSecuritySolutions/"+ (solutionName==null? "" : System.Uri.EscapeDataString(solutionName))+"/analyticsModels/default?api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<IoTSecuritySolutionAnalyticsModel>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<IoTSecuritySolutionAnalyticsModel>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -588,19 +584,17 @@ namespace MyNS
 		public async Task<IoTSecurityAggregatedAlertList> IotSecuritySolutionsAnalyticsAggregatedAlert_ListAsync(string api_version, string subscriptionId, string resourceGroupName, string solutionName, int top)
 		{
 			var requestUri = "subscriptions/"+ (subscriptionId==null? "" : System.Uri.EscapeDataString(subscriptionId))+"/resourceGroups/"+ (resourceGroupName==null? "" : System.Uri.EscapeDataString(resourceGroupName))+"/providers/Microsoft.Security/iotSecuritySolutions/"+ (solutionName==null? "" : System.Uri.EscapeDataString(solutionName))+"/analyticsModels/default/aggregatedAlerts?api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version))+"&$top="+top;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<IoTSecurityAggregatedAlertList>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<IoTSecurityAggregatedAlertList>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -620,19 +614,17 @@ namespace MyNS
 		public async Task<IoTSecurityAggregatedAlert> IotSecuritySolutionsAnalyticsAggregatedAlert_GetAsync(string api_version, string subscriptionId, string resourceGroupName, string solutionName, string aggregatedAlertName)
 		{
 			var requestUri = "subscriptions/"+ (subscriptionId==null? "" : System.Uri.EscapeDataString(subscriptionId))+"/resourceGroups/"+ (resourceGroupName==null? "" : System.Uri.EscapeDataString(resourceGroupName))+"/providers/Microsoft.Security/iotSecuritySolutions/"+ (solutionName==null? "" : System.Uri.EscapeDataString(solutionName))+"/analyticsModels/default/aggregatedAlerts/"+ (aggregatedAlertName==null? "" : System.Uri.EscapeDataString(aggregatedAlertName))+"?api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<IoTSecurityAggregatedAlert>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<IoTSecurityAggregatedAlert>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -652,8 +644,7 @@ namespace MyNS
 		public async Task IotSecuritySolutionsAnalyticsAggregatedAlert_DismissAsync(string api_version, string subscriptionId, string resourceGroupName, string solutionName, string aggregatedAlertName)
 		{
 			var requestUri = "subscriptions/"+ (subscriptionId==null? "" : System.Uri.EscapeDataString(subscriptionId))+"/resourceGroups/"+ (resourceGroupName==null? "" : System.Uri.EscapeDataString(resourceGroupName))+"/providers/Microsoft.Security/iotSecuritySolutions/"+ (solutionName==null? "" : System.Uri.EscapeDataString(solutionName))+"/analyticsModels/default/aggregatedAlerts/"+ (aggregatedAlertName==null? "" : System.Uri.EscapeDataString(aggregatedAlertName))+"/dismiss?api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -662,7 +653,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -682,19 +672,17 @@ namespace MyNS
 		public async Task<IoTSecurityAggregatedRecommendationList> IotSecuritySolutionsAnalyticsRecommendation_ListAsync(string api_version, string subscriptionId, string resourceGroupName, string solutionName, int top)
 		{
 			var requestUri = "subscriptions/"+ (subscriptionId==null? "" : System.Uri.EscapeDataString(subscriptionId))+"/resourceGroups/"+ (resourceGroupName==null? "" : System.Uri.EscapeDataString(resourceGroupName))+"/providers/Microsoft.Security/iotSecuritySolutions/"+ (solutionName==null? "" : System.Uri.EscapeDataString(solutionName))+"/analyticsModels/default/aggregatedRecommendations?api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version))+"&$top="+top;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<IoTSecurityAggregatedRecommendationList>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<IoTSecurityAggregatedRecommendationList>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -714,19 +702,17 @@ namespace MyNS
 		public async Task<IoTSecurityAggregatedRecommendation> IotSecuritySolutionsAnalyticsRecommendation_GetAsync(string api_version, string subscriptionId, string resourceGroupName, string solutionName, string aggregatedRecommendationName)
 		{
 			var requestUri = "subscriptions/"+ (subscriptionId==null? "" : System.Uri.EscapeDataString(subscriptionId))+"/resourceGroups/"+ (resourceGroupName==null? "" : System.Uri.EscapeDataString(resourceGroupName))+"/providers/Microsoft.Security/iotSecuritySolutions/"+ (solutionName==null? "" : System.Uri.EscapeDataString(solutionName))+"/analyticsModels/default/aggregatedRecommendations/"+ (aggregatedRecommendationName==null? "" : System.Uri.EscapeDataString(aggregatedRecommendationName))+"?api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<IoTSecurityAggregatedRecommendation>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<IoTSecurityAggregatedRecommendation>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

@@ -547,19 +547,17 @@ namespace MyNS
 		public async Task<News> News_CategoryAsync(string cc, string category, int count, int headlineCount, string mkt, int offset, bool originalImg, News_CategorySafeSearch safeSearch, string setLang, bool textDecorations, News_CategoryTextFormat textFormat)
 		{
 			var requestUri = "news?cc=" + (cc==null? "" : System.Uri.EscapeDataString(cc))+"&category=" + (category==null? "" : System.Uri.EscapeDataString(category))+"&count="+count+"&headlineCount="+headlineCount+"&mkt=" + (mkt==null? "" : System.Uri.EscapeDataString(mkt))+"&offset="+offset+"&originalImg="+originalImg+"&safeSearch=" + safeSearch+"&setLang=" + (setLang==null? "" : System.Uri.EscapeDataString(setLang))+"&textDecorations="+textDecorations+"&textFormat=" + textFormat;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<News>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<News>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -583,19 +581,17 @@ namespace MyNS
 		public async Task<News> News_SearchAsync(string cc, int count, News_SearchFreshness freshness, string mkt, int offset, bool originalImg, string q, News_CategorySafeSearch safeSearch, string setLang, string sortBy, bool textDecorations, News_CategoryTextFormat textFormat)
 		{
 			var requestUri = "news/search?cc=" + (cc==null? "" : System.Uri.EscapeDataString(cc))+"&count="+count+"&freshness=" + freshness+"&mkt=" + (mkt==null? "" : System.Uri.EscapeDataString(mkt))+"&offset="+offset+"&originalImg="+originalImg+"&q=" + (q==null? "" : System.Uri.EscapeDataString(q))+"&safeSearch=" + safeSearch+"&setLang=" + (setLang==null? "" : System.Uri.EscapeDataString(setLang))+"&sortBy=" + (sortBy==null? "" : System.Uri.EscapeDataString(sortBy))+"&textDecorations="+textDecorations+"&textFormat=" + textFormat;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<News>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<News>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -617,19 +613,17 @@ namespace MyNS
 		public async Task<TrendingTopics> News_TrendingAsync(string cc, int count, string mkt, int offset, News_CategorySafeSearch safeSearch, string setLang, long since, string sortBy, bool textDecorations, News_CategoryTextFormat textFormat)
 		{
 			var requestUri = "news/trendingtopics?cc=" + (cc==null? "" : System.Uri.EscapeDataString(cc))+"&count="+count+"&mkt=" + (mkt==null? "" : System.Uri.EscapeDataString(mkt))+"&offset="+offset+"&safeSearch=" + safeSearch+"&setLang=" + (setLang==null? "" : System.Uri.EscapeDataString(setLang))+"&since="+since+"&sortBy=" + (sortBy==null? "" : System.Uri.EscapeDataString(sortBy))+"&textDecorations="+textDecorations+"&textFormat=" + textFormat;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<TrendingTopics>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<TrendingTopics>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

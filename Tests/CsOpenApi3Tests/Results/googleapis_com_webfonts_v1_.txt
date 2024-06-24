@@ -163,8 +163,7 @@ namespace MyNS
 		public async Task<WebfontList> Webfonts_webfonts_listAsync(string[] capability, string[] family, Webfonts_webfonts_listSort sort, string subset, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/webfonts?"+string.Join("&", capability.Select(z => $"capability={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", family.Select(z => $"family={System.Uri.EscapeDataString(z.ToString())}"))+"&sort=" + sort+"&subset=" + (subset==null? "" : System.Uri.EscapeDataString(subset));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -174,13 +173,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<WebfontList>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<WebfontList>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

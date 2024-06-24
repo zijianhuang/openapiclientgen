@@ -870,19 +870,17 @@ namespace MyNS
 		public async Task<OperationListResult> Operations_ListAsync(Operations_ListApi_version api_version, string skiptoken)
 		{
 			var requestUri = "providers/Microsoft.WorkloadMonitor/operations?api-version=" + api_version+"&$skiptoken=" + (skiptoken==null? "" : System.Uri.EscapeDataString(skiptoken));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<OperationListResult>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<OperationListResult>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -905,19 +903,17 @@ namespace MyNS
 		public async Task<ComponentsCollection> ComponentsSummary_ListAsync(string subscriptionId, ComponentsSummary_ListApi_version api_version, string select, string filter, string apply, string orderby, string expand, string top, string skiptoken)
 		{
 			var requestUri = "subscriptions/"+ (subscriptionId==null? "" : System.Uri.EscapeDataString(subscriptionId))+"/providers/Microsoft.WorkloadMonitor/componentsSummary&api-version=" + api_version+"&$select=" + (select==null? "" : System.Uri.EscapeDataString(select))+"&$filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&$apply=" + (apply==null? "" : System.Uri.EscapeDataString(apply))+"&$orderby=" + (orderby==null? "" : System.Uri.EscapeDataString(orderby))+"&$expand=" + (expand==null? "" : System.Uri.EscapeDataString(expand))+"&$top=" + (top==null? "" : System.Uri.EscapeDataString(top))+"&$skiptoken=" + (skiptoken==null? "" : System.Uri.EscapeDataString(skiptoken));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ComponentsCollection>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ComponentsCollection>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -940,19 +936,17 @@ namespace MyNS
 		public async Task<MonitorInstancesCollection> MonitorInstancesSummary_ListAsync(string subscriptionId, MonitorInstancesSummary_ListApi_version api_version, string select, string filter, string apply, string orderby, string expand, string top, string skiptoken)
 		{
 			var requestUri = "subscriptions/"+ (subscriptionId==null? "" : System.Uri.EscapeDataString(subscriptionId))+"/providers/Microsoft.WorkloadMonitor/monitorInstancesSummary&api-version=" + api_version+"&$select=" + (select==null? "" : System.Uri.EscapeDataString(select))+"&$filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&$apply=" + (apply==null? "" : System.Uri.EscapeDataString(apply))+"&$orderby=" + (orderby==null? "" : System.Uri.EscapeDataString(orderby))+"&$expand=" + (expand==null? "" : System.Uri.EscapeDataString(expand))+"&$top=" + (top==null? "" : System.Uri.EscapeDataString(top))+"&$skiptoken=" + (skiptoken==null? "" : System.Uri.EscapeDataString(skiptoken));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<MonitorInstancesCollection>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<MonitorInstancesCollection>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -982,19 +976,17 @@ namespace MyNS
 		public async Task<ComponentsCollection> Components_ListByResourceAsync(string subscriptionId, string resourceGroupName, string resourceNamespace, string resourceType, string resourceName, Components_ListByResourceApi_version api_version, string select, string filter, string apply, string orderby, string expand, string top, string skiptoken)
 		{
 			var requestUri = "subscriptions/"+ (subscriptionId==null? "" : System.Uri.EscapeDataString(subscriptionId))+"/resourceGroups/"+ (resourceGroupName==null? "" : System.Uri.EscapeDataString(resourceGroupName))+"/providers/"+ (resourceNamespace==null? "" : System.Uri.EscapeDataString(resourceNamespace))+"/"+ (resourceType==null? "" : System.Uri.EscapeDataString(resourceType))+"/"+ (resourceName==null? "" : System.Uri.EscapeDataString(resourceName))+"/providers/Microsoft.WorkloadMonitor/components&api-version=" + api_version+"&$select=" + (select==null? "" : System.Uri.EscapeDataString(select))+"&$filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&$apply=" + (apply==null? "" : System.Uri.EscapeDataString(apply))+"&$orderby=" + (orderby==null? "" : System.Uri.EscapeDataString(orderby))+"&$expand=" + (expand==null? "" : System.Uri.EscapeDataString(expand))+"&$top=" + (top==null? "" : System.Uri.EscapeDataString(top))+"&$skiptoken=" + (skiptoken==null? "" : System.Uri.EscapeDataString(skiptoken));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ComponentsCollection>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ComponentsCollection>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1020,19 +1012,17 @@ namespace MyNS
 		public async Task<Component> Components_GetAsync(string subscriptionId, string resourceGroupName, string resourceNamespace, string resourceType, string resourceName, string componentId, Components_GetApi_version api_version, string select, string expand)
 		{
 			var requestUri = "subscriptions/"+ (subscriptionId==null? "" : System.Uri.EscapeDataString(subscriptionId))+"/resourceGroups/"+ (resourceGroupName==null? "" : System.Uri.EscapeDataString(resourceGroupName))+"/providers/"+ (resourceNamespace==null? "" : System.Uri.EscapeDataString(resourceNamespace))+"/"+ (resourceType==null? "" : System.Uri.EscapeDataString(resourceType))+"/"+ (resourceName==null? "" : System.Uri.EscapeDataString(resourceName))+"/providers/Microsoft.WorkloadMonitor/components/"+ (componentId==null? "" : System.Uri.EscapeDataString(componentId))+"&api-version=" + api_version+"&$select=" + (select==null? "" : System.Uri.EscapeDataString(select))+"&$expand=" + (expand==null? "" : System.Uri.EscapeDataString(expand));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Component>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Component>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1062,19 +1052,17 @@ namespace MyNS
 		public async Task<MonitorInstancesCollection> MonitorInstances_ListByResourceAsync(string subscriptionId, string resourceGroupName, string resourceNamespace, string resourceType, string resourceName, MonitorInstances_ListByResourceApi_version api_version, string select, string filter, string apply, string orderby, string expand, string top, string skiptoken)
 		{
 			var requestUri = "subscriptions/"+ (subscriptionId==null? "" : System.Uri.EscapeDataString(subscriptionId))+"/resourceGroups/"+ (resourceGroupName==null? "" : System.Uri.EscapeDataString(resourceGroupName))+"/providers/"+ (resourceNamespace==null? "" : System.Uri.EscapeDataString(resourceNamespace))+"/"+ (resourceType==null? "" : System.Uri.EscapeDataString(resourceType))+"/"+ (resourceName==null? "" : System.Uri.EscapeDataString(resourceName))+"/providers/Microsoft.WorkloadMonitor/monitorInstances&api-version=" + api_version+"&$select=" + (select==null? "" : System.Uri.EscapeDataString(select))+"&$filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&$apply=" + (apply==null? "" : System.Uri.EscapeDataString(apply))+"&$orderby=" + (orderby==null? "" : System.Uri.EscapeDataString(orderby))+"&$expand=" + (expand==null? "" : System.Uri.EscapeDataString(expand))+"&$top=" + (top==null? "" : System.Uri.EscapeDataString(top))+"&$skiptoken=" + (skiptoken==null? "" : System.Uri.EscapeDataString(skiptoken));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<MonitorInstancesCollection>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<MonitorInstancesCollection>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1100,19 +1088,17 @@ namespace MyNS
 		public async Task<MonitorInstance> MonitorInstances_GetAsync(string subscriptionId, string resourceGroupName, string resourceNamespace, string resourceType, string resourceName, string monitorInstanceId, MonitorInstances_GetApi_version api_version, string select, string expand)
 		{
 			var requestUri = "subscriptions/"+ (subscriptionId==null? "" : System.Uri.EscapeDataString(subscriptionId))+"/resourceGroups/"+ (resourceGroupName==null? "" : System.Uri.EscapeDataString(resourceGroupName))+"/providers/"+ (resourceNamespace==null? "" : System.Uri.EscapeDataString(resourceNamespace))+"/"+ (resourceType==null? "" : System.Uri.EscapeDataString(resourceType))+"/"+ (resourceName==null? "" : System.Uri.EscapeDataString(resourceName))+"/providers/Microsoft.WorkloadMonitor/monitorInstances/"+ (monitorInstanceId==null? "" : System.Uri.EscapeDataString(monitorInstanceId))+"&api-version=" + api_version+"&$select=" + (select==null? "" : System.Uri.EscapeDataString(select))+"&$expand=" + (expand==null? "" : System.Uri.EscapeDataString(expand));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<MonitorInstance>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<MonitorInstance>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1137,19 +1123,17 @@ namespace MyNS
 		public async Task<MonitorsCollection> Monitors_ListByResourceAsync(string subscriptionId, string resourceGroupName, string resourceNamespace, string resourceType, string resourceName, Monitors_ListByResourceApi_version api_version, string filter, string skiptoken)
 		{
 			var requestUri = "subscriptions/"+ (subscriptionId==null? "" : System.Uri.EscapeDataString(subscriptionId))+"/resourceGroups/"+ (resourceGroupName==null? "" : System.Uri.EscapeDataString(resourceGroupName))+"/providers/"+ (resourceNamespace==null? "" : System.Uri.EscapeDataString(resourceNamespace))+"/"+ (resourceType==null? "" : System.Uri.EscapeDataString(resourceType))+"/"+ (resourceName==null? "" : System.Uri.EscapeDataString(resourceName))+"/providers/Microsoft.WorkloadMonitor/monitors&api-version=" + api_version+"&$filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&$skiptoken=" + (skiptoken==null? "" : System.Uri.EscapeDataString(skiptoken));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<MonitorsCollection>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<MonitorsCollection>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1173,19 +1157,17 @@ namespace MyNS
 		public async Task<Monitor> Monitors_GetAsync(string subscriptionId, string resourceGroupName, string resourceNamespace, string resourceType, string resourceName, string monitorId, Monitors_GetApi_version api_version)
 		{
 			var requestUri = "subscriptions/"+ (subscriptionId==null? "" : System.Uri.EscapeDataString(subscriptionId))+"/resourceGroups/"+ (resourceGroupName==null? "" : System.Uri.EscapeDataString(resourceGroupName))+"/providers/"+ (resourceNamespace==null? "" : System.Uri.EscapeDataString(resourceNamespace))+"/"+ (resourceType==null? "" : System.Uri.EscapeDataString(resourceType))+"/"+ (resourceName==null? "" : System.Uri.EscapeDataString(resourceName))+"/providers/Microsoft.WorkloadMonitor/monitors/"+ (monitorId==null? "" : System.Uri.EscapeDataString(monitorId))+"&api-version=" + api_version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Monitor>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Monitor>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1210,22 +1192,19 @@ namespace MyNS
 		public async Task<Monitor> Monitors_UpdateAsync(string subscriptionId, string resourceGroupName, string resourceNamespace, string resourceType, string resourceName, string monitorId, Monitors_UpdateApi_version api_version, Monitor requestBody)
 		{
 			var requestUri = "subscriptions/"+ (subscriptionId==null? "" : System.Uri.EscapeDataString(subscriptionId))+"/resourceGroups/"+ (resourceGroupName==null? "" : System.Uri.EscapeDataString(resourceGroupName))+"/providers/"+ (resourceNamespace==null? "" : System.Uri.EscapeDataString(resourceNamespace))+"/"+ (resourceType==null? "" : System.Uri.EscapeDataString(resourceType))+"/"+ (resourceName==null? "" : System.Uri.EscapeDataString(resourceName))+"/providers/Microsoft.WorkloadMonitor/monitors/"+ (monitorId==null? "" : System.Uri.EscapeDataString(monitorId))+"&api-version=" + api_version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Monitor>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Monitor>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1249,19 +1228,17 @@ namespace MyNS
 		public async Task<NotificationSettingsCollection> NotificationSettings_ListByResourceAsync(string subscriptionId, string resourceGroupName, string resourceNamespace, string resourceType, string resourceName, NotificationSettings_ListByResourceApi_version api_version, string skiptoken)
 		{
 			var requestUri = "subscriptions/"+ (subscriptionId==null? "" : System.Uri.EscapeDataString(subscriptionId))+"/resourceGroups/"+ (resourceGroupName==null? "" : System.Uri.EscapeDataString(resourceGroupName))+"/providers/"+ (resourceNamespace==null? "" : System.Uri.EscapeDataString(resourceNamespace))+"/"+ (resourceType==null? "" : System.Uri.EscapeDataString(resourceType))+"/"+ (resourceName==null? "" : System.Uri.EscapeDataString(resourceName))+"/providers/Microsoft.WorkloadMonitor/notificationSettings&api-version=" + api_version+"&$skiptoken=" + (skiptoken==null? "" : System.Uri.EscapeDataString(skiptoken));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<NotificationSettingsCollection>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<NotificationSettingsCollection>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1285,19 +1262,17 @@ namespace MyNS
 		public async Task<NotificationSetting> NotificationSettings_GetAsync(string subscriptionId, string resourceGroupName, string resourceNamespace, string resourceType, string resourceName, NotificationSettings_GetNotificationSettingName notificationSettingName, NotificationSettings_GetApi_version api_version)
 		{
 			var requestUri = "subscriptions/"+ (subscriptionId==null? "" : System.Uri.EscapeDataString(subscriptionId))+"/resourceGroups/"+ (resourceGroupName==null? "" : System.Uri.EscapeDataString(resourceGroupName))+"/providers/"+ (resourceNamespace==null? "" : System.Uri.EscapeDataString(resourceNamespace))+"/"+ (resourceType==null? "" : System.Uri.EscapeDataString(resourceType))+"/"+ (resourceName==null? "" : System.Uri.EscapeDataString(resourceName))+"/providers/Microsoft.WorkloadMonitor/notificationSettings/"+notificationSettingName+"&api-version=" + api_version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<NotificationSetting>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<NotificationSetting>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1322,22 +1297,19 @@ namespace MyNS
 		public async Task<NotificationSetting> NotificationSettings_UpdateAsync(string subscriptionId, string resourceGroupName, string resourceNamespace, string resourceType, string resourceName, NotificationSettings_UpdateNotificationSettingName notificationSettingName, NotificationSettings_UpdateApi_version api_version, NotificationSetting requestBody)
 		{
 			var requestUri = "subscriptions/"+ (subscriptionId==null? "" : System.Uri.EscapeDataString(subscriptionId))+"/resourceGroups/"+ (resourceGroupName==null? "" : System.Uri.EscapeDataString(resourceGroupName))+"/providers/"+ (resourceNamespace==null? "" : System.Uri.EscapeDataString(resourceNamespace))+"/"+ (resourceType==null? "" : System.Uri.EscapeDataString(resourceType))+"/"+ (resourceName==null? "" : System.Uri.EscapeDataString(resourceName))+"/providers/Microsoft.WorkloadMonitor/notificationSettings/"+notificationSettingName+"&api-version=" + api_version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<NotificationSetting>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<NotificationSetting>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

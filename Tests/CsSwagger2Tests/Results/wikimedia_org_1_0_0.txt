@@ -1393,8 +1393,7 @@ namespace MyNS
 		public async Task FeedAvailabilityGetAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "feed/availability";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1408,7 +1407,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1428,8 +1426,7 @@ namespace MyNS
 		public async Task MediaMathFormula_hashGetAsync(string hash, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "media/math/formula/"+ (hash==null? "" : System.Uri.EscapeDataString(hash));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1443,7 +1440,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1467,8 +1463,7 @@ namespace MyNS
 		public async Task MediaMathRender_format_hashGetAsync(MediaMathRender_format_hashGetFormat format, string hash, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "media/math/render/"+format+"/"+ (hash==null? "" : System.Uri.EscapeDataString(hash));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1482,7 +1477,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1527,8 +1521,7 @@ namespace MyNS
 		public async Task<Absolute_bytes_difference> MetricsBytes_differenceAbsoluteAggregate_project_editor_type_page_type_granularity_start_endGetAsync(string project, MetricsBytes_differenceAbsoluteAggregate_project_editor_type_page_type_granularity_start_endGetEditor_type editor_type, MetricsBytes_differenceAbsoluteAggregate_project_editor_type_page_type_granularity_start_endGetPage_type page_type, MetricsBytes_differenceAbsoluteAggregate_project_editor_type_page_type_granularity_start_endGetGranularity granularity, string start, string end, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "metrics/bytes-difference/absolute/aggregate/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/{editor_type}/{page_type}/"+granularity+"/"+ (start==null? "" : System.Uri.EscapeDataString(start))+"/"+ (end==null? "" : System.Uri.EscapeDataString(end));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1538,13 +1531,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Absolute_bytes_difference>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Absolute_bytes_difference>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1585,8 +1577,7 @@ namespace MyNS
 		public async Task<Absolute_bytes_difference_per_page> MetricsBytes_differenceAbsolutePer_page_project_page_title_editor_type_granularity_start_endGetAsync(string project, string page_title, MetricsBytes_differenceAbsolutePer_page_project_page_title_editor_type_granularity_start_endGetEditor_type editor_type, MetricsBytes_differenceAbsoluteAggregate_project_editor_type_page_type_granularity_start_endGetGranularity granularity, string start, string end, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "metrics/bytes-difference/absolute/per-page/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/{page_title}/{editor_type}/"+granularity+"/"+ (start==null? "" : System.Uri.EscapeDataString(start))+"/"+ (end==null? "" : System.Uri.EscapeDataString(end));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1596,13 +1587,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Absolute_bytes_difference_per_page>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Absolute_bytes_difference_per_page>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1645,8 +1635,7 @@ namespace MyNS
 		public async Task<Net_bytes_difference> MetricsBytes_differenceNetAggregate_project_editor_type_page_type_granularity_start_endGetAsync(string project, MetricsBytes_differenceNetAggregate_project_editor_type_page_type_granularity_start_endGetEditor_type editor_type, MetricsBytes_differenceNetAggregate_project_editor_type_page_type_granularity_start_endGetPage_type page_type, MetricsBytes_differenceAbsoluteAggregate_project_editor_type_page_type_granularity_start_endGetGranularity granularity, string start, string end, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "metrics/bytes-difference/net/aggregate/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/{editor_type}/{page_type}/"+granularity+"/"+ (start==null? "" : System.Uri.EscapeDataString(start))+"/"+ (end==null? "" : System.Uri.EscapeDataString(end));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1656,13 +1645,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Net_bytes_difference>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Net_bytes_difference>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1703,8 +1691,7 @@ namespace MyNS
 		public async Task<Net_bytes_difference_per_page> MetricsBytes_differenceNetPer_page_project_page_title_editor_type_granularity_start_endGetAsync(string project, string page_title, MetricsBytes_differenceNetPer_page_project_page_title_editor_type_granularity_start_endGetEditor_type editor_type, MetricsBytes_differenceAbsoluteAggregate_project_editor_type_page_type_granularity_start_endGetGranularity granularity, string start, string end, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "metrics/bytes-difference/net/per-page/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/{page_title}/{editor_type}/"+granularity+"/"+ (start==null? "" : System.Uri.EscapeDataString(start))+"/"+ (end==null? "" : System.Uri.EscapeDataString(end));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1714,13 +1701,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Net_bytes_difference_per_page>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Net_bytes_difference_per_page>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1768,8 +1754,7 @@ namespace MyNS
 		public async Task<Edited_pages> MetricsEdited_pagesAggregate_project_editor_type_page_type_activity_level_granularity_start_endGetAsync(string project, MetricsEdited_pagesAggregate_project_editor_type_page_type_activity_level_granularity_start_endGetEditor_type editor_type, MetricsEdited_pagesAggregate_project_editor_type_page_type_activity_level_granularity_start_endGetPage_type page_type, MetricsEdited_pagesAggregate_project_editor_type_page_type_activity_level_granularity_start_endGetActivity_level activity_level, MetricsBytes_differenceAbsoluteAggregate_project_editor_type_page_type_granularity_start_endGetGranularity granularity, string start, string end, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "metrics/edited-pages/aggregate/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/{editor_type}/{page_type}/{activity_level}/"+granularity+"/"+ (start==null? "" : System.Uri.EscapeDataString(start))+"/"+ (end==null? "" : System.Uri.EscapeDataString(end));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1779,13 +1764,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Edited_pages>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Edited_pages>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1829,8 +1813,7 @@ namespace MyNS
 		public async Task<New_pages> MetricsEdited_pagesNew_project_editor_type_page_type_granularity_start_endGetAsync(string project, MetricsEdited_pagesNew_project_editor_type_page_type_granularity_start_endGetEditor_type editor_type, MetricsEdited_pagesNew_project_editor_type_page_type_granularity_start_endGetPage_type page_type, MetricsBytes_differenceAbsoluteAggregate_project_editor_type_page_type_granularity_start_endGetGranularity granularity, string start, string end, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "metrics/edited-pages/new/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/{editor_type}/{page_type}/"+granularity+"/"+ (start==null? "" : System.Uri.EscapeDataString(start))+"/"+ (end==null? "" : System.Uri.EscapeDataString(end));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1840,13 +1823,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<New_pages>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<New_pages>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1886,8 +1868,7 @@ namespace MyNS
 		public async Task<Top_edited_pages_by_abs_bytes_diff> MetricsEdited_pagesTop_by_absolute_bytes_difference_project_editor_type_page_type_year_month_dayGetAsync(string project, MetricsEdited_pagesTop_by_absolute_bytes_difference_project_editor_type_page_type_year_month_dayGetEditor_type editor_type, MetricsEdited_pagesTop_by_absolute_bytes_difference_project_editor_type_page_type_year_month_dayGetPage_type page_type, string year, string month, string day, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "metrics/edited-pages/top-by-absolute-bytes-difference/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/{editor_type}/{page_type}/"+ (year==null? "" : System.Uri.EscapeDataString(year))+"/"+ (month==null? "" : System.Uri.EscapeDataString(month))+"/"+ (day==null? "" : System.Uri.EscapeDataString(day));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1897,13 +1878,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Top_edited_pages_by_abs_bytes_diff>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Top_edited_pages_by_abs_bytes_diff>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1944,8 +1924,7 @@ namespace MyNS
 		public async Task<Top_edited_pages_by_edits> MetricsEdited_pagesTop_by_edits_project_editor_type_page_type_year_month_dayGetAsync(string project, MetricsEdited_pagesTop_by_edits_project_editor_type_page_type_year_month_dayGetEditor_type editor_type, MetricsEdited_pagesTop_by_edits_project_editor_type_page_type_year_month_dayGetPage_type page_type, string year, string month, string day, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "metrics/edited-pages/top-by-edits/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/{editor_type}/{page_type}/"+ (year==null? "" : System.Uri.EscapeDataString(year))+"/"+ (month==null? "" : System.Uri.EscapeDataString(month))+"/"+ (day==null? "" : System.Uri.EscapeDataString(day));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1955,13 +1934,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Top_edited_pages_by_edits>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Top_edited_pages_by_edits>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2001,8 +1979,7 @@ namespace MyNS
 		public async Task<Top_edited_pages_by_net_bytes_diff> MetricsEdited_pagesTop_by_net_bytes_difference_project_editor_type_page_type_year_month_dayGetAsync(string project, MetricsEdited_pagesTop_by_net_bytes_difference_project_editor_type_page_type_year_month_dayGetEditor_type editor_type, MetricsEdited_pagesTop_by_net_bytes_difference_project_editor_type_page_type_year_month_dayGetPage_type page_type, string year, string month, string day, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "metrics/edited-pages/top-by-net-bytes-difference/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/{editor_type}/{page_type}/"+ (year==null? "" : System.Uri.EscapeDataString(year))+"/"+ (month==null? "" : System.Uri.EscapeDataString(month))+"/"+ (day==null? "" : System.Uri.EscapeDataString(day));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2012,13 +1989,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Top_edited_pages_by_net_bytes_diff>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Top_edited_pages_by_net_bytes_diff>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2066,8 +2042,7 @@ namespace MyNS
 		public async Task<Editors> MetricsEditorsAggregate_project_editor_type_page_type_activity_level_granularity_start_endGetAsync(string project, MetricsEditorsAggregate_project_editor_type_page_type_activity_level_granularity_start_endGetEditor_type editor_type, MetricsEditorsAggregate_project_editor_type_page_type_activity_level_granularity_start_endGetPage_type page_type, MetricsEditorsAggregate_project_editor_type_page_type_activity_level_granularity_start_endGetActivity_level activity_level, MetricsBytes_differenceAbsoluteAggregate_project_editor_type_page_type_granularity_start_endGetGranularity granularity, string start, string end, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "metrics/editors/aggregate/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/{editor_type}/{page_type}/{activity_level}/"+granularity+"/"+ (start==null? "" : System.Uri.EscapeDataString(start))+"/"+ (end==null? "" : System.Uri.EscapeDataString(end));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2077,13 +2052,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Editors>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Editors>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2125,8 +2099,7 @@ namespace MyNS
 		public async Task<Top_editors_by_abs_bytes_diff> MetricsEditorsTop_by_absolute_bytes_difference_project_editor_type_page_type_year_month_dayGetAsync(string project, MetricsEditorsTop_by_absolute_bytes_difference_project_editor_type_page_type_year_month_dayGetEditor_type editor_type, MetricsEditorsTop_by_absolute_bytes_difference_project_editor_type_page_type_year_month_dayGetPage_type page_type, string year, string month, string day, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "metrics/editors/top-by-absolute-bytes-difference/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/{editor_type}/{page_type}/"+ (year==null? "" : System.Uri.EscapeDataString(year))+"/"+ (month==null? "" : System.Uri.EscapeDataString(month))+"/"+ (day==null? "" : System.Uri.EscapeDataString(day));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2136,13 +2109,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Top_editors_by_abs_bytes_diff>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Top_editors_by_abs_bytes_diff>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2184,8 +2156,7 @@ namespace MyNS
 		public async Task<Top_editors_by_edits> MetricsEditorsTop_by_edits_project_editor_type_page_type_year_month_dayGetAsync(string project, MetricsEditorsTop_by_edits_project_editor_type_page_type_year_month_dayGetEditor_type editor_type, MetricsEditorsTop_by_edits_project_editor_type_page_type_year_month_dayGetPage_type page_type, string year, string month, string day, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "metrics/editors/top-by-edits/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/{editor_type}/{page_type}/"+ (year==null? "" : System.Uri.EscapeDataString(year))+"/"+ (month==null? "" : System.Uri.EscapeDataString(month))+"/"+ (day==null? "" : System.Uri.EscapeDataString(day));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2195,13 +2166,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Top_editors_by_edits>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Top_editors_by_edits>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2243,8 +2213,7 @@ namespace MyNS
 		public async Task<Top_editors_by_net_bytes_diff> MetricsEditorsTop_by_net_bytes_difference_project_editor_type_page_type_year_month_dayGetAsync(string project, MetricsEditorsTop_by_net_bytes_difference_project_editor_type_page_type_year_month_dayGetEditor_type editor_type, MetricsEditorsTop_by_net_bytes_difference_project_editor_type_page_type_year_month_dayGetPage_type page_type, string year, string month, string day, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "metrics/editors/top-by-net-bytes-difference/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/{editor_type}/{page_type}/"+ (year==null? "" : System.Uri.EscapeDataString(year))+"/"+ (month==null? "" : System.Uri.EscapeDataString(month))+"/"+ (day==null? "" : System.Uri.EscapeDataString(day));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2254,13 +2223,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Top_editors_by_net_bytes_diff>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Top_editors_by_net_bytes_diff>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2304,8 +2272,7 @@ namespace MyNS
 		public async Task<Edits> MetricsEditsAggregate_project_editor_type_page_type_granularity_start_endGetAsync(string project, MetricsEditsAggregate_project_editor_type_page_type_granularity_start_endGetEditor_type editor_type, MetricsEditsAggregate_project_editor_type_page_type_granularity_start_endGetPage_type page_type, MetricsBytes_differenceAbsoluteAggregate_project_editor_type_page_type_granularity_start_endGetGranularity granularity, string start, string end, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "metrics/edits/aggregate/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/{editor_type}/{page_type}/"+granularity+"/"+ (start==null? "" : System.Uri.EscapeDataString(start))+"/"+ (end==null? "" : System.Uri.EscapeDataString(end));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2315,13 +2282,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Edits>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Edits>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2362,8 +2328,7 @@ namespace MyNS
 		public async Task<Edits_per_page> MetricsEditsPer_page_project_page_title_editor_type_granularity_start_endGetAsync(string project, string page_title, MetricsEditsPer_page_project_page_title_editor_type_granularity_start_endGetEditor_type editor_type, MetricsBytes_differenceAbsoluteAggregate_project_editor_type_page_type_granularity_start_endGetGranularity granularity, string start, string end, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "metrics/edits/per-page/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/{page_title}/{editor_type}/"+granularity+"/"+ (start==null? "" : System.Uri.EscapeDataString(start))+"/"+ (end==null? "" : System.Uri.EscapeDataString(end));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2373,13 +2338,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Edits_per_page>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Edits_per_page>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2412,8 +2376,7 @@ namespace MyNS
 		public async Task<Pagecounts_project> MetricsLegacyPagecountsAggregate_project_access_site_granularity_start_endGetAsync(string project, MetricsLegacyPagecountsAggregate_project_access_site_granularity_start_endGetAccess_site access_site, MetricsLegacyPagecountsAggregate_project_access_site_granularity_start_endGetGranularity granularity, string start, string end, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "metrics/legacy/pagecounts/aggregate/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/{access_site}/"+granularity+"/"+ (start==null? "" : System.Uri.EscapeDataString(start))+"/"+ (end==null? "" : System.Uri.EscapeDataString(end));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2423,13 +2386,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Pagecounts_project>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Pagecounts_project>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2465,8 +2427,7 @@ namespace MyNS
 		public async Task<Pageview_project> MetricsPageviewsAggregate_project_access_agent_granularity_start_endGetAsync(string project, MetricsPageviewsAggregate_project_access_agent_granularity_start_endGetAccess access, MetricsPageviewsAggregate_project_access_agent_granularity_start_endGetAgent agent, MetricsLegacyPagecountsAggregate_project_access_site_granularity_start_endGetGranularity granularity, string start, string end, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "metrics/pageviews/aggregate/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/"+access+"/"+agent+"/"+granularity+"/"+ (start==null? "" : System.Uri.EscapeDataString(start))+"/"+ (end==null? "" : System.Uri.EscapeDataString(end));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2476,13 +2437,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Pageview_project>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Pageview_project>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2521,8 +2481,7 @@ namespace MyNS
 		public async Task<Pageview_article> MetricsPageviewsPer_article_project_access_agent_article_granularity_start_endGetAsync(string project, MetricsPageviewsPer_article_project_access_agent_article_granularity_start_endGetAccess access, MetricsPageviewsPer_article_project_access_agent_article_granularity_start_endGetAgent agent, string article, MetricsBytes_differenceAbsoluteAggregate_project_editor_type_page_type_granularity_start_endGetGranularity granularity, string start, string end, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "metrics/pageviews/per-article/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/"+access+"/"+agent+"/"+ (article==null? "" : System.Uri.EscapeDataString(article))+"/"+granularity+"/"+ (start==null? "" : System.Uri.EscapeDataString(start))+"/"+ (end==null? "" : System.Uri.EscapeDataString(end));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2532,13 +2491,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Pageview_article>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Pageview_article>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2567,8 +2525,7 @@ namespace MyNS
 		public async Task<By_country> MetricsPageviewsTop_by_country_project_access_year_monthGetAsync(string project, MetricsPageviewsTop_by_country_project_access_year_monthGetAccess access, string year, string month, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "metrics/pageviews/top-by-country/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/"+access+"/"+ (year==null? "" : System.Uri.EscapeDataString(year))+"/"+ (month==null? "" : System.Uri.EscapeDataString(month));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2578,13 +2535,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<By_country>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<By_country>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2615,8 +2571,7 @@ namespace MyNS
 		public async Task<Pageview_tops> MetricsPageviewsTop_project_access_year_month_dayGetAsync(string project, MetricsPageviewsTop_project_access_year_month_dayGetAccess access, string year, string month, string day, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "metrics/pageviews/top/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/"+access+"/"+ (year==null? "" : System.Uri.EscapeDataString(year))+"/"+ (month==null? "" : System.Uri.EscapeDataString(month))+"/"+ (day==null? "" : System.Uri.EscapeDataString(day));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2626,13 +2581,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Pageview_tops>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Pageview_tops>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2665,8 +2619,7 @@ namespace MyNS
 		public async Task<New_registered_users> MetricsRegistered_usersNew_project_granularity_start_endGetAsync(string project, MetricsBytes_differenceAbsoluteAggregate_project_editor_type_page_type_granularity_start_endGetGranularity granularity, string start, string end, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "metrics/registered-users/new/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/"+granularity+"/"+ (start==null? "" : System.Uri.EscapeDataString(start))+"/"+ (end==null? "" : System.Uri.EscapeDataString(end));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2676,13 +2629,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<New_registered_users>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<New_registered_users>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2714,8 +2666,7 @@ namespace MyNS
 		public async Task<Unique_devices> MetricsUnique_devices_project_access_site_granularity_start_endGetAsync(string project, MetricsUnique_devices_project_access_site_granularity_start_endGetAccess_site access_site, MetricsBytes_differenceAbsoluteAggregate_project_editor_type_page_type_granularity_start_endGetGranularity granularity, string start, string end, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "metrics/unique-devices/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/{access_site}/"+granularity+"/"+ (start==null? "" : System.Uri.EscapeDataString(start))+"/"+ (end==null? "" : System.Uri.EscapeDataString(end));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2725,13 +2676,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Unique_devices>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Unique_devices>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2747,8 +2697,7 @@ namespace MyNS
 		public async Task<Cx_languagepairs> TransformListLanguagepairsGetAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "transform/list/languagepairs/";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2758,13 +2707,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Cx_languagepairs>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Cx_languagepairs>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2782,8 +2730,7 @@ namespace MyNS
 		public async Task<Cx_list_tools> TransformListPair_from_toGetAsync(string from, string to, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "transform/list/pair/"+ (from==null? "" : System.Uri.EscapeDataString(from))+"/"+ (to==null? "" : System.Uri.EscapeDataString(to))+"/";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2793,13 +2740,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Cx_list_tools>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Cx_list_tools>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2816,8 +2762,7 @@ namespace MyNS
 		public async Task<Cx_list_pairs_for_tool> TransformListTool_toolGetAsync(TransformListTool_toolGetTool tool, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "transform/list/tool/"+tool;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2827,13 +2772,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Cx_list_pairs_for_tool>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Cx_list_pairs_for_tool>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2851,8 +2795,7 @@ namespace MyNS
 		public async Task<Cx_list_pairs_for_tool> TransformListTool_tool_fromGetAsync(TransformListTool_toolGetTool tool, string from, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "transform/list/tool/"+tool+"/"+ (from==null? "" : System.Uri.EscapeDataString(from));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2862,13 +2805,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Cx_list_pairs_for_tool>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Cx_list_pairs_for_tool>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2887,8 +2829,7 @@ namespace MyNS
 		public async Task<Cx_list_pairs_for_tool> TransformListTool_tool_from_toGetAsync(TransformListTool_toolGetTool tool, string from, string to, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "transform/list/tool/"+tool+"/"+ (from==null? "" : System.Uri.EscapeDataString(from))+"/"+ (to==null? "" : System.Uri.EscapeDataString(to));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2898,13 +2839,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Cx_list_pairs_for_tool>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Cx_list_pairs_for_tool>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2924,8 +2864,7 @@ namespace MyNS
 		public async Task<Cx_dict> TransformWordFrom_from_langTo_to_lang_wordGetAsync(string from_lang, string to_lang, string word, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "transform/word/from/"+ (from_lang==null? "" : System.Uri.EscapeDataString(from_lang))+"/to/"+ (to_lang==null? "" : System.Uri.EscapeDataString(to_lang))+"/"+ (word==null? "" : System.Uri.EscapeDataString(word));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2935,13 +2874,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Cx_dict>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Cx_dict>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2962,8 +2900,7 @@ namespace MyNS
 		public async Task<Cx_dict> TransformWordFrom_from_langTo_to_lang_word_providerGetAsync(string from_lang, string to_lang, string word, TransformWordFrom_from_langTo_to_lang_word_providerGetProvider provider, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "transform/word/from/"+ (from_lang==null? "" : System.Uri.EscapeDataString(from_lang))+"/to/"+ (to_lang==null? "" : System.Uri.EscapeDataString(to_lang))+"/"+ (word==null? "" : System.Uri.EscapeDataString(word))+"/"+provider;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2973,13 +2910,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Cx_dict>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Cx_dict>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

@@ -1868,8 +1868,7 @@ namespace MyNS
 		public async Task FindAdvisorByIDAsync(string vestorly_auth, string access_token, string id)
 		{
 			var requestUri = "advisors/"+ (id==null? "" : System.Uri.EscapeDataString(id))+"?vestorly_auth=" + (vestorly_auth==null? "" : System.Uri.EscapeDataString(vestorly_auth))+"&access_token=" + (access_token==null? "" : System.Uri.EscapeDataString(access_token));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -1878,7 +1877,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1895,8 +1893,7 @@ namespace MyNS
 		public async Task FindArticlePhrasesAsync(string vestorly_auth, string access_token, string text_search, int size, int from)
 		{
 			var requestUri = "article_phrases?vestorly_auth=" + (vestorly_auth==null? "" : System.Uri.EscapeDataString(vestorly_auth))+"&access_token=" + (access_token==null? "" : System.Uri.EscapeDataString(access_token))+"&text_search=" + (text_search==null? "" : System.Uri.EscapeDataString(text_search))+"&size="+size+"&from="+from;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -1905,7 +1902,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1923,8 +1919,7 @@ namespace MyNS
 		public async Task FindArticlesAsync(string vestorly_auth, string access_token, int limit, string text_query, string sort_direction, string sort_by)
 		{
 			var requestUri = "articles?vestorly_auth=" + (vestorly_auth==null? "" : System.Uri.EscapeDataString(vestorly_auth))+"&access_token=" + (access_token==null? "" : System.Uri.EscapeDataString(access_token))+"&limit="+limit+"&text_query=" + (text_query==null? "" : System.Uri.EscapeDataString(text_query))+"&sort_direction=" + (sort_direction==null? "" : System.Uri.EscapeDataString(sort_direction))+"&sort_by=" + (sort_by==null? "" : System.Uri.EscapeDataString(sort_by));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -1933,7 +1928,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1948,8 +1942,7 @@ namespace MyNS
 		public async Task FindArticleByIDAsync(string vestorly_auth, string access_token, string id)
 		{
 			var requestUri = "articles/"+ (id==null? "" : System.Uri.EscapeDataString(id))+"?vestorly_auth=" + (vestorly_auth==null? "" : System.Uri.EscapeDataString(vestorly_auth))+"&access_token=" + (access_token==null? "" : System.Uri.EscapeDataString(access_token));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -1958,7 +1951,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1972,8 +1964,7 @@ namespace MyNS
 		public async Task FindCustomFeedFiltersAsync(string vestorly_auth, string access_token)
 		{
 			var requestUri = "custom_feed_filters?vestorly_auth=" + (vestorly_auth==null? "" : System.Uri.EscapeDataString(vestorly_auth))+"&access_token=" + (access_token==null? "" : System.Uri.EscapeDataString(access_token));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -1982,7 +1973,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1997,22 +1987,19 @@ namespace MyNS
 		public async Task<CustomFeedFilterresponse> CreateCustomFeedFilterAsync(string vestorly_auth, string access_token, CustomFeedFilterInput requestBody)
 		{
 			var requestUri = "custom_feed_filters?vestorly_auth=" + (vestorly_auth==null? "" : System.Uri.EscapeDataString(vestorly_auth))+"&access_token=" + (access_token==null? "" : System.Uri.EscapeDataString(access_token));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<CustomFeedFilterresponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<CustomFeedFilterresponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2027,8 +2014,7 @@ namespace MyNS
 		public async Task FindCustomFeedFilterByIDAsync(string vestorly_auth, string access_token, string id)
 		{
 			var requestUri = "custom_feed_filters/"+ (id==null? "" : System.Uri.EscapeDataString(id))+"?vestorly_auth=" + (vestorly_auth==null? "" : System.Uri.EscapeDataString(vestorly_auth))+"&access_token=" + (access_token==null? "" : System.Uri.EscapeDataString(access_token));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -2037,7 +2023,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2053,22 +2038,19 @@ namespace MyNS
 		public async Task<CustomFeedFilterresponse> UpdateCustomFeedFilterByIdAsync(string vestorly_auth, string access_token, string id, CustomFeedFilterInput requestBody)
 		{
 			var requestUri = "custom_feed_filters/"+ (id==null? "" : System.Uri.EscapeDataString(id))+"?vestorly_auth=" + (vestorly_auth==null? "" : System.Uri.EscapeDataString(vestorly_auth))+"&access_token=" + (access_token==null? "" : System.Uri.EscapeDataString(access_token));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<CustomFeedFilterresponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<CustomFeedFilterresponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2083,19 +2065,17 @@ namespace MyNS
 		public async Task<CustomFeedFilterresponse> DeleteCustomFeedFilterAsync(string vestorly_auth, string access_token, string id)
 		{
 			var requestUri = "custom_feed_filters/"+ (id==null? "" : System.Uri.EscapeDataString(id))+"?vestorly_auth=" + (vestorly_auth==null? "" : System.Uri.EscapeDataString(vestorly_auth))+"&access_token=" + (access_token==null? "" : System.Uri.EscapeDataString(access_token));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<CustomFeedFilterresponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<CustomFeedFilterresponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2109,8 +2089,7 @@ namespace MyNS
 		public async Task FindCustomFeedsAsync(string vestorly_auth, string access_token)
 		{
 			var requestUri = "custom_feeds?vestorly_auth=" + (vestorly_auth==null? "" : System.Uri.EscapeDataString(vestorly_auth))+"&access_token=" + (access_token==null? "" : System.Uri.EscapeDataString(access_token));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -2119,7 +2098,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2134,22 +2112,19 @@ namespace MyNS
 		public async Task<CustomFeedresponse> CreateCustomFeedAsync(string vestorly_auth, string access_token, CustomFeedInput requestBody)
 		{
 			var requestUri = "custom_feeds?vestorly_auth=" + (vestorly_auth==null? "" : System.Uri.EscapeDataString(vestorly_auth))+"&access_token=" + (access_token==null? "" : System.Uri.EscapeDataString(access_token));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<CustomFeedresponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<CustomFeedresponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2164,8 +2139,7 @@ namespace MyNS
 		public async Task FindCustomFeedByIDAsync(string vestorly_auth, string access_token, string id)
 		{
 			var requestUri = "custom_feeds/"+ (id==null? "" : System.Uri.EscapeDataString(id))+"?vestorly_auth=" + (vestorly_auth==null? "" : System.Uri.EscapeDataString(vestorly_auth))+"&access_token=" + (access_token==null? "" : System.Uri.EscapeDataString(access_token));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -2174,7 +2148,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2190,22 +2163,19 @@ namespace MyNS
 		public async Task<CustomFeedresponse> UpdateCategoryByIdAsync(string vestorly_auth, string access_token, string id, CustomFeedInput requestBody)
 		{
 			var requestUri = "custom_feeds/"+ (id==null? "" : System.Uri.EscapeDataString(id))+"?vestorly_auth=" + (vestorly_auth==null? "" : System.Uri.EscapeDataString(vestorly_auth))+"&access_token=" + (access_token==null? "" : System.Uri.EscapeDataString(access_token));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<CustomFeedresponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<CustomFeedresponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2220,19 +2190,17 @@ namespace MyNS
 		public async Task<CustomFeedresponse> DeleteCustomFeedAsync(string vestorly_auth, string access_token, string id)
 		{
 			var requestUri = "custom_feeds/"+ (id==null? "" : System.Uri.EscapeDataString(id))+"?vestorly_auth=" + (vestorly_auth==null? "" : System.Uri.EscapeDataString(vestorly_auth))+"&access_token=" + (access_token==null? "" : System.Uri.EscapeDataString(access_token));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<CustomFeedresponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<CustomFeedresponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2252,8 +2220,7 @@ namespace MyNS
 		public async Task FindCustomFeedArticlesAsync(string vestorly_auth, string access_token, string id, int limit, string sort_by, int start, string created_at_gte_days_ago, string text_query)
 		{
 			var requestUri = "custom_feeds/"+ (id==null? "" : System.Uri.EscapeDataString(id))+"/articles?vestorly_auth=" + (vestorly_auth==null? "" : System.Uri.EscapeDataString(vestorly_auth))+"&access_token=" + (access_token==null? "" : System.Uri.EscapeDataString(access_token))+"&limit="+limit+"&sort_by=" + (sort_by==null? "" : System.Uri.EscapeDataString(sort_by))+"&start="+start+"&created_at_gte_days_ago=" + (created_at_gte_days_ago==null? "" : System.Uri.EscapeDataString(created_at_gte_days_ago))+"&text_query=" + (text_query==null? "" : System.Uri.EscapeDataString(text_query));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -2262,7 +2229,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2277,8 +2243,7 @@ namespace MyNS
 		public async Task DuplicateCustomFeedAsync(string vestorly_auth, string access_token, string id)
 		{
 			var requestUri = "custom_feeds/"+ (id==null? "" : System.Uri.EscapeDataString(id))+"/duplicates?vestorly_auth=" + (vestorly_auth==null? "" : System.Uri.EscapeDataString(vestorly_auth))+"&access_token=" + (access_token==null? "" : System.Uri.EscapeDataString(access_token));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -2287,7 +2252,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2301,8 +2265,7 @@ namespace MyNS
 		public async Task FindEventsAsync(string vestorly_auth, string access_token)
 		{
 			var requestUri = "events?vestorly_auth=" + (vestorly_auth==null? "" : System.Uri.EscapeDataString(vestorly_auth))+"&access_token=" + (access_token==null? "" : System.Uri.EscapeDataString(access_token));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -2311,7 +2274,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2326,10 +2288,8 @@ namespace MyNS
 		public async Task CreateEventAsync(string vestorly_auth, string access_token, EventInput requestBody)
 		{
 			var requestUri = "events?vestorly_auth=" + (vestorly_auth==null? "" : System.Uri.EscapeDataString(vestorly_auth))+"&access_token=" + (access_token==null? "" : System.Uri.EscapeDataString(access_token));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -2339,7 +2299,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2354,8 +2313,7 @@ namespace MyNS
 		public async Task FindEventByIDAsync(string id, string access_token, string vestorly_auth)
 		{
 			var requestUri = "events/"+ (id==null? "" : System.Uri.EscapeDataString(id))+"&access_token=" + (access_token==null? "" : System.Uri.EscapeDataString(access_token))+"&vestorly_auth=" + (vestorly_auth==null? "" : System.Uri.EscapeDataString(vestorly_auth));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -2364,7 +2322,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2378,8 +2335,7 @@ namespace MyNS
 		public async Task FindGroupsAsync(string vestorly_auth, string access_token)
 		{
 			var requestUri = "groups?vestorly_auth=" + (vestorly_auth==null? "" : System.Uri.EscapeDataString(vestorly_auth))+"&access_token=" + (access_token==null? "" : System.Uri.EscapeDataString(access_token));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -2388,7 +2344,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2403,22 +2358,19 @@ namespace MyNS
 		public async Task<Groupresponse> CreateGroupAsync(string vestorly_auth, string access_token, GroupInput requestBody)
 		{
 			var requestUri = "groups?vestorly_auth=" + (vestorly_auth==null? "" : System.Uri.EscapeDataString(vestorly_auth))+"&access_token=" + (access_token==null? "" : System.Uri.EscapeDataString(access_token));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Groupresponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Groupresponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2433,8 +2385,7 @@ namespace MyNS
 		public async Task FindGroupByIDAsync(string vestorly_auth, string access_token, string id)
 		{
 			var requestUri = "groups/"+ (id==null? "" : System.Uri.EscapeDataString(id))+"?vestorly_auth=" + (vestorly_auth==null? "" : System.Uri.EscapeDataString(vestorly_auth))+"&access_token=" + (access_token==null? "" : System.Uri.EscapeDataString(access_token));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -2443,7 +2394,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2459,22 +2409,19 @@ namespace MyNS
 		public async Task<Groupresponse> UpdateGroupByIdAsync(string vestorly_auth, string access_token, string id, GroupInput requestBody)
 		{
 			var requestUri = "groups/"+ (id==null? "" : System.Uri.EscapeDataString(id))+"?vestorly_auth=" + (vestorly_auth==null? "" : System.Uri.EscapeDataString(vestorly_auth))+"&access_token=" + (access_token==null? "" : System.Uri.EscapeDataString(access_token));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Groupresponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Groupresponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2489,19 +2436,17 @@ namespace MyNS
 		public async Task<Groupresponse> DeleteGroupAsync(string vestorly_auth, string access_token, string id)
 		{
 			var requestUri = "groups/"+ (id==null? "" : System.Uri.EscapeDataString(id))+"?vestorly_auth=" + (vestorly_auth==null? "" : System.Uri.EscapeDataString(vestorly_auth))+"&access_token=" + (access_token==null? "" : System.Uri.EscapeDataString(access_token));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Groupresponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Groupresponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2515,8 +2460,7 @@ namespace MyNS
 		public async Task FindMemberEventsAsync(string vestorly_auth, string access_token)
 		{
 			var requestUri = "member_events?vestorly_auth=" + (vestorly_auth==null? "" : System.Uri.EscapeDataString(vestorly_auth))+"&access_token=" + (access_token==null? "" : System.Uri.EscapeDataString(access_token));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -2525,7 +2469,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2539,8 +2482,7 @@ namespace MyNS
 		public async Task FindMemberReportsAsync(string vestorly_auth, string access_token)
 		{
 			var requestUri = "member_reports?vestorly_auth=" + (vestorly_auth==null? "" : System.Uri.EscapeDataString(vestorly_auth))+"&access_token=" + (access_token==null? "" : System.Uri.EscapeDataString(access_token));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -2549,7 +2491,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2565,8 +2506,7 @@ namespace MyNS
 		public async Task FindMembersAsync(string vestorly_auth, string access_token, int start, int limit)
 		{
 			var requestUri = "members?vestorly_auth=" + (vestorly_auth==null? "" : System.Uri.EscapeDataString(vestorly_auth))+"&access_token=" + (access_token==null? "" : System.Uri.EscapeDataString(access_token))+"&start="+start+"&limit="+limit;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -2575,7 +2515,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2590,10 +2529,8 @@ namespace MyNS
 		public async Task CreateMemberAsync(string vestorly_auth, string access_token, Member requestBody)
 		{
 			var requestUri = "members?vestorly_auth=" + (vestorly_auth==null? "" : System.Uri.EscapeDataString(vestorly_auth))+"&access_token=" + (access_token==null? "" : System.Uri.EscapeDataString(access_token));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -2603,7 +2540,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2618,8 +2554,7 @@ namespace MyNS
 		public async Task FindMemberByIDAsync(string id, string vestorly_auth, string access_token)
 		{
 			var requestUri = "members/"+ (id==null? "" : System.Uri.EscapeDataString(id))+"&vestorly_auth=" + (vestorly_auth==null? "" : System.Uri.EscapeDataString(vestorly_auth))+"&access_token=" + (access_token==null? "" : System.Uri.EscapeDataString(access_token));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -2628,7 +2563,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2644,10 +2578,8 @@ namespace MyNS
 		public async Task UpdateMemberByIDAsync(string id, string vestorly_auth, string access_token, Member requestBody)
 		{
 			var requestUri = "members/"+ (id==null? "" : System.Uri.EscapeDataString(id))+"&vestorly_auth=" + (vestorly_auth==null? "" : System.Uri.EscapeDataString(vestorly_auth))+"&access_token=" + (access_token==null? "" : System.Uri.EscapeDataString(access_token));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -2657,7 +2589,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2671,8 +2602,7 @@ namespace MyNS
 		public async Task FindNewsletterSettingsAsync(string vestorly_auth, string access_token)
 		{
 			var requestUri = "newsletter_settings?vestorly_auth=" + (vestorly_auth==null? "" : System.Uri.EscapeDataString(vestorly_auth))+"&access_token=" + (access_token==null? "" : System.Uri.EscapeDataString(access_token));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -2681,7 +2611,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2696,8 +2625,7 @@ namespace MyNS
 		public async Task FindNewsletterSettingsByIDAsync(string id, string vestorly_auth, string access_token)
 		{
 			var requestUri = "newsletter_settings/"+ (id==null? "" : System.Uri.EscapeDataString(id))+"&vestorly_auth=" + (vestorly_auth==null? "" : System.Uri.EscapeDataString(vestorly_auth))+"&access_token=" + (access_token==null? "" : System.Uri.EscapeDataString(access_token));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -2706,7 +2634,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2722,10 +2649,8 @@ namespace MyNS
 		public async Task UpdateNewsletterSettingsByIDAsync(string id, string vestorly_auth, string access_token, NewsletterSettingsInput requestBody)
 		{
 			var requestUri = "newsletter_settings/"+ (id==null? "" : System.Uri.EscapeDataString(id))+"&vestorly_auth=" + (vestorly_auth==null? "" : System.Uri.EscapeDataString(vestorly_auth))+"&access_token=" + (access_token==null? "" : System.Uri.EscapeDataString(access_token));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -2735,7 +2660,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2749,8 +2673,7 @@ namespace MyNS
 		public async Task FindNewslettersAsync(string vestorly_auth, string access_token)
 		{
 			var requestUri = "newsletters?vestorly_auth=" + (vestorly_auth==null? "" : System.Uri.EscapeDataString(vestorly_auth))+"&access_token=" + (access_token==null? "" : System.Uri.EscapeDataString(access_token));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -2759,7 +2682,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2774,8 +2696,7 @@ namespace MyNS
 		public async Task GetNewsletterByIDAsync(string vestorly_auth, string access_token, string id)
 		{
 			var requestUri = "newsletters/"+ (id==null? "" : System.Uri.EscapeDataString(id))+"?vestorly_auth=" + (vestorly_auth==null? "" : System.Uri.EscapeDataString(vestorly_auth))+"&access_token=" + (access_token==null? "" : System.Uri.EscapeDataString(access_token));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -2784,7 +2705,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2800,10 +2720,8 @@ namespace MyNS
 		public async Task UpdateNewsletterByIDAsync(string vestorly_auth, string access_token, string id, NewsletterInput requestBody)
 		{
 			var requestUri = "newsletters/"+ (id==null? "" : System.Uri.EscapeDataString(id))+"?vestorly_auth=" + (vestorly_auth==null? "" : System.Uri.EscapeDataString(vestorly_auth))+"&access_token=" + (access_token==null? "" : System.Uri.EscapeDataString(access_token));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -2813,7 +2731,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2830,8 +2747,7 @@ namespace MyNS
 		public async Task FindPostsAsync(string vestorly_auth, string access_token, string text_query, string external_url, string is_published)
 		{
 			var requestUri = "posts?vestorly_auth=" + (vestorly_auth==null? "" : System.Uri.EscapeDataString(vestorly_auth))+"&access_token=" + (access_token==null? "" : System.Uri.EscapeDataString(access_token))+"&text_query=" + (text_query==null? "" : System.Uri.EscapeDataString(text_query))+"&external_url=" + (external_url==null? "" : System.Uri.EscapeDataString(external_url))+"&is_published=" + (is_published==null? "" : System.Uri.EscapeDataString(is_published));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -2840,7 +2756,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2855,10 +2770,8 @@ namespace MyNS
 		public async Task CreatePostAsync(string vestorly_auth, string access_token, PostInput requestBody)
 		{
 			var requestUri = "posts?vestorly_auth=" + (vestorly_auth==null? "" : System.Uri.EscapeDataString(vestorly_auth))+"&access_token=" + (access_token==null? "" : System.Uri.EscapeDataString(access_token));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -2868,7 +2781,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2883,8 +2795,7 @@ namespace MyNS
 		public async Task GetPostByIDAsync(string vestorly_auth, string access_token, string id)
 		{
 			var requestUri = "posts/"+ (id==null? "" : System.Uri.EscapeDataString(id))+"?vestorly_auth=" + (vestorly_auth==null? "" : System.Uri.EscapeDataString(vestorly_auth))+"&access_token=" + (access_token==null? "" : System.Uri.EscapeDataString(access_token));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -2893,7 +2804,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2909,10 +2819,8 @@ namespace MyNS
 		public async Task UpdatePostByIDAsync(string vestorly_auth, string access_token, string id, Post requestBody)
 		{
 			var requestUri = "posts/"+ (id==null? "" : System.Uri.EscapeDataString(id))+"?vestorly_auth=" + (vestorly_auth==null? "" : System.Uri.EscapeDataString(vestorly_auth))+"&access_token=" + (access_token==null? "" : System.Uri.EscapeDataString(access_token));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -2922,7 +2830,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2936,8 +2843,7 @@ namespace MyNS
 		public async Task FindSeedCustomFeedsAsync(string vestorly_auth, string access_token)
 		{
 			var requestUri = "seed_custom_feeds?vestorly_auth=" + (vestorly_auth==null? "" : System.Uri.EscapeDataString(vestorly_auth))+"&access_token=" + (access_token==null? "" : System.Uri.EscapeDataString(access_token));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -2946,7 +2852,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2961,22 +2866,19 @@ namespace MyNS
 		public async Task<SeedCustomFeedresponse> CreateSeedCustomFeedAsync(string vestorly_auth, string access_token, SeedCustomFeedInput requestBody)
 		{
 			var requestUri = "seed_custom_feeds?vestorly_auth=" + (vestorly_auth==null? "" : System.Uri.EscapeDataString(vestorly_auth))+"&access_token=" + (access_token==null? "" : System.Uri.EscapeDataString(access_token));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<SeedCustomFeedresponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<SeedCustomFeedresponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2991,8 +2893,7 @@ namespace MyNS
 		public async Task FindSeedCustomFeedByIDAsync(string vestorly_auth, string access_token, string id)
 		{
 			var requestUri = "seed_custom_feeds/"+ (id==null? "" : System.Uri.EscapeDataString(id))+"?vestorly_auth=" + (vestorly_auth==null? "" : System.Uri.EscapeDataString(vestorly_auth))+"&access_token=" + (access_token==null? "" : System.Uri.EscapeDataString(access_token));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -3001,7 +2902,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3017,22 +2917,19 @@ namespace MyNS
 		public async Task<SeedCustomFeedresponse> UpdateSeedCustomFeedByIdAsync(string vestorly_auth, string access_token, string id, SeedCustomFeedInput requestBody)
 		{
 			var requestUri = "seed_custom_feeds/"+ (id==null? "" : System.Uri.EscapeDataString(id))+"?vestorly_auth=" + (vestorly_auth==null? "" : System.Uri.EscapeDataString(vestorly_auth))+"&access_token=" + (access_token==null? "" : System.Uri.EscapeDataString(access_token));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<SeedCustomFeedresponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<SeedCustomFeedresponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3047,19 +2944,17 @@ namespace MyNS
 		public async Task<SeedCustomFeedresponse> DeleteSeedCustomFeedAsync(string vestorly_auth, string access_token, string id)
 		{
 			var requestUri = "seed_custom_feeds/"+ (id==null? "" : System.Uri.EscapeDataString(id))+"?vestorly_auth=" + (vestorly_auth==null? "" : System.Uri.EscapeDataString(vestorly_auth))+"&access_token=" + (access_token==null? "" : System.Uri.EscapeDataString(access_token));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<SeedCustomFeedresponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<SeedCustomFeedresponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3073,8 +2968,7 @@ namespace MyNS
 		public async Task LoginAsync(string username, string password)
 		{
 			var requestUri = "sessions?username=" + (username==null? "" : System.Uri.EscapeDataString(username))+"&password=" + (password==null? "" : System.Uri.EscapeDataString(password));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -3083,7 +2977,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3097,8 +2990,7 @@ namespace MyNS
 		public async Task LogoutAsync(string vestorly_auth, string id)
 		{
 			var requestUri = "sessions/"+ (id==null? "" : System.Uri.EscapeDataString(id))+"?vestorly_auth=" + (vestorly_auth==null? "" : System.Uri.EscapeDataString(vestorly_auth));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -3107,7 +2999,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3121,8 +3012,7 @@ namespace MyNS
 		public async Task FindSourcesAsync(string vestorly_auth, string access_token)
 		{
 			var requestUri = "sources?vestorly_auth=" + (vestorly_auth==null? "" : System.Uri.EscapeDataString(vestorly_auth))+"&access_token=" + (access_token==null? "" : System.Uri.EscapeDataString(access_token));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -3131,7 +3021,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3146,10 +3035,8 @@ namespace MyNS
 		public async Task CreateSourceAsync(string vestorly_auth, string access_token, SourceInput requestBody)
 		{
 			var requestUri = "sources?vestorly_auth=" + (vestorly_auth==null? "" : System.Uri.EscapeDataString(vestorly_auth))+"&access_token=" + (access_token==null? "" : System.Uri.EscapeDataString(access_token));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -3159,7 +3046,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3174,8 +3060,7 @@ namespace MyNS
 		public async Task GetSourceByIDAsync(string vestorly_auth, string access_token, string id)
 		{
 			var requestUri = "sources/"+ (id==null? "" : System.Uri.EscapeDataString(id))+"?vestorly_auth=" + (vestorly_auth==null? "" : System.Uri.EscapeDataString(vestorly_auth))+"&access_token=" + (access_token==null? "" : System.Uri.EscapeDataString(access_token));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -3184,7 +3069,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3200,10 +3084,8 @@ namespace MyNS
 		public async Task UpdateSourceByIDAsync(string vestorly_auth, string access_token, string id, SourceInput requestBody)
 		{
 			var requestUri = "sources/"+ (id==null? "" : System.Uri.EscapeDataString(id))+"?vestorly_auth=" + (vestorly_auth==null? "" : System.Uri.EscapeDataString(vestorly_auth))+"&access_token=" + (access_token==null? "" : System.Uri.EscapeDataString(access_token));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -3213,7 +3095,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

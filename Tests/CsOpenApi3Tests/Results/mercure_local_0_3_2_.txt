@@ -137,8 +137,7 @@ namespace MyNS
 		public async Task _well_knownMercureGetByTopicAndLast_Event_IDAsync(string[] topic, string Last_Event_ID, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = ".well-known/mercure?"+string.Join("&", topic.Select(z => $"topic={System.Uri.EscapeDataString(z.ToString())}"))+"&Last-Event-ID=" + (Last_Event_ID==null? "" : System.Uri.EscapeDataString(Last_Event_ID));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -152,7 +151,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -164,8 +162,7 @@ namespace MyNS
 		public async Task _well_knownMercureSubscriptionsGetAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = ".well-known/mercure/subscriptions";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -179,7 +176,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -191,8 +187,7 @@ namespace MyNS
 		public async Task _well_knownMercureSubscriptions_topicGetAsync(string topic, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = ".well-known/mercure/subscriptions/"+ (topic==null? "" : System.Uri.EscapeDataString(topic));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -206,7 +201,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -218,8 +212,7 @@ namespace MyNS
 		public async Task _well_knownMercureSubscriptions_topic_subscriberGetAsync(string topic, string subscriber, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = ".well-known/mercure/subscriptions/"+ (topic==null? "" : System.Uri.EscapeDataString(topic))+"/"+ (subscriber==null? "" : System.Uri.EscapeDataString(subscriber));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -233,7 +226,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

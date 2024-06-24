@@ -912,19 +912,17 @@ namespace MyNS
 		public async Task<OperationsList> Operations_ListAsync(Operations_ListApi_version api_version)
 		{
 			var requestUri = "providers/Microsoft.AlertsManagement/operations?api-version=" + api_version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<OperationsList>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<OperationsList>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -950,19 +948,17 @@ namespace MyNS
 		public async Task<SmartGroupsList> SmartGroups_GetAllAsync(string subscriptionId, string targetResource, string targetResourceGroup, string targetResourceType, SmartGroups_GetAllMonitorService monitorService, EssentialsMonitorCondition monitorCondition, EssentialsSeverity severity, EssentialsAlertState smartGroupState, SmartGroups_GetAllTimeRange timeRange, int pageCount, SmartGroups_GetAllSortBy sortBy, SmartGroups_GetAllSortOrder sortOrder, SmartGroups_GetAllApi_version api_version)
 		{
 			var requestUri = "subscriptions/"+ (subscriptionId==null? "" : System.Uri.EscapeDataString(subscriptionId))+"/providers/Microsoft.AlertsManagement/smartGroups&targetResource=" + (targetResource==null? "" : System.Uri.EscapeDataString(targetResource))+"&targetResourceGroup=" + (targetResourceGroup==null? "" : System.Uri.EscapeDataString(targetResourceGroup))+"&targetResourceType=" + (targetResourceType==null? "" : System.Uri.EscapeDataString(targetResourceType))+"&monitorService=" + monitorService+"&monitorCondition=" + monitorCondition+"&severity=" + severity+"&smartGroupState=" + smartGroupState+"&timeRange=" + timeRange+"&pageCount="+pageCount+"&sortBy=" + sortBy+"&sortOrder=" + sortOrder+"&api-version=" + api_version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<SmartGroupsList>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<SmartGroupsList>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -978,19 +974,17 @@ namespace MyNS
 		public async Task<SmartGroup> SmartGroups_GetByIdAsync(string subscriptionId, string smartGroupId, SmartGroups_GetByIdApi_version api_version)
 		{
 			var requestUri = "subscriptions/"+ (subscriptionId==null? "" : System.Uri.EscapeDataString(subscriptionId))+"/providers/Microsoft.AlertsManagement/smartGroups/"+ (smartGroupId==null? "" : System.Uri.EscapeDataString(smartGroupId))+"&api-version=" + api_version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<SmartGroup>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<SmartGroup>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1006,19 +1000,17 @@ namespace MyNS
 		public async Task<SmartGroup> SmartGroups_ChangeStateAsync(string subscriptionId, string smartGroupId, SmartGroups_ChangeStateApi_version api_version, EssentialsAlertState newState)
 		{
 			var requestUri = "subscriptions/"+ (subscriptionId==null? "" : System.Uri.EscapeDataString(subscriptionId))+"/providers/Microsoft.AlertsManagement/smartGroups/"+ (smartGroupId==null? "" : System.Uri.EscapeDataString(smartGroupId))+"/changeState&api-version=" + api_version+"&newState=" + newState;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<SmartGroup>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<SmartGroup>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1033,19 +1025,17 @@ namespace MyNS
 		public async Task<SmartGroupModification> SmartGroups_GetHistoryAsync(string subscriptionId, string smartGroupId, SmartGroups_GetHistoryApi_version api_version)
 		{
 			var requestUri = "subscriptions/"+ (subscriptionId==null? "" : System.Uri.EscapeDataString(subscriptionId))+"/providers/Microsoft.AlertsManagement/smartGroups/"+ (smartGroupId==null? "" : System.Uri.EscapeDataString(smartGroupId))+"/history&api-version=" + api_version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<SmartGroupModification>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<SmartGroupModification>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1095,19 +1085,17 @@ namespace MyNS
 					Alerts_GetAllApi_version api_version)
 		{
 			var requestUri = ""+ (scope==null? "" : System.Uri.EscapeDataString(scope))+"/providers/Microsoft.AlertsManagement/alerts&targetResource=" + (targetResource==null? "" : System.Uri.EscapeDataString(targetResource))+"&targetResourceType=" + (targetResourceType==null? "" : System.Uri.EscapeDataString(targetResourceType))+"&targetResourceGroup=" + (targetResourceGroup==null? "" : System.Uri.EscapeDataString(targetResourceGroup))+"&monitorService=" + monitorService+"&monitorCondition=" + monitorCondition+"&severity=" + severity+"&alertState=" + alertState+"&alertRule=" + (alertRule==null? "" : System.Uri.EscapeDataString(alertRule))+"&smartGroupId=" + (smartGroupId==null? "" : System.Uri.EscapeDataString(smartGroupId))+"&includeContext="+includeContext+"&includeEgressConfig="+includeEgressConfig+"&pageCount="+pageCount+"&sortBy=" + sortBy+"&sortOrder=" + sortOrder+"&select=" + (select==null? "" : System.Uri.EscapeDataString(select))+"&timeRange=" + timeRange+"&customTimeRange=" + (customTimeRange==null? "" : System.Uri.EscapeDataString(customTimeRange))+"&api-version=" + api_version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<AlertsList>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<AlertsList>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1123,19 +1111,17 @@ namespace MyNS
 		public async Task<Alert> Alerts_GetByIdAsync(string scope, string alertId, Alerts_GetByIdApi_version api_version)
 		{
 			var requestUri = ""+ (scope==null? "" : System.Uri.EscapeDataString(scope))+"/providers/Microsoft.AlertsManagement/alerts/"+ (alertId==null? "" : System.Uri.EscapeDataString(alertId))+"&api-version=" + api_version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Alert>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Alert>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1151,19 +1137,17 @@ namespace MyNS
 		public async Task<Alert> Alerts_ChangeStateAsync(string scope, string alertId, Alerts_ChangeStateApi_version api_version, EssentialsAlertState newState)
 		{
 			var requestUri = ""+ (scope==null? "" : System.Uri.EscapeDataString(scope))+"/providers/Microsoft.AlertsManagement/alerts/"+ (alertId==null? "" : System.Uri.EscapeDataString(alertId))+"/changestate&api-version=" + api_version+"&newState=" + newState;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Alert>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Alert>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1178,19 +1162,17 @@ namespace MyNS
 		public async Task<AlertModification> Alerts_GetHistoryAsync(string scope, string alertId, Alerts_GetHistoryApi_version api_version)
 		{
 			var requestUri = ""+ (scope==null? "" : System.Uri.EscapeDataString(scope))+"/providers/Microsoft.AlertsManagement/alerts/"+ (alertId==null? "" : System.Uri.EscapeDataString(alertId))+"/history&api-version=" + api_version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<AlertModification>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<AlertModification>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1216,19 +1198,17 @@ namespace MyNS
 		public async Task<AlertsSummary> Alerts_GetSummaryAsync(string scope, Alerts_GetSummaryGroupby groupby, bool includeSmartGroupsCount, string targetResource, string targetResourceType, string targetResourceGroup, Alerts_GetSummaryMonitorService monitorService, EssentialsMonitorCondition monitorCondition, EssentialsSeverity severity, EssentialsAlertState alertState, string alertRule, Alerts_GetSummaryTimeRange timeRange, string customTimeRange, Alerts_GetSummaryApi_version api_version)
 		{
 			var requestUri = ""+ (scope==null? "" : System.Uri.EscapeDataString(scope))+"/providers/Microsoft.AlertsManagement/alertsSummary&groupby=" + groupby+"&includeSmartGroupsCount="+includeSmartGroupsCount+"&targetResource=" + (targetResource==null? "" : System.Uri.EscapeDataString(targetResource))+"&targetResourceType=" + (targetResourceType==null? "" : System.Uri.EscapeDataString(targetResourceType))+"&targetResourceGroup=" + (targetResourceGroup==null? "" : System.Uri.EscapeDataString(targetResourceGroup))+"&monitorService=" + monitorService+"&monitorCondition=" + monitorCondition+"&severity=" + severity+"&alertState=" + alertState+"&alertRule=" + (alertRule==null? "" : System.Uri.EscapeDataString(alertRule))+"&timeRange=" + timeRange+"&customTimeRange=" + (customTimeRange==null? "" : System.Uri.EscapeDataString(customTimeRange))+"&api-version=" + api_version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<AlertsSummary>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<AlertsSummary>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

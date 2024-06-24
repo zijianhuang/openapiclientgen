@@ -805,8 +805,7 @@ namespace MyNS
 		public async Task GetAudioAsync(string word, GetAudioUseCanonical useCanonical, int limit, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "word.json/"+ (word==null? "" : System.Uri.EscapeDataString(word))+"/audio&useCanonical=" + useCanonical+"&limit="+limit;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -820,7 +819,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -839,8 +837,7 @@ namespace MyNS
 		public async Task GetDefinitionsAsync(string word, int limit, GetDefinitionsPartOfSpeech partOfSpeech, string includeRelated, string[] sourceDictionaries, GetDefinitionsUseCanonical useCanonical, GetDefinitionsIncludeTags includeTags, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "word.json/"+ (word==null? "" : System.Uri.EscapeDataString(word))+"/definitions&limit="+limit+"&partOfSpeech=" + partOfSpeech+"&includeRelated=" + (includeRelated==null? "" : System.Uri.EscapeDataString(includeRelated))+"&"+string.Join("&", sourceDictionaries.Select(z => $"sourceDictionaries={System.Uri.EscapeDataString(z.ToString())}"))+"&useCanonical=" + useCanonical+"&includeTags=" + includeTags;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -854,7 +851,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -868,8 +864,7 @@ namespace MyNS
 		public async Task GetEtymologiesAsync(string word, GetEtymologiesUseCanonical useCanonical, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "word.json/"+ (word==null? "" : System.Uri.EscapeDataString(word))+"/etymologies&useCanonical=" + useCanonical;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -883,7 +878,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -900,8 +894,7 @@ namespace MyNS
 		public async Task GetExamplesAsync(string word, GetExamplesIncludeDuplicates includeDuplicates, GetExamplesUseCanonical useCanonical, int skip, int limit, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "word.json/"+ (word==null? "" : System.Uri.EscapeDataString(word))+"/examples&includeDuplicates=" + includeDuplicates+"&useCanonical=" + useCanonical+"&skip="+skip+"&limit="+limit;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -915,7 +908,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -931,8 +923,7 @@ namespace MyNS
 		public async Task GetWordFrequencyAsync(string word, GetWordFrequencyUseCanonical useCanonical, int startYear, int endYear, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "word.json/"+ (word==null? "" : System.Uri.EscapeDataString(word))+"/frequency&useCanonical=" + useCanonical+"&startYear="+startYear+"&endYear="+endYear;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -946,7 +937,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -962,8 +952,7 @@ namespace MyNS
 		public async Task GetHyphenationAsync(string word, GetHyphenationUseCanonical useCanonical, GetHyphenationSourceDictionary sourceDictionary, int limit, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "word.json/"+ (word==null? "" : System.Uri.EscapeDataString(word))+"/hyphenation&useCanonical=" + useCanonical+"&sourceDictionary=" + sourceDictionary+"&limit="+limit;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -977,7 +966,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -993,8 +981,7 @@ namespace MyNS
 		public async Task GetPhrasesAsync(string word, int limit, int wlmi, GetPhrasesUseCanonical useCanonical, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "word.json/"+ (word==null? "" : System.Uri.EscapeDataString(word))+"/phrases&limit="+limit+"&wlmi="+wlmi+"&useCanonical=" + useCanonical;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1008,7 +995,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1025,8 +1011,7 @@ namespace MyNS
 		public async Task GetTextPronunciationsAsync(string word, GetTextPronunciationsUseCanonical useCanonical, GetTextPronunciationsSourceDictionary sourceDictionary, GetTextPronunciationsTypeFormat typeFormat, int limit, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "word.json/"+ (word==null? "" : System.Uri.EscapeDataString(word))+"/pronunciations&useCanonical=" + useCanonical+"&sourceDictionary=" + sourceDictionary+"&typeFormat=" + typeFormat+"&limit="+limit;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1040,7 +1025,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1056,8 +1040,7 @@ namespace MyNS
 		public async Task GetRelatedWordsAsync(string word, GetRelatedWordsUseCanonical useCanonical, GetRelatedWordsRelationshipTypes relationshipTypes, int limitPerRelationshipType, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "word.json/"+ (word==null? "" : System.Uri.EscapeDataString(word))+"/relatedWords&useCanonical=" + useCanonical+"&relationshipTypes=" + relationshipTypes+"&limitPerRelationshipType="+limitPerRelationshipType;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1071,7 +1054,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1084,8 +1066,7 @@ namespace MyNS
 		public async Task GetScrabbleScoreAsync(string word, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "word.json/"+ (word==null? "" : System.Uri.EscapeDataString(word))+"/scrabbleScore";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1099,7 +1080,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1113,8 +1093,7 @@ namespace MyNS
 		public async Task GetTopExampleAsync(string word, GetTopExampleUseCanonical useCanonical, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "word.json/"+ (word==null? "" : System.Uri.EscapeDataString(word))+"/topExample&useCanonical=" + useCanonical;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1128,7 +1107,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1149,8 +1127,7 @@ namespace MyNS
 		public async Task GetRandomWordAsync(string hasDictionaryDef, string includePartOfSpeech, string excludePartOfSpeech, int minCorpusCount, int maxCorpusCount, int minDictionaryCount, int maxDictionaryCount, int minLength, int maxLength, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "words.json/randomWord?hasDictionaryDef=" + (hasDictionaryDef==null? "" : System.Uri.EscapeDataString(hasDictionaryDef))+"&includePartOfSpeech=" + (includePartOfSpeech==null? "" : System.Uri.EscapeDataString(includePartOfSpeech))+"&excludePartOfSpeech=" + (excludePartOfSpeech==null? "" : System.Uri.EscapeDataString(excludePartOfSpeech))+"&minCorpusCount="+minCorpusCount+"&maxCorpusCount="+maxCorpusCount+"&minDictionaryCount="+minDictionaryCount+"&maxDictionaryCount="+maxDictionaryCount+"&minLength="+minLength+"&maxLength="+maxLength;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1164,7 +1141,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1188,8 +1164,7 @@ namespace MyNS
 		public async Task GetRandomWordsAsync(string hasDictionaryDef, string includePartOfSpeech, string excludePartOfSpeech, int minCorpusCount, int maxCorpusCount, int minDictionaryCount, int maxDictionaryCount, int minLength, int maxLength, GetRandomWordsSortBy sortBy, GetRandomWordsSortOrder sortOrder, int limit, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "words.json/randomWords?hasDictionaryDef=" + (hasDictionaryDef==null? "" : System.Uri.EscapeDataString(hasDictionaryDef))+"&includePartOfSpeech=" + (includePartOfSpeech==null? "" : System.Uri.EscapeDataString(includePartOfSpeech))+"&excludePartOfSpeech=" + (excludePartOfSpeech==null? "" : System.Uri.EscapeDataString(excludePartOfSpeech))+"&minCorpusCount="+minCorpusCount+"&maxCorpusCount="+maxCorpusCount+"&minDictionaryCount="+minDictionaryCount+"&maxDictionaryCount="+maxDictionaryCount+"&minLength="+minLength+"&maxLength="+maxLength+"&sortBy=" + sortBy+"&sortOrder=" + sortOrder+"&limit="+limit;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1203,7 +1178,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1248,8 +1222,7 @@ namespace MyNS
 					Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "words.json/reverseDictionary?query=" + (query==null? "" : System.Uri.EscapeDataString(query))+"&findSenseForWord=" + (findSenseForWord==null? "" : System.Uri.EscapeDataString(findSenseForWord))+"&includeSourceDictionaries=" + includeSourceDictionaries+"&excludeSourceDictionaries=" + excludeSourceDictionaries+"&includePartOfSpeech=" + (includePartOfSpeech==null? "" : System.Uri.EscapeDataString(includePartOfSpeech))+"&excludePartOfSpeech=" + (excludePartOfSpeech==null? "" : System.Uri.EscapeDataString(excludePartOfSpeech))+"&minCorpusCount="+minCorpusCount+"&maxCorpusCount="+maxCorpusCount+"&minLength="+minLength+"&maxLength="+maxLength+"&expandTerms=" + (expandTerms==null? "" : System.Uri.EscapeDataString(expandTerms))+"&includeTags=" + includeTags+"&sortBy=" + sortBy+"&sortOrder=" + sortOrder+"&skip=" + (skip==null? "" : System.Uri.EscapeDataString(skip))+"&limit="+limit;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1263,7 +1236,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1288,8 +1260,7 @@ namespace MyNS
 		public async Task SearchWordsAsync(string allowRegex, string query, string caseSensitive, string includePartOfSpeech, string excludePartOfSpeech, int minCorpusCount, int maxCorpusCount, int minDictionaryCount, int maxDictionaryCount, int minLength, int maxLength, int skip, int limit, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "words.json/search/"+ (query==null? "" : System.Uri.EscapeDataString(query))+"?allowRegex=" + (allowRegex==null? "" : System.Uri.EscapeDataString(allowRegex))+"&caseSensitive=" + (caseSensitive==null? "" : System.Uri.EscapeDataString(caseSensitive))+"&includePartOfSpeech=" + (includePartOfSpeech==null? "" : System.Uri.EscapeDataString(includePartOfSpeech))+"&excludePartOfSpeech=" + (excludePartOfSpeech==null? "" : System.Uri.EscapeDataString(excludePartOfSpeech))+"&minCorpusCount="+minCorpusCount+"&maxCorpusCount="+maxCorpusCount+"&minDictionaryCount="+minDictionaryCount+"&maxDictionaryCount="+maxDictionaryCount+"&minLength="+minLength+"&maxLength="+maxLength+"&skip="+skip+"&limit="+limit;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1303,7 +1274,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1316,8 +1286,7 @@ namespace MyNS
 		public async Task GetWordOfTheDayAsync(string date, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "words.json/wordOfTheDay?date=" + (date==null? "" : System.Uri.EscapeDataString(date));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1331,7 +1300,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

@@ -392,8 +392,7 @@ namespace MyNS
 		public async Task DeleteObjectAsync(string jobId, string objectName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "backup-jobs/"+ (jobId==null? "" : System.Uri.EscapeDataString(jobId))+"/object/"+ (objectName==null? "" : System.Uri.EscapeDataString(objectName));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -407,7 +406,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -421,10 +419,8 @@ namespace MyNS
 		public async Task<StartObjectOutput> StartObjectAsync(string jobId, string objectName, StartObjectPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "backup-jobs/"+ (jobId==null? "" : System.Uri.EscapeDataString(jobId))+"/object/"+ (objectName==null? "" : System.Uri.EscapeDataString(objectName));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -435,13 +431,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<StartObjectOutput>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<StartObjectOutput>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -455,8 +450,7 @@ namespace MyNS
 		public async Task<GetChunkOutput> GetChunkAsync(string jobId, string chunkToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "restore-jobs/"+ (jobId==null? "" : System.Uri.EscapeDataString(jobId))+"/chunk/"+ (chunkToken==null? "" : System.Uri.EscapeDataString(chunkToken));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -466,13 +460,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<GetChunkOutput>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<GetChunkOutput>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -486,8 +479,7 @@ namespace MyNS
 		public async Task<GetObjectMetadataOutput> GetObjectMetadataAsync(string jobId, string objectToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "restore-jobs/"+ (jobId==null? "" : System.Uri.EscapeDataString(jobId))+"/object/"+ (objectToken==null? "" : System.Uri.EscapeDataString(objectToken))+"/metadata";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -497,13 +489,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<GetObjectMetadataOutput>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<GetObjectMetadataOutput>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -524,8 +515,7 @@ namespace MyNS
 		public async Task<ListChunksOutput> ListChunksAsync(string jobId, string objectToken, int max_results, string next_token, string MaxResults, string NextToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "restore-jobs/"+ (jobId==null? "" : System.Uri.EscapeDataString(jobId))+"/chunks/"+ (objectToken==null? "" : System.Uri.EscapeDataString(objectToken))+"/list&max-results="+max_results+"&next-token=" + (next_token==null? "" : System.Uri.EscapeDataString(next_token))+"&MaxResults=" + (MaxResults==null? "" : System.Uri.EscapeDataString(MaxResults))+"&NextToken=" + (NextToken==null? "" : System.Uri.EscapeDataString(NextToken));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -535,13 +525,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ListChunksOutput>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ListChunksOutput>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -565,8 +554,7 @@ namespace MyNS
 		public async Task<ListObjectsOutput> ListObjectsAsync(string jobId, string starting_object_name, string starting_object_prefix, int max_results, string next_token, System.DateTimeOffset created_before, System.DateTimeOffset created_after, string MaxResults, string NextToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "restore-jobs/"+ (jobId==null? "" : System.Uri.EscapeDataString(jobId))+"/objects/list&starting-object-name=" + (starting_object_name==null? "" : System.Uri.EscapeDataString(starting_object_name))+"&starting-object-prefix=" + (starting_object_prefix==null? "" : System.Uri.EscapeDataString(starting_object_prefix))+"&max-results="+max_results+"&next-token=" + (next_token==null? "" : System.Uri.EscapeDataString(next_token))+"&created-before=" + created_before.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&created-after=" + created_after.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&MaxResults=" + (MaxResults==null? "" : System.Uri.EscapeDataString(MaxResults))+"&NextToken=" + (NextToken==null? "" : System.Uri.EscapeDataString(NextToken));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -576,13 +564,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ListObjectsOutput>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ListObjectsOutput>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -602,10 +589,8 @@ namespace MyNS
 		public async Task<NotifyObjectCompleteOutput> NotifyObjectCompleteAsync(string jobId, string uploadId, string checksum, SummaryChecksumAlgorithm checksum_algorithm, string metadata_string, int metadata_blob_length, string metadata_checksum, DataChecksumAlgorithm metadata_checksum_algorithm, NotifyObjectCompletePutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "backup-jobs/"+ (jobId==null? "" : System.Uri.EscapeDataString(jobId))+"/object/"+ (uploadId==null? "" : System.Uri.EscapeDataString(uploadId))+"/complete#checksum&checksum-algorithm&checksum=" + (checksum==null? "" : System.Uri.EscapeDataString(checksum))+"&checksum-algorithm=" + checksum_algorithm+"&metadata-string=" + (metadata_string==null? "" : System.Uri.EscapeDataString(metadata_string))+"&metadata-blob-length="+metadata_blob_length+"&metadata-checksum=" + (metadata_checksum==null? "" : System.Uri.EscapeDataString(metadata_checksum))+"&metadata-checksum-algorithm=" + metadata_checksum_algorithm;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -616,13 +601,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<NotifyObjectCompleteOutput>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<NotifyObjectCompleteOutput>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -640,10 +624,8 @@ namespace MyNS
 		public async Task<PutChunkOutput> PutChunkAsync(string jobId, string uploadId, int chunkIndex, int length, string checksum, DataChecksumAlgorithm checksum_algorithm, PutChunkPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "backup-jobs/"+ (jobId==null? "" : System.Uri.EscapeDataString(jobId))+"/chunk/"+ (uploadId==null? "" : System.Uri.EscapeDataString(uploadId))+"/"+chunkIndex+"#length&checksum&checksum-algorithm&length="+length+"&checksum=" + (checksum==null? "" : System.Uri.EscapeDataString(checksum))+"&checksum-algorithm=" + checksum_algorithm;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -654,13 +636,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<PutChunkOutput>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<PutChunkOutput>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -681,10 +662,8 @@ namespace MyNS
 		public async Task<PutObjectOutput> PutObjectAsync(string jobId, string objectName, string metadata_string, int length, string checksum, string checksum_algorithm, string object_checksum, SummaryChecksumAlgorithm object_checksum_algorithm, bool throwOnDuplicate, PutObjectPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "backup-jobs/"+ (jobId==null? "" : System.Uri.EscapeDataString(jobId))+"/object/"+ (objectName==null? "" : System.Uri.EscapeDataString(objectName))+"/put-object&metadata-string=" + (metadata_string==null? "" : System.Uri.EscapeDataString(metadata_string))+"&length="+length+"&checksum=" + (checksum==null? "" : System.Uri.EscapeDataString(checksum))+"&checksum-algorithm=" + (checksum_algorithm==null? "" : System.Uri.EscapeDataString(checksum_algorithm))+"&object-checksum=" + (object_checksum==null? "" : System.Uri.EscapeDataString(object_checksum))+"&object-checksum-algorithm=" + object_checksum_algorithm+"&throwOnDuplicate="+throwOnDuplicate;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -695,13 +674,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<PutObjectOutput>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<PutObjectOutput>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

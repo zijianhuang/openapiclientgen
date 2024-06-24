@@ -2081,8 +2081,7 @@ namespace MyNS
 		public async Task Classification_inclusionsGetByIds_AndPage_numberAndPage_sizeAndClassification_idAndClassification_typeAndClassified_idAndClassified_typeAndQAndSortAsync(string[] ids_, int page_number, int page_size, string classification_id, ClassificationAttributesType classification_type, string classified_id, ClassificationInclusionAttributesClassified_type classified_type, string q, string[] sort, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "classification_inclusions?"+string.Join("&", ids_.Select(z => $"ids[]={System.Uri.EscapeDataString(z.ToString())}"))+"&page[number]="+page_number+"&page[size]="+page_size+"&classification_id=" + (classification_id==null? "" : System.Uri.EscapeDataString(classification_id))+"&classification_type=" + classification_type+"&classified_id=" + (classified_id==null? "" : System.Uri.EscapeDataString(classified_id))+"&classified_type=" + classified_type+"&q=" + (q==null? "" : System.Uri.EscapeDataString(q))+"&"+string.Join("&", sort.Select(z => $"sort={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2096,7 +2095,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2109,8 +2107,7 @@ namespace MyNS
 		public async Task Classification_inclusions_idGetAsync(string id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "classification_inclusions/"+ (id==null? "" : System.Uri.EscapeDataString(id));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2124,7 +2121,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2164,8 +2160,7 @@ namespace MyNS
 		public async Task ClassificationsGetByIds_AndPage_numberAndPage_sizeAndTypeAndQAndIs_countryAndSortAsync(string[] ids_, int page_number, int page_size, ClassificationAttributesType type, string q, string is_country, string[] sort, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "classifications?"+string.Join("&", ids_.Select(z => $"ids[]={System.Uri.EscapeDataString(z.ToString())}"))+"&page[number]="+page_number+"&page[size]="+page_size+"&type=" + type+"&q=" + (q==null? "" : System.Uri.EscapeDataString(q))+"&is_country=" + (is_country==null? "" : System.Uri.EscapeDataString(is_country))+"&"+string.Join("&", sort.Select(z => $"sort={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2179,7 +2174,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2192,8 +2186,7 @@ namespace MyNS
 		public async Task Classifications_idGetAsync(string id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "classifications/"+ (id==null? "" : System.Uri.EscapeDataString(id));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2207,7 +2200,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2244,8 +2236,7 @@ namespace MyNS
 		public async Task CreditsGetByIds_AndPage_numberAndPage_sizeAndCreditable_idAndCreditable_typeAndSortAsync(string[] ids_, int page_number, int page_size, string creditable_id, ClassificationInclusionAttributesClassified_type creditable_type, string[] sort, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "credits?"+string.Join("&", ids_.Select(z => $"ids[]={System.Uri.EscapeDataString(z.ToString())}"))+"&page[number]="+page_number+"&page[size]="+page_size+"&creditable_id=" + (creditable_id==null? "" : System.Uri.EscapeDataString(creditable_id))+"&creditable_type=" + creditable_type+"&"+string.Join("&", sort.Select(z => $"sort={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2259,7 +2250,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2272,8 +2262,7 @@ namespace MyNS
 		public async Task Credits_idGetAsync(string id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "credits/"+ (id==null? "" : System.Uri.EscapeDataString(id));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2287,7 +2276,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2337,8 +2325,7 @@ namespace MyNS
 		public async Task EpisodesGetByIds_AndPage_numberAndPage_sizeAndIncluded_in_inventory_calendarAndMonthAndPublishedAndQAndReleased_afterAndReleased_beforeAndRssAndSeason_idAndSeries_idAndSortAndYearAsync(string[] ids_, int page_number, int page_size, string included_in_inventory_calendar, string month, bool published, string q, System.DateTimeOffset released_after, System.DateTimeOffset released_before, bool rss, string season_id, string series_id, string[] sort, string year, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "episodes?"+string.Join("&", ids_.Select(z => $"ids[]={System.Uri.EscapeDataString(z.ToString())}"))+"&page[number]="+page_number+"&page[size]="+page_size+"&included_in_inventory_calendar=" + (included_in_inventory_calendar==null? "" : System.Uri.EscapeDataString(included_in_inventory_calendar))+"&month=" + (month==null? "" : System.Uri.EscapeDataString(month))+"&published="+published+"&q=" + (q==null? "" : System.Uri.EscapeDataString(q))+"&released_after=" + released_after.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&released_before=" + released_before.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&rss="+rss+"&season_id=" + (season_id==null? "" : System.Uri.EscapeDataString(season_id))+"&series_id=" + (series_id==null? "" : System.Uri.EscapeDataString(series_id))+"&"+string.Join("&", sort.Select(z => $"sort={System.Uri.EscapeDataString(z.ToString())}"))+"&year=" + (year==null? "" : System.Uri.EscapeDataString(year));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2352,7 +2339,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2365,8 +2351,7 @@ namespace MyNS
 		public async Task Episodes_idGetAsync(string id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "episodes/"+ (id==null? "" : System.Uri.EscapeDataString(id));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2380,7 +2365,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2395,8 +2379,7 @@ namespace MyNS
 		public async Task Episodes_idNext_siblingGetByRssAsync(string id, bool rss, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "episodes/"+ (id==null? "" : System.Uri.EscapeDataString(id))+"/next_sibling&rss="+rss;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2410,7 +2393,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2425,8 +2407,7 @@ namespace MyNS
 		public async Task Episodes_idPrevious_siblingGetByRssAsync(string id, bool rss, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "episodes/"+ (id==null? "" : System.Uri.EscapeDataString(id))+"/previous_sibling&rss="+rss;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2440,7 +2421,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2495,8 +2475,7 @@ namespace MyNS
 		public async Task ImagesGetByIds_Async(string[] ids_, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "images?"+string.Join("&", ids_.Select(z => $"ids[]={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2510,7 +2489,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2562,8 +2540,7 @@ namespace MyNS
 		public async Task Images_idGetAsync(string id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "images/"+ (id==null? "" : System.Uri.EscapeDataString(id));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2577,7 +2554,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2642,8 +2618,7 @@ namespace MyNS
 		public async Task Media_assetsGetByIds_Async(string[] ids_, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "media_assets?"+string.Join("&", ids_.Select(z => $"ids[]={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2657,7 +2632,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2719,8 +2693,7 @@ namespace MyNS
 		public async Task Media_assets_idGetAsync(string id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "media_assets/"+ (id==null? "" : System.Uri.EscapeDataString(id));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2734,7 +2707,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2775,8 +2747,7 @@ namespace MyNS
 		public async Task NetworksGetByIds_AndPage_numberAndPage_sizeAndQAndAd_rep_account_idAndAd_deal_statusAndSortAsync(string[] ids_, int page_number, int page_size, string q, string ad_rep_account_id, string[] ad_deal_status, string[] sort, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "networks?"+string.Join("&", ids_.Select(z => $"ids[]={System.Uri.EscapeDataString(z.ToString())}"))+"&page[number]="+page_number+"&page[size]="+page_size+"&q=" + (q==null? "" : System.Uri.EscapeDataString(q))+"&ad_rep_account_id=" + (ad_rep_account_id==null? "" : System.Uri.EscapeDataString(ad_rep_account_id))+"&"+string.Join("&", ad_deal_status.Select(z => $"ad_deal_status={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", sort.Select(z => $"sort={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2790,7 +2761,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2808,8 +2778,7 @@ namespace MyNS
 		public async Task Networks_idGetAsync(string id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "networks/"+ (id==null? "" : System.Uri.EscapeDataString(id));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2823,7 +2792,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2858,8 +2826,7 @@ namespace MyNS
 		public async Task PeopleGetByIds_AndPage_numberAndPage_sizeAndQAndSortAsync(string[] ids_, int page_number, int page_size, string q, string[] sort, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "people?"+string.Join("&", ids_.Select(z => $"ids[]={System.Uri.EscapeDataString(z.ToString())}"))+"&page[number]="+page_number+"&page[size]="+page_size+"&q=" + (q==null? "" : System.Uri.EscapeDataString(q))+"&"+string.Join("&", sort.Select(z => $"sort={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2873,7 +2840,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2890,8 +2856,7 @@ namespace MyNS
 		public async Task People_idGetAsync(string id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "people/"+ (id==null? "" : System.Uri.EscapeDataString(id));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2905,7 +2870,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2941,8 +2905,7 @@ namespace MyNS
 		public async Task SeasonsGetByIds_AndPage_numberAndPage_sizeAndSeries_idAndQAndSortAsync(string[] ids_, int page_number, int page_size, string series_id, string q, string[] sort, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "seasons?"+string.Join("&", ids_.Select(z => $"ids[]={System.Uri.EscapeDataString(z.ToString())}"))+"&page[number]="+page_number+"&page[size]="+page_size+"&series_id=" + (series_id==null? "" : System.Uri.EscapeDataString(series_id))+"&q=" + (q==null? "" : System.Uri.EscapeDataString(q))+"&"+string.Join("&", sort.Select(z => $"sort={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2956,7 +2919,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2969,8 +2931,7 @@ namespace MyNS
 		public async Task Seasons_idGetAsync(string id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "seasons/"+ (id==null? "" : System.Uri.EscapeDataString(id));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2984,7 +2945,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3023,8 +2983,7 @@ namespace MyNS
 		public async Task SeriesGetByIds_AndPage_numberAndPage_sizeAndAd_rep_account_idAndNetwork_idAndQAndSortAsync(string[] ids_, int page_number, int page_size, string ad_rep_account_id, string network_id, string q, string[] sort, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "series?"+string.Join("&", ids_.Select(z => $"ids[]={System.Uri.EscapeDataString(z.ToString())}"))+"&page[number]="+page_number+"&page[size]="+page_size+"&ad_rep_account_id=" + (ad_rep_account_id==null? "" : System.Uri.EscapeDataString(ad_rep_account_id))+"&network_id=" + (network_id==null? "" : System.Uri.EscapeDataString(network_id))+"&q=" + (q==null? "" : System.Uri.EscapeDataString(q))+"&"+string.Join("&", sort.Select(z => $"sort={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3038,7 +2997,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3051,8 +3009,7 @@ namespace MyNS
 		public async Task Series_idGetAsync(string id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "series/"+ (id==null? "" : System.Uri.EscapeDataString(id));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3066,7 +3023,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

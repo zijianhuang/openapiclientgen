@@ -2733,8 +2733,7 @@ namespace MyNS
 		public async Task<ListWorkspaceReturn> ListWorkspaceAsync(string FriendlyName, int PageSize, int Page, string PageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/Workspaces?FriendlyName=" + (FriendlyName==null? "" : System.Uri.EscapeDataString(FriendlyName))+"&PageSize="+PageSize+"&Page="+Page+"&PageToken=" + (PageToken==null? "" : System.Uri.EscapeDataString(PageToken));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2744,13 +2743,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ListWorkspaceReturn>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ListWorkspaceReturn>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2764,8 +2762,7 @@ namespace MyNS
 		public async Task DeleteWorkspaceAsync(string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/Workspaces/"+ (Sid==null? "" : System.Uri.EscapeDataString(Sid));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2779,7 +2776,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2794,8 +2790,7 @@ namespace MyNS
 		public async Task<Taskrouterv1workspace> FetchWorkspaceAsync(string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/Workspaces/"+ (Sid==null? "" : System.Uri.EscapeDataString(Sid));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2805,13 +2800,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Taskrouterv1workspace>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Taskrouterv1workspace>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2836,8 +2830,7 @@ namespace MyNS
 		public async Task<ListActivityReturn> ListActivityAsync(string WorkspaceSid, string FriendlyName, string Available, int PageSize, int Page, string PageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/Workspaces/"+ (WorkspaceSid==null? "" : System.Uri.EscapeDataString(WorkspaceSid))+"/Activities&FriendlyName=" + (FriendlyName==null? "" : System.Uri.EscapeDataString(FriendlyName))+"&Available=" + (Available==null? "" : System.Uri.EscapeDataString(Available))+"&PageSize="+PageSize+"&Page="+Page+"&PageToken=" + (PageToken==null? "" : System.Uri.EscapeDataString(PageToken));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2847,13 +2840,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ListActivityReturn>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ListActivityReturn>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2871,8 +2863,7 @@ namespace MyNS
 		public async Task DeleteActivityAsync(string WorkspaceSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/Workspaces/"+ (WorkspaceSid==null? "" : System.Uri.EscapeDataString(WorkspaceSid))+"/Activities/"+ (Sid==null? "" : System.Uri.EscapeDataString(Sid));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2886,7 +2877,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2905,8 +2895,7 @@ namespace MyNS
 		public async Task<Taskrouterv1workspaceactivity> FetchActivityAsync(string WorkspaceSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/Workspaces/"+ (WorkspaceSid==null? "" : System.Uri.EscapeDataString(WorkspaceSid))+"/Activities/"+ (Sid==null? "" : System.Uri.EscapeDataString(Sid));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2916,13 +2905,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Taskrouterv1workspaceactivity>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Taskrouterv1workspaceactivity>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2942,8 +2930,7 @@ namespace MyNS
 		public async Task<Taskrouterv1workspaceworkspace_cumulative_statistics> FetchWorkspaceCumulativeStatisticsAsync(string WorkspaceSid, System.DateTimeOffset EndDate, int Minutes, System.DateTimeOffset StartDate, string TaskChannel, string SplitByWaitTime, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/Workspaces/"+ (WorkspaceSid==null? "" : System.Uri.EscapeDataString(WorkspaceSid))+"/CumulativeStatistics&EndDate=" + EndDate.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&Minutes="+Minutes+"&StartDate=" + StartDate.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&TaskChannel=" + (TaskChannel==null? "" : System.Uri.EscapeDataString(TaskChannel))+"&SplitByWaitTime=" + (SplitByWaitTime==null? "" : System.Uri.EscapeDataString(SplitByWaitTime));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2953,13 +2940,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Taskrouterv1workspaceworkspace_cumulative_statistics>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Taskrouterv1workspaceworkspace_cumulative_statistics>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3027,8 +3013,7 @@ namespace MyNS
 					Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/Workspaces/"+ (WorkspaceSid==null? "" : System.Uri.EscapeDataString(WorkspaceSid))+"/Events&EndDate=" + EndDate.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&EventType=" + (EventType==null? "" : System.Uri.EscapeDataString(EventType))+"&Minutes="+Minutes+"&ReservationSid=" + (ReservationSid==null? "" : System.Uri.EscapeDataString(ReservationSid))+"&StartDate=" + StartDate.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&TaskQueueSid=" + (TaskQueueSid==null? "" : System.Uri.EscapeDataString(TaskQueueSid))+"&TaskSid=" + (TaskSid==null? "" : System.Uri.EscapeDataString(TaskSid))+"&WorkerSid=" + (WorkerSid==null? "" : System.Uri.EscapeDataString(WorkerSid))+"&WorkflowSid=" + (WorkflowSid==null? "" : System.Uri.EscapeDataString(WorkflowSid))+"&TaskChannel=" + (TaskChannel==null? "" : System.Uri.EscapeDataString(TaskChannel))+"&Sid=" + (Sid==null? "" : System.Uri.EscapeDataString(Sid))+"&PageSize="+PageSize+"&Page="+Page+"&PageToken=" + (PageToken==null? "" : System.Uri.EscapeDataString(PageToken));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3038,13 +3023,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ListEventReturn>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ListEventReturn>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3063,8 +3047,7 @@ namespace MyNS
 		public async Task<Taskrouterv1workspaceevent> FetchEventAsync(string WorkspaceSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/Workspaces/"+ (WorkspaceSid==null? "" : System.Uri.EscapeDataString(WorkspaceSid))+"/Events/"+ (Sid==null? "" : System.Uri.EscapeDataString(Sid));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3074,13 +3057,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Taskrouterv1workspaceevent>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Taskrouterv1workspaceevent>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3096,8 +3078,7 @@ namespace MyNS
 		public async Task<Taskrouterv1workspaceworkspace_real_time_statistics> FetchWorkspaceRealTimeStatisticsAsync(string WorkspaceSid, string TaskChannel, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/Workspaces/"+ (WorkspaceSid==null? "" : System.Uri.EscapeDataString(WorkspaceSid))+"/RealTimeStatistics&TaskChannel=" + (TaskChannel==null? "" : System.Uri.EscapeDataString(TaskChannel));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3107,13 +3088,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Taskrouterv1workspaceworkspace_real_time_statistics>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Taskrouterv1workspaceworkspace_real_time_statistics>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3133,8 +3113,7 @@ namespace MyNS
 		public async Task<Taskrouterv1workspaceworkspace_statistics> FetchWorkspaceStatisticsAsync(string WorkspaceSid, int Minutes, System.DateTimeOffset StartDate, System.DateTimeOffset EndDate, string TaskChannel, string SplitByWaitTime, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/Workspaces/"+ (WorkspaceSid==null? "" : System.Uri.EscapeDataString(WorkspaceSid))+"/Statistics&Minutes="+Minutes+"&StartDate=" + StartDate.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&EndDate=" + EndDate.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&TaskChannel=" + (TaskChannel==null? "" : System.Uri.EscapeDataString(TaskChannel))+"&SplitByWaitTime=" + (SplitByWaitTime==null? "" : System.Uri.EscapeDataString(SplitByWaitTime));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3144,13 +3123,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Taskrouterv1workspaceworkspace_statistics>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Taskrouterv1workspaceworkspace_statistics>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3173,8 +3151,7 @@ namespace MyNS
 		public async Task<ListTaskChannelReturn> ListTaskChannelAsync(string WorkspaceSid, int PageSize, int Page, string PageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/Workspaces/"+ (WorkspaceSid==null? "" : System.Uri.EscapeDataString(WorkspaceSid))+"/TaskChannels&PageSize="+PageSize+"&Page="+Page+"&PageToken=" + (PageToken==null? "" : System.Uri.EscapeDataString(PageToken));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3184,13 +3161,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ListTaskChannelReturn>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ListTaskChannelReturn>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3205,8 +3181,7 @@ namespace MyNS
 		public async Task DeleteTaskChannelAsync(string WorkspaceSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/Workspaces/"+ (WorkspaceSid==null? "" : System.Uri.EscapeDataString(WorkspaceSid))+"/TaskChannels/"+ (Sid==null? "" : System.Uri.EscapeDataString(Sid));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3220,7 +3195,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3236,8 +3210,7 @@ namespace MyNS
 		public async Task<Taskrouterv1workspacetask_channel> FetchTaskChannelAsync(string WorkspaceSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/Workspaces/"+ (WorkspaceSid==null? "" : System.Uri.EscapeDataString(WorkspaceSid))+"/TaskChannels/"+ (Sid==null? "" : System.Uri.EscapeDataString(Sid));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3247,13 +3220,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Taskrouterv1workspacetask_channel>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Taskrouterv1workspacetask_channel>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3283,8 +3255,7 @@ namespace MyNS
 		public async Task<ListTaskQueueReturn> ListTaskQueueAsync(string WorkspaceSid, string FriendlyName, string EvaluateWorkerAttributes, string WorkerSid, string Ordering, int PageSize, int Page, string PageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/Workspaces/"+ (WorkspaceSid==null? "" : System.Uri.EscapeDataString(WorkspaceSid))+"/TaskQueues&FriendlyName=" + (FriendlyName==null? "" : System.Uri.EscapeDataString(FriendlyName))+"&EvaluateWorkerAttributes=" + (EvaluateWorkerAttributes==null? "" : System.Uri.EscapeDataString(EvaluateWorkerAttributes))+"&WorkerSid=" + (WorkerSid==null? "" : System.Uri.EscapeDataString(WorkerSid))+"&Ordering=" + (Ordering==null? "" : System.Uri.EscapeDataString(Ordering))+"&PageSize="+PageSize+"&Page="+Page+"&PageToken=" + (PageToken==null? "" : System.Uri.EscapeDataString(PageToken));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3294,13 +3265,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ListTaskQueueReturn>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ListTaskQueueReturn>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3329,8 +3299,7 @@ namespace MyNS
 		public async Task<ListTaskQueuesStatisticsReturn> ListTaskQueuesStatisticsAsync(string WorkspaceSid, System.DateTimeOffset EndDate, string FriendlyName, int Minutes, System.DateTimeOffset StartDate, string TaskChannel, string SplitByWaitTime, int PageSize, int Page, string PageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/Workspaces/"+ (WorkspaceSid==null? "" : System.Uri.EscapeDataString(WorkspaceSid))+"/TaskQueues/Statistics&EndDate=" + EndDate.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&FriendlyName=" + (FriendlyName==null? "" : System.Uri.EscapeDataString(FriendlyName))+"&Minutes="+Minutes+"&StartDate=" + StartDate.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&TaskChannel=" + (TaskChannel==null? "" : System.Uri.EscapeDataString(TaskChannel))+"&SplitByWaitTime=" + (SplitByWaitTime==null? "" : System.Uri.EscapeDataString(SplitByWaitTime))+"&PageSize="+PageSize+"&Page="+Page+"&PageToken=" + (PageToken==null? "" : System.Uri.EscapeDataString(PageToken));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3340,13 +3309,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ListTaskQueuesStatisticsReturn>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ListTaskQueuesStatisticsReturn>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3364,8 +3332,7 @@ namespace MyNS
 		public async Task DeleteTaskQueueAsync(string WorkspaceSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/Workspaces/"+ (WorkspaceSid==null? "" : System.Uri.EscapeDataString(WorkspaceSid))+"/TaskQueues/"+ (Sid==null? "" : System.Uri.EscapeDataString(Sid));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3379,7 +3346,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3398,8 +3364,7 @@ namespace MyNS
 		public async Task<Taskrouterv1workspacetask_queue> FetchTaskQueueAsync(string WorkspaceSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/Workspaces/"+ (WorkspaceSid==null? "" : System.Uri.EscapeDataString(WorkspaceSid))+"/TaskQueues/"+ (Sid==null? "" : System.Uri.EscapeDataString(Sid));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3409,13 +3374,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Taskrouterv1workspacetask_queue>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Taskrouterv1workspacetask_queue>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3439,8 +3403,7 @@ namespace MyNS
 		public async Task<Taskrouterv1workspacetask_queuetask_queue_cumulative_statistics> FetchTaskQueueCumulativeStatisticsAsync(string WorkspaceSid, string TaskQueueSid, System.DateTimeOffset EndDate, int Minutes, System.DateTimeOffset StartDate, string TaskChannel, string SplitByWaitTime, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/Workspaces/"+ (WorkspaceSid==null? "" : System.Uri.EscapeDataString(WorkspaceSid))+"/TaskQueues/"+ (TaskQueueSid==null? "" : System.Uri.EscapeDataString(TaskQueueSid))+"/CumulativeStatistics&EndDate=" + EndDate.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&Minutes="+Minutes+"&StartDate=" + StartDate.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&TaskChannel=" + (TaskChannel==null? "" : System.Uri.EscapeDataString(TaskChannel))+"&SplitByWaitTime=" + (SplitByWaitTime==null? "" : System.Uri.EscapeDataString(SplitByWaitTime));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3450,13 +3413,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Taskrouterv1workspacetask_queuetask_queue_cumulative_statistics>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Taskrouterv1workspacetask_queuetask_queue_cumulative_statistics>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3476,8 +3438,7 @@ namespace MyNS
 		public async Task<Taskrouterv1workspacetask_queuetask_queue_real_time_statistics> FetchTaskQueueRealTimeStatisticsAsync(string WorkspaceSid, string TaskQueueSid, string TaskChannel, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/Workspaces/"+ (WorkspaceSid==null? "" : System.Uri.EscapeDataString(WorkspaceSid))+"/TaskQueues/"+ (TaskQueueSid==null? "" : System.Uri.EscapeDataString(TaskQueueSid))+"/RealTimeStatistics&TaskChannel=" + (TaskChannel==null? "" : System.Uri.EscapeDataString(TaskChannel));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3487,13 +3448,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Taskrouterv1workspacetask_queuetask_queue_real_time_statistics>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Taskrouterv1workspacetask_queuetask_queue_real_time_statistics>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3517,8 +3477,7 @@ namespace MyNS
 		public async Task<Taskrouterv1workspacetask_queuetask_queue_statistics> FetchTaskQueueStatisticsAsync(string WorkspaceSid, string TaskQueueSid, System.DateTimeOffset EndDate, int Minutes, System.DateTimeOffset StartDate, string TaskChannel, string SplitByWaitTime, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/Workspaces/"+ (WorkspaceSid==null? "" : System.Uri.EscapeDataString(WorkspaceSid))+"/TaskQueues/"+ (TaskQueueSid==null? "" : System.Uri.EscapeDataString(TaskQueueSid))+"/Statistics&EndDate=" + EndDate.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&Minutes="+Minutes+"&StartDate=" + StartDate.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&TaskChannel=" + (TaskChannel==null? "" : System.Uri.EscapeDataString(TaskChannel))+"&SplitByWaitTime=" + (SplitByWaitTime==null? "" : System.Uri.EscapeDataString(SplitByWaitTime));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3528,13 +3487,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Taskrouterv1workspacetask_queuetask_queue_statistics>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Taskrouterv1workspacetask_queuetask_queue_statistics>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3572,8 +3530,7 @@ namespace MyNS
 		public async Task<ListTaskReturn> ListTaskAsync(string WorkspaceSid, int Priority, string[] AssignmentStatus, string WorkflowSid, string WorkflowName, string TaskQueueSid, string TaskQueueName, string EvaluateTaskAttributes, string Ordering, bool HasAddons, int PageSize, int Page, string PageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/Workspaces/"+ (WorkspaceSid==null? "" : System.Uri.EscapeDataString(WorkspaceSid))+"/Tasks&Priority="+Priority+"&"+string.Join("&", AssignmentStatus.Select(z => $"AssignmentStatus={System.Uri.EscapeDataString(z.ToString())}"))+"&WorkflowSid=" + (WorkflowSid==null? "" : System.Uri.EscapeDataString(WorkflowSid))+"&WorkflowName=" + (WorkflowName==null? "" : System.Uri.EscapeDataString(WorkflowName))+"&TaskQueueSid=" + (TaskQueueSid==null? "" : System.Uri.EscapeDataString(TaskQueueSid))+"&TaskQueueName=" + (TaskQueueName==null? "" : System.Uri.EscapeDataString(TaskQueueName))+"&EvaluateTaskAttributes=" + (EvaluateTaskAttributes==null? "" : System.Uri.EscapeDataString(EvaluateTaskAttributes))+"&Ordering=" + (Ordering==null? "" : System.Uri.EscapeDataString(Ordering))+"&HasAddons="+HasAddons+"&PageSize="+PageSize+"&Page="+Page+"&PageToken=" + (PageToken==null? "" : System.Uri.EscapeDataString(PageToken));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3583,13 +3540,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ListTaskReturn>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ListTaskReturn>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3607,8 +3563,7 @@ namespace MyNS
 		public async Task DeleteTaskAsync(string WorkspaceSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/Workspaces/"+ (WorkspaceSid==null? "" : System.Uri.EscapeDataString(WorkspaceSid))+"/Tasks/"+ (Sid==null? "" : System.Uri.EscapeDataString(Sid));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3622,7 +3577,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3641,8 +3595,7 @@ namespace MyNS
 		public async Task<Taskrouterv1workspacetask> FetchTaskAsync(string WorkspaceSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/Workspaces/"+ (WorkspaceSid==null? "" : System.Uri.EscapeDataString(WorkspaceSid))+"/Tasks/"+ (Sid==null? "" : System.Uri.EscapeDataString(Sid));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3652,13 +3605,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Taskrouterv1workspacetask>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Taskrouterv1workspacetask>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3690,8 +3642,7 @@ namespace MyNS
 		public async Task<ListTaskReservationReturn> ListTaskReservationAsync(string WorkspaceSid, string TaskSid, Task_reservation_enum_status ReservationStatus, string WorkerSid, int PageSize, int Page, string PageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/Workspaces/"+ (WorkspaceSid==null? "" : System.Uri.EscapeDataString(WorkspaceSid))+"/Tasks/"+ (TaskSid==null? "" : System.Uri.EscapeDataString(TaskSid))+"/Reservations&ReservationStatus=" + ReservationStatus+"&WorkerSid=" + (WorkerSid==null? "" : System.Uri.EscapeDataString(WorkerSid))+"&PageSize="+PageSize+"&Page="+Page+"&PageToken=" + (PageToken==null? "" : System.Uri.EscapeDataString(PageToken));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3701,13 +3652,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ListTaskReservationReturn>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ListTaskReservationReturn>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3730,8 +3680,7 @@ namespace MyNS
 		public async Task<Taskrouterv1workspacetasktask_reservation> FetchTaskReservationAsync(string WorkspaceSid, string TaskSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/Workspaces/"+ (WorkspaceSid==null? "" : System.Uri.EscapeDataString(WorkspaceSid))+"/Tasks/"+ (TaskSid==null? "" : System.Uri.EscapeDataString(TaskSid))+"/Reservations/"+ (Sid==null? "" : System.Uri.EscapeDataString(Sid));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3741,13 +3690,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Taskrouterv1workspacetasktask_reservation>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Taskrouterv1workspacetasktask_reservation>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3784,8 +3732,7 @@ namespace MyNS
 		public async Task<ListWorkerReturn> ListWorkerAsync(string WorkspaceSid, string ActivityName, string ActivitySid, string Available, string FriendlyName, string TargetWorkersExpression, string TaskQueueName, string TaskQueueSid, string Ordering, int PageSize, int Page, string PageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/Workspaces/"+ (WorkspaceSid==null? "" : System.Uri.EscapeDataString(WorkspaceSid))+"/Workers&ActivityName=" + (ActivityName==null? "" : System.Uri.EscapeDataString(ActivityName))+"&ActivitySid=" + (ActivitySid==null? "" : System.Uri.EscapeDataString(ActivitySid))+"&Available=" + (Available==null? "" : System.Uri.EscapeDataString(Available))+"&FriendlyName=" + (FriendlyName==null? "" : System.Uri.EscapeDataString(FriendlyName))+"&TargetWorkersExpression=" + (TargetWorkersExpression==null? "" : System.Uri.EscapeDataString(TargetWorkersExpression))+"&TaskQueueName=" + (TaskQueueName==null? "" : System.Uri.EscapeDataString(TaskQueueName))+"&TaskQueueSid=" + (TaskQueueSid==null? "" : System.Uri.EscapeDataString(TaskQueueSid))+"&Ordering=" + (Ordering==null? "" : System.Uri.EscapeDataString(Ordering))+"&PageSize="+PageSize+"&Page="+Page+"&PageToken=" + (PageToken==null? "" : System.Uri.EscapeDataString(PageToken));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3795,13 +3742,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ListWorkerReturn>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ListWorkerReturn>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3820,8 +3766,7 @@ namespace MyNS
 		public async Task<Taskrouterv1workspaceworkerworkers_cumulative_statistics> FetchWorkersCumulativeStatisticsAsync(string WorkspaceSid, System.DateTimeOffset EndDate, int Minutes, System.DateTimeOffset StartDate, string TaskChannel, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/Workspaces/"+ (WorkspaceSid==null? "" : System.Uri.EscapeDataString(WorkspaceSid))+"/Workers/CumulativeStatistics&EndDate=" + EndDate.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&Minutes="+Minutes+"&StartDate=" + StartDate.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&TaskChannel=" + (TaskChannel==null? "" : System.Uri.EscapeDataString(TaskChannel));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3831,13 +3776,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Taskrouterv1workspaceworkerworkers_cumulative_statistics>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Taskrouterv1workspaceworkerworkers_cumulative_statistics>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3853,8 +3797,7 @@ namespace MyNS
 		public async Task<Taskrouterv1workspaceworkerworkers_real_time_statistics> FetchWorkersRealTimeStatisticsAsync(string WorkspaceSid, string TaskChannel, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/Workspaces/"+ (WorkspaceSid==null? "" : System.Uri.EscapeDataString(WorkspaceSid))+"/Workers/RealTimeStatistics&TaskChannel=" + (TaskChannel==null? "" : System.Uri.EscapeDataString(TaskChannel));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3864,13 +3807,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Taskrouterv1workspaceworkerworkers_real_time_statistics>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Taskrouterv1workspaceworkerworkers_real_time_statistics>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3895,8 +3837,7 @@ namespace MyNS
 		public async Task<Taskrouterv1workspaceworkerworker_statistics> FetchWorkerStatisticsAsync(string WorkspaceSid, int Minutes, System.DateTimeOffset StartDate, System.DateTimeOffset EndDate, string TaskQueueSid, string TaskQueueName, string FriendlyName, string TaskChannel, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/Workspaces/"+ (WorkspaceSid==null? "" : System.Uri.EscapeDataString(WorkspaceSid))+"/Workers/Statistics&Minutes="+Minutes+"&StartDate=" + StartDate.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&EndDate=" + EndDate.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&TaskQueueSid=" + (TaskQueueSid==null? "" : System.Uri.EscapeDataString(TaskQueueSid))+"&TaskQueueName=" + (TaskQueueName==null? "" : System.Uri.EscapeDataString(TaskQueueName))+"&FriendlyName=" + (FriendlyName==null? "" : System.Uri.EscapeDataString(FriendlyName))+"&TaskChannel=" + (TaskChannel==null? "" : System.Uri.EscapeDataString(TaskChannel));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3906,13 +3847,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Taskrouterv1workspaceworkerworker_statistics>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Taskrouterv1workspaceworkerworker_statistics>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3930,8 +3870,7 @@ namespace MyNS
 		public async Task DeleteWorkerAsync(string WorkspaceSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/Workspaces/"+ (WorkspaceSid==null? "" : System.Uri.EscapeDataString(WorkspaceSid))+"/Workers/"+ (Sid==null? "" : System.Uri.EscapeDataString(Sid));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3945,7 +3884,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3964,8 +3902,7 @@ namespace MyNS
 		public async Task<Taskrouterv1workspaceworker> FetchWorkerAsync(string WorkspaceSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/Workspaces/"+ (WorkspaceSid==null? "" : System.Uri.EscapeDataString(WorkspaceSid))+"/Workers/"+ (Sid==null? "" : System.Uri.EscapeDataString(Sid));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3975,13 +3912,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Taskrouterv1workspaceworker>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Taskrouterv1workspaceworker>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4008,8 +3944,7 @@ namespace MyNS
 		public async Task<ListWorkerChannelReturn> ListWorkerChannelAsync(string WorkspaceSid, string WorkerSid, int PageSize, int Page, string PageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/Workspaces/"+ (WorkspaceSid==null? "" : System.Uri.EscapeDataString(WorkspaceSid))+"/Workers/"+ (WorkerSid==null? "" : System.Uri.EscapeDataString(WorkerSid))+"/Channels&PageSize="+PageSize+"&Page="+Page+"&PageToken=" + (PageToken==null? "" : System.Uri.EscapeDataString(PageToken));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4019,13 +3954,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ListWorkerChannelReturn>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ListWorkerChannelReturn>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4045,8 +3979,7 @@ namespace MyNS
 		public async Task<Taskrouterv1workspaceworkerworker_channel> FetchWorkerChannelAsync(string WorkspaceSid, string WorkerSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/Workspaces/"+ (WorkspaceSid==null? "" : System.Uri.EscapeDataString(WorkspaceSid))+"/Workers/"+ (WorkerSid==null? "" : System.Uri.EscapeDataString(WorkerSid))+"/Channels/"+ (Sid==null? "" : System.Uri.EscapeDataString(Sid));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4056,13 +3989,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Taskrouterv1workspaceworkerworker_channel>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Taskrouterv1workspaceworkerworker_channel>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4090,8 +4022,7 @@ namespace MyNS
 		public async Task<ListWorkerReservationReturn> ListWorkerReservationAsync(string WorkspaceSid, string WorkerSid, Task_reservation_enum_status ReservationStatus, int PageSize, int Page, string PageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/Workspaces/"+ (WorkspaceSid==null? "" : System.Uri.EscapeDataString(WorkspaceSid))+"/Workers/"+ (WorkerSid==null? "" : System.Uri.EscapeDataString(WorkerSid))+"/Reservations&ReservationStatus=" + ReservationStatus+"&PageSize="+PageSize+"&Page="+Page+"&PageToken=" + (PageToken==null? "" : System.Uri.EscapeDataString(PageToken));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4101,13 +4032,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ListWorkerReservationReturn>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ListWorkerReservationReturn>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4130,8 +4060,7 @@ namespace MyNS
 		public async Task<Taskrouterv1workspaceworkerworker_reservation> FetchWorkerReservationAsync(string WorkspaceSid, string WorkerSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/Workspaces/"+ (WorkspaceSid==null? "" : System.Uri.EscapeDataString(WorkspaceSid))+"/Workers/"+ (WorkerSid==null? "" : System.Uri.EscapeDataString(WorkerSid))+"/Reservations/"+ (Sid==null? "" : System.Uri.EscapeDataString(Sid));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4141,13 +4070,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Taskrouterv1workspaceworkerworker_reservation>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Taskrouterv1workspaceworkerworker_reservation>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4170,8 +4098,7 @@ namespace MyNS
 		public async Task<Taskrouterv1workspaceworkerworker_instance_statistics> FetchWorkerInstanceStatisticsAsync(string WorkspaceSid, string WorkerSid, int Minutes, System.DateTimeOffset StartDate, System.DateTimeOffset EndDate, string TaskChannel, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/Workspaces/"+ (WorkspaceSid==null? "" : System.Uri.EscapeDataString(WorkspaceSid))+"/Workers/"+ (WorkerSid==null? "" : System.Uri.EscapeDataString(WorkerSid))+"/Statistics&Minutes="+Minutes+"&StartDate=" + StartDate.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&EndDate=" + EndDate.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&TaskChannel=" + (TaskChannel==null? "" : System.Uri.EscapeDataString(TaskChannel));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4181,13 +4108,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Taskrouterv1workspaceworkerworker_instance_statistics>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Taskrouterv1workspaceworkerworker_instance_statistics>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4211,8 +4137,7 @@ namespace MyNS
 		public async Task<ListWorkflowReturn> ListWorkflowAsync(string WorkspaceSid, string FriendlyName, int PageSize, int Page, string PageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/Workspaces/"+ (WorkspaceSid==null? "" : System.Uri.EscapeDataString(WorkspaceSid))+"/Workflows&FriendlyName=" + (FriendlyName==null? "" : System.Uri.EscapeDataString(FriendlyName))+"&PageSize="+PageSize+"&Page="+Page+"&PageToken=" + (PageToken==null? "" : System.Uri.EscapeDataString(PageToken));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4222,13 +4147,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ListWorkflowReturn>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ListWorkflowReturn>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4246,8 +4170,7 @@ namespace MyNS
 		public async Task DeleteWorkflowAsync(string WorkspaceSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/Workspaces/"+ (WorkspaceSid==null? "" : System.Uri.EscapeDataString(WorkspaceSid))+"/Workflows/"+ (Sid==null? "" : System.Uri.EscapeDataString(Sid));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4261,7 +4184,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4280,8 +4202,7 @@ namespace MyNS
 		public async Task<Taskrouterv1workspaceworkflow> FetchWorkflowAsync(string WorkspaceSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/Workspaces/"+ (WorkspaceSid==null? "" : System.Uri.EscapeDataString(WorkspaceSid))+"/Workflows/"+ (Sid==null? "" : System.Uri.EscapeDataString(Sid));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4291,13 +4212,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Taskrouterv1workspaceworkflow>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Taskrouterv1workspaceworkflow>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4321,8 +4241,7 @@ namespace MyNS
 		public async Task<Taskrouterv1workspaceworkflowworkflow_cumulative_statistics> FetchWorkflowCumulativeStatisticsAsync(string WorkspaceSid, string WorkflowSid, System.DateTimeOffset EndDate, int Minutes, System.DateTimeOffset StartDate, string TaskChannel, string SplitByWaitTime, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/Workspaces/"+ (WorkspaceSid==null? "" : System.Uri.EscapeDataString(WorkspaceSid))+"/Workflows/"+ (WorkflowSid==null? "" : System.Uri.EscapeDataString(WorkflowSid))+"/CumulativeStatistics&EndDate=" + EndDate.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&Minutes="+Minutes+"&StartDate=" + StartDate.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&TaskChannel=" + (TaskChannel==null? "" : System.Uri.EscapeDataString(TaskChannel))+"&SplitByWaitTime=" + (SplitByWaitTime==null? "" : System.Uri.EscapeDataString(SplitByWaitTime));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4332,13 +4251,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Taskrouterv1workspaceworkflowworkflow_cumulative_statistics>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Taskrouterv1workspaceworkflowworkflow_cumulative_statistics>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4358,8 +4276,7 @@ namespace MyNS
 		public async Task<Taskrouterv1workspaceworkflowworkflow_real_time_statistics> FetchWorkflowRealTimeStatisticsAsync(string WorkspaceSid, string WorkflowSid, string TaskChannel, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/Workspaces/"+ (WorkspaceSid==null? "" : System.Uri.EscapeDataString(WorkspaceSid))+"/Workflows/"+ (WorkflowSid==null? "" : System.Uri.EscapeDataString(WorkflowSid))+"/RealTimeStatistics&TaskChannel=" + (TaskChannel==null? "" : System.Uri.EscapeDataString(TaskChannel));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4369,13 +4286,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Taskrouterv1workspaceworkflowworkflow_real_time_statistics>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Taskrouterv1workspaceworkflowworkflow_real_time_statistics>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4399,8 +4315,7 @@ namespace MyNS
 		public async Task<Taskrouterv1workspaceworkflowworkflow_statistics> FetchWorkflowStatisticsAsync(string WorkspaceSid, string WorkflowSid, int Minutes, System.DateTimeOffset StartDate, System.DateTimeOffset EndDate, string TaskChannel, string SplitByWaitTime, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/Workspaces/"+ (WorkspaceSid==null? "" : System.Uri.EscapeDataString(WorkspaceSid))+"/Workflows/"+ (WorkflowSid==null? "" : System.Uri.EscapeDataString(WorkflowSid))+"/Statistics&Minutes="+Minutes+"&StartDate=" + StartDate.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&EndDate=" + EndDate.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&TaskChannel=" + (TaskChannel==null? "" : System.Uri.EscapeDataString(TaskChannel))+"&SplitByWaitTime=" + (SplitByWaitTime==null? "" : System.Uri.EscapeDataString(SplitByWaitTime));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4410,13 +4325,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Taskrouterv1workspaceworkflowworkflow_statistics>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Taskrouterv1workspaceworkflowworkflow_statistics>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

@@ -48,8 +48,7 @@ namespace MyNS
 		public async Task ASNLookupGetByKeyAndAsnAndIsListAndFormatAsync(string key, string asn, string isList, string format, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "ASNLookup?key=" + (key==null? "" : System.Uri.EscapeDataString(key))+"&asn=" + (asn==null? "" : System.Uri.EscapeDataString(asn))+"&isList=" + (isList==null? "" : System.Uri.EscapeDataString(isList))+"&format=" + (format==null? "" : System.Uri.EscapeDataString(format));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -63,7 +62,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -78,8 +76,7 @@ namespace MyNS
 		public async Task BINLookupGetByKeyAndBinAndFormatAsync(string key, string bin, string format, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "BINLookup?key=" + (key==null? "" : System.Uri.EscapeDataString(key))+"&bin=" + (bin==null? "" : System.Uri.EscapeDataString(bin))+"&format=" + (format==null? "" : System.Uri.EscapeDataString(format));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -93,7 +90,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -110,8 +106,7 @@ namespace MyNS
 		public async Task BulkLookupGetByKeyAndIpsAnd_paramsAndLangAndFormatAsync(string key, string ips, string _params, string lang, string format, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "BulkLookup?key=" + (key==null? "" : System.Uri.EscapeDataString(key))+"&ips=" + (ips==null? "" : System.Uri.EscapeDataString(ips))+"&params=" + (_params==null? "" : System.Uri.EscapeDataString(_params))+"&lang=" + (lang==null? "" : System.Uri.EscapeDataString(lang))+"&format=" + (format==null? "" : System.Uri.EscapeDataString(format));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -125,7 +120,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -142,8 +136,7 @@ namespace MyNS
 		public async Task CountryGetByKeyAndCountryCodeAnd_paramsAndLangAndFormatAsync(string key, string CountryCode, string _params, string lang, string format, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "Country?key=" + (key==null? "" : System.Uri.EscapeDataString(key))+"&CountryCode=" + (CountryCode==null? "" : System.Uri.EscapeDataString(CountryCode))+"&params=" + (_params==null? "" : System.Uri.EscapeDataString(_params))+"&lang=" + (lang==null? "" : System.Uri.EscapeDataString(lang))+"&format=" + (format==null? "" : System.Uri.EscapeDataString(format));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -157,7 +150,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -173,8 +165,7 @@ namespace MyNS
 		public async Task GeoIPGetByKeyAnd_paramsAndLangAndFormatAsync(string key, string _params, string lang, string format, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "GeoIP?key=" + (key==null? "" : System.Uri.EscapeDataString(key))+"&params=" + (_params==null? "" : System.Uri.EscapeDataString(_params))+"&lang=" + (lang==null? "" : System.Uri.EscapeDataString(lang))+"&format=" + (format==null? "" : System.Uri.EscapeDataString(format));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -188,7 +179,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -205,8 +195,7 @@ namespace MyNS
 		public async Task IPLookupGetByKeyAndIpAnd_paramsAndLangAndFormatAsync(string key, string ip, string _params, string lang, string format, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "IPLookup?key=" + (key==null? "" : System.Uri.EscapeDataString(key))+"&ip=" + (ip==null? "" : System.Uri.EscapeDataString(ip))+"&params=" + (_params==null? "" : System.Uri.EscapeDataString(_params))+"&lang=" + (lang==null? "" : System.Uri.EscapeDataString(lang))+"&format=" + (format==null? "" : System.Uri.EscapeDataString(format));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -220,7 +209,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -237,8 +225,7 @@ namespace MyNS
 		public async Task BadWordsGetByKeyAndTextAndListBadWordsAndScoreOnlyAndFormatAsync(string key, string text, string listBadWords, string scoreOnly, string format, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "badWords?key=" + (key==null? "" : System.Uri.EscapeDataString(key))+"&text=" + (text==null? "" : System.Uri.EscapeDataString(text))+"&listBadWords=" + (listBadWords==null? "" : System.Uri.EscapeDataString(listBadWords))+"&scoreOnly=" + (scoreOnly==null? "" : System.Uri.EscapeDataString(scoreOnly))+"&format=" + (format==null? "" : System.Uri.EscapeDataString(format));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -252,7 +239,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -267,8 +253,7 @@ namespace MyNS
 		public async Task ValidateEmailGetByKeyAndEmailAndFormatAsync(string key, string email, string format, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "validateEmail?key=" + (key==null? "" : System.Uri.EscapeDataString(key))+"&email=" + (email==null? "" : System.Uri.EscapeDataString(email))+"&format=" + (format==null? "" : System.Uri.EscapeDataString(format));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -282,7 +267,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -298,8 +282,7 @@ namespace MyNS
 		public async Task ValidatePhoneGetByKeyAndPhoneAndCountryCodeAndFormatAsync(string key, string phone, string countryCode, string format, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "validatePhone?key=" + (key==null? "" : System.Uri.EscapeDataString(key))+"&phone=" + (phone==null? "" : System.Uri.EscapeDataString(phone))+"&countryCode=" + (countryCode==null? "" : System.Uri.EscapeDataString(countryCode))+"&format=" + (format==null? "" : System.Uri.EscapeDataString(format));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -313,7 +296,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

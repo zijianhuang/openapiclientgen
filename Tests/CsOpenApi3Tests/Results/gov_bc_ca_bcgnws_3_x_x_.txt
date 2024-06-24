@@ -46,8 +46,7 @@ namespace MyNS
 		public async Task FeatureCategoriesGetByOutputFormatAsync(FeatureCategoriesGetByOutputFormatOutputFormat outputFormat, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "featureCategories?outputFormat=" + outputFormat;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -61,7 +60,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -75,8 +73,7 @@ namespace MyNS
 		public async Task FeatureClassesGetByOutputFormatAsync(FeatureCategoriesGetByOutputFormatOutputFormat outputFormat, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "featureClasses?outputFormat=" + outputFormat;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -90,7 +87,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -104,8 +100,7 @@ namespace MyNS
 		public async Task FeatureTypesGetByOutputFormatAsync(FeatureCategoriesGetByOutputFormatOutputFormat outputFormat, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "featureTypes?outputFormat=" + outputFormat;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -119,7 +114,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -133,8 +127,7 @@ namespace MyNS
 		public async Task Features_featureIdGetAsync(int featureId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "features/"+featureId;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -148,7 +141,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -162,8 +154,7 @@ namespace MyNS
 		public async Task NameAuthoritiesGetByOutputFormatAsync(FeatureCategoriesGetByOutputFormatOutputFormat outputFormat, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "nameAuthorities?outputFormat=" + outputFormat;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -177,7 +168,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -202,8 +192,7 @@ namespace MyNS
 		public async Task NamesChangesGetByOutputFormatAndFromDateAndToDateAndFeatureClassAndFeatureCategoryAndFeatureTypeAndSortByAndOutputSRSAndEmbedAndOutputStyleAndItemsPerPageAndStartIndexAsync(NamesChangesGetByOutputFormatAndFromDateAndToDateAndFeatureClassAndFeatureCategoryAndFeatureTypeAndSortByAndOutputSRSAndEmbedAndOutputStyleAndItemsPerPageAndStartIndexOutputFormat outputFormat, int fromDate, int toDate, string featureClass, string featureCategory, string featureType, NamesChangesGetByOutputFormatAndFromDateAndToDateAndFeatureClassAndFeatureCategoryAndFeatureTypeAndSortByAndOutputSRSAndEmbedAndOutputStyleAndItemsPerPageAndStartIndexSortBy sortBy, NamesChangesGetByOutputFormatAndFromDateAndToDateAndFeatureClassAndFeatureCategoryAndFeatureTypeAndSortByAndOutputSRSAndEmbedAndOutputStyleAndItemsPerPageAndStartIndexOutputSRS outputSRS, NamesChangesGetByOutputFormatAndFromDateAndToDateAndFeatureClassAndFeatureCategoryAndFeatureTypeAndSortByAndOutputSRSAndEmbedAndOutputStyleAndItemsPerPageAndStartIndexEmbed embed, NamesChangesGetByOutputFormatAndFromDateAndToDateAndFeatureClassAndFeatureCategoryAndFeatureTypeAndSortByAndOutputSRSAndEmbedAndOutputStyleAndItemsPerPageAndStartIndexOutputStyle outputStyle, int itemsPerPage, int startIndex, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "names/changes?outputFormat=" + outputFormat+"&fromDate="+fromDate+"&toDate="+toDate+"&featureClass=" + (featureClass==null? "" : System.Uri.EscapeDataString(featureClass))+"&featureCategory=" + (featureCategory==null? "" : System.Uri.EscapeDataString(featureCategory))+"&featureType=" + (featureType==null? "" : System.Uri.EscapeDataString(featureType))+"&sortBy=" + sortBy+"&outputSRS="+outputSRS+"&embed="+embed+"&outputStyle=" + outputStyle+"&itemsPerPage="+itemsPerPage+"&startIndex="+startIndex;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -217,7 +206,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -241,8 +229,7 @@ namespace MyNS
 		public async Task NamesDecisionsRecentGetByOutputFormatAndDaysAndFeatureClassAndFeatureCategoryAndFeatureTypeAndSortByAndOutputSRSAndEmbedAndOutputStyleAndItemsPerPageAndStartIndexAsync(NamesChangesGetByOutputFormatAndFromDateAndToDateAndFeatureClassAndFeatureCategoryAndFeatureTypeAndSortByAndOutputSRSAndEmbedAndOutputStyleAndItemsPerPageAndStartIndexOutputFormat outputFormat, int days, string featureClass, string featureCategory, string featureType, NamesChangesGetByOutputFormatAndFromDateAndToDateAndFeatureClassAndFeatureCategoryAndFeatureTypeAndSortByAndOutputSRSAndEmbedAndOutputStyleAndItemsPerPageAndStartIndexSortBy sortBy, NamesDecisionsRecentGetByOutputFormatAndDaysAndFeatureClassAndFeatureCategoryAndFeatureTypeAndSortByAndOutputSRSAndEmbedAndOutputStyleAndItemsPerPageAndStartIndexOutputSRS outputSRS, NamesDecisionsRecentGetByOutputFormatAndDaysAndFeatureClassAndFeatureCategoryAndFeatureTypeAndSortByAndOutputSRSAndEmbedAndOutputStyleAndItemsPerPageAndStartIndexEmbed embed, NamesChangesGetByOutputFormatAndFromDateAndToDateAndFeatureClassAndFeatureCategoryAndFeatureTypeAndSortByAndOutputSRSAndEmbedAndOutputStyleAndItemsPerPageAndStartIndexOutputStyle outputStyle, int itemsPerPage, int startIndex, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "names/decisions/recent?outputFormat=" + outputFormat+"&days="+days+"&featureClass=" + (featureClass==null? "" : System.Uri.EscapeDataString(featureClass))+"&featureCategory=" + (featureCategory==null? "" : System.Uri.EscapeDataString(featureCategory))+"&featureType=" + (featureType==null? "" : System.Uri.EscapeDataString(featureType))+"&sortBy=" + sortBy+"&outputSRS="+outputSRS+"&embed="+embed+"&outputStyle=" + outputStyle+"&itemsPerPage="+itemsPerPage+"&startIndex="+startIndex;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -256,7 +243,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -280,8 +266,7 @@ namespace MyNS
 		public async Task NamesDecisionsYearGetByOutputFormatAndYearAndFeatureClassAndFeatureCategoryAndFeatureTypeAndSortByAndOutputSRSAndEmbedAndOutputStyleAndItemsPerPageAndStartIndexAsync(NamesChangesGetByOutputFormatAndFromDateAndToDateAndFeatureClassAndFeatureCategoryAndFeatureTypeAndSortByAndOutputSRSAndEmbedAndOutputStyleAndItemsPerPageAndStartIndexOutputFormat outputFormat, int year, string featureClass, string featureCategory, string featureType, NamesChangesGetByOutputFormatAndFromDateAndToDateAndFeatureClassAndFeatureCategoryAndFeatureTypeAndSortByAndOutputSRSAndEmbedAndOutputStyleAndItemsPerPageAndStartIndexSortBy sortBy, NamesDecisionsYearGetByOutputFormatAndYearAndFeatureClassAndFeatureCategoryAndFeatureTypeAndSortByAndOutputSRSAndEmbedAndOutputStyleAndItemsPerPageAndStartIndexOutputSRS outputSRS, NamesDecisionsYearGetByOutputFormatAndYearAndFeatureClassAndFeatureCategoryAndFeatureTypeAndSortByAndOutputSRSAndEmbedAndOutputStyleAndItemsPerPageAndStartIndexEmbed embed, NamesChangesGetByOutputFormatAndFromDateAndToDateAndFeatureClassAndFeatureCategoryAndFeatureTypeAndSortByAndOutputSRSAndEmbedAndOutputStyleAndItemsPerPageAndStartIndexOutputStyle outputStyle, int itemsPerPage, int startIndex, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "names/decisions/year?outputFormat=" + outputFormat+"&year="+year+"&featureClass=" + (featureClass==null? "" : System.Uri.EscapeDataString(featureClass))+"&featureCategory=" + (featureCategory==null? "" : System.Uri.EscapeDataString(featureCategory))+"&featureType=" + (featureType==null? "" : System.Uri.EscapeDataString(featureType))+"&sortBy=" + sortBy+"&outputSRS="+outputSRS+"&embed="+embed+"&outputStyle=" + outputStyle+"&itemsPerPage="+itemsPerPage+"&startIndex="+startIndex;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -295,7 +280,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -319,8 +303,7 @@ namespace MyNS
 		public async Task NamesInsideGetByOutputFormatAndBboxAndFeatureClassAndFeatureCategoryAndFeatureTypeAndSortByAndOutputSRSAndEmbedAndOutputStyleAndItemsPerPageAndStartIndexAsync(NamesChangesGetByOutputFormatAndFromDateAndToDateAndFeatureClassAndFeatureCategoryAndFeatureTypeAndSortByAndOutputSRSAndEmbedAndOutputStyleAndItemsPerPageAndStartIndexOutputFormat outputFormat, string bbox, string featureClass, string featureCategory, string featureType, NamesChangesGetByOutputFormatAndFromDateAndToDateAndFeatureClassAndFeatureCategoryAndFeatureTypeAndSortByAndOutputSRSAndEmbedAndOutputStyleAndItemsPerPageAndStartIndexSortBy sortBy, NamesInsideGetByOutputFormatAndBboxAndFeatureClassAndFeatureCategoryAndFeatureTypeAndSortByAndOutputSRSAndEmbedAndOutputStyleAndItemsPerPageAndStartIndexOutputSRS outputSRS, NamesInsideGetByOutputFormatAndBboxAndFeatureClassAndFeatureCategoryAndFeatureTypeAndSortByAndOutputSRSAndEmbedAndOutputStyleAndItemsPerPageAndStartIndexEmbed embed, NamesChangesGetByOutputFormatAndFromDateAndToDateAndFeatureClassAndFeatureCategoryAndFeatureTypeAndSortByAndOutputSRSAndEmbedAndOutputStyleAndItemsPerPageAndStartIndexOutputStyle outputStyle, int itemsPerPage, int startIndex, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "names/inside?outputFormat=" + outputFormat+"&bbox=" + (bbox==null? "" : System.Uri.EscapeDataString(bbox))+"&featureClass=" + (featureClass==null? "" : System.Uri.EscapeDataString(featureClass))+"&featureCategory=" + (featureCategory==null? "" : System.Uri.EscapeDataString(featureCategory))+"&featureType=" + (featureType==null? "" : System.Uri.EscapeDataString(featureType))+"&sortBy=" + sortBy+"&outputSRS="+outputSRS+"&embed="+embed+"&outputStyle=" + outputStyle+"&itemsPerPage="+itemsPerPage+"&startIndex="+startIndex;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -334,7 +317,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -359,8 +341,7 @@ namespace MyNS
 		public async Task NamesNearGetByOutputFormatAndFeaturePointAndDistanceAndFeatureClassAndFeatureCategoryAndFeatureTypeAndSortByAndOutputSRSAndEmbedAndOutputStyleAndItemsPerPageAndStartIndexAsync(NamesChangesGetByOutputFormatAndFromDateAndToDateAndFeatureClassAndFeatureCategoryAndFeatureTypeAndSortByAndOutputSRSAndEmbedAndOutputStyleAndItemsPerPageAndStartIndexOutputFormat outputFormat, string featurePoint, string distance, string featureClass, string featureCategory, string featureType, NamesChangesGetByOutputFormatAndFromDateAndToDateAndFeatureClassAndFeatureCategoryAndFeatureTypeAndSortByAndOutputSRSAndEmbedAndOutputStyleAndItemsPerPageAndStartIndexSortBy sortBy, NamesNearGetByOutputFormatAndFeaturePointAndDistanceAndFeatureClassAndFeatureCategoryAndFeatureTypeAndSortByAndOutputSRSAndEmbedAndOutputStyleAndItemsPerPageAndStartIndexOutputSRS outputSRS, NamesNearGetByOutputFormatAndFeaturePointAndDistanceAndFeatureClassAndFeatureCategoryAndFeatureTypeAndSortByAndOutputSRSAndEmbedAndOutputStyleAndItemsPerPageAndStartIndexEmbed embed, NamesChangesGetByOutputFormatAndFromDateAndToDateAndFeatureClassAndFeatureCategoryAndFeatureTypeAndSortByAndOutputSRSAndEmbedAndOutputStyleAndItemsPerPageAndStartIndexOutputStyle outputStyle, int itemsPerPage, int startIndex, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "names/near?outputFormat=" + outputFormat+"&featurePoint=" + (featurePoint==null? "" : System.Uri.EscapeDataString(featurePoint))+"&distance=" + (distance==null? "" : System.Uri.EscapeDataString(distance))+"&featureClass=" + (featureClass==null? "" : System.Uri.EscapeDataString(featureClass))+"&featureCategory=" + (featureCategory==null? "" : System.Uri.EscapeDataString(featureCategory))+"&featureType=" + (featureType==null? "" : System.Uri.EscapeDataString(featureType))+"&sortBy=" + sortBy+"&outputSRS="+outputSRS+"&embed="+embed+"&outputStyle=" + outputStyle+"&itemsPerPage="+itemsPerPage+"&startIndex="+startIndex;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -374,7 +355,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -399,8 +379,7 @@ namespace MyNS
 		public async Task NamesNotOfficialSearchGetByOutputFormatAndNameAndExactSpellingAndFeatureClassAndFeatureCategoryAndFeatureTypeAndSortByAndOutputSRSAndEmbedAndOutputStyleAndItemsPerPageAndStartIndexAsync(NamesChangesGetByOutputFormatAndFromDateAndToDateAndFeatureClassAndFeatureCategoryAndFeatureTypeAndSortByAndOutputSRSAndEmbedAndOutputStyleAndItemsPerPageAndStartIndexOutputFormat outputFormat, string name, NamesNotOfficialSearchGetByOutputFormatAndNameAndExactSpellingAndFeatureClassAndFeatureCategoryAndFeatureTypeAndSortByAndOutputSRSAndEmbedAndOutputStyleAndItemsPerPageAndStartIndexExactSpelling exactSpelling, string featureClass, string featureCategory, string featureType, NamesNotOfficialSearchGetByOutputFormatAndNameAndExactSpellingAndFeatureClassAndFeatureCategoryAndFeatureTypeAndSortByAndOutputSRSAndEmbedAndOutputStyleAndItemsPerPageAndStartIndexSortBy sortBy, NamesNotOfficialSearchGetByOutputFormatAndNameAndExactSpellingAndFeatureClassAndFeatureCategoryAndFeatureTypeAndSortByAndOutputSRSAndEmbedAndOutputStyleAndItemsPerPageAndStartIndexOutputSRS outputSRS, NamesNotOfficialSearchGetByOutputFormatAndNameAndExactSpellingAndFeatureClassAndFeatureCategoryAndFeatureTypeAndSortByAndOutputSRSAndEmbedAndOutputStyleAndItemsPerPageAndStartIndexEmbed embed, NamesChangesGetByOutputFormatAndFromDateAndToDateAndFeatureClassAndFeatureCategoryAndFeatureTypeAndSortByAndOutputSRSAndEmbedAndOutputStyleAndItemsPerPageAndStartIndexOutputStyle outputStyle, int itemsPerPage, int startIndex, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "names/notOfficial/search?outputFormat=" + outputFormat+"&name=" + (name==null? "" : System.Uri.EscapeDataString(name))+"&exactSpelling="+exactSpelling+"&featureClass=" + (featureClass==null? "" : System.Uri.EscapeDataString(featureClass))+"&featureCategory=" + (featureCategory==null? "" : System.Uri.EscapeDataString(featureCategory))+"&featureType=" + (featureType==null? "" : System.Uri.EscapeDataString(featureType))+"&sortBy=" + sortBy+"&outputSRS="+outputSRS+"&embed="+embed+"&outputStyle=" + outputStyle+"&itemsPerPage="+itemsPerPage+"&startIndex="+startIndex;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -414,7 +393,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -439,8 +417,7 @@ namespace MyNS
 		public async Task NamesOfficialSearchGetByOutputFormatAndNameAndExactSpellingAndFeatureClassAndFeatureCategoryAndFeatureTypeAndSortByAndOutputSRSAndEmbedAndOutputStyleAndItemsPerPageAndStartIndexAsync(NamesChangesGetByOutputFormatAndFromDateAndToDateAndFeatureClassAndFeatureCategoryAndFeatureTypeAndSortByAndOutputSRSAndEmbedAndOutputStyleAndItemsPerPageAndStartIndexOutputFormat outputFormat, string name, NamesOfficialSearchGetByOutputFormatAndNameAndExactSpellingAndFeatureClassAndFeatureCategoryAndFeatureTypeAndSortByAndOutputSRSAndEmbedAndOutputStyleAndItemsPerPageAndStartIndexExactSpelling exactSpelling, string featureClass, string featureCategory, string featureType, NamesNotOfficialSearchGetByOutputFormatAndNameAndExactSpellingAndFeatureClassAndFeatureCategoryAndFeatureTypeAndSortByAndOutputSRSAndEmbedAndOutputStyleAndItemsPerPageAndStartIndexSortBy sortBy, NamesOfficialSearchGetByOutputFormatAndNameAndExactSpellingAndFeatureClassAndFeatureCategoryAndFeatureTypeAndSortByAndOutputSRSAndEmbedAndOutputStyleAndItemsPerPageAndStartIndexOutputSRS outputSRS, NamesOfficialSearchGetByOutputFormatAndNameAndExactSpellingAndFeatureClassAndFeatureCategoryAndFeatureTypeAndSortByAndOutputSRSAndEmbedAndOutputStyleAndItemsPerPageAndStartIndexEmbed embed, NamesChangesGetByOutputFormatAndFromDateAndToDateAndFeatureClassAndFeatureCategoryAndFeatureTypeAndSortByAndOutputSRSAndEmbedAndOutputStyleAndItemsPerPageAndStartIndexOutputStyle outputStyle, int itemsPerPage, int startIndex, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "names/official/search?outputFormat=" + outputFormat+"&name=" + (name==null? "" : System.Uri.EscapeDataString(name))+"&exactSpelling="+exactSpelling+"&featureClass=" + (featureClass==null? "" : System.Uri.EscapeDataString(featureClass))+"&featureCategory=" + (featureCategory==null? "" : System.Uri.EscapeDataString(featureCategory))+"&featureType=" + (featureType==null? "" : System.Uri.EscapeDataString(featureType))+"&sortBy=" + sortBy+"&outputSRS="+outputSRS+"&embed="+embed+"&outputStyle=" + outputStyle+"&itemsPerPage="+itemsPerPage+"&startIndex="+startIndex;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -454,7 +431,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -479,8 +455,7 @@ namespace MyNS
 		public async Task NamesSearchGetByOutputFormatAndNameAndExactSpellingAndFeatureClassAndFeatureCategoryAndFeatureTypeAndSortByAndOutputSRSAndEmbedAndOutputStyleAndItemsPerPageAndStartIndexAsync(NamesChangesGetByOutputFormatAndFromDateAndToDateAndFeatureClassAndFeatureCategoryAndFeatureTypeAndSortByAndOutputSRSAndEmbedAndOutputStyleAndItemsPerPageAndStartIndexOutputFormat outputFormat, string name, NamesSearchGetByOutputFormatAndNameAndExactSpellingAndFeatureClassAndFeatureCategoryAndFeatureTypeAndSortByAndOutputSRSAndEmbedAndOutputStyleAndItemsPerPageAndStartIndexExactSpelling exactSpelling, string featureClass, string featureCategory, string featureType, NamesNotOfficialSearchGetByOutputFormatAndNameAndExactSpellingAndFeatureClassAndFeatureCategoryAndFeatureTypeAndSortByAndOutputSRSAndEmbedAndOutputStyleAndItemsPerPageAndStartIndexSortBy sortBy, NamesSearchGetByOutputFormatAndNameAndExactSpellingAndFeatureClassAndFeatureCategoryAndFeatureTypeAndSortByAndOutputSRSAndEmbedAndOutputStyleAndItemsPerPageAndStartIndexOutputSRS outputSRS, NamesSearchGetByOutputFormatAndNameAndExactSpellingAndFeatureClassAndFeatureCategoryAndFeatureTypeAndSortByAndOutputSRSAndEmbedAndOutputStyleAndItemsPerPageAndStartIndexEmbed embed, NamesChangesGetByOutputFormatAndFromDateAndToDateAndFeatureClassAndFeatureCategoryAndFeatureTypeAndSortByAndOutputSRSAndEmbedAndOutputStyleAndItemsPerPageAndStartIndexOutputStyle outputStyle, int itemsPerPage, int startIndex, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "names/search?outputFormat=" + outputFormat+"&name=" + (name==null? "" : System.Uri.EscapeDataString(name))+"&exactSpelling="+exactSpelling+"&featureClass=" + (featureClass==null? "" : System.Uri.EscapeDataString(featureClass))+"&featureCategory=" + (featureCategory==null? "" : System.Uri.EscapeDataString(featureCategory))+"&featureType=" + (featureType==null? "" : System.Uri.EscapeDataString(featureType))+"&sortBy=" + sortBy+"&outputSRS="+outputSRS+"&embed="+embed+"&outputStyle=" + outputStyle+"&itemsPerPage="+itemsPerPage+"&startIndex="+startIndex;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -494,7 +469,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -509,8 +483,7 @@ namespace MyNS
 		public async Task Names_nameId__outputFormatGetAsync(int nameId, Names_nameId__outputFormatGetOutputFormat outputFormat, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "names/"+nameId+"."+outputFormat;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -524,7 +497,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

@@ -2647,8 +2647,7 @@ namespace MyNS
 		public async Task Access_tokens_accessTokensGetByPagesizeAndPageAndFilterAndCallbackAsync(string accessTokens, int pagesize, int page, string filter, string callback, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "access-tokens/"+ (accessTokens==null? "" : System.Uri.EscapeDataString(accessTokens))+"&pagesize="+pagesize+"&page="+page+"&filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&callback=" + (callback==null? "" : System.Uri.EscapeDataString(callback));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2662,7 +2661,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2713,8 +2711,7 @@ namespace MyNS
 		public async Task Access_tokens_accessTokensInvalidateGetByPagesizeAndPageAndFilterAndCallbackAsync(string accessTokens, int pagesize, int page, string filter, string callback, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "access-tokens/"+ (accessTokens==null? "" : System.Uri.EscapeDataString(accessTokens))+"/invalidate&pagesize="+pagesize+"&page="+page+"&filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&callback=" + (callback==null? "" : System.Uri.EscapeDataString(callback));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2728,7 +2725,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2797,8 +2793,7 @@ namespace MyNS
 		public async Task AnswersGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteAsync(AnswersGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteOrder order, string max, string min, AnswersGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteSort sort, int fromdate, int todate, int pagesize, int page, string filter, string callback, string site, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "answers?order=" + order+"&max=" + (max==null? "" : System.Uri.EscapeDataString(max))+"&min=" + (min==null? "" : System.Uri.EscapeDataString(min))+"&sort=" + sort+"&fromdate="+fromdate+"&todate="+todate+"&pagesize="+pagesize+"&page="+page+"&filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&callback=" + (callback==null? "" : System.Uri.EscapeDataString(callback))+"&site=" + (site==null? "" : System.Uri.EscapeDataString(site));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2812,7 +2807,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2886,8 +2880,7 @@ namespace MyNS
 		public async Task Answers_idsGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteAsync(string ids, AnswersGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteOrder order, string max, string min, AnswersGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteSort sort, int fromdate, int todate, int pagesize, int page, string filter, string callback, string site, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "answers/"+ (ids==null? "" : System.Uri.EscapeDataString(ids))+"&order=" + order+"&max=" + (max==null? "" : System.Uri.EscapeDataString(max))+"&min=" + (min==null? "" : System.Uri.EscapeDataString(min))+"&sort=" + sort+"&fromdate="+fromdate+"&todate="+todate+"&pagesize="+pagesize+"&page="+page+"&filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&callback=" + (callback==null? "" : System.Uri.EscapeDataString(callback))+"&site=" + (site==null? "" : System.Uri.EscapeDataString(site));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2901,7 +2894,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2972,8 +2964,7 @@ namespace MyNS
 		public async Task Answers_idsCommentsGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteAsync(string ids, AnswersGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteOrder order, string max, string min, Answers_idsCommentsGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteSort sort, int fromdate, int todate, int pagesize, int page, string filter, string callback, string site, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "answers/"+ (ids==null? "" : System.Uri.EscapeDataString(ids))+"/comments&order=" + order+"&max=" + (max==null? "" : System.Uri.EscapeDataString(max))+"&min=" + (min==null? "" : System.Uri.EscapeDataString(min))+"&sort=" + sort+"&fromdate="+fromdate+"&todate="+todate+"&pagesize="+pagesize+"&page="+page+"&filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&callback=" + (callback==null? "" : System.Uri.EscapeDataString(callback))+"&site=" + (site==null? "" : System.Uri.EscapeDataString(site));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2987,7 +2978,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3042,8 +3032,7 @@ namespace MyNS
 		public async Task Apps_accessTokensDe_authenticateGetByPagesizeAndPageAndFilterAndCallbackAsync(string accessTokens, int pagesize, int page, string filter, string callback, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "apps/"+ (accessTokens==null? "" : System.Uri.EscapeDataString(accessTokens))+"/de-authenticate&pagesize="+pagesize+"&page="+page+"&filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&callback=" + (callback==null? "" : System.Uri.EscapeDataString(callback));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3057,7 +3046,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3125,8 +3113,7 @@ namespace MyNS
 		public async Task BadgesGetByInnameAndOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteAsync(string inname, AnswersGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteOrder order, string max, string min, BadgesGetByInnameAndOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteSort sort, int fromdate, int todate, int pagesize, int page, string filter, string callback, string site, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "badges?inname=" + (inname==null? "" : System.Uri.EscapeDataString(inname))+"&order=" + order+"&max=" + (max==null? "" : System.Uri.EscapeDataString(max))+"&min=" + (min==null? "" : System.Uri.EscapeDataString(min))+"&sort=" + sort+"&fromdate="+fromdate+"&todate="+todate+"&pagesize="+pagesize+"&page="+page+"&filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&callback=" + (callback==null? "" : System.Uri.EscapeDataString(callback))+"&site=" + (site==null? "" : System.Uri.EscapeDataString(site));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3140,7 +3127,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3204,8 +3190,7 @@ namespace MyNS
 		public async Task BadgesNameGetByInnameAndOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteAsync(string inname, AnswersGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteOrder order, string max, string min, BadgesNameGetByInnameAndOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteSort sort, int fromdate, int todate, int pagesize, int page, string filter, string callback, string site, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "badges/name?inname=" + (inname==null? "" : System.Uri.EscapeDataString(inname))+"&order=" + order+"&max=" + (max==null? "" : System.Uri.EscapeDataString(max))+"&min=" + (min==null? "" : System.Uri.EscapeDataString(min))+"&sort=" + sort+"&fromdate="+fromdate+"&todate="+todate+"&pagesize="+pagesize+"&page="+page+"&filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&callback=" + (callback==null? "" : System.Uri.EscapeDataString(callback))+"&site=" + (site==null? "" : System.Uri.EscapeDataString(site));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3219,7 +3204,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3273,8 +3257,7 @@ namespace MyNS
 		public async Task BadgesRecipientsGetByFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteAsync(int fromdate, int todate, int pagesize, int page, string filter, string callback, string site, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "badges/recipients?fromdate="+fromdate+"&todate="+todate+"&pagesize="+pagesize+"&page="+page+"&filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&callback=" + (callback==null? "" : System.Uri.EscapeDataString(callback))+"&site=" + (site==null? "" : System.Uri.EscapeDataString(site));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3288,7 +3271,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3350,8 +3332,7 @@ namespace MyNS
 		public async Task BadgesTagsGetByInnameAndOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteAsync(string inname, AnswersGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteOrder order, string max, string min, BadgesNameGetByInnameAndOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteSort sort, int fromdate, int todate, int pagesize, int page, string filter, string callback, string site, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "badges/tags?inname=" + (inname==null? "" : System.Uri.EscapeDataString(inname))+"&order=" + order+"&max=" + (max==null? "" : System.Uri.EscapeDataString(max))+"&min=" + (min==null? "" : System.Uri.EscapeDataString(min))+"&sort=" + sort+"&fromdate="+fromdate+"&todate="+todate+"&pagesize="+pagesize+"&page="+page+"&filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&callback=" + (callback==null? "" : System.Uri.EscapeDataString(callback))+"&site=" + (site==null? "" : System.Uri.EscapeDataString(site));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3365,7 +3346,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3438,8 +3418,7 @@ namespace MyNS
 		public async Task Badges_idsGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteAsync(string ids, AnswersGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteOrder order, string max, string min, BadgesGetByInnameAndOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteSort sort, int fromdate, int todate, int pagesize, int page, string filter, string callback, string site, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "badges/"+ (ids==null? "" : System.Uri.EscapeDataString(ids))+"&order=" + order+"&max=" + (max==null? "" : System.Uri.EscapeDataString(max))+"&min=" + (min==null? "" : System.Uri.EscapeDataString(min))+"&sort=" + sort+"&fromdate="+fromdate+"&todate="+todate+"&pagesize="+pagesize+"&page="+page+"&filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&callback=" + (callback==null? "" : System.Uri.EscapeDataString(callback))+"&site=" + (site==null? "" : System.Uri.EscapeDataString(site));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3453,7 +3432,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3510,8 +3488,7 @@ namespace MyNS
 		public async Task Badges_idsRecipientsGetByFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteAsync(string ids, int fromdate, int todate, int pagesize, int page, string filter, string callback, string site, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "badges/"+ (ids==null? "" : System.Uri.EscapeDataString(ids))+"/recipients&fromdate="+fromdate+"&todate="+todate+"&pagesize="+pagesize+"&page="+page+"&filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&callback=" + (callback==null? "" : System.Uri.EscapeDataString(callback))+"&site=" + (site==null? "" : System.Uri.EscapeDataString(site));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3525,7 +3502,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3595,8 +3571,7 @@ namespace MyNS
 		public async Task CommentsGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteAsync(AnswersGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteOrder order, string max, string min, Answers_idsCommentsGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteSort sort, int fromdate, int todate, int pagesize, int page, string filter, string callback, string site, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "comments?order=" + order+"&max=" + (max==null? "" : System.Uri.EscapeDataString(max))+"&min=" + (min==null? "" : System.Uri.EscapeDataString(min))+"&sort=" + sort+"&fromdate="+fromdate+"&todate="+todate+"&pagesize="+pagesize+"&page="+page+"&filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&callback=" + (callback==null? "" : System.Uri.EscapeDataString(callback))+"&site=" + (site==null? "" : System.Uri.EscapeDataString(site));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3610,7 +3585,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3681,8 +3655,7 @@ namespace MyNS
 		public async Task Comments_idsGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteAsync(string ids, AnswersGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteOrder order, string max, string min, Answers_idsCommentsGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteSort sort, int fromdate, int todate, int pagesize, int page, string filter, string callback, string site, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "comments/"+ (ids==null? "" : System.Uri.EscapeDataString(ids))+"&order=" + order+"&max=" + (max==null? "" : System.Uri.EscapeDataString(max))+"&min=" + (min==null? "" : System.Uri.EscapeDataString(min))+"&sort=" + sort+"&fromdate="+fromdate+"&todate="+todate+"&pagesize="+pagesize+"&page="+page+"&filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&callback=" + (callback==null? "" : System.Uri.EscapeDataString(callback))+"&site=" + (site==null? "" : System.Uri.EscapeDataString(site));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3696,7 +3669,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3748,8 +3720,7 @@ namespace MyNS
 		public async Task Comments_idDeletePostByFilterAndCallbackAndSiteAndPreviewAsync(int id, string filter, string callback, string site, bool preview, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "comments/"+id+"/delete?filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&callback=" + (callback==null? "" : System.Uri.EscapeDataString(callback))+"&site=" + (site==null? "" : System.Uri.EscapeDataString(site))+"&preview="+preview;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -3758,7 +3729,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3810,8 +3780,7 @@ namespace MyNS
 		public async Task Comments_idEditPostByFilterAndCallbackAndSiteAndBodyAndPreviewAsync(int id, string filter, string callback, string site, string body, bool preview, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "comments/"+id+"/edit?filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&callback=" + (callback==null? "" : System.Uri.EscapeDataString(callback))+"&site=" + (site==null? "" : System.Uri.EscapeDataString(site))+"&body=" + (body==null? "" : System.Uri.EscapeDataString(body))+"&preview="+preview;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -3820,7 +3789,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3872,8 +3840,7 @@ namespace MyNS
 		public async Task ErrorsGetByPagesizeAndPageAndFilterAndCallbackAsync(int pagesize, int page, string filter, string callback, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "errors?pagesize="+pagesize+"&page="+page+"&filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&callback=" + (callback==null? "" : System.Uri.EscapeDataString(callback));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3887,7 +3854,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3904,8 +3870,7 @@ namespace MyNS
 		public async Task Errors_idGetAsync(int id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "errors/"+id;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3919,7 +3884,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3984,8 +3948,7 @@ namespace MyNS
 		public async Task EventsGetByPagesizeAndPageAndFilterAndCallbackAndSiteAndSinceAsync(int pagesize, int page, string filter, string callback, string site, int since, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "events?pagesize="+pagesize+"&page="+page+"&filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&callback=" + (callback==null? "" : System.Uri.EscapeDataString(callback))+"&site=" + (site==null? "" : System.Uri.EscapeDataString(site))+"&since="+since;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3999,7 +3962,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4024,8 +3986,7 @@ namespace MyNS
 		public async Task FiltersCreateGetBy_baseAndExcludeAndIncludeAnd_unsafeAsync(string _base, string exclude, string include, bool _unsafe, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "filters/create?base=" + (_base==null? "" : System.Uri.EscapeDataString(_base))+"&exclude=" + (exclude==null? "" : System.Uri.EscapeDataString(exclude))+"&include=" + (include==null? "" : System.Uri.EscapeDataString(include))+"&unsafe="+_unsafe;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4039,7 +4000,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4059,8 +4019,7 @@ namespace MyNS
 		public async Task Filters_filtersGetAsync(string filters, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "filters/"+ (filters==null? "" : System.Uri.EscapeDataString(filters));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4074,7 +4033,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4124,8 +4082,7 @@ namespace MyNS
 		public async Task InboxGetByPagesizeAndPageAndFilterAndCallbackAsync(int pagesize, int page, string filter, string callback, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "inbox?pagesize="+pagesize+"&page="+page+"&filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&callback=" + (callback==null? "" : System.Uri.EscapeDataString(callback));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4139,7 +4096,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4190,8 +4146,7 @@ namespace MyNS
 		public async Task InboxUnreadGetByPagesizeAndPageAndFilterAndCallbackAndSinceAsync(int pagesize, int page, string filter, string callback, int since, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "inbox/unread?pagesize="+pagesize+"&page="+page+"&filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&callback=" + (callback==null? "" : System.Uri.EscapeDataString(callback))+"&since="+since;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4205,7 +4160,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4226,8 +4180,7 @@ namespace MyNS
 		public async Task InfoGetBySiteAsync(string site, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "info?site=" + (site==null? "" : System.Uri.EscapeDataString(site));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4241,7 +4194,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4303,8 +4255,7 @@ namespace MyNS
 		public async Task MeGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteAsync(AnswersGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteOrder order, string max, string min, MeGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteSort sort, int fromdate, int todate, int pagesize, int page, string filter, string callback, string site, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "me?order=" + order+"&max=" + (max==null? "" : System.Uri.EscapeDataString(max))+"&min=" + (min==null? "" : System.Uri.EscapeDataString(min))+"&sort=" + sort+"&fromdate="+fromdate+"&todate="+todate+"&pagesize="+pagesize+"&page="+page+"&filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&callback=" + (callback==null? "" : System.Uri.EscapeDataString(callback))+"&site=" + (site==null? "" : System.Uri.EscapeDataString(site));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4318,7 +4269,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4378,8 +4328,7 @@ namespace MyNS
 		public async Task MeAnswersGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteAsync(AnswersGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteOrder order, string max, string min, AnswersGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteSort sort, int fromdate, int todate, int pagesize, int page, string filter, string callback, string site, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "me/answers?order=" + order+"&max=" + (max==null? "" : System.Uri.EscapeDataString(max))+"&min=" + (min==null? "" : System.Uri.EscapeDataString(min))+"&sort=" + sort+"&fromdate="+fromdate+"&todate="+todate+"&pagesize="+pagesize+"&page="+page+"&filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&callback=" + (callback==null? "" : System.Uri.EscapeDataString(callback))+"&site=" + (site==null? "" : System.Uri.EscapeDataString(site));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4393,7 +4342,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4441,8 +4389,7 @@ namespace MyNS
 		public async Task MeAssociatedGetByPagesizeAndPageAndFilterAndCallbackAsync(int pagesize, int page, string filter, string callback, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "me/associated?pagesize="+pagesize+"&page="+page+"&filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&callback=" + (callback==null? "" : System.Uri.EscapeDataString(callback));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4456,7 +4403,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4516,8 +4462,7 @@ namespace MyNS
 		public async Task MeBadgesGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteAsync(AnswersGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteOrder order, string max, string min, BadgesGetByInnameAndOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteSort sort, int fromdate, int todate, int pagesize, int page, string filter, string callback, string site, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "me/badges?order=" + order+"&max=" + (max==null? "" : System.Uri.EscapeDataString(max))+"&min=" + (min==null? "" : System.Uri.EscapeDataString(min))+"&sort=" + sort+"&fromdate="+fromdate+"&todate="+todate+"&pagesize="+pagesize+"&page="+page+"&filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&callback=" + (callback==null? "" : System.Uri.EscapeDataString(callback))+"&site=" + (site==null? "" : System.Uri.EscapeDataString(site));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4531,7 +4476,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4589,8 +4533,7 @@ namespace MyNS
 		public async Task MeCommentsGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteAsync(AnswersGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteOrder order, string max, string min, Answers_idsCommentsGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteSort sort, int fromdate, int todate, int pagesize, int page, string filter, string callback, string site, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "me/comments?order=" + order+"&max=" + (max==null? "" : System.Uri.EscapeDataString(max))+"&min=" + (min==null? "" : System.Uri.EscapeDataString(min))+"&sort=" + sort+"&fromdate="+fromdate+"&todate="+todate+"&pagesize="+pagesize+"&page="+page+"&filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&callback=" + (callback==null? "" : System.Uri.EscapeDataString(callback))+"&site=" + (site==null? "" : System.Uri.EscapeDataString(site));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4604,7 +4547,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4662,8 +4604,7 @@ namespace MyNS
 		public async Task MeComments_toIdGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteAsync(int toId, AnswersGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteOrder order, string max, string min, Answers_idsCommentsGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteSort sort, int fromdate, int todate, int pagesize, int page, string filter, string callback, string site, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "me/comments/"+toId+"?order=" + order+"&max=" + (max==null? "" : System.Uri.EscapeDataString(max))+"&min=" + (min==null? "" : System.Uri.EscapeDataString(min))+"&sort=" + sort+"&fromdate="+fromdate+"&todate="+todate+"&pagesize="+pagesize+"&page="+page+"&filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&callback=" + (callback==null? "" : System.Uri.EscapeDataString(callback))+"&site=" + (site==null? "" : System.Uri.EscapeDataString(site));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4677,7 +4618,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4739,8 +4679,7 @@ namespace MyNS
 		public async Task MeFavoritesGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteAsync(AnswersGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteOrder order, string max, string min, MeFavoritesGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteSort sort, int fromdate, int todate, int pagesize, int page, string filter, string callback, string site, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "me/favorites?order=" + order+"&max=" + (max==null? "" : System.Uri.EscapeDataString(max))+"&min=" + (min==null? "" : System.Uri.EscapeDataString(min))+"&sort=" + sort+"&fromdate="+fromdate+"&todate="+todate+"&pagesize="+pagesize+"&page="+page+"&filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&callback=" + (callback==null? "" : System.Uri.EscapeDataString(callback))+"&site=" + (site==null? "" : System.Uri.EscapeDataString(site));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4754,7 +4693,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4806,8 +4744,7 @@ namespace MyNS
 		public async Task MeInboxGetByPagesizeAndPageAndFilterAndCallbackAndSiteAsync(int pagesize, int page, string filter, string callback, string site, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "me/inbox?pagesize="+pagesize+"&page="+page+"&filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&callback=" + (callback==null? "" : System.Uri.EscapeDataString(callback))+"&site=" + (site==null? "" : System.Uri.EscapeDataString(site));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4821,7 +4758,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4874,8 +4810,7 @@ namespace MyNS
 		public async Task MeInboxUnreadGetByPagesizeAndPageAndFilterAndCallbackAndSiteAndSinceAsync(int pagesize, int page, string filter, string callback, string site, int since, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "me/inbox/unread?pagesize="+pagesize+"&page="+page+"&filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&callback=" + (callback==null? "" : System.Uri.EscapeDataString(callback))+"&site=" + (site==null? "" : System.Uri.EscapeDataString(site))+"&since="+since;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4889,7 +4824,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4947,8 +4881,7 @@ namespace MyNS
 		public async Task MeMentionedGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteAsync(AnswersGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteOrder order, string max, string min, Answers_idsCommentsGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteSort sort, int fromdate, int todate, int pagesize, int page, string filter, string callback, string site, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "me/mentioned?order=" + order+"&max=" + (max==null? "" : System.Uri.EscapeDataString(max))+"&min=" + (min==null? "" : System.Uri.EscapeDataString(min))+"&sort=" + sort+"&fromdate="+fromdate+"&todate="+todate+"&pagesize="+pagesize+"&page="+page+"&filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&callback=" + (callback==null? "" : System.Uri.EscapeDataString(callback))+"&site=" + (site==null? "" : System.Uri.EscapeDataString(site));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4962,7 +4895,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5018,8 +4950,7 @@ namespace MyNS
 		public async Task MeMergesGetByPagesizeAndPageAndFilterAndCallbackAsync(int pagesize, int page, string filter, string callback, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "me/merges?pagesize="+pagesize+"&page="+page+"&filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&callback=" + (callback==null? "" : System.Uri.EscapeDataString(callback));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5033,7 +4964,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5085,8 +5015,7 @@ namespace MyNS
 		public async Task MeNotificationsGetByPagesizeAndPageAndFilterAndCallbackAndSiteAsync(int pagesize, int page, string filter, string callback, string site, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "me/notifications?pagesize="+pagesize+"&page="+page+"&filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&callback=" + (callback==null? "" : System.Uri.EscapeDataString(callback))+"&site=" + (site==null? "" : System.Uri.EscapeDataString(site));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5100,7 +5029,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5152,8 +5080,7 @@ namespace MyNS
 		public async Task MeNotificationsUnreadGetByPagesizeAndPageAndFilterAndCallbackAndSiteAsync(int pagesize, int page, string filter, string callback, string site, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "me/notifications/unread?pagesize="+pagesize+"&page="+page+"&filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&callback=" + (callback==null? "" : System.Uri.EscapeDataString(callback))+"&site=" + (site==null? "" : System.Uri.EscapeDataString(site));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5167,7 +5094,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5217,8 +5143,7 @@ namespace MyNS
 		public async Task MePrivilegesGetByPagesizeAndPageAndFilterAndCallbackAndSiteAsync(int pagesize, int page, string filter, string callback, string site, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "me/privileges?pagesize="+pagesize+"&page="+page+"&filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&callback=" + (callback==null? "" : System.Uri.EscapeDataString(callback))+"&site=" + (site==null? "" : System.Uri.EscapeDataString(site));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5232,7 +5157,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5292,8 +5216,7 @@ namespace MyNS
 		public async Task MeQuestionsGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteAsync(AnswersGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteOrder order, string max, string min, AnswersGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteSort sort, int fromdate, int todate, int pagesize, int page, string filter, string callback, string site, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "me/questions?order=" + order+"&max=" + (max==null? "" : System.Uri.EscapeDataString(max))+"&min=" + (min==null? "" : System.Uri.EscapeDataString(min))+"&sort=" + sort+"&fromdate="+fromdate+"&todate="+todate+"&pagesize="+pagesize+"&page="+page+"&filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&callback=" + (callback==null? "" : System.Uri.EscapeDataString(callback))+"&site=" + (site==null? "" : System.Uri.EscapeDataString(site));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5307,7 +5230,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5367,8 +5289,7 @@ namespace MyNS
 		public async Task MeQuestionsFeaturedGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteAsync(AnswersGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteOrder order, string max, string min, AnswersGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteSort sort, int fromdate, int todate, int pagesize, int page, string filter, string callback, string site, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "me/questions/featured?order=" + order+"&max=" + (max==null? "" : System.Uri.EscapeDataString(max))+"&min=" + (min==null? "" : System.Uri.EscapeDataString(min))+"&sort=" + sort+"&fromdate="+fromdate+"&todate="+todate+"&pagesize="+pagesize+"&page="+page+"&filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&callback=" + (callback==null? "" : System.Uri.EscapeDataString(callback))+"&site=" + (site==null? "" : System.Uri.EscapeDataString(site));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5382,7 +5303,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5442,8 +5362,7 @@ namespace MyNS
 		public async Task MeQuestionsNo_answersGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteAsync(AnswersGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteOrder order, string max, string min, AnswersGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteSort sort, int fromdate, int todate, int pagesize, int page, string filter, string callback, string site, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "me/questions/no-answers?order=" + order+"&max=" + (max==null? "" : System.Uri.EscapeDataString(max))+"&min=" + (min==null? "" : System.Uri.EscapeDataString(min))+"&sort=" + sort+"&fromdate="+fromdate+"&todate="+todate+"&pagesize="+pagesize+"&page="+page+"&filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&callback=" + (callback==null? "" : System.Uri.EscapeDataString(callback))+"&site=" + (site==null? "" : System.Uri.EscapeDataString(site));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5457,7 +5376,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5517,8 +5435,7 @@ namespace MyNS
 		public async Task MeQuestionsUnacceptedGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteAsync(AnswersGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteOrder order, string max, string min, AnswersGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteSort sort, int fromdate, int todate, int pagesize, int page, string filter, string callback, string site, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "me/questions/unaccepted?order=" + order+"&max=" + (max==null? "" : System.Uri.EscapeDataString(max))+"&min=" + (min==null? "" : System.Uri.EscapeDataString(min))+"&sort=" + sort+"&fromdate="+fromdate+"&todate="+todate+"&pagesize="+pagesize+"&page="+page+"&filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&callback=" + (callback==null? "" : System.Uri.EscapeDataString(callback))+"&site=" + (site==null? "" : System.Uri.EscapeDataString(site));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5532,7 +5449,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5592,8 +5508,7 @@ namespace MyNS
 		public async Task MeQuestionsUnansweredGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteAsync(AnswersGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteOrder order, string max, string min, AnswersGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteSort sort, int fromdate, int todate, int pagesize, int page, string filter, string callback, string site, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "me/questions/unanswered?order=" + order+"&max=" + (max==null? "" : System.Uri.EscapeDataString(max))+"&min=" + (min==null? "" : System.Uri.EscapeDataString(min))+"&sort=" + sort+"&fromdate="+fromdate+"&todate="+todate+"&pagesize="+pagesize+"&page="+page+"&filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&callback=" + (callback==null? "" : System.Uri.EscapeDataString(callback))+"&site=" + (site==null? "" : System.Uri.EscapeDataString(site));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5607,7 +5522,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5657,8 +5571,7 @@ namespace MyNS
 		public async Task MeReputationGetByFilterAndCallbackAndSiteAsync(string filter, string callback, string site, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "me/reputation?filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&callback=" + (callback==null? "" : System.Uri.EscapeDataString(callback))+"&site=" + (site==null? "" : System.Uri.EscapeDataString(site));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5672,7 +5585,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5722,8 +5634,7 @@ namespace MyNS
 		public async Task MeReputation_historyGetByPagesizeAndPageAndFilterAndCallbackAndSiteAsync(int pagesize, int page, string filter, string callback, string site, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "me/reputation-history?pagesize="+pagesize+"&page="+page+"&filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&callback=" + (callback==null? "" : System.Uri.EscapeDataString(callback))+"&site=" + (site==null? "" : System.Uri.EscapeDataString(site));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5737,7 +5648,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5790,8 +5700,7 @@ namespace MyNS
 		public async Task MeReputation_historyFullGetByPagesizeAndPageAndFilterAndCallbackAndSiteAsync(int pagesize, int page, string filter, string callback, string site, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "me/reputation-history/full?pagesize="+pagesize+"&page="+page+"&filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&callback=" + (callback==null? "" : System.Uri.EscapeDataString(callback))+"&site=" + (site==null? "" : System.Uri.EscapeDataString(site));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5805,7 +5714,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5865,8 +5773,7 @@ namespace MyNS
 		public async Task MeSuggested_editsGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteAsync(AnswersGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteOrder order, string max, string min, MeSuggested_editsGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteSort sort, int fromdate, int todate, int pagesize, int page, string filter, string callback, string site, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "me/suggested-edits?order=" + order+"&max=" + (max==null? "" : System.Uri.EscapeDataString(max))+"&min=" + (min==null? "" : System.Uri.EscapeDataString(min))+"&sort=" + sort+"&fromdate="+fromdate+"&todate="+todate+"&pagesize="+pagesize+"&page="+page+"&filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&callback=" + (callback==null? "" : System.Uri.EscapeDataString(callback))+"&site=" + (site==null? "" : System.Uri.EscapeDataString(site));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5880,7 +5787,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5940,8 +5846,7 @@ namespace MyNS
 		public async Task MeTagsGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteAsync(AnswersGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteOrder order, string max, string min, MeTagsGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteSort sort, int fromdate, int todate, int pagesize, int page, string filter, string callback, string site, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "me/tags?order=" + order+"&max=" + (max==null? "" : System.Uri.EscapeDataString(max))+"&min=" + (min==null? "" : System.Uri.EscapeDataString(min))+"&sort=" + sort+"&fromdate="+fromdate+"&todate="+todate+"&pagesize="+pagesize+"&page="+page+"&filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&callback=" + (callback==null? "" : System.Uri.EscapeDataString(callback))+"&site=" + (site==null? "" : System.Uri.EscapeDataString(site));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5955,7 +5860,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6016,8 +5920,7 @@ namespace MyNS
 		public async Task MeTags_tagsTop_answersGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteAsync(string tags, AnswersGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteOrder order, string max, string min, AnswersGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteSort sort, int fromdate, int todate, int pagesize, int page, string filter, string callback, string site, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "me/tags/"+ (tags==null? "" : System.Uri.EscapeDataString(tags))+"/top-answers&order=" + order+"&max=" + (max==null? "" : System.Uri.EscapeDataString(max))+"&min=" + (min==null? "" : System.Uri.EscapeDataString(min))+"&sort=" + sort+"&fromdate="+fromdate+"&todate="+todate+"&pagesize="+pagesize+"&page="+page+"&filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&callback=" + (callback==null? "" : System.Uri.EscapeDataString(callback))+"&site=" + (site==null? "" : System.Uri.EscapeDataString(site));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6031,7 +5934,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6100,8 +6002,7 @@ namespace MyNS
 		public async Task MeTags_tagsTop_questionsGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteAsync(string tags, AnswersGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteOrder order, string max, string min, MeTags_tagsTop_questionsGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteSort sort, int fromdate, int todate, int pagesize, int page, string filter, string callback, string site, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "me/tags/"+ (tags==null? "" : System.Uri.EscapeDataString(tags))+"/top-questions&order=" + order+"&max=" + (max==null? "" : System.Uri.EscapeDataString(max))+"&min=" + (min==null? "" : System.Uri.EscapeDataString(min))+"&sort=" + sort+"&fromdate="+fromdate+"&todate="+todate+"&pagesize="+pagesize+"&page="+page+"&filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&callback=" + (callback==null? "" : System.Uri.EscapeDataString(callback))+"&site=" + (site==null? "" : System.Uri.EscapeDataString(site));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6115,7 +6016,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6167,8 +6067,7 @@ namespace MyNS
 		public async Task MeTimelineGetByFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteAsync(int fromdate, int todate, int pagesize, int page, string filter, string callback, string site, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "me/timeline?fromdate="+fromdate+"&todate="+todate+"&pagesize="+pagesize+"&page="+page+"&filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&callback=" + (callback==null? "" : System.Uri.EscapeDataString(callback))+"&site=" + (site==null? "" : System.Uri.EscapeDataString(site));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6182,7 +6081,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6232,8 +6130,7 @@ namespace MyNS
 		public async Task MeTop_answer_tagsGetByPagesizeAndPageAndFilterAndCallbackAndSiteAsync(int pagesize, int page, string filter, string callback, string site, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "me/top-answer-tags?pagesize="+pagesize+"&page="+page+"&filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&callback=" + (callback==null? "" : System.Uri.EscapeDataString(callback))+"&site=" + (site==null? "" : System.Uri.EscapeDataString(site));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6247,7 +6144,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6297,8 +6193,7 @@ namespace MyNS
 		public async Task MeTop_question_tagsGetByPagesizeAndPageAndFilterAndCallbackAndSiteAsync(int pagesize, int page, string filter, string callback, string site, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "me/top-question-tags?pagesize="+pagesize+"&page="+page+"&filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&callback=" + (callback==null? "" : System.Uri.EscapeDataString(callback))+"&site=" + (site==null? "" : System.Uri.EscapeDataString(site));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6312,7 +6207,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6366,8 +6260,7 @@ namespace MyNS
 		public async Task MeWrite_permissionsGetByPagesizeAndPageAndFilterAndCallbackAndSiteAsync(int pagesize, int page, string filter, string callback, string site, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "me/write-permissions?pagesize="+pagesize+"&page="+page+"&filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&callback=" + (callback==null? "" : System.Uri.EscapeDataString(callback))+"&site=" + (site==null? "" : System.Uri.EscapeDataString(site));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6381,7 +6274,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6431,8 +6323,7 @@ namespace MyNS
 		public async Task NotificationsGetByPagesizeAndPageAndFilterAndCallbackAsync(int pagesize, int page, string filter, string callback, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "notifications?pagesize="+pagesize+"&page="+page+"&filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&callback=" + (callback==null? "" : System.Uri.EscapeDataString(callback));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6446,7 +6337,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6496,8 +6386,7 @@ namespace MyNS
 		public async Task NotificationsUnreadGetByPagesizeAndPageAndFilterAndCallbackAsync(int pagesize, int page, string filter, string callback, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "notifications/unread?pagesize="+pagesize+"&page="+page+"&filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&callback=" + (callback==null? "" : System.Uri.EscapeDataString(callback));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6511,7 +6400,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6584,8 +6472,7 @@ namespace MyNS
 		public async Task PostsGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteAsync(AnswersGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteOrder order, string max, string min, AnswersGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteSort sort, int fromdate, int todate, int pagesize, int page, string filter, string callback, string site, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "posts?order=" + order+"&max=" + (max==null? "" : System.Uri.EscapeDataString(max))+"&min=" + (min==null? "" : System.Uri.EscapeDataString(min))+"&sort=" + sort+"&fromdate="+fromdate+"&todate="+todate+"&pagesize="+pagesize+"&page="+page+"&filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&callback=" + (callback==null? "" : System.Uri.EscapeDataString(callback))+"&site=" + (site==null? "" : System.Uri.EscapeDataString(site));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6599,7 +6486,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6673,8 +6559,7 @@ namespace MyNS
 		public async Task Posts_idsGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteAsync(string ids, AnswersGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteOrder order, string max, string min, AnswersGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteSort sort, int fromdate, int todate, int pagesize, int page, string filter, string callback, string site, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "posts/"+ (ids==null? "" : System.Uri.EscapeDataString(ids))+"&order=" + order+"&max=" + (max==null? "" : System.Uri.EscapeDataString(max))+"&min=" + (min==null? "" : System.Uri.EscapeDataString(min))+"&sort=" + sort+"&fromdate="+fromdate+"&todate="+todate+"&pagesize="+pagesize+"&page="+page+"&filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&callback=" + (callback==null? "" : System.Uri.EscapeDataString(callback))+"&site=" + (site==null? "" : System.Uri.EscapeDataString(site));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6688,7 +6573,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6759,8 +6643,7 @@ namespace MyNS
 		public async Task Posts_idsCommentsGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteAsync(string ids, AnswersGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteOrder order, string max, string min, Answers_idsCommentsGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteSort sort, int fromdate, int todate, int pagesize, int page, string filter, string callback, string site, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "posts/"+ (ids==null? "" : System.Uri.EscapeDataString(ids))+"/comments&order=" + order+"&max=" + (max==null? "" : System.Uri.EscapeDataString(max))+"&min=" + (min==null? "" : System.Uri.EscapeDataString(min))+"&sort=" + sort+"&fromdate="+fromdate+"&todate="+todate+"&pagesize="+pagesize+"&page="+page+"&filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&callback=" + (callback==null? "" : System.Uri.EscapeDataString(callback))+"&site=" + (site==null? "" : System.Uri.EscapeDataString(site));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6774,7 +6657,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6829,8 +6711,7 @@ namespace MyNS
 		public async Task Posts_idsRevisionsGetByFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteAsync(string ids, int fromdate, int todate, int pagesize, int page, string filter, string callback, string site, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "posts/"+ (ids==null? "" : System.Uri.EscapeDataString(ids))+"/revisions&fromdate="+fromdate+"&todate="+todate+"&pagesize="+pagesize+"&page="+page+"&filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&callback=" + (callback==null? "" : System.Uri.EscapeDataString(callback))+"&site=" + (site==null? "" : System.Uri.EscapeDataString(site));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6844,7 +6725,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6913,8 +6793,7 @@ namespace MyNS
 		public async Task Posts_idsSuggested_editsGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteAsync(string ids, AnswersGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteOrder order, string max, string min, MeSuggested_editsGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteSort sort, int fromdate, int todate, int pagesize, int page, string filter, string callback, string site, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "posts/"+ (ids==null? "" : System.Uri.EscapeDataString(ids))+"/suggested-edits&order=" + order+"&max=" + (max==null? "" : System.Uri.EscapeDataString(max))+"&min=" + (min==null? "" : System.Uri.EscapeDataString(min))+"&sort=" + sort+"&fromdate="+fromdate+"&todate="+todate+"&pagesize="+pagesize+"&page="+page+"&filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&callback=" + (callback==null? "" : System.Uri.EscapeDataString(callback))+"&site=" + (site==null? "" : System.Uri.EscapeDataString(site));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6928,7 +6807,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6980,8 +6858,7 @@ namespace MyNS
 		public async Task Posts_idCommentsAddPostByFilterAndCallbackAndSiteAndBodyAndPreviewAsync(int id, string filter, string callback, string site, string body, bool preview, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "posts/"+id+"/comments/add?filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&callback=" + (callback==null? "" : System.Uri.EscapeDataString(callback))+"&site=" + (site==null? "" : System.Uri.EscapeDataString(site))+"&body=" + (body==null? "" : System.Uri.EscapeDataString(body))+"&preview="+preview;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -6990,7 +6867,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -7044,8 +6920,7 @@ namespace MyNS
 		public async Task PrivilegesGetByPagesizeAndPageAndFilterAndCallbackAndSiteAsync(int pagesize, int page, string filter, string callback, string site, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "privileges?pagesize="+pagesize+"&page="+page+"&filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&callback=" + (callback==null? "" : System.Uri.EscapeDataString(callback))+"&site=" + (site==null? "" : System.Uri.EscapeDataString(site));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -7059,7 +6934,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -7144,8 +7018,7 @@ namespace MyNS
 		public async Task QuestionsGetByTaggedAndOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteAsync(string tagged, AnswersGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteOrder order, string max, string min, MeTags_tagsTop_questionsGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteSort sort, int fromdate, int todate, int pagesize, int page, string filter, string callback, string site, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "questions?tagged=" + (tagged==null? "" : System.Uri.EscapeDataString(tagged))+"&order=" + order+"&max=" + (max==null? "" : System.Uri.EscapeDataString(max))+"&min=" + (min==null? "" : System.Uri.EscapeDataString(min))+"&sort=" + sort+"&fromdate="+fromdate+"&todate="+todate+"&pagesize="+pagesize+"&page="+page+"&filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&callback=" + (callback==null? "" : System.Uri.EscapeDataString(callback))+"&site=" + (site==null? "" : System.Uri.EscapeDataString(site));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -7159,7 +7032,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -7229,8 +7101,7 @@ namespace MyNS
 		public async Task QuestionsFeaturedGetByTaggedAndOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteAsync(string tagged, AnswersGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteOrder order, string max, string min, AnswersGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteSort sort, int fromdate, int todate, int pagesize, int page, string filter, string callback, string site, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "questions/featured?tagged=" + (tagged==null? "" : System.Uri.EscapeDataString(tagged))+"&order=" + order+"&max=" + (max==null? "" : System.Uri.EscapeDataString(max))+"&min=" + (min==null? "" : System.Uri.EscapeDataString(min))+"&sort=" + sort+"&fromdate="+fromdate+"&todate="+todate+"&pagesize="+pagesize+"&page="+page+"&filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&callback=" + (callback==null? "" : System.Uri.EscapeDataString(callback))+"&site=" + (site==null? "" : System.Uri.EscapeDataString(site));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -7244,7 +7115,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -7320,8 +7190,7 @@ namespace MyNS
 		public async Task QuestionsNo_answersGetByTaggedAndOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteAsync(string tagged, AnswersGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteOrder order, string max, string min, AnswersGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteSort sort, int fromdate, int todate, int pagesize, int page, string filter, string callback, string site, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "questions/no-answers?tagged=" + (tagged==null? "" : System.Uri.EscapeDataString(tagged))+"&order=" + order+"&max=" + (max==null? "" : System.Uri.EscapeDataString(max))+"&min=" + (min==null? "" : System.Uri.EscapeDataString(min))+"&sort=" + sort+"&fromdate="+fromdate+"&todate="+todate+"&pagesize="+pagesize+"&page="+page+"&filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&callback=" + (callback==null? "" : System.Uri.EscapeDataString(callback))+"&site=" + (site==null? "" : System.Uri.EscapeDataString(site));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -7335,7 +7204,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -7413,8 +7281,7 @@ namespace MyNS
 		public async Task QuestionsUnansweredGetByTaggedAndOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteAsync(string tagged, AnswersGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteOrder order, string max, string min, AnswersGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteSort sort, int fromdate, int todate, int pagesize, int page, string filter, string callback, string site, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "questions/unanswered?tagged=" + (tagged==null? "" : System.Uri.EscapeDataString(tagged))+"&order=" + order+"&max=" + (max==null? "" : System.Uri.EscapeDataString(max))+"&min=" + (min==null? "" : System.Uri.EscapeDataString(min))+"&sort=" + sort+"&fromdate="+fromdate+"&todate="+todate+"&pagesize="+pagesize+"&page="+page+"&filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&callback=" + (callback==null? "" : System.Uri.EscapeDataString(callback))+"&site=" + (site==null? "" : System.Uri.EscapeDataString(site));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -7428,7 +7295,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -7502,8 +7368,7 @@ namespace MyNS
 		public async Task Questions_idsGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteAsync(string ids, AnswersGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteOrder order, string max, string min, AnswersGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteSort sort, int fromdate, int todate, int pagesize, int page, string filter, string callback, string site, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "questions/"+ (ids==null? "" : System.Uri.EscapeDataString(ids))+"&order=" + order+"&max=" + (max==null? "" : System.Uri.EscapeDataString(max))+"&min=" + (min==null? "" : System.Uri.EscapeDataString(min))+"&sort=" + sort+"&fromdate="+fromdate+"&todate="+todate+"&pagesize="+pagesize+"&page="+page+"&filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&callback=" + (callback==null? "" : System.Uri.EscapeDataString(callback))+"&site=" + (site==null? "" : System.Uri.EscapeDataString(site));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -7517,7 +7382,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -7591,8 +7455,7 @@ namespace MyNS
 		public async Task Questions_idsAnswersGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteAsync(string ids, AnswersGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteOrder order, string max, string min, AnswersGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteSort sort, int fromdate, int todate, int pagesize, int page, string filter, string callback, string site, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "questions/"+ (ids==null? "" : System.Uri.EscapeDataString(ids))+"/answers&order=" + order+"&max=" + (max==null? "" : System.Uri.EscapeDataString(max))+"&min=" + (min==null? "" : System.Uri.EscapeDataString(min))+"&sort=" + sort+"&fromdate="+fromdate+"&todate="+todate+"&pagesize="+pagesize+"&page="+page+"&filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&callback=" + (callback==null? "" : System.Uri.EscapeDataString(callback))+"&site=" + (site==null? "" : System.Uri.EscapeDataString(site));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -7606,7 +7469,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -7677,8 +7539,7 @@ namespace MyNS
 		public async Task Questions_idsCommentsGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteAsync(string ids, AnswersGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteOrder order, string max, string min, Answers_idsCommentsGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteSort sort, int fromdate, int todate, int pagesize, int page, string filter, string callback, string site, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "questions/"+ (ids==null? "" : System.Uri.EscapeDataString(ids))+"/comments&order=" + order+"&max=" + (max==null? "" : System.Uri.EscapeDataString(max))+"&min=" + (min==null? "" : System.Uri.EscapeDataString(min))+"&sort=" + sort+"&fromdate="+fromdate+"&todate="+todate+"&pagesize="+pagesize+"&page="+page+"&filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&callback=" + (callback==null? "" : System.Uri.EscapeDataString(callback))+"&site=" + (site==null? "" : System.Uri.EscapeDataString(site));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -7692,7 +7553,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -7771,8 +7631,7 @@ namespace MyNS
 		public async Task Questions_idsLinkedGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteAsync(string ids, AnswersGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteOrder order, string max, string min, Questions_idsLinkedGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteSort sort, int fromdate, int todate, int pagesize, int page, string filter, string callback, string site, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "questions/"+ (ids==null? "" : System.Uri.EscapeDataString(ids))+"/linked&order=" + order+"&max=" + (max==null? "" : System.Uri.EscapeDataString(max))+"&min=" + (min==null? "" : System.Uri.EscapeDataString(min))+"&sort=" + sort+"&fromdate="+fromdate+"&todate="+todate+"&pagesize="+pagesize+"&page="+page+"&filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&callback=" + (callback==null? "" : System.Uri.EscapeDataString(callback))+"&site=" + (site==null? "" : System.Uri.EscapeDataString(site));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -7786,7 +7645,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -7863,8 +7721,7 @@ namespace MyNS
 		public async Task Questions_idsRelatedGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteAsync(string ids, AnswersGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteOrder order, string max, string min, Questions_idsLinkedGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteSort sort, int fromdate, int todate, int pagesize, int page, string filter, string callback, string site, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "questions/"+ (ids==null? "" : System.Uri.EscapeDataString(ids))+"/related&order=" + order+"&max=" + (max==null? "" : System.Uri.EscapeDataString(max))+"&min=" + (min==null? "" : System.Uri.EscapeDataString(min))+"&sort=" + sort+"&fromdate="+fromdate+"&todate="+todate+"&pagesize="+pagesize+"&page="+page+"&filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&callback=" + (callback==null? "" : System.Uri.EscapeDataString(callback))+"&site=" + (site==null? "" : System.Uri.EscapeDataString(site));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -7878,7 +7735,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -7937,8 +7793,7 @@ namespace MyNS
 		public async Task Questions_idsTimelineGetByFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteAsync(string ids, int fromdate, int todate, int pagesize, int page, string filter, string callback, string site, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "questions/"+ (ids==null? "" : System.Uri.EscapeDataString(ids))+"/timeline&fromdate="+fromdate+"&todate="+todate+"&pagesize="+pagesize+"&page="+page+"&filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&callback=" + (callback==null? "" : System.Uri.EscapeDataString(callback))+"&site=" + (site==null? "" : System.Uri.EscapeDataString(site));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -7952,7 +7807,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -8007,8 +7861,7 @@ namespace MyNS
 		public async Task Revisions_idsGetByFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteAsync(string ids, int fromdate, int todate, int pagesize, int page, string filter, string callback, string site, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "revisions/"+ (ids==null? "" : System.Uri.EscapeDataString(ids))+"&fromdate="+fromdate+"&todate="+todate+"&pagesize="+pagesize+"&page="+page+"&filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&callback=" + (callback==null? "" : System.Uri.EscapeDataString(callback))+"&site=" + (site==null? "" : System.Uri.EscapeDataString(site));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -8022,7 +7875,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -8102,8 +7954,7 @@ namespace MyNS
 		public async Task SearchGetByTaggedAndOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteAndIntitleAndNottaggedAsync(string tagged, AnswersGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteOrder order, string max, string min, SearchGetByTaggedAndOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteAndIntitleAndNottaggedSort sort, int fromdate, int todate, int pagesize, int page, string filter, string callback, string site, string intitle, string nottagged, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "search?tagged=" + (tagged==null? "" : System.Uri.EscapeDataString(tagged))+"&order=" + order+"&max=" + (max==null? "" : System.Uri.EscapeDataString(max))+"&min=" + (min==null? "" : System.Uri.EscapeDataString(min))+"&sort=" + sort+"&fromdate="+fromdate+"&todate="+todate+"&pagesize="+pagesize+"&page="+page+"&filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&callback=" + (callback==null? "" : System.Uri.EscapeDataString(callback))+"&site=" + (site==null? "" : System.Uri.EscapeDataString(site))+"&intitle=" + (intitle==null? "" : System.Uri.EscapeDataString(intitle))+"&nottagged=" + (nottagged==null? "" : System.Uri.EscapeDataString(nottagged));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -8117,7 +7968,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -8236,8 +8086,7 @@ namespace MyNS
 					Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "search/advanced?tagged=" + (tagged==null? "" : System.Uri.EscapeDataString(tagged))+"&order=" + order+"&max=" + (max==null? "" : System.Uri.EscapeDataString(max))+"&min=" + (min==null? "" : System.Uri.EscapeDataString(min))+"&sort=" + sort+"&fromdate="+fromdate+"&todate="+todate+"&pagesize="+pagesize+"&page="+page+"&filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&callback=" + (callback==null? "" : System.Uri.EscapeDataString(callback))+"&site=" + (site==null? "" : System.Uri.EscapeDataString(site))+"&accepted=" + accepted+"&answers="+answers+"&body=" + (body==null? "" : System.Uri.EscapeDataString(body))+"&closed=" + closed+"&migrated=" + migrated+"&notice=" + notice+"&nottagged=" + (nottagged==null? "" : System.Uri.EscapeDataString(nottagged))+"&q=" + (q==null? "" : System.Uri.EscapeDataString(q))+"&title=" + (title==null? "" : System.Uri.EscapeDataString(title))+"&url=" + (url==null? "" : System.Uri.EscapeDataString(url))+"&user="+user+"&views="+views+"&wiki=" + wiki;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -8251,7 +8100,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -8333,8 +8181,7 @@ namespace MyNS
 		public async Task SimilarGetByTaggedAndOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteAndNottaggedAndTitleAsync(string tagged, AnswersGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteOrder order, string max, string min, SearchGetByTaggedAndOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteAndIntitleAndNottaggedSort sort, int fromdate, int todate, int pagesize, int page, string filter, string callback, string site, string nottagged, string title, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "similar?tagged=" + (tagged==null? "" : System.Uri.EscapeDataString(tagged))+"&order=" + order+"&max=" + (max==null? "" : System.Uri.EscapeDataString(max))+"&min=" + (min==null? "" : System.Uri.EscapeDataString(min))+"&sort=" + sort+"&fromdate="+fromdate+"&todate="+todate+"&pagesize="+pagesize+"&page="+page+"&filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&callback=" + (callback==null? "" : System.Uri.EscapeDataString(callback))+"&site=" + (site==null? "" : System.Uri.EscapeDataString(site))+"&nottagged=" + (nottagged==null? "" : System.Uri.EscapeDataString(nottagged))+"&title=" + (title==null? "" : System.Uri.EscapeDataString(title));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -8348,7 +8195,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -8400,8 +8246,7 @@ namespace MyNS
 		public async Task SitesGetByPagesizeAndPageAndFilterAndCallbackAsync(int pagesize, int page, string filter, string callback, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "sites?pagesize="+pagesize+"&page="+page+"&filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&callback=" + (callback==null? "" : System.Uri.EscapeDataString(callback));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -8415,7 +8260,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -8483,8 +8327,7 @@ namespace MyNS
 		public async Task Suggested_editsGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteAsync(AnswersGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteOrder order, string max, string min, MeSuggested_editsGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteSort sort, int fromdate, int todate, int pagesize, int page, string filter, string callback, string site, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "suggested-edits?order=" + order+"&max=" + (max==null? "" : System.Uri.EscapeDataString(max))+"&min=" + (min==null? "" : System.Uri.EscapeDataString(min))+"&sort=" + sort+"&fromdate="+fromdate+"&todate="+todate+"&pagesize="+pagesize+"&page="+page+"&filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&callback=" + (callback==null? "" : System.Uri.EscapeDataString(callback))+"&site=" + (site==null? "" : System.Uri.EscapeDataString(site));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -8498,7 +8341,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -8570,8 +8412,7 @@ namespace MyNS
 		public async Task Suggested_edits_idsGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteAsync(string ids, AnswersGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteOrder order, string max, string min, MeSuggested_editsGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteSort sort, int fromdate, int todate, int pagesize, int page, string filter, string callback, string site, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "suggested-edits/"+ (ids==null? "" : System.Uri.EscapeDataString(ids))+"&order=" + order+"&max=" + (max==null? "" : System.Uri.EscapeDataString(max))+"&min=" + (min==null? "" : System.Uri.EscapeDataString(min))+"&sort=" + sort+"&fromdate="+fromdate+"&todate="+todate+"&pagesize="+pagesize+"&page="+page+"&filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&callback=" + (callback==null? "" : System.Uri.EscapeDataString(callback))+"&site=" + (site==null? "" : System.Uri.EscapeDataString(site));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -8585,7 +8426,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -8655,8 +8495,7 @@ namespace MyNS
 		public async Task TagsGetByInnameAndOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteAsync(string inname, AnswersGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteOrder order, string max, string min, MeTagsGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteSort sort, int fromdate, int todate, int pagesize, int page, string filter, string callback, string site, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "tags?inname=" + (inname==null? "" : System.Uri.EscapeDataString(inname))+"&order=" + order+"&max=" + (max==null? "" : System.Uri.EscapeDataString(max))+"&min=" + (min==null? "" : System.Uri.EscapeDataString(min))+"&sort=" + sort+"&fromdate="+fromdate+"&todate="+todate+"&pagesize="+pagesize+"&page="+page+"&filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&callback=" + (callback==null? "" : System.Uri.EscapeDataString(callback))+"&site=" + (site==null? "" : System.Uri.EscapeDataString(site));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -8670,7 +8509,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -8740,8 +8578,7 @@ namespace MyNS
 		public async Task TagsModerator_onlyGetByInnameAndOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteAsync(string inname, AnswersGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteOrder order, string max, string min, MeTagsGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteSort sort, int fromdate, int todate, int pagesize, int page, string filter, string callback, string site, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "tags/moderator-only?inname=" + (inname==null? "" : System.Uri.EscapeDataString(inname))+"&order=" + order+"&max=" + (max==null? "" : System.Uri.EscapeDataString(max))+"&min=" + (min==null? "" : System.Uri.EscapeDataString(min))+"&sort=" + sort+"&fromdate="+fromdate+"&todate="+todate+"&pagesize="+pagesize+"&page="+page+"&filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&callback=" + (callback==null? "" : System.Uri.EscapeDataString(callback))+"&site=" + (site==null? "" : System.Uri.EscapeDataString(site));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -8755,7 +8592,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -8825,8 +8661,7 @@ namespace MyNS
 		public async Task TagsRequiredGetByInnameAndOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteAsync(string inname, AnswersGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteOrder order, string max, string min, MeTagsGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteSort sort, int fromdate, int todate, int pagesize, int page, string filter, string callback, string site, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "tags/required?inname=" + (inname==null? "" : System.Uri.EscapeDataString(inname))+"&order=" + order+"&max=" + (max==null? "" : System.Uri.EscapeDataString(max))+"&min=" + (min==null? "" : System.Uri.EscapeDataString(min))+"&sort=" + sort+"&fromdate="+fromdate+"&todate="+todate+"&pagesize="+pagesize+"&page="+page+"&filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&callback=" + (callback==null? "" : System.Uri.EscapeDataString(callback))+"&site=" + (site==null? "" : System.Uri.EscapeDataString(site));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -8840,7 +8675,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -8911,8 +8745,7 @@ namespace MyNS
 		public async Task TagsSynonymsGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteAsync(AnswersGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteOrder order, string max, string min, TagsSynonymsGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteSort sort, int fromdate, int todate, int pagesize, int page, string filter, string callback, string site, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "tags/synonyms?order=" + order+"&max=" + (max==null? "" : System.Uri.EscapeDataString(max))+"&min=" + (min==null? "" : System.Uri.EscapeDataString(min))+"&sort=" + sort+"&fromdate="+fromdate+"&todate="+todate+"&pagesize="+pagesize+"&page="+page+"&filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&callback=" + (callback==null? "" : System.Uri.EscapeDataString(callback))+"&site=" + (site==null? "" : System.Uri.EscapeDataString(site));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -8926,7 +8759,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -8981,8 +8813,7 @@ namespace MyNS
 		public async Task Tags_tagsFaqGetByPagesizeAndPageAndFilterAndCallbackAndSiteAsync(string tags, int pagesize, int page, string filter, string callback, string site, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "tags/"+ (tags==null? "" : System.Uri.EscapeDataString(tags))+"/faq&pagesize="+pagesize+"&page="+page+"&filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&callback=" + (callback==null? "" : System.Uri.EscapeDataString(callback))+"&site=" + (site==null? "" : System.Uri.EscapeDataString(site));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -8996,7 +8827,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -9067,8 +8897,7 @@ namespace MyNS
 		public async Task Tags_tagsInfoGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteAsync(string tags, AnswersGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteOrder order, string max, string min, MeTagsGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteSort sort, int fromdate, int todate, int pagesize, int page, string filter, string callback, string site, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "tags/"+ (tags==null? "" : System.Uri.EscapeDataString(tags))+"/info&order=" + order+"&max=" + (max==null? "" : System.Uri.EscapeDataString(max))+"&min=" + (min==null? "" : System.Uri.EscapeDataString(min))+"&sort=" + sort+"&fromdate="+fromdate+"&todate="+todate+"&pagesize="+pagesize+"&page="+page+"&filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&callback=" + (callback==null? "" : System.Uri.EscapeDataString(callback))+"&site=" + (site==null? "" : System.Uri.EscapeDataString(site));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -9082,7 +8911,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -9139,8 +8967,7 @@ namespace MyNS
 		public async Task Tags_tagsRelatedGetByPagesizeAndPageAndFilterAndCallbackAndSiteAsync(string tags, int pagesize, int page, string filter, string callback, string site, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "tags/"+ (tags==null? "" : System.Uri.EscapeDataString(tags))+"/related&pagesize="+pagesize+"&page="+page+"&filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&callback=" + (callback==null? "" : System.Uri.EscapeDataString(callback))+"&site=" + (site==null? "" : System.Uri.EscapeDataString(site));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -9154,7 +8981,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -9226,8 +9052,7 @@ namespace MyNS
 		public async Task Tags_tagsSynonymsGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteAsync(string tags, AnswersGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteOrder order, string max, string min, TagsSynonymsGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteSort sort, int fromdate, int todate, int pagesize, int page, string filter, string callback, string site, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "tags/"+ (tags==null? "" : System.Uri.EscapeDataString(tags))+"/synonyms&order=" + order+"&max=" + (max==null? "" : System.Uri.EscapeDataString(max))+"&min=" + (min==null? "" : System.Uri.EscapeDataString(min))+"&sort=" + sort+"&fromdate="+fromdate+"&todate="+todate+"&pagesize="+pagesize+"&page="+page+"&filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&callback=" + (callback==null? "" : System.Uri.EscapeDataString(callback))+"&site=" + (site==null? "" : System.Uri.EscapeDataString(site));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -9241,7 +9066,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -9296,8 +9120,7 @@ namespace MyNS
 		public async Task Tags_tagsWikisGetByPagesizeAndPageAndFilterAndCallbackAndSiteAsync(string tags, int pagesize, int page, string filter, string callback, string site, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "tags/"+ (tags==null? "" : System.Uri.EscapeDataString(tags))+"/wikis&pagesize="+pagesize+"&page="+page+"&filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&callback=" + (callback==null? "" : System.Uri.EscapeDataString(callback))+"&site=" + (site==null? "" : System.Uri.EscapeDataString(site));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -9311,7 +9134,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -9363,8 +9185,7 @@ namespace MyNS
 		public async Task Tags_tagTop_answerers_periodGetByPagesizeAndPageAndFilterAndCallbackAndSiteAsync(string tag, Tags_tagTop_answerers_periodGetByPagesizeAndPageAndFilterAndCallbackAndSitePeriod period, int pagesize, int page, string filter, string callback, string site, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "tags/"+ (tag==null? "" : System.Uri.EscapeDataString(tag))+"/top-answerers/"+period+"&pagesize="+pagesize+"&page="+page+"&filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&callback=" + (callback==null? "" : System.Uri.EscapeDataString(callback))+"&site=" + (site==null? "" : System.Uri.EscapeDataString(site));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -9378,7 +9199,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -9430,8 +9250,7 @@ namespace MyNS
 		public async Task Tags_tagTop_askers_periodGetByPagesizeAndPageAndFilterAndCallbackAndSiteAsync(string tag, Tags_tagTop_answerers_periodGetByPagesizeAndPageAndFilterAndCallbackAndSitePeriod period, int pagesize, int page, string filter, string callback, string site, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "tags/"+ (tag==null? "" : System.Uri.EscapeDataString(tag))+"/top-askers/"+period+"&pagesize="+pagesize+"&page="+page+"&filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&callback=" + (callback==null? "" : System.Uri.EscapeDataString(callback))+"&site=" + (site==null? "" : System.Uri.EscapeDataString(site));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -9445,7 +9264,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -9519,8 +9337,7 @@ namespace MyNS
 		public async Task UsersGetByInnameAndOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteAsync(string inname, AnswersGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteOrder order, string max, string min, MeGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteSort sort, int fromdate, int todate, int pagesize, int page, string filter, string callback, string site, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "users?inname=" + (inname==null? "" : System.Uri.EscapeDataString(inname))+"&order=" + order+"&max=" + (max==null? "" : System.Uri.EscapeDataString(max))+"&min=" + (min==null? "" : System.Uri.EscapeDataString(min))+"&sort=" + sort+"&fromdate="+fromdate+"&todate="+todate+"&pagesize="+pagesize+"&page="+page+"&filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&callback=" + (callback==null? "" : System.Uri.EscapeDataString(callback))+"&site=" + (site==null? "" : System.Uri.EscapeDataString(site));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -9534,7 +9351,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -9608,8 +9424,7 @@ namespace MyNS
 		public async Task UsersModeratorsGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteAsync(AnswersGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteOrder order, string max, string min, MeGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteSort sort, int fromdate, int todate, int pagesize, int page, string filter, string callback, string site, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "users/moderators?order=" + order+"&max=" + (max==null? "" : System.Uri.EscapeDataString(max))+"&min=" + (min==null? "" : System.Uri.EscapeDataString(min))+"&sort=" + sort+"&fromdate="+fromdate+"&todate="+todate+"&pagesize="+pagesize+"&page="+page+"&filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&callback=" + (callback==null? "" : System.Uri.EscapeDataString(callback))+"&site=" + (site==null? "" : System.Uri.EscapeDataString(site));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -9623,7 +9438,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -9697,8 +9511,7 @@ namespace MyNS
 		public async Task UsersModeratorsElectedGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteAsync(AnswersGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteOrder order, string max, string min, MeGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteSort sort, int fromdate, int todate, int pagesize, int page, string filter, string callback, string site, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "users/moderators/elected?order=" + order+"&max=" + (max==null? "" : System.Uri.EscapeDataString(max))+"&min=" + (min==null? "" : System.Uri.EscapeDataString(min))+"&sort=" + sort+"&fromdate="+fromdate+"&todate="+todate+"&pagesize="+pagesize+"&page="+page+"&filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&callback=" + (callback==null? "" : System.Uri.EscapeDataString(callback))+"&site=" + (site==null? "" : System.Uri.EscapeDataString(site));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -9712,7 +9525,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -9789,8 +9601,7 @@ namespace MyNS
 		public async Task Users_idsGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteAsync(string ids, AnswersGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteOrder order, string max, string min, MeGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteSort sort, int fromdate, int todate, int pagesize, int page, string filter, string callback, string site, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "users/"+ (ids==null? "" : System.Uri.EscapeDataString(ids))+"&order=" + order+"&max=" + (max==null? "" : System.Uri.EscapeDataString(max))+"&min=" + (min==null? "" : System.Uri.EscapeDataString(min))+"&sort=" + sort+"&fromdate="+fromdate+"&todate="+todate+"&pagesize="+pagesize+"&page="+page+"&filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&callback=" + (callback==null? "" : System.Uri.EscapeDataString(callback))+"&site=" + (site==null? "" : System.Uri.EscapeDataString(site));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -9804,7 +9615,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -9876,8 +9686,7 @@ namespace MyNS
 		public async Task Users_idsAnswersGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteAsync(string ids, AnswersGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteOrder order, string max, string min, AnswersGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteSort sort, int fromdate, int todate, int pagesize, int page, string filter, string callback, string site, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "users/"+ (ids==null? "" : System.Uri.EscapeDataString(ids))+"/answers&order=" + order+"&max=" + (max==null? "" : System.Uri.EscapeDataString(max))+"&min=" + (min==null? "" : System.Uri.EscapeDataString(min))+"&sort=" + sort+"&fromdate="+fromdate+"&todate="+todate+"&pagesize="+pagesize+"&page="+page+"&filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&callback=" + (callback==null? "" : System.Uri.EscapeDataString(callback))+"&site=" + (site==null? "" : System.Uri.EscapeDataString(site));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -9891,7 +9700,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -9942,8 +9750,7 @@ namespace MyNS
 		public async Task Users_idsAssociatedGetByPagesizeAndPageAndFilterAndCallbackAsync(string ids, int pagesize, int page, string filter, string callback, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "users/"+ (ids==null? "" : System.Uri.EscapeDataString(ids))+"/associated&pagesize="+pagesize+"&page="+page+"&filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&callback=" + (callback==null? "" : System.Uri.EscapeDataString(callback));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -9957,7 +9764,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -10030,8 +9836,7 @@ namespace MyNS
 		public async Task Users_idsBadgesGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteAsync(string ids, AnswersGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteOrder order, string max, string min, Users_idsBadgesGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteSort sort, int fromdate, int todate, int pagesize, int page, string filter, string callback, string site, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "users/"+ (ids==null? "" : System.Uri.EscapeDataString(ids))+"/badges&order=" + order+"&max=" + (max==null? "" : System.Uri.EscapeDataString(max))+"&min=" + (min==null? "" : System.Uri.EscapeDataString(min))+"&sort=" + sort+"&fromdate="+fromdate+"&todate="+todate+"&pagesize="+pagesize+"&page="+page+"&filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&callback=" + (callback==null? "" : System.Uri.EscapeDataString(callback))+"&site=" + (site==null? "" : System.Uri.EscapeDataString(site));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -10045,7 +9850,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -10114,8 +9918,7 @@ namespace MyNS
 		public async Task Users_idsCommentsGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteAsync(string ids, AnswersGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteOrder order, string max, string min, Answers_idsCommentsGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteSort sort, int fromdate, int todate, int pagesize, int page, string filter, string callback, string site, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "users/"+ (ids==null? "" : System.Uri.EscapeDataString(ids))+"/comments&order=" + order+"&max=" + (max==null? "" : System.Uri.EscapeDataString(max))+"&min=" + (min==null? "" : System.Uri.EscapeDataString(min))+"&sort=" + sort+"&fromdate="+fromdate+"&todate="+todate+"&pagesize="+pagesize+"&page="+page+"&filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&callback=" + (callback==null? "" : System.Uri.EscapeDataString(callback))+"&site=" + (site==null? "" : System.Uri.EscapeDataString(site));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -10129,7 +9932,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -10200,8 +10002,7 @@ namespace MyNS
 		public async Task Users_idsComments_toidGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteAsync(string ids, int toid, AnswersGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteOrder order, string max, string min, Answers_idsCommentsGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteSort sort, int fromdate, int todate, int pagesize, int page, string filter, string callback, string site, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "users/"+ (ids==null? "" : System.Uri.EscapeDataString(ids))+"/comments/"+toid+"&order=" + order+"&max=" + (max==null? "" : System.Uri.EscapeDataString(max))+"&min=" + (min==null? "" : System.Uri.EscapeDataString(min))+"&sort=" + sort+"&fromdate="+fromdate+"&todate="+todate+"&pagesize="+pagesize+"&page="+page+"&filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&callback=" + (callback==null? "" : System.Uri.EscapeDataString(callback))+"&site=" + (site==null? "" : System.Uri.EscapeDataString(site));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -10215,7 +10016,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -10292,8 +10092,7 @@ namespace MyNS
 		public async Task Users_idsFavoritesGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteAsync(string ids, AnswersGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteOrder order, string max, string min, MeFavoritesGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteSort sort, int fromdate, int todate, int pagesize, int page, string filter, string callback, string site, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "users/"+ (ids==null? "" : System.Uri.EscapeDataString(ids))+"/favorites&order=" + order+"&max=" + (max==null? "" : System.Uri.EscapeDataString(max))+"&min=" + (min==null? "" : System.Uri.EscapeDataString(min))+"&sort=" + sort+"&fromdate="+fromdate+"&todate="+todate+"&pagesize="+pagesize+"&page="+page+"&filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&callback=" + (callback==null? "" : System.Uri.EscapeDataString(callback))+"&site=" + (site==null? "" : System.Uri.EscapeDataString(site));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -10307,7 +10106,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -10376,8 +10174,7 @@ namespace MyNS
 		public async Task Users_idsMentionedGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteAsync(string ids, AnswersGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteOrder order, string max, string min, Answers_idsCommentsGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteSort sort, int fromdate, int todate, int pagesize, int page, string filter, string callback, string site, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "users/"+ (ids==null? "" : System.Uri.EscapeDataString(ids))+"/mentioned&order=" + order+"&max=" + (max==null? "" : System.Uri.EscapeDataString(max))+"&min=" + (min==null? "" : System.Uri.EscapeDataString(min))+"&sort=" + sort+"&fromdate="+fromdate+"&todate="+todate+"&pagesize="+pagesize+"&page="+page+"&filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&callback=" + (callback==null? "" : System.Uri.EscapeDataString(callback))+"&site=" + (site==null? "" : System.Uri.EscapeDataString(site));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -10391,7 +10188,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -10448,8 +10244,7 @@ namespace MyNS
 		public async Task Users_idsMergesGetByPagesizeAndPageAndFilterAndCallbackAsync(string ids, int pagesize, int page, string filter, string callback, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "users/"+ (ids==null? "" : System.Uri.EscapeDataString(ids))+"/merges&pagesize="+pagesize+"&page="+page+"&filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&callback=" + (callback==null? "" : System.Uri.EscapeDataString(callback));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -10463,7 +10258,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -10535,8 +10329,7 @@ namespace MyNS
 		public async Task Users_idsQuestionsGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteAsync(string ids, AnswersGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteOrder order, string max, string min, AnswersGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteSort sort, int fromdate, int todate, int pagesize, int page, string filter, string callback, string site, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "users/"+ (ids==null? "" : System.Uri.EscapeDataString(ids))+"/questions&order=" + order+"&max=" + (max==null? "" : System.Uri.EscapeDataString(max))+"&min=" + (min==null? "" : System.Uri.EscapeDataString(min))+"&sort=" + sort+"&fromdate="+fromdate+"&todate="+todate+"&pagesize="+pagesize+"&page="+page+"&filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&callback=" + (callback==null? "" : System.Uri.EscapeDataString(callback))+"&site=" + (site==null? "" : System.Uri.EscapeDataString(site));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -10550,7 +10343,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -10622,8 +10414,7 @@ namespace MyNS
 		public async Task Users_idsQuestionsFeaturedGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteAsync(string ids, AnswersGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteOrder order, string max, string min, AnswersGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteSort sort, int fromdate, int todate, int pagesize, int page, string filter, string callback, string site, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "users/"+ (ids==null? "" : System.Uri.EscapeDataString(ids))+"/questions/featured&order=" + order+"&max=" + (max==null? "" : System.Uri.EscapeDataString(max))+"&min=" + (min==null? "" : System.Uri.EscapeDataString(min))+"&sort=" + sort+"&fromdate="+fromdate+"&todate="+todate+"&pagesize="+pagesize+"&page="+page+"&filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&callback=" + (callback==null? "" : System.Uri.EscapeDataString(callback))+"&site=" + (site==null? "" : System.Uri.EscapeDataString(site));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -10637,7 +10428,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -10711,8 +10501,7 @@ namespace MyNS
 		public async Task Users_idsQuestionsNo_answersGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteAsync(string ids, AnswersGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteOrder order, string max, string min, AnswersGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteSort sort, int fromdate, int todate, int pagesize, int page, string filter, string callback, string site, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "users/"+ (ids==null? "" : System.Uri.EscapeDataString(ids))+"/questions/no-answers&order=" + order+"&max=" + (max==null? "" : System.Uri.EscapeDataString(max))+"&min=" + (min==null? "" : System.Uri.EscapeDataString(min))+"&sort=" + sort+"&fromdate="+fromdate+"&todate="+todate+"&pagesize="+pagesize+"&page="+page+"&filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&callback=" + (callback==null? "" : System.Uri.EscapeDataString(callback))+"&site=" + (site==null? "" : System.Uri.EscapeDataString(site));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -10726,7 +10515,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -10800,8 +10588,7 @@ namespace MyNS
 		public async Task Users_idsQuestionsUnacceptedGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteAsync(string ids, AnswersGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteOrder order, string max, string min, AnswersGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteSort sort, int fromdate, int todate, int pagesize, int page, string filter, string callback, string site, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "users/"+ (ids==null? "" : System.Uri.EscapeDataString(ids))+"/questions/unaccepted&order=" + order+"&max=" + (max==null? "" : System.Uri.EscapeDataString(max))+"&min=" + (min==null? "" : System.Uri.EscapeDataString(min))+"&sort=" + sort+"&fromdate="+fromdate+"&todate="+todate+"&pagesize="+pagesize+"&page="+page+"&filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&callback=" + (callback==null? "" : System.Uri.EscapeDataString(callback))+"&site=" + (site==null? "" : System.Uri.EscapeDataString(site));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -10815,7 +10602,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -10891,8 +10677,7 @@ namespace MyNS
 		public async Task Users_idsQuestionsUnansweredGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteAsync(string ids, AnswersGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteOrder order, string max, string min, AnswersGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteSort sort, int fromdate, int todate, int pagesize, int page, string filter, string callback, string site, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "users/"+ (ids==null? "" : System.Uri.EscapeDataString(ids))+"/questions/unanswered&order=" + order+"&max=" + (max==null? "" : System.Uri.EscapeDataString(max))+"&min=" + (min==null? "" : System.Uri.EscapeDataString(min))+"&sort=" + sort+"&fromdate="+fromdate+"&todate="+todate+"&pagesize="+pagesize+"&page="+page+"&filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&callback=" + (callback==null? "" : System.Uri.EscapeDataString(callback))+"&site=" + (site==null? "" : System.Uri.EscapeDataString(site));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -10906,7 +10691,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -10963,8 +10747,7 @@ namespace MyNS
 		public async Task Users_idsReputationGetByFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteAsync(string ids, int fromdate, int todate, int pagesize, int page, string filter, string callback, string site, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "users/"+ (ids==null? "" : System.Uri.EscapeDataString(ids))+"/reputation&fromdate="+fromdate+"&todate="+todate+"&pagesize="+pagesize+"&page="+page+"&filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&callback=" + (callback==null? "" : System.Uri.EscapeDataString(callback))+"&site=" + (site==null? "" : System.Uri.EscapeDataString(site));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -10978,7 +10761,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -11029,8 +10811,7 @@ namespace MyNS
 		public async Task Users_idsReputation_historyGetByPagesizeAndPageAndFilterAndCallbackAndSiteAsync(string ids, int pagesize, int page, string filter, string callback, string site, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "users/"+ (ids==null? "" : System.Uri.EscapeDataString(ids))+"/reputation-history&pagesize="+pagesize+"&page="+page+"&filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&callback=" + (callback==null? "" : System.Uri.EscapeDataString(callback))+"&site=" + (site==null? "" : System.Uri.EscapeDataString(site));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -11044,7 +10825,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -11116,8 +10896,7 @@ namespace MyNS
 		public async Task Users_idsSuggested_editsGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteAsync(string ids, AnswersGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteOrder order, string max, string min, MeSuggested_editsGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteSort sort, int fromdate, int todate, int pagesize, int page, string filter, string callback, string site, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "users/"+ (ids==null? "" : System.Uri.EscapeDataString(ids))+"/suggested-edits&order=" + order+"&max=" + (max==null? "" : System.Uri.EscapeDataString(max))+"&min=" + (min==null? "" : System.Uri.EscapeDataString(min))+"&sort=" + sort+"&fromdate="+fromdate+"&todate="+todate+"&pagesize="+pagesize+"&page="+page+"&filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&callback=" + (callback==null? "" : System.Uri.EscapeDataString(callback))+"&site=" + (site==null? "" : System.Uri.EscapeDataString(site));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -11131,7 +10910,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -11205,8 +10983,7 @@ namespace MyNS
 		public async Task Users_idsTagsGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteAsync(string ids, AnswersGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteOrder order, string max, string min, MeTagsGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteSort sort, int fromdate, int todate, int pagesize, int page, string filter, string callback, string site, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "users/"+ (ids==null? "" : System.Uri.EscapeDataString(ids))+"/tags&order=" + order+"&max=" + (max==null? "" : System.Uri.EscapeDataString(max))+"&min=" + (min==null? "" : System.Uri.EscapeDataString(min))+"&sort=" + sort+"&fromdate="+fromdate+"&todate="+todate+"&pagesize="+pagesize+"&page="+page+"&filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&callback=" + (callback==null? "" : System.Uri.EscapeDataString(callback))+"&site=" + (site==null? "" : System.Uri.EscapeDataString(site));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -11220,7 +10997,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -11277,8 +11053,7 @@ namespace MyNS
 		public async Task Users_idsTimelineGetByFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteAsync(string ids, int fromdate, int todate, int pagesize, int page, string filter, string callback, string site, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "users/"+ (ids==null? "" : System.Uri.EscapeDataString(ids))+"/timeline&fromdate="+fromdate+"&todate="+todate+"&pagesize="+pagesize+"&page="+page+"&filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&callback=" + (callback==null? "" : System.Uri.EscapeDataString(callback))+"&site=" + (site==null? "" : System.Uri.EscapeDataString(site));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -11292,7 +11067,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -11348,8 +11122,7 @@ namespace MyNS
 		public async Task Users_idInboxGetByPagesizeAndPageAndFilterAndCallbackAndSiteAsync(int id, int pagesize, int page, string filter, string callback, string site, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "users/"+id+"/inbox?pagesize="+pagesize+"&page="+page+"&filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&callback=" + (callback==null? "" : System.Uri.EscapeDataString(callback))+"&site=" + (site==null? "" : System.Uri.EscapeDataString(site));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -11363,7 +11136,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -11420,8 +11192,7 @@ namespace MyNS
 		public async Task Users_idInboxUnreadGetByPagesizeAndPageAndFilterAndCallbackAndSiteAndSinceAsync(int id, int pagesize, int page, string filter, string callback, string site, int since, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "users/"+id+"/inbox/unread?pagesize="+pagesize+"&page="+page+"&filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&callback=" + (callback==null? "" : System.Uri.EscapeDataString(callback))+"&site=" + (site==null? "" : System.Uri.EscapeDataString(site))+"&since="+since;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -11435,7 +11206,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -11487,8 +11257,7 @@ namespace MyNS
 		public async Task Users_idNotificationsGetByPagesizeAndPageAndFilterAndCallbackAndSiteAsync(int id, int pagesize, int page, string filter, string callback, string site, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "users/"+id+"/notifications?pagesize="+pagesize+"&page="+page+"&filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&callback=" + (callback==null? "" : System.Uri.EscapeDataString(callback))+"&site=" + (site==null? "" : System.Uri.EscapeDataString(site));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -11502,7 +11271,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -11554,8 +11322,7 @@ namespace MyNS
 		public async Task Users_idNotificationsUnreadGetByPagesizeAndPageAndFilterAndCallbackAndSiteAsync(int id, int pagesize, int page, string filter, string callback, string site, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "users/"+id+"/notifications/unread?pagesize="+pagesize+"&page="+page+"&filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&callback=" + (callback==null? "" : System.Uri.EscapeDataString(callback))+"&site=" + (site==null? "" : System.Uri.EscapeDataString(site));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -11569,7 +11336,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -11623,8 +11389,7 @@ namespace MyNS
 		public async Task Users_idPrivilegesGetByPagesizeAndPageAndFilterAndCallbackAndSiteAsync(int id, int pagesize, int page, string filter, string callback, string site, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "users/"+id+"/privileges?pagesize="+pagesize+"&page="+page+"&filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&callback=" + (callback==null? "" : System.Uri.EscapeDataString(callback))+"&site=" + (site==null? "" : System.Uri.EscapeDataString(site));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -11638,7 +11403,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -11690,8 +11454,7 @@ namespace MyNS
 		public async Task Users_idReputation_historyFullGetByPagesizeAndPageAndFilterAndCallbackAndSiteAsync(int id, int pagesize, int page, string filter, string callback, string site, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "users/"+id+"/reputation-history/full?pagesize="+pagesize+"&page="+page+"&filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&callback=" + (callback==null? "" : System.Uri.EscapeDataString(callback))+"&site=" + (site==null? "" : System.Uri.EscapeDataString(site));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -11705,7 +11468,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -11777,8 +11539,7 @@ namespace MyNS
 		public async Task Users_idTags_tagsTop_answersGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteAsync(int id, string tags, AnswersGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteOrder order, string max, string min, AnswersGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteSort sort, int fromdate, int todate, int pagesize, int page, string filter, string callback, string site, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "users/"+id+"/tags/"+ (tags==null? "" : System.Uri.EscapeDataString(tags))+"/top-answers&order=" + order+"&max=" + (max==null? "" : System.Uri.EscapeDataString(max))+"&min=" + (min==null? "" : System.Uri.EscapeDataString(min))+"&sort=" + sort+"&fromdate="+fromdate+"&todate="+todate+"&pagesize="+pagesize+"&page="+page+"&filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&callback=" + (callback==null? "" : System.Uri.EscapeDataString(callback))+"&site=" + (site==null? "" : System.Uri.EscapeDataString(site));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -11792,7 +11553,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -11864,8 +11624,7 @@ namespace MyNS
 		public async Task Users_idTags_tagsTop_questionsGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteAsync(int id, string tags, AnswersGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteOrder order, string max, string min, AnswersGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteSort sort, int fromdate, int todate, int pagesize, int page, string filter, string callback, string site, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "users/"+id+"/tags/"+ (tags==null? "" : System.Uri.EscapeDataString(tags))+"/top-questions&order=" + order+"&max=" + (max==null? "" : System.Uri.EscapeDataString(max))+"&min=" + (min==null? "" : System.Uri.EscapeDataString(min))+"&sort=" + sort+"&fromdate="+fromdate+"&todate="+todate+"&pagesize="+pagesize+"&page="+page+"&filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&callback=" + (callback==null? "" : System.Uri.EscapeDataString(callback))+"&site=" + (site==null? "" : System.Uri.EscapeDataString(site));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -11879,7 +11638,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -11933,8 +11691,7 @@ namespace MyNS
 		public async Task Users_idTop_answer_tagsGetByPagesizeAndPageAndFilterAndCallbackAndSiteAsync(int id, int pagesize, int page, string filter, string callback, string site, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "users/"+id+"/top-answer-tags?pagesize="+pagesize+"&page="+page+"&filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&callback=" + (callback==null? "" : System.Uri.EscapeDataString(callback))+"&site=" + (site==null? "" : System.Uri.EscapeDataString(site));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -11948,7 +11705,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -12002,8 +11758,7 @@ namespace MyNS
 		public async Task Users_idTop_question_tagsGetByPagesizeAndPageAndFilterAndCallbackAndSiteAsync(int id, int pagesize, int page, string filter, string callback, string site, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "users/"+id+"/top-question-tags?pagesize="+pagesize+"&page="+page+"&filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&callback=" + (callback==null? "" : System.Uri.EscapeDataString(callback))+"&site=" + (site==null? "" : System.Uri.EscapeDataString(site));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -12017,7 +11772,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -12071,8 +11825,7 @@ namespace MyNS
 		public async Task Users_idWrite_permissionsGetByPagesizeAndPageAndFilterAndCallbackAndSiteAsync(int id, int pagesize, int page, string filter, string callback, string site, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "users/"+id+"/write-permissions?pagesize="+pagesize+"&page="+page+"&filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&callback=" + (callback==null? "" : System.Uri.EscapeDataString(callback))+"&site=" + (site==null? "" : System.Uri.EscapeDataString(site));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -12086,7 +11839,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

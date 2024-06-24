@@ -480,8 +480,7 @@ namespace MyNS
 		public async Task<ErrorGroup> Clouderrorreporting_projects_groups_getAsync(string groupName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1beta1/"+ (groupName==null? "" : System.Uri.EscapeDataString(groupName));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -491,13 +490,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ErrorGroup>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ErrorGroup>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -510,10 +508,8 @@ namespace MyNS
 		public async Task<ErrorGroup> Clouderrorreporting_projects_groups_updateAsync(string name, ErrorGroup requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1beta1/"+ (name==null? "" : System.Uri.EscapeDataString(name));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -524,13 +520,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ErrorGroup>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ErrorGroup>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -543,8 +538,7 @@ namespace MyNS
 		public async Task<DeleteEventsResponse> Clouderrorreporting_projects_deleteEventsAsync(string projectName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1beta1/"+ (projectName==null? "" : System.Uri.EscapeDataString(projectName))+"/events";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -554,13 +548,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<DeleteEventsResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<DeleteEventsResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -580,8 +573,7 @@ namespace MyNS
 		public async Task<ListEventsResponse> Clouderrorreporting_projects_events_listAsync(string projectName, string groupId, int pageSize, string pageToken, string serviceFilter_resourceType, string serviceFilter_service, string serviceFilter_version, Clouderrorreporting_projects_events_listTimeRange_period timeRange_period, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1beta1/"+ (projectName==null? "" : System.Uri.EscapeDataString(projectName))+"/events&groupId=" + (groupId==null? "" : System.Uri.EscapeDataString(groupId))+"&pageSize="+pageSize+"&pageToken=" + (pageToken==null? "" : System.Uri.EscapeDataString(pageToken))+"&serviceFilter.resourceType=" + (serviceFilter_resourceType==null? "" : System.Uri.EscapeDataString(serviceFilter_resourceType))+"&serviceFilter.service=" + (serviceFilter_service==null? "" : System.Uri.EscapeDataString(serviceFilter_service))+"&serviceFilter.version=" + (serviceFilter_version==null? "" : System.Uri.EscapeDataString(serviceFilter_version))+"&timeRange.period=" + timeRange_period;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -591,13 +583,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ListEventsResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ListEventsResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -610,10 +601,8 @@ namespace MyNS
 		public async Task<ReportErrorEventResponse> Clouderrorreporting_projects_events_reportAsync(string projectName, ReportedErrorEvent requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1beta1/"+ (projectName==null? "" : System.Uri.EscapeDataString(projectName))+"/events:report";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -624,13 +613,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ReportErrorEventResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ReportErrorEventResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -654,8 +642,7 @@ namespace MyNS
 		public async Task<ListGroupStatsResponse> Clouderrorreporting_projects_groupStats_listAsync(string projectName, Clouderrorreporting_projects_groupStats_listAlignment alignment, string alignmentTime, string[] groupId, Clouderrorreporting_projects_groupStats_listOrder order, int pageSize, string pageToken, string serviceFilter_resourceType, string serviceFilter_service, string serviceFilter_version, Clouderrorreporting_projects_events_listTimeRange_period timeRange_period, string timedCountDuration, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1beta1/"+ (projectName==null? "" : System.Uri.EscapeDataString(projectName))+"/groupStats&alignment=" + alignment+"&alignmentTime=" + (alignmentTime==null? "" : System.Uri.EscapeDataString(alignmentTime))+"&"+string.Join("&", groupId.Select(z => $"groupId={System.Uri.EscapeDataString(z.ToString())}"))+"&order=" + order+"&pageSize="+pageSize+"&pageToken=" + (pageToken==null? "" : System.Uri.EscapeDataString(pageToken))+"&serviceFilter.resourceType=" + (serviceFilter_resourceType==null? "" : System.Uri.EscapeDataString(serviceFilter_resourceType))+"&serviceFilter.service=" + (serviceFilter_service==null? "" : System.Uri.EscapeDataString(serviceFilter_service))+"&serviceFilter.version=" + (serviceFilter_version==null? "" : System.Uri.EscapeDataString(serviceFilter_version))+"&timeRange.period=" + timeRange_period+"&timedCountDuration=" + (timedCountDuration==null? "" : System.Uri.EscapeDataString(timedCountDuration));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -665,13 +652,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ListGroupStatsResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ListGroupStatsResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

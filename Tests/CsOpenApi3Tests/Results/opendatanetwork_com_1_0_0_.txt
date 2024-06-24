@@ -93,8 +93,7 @@ namespace MyNS
 		public async Task Find_all_available_data_for_some_entitiesAsync(string entity_id, string app_token, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "data/v1/availability/?entity_id=" + (entity_id==null? "" : System.Uri.EscapeDataString(entity_id))+"&app_token=" + (app_token==null? "" : System.Uri.EscapeDataString(app_token));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -108,7 +107,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -125,8 +123,7 @@ namespace MyNS
 		public async Task Get_constraint_permutations_for_entitiesAsync(string variable, string entity_id, string constraint, string app_token, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "data/v1/constraint/"+ (variable==null? "" : System.Uri.EscapeDataString(variable))+"&entity_id=" + (entity_id==null? "" : System.Uri.EscapeDataString(entity_id))+"&constraint=" + (constraint==null? "" : System.Uri.EscapeDataString(constraint))+"&app_token=" + (app_token==null? "" : System.Uri.EscapeDataString(app_token));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -140,7 +137,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -160,8 +156,7 @@ namespace MyNS
 		public async Task Create_a_mapAsync(string variable, string entity_id, string constraint, string app_token, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "data/v1/map/new?variable=" + (variable==null? "" : System.Uri.EscapeDataString(variable))+"&entity_id=" + (entity_id==null? "" : System.Uri.EscapeDataString(entity_id))+"&constraint=" + (constraint==null? "" : System.Uri.EscapeDataString(constraint))+"&app_token=" + (app_token==null? "" : System.Uri.EscapeDataString(app_token));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -175,7 +170,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -217,8 +211,7 @@ namespace MyNS
 		public async Task Get_values_for_variablesAsync(string variable, string entity_id, double forecast, bool describe, Get_values_for_variablesFormat format, string app_token, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "data/v1/values?variable=" + (variable==null? "" : System.Uri.EscapeDataString(variable))+"&entity_id=" + (entity_id==null? "" : System.Uri.EscapeDataString(entity_id))+"&forecast="+forecast+"&describe="+describe+"&format=" + format+"&app_token=" + (app_token==null? "" : System.Uri.EscapeDataString(app_token));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -232,7 +225,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -249,8 +241,7 @@ namespace MyNS
 		public async Task Get_EntitiesAsync(string entity_id, string entity_name, string entity_type, string app_token, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "entity/v1?entity_id=" + (entity_id==null? "" : System.Uri.EscapeDataString(entity_id))+"&entity_name=" + (entity_name==null? "" : System.Uri.EscapeDataString(entity_name))+"&entity_type=" + (entity_type==null? "" : System.Uri.EscapeDataString(entity_type))+"&app_token=" + (app_token==null? "" : System.Uri.EscapeDataString(app_token));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -264,7 +255,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -285,8 +275,7 @@ namespace MyNS
 		public async Task Find_the_relatives_of_an_entityAsync(Find_the_relatives_of_an_entityRelation relation, string entity_id, string variable_id, double limit, string app_token, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "entity/v1/"+relation+"?entity_id=" + (entity_id==null? "" : System.Uri.EscapeDataString(entity_id))+"&variable_id=" + (variable_id==null? "" : System.Uri.EscapeDataString(variable_id))+"&limit="+limit+"&app_token=" + (app_token==null? "" : System.Uri.EscapeDataString(app_token));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -300,7 +289,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -321,8 +309,7 @@ namespace MyNS
 		public async Task Get_datasetsAsync(string entity_id, string dataset_id, double limit, double offset, string app_token, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "search/v1/dataset?entity_id=" + (entity_id==null? "" : System.Uri.EscapeDataString(entity_id))+"&dataset_id=" + (dataset_id==null? "" : System.Uri.EscapeDataString(dataset_id))+"&limit="+limit+"&offset="+offset+"&app_token=" + (app_token==null? "" : System.Uri.EscapeDataString(app_token));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -336,7 +323,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -355,8 +341,7 @@ namespace MyNS
 		public async Task Get_questionsAsync(string query, double limit, double offset, string app_token, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "search/v1/question?query=" + (query==null? "" : System.Uri.EscapeDataString(query))+"&limit="+limit+"&offset="+offset+"&app_token=" + (app_token==null? "" : System.Uri.EscapeDataString(app_token));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -370,7 +355,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -396,8 +380,7 @@ namespace MyNS
 		public async Task Get_suggestionsAsync(Get_suggestionsType type, string query, double limit, string variable_id, string app_token, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "suggest/v1/"+type+"?query=" + (query==null? "" : System.Uri.EscapeDataString(query))+"&limit="+limit+"&variable_id=" + (variable_id==null? "" : System.Uri.EscapeDataString(variable_id))+"&app_token=" + (app_token==null? "" : System.Uri.EscapeDataString(app_token));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -411,7 +394,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

@@ -4787,19 +4787,17 @@ namespace MyNS
 		public async Task<ApplicationListResult> Application_ListAsync(int maxresults, int timeout, string api_version)
 		{
 			var requestUri = "applications?maxresults="+maxresults+"&timeout="+timeout+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ApplicationListResult>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ApplicationListResult>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4815,19 +4813,17 @@ namespace MyNS
 		public async Task<ApplicationSummary> Application_GetAsync(string applicationId, int timeout, string api_version)
 		{
 			var requestUri = "applications/"+ (applicationId==null? "" : System.Uri.EscapeDataString(applicationId))+"&timeout="+timeout+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ApplicationSummary>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ApplicationSummary>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4847,19 +4843,17 @@ namespace MyNS
 		public async Task<CertificateListResult> Certificate_ListAsync(string filter, string select, int maxresults, int timeout, string api_version)
 		{
 			var requestUri = "certificates?$filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&$select=" + (select==null? "" : System.Uri.EscapeDataString(select))+"&maxresults="+maxresults+"&timeout="+timeout+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<CertificateListResult>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<CertificateListResult>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4876,19 +4870,17 @@ namespace MyNS
 		public async Task<Certificate> Certificate_GetAsync(string thumbprintAlgorithm, string thumbprint, string select, int timeout, string api_version)
 		{
 			var requestUri = "certificates(thumbprintAlgorithm="+ (thumbprintAlgorithm==null? "" : System.Uri.EscapeDataString(thumbprintAlgorithm))+",thumbprint="+ (thumbprint==null? "" : System.Uri.EscapeDataString(thumbprint))+")&$select=" + (select==null? "" : System.Uri.EscapeDataString(select))+"&timeout="+timeout+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Certificate>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Certificate>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4904,8 +4896,7 @@ namespace MyNS
 		public async Task Certificate_DeleteAsync(string thumbprintAlgorithm, string thumbprint, int timeout, string api_version)
 		{
 			var requestUri = "certificates(thumbprintAlgorithm="+ (thumbprintAlgorithm==null? "" : System.Uri.EscapeDataString(thumbprintAlgorithm))+",thumbprint="+ (thumbprint==null? "" : System.Uri.EscapeDataString(thumbprint))+")&timeout="+timeout+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -4914,7 +4905,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4930,8 +4920,7 @@ namespace MyNS
 		public async Task Certificate_CancelDeletionAsync(string thumbprintAlgorithm, string thumbprint, int timeout, string api_version)
 		{
 			var requestUri = "certificates(thumbprintAlgorithm="+ (thumbprintAlgorithm==null? "" : System.Uri.EscapeDataString(thumbprintAlgorithm))+",thumbprint="+ (thumbprint==null? "" : System.Uri.EscapeDataString(thumbprint))+")/canceldelete&timeout="+timeout+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -4940,7 +4929,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4961,19 +4949,17 @@ namespace MyNS
 		public async Task<CloudJobListResult> Job_ListAsync(string filter, string select, string expand, int maxresults, int timeout, string api_version)
 		{
 			var requestUri = "jobs?$filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&$select=" + (select==null? "" : System.Uri.EscapeDataString(select))+"&$expand=" + (expand==null? "" : System.Uri.EscapeDataString(expand))+"&maxresults="+maxresults+"&timeout="+timeout+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<CloudJobListResult>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<CloudJobListResult>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4990,19 +4976,17 @@ namespace MyNS
 		public async Task<CloudJob> Job_GetAsync(string jobId, string select, string expand, int timeout, string api_version)
 		{
 			var requestUri = "jobs/"+ (jobId==null? "" : System.Uri.EscapeDataString(jobId))+"&$select=" + (select==null? "" : System.Uri.EscapeDataString(select))+"&$expand=" + (expand==null? "" : System.Uri.EscapeDataString(expand))+"&timeout="+timeout+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<CloudJob>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<CloudJob>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5017,8 +5001,7 @@ namespace MyNS
 		public async Task Job_DeleteAsync(string jobId, int timeout, string api_version)
 		{
 			var requestUri = "jobs/"+ (jobId==null? "" : System.Uri.EscapeDataString(jobId))+"&timeout="+timeout+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -5027,7 +5010,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5042,8 +5024,7 @@ namespace MyNS
 		public async Task Job_EnableAsync(string jobId, int timeout, string api_version)
 		{
 			var requestUri = "jobs/"+ (jobId==null? "" : System.Uri.EscapeDataString(jobId))+"/enable&timeout="+timeout+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -5052,7 +5033,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5074,19 +5054,17 @@ namespace MyNS
 		public async Task<CloudJobListPreparationAndReleaseTaskStatusResult> Job_ListPreparationAndReleaseTaskStatusAsync(string jobId, string filter, string select, int maxresults, int timeout, string api_version)
 		{
 			var requestUri = "jobs/"+ (jobId==null? "" : System.Uri.EscapeDataString(jobId))+"/jobpreparationandreleasetaskstatus&$filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&$select=" + (select==null? "" : System.Uri.EscapeDataString(select))+"&maxresults="+maxresults+"&timeout="+timeout+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<CloudJobListPreparationAndReleaseTaskStatusResult>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<CloudJobListPreparationAndReleaseTaskStatusResult>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5102,19 +5080,17 @@ namespace MyNS
 		public async Task<TaskCounts> Job_GetTaskCountsAsync(string jobId, int timeout, string api_version)
 		{
 			var requestUri = "jobs/"+ (jobId==null? "" : System.Uri.EscapeDataString(jobId))+"/taskcounts&timeout="+timeout+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<TaskCounts>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<TaskCounts>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5137,19 +5113,17 @@ namespace MyNS
 		public async Task<CloudTaskListResult> Task_ListAsync(string jobId, string filter, string select, string expand, int maxresults, int timeout, string api_version)
 		{
 			var requestUri = "jobs/"+ (jobId==null? "" : System.Uri.EscapeDataString(jobId))+"/tasks&$filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&$select=" + (select==null? "" : System.Uri.EscapeDataString(select))+"&$expand=" + (expand==null? "" : System.Uri.EscapeDataString(expand))+"&maxresults="+maxresults+"&timeout="+timeout+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<CloudTaskListResult>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<CloudTaskListResult>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5168,19 +5142,17 @@ namespace MyNS
 		public async Task<CloudTask> Task_GetAsync(string jobId, string taskId, string select, string expand, int timeout, string api_version)
 		{
 			var requestUri = "jobs/"+ (jobId==null? "" : System.Uri.EscapeDataString(jobId))+"/tasks/"+ (taskId==null? "" : System.Uri.EscapeDataString(taskId))+"&$select=" + (select==null? "" : System.Uri.EscapeDataString(select))+"&$expand=" + (expand==null? "" : System.Uri.EscapeDataString(expand))+"&timeout="+timeout+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<CloudTask>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<CloudTask>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5197,8 +5169,7 @@ namespace MyNS
 		public async Task Task_DeleteAsync(string jobId, string taskId, int timeout, string api_version)
 		{
 			var requestUri = "jobs/"+ (jobId==null? "" : System.Uri.EscapeDataString(jobId))+"/tasks/"+ (taskId==null? "" : System.Uri.EscapeDataString(taskId))+"&timeout="+timeout+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -5207,7 +5178,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5229,19 +5199,17 @@ namespace MyNS
 		public async Task<NodeFileListResult> File_ListFromTaskAsync(string jobId, string taskId, string filter, bool recursive, int maxresults, int timeout, string api_version)
 		{
 			var requestUri = "jobs/"+ (jobId==null? "" : System.Uri.EscapeDataString(jobId))+"/tasks/"+ (taskId==null? "" : System.Uri.EscapeDataString(taskId))+"/files&$filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&recursive="+recursive+"&maxresults="+maxresults+"&timeout="+timeout+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<NodeFileListResult>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<NodeFileListResult>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5258,19 +5226,17 @@ namespace MyNS
 		public async Task<string> File_GetFromTaskAsync(string jobId, string taskId, string filePath, int timeout, string api_version)
 		{
 			var requestUri = "jobs/"+ (jobId==null? "" : System.Uri.EscapeDataString(jobId))+"/tasks/"+ (taskId==null? "" : System.Uri.EscapeDataString(taskId))+"/files/"+ (filePath==null? "" : System.Uri.EscapeDataString(filePath))+"&timeout="+timeout+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<string>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<string>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5288,8 +5254,7 @@ namespace MyNS
 		public async Task File_DeleteFromTaskAsync(string jobId, string taskId, string filePath, bool recursive, int timeout, string api_version)
 		{
 			var requestUri = "jobs/"+ (jobId==null? "" : System.Uri.EscapeDataString(jobId))+"/tasks/"+ (taskId==null? "" : System.Uri.EscapeDataString(taskId))+"/files/"+ (filePath==null? "" : System.Uri.EscapeDataString(filePath))+"&recursive="+recursive+"&timeout="+timeout+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -5298,7 +5263,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5314,8 +5278,7 @@ namespace MyNS
 		public async Task Task_ReactivateAsync(string jobId, string taskId, int timeout, string api_version)
 		{
 			var requestUri = "jobs/"+ (jobId==null? "" : System.Uri.EscapeDataString(jobId))+"/tasks/"+ (taskId==null? "" : System.Uri.EscapeDataString(taskId))+"/reactivate&timeout="+timeout+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -5324,7 +5287,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5342,19 +5304,17 @@ namespace MyNS
 		public async Task<CloudTaskListSubtasksResult> Task_ListSubtasksAsync(string jobId, string taskId, string select, int timeout, string api_version)
 		{
 			var requestUri = "jobs/"+ (jobId==null? "" : System.Uri.EscapeDataString(jobId))+"/tasks/"+ (taskId==null? "" : System.Uri.EscapeDataString(taskId))+"/subtasksinfo&$select=" + (select==null? "" : System.Uri.EscapeDataString(select))+"&timeout="+timeout+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<CloudTaskListSubtasksResult>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<CloudTaskListSubtasksResult>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5370,8 +5330,7 @@ namespace MyNS
 		public async Task Task_TerminateAsync(string jobId, string taskId, int timeout, string api_version)
 		{
 			var requestUri = "jobs/"+ (jobId==null? "" : System.Uri.EscapeDataString(jobId))+"/tasks/"+ (taskId==null? "" : System.Uri.EscapeDataString(taskId))+"/terminate&timeout="+timeout+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -5380,7 +5339,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5401,19 +5359,17 @@ namespace MyNS
 		public async Task<CloudJobScheduleListResult> JobSchedule_ListAsync(string filter, string select, string expand, int maxresults, int timeout, string api_version)
 		{
 			var requestUri = "jobschedules?$filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&$select=" + (select==null? "" : System.Uri.EscapeDataString(select))+"&$expand=" + (expand==null? "" : System.Uri.EscapeDataString(expand))+"&maxresults="+maxresults+"&timeout="+timeout+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<CloudJobScheduleListResult>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<CloudJobScheduleListResult>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5430,19 +5386,17 @@ namespace MyNS
 		public async Task<CloudJobSchedule> JobSchedule_GetAsync(string jobScheduleId, string select, string expand, int timeout, string api_version)
 		{
 			var requestUri = "jobschedules/"+ (jobScheduleId==null? "" : System.Uri.EscapeDataString(jobScheduleId))+"&$select=" + (select==null? "" : System.Uri.EscapeDataString(select))+"&$expand=" + (expand==null? "" : System.Uri.EscapeDataString(expand))+"&timeout="+timeout+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<CloudJobSchedule>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<CloudJobSchedule>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5457,8 +5411,7 @@ namespace MyNS
 		public async Task JobSchedule_DeleteAsync(string jobScheduleId, int timeout, string api_version)
 		{
 			var requestUri = "jobschedules/"+ (jobScheduleId==null? "" : System.Uri.EscapeDataString(jobScheduleId))+"&timeout="+timeout+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -5467,7 +5420,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5482,8 +5434,7 @@ namespace MyNS
 		public async Task JobSchedule_DisableAsync(string jobScheduleId, int timeout, string api_version)
 		{
 			var requestUri = "jobschedules/"+ (jobScheduleId==null? "" : System.Uri.EscapeDataString(jobScheduleId))+"/disable&timeout="+timeout+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -5492,7 +5443,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5506,8 +5456,7 @@ namespace MyNS
 		public async Task JobSchedule_EnableAsync(string jobScheduleId, int timeout, string api_version)
 		{
 			var requestUri = "jobschedules/"+ (jobScheduleId==null? "" : System.Uri.EscapeDataString(jobScheduleId))+"/enable&timeout="+timeout+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -5516,7 +5465,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5538,19 +5486,17 @@ namespace MyNS
 		public async Task<CloudJobListResult> Job_ListFromJobScheduleAsync(string jobScheduleId, string filter, string select, string expand, int maxresults, int timeout, string api_version)
 		{
 			var requestUri = "jobschedules/"+ (jobScheduleId==null? "" : System.Uri.EscapeDataString(jobScheduleId))+"/jobs&$filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&$select=" + (select==null? "" : System.Uri.EscapeDataString(select))+"&$expand=" + (expand==null? "" : System.Uri.EscapeDataString(expand))+"&maxresults="+maxresults+"&timeout="+timeout+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<CloudJobListResult>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<CloudJobListResult>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5564,8 +5510,7 @@ namespace MyNS
 		public async Task JobSchedule_TerminateAsync(string jobScheduleId, int timeout, string api_version)
 		{
 			var requestUri = "jobschedules/"+ (jobScheduleId==null? "" : System.Uri.EscapeDataString(jobScheduleId))+"/terminate&timeout="+timeout+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -5574,7 +5519,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5589,19 +5533,17 @@ namespace MyNS
 		public async Task<JobStatistics> Job_GetAllLifetimeStatisticsAsync(int timeout, string api_version)
 		{
 			var requestUri = "lifetimejobstats?timeout="+timeout+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<JobStatistics>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<JobStatistics>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5616,19 +5558,17 @@ namespace MyNS
 		public async Task<PoolStatistics> Pool_GetAllLifetimeStatisticsAsync(int timeout, string api_version)
 		{
 			var requestUri = "lifetimepoolstats?timeout="+timeout+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<PoolStatistics>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<PoolStatistics>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5647,19 +5587,17 @@ namespace MyNS
 		public async Task<AccountListNodeAgentSkusResult> Account_ListNodeAgentSkusAsync(string filter, int maxresults, int timeout, string api_version)
 		{
 			var requestUri = "nodeagentskus?$filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&maxresults="+maxresults+"&timeout="+timeout+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<AccountListNodeAgentSkusResult>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<AccountListNodeAgentSkusResult>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5680,19 +5618,17 @@ namespace MyNS
 		public async Task<CloudPoolListResult> Pool_ListAsync(string filter, string select, string expand, int maxresults, int timeout, string api_version)
 		{
 			var requestUri = "pools?$filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&$select=" + (select==null? "" : System.Uri.EscapeDataString(select))+"&$expand=" + (expand==null? "" : System.Uri.EscapeDataString(expand))+"&maxresults="+maxresults+"&timeout="+timeout+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<CloudPoolListResult>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<CloudPoolListResult>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5709,19 +5645,17 @@ namespace MyNS
 		public async Task<CloudPool> Pool_GetAsync(string poolId, string select, string expand, int timeout, string api_version)
 		{
 			var requestUri = "pools/"+ (poolId==null? "" : System.Uri.EscapeDataString(poolId))+"&$select=" + (select==null? "" : System.Uri.EscapeDataString(select))+"&$expand=" + (expand==null? "" : System.Uri.EscapeDataString(expand))+"&timeout="+timeout+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<CloudPool>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<CloudPool>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5736,8 +5670,7 @@ namespace MyNS
 		public async Task Pool_DeleteAsync(string poolId, int timeout, string api_version)
 		{
 			var requestUri = "pools/"+ (poolId==null? "" : System.Uri.EscapeDataString(poolId))+"&timeout="+timeout+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -5746,7 +5679,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5761,8 +5693,7 @@ namespace MyNS
 		public async Task Pool_DisableAutoScaleAsync(string poolId, int timeout, string api_version)
 		{
 			var requestUri = "pools/"+ (poolId==null? "" : System.Uri.EscapeDataString(poolId))+"/disableautoscale&timeout="+timeout+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -5771,7 +5702,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5792,19 +5722,17 @@ namespace MyNS
 		public async Task<ComputeNodeListResult> ComputeNode_ListAsync(string poolId, string filter, string select, int maxresults, int timeout, string api_version)
 		{
 			var requestUri = "pools/"+ (poolId==null? "" : System.Uri.EscapeDataString(poolId))+"/nodes&$filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&$select=" + (select==null? "" : System.Uri.EscapeDataString(select))+"&maxresults="+maxresults+"&timeout="+timeout+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ComputeNodeListResult>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ComputeNodeListResult>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5821,19 +5749,17 @@ namespace MyNS
 		public async Task<ComputeNode> ComputeNode_GetAsync(string poolId, string nodeId, string select, int timeout, string api_version)
 		{
 			var requestUri = "pools/"+ (poolId==null? "" : System.Uri.EscapeDataString(poolId))+"/nodes/"+ (nodeId==null? "" : System.Uri.EscapeDataString(nodeId))+"&$select=" + (select==null? "" : System.Uri.EscapeDataString(select))+"&timeout="+timeout+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ComputeNode>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ComputeNode>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5850,8 +5776,7 @@ namespace MyNS
 		public async Task ComputeNode_EnableSchedulingAsync(string poolId, string nodeId, int timeout, string api_version)
 		{
 			var requestUri = "pools/"+ (poolId==null? "" : System.Uri.EscapeDataString(poolId))+"/nodes/"+ (nodeId==null? "" : System.Uri.EscapeDataString(nodeId))+"/enablescheduling&timeout="+timeout+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -5860,7 +5785,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5882,19 +5806,17 @@ namespace MyNS
 		public async Task<NodeFileListResult> File_ListFromComputeNodeAsync(string poolId, string nodeId, string filter, bool recursive, int maxresults, int timeout, string api_version)
 		{
 			var requestUri = "pools/"+ (poolId==null? "" : System.Uri.EscapeDataString(poolId))+"/nodes/"+ (nodeId==null? "" : System.Uri.EscapeDataString(nodeId))+"/files&$filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&recursive="+recursive+"&maxresults="+maxresults+"&timeout="+timeout+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<NodeFileListResult>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<NodeFileListResult>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5911,19 +5833,17 @@ namespace MyNS
 		public async Task<string> File_GetFromComputeNodeAsync(string poolId, string nodeId, string filePath, int timeout, string api_version)
 		{
 			var requestUri = "pools/"+ (poolId==null? "" : System.Uri.EscapeDataString(poolId))+"/nodes/"+ (nodeId==null? "" : System.Uri.EscapeDataString(nodeId))+"/files/"+ (filePath==null? "" : System.Uri.EscapeDataString(filePath))+"&timeout="+timeout+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<string>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<string>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5941,8 +5861,7 @@ namespace MyNS
 		public async Task File_DeleteFromComputeNodeAsync(string poolId, string nodeId, string filePath, bool recursive, int timeout, string api_version)
 		{
 			var requestUri = "pools/"+ (poolId==null? "" : System.Uri.EscapeDataString(poolId))+"/nodes/"+ (nodeId==null? "" : System.Uri.EscapeDataString(nodeId))+"/files/"+ (filePath==null? "" : System.Uri.EscapeDataString(filePath))+"&recursive="+recursive+"&timeout="+timeout+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -5951,7 +5870,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5968,19 +5886,17 @@ namespace MyNS
 		public async Task<string> ComputeNode_GetRemoteDesktopAsync(string poolId, string nodeId, int timeout, string api_version)
 		{
 			var requestUri = "pools/"+ (poolId==null? "" : System.Uri.EscapeDataString(poolId))+"/nodes/"+ (nodeId==null? "" : System.Uri.EscapeDataString(nodeId))+"/rdp&timeout="+timeout+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<string>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<string>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5997,19 +5913,17 @@ namespace MyNS
 		public async Task<ComputeNodeGetRemoteLoginSettingsResult> ComputeNode_GetRemoteLoginSettingsAsync(string poolId, string nodeId, int timeout, string api_version)
 		{
 			var requestUri = "pools/"+ (poolId==null? "" : System.Uri.EscapeDataString(poolId))+"/nodes/"+ (nodeId==null? "" : System.Uri.EscapeDataString(nodeId))+"/remoteloginsettings&timeout="+timeout+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ComputeNodeGetRemoteLoginSettingsResult>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ComputeNodeGetRemoteLoginSettingsResult>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6027,8 +5941,7 @@ namespace MyNS
 		public async Task ComputeNode_DeleteUserAsync(string poolId, string nodeId, string userName, int timeout, string api_version)
 		{
 			var requestUri = "pools/"+ (poolId==null? "" : System.Uri.EscapeDataString(poolId))+"/nodes/"+ (nodeId==null? "" : System.Uri.EscapeDataString(nodeId))+"/users/"+ (userName==null? "" : System.Uri.EscapeDataString(userName))+"&timeout="+timeout+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -6037,7 +5950,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6052,8 +5964,7 @@ namespace MyNS
 		public async Task Pool_StopResizeAsync(string poolId, int timeout, string api_version)
 		{
 			var requestUri = "pools/"+ (poolId==null? "" : System.Uri.EscapeDataString(poolId))+"/stopresize&timeout="+timeout+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -6062,7 +5973,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6084,19 +5994,17 @@ namespace MyNS
 		public async Task<PoolListUsageMetricsResult> Pool_ListUsageMetricsAsync(System.DateTimeOffset starttime, System.DateTimeOffset endtime, string filter, int maxresults, int timeout, string api_version)
 		{
 			var requestUri = "poolusagemetrics?starttime=" + starttime.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&endtime=" + endtime.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&$filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&maxresults="+maxresults+"&timeout="+timeout+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<PoolListUsageMetricsResult>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<PoolListUsageMetricsResult>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

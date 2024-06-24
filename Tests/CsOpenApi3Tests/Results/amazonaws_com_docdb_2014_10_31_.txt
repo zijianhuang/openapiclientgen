@@ -3226,8 +3226,7 @@ namespace MyNS
 		public async Task GET_AddSourceIdentifierToSubscriptionAsync(string SubscriptionName, string SourceIdentifier, GET_AddSourceIdentifierToSubscriptionAction Action, GET_AddSourceIdentifierToSubscriptionVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=AddSourceIdentifierToSubscription?SubscriptionName=" + (SubscriptionName==null? "" : System.Uri.EscapeDataString(SubscriptionName))+"&SourceIdentifier=" + (SourceIdentifier==null? "" : System.Uri.EscapeDataString(SourceIdentifier))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3241,7 +3240,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3255,8 +3253,7 @@ namespace MyNS
 		public async Task GET_AddTagsToResourceAsync(string ResourceName, string[] Tags, GET_AddTagsToResourceAction Action, GET_AddTagsToResourceVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=AddTagsToResource?ResourceName=" + (ResourceName==null? "" : System.Uri.EscapeDataString(ResourceName))+"&"+string.Join("&", Tags.Select(z => $"Tags={System.Uri.EscapeDataString(z.ToString())}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3270,7 +3267,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3285,8 +3281,7 @@ namespace MyNS
 		public async Task GET_ApplyPendingMaintenanceActionAsync(string ResourceIdentifier, string ApplyAction, string OptInType, GET_ApplyPendingMaintenanceActionAction Action, GET_ApplyPendingMaintenanceActionVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=ApplyPendingMaintenanceAction?ResourceIdentifier=" + (ResourceIdentifier==null? "" : System.Uri.EscapeDataString(ResourceIdentifier))+"&ApplyAction=" + (ApplyAction==null? "" : System.Uri.EscapeDataString(ApplyAction))+"&OptInType=" + (OptInType==null? "" : System.Uri.EscapeDataString(OptInType))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3300,7 +3295,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3316,8 +3310,7 @@ namespace MyNS
 		public async Task GET_CopyDBClusterParameterGroupAsync(string SourceDBClusterParameterGroupIdentifier, string TargetDBClusterParameterGroupIdentifier, string TargetDBClusterParameterGroupDescription, string[] Tags, GET_CopyDBClusterParameterGroupAction Action, GET_CopyDBClusterParameterGroupVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=CopyDBClusterParameterGroup?SourceDBClusterParameterGroupIdentifier=" + (SourceDBClusterParameterGroupIdentifier==null? "" : System.Uri.EscapeDataString(SourceDBClusterParameterGroupIdentifier))+"&TargetDBClusterParameterGroupIdentifier=" + (TargetDBClusterParameterGroupIdentifier==null? "" : System.Uri.EscapeDataString(TargetDBClusterParameterGroupIdentifier))+"&TargetDBClusterParameterGroupDescription=" + (TargetDBClusterParameterGroupDescription==null? "" : System.Uri.EscapeDataString(TargetDBClusterParameterGroupDescription))+"&"+string.Join("&", Tags.Select(z => $"Tags={System.Uri.EscapeDataString(z.ToString())}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3331,7 +3324,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3349,8 +3341,7 @@ namespace MyNS
 		public async Task GET_CopyDBClusterSnapshotAsync(string SourceDBClusterSnapshotIdentifier, string TargetDBClusterSnapshotIdentifier, string KmsKeyId, string PreSignedUrl, bool CopyTags, string[] Tags, GET_CopyDBClusterSnapshotAction Action, GET_CopyDBClusterSnapshotVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=CopyDBClusterSnapshot?SourceDBClusterSnapshotIdentifier=" + (SourceDBClusterSnapshotIdentifier==null? "" : System.Uri.EscapeDataString(SourceDBClusterSnapshotIdentifier))+"&TargetDBClusterSnapshotIdentifier=" + (TargetDBClusterSnapshotIdentifier==null? "" : System.Uri.EscapeDataString(TargetDBClusterSnapshotIdentifier))+"&KmsKeyId=" + (KmsKeyId==null? "" : System.Uri.EscapeDataString(KmsKeyId))+"&PreSignedUrl=" + (PreSignedUrl==null? "" : System.Uri.EscapeDataString(PreSignedUrl))+"&CopyTags="+CopyTags+"&"+string.Join("&", Tags.Select(z => $"Tags={System.Uri.EscapeDataString(z.ToString())}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3364,7 +3355,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3422,8 +3412,7 @@ namespace MyNS
 					Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=CreateDBCluster?"+string.Join("&", AvailabilityZones.Select(z => $"AvailabilityZones={System.Uri.EscapeDataString(z.ToString())}"))+"&BackupRetentionPeriod="+BackupRetentionPeriod+"&DBClusterIdentifier=" + (DBClusterIdentifier==null? "" : System.Uri.EscapeDataString(DBClusterIdentifier))+"&DBClusterParameterGroupName=" + (DBClusterParameterGroupName==null? "" : System.Uri.EscapeDataString(DBClusterParameterGroupName))+"&"+string.Join("&", VpcSecurityGroupIds.Select(z => $"VpcSecurityGroupIds={System.Uri.EscapeDataString(z.ToString())}"))+"&DBSubnetGroupName=" + (DBSubnetGroupName==null? "" : System.Uri.EscapeDataString(DBSubnetGroupName))+"&Engine=" + (Engine==null? "" : System.Uri.EscapeDataString(Engine))+"&EngineVersion=" + (EngineVersion==null? "" : System.Uri.EscapeDataString(EngineVersion))+"&Port="+Port+"&MasterUsername=" + (MasterUsername==null? "" : System.Uri.EscapeDataString(MasterUsername))+"&MasterUserPassword=" + (MasterUserPassword==null? "" : System.Uri.EscapeDataString(MasterUserPassword))+"&PreferredBackupWindow=" + (PreferredBackupWindow==null? "" : System.Uri.EscapeDataString(PreferredBackupWindow))+"&PreferredMaintenanceWindow=" + (PreferredMaintenanceWindow==null? "" : System.Uri.EscapeDataString(PreferredMaintenanceWindow))+"&"+string.Join("&", Tags.Select(z => $"Tags={System.Uri.EscapeDataString(z.ToString())}"))+"&StorageEncrypted="+StorageEncrypted+"&KmsKeyId=" + (KmsKeyId==null? "" : System.Uri.EscapeDataString(KmsKeyId))+"&PreSignedUrl=" + (PreSignedUrl==null? "" : System.Uri.EscapeDataString(PreSignedUrl))+"&"+string.Join("&", EnableCloudwatchLogsExports.Select(z => $"EnableCloudwatchLogsExports={System.Uri.EscapeDataString(z.ToString())}"))+"&DeletionProtection="+DeletionProtection+"&GlobalClusterIdentifier=" + (GlobalClusterIdentifier==null? "" : System.Uri.EscapeDataString(GlobalClusterIdentifier))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3437,7 +3426,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3453,8 +3441,7 @@ namespace MyNS
 		public async Task GET_CreateDBClusterParameterGroupAsync(string DBClusterParameterGroupName, string DBParameterGroupFamily, string Description, string[] Tags, GET_CreateDBClusterParameterGroupAction Action, GET_CreateDBClusterParameterGroupVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=CreateDBClusterParameterGroup?DBClusterParameterGroupName=" + (DBClusterParameterGroupName==null? "" : System.Uri.EscapeDataString(DBClusterParameterGroupName))+"&DBParameterGroupFamily=" + (DBParameterGroupFamily==null? "" : System.Uri.EscapeDataString(DBParameterGroupFamily))+"&Description=" + (Description==null? "" : System.Uri.EscapeDataString(Description))+"&"+string.Join("&", Tags.Select(z => $"Tags={System.Uri.EscapeDataString(z.ToString())}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3468,7 +3455,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3483,8 +3469,7 @@ namespace MyNS
 		public async Task GET_CreateDBClusterSnapshotAsync(string DBClusterSnapshotIdentifier, string DBClusterIdentifier, string[] Tags, GET_CreateDBClusterSnapshotAction Action, GET_CreateDBClusterSnapshotVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=CreateDBClusterSnapshot?DBClusterSnapshotIdentifier=" + (DBClusterSnapshotIdentifier==null? "" : System.Uri.EscapeDataString(DBClusterSnapshotIdentifier))+"&DBClusterIdentifier=" + (DBClusterIdentifier==null? "" : System.Uri.EscapeDataString(DBClusterIdentifier))+"&"+string.Join("&", Tags.Select(z => $"Tags={System.Uri.EscapeDataString(z.ToString())}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3498,7 +3483,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3522,8 +3506,7 @@ namespace MyNS
 		public async Task GET_CreateDBInstanceAsync(string DBInstanceIdentifier, string DBInstanceClass, string Engine, string AvailabilityZone, string PreferredMaintenanceWindow, bool AutoMinorVersionUpgrade, string[] Tags, string DBClusterIdentifier, bool CopyTagsToSnapshot, int PromotionTier, bool EnablePerformanceInsights, string PerformanceInsightsKMSKeyId, GET_CreateDBInstanceAction Action, GET_CreateDBInstanceVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=CreateDBInstance?DBInstanceIdentifier=" + (DBInstanceIdentifier==null? "" : System.Uri.EscapeDataString(DBInstanceIdentifier))+"&DBInstanceClass=" + (DBInstanceClass==null? "" : System.Uri.EscapeDataString(DBInstanceClass))+"&Engine=" + (Engine==null? "" : System.Uri.EscapeDataString(Engine))+"&AvailabilityZone=" + (AvailabilityZone==null? "" : System.Uri.EscapeDataString(AvailabilityZone))+"&PreferredMaintenanceWindow=" + (PreferredMaintenanceWindow==null? "" : System.Uri.EscapeDataString(PreferredMaintenanceWindow))+"&AutoMinorVersionUpgrade="+AutoMinorVersionUpgrade+"&"+string.Join("&", Tags.Select(z => $"Tags={System.Uri.EscapeDataString(z.ToString())}"))+"&DBClusterIdentifier=" + (DBClusterIdentifier==null? "" : System.Uri.EscapeDataString(DBClusterIdentifier))+"&CopyTagsToSnapshot="+CopyTagsToSnapshot+"&PromotionTier="+PromotionTier+"&EnablePerformanceInsights="+EnablePerformanceInsights+"&PerformanceInsightsKMSKeyId=" + (PerformanceInsightsKMSKeyId==null? "" : System.Uri.EscapeDataString(PerformanceInsightsKMSKeyId))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3537,7 +3520,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3553,8 +3535,7 @@ namespace MyNS
 		public async Task GET_CreateDBSubnetGroupAsync(string DBSubnetGroupName, string DBSubnetGroupDescription, string[] SubnetIds, string[] Tags, GET_CreateDBSubnetGroupAction Action, GET_CreateDBSubnetGroupVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=CreateDBSubnetGroup?DBSubnetGroupName=" + (DBSubnetGroupName==null? "" : System.Uri.EscapeDataString(DBSubnetGroupName))+"&DBSubnetGroupDescription=" + (DBSubnetGroupDescription==null? "" : System.Uri.EscapeDataString(DBSubnetGroupDescription))+"&"+string.Join("&", SubnetIds.Select(z => $"SubnetIds={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", Tags.Select(z => $"Tags={System.Uri.EscapeDataString(z.ToString())}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3568,7 +3549,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3587,8 +3567,7 @@ namespace MyNS
 		public async Task GET_CreateEventSubscriptionAsync(string SubscriptionName, string SnsTopicArn, string SourceType, string[] EventCategories, string[] SourceIds, bool Enabled, string[] Tags, GET_CreateEventSubscriptionAction Action, GET_CreateEventSubscriptionVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=CreateEventSubscription?SubscriptionName=" + (SubscriptionName==null? "" : System.Uri.EscapeDataString(SubscriptionName))+"&SnsTopicArn=" + (SnsTopicArn==null? "" : System.Uri.EscapeDataString(SnsTopicArn))+"&SourceType=" + (SourceType==null? "" : System.Uri.EscapeDataString(SourceType))+"&"+string.Join("&", EventCategories.Select(z => $"EventCategories={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", SourceIds.Select(z => $"SourceIds={System.Uri.EscapeDataString(z.ToString())}"))+"&Enabled="+Enabled+"&"+string.Join("&", Tags.Select(z => $"Tags={System.Uri.EscapeDataString(z.ToString())}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3602,7 +3581,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3624,8 +3602,7 @@ namespace MyNS
 		public async Task GET_CreateGlobalClusterAsync(string GlobalClusterIdentifier, string SourceDBClusterIdentifier, string Engine, string EngineVersion, bool DeletionProtection, string DatabaseName, bool StorageEncrypted, GET_CreateGlobalClusterAction Action, GET_CreateGlobalClusterVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=CreateGlobalCluster?GlobalClusterIdentifier=" + (GlobalClusterIdentifier==null? "" : System.Uri.EscapeDataString(GlobalClusterIdentifier))+"&SourceDBClusterIdentifier=" + (SourceDBClusterIdentifier==null? "" : System.Uri.EscapeDataString(SourceDBClusterIdentifier))+"&Engine=" + (Engine==null? "" : System.Uri.EscapeDataString(Engine))+"&EngineVersion=" + (EngineVersion==null? "" : System.Uri.EscapeDataString(EngineVersion))+"&DeletionProtection="+DeletionProtection+"&DatabaseName=" + (DatabaseName==null? "" : System.Uri.EscapeDataString(DatabaseName))+"&StorageEncrypted="+StorageEncrypted+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3639,7 +3616,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3654,8 +3630,7 @@ namespace MyNS
 		public async Task GET_DeleteDBClusterAsync(string DBClusterIdentifier, bool SkipFinalSnapshot, string FinalDBSnapshotIdentifier, GET_DeleteDBClusterAction Action, GET_DeleteDBClusterVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DeleteDBCluster?DBClusterIdentifier=" + (DBClusterIdentifier==null? "" : System.Uri.EscapeDataString(DBClusterIdentifier))+"&SkipFinalSnapshot="+SkipFinalSnapshot+"&FinalDBSnapshotIdentifier=" + (FinalDBSnapshotIdentifier==null? "" : System.Uri.EscapeDataString(FinalDBSnapshotIdentifier))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3669,7 +3644,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3682,8 +3656,7 @@ namespace MyNS
 		public async Task GET_DeleteDBClusterParameterGroupAsync(string DBClusterParameterGroupName, GET_DeleteDBClusterParameterGroupAction Action, GET_DeleteDBClusterParameterGroupVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DeleteDBClusterParameterGroup?DBClusterParameterGroupName=" + (DBClusterParameterGroupName==null? "" : System.Uri.EscapeDataString(DBClusterParameterGroupName))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3697,7 +3670,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3710,8 +3682,7 @@ namespace MyNS
 		public async Task GET_DeleteDBClusterSnapshotAsync(string DBClusterSnapshotIdentifier, GET_DeleteDBClusterSnapshotAction Action, GET_DeleteDBClusterSnapshotVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DeleteDBClusterSnapshot?DBClusterSnapshotIdentifier=" + (DBClusterSnapshotIdentifier==null? "" : System.Uri.EscapeDataString(DBClusterSnapshotIdentifier))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3725,7 +3696,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3738,8 +3708,7 @@ namespace MyNS
 		public async Task GET_DeleteDBInstanceAsync(string DBInstanceIdentifier, GET_DeleteDBInstanceAction Action, GET_DeleteDBInstanceVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DeleteDBInstance?DBInstanceIdentifier=" + (DBInstanceIdentifier==null? "" : System.Uri.EscapeDataString(DBInstanceIdentifier))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3753,7 +3722,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3766,8 +3734,7 @@ namespace MyNS
 		public async Task GET_DeleteDBSubnetGroupAsync(string DBSubnetGroupName, GET_DeleteDBSubnetGroupAction Action, GET_DeleteDBSubnetGroupVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DeleteDBSubnetGroup?DBSubnetGroupName=" + (DBSubnetGroupName==null? "" : System.Uri.EscapeDataString(DBSubnetGroupName))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3781,7 +3748,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3794,8 +3760,7 @@ namespace MyNS
 		public async Task GET_DeleteEventSubscriptionAsync(string SubscriptionName, GET_DeleteEventSubscriptionAction Action, GET_DeleteEventSubscriptionVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DeleteEventSubscription?SubscriptionName=" + (SubscriptionName==null? "" : System.Uri.EscapeDataString(SubscriptionName))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3809,7 +3774,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3825,8 +3789,7 @@ namespace MyNS
 		public async Task GET_DeleteGlobalClusterAsync(string GlobalClusterIdentifier, GET_DeleteGlobalClusterAction Action, GET_DeleteGlobalClusterVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DeleteGlobalCluster?GlobalClusterIdentifier=" + (GlobalClusterIdentifier==null? "" : System.Uri.EscapeDataString(GlobalClusterIdentifier))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3840,7 +3803,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3856,8 +3818,7 @@ namespace MyNS
 		public async Task GET_DescribeCertificatesAsync(string CertificateIdentifier, string[] Filters, int MaxRecords, string Marker, GET_DescribeCertificatesAction Action, GET_DescribeCertificatesVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribeCertificates?CertificateIdentifier=" + (CertificateIdentifier==null? "" : System.Uri.EscapeDataString(CertificateIdentifier))+"&"+string.Join("&", Filters.Select(z => $"Filters={System.Uri.EscapeDataString(z.ToString())}"))+"&MaxRecords="+MaxRecords+"&Marker=" + (Marker==null? "" : System.Uri.EscapeDataString(Marker))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3871,7 +3832,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3887,8 +3847,7 @@ namespace MyNS
 		public async Task GET_DescribeDBClusterParameterGroupsAsync(string DBClusterParameterGroupName, string[] Filters, int MaxRecords, string Marker, GET_DescribeDBClusterParameterGroupsAction Action, GET_DescribeDBClusterParameterGroupsVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribeDBClusterParameterGroups?DBClusterParameterGroupName=" + (DBClusterParameterGroupName==null? "" : System.Uri.EscapeDataString(DBClusterParameterGroupName))+"&"+string.Join("&", Filters.Select(z => $"Filters={System.Uri.EscapeDataString(z.ToString())}"))+"&MaxRecords="+MaxRecords+"&Marker=" + (Marker==null? "" : System.Uri.EscapeDataString(Marker))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3902,7 +3861,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3919,8 +3877,7 @@ namespace MyNS
 		public async Task GET_DescribeDBClusterParametersAsync(string DBClusterParameterGroupName, string Source, string[] Filters, int MaxRecords, string Marker, GET_DescribeDBClusterParametersAction Action, GET_DescribeDBClusterParametersVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribeDBClusterParameters?DBClusterParameterGroupName=" + (DBClusterParameterGroupName==null? "" : System.Uri.EscapeDataString(DBClusterParameterGroupName))+"&Source=" + (Source==null? "" : System.Uri.EscapeDataString(Source))+"&"+string.Join("&", Filters.Select(z => $"Filters={System.Uri.EscapeDataString(z.ToString())}"))+"&MaxRecords="+MaxRecords+"&Marker=" + (Marker==null? "" : System.Uri.EscapeDataString(Marker))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3934,7 +3891,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3947,8 +3903,7 @@ namespace MyNS
 		public async Task GET_DescribeDBClusterSnapshotAttributesAsync(string DBClusterSnapshotIdentifier, GET_DescribeDBClusterSnapshotAttributesAction Action, GET_DescribeDBClusterSnapshotAttributesVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribeDBClusterSnapshotAttributes?DBClusterSnapshotIdentifier=" + (DBClusterSnapshotIdentifier==null? "" : System.Uri.EscapeDataString(DBClusterSnapshotIdentifier))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3962,7 +3917,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3982,8 +3936,7 @@ namespace MyNS
 		public async Task GET_DescribeDBClusterSnapshotsAsync(string DBClusterIdentifier, string DBClusterSnapshotIdentifier, string SnapshotType, string[] Filters, int MaxRecords, string Marker, bool IncludeShared, bool IncludePublic, GET_DescribeDBClusterSnapshotsAction Action, GET_DescribeDBClusterSnapshotsVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribeDBClusterSnapshots?DBClusterIdentifier=" + (DBClusterIdentifier==null? "" : System.Uri.EscapeDataString(DBClusterIdentifier))+"&DBClusterSnapshotIdentifier=" + (DBClusterSnapshotIdentifier==null? "" : System.Uri.EscapeDataString(DBClusterSnapshotIdentifier))+"&SnapshotType=" + (SnapshotType==null? "" : System.Uri.EscapeDataString(SnapshotType))+"&"+string.Join("&", Filters.Select(z => $"Filters={System.Uri.EscapeDataString(z.ToString())}"))+"&MaxRecords="+MaxRecords+"&Marker=" + (Marker==null? "" : System.Uri.EscapeDataString(Marker))+"&IncludeShared="+IncludeShared+"&IncludePublic="+IncludePublic+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3997,7 +3950,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4013,8 +3965,7 @@ namespace MyNS
 		public async Task GET_DescribeDBClustersAsync(string DBClusterIdentifier, string[] Filters, int MaxRecords, string Marker, GET_DescribeDBClustersAction Action, GET_DescribeDBClustersVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribeDBClusters?DBClusterIdentifier=" + (DBClusterIdentifier==null? "" : System.Uri.EscapeDataString(DBClusterIdentifier))+"&"+string.Join("&", Filters.Select(z => $"Filters={System.Uri.EscapeDataString(z.ToString())}"))+"&MaxRecords="+MaxRecords+"&Marker=" + (Marker==null? "" : System.Uri.EscapeDataString(Marker))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4028,7 +3979,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4049,8 +3999,7 @@ namespace MyNS
 		public async Task GET_DescribeDBEngineVersionsAsync(string Engine, string EngineVersion, string DBParameterGroupFamily, string[] Filters, int MaxRecords, string Marker, bool DefaultOnly, bool ListSupportedCharacterSets, bool ListSupportedTimezones, GET_DescribeDBEngineVersionsAction Action, GET_DescribeDBEngineVersionsVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribeDBEngineVersions?Engine=" + (Engine==null? "" : System.Uri.EscapeDataString(Engine))+"&EngineVersion=" + (EngineVersion==null? "" : System.Uri.EscapeDataString(EngineVersion))+"&DBParameterGroupFamily=" + (DBParameterGroupFamily==null? "" : System.Uri.EscapeDataString(DBParameterGroupFamily))+"&"+string.Join("&", Filters.Select(z => $"Filters={System.Uri.EscapeDataString(z.ToString())}"))+"&MaxRecords="+MaxRecords+"&Marker=" + (Marker==null? "" : System.Uri.EscapeDataString(Marker))+"&DefaultOnly="+DefaultOnly+"&ListSupportedCharacterSets="+ListSupportedCharacterSets+"&ListSupportedTimezones="+ListSupportedTimezones+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4064,7 +4013,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4080,8 +4028,7 @@ namespace MyNS
 		public async Task GET_DescribeDBInstancesAsync(string DBInstanceIdentifier, string[] Filters, int MaxRecords, string Marker, GET_DescribeDBInstancesAction Action, GET_DescribeDBInstancesVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribeDBInstances?DBInstanceIdentifier=" + (DBInstanceIdentifier==null? "" : System.Uri.EscapeDataString(DBInstanceIdentifier))+"&"+string.Join("&", Filters.Select(z => $"Filters={System.Uri.EscapeDataString(z.ToString())}"))+"&MaxRecords="+MaxRecords+"&Marker=" + (Marker==null? "" : System.Uri.EscapeDataString(Marker))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4095,7 +4042,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4111,8 +4057,7 @@ namespace MyNS
 		public async Task GET_DescribeDBSubnetGroupsAsync(string DBSubnetGroupName, string[] Filters, int MaxRecords, string Marker, GET_DescribeDBSubnetGroupsAction Action, GET_DescribeDBSubnetGroupsVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribeDBSubnetGroups?DBSubnetGroupName=" + (DBSubnetGroupName==null? "" : System.Uri.EscapeDataString(DBSubnetGroupName))+"&"+string.Join("&", Filters.Select(z => $"Filters={System.Uri.EscapeDataString(z.ToString())}"))+"&MaxRecords="+MaxRecords+"&Marker=" + (Marker==null? "" : System.Uri.EscapeDataString(Marker))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4126,7 +4071,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4142,8 +4086,7 @@ namespace MyNS
 		public async Task GET_DescribeEngineDefaultClusterParametersAsync(string DBParameterGroupFamily, string[] Filters, int MaxRecords, string Marker, GET_DescribeEngineDefaultClusterParametersAction Action, GET_DescribeEngineDefaultClusterParametersVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribeEngineDefaultClusterParameters?DBParameterGroupFamily=" + (DBParameterGroupFamily==null? "" : System.Uri.EscapeDataString(DBParameterGroupFamily))+"&"+string.Join("&", Filters.Select(z => $"Filters={System.Uri.EscapeDataString(z.ToString())}"))+"&MaxRecords="+MaxRecords+"&Marker=" + (Marker==null? "" : System.Uri.EscapeDataString(Marker))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4157,7 +4100,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4171,8 +4113,7 @@ namespace MyNS
 		public async Task GET_DescribeEventCategoriesAsync(string SourceType, string[] Filters, GET_DescribeEventCategoriesAction Action, GET_DescribeEventCategoriesVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribeEventCategories?SourceType=" + (SourceType==null? "" : System.Uri.EscapeDataString(SourceType))+"&"+string.Join("&", Filters.Select(z => $"Filters={System.Uri.EscapeDataString(z.ToString())}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4186,7 +4127,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4202,8 +4142,7 @@ namespace MyNS
 		public async Task GET_DescribeEventSubscriptionsAsync(string SubscriptionName, string[] Filters, int MaxRecords, string Marker, GET_DescribeEventSubscriptionsAction Action, GET_DescribeEventSubscriptionsVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribeEventSubscriptions?SubscriptionName=" + (SubscriptionName==null? "" : System.Uri.EscapeDataString(SubscriptionName))+"&"+string.Join("&", Filters.Select(z => $"Filters={System.Uri.EscapeDataString(z.ToString())}"))+"&MaxRecords="+MaxRecords+"&Marker=" + (Marker==null? "" : System.Uri.EscapeDataString(Marker))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4217,7 +4156,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4238,8 +4176,7 @@ namespace MyNS
 		public async Task GET_DescribeEventsAsync(string SourceIdentifier, GET_DescribeEventsSourceType SourceType, System.DateTimeOffset StartTime, System.DateTimeOffset EndTime, int Duration, string[] EventCategories, string[] Filters, int MaxRecords, string Marker, GET_DescribeEventsAction Action, GET_DescribeEventsVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribeEvents?SourceIdentifier=" + (SourceIdentifier==null? "" : System.Uri.EscapeDataString(SourceIdentifier))+"&SourceType=" + SourceType+"&StartTime=" + StartTime.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&EndTime=" + EndTime.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&Duration="+Duration+"&"+string.Join("&", EventCategories.Select(z => $"EventCategories={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", Filters.Select(z => $"Filters={System.Uri.EscapeDataString(z.ToString())}"))+"&MaxRecords="+MaxRecords+"&Marker=" + (Marker==null? "" : System.Uri.EscapeDataString(Marker))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4253,7 +4190,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4272,8 +4208,7 @@ namespace MyNS
 		public async Task GET_DescribeGlobalClustersAsync(string GlobalClusterIdentifier, string[] Filters, int MaxRecords, string Marker, GET_DescribeGlobalClustersAction Action, GET_DescribeGlobalClustersVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribeGlobalClusters?GlobalClusterIdentifier=" + (GlobalClusterIdentifier==null? "" : System.Uri.EscapeDataString(GlobalClusterIdentifier))+"&"+string.Join("&", Filters.Select(z => $"Filters={System.Uri.EscapeDataString(z.ToString())}"))+"&MaxRecords="+MaxRecords+"&Marker=" + (Marker==null? "" : System.Uri.EscapeDataString(Marker))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4287,7 +4222,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4307,8 +4241,7 @@ namespace MyNS
 		public async Task GET_DescribeOrderableDBInstanceOptionsAsync(string Engine, string EngineVersion, string DBInstanceClass, string LicenseModel, bool Vpc, string[] Filters, int MaxRecords, string Marker, GET_DescribeOrderableDBInstanceOptionsAction Action, GET_DescribeOrderableDBInstanceOptionsVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribeOrderableDBInstanceOptions?Engine=" + (Engine==null? "" : System.Uri.EscapeDataString(Engine))+"&EngineVersion=" + (EngineVersion==null? "" : System.Uri.EscapeDataString(EngineVersion))+"&DBInstanceClass=" + (DBInstanceClass==null? "" : System.Uri.EscapeDataString(DBInstanceClass))+"&LicenseModel=" + (LicenseModel==null? "" : System.Uri.EscapeDataString(LicenseModel))+"&Vpc="+Vpc+"&"+string.Join("&", Filters.Select(z => $"Filters={System.Uri.EscapeDataString(z.ToString())}"))+"&MaxRecords="+MaxRecords+"&Marker=" + (Marker==null? "" : System.Uri.EscapeDataString(Marker))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4322,7 +4255,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4338,8 +4270,7 @@ namespace MyNS
 		public async Task GET_DescribePendingMaintenanceActionsAsync(string ResourceIdentifier, string[] Filters, string Marker, int MaxRecords, GET_DescribePendingMaintenanceActionsAction Action, GET_DescribePendingMaintenanceActionsVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribePendingMaintenanceActions?ResourceIdentifier=" + (ResourceIdentifier==null? "" : System.Uri.EscapeDataString(ResourceIdentifier))+"&"+string.Join("&", Filters.Select(z => $"Filters={System.Uri.EscapeDataString(z.ToString())}"))+"&Marker=" + (Marker==null? "" : System.Uri.EscapeDataString(Marker))+"&MaxRecords="+MaxRecords+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4353,7 +4284,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4367,8 +4297,7 @@ namespace MyNS
 		public async Task GET_FailoverDBClusterAsync(string DBClusterIdentifier, string TargetDBInstanceIdentifier, GET_FailoverDBClusterAction Action, GET_FailoverDBClusterVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=FailoverDBCluster?DBClusterIdentifier=" + (DBClusterIdentifier==null? "" : System.Uri.EscapeDataString(DBClusterIdentifier))+"&TargetDBInstanceIdentifier=" + (TargetDBInstanceIdentifier==null? "" : System.Uri.EscapeDataString(TargetDBInstanceIdentifier))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4382,7 +4311,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4396,8 +4324,7 @@ namespace MyNS
 		public async Task GET_ListTagsForResourceAsync(string ResourceName, string[] Filters, GET_ListTagsForResourceAction Action, GET_ListTagsForResourceVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=ListTagsForResource?ResourceName=" + (ResourceName==null? "" : System.Uri.EscapeDataString(ResourceName))+"&"+string.Join("&", Filters.Select(z => $"Filters={System.Uri.EscapeDataString(z.ToString())}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4411,7 +4338,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4454,8 +4380,7 @@ namespace MyNS
 					Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=ModifyDBCluster?DBClusterIdentifier=" + (DBClusterIdentifier==null? "" : System.Uri.EscapeDataString(DBClusterIdentifier))+"&NewDBClusterIdentifier=" + (NewDBClusterIdentifier==null? "" : System.Uri.EscapeDataString(NewDBClusterIdentifier))+"&ApplyImmediately="+ApplyImmediately+"&BackupRetentionPeriod="+BackupRetentionPeriod+"&DBClusterParameterGroupName=" + (DBClusterParameterGroupName==null? "" : System.Uri.EscapeDataString(DBClusterParameterGroupName))+"&"+string.Join("&", VpcSecurityGroupIds.Select(z => $"VpcSecurityGroupIds={System.Uri.EscapeDataString(z.ToString())}"))+"&Port="+Port+"&MasterUserPassword=" + (MasterUserPassword==null? "" : System.Uri.EscapeDataString(MasterUserPassword))+"&PreferredBackupWindow=" + (PreferredBackupWindow==null? "" : System.Uri.EscapeDataString(PreferredBackupWindow))+"&PreferredMaintenanceWindow=" + (PreferredMaintenanceWindow==null? "" : System.Uri.EscapeDataString(PreferredMaintenanceWindow))+"&CloudwatchLogsExportConfiguration=" + CloudwatchLogsExportConfiguration+"&EngineVersion=" + (EngineVersion==null? "" : System.Uri.EscapeDataString(EngineVersion))+"&AllowMajorVersionUpgrade="+AllowMajorVersionUpgrade+"&DeletionProtection="+DeletionProtection+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4469,7 +4394,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4483,8 +4407,7 @@ namespace MyNS
 		public async Task GET_ModifyDBClusterParameterGroupAsync(string DBClusterParameterGroupName, string[] Parameters, GET_ModifyDBClusterParameterGroupAction Action, GET_ModifyDBClusterParameterGroupVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=ModifyDBClusterParameterGroup?DBClusterParameterGroupName=" + (DBClusterParameterGroupName==null? "" : System.Uri.EscapeDataString(DBClusterParameterGroupName))+"&"+string.Join("&", Parameters.Select(z => $"Parameters={System.Uri.EscapeDataString(z.ToString())}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4498,7 +4421,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4514,8 +4436,7 @@ namespace MyNS
 		public async Task GET_ModifyDBClusterSnapshotAttributeAsync(string DBClusterSnapshotIdentifier, string AttributeName, string[] ValuesToAdd, string[] ValuesToRemove, GET_ModifyDBClusterSnapshotAttributeAction Action, GET_ModifyDBClusterSnapshotAttributeVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=ModifyDBClusterSnapshotAttribute?DBClusterSnapshotIdentifier=" + (DBClusterSnapshotIdentifier==null? "" : System.Uri.EscapeDataString(DBClusterSnapshotIdentifier))+"&AttributeName=" + (AttributeName==null? "" : System.Uri.EscapeDataString(AttributeName))+"&"+string.Join("&", ValuesToAdd.Select(z => $"ValuesToAdd={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", ValuesToRemove.Select(z => $"ValuesToRemove={System.Uri.EscapeDataString(z.ToString())}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4529,7 +4450,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4552,8 +4472,7 @@ namespace MyNS
 		public async Task GET_ModifyDBInstanceAsync(string DBInstanceIdentifier, string DBInstanceClass, bool ApplyImmediately, string PreferredMaintenanceWindow, bool AutoMinorVersionUpgrade, string NewDBInstanceIdentifier, string CACertificateIdentifier, bool CopyTagsToSnapshot, int PromotionTier, bool EnablePerformanceInsights, string PerformanceInsightsKMSKeyId, GET_ModifyDBInstanceAction Action, GET_ModifyDBInstanceVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=ModifyDBInstance?DBInstanceIdentifier=" + (DBInstanceIdentifier==null? "" : System.Uri.EscapeDataString(DBInstanceIdentifier))+"&DBInstanceClass=" + (DBInstanceClass==null? "" : System.Uri.EscapeDataString(DBInstanceClass))+"&ApplyImmediately="+ApplyImmediately+"&PreferredMaintenanceWindow=" + (PreferredMaintenanceWindow==null? "" : System.Uri.EscapeDataString(PreferredMaintenanceWindow))+"&AutoMinorVersionUpgrade="+AutoMinorVersionUpgrade+"&NewDBInstanceIdentifier=" + (NewDBInstanceIdentifier==null? "" : System.Uri.EscapeDataString(NewDBInstanceIdentifier))+"&CACertificateIdentifier=" + (CACertificateIdentifier==null? "" : System.Uri.EscapeDataString(CACertificateIdentifier))+"&CopyTagsToSnapshot="+CopyTagsToSnapshot+"&PromotionTier="+PromotionTier+"&EnablePerformanceInsights="+EnablePerformanceInsights+"&PerformanceInsightsKMSKeyId=" + (PerformanceInsightsKMSKeyId==null? "" : System.Uri.EscapeDataString(PerformanceInsightsKMSKeyId))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4567,7 +4486,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4582,8 +4500,7 @@ namespace MyNS
 		public async Task GET_ModifyDBSubnetGroupAsync(string DBSubnetGroupName, string DBSubnetGroupDescription, string[] SubnetIds, GET_ModifyDBSubnetGroupAction Action, GET_ModifyDBSubnetGroupVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=ModifyDBSubnetGroup?DBSubnetGroupName=" + (DBSubnetGroupName==null? "" : System.Uri.EscapeDataString(DBSubnetGroupName))+"&DBSubnetGroupDescription=" + (DBSubnetGroupDescription==null? "" : System.Uri.EscapeDataString(DBSubnetGroupDescription))+"&"+string.Join("&", SubnetIds.Select(z => $"SubnetIds={System.Uri.EscapeDataString(z.ToString())}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4597,7 +4514,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4614,8 +4530,7 @@ namespace MyNS
 		public async Task GET_ModifyEventSubscriptionAsync(string SubscriptionName, string SnsTopicArn, string SourceType, string[] EventCategories, bool Enabled, GET_ModifyEventSubscriptionAction Action, GET_ModifyEventSubscriptionVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=ModifyEventSubscription?SubscriptionName=" + (SubscriptionName==null? "" : System.Uri.EscapeDataString(SubscriptionName))+"&SnsTopicArn=" + (SnsTopicArn==null? "" : System.Uri.EscapeDataString(SnsTopicArn))+"&SourceType=" + (SourceType==null? "" : System.Uri.EscapeDataString(SourceType))+"&"+string.Join("&", EventCategories.Select(z => $"EventCategories={System.Uri.EscapeDataString(z.ToString())}"))+"&Enabled="+Enabled+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4629,7 +4544,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4650,8 +4564,7 @@ namespace MyNS
 		public async Task GET_ModifyGlobalClusterAsync(string GlobalClusterIdentifier, string NewGlobalClusterIdentifier, bool DeletionProtection, GET_ModifyGlobalClusterAction Action, GET_ModifyGlobalClusterVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=ModifyGlobalCluster?GlobalClusterIdentifier=" + (GlobalClusterIdentifier==null? "" : System.Uri.EscapeDataString(GlobalClusterIdentifier))+"&NewGlobalClusterIdentifier=" + (NewGlobalClusterIdentifier==null? "" : System.Uri.EscapeDataString(NewGlobalClusterIdentifier))+"&DeletionProtection="+DeletionProtection+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4665,7 +4578,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4679,8 +4591,7 @@ namespace MyNS
 		public async Task GET_RebootDBInstanceAsync(string DBInstanceIdentifier, bool ForceFailover, GET_RebootDBInstanceAction Action, GET_RebootDBInstanceVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=RebootDBInstance?DBInstanceIdentifier=" + (DBInstanceIdentifier==null? "" : System.Uri.EscapeDataString(DBInstanceIdentifier))+"&ForceFailover="+ForceFailover+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4694,7 +4605,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4711,8 +4621,7 @@ namespace MyNS
 		public async Task GET_RemoveFromGlobalClusterAsync(string GlobalClusterIdentifier, string DbClusterIdentifier, GET_RemoveFromGlobalClusterAction Action, GET_RemoveFromGlobalClusterVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=RemoveFromGlobalCluster?GlobalClusterIdentifier=" + (GlobalClusterIdentifier==null? "" : System.Uri.EscapeDataString(GlobalClusterIdentifier))+"&DbClusterIdentifier=" + (DbClusterIdentifier==null? "" : System.Uri.EscapeDataString(DbClusterIdentifier))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4726,7 +4635,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4740,8 +4648,7 @@ namespace MyNS
 		public async Task GET_RemoveSourceIdentifierFromSubscriptionAsync(string SubscriptionName, string SourceIdentifier, GET_RemoveSourceIdentifierFromSubscriptionAction Action, GET_RemoveSourceIdentifierFromSubscriptionVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=RemoveSourceIdentifierFromSubscription?SubscriptionName=" + (SubscriptionName==null? "" : System.Uri.EscapeDataString(SubscriptionName))+"&SourceIdentifier=" + (SourceIdentifier==null? "" : System.Uri.EscapeDataString(SourceIdentifier))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4755,7 +4662,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4769,8 +4675,7 @@ namespace MyNS
 		public async Task GET_RemoveTagsFromResourceAsync(string ResourceName, string[] TagKeys, GET_RemoveTagsFromResourceAction Action, GET_RemoveTagsFromResourceVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=RemoveTagsFromResource?ResourceName=" + (ResourceName==null? "" : System.Uri.EscapeDataString(ResourceName))+"&"+string.Join("&", TagKeys.Select(z => $"TagKeys={System.Uri.EscapeDataString(z.ToString())}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4784,7 +4689,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4799,8 +4703,7 @@ namespace MyNS
 		public async Task GET_ResetDBClusterParameterGroupAsync(string DBClusterParameterGroupName, bool ResetAllParameters, string[] Parameters, GET_ResetDBClusterParameterGroupAction Action, GET_ResetDBClusterParameterGroupVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=ResetDBClusterParameterGroup?DBClusterParameterGroupName=" + (DBClusterParameterGroupName==null? "" : System.Uri.EscapeDataString(DBClusterParameterGroupName))+"&ResetAllParameters="+ResetAllParameters+"&"+string.Join("&", Parameters.Select(z => $"Parameters={System.Uri.EscapeDataString(z.ToString())}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4814,7 +4717,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4855,8 +4757,7 @@ namespace MyNS
 					Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=RestoreDBClusterFromSnapshot?"+string.Join("&", AvailabilityZones.Select(z => $"AvailabilityZones={System.Uri.EscapeDataString(z.ToString())}"))+"&DBClusterIdentifier=" + (DBClusterIdentifier==null? "" : System.Uri.EscapeDataString(DBClusterIdentifier))+"&SnapshotIdentifier=" + (SnapshotIdentifier==null? "" : System.Uri.EscapeDataString(SnapshotIdentifier))+"&Engine=" + (Engine==null? "" : System.Uri.EscapeDataString(Engine))+"&EngineVersion=" + (EngineVersion==null? "" : System.Uri.EscapeDataString(EngineVersion))+"&Port="+Port+"&DBSubnetGroupName=" + (DBSubnetGroupName==null? "" : System.Uri.EscapeDataString(DBSubnetGroupName))+"&"+string.Join("&", VpcSecurityGroupIds.Select(z => $"VpcSecurityGroupIds={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", Tags.Select(z => $"Tags={System.Uri.EscapeDataString(z.ToString())}"))+"&KmsKeyId=" + (KmsKeyId==null? "" : System.Uri.EscapeDataString(KmsKeyId))+"&"+string.Join("&", EnableCloudwatchLogsExports.Select(z => $"EnableCloudwatchLogsExports={System.Uri.EscapeDataString(z.ToString())}"))+"&DeletionProtection="+DeletionProtection+"&DBClusterParameterGroupName=" + (DBClusterParameterGroupName==null? "" : System.Uri.EscapeDataString(DBClusterParameterGroupName))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4870,7 +4771,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4894,8 +4794,7 @@ namespace MyNS
 		public async Task GET_RestoreDBClusterToPointInTimeAsync(string DBClusterIdentifier, string RestoreType, string SourceDBClusterIdentifier, System.DateTimeOffset RestoreToTime, bool UseLatestRestorableTime, int Port, string DBSubnetGroupName, string[] VpcSecurityGroupIds, string[] Tags, string KmsKeyId, string[] EnableCloudwatchLogsExports, bool DeletionProtection, GET_RestoreDBClusterToPointInTimeAction Action, GET_RestoreDBClusterToPointInTimeVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=RestoreDBClusterToPointInTime?DBClusterIdentifier=" + (DBClusterIdentifier==null? "" : System.Uri.EscapeDataString(DBClusterIdentifier))+"&RestoreType=" + (RestoreType==null? "" : System.Uri.EscapeDataString(RestoreType))+"&SourceDBClusterIdentifier=" + (SourceDBClusterIdentifier==null? "" : System.Uri.EscapeDataString(SourceDBClusterIdentifier))+"&RestoreToTime=" + RestoreToTime.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&UseLatestRestorableTime="+UseLatestRestorableTime+"&Port="+Port+"&DBSubnetGroupName=" + (DBSubnetGroupName==null? "" : System.Uri.EscapeDataString(DBSubnetGroupName))+"&"+string.Join("&", VpcSecurityGroupIds.Select(z => $"VpcSecurityGroupIds={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", Tags.Select(z => $"Tags={System.Uri.EscapeDataString(z.ToString())}"))+"&KmsKeyId=" + (KmsKeyId==null? "" : System.Uri.EscapeDataString(KmsKeyId))+"&"+string.Join("&", EnableCloudwatchLogsExports.Select(z => $"EnableCloudwatchLogsExports={System.Uri.EscapeDataString(z.ToString())}"))+"&DeletionProtection="+DeletionProtection+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4909,7 +4808,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4922,8 +4820,7 @@ namespace MyNS
 		public async Task GET_StartDBClusterAsync(string DBClusterIdentifier, GET_StartDBClusterAction Action, GET_StartDBClusterVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=StartDBCluster?DBClusterIdentifier=" + (DBClusterIdentifier==null? "" : System.Uri.EscapeDataString(DBClusterIdentifier))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4937,7 +4834,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4950,8 +4846,7 @@ namespace MyNS
 		public async Task GET_StopDBClusterAsync(string DBClusterIdentifier, GET_StopDBClusterAction Action, GET_StopDBClusterVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=StopDBCluster?DBClusterIdentifier=" + (DBClusterIdentifier==null? "" : System.Uri.EscapeDataString(DBClusterIdentifier))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4965,7 +4860,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

@@ -3789,19 +3789,17 @@ namespace MyNS
 		public async Task<GetCountriesDictOut> GetCountriesDictAsync(bool tax_supported)
 		{
 			var requestUri = "api/v1/dictionaries/countries?tax_supported="+tax_supported;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<GetCountriesDictOut>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<GetCountriesDictOut>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3813,19 +3811,17 @@ namespace MyNS
 		public async Task<GetCurrenciesDictOut> GetCurrenciesDictAsync()
 		{
 			var requestUri = "api/v1/dictionaries/currencies";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<GetCurrenciesDictOut>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<GetCurrenciesDictOut>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3837,19 +3833,17 @@ namespace MyNS
 		public async Task<GetProductTypesDictOut> GetProductTypesDictAsync()
 		{
 			var requestUri = "api/v1/dictionaries/product_types";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<GetProductTypesDictOut>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<GetProductTypesDictOut>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3861,19 +3855,17 @@ namespace MyNS
 		public async Task<LocateMyIPOut> LocateMyIPAsync()
 		{
 			var requestUri = "api/v1/geoip";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<LocateMyIPOut>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<LocateMyIPOut>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3886,19 +3878,17 @@ namespace MyNS
 		public async Task<LocateGivenIPOut> LocateGivenIPAsync(string ip)
 		{
 			var requestUri = "api/v1/geoip/"+ (ip==null? "" : System.Uri.EscapeDataString(ip));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<LocateGivenIPOut>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<LocateGivenIPOut>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3916,19 +3906,17 @@ namespace MyNS
 		public async Task<GetDomesticSummaryReportOut> GetDomesticSummaryReportAsync(string format, string country_code, string currency_code, string start_month, string end_month, string fx_date_type)
 		{
 			var requestUri = "api/v1/reports/domestic/summary?format=" + (format==null? "" : System.Uri.EscapeDataString(format))+"&country_code=" + (country_code==null? "" : System.Uri.EscapeDataString(country_code))+"&currency_code=" + (currency_code==null? "" : System.Uri.EscapeDataString(currency_code))+"&start_month=" + (start_month==null? "" : System.Uri.EscapeDataString(start_month))+"&end_month=" + (end_month==null? "" : System.Uri.EscapeDataString(end_month))+"&fx_date_type=" + (fx_date_type==null? "" : System.Uri.EscapeDataString(fx_date_type));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<GetDomesticSummaryReportOut>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<GetDomesticSummaryReportOut>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3950,19 +3938,17 @@ namespace MyNS
 		public async Task<GetEuViesReportOut> GetEuViesReportAsync(string period_length, string lff_sequence_number, string transformation, string currency_code, string end_month, string tax_id, string start_month, string eu_country_code, string fx_date_type, string format)
 		{
 			var requestUri = "api/v1/reports/eu/vies?period_length=" + (period_length==null? "" : System.Uri.EscapeDataString(period_length))+"&lff_sequence_number=" + (lff_sequence_number==null? "" : System.Uri.EscapeDataString(lff_sequence_number))+"&transformation=" + (transformation==null? "" : System.Uri.EscapeDataString(transformation))+"&currency_code=" + (currency_code==null? "" : System.Uri.EscapeDataString(currency_code))+"&end_month=" + (end_month==null? "" : System.Uri.EscapeDataString(end_month))+"&tax_id=" + (tax_id==null? "" : System.Uri.EscapeDataString(tax_id))+"&start_month=" + (start_month==null? "" : System.Uri.EscapeDataString(start_month))+"&eu_country_code=" + (eu_country_code==null? "" : System.Uri.EscapeDataString(eu_country_code))+"&fx_date_type=" + (fx_date_type==null? "" : System.Uri.EscapeDataString(fx_date_type))+"&format=" + (format==null? "" : System.Uri.EscapeDataString(format));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<GetEuViesReportOut>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<GetEuViesReportOut>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3980,19 +3966,17 @@ namespace MyNS
 		public async Task<GetDetailedRefundsOut> GetDetailedRefundsAsync(string format, string country_codes, string date_from, string date_to, double limit, double offset)
 		{
 			var requestUri = "api/v1/settlement/detailed_refunds?format=" + (format==null? "" : System.Uri.EscapeDataString(format))+"&country_codes=" + (country_codes==null? "" : System.Uri.EscapeDataString(country_codes))+"&date_from=" + (date_from==null? "" : System.Uri.EscapeDataString(date_from))+"&date_to=" + (date_to==null? "" : System.Uri.EscapeDataString(date_to))+"&limit="+limit+"&offset="+offset;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<GetDetailedRefundsOut>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<GetDetailedRefundsOut>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4008,19 +3992,17 @@ namespace MyNS
 		public async Task<GetRefundsOut> GetRefundsAsync(string format, string moss_country_code, string tax_region, string date_from)
 		{
 			var requestUri = "api/v1/settlement/refunds?format=" + (format==null? "" : System.Uri.EscapeDataString(format))+"&moss_country_code=" + (moss_country_code==null? "" : System.Uri.EscapeDataString(moss_country_code))+"&tax_region=" + (tax_region==null? "" : System.Uri.EscapeDataString(tax_region))+"&date_from=" + (date_from==null? "" : System.Uri.EscapeDataString(date_from));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<GetRefundsOut>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<GetRefundsOut>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4037,19 +4019,17 @@ namespace MyNS
 		public async Task<GetSettlementSummaryOut> GetSettlementSummaryAsync(string moss_country_code, string tax_region, string start_month, string end_month, string quarter)
 		{
 			var requestUri = "api/v1/settlement/summary/"+ (quarter==null? "" : System.Uri.EscapeDataString(quarter))+"?moss_country_code=" + (moss_country_code==null? "" : System.Uri.EscapeDataString(moss_country_code))+"&tax_region=" + (tax_region==null? "" : System.Uri.EscapeDataString(tax_region))+"&start_month=" + (start_month==null? "" : System.Uri.EscapeDataString(start_month))+"&end_month=" + (end_month==null? "" : System.Uri.EscapeDataString(end_month));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<GetSettlementSummaryOut>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<GetSettlementSummaryOut>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4071,19 +4051,17 @@ namespace MyNS
 		public async Task<GetSettlementOut> GetSettlementAsync(string moss_tax_id, string currency_code, string end_month, string tax_id, string refund_date_kind_override, string start_month, string moss_country_code, string format, string tax_country_code, string quarter)
 		{
 			var requestUri = "api/v1/settlement/"+ (quarter==null? "" : System.Uri.EscapeDataString(quarter))+"?moss_tax_id=" + (moss_tax_id==null? "" : System.Uri.EscapeDataString(moss_tax_id))+"&currency_code=" + (currency_code==null? "" : System.Uri.EscapeDataString(currency_code))+"&end_month=" + (end_month==null? "" : System.Uri.EscapeDataString(end_month))+"&tax_id=" + (tax_id==null? "" : System.Uri.EscapeDataString(tax_id))+"&refund_date_kind_override=" + (refund_date_kind_override==null? "" : System.Uri.EscapeDataString(refund_date_kind_override))+"&start_month=" + (start_month==null? "" : System.Uri.EscapeDataString(start_month))+"&moss_country_code=" + (moss_country_code==null? "" : System.Uri.EscapeDataString(moss_country_code))+"&format=" + (format==null? "" : System.Uri.EscapeDataString(format))+"&tax_country_code=" + (tax_country_code==null? "" : System.Uri.EscapeDataString(tax_country_code));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<GetSettlementOut>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<GetSettlementOut>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4097,19 +4075,17 @@ namespace MyNS
 		public async Task<GetSettlementStatsByCountryOut> GetSettlementStatsByCountryAsync(string date_from, string date_to)
 		{
 			var requestUri = "api/v1/stats/settlement/by_country?date_from=" + (date_from==null? "" : System.Uri.EscapeDataString(date_from))+"&date_to=" + (date_to==null? "" : System.Uri.EscapeDataString(date_to));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<GetSettlementStatsByCountryOut>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<GetSettlementStatsByCountryOut>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4123,19 +4099,17 @@ namespace MyNS
 		public async Task<GetSettlementStatsByTaxationTypeOut> GetSettlementStatsByTaxationTypeAsync(string date_from, string date_to)
 		{
 			var requestUri = "api/v1/stats/settlement/by_taxation_type?date_from=" + (date_from==null? "" : System.Uri.EscapeDataString(date_from))+"&date_to=" + (date_to==null? "" : System.Uri.EscapeDataString(date_to));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<GetSettlementStatsByTaxationTypeOut>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<GetSettlementStatsByTaxationTypeOut>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4150,19 +4124,17 @@ namespace MyNS
 		public async Task<GetDailySettlementStatsOut> GetDailySettlementStatsAsync(string interval, string date_from, string date_to)
 		{
 			var requestUri = "api/v1/stats/settlement/daily?interval=" + (interval==null? "" : System.Uri.EscapeDataString(interval))+"&date_from=" + (date_from==null? "" : System.Uri.EscapeDataString(date_from))+"&date_to=" + (date_to==null? "" : System.Uri.EscapeDataString(date_to));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<GetDailySettlementStatsOut>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<GetDailySettlementStatsOut>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4177,19 +4149,17 @@ namespace MyNS
 		public async Task<GetTransactionsStatsOut> GetTransactionsStatsAsync(string date_from, string date_to, string interval)
 		{
 			var requestUri = "api/v1/stats/transactions?date_from=" + (date_from==null? "" : System.Uri.EscapeDataString(date_from))+"&date_to=" + (date_to==null? "" : System.Uri.EscapeDataString(date_to))+"&interval=" + (interval==null? "" : System.Uri.EscapeDataString(interval));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<GetTransactionsStatsOut>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<GetTransactionsStatsOut>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4204,19 +4174,17 @@ namespace MyNS
 		public async Task<GetTransactionsStatsByCountryOut> GetTransactionsStatsByCountryAsync(string global_currency_code, string date_from, string date_to)
 		{
 			var requestUri = "api/v1/stats/transactions/by_country?global_currency_code=" + (global_currency_code==null? "" : System.Uri.EscapeDataString(global_currency_code))+"&date_from=" + (date_from==null? "" : System.Uri.EscapeDataString(date_from))+"&date_to=" + (date_to==null? "" : System.Uri.EscapeDataString(date_to));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<GetTransactionsStatsByCountryOut>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<GetTransactionsStatsByCountryOut>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4243,19 +4211,17 @@ namespace MyNS
 		public async Task<CalculateSimpleTaxOut> CalculateSimpleTaxAsync(string product_type, string invoice_address_city, string buyer_credit_card_prefix, string currency_code, string invoice_address_region, double unit_price, double quantity, string buyer_tax_number, string force_country_code, string order_date, double amount, string billing_country_code, string invoice_address_postal_code, double total_amount, bool tax_deducted)
 		{
 			var requestUri = "api/v1/tax/calculate?product_type=" + (product_type==null? "" : System.Uri.EscapeDataString(product_type))+"&invoice_address_city=" + (invoice_address_city==null? "" : System.Uri.EscapeDataString(invoice_address_city))+"&buyer_credit_card_prefix=" + (buyer_credit_card_prefix==null? "" : System.Uri.EscapeDataString(buyer_credit_card_prefix))+"&currency_code=" + (currency_code==null? "" : System.Uri.EscapeDataString(currency_code))+"&invoice_address_region=" + (invoice_address_region==null? "" : System.Uri.EscapeDataString(invoice_address_region))+"&unit_price="+unit_price+"&quantity="+quantity+"&buyer_tax_number=" + (buyer_tax_number==null? "" : System.Uri.EscapeDataString(buyer_tax_number))+"&force_country_code=" + (force_country_code==null? "" : System.Uri.EscapeDataString(force_country_code))+"&order_date=" + (order_date==null? "" : System.Uri.EscapeDataString(order_date))+"&amount="+amount+"&billing_country_code=" + (billing_country_code==null? "" : System.Uri.EscapeDataString(billing_country_code))+"&invoice_address_postal_code=" + (invoice_address_postal_code==null? "" : System.Uri.EscapeDataString(invoice_address_postal_code))+"&total_amount="+total_amount+"&tax_deducted="+tax_deducted;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<CalculateSimpleTaxOut>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<CalculateSimpleTaxOut>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4268,22 +4234,19 @@ namespace MyNS
 		public async Task<CalculateTaxOut> CalculateTaxAsync(CalculateTaxIn requestBody)
 		{
 			var requestUri = "api/v1/tax/calculate";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<CalculateTaxOut>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<CalculateTaxOut>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4297,19 +4260,17 @@ namespace MyNS
 		public async Task<CalculateTaxLocationOut> CalculateTaxLocationAsync(string billing_country_code, string buyer_credit_card_prefix)
 		{
 			var requestUri = "api/v1/tax/location/calculate?billing_country_code=" + (billing_country_code==null? "" : System.Uri.EscapeDataString(billing_country_code))+"&buyer_credit_card_prefix=" + (buyer_credit_card_prefix==null? "" : System.Uri.EscapeDataString(buyer_credit_card_prefix));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<CalculateTaxLocationOut>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<CalculateTaxLocationOut>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4323,19 +4284,17 @@ namespace MyNS
 		public async Task<ValidateTaxNumberOut> ValidateTaxNumberAsync(string country_code, string tax_number)
 		{
 			var requestUri = "api/v1/tax/vat_numbers/"+ (tax_number==null? "" : System.Uri.EscapeDataString(tax_number))+"/validate?country_code=" + (country_code==null? "" : System.Uri.EscapeDataString(country_code));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ValidateTaxNumberOut>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ValidateTaxNumberOut>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4381,19 +4340,17 @@ namespace MyNS
 					string tax_country_code)
 		{
 			var requestUri = "api/v1/transactions?filter_text=" + (filter_text==null? "" : System.Uri.EscapeDataString(filter_text))+"&offset="+offset+"&has_note="+has_note+"&key_or_custom_id=" + (key_or_custom_id==null? "" : System.Uri.EscapeDataString(key_or_custom_id))+"&currency_code=" + (currency_code==null? "" : System.Uri.EscapeDataString(currency_code))+"&order_date_to=" + (order_date_to==null? "" : System.Uri.EscapeDataString(order_date_to))+"&sort_reverse="+sort_reverse+"&limit="+limit+"&invoice_number=" + (invoice_number==null? "" : System.Uri.EscapeDataString(invoice_number))+"&tax_country_codes=" + (tax_country_codes==null? "" : System.Uri.EscapeDataString(tax_country_codes))+"&statuses=" + (statuses==null? "" : System.Uri.EscapeDataString(statuses))+"&original_transaction_key=" + (original_transaction_key==null? "" : System.Uri.EscapeDataString(original_transaction_key))+"&order_date_from=" + (order_date_from==null? "" : System.Uri.EscapeDataString(order_date_from))+"&total_amount_greater_than=" + (total_amount_greater_than==null? "" : System.Uri.EscapeDataString(total_amount_greater_than))+"&format=" + (format==null? "" : System.Uri.EscapeDataString(format))+"&total_amount_less_than=" + (total_amount_less_than==null? "" : System.Uri.EscapeDataString(total_amount_less_than))+"&tax_country_code=" + (tax_country_code==null? "" : System.Uri.EscapeDataString(tax_country_code));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ListTransactionsOut>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ListTransactionsOut>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4406,22 +4363,19 @@ namespace MyNS
 		public async Task<CreateTransactionOut> CreateTransactionAsync(CreateTransactionIn requestBody)
 		{
 			var requestUri = "api/v1/transactions";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<CreateTransactionOut>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<CreateTransactionOut>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4434,19 +4388,17 @@ namespace MyNS
 		public async Task<GetTransactionOut> GetTransactionAsync(string key)
 		{
 			var requestUri = "api/v1/transactions/"+ (key==null? "" : System.Uri.EscapeDataString(key));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<GetTransactionOut>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<GetTransactionOut>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4460,22 +4412,19 @@ namespace MyNS
 		public async Task<UpdateTransactionOut> UpdateTransactionAsync(string key, UpdateTransactionIn requestBody)
 		{
 			var requestUri = "api/v1/transactions/"+ (key==null? "" : System.Uri.EscapeDataString(key));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<UpdateTransactionOut>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<UpdateTransactionOut>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4488,19 +4437,17 @@ namespace MyNS
 		public async Task<CancelTransactionOut> CancelTransactionAsync(string key)
 		{
 			var requestUri = "api/v1/transactions/"+ (key==null? "" : System.Uri.EscapeDataString(key));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<CancelTransactionOut>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<CancelTransactionOut>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4514,22 +4461,19 @@ namespace MyNS
 		public async Task<ConfirmTransactionOut> ConfirmTransactionAsync(string key, ConfirmTransactionIn requestBody)
 		{
 			var requestUri = "api/v1/transactions/"+ (key==null? "" : System.Uri.EscapeDataString(key))+"/confirm";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ConfirmTransactionOut>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ConfirmTransactionOut>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4544,22 +4488,19 @@ namespace MyNS
 		public async Task<EmailRefundOut> EmailRefundAsync(string key, string refund_note_number, EmailRefundIn requestBody)
 		{
 			var requestUri = "api/v1/transactions/"+ (key==null? "" : System.Uri.EscapeDataString(key))+"/invoice/refunds/"+ (refund_note_number==null? "" : System.Uri.EscapeDataString(refund_note_number))+"/send_email";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<EmailRefundOut>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<EmailRefundOut>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4573,22 +4514,19 @@ namespace MyNS
 		public async Task<EmailInvoiceOut> EmailInvoiceAsync(string key, EmailInvoiceIn requestBody)
 		{
 			var requestUri = "api/v1/transactions/"+ (key==null? "" : System.Uri.EscapeDataString(key))+"/invoice/send_email";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<EmailInvoiceOut>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<EmailInvoiceOut>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4603,19 +4541,17 @@ namespace MyNS
 		public async Task<ListPaymentsOut> ListPaymentsAsync(string limit, string offset, string key)
 		{
 			var requestUri = "api/v1/transactions/"+ (key==null? "" : System.Uri.EscapeDataString(key))+"/payments?limit=" + (limit==null? "" : System.Uri.EscapeDataString(limit))+"&offset=" + (offset==null? "" : System.Uri.EscapeDataString(offset));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ListPaymentsOut>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ListPaymentsOut>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4629,22 +4565,19 @@ namespace MyNS
 		public async Task<CreatePaymentOut> CreatePaymentAsync(string key, CreatePaymentIn requestBody)
 		{
 			var requestUri = "api/v1/transactions/"+ (key==null? "" : System.Uri.EscapeDataString(key))+"/payments";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<CreatePaymentOut>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<CreatePaymentOut>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4657,19 +4590,17 @@ namespace MyNS
 		public async Task<CapturePaymentOut> CapturePaymentAsync(string key)
 		{
 			var requestUri = "api/v1/transactions/"+ (key==null? "" : System.Uri.EscapeDataString(key))+"/payments/capture";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<CapturePaymentOut>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<CapturePaymentOut>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4682,19 +4613,17 @@ namespace MyNS
 		public async Task<ListRefundsOut> ListRefundsAsync(string key)
 		{
 			var requestUri = "api/v1/transactions/"+ (key==null? "" : System.Uri.EscapeDataString(key))+"/refunds";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ListRefundsOut>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ListRefundsOut>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4708,22 +4637,19 @@ namespace MyNS
 		public async Task<CreateRefundOut> CreateRefundAsync(string key, CreateRefundIn requestBody)
 		{
 			var requestUri = "api/v1/transactions/"+ (key==null? "" : System.Uri.EscapeDataString(key))+"/refunds";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<CreateRefundOut>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<CreateRefundOut>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4737,22 +4663,19 @@ namespace MyNS
 		public async Task<UnconfirmTransactionOut> UnconfirmTransactionAsync(string key, UnconfirmTransactionIn requestBody)
 		{
 			var requestUri = "api/v1/transactions/"+ (key==null? "" : System.Uri.EscapeDataString(key))+"/unconfirm";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<UnconfirmTransactionOut>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<UnconfirmTransactionOut>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4765,22 +4688,19 @@ namespace MyNS
 		public async Task<CreateSMSTokenOut> CreateSMSTokenAsync(CreateSMSTokenIn requestBody)
 		{
 			var requestUri = "api/v1/verification/sms";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<CreateSMSTokenOut>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<CreateSMSTokenOut>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4793,19 +4713,17 @@ namespace MyNS
 		public async Task<VerifySMSTokenOut> VerifySMSTokenAsync(string token)
 		{
 			var requestUri = "api/v1/verification/sms/"+ (token==null? "" : System.Uri.EscapeDataString(token));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<VerifySMSTokenOut>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<VerifySMSTokenOut>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

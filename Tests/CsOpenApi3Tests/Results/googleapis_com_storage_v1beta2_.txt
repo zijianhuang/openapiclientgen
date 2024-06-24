@@ -881,8 +881,7 @@ namespace MyNS
 		public async Task<Buckets> Storage_buckets_listAsync(string project, int maxResults, string pageToken, Storage_buckets_listProjection projection, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "b?project=" + (project==null? "" : System.Uri.EscapeDataString(project))+"&maxResults="+maxResults+"&pageToken=" + (pageToken==null? "" : System.Uri.EscapeDataString(pageToken))+"&projection=" + projection;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -892,13 +891,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Buckets>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Buckets>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -912,10 +910,8 @@ namespace MyNS
 		public async Task<Bucket> Storage_buckets_insertAsync(string project, Storage_buckets_listProjection projection, Bucket requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "b?project=" + (project==null? "" : System.Uri.EscapeDataString(project))+"&projection=" + projection;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -926,13 +922,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Bucket>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Bucket>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -947,8 +942,7 @@ namespace MyNS
 		public async Task Storage_buckets_deleteAsync(string bucket, string ifMetagenerationMatch, string ifMetagenerationNotMatch, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "b/"+ (bucket==null? "" : System.Uri.EscapeDataString(bucket))+"&ifMetagenerationMatch=" + (ifMetagenerationMatch==null? "" : System.Uri.EscapeDataString(ifMetagenerationMatch))+"&ifMetagenerationNotMatch=" + (ifMetagenerationNotMatch==null? "" : System.Uri.EscapeDataString(ifMetagenerationNotMatch));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -962,7 +956,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -978,8 +971,7 @@ namespace MyNS
 		public async Task<Bucket> Storage_buckets_getAsync(string bucket, string ifMetagenerationMatch, string ifMetagenerationNotMatch, Storage_buckets_listProjection projection, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "b/"+ (bucket==null? "" : System.Uri.EscapeDataString(bucket))+"&ifMetagenerationMatch=" + (ifMetagenerationMatch==null? "" : System.Uri.EscapeDataString(ifMetagenerationMatch))+"&ifMetagenerationNotMatch=" + (ifMetagenerationNotMatch==null? "" : System.Uri.EscapeDataString(ifMetagenerationNotMatch))+"&projection=" + projection;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -989,13 +981,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Bucket>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Bucket>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1011,10 +1002,8 @@ namespace MyNS
 		public async Task<Bucket> Storage_buckets_patchAsync(string bucket, string ifMetagenerationMatch, string ifMetagenerationNotMatch, Storage_buckets_listProjection projection, Bucket requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "b/"+ (bucket==null? "" : System.Uri.EscapeDataString(bucket))+"&ifMetagenerationMatch=" + (ifMetagenerationMatch==null? "" : System.Uri.EscapeDataString(ifMetagenerationMatch))+"&ifMetagenerationNotMatch=" + (ifMetagenerationNotMatch==null? "" : System.Uri.EscapeDataString(ifMetagenerationNotMatch))+"&projection=" + projection;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -1025,13 +1014,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Bucket>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Bucket>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1047,10 +1035,8 @@ namespace MyNS
 		public async Task<Bucket> Storage_buckets_updateAsync(string bucket, string ifMetagenerationMatch, string ifMetagenerationNotMatch, Storage_buckets_listProjection projection, Bucket requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "b/"+ (bucket==null? "" : System.Uri.EscapeDataString(bucket))+"&ifMetagenerationMatch=" + (ifMetagenerationMatch==null? "" : System.Uri.EscapeDataString(ifMetagenerationMatch))+"&ifMetagenerationNotMatch=" + (ifMetagenerationNotMatch==null? "" : System.Uri.EscapeDataString(ifMetagenerationNotMatch))+"&projection=" + projection;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -1061,13 +1047,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Bucket>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Bucket>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1080,8 +1065,7 @@ namespace MyNS
 		public async Task<BucketAccessControls> Storage_bucketAccessControls_listAsync(string bucket, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "b/"+ (bucket==null? "" : System.Uri.EscapeDataString(bucket))+"/acl";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1091,13 +1075,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<BucketAccessControls>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<BucketAccessControls>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1110,10 +1093,8 @@ namespace MyNS
 		public async Task<BucketAccessControl> Storage_bucketAccessControls_insertAsync(string bucket, BucketAccessControl requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "b/"+ (bucket==null? "" : System.Uri.EscapeDataString(bucket))+"/acl";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -1124,13 +1105,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<BucketAccessControl>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<BucketAccessControl>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1144,8 +1124,7 @@ namespace MyNS
 		public async Task Storage_bucketAccessControls_deleteAsync(string bucket, string entity, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "b/"+ (bucket==null? "" : System.Uri.EscapeDataString(bucket))+"/acl/"+ (entity==null? "" : System.Uri.EscapeDataString(entity));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1159,7 +1138,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1173,8 +1151,7 @@ namespace MyNS
 		public async Task<BucketAccessControl> Storage_bucketAccessControls_getAsync(string bucket, string entity, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "b/"+ (bucket==null? "" : System.Uri.EscapeDataString(bucket))+"/acl/"+ (entity==null? "" : System.Uri.EscapeDataString(entity));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1184,13 +1161,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<BucketAccessControl>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<BucketAccessControl>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1204,10 +1180,8 @@ namespace MyNS
 		public async Task<BucketAccessControl> Storage_bucketAccessControls_patchAsync(string bucket, string entity, BucketAccessControl requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "b/"+ (bucket==null? "" : System.Uri.EscapeDataString(bucket))+"/acl/"+ (entity==null? "" : System.Uri.EscapeDataString(entity));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -1218,13 +1192,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<BucketAccessControl>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<BucketAccessControl>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1238,10 +1211,8 @@ namespace MyNS
 		public async Task<BucketAccessControl> Storage_bucketAccessControls_updateAsync(string bucket, string entity, BucketAccessControl requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "b/"+ (bucket==null? "" : System.Uri.EscapeDataString(bucket))+"/acl/"+ (entity==null? "" : System.Uri.EscapeDataString(entity));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -1252,13 +1223,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<BucketAccessControl>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<BucketAccessControl>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1273,8 +1243,7 @@ namespace MyNS
 		public async Task<ObjectAccessControls> Storage_defaultObjectAccessControls_listAsync(string bucket, string ifMetagenerationMatch, string ifMetagenerationNotMatch, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "b/"+ (bucket==null? "" : System.Uri.EscapeDataString(bucket))+"/defaultObjectAcl&ifMetagenerationMatch=" + (ifMetagenerationMatch==null? "" : System.Uri.EscapeDataString(ifMetagenerationMatch))+"&ifMetagenerationNotMatch=" + (ifMetagenerationNotMatch==null? "" : System.Uri.EscapeDataString(ifMetagenerationNotMatch));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1284,13 +1253,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ObjectAccessControls>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ObjectAccessControls>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1303,10 +1271,8 @@ namespace MyNS
 		public async Task<ObjectAccessControl> Storage_defaultObjectAccessControls_insertAsync(string bucket, ObjectAccessControl requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "b/"+ (bucket==null? "" : System.Uri.EscapeDataString(bucket))+"/defaultObjectAcl";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -1317,13 +1283,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ObjectAccessControl>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ObjectAccessControl>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1337,8 +1302,7 @@ namespace MyNS
 		public async Task Storage_defaultObjectAccessControls_deleteAsync(string bucket, string entity, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "b/"+ (bucket==null? "" : System.Uri.EscapeDataString(bucket))+"/defaultObjectAcl/"+ (entity==null? "" : System.Uri.EscapeDataString(entity));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1352,7 +1316,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1366,8 +1329,7 @@ namespace MyNS
 		public async Task<ObjectAccessControl> Storage_defaultObjectAccessControls_getAsync(string bucket, string entity, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "b/"+ (bucket==null? "" : System.Uri.EscapeDataString(bucket))+"/defaultObjectAcl/"+ (entity==null? "" : System.Uri.EscapeDataString(entity));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1377,13 +1339,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ObjectAccessControl>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ObjectAccessControl>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1397,10 +1358,8 @@ namespace MyNS
 		public async Task<ObjectAccessControl> Storage_defaultObjectAccessControls_patchAsync(string bucket, string entity, ObjectAccessControl requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "b/"+ (bucket==null? "" : System.Uri.EscapeDataString(bucket))+"/defaultObjectAcl/"+ (entity==null? "" : System.Uri.EscapeDataString(entity));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -1411,13 +1370,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ObjectAccessControl>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ObjectAccessControl>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1431,10 +1389,8 @@ namespace MyNS
 		public async Task<ObjectAccessControl> Storage_defaultObjectAccessControls_updateAsync(string bucket, string entity, ObjectAccessControl requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "b/"+ (bucket==null? "" : System.Uri.EscapeDataString(bucket))+"/defaultObjectAcl/"+ (entity==null? "" : System.Uri.EscapeDataString(entity));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -1445,13 +1401,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ObjectAccessControl>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ObjectAccessControl>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1472,8 +1427,7 @@ namespace MyNS
 		public async Task<Objects> Storage_objects_listAsync(string bucket, string delimiter, int maxResults, string pageToken, string prefix, Storage_buckets_listProjection projection, bool versions, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "b/"+ (bucket==null? "" : System.Uri.EscapeDataString(bucket))+"/o&delimiter=" + (delimiter==null? "" : System.Uri.EscapeDataString(delimiter))+"&maxResults="+maxResults+"&pageToken=" + (pageToken==null? "" : System.Uri.EscapeDataString(pageToken))+"&prefix=" + (prefix==null? "" : System.Uri.EscapeDataString(prefix))+"&projection=" + projection+"&versions="+versions;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1483,13 +1437,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Objects>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Objects>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1510,10 +1463,8 @@ namespace MyNS
 		public async Task<Channel> Storage_objects_watchAllAsync(string bucket, string delimiter, int maxResults, string pageToken, string prefix, Storage_buckets_listProjection projection, bool versions, Channel requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "b/"+ (bucket==null? "" : System.Uri.EscapeDataString(bucket))+"/o/watch&delimiter=" + (delimiter==null? "" : System.Uri.EscapeDataString(delimiter))+"&maxResults="+maxResults+"&pageToken=" + (pageToken==null? "" : System.Uri.EscapeDataString(pageToken))+"&prefix=" + (prefix==null? "" : System.Uri.EscapeDataString(prefix))+"&projection=" + projection+"&versions="+versions;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -1524,13 +1475,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Channel>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Channel>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1549,8 +1499,7 @@ namespace MyNS
 		public async Task Storage_objects_deleteAsync(string bucket, string _object, string generation, string ifGenerationMatch, string ifGenerationNotMatch, string ifMetagenerationMatch, string ifMetagenerationNotMatch, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "b/"+ (bucket==null? "" : System.Uri.EscapeDataString(bucket))+"/o/"+ (_object==null? "" : System.Uri.EscapeDataString(_object))+"&generation=" + (generation==null? "" : System.Uri.EscapeDataString(generation))+"&ifGenerationMatch=" + (ifGenerationMatch==null? "" : System.Uri.EscapeDataString(ifGenerationMatch))+"&ifGenerationNotMatch=" + (ifGenerationNotMatch==null? "" : System.Uri.EscapeDataString(ifGenerationNotMatch))+"&ifMetagenerationMatch=" + (ifMetagenerationMatch==null? "" : System.Uri.EscapeDataString(ifMetagenerationMatch))+"&ifMetagenerationNotMatch=" + (ifMetagenerationNotMatch==null? "" : System.Uri.EscapeDataString(ifMetagenerationNotMatch));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1564,7 +1513,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1584,8 +1532,7 @@ namespace MyNS
 		public async Task<Object> Storage_objects_getAsync(string bucket, string _object, string generation, string ifGenerationMatch, string ifGenerationNotMatch, string ifMetagenerationMatch, string ifMetagenerationNotMatch, Storage_buckets_listProjection projection, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "b/"+ (bucket==null? "" : System.Uri.EscapeDataString(bucket))+"/o/"+ (_object==null? "" : System.Uri.EscapeDataString(_object))+"&generation=" + (generation==null? "" : System.Uri.EscapeDataString(generation))+"&ifGenerationMatch=" + (ifGenerationMatch==null? "" : System.Uri.EscapeDataString(ifGenerationMatch))+"&ifGenerationNotMatch=" + (ifGenerationNotMatch==null? "" : System.Uri.EscapeDataString(ifGenerationNotMatch))+"&ifMetagenerationMatch=" + (ifMetagenerationMatch==null? "" : System.Uri.EscapeDataString(ifMetagenerationMatch))+"&ifMetagenerationNotMatch=" + (ifMetagenerationNotMatch==null? "" : System.Uri.EscapeDataString(ifMetagenerationNotMatch))+"&projection=" + projection;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1595,13 +1542,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Object>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Object>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1621,10 +1567,8 @@ namespace MyNS
 		public async Task<Object> Storage_objects_patchAsync(string bucket, string _object, string generation, string ifGenerationMatch, string ifGenerationNotMatch, string ifMetagenerationMatch, string ifMetagenerationNotMatch, Storage_buckets_listProjection projection, Object requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "b/"+ (bucket==null? "" : System.Uri.EscapeDataString(bucket))+"/o/"+ (_object==null? "" : System.Uri.EscapeDataString(_object))+"&generation=" + (generation==null? "" : System.Uri.EscapeDataString(generation))+"&ifGenerationMatch=" + (ifGenerationMatch==null? "" : System.Uri.EscapeDataString(ifGenerationMatch))+"&ifGenerationNotMatch=" + (ifGenerationNotMatch==null? "" : System.Uri.EscapeDataString(ifGenerationNotMatch))+"&ifMetagenerationMatch=" + (ifMetagenerationMatch==null? "" : System.Uri.EscapeDataString(ifMetagenerationMatch))+"&ifMetagenerationNotMatch=" + (ifMetagenerationNotMatch==null? "" : System.Uri.EscapeDataString(ifMetagenerationNotMatch))+"&projection=" + projection;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -1635,13 +1579,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Object>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Object>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1661,10 +1604,8 @@ namespace MyNS
 		public async Task<Object> Storage_objects_updateAsync(string bucket, string _object, string generation, string ifGenerationMatch, string ifGenerationNotMatch, string ifMetagenerationMatch, string ifMetagenerationNotMatch, Storage_buckets_listProjection projection, Object requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "b/"+ (bucket==null? "" : System.Uri.EscapeDataString(bucket))+"/o/"+ (_object==null? "" : System.Uri.EscapeDataString(_object))+"&generation=" + (generation==null? "" : System.Uri.EscapeDataString(generation))+"&ifGenerationMatch=" + (ifGenerationMatch==null? "" : System.Uri.EscapeDataString(ifGenerationMatch))+"&ifGenerationNotMatch=" + (ifGenerationNotMatch==null? "" : System.Uri.EscapeDataString(ifGenerationNotMatch))+"&ifMetagenerationMatch=" + (ifMetagenerationMatch==null? "" : System.Uri.EscapeDataString(ifMetagenerationMatch))+"&ifMetagenerationNotMatch=" + (ifMetagenerationNotMatch==null? "" : System.Uri.EscapeDataString(ifMetagenerationNotMatch))+"&projection=" + projection;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -1675,13 +1616,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Object>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Object>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1696,8 +1636,7 @@ namespace MyNS
 		public async Task<ObjectAccessControls> Storage_objectAccessControls_listAsync(string bucket, string _object, string generation, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "b/"+ (bucket==null? "" : System.Uri.EscapeDataString(bucket))+"/o/"+ (_object==null? "" : System.Uri.EscapeDataString(_object))+"/acl&generation=" + (generation==null? "" : System.Uri.EscapeDataString(generation));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1707,13 +1646,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ObjectAccessControls>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ObjectAccessControls>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1728,10 +1666,8 @@ namespace MyNS
 		public async Task<ObjectAccessControl> Storage_objectAccessControls_insertAsync(string bucket, string _object, string generation, ObjectAccessControl requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "b/"+ (bucket==null? "" : System.Uri.EscapeDataString(bucket))+"/o/"+ (_object==null? "" : System.Uri.EscapeDataString(_object))+"/acl&generation=" + (generation==null? "" : System.Uri.EscapeDataString(generation));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -1742,13 +1678,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ObjectAccessControl>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ObjectAccessControl>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1764,8 +1699,7 @@ namespace MyNS
 		public async Task Storage_objectAccessControls_deleteAsync(string bucket, string _object, string entity, string generation, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "b/"+ (bucket==null? "" : System.Uri.EscapeDataString(bucket))+"/o/"+ (_object==null? "" : System.Uri.EscapeDataString(_object))+"/acl/"+ (entity==null? "" : System.Uri.EscapeDataString(entity))+"&generation=" + (generation==null? "" : System.Uri.EscapeDataString(generation));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1779,7 +1713,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1795,8 +1728,7 @@ namespace MyNS
 		public async Task<ObjectAccessControl> Storage_objectAccessControls_getAsync(string bucket, string _object, string entity, string generation, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "b/"+ (bucket==null? "" : System.Uri.EscapeDataString(bucket))+"/o/"+ (_object==null? "" : System.Uri.EscapeDataString(_object))+"/acl/"+ (entity==null? "" : System.Uri.EscapeDataString(entity))+"&generation=" + (generation==null? "" : System.Uri.EscapeDataString(generation));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1806,13 +1738,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ObjectAccessControl>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ObjectAccessControl>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1828,10 +1759,8 @@ namespace MyNS
 		public async Task<ObjectAccessControl> Storage_objectAccessControls_patchAsync(string bucket, string _object, string entity, string generation, ObjectAccessControl requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "b/"+ (bucket==null? "" : System.Uri.EscapeDataString(bucket))+"/o/"+ (_object==null? "" : System.Uri.EscapeDataString(_object))+"/acl/"+ (entity==null? "" : System.Uri.EscapeDataString(entity))+"&generation=" + (generation==null? "" : System.Uri.EscapeDataString(generation));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -1842,13 +1771,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ObjectAccessControl>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ObjectAccessControl>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1864,10 +1792,8 @@ namespace MyNS
 		public async Task<ObjectAccessControl> Storage_objectAccessControls_updateAsync(string bucket, string _object, string entity, string generation, ObjectAccessControl requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "b/"+ (bucket==null? "" : System.Uri.EscapeDataString(bucket))+"/o/"+ (_object==null? "" : System.Uri.EscapeDataString(_object))+"/acl/"+ (entity==null? "" : System.Uri.EscapeDataString(entity))+"&generation=" + (generation==null? "" : System.Uri.EscapeDataString(generation));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -1878,13 +1804,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ObjectAccessControl>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ObjectAccessControl>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1900,10 +1825,8 @@ namespace MyNS
 		public async Task<Object> Storage_objects_composeAsync(string destinationBucket, string destinationObject, string ifGenerationMatch, string ifMetagenerationMatch, ComposeRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "b/"+ (destinationBucket==null? "" : System.Uri.EscapeDataString(destinationBucket))+"/o/"+ (destinationObject==null? "" : System.Uri.EscapeDataString(destinationObject))+"/compose&ifGenerationMatch=" + (ifGenerationMatch==null? "" : System.Uri.EscapeDataString(ifGenerationMatch))+"&ifMetagenerationMatch=" + (ifMetagenerationMatch==null? "" : System.Uri.EscapeDataString(ifMetagenerationMatch));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -1914,13 +1837,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Object>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Object>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1962,10 +1884,8 @@ namespace MyNS
 					Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "b/"+ (sourceBucket==null? "" : System.Uri.EscapeDataString(sourceBucket))+"/o/"+ (sourceObject==null? "" : System.Uri.EscapeDataString(sourceObject))+"/copyTo/b/"+ (destinationBucket==null? "" : System.Uri.EscapeDataString(destinationBucket))+"/o/"+ (destinationObject==null? "" : System.Uri.EscapeDataString(destinationObject))+"&ifGenerationMatch=" + (ifGenerationMatch==null? "" : System.Uri.EscapeDataString(ifGenerationMatch))+"&ifGenerationNotMatch=" + (ifGenerationNotMatch==null? "" : System.Uri.EscapeDataString(ifGenerationNotMatch))+"&ifMetagenerationMatch=" + (ifMetagenerationMatch==null? "" : System.Uri.EscapeDataString(ifMetagenerationMatch))+"&ifMetagenerationNotMatch=" + (ifMetagenerationNotMatch==null? "" : System.Uri.EscapeDataString(ifMetagenerationNotMatch))+"&ifSourceGenerationMatch=" + (ifSourceGenerationMatch==null? "" : System.Uri.EscapeDataString(ifSourceGenerationMatch))+"&ifSourceGenerationNotMatch=" + (ifSourceGenerationNotMatch==null? "" : System.Uri.EscapeDataString(ifSourceGenerationNotMatch))+"&ifSourceMetagenerationMatch=" + (ifSourceMetagenerationMatch==null? "" : System.Uri.EscapeDataString(ifSourceMetagenerationMatch))+"&ifSourceMetagenerationNotMatch=" + (ifSourceMetagenerationNotMatch==null? "" : System.Uri.EscapeDataString(ifSourceMetagenerationNotMatch))+"&projection=" + projection+"&sourceGeneration=" + (sourceGeneration==null? "" : System.Uri.EscapeDataString(sourceGeneration));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -1976,13 +1896,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Object>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Object>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1994,10 +1913,8 @@ namespace MyNS
 		public async Task Storage_channels_stopAsync(Channel requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "channels/stop";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -2012,7 +1929,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

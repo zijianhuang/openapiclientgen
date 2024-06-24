@@ -1411,8 +1411,7 @@ namespace MyNS
 		public async Task<GooglePlayDeveloperReportingV1beta1SearchAccessibleAppsResponse> Playdeveloperreporting_apps_searchAsync(int pageSize, string pageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1beta1/apps:search?pageSize="+pageSize+"&pageToken=" + (pageToken==null? "" : System.Uri.EscapeDataString(pageToken));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1422,13 +1421,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<GooglePlayDeveloperReportingV1beta1SearchAccessibleAppsResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<GooglePlayDeveloperReportingV1beta1SearchAccessibleAppsResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1441,8 +1439,7 @@ namespace MyNS
 		public async Task<GooglePlayDeveloperReportingV1beta1StuckBackgroundWakelockRateMetricSet> Playdeveloperreporting_vitals_stuckbackgroundwakelockrate_getAsync(string name, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1beta1/"+ (name==null? "" : System.Uri.EscapeDataString(name));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1452,13 +1449,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<GooglePlayDeveloperReportingV1beta1StuckBackgroundWakelockRateMetricSet>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<GooglePlayDeveloperReportingV1beta1StuckBackgroundWakelockRateMetricSet>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1471,8 +1467,7 @@ namespace MyNS
 		public async Task<GooglePlayDeveloperReportingV1beta1ReleaseFilterOptions> Playdeveloperreporting_apps_fetchReleaseFilterOptionsAsync(string name, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1beta1/"+ (name==null? "" : System.Uri.EscapeDataString(name))+":fetchReleaseFilterOptions";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1482,13 +1477,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<GooglePlayDeveloperReportingV1beta1ReleaseFilterOptions>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<GooglePlayDeveloperReportingV1beta1ReleaseFilterOptions>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1501,10 +1495,8 @@ namespace MyNS
 		public async Task<GooglePlayDeveloperReportingV1beta1QueryStuckBackgroundWakelockRateMetricSetResponse> Playdeveloperreporting_vitals_stuckbackgroundwakelockrate_queryAsync(string name, GooglePlayDeveloperReportingV1beta1QueryStuckBackgroundWakelockRateMetricSetRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1beta1/"+ (name==null? "" : System.Uri.EscapeDataString(name))+":query";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -1515,13 +1507,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<GooglePlayDeveloperReportingV1beta1QueryStuckBackgroundWakelockRateMetricSetResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<GooglePlayDeveloperReportingV1beta1QueryStuckBackgroundWakelockRateMetricSetResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1537,8 +1528,7 @@ namespace MyNS
 		public async Task<GooglePlayDeveloperReportingV1beta1ListAnomaliesResponse> Playdeveloperreporting_anomalies_listAsync(string parent, string filter, int pageSize, string pageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1beta1/"+ (parent==null? "" : System.Uri.EscapeDataString(parent))+"/anomalies&filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&pageSize="+pageSize+"&pageToken=" + (pageToken==null? "" : System.Uri.EscapeDataString(pageToken));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1548,13 +1538,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<GooglePlayDeveloperReportingV1beta1ListAnomaliesResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<GooglePlayDeveloperReportingV1beta1ListAnomaliesResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1617,8 +1606,7 @@ namespace MyNS
 					Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1beta1/"+ (parent==null? "" : System.Uri.EscapeDataString(parent))+"/errorIssues:search&filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&interval.endTime.day="+interval_endTime_day+"&interval.endTime.hours="+interval_endTime_hours+"&interval.endTime.minutes="+interval_endTime_minutes+"&interval.endTime.month="+interval_endTime_month+"&interval.endTime.nanos="+interval_endTime_nanos+"&interval.endTime.seconds="+interval_endTime_seconds+"&interval.endTime.timeZone.id=" + (interval_endTime_timeZone_id==null? "" : System.Uri.EscapeDataString(interval_endTime_timeZone_id))+"&interval.endTime.timeZone.version=" + (interval_endTime_timeZone_version==null? "" : System.Uri.EscapeDataString(interval_endTime_timeZone_version))+"&interval.endTime.utcOffset=" + (interval_endTime_utcOffset==null? "" : System.Uri.EscapeDataString(interval_endTime_utcOffset))+"&interval.endTime.year="+interval_endTime_year+"&interval.startTime.day="+interval_startTime_day+"&interval.startTime.hours="+interval_startTime_hours+"&interval.startTime.minutes="+interval_startTime_minutes+"&interval.startTime.month="+interval_startTime_month+"&interval.startTime.nanos="+interval_startTime_nanos+"&interval.startTime.seconds="+interval_startTime_seconds+"&interval.startTime.timeZone.id=" + (interval_startTime_timeZone_id==null? "" : System.Uri.EscapeDataString(interval_startTime_timeZone_id))+"&interval.startTime.timeZone.version=" + (interval_startTime_timeZone_version==null? "" : System.Uri.EscapeDataString(interval_startTime_timeZone_version))+"&interval.startTime.utcOffset=" + (interval_startTime_utcOffset==null? "" : System.Uri.EscapeDataString(interval_startTime_utcOffset))+"&interval.startTime.year="+interval_startTime_year+"&orderBy=" + (orderBy==null? "" : System.Uri.EscapeDataString(orderBy))+"&pageSize="+pageSize+"&pageToken=" + (pageToken==null? "" : System.Uri.EscapeDataString(pageToken));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1628,13 +1616,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<GooglePlayDeveloperReportingV1beta1SearchErrorIssuesResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<GooglePlayDeveloperReportingV1beta1SearchErrorIssuesResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1695,8 +1682,7 @@ namespace MyNS
 					Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1beta1/"+ (parent==null? "" : System.Uri.EscapeDataString(parent))+"/errorReports:search&filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&interval.endTime.day="+interval_endTime_day+"&interval.endTime.hours="+interval_endTime_hours+"&interval.endTime.minutes="+interval_endTime_minutes+"&interval.endTime.month="+interval_endTime_month+"&interval.endTime.nanos="+interval_endTime_nanos+"&interval.endTime.seconds="+interval_endTime_seconds+"&interval.endTime.timeZone.id=" + (interval_endTime_timeZone_id==null? "" : System.Uri.EscapeDataString(interval_endTime_timeZone_id))+"&interval.endTime.timeZone.version=" + (interval_endTime_timeZone_version==null? "" : System.Uri.EscapeDataString(interval_endTime_timeZone_version))+"&interval.endTime.utcOffset=" + (interval_endTime_utcOffset==null? "" : System.Uri.EscapeDataString(interval_endTime_utcOffset))+"&interval.endTime.year="+interval_endTime_year+"&interval.startTime.day="+interval_startTime_day+"&interval.startTime.hours="+interval_startTime_hours+"&interval.startTime.minutes="+interval_startTime_minutes+"&interval.startTime.month="+interval_startTime_month+"&interval.startTime.nanos="+interval_startTime_nanos+"&interval.startTime.seconds="+interval_startTime_seconds+"&interval.startTime.timeZone.id=" + (interval_startTime_timeZone_id==null? "" : System.Uri.EscapeDataString(interval_startTime_timeZone_id))+"&interval.startTime.timeZone.version=" + (interval_startTime_timeZone_version==null? "" : System.Uri.EscapeDataString(interval_startTime_timeZone_version))+"&interval.startTime.utcOffset=" + (interval_startTime_utcOffset==null? "" : System.Uri.EscapeDataString(interval_startTime_utcOffset))+"&interval.startTime.year="+interval_startTime_year+"&pageSize="+pageSize+"&pageToken=" + (pageToken==null? "" : System.Uri.EscapeDataString(pageToken));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1706,13 +1692,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<GooglePlayDeveloperReportingV1beta1SearchErrorReportsResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<GooglePlayDeveloperReportingV1beta1SearchErrorReportsResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

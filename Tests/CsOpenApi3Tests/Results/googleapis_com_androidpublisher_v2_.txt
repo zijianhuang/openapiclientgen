@@ -1282,10 +1282,8 @@ namespace MyNS
 		public async Task Androidpublisher_edits_insertAsync(string packageName, AppEdit requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = ""+ (packageName==null? "" : System.Uri.EscapeDataString(packageName))+"/edits";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -1300,7 +1298,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1314,8 +1311,7 @@ namespace MyNS
 		public async Task Androidpublisher_edits_deleteAsync(string packageName, string editId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = ""+ (packageName==null? "" : System.Uri.EscapeDataString(packageName))+"/edits/"+ (editId==null? "" : System.Uri.EscapeDataString(editId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1329,7 +1325,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1343,8 +1338,7 @@ namespace MyNS
 		public async Task Androidpublisher_edits_getAsync(string packageName, string editId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = ""+ (packageName==null? "" : System.Uri.EscapeDataString(packageName))+"/edits/"+ (editId==null? "" : System.Uri.EscapeDataString(editId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1358,7 +1352,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1371,8 +1364,7 @@ namespace MyNS
 		public async Task Androidpublisher_edits_apks_listAsync(string packageName, string editId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = ""+ (packageName==null? "" : System.Uri.EscapeDataString(packageName))+"/edits/"+ (editId==null? "" : System.Uri.EscapeDataString(editId))+"/apks";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1387,7 +1379,6 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
-			}
 		}
 		
 		/// <summary>
@@ -1399,8 +1390,7 @@ namespace MyNS
 		public async Task Androidpublisher_edits_apks_uploadAsync(string packageName, string editId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = ""+ (packageName==null? "" : System.Uri.EscapeDataString(packageName))+"/edits/"+ (editId==null? "" : System.Uri.EscapeDataString(editId))+"/apks";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -1409,7 +1399,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1423,10 +1412,8 @@ namespace MyNS
 		public async Task Androidpublisher_edits_apks_addexternallyhostedAsync(string packageName, string editId, ApksAddExternallyHostedRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = ""+ (packageName==null? "" : System.Uri.EscapeDataString(packageName))+"/edits/"+ (editId==null? "" : System.Uri.EscapeDataString(editId))+"/apks/externallyHosted";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -1441,7 +1428,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1456,8 +1442,7 @@ namespace MyNS
 		public async Task Androidpublisher_edits_deobfuscationfiles_uploadAsync(string packageName, string editId, int apkVersionCode, Androidpublisher_edits_deobfuscationfiles_uploadDeobfuscationFileType deobfuscationFileType, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = ""+ (packageName==null? "" : System.Uri.EscapeDataString(packageName))+"/edits/"+ (editId==null? "" : System.Uri.EscapeDataString(editId))+"/apks/"+apkVersionCode+"/deobfuscationFiles/"+deobfuscationFileType;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -1466,7 +1451,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1481,8 +1465,7 @@ namespace MyNS
 		public async Task Androidpublisher_edits_expansionfiles_getAsync(string packageName, string editId, int apkVersionCode, Androidpublisher_edits_expansionfiles_getExpansionFileType expansionFileType, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = ""+ (packageName==null? "" : System.Uri.EscapeDataString(packageName))+"/edits/"+ (editId==null? "" : System.Uri.EscapeDataString(editId))+"/apks/"+apkVersionCode+"/expansionFiles/"+expansionFileType;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1496,7 +1479,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1511,10 +1493,8 @@ namespace MyNS
 		public async Task Androidpublisher_edits_expansionfiles_patchAsync(string packageName, string editId, int apkVersionCode, Androidpublisher_edits_expansionfiles_getExpansionFileType expansionFileType, ExpansionFile requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = ""+ (packageName==null? "" : System.Uri.EscapeDataString(packageName))+"/edits/"+ (editId==null? "" : System.Uri.EscapeDataString(editId))+"/apks/"+apkVersionCode+"/expansionFiles/"+expansionFileType;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -1529,7 +1509,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1544,8 +1523,7 @@ namespace MyNS
 		public async Task Androidpublisher_edits_expansionfiles_uploadAsync(string packageName, string editId, int apkVersionCode, Androidpublisher_edits_expansionfiles_getExpansionFileType expansionFileType, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = ""+ (packageName==null? "" : System.Uri.EscapeDataString(packageName))+"/edits/"+ (editId==null? "" : System.Uri.EscapeDataString(editId))+"/apks/"+apkVersionCode+"/expansionFiles/"+expansionFileType;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -1554,7 +1532,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1569,10 +1546,8 @@ namespace MyNS
 		public async Task Androidpublisher_edits_expansionfiles_updateAsync(string packageName, string editId, int apkVersionCode, Androidpublisher_edits_expansionfiles_getExpansionFileType expansionFileType, ExpansionFile requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = ""+ (packageName==null? "" : System.Uri.EscapeDataString(packageName))+"/edits/"+ (editId==null? "" : System.Uri.EscapeDataString(editId))+"/apks/"+apkVersionCode+"/expansionFiles/"+expansionFileType;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -1588,7 +1563,6 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
-			}
 		}
 		
 		/// <summary>
@@ -1602,8 +1576,7 @@ namespace MyNS
 		public async Task Androidpublisher_edits_apklistings_deleteallAsync(string packageName, string editId, int apkVersionCode, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = ""+ (packageName==null? "" : System.Uri.EscapeDataString(packageName))+"/edits/"+ (editId==null? "" : System.Uri.EscapeDataString(editId))+"/apks/"+apkVersionCode+"/listings";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1617,7 +1590,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1632,8 +1604,7 @@ namespace MyNS
 		public async Task Androidpublisher_edits_apklistings_listAsync(string packageName, string editId, int apkVersionCode, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = ""+ (packageName==null? "" : System.Uri.EscapeDataString(packageName))+"/edits/"+ (editId==null? "" : System.Uri.EscapeDataString(editId))+"/apks/"+apkVersionCode+"/listings";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1647,7 +1618,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1663,8 +1633,7 @@ namespace MyNS
 		public async Task Androidpublisher_edits_apklistings_deleteAsync(string packageName, string editId, int apkVersionCode, string language, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = ""+ (packageName==null? "" : System.Uri.EscapeDataString(packageName))+"/edits/"+ (editId==null? "" : System.Uri.EscapeDataString(editId))+"/apks/"+apkVersionCode+"/listings/"+ (language==null? "" : System.Uri.EscapeDataString(language));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1678,7 +1647,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1694,8 +1662,7 @@ namespace MyNS
 		public async Task Androidpublisher_edits_apklistings_getAsync(string packageName, string editId, int apkVersionCode, string language, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = ""+ (packageName==null? "" : System.Uri.EscapeDataString(packageName))+"/edits/"+ (editId==null? "" : System.Uri.EscapeDataString(editId))+"/apks/"+apkVersionCode+"/listings/"+ (language==null? "" : System.Uri.EscapeDataString(language));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1709,7 +1676,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1725,10 +1691,8 @@ namespace MyNS
 		public async Task Androidpublisher_edits_apklistings_patchAsync(string packageName, string editId, int apkVersionCode, string language, ApkListing requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = ""+ (packageName==null? "" : System.Uri.EscapeDataString(packageName))+"/edits/"+ (editId==null? "" : System.Uri.EscapeDataString(editId))+"/apks/"+apkVersionCode+"/listings/"+ (language==null? "" : System.Uri.EscapeDataString(language));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -1743,7 +1707,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1759,10 +1722,8 @@ namespace MyNS
 		public async Task Androidpublisher_edits_apklistings_updateAsync(string packageName, string editId, int apkVersionCode, string language, ApkListing requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = ""+ (packageName==null? "" : System.Uri.EscapeDataString(packageName))+"/edits/"+ (editId==null? "" : System.Uri.EscapeDataString(editId))+"/apks/"+apkVersionCode+"/listings/"+ (language==null? "" : System.Uri.EscapeDataString(language));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -1778,7 +1739,6 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
-			}
 		}
 		
 		/// <summary>
@@ -1790,8 +1750,7 @@ namespace MyNS
 		public async Task Androidpublisher_edits_bundles_listAsync(string packageName, string editId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = ""+ (packageName==null? "" : System.Uri.EscapeDataString(packageName))+"/edits/"+ (editId==null? "" : System.Uri.EscapeDataString(editId))+"/bundles";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1805,7 +1764,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1820,8 +1778,7 @@ namespace MyNS
 		public async Task Androidpublisher_edits_bundles_uploadAsync(string packageName, string editId, bool ackBundleInstallationWarning, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = ""+ (packageName==null? "" : System.Uri.EscapeDataString(packageName))+"/edits/"+ (editId==null? "" : System.Uri.EscapeDataString(editId))+"/bundles&ackBundleInstallationWarning="+ackBundleInstallationWarning;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -1830,7 +1787,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1844,8 +1800,7 @@ namespace MyNS
 		public async Task Androidpublisher_edits_details_getAsync(string packageName, string editId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = ""+ (packageName==null? "" : System.Uri.EscapeDataString(packageName))+"/edits/"+ (editId==null? "" : System.Uri.EscapeDataString(editId))+"/details";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1859,7 +1814,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1873,10 +1827,8 @@ namespace MyNS
 		public async Task Androidpublisher_edits_details_patchAsync(string packageName, string editId, AppDetails requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = ""+ (packageName==null? "" : System.Uri.EscapeDataString(packageName))+"/edits/"+ (editId==null? "" : System.Uri.EscapeDataString(editId))+"/details";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -1891,7 +1843,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1905,10 +1856,8 @@ namespace MyNS
 		public async Task Androidpublisher_edits_details_updateAsync(string packageName, string editId, AppDetails requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = ""+ (packageName==null? "" : System.Uri.EscapeDataString(packageName))+"/edits/"+ (editId==null? "" : System.Uri.EscapeDataString(editId))+"/details";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -1924,7 +1873,6 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
-			}
 		}
 		
 		/// <summary>
@@ -1937,8 +1885,7 @@ namespace MyNS
 		public async Task Androidpublisher_edits_listings_deleteallAsync(string packageName, string editId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = ""+ (packageName==null? "" : System.Uri.EscapeDataString(packageName))+"/edits/"+ (editId==null? "" : System.Uri.EscapeDataString(editId))+"/listings";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1952,7 +1899,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1966,8 +1912,7 @@ namespace MyNS
 		public async Task Androidpublisher_edits_listings_listAsync(string packageName, string editId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = ""+ (packageName==null? "" : System.Uri.EscapeDataString(packageName))+"/edits/"+ (editId==null? "" : System.Uri.EscapeDataString(editId))+"/listings";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1981,7 +1926,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1996,8 +1940,7 @@ namespace MyNS
 		public async Task Androidpublisher_edits_listings_deleteAsync(string packageName, string editId, string language, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = ""+ (packageName==null? "" : System.Uri.EscapeDataString(packageName))+"/edits/"+ (editId==null? "" : System.Uri.EscapeDataString(editId))+"/listings/"+ (language==null? "" : System.Uri.EscapeDataString(language));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2011,7 +1954,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2026,8 +1968,7 @@ namespace MyNS
 		public async Task Androidpublisher_edits_listings_getAsync(string packageName, string editId, string language, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = ""+ (packageName==null? "" : System.Uri.EscapeDataString(packageName))+"/edits/"+ (editId==null? "" : System.Uri.EscapeDataString(editId))+"/listings/"+ (language==null? "" : System.Uri.EscapeDataString(language));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2041,7 +1982,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2056,10 +1996,8 @@ namespace MyNS
 		public async Task Androidpublisher_edits_listings_patchAsync(string packageName, string editId, string language, Listing requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = ""+ (packageName==null? "" : System.Uri.EscapeDataString(packageName))+"/edits/"+ (editId==null? "" : System.Uri.EscapeDataString(editId))+"/listings/"+ (language==null? "" : System.Uri.EscapeDataString(language));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -2074,7 +2012,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2089,10 +2026,8 @@ namespace MyNS
 		public async Task Androidpublisher_edits_listings_updateAsync(string packageName, string editId, string language, Listing requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = ""+ (packageName==null? "" : System.Uri.EscapeDataString(packageName))+"/edits/"+ (editId==null? "" : System.Uri.EscapeDataString(editId))+"/listings/"+ (language==null? "" : System.Uri.EscapeDataString(language));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -2108,7 +2043,6 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
-			}
 		}
 		
 		/// <summary>
@@ -2122,8 +2056,7 @@ namespace MyNS
 		public async Task Androidpublisher_edits_images_deleteallAsync(string packageName, string editId, string language, Androidpublisher_edits_images_deleteallImageType imageType, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = ""+ (packageName==null? "" : System.Uri.EscapeDataString(packageName))+"/edits/"+ (editId==null? "" : System.Uri.EscapeDataString(editId))+"/listings/"+ (language==null? "" : System.Uri.EscapeDataString(language))+"/"+imageType;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2137,7 +2070,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2152,8 +2084,7 @@ namespace MyNS
 		public async Task Androidpublisher_edits_images_listAsync(string packageName, string editId, string language, Androidpublisher_edits_images_deleteallImageType imageType, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = ""+ (packageName==null? "" : System.Uri.EscapeDataString(packageName))+"/edits/"+ (editId==null? "" : System.Uri.EscapeDataString(editId))+"/listings/"+ (language==null? "" : System.Uri.EscapeDataString(language))+"/"+imageType;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2168,7 +2099,6 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
-			}
 		}
 		
 		/// <summary>
@@ -2182,8 +2112,7 @@ namespace MyNS
 		public async Task Androidpublisher_edits_images_uploadAsync(string packageName, string editId, string language, Androidpublisher_edits_images_deleteallImageType imageType, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = ""+ (packageName==null? "" : System.Uri.EscapeDataString(packageName))+"/edits/"+ (editId==null? "" : System.Uri.EscapeDataString(editId))+"/listings/"+ (language==null? "" : System.Uri.EscapeDataString(language))+"/"+imageType;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -2192,7 +2121,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2208,8 +2136,7 @@ namespace MyNS
 		public async Task Androidpublisher_edits_images_deleteAsync(string packageName, string editId, string language, Androidpublisher_edits_images_deleteallImageType imageType, string imageId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = ""+ (packageName==null? "" : System.Uri.EscapeDataString(packageName))+"/edits/"+ (editId==null? "" : System.Uri.EscapeDataString(editId))+"/listings/"+ (language==null? "" : System.Uri.EscapeDataString(language))+"/"+imageType+"/"+ (imageId==null? "" : System.Uri.EscapeDataString(imageId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2223,7 +2150,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2237,8 +2163,7 @@ namespace MyNS
 		public async Task Androidpublisher_edits_testers_getAsync(string packageName, string editId, string track, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = ""+ (packageName==null? "" : System.Uri.EscapeDataString(packageName))+"/edits/"+ (editId==null? "" : System.Uri.EscapeDataString(editId))+"/testers/"+ (track==null? "" : System.Uri.EscapeDataString(track));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2252,7 +2177,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2266,10 +2190,8 @@ namespace MyNS
 		public async Task Androidpublisher_edits_testers_patchAsync(string packageName, string editId, string track, Testers requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = ""+ (packageName==null? "" : System.Uri.EscapeDataString(packageName))+"/edits/"+ (editId==null? "" : System.Uri.EscapeDataString(editId))+"/testers/"+ (track==null? "" : System.Uri.EscapeDataString(track));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -2284,7 +2206,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2298,10 +2219,8 @@ namespace MyNS
 		public async Task Androidpublisher_edits_testers_updateAsync(string packageName, string editId, string track, Testers requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = ""+ (packageName==null? "" : System.Uri.EscapeDataString(packageName))+"/edits/"+ (editId==null? "" : System.Uri.EscapeDataString(editId))+"/testers/"+ (track==null? "" : System.Uri.EscapeDataString(track));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -2317,7 +2236,6 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
-			}
 		}
 		
 		/// <summary>
@@ -2330,8 +2248,7 @@ namespace MyNS
 		public async Task Androidpublisher_edits_tracks_listAsync(string packageName, string editId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = ""+ (packageName==null? "" : System.Uri.EscapeDataString(packageName))+"/edits/"+ (editId==null? "" : System.Uri.EscapeDataString(editId))+"/tracks";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2345,7 +2262,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2360,8 +2276,7 @@ namespace MyNS
 		public async Task Androidpublisher_edits_tracks_getAsync(string packageName, string editId, string track, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = ""+ (packageName==null? "" : System.Uri.EscapeDataString(packageName))+"/edits/"+ (editId==null? "" : System.Uri.EscapeDataString(editId))+"/tracks/"+ (track==null? "" : System.Uri.EscapeDataString(track));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2375,7 +2290,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2390,10 +2304,8 @@ namespace MyNS
 		public async Task Androidpublisher_edits_tracks_patchAsync(string packageName, string editId, string track, Track requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = ""+ (packageName==null? "" : System.Uri.EscapeDataString(packageName))+"/edits/"+ (editId==null? "" : System.Uri.EscapeDataString(editId))+"/tracks/"+ (track==null? "" : System.Uri.EscapeDataString(track));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -2408,7 +2320,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2423,10 +2334,8 @@ namespace MyNS
 		public async Task Androidpublisher_edits_tracks_updateAsync(string packageName, string editId, string track, Track requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = ""+ (packageName==null? "" : System.Uri.EscapeDataString(packageName))+"/edits/"+ (editId==null? "" : System.Uri.EscapeDataString(editId))+"/tracks/"+ (track==null? "" : System.Uri.EscapeDataString(track));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -2441,7 +2350,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2455,8 +2363,7 @@ namespace MyNS
 		public async Task Androidpublisher_edits_commitAsync(string packageName, string editId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = ""+ (packageName==null? "" : System.Uri.EscapeDataString(packageName))+"/edits/"+ (editId==null? "" : System.Uri.EscapeDataString(editId))+":commit";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -2465,7 +2372,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2479,8 +2385,7 @@ namespace MyNS
 		public async Task Androidpublisher_edits_validateAsync(string packageName, string editId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = ""+ (packageName==null? "" : System.Uri.EscapeDataString(packageName))+"/edits/"+ (editId==null? "" : System.Uri.EscapeDataString(editId))+":validate";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -2489,7 +2394,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2502,8 +2406,7 @@ namespace MyNS
 		public async Task Androidpublisher_inappproducts_listAsync(string packageName, int maxResults, int startIndex, string token, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = ""+ (packageName==null? "" : System.Uri.EscapeDataString(packageName))+"/inappproducts&maxResults="+maxResults+"&startIndex="+startIndex+"&token=" + (token==null? "" : System.Uri.EscapeDataString(token));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2518,7 +2421,6 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
-			}
 		}
 		
 		/// <summary>
@@ -2531,10 +2433,8 @@ namespace MyNS
 		public async Task Androidpublisher_inappproducts_insertAsync(string packageName, bool autoConvertMissingPrices, InAppProduct requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = ""+ (packageName==null? "" : System.Uri.EscapeDataString(packageName))+"/inappproducts&autoConvertMissingPrices="+autoConvertMissingPrices;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -2550,7 +2450,6 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
-			}
 		}
 		
 		/// <summary>
@@ -2563,8 +2462,7 @@ namespace MyNS
 		public async Task Androidpublisher_inappproducts_deleteAsync(string packageName, string sku, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = ""+ (packageName==null? "" : System.Uri.EscapeDataString(packageName))+"/inappproducts/"+ (sku==null? "" : System.Uri.EscapeDataString(sku));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2578,7 +2476,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2591,8 +2488,7 @@ namespace MyNS
 		public async Task Androidpublisher_inappproducts_getAsync(string packageName, string sku, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = ""+ (packageName==null? "" : System.Uri.EscapeDataString(packageName))+"/inappproducts/"+ (sku==null? "" : System.Uri.EscapeDataString(sku));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2606,7 +2502,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2621,10 +2516,8 @@ namespace MyNS
 		public async Task Androidpublisher_inappproducts_patchAsync(string packageName, string sku, bool autoConvertMissingPrices, InAppProduct requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = ""+ (packageName==null? "" : System.Uri.EscapeDataString(packageName))+"/inappproducts/"+ (sku==null? "" : System.Uri.EscapeDataString(sku))+"&autoConvertMissingPrices="+autoConvertMissingPrices;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -2639,7 +2532,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2654,10 +2546,8 @@ namespace MyNS
 		public async Task Androidpublisher_inappproducts_updateAsync(string packageName, string sku, bool autoConvertMissingPrices, InAppProduct requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = ""+ (packageName==null? "" : System.Uri.EscapeDataString(packageName))+"/inappproducts/"+ (sku==null? "" : System.Uri.EscapeDataString(sku))+"&autoConvertMissingPrices="+autoConvertMissingPrices;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -2672,7 +2562,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2687,8 +2576,7 @@ namespace MyNS
 		public async Task Androidpublisher_orders_refundAsync(string packageName, string orderId, bool revoke, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = ""+ (packageName==null? "" : System.Uri.EscapeDataString(packageName))+"/orders/"+ (orderId==null? "" : System.Uri.EscapeDataString(orderId))+":refund&revoke="+revoke;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -2697,7 +2585,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2712,8 +2599,7 @@ namespace MyNS
 		public async Task Androidpublisher_purchases_products_getAsync(string packageName, string productId, string token, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = ""+ (packageName==null? "" : System.Uri.EscapeDataString(packageName))+"/purchases/products/"+ (productId==null? "" : System.Uri.EscapeDataString(productId))+"/tokens/"+ (token==null? "" : System.Uri.EscapeDataString(token));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2727,7 +2613,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2742,8 +2627,7 @@ namespace MyNS
 		public async Task Androidpublisher_purchases_subscriptions_getAsync(string packageName, string subscriptionId, string token, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = ""+ (packageName==null? "" : System.Uri.EscapeDataString(packageName))+"/purchases/subscriptions/"+ (subscriptionId==null? "" : System.Uri.EscapeDataString(subscriptionId))+"/tokens/"+ (token==null? "" : System.Uri.EscapeDataString(token));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2757,7 +2641,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2772,8 +2655,7 @@ namespace MyNS
 		public async Task Androidpublisher_purchases_subscriptions_cancelAsync(string packageName, string subscriptionId, string token, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = ""+ (packageName==null? "" : System.Uri.EscapeDataString(packageName))+"/purchases/subscriptions/"+ (subscriptionId==null? "" : System.Uri.EscapeDataString(subscriptionId))+"/tokens/"+ (token==null? "" : System.Uri.EscapeDataString(token))+":cancel";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -2782,7 +2664,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2797,10 +2678,8 @@ namespace MyNS
 		public async Task Androidpublisher_purchases_subscriptions_deferAsync(string packageName, string subscriptionId, string token, SubscriptionPurchasesDeferRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = ""+ (packageName==null? "" : System.Uri.EscapeDataString(packageName))+"/purchases/subscriptions/"+ (subscriptionId==null? "" : System.Uri.EscapeDataString(subscriptionId))+"/tokens/"+ (token==null? "" : System.Uri.EscapeDataString(token))+":defer";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -2815,7 +2694,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2830,8 +2708,7 @@ namespace MyNS
 		public async Task Androidpublisher_purchases_subscriptions_refundAsync(string packageName, string subscriptionId, string token, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = ""+ (packageName==null? "" : System.Uri.EscapeDataString(packageName))+"/purchases/subscriptions/"+ (subscriptionId==null? "" : System.Uri.EscapeDataString(subscriptionId))+"/tokens/"+ (token==null? "" : System.Uri.EscapeDataString(token))+":refund";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -2840,7 +2717,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2855,8 +2731,7 @@ namespace MyNS
 		public async Task Androidpublisher_purchases_subscriptions_revokeAsync(string packageName, string subscriptionId, string token, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = ""+ (packageName==null? "" : System.Uri.EscapeDataString(packageName))+"/purchases/subscriptions/"+ (subscriptionId==null? "" : System.Uri.EscapeDataString(subscriptionId))+"/tokens/"+ (token==null? "" : System.Uri.EscapeDataString(token))+":revoke";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -2865,7 +2740,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2880,8 +2754,7 @@ namespace MyNS
 		public async Task Androidpublisher_purchases_voidedpurchases_listAsync(string packageName, string endTime, int maxResults, int startIndex, string startTime, string token, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = ""+ (packageName==null? "" : System.Uri.EscapeDataString(packageName))+"/purchases/voidedpurchases&endTime=" + (endTime==null? "" : System.Uri.EscapeDataString(endTime))+"&maxResults="+maxResults+"&startIndex="+startIndex+"&startTime=" + (startTime==null? "" : System.Uri.EscapeDataString(startTime))+"&token=" + (token==null? "" : System.Uri.EscapeDataString(token));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2895,7 +2768,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2908,8 +2780,7 @@ namespace MyNS
 		public async Task Androidpublisher_reviews_listAsync(string packageName, int maxResults, int startIndex, string token, string translationLanguage, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = ""+ (packageName==null? "" : System.Uri.EscapeDataString(packageName))+"/reviews&maxResults="+maxResults+"&startIndex="+startIndex+"&token=" + (token==null? "" : System.Uri.EscapeDataString(token))+"&translationLanguage=" + (translationLanguage==null? "" : System.Uri.EscapeDataString(translationLanguage));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2923,7 +2794,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2936,8 +2806,7 @@ namespace MyNS
 		public async Task Androidpublisher_reviews_getAsync(string packageName, string reviewId, string translationLanguage, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = ""+ (packageName==null? "" : System.Uri.EscapeDataString(packageName))+"/reviews/"+ (reviewId==null? "" : System.Uri.EscapeDataString(reviewId))+"&translationLanguage=" + (translationLanguage==null? "" : System.Uri.EscapeDataString(translationLanguage));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2952,7 +2821,6 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
-			}
 		}
 		
 		/// <summary>
@@ -2964,10 +2832,8 @@ namespace MyNS
 		public async Task Androidpublisher_reviews_replyAsync(string packageName, string reviewId, ReviewsReplyRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = ""+ (packageName==null? "" : System.Uri.EscapeDataString(packageName))+"/reviews/"+ (reviewId==null? "" : System.Uri.EscapeDataString(reviewId))+":reply";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -2982,7 +2848,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

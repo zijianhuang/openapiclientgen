@@ -45,8 +45,7 @@ namespace MyNS
 		public async Task Content_aspectIdGetAsync(Content_aspectIdGetAspectId aspectId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "content/"+aspectId;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -60,7 +59,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -74,8 +72,7 @@ namespace MyNS
 		public async Task Content_aspectId_civixDocumentIdGetAsync(Content_aspectIdGetAspectId aspectId, string civixDocumentId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "content/"+aspectId+"/"+ (civixDocumentId==null? "" : System.Uri.EscapeDataString(civixDocumentId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -89,7 +86,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -105,8 +101,7 @@ namespace MyNS
 		public async Task DocumentId_aspectId_civixIndexId_civixDocumentIdGetAsync(Content_aspectIdGetAspectId aspectId, string civixIndexId, string civixDocumentId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "document/id/"+aspectId+"/"+ (civixIndexId==null? "" : System.Uri.EscapeDataString(civixIndexId))+"/"+ (civixDocumentId==null? "" : System.Uri.EscapeDataString(civixDocumentId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -120,7 +115,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -137,8 +131,7 @@ namespace MyNS
 		public async Task DocumentId_aspectId_civixIndexId_civixDocumentIdSearch_searchStringGetAsync(Content_aspectIdGetAspectId aspectId, string civixIndexId, string civixDocumentId, string searchString, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "document/id/"+aspectId+"/"+ (civixIndexId==null? "" : System.Uri.EscapeDataString(civixIndexId))+"/"+ (civixDocumentId==null? "" : System.Uri.EscapeDataString(civixDocumentId))+"/search/"+ (searchString==null? "" : System.Uri.EscapeDataString(searchString));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -152,7 +145,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -168,8 +160,7 @@ namespace MyNS
 		public async Task DocumentId_aspectId_civixIndexId_civixDocumentIdXmlGetAsync(Content_aspectIdGetAspectId aspectId, string civixIndexId, string civixDocumentId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "document/id/"+aspectId+"/"+ (civixIndexId==null? "" : System.Uri.EscapeDataString(civixIndexId))+"/"+ (civixDocumentId==null? "" : System.Uri.EscapeDataString(civixDocumentId))+"/xml";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -183,7 +174,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -200,8 +190,7 @@ namespace MyNS
 		public async Task DocumentId_aspectId_civixIndexId_civixDocumentIdXmlSearch_searchStringGetAsync(Content_aspectIdGetAspectId aspectId, string civixIndexId, string civixDocumentId, string searchString, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "document/id/"+aspectId+"/"+ (civixIndexId==null? "" : System.Uri.EscapeDataString(civixIndexId))+"/"+ (civixDocumentId==null? "" : System.Uri.EscapeDataString(civixDocumentId))+"/xml/search/"+ (searchString==null? "" : System.Uri.EscapeDataString(searchString));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -215,7 +204,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -233,8 +221,7 @@ namespace MyNS
 		public async Task Search_aspectIdFullsearchGetByQAndSAndEAndNFragAndLFragAsync(Content_aspectIdGetAspectId aspectId, string q, string s, int e, int nFrag, int lFrag, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "search/"+aspectId+"/fullsearch?q=" + (q==null? "" : System.Uri.EscapeDataString(q))+"&s=" + (s==null? "" : System.Uri.EscapeDataString(s))+"&e="+e+"&nFrag="+nFrag+"&lFrag="+lFrag;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -248,7 +235,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

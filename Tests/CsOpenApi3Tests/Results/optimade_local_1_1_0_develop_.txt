@@ -2882,8 +2882,7 @@ namespace MyNS
 		public async Task<InfoResponse> Get_info_info_getAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "info";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2893,13 +2892,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<InfoResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<InfoResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2911,8 +2909,7 @@ namespace MyNS
 		public async Task<EntryInfoResponse> Get_entry_info_info__entry__getAsync(string entry, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "info/"+ (entry==null? "" : System.Uri.EscapeDataString(entry));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2922,13 +2919,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<EntryInfoResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<EntryInfoResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3002,8 +2998,7 @@ namespace MyNS
 		public async Task<LinksResponse> Get_links_links_getAsync(string filter, string response_format, string email_address, string response_fields, string sort, int page_limit, int page_offset, int page_number, int page_cursor, int page_above, int page_below, string include, string api_hint, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "links?filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&response_format=" + (response_format==null? "" : System.Uri.EscapeDataString(response_format))+"&email_address=" + (email_address==null? "" : System.Uri.EscapeDataString(email_address))+"&response_fields=" + (response_fields==null? "" : System.Uri.EscapeDataString(response_fields))+"&sort=" + (sort==null? "" : System.Uri.EscapeDataString(sort))+"&page_limit="+page_limit+"&page_offset="+page_offset+"&page_number="+page_number+"&page_cursor="+page_cursor+"&page_above="+page_above+"&page_below="+page_below+"&include=" + (include==null? "" : System.Uri.EscapeDataString(include))+"&api_hint=" + (api_hint==null? "" : System.Uri.EscapeDataString(api_hint));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3013,13 +3008,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<LinksResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<LinksResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3093,8 +3087,7 @@ namespace MyNS
 		public async Task<ReferenceResponseMany> Get_references_references_getAsync(string filter, string response_format, string email_address, string response_fields, string sort, int page_limit, int page_offset, int page_number, int page_cursor, int page_above, int page_below, string include, string api_hint, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "references?filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&response_format=" + (response_format==null? "" : System.Uri.EscapeDataString(response_format))+"&email_address=" + (email_address==null? "" : System.Uri.EscapeDataString(email_address))+"&response_fields=" + (response_fields==null? "" : System.Uri.EscapeDataString(response_fields))+"&sort=" + (sort==null? "" : System.Uri.EscapeDataString(sort))+"&page_limit="+page_limit+"&page_offset="+page_offset+"&page_number="+page_number+"&page_cursor="+page_cursor+"&page_above="+page_above+"&page_below="+page_below+"&include=" + (include==null? "" : System.Uri.EscapeDataString(include))+"&api_hint=" + (api_hint==null? "" : System.Uri.EscapeDataString(api_hint));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3104,13 +3097,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ReferenceResponseMany>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ReferenceResponseMany>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3145,8 +3137,7 @@ namespace MyNS
 		public async Task<ReferenceResponseOne> Get_single_reference_references__entry_id__getAsync(string entry_id, string response_format, string email_address, string response_fields, string include, string api_hint, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "references/"+ (entry_id==null? "" : System.Uri.EscapeDataString(entry_id))+"&response_format=" + (response_format==null? "" : System.Uri.EscapeDataString(response_format))+"&email_address=" + (email_address==null? "" : System.Uri.EscapeDataString(email_address))+"&response_fields=" + (response_fields==null? "" : System.Uri.EscapeDataString(response_fields))+"&include=" + (include==null? "" : System.Uri.EscapeDataString(include))+"&api_hint=" + (api_hint==null? "" : System.Uri.EscapeDataString(api_hint));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3156,13 +3147,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ReferenceResponseOne>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ReferenceResponseOne>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3236,8 +3226,7 @@ namespace MyNS
 		public async Task<StructureResponseMany> Get_structures_structures_getAsync(string filter, string response_format, string email_address, string response_fields, string sort, int page_limit, int page_offset, int page_number, int page_cursor, int page_above, int page_below, string include, string api_hint, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "structures?filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&response_format=" + (response_format==null? "" : System.Uri.EscapeDataString(response_format))+"&email_address=" + (email_address==null? "" : System.Uri.EscapeDataString(email_address))+"&response_fields=" + (response_fields==null? "" : System.Uri.EscapeDataString(response_fields))+"&sort=" + (sort==null? "" : System.Uri.EscapeDataString(sort))+"&page_limit="+page_limit+"&page_offset="+page_offset+"&page_number="+page_number+"&page_cursor="+page_cursor+"&page_above="+page_above+"&page_below="+page_below+"&include=" + (include==null? "" : System.Uri.EscapeDataString(include))+"&api_hint=" + (api_hint==null? "" : System.Uri.EscapeDataString(api_hint));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3247,13 +3236,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<StructureResponseMany>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<StructureResponseMany>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3288,8 +3276,7 @@ namespace MyNS
 		public async Task<StructureResponseOne> Get_single_structure_structures__entry_id__getAsync(string entry_id, string response_format, string email_address, string response_fields, string include, string api_hint, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "structures/"+ (entry_id==null? "" : System.Uri.EscapeDataString(entry_id))+"&response_format=" + (response_format==null? "" : System.Uri.EscapeDataString(response_format))+"&email_address=" + (email_address==null? "" : System.Uri.EscapeDataString(email_address))+"&response_fields=" + (response_fields==null? "" : System.Uri.EscapeDataString(response_fields))+"&include=" + (include==null? "" : System.Uri.EscapeDataString(include))+"&api_hint=" + (api_hint==null? "" : System.Uri.EscapeDataString(api_hint));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3299,13 +3286,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<StructureResponseOne>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<StructureResponseOne>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3318,8 +3304,7 @@ namespace MyNS
 		public async Task Get_versions_versions_getAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "versions";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3333,7 +3318,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

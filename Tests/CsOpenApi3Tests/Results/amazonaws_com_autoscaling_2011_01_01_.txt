@@ -4236,8 +4236,7 @@ namespace MyNS
 		public async Task GET_AttachInstancesAsync(string[] InstanceIds, string AutoScalingGroupName, GET_AttachInstancesAction Action, GET_AttachInstancesVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=AttachInstances?"+string.Join("&", InstanceIds.Select(z => $"InstanceIds={System.Uri.EscapeDataString(z.ToString())}"))+"&AutoScalingGroupName=" + (AutoScalingGroupName==null? "" : System.Uri.EscapeDataString(AutoScalingGroupName))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4251,7 +4250,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4268,8 +4266,7 @@ namespace MyNS
 		public async Task GET_AttachLoadBalancerTargetGroupsAsync(string AutoScalingGroupName, string[] TargetGroupARNs, GET_AttachLoadBalancerTargetGroupsAction Action, GET_AttachLoadBalancerTargetGroupsVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=AttachLoadBalancerTargetGroups?AutoScalingGroupName=" + (AutoScalingGroupName==null? "" : System.Uri.EscapeDataString(AutoScalingGroupName))+"&"+string.Join("&", TargetGroupARNs.Select(z => $"TargetGroupARNs={System.Uri.EscapeDataString(z.ToString())}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4283,7 +4280,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4300,8 +4296,7 @@ namespace MyNS
 		public async Task GET_AttachLoadBalancersAsync(string AutoScalingGroupName, string[] LoadBalancerNames, GET_AttachLoadBalancersAction Action, GET_AttachLoadBalancersVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=AttachLoadBalancers?AutoScalingGroupName=" + (AutoScalingGroupName==null? "" : System.Uri.EscapeDataString(AutoScalingGroupName))+"&"+string.Join("&", LoadBalancerNames.Select(z => $"LoadBalancerNames={System.Uri.EscapeDataString(z.ToString())}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4315,7 +4310,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4332,8 +4326,7 @@ namespace MyNS
 		public async Task GET_AttachTrafficSourcesAsync(string AutoScalingGroupName, TrafficSourceIdentifier[] TrafficSources, GET_AttachTrafficSourcesAction Action, GET_AttachTrafficSourcesVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=AttachTrafficSources?AutoScalingGroupName=" + (AutoScalingGroupName==null? "" : System.Uri.EscapeDataString(AutoScalingGroupName))+"&"+string.Join("&", TrafficSources.Select(z => $"TrafficSources={z}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4347,7 +4340,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4364,8 +4356,7 @@ namespace MyNS
 		public async Task GET_BatchDeleteScheduledActionAsync(string AutoScalingGroupName, string[] ScheduledActionNames, GET_BatchDeleteScheduledActionAction Action, GET_BatchDeleteScheduledActionVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=BatchDeleteScheduledAction?AutoScalingGroupName=" + (AutoScalingGroupName==null? "" : System.Uri.EscapeDataString(AutoScalingGroupName))+"&"+string.Join("&", ScheduledActionNames.Select(z => $"ScheduledActionNames={System.Uri.EscapeDataString(z.ToString())}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4379,7 +4370,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4396,8 +4386,7 @@ namespace MyNS
 		public async Task GET_BatchPutScheduledUpdateGroupActionAsync(string AutoScalingGroupName, ScheduledUpdateGroupActionRequest[] ScheduledUpdateGroupActions, GET_BatchPutScheduledUpdateGroupActionAction Action, GET_BatchPutScheduledUpdateGroupActionVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=BatchPutScheduledUpdateGroupAction?AutoScalingGroupName=" + (AutoScalingGroupName==null? "" : System.Uri.EscapeDataString(AutoScalingGroupName))+"&"+string.Join("&", ScheduledUpdateGroupActions.Select(z => $"ScheduledUpdateGroupActions={z}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4411,7 +4400,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4427,8 +4415,7 @@ namespace MyNS
 		public async Task GET_CancelInstanceRefreshAsync(string AutoScalingGroupName, GET_CancelInstanceRefreshAction Action, GET_CancelInstanceRefreshVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=CancelInstanceRefresh?AutoScalingGroupName=" + (AutoScalingGroupName==null? "" : System.Uri.EscapeDataString(AutoScalingGroupName))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4442,7 +4429,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4471,8 +4457,7 @@ namespace MyNS
 		public async Task GET_CompleteLifecycleActionAsync(string LifecycleHookName, string AutoScalingGroupName, string LifecycleActionToken, string LifecycleActionResult, string InstanceId, GET_CompleteLifecycleActionAction Action, GET_CompleteLifecycleActionVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=CompleteLifecycleAction?LifecycleHookName=" + (LifecycleHookName==null? "" : System.Uri.EscapeDataString(LifecycleHookName))+"&AutoScalingGroupName=" + (AutoScalingGroupName==null? "" : System.Uri.EscapeDataString(AutoScalingGroupName))+"&LifecycleActionToken=" + (LifecycleActionToken==null? "" : System.Uri.EscapeDataString(LifecycleActionToken))+"&LifecycleActionResult=" + (LifecycleActionResult==null? "" : System.Uri.EscapeDataString(LifecycleActionResult))+"&InstanceId=" + (InstanceId==null? "" : System.Uri.EscapeDataString(InstanceId))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4486,7 +4471,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4579,8 +4563,7 @@ namespace MyNS
 					Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=CreateAutoScalingGroup?AutoScalingGroupName=" + (AutoScalingGroupName==null? "" : System.Uri.EscapeDataString(AutoScalingGroupName))+"&LaunchConfigurationName=" + (LaunchConfigurationName==null? "" : System.Uri.EscapeDataString(LaunchConfigurationName))+"&LaunchTemplate=" + LaunchTemplate+"&MixedInstancesPolicy=" + MixedInstancesPolicy+"&InstanceId=" + (InstanceId==null? "" : System.Uri.EscapeDataString(InstanceId))+"&MinSize="+MinSize+"&MaxSize="+MaxSize+"&DesiredCapacity="+DesiredCapacity+"&DefaultCooldown="+DefaultCooldown+"&"+string.Join("&", AvailabilityZones.Select(z => $"AvailabilityZones={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", LoadBalancerNames.Select(z => $"LoadBalancerNames={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", TargetGroupARNs.Select(z => $"TargetGroupARNs={System.Uri.EscapeDataString(z.ToString())}"))+"&HealthCheckType=" + (HealthCheckType==null? "" : System.Uri.EscapeDataString(HealthCheckType))+"&HealthCheckGracePeriod="+HealthCheckGracePeriod+"&PlacementGroup=" + (PlacementGroup==null? "" : System.Uri.EscapeDataString(PlacementGroup))+"&VPCZoneIdentifier=" + (VPCZoneIdentifier==null? "" : System.Uri.EscapeDataString(VPCZoneIdentifier))+"&"+string.Join("&", TerminationPolicies.Select(z => $"TerminationPolicies={System.Uri.EscapeDataString(z.ToString())}"))+"&NewInstancesProtectedFromScaleIn="+NewInstancesProtectedFromScaleIn+"&CapacityRebalance="+CapacityRebalance+"&"+string.Join("&", LifecycleHookSpecificationList.Select(z => $"LifecycleHookSpecificationList={z}"))+"&"+string.Join("&", Tags.Select(z => $"Tags={z}"))+"&ServiceLinkedRoleARN=" + (ServiceLinkedRoleARN==null? "" : System.Uri.EscapeDataString(ServiceLinkedRoleARN))+"&MaxInstanceLifetime="+MaxInstanceLifetime+"&Context=" + (Context==null? "" : System.Uri.EscapeDataString(Context))+"&DesiredCapacityType=" + (DesiredCapacityType==null? "" : System.Uri.EscapeDataString(DesiredCapacityType))+"&DefaultInstanceWarmup="+DefaultInstanceWarmup+"&"+string.Join("&", TrafficSources.Select(z => $"TrafficSources={z}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4594,7 +4577,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4682,8 +4664,7 @@ namespace MyNS
 					Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=CreateLaunchConfiguration?LaunchConfigurationName=" + (LaunchConfigurationName==null? "" : System.Uri.EscapeDataString(LaunchConfigurationName))+"&ImageId=" + (ImageId==null? "" : System.Uri.EscapeDataString(ImageId))+"&KeyName=" + (KeyName==null? "" : System.Uri.EscapeDataString(KeyName))+"&"+string.Join("&", SecurityGroups.Select(z => $"SecurityGroups={System.Uri.EscapeDataString(z.ToString())}"))+"&ClassicLinkVPCId=" + (ClassicLinkVPCId==null? "" : System.Uri.EscapeDataString(ClassicLinkVPCId))+"&"+string.Join("&", ClassicLinkVPCSecurityGroups.Select(z => $"ClassicLinkVPCSecurityGroups={System.Uri.EscapeDataString(z.ToString())}"))+"&UserData=" + (UserData==null? "" : System.Uri.EscapeDataString(UserData))+"&InstanceId=" + (InstanceId==null? "" : System.Uri.EscapeDataString(InstanceId))+"&InstanceType=" + (InstanceType==null? "" : System.Uri.EscapeDataString(InstanceType))+"&KernelId=" + (KernelId==null? "" : System.Uri.EscapeDataString(KernelId))+"&RamdiskId=" + (RamdiskId==null? "" : System.Uri.EscapeDataString(RamdiskId))+"&"+string.Join("&", BlockDeviceMappings.Select(z => $"BlockDeviceMappings={z}"))+"&InstanceMonitoring=" + InstanceMonitoring+"&SpotPrice=" + (SpotPrice==null? "" : System.Uri.EscapeDataString(SpotPrice))+"&IamInstanceProfile=" + (IamInstanceProfile==null? "" : System.Uri.EscapeDataString(IamInstanceProfile))+"&EbsOptimized="+EbsOptimized+"&AssociatePublicIpAddress="+AssociatePublicIpAddress+"&PlacementTenancy=" + (PlacementTenancy==null? "" : System.Uri.EscapeDataString(PlacementTenancy))+"&MetadataOptions=" + MetadataOptions+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4697,7 +4678,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4710,8 +4690,7 @@ namespace MyNS
 		public async Task GET_CreateOrUpdateTagsAsync(Tag[] Tags, GET_CreateOrUpdateTagsAction Action, GET_CreateOrUpdateTagsVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=CreateOrUpdateTags?"+string.Join("&", Tags.Select(z => $"Tags={z}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4725,7 +4704,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4742,8 +4720,7 @@ namespace MyNS
 		public async Task GET_DeleteAutoScalingGroupAsync(string AutoScalingGroupName, bool ForceDelete, GET_DeleteAutoScalingGroupAction Action, GET_DeleteAutoScalingGroupVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DeleteAutoScalingGroup?AutoScalingGroupName=" + (AutoScalingGroupName==null? "" : System.Uri.EscapeDataString(AutoScalingGroupName))+"&ForceDelete="+ForceDelete+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4757,7 +4734,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4773,8 +4749,7 @@ namespace MyNS
 		public async Task GET_DeleteLaunchConfigurationAsync(string LaunchConfigurationName, GET_DeleteLaunchConfigurationAction Action, GET_DeleteLaunchConfigurationVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DeleteLaunchConfiguration?LaunchConfigurationName=" + (LaunchConfigurationName==null? "" : System.Uri.EscapeDataString(LaunchConfigurationName))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4788,7 +4763,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4808,8 +4782,7 @@ namespace MyNS
 		public async Task GET_DeleteLifecycleHookAsync(string LifecycleHookName, string AutoScalingGroupName, GET_DeleteLifecycleHookAction Action, GET_DeleteLifecycleHookVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DeleteLifecycleHook?LifecycleHookName=" + (LifecycleHookName==null? "" : System.Uri.EscapeDataString(LifecycleHookName))+"&AutoScalingGroupName=" + (AutoScalingGroupName==null? "" : System.Uri.EscapeDataString(AutoScalingGroupName))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4823,7 +4796,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4843,8 +4815,7 @@ namespace MyNS
 		public async Task GET_DeleteNotificationConfigurationAsync(string AutoScalingGroupName, string TopicARN, GET_DeleteNotificationConfigurationAction Action, GET_DeleteNotificationConfigurationVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DeleteNotificationConfiguration?AutoScalingGroupName=" + (AutoScalingGroupName==null? "" : System.Uri.EscapeDataString(AutoScalingGroupName))+"&TopicARN=" + (TopicARN==null? "" : System.Uri.EscapeDataString(TopicARN))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4858,7 +4829,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4878,8 +4848,7 @@ namespace MyNS
 		public async Task GET_DeletePolicyAsync(string AutoScalingGroupName, string PolicyName, GET_DeletePolicyAction Action, GET_DeletePolicyVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DeletePolicy?AutoScalingGroupName=" + (AutoScalingGroupName==null? "" : System.Uri.EscapeDataString(AutoScalingGroupName))+"&PolicyName=" + (PolicyName==null? "" : System.Uri.EscapeDataString(PolicyName))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4893,7 +4862,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4913,8 +4881,7 @@ namespace MyNS
 		public async Task GET_DeleteScheduledActionAsync(string AutoScalingGroupName, string ScheduledActionName, GET_DeleteScheduledActionAction Action, GET_DeleteScheduledActionVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DeleteScheduledAction?AutoScalingGroupName=" + (AutoScalingGroupName==null? "" : System.Uri.EscapeDataString(AutoScalingGroupName))+"&ScheduledActionName=" + (ScheduledActionName==null? "" : System.Uri.EscapeDataString(ScheduledActionName))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4928,7 +4895,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4941,8 +4907,7 @@ namespace MyNS
 		public async Task GET_DeleteTagsAsync(Tag[] Tags, GET_DeleteTagsAction Action, GET_DeleteTagsVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DeleteTags?"+string.Join("&", Tags.Select(z => $"Tags={z}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4956,7 +4921,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4973,8 +4937,7 @@ namespace MyNS
 		public async Task GET_DeleteWarmPoolAsync(string AutoScalingGroupName, bool ForceDelete, GET_DeleteWarmPoolAction Action, GET_DeleteWarmPoolVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DeleteWarmPool?AutoScalingGroupName=" + (AutoScalingGroupName==null? "" : System.Uri.EscapeDataString(AutoScalingGroupName))+"&ForceDelete="+ForceDelete+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4988,7 +4951,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5000,8 +4962,7 @@ namespace MyNS
 		public async Task GET_DescribeAccountLimitsAsync(GET_DescribeAccountLimitsAction Action, GET_DescribeAccountLimitsVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribeAccountLimits?Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5015,7 +4976,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5027,8 +4987,7 @@ namespace MyNS
 		public async Task POST_DescribeAccountLimitsAsync(GET_DescribeAccountLimitsAction Action, POST_DescribeAccountLimitsVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribeAccountLimits?Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -5037,7 +4996,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5049,8 +5007,7 @@ namespace MyNS
 		public async Task GET_DescribeAdjustmentTypesAsync(GET_DescribeAdjustmentTypesAction Action, GET_DescribeAdjustmentTypesVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribeAdjustmentTypes?Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5065,7 +5022,6 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
-			}
 		}
 		
 		/// <summary>
@@ -5076,8 +5032,7 @@ namespace MyNS
 		public async Task POST_DescribeAdjustmentTypesAsync(GET_DescribeAdjustmentTypesAction Action, POST_DescribeAdjustmentTypesVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribeAdjustmentTypes?Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -5086,7 +5041,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5102,8 +5056,7 @@ namespace MyNS
 		public async Task GET_DescribeAutoScalingGroupsAsync(string[] AutoScalingGroupNames, string NextToken, int MaxRecords, Filter[] Filters, GET_DescribeAutoScalingGroupsAction Action, GET_DescribeAutoScalingGroupsVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribeAutoScalingGroups?"+string.Join("&", AutoScalingGroupNames.Select(z => $"AutoScalingGroupNames={System.Uri.EscapeDataString(z.ToString())}"))+"&NextToken=" + (NextToken==null? "" : System.Uri.EscapeDataString(NextToken))+"&MaxRecords="+MaxRecords+"&"+string.Join("&", Filters.Select(z => $"Filters={z}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5117,7 +5070,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5132,8 +5084,7 @@ namespace MyNS
 		public async Task GET_DescribeAutoScalingInstancesAsync(string[] InstanceIds, int MaxRecords, string NextToken, GET_DescribeAutoScalingInstancesAction Action, GET_DescribeAutoScalingInstancesVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribeAutoScalingInstances?"+string.Join("&", InstanceIds.Select(z => $"InstanceIds={System.Uri.EscapeDataString(z.ToString())}"))+"&MaxRecords="+MaxRecords+"&NextToken=" + (NextToken==null? "" : System.Uri.EscapeDataString(NextToken))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5147,7 +5098,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5159,8 +5109,7 @@ namespace MyNS
 		public async Task GET_DescribeAutoScalingNotificationTypesAsync(GET_DescribeAutoScalingNotificationTypesAction Action, GET_DescribeAutoScalingNotificationTypesVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribeAutoScalingNotificationTypes?Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5175,7 +5124,6 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
-			}
 		}
 		
 		/// <summary>
@@ -5186,8 +5134,7 @@ namespace MyNS
 		public async Task POST_DescribeAutoScalingNotificationTypesAsync(GET_DescribeAutoScalingNotificationTypesAction Action, POST_DescribeAutoScalingNotificationTypesVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribeAutoScalingNotificationTypes?Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -5196,7 +5143,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5215,8 +5161,7 @@ namespace MyNS
 		public async Task GET_DescribeInstanceRefreshesAsync(string AutoScalingGroupName, string[] InstanceRefreshIds, string NextToken, int MaxRecords, GET_DescribeInstanceRefreshesAction Action, GET_DescribeInstanceRefreshesVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribeInstanceRefreshes?AutoScalingGroupName=" + (AutoScalingGroupName==null? "" : System.Uri.EscapeDataString(AutoScalingGroupName))+"&"+string.Join("&", InstanceRefreshIds.Select(z => $"InstanceRefreshIds={System.Uri.EscapeDataString(z.ToString())}"))+"&NextToken=" + (NextToken==null? "" : System.Uri.EscapeDataString(NextToken))+"&MaxRecords="+MaxRecords+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5230,7 +5175,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5245,8 +5189,7 @@ namespace MyNS
 		public async Task GET_DescribeLaunchConfigurationsAsync(string[] LaunchConfigurationNames, string NextToken, int MaxRecords, GET_DescribeLaunchConfigurationsAction Action, GET_DescribeLaunchConfigurationsVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribeLaunchConfigurations?"+string.Join("&", LaunchConfigurationNames.Select(z => $"LaunchConfigurationNames={System.Uri.EscapeDataString(z.ToString())}"))+"&NextToken=" + (NextToken==null? "" : System.Uri.EscapeDataString(NextToken))+"&MaxRecords="+MaxRecords+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5260,7 +5203,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5272,8 +5214,7 @@ namespace MyNS
 		public async Task GET_DescribeLifecycleHookTypesAsync(GET_DescribeLifecycleHookTypesAction Action, GET_DescribeLifecycleHookTypesVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribeLifecycleHookTypes?Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5288,7 +5229,6 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
-			}
 		}
 		
 		/// <summary>
@@ -5299,8 +5239,7 @@ namespace MyNS
 		public async Task POST_DescribeLifecycleHookTypesAsync(GET_DescribeLifecycleHookTypesAction Action, POST_DescribeLifecycleHookTypesVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribeLifecycleHookTypes?Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -5309,7 +5248,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5328,8 +5266,7 @@ namespace MyNS
 		public async Task GET_DescribeLifecycleHooksAsync(string AutoScalingGroupName, string[] LifecycleHookNames, GET_DescribeLifecycleHooksAction Action, GET_DescribeLifecycleHooksVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribeLifecycleHooks?AutoScalingGroupName=" + (AutoScalingGroupName==null? "" : System.Uri.EscapeDataString(AutoScalingGroupName))+"&"+string.Join("&", LifecycleHookNames.Select(z => $"LifecycleHookNames={System.Uri.EscapeDataString(z.ToString())}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5343,7 +5280,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5361,8 +5297,7 @@ namespace MyNS
 		public async Task GET_DescribeLoadBalancerTargetGroupsAsync(string AutoScalingGroupName, string NextToken, int MaxRecords, GET_DescribeLoadBalancerTargetGroupsAction Action, GET_DescribeLoadBalancerTargetGroupsVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribeLoadBalancerTargetGroups?AutoScalingGroupName=" + (AutoScalingGroupName==null? "" : System.Uri.EscapeDataString(AutoScalingGroupName))+"&NextToken=" + (NextToken==null? "" : System.Uri.EscapeDataString(NextToken))+"&MaxRecords="+MaxRecords+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5376,7 +5311,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5394,8 +5328,7 @@ namespace MyNS
 		public async Task GET_DescribeLoadBalancersAsync(string AutoScalingGroupName, string NextToken, int MaxRecords, GET_DescribeLoadBalancersAction Action, GET_DescribeLoadBalancersVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribeLoadBalancers?AutoScalingGroupName=" + (AutoScalingGroupName==null? "" : System.Uri.EscapeDataString(AutoScalingGroupName))+"&NextToken=" + (NextToken==null? "" : System.Uri.EscapeDataString(NextToken))+"&MaxRecords="+MaxRecords+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5409,7 +5342,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5421,8 +5353,7 @@ namespace MyNS
 		public async Task GET_DescribeMetricCollectionTypesAsync(GET_DescribeMetricCollectionTypesAction Action, GET_DescribeMetricCollectionTypesVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribeMetricCollectionTypes?Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5437,7 +5368,6 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
-			}
 		}
 		
 		/// <summary>
@@ -5448,8 +5378,7 @@ namespace MyNS
 		public async Task POST_DescribeMetricCollectionTypesAsync(GET_DescribeMetricCollectionTypesAction Action, POST_DescribeMetricCollectionTypesVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribeMetricCollectionTypes?Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -5458,7 +5387,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5473,8 +5401,7 @@ namespace MyNS
 		public async Task GET_DescribeNotificationConfigurationsAsync(string[] AutoScalingGroupNames, string NextToken, int MaxRecords, GET_DescribeNotificationConfigurationsAction Action, GET_DescribeNotificationConfigurationsVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribeNotificationConfigurations?"+string.Join("&", AutoScalingGroupNames.Select(z => $"AutoScalingGroupNames={System.Uri.EscapeDataString(z.ToString())}"))+"&NextToken=" + (NextToken==null? "" : System.Uri.EscapeDataString(NextToken))+"&MaxRecords="+MaxRecords+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5488,7 +5415,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5508,8 +5434,7 @@ namespace MyNS
 		public async Task GET_DescribePoliciesAsync(string AutoScalingGroupName, string[] PolicyNames, string[] PolicyTypes, string NextToken, int MaxRecords, GET_DescribePoliciesAction Action, GET_DescribePoliciesVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribePolicies?AutoScalingGroupName=" + (AutoScalingGroupName==null? "" : System.Uri.EscapeDataString(AutoScalingGroupName))+"&"+string.Join("&", PolicyNames.Select(z => $"PolicyNames={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", PolicyTypes.Select(z => $"PolicyTypes={System.Uri.EscapeDataString(z.ToString())}"))+"&NextToken=" + (NextToken==null? "" : System.Uri.EscapeDataString(NextToken))+"&MaxRecords="+MaxRecords+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5523,7 +5448,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5543,8 +5467,7 @@ namespace MyNS
 		public async Task GET_DescribeScalingActivitiesAsync(string[] ActivityIds, string AutoScalingGroupName, bool IncludeDeletedGroups, int MaxRecords, string NextToken, GET_DescribeScalingActivitiesAction Action, GET_DescribeScalingActivitiesVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribeScalingActivities?"+string.Join("&", ActivityIds.Select(z => $"ActivityIds={System.Uri.EscapeDataString(z.ToString())}"))+"&AutoScalingGroupName=" + (AutoScalingGroupName==null? "" : System.Uri.EscapeDataString(AutoScalingGroupName))+"&IncludeDeletedGroups="+IncludeDeletedGroups+"&MaxRecords="+MaxRecords+"&NextToken=" + (NextToken==null? "" : System.Uri.EscapeDataString(NextToken))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5558,7 +5481,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5570,8 +5492,7 @@ namespace MyNS
 		public async Task GET_DescribeScalingProcessTypesAsync(GET_DescribeScalingProcessTypesAction Action, GET_DescribeScalingProcessTypesVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribeScalingProcessTypes?Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5586,7 +5507,6 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
-			}
 		}
 		
 		/// <summary>
@@ -5597,8 +5517,7 @@ namespace MyNS
 		public async Task POST_DescribeScalingProcessTypesAsync(GET_DescribeScalingProcessTypesAction Action, POST_DescribeScalingProcessTypesVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribeScalingProcessTypes?Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -5607,7 +5526,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5628,8 +5546,7 @@ namespace MyNS
 		public async Task GET_DescribeScheduledActionsAsync(string AutoScalingGroupName, string[] ScheduledActionNames, System.DateTimeOffset StartTime, System.DateTimeOffset EndTime, string NextToken, int MaxRecords, GET_DescribeScheduledActionsAction Action, GET_DescribeScheduledActionsVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribeScheduledActions?AutoScalingGroupName=" + (AutoScalingGroupName==null? "" : System.Uri.EscapeDataString(AutoScalingGroupName))+"&"+string.Join("&", ScheduledActionNames.Select(z => $"ScheduledActionNames={System.Uri.EscapeDataString(z.ToString())}"))+"&StartTime=" + StartTime.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&EndTime=" + EndTime.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&NextToken=" + (NextToken==null? "" : System.Uri.EscapeDataString(NextToken))+"&MaxRecords="+MaxRecords+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5643,7 +5560,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5658,8 +5574,7 @@ namespace MyNS
 		public async Task GET_DescribeTagsAsync(Filter[] Filters, string NextToken, int MaxRecords, GET_DescribeTagsAction Action, GET_DescribeTagsVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribeTags?"+string.Join("&", Filters.Select(z => $"Filters={z}"))+"&NextToken=" + (NextToken==null? "" : System.Uri.EscapeDataString(NextToken))+"&MaxRecords="+MaxRecords+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5673,7 +5588,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5685,8 +5599,7 @@ namespace MyNS
 		public async Task GET_DescribeTerminationPolicyTypesAsync(GET_DescribeTerminationPolicyTypesAction Action, GET_DescribeTerminationPolicyTypesVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribeTerminationPolicyTypes?Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5701,7 +5614,6 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
-			}
 		}
 		
 		/// <summary>
@@ -5712,8 +5624,7 @@ namespace MyNS
 		public async Task POST_DescribeTerminationPolicyTypesAsync(GET_DescribeTerminationPolicyTypesAction Action, POST_DescribeTerminationPolicyTypesVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribeTerminationPolicyTypes?Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -5722,7 +5633,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5744,8 +5654,7 @@ namespace MyNS
 		public async Task GET_DescribeTrafficSourcesAsync(string AutoScalingGroupName, string TrafficSourceType, string NextToken, int MaxRecords, GET_DescribeTrafficSourcesAction Action, GET_DescribeTrafficSourcesVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribeTrafficSources?AutoScalingGroupName=" + (AutoScalingGroupName==null? "" : System.Uri.EscapeDataString(AutoScalingGroupName))+"&TrafficSourceType=" + (TrafficSourceType==null? "" : System.Uri.EscapeDataString(TrafficSourceType))+"&NextToken=" + (NextToken==null? "" : System.Uri.EscapeDataString(NextToken))+"&MaxRecords="+MaxRecords+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5759,7 +5668,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5777,8 +5685,7 @@ namespace MyNS
 		public async Task GET_DescribeWarmPoolAsync(string AutoScalingGroupName, int MaxRecords, string NextToken, GET_DescribeWarmPoolAction Action, GET_DescribeWarmPoolVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribeWarmPool?AutoScalingGroupName=" + (AutoScalingGroupName==null? "" : System.Uri.EscapeDataString(AutoScalingGroupName))+"&MaxRecords="+MaxRecords+"&NextToken=" + (NextToken==null? "" : System.Uri.EscapeDataString(NextToken))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5792,7 +5699,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5810,8 +5716,7 @@ namespace MyNS
 		public async Task GET_DetachInstancesAsync(string[] InstanceIds, string AutoScalingGroupName, bool ShouldDecrementDesiredCapacity, GET_DetachInstancesAction Action, GET_DetachInstancesVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DetachInstances?"+string.Join("&", InstanceIds.Select(z => $"InstanceIds={System.Uri.EscapeDataString(z.ToString())}"))+"&AutoScalingGroupName=" + (AutoScalingGroupName==null? "" : System.Uri.EscapeDataString(AutoScalingGroupName))+"&ShouldDecrementDesiredCapacity="+ShouldDecrementDesiredCapacity+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5825,7 +5730,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5842,8 +5746,7 @@ namespace MyNS
 		public async Task GET_DetachLoadBalancerTargetGroupsAsync(string AutoScalingGroupName, string[] TargetGroupARNs, GET_DetachLoadBalancerTargetGroupsAction Action, GET_DetachLoadBalancerTargetGroupsVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DetachLoadBalancerTargetGroups?AutoScalingGroupName=" + (AutoScalingGroupName==null? "" : System.Uri.EscapeDataString(AutoScalingGroupName))+"&"+string.Join("&", TargetGroupARNs.Select(z => $"TargetGroupARNs={System.Uri.EscapeDataString(z.ToString())}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5857,7 +5760,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5874,8 +5776,7 @@ namespace MyNS
 		public async Task GET_DetachLoadBalancersAsync(string AutoScalingGroupName, string[] LoadBalancerNames, GET_DetachLoadBalancersAction Action, GET_DetachLoadBalancersVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DetachLoadBalancers?AutoScalingGroupName=" + (AutoScalingGroupName==null? "" : System.Uri.EscapeDataString(AutoScalingGroupName))+"&"+string.Join("&", LoadBalancerNames.Select(z => $"LoadBalancerNames={System.Uri.EscapeDataString(z.ToString())}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5889,7 +5790,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5906,8 +5806,7 @@ namespace MyNS
 		public async Task GET_DetachTrafficSourcesAsync(string AutoScalingGroupName, TrafficSourceIdentifier[] TrafficSources, GET_DetachTrafficSourcesAction Action, GET_DetachTrafficSourcesVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DetachTrafficSources?AutoScalingGroupName=" + (AutoScalingGroupName==null? "" : System.Uri.EscapeDataString(AutoScalingGroupName))+"&"+string.Join("&", TrafficSources.Select(z => $"TrafficSources={z}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5921,7 +5820,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5938,8 +5836,7 @@ namespace MyNS
 		public async Task GET_DisableMetricsCollectionAsync(string AutoScalingGroupName, string[] Metrics, GET_DisableMetricsCollectionAction Action, GET_DisableMetricsCollectionVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DisableMetricsCollection?AutoScalingGroupName=" + (AutoScalingGroupName==null? "" : System.Uri.EscapeDataString(AutoScalingGroupName))+"&"+string.Join("&", Metrics.Select(z => $"Metrics={System.Uri.EscapeDataString(z.ToString())}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5953,7 +5850,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5974,8 +5870,7 @@ namespace MyNS
 		public async Task GET_EnableMetricsCollectionAsync(string AutoScalingGroupName, string[] Metrics, string Granularity, GET_EnableMetricsCollectionAction Action, GET_EnableMetricsCollectionVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=EnableMetricsCollection?AutoScalingGroupName=" + (AutoScalingGroupName==null? "" : System.Uri.EscapeDataString(AutoScalingGroupName))+"&"+string.Join("&", Metrics.Select(z => $"Metrics={System.Uri.EscapeDataString(z.ToString())}"))+"&Granularity=" + (Granularity==null? "" : System.Uri.EscapeDataString(Granularity))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5989,7 +5884,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6007,8 +5901,7 @@ namespace MyNS
 		public async Task GET_EnterStandbyAsync(string[] InstanceIds, string AutoScalingGroupName, bool ShouldDecrementDesiredCapacity, GET_EnterStandbyAction Action, GET_EnterStandbyVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=EnterStandby?"+string.Join("&", InstanceIds.Select(z => $"InstanceIds={System.Uri.EscapeDataString(z.ToString())}"))+"&AutoScalingGroupName=" + (AutoScalingGroupName==null? "" : System.Uri.EscapeDataString(AutoScalingGroupName))+"&ShouldDecrementDesiredCapacity="+ShouldDecrementDesiredCapacity+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6022,7 +5915,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6045,8 +5937,7 @@ namespace MyNS
 		public async Task GET_ExecutePolicyAsync(string AutoScalingGroupName, string PolicyName, bool HonorCooldown, double MetricValue, double BreachThreshold, GET_ExecutePolicyAction Action, GET_ExecutePolicyVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=ExecutePolicy?AutoScalingGroupName=" + (AutoScalingGroupName==null? "" : System.Uri.EscapeDataString(AutoScalingGroupName))+"&PolicyName=" + (PolicyName==null? "" : System.Uri.EscapeDataString(PolicyName))+"&HonorCooldown="+HonorCooldown+"&MetricValue="+MetricValue+"&BreachThreshold="+BreachThreshold+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6060,7 +5951,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6077,8 +5967,7 @@ namespace MyNS
 		public async Task GET_ExitStandbyAsync(string[] InstanceIds, string AutoScalingGroupName, GET_ExitStandbyAction Action, GET_ExitStandbyVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=ExitStandby?"+string.Join("&", InstanceIds.Select(z => $"InstanceIds={System.Uri.EscapeDataString(z.ToString())}"))+"&AutoScalingGroupName=" + (AutoScalingGroupName==null? "" : System.Uri.EscapeDataString(AutoScalingGroupName))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6092,7 +5981,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6114,8 +6002,7 @@ namespace MyNS
 		public async Task GET_GetPredictiveScalingForecastAsync(string AutoScalingGroupName, string PolicyName, System.DateTimeOffset StartTime, System.DateTimeOffset EndTime, GET_GetPredictiveScalingForecastAction Action, GET_GetPredictiveScalingForecastVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=GetPredictiveScalingForecast?AutoScalingGroupName=" + (AutoScalingGroupName==null? "" : System.Uri.EscapeDataString(AutoScalingGroupName))+"&PolicyName=" + (PolicyName==null? "" : System.Uri.EscapeDataString(PolicyName))+"&StartTime=" + StartTime.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&EndTime=" + EndTime.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6129,7 +6016,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6164,8 +6050,7 @@ namespace MyNS
 		public async Task GET_PutLifecycleHookAsync(string LifecycleHookName, string AutoScalingGroupName, string LifecycleTransition, string RoleARN, string NotificationTargetARN, string NotificationMetadata, int HeartbeatTimeout, string DefaultResult, GET_PutLifecycleHookAction Action, GET_PutLifecycleHookVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=PutLifecycleHook?LifecycleHookName=" + (LifecycleHookName==null? "" : System.Uri.EscapeDataString(LifecycleHookName))+"&AutoScalingGroupName=" + (AutoScalingGroupName==null? "" : System.Uri.EscapeDataString(AutoScalingGroupName))+"&LifecycleTransition=" + (LifecycleTransition==null? "" : System.Uri.EscapeDataString(LifecycleTransition))+"&RoleARN=" + (RoleARN==null? "" : System.Uri.EscapeDataString(RoleARN))+"&NotificationTargetARN=" + (NotificationTargetARN==null? "" : System.Uri.EscapeDataString(NotificationTargetARN))+"&NotificationMetadata=" + (NotificationMetadata==null? "" : System.Uri.EscapeDataString(NotificationMetadata))+"&HeartbeatTimeout="+HeartbeatTimeout+"&DefaultResult=" + (DefaultResult==null? "" : System.Uri.EscapeDataString(DefaultResult))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6179,7 +6064,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6200,8 +6084,7 @@ namespace MyNS
 		public async Task GET_PutNotificationConfigurationAsync(string AutoScalingGroupName, string TopicARN, string[] NotificationTypes, GET_PutNotificationConfigurationAction Action, GET_PutNotificationConfigurationVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=PutNotificationConfiguration?AutoScalingGroupName=" + (AutoScalingGroupName==null? "" : System.Uri.EscapeDataString(AutoScalingGroupName))+"&TopicARN=" + (TopicARN==null? "" : System.Uri.EscapeDataString(TopicARN))+"&"+string.Join("&", NotificationTypes.Select(z => $"NotificationTypes={System.Uri.EscapeDataString(z.ToString())}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6215,7 +6098,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6273,8 +6155,7 @@ namespace MyNS
 					Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=PutScalingPolicy?AutoScalingGroupName=" + (AutoScalingGroupName==null? "" : System.Uri.EscapeDataString(AutoScalingGroupName))+"&PolicyName=" + (PolicyName==null? "" : System.Uri.EscapeDataString(PolicyName))+"&PolicyType=" + (PolicyType==null? "" : System.Uri.EscapeDataString(PolicyType))+"&AdjustmentType=" + (AdjustmentType==null? "" : System.Uri.EscapeDataString(AdjustmentType))+"&MinAdjustmentStep="+MinAdjustmentStep+"&MinAdjustmentMagnitude="+MinAdjustmentMagnitude+"&ScalingAdjustment="+ScalingAdjustment+"&Cooldown="+Cooldown+"&MetricAggregationType=" + (MetricAggregationType==null? "" : System.Uri.EscapeDataString(MetricAggregationType))+"&"+string.Join("&", StepAdjustments.Select(z => $"StepAdjustments={z}"))+"&EstimatedInstanceWarmup="+EstimatedInstanceWarmup+"&TargetTrackingConfiguration=" + TargetTrackingConfiguration+"&Enabled="+Enabled+"&PredictiveScalingConfiguration=" + PredictiveScalingConfiguration+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6288,7 +6169,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6322,8 +6202,7 @@ namespace MyNS
 		public async Task GET_PutScheduledUpdateGroupActionAsync(string AutoScalingGroupName, string ScheduledActionName, System.DateTimeOffset Time, System.DateTimeOffset StartTime, System.DateTimeOffset EndTime, string Recurrence, int MinSize, int MaxSize, int DesiredCapacity, string TimeZone, GET_PutScheduledUpdateGroupActionAction Action, GET_PutScheduledUpdateGroupActionVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=PutScheduledUpdateGroupAction?AutoScalingGroupName=" + (AutoScalingGroupName==null? "" : System.Uri.EscapeDataString(AutoScalingGroupName))+"&ScheduledActionName=" + (ScheduledActionName==null? "" : System.Uri.EscapeDataString(ScheduledActionName))+"&Time=" + Time.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&StartTime=" + StartTime.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&EndTime=" + EndTime.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&Recurrence=" + (Recurrence==null? "" : System.Uri.EscapeDataString(Recurrence))+"&MinSize="+MinSize+"&MaxSize="+MaxSize+"&DesiredCapacity="+DesiredCapacity+"&TimeZone=" + (TimeZone==null? "" : System.Uri.EscapeDataString(TimeZone))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6337,7 +6216,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6361,8 +6239,7 @@ namespace MyNS
 		public async Task GET_PutWarmPoolAsync(string AutoScalingGroupName, int MaxGroupPreparedCapacity, int MinSize, WarmPoolState PoolState, GET_PutWarmPoolInstanceReusePolicy InstanceReusePolicy, GET_PutWarmPoolAction Action, GET_PutWarmPoolVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=PutWarmPool?AutoScalingGroupName=" + (AutoScalingGroupName==null? "" : System.Uri.EscapeDataString(AutoScalingGroupName))+"&MaxGroupPreparedCapacity="+MaxGroupPreparedCapacity+"&MinSize="+MinSize+"&PoolState=" + PoolState+"&InstanceReusePolicy=" + InstanceReusePolicy+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6376,7 +6253,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6404,8 +6280,7 @@ namespace MyNS
 		public async Task GET_RecordLifecycleActionHeartbeatAsync(string LifecycleHookName, string AutoScalingGroupName, string LifecycleActionToken, string InstanceId, GET_RecordLifecycleActionHeartbeatAction Action, GET_RecordLifecycleActionHeartbeatVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=RecordLifecycleActionHeartbeat?LifecycleHookName=" + (LifecycleHookName==null? "" : System.Uri.EscapeDataString(LifecycleHookName))+"&AutoScalingGroupName=" + (AutoScalingGroupName==null? "" : System.Uri.EscapeDataString(AutoScalingGroupName))+"&LifecycleActionToken=" + (LifecycleActionToken==null? "" : System.Uri.EscapeDataString(LifecycleActionToken))+"&InstanceId=" + (InstanceId==null? "" : System.Uri.EscapeDataString(InstanceId))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6419,7 +6294,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6436,8 +6310,7 @@ namespace MyNS
 		public async Task GET_ResumeProcessesAsync(string AutoScalingGroupName, string[] ScalingProcesses, GET_ResumeProcessesAction Action, GET_ResumeProcessesVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=ResumeProcesses?AutoScalingGroupName=" + (AutoScalingGroupName==null? "" : System.Uri.EscapeDataString(AutoScalingGroupName))+"&"+string.Join("&", ScalingProcesses.Select(z => $"ScalingProcesses={System.Uri.EscapeDataString(z.ToString())}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6451,7 +6324,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6467,8 +6339,7 @@ namespace MyNS
 		public async Task GET_RollbackInstanceRefreshAsync(string AutoScalingGroupName, GET_RollbackInstanceRefreshAction Action, GET_RollbackInstanceRefreshVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=RollbackInstanceRefresh?AutoScalingGroupName=" + (AutoScalingGroupName==null? "" : System.Uri.EscapeDataString(AutoScalingGroupName))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6482,7 +6353,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6500,8 +6370,7 @@ namespace MyNS
 		public async Task GET_SetDesiredCapacityAsync(string AutoScalingGroupName, int DesiredCapacity, bool HonorCooldown, GET_SetDesiredCapacityAction Action, GET_SetDesiredCapacityVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=SetDesiredCapacity?AutoScalingGroupName=" + (AutoScalingGroupName==null? "" : System.Uri.EscapeDataString(AutoScalingGroupName))+"&DesiredCapacity="+DesiredCapacity+"&HonorCooldown="+HonorCooldown+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6515,7 +6384,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6536,8 +6404,7 @@ namespace MyNS
 		public async Task GET_SetInstanceHealthAsync(string InstanceId, string HealthStatus, bool ShouldRespectGracePeriod, GET_SetInstanceHealthAction Action, GET_SetInstanceHealthVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=SetInstanceHealth?InstanceId=" + (InstanceId==null? "" : System.Uri.EscapeDataString(InstanceId))+"&HealthStatus=" + (HealthStatus==null? "" : System.Uri.EscapeDataString(HealthStatus))+"&ShouldRespectGracePeriod="+ShouldRespectGracePeriod+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6551,7 +6418,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6569,8 +6435,7 @@ namespace MyNS
 		public async Task GET_SetInstanceProtectionAsync(string[] InstanceIds, string AutoScalingGroupName, bool ProtectedFromScaleIn, GET_SetInstanceProtectionAction Action, GET_SetInstanceProtectionVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=SetInstanceProtection?"+string.Join("&", InstanceIds.Select(z => $"InstanceIds={System.Uri.EscapeDataString(z.ToString())}"))+"&AutoScalingGroupName=" + (AutoScalingGroupName==null? "" : System.Uri.EscapeDataString(AutoScalingGroupName))+"&ProtectedFromScaleIn="+ProtectedFromScaleIn+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6584,7 +6449,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6603,8 +6467,7 @@ namespace MyNS
 		public async Task GET_StartInstanceRefreshAsync(string AutoScalingGroupName, RefreshStrategy Strategy, GET_StartInstanceRefreshDesiredConfiguration DesiredConfiguration, GET_StartInstanceRefreshPreferences Preferences, GET_StartInstanceRefreshAction Action, GET_StartInstanceRefreshVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=StartInstanceRefresh?AutoScalingGroupName=" + (AutoScalingGroupName==null? "" : System.Uri.EscapeDataString(AutoScalingGroupName))+"&Strategy=" + Strategy+"&DesiredConfiguration=" + DesiredConfiguration+"&Preferences=" + Preferences+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6618,7 +6481,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6635,8 +6497,7 @@ namespace MyNS
 		public async Task GET_SuspendProcessesAsync(string AutoScalingGroupName, string[] ScalingProcesses, GET_SuspendProcessesAction Action, GET_SuspendProcessesVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=SuspendProcesses?AutoScalingGroupName=" + (AutoScalingGroupName==null? "" : System.Uri.EscapeDataString(AutoScalingGroupName))+"&"+string.Join("&", ScalingProcesses.Select(z => $"ScalingProcesses={System.Uri.EscapeDataString(z.ToString())}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6650,7 +6511,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6667,8 +6527,7 @@ namespace MyNS
 		public async Task GET_TerminateInstanceInAutoScalingGroupAsync(string InstanceId, bool ShouldDecrementDesiredCapacity, GET_TerminateInstanceInAutoScalingGroupAction Action, GET_TerminateInstanceInAutoScalingGroupVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=TerminateInstanceInAutoScalingGroup?InstanceId=" + (InstanceId==null? "" : System.Uri.EscapeDataString(InstanceId))+"&ShouldDecrementDesiredCapacity="+ShouldDecrementDesiredCapacity+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6682,7 +6541,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6760,8 +6618,7 @@ namespace MyNS
 					Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=UpdateAutoScalingGroup?AutoScalingGroupName=" + (AutoScalingGroupName==null? "" : System.Uri.EscapeDataString(AutoScalingGroupName))+"&LaunchConfigurationName=" + (LaunchConfigurationName==null? "" : System.Uri.EscapeDataString(LaunchConfigurationName))+"&LaunchTemplate=" + LaunchTemplate+"&MixedInstancesPolicy=" + MixedInstancesPolicy+"&MinSize="+MinSize+"&MaxSize="+MaxSize+"&DesiredCapacity="+DesiredCapacity+"&DefaultCooldown="+DefaultCooldown+"&"+string.Join("&", AvailabilityZones.Select(z => $"AvailabilityZones={System.Uri.EscapeDataString(z.ToString())}"))+"&HealthCheckType=" + (HealthCheckType==null? "" : System.Uri.EscapeDataString(HealthCheckType))+"&HealthCheckGracePeriod="+HealthCheckGracePeriod+"&PlacementGroup=" + (PlacementGroup==null? "" : System.Uri.EscapeDataString(PlacementGroup))+"&VPCZoneIdentifier=" + (VPCZoneIdentifier==null? "" : System.Uri.EscapeDataString(VPCZoneIdentifier))+"&"+string.Join("&", TerminationPolicies.Select(z => $"TerminationPolicies={System.Uri.EscapeDataString(z.ToString())}"))+"&NewInstancesProtectedFromScaleIn="+NewInstancesProtectedFromScaleIn+"&ServiceLinkedRoleARN=" + (ServiceLinkedRoleARN==null? "" : System.Uri.EscapeDataString(ServiceLinkedRoleARN))+"&MaxInstanceLifetime="+MaxInstanceLifetime+"&CapacityRebalance="+CapacityRebalance+"&Context=" + (Context==null? "" : System.Uri.EscapeDataString(Context))+"&DesiredCapacityType=" + (DesiredCapacityType==null? "" : System.Uri.EscapeDataString(DesiredCapacityType))+"&DefaultInstanceWarmup="+DefaultInstanceWarmup+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6775,7 +6632,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

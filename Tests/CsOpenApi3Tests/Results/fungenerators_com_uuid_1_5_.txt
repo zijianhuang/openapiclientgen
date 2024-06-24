@@ -46,8 +46,7 @@ namespace MyNS
 		public async Task UUID_GenerationGetByCountAsync(string count, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "uuid?count=" + (count==null? "" : System.Uri.EscapeDataString(count));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -62,7 +61,6 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
-			}
 		}
 		
 		/// <summary>
@@ -74,8 +72,7 @@ namespace MyNS
 		public async Task UUID_ParsingPostByUuidstrAsync(string uuidstr, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "uuid?uuidstr=" + (uuidstr==null? "" : System.Uri.EscapeDataString(uuidstr));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -84,7 +81,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -100,8 +96,7 @@ namespace MyNS
 		public async Task UUID_GenerationGetByCountAndVersionAndTypeAndTextAsync(string count, string version, string type, string text, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "uuid/version/"+ (version==null? "" : System.Uri.EscapeDataString(version))+"?count=" + (count==null? "" : System.Uri.EscapeDataString(count))+"&type=" + (type==null? "" : System.Uri.EscapeDataString(type))+"&text=" + (text==null? "" : System.Uri.EscapeDataString(text));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -115,7 +110,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

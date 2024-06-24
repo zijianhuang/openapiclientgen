@@ -6390,8 +6390,7 @@ namespace MyNS
 		public async Task GetAPIAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6405,7 +6404,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6433,8 +6431,7 @@ namespace MyNS
 		public async Task<Nitro> ListAvailabilityAsync(ListAvailabilitySort sort, ListAvailabilitySort_direction sort_direction, string[] availability, string[] descendants_of, string[] media_set, int page, int page_size, string[] territory, bool debug, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "availabilities?sort=" + sort+"&sort_direction=" + sort_direction+"&"+string.Join("&", availability.Select(z => $"availability={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", descendants_of.Select(z => $"descendants_of={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", media_set.Select(z => $"media_set={System.Uri.EscapeDataString(z.ToString())}"))+"&page="+page+"&page_size="+page_size+"&"+string.Join("&", territory.Select(z => $"territory={System.Uri.EscapeDataString(z.ToString())}"))+"&debug="+debug;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6444,13 +6441,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Nitro>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Nitro>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6520,8 +6516,7 @@ namespace MyNS
 					Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "broadcasts?sort=" + sort+"&sort_direction=" + sort_direction+"&"+string.Join("&", mixin.Select(z => $"mixin={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", authority.Select(z => $"authority={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", descendants_of.Select(z => $"descendants_of={System.Uri.EscapeDataString(z.ToString())}"))+"&end_from=" + end_from.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&end_to=" + end_to.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&"+string.Join("&", format.Select(z => $"format={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", genre.Select(z => $"genre={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", id.Select(z => $"id={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", item.Select(z => $"item={System.Uri.EscapeDataString(z.ToString())}"))+"&page="+page+"&page_size="+page_size+"&people=" + (people==null? "" : System.Uri.EscapeDataString(people))+"&"+string.Join("&", pid.Select(z => $"pid={System.Uri.EscapeDataString(z.ToString())}"))+"&q=" + (q==null? "" : System.Uri.EscapeDataString(q))+"&schedule_day="+schedule_day+"&schedule_day_from="+schedule_day_from+"&schedule_day_to="+schedule_day_to+"&"+string.Join("&", service_master_brand.Select(z => $"service_master_brand={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", sid.Select(z => $"sid={System.Uri.EscapeDataString(z.ToString())}"))+"&start_from=" + start_from.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&start_to=" + start_to.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&"+string.Join("&", version.Select(z => $"version={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6531,13 +6526,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Nitro>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Nitro>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6600,8 +6594,7 @@ namespace MyNS
 					Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "groups?sort=" + sort+"&sort_direction=" + sort_direction+"&"+string.Join("&", mixin.Select(z => $"mixin={System.Uri.EscapeDataString(z.ToString())}"))+"&for_descendants_of=" + (for_descendants_of==null? "" : System.Uri.EscapeDataString(for_descendants_of))+"&for_programme=" + (for_programme==null? "" : System.Uri.EscapeDataString(for_programme))+"&group=" + (group==null? "" : System.Uri.EscapeDataString(group))+"&"+string.Join("&", group_type.Select(z => $"group_type={System.Uri.EscapeDataString(z.ToString())}"))+"&member=" + (member==null? "" : System.Uri.EscapeDataString(member))+"&page="+page+"&page_size="+page_size+"&"+string.Join("&", partner_id.Select(z => $"partner_id={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", partner_pid.Select(z => $"partner_pid={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", pid.Select(z => $"pid={System.Uri.EscapeDataString(z.ToString())}"))+"&q=" + (q==null? "" : System.Uri.EscapeDataString(q))+"&embargoed=" + embargoed;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6611,13 +6604,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Nitro>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Nitro>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6656,8 +6648,7 @@ namespace MyNS
 		public async Task<Nitro> ListImagesAsync(ListImagesSort sort, ListAvailabilitySort_direction sort_direction, string group, string[] image_type, string is_alternate_image_for, string is_image_for, int page, int page_size, string[] partner_id, string[] partner_pid, string[] pid, string q, ListGroupsEmbargoed embargoed, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "images?sort=" + sort+"&sort_direction=" + sort_direction+"&group=" + (group==null? "" : System.Uri.EscapeDataString(group))+"&"+string.Join("&", image_type.Select(z => $"image_type={System.Uri.EscapeDataString(z.ToString())}"))+"&is_alternate_image_for=" + (is_alternate_image_for==null? "" : System.Uri.EscapeDataString(is_alternate_image_for))+"&is_image_for=" + (is_image_for==null? "" : System.Uri.EscapeDataString(is_image_for))+"&page="+page+"&page_size="+page_size+"&"+string.Join("&", partner_id.Select(z => $"partner_id={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", partner_pid.Select(z => $"partner_pid={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", pid.Select(z => $"pid={System.Uri.EscapeDataString(z.ToString())}"))+"&q=" + (q==null? "" : System.Uri.EscapeDataString(q))+"&embargoed=" + embargoed;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6667,13 +6658,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Nitro>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Nitro>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6732,8 +6722,7 @@ namespace MyNS
 					Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "items?sort=" + sort+"&sort_direction=" + sort_direction+"&"+string.Join("&", mixin.Select(z => $"mixin={System.Uri.EscapeDataString(z.ToString())}"))+"&authority=" + (authority==null? "" : System.Uri.EscapeDataString(authority))+"&"+string.Join("&", id.Select(z => $"id={System.Uri.EscapeDataString(z.ToString())}"))+"&id_type=" + (id_type==null? "" : System.Uri.EscapeDataString(id_type))+"&"+string.Join("&", item_type.Select(z => $"item_type={System.Uri.EscapeDataString(z.ToString())}"))+"&page="+page+"&page_size="+page_size+"&"+string.Join("&", partner_id.Select(z => $"partner_id={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", partner_pid.Select(z => $"partner_pid={System.Uri.EscapeDataString(z.ToString())}"))+"&people=" + (people==null? "" : System.Uri.EscapeDataString(people))+"&"+string.Join("&", pid.Select(z => $"pid={System.Uri.EscapeDataString(z.ToString())}"))+"&programme=" + (programme==null? "" : System.Uri.EscapeDataString(programme))+"&q=" + (q==null? "" : System.Uri.EscapeDataString(q))+"&segment_event=" + (segment_event==null? "" : System.Uri.EscapeDataString(segment_event));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6743,13 +6732,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Nitro>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Nitro>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6779,8 +6767,7 @@ namespace MyNS
 		public async Task<Nitro> ListMasterbrandsAsync(ListMasterbrandsSort sort, ListMasterbrandsSort_direction sort_direction, string[] mixin, string[] mid, int page, int page_size, string[] partner_id, string[] partner_pid, string q, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "master_brands?sort=" + sort+"&sort_direction=" + sort_direction+"&"+string.Join("&", mixin.Select(z => $"mixin={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", mid.Select(z => $"mid={System.Uri.EscapeDataString(z.ToString())}"))+"&page="+page+"&page_size="+page_size+"&"+string.Join("&", partner_id.Select(z => $"partner_id={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", partner_pid.Select(z => $"partner_pid={System.Uri.EscapeDataString(z.ToString())}"))+"&q=" + (q==null? "" : System.Uri.EscapeDataString(q));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6790,13 +6777,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Nitro>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Nitro>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6824,8 +6810,7 @@ namespace MyNS
 		public async Task<Nitro> ListPeopleAsync(string authority, string[] has_external_id, string[] id, string id_type, int page, int page_size, string[] partner_id, string[] partner_pid, string[] pid, string programme, string q, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "people?authority=" + (authority==null? "" : System.Uri.EscapeDataString(authority))+"&"+string.Join("&", has_external_id.Select(z => $"has_external_id={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", id.Select(z => $"id={System.Uri.EscapeDataString(z.ToString())}"))+"&id_type=" + (id_type==null? "" : System.Uri.EscapeDataString(id_type))+"&page="+page+"&page_size="+page_size+"&"+string.Join("&", partner_id.Select(z => $"partner_id={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", partner_pid.Select(z => $"partner_pid={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", pid.Select(z => $"pid={System.Uri.EscapeDataString(z.ToString())}"))+"&programme=" + (programme==null? "" : System.Uri.EscapeDataString(programme))+"&q=" + (q==null? "" : System.Uri.EscapeDataString(q));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6835,13 +6820,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Nitro>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Nitro>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6861,8 +6845,7 @@ namespace MyNS
 		public async Task<Nitro> ListPipsAsync(int page, int page_size, string q, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "pips?page="+page+"&page_size="+page_size+"&q=" + (q==null? "" : System.Uri.EscapeDataString(q));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6872,13 +6855,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Nitro>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Nitro>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6903,8 +6885,7 @@ namespace MyNS
 		public async Task<Nitro> ListProgrammeDetailsAsync(int page, int page_size, string partner_pid, string pid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "programme_details?page="+page+"&page_size="+page_size+"&partner_pid=" + (partner_pid==null? "" : System.Uri.EscapeDataString(partner_pid))+"&pid=" + (pid==null? "" : System.Uri.EscapeDataString(pid));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6914,13 +6895,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Nitro>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Nitro>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -7056,8 +7036,7 @@ namespace MyNS
 					Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "programmes?sort=" + sort+"&sort_direction=" + sort_direction+"&"+string.Join("&", mixin.Select(z => $"mixin={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", audio_described.Select(z => $"audio_described={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", availability.Select(z => $"availability={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", availability_entity_type.Select(z => $"availability_entity_type={System.Uri.EscapeDataString(z.ToString())}"))+"&availability_from=" + availability_from.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&"+string.Join("&", availability_type.Select(z => $"availability_type={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", children_of.Select(z => $"children_of={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", descendants_of.Select(z => $"descendants_of={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", duration.Select(z => $"duration={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", entity_type.Select(z => $"entity_type={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", format.Select(z => $"format={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", genre.Select(z => $"genre={System.Uri.EscapeDataString(z.ToString())}"))+"&group=" + (group==null? "" : System.Uri.EscapeDataString(group))+"&initial_letter=" + (initial_letter==null? "" : System.Uri.EscapeDataString(initial_letter))+"&initial_letter_end=" + (initial_letter_end==null? "" : System.Uri.EscapeDataString(initial_letter_end))+"&initial_letter_start=" + (initial_letter_start==null? "" : System.Uri.EscapeDataString(initial_letter_start))+"&"+string.Join("&", initial_letter_strict.Select(z => $"initial_letter_strict={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", item.Select(z => $"item={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", master_brand.Select(z => $"master_brand={System.Uri.EscapeDataString(z.ToString())}"))+"&media_set=" + (media_set==null? "" : System.Uri.EscapeDataString(media_set))+"&"+string.Join("&", media_type.Select(z => $"media_type={System.Uri.EscapeDataString(z.ToString())}"))+"&page="+page+"&page_size="+page_size+"&"+string.Join("&", partner_id.Select(z => $"partner_id={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", partner_pid.Select(z => $"partner_pid={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", payment_type.Select(z => $"payment_type={System.Uri.EscapeDataString(z.ToString())}"))+"&people=" + (people==null? "" : System.Uri.EscapeDataString(people))+"&"+string.Join("&", pid.Select(z => $"pid={System.Uri.EscapeDataString(z.ToString())}"))+"&promoted_for=" + (promoted_for==null? "" : System.Uri.EscapeDataString(promoted_for))+"&q=" + (q==null? "" : System.Uri.EscapeDataString(q))+"&"+string.Join("&", signed.Select(z => $"signed={System.Uri.EscapeDataString(z.ToString())}"))+"&tag_name=" + (tag_name==null? "" : System.Uri.EscapeDataString(tag_name))+"&tag_scheme=" + (tag_scheme==null? "" : System.Uri.EscapeDataString(tag_scheme))+"&"+string.Join("&", tleo.Select(z => $"tleo={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", version.Select(z => $"version={System.Uri.EscapeDataString(z.ToString())}"))+"&embargoed=" + embargoed;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -7067,13 +7046,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Nitro>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Nitro>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -7105,8 +7083,7 @@ namespace MyNS
 		public async Task<Nitro> ListPromotionsAsync(string[] mixin, string context, int page, int page_size, string[] partner_id, string[] partner_pid, string[] pid, string[] promoted_by, string[] promoted_for, string q, string[] status, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "promotions?"+string.Join("&", mixin.Select(z => $"mixin={System.Uri.EscapeDataString(z.ToString())}"))+"&context=" + (context==null? "" : System.Uri.EscapeDataString(context))+"&page="+page+"&page_size="+page_size+"&"+string.Join("&", partner_id.Select(z => $"partner_id={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", partner_pid.Select(z => $"partner_pid={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", pid.Select(z => $"pid={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", promoted_by.Select(z => $"promoted_by={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", promoted_for.Select(z => $"promoted_for={System.Uri.EscapeDataString(z.ToString())}"))+"&q=" + (q==null? "" : System.Uri.EscapeDataString(q))+"&"+string.Join("&", status.Select(z => $"status={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -7116,13 +7093,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Nitro>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Nitro>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -7206,8 +7182,7 @@ namespace MyNS
 					Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "schedules?sort=" + sort+"&sort_direction=" + sort_direction+"&"+string.Join("&", mixin.Select(z => $"mixin={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", authority.Select(z => $"authority={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", descendants_of.Select(z => $"descendants_of={System.Uri.EscapeDataString(z.ToString())}"))+"&end_from=" + end_from.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&end_to=" + end_to.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&"+string.Join("&", format.Select(z => $"format={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", genre.Select(z => $"genre={System.Uri.EscapeDataString(z.ToString())}"))+"&group=" + (group==null? "" : System.Uri.EscapeDataString(group))+"&"+string.Join("&", id.Select(z => $"id={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", id_type.Select(z => $"id_type={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", item.Select(z => $"item={System.Uri.EscapeDataString(z.ToString())}"))+"&page="+page+"&page_size="+page_size+"&"+string.Join("&", partner_id.Select(z => $"partner_id={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", partner_pid.Select(z => $"partner_pid={System.Uri.EscapeDataString(z.ToString())}"))+"&people=" + (people==null? "" : System.Uri.EscapeDataString(people))+"&"+string.Join("&", pid.Select(z => $"pid={System.Uri.EscapeDataString(z.ToString())}"))+"&q=" + (q==null? "" : System.Uri.EscapeDataString(q))+"&repeat="+repeat+"&schedule_day="+schedule_day+"&schedule_day_from="+schedule_day_from+"&schedule_day_to="+schedule_day_to+"&"+string.Join("&", service_master_brand.Select(z => $"service_master_brand={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", sid.Select(z => $"sid={System.Uri.EscapeDataString(z.ToString())}"))+"&start_from=" + start_from.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&start_to=" + start_to.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&"+string.Join("&", version.Select(z => $"version={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -7217,13 +7192,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Nitro>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Nitro>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -7236,8 +7210,7 @@ namespace MyNS
 		public async Task GetXSDAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "schema";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -7251,7 +7224,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -7280,8 +7252,7 @@ namespace MyNS
 		public async Task<Nitro> ListServicesAsync(System.DateTimeOffset end_from, System.DateTimeOffset end_to, string[] mid, int page, int page_size, string[] partner_id, string[] partner_pid, string q, string[] service_type, string[] sid, System.DateTimeOffset start_from, System.DateTimeOffset start_to, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "services?end_from=" + end_from.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&end_to=" + end_to.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&"+string.Join("&", mid.Select(z => $"mid={System.Uri.EscapeDataString(z.ToString())}"))+"&page="+page+"&page_size="+page_size+"&"+string.Join("&", partner_id.Select(z => $"partner_id={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", partner_pid.Select(z => $"partner_pid={System.Uri.EscapeDataString(z.ToString())}"))+"&q=" + (q==null? "" : System.Uri.EscapeDataString(q))+"&"+string.Join("&", service_type.Select(z => $"service_type={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", sid.Select(z => $"sid={System.Uri.EscapeDataString(z.ToString())}"))+"&start_from=" + start_from.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&start_to=" + start_to.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ");
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -7291,13 +7262,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Nitro>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Nitro>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -7310,8 +7280,7 @@ namespace MyNS
 		public async Task<Nitro> Get_Raw_brandAsync(string pid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/brands/"+ (pid==null? "" : System.Uri.EscapeDataString(pid));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -7321,13 +7290,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Nitro>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Nitro>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -7340,8 +7308,7 @@ namespace MyNS
 		public async Task<Nitro> Get_Raw_brand_franchisesAsync(string pid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/brands/"+ (pid==null? "" : System.Uri.EscapeDataString(pid))+"/franchises/";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -7351,13 +7318,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Nitro>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Nitro>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -7370,8 +7336,7 @@ namespace MyNS
 		public async Task<Nitro> Get_Raw_episodeAsync(string pid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/episodes/"+ (pid==null? "" : System.Uri.EscapeDataString(pid));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -7381,13 +7346,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Nitro>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Nitro>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -7400,8 +7364,7 @@ namespace MyNS
 		public async Task<Nitro> Get_Raw_ancestorsAsync(string pid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/episodes/"+ (pid==null? "" : System.Uri.EscapeDataString(pid))+"/ancestors/";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -7411,13 +7374,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Nitro>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Nitro>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -7430,8 +7392,7 @@ namespace MyNS
 		public async Task<Nitro> Get_Raw_formatsAsync(string pid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/episodes/"+ (pid==null? "" : System.Uri.EscapeDataString(pid))+"/formats/";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -7441,13 +7402,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Nitro>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Nitro>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -7460,8 +7420,7 @@ namespace MyNS
 		public async Task<Nitro> Get_Raw_genre_groupsAsync(string pid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/episodes/"+ (pid==null? "" : System.Uri.EscapeDataString(pid))+"/genre_groups/";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -7471,13 +7430,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Nitro>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Nitro>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -7490,8 +7448,7 @@ namespace MyNS
 		public async Task<Nitro> Get_Raw_imageAsync(string pid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/images/"+ (pid==null? "" : System.Uri.EscapeDataString(pid));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -7501,13 +7458,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Nitro>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Nitro>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -7520,8 +7476,7 @@ namespace MyNS
 		public async Task<Nitro> Get_Raw_masterbrandAsync(string mbid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/master_brands/"+ (mbid==null? "" : System.Uri.EscapeDataString(mbid));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -7531,13 +7486,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Nitro>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Nitro>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -7550,8 +7504,7 @@ namespace MyNS
 		public async Task<Nitro> Get_Raw_promotionAsync(string pid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/promotions/"+ (pid==null? "" : System.Uri.EscapeDataString(pid));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -7561,13 +7514,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Nitro>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Nitro>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -7594,8 +7546,7 @@ namespace MyNS
 		public async Task<Nitro> ListVersionsAsync(string[] availability, string[] descendants_of, string[] media_set, int page, int page_size, string[] partner_id, string[] partner_pid, string[] payment_type, string[] pid, ListGroupsEmbargoed embargoed, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "versions?"+string.Join("&", availability.Select(z => $"availability={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", descendants_of.Select(z => $"descendants_of={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", media_set.Select(z => $"media_set={System.Uri.EscapeDataString(z.ToString())}"))+"&page="+page+"&page_size="+page_size+"&"+string.Join("&", partner_id.Select(z => $"partner_id={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", partner_pid.Select(z => $"partner_pid={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", payment_type.Select(z => $"payment_type={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", pid.Select(z => $"pid={System.Uri.EscapeDataString(z.ToString())}"))+"&embargoed=" + embargoed;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -7605,13 +7556,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Nitro>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Nitro>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

@@ -959,8 +959,7 @@ namespace MyNS
 		public async Task<ApiResponse_List_PublishedWrittenQuestion_> PublishedEarlyDayMotion_GetAsync(int id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "EarlyDayMotion/"+id;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -970,13 +969,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ApiResponse_List_PublishedWrittenQuestion_>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ApiResponse_List_PublishedWrittenQuestion_>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1003,8 +1001,7 @@ namespace MyNS
 		public async Task<ApiResponse_List_PublishedWrittenQuestion_> Early_Day_MotionsGetByParameters_edmIdsAndParameters_uINWithAmendmentSuffixAndParameters_searchTermAndParameters_currentStatusDateStartAndParameters_currentStatusDateEndAndParameters_isPrayerAndParameters_memberIdAndParameters_includeSponsoredByMemberAndParameters_tabledStartDateAndParameters_tabledEndDateAndParameters_statusesAndParameters_orderByAndParameters_skipAndParameters_takeAsync(int[] parameters_edmIds, string parameters_uINWithAmendmentSuffix, string parameters_searchTerm, System.DateTimeOffset parameters_currentStatusDateStart, System.DateTimeOffset parameters_currentStatusDateEnd, bool parameters_isPrayer, int parameters_memberId, bool parameters_includeSponsoredByMember, System.DateTimeOffset parameters_tabledStartDate, System.DateTimeOffset parameters_tabledEndDate, PublishedEarlyDayMotionStatus[] parameters_statuses, PublishedEarlyDayMotionQueryParametersOrderBy parameters_orderBy, int parameters_skip, int parameters_take, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "EarlyDayMotions/list?"+string.Join("&", parameters_edmIds.Select(z => $"parameters.edmIds={z}"))+"&parameters.uINWithAmendmentSuffix=" + (parameters_uINWithAmendmentSuffix==null? "" : System.Uri.EscapeDataString(parameters_uINWithAmendmentSuffix))+"&parameters.searchTerm=" + (parameters_searchTerm==null? "" : System.Uri.EscapeDataString(parameters_searchTerm))+"&parameters.currentStatusDateStart=" + parameters_currentStatusDateStart.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&parameters.currentStatusDateEnd=" + parameters_currentStatusDateEnd.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&parameters.isPrayer="+parameters_isPrayer+"&parameters.memberId="+parameters_memberId+"&parameters.includeSponsoredByMember="+parameters_includeSponsoredByMember+"&parameters.tabledStartDate=" + parameters_tabledStartDate.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&parameters.tabledEndDate=" + parameters_tabledEndDate.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&"+string.Join("&", parameters_statuses.Select(z => $"parameters.statuses={z}"))+"&parameters.orderBy=" + parameters_orderBy+"&parameters.skip="+parameters_skip+"&parameters.take="+parameters_take;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1014,13 +1011,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ApiResponse_List_PublishedWrittenQuestion_>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ApiResponse_List_PublishedWrittenQuestion_>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1042,8 +1038,7 @@ namespace MyNS
 		public async Task<ApiResponse_List_PublishedWrittenQuestion_> PublishedOralQuestion_GetAsync(System.DateTimeOffset parameters_answeringDateStart, System.DateTimeOffset parameters_answeringDateEnd, PublishedOralQuestionQuestionType parameters_questionType, int parameters_oralQuestionTimeId, int[] parameters_askingMemberIds, int[] parameters_uINs, int[] parameters_answeringBodyIds, int parameters_skip, int parameters_take, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "oralquestions/list?parameters.answeringDateStart=" + parameters_answeringDateStart.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&parameters.answeringDateEnd=" + parameters_answeringDateEnd.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&parameters.questionType=" + parameters_questionType+"&parameters.oralQuestionTimeId="+parameters_oralQuestionTimeId+"&"+string.Join("&", parameters_askingMemberIds.Select(z => $"parameters.askingMemberIds={z}"))+"&"+string.Join("&", parameters_uINs.Select(z => $"parameters.uINs={z}"))+"&"+string.Join("&", parameters_answeringBodyIds.Select(z => $"parameters.answeringBodyIds={z}"))+"&parameters.skip="+parameters_skip+"&parameters.take="+parameters_take;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1053,13 +1048,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ApiResponse_List_PublishedWrittenQuestion_>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ApiResponse_List_PublishedWrittenQuestion_>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1080,8 +1074,7 @@ namespace MyNS
 		public async Task<ApiResponse_List_PublishedWrittenQuestion_> PublishedOralQuestionTime_GetAsync(System.DateTimeOffset parameters_answeringDateStart, System.DateTimeOffset parameters_answeringDateEnd, System.DateTimeOffset parameters_deadlineDateStart, System.DateTimeOffset parameters_deadlineDateEnd, int parameters_oralQuestionTimeId, int[] parameters_answeringBodyIds, int parameters_skip, int parameters_take, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "oralquestiontimes/list?parameters.answeringDateStart=" + parameters_answeringDateStart.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&parameters.answeringDateEnd=" + parameters_answeringDateEnd.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&parameters.deadlineDateStart=" + parameters_deadlineDateStart.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&parameters.deadlineDateEnd=" + parameters_deadlineDateEnd.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&parameters.oralQuestionTimeId="+parameters_oralQuestionTimeId+"&"+string.Join("&", parameters_answeringBodyIds.Select(z => $"parameters.answeringBodyIds={z}"))+"&parameters.skip="+parameters_skip+"&parameters.take="+parameters_take;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1091,13 +1084,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ApiResponse_List_PublishedWrittenQuestion_>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ApiResponse_List_PublishedWrittenQuestion_>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

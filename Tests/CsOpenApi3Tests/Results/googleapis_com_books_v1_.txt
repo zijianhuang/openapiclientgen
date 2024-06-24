@@ -2903,19 +2903,17 @@ namespace MyNS
 		public async Task<BooksCloudloadingResource> Books_cloudloading_addBookAsync(string drive_document_id, string mime_type, string name, string upload_client_token, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "books/v1/cloudloading/addBook?drive_document_id=" + (drive_document_id==null? "" : System.Uri.EscapeDataString(drive_document_id))+"&mime_type=" + (mime_type==null? "" : System.Uri.EscapeDataString(mime_type))+"&name=" + (name==null? "" : System.Uri.EscapeDataString(name))+"&upload_client_token=" + (upload_client_token==null? "" : System.Uri.EscapeDataString(upload_client_token));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<BooksCloudloadingResource>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<BooksCloudloadingResource>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2928,19 +2926,17 @@ namespace MyNS
 		public async Task<Empty> Books_cloudloading_deleteBookAsync(string volumeId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "books/v1/cloudloading/deleteBook?volumeId=" + (volumeId==null? "" : System.Uri.EscapeDataString(volumeId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Empty>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Empty>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2952,10 +2948,8 @@ namespace MyNS
 		public async Task<BooksCloudloadingResource> Books_cloudloading_updateBookAsync(BooksCloudloadingResource requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "books/v1/cloudloading/updateBook";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -2966,13 +2960,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<BooksCloudloadingResource>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<BooksCloudloadingResource>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2985,8 +2978,7 @@ namespace MyNS
 		public async Task<Metadata> Books_dictionary_listOfflineMetadataAsync(string cpksver, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "books/v1/dictionary/listOfflineMetadata?cpksver=" + (cpksver==null? "" : System.Uri.EscapeDataString(cpksver));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2996,13 +2988,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Metadata>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Metadata>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3015,8 +3006,7 @@ namespace MyNS
 		public async Task<FamilyInfo> Books_familysharing_getFamilyInfoAsync(string source, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "books/v1/familysharing/getFamilyInfo?source=" + (source==null? "" : System.Uri.EscapeDataString(source));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3026,13 +3016,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<FamilyInfo>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<FamilyInfo>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3047,19 +3036,17 @@ namespace MyNS
 		public async Task<Empty> Books_familysharing_shareAsync(string docId, string source, string volumeId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "books/v1/familysharing/share?docId=" + (docId==null? "" : System.Uri.EscapeDataString(docId))+"&source=" + (source==null? "" : System.Uri.EscapeDataString(source))+"&volumeId=" + (volumeId==null? "" : System.Uri.EscapeDataString(volumeId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Empty>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Empty>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3074,19 +3061,17 @@ namespace MyNS
 		public async Task<Empty> Books_familysharing_unshareAsync(string docId, string source, string volumeId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "books/v1/familysharing/unshare?docId=" + (docId==null? "" : System.Uri.EscapeDataString(docId))+"&source=" + (source==null? "" : System.Uri.EscapeDataString(source))+"&volumeId=" + (volumeId==null? "" : System.Uri.EscapeDataString(volumeId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Empty>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Empty>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3099,8 +3084,7 @@ namespace MyNS
 		public async Task<Usersettings> Books_myconfig_getUserSettingsAsync(string country, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "books/v1/myconfig/getUserSettings?country=" + (country==null? "" : System.Uri.EscapeDataString(country));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3110,13 +3094,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Usersettings>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Usersettings>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3132,19 +3115,17 @@ namespace MyNS
 		public async Task<DownloadAccesses> Books_myconfig_releaseDownloadAccessAsync(string cpksver, string[] volumeIds, string locale, string source, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "books/v1/myconfig/releaseDownloadAccess?cpksver=" + (cpksver==null? "" : System.Uri.EscapeDataString(cpksver))+"&"+string.Join("&", volumeIds.Select(z => $"volumeIds={System.Uri.EscapeDataString(z.ToString())}"))+"&locale=" + (locale==null? "" : System.Uri.EscapeDataString(locale))+"&source=" + (source==null? "" : System.Uri.EscapeDataString(source));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<DownloadAccesses>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<DownloadAccesses>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3162,19 +3143,17 @@ namespace MyNS
 		public async Task<RequestAccessData> Books_myconfig_requestAccessAsync(string cpksver, string nonce, string source, string volumeId, Books_myconfig_requestAccessLicenseTypes licenseTypes, string locale, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "books/v1/myconfig/requestAccess?cpksver=" + (cpksver==null? "" : System.Uri.EscapeDataString(cpksver))+"&nonce=" + (nonce==null? "" : System.Uri.EscapeDataString(nonce))+"&source=" + (source==null? "" : System.Uri.EscapeDataString(source))+"&volumeId=" + (volumeId==null? "" : System.Uri.EscapeDataString(volumeId))+"&licenseTypes=" + licenseTypes+"&locale=" + (locale==null? "" : System.Uri.EscapeDataString(locale));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<RequestAccessData>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<RequestAccessData>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3194,19 +3173,17 @@ namespace MyNS
 		public async Task<Volumes> Books_myconfig_syncVolumeLicensesAsync(string cpksver, string nonce, string source, string[] features, bool includeNonComicsSeries, string locale, bool showPreorders, string[] volumeIds, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "books/v1/myconfig/syncVolumeLicenses?cpksver=" + (cpksver==null? "" : System.Uri.EscapeDataString(cpksver))+"&nonce=" + (nonce==null? "" : System.Uri.EscapeDataString(nonce))+"&source=" + (source==null? "" : System.Uri.EscapeDataString(source))+"&"+string.Join("&", features.Select(z => $"features={System.Uri.EscapeDataString(z.ToString())}"))+"&includeNonComicsSeries="+includeNonComicsSeries+"&locale=" + (locale==null? "" : System.Uri.EscapeDataString(locale))+"&showPreorders="+showPreorders+"&"+string.Join("&", volumeIds.Select(z => $"volumeIds={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Volumes>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Volumes>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3218,10 +3195,8 @@ namespace MyNS
 		public async Task<Usersettings> Books_myconfig_updateUserSettingsAsync(Usersettings requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "books/v1/myconfig/updateUserSettings";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -3232,13 +3207,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Usersettings>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Usersettings>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3263,8 +3237,7 @@ namespace MyNS
 		public async Task<Annotations> Books_mylibrary_annotations_listAsync(string contentVersion, string layerId, string[] layerIds, int maxResults, string pageToken, bool showDeleted, string source, string updatedMax, string updatedMin, string volumeId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "books/v1/mylibrary/annotations?contentVersion=" + (contentVersion==null? "" : System.Uri.EscapeDataString(contentVersion))+"&layerId=" + (layerId==null? "" : System.Uri.EscapeDataString(layerId))+"&"+string.Join("&", layerIds.Select(z => $"layerIds={System.Uri.EscapeDataString(z.ToString())}"))+"&maxResults="+maxResults+"&pageToken=" + (pageToken==null? "" : System.Uri.EscapeDataString(pageToken))+"&showDeleted="+showDeleted+"&source=" + (source==null? "" : System.Uri.EscapeDataString(source))+"&updatedMax=" + (updatedMax==null? "" : System.Uri.EscapeDataString(updatedMax))+"&updatedMin=" + (updatedMin==null? "" : System.Uri.EscapeDataString(updatedMin))+"&volumeId=" + (volumeId==null? "" : System.Uri.EscapeDataString(volumeId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3274,13 +3247,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Annotations>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Annotations>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3296,10 +3268,8 @@ namespace MyNS
 		public async Task<Annotation> Books_mylibrary_annotations_insertAsync(string annotationId, string country, bool showOnlySummaryInResponse, string source, Annotation requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "books/v1/mylibrary/annotations?annotationId=" + (annotationId==null? "" : System.Uri.EscapeDataString(annotationId))+"&country=" + (country==null? "" : System.Uri.EscapeDataString(country))+"&showOnlySummaryInResponse="+showOnlySummaryInResponse+"&source=" + (source==null? "" : System.Uri.EscapeDataString(source));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -3310,13 +3280,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Annotation>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Annotation>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3330,19 +3299,17 @@ namespace MyNS
 		public async Task<AnnotationsSummary> Books_mylibrary_annotations_summaryAsync(string[] layerIds, string volumeId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "books/v1/mylibrary/annotations/summary?"+string.Join("&", layerIds.Select(z => $"layerIds={System.Uri.EscapeDataString(z.ToString())}"))+"&volumeId=" + (volumeId==null? "" : System.Uri.EscapeDataString(volumeId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<AnnotationsSummary>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<AnnotationsSummary>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3356,8 +3323,7 @@ namespace MyNS
 		public async Task<Empty> Books_mylibrary_annotations_deleteAsync(string annotationId, string source, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "books/v1/mylibrary/annotations/"+ (annotationId==null? "" : System.Uri.EscapeDataString(annotationId))+"&source=" + (source==null? "" : System.Uri.EscapeDataString(source));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3367,13 +3333,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Empty>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Empty>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3387,10 +3352,8 @@ namespace MyNS
 		public async Task<Annotation> Books_mylibrary_annotations_updateAsync(string annotationId, string source, Annotation requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "books/v1/mylibrary/annotations/"+ (annotationId==null? "" : System.Uri.EscapeDataString(annotationId))+"&source=" + (source==null? "" : System.Uri.EscapeDataString(source));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -3401,13 +3364,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Annotation>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Annotation>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3420,8 +3382,7 @@ namespace MyNS
 		public async Task<Bookshelves> Books_mylibrary_bookshelves_listAsync(string source, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "books/v1/mylibrary/bookshelves?source=" + (source==null? "" : System.Uri.EscapeDataString(source));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3431,13 +3392,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Bookshelves>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Bookshelves>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3451,8 +3411,7 @@ namespace MyNS
 		public async Task<Bookshelf> Books_mylibrary_bookshelves_getAsync(string shelf, string source, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "books/v1/mylibrary/bookshelves/"+ (shelf==null? "" : System.Uri.EscapeDataString(shelf))+"&source=" + (source==null? "" : System.Uri.EscapeDataString(source));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3462,13 +3421,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Bookshelf>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Bookshelf>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3484,19 +3442,17 @@ namespace MyNS
 		public async Task<Empty> Books_mylibrary_bookshelves_addVolumeAsync(string shelf, string volumeId, Books_mylibrary_bookshelves_addVolumeReason reason, string source, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "books/v1/mylibrary/bookshelves/"+ (shelf==null? "" : System.Uri.EscapeDataString(shelf))+"/addVolume&volumeId=" + (volumeId==null? "" : System.Uri.EscapeDataString(volumeId))+"&reason=" + reason+"&source=" + (source==null? "" : System.Uri.EscapeDataString(source));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Empty>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Empty>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3510,19 +3466,17 @@ namespace MyNS
 		public async Task<Empty> Books_mylibrary_bookshelves_clearVolumesAsync(string shelf, string source, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "books/v1/mylibrary/bookshelves/"+ (shelf==null? "" : System.Uri.EscapeDataString(shelf))+"/clearVolumes&source=" + (source==null? "" : System.Uri.EscapeDataString(source));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Empty>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Empty>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3538,19 +3492,17 @@ namespace MyNS
 		public async Task<Empty> Books_mylibrary_bookshelves_moveVolumeAsync(string shelf, string volumeId, int volumePosition, string source, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "books/v1/mylibrary/bookshelves/"+ (shelf==null? "" : System.Uri.EscapeDataString(shelf))+"/moveVolume&volumeId=" + (volumeId==null? "" : System.Uri.EscapeDataString(volumeId))+"&volumePosition="+volumePosition+"&source=" + (source==null? "" : System.Uri.EscapeDataString(source));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Empty>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Empty>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3566,19 +3518,17 @@ namespace MyNS
 		public async Task<Empty> Books_mylibrary_bookshelves_removeVolumeAsync(string shelf, string volumeId, Books_mylibrary_bookshelves_removeVolumeReason reason, string source, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "books/v1/mylibrary/bookshelves/"+ (shelf==null? "" : System.Uri.EscapeDataString(shelf))+"/removeVolume&volumeId=" + (volumeId==null? "" : System.Uri.EscapeDataString(volumeId))+"&reason=" + reason+"&source=" + (source==null? "" : System.Uri.EscapeDataString(source));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Empty>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Empty>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3602,8 +3552,7 @@ namespace MyNS
 		public async Task<Volumes> Books_mylibrary_bookshelves_volumes_listAsync(string shelf, string country, int maxResults, Books_mylibrary_bookshelves_volumes_listProjection projection, string q, bool showPreorders, string source, int startIndex, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "books/v1/mylibrary/bookshelves/"+ (shelf==null? "" : System.Uri.EscapeDataString(shelf))+"/volumes&country=" + (country==null? "" : System.Uri.EscapeDataString(country))+"&maxResults="+maxResults+"&projection=" + projection+"&q=" + (q==null? "" : System.Uri.EscapeDataString(q))+"&showPreorders="+showPreorders+"&source=" + (source==null? "" : System.Uri.EscapeDataString(source))+"&startIndex="+startIndex;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3613,13 +3562,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Volumes>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Volumes>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3634,8 +3582,7 @@ namespace MyNS
 		public async Task<ReadingPosition> Books_mylibrary_readingpositions_getAsync(string volumeId, string contentVersion, string source, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "books/v1/mylibrary/readingpositions/"+ (volumeId==null? "" : System.Uri.EscapeDataString(volumeId))+"&contentVersion=" + (contentVersion==null? "" : System.Uri.EscapeDataString(contentVersion))+"&source=" + (source==null? "" : System.Uri.EscapeDataString(source));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3645,13 +3592,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ReadingPosition>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ReadingPosition>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3670,19 +3616,17 @@ namespace MyNS
 		public async Task<Empty> Books_mylibrary_readingpositions_setPositionAsync(string volumeId, string position, string timestamp, Books_mylibrary_readingpositions_setPositionAction action, string contentVersion, string deviceCookie, string source, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "books/v1/mylibrary/readingpositions/"+ (volumeId==null? "" : System.Uri.EscapeDataString(volumeId))+"/setPosition&position=" + (position==null? "" : System.Uri.EscapeDataString(position))+"&timestamp=" + (timestamp==null? "" : System.Uri.EscapeDataString(timestamp))+"&action=" + action+"&contentVersion=" + (contentVersion==null? "" : System.Uri.EscapeDataString(contentVersion))+"&deviceCookie=" + (deviceCookie==null? "" : System.Uri.EscapeDataString(deviceCookie))+"&source=" + (source==null? "" : System.Uri.EscapeDataString(source));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Empty>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Empty>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3697,8 +3641,7 @@ namespace MyNS
 		public async Task<Notification> Books_notification_getAsync(string notification_id, string locale, string source, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "books/v1/notification/get?notification_id=" + (notification_id==null? "" : System.Uri.EscapeDataString(notification_id))+"&locale=" + (locale==null? "" : System.Uri.EscapeDataString(locale))+"&source=" + (source==null? "" : System.Uri.EscapeDataString(source));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3708,13 +3651,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Notification>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Notification>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3727,8 +3669,7 @@ namespace MyNS
 		public async Task<Category> Books_onboarding_listCategoriesAsync(string locale, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "books/v1/onboarding/listCategories?locale=" + (locale==null? "" : System.Uri.EscapeDataString(locale));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3738,13 +3679,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Category>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Category>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3761,8 +3701,7 @@ namespace MyNS
 		public async Task<Volume2> Books_onboarding_listCategoryVolumesAsync(string[] categoryId, string locale, Books_onboarding_listCategoryVolumesMaxAllowedMaturityRating maxAllowedMaturityRating, int pageSize, string pageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "books/v1/onboarding/listCategoryVolumes?"+string.Join("&", categoryId.Select(z => $"categoryId={System.Uri.EscapeDataString(z.ToString())}"))+"&locale=" + (locale==null? "" : System.Uri.EscapeDataString(locale))+"&maxAllowedMaturityRating=" + maxAllowedMaturityRating+"&pageSize="+pageSize+"&pageToken=" + (pageToken==null? "" : System.Uri.EscapeDataString(pageToken));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3772,13 +3711,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Volume2>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Volume2>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3793,8 +3731,7 @@ namespace MyNS
 		public async Task<Discoveryclusters> Books_personalizedstream_getAsync(string locale, Books_personalizedstream_getMaxAllowedMaturityRating maxAllowedMaturityRating, string source, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "books/v1/personalizedstream/get?locale=" + (locale==null? "" : System.Uri.EscapeDataString(locale))+"&maxAllowedMaturityRating=" + maxAllowedMaturityRating+"&source=" + (source==null? "" : System.Uri.EscapeDataString(source));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3804,13 +3741,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Discoveryclusters>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Discoveryclusters>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3829,19 +3765,17 @@ namespace MyNS
 		public async Task<Empty> Books_promooffer_acceptAsync(string androidId, string device, string manufacturer, string model, string offerId, string product, string serial, string volumeId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "books/v1/promooffer/accept?androidId=" + (androidId==null? "" : System.Uri.EscapeDataString(androidId))+"&device=" + (device==null? "" : System.Uri.EscapeDataString(device))+"&manufacturer=" + (manufacturer==null? "" : System.Uri.EscapeDataString(manufacturer))+"&model=" + (model==null? "" : System.Uri.EscapeDataString(model))+"&offerId=" + (offerId==null? "" : System.Uri.EscapeDataString(offerId))+"&product=" + (product==null? "" : System.Uri.EscapeDataString(product))+"&serial=" + (serial==null? "" : System.Uri.EscapeDataString(serial))+"&volumeId=" + (volumeId==null? "" : System.Uri.EscapeDataString(volumeId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Empty>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Empty>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3860,19 +3794,17 @@ namespace MyNS
 		public async Task<Empty> Books_promooffer_dismissAsync(string androidId, string device, string manufacturer, string model, string offerId, string product, string serial, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "books/v1/promooffer/dismiss?androidId=" + (androidId==null? "" : System.Uri.EscapeDataString(androidId))+"&device=" + (device==null? "" : System.Uri.EscapeDataString(device))+"&manufacturer=" + (manufacturer==null? "" : System.Uri.EscapeDataString(manufacturer))+"&model=" + (model==null? "" : System.Uri.EscapeDataString(model))+"&offerId=" + (offerId==null? "" : System.Uri.EscapeDataString(offerId))+"&product=" + (product==null? "" : System.Uri.EscapeDataString(product))+"&serial=" + (serial==null? "" : System.Uri.EscapeDataString(serial));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Empty>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Empty>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3890,8 +3822,7 @@ namespace MyNS
 		public async Task<Offers> Books_promooffer_getAsync(string androidId, string device, string manufacturer, string model, string product, string serial, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "books/v1/promooffer/get?androidId=" + (androidId==null? "" : System.Uri.EscapeDataString(androidId))+"&device=" + (device==null? "" : System.Uri.EscapeDataString(device))+"&manufacturer=" + (manufacturer==null? "" : System.Uri.EscapeDataString(manufacturer))+"&model=" + (model==null? "" : System.Uri.EscapeDataString(model))+"&product=" + (product==null? "" : System.Uri.EscapeDataString(product))+"&serial=" + (serial==null? "" : System.Uri.EscapeDataString(serial));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3901,13 +3832,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Offers>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Offers>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3920,8 +3850,7 @@ namespace MyNS
 		public async Task<Series> Books_series_getAsync(string[] series_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "books/v1/series/get?"+string.Join("&", series_id.Select(z => $"series_id={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3931,13 +3860,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Series>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Series>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3952,8 +3880,7 @@ namespace MyNS
 		public async Task<Seriesmembership> Books_series_membership_getAsync(string series_id, int page_size, string page_token, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "books/v1/series/membership/get?series_id=" + (series_id==null? "" : System.Uri.EscapeDataString(series_id))+"&page_size="+page_size+"&page_token=" + (page_token==null? "" : System.Uri.EscapeDataString(page_token));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3963,13 +3890,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Seriesmembership>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Seriesmembership>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3983,8 +3909,7 @@ namespace MyNS
 		public async Task<Bookshelves> Books_bookshelves_listAsync(string userId, string source, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "books/v1/users/"+ (userId==null? "" : System.Uri.EscapeDataString(userId))+"/bookshelves&source=" + (source==null? "" : System.Uri.EscapeDataString(source));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3994,13 +3919,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Bookshelves>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Bookshelves>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4015,8 +3939,7 @@ namespace MyNS
 		public async Task<Bookshelf> Books_bookshelves_getAsync(string userId, string shelf, string source, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "books/v1/users/"+ (userId==null? "" : System.Uri.EscapeDataString(userId))+"/bookshelves/"+ (shelf==null? "" : System.Uri.EscapeDataString(shelf))+"&source=" + (source==null? "" : System.Uri.EscapeDataString(source));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4026,13 +3949,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Bookshelf>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Bookshelf>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4054,8 +3976,7 @@ namespace MyNS
 		public async Task<Volumes> Books_bookshelves_volumes_listAsync(string userId, string shelf, int maxResults, bool showPreorders, string source, int startIndex, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "books/v1/users/"+ (userId==null? "" : System.Uri.EscapeDataString(userId))+"/bookshelves/"+ (shelf==null? "" : System.Uri.EscapeDataString(shelf))+"/volumes&maxResults="+maxResults+"&showPreorders="+showPreorders+"&source=" + (source==null? "" : System.Uri.EscapeDataString(source))+"&startIndex="+startIndex;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4065,13 +3986,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Volumes>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Volumes>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4102,8 +4022,7 @@ namespace MyNS
 		public async Task<Volumes> Books_volumes_listAsync(string q, Books_volumes_listDownload download, Books_volumes_listFilter filter, string langRestrict, Books_volumes_listLibraryRestrict libraryRestrict, Books_volumes_listMaxAllowedMaturityRating maxAllowedMaturityRating, int maxResults, Books_volumes_listOrderBy orderBy, string partner, Books_volumes_listPrintType printType, Books_mylibrary_bookshelves_volumes_listProjection projection, bool showPreorders, string source, int startIndex, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "books/v1/volumes?q=" + (q==null? "" : System.Uri.EscapeDataString(q))+"&download=" + download+"&filter=" + filter+"&langRestrict=" + (langRestrict==null? "" : System.Uri.EscapeDataString(langRestrict))+"&libraryRestrict=" + libraryRestrict+"&maxAllowedMaturityRating=" + maxAllowedMaturityRating+"&maxResults="+maxResults+"&orderBy=" + orderBy+"&partner=" + (partner==null? "" : System.Uri.EscapeDataString(partner))+"&printType=" + printType+"&projection=" + projection+"&showPreorders="+showPreorders+"&source=" + (source==null? "" : System.Uri.EscapeDataString(source))+"&startIndex="+startIndex;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4113,13 +4032,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Volumes>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Volumes>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4143,8 +4061,7 @@ namespace MyNS
 		public async Task<Volumes> Books_volumes_mybooks_listAsync(string[] acquireMethod, string country, string locale, int maxResults, string[] processingState, string source, int startIndex, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "books/v1/volumes/mybooks?"+string.Join("&", acquireMethod.Select(z => $"acquireMethod={System.Uri.EscapeDataString(z.ToString())}"))+"&country=" + (country==null? "" : System.Uri.EscapeDataString(country))+"&locale=" + (locale==null? "" : System.Uri.EscapeDataString(locale))+"&maxResults="+maxResults+"&"+string.Join("&", processingState.Select(z => $"processingState={System.Uri.EscapeDataString(z.ToString())}"))+"&source=" + (source==null? "" : System.Uri.EscapeDataString(source))+"&startIndex="+startIndex;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4154,13 +4071,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Volumes>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Volumes>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4175,8 +4091,7 @@ namespace MyNS
 		public async Task<Volumes> Books_volumes_recommended_listAsync(string locale, Books_volumes_recommended_listMaxAllowedMaturityRating maxAllowedMaturityRating, string source, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "books/v1/volumes/recommended?locale=" + (locale==null? "" : System.Uri.EscapeDataString(locale))+"&maxAllowedMaturityRating=" + maxAllowedMaturityRating+"&source=" + (source==null? "" : System.Uri.EscapeDataString(source));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4186,13 +4101,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Volumes>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Volumes>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4208,19 +4122,17 @@ namespace MyNS
 		public async Task<BooksVolumesRecommendedRateResponse> Books_volumes_recommended_rateAsync(Books_volumes_recommended_rateRating rating, string volumeId, string locale, string source, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "books/v1/volumes/recommended/rate?rating=" + rating+"&volumeId=" + (volumeId==null? "" : System.Uri.EscapeDataString(volumeId))+"&locale=" + (locale==null? "" : System.Uri.EscapeDataString(locale))+"&source=" + (source==null? "" : System.Uri.EscapeDataString(source));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<BooksVolumesRecommendedRateResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<BooksVolumesRecommendedRateResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4243,8 +4155,7 @@ namespace MyNS
 		public async Task<Volumes> Books_volumes_useruploaded_listAsync(string locale, int maxResults, string[] processingState, string source, int startIndex, string[] volumeId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "books/v1/volumes/useruploaded?locale=" + (locale==null? "" : System.Uri.EscapeDataString(locale))+"&maxResults="+maxResults+"&"+string.Join("&", processingState.Select(z => $"processingState={System.Uri.EscapeDataString(z.ToString())}"))+"&source=" + (source==null? "" : System.Uri.EscapeDataString(source))+"&startIndex="+startIndex+"&"+string.Join("&", volumeId.Select(z => $"volumeId={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4254,13 +4165,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Volumes>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Volumes>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4278,8 +4188,7 @@ namespace MyNS
 		public async Task<Volume> Books_volumes_getAsync(string volumeId, string country, bool includeNonComicsSeries, string partner, Books_mylibrary_bookshelves_volumes_listProjection projection, string source, bool user_library_consistent_read, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "books/v1/volumes/"+ (volumeId==null? "" : System.Uri.EscapeDataString(volumeId))+"&country=" + (country==null? "" : System.Uri.EscapeDataString(country))+"&includeNonComicsSeries="+includeNonComicsSeries+"&partner=" + (partner==null? "" : System.Uri.EscapeDataString(partner))+"&projection=" + projection+"&source=" + (source==null? "" : System.Uri.EscapeDataString(source))+"&user_library_consistent_read="+user_library_consistent_read;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4289,13 +4198,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Volume>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Volume>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4312,8 +4220,7 @@ namespace MyNS
 		public async Task<Volumes> Books_volumes_associated_listAsync(string volumeId, Books_volumes_associated_listAssociation association, string locale, Books_volumes_associated_listMaxAllowedMaturityRating maxAllowedMaturityRating, string source, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "books/v1/volumes/"+ (volumeId==null? "" : System.Uri.EscapeDataString(volumeId))+"/associated&association=" + association+"&locale=" + (locale==null? "" : System.Uri.EscapeDataString(locale))+"&maxAllowedMaturityRating=" + maxAllowedMaturityRating+"&source=" + (source==null? "" : System.Uri.EscapeDataString(source));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4323,13 +4230,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Volumes>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Volumes>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4375,8 +4281,7 @@ namespace MyNS
 					Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "books/v1/volumes/"+ (volumeId==null? "" : System.Uri.EscapeDataString(volumeId))+"/layers/"+ (layerId==null? "" : System.Uri.EscapeDataString(layerId))+"&contentVersion=" + (contentVersion==null? "" : System.Uri.EscapeDataString(contentVersion))+"&endOffset=" + (endOffset==null? "" : System.Uri.EscapeDataString(endOffset))+"&endPosition=" + (endPosition==null? "" : System.Uri.EscapeDataString(endPosition))+"&locale=" + (locale==null? "" : System.Uri.EscapeDataString(locale))+"&maxResults="+maxResults+"&pageToken=" + (pageToken==null? "" : System.Uri.EscapeDataString(pageToken))+"&showDeleted="+showDeleted+"&source=" + (source==null? "" : System.Uri.EscapeDataString(source))+"&startOffset=" + (startOffset==null? "" : System.Uri.EscapeDataString(startOffset))+"&startPosition=" + (startPosition==null? "" : System.Uri.EscapeDataString(startPosition))+"&updatedMax=" + (updatedMax==null? "" : System.Uri.EscapeDataString(updatedMax))+"&updatedMin=" + (updatedMin==null? "" : System.Uri.EscapeDataString(updatedMin))+"&volumeAnnotationsVersion=" + (volumeAnnotationsVersion==null? "" : System.Uri.EscapeDataString(volumeAnnotationsVersion));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4386,13 +4291,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Volumeannotations>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Volumeannotations>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4409,8 +4313,7 @@ namespace MyNS
 		public async Task<Volumeannotation> Books_layers_volumeAnnotations_getAsync(string volumeId, string layerId, string annotationId, string locale, string source, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "books/v1/volumes/"+ (volumeId==null? "" : System.Uri.EscapeDataString(volumeId))+"/layers/"+ (layerId==null? "" : System.Uri.EscapeDataString(layerId))+"/annotations/"+ (annotationId==null? "" : System.Uri.EscapeDataString(annotationId))+"&locale=" + (locale==null? "" : System.Uri.EscapeDataString(locale))+"&source=" + (source==null? "" : System.Uri.EscapeDataString(source));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4420,13 +4323,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Volumeannotation>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Volumeannotation>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4456,8 +4358,7 @@ namespace MyNS
 		public async Task<Annotationsdata> Books_layers_annotationData_listAsync(string volumeId, string layerId, string contentVersion, string[] annotationDataId, int h, string locale, int maxResults, string pageToken, int scale, string source, string updatedMax, string updatedMin, int w, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "books/v1/volumes/"+ (volumeId==null? "" : System.Uri.EscapeDataString(volumeId))+"/layers/"+ (layerId==null? "" : System.Uri.EscapeDataString(layerId))+"/data&contentVersion=" + (contentVersion==null? "" : System.Uri.EscapeDataString(contentVersion))+"&"+string.Join("&", annotationDataId.Select(z => $"annotationDataId={System.Uri.EscapeDataString(z.ToString())}"))+"&h="+h+"&locale=" + (locale==null? "" : System.Uri.EscapeDataString(locale))+"&maxResults="+maxResults+"&pageToken=" + (pageToken==null? "" : System.Uri.EscapeDataString(pageToken))+"&scale="+scale+"&source=" + (source==null? "" : System.Uri.EscapeDataString(source))+"&updatedMax=" + (updatedMax==null? "" : System.Uri.EscapeDataString(updatedMax))+"&updatedMin=" + (updatedMin==null? "" : System.Uri.EscapeDataString(updatedMin))+"&w="+w;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4467,13 +4368,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Annotationsdata>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Annotationsdata>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4497,8 +4397,7 @@ namespace MyNS
 		public async Task<DictionaryAnnotationdata> Books_layers_annotationData_getAsync(string volumeId, string layerId, string annotationDataId, string contentVersion, bool allowWebDefinitions, int h, string locale, int scale, string source, int w, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "books/v1/volumes/"+ (volumeId==null? "" : System.Uri.EscapeDataString(volumeId))+"/layers/"+ (layerId==null? "" : System.Uri.EscapeDataString(layerId))+"/data/"+ (annotationDataId==null? "" : System.Uri.EscapeDataString(annotationDataId))+"&contentVersion=" + (contentVersion==null? "" : System.Uri.EscapeDataString(contentVersion))+"&allowWebDefinitions="+allowWebDefinitions+"&h="+h+"&locale=" + (locale==null? "" : System.Uri.EscapeDataString(locale))+"&scale="+scale+"&source=" + (source==null? "" : System.Uri.EscapeDataString(source))+"&w="+w;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4508,13 +4407,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<DictionaryAnnotationdata>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<DictionaryAnnotationdata>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4534,8 +4432,7 @@ namespace MyNS
 		public async Task<Layersummaries> Books_layers_listAsync(string volumeId, string contentVersion, int maxResults, string pageToken, string source, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "books/v1/volumes/"+ (volumeId==null? "" : System.Uri.EscapeDataString(volumeId))+"/layersummary&contentVersion=" + (contentVersion==null? "" : System.Uri.EscapeDataString(contentVersion))+"&maxResults="+maxResults+"&pageToken=" + (pageToken==null? "" : System.Uri.EscapeDataString(pageToken))+"&source=" + (source==null? "" : System.Uri.EscapeDataString(source));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4545,13 +4442,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Layersummaries>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Layersummaries>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4567,8 +4463,7 @@ namespace MyNS
 		public async Task<Layersummary> Books_layers_getAsync(string volumeId, string summaryId, string contentVersion, string source, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "books/v1/volumes/"+ (volumeId==null? "" : System.Uri.EscapeDataString(volumeId))+"/layersummary/"+ (summaryId==null? "" : System.Uri.EscapeDataString(summaryId))+"&contentVersion=" + (contentVersion==null? "" : System.Uri.EscapeDataString(contentVersion))+"&source=" + (source==null? "" : System.Uri.EscapeDataString(source));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4578,13 +4473,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Layersummary>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Layersummary>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

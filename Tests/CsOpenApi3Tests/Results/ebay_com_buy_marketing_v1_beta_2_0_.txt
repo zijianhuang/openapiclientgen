@@ -337,8 +337,7 @@ namespace MyNS
 		public async Task GetMerchandisedProductsAsync(string aspect_filter, string category_id, string limit, string metric_name, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "merchandised_product?aspect_filter=" + (aspect_filter==null? "" : System.Uri.EscapeDataString(aspect_filter))+"&category_id=" + (category_id==null? "" : System.Uri.EscapeDataString(category_id))+"&limit=" + (limit==null? "" : System.Uri.EscapeDataString(limit))+"&metric_name=" + (metric_name==null? "" : System.Uri.EscapeDataString(metric_name));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -352,7 +351,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

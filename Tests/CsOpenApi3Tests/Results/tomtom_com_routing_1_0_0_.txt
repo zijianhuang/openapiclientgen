@@ -261,8 +261,7 @@ namespace MyNS
 					Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "routing/"+versionNumber+"/calculateReachableRange/"+ (origin==null? "" : System.Uri.EscapeDataString(origin))+"/"+contentType+"&fuelBudgetInLiters="+fuelBudgetInLiters+"&energyBudgetInkWh="+energyBudgetInkWh+"&timeBudgetInSec="+timeBudgetInSec+"&callback=" + (callback==null? "" : System.Uri.EscapeDataString(callback))+"&report=" + report+"&departAt=" + (departAt==null? "" : System.Uri.EscapeDataString(departAt))+"&arriveAt=" + (arriveAt==null? "" : System.Uri.EscapeDataString(arriveAt))+"&routeType=" + routeType+"&traffic="+traffic+"&avoid=" + (avoid==null? "" : System.Uri.EscapeDataString(avoid))+"&travelMode=" + travelMode+"&hilliness=" + hilliness+"&windingness=" + windingness+"&vehicleMaxSpeed="+vehicleMaxSpeed+"&vehicleWeight="+vehicleWeight+"&vehicleAxleWeight="+vehicleAxleWeight+"&vehicleLength="+vehicleLength+"&vehicleWidth="+vehicleWidth+"&vehicleHeight="+vehicleHeight+"&vehicleCommercial="+vehicleCommercial+"&vehicleLoadType=" + (vehicleLoadType==null? "" : System.Uri.EscapeDataString(vehicleLoadType))+"&constantSpeedConsumptionInLitersPerHundredkm=" + (constantSpeedConsumptionInLitersPerHundredkm==null? "" : System.Uri.EscapeDataString(constantSpeedConsumptionInLitersPerHundredkm))+"&currentFuelInLiters="+currentFuelInLiters+"&auxiliaryPowerInLitersPerHour="+auxiliaryPowerInLitersPerHour+"&fuelEnergyDensityInMJoulesPerLiter="+fuelEnergyDensityInMJoulesPerLiter+"&accelerationEfficiency="+accelerationEfficiency+"&decelerationEfficiency="+decelerationEfficiency+"&uphillEfficiency="+uphillEfficiency+"&downhillEfficiency="+downhillEfficiency+"&vehicleEngineType=" + vehicleEngineType+"&constantSpeedConsumptionInkWhPerHundredkm=" + (constantSpeedConsumptionInkWhPerHundredkm==null? "" : System.Uri.EscapeDataString(constantSpeedConsumptionInkWhPerHundredkm));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -276,7 +275,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -390,10 +388,8 @@ namespace MyNS
 					Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "routing/"+versionNumber+"/calculateReachableRange/"+ (origin==null? "" : System.Uri.EscapeDataString(origin))+"/"+contentType+"&fuelBudgetInLiters="+fuelBudgetInLiters+"&energyBudgetInkWh="+energyBudgetInkWh+"&timeBudgetInSec="+timeBudgetInSec+"&callback=" + (callback==null? "" : System.Uri.EscapeDataString(callback))+"&report=" + report+"&departAt=" + (departAt==null? "" : System.Uri.EscapeDataString(departAt))+"&arriveAt=" + (arriveAt==null? "" : System.Uri.EscapeDataString(arriveAt))+"&routeType=" + routeType+"&traffic="+traffic+"&avoid=" + (avoid==null? "" : System.Uri.EscapeDataString(avoid))+"&travelMode=" + travelMode+"&hilliness=" + hilliness+"&windingness=" + windingness+"&vehicleMaxSpeed="+vehicleMaxSpeed+"&vehicleWeight="+vehicleWeight+"&vehicleAxleWeight="+vehicleAxleWeight+"&vehicleLength="+vehicleLength+"&vehicleWidth="+vehicleWidth+"&vehicleHeight="+vehicleHeight+"&vehicleCommercial="+vehicleCommercial+"&vehicleLoadType=" + (vehicleLoadType==null? "" : System.Uri.EscapeDataString(vehicleLoadType))+"&constantSpeedConsumptionInLitersPerHundredkm=" + (constantSpeedConsumptionInLitersPerHundredkm==null? "" : System.Uri.EscapeDataString(constantSpeedConsumptionInLitersPerHundredkm))+"&currentFuelInLiters="+currentFuelInLiters+"&auxiliaryPowerInLitersPerHour="+auxiliaryPowerInLitersPerHour+"&fuelEnergyDensityInMJoulesPerLiter="+fuelEnergyDensityInMJoulesPerLiter+"&accelerationEfficiency="+accelerationEfficiency+"&decelerationEfficiency="+decelerationEfficiency+"&uphillEfficiency="+uphillEfficiency+"&downhillEfficiency="+downhillEfficiency+"&vehicleEngineType=" + vehicleEngineType+"&constantSpeedConsumptionInkWhPerHundredkm=" + (constantSpeedConsumptionInkWhPerHundredkm==null? "" : System.Uri.EscapeDataString(constantSpeedConsumptionInkWhPerHundredkm));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -408,7 +404,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -545,8 +540,7 @@ namespace MyNS
 					Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "routing/"+versionNumber+"/calculateRoute/"+ (locations==null? "" : System.Uri.EscapeDataString(locations))+"/"+contentType+"&maxAlternatives="+maxAlternatives+"&alternativeType=" + alternativeType+"&minDeviationDistance="+minDeviationDistance+"&minDeviationTime="+minDeviationTime+"&instructionsType=" + instructionsType+"&language=" + (language==null? "" : System.Uri.EscapeDataString(language))+"&computeBestOrder="+computeBestOrder+"&routeRepresentation=" + routeRepresentation+"&computeTravelTimeFor=" + computeTravelTimeFor+"&vehicleHeading="+vehicleHeading+"&sectionType=" + (sectionType==null? "" : System.Uri.EscapeDataString(sectionType))+"&callback=" + (callback==null? "" : System.Uri.EscapeDataString(callback))+"&report=" + report+"&departAt=" + (departAt==null? "" : System.Uri.EscapeDataString(departAt))+"&arriveAt=" + (arriveAt==null? "" : System.Uri.EscapeDataString(arriveAt))+"&routeType=" + routeType+"&traffic="+traffic+"&avoid=" + (avoid==null? "" : System.Uri.EscapeDataString(avoid))+"&travelMode=" + travelMode+"&hilliness=" + hilliness+"&windingness=" + windingness+"&vehicleMaxSpeed="+vehicleMaxSpeed+"&vehicleWeight="+vehicleWeight+"&vehicleAxleWeight="+vehicleAxleWeight+"&vehicleLength="+vehicleLength+"&vehicleWidth="+vehicleWidth+"&vehicleHeight="+vehicleHeight+"&vehicleCommercial="+vehicleCommercial+"&vehicleLoadType=" + (vehicleLoadType==null? "" : System.Uri.EscapeDataString(vehicleLoadType))+"&vehicleEngineType=" + vehicleEngineType+"&constantSpeedConsumptionInLitersPerHundredkm=" + (constantSpeedConsumptionInLitersPerHundredkm==null? "" : System.Uri.EscapeDataString(constantSpeedConsumptionInLitersPerHundredkm))+"&currentFuelInLiters="+currentFuelInLiters+"&auxiliaryPowerInLitersPerHour="+auxiliaryPowerInLitersPerHour+"&fuelEnergyDensityInMJoulesPerLiter="+fuelEnergyDensityInMJoulesPerLiter+"&accelerationEfficiency="+accelerationEfficiency+"&decelerationEfficiency="+decelerationEfficiency+"&uphillEfficiency="+uphillEfficiency+"&downhillEfficiency="+downhillEfficiency+"&constantSpeedConsumptionInkWhPerHundredkm=" + (constantSpeedConsumptionInkWhPerHundredkm==null? "" : System.Uri.EscapeDataString(constantSpeedConsumptionInkWhPerHundredkm));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -560,7 +554,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -698,10 +691,8 @@ namespace MyNS
 					Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "routing/"+versionNumber+"/calculateRoute/"+ (locations==null? "" : System.Uri.EscapeDataString(locations))+"/"+contentType+"&maxAlternatives="+maxAlternatives+"&alternativeType=" + alternativeType+"&minDeviationDistance="+minDeviationDistance+"&minDeviationTime="+minDeviationTime+"&instructionsType=" + instructionsType+"&language=" + (language==null? "" : System.Uri.EscapeDataString(language))+"&computeBestOrder="+computeBestOrder+"&routeRepresentation=" + routeRepresentation+"&computeTravelTimeFor=" + computeTravelTimeFor+"&vehicleHeading="+vehicleHeading+"&sectionType=" + (sectionType==null? "" : System.Uri.EscapeDataString(sectionType))+"&callback=" + (callback==null? "" : System.Uri.EscapeDataString(callback))+"&report=" + report+"&departAt=" + (departAt==null? "" : System.Uri.EscapeDataString(departAt))+"&arriveAt=" + (arriveAt==null? "" : System.Uri.EscapeDataString(arriveAt))+"&routeType=" + routeType+"&traffic="+traffic+"&avoid=" + (avoid==null? "" : System.Uri.EscapeDataString(avoid))+"&travelMode=" + travelMode+"&hilliness=" + hilliness+"&windingness=" + windingness+"&vehicleMaxSpeed="+vehicleMaxSpeed+"&vehicleWeight="+vehicleWeight+"&vehicleAxleWeight="+vehicleAxleWeight+"&vehicleLength="+vehicleLength+"&vehicleWidth="+vehicleWidth+"&vehicleHeight="+vehicleHeight+"&vehicleCommercial="+vehicleCommercial+"&vehicleLoadType=" + (vehicleLoadType==null? "" : System.Uri.EscapeDataString(vehicleLoadType))+"&vehicleEngineType=" + vehicleEngineType+"&constantSpeedConsumptionInLitersPerHundredkm=" + (constantSpeedConsumptionInLitersPerHundredkm==null? "" : System.Uri.EscapeDataString(constantSpeedConsumptionInLitersPerHundredkm))+"&currentFuelInLiters="+currentFuelInLiters+"&auxiliaryPowerInLitersPerHour="+auxiliaryPowerInLitersPerHour+"&fuelEnergyDensityInMJoulesPerLiter="+fuelEnergyDensityInMJoulesPerLiter+"&accelerationEfficiency="+accelerationEfficiency+"&decelerationEfficiency="+decelerationEfficiency+"&uphillEfficiency="+uphillEfficiency+"&downhillEfficiency="+downhillEfficiency+"&constantSpeedConsumptionInkWhPerHundredkm=" + (constantSpeedConsumptionInkWhPerHundredkm==null? "" : System.Uri.EscapeDataString(constantSpeedConsumptionInkWhPerHundredkm));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -716,7 +707,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

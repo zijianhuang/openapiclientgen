@@ -47,8 +47,7 @@ namespace MyNS
 		public async Task V1EmailDisposableGetByFormatAndEmailAndKeyAsync(V1EmailDisposableGetByFormatAndEmailAndKeyFormat format, string email, string key, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/email/disposable?format=" + format+"&email=" + (email==null? "" : System.Uri.EscapeDataString(email))+"&key=" + (key==null? "" : System.Uri.EscapeDataString(key));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -62,7 +61,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

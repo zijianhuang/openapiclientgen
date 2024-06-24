@@ -35121,8 +35121,7 @@ namespace MyNS
 		public async Task AppApiUsage_applicationIdGetByEndAndStartAsync(int applicationId, System.DateTimeOffset end, System.DateTimeOffset start, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "App/ApiUsage/"+applicationId+"/?end=" + end.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&start=" + start.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ");
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -35136,7 +35135,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -35148,8 +35146,7 @@ namespace MyNS
 		public async Task AppFirstPartyGetAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "App/FirstParty/";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -35163,7 +35160,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -35178,8 +35174,7 @@ namespace MyNS
 		public async Task CommunityContentGet_sort_mediaFilter_pageGetAsync(int mediaFilter, int page, string sort, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "CommunityContent/Get/"+ (sort==null? "" : System.Uri.EscapeDataString(sort))+"/"+mediaFilter+"/"+page+"/";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -35193,7 +35188,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -35206,8 +35200,7 @@ namespace MyNS
 		public async Task ContentGetContentById_id_localeGetByHeadAsync(bool head, long id, string locale, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "Content/GetContentById/"+id+"/"+ (locale==null? "" : System.Uri.EscapeDataString(locale))+"/?head="+head;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -35221,7 +35214,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -35234,8 +35226,7 @@ namespace MyNS
 		public async Task ContentGetContentByTagAndType_tag_type_localeGetByHeadAsync(bool head, string locale, string tag, string type, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "Content/GetContentByTagAndType/"+ (tag==null? "" : System.Uri.EscapeDataString(tag))+"/"+ (type==null? "" : System.Uri.EscapeDataString(type))+"/"+ (locale==null? "" : System.Uri.EscapeDataString(locale))+"/?head="+head;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -35249,7 +35240,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -35261,8 +35251,7 @@ namespace MyNS
 		public async Task ContentGetContentType_typeGetAsync(string type, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "Content/GetContentType/"+ (type==null? "" : System.Uri.EscapeDataString(type))+"/";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -35276,7 +35265,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -35291,8 +35279,7 @@ namespace MyNS
 		public async Task ContentRssNewsArticles_pageTokenGetByCategoryfilterAndIncludebodyAsync(string categoryfilter, bool includebody, string pageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "Content/Rss/NewsArticles/"+ (pageToken==null? "" : System.Uri.EscapeDataString(pageToken))+"/?categoryfilter=" + (categoryfilter==null? "" : System.Uri.EscapeDataString(categoryfilter))+"&includebody="+includebody;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -35306,7 +35293,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -35324,8 +35310,7 @@ namespace MyNS
 		public async Task ContentSearch_localeGetByCtypeAndCurrentpageAndHeadAndSearchtextAndSourceAndTagAsync(string ctype, int currentpage, bool head, string locale, string searchtext, string source, string tag, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "Content/Search/"+ (locale==null? "" : System.Uri.EscapeDataString(locale))+"/?ctype=" + (ctype==null? "" : System.Uri.EscapeDataString(ctype))+"&currentpage="+currentpage+"&head="+head+"&searchtext=" + (searchtext==null? "" : System.Uri.EscapeDataString(searchtext))+"&source=" + (source==null? "" : System.Uri.EscapeDataString(source))+"&tag=" + (tag==null? "" : System.Uri.EscapeDataString(tag));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -35339,7 +35324,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -35354,8 +35338,7 @@ namespace MyNS
 		public async Task ContentSearchContentByTagAndType_tag_type_localeGetByCurrentpageAndHeadAndItemsperpageAsync(int currentpage, bool head, int itemsperpage, string locale, string tag, string type, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "Content/SearchContentByTagAndType/"+ (tag==null? "" : System.Uri.EscapeDataString(tag))+"/"+ (type==null? "" : System.Uri.EscapeDataString(type))+"/"+ (locale==null? "" : System.Uri.EscapeDataString(locale))+"/?currentpage="+currentpage+"&head="+head+"&itemsperpage="+itemsperpage;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -35369,7 +35352,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -35381,8 +35363,7 @@ namespace MyNS
 		public async Task ContentSearchHelpArticles_searchtext_sizeGetAsync(string searchtext, string size, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "Content/SearchHelpArticles/"+ (searchtext==null? "" : System.Uri.EscapeDataString(searchtext))+"/"+ (size==null? "" : System.Uri.EscapeDataString(size))+"/";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -35397,7 +35378,6 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
-			}
 		}
 		
 		/// <summary>
@@ -35408,8 +35388,7 @@ namespace MyNS
 		public async Task Destiny2ActionsItemsEquipItemPostAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "Destiny2/Actions/Items/EquipItem/";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -35418,7 +35397,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -35430,8 +35408,7 @@ namespace MyNS
 		public async Task Destiny2ActionsItemsEquipItemsPostAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "Destiny2/Actions/Items/EquipItems/";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -35440,7 +35417,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -35452,8 +35428,7 @@ namespace MyNS
 		public async Task Destiny2ActionsItemsInsertSocketPlugPostAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "Destiny2/Actions/Items/InsertSocketPlug/";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -35462,7 +35437,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -35474,8 +35448,7 @@ namespace MyNS
 		public async Task Destiny2ActionsItemsInsertSocketPlugFreePostAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "Destiny2/Actions/Items/InsertSocketPlugFree/";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -35484,7 +35457,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -35496,8 +35468,7 @@ namespace MyNS
 		public async Task Destiny2ActionsItemsPullFromPostmasterPostAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "Destiny2/Actions/Items/PullFromPostmaster/";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -35506,7 +35477,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -35518,8 +35488,7 @@ namespace MyNS
 		public async Task Destiny2ActionsItemsSetLockStatePostAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "Destiny2/Actions/Items/SetLockState/";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -35528,7 +35497,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -35540,8 +35508,7 @@ namespace MyNS
 		public async Task Destiny2ActionsItemsSetTrackedStatePostAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "Destiny2/Actions/Items/SetTrackedState/";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -35550,7 +35517,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -35562,8 +35528,7 @@ namespace MyNS
 		public async Task Destiny2ActionsItemsTransferItemPostAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "Destiny2/Actions/Items/TransferItem/";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -35572,7 +35537,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -35584,8 +35548,7 @@ namespace MyNS
 		public async Task Destiny2ActionsLoadoutsClearLoadoutPostAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "Destiny2/Actions/Loadouts/ClearLoadout/";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -35594,7 +35557,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -35606,8 +35568,7 @@ namespace MyNS
 		public async Task Destiny2ActionsLoadoutsEquipLoadoutPostAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "Destiny2/Actions/Loadouts/EquipLoadout/";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -35616,7 +35577,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -35628,8 +35588,7 @@ namespace MyNS
 		public async Task Destiny2ActionsLoadoutsSnapshotLoadoutPostAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "Destiny2/Actions/Loadouts/SnapshotLoadout/";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -35638,7 +35597,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -35650,8 +35608,7 @@ namespace MyNS
 		public async Task Destiny2ActionsLoadoutsUpdateLoadoutIdentifiersPostAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "Destiny2/Actions/Loadouts/UpdateLoadoutIdentifiers/";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -35660,7 +35617,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -35675,8 +35631,7 @@ namespace MyNS
 		public async Task Destiny2ArmorySearch_type_searchTermGetByPageAsync(int page, string searchTerm, string type, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "Destiny2/Armory/Search/"+ (type==null? "" : System.Uri.EscapeDataString(type))+"/"+ (searchTerm==null? "" : System.Uri.EscapeDataString(searchTerm))+"/?page="+page;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -35691,7 +35646,6 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
-			}
 		}
 		
 		/// <summary>
@@ -35702,8 +35656,7 @@ namespace MyNS
 		public async Task Destiny2AwaAwaProvideAuthorizationResultPostAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "Destiny2/Awa/AwaProvideAuthorizationResult/";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -35712,7 +35665,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -35725,8 +35677,7 @@ namespace MyNS
 		public async Task Destiny2AwaGetActionToken_correlationIdGetAsync(string correlationId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "Destiny2/Awa/GetActionToken/"+ (correlationId==null? "" : System.Uri.EscapeDataString(correlationId))+"/";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -35740,7 +35691,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -35752,8 +35702,7 @@ namespace MyNS
 		public async Task Destiny2AwaInitializePostAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "Destiny2/Awa/Initialize/";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -35762,7 +35711,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -35774,8 +35722,7 @@ namespace MyNS
 		public async Task Destiny2ClanClanBannerDictionaryGetAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "Destiny2/Clan/ClanBannerDictionary/";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -35789,7 +35736,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -35802,8 +35748,7 @@ namespace MyNS
 		public async Task Destiny2Clan_groupIdWeeklyRewardStateGetAsync(long groupId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "Destiny2/Clan/"+groupId+"/WeeklyRewardState/";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -35817,7 +35762,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -35829,8 +35773,7 @@ namespace MyNS
 		public async Task Destiny2ManifestGetAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "Destiny2/Manifest/";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -35844,7 +35787,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -35858,8 +35800,7 @@ namespace MyNS
 		public async Task Destiny2Manifest_entityType_hashIdentifierGetAsync(string entityType, uint hashIdentifier, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "Destiny2/Manifest/"+ (entityType==null? "" : System.Uri.EscapeDataString(entityType))+"/"+hashIdentifier+"/";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -35873,7 +35814,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -35885,8 +35825,7 @@ namespace MyNS
 		public async Task Destiny2MilestonesGetAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "Destiny2/Milestones/";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -35900,7 +35839,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -35913,8 +35851,7 @@ namespace MyNS
 		public async Task Destiny2Milestones_milestoneHashContentGetAsync(uint milestoneHash, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "Destiny2/Milestones/"+milestoneHash+"/Content/";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -35929,7 +35866,6 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
-			}
 		}
 		
 		/// <summary>
@@ -35941,8 +35877,7 @@ namespace MyNS
 		public async Task Destiny2SearchDestinyPlayerByBungieName_membershipTypePostAsync(int membershipType, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "Destiny2/SearchDestinyPlayerByBungieName/"+membershipType+"/";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -35951,7 +35886,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -35965,8 +35899,7 @@ namespace MyNS
 		public async Task Destiny2StatsAggregateClanStats_groupIdGetByModesAsync(long groupId, string modes, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "Destiny2/Stats/AggregateClanStats/"+groupId+"/?modes=" + (modes==null? "" : System.Uri.EscapeDataString(modes));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -35980,7 +35913,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -35992,8 +35924,7 @@ namespace MyNS
 		public async Task Destiny2StatsDefinitionGetAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "Destiny2/Stats/Definition/";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -36007,7 +35938,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -36023,8 +35953,7 @@ namespace MyNS
 		public async Task Destiny2StatsLeaderboardsClans_groupIdGetByMaxtopAndModesAndStatidAsync(long groupId, int maxtop, string modes, string statid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "Destiny2/Stats/Leaderboards/Clans/"+groupId+"/?maxtop="+maxtop+"&modes=" + (modes==null? "" : System.Uri.EscapeDataString(modes))+"&statid=" + (statid==null? "" : System.Uri.EscapeDataString(statid));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -36038,7 +35967,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -36056,8 +35984,7 @@ namespace MyNS
 		public async Task Destiny2StatsLeaderboards_membershipType_destinyMembershipId_characterIdGetByMaxtopAndModesAndStatidAsync(long characterId, long destinyMembershipId, int maxtop, int membershipType, string modes, string statid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "Destiny2/Stats/Leaderboards/"+membershipType+"/"+destinyMembershipId+"/"+characterId+"/?maxtop="+maxtop+"&modes=" + (modes==null? "" : System.Uri.EscapeDataString(modes))+"&statid=" + (statid==null? "" : System.Uri.EscapeDataString(statid));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -36071,7 +35998,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -36084,8 +36010,7 @@ namespace MyNS
 		public async Task Destiny2StatsPostGameCarnageReport_activityIdGetAsync(long activityId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "Destiny2/Stats/PostGameCarnageReport/"+activityId+"/";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -36100,7 +36025,6 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
-			}
 		}
 		
 		/// <summary>
@@ -36112,8 +36036,7 @@ namespace MyNS
 		public async Task Destiny2StatsPostGameCarnageReport_activityIdReportPostAsync(long activityId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "Destiny2/Stats/PostGameCarnageReport/"+activityId+"/Report/";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -36122,7 +36045,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -36137,8 +36059,7 @@ namespace MyNS
 		public async Task Destiny2VendorsGetByComponentsAsync(int[] components, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "Destiny2/Vendors/?"+string.Join("&", components.Select(z => $"components={z}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -36152,7 +36073,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -36172,8 +36092,7 @@ namespace MyNS
 		public async Task Destiny2_membershipTypeAccount_destinyMembershipIdCharacter_characterIdStatsGetByDayendAndDaystartAndGroupsAndModesAndPeriodTypeAsync(long characterId, System.DateTimeOffset dayend, System.DateTimeOffset daystart, long destinyMembershipId, int[] groups, int membershipType, int[] modes, int periodType, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "Destiny2/"+membershipType+"/Account/"+destinyMembershipId+"/Character/"+characterId+"/Stats/?dayend=" + dayend.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&daystart=" + daystart.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&"+string.Join("&", groups.Select(z => $"groups={z}"))+"&"+string.Join("&", modes.Select(z => $"modes={z}"))+"&periodType="+periodType;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -36187,7 +36106,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -36205,8 +36123,7 @@ namespace MyNS
 		public async Task Destiny2_membershipTypeAccount_destinyMembershipIdCharacter_characterIdStatsActivitiesGetByCountAndModeAndPageAsync(long characterId, int count, long destinyMembershipId, int membershipType, int mode, int page, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "Destiny2/"+membershipType+"/Account/"+destinyMembershipId+"/Character/"+characterId+"/Stats/Activities/?count="+count+"&mode="+mode+"&page="+page;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -36220,7 +36137,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -36235,8 +36151,7 @@ namespace MyNS
 		public async Task Destiny2_membershipTypeAccount_destinyMembershipIdCharacter_characterIdStatsAggregateActivityStatsGetAsync(long characterId, long destinyMembershipId, int membershipType, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "Destiny2/"+membershipType+"/Account/"+destinyMembershipId+"/Character/"+characterId+"/Stats/AggregateActivityStats/";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -36250,7 +36165,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -36265,8 +36179,7 @@ namespace MyNS
 		public async Task Destiny2_membershipTypeAccount_destinyMembershipIdCharacter_characterIdStatsUniqueWeaponsGetAsync(long characterId, long destinyMembershipId, int membershipType, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "Destiny2/"+membershipType+"/Account/"+destinyMembershipId+"/Character/"+characterId+"/Stats/UniqueWeapons/";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -36280,7 +36193,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -36295,8 +36207,7 @@ namespace MyNS
 		public async Task Destiny2_membershipTypeAccount_destinyMembershipIdStatsGetByGroupsAsync(long destinyMembershipId, int[] groups, int membershipType, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "Destiny2/"+membershipType+"/Account/"+destinyMembershipId+"/Stats/?"+string.Join("&", groups.Select(z => $"groups={z}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -36310,7 +36221,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -36327,8 +36237,7 @@ namespace MyNS
 		public async Task Destiny2_membershipTypeAccount_destinyMembershipIdStatsLeaderboardsGetByMaxtopAndModesAndStatidAsync(long destinyMembershipId, int maxtop, int membershipType, string modes, string statid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "Destiny2/"+membershipType+"/Account/"+destinyMembershipId+"/Stats/Leaderboards/?maxtop="+maxtop+"&modes=" + (modes==null? "" : System.Uri.EscapeDataString(modes))+"&statid=" + (statid==null? "" : System.Uri.EscapeDataString(statid));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -36342,7 +36251,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -36357,8 +36265,7 @@ namespace MyNS
 		public async Task Destiny2_membershipTypeProfile_destinyMembershipIdGetByComponentsAsync(int[] components, long destinyMembershipId, int membershipType, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "Destiny2/"+membershipType+"/Profile/"+destinyMembershipId+"/?"+string.Join("&", components.Select(z => $"components={z}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -36372,7 +36279,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -36388,8 +36294,7 @@ namespace MyNS
 		public async Task Destiny2_membershipTypeProfile_destinyMembershipIdCharacter_characterIdGetByComponentsAsync(long characterId, int[] components, long destinyMembershipId, int membershipType, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "Destiny2/"+membershipType+"/Profile/"+destinyMembershipId+"/Character/"+characterId+"/?"+string.Join("&", components.Select(z => $"components={z}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -36403,7 +36308,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -36420,8 +36324,7 @@ namespace MyNS
 		public async Task Destiny2_membershipTypeProfile_destinyMembershipIdCharacter_characterIdCollectibles_collectiblePresentationNodeHashGetByComponentsAsync(long characterId, uint collectiblePresentationNodeHash, int[] components, long destinyMembershipId, int membershipType, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "Destiny2/"+membershipType+"/Profile/"+destinyMembershipId+"/Character/"+characterId+"/Collectibles/"+collectiblePresentationNodeHash+"/?"+string.Join("&", components.Select(z => $"components={z}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -36435,7 +36338,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -36452,8 +36354,7 @@ namespace MyNS
 		public async Task Destiny2_membershipTypeProfile_destinyMembershipIdCharacter_characterIdVendorsGetByComponentsAndFilterAsync(long characterId, int[] components, long destinyMembershipId, int filter, int membershipType, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "Destiny2/"+membershipType+"/Profile/"+destinyMembershipId+"/Character/"+characterId+"/Vendors/?"+string.Join("&", components.Select(z => $"components={z}"))+"&filter="+filter;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -36467,7 +36368,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -36484,8 +36384,7 @@ namespace MyNS
 		public async Task Destiny2_membershipTypeProfile_destinyMembershipIdCharacter_characterIdVendors_vendorHashGetByComponentsAsync(long characterId, int[] components, long destinyMembershipId, int membershipType, uint vendorHash, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "Destiny2/"+membershipType+"/Profile/"+destinyMembershipId+"/Character/"+characterId+"/Vendors/"+vendorHash+"/?"+string.Join("&", components.Select(z => $"components={z}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -36499,7 +36398,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -36515,8 +36413,7 @@ namespace MyNS
 		public async Task Destiny2_membershipTypeProfile_destinyMembershipIdItem_itemInstanceIdGetByComponentsAsync(int[] components, long destinyMembershipId, long itemInstanceId, int membershipType, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "Destiny2/"+membershipType+"/Profile/"+destinyMembershipId+"/Item/"+itemInstanceId+"/?"+string.Join("&", components.Select(z => $"components={z}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -36530,7 +36427,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -36546,8 +36442,7 @@ namespace MyNS
 		public async Task Destiny2_membershipTypeProfile_membershipIdLinkedProfilesGetByGetAllMembershipsAsync(bool getAllMemberships, long membershipId, int membershipType, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "Destiny2/"+membershipType+"/Profile/"+membershipId+"/LinkedProfiles/?getAllMemberships="+getAllMemberships;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -36561,7 +36456,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -36574,8 +36468,7 @@ namespace MyNS
 		public async Task FireteamClan_groupIdActiveCountGetAsync(long groupId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "Fireteam/Clan/"+groupId+"/ActiveCount/";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -36589,7 +36482,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -36610,8 +36502,7 @@ namespace MyNS
 		public async Task FireteamClan_groupIdAvailable_platform_activityType_dateRange_slotFilter_publicOnly_pageGetByExcludeImmediateAndLangFilterAsync(int activityType, string dateRange, bool excludeImmediate, long groupId, string langFilter, int page, string platform, string publicOnly, string slotFilter, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "Fireteam/Clan/"+groupId+"/Available/"+ (platform==null? "" : System.Uri.EscapeDataString(platform))+"/"+activityType+"/"+ (dateRange==null? "" : System.Uri.EscapeDataString(dateRange))+"/"+ (slotFilter==null? "" : System.Uri.EscapeDataString(slotFilter))+"/"+ (publicOnly==null? "" : System.Uri.EscapeDataString(publicOnly))+"/"+page+"/&excludeImmediate="+excludeImmediate+"&langFilter=" + (langFilter==null? "" : System.Uri.EscapeDataString(langFilter));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -36625,7 +36516,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -36643,8 +36533,7 @@ namespace MyNS
 		public async Task FireteamClan_groupIdMy_platform_includeClosed_pageGetByGroupFilterAndLangFilterAsync(bool groupFilter, long groupId, bool includeClosed, string langFilter, int page, string platform, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "Fireteam/Clan/"+groupId+"/My/"+ (platform==null? "" : System.Uri.EscapeDataString(platform))+"/"+includeClosed+"/"+page+"/?groupFilter="+groupFilter+"&langFilter=" + (langFilter==null? "" : System.Uri.EscapeDataString(langFilter));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -36658,7 +36547,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -36672,8 +36560,7 @@ namespace MyNS
 		public async Task FireteamClan_groupIdSummary_fireteamIdGetAsync(long fireteamId, long groupId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "Fireteam/Clan/"+groupId+"/Summary/"+fireteamId+"/";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -36687,7 +36574,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -36706,8 +36592,7 @@ namespace MyNS
 		public async Task FireteamSearchAvailable_platform_activityType_dateRange_slotFilter_pageGetByExcludeImmediateAndLangFilterAsync(int activityType, string dateRange, bool excludeImmediate, string langFilter, int page, string platform, string slotFilter, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "Fireteam/Search/Available/"+ (platform==null? "" : System.Uri.EscapeDataString(platform))+"/"+activityType+"/"+ (dateRange==null? "" : System.Uri.EscapeDataString(dateRange))+"/"+ (slotFilter==null? "" : System.Uri.EscapeDataString(slotFilter))+"/"+page+"/&excludeImmediate="+excludeImmediate+"&langFilter=" + (langFilter==null? "" : System.Uri.EscapeDataString(langFilter));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -36721,7 +36606,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -36738,8 +36622,7 @@ namespace MyNS
 		public async Task ForumGetCoreTopicsPaged_page_sort_quickDate_categoryFilterGetByLocalesAsync(int categoryFilter, string locales, int page, int quickDate, string sort, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "Forum/GetCoreTopicsPaged/"+page+"/"+ (sort==null? "" : System.Uri.EscapeDataString(sort))+"/"+quickDate+"/"+categoryFilter+"/?locales=" + (locales==null? "" : System.Uri.EscapeDataString(locales));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -36753,7 +36636,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -36766,8 +36648,7 @@ namespace MyNS
 		public async Task ForumGetForumTagSuggestionsGetByPartialtagAsync(string partialtag, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "Forum/GetForumTagSuggestions/?partialtag=" + (partialtag==null? "" : System.Uri.EscapeDataString(partialtag));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -36781,7 +36662,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -36794,8 +36674,7 @@ namespace MyNS
 		public async Task ForumGetPostAndParent_childPostIdGetByShowbannedAsync(long childPostId, string showbanned, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "Forum/GetPostAndParent/"+childPostId+"/?showbanned=" + (showbanned==null? "" : System.Uri.EscapeDataString(showbanned));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -36809,7 +36688,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -36822,8 +36700,7 @@ namespace MyNS
 		public async Task ForumGetPostAndParentAwaitingApproval_childPostIdGetByShowbannedAsync(long childPostId, string showbanned, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "Forum/GetPostAndParentAwaitingApproval/"+childPostId+"/?showbanned=" + (showbanned==null? "" : System.Uri.EscapeDataString(showbanned));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -36837,7 +36714,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -36850,8 +36726,7 @@ namespace MyNS
 		public async Task ForumGetPostsThreadedPaged_parentPostId_page_pageSize_replySize_getParentPost_rootThreadMode_sortModeGetByShowbannedAsync(bool getParentPost, int page, int pageSize, long parentPostId, int replySize, bool rootThreadMode, string showbanned, int sortMode, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "Forum/GetPostsThreadedPaged/"+parentPostId+"/"+page+"/"+pageSize+"/"+replySize+"/"+getParentPost+"/"+rootThreadMode+"/"+sortMode+"/?showbanned=" + (showbanned==null? "" : System.Uri.EscapeDataString(showbanned));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -36865,7 +36740,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -36878,8 +36752,7 @@ namespace MyNS
 		public async Task ForumGetPostsThreadedPagedFromChild_childPostId_page_pageSize_replySize_rootThreadMode_sortModeGetByShowbannedAsync(long childPostId, int page, int pageSize, int replySize, bool rootThreadMode, string showbanned, int sortMode, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "Forum/GetPostsThreadedPagedFromChild/"+childPostId+"/"+page+"/"+pageSize+"/"+replySize+"/"+rootThreadMode+"/"+sortMode+"/?showbanned=" + (showbanned==null? "" : System.Uri.EscapeDataString(showbanned));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -36893,7 +36766,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -36905,8 +36777,7 @@ namespace MyNS
 		public async Task ForumGetTopicForContent_contentIdGetAsync(long contentId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "Forum/GetTopicForContent/"+contentId+"/";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -36920,7 +36791,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -36940,8 +36810,7 @@ namespace MyNS
 		public async Task ForumGetTopicsPaged_page_pageSize_group_sort_quickDate_categoryFilterGetByLocalesAndTagstringAsync(int categoryFilter, long group, string locales, int page, int pageSize, int quickDate, string sort, string tagstring, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "Forum/GetTopicsPaged/"+page+"/"+pageSize+"/"+group+"/"+ (sort==null? "" : System.Uri.EscapeDataString(sort))+"/"+quickDate+"/"+categoryFilter+"/?locales=" + (locales==null? "" : System.Uri.EscapeDataString(locales))+"&tagstring=" + (tagstring==null? "" : System.Uri.EscapeDataString(tagstring));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -36955,7 +36824,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -36968,8 +36836,7 @@ namespace MyNS
 		public async Task ForumPoll_topicIdGetAsync(long topicId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "Forum/Poll/"+topicId+"/";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -36983,7 +36850,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -36995,8 +36861,7 @@ namespace MyNS
 		public async Task ForumRecruitSummariesPostAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "Forum/Recruit/Summaries/";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -37005,7 +36870,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -37017,8 +36881,7 @@ namespace MyNS
 		public async Task GetAvailableLocalesGetAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "GetAvailableLocales/";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -37032,7 +36895,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -37045,8 +36907,7 @@ namespace MyNS
 		public async Task GlobalAlertsGetByIncludestreamingAsync(bool includestreaming, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "GlobalAlerts/?includestreaming="+includestreaming;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -37060,7 +36921,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -37072,8 +36932,7 @@ namespace MyNS
 		public async Task GroupV2GetAvailableAvatarsGetAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "GroupV2/GetAvailableAvatars/";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -37087,7 +36946,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -37099,8 +36957,7 @@ namespace MyNS
 		public async Task GroupV2GetAvailableThemesGetAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "GroupV2/GetAvailableThemes/";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -37114,7 +36971,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -37127,8 +36983,7 @@ namespace MyNS
 		public async Task GroupV2GetUserClanInviteSetting_mTypeGetAsync(int mType, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "GroupV2/GetUserClanInviteSetting/"+mType+"/";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -37142,7 +36997,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -37156,8 +37010,7 @@ namespace MyNS
 		public async Task GroupV2Name_groupName_groupTypeGetAsync(string groupName, int groupType, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "GroupV2/Name/"+ (groupName==null? "" : System.Uri.EscapeDataString(groupName))+"/"+groupType+"/";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -37172,7 +37025,6 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
-			}
 		}
 		
 		/// <summary>
@@ -37183,8 +37035,7 @@ namespace MyNS
 		public async Task GroupV2NameV2PostAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "GroupV2/NameV2/";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -37193,7 +37044,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -37207,8 +37057,7 @@ namespace MyNS
 		public async Task GroupV2Recommended_groupType_createDateRangePostAsync(int createDateRange, int groupType, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "GroupV2/Recommended/"+groupType+"/"+createDateRange+"/";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -37217,7 +37066,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -37232,8 +37080,7 @@ namespace MyNS
 		public async Task GroupV2Recover_membershipType_membershipId_groupTypeGetAsync(int groupType, long membershipId, int membershipType, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "GroupV2/Recover/"+membershipType+"/"+membershipId+"/"+groupType+"/";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -37248,7 +37095,6 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
-			}
 		}
 		
 		/// <summary>
@@ -37259,8 +37105,7 @@ namespace MyNS
 		public async Task GroupV2SearchPostAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "GroupV2/Search/";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -37269,7 +37114,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -37285,8 +37129,7 @@ namespace MyNS
 		public async Task GroupV2UserPotential_membershipType_membershipId_filter_groupTypeGetAsync(int filter, int groupType, long membershipId, int membershipType, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "GroupV2/User/Potential/"+membershipType+"/"+membershipId+"/"+filter+"/"+groupType+"/";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -37300,7 +37143,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -37316,8 +37158,7 @@ namespace MyNS
 		public async Task GroupV2User_membershipType_membershipId_filter_groupTypeGetAsync(int filter, int groupType, long membershipId, int membershipType, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "GroupV2/User/"+membershipType+"/"+membershipId+"/"+filter+"/"+groupType+"/";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -37331,7 +37172,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -37344,8 +37184,7 @@ namespace MyNS
 		public async Task GroupV2_groupIdGetAsync(long groupId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "GroupV2/"+groupId+"/";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -37359,7 +37198,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -37374,8 +37212,7 @@ namespace MyNS
 		public async Task GroupV2_groupIdAdminAbdicateFoundership_membershipType_founderIdNewPostAsync(long founderIdNew, long groupId, int membershipType, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "GroupV2/"+groupId+"/Admin/AbdicateFoundership/"+membershipType+"/"+founderIdNew+"/";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -37384,7 +37221,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -37398,8 +37234,7 @@ namespace MyNS
 		public async Task GroupV2_groupIdAdminsAndFounderGetByCurrentpageAsync(int currentpage, long groupId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "GroupV2/"+groupId+"/AdminsAndFounder/?currentpage="+currentpage;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -37413,7 +37248,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -37427,8 +37261,7 @@ namespace MyNS
 		public async Task GroupV2_groupIdBannedGetByCurrentpageAsync(int currentpage, long groupId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "GroupV2/"+groupId+"/Banned/?currentpage="+currentpage;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -37443,7 +37276,6 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
-			}
 		}
 		
 		/// <summary>
@@ -37455,8 +37287,7 @@ namespace MyNS
 		public async Task GroupV2_groupIdEditPostAsync(long groupId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "GroupV2/"+groupId+"/Edit/";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -37465,7 +37296,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -37478,8 +37308,7 @@ namespace MyNS
 		public async Task GroupV2_groupIdEditClanBannerPostAsync(long groupId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "GroupV2/"+groupId+"/EditClanBanner/";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -37488,7 +37317,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -37501,8 +37329,7 @@ namespace MyNS
 		public async Task GroupV2_groupIdEditFounderOptionsPostAsync(long groupId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "GroupV2/"+groupId+"/EditFounderOptions/";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -37511,7 +37338,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -37527,8 +37353,7 @@ namespace MyNS
 		public async Task GroupV2_groupIdMembersGetByCurrentpageAndMemberTypeAndNameSearchAsync(int currentpage, long groupId, int memberType, string nameSearch, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "GroupV2/"+groupId+"/Members/?currentpage="+currentpage+"&memberType="+memberType+"&nameSearch=" + (nameSearch==null? "" : System.Uri.EscapeDataString(nameSearch));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -37542,7 +37367,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -37557,8 +37381,7 @@ namespace MyNS
 		public async Task GroupV2_groupIdMembersApprove_membershipType_membershipIdPostAsync(long groupId, long membershipId, int membershipType, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "GroupV2/"+groupId+"/Members/Approve/"+membershipType+"/"+membershipId+"/";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -37567,7 +37390,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -37580,8 +37402,7 @@ namespace MyNS
 		public async Task GroupV2_groupIdMembersApproveAllPostAsync(long groupId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "GroupV2/"+groupId+"/Members/ApproveAll/";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -37590,7 +37411,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -37603,8 +37423,7 @@ namespace MyNS
 		public async Task GroupV2_groupIdMembersApproveListPostAsync(long groupId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "GroupV2/"+groupId+"/Members/ApproveList/";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -37613,7 +37432,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -37626,8 +37444,7 @@ namespace MyNS
 		public async Task GroupV2_groupIdMembersDenyAllPostAsync(long groupId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "GroupV2/"+groupId+"/Members/DenyAll/";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -37636,7 +37453,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -37649,8 +37465,7 @@ namespace MyNS
 		public async Task GroupV2_groupIdMembersDenyListPostAsync(long groupId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "GroupV2/"+groupId+"/Members/DenyList/";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -37659,7 +37474,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -37674,8 +37488,7 @@ namespace MyNS
 		public async Task GroupV2_groupIdMembersIndividualInvite_membershipType_membershipIdPostAsync(long groupId, long membershipId, int membershipType, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "GroupV2/"+groupId+"/Members/IndividualInvite/"+membershipType+"/"+membershipId+"/";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -37684,7 +37497,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -37699,8 +37511,7 @@ namespace MyNS
 		public async Task GroupV2_groupIdMembersIndividualInviteCancel_membershipType_membershipIdPostAsync(long groupId, long membershipId, int membershipType, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "GroupV2/"+groupId+"/Members/IndividualInviteCancel/"+membershipType+"/"+membershipId+"/";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -37709,7 +37520,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -37723,8 +37533,7 @@ namespace MyNS
 		public async Task GroupV2_groupIdMembersInvitedIndividualsGetByCurrentpageAsync(int currentpage, long groupId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "GroupV2/"+groupId+"/Members/InvitedIndividuals/?currentpage="+currentpage;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -37738,7 +37547,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -37752,8 +37560,7 @@ namespace MyNS
 		public async Task GroupV2_groupIdMembersPendingGetByCurrentpageAsync(int currentpage, long groupId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "GroupV2/"+groupId+"/Members/Pending/?currentpage="+currentpage;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -37767,7 +37574,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -37782,8 +37588,7 @@ namespace MyNS
 		public async Task GroupV2_groupIdMembers_membershipType_membershipIdBanPostAsync(long groupId, long membershipId, int membershipType, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "GroupV2/"+groupId+"/Members/"+membershipType+"/"+membershipId+"/Ban/";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -37792,7 +37597,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -37807,8 +37611,7 @@ namespace MyNS
 		public async Task GroupV2_groupIdMembers_membershipType_membershipIdKickPostAsync(long groupId, long membershipId, int membershipType, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "GroupV2/"+groupId+"/Members/"+membershipType+"/"+membershipId+"/Kick/";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -37817,7 +37620,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -37833,8 +37635,7 @@ namespace MyNS
 		public async Task GroupV2_groupIdMembers_membershipType_membershipIdSetMembershipType_memberTypePostAsync(long groupId, long membershipId, int membershipType, int memberType, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "GroupV2/"+groupId+"/Members/"+membershipType+"/"+membershipId+"/SetMembershipType/"+memberType+"/";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -37843,7 +37644,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -37857,8 +37657,7 @@ namespace MyNS
 		public async Task GroupV2_groupIdMembers_membershipType_membershipIdUnbanPostAsync(long groupId, long membershipId, int membershipType, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "GroupV2/"+groupId+"/Members/"+membershipType+"/"+membershipId+"/Unban/";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -37867,7 +37666,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -37880,8 +37678,7 @@ namespace MyNS
 		public async Task GroupV2_groupIdOptionalConversationsGetAsync(long groupId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "GroupV2/"+groupId+"/OptionalConversations/";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -37896,7 +37693,6 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
-			}
 		}
 		
 		/// <summary>
@@ -37908,8 +37704,7 @@ namespace MyNS
 		public async Task GroupV2_groupIdOptionalConversationsAddPostAsync(long groupId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "GroupV2/"+groupId+"/OptionalConversations/Add/";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -37918,7 +37713,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -37932,8 +37726,7 @@ namespace MyNS
 		public async Task GroupV2_groupIdOptionalConversationsEdit_conversationIdPostAsync(long conversationId, long groupId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "GroupV2/"+groupId+"/OptionalConversations/Edit/"+conversationId+"/";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -37942,7 +37735,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -37954,8 +37746,7 @@ namespace MyNS
 		public async Task SettingsGetAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "Settings/";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -37969,7 +37760,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -37981,8 +37771,7 @@ namespace MyNS
 		public async Task SocialFriendsGetAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "Social/Friends/";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -37996,7 +37785,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -38009,8 +37797,7 @@ namespace MyNS
 		public async Task SocialFriendsAdd_membershipIdPostAsync(string membershipId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "Social/Friends/Add/"+ (membershipId==null? "" : System.Uri.EscapeDataString(membershipId))+"/";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -38019,7 +37806,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -38032,8 +37818,7 @@ namespace MyNS
 		public async Task SocialFriendsRemove_membershipIdPostAsync(string membershipId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "Social/Friends/Remove/"+ (membershipId==null? "" : System.Uri.EscapeDataString(membershipId))+"/";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -38042,7 +37827,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -38054,8 +37838,7 @@ namespace MyNS
 		public async Task SocialFriendsRequestsGetAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "Social/Friends/Requests/";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -38070,7 +37853,6 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
-			}
 		}
 		
 		/// <summary>
@@ -38082,8 +37864,7 @@ namespace MyNS
 		public async Task SocialFriendsRequestsAccept_membershipIdPostAsync(string membershipId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "Social/Friends/Requests/Accept/"+ (membershipId==null? "" : System.Uri.EscapeDataString(membershipId))+"/";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -38092,7 +37873,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -38105,8 +37885,7 @@ namespace MyNS
 		public async Task SocialFriendsRequestsDecline_membershipIdPostAsync(string membershipId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "Social/Friends/Requests/Decline/"+ (membershipId==null? "" : System.Uri.EscapeDataString(membershipId))+"/";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -38115,7 +37894,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -38128,8 +37906,7 @@ namespace MyNS
 		public async Task SocialFriendsRequestsRemove_membershipIdPostAsync(string membershipId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "Social/Friends/Requests/Remove/"+ (membershipId==null? "" : System.Uri.EscapeDataString(membershipId))+"/";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -38138,7 +37915,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -38152,8 +37928,7 @@ namespace MyNS
 		public async Task SocialPlatformFriends_friendPlatform_pageGetAsync(int friendPlatform, string page, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "Social/PlatformFriends/"+friendPlatform+"/"+ (page==null? "" : System.Uri.EscapeDataString(page))+"/";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -38167,7 +37942,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -38181,8 +37955,7 @@ namespace MyNS
 		public async Task TokensPartnerApplyMissingOffers_partnerApplicationId_targetBnetMembershipIdPostAsync(int partnerApplicationId, long targetBnetMembershipId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "Tokens/Partner/ApplyMissingOffers/"+partnerApplicationId+"/"+targetBnetMembershipId+"/";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -38191,7 +37964,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -38203,8 +37975,7 @@ namespace MyNS
 		public async Task TokensPartnerClaimOfferPostAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "Tokens/Partner/ClaimOffer/";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -38213,7 +37984,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -38225,8 +37995,7 @@ namespace MyNS
 		public async Task TokensPartnerForceDropsRepairPostAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "Tokens/Partner/ForceDropsRepair/";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -38235,7 +38004,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -38249,8 +38017,7 @@ namespace MyNS
 		public async Task TokensPartnerHistory_partnerApplicationId_targetBnetMembershipIdGetAsync(int partnerApplicationId, long targetBnetMembershipId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "Tokens/Partner/History/"+partnerApplicationId+"/"+targetBnetMembershipId+"/";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -38264,7 +38031,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -38278,8 +38044,7 @@ namespace MyNS
 		public async Task TokensPartnerHistory_targetBnetMembershipIdApplication_partnerApplicationIdGetAsync(int partnerApplicationId, long targetBnetMembershipId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "Tokens/Partner/History/"+targetBnetMembershipId+"/Application/"+partnerApplicationId+"/";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -38293,7 +38058,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -38305,8 +38069,7 @@ namespace MyNS
 		public async Task TokensRewardsBungieRewardsGetAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "Tokens/Rewards/BungieRewards/";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -38320,7 +38083,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -38334,8 +38096,7 @@ namespace MyNS
 		public async Task TokensRewardsGetRewardsForPlatformUser_membershipId_membershipTypeGetAsync(long membershipId, int membershipType, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "Tokens/Rewards/GetRewardsForPlatformUser/"+membershipId+"/"+membershipType+"/";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -38349,7 +38110,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -38362,8 +38122,7 @@ namespace MyNS
 		public async Task TokensRewardsGetRewardsForUser_membershipIdGetAsync(long membershipId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "Tokens/Rewards/GetRewardsForUser/"+membershipId+"/";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -38377,7 +38136,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -38389,8 +38147,7 @@ namespace MyNS
 		public async Task TrendingCategoriesGetAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "Trending/Categories/";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -38404,7 +38161,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -38418,8 +38174,7 @@ namespace MyNS
 		public async Task TrendingCategories_categoryId_pageNumberGetAsync(string categoryId, int pageNumber, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "Trending/Categories/"+ (categoryId==null? "" : System.Uri.EscapeDataString(categoryId))+"/"+pageNumber+"/";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -38433,7 +38188,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -38447,8 +38201,7 @@ namespace MyNS
 		public async Task TrendingDetails_trendingEntryType_identifierGetAsync(string identifier, int trendingEntryType, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "Trending/Details/"+trendingEntryType+"/"+ (identifier==null? "" : System.Uri.EscapeDataString(identifier))+"/";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -38462,7 +38215,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -38474,8 +38226,7 @@ namespace MyNS
 		public async Task UserGetAvailableThemesGetAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "User/GetAvailableThemes/";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -38489,7 +38240,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -38502,8 +38252,7 @@ namespace MyNS
 		public async Task UserGetBungieNetUserById_idGetAsync(long id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "User/GetBungieNetUserById/"+id+"/";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -38517,7 +38266,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -38530,8 +38278,7 @@ namespace MyNS
 		public async Task UserGetCredentialTypesForTargetAccount_membershipIdGetAsync(long membershipId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "User/GetCredentialTypesForTargetAccount/"+membershipId+"/";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -38545,7 +38292,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -38559,8 +38305,7 @@ namespace MyNS
 		public async Task UserGetMembershipFromHardLinkedCredential_crType_credentialGetAsync(string credential, string crType, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "User/GetMembershipFromHardLinkedCredential/"+ (crType==null? "" : System.Uri.EscapeDataString(crType))+"/"+ (credential==null? "" : System.Uri.EscapeDataString(credential))+"/";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -38574,7 +38319,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -38588,8 +38332,7 @@ namespace MyNS
 		public async Task UserGetMembershipsById_membershipId_membershipTypeGetAsync(long membershipId, int membershipType, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "User/GetMembershipsById/"+membershipId+"/"+membershipType+"/";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -38603,7 +38346,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -38615,8 +38357,7 @@ namespace MyNS
 		public async Task UserGetMembershipsForCurrentUserGetAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "User/GetMembershipsForCurrentUser/";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -38630,7 +38371,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -38643,8 +38383,7 @@ namespace MyNS
 		public async Task UserGetSanitizedPlatformDisplayNames_membershipIdGetAsync(long membershipId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "User/GetSanitizedPlatformDisplayNames/"+membershipId+"/";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -38659,7 +38398,6 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
-			}
 		}
 		
 		/// <summary>
@@ -38671,8 +38409,7 @@ namespace MyNS
 		public async Task UserSearchGlobalName_pagePostAsync(int page, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "User/Search/GlobalName/"+page+"/";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -38681,7 +38418,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -38695,8 +38431,7 @@ namespace MyNS
 		public async Task UserSearchPrefix_displayNamePrefix_pageGetAsync(string displayNamePrefix, int page, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "User/Search/Prefix/"+ (displayNamePrefix==null? "" : System.Uri.EscapeDataString(displayNamePrefix))+"/"+page+"/";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -38710,7 +38445,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -38722,8 +38456,7 @@ namespace MyNS
 		public async Task UserSystemOverridesGetAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "UserSystemOverrides/";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -38737,7 +38470,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

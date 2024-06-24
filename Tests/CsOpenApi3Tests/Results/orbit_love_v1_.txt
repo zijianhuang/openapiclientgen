@@ -503,8 +503,7 @@ namespace MyNS
 		public async Task UserGetAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "user";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -518,7 +517,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -530,8 +528,7 @@ namespace MyNS
 		public async Task WorkspacesGetAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "workspaces";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -545,7 +542,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -558,8 +554,7 @@ namespace MyNS
 		public async Task Workspaces_workspace_slugGetByInclude_orbit_level_countsAsync(string workspace_slug, bool include_orbit_level_counts, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "workspaces/"+ (workspace_slug==null? "" : System.Uri.EscapeDataString(workspace_slug))+"&include_orbit_level_counts="+include_orbit_level_counts;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -573,7 +568,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -617,8 +611,7 @@ namespace MyNS
 					Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = ""+ (workspace_slug==null? "" : System.Uri.EscapeDataString(workspace_slug))+"/activities&affiliation=" + affiliation+"&member_tags=" + (member_tags==null? "" : System.Uri.EscapeDataString(member_tags))+"&orbit=" + (orbit==null? "" : System.Uri.EscapeDataString(orbit))+"&activity_type=" + activity_type+"&identity=" + identity+"&company[]=" + (company_==null? "" : System.Uri.EscapeDataString(company_))+"&title[]=" + (title_==null? "" : System.Uri.EscapeDataString(title_))+"&regions[]=" + (regions_==null? "" : System.Uri.EscapeDataString(regions_))+"&countries[]=" + (countries_==null? "" : System.Uri.EscapeDataString(countries_))+"&cities[]=" + (cities_==null? "" : System.Uri.EscapeDataString(cities_))+"&start_date=" + (start_date==null? "" : System.Uri.EscapeDataString(start_date))+"&end_date=" + (end_date==null? "" : System.Uri.EscapeDataString(end_date))+"&relative=" + (relative==null? "" : System.Uri.EscapeDataString(relative))+"&page=" + (page==null? "" : System.Uri.EscapeDataString(page))+"&direction=" + direction+"&items=" + items+"&sort=" + sort+"&type=" + (type==null? "" : System.Uri.EscapeDataString(type));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -633,7 +626,6 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
-			}
 		}
 		
 		/// <summary>
@@ -644,10 +636,8 @@ namespace MyNS
 		public async Task _workspace_slugActivitiesPostAsync(string workspace_slug, Activity_and_identity requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = ""+ (workspace_slug==null? "" : System.Uri.EscapeDataString(workspace_slug))+"/activities";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			using (var requestWriter = new System.IO.StringWriter())
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			using var requestWriter = new System.IO.StringWriter();
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
@@ -666,8 +656,6 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
-			}
-			}
 		}
 		
 		/// <summary>
@@ -678,8 +666,7 @@ namespace MyNS
 		public async Task _workspace_slugActivities_idGetAsync(string workspace_slug, string id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = ""+ (workspace_slug==null? "" : System.Uri.EscapeDataString(workspace_slug))+"/activities/"+ (id==null? "" : System.Uri.EscapeDataString(id));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -693,7 +680,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -705,8 +691,7 @@ namespace MyNS
 		public async Task _workspace_slugActivity_typesGetAsync(string workspace_slug, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = ""+ (workspace_slug==null? "" : System.Uri.EscapeDataString(workspace_slug))+"/activity_types";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -720,7 +705,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -767,8 +751,7 @@ namespace MyNS
 					Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = ""+ (workspace_slug==null? "" : System.Uri.EscapeDataString(workspace_slug))+"/members&affiliation=" + affiliation+"&member_tags=" + (member_tags==null? "" : System.Uri.EscapeDataString(member_tags))+"&orbit=" + (orbit==null? "" : System.Uri.EscapeDataString(orbit))+"&activity_type=" + activity_type+"&identity=" + identity+"&company[]=" + (company_==null? "" : System.Uri.EscapeDataString(company_))+"&title[]=" + (title_==null? "" : System.Uri.EscapeDataString(title_))+"&regions[]=" + (regions_==null? "" : System.Uri.EscapeDataString(regions_))+"&countries[]=" + (countries_==null? "" : System.Uri.EscapeDataString(countries_))+"&cities[]=" + (cities_==null? "" : System.Uri.EscapeDataString(cities_))+"&start_date=" + (start_date==null? "" : System.Uri.EscapeDataString(start_date))+"&end_date=" + (end_date==null? "" : System.Uri.EscapeDataString(end_date))+"&relative=" + (relative==null? "" : System.Uri.EscapeDataString(relative))+"&query=" + (query==null? "" : System.Uri.EscapeDataString(query))+"&page=" + (page==null? "" : System.Uri.EscapeDataString(page))+"&direction=" + direction+"&items=" + items+"&activities_count_min=" + (activities_count_min==null? "" : System.Uri.EscapeDataString(activities_count_min))+"&activities_count_max=" + (activities_count_max==null? "" : System.Uri.EscapeDataString(activities_count_max))+"&sort=" + sort+"&type=" + (type==null? "" : System.Uri.EscapeDataString(type));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -783,7 +766,6 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
-			}
 		}
 		
 		/// <summary>
@@ -795,10 +777,8 @@ namespace MyNS
 		public async Task _workspace_slugMembersPostAsync(string workspace_slug, Member_and_identity requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = ""+ (workspace_slug==null? "" : System.Uri.EscapeDataString(workspace_slug))+"/members";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			using (var requestWriter = new System.IO.StringWriter())
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			using var requestWriter = new System.IO.StringWriter();
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
@@ -816,8 +796,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
-			}
 			}
 		}
 		
@@ -831,8 +809,7 @@ namespace MyNS
 		public async Task _workspace_slugMembersFindGetBySourceAndSource_hostAndUidAndUsernameAndEmailAndGithubAsync(string workspace_slug, string source, string source_host, string uid, string username, string email, string github, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = ""+ (workspace_slug==null? "" : System.Uri.EscapeDataString(workspace_slug))+"/members/find&source=" + (source==null? "" : System.Uri.EscapeDataString(source))+"&source_host=" + (source_host==null? "" : System.Uri.EscapeDataString(source_host))+"&uid=" + (uid==null? "" : System.Uri.EscapeDataString(uid))+"&username=" + (username==null? "" : System.Uri.EscapeDataString(username))+"&email=" + (email==null? "" : System.Uri.EscapeDataString(email))+"&github=" + (github==null? "" : System.Uri.EscapeDataString(github));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -846,7 +823,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -857,8 +833,7 @@ namespace MyNS
 		public async Task _workspace_slugMembers_member_slugDeleteAsync(string workspace_slug, string member_slug, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = ""+ (workspace_slug==null? "" : System.Uri.EscapeDataString(workspace_slug))+"/members/"+ (member_slug==null? "" : System.Uri.EscapeDataString(member_slug));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -872,7 +847,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -884,8 +858,7 @@ namespace MyNS
 		public async Task _workspace_slugMembers_member_slugGetAsync(string workspace_slug, string member_slug, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = ""+ (workspace_slug==null? "" : System.Uri.EscapeDataString(workspace_slug))+"/members/"+ (member_slug==null? "" : System.Uri.EscapeDataString(member_slug));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -900,7 +873,6 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
-			}
 		}
 		
 		/// <summary>
@@ -910,10 +882,8 @@ namespace MyNS
 		public async Task _workspace_slugMembers_member_slugPutAsync(string workspace_slug, string member_slug, Member requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = ""+ (workspace_slug==null? "" : System.Uri.EscapeDataString(workspace_slug))+"/members/"+ (member_slug==null? "" : System.Uri.EscapeDataString(member_slug));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
-			{
-			using (var requestWriter = new System.IO.StringWriter())
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri);
+			using var requestWriter = new System.IO.StringWriter();
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
@@ -931,8 +901,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
-			}
 			}
 		}
 		
@@ -945,8 +913,7 @@ namespace MyNS
 		public async Task _workspace_slugMembers_member_slugActivitiesGetByPageAndDirectionAndItemsAndSortAndActivity_typeAndTypeAsync(string workspace_slug, string member_slug, string page, _workspace_slugActivitiesGetByAffiliationAndMember_tagsAndOrbitAndActivity_typeAndIdentityAndCompany_AndTitle_AndRegions_AndCountries_AndCities_AndStart_dateAndEnd_dateAndRelativeAndPageAndDirectionAndItemsAndSortAndTypeDirection direction, _workspace_slugMembers_member_slugActivitiesGetByPageAndDirectionAndItemsAndSortAndActivity_typeAndTypeItems items, _workspace_slugActivitiesGetByAffiliationAndMember_tagsAndOrbitAndActivity_typeAndIdentityAndCompany_AndTitle_AndRegions_AndCountries_AndCities_AndStart_dateAndEnd_dateAndRelativeAndPageAndDirectionAndItemsAndSortAndTypeSort sort, string activity_type, string type, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = ""+ (workspace_slug==null? "" : System.Uri.EscapeDataString(workspace_slug))+"/members/"+ (member_slug==null? "" : System.Uri.EscapeDataString(member_slug))+"/activities&page=" + (page==null? "" : System.Uri.EscapeDataString(page))+"&direction=" + direction+"&items=" + items+"&sort=" + sort+"&activity_type=" + (activity_type==null? "" : System.Uri.EscapeDataString(activity_type))+"&type=" + (type==null? "" : System.Uri.EscapeDataString(type));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -960,7 +927,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -971,10 +937,8 @@ namespace MyNS
 		public async Task _workspace_slugMembers_member_slugActivitiesPostAsync(string workspace_slug, string member_slug, Custom_or_post_activity requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = ""+ (workspace_slug==null? "" : System.Uri.EscapeDataString(workspace_slug))+"/members/"+ (member_slug==null? "" : System.Uri.EscapeDataString(member_slug))+"/activities";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			using (var requestWriter = new System.IO.StringWriter())
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			using var requestWriter = new System.IO.StringWriter();
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
@@ -992,8 +956,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
-			}
 			}
 		}
 		
@@ -1004,8 +966,7 @@ namespace MyNS
 		public async Task _workspace_slugMembers_member_slugActivities_idDeleteAsync(string workspace_slug, string member_slug, string id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = ""+ (workspace_slug==null? "" : System.Uri.EscapeDataString(workspace_slug))+"/members/"+ (member_slug==null? "" : System.Uri.EscapeDataString(member_slug))+"/activities/"+ (id==null? "" : System.Uri.EscapeDataString(id));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1019,7 +980,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1030,10 +990,8 @@ namespace MyNS
 		public async Task _workspace_slugMembers_member_slugActivities_idPutAsync(string workspace_slug, string member_slug, string id, Activity requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = ""+ (workspace_slug==null? "" : System.Uri.EscapeDataString(workspace_slug))+"/members/"+ (member_slug==null? "" : System.Uri.EscapeDataString(member_slug))+"/activities/"+ (id==null? "" : System.Uri.EscapeDataString(id));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
-			{
-			using (var requestWriter = new System.IO.StringWriter())
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri);
+			using var requestWriter = new System.IO.StringWriter();
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
@@ -1051,8 +1009,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
-			}
 			}
 		}
 		
@@ -1063,8 +1019,7 @@ namespace MyNS
 		public async Task _workspace_slugMembers_member_slugIdentitiesDeleteAsync(string workspace_slug, string member_slug, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = ""+ (workspace_slug==null? "" : System.Uri.EscapeDataString(workspace_slug))+"/members/"+ (member_slug==null? "" : System.Uri.EscapeDataString(member_slug))+"/identities";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1079,7 +1034,6 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
-			}
 		}
 		
 		/// <summary>
@@ -1089,10 +1043,8 @@ namespace MyNS
 		public async Task _workspace_slugMembers_member_slugIdentitiesPostAsync(string workspace_slug, string member_slug, Identity requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = ""+ (workspace_slug==null? "" : System.Uri.EscapeDataString(workspace_slug))+"/members/"+ (member_slug==null? "" : System.Uri.EscapeDataString(member_slug))+"/identities";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			using (var requestWriter = new System.IO.StringWriter())
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			using var requestWriter = new System.IO.StringWriter();
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
@@ -1110,8 +1062,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
-			}
 			}
 		}
 		
@@ -1123,8 +1073,7 @@ namespace MyNS
 		public async Task _workspace_slugMembers_member_slugNotesGetByPageAsync(string workspace_slug, string member_slug, string page, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = ""+ (workspace_slug==null? "" : System.Uri.EscapeDataString(workspace_slug))+"/members/"+ (member_slug==null? "" : System.Uri.EscapeDataString(member_slug))+"/notes&page=" + (page==null? "" : System.Uri.EscapeDataString(page));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1138,7 +1087,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1149,10 +1097,8 @@ namespace MyNS
 		public async Task _workspace_slugMembers_member_slugNotesPostAsync(string workspace_slug, string member_slug, Note requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = ""+ (workspace_slug==null? "" : System.Uri.EscapeDataString(workspace_slug))+"/members/"+ (member_slug==null? "" : System.Uri.EscapeDataString(member_slug))+"/notes";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			using (var requestWriter = new System.IO.StringWriter())
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			using var requestWriter = new System.IO.StringWriter();
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
@@ -1170,8 +1116,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
-			}
 			}
 		}
 		
@@ -1182,10 +1126,8 @@ namespace MyNS
 		public async Task _workspace_slugMembers_member_slugNotes_idPutAsync(string workspace_slug, string member_slug, string id, Note requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = ""+ (workspace_slug==null? "" : System.Uri.EscapeDataString(workspace_slug))+"/members/"+ (member_slug==null? "" : System.Uri.EscapeDataString(member_slug))+"/notes/"+ (id==null? "" : System.Uri.EscapeDataString(id));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
-			{
-			using (var requestWriter = new System.IO.StringWriter())
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri);
+			using var requestWriter = new System.IO.StringWriter();
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
@@ -1203,8 +1145,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
-			}
 			}
 		}
 		
@@ -1216,8 +1156,7 @@ namespace MyNS
 		public async Task _workspace_slugOrganizationsGetByQueryAndPageAndDirectionAndItemsAndSortAsync(string workspace_slug, string query, string page, _workspace_slugActivitiesGetByAffiliationAndMember_tagsAndOrbitAndActivity_typeAndIdentityAndCompany_AndTitle_AndRegions_AndCountries_AndCities_AndStart_dateAndEnd_dateAndRelativeAndPageAndDirectionAndItemsAndSortAndTypeDirection direction, _workspace_slugOrganizationsGetByQueryAndPageAndDirectionAndItemsAndSortItems items, _workspace_slugOrganizationsGetByQueryAndPageAndDirectionAndItemsAndSortSort sort, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = ""+ (workspace_slug==null? "" : System.Uri.EscapeDataString(workspace_slug))+"/organizations&query=" + (query==null? "" : System.Uri.EscapeDataString(query))+"&page=" + (page==null? "" : System.Uri.EscapeDataString(page))+"&direction=" + direction+"&items=" + items+"&sort=" + sort;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1231,7 +1170,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1243,8 +1181,7 @@ namespace MyNS
 		public async Task _workspace_slugOrganizations_organization_idGetAsync(string workspace_slug, string organization_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = ""+ (workspace_slug==null? "" : System.Uri.EscapeDataString(workspace_slug))+"/organizations/"+ (organization_id==null? "" : System.Uri.EscapeDataString(organization_id));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1259,7 +1196,6 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
-			}
 		}
 		
 		/// <summary>
@@ -1269,10 +1205,8 @@ namespace MyNS
 		public async Task _workspace_slugOrganizations_organization_idPutAsync(string workspace_slug, string organization_id, Organization requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = ""+ (workspace_slug==null? "" : System.Uri.EscapeDataString(workspace_slug))+"/organizations/"+ (organization_id==null? "" : System.Uri.EscapeDataString(organization_id));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
-			{
-			using (var requestWriter = new System.IO.StringWriter())
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri);
+			using var requestWriter = new System.IO.StringWriter();
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
@@ -1291,8 +1225,6 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
-			}
-			}
 		}
 		
 		/// <summary>
@@ -1303,8 +1235,7 @@ namespace MyNS
 		public async Task _workspace_slugOrganizations_organization_idActivitiesGetByPageAndDirectionAndItemsAndSortAndActivity_typeAsync(string workspace_slug, string organization_id, string page, _workspace_slugActivitiesGetByAffiliationAndMember_tagsAndOrbitAndActivity_typeAndIdentityAndCompany_AndTitle_AndRegions_AndCountries_AndCities_AndStart_dateAndEnd_dateAndRelativeAndPageAndDirectionAndItemsAndSortAndTypeDirection direction, _workspace_slugOrganizations_organization_idActivitiesGetByPageAndDirectionAndItemsAndSortAndActivity_typeItems items, _workspace_slugActivitiesGetByAffiliationAndMember_tagsAndOrbitAndActivity_typeAndIdentityAndCompany_AndTitle_AndRegions_AndCountries_AndCities_AndStart_dateAndEnd_dateAndRelativeAndPageAndDirectionAndItemsAndSortAndTypeSort sort, _workspace_slugOrganizations_organization_idActivitiesGetByPageAndDirectionAndItemsAndSortAndActivity_typeActivity_type activity_type, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = ""+ (workspace_slug==null? "" : System.Uri.EscapeDataString(workspace_slug))+"/organizations/"+ (organization_id==null? "" : System.Uri.EscapeDataString(organization_id))+"/activities&page=" + (page==null? "" : System.Uri.EscapeDataString(page))+"&direction=" + direction+"&items=" + items+"&sort=" + sort+"&activity_type=" + activity_type;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1318,7 +1249,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1330,8 +1260,7 @@ namespace MyNS
 		public async Task _workspace_slugOrganizations_organization_idMembersGetByPageAndItemsAsync(string workspace_slug, string organization_id, string page, _workspace_slugOrganizations_organization_idMembersGetByPageAndItemsItems items, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = ""+ (workspace_slug==null? "" : System.Uri.EscapeDataString(workspace_slug))+"/organizations/"+ (organization_id==null? "" : System.Uri.EscapeDataString(organization_id))+"/members&page=" + (page==null? "" : System.Uri.EscapeDataString(page))+"&items=" + items;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1345,7 +1274,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1361,8 +1289,7 @@ namespace MyNS
 		public async Task _workspace_slugReportsGetByStart_dateAndEnd_dateAndRelativeAndPropertiesAndActivity_typeAndTypeAsync(string workspace_slug, string start_date, string end_date, string relative, string properties, string activity_type, string type, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = ""+ (workspace_slug==null? "" : System.Uri.EscapeDataString(workspace_slug))+"/reports&start_date=" + (start_date==null? "" : System.Uri.EscapeDataString(start_date))+"&end_date=" + (end_date==null? "" : System.Uri.EscapeDataString(end_date))+"&relative=" + (relative==null? "" : System.Uri.EscapeDataString(relative))+"&properties=" + (properties==null? "" : System.Uri.EscapeDataString(properties))+"&activity_type=" + (activity_type==null? "" : System.Uri.EscapeDataString(activity_type))+"&type=" + (type==null? "" : System.Uri.EscapeDataString(type));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1376,7 +1303,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1388,8 +1314,7 @@ namespace MyNS
 		public async Task _workspace_slugWebhooksGetAsync(string workspace_slug, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = ""+ (workspace_slug==null? "" : System.Uri.EscapeDataString(workspace_slug))+"/webhooks";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1404,7 +1329,6 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
-			}
 		}
 		
 		/// <summary>
@@ -1414,10 +1338,8 @@ namespace MyNS
 		public async Task _workspace_slugWebhooksPostAsync(string workspace_slug, Webhook_subscription requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = ""+ (workspace_slug==null? "" : System.Uri.EscapeDataString(workspace_slug))+"/webhooks";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			using (var requestWriter = new System.IO.StringWriter())
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			using var requestWriter = new System.IO.StringWriter();
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
@@ -1436,8 +1358,6 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
-			}
-			}
 		}
 		
 		/// <summary>
@@ -1447,8 +1367,7 @@ namespace MyNS
 		public async Task _workspace_slugWebhooks_idDeleteAsync(string workspace_slug, string id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = ""+ (workspace_slug==null? "" : System.Uri.EscapeDataString(workspace_slug))+"/webhooks/"+ (id==null? "" : System.Uri.EscapeDataString(id));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1462,7 +1381,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1474,8 +1392,7 @@ namespace MyNS
 		public async Task _workspace_slugWebhooks_idGetAsync(string workspace_slug, string id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = ""+ (workspace_slug==null? "" : System.Uri.EscapeDataString(workspace_slug))+"/webhooks/"+ (id==null? "" : System.Uri.EscapeDataString(id));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1490,7 +1407,6 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
-			}
 		}
 		
 		/// <summary>
@@ -1500,10 +1416,8 @@ namespace MyNS
 		public async Task _workspace_slugWebhooks_idPutAsync(string workspace_slug, string id, Webhook_subscription requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = ""+ (workspace_slug==null? "" : System.Uri.EscapeDataString(workspace_slug))+"/webhooks/"+ (id==null? "" : System.Uri.EscapeDataString(id));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
-			{
-			using (var requestWriter = new System.IO.StringWriter())
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri);
+			using var requestWriter = new System.IO.StringWriter();
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
@@ -1521,8 +1435,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
-			}
 			}
 		}
 	}

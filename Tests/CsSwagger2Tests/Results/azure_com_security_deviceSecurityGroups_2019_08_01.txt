@@ -325,19 +325,17 @@ namespace MyNS
 		public async Task<DeviceSecurityGroupList> DeviceSecurityGroups_ListAsync(string api_version, string resourceId)
 		{
 			var requestUri = ""+ (resourceId==null? "" : System.Uri.EscapeDataString(resourceId))+"/providers/Microsoft.Security/deviceSecurityGroups?api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<DeviceSecurityGroupList>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<DeviceSecurityGroupList>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -352,19 +350,17 @@ namespace MyNS
 		public async Task<DeviceSecurityGroup> DeviceSecurityGroups_GetAsync(string api_version, string resourceId, string deviceSecurityGroupName)
 		{
 			var requestUri = ""+ (resourceId==null? "" : System.Uri.EscapeDataString(resourceId))+"/providers/Microsoft.Security/deviceSecurityGroups/"+ (deviceSecurityGroupName==null? "" : System.Uri.EscapeDataString(deviceSecurityGroupName))+"?api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<DeviceSecurityGroup>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<DeviceSecurityGroup>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -380,22 +376,19 @@ namespace MyNS
 		public async Task<DeviceSecurityGroup> DeviceSecurityGroups_CreateOrUpdateAsync(string api_version, string resourceId, string deviceSecurityGroupName, DeviceSecurityGroup requestBody)
 		{
 			var requestUri = ""+ (resourceId==null? "" : System.Uri.EscapeDataString(resourceId))+"/providers/Microsoft.Security/deviceSecurityGroups/"+ (deviceSecurityGroupName==null? "" : System.Uri.EscapeDataString(deviceSecurityGroupName))+"?api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<DeviceSecurityGroup>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<DeviceSecurityGroup>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -410,8 +403,7 @@ namespace MyNS
 		public async Task DeviceSecurityGroups_DeleteAsync(string api_version, string resourceId, string deviceSecurityGroupName)
 		{
 			var requestUri = ""+ (resourceId==null? "" : System.Uri.EscapeDataString(resourceId))+"/providers/Microsoft.Security/deviceSecurityGroups/"+ (deviceSecurityGroupName==null? "" : System.Uri.EscapeDataString(deviceSecurityGroupName))+"?api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -420,7 +412,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

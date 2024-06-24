@@ -528,8 +528,7 @@ namespace MyNS
 		public async Task<Search_groupsReturn> Search_groupsAsync(string name, double latitude, double longitude, double distance, string country, string region, string postal_code, int page, int per_page, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "groups?name=" + (name==null? "" : System.Uri.EscapeDataString(name))+"&latitude="+latitude+"&longitude="+longitude+"&distance="+distance+"&country=" + (country==null? "" : System.Uri.EscapeDataString(country))+"&region=" + (region==null? "" : System.Uri.EscapeDataString(region))+"&postal_code=" + (postal_code==null? "" : System.Uri.EscapeDataString(postal_code))+"&page="+page+"&per_page="+per_page;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -539,13 +538,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Search_groupsReturn>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Search_groupsReturn>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -558,8 +556,7 @@ namespace MyNS
 		public async Task<Group[]> Get_groups_by_idsAsync(string group_ids, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "groups/multiple?group_ids=" + (group_ids==null? "" : System.Uri.EscapeDataString(group_ids));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -569,13 +566,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Group[]>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Group[]>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -588,8 +584,7 @@ namespace MyNS
 		public async Task<Group> Get_groupAsync(string group_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "groups/"+ (group_id==null? "" : System.Uri.EscapeDataString(group_id));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -599,13 +594,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Group>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Group>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -674,8 +668,7 @@ namespace MyNS
 					Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "posts?sort_by=" + (sort_by==null? "" : System.Uri.EscapeDataString(sort_by))+"&types=" + (types==null? "" : System.Uri.EscapeDataString(types))+"&sources=" + (sources==null? "" : System.Uri.EscapeDataString(sources))+"&group_ids=" + (group_ids==null? "" : System.Uri.EscapeDataString(group_ids))+"&per_page="+per_page+"&page="+page+"&device_pixel_ratio="+device_pixel_ratio+"&latitude="+latitude+"&longitude="+longitude+"&radius="+radius+"&date_min=" + date_min.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&date_max=" + date_max.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&outcomes=" + (outcomes==null? "" : System.Uri.EscapeDataString(outcomes))+"&user_state=" + (user_state==null? "" : System.Uri.EscapeDataString(user_state))+"&include_reposts="+include_reposts;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -685,13 +678,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Get_postsReturn>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Get_postsReturn>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -719,8 +711,7 @@ namespace MyNS
 		public async Task<Get_all_postsReturn> Get_all_postsAsync(string types, System.DateTimeOffset date_min, System.DateTimeOffset date_max, int per_page, int page, double device_pixel_ratio, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "posts/all?types=" + (types==null? "" : System.Uri.EscapeDataString(types))+"&date_min=" + date_min.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&date_max=" + date_max.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&per_page="+per_page+"&page="+page+"&device_pixel_ratio="+device_pixel_ratio;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -730,13 +721,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Get_all_postsReturn>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Get_all_postsReturn>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -761,8 +751,7 @@ namespace MyNS
 		public async Task<Get_all_posts_changesReturn> Get_all_posts_changesAsync(System.DateTimeOffset date_min, System.DateTimeOffset date_max, int per_page, int page, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "posts/all/changes?date_min=" + date_min.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&date_max=" + date_max.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&per_page="+per_page+"&page="+page;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -772,13 +761,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Get_all_posts_changesReturn>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Get_all_posts_changesReturn>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -792,8 +780,7 @@ namespace MyNS
 		public async Task<Get_posts_by_idsReturn> Get_posts_by_idsAsync(string post_ids, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "posts/multiple?post_ids=" + (post_ids==null? "" : System.Uri.EscapeDataString(post_ids));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -803,13 +790,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Get_posts_by_idsReturn>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Get_posts_by_idsReturn>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -879,8 +865,7 @@ namespace MyNS
 					Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "posts/search?search=" + (search==null? "" : System.Uri.EscapeDataString(search))+"&sort_by=" + (sort_by==null? "" : System.Uri.EscapeDataString(sort_by))+"&types=" + (types==null? "" : System.Uri.EscapeDataString(types))+"&sources=" + (sources==null? "" : System.Uri.EscapeDataString(sources))+"&group_ids=" + (group_ids==null? "" : System.Uri.EscapeDataString(group_ids))+"&per_page="+per_page+"&page="+page+"&device_pixel_ratio="+device_pixel_ratio+"&latitude="+latitude+"&longitude="+longitude+"&radius="+radius+"&date_min=" + date_min.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&date_max=" + date_max.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&outcomes=" + (outcomes==null? "" : System.Uri.EscapeDataString(outcomes))+"&user_state=" + (user_state==null? "" : System.Uri.EscapeDataString(user_state))+"&include_reposts="+include_reposts;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -890,13 +875,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Search_postsReturn>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Search_postsReturn>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -909,8 +893,7 @@ namespace MyNS
 		public async Task<Post> Get_postAsync(string post_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "posts/"+ (post_id==null? "" : System.Uri.EscapeDataString(post_id));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -920,13 +903,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Post>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Post>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -941,8 +923,7 @@ namespace MyNS
 		public async Task<Get_post_and_related_dataReturn> Get_post_and_related_dataAsync(string post_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "posts/"+ (post_id==null? "" : System.Uri.EscapeDataString(post_id))+"/display";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -952,13 +933,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Get_post_and_related_dataReturn>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Get_post_and_related_dataReturn>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1024,8 +1004,7 @@ namespace MyNS
 					Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "users/"+ (user_id==null? "" : System.Uri.EscapeDataString(user_id))+"/posts&sort_by=" + (sort_by==null? "" : System.Uri.EscapeDataString(sort_by))+"&types=" + (types==null? "" : System.Uri.EscapeDataString(types))+"&sources=" + (sources==null? "" : System.Uri.EscapeDataString(sources))+"&group_ids=" + (group_ids==null? "" : System.Uri.EscapeDataString(group_ids))+"&per_page="+per_page+"&page="+page+"&device_pixel_ratio="+device_pixel_ratio+"&latitude="+latitude+"&longitude="+longitude+"&radius="+radius+"&date_min=" + date_min.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&date_max=" + date_max.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&outcomes=" + (outcomes==null? "" : System.Uri.EscapeDataString(outcomes))+"&include_reposts="+include_reposts;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1035,13 +1014,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Get_user_postsReturn>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Get_user_postsReturn>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1110,8 +1088,7 @@ namespace MyNS
 					Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "users/"+ (user_id==null? "" : System.Uri.EscapeDataString(user_id))+"/posts/search&search=" + (search==null? "" : System.Uri.EscapeDataString(search))+"&sort_by=" + (sort_by==null? "" : System.Uri.EscapeDataString(sort_by))+"&types=" + (types==null? "" : System.Uri.EscapeDataString(types))+"&sources=" + (sources==null? "" : System.Uri.EscapeDataString(sources))+"&group_ids=" + (group_ids==null? "" : System.Uri.EscapeDataString(group_ids))+"&per_page="+per_page+"&page="+page+"&device_pixel_ratio="+device_pixel_ratio+"&latitude="+latitude+"&longitude="+longitude+"&radius="+radius+"&date_min=" + date_min.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&date_max=" + date_max.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&outcomes=" + (outcomes==null? "" : System.Uri.EscapeDataString(outcomes))+"&include_reposts="+include_reposts;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1121,13 +1098,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Search_user_postsReturn>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Search_user_postsReturn>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

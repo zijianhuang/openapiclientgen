@@ -351,19 +351,17 @@ namespace MyNS
 		public async Task<PredictionResponse> Prediction_GetSlotPredictionGETAsync(string appId, string slotName, string query, bool verbose, bool show_all_intents, bool log)
 		{
 			var requestUri = "apps/"+ (appId==null? "" : System.Uri.EscapeDataString(appId))+"/slots/"+ (slotName==null? "" : System.Uri.EscapeDataString(slotName))+"/predict&query=" + (query==null? "" : System.Uri.EscapeDataString(query))+"&verbose="+verbose+"&show-all-intents="+show_all_intents+"&log="+log;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<PredictionResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<PredictionResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -381,22 +379,19 @@ namespace MyNS
 		public async Task<PredictionResponse> Prediction_GetSlotPredictionAsync(string appId, string slotName, bool verbose, bool show_all_intents, bool log, PredictionRequest requestBody)
 		{
 			var requestUri = "apps/"+ (appId==null? "" : System.Uri.EscapeDataString(appId))+"/slots/"+ (slotName==null? "" : System.Uri.EscapeDataString(slotName))+"/predict&verbose="+verbose+"&show-all-intents="+show_all_intents+"&log="+log;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<PredictionResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<PredictionResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -414,19 +409,17 @@ namespace MyNS
 		public async Task<PredictionResponse> Prediction_GetVersionPredictionGETAsync(string appId, string versionId, string query, bool verbose, bool show_all_intents, bool log)
 		{
 			var requestUri = "apps/"+ (appId==null? "" : System.Uri.EscapeDataString(appId))+"/versions/"+ (versionId==null? "" : System.Uri.EscapeDataString(versionId))+"/predict&query=" + (query==null? "" : System.Uri.EscapeDataString(query))+"&verbose="+verbose+"&show-all-intents="+show_all_intents+"&log="+log;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<PredictionResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<PredictionResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -444,22 +437,19 @@ namespace MyNS
 		public async Task<PredictionResponse> Prediction_GetVersionPredictionAsync(string appId, string versionId, bool verbose, bool show_all_intents, bool log, PredictionRequest requestBody)
 		{
 			var requestUri = "apps/"+ (appId==null? "" : System.Uri.EscapeDataString(appId))+"/versions/"+ (versionId==null? "" : System.Uri.EscapeDataString(versionId))+"/predict&verbose="+verbose+"&show-all-intents="+show_all_intents+"&log="+log;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<PredictionResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<PredictionResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

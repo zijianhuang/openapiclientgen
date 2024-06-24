@@ -112,8 +112,7 @@ namespace MyNS
 					Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "addresses."+outputFormat+"?addressString=" + (addressString==null? "" : System.Uri.EscapeDataString(addressString))+"&locationDescriptor=" + locationDescriptor+"&maxResults="+maxResults+"&interpolation=" + interpolation+"&echo="+echo+"&brief="+brief+"&autoComplete="+autoComplete+"&setBack="+setBack+"&outputSRS="+outputSRS+"&minScore="+minScore+"&matchPrecision=" + (matchPrecision==null? "" : System.Uri.EscapeDataString(matchPrecision))+"&matchPrecisionNot=" + (matchPrecisionNot==null? "" : System.Uri.EscapeDataString(matchPrecisionNot))+"&siteName=" + (siteName==null? "" : System.Uri.EscapeDataString(siteName))+"&unitDesignator=" + unitDesignator+"&unitNumber=" + (unitNumber==null? "" : System.Uri.EscapeDataString(unitNumber))+"&unitNumberSuffix=" + (unitNumberSuffix==null? "" : System.Uri.EscapeDataString(unitNumberSuffix))+"&civicNumber=" + (civicNumber==null? "" : System.Uri.EscapeDataString(civicNumber))+"&civicNumberSuffix=" + (civicNumberSuffix==null? "" : System.Uri.EscapeDataString(civicNumberSuffix))+"&streetName=" + (streetName==null? "" : System.Uri.EscapeDataString(streetName))+"&streetType=" + (streetType==null? "" : System.Uri.EscapeDataString(streetType))+"&streetDirection=" + streetDirection+"&streetQualifier=" + (streetQualifier==null? "" : System.Uri.EscapeDataString(streetQualifier))+"&localityName=" + (localityName==null? "" : System.Uri.EscapeDataString(localityName))+"&provinceCode=" + (provinceCode==null? "" : System.Uri.EscapeDataString(provinceCode))+"&localities=" + (localities==null? "" : System.Uri.EscapeDataString(localities))+"&notLocalities=" + (notLocalities==null? "" : System.Uri.EscapeDataString(notLocalities))+"&bbox=" + (bbox==null? "" : System.Uri.EscapeDataString(bbox))+"&centre=" + (centre==null? "" : System.Uri.EscapeDataString(centre))+"&maxDistance="+maxDistance+"&extrapolate="+extrapolate+"&parcelPoint=" + (parcelPoint==null? "" : System.Uri.EscapeDataString(parcelPoint));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -127,7 +126,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -149,8 +147,7 @@ namespace MyNS
 		public async Task IntersectionsNear__outputFormatGetByPointAndMaxDistanceAndOutputSRSAndMaxResultsAndMinDegreeAndMaxDegreeAsync(Addresses__outputFormatGetByAddressStringAndLocationDescriptorAndMaxResultsAndInterpolationAndEchoAndBriefAndAutoCompleteAndSetBackAndOutputSRSAndMinScoreAndMatchPrecisionAndMatchPrecisionNotAndSiteNameAndUnitDesignatorAndUnitNumberAndUnitNumberSuffixAndCivicNumberAndCivicNumberSuffixAndStreetNameAndStreetTypeAndStreetDirectionAndStreetQualifierAndLocalityNameAndProvinceCodeAndLocalitiesAndNotLocalitiesAndBboxAndCentreAndMaxDistanceAndExtrapolateAndParcelPointOutputFormat outputFormat, string point, int maxDistance, IntersectionsNear__outputFormatGetByPointAndMaxDistanceAndOutputSRSAndMaxResultsAndMinDegreeAndMaxDegreeOutputSRS outputSRS, int maxResults, int minDegree, int maxDegree, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "intersections/near."+outputFormat+"?point=" + (point==null? "" : System.Uri.EscapeDataString(point))+"&maxDistance="+maxDistance+"&outputSRS="+outputSRS+"&maxResults="+maxResults+"&minDegree="+minDegree+"&maxDegree="+maxDegree;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -164,7 +161,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -185,8 +181,7 @@ namespace MyNS
 		public async Task IntersectionsNearest__outputFormatGetByPointAndMaxDistanceAndOutputSRSAndMinDegreeAndMaxDegreeAsync(Addresses__outputFormatGetByAddressStringAndLocationDescriptorAndMaxResultsAndInterpolationAndEchoAndBriefAndAutoCompleteAndSetBackAndOutputSRSAndMinScoreAndMatchPrecisionAndMatchPrecisionNotAndSiteNameAndUnitDesignatorAndUnitNumberAndUnitNumberSuffixAndCivicNumberAndCivicNumberSuffixAndStreetNameAndStreetTypeAndStreetDirectionAndStreetQualifierAndLocalityNameAndProvinceCodeAndLocalitiesAndNotLocalitiesAndBboxAndCentreAndMaxDistanceAndExtrapolateAndParcelPointOutputFormat outputFormat, string point, int maxDistance, IntersectionsNearest__outputFormatGetByPointAndMaxDistanceAndOutputSRSAndMinDegreeAndMaxDegreeOutputSRS outputSRS, int minDegree, int maxDegree, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "intersections/nearest."+outputFormat+"?point=" + (point==null? "" : System.Uri.EscapeDataString(point))+"&maxDistance="+maxDistance+"&outputSRS="+outputSRS+"&minDegree="+minDegree+"&maxDegree="+maxDegree;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -200,7 +195,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -221,8 +215,7 @@ namespace MyNS
 		public async Task IntersectionsWithin__outputFormatGetByBboxAndOutputSRSAndMaxResultsAndMinDegreeAndMaxDegreeAsync(Addresses__outputFormatGetByAddressStringAndLocationDescriptorAndMaxResultsAndInterpolationAndEchoAndBriefAndAutoCompleteAndSetBackAndOutputSRSAndMinScoreAndMatchPrecisionAndMatchPrecisionNotAndSiteNameAndUnitDesignatorAndUnitNumberAndUnitNumberSuffixAndCivicNumberAndCivicNumberSuffixAndStreetNameAndStreetTypeAndStreetDirectionAndStreetQualifierAndLocalityNameAndProvinceCodeAndLocalitiesAndNotLocalitiesAndBboxAndCentreAndMaxDistanceAndExtrapolateAndParcelPointOutputFormat outputFormat, string bbox, IntersectionsWithin__outputFormatGetByBboxAndOutputSRSAndMaxResultsAndMinDegreeAndMaxDegreeOutputSRS outputSRS, int maxResults, int minDegree, int maxDegree, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "intersections/within."+outputFormat+"?bbox=" + (bbox==null? "" : System.Uri.EscapeDataString(bbox))+"&outputSRS="+outputSRS+"&maxResults="+maxResults+"&minDegree="+minDegree+"&maxDegree="+maxDegree;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -236,7 +229,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -254,8 +246,7 @@ namespace MyNS
 		public async Task Intersections_intersectionID__outputFormatGetByOutputSRSAsync(string intersectionID, Addresses__outputFormatGetByAddressStringAndLocationDescriptorAndMaxResultsAndInterpolationAndEchoAndBriefAndAutoCompleteAndSetBackAndOutputSRSAndMinScoreAndMatchPrecisionAndMatchPrecisionNotAndSiteNameAndUnitDesignatorAndUnitNumberAndUnitNumberSuffixAndCivicNumberAndCivicNumberSuffixAndStreetNameAndStreetTypeAndStreetDirectionAndStreetQualifierAndLocalityNameAndProvinceCodeAndLocalitiesAndNotLocalitiesAndBboxAndCentreAndMaxDistanceAndExtrapolateAndParcelPointOutputFormat outputFormat, Intersections_intersectionID__outputFormatGetByOutputSRSOutputSRS outputSRS, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "intersections/"+ (intersectionID==null? "" : System.Uri.EscapeDataString(intersectionID))+"."+outputFormat+"&outputSRS="+outputSRS;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -269,7 +260,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -351,8 +341,7 @@ namespace MyNS
 					Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "occupants/addresses."+outputFormat+"?addressString=" + (addressString==null? "" : System.Uri.EscapeDataString(addressString))+"&tags=" + (tags==null? "" : System.Uri.EscapeDataString(tags))+"&locationDescriptor=" + locationDescriptor+"&maxResults="+maxResults+"&interpolation=" + interpolation+"&echo="+echo+"&brief="+brief+"&autoComplete="+autoComplete+"&setBack="+setBack+"&outputSRS="+outputSRS+"&minScore="+minScore+"&matchPrecision=" + (matchPrecision==null? "" : System.Uri.EscapeDataString(matchPrecision))+"&matchPrecisionNot=" + (matchPrecisionNot==null? "" : System.Uri.EscapeDataString(matchPrecisionNot))+"&siteName=" + (siteName==null? "" : System.Uri.EscapeDataString(siteName))+"&unitDesignator=" + unitDesignator+"&unitNumber=" + (unitNumber==null? "" : System.Uri.EscapeDataString(unitNumber))+"&unitNumberSuffix=" + (unitNumberSuffix==null? "" : System.Uri.EscapeDataString(unitNumberSuffix))+"&civicNumber=" + (civicNumber==null? "" : System.Uri.EscapeDataString(civicNumber))+"&civicNumberSuffix=" + (civicNumberSuffix==null? "" : System.Uri.EscapeDataString(civicNumberSuffix))+"&streetName=" + (streetName==null? "" : System.Uri.EscapeDataString(streetName))+"&streetType=" + (streetType==null? "" : System.Uri.EscapeDataString(streetType))+"&streetDirection=" + streetDirection+"&streetQualifier=" + (streetQualifier==null? "" : System.Uri.EscapeDataString(streetQualifier))+"&localityName=" + (localityName==null? "" : System.Uri.EscapeDataString(localityName))+"&provinceCode=" + (provinceCode==null? "" : System.Uri.EscapeDataString(provinceCode))+"&localities=" + (localities==null? "" : System.Uri.EscapeDataString(localities))+"&notLocalities=" + (notLocalities==null? "" : System.Uri.EscapeDataString(notLocalities))+"&bbox=" + (bbox==null? "" : System.Uri.EscapeDataString(bbox))+"&centre=" + (centre==null? "" : System.Uri.EscapeDataString(centre))+"&maxDistance="+maxDistance+"&extrapolate="+extrapolate+"&parcelPoint=" + (parcelPoint==null? "" : System.Uri.EscapeDataString(parcelPoint));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -366,7 +355,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -390,8 +378,7 @@ namespace MyNS
 		public async Task OccupantsNear__outputFormatGetByPointAndTagsAndMaxDistanceAndOutputSRSAndMaxResultsAndLocationDescriptorAndBriefAndSetBackAsync(Addresses__outputFormatGetByAddressStringAndLocationDescriptorAndMaxResultsAndInterpolationAndEchoAndBriefAndAutoCompleteAndSetBackAndOutputSRSAndMinScoreAndMatchPrecisionAndMatchPrecisionNotAndSiteNameAndUnitDesignatorAndUnitNumberAndUnitNumberSuffixAndCivicNumberAndCivicNumberSuffixAndStreetNameAndStreetTypeAndStreetDirectionAndStreetQualifierAndLocalityNameAndProvinceCodeAndLocalitiesAndNotLocalitiesAndBboxAndCentreAndMaxDistanceAndExtrapolateAndParcelPointOutputFormat outputFormat, string point, string tags, int maxDistance, OccupantsNear__outputFormatGetByPointAndTagsAndMaxDistanceAndOutputSRSAndMaxResultsAndLocationDescriptorAndBriefAndSetBackOutputSRS outputSRS, int maxResults, Addresses__outputFormatGetByAddressStringAndLocationDescriptorAndMaxResultsAndInterpolationAndEchoAndBriefAndAutoCompleteAndSetBackAndOutputSRSAndMinScoreAndMatchPrecisionAndMatchPrecisionNotAndSiteNameAndUnitDesignatorAndUnitNumberAndUnitNumberSuffixAndCivicNumberAndCivicNumberSuffixAndStreetNameAndStreetTypeAndStreetDirectionAndStreetQualifierAndLocalityNameAndProvinceCodeAndLocalitiesAndNotLocalitiesAndBboxAndCentreAndMaxDistanceAndExtrapolateAndParcelPointLocationDescriptor locationDescriptor, bool brief, int setBack, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "occupants/near."+outputFormat+"?point=" + (point==null? "" : System.Uri.EscapeDataString(point))+"&tags=" + (tags==null? "" : System.Uri.EscapeDataString(tags))+"&maxDistance="+maxDistance+"&outputSRS="+outputSRS+"&maxResults="+maxResults+"&locationDescriptor=" + locationDescriptor+"&brief="+brief+"&setBack="+setBack;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -405,7 +392,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -428,8 +414,7 @@ namespace MyNS
 		public async Task OccupantsNearest__outputFormatGetByPointAndMaxDistanceAndTagsAndOutputSRSAndLocationDescriptorAndBriefAndSetBackAsync(Addresses__outputFormatGetByAddressStringAndLocationDescriptorAndMaxResultsAndInterpolationAndEchoAndBriefAndAutoCompleteAndSetBackAndOutputSRSAndMinScoreAndMatchPrecisionAndMatchPrecisionNotAndSiteNameAndUnitDesignatorAndUnitNumberAndUnitNumberSuffixAndCivicNumberAndCivicNumberSuffixAndStreetNameAndStreetTypeAndStreetDirectionAndStreetQualifierAndLocalityNameAndProvinceCodeAndLocalitiesAndNotLocalitiesAndBboxAndCentreAndMaxDistanceAndExtrapolateAndParcelPointOutputFormat outputFormat, string point, int maxDistance, string tags, OccupantsNearest__outputFormatGetByPointAndMaxDistanceAndTagsAndOutputSRSAndLocationDescriptorAndBriefAndSetBackOutputSRS outputSRS, Addresses__outputFormatGetByAddressStringAndLocationDescriptorAndMaxResultsAndInterpolationAndEchoAndBriefAndAutoCompleteAndSetBackAndOutputSRSAndMinScoreAndMatchPrecisionAndMatchPrecisionNotAndSiteNameAndUnitDesignatorAndUnitNumberAndUnitNumberSuffixAndCivicNumberAndCivicNumberSuffixAndStreetNameAndStreetTypeAndStreetDirectionAndStreetQualifierAndLocalityNameAndProvinceCodeAndLocalitiesAndNotLocalitiesAndBboxAndCentreAndMaxDistanceAndExtrapolateAndParcelPointLocationDescriptor locationDescriptor, bool brief, int setBack, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "occupants/nearest."+outputFormat+"?point=" + (point==null? "" : System.Uri.EscapeDataString(point))+"&maxDistance="+maxDistance+"&tags=" + (tags==null? "" : System.Uri.EscapeDataString(tags))+"&outputSRS="+outputSRS+"&locationDescriptor=" + locationDescriptor+"&brief="+brief+"&setBack="+setBack;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -443,7 +428,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -466,8 +450,7 @@ namespace MyNS
 		public async Task OccupantsWithin__outputFormatGetByBboxAndTagsAndOutputSRSAndMaxResultsAndLocationDescriptorAndBriefAndSetBackAsync(Addresses__outputFormatGetByAddressStringAndLocationDescriptorAndMaxResultsAndInterpolationAndEchoAndBriefAndAutoCompleteAndSetBackAndOutputSRSAndMinScoreAndMatchPrecisionAndMatchPrecisionNotAndSiteNameAndUnitDesignatorAndUnitNumberAndUnitNumberSuffixAndCivicNumberAndCivicNumberSuffixAndStreetNameAndStreetTypeAndStreetDirectionAndStreetQualifierAndLocalityNameAndProvinceCodeAndLocalitiesAndNotLocalitiesAndBboxAndCentreAndMaxDistanceAndExtrapolateAndParcelPointOutputFormat outputFormat, string bbox, string tags, OccupantsWithin__outputFormatGetByBboxAndTagsAndOutputSRSAndMaxResultsAndLocationDescriptorAndBriefAndSetBackOutputSRS outputSRS, int maxResults, Addresses__outputFormatGetByAddressStringAndLocationDescriptorAndMaxResultsAndInterpolationAndEchoAndBriefAndAutoCompleteAndSetBackAndOutputSRSAndMinScoreAndMatchPrecisionAndMatchPrecisionNotAndSiteNameAndUnitDesignatorAndUnitNumberAndUnitNumberSuffixAndCivicNumberAndCivicNumberSuffixAndStreetNameAndStreetTypeAndStreetDirectionAndStreetQualifierAndLocalityNameAndProvinceCodeAndLocalitiesAndNotLocalitiesAndBboxAndCentreAndMaxDistanceAndExtrapolateAndParcelPointLocationDescriptor locationDescriptor, bool brief, int setBack, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "occupants/within."+outputFormat+"?bbox=" + (bbox==null? "" : System.Uri.EscapeDataString(bbox))+"&tags=" + (tags==null? "" : System.Uri.EscapeDataString(tags))+"&outputSRS="+outputSRS+"&maxResults="+maxResults+"&locationDescriptor=" + locationDescriptor+"&brief="+brief+"&setBack="+setBack;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -481,7 +464,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -502,8 +484,7 @@ namespace MyNS
 		public async Task Occupants_occupantID__outputFormatGetByOutputSRSAndLocationDescriptorAndBriefAndSetBackAsync(string occupantID, Addresses__outputFormatGetByAddressStringAndLocationDescriptorAndMaxResultsAndInterpolationAndEchoAndBriefAndAutoCompleteAndSetBackAndOutputSRSAndMinScoreAndMatchPrecisionAndMatchPrecisionNotAndSiteNameAndUnitDesignatorAndUnitNumberAndUnitNumberSuffixAndCivicNumberAndCivicNumberSuffixAndStreetNameAndStreetTypeAndStreetDirectionAndStreetQualifierAndLocalityNameAndProvinceCodeAndLocalitiesAndNotLocalitiesAndBboxAndCentreAndMaxDistanceAndExtrapolateAndParcelPointOutputFormat outputFormat, Occupants_occupantID__outputFormatGetByOutputSRSAndLocationDescriptorAndBriefAndSetBackOutputSRS outputSRS, Addresses__outputFormatGetByAddressStringAndLocationDescriptorAndMaxResultsAndInterpolationAndEchoAndBriefAndAutoCompleteAndSetBackAndOutputSRSAndMinScoreAndMatchPrecisionAndMatchPrecisionNotAndSiteNameAndUnitDesignatorAndUnitNumberAndUnitNumberSuffixAndCivicNumberAndCivicNumberSuffixAndStreetNameAndStreetTypeAndStreetDirectionAndStreetQualifierAndLocalityNameAndProvinceCodeAndLocalitiesAndNotLocalitiesAndBboxAndCentreAndMaxDistanceAndExtrapolateAndParcelPointLocationDescriptor locationDescriptor, bool brief, int setBack, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "occupants/"+ (occupantID==null? "" : System.Uri.EscapeDataString(occupantID))+"."+outputFormat+"&outputSRS="+outputSRS+"&locationDescriptor=" + locationDescriptor+"&brief="+brief+"&setBack="+setBack;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -517,7 +498,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -534,8 +514,7 @@ namespace MyNS
 		public async Task ParcelsPids_siteID__outputFormatGetAsync(string siteID, Addresses__outputFormatGetByAddressStringAndLocationDescriptorAndMaxResultsAndInterpolationAndEchoAndBriefAndAutoCompleteAndSetBackAndOutputSRSAndMinScoreAndMatchPrecisionAndMatchPrecisionNotAndSiteNameAndUnitDesignatorAndUnitNumberAndUnitNumberSuffixAndCivicNumberAndCivicNumberSuffixAndStreetNameAndStreetTypeAndStreetDirectionAndStreetQualifierAndLocalityNameAndProvinceCodeAndLocalitiesAndNotLocalitiesAndBboxAndCentreAndMaxDistanceAndExtrapolateAndParcelPointOutputFormat outputFormat, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "parcels/pids/"+ (siteID==null? "" : System.Uri.EscapeDataString(siteID))+"."+outputFormat;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -549,7 +528,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -574,8 +552,7 @@ namespace MyNS
 		public async Task SitesNear__outputFormatGetByPointAndMaxDistanceAndOutputSRSAndMaxResultsAndLocationDescriptorAndSetBackAndBriefAndExcludeUnitsAndOnlyCivicAsync(Addresses__outputFormatGetByAddressStringAndLocationDescriptorAndMaxResultsAndInterpolationAndEchoAndBriefAndAutoCompleteAndSetBackAndOutputSRSAndMinScoreAndMatchPrecisionAndMatchPrecisionNotAndSiteNameAndUnitDesignatorAndUnitNumberAndUnitNumberSuffixAndCivicNumberAndCivicNumberSuffixAndStreetNameAndStreetTypeAndStreetDirectionAndStreetQualifierAndLocalityNameAndProvinceCodeAndLocalitiesAndNotLocalitiesAndBboxAndCentreAndMaxDistanceAndExtrapolateAndParcelPointOutputFormat outputFormat, string point, int maxDistance, SitesNear__outputFormatGetByPointAndMaxDistanceAndOutputSRSAndMaxResultsAndLocationDescriptorAndSetBackAndBriefAndExcludeUnitsAndOnlyCivicOutputSRS outputSRS, int maxResults, Addresses__outputFormatGetByAddressStringAndLocationDescriptorAndMaxResultsAndInterpolationAndEchoAndBriefAndAutoCompleteAndSetBackAndOutputSRSAndMinScoreAndMatchPrecisionAndMatchPrecisionNotAndSiteNameAndUnitDesignatorAndUnitNumberAndUnitNumberSuffixAndCivicNumberAndCivicNumberSuffixAndStreetNameAndStreetTypeAndStreetDirectionAndStreetQualifierAndLocalityNameAndProvinceCodeAndLocalitiesAndNotLocalitiesAndBboxAndCentreAndMaxDistanceAndExtrapolateAndParcelPointLocationDescriptor locationDescriptor, int setBack, bool brief, bool excludeUnits, bool onlyCivic, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "sites/near."+outputFormat+"?point=" + (point==null? "" : System.Uri.EscapeDataString(point))+"&maxDistance="+maxDistance+"&outputSRS="+outputSRS+"&maxResults="+maxResults+"&locationDescriptor=" + locationDescriptor+"&setBack="+setBack+"&brief="+brief+"&excludeUnits="+excludeUnits+"&onlyCivic="+onlyCivic;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -589,7 +566,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -613,8 +589,7 @@ namespace MyNS
 		public async Task SitesNearest__outputFormatGetByPointAndMaxDistanceAndOutputSRSAndLocationDescriptorAndSetBackAndBriefAndExcludeUnitsAndOnlyCivicAsync(Addresses__outputFormatGetByAddressStringAndLocationDescriptorAndMaxResultsAndInterpolationAndEchoAndBriefAndAutoCompleteAndSetBackAndOutputSRSAndMinScoreAndMatchPrecisionAndMatchPrecisionNotAndSiteNameAndUnitDesignatorAndUnitNumberAndUnitNumberSuffixAndCivicNumberAndCivicNumberSuffixAndStreetNameAndStreetTypeAndStreetDirectionAndStreetQualifierAndLocalityNameAndProvinceCodeAndLocalitiesAndNotLocalitiesAndBboxAndCentreAndMaxDistanceAndExtrapolateAndParcelPointOutputFormat outputFormat, string point, int maxDistance, SitesNearest__outputFormatGetByPointAndMaxDistanceAndOutputSRSAndLocationDescriptorAndSetBackAndBriefAndExcludeUnitsAndOnlyCivicOutputSRS outputSRS, Addresses__outputFormatGetByAddressStringAndLocationDescriptorAndMaxResultsAndInterpolationAndEchoAndBriefAndAutoCompleteAndSetBackAndOutputSRSAndMinScoreAndMatchPrecisionAndMatchPrecisionNotAndSiteNameAndUnitDesignatorAndUnitNumberAndUnitNumberSuffixAndCivicNumberAndCivicNumberSuffixAndStreetNameAndStreetTypeAndStreetDirectionAndStreetQualifierAndLocalityNameAndProvinceCodeAndLocalitiesAndNotLocalitiesAndBboxAndCentreAndMaxDistanceAndExtrapolateAndParcelPointLocationDescriptor locationDescriptor, int setBack, bool brief, bool excludeUnits, bool onlyCivic, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "sites/nearest."+outputFormat+"?point=" + (point==null? "" : System.Uri.EscapeDataString(point))+"&maxDistance="+maxDistance+"&outputSRS="+outputSRS+"&locationDescriptor=" + locationDescriptor+"&setBack="+setBack+"&brief="+brief+"&excludeUnits="+excludeUnits+"&onlyCivic="+onlyCivic;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -628,7 +603,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -652,8 +626,7 @@ namespace MyNS
 		public async Task SitesWithin__outputFormatGetByBboxAndOutputSRSAndMaxResultsAndLocationDescriptorAndSetBackAndBriefAndExcludeUnitsAndOnlyCivicAsync(Addresses__outputFormatGetByAddressStringAndLocationDescriptorAndMaxResultsAndInterpolationAndEchoAndBriefAndAutoCompleteAndSetBackAndOutputSRSAndMinScoreAndMatchPrecisionAndMatchPrecisionNotAndSiteNameAndUnitDesignatorAndUnitNumberAndUnitNumberSuffixAndCivicNumberAndCivicNumberSuffixAndStreetNameAndStreetTypeAndStreetDirectionAndStreetQualifierAndLocalityNameAndProvinceCodeAndLocalitiesAndNotLocalitiesAndBboxAndCentreAndMaxDistanceAndExtrapolateAndParcelPointOutputFormat outputFormat, string bbox, SitesWithin__outputFormatGetByBboxAndOutputSRSAndMaxResultsAndLocationDescriptorAndSetBackAndBriefAndExcludeUnitsAndOnlyCivicOutputSRS outputSRS, int maxResults, Addresses__outputFormatGetByAddressStringAndLocationDescriptorAndMaxResultsAndInterpolationAndEchoAndBriefAndAutoCompleteAndSetBackAndOutputSRSAndMinScoreAndMatchPrecisionAndMatchPrecisionNotAndSiteNameAndUnitDesignatorAndUnitNumberAndUnitNumberSuffixAndCivicNumberAndCivicNumberSuffixAndStreetNameAndStreetTypeAndStreetDirectionAndStreetQualifierAndLocalityNameAndProvinceCodeAndLocalitiesAndNotLocalitiesAndBboxAndCentreAndMaxDistanceAndExtrapolateAndParcelPointLocationDescriptor locationDescriptor, int setBack, bool brief, bool excludeUnits, bool onlyCivic, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "sites/within."+outputFormat+"?bbox=" + (bbox==null? "" : System.Uri.EscapeDataString(bbox))+"&outputSRS="+outputSRS+"&maxResults="+maxResults+"&locationDescriptor=" + locationDescriptor+"&setBack="+setBack+"&brief="+brief+"&excludeUnits="+excludeUnits+"&onlyCivic="+onlyCivic;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -667,7 +640,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -688,8 +660,7 @@ namespace MyNS
 		public async Task Sites_siteID__outputFormatGetByOutputSRSAndLocationDescriptorAndBriefAndSetBackAsync(string siteID, Addresses__outputFormatGetByAddressStringAndLocationDescriptorAndMaxResultsAndInterpolationAndEchoAndBriefAndAutoCompleteAndSetBackAndOutputSRSAndMinScoreAndMatchPrecisionAndMatchPrecisionNotAndSiteNameAndUnitDesignatorAndUnitNumberAndUnitNumberSuffixAndCivicNumberAndCivicNumberSuffixAndStreetNameAndStreetTypeAndStreetDirectionAndStreetQualifierAndLocalityNameAndProvinceCodeAndLocalitiesAndNotLocalitiesAndBboxAndCentreAndMaxDistanceAndExtrapolateAndParcelPointOutputFormat outputFormat, Sites_siteID__outputFormatGetByOutputSRSAndLocationDescriptorAndBriefAndSetBackOutputSRS outputSRS, Addresses__outputFormatGetByAddressStringAndLocationDescriptorAndMaxResultsAndInterpolationAndEchoAndBriefAndAutoCompleteAndSetBackAndOutputSRSAndMinScoreAndMatchPrecisionAndMatchPrecisionNotAndSiteNameAndUnitDesignatorAndUnitNumberAndUnitNumberSuffixAndCivicNumberAndCivicNumberSuffixAndStreetNameAndStreetTypeAndStreetDirectionAndStreetQualifierAndLocalityNameAndProvinceCodeAndLocalitiesAndNotLocalitiesAndBboxAndCentreAndMaxDistanceAndExtrapolateAndParcelPointLocationDescriptor locationDescriptor, bool brief, int setBack, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "sites/"+ (siteID==null? "" : System.Uri.EscapeDataString(siteID))+"."+outputFormat+"&outputSRS="+outputSRS+"&locationDescriptor=" + locationDescriptor+"&brief="+brief+"&setBack="+setBack;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -703,7 +674,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -724,8 +694,7 @@ namespace MyNS
 		public async Task Sites_siteIDSubsites__outputFormatGetByOutputSRSAndLocationDescriptorAndBriefAndSetBackAsync(string siteID, Addresses__outputFormatGetByAddressStringAndLocationDescriptorAndMaxResultsAndInterpolationAndEchoAndBriefAndAutoCompleteAndSetBackAndOutputSRSAndMinScoreAndMatchPrecisionAndMatchPrecisionNotAndSiteNameAndUnitDesignatorAndUnitNumberAndUnitNumberSuffixAndCivicNumberAndCivicNumberSuffixAndStreetNameAndStreetTypeAndStreetDirectionAndStreetQualifierAndLocalityNameAndProvinceCodeAndLocalitiesAndNotLocalitiesAndBboxAndCentreAndMaxDistanceAndExtrapolateAndParcelPointOutputFormat outputFormat, Sites_siteIDSubsites__outputFormatGetByOutputSRSAndLocationDescriptorAndBriefAndSetBackOutputSRS outputSRS, Addresses__outputFormatGetByAddressStringAndLocationDescriptorAndMaxResultsAndInterpolationAndEchoAndBriefAndAutoCompleteAndSetBackAndOutputSRSAndMinScoreAndMatchPrecisionAndMatchPrecisionNotAndSiteNameAndUnitDesignatorAndUnitNumberAndUnitNumberSuffixAndCivicNumberAndCivicNumberSuffixAndStreetNameAndStreetTypeAndStreetDirectionAndStreetQualifierAndLocalityNameAndProvinceCodeAndLocalitiesAndNotLocalitiesAndBboxAndCentreAndMaxDistanceAndExtrapolateAndParcelPointLocationDescriptor locationDescriptor, bool brief, int setBack, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "sites/"+ (siteID==null? "" : System.Uri.EscapeDataString(siteID))+"/subsites."+outputFormat+"&outputSRS="+outputSRS+"&locationDescriptor=" + locationDescriptor+"&brief="+brief+"&setBack="+setBack;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -739,7 +708,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

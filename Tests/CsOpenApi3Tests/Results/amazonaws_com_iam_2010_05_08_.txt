@@ -6364,8 +6364,7 @@ namespace MyNS
 		public async Task GET_AddClientIDToOpenIDConnectProviderAsync(string OpenIDConnectProviderArn, string ClientID, GET_AddClientIDToOpenIDConnectProviderAction Action, GET_AddClientIDToOpenIDConnectProviderVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=AddClientIDToOpenIDConnectProvider?OpenIDConnectProviderArn=" + (OpenIDConnectProviderArn==null? "" : System.Uri.EscapeDataString(OpenIDConnectProviderArn))+"&ClientID=" + (ClientID==null? "" : System.Uri.EscapeDataString(ClientID))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6379,7 +6378,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6399,8 +6397,7 @@ namespace MyNS
 		public async Task GET_AddRoleToInstanceProfileAsync(string InstanceProfileName, string RoleName, GET_AddRoleToInstanceProfileAction Action, GET_AddRoleToInstanceProfileVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=AddRoleToInstanceProfile?InstanceProfileName=" + (InstanceProfileName==null? "" : System.Uri.EscapeDataString(InstanceProfileName))+"&RoleName=" + (RoleName==null? "" : System.Uri.EscapeDataString(RoleName))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6414,7 +6411,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6434,8 +6430,7 @@ namespace MyNS
 		public async Task GET_AddUserToGroupAsync(string GroupName, string UserName, GET_AddUserToGroupAction Action, GET_AddUserToGroupVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=AddUserToGroup?GroupName=" + (GroupName==null? "" : System.Uri.EscapeDataString(GroupName))+"&UserName=" + (UserName==null? "" : System.Uri.EscapeDataString(UserName))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6449,7 +6444,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6469,8 +6463,7 @@ namespace MyNS
 		public async Task GET_AttachGroupPolicyAsync(string GroupName, string PolicyArn, GET_AttachGroupPolicyAction Action, GET_AttachGroupPolicyVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=AttachGroupPolicy?GroupName=" + (GroupName==null? "" : System.Uri.EscapeDataString(GroupName))+"&PolicyArn=" + (PolicyArn==null? "" : System.Uri.EscapeDataString(PolicyArn))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6484,7 +6477,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6504,8 +6496,7 @@ namespace MyNS
 		public async Task GET_AttachRolePolicyAsync(string RoleName, string PolicyArn, GET_AttachRolePolicyAction Action, GET_AttachRolePolicyVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=AttachRolePolicy?RoleName=" + (RoleName==null? "" : System.Uri.EscapeDataString(RoleName))+"&PolicyArn=" + (PolicyArn==null? "" : System.Uri.EscapeDataString(PolicyArn))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6519,7 +6510,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6539,8 +6529,7 @@ namespace MyNS
 		public async Task GET_AttachUserPolicyAsync(string UserName, string PolicyArn, GET_AttachUserPolicyAction Action, GET_AttachUserPolicyVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=AttachUserPolicy?UserName=" + (UserName==null? "" : System.Uri.EscapeDataString(UserName))+"&PolicyArn=" + (PolicyArn==null? "" : System.Uri.EscapeDataString(PolicyArn))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6554,7 +6543,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6574,8 +6562,7 @@ namespace MyNS
 		public async Task GET_ChangePasswordAsync(string OldPassword, string NewPassword, GET_ChangePasswordAction Action, GET_ChangePasswordVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=ChangePassword?OldPassword=" + (OldPassword==null? "" : System.Uri.EscapeDataString(OldPassword))+"&NewPassword=" + (NewPassword==null? "" : System.Uri.EscapeDataString(NewPassword))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6589,7 +6576,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6605,8 +6591,7 @@ namespace MyNS
 		public async Task GET_CreateAccessKeyAsync(string UserName, GET_CreateAccessKeyAction Action, GET_CreateAccessKeyVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=CreateAccessKey?UserName=" + (UserName==null? "" : System.Uri.EscapeDataString(UserName))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6620,7 +6605,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6636,8 +6620,7 @@ namespace MyNS
 		public async Task GET_CreateAccountAliasAsync(string AccountAlias, GET_CreateAccountAliasAction Action, GET_CreateAccountAliasVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=CreateAccountAlias?AccountAlias=" + (AccountAlias==null? "" : System.Uri.EscapeDataString(AccountAlias))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6651,7 +6634,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6671,8 +6653,7 @@ namespace MyNS
 		public async Task GET_CreateGroupAsync(string Path, string GroupName, GET_CreateGroupAction Action, GET_CreateGroupVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=CreateGroup?Path=" + (Path==null? "" : System.Uri.EscapeDataString(Path))+"&GroupName=" + (GroupName==null? "" : System.Uri.EscapeDataString(GroupName))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6686,7 +6667,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6709,8 +6689,7 @@ namespace MyNS
 		public async Task GET_CreateInstanceProfileAsync(string InstanceProfileName, string Path, Tag[] Tags, GET_CreateInstanceProfileAction Action, GET_CreateInstanceProfileVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=CreateInstanceProfile?InstanceProfileName=" + (InstanceProfileName==null? "" : System.Uri.EscapeDataString(InstanceProfileName))+"&Path=" + (Path==null? "" : System.Uri.EscapeDataString(Path))+"&"+string.Join("&", Tags.Select(z => $"Tags={z}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6724,7 +6703,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6745,8 +6723,7 @@ namespace MyNS
 		public async Task GET_CreateLoginProfileAsync(string UserName, string Password, bool PasswordResetRequired, GET_CreateLoginProfileAction Action, GET_CreateLoginProfileVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=CreateLoginProfile?UserName=" + (UserName==null? "" : System.Uri.EscapeDataString(UserName))+"&Password=" + (Password==null? "" : System.Uri.EscapeDataString(Password))+"&PasswordResetRequired="+PasswordResetRequired+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6760,7 +6737,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6781,8 +6757,7 @@ namespace MyNS
 		public async Task GET_CreateOpenIDConnectProviderAsync(string Url, string[] ClientIDList, string[] ThumbprintList, Tag[] Tags, GET_CreateOpenIDConnectProviderAction Action, GET_CreateOpenIDConnectProviderVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=CreateOpenIDConnectProvider?Url=" + (Url==null? "" : System.Uri.EscapeDataString(Url))+"&"+string.Join("&", ClientIDList.Select(z => $"ClientIDList={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", ThumbprintList.Select(z => $"ThumbprintList={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", Tags.Select(z => $"Tags={z}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6796,7 +6771,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6826,8 +6800,7 @@ namespace MyNS
 		public async Task GET_CreatePolicyAsync(string PolicyName, string Path, string PolicyDocument, string Description, Tag[] Tags, GET_CreatePolicyAction Action, GET_CreatePolicyVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=CreatePolicy?PolicyName=" + (PolicyName==null? "" : System.Uri.EscapeDataString(PolicyName))+"&Path=" + (Path==null? "" : System.Uri.EscapeDataString(Path))+"&PolicyDocument=" + (PolicyDocument==null? "" : System.Uri.EscapeDataString(PolicyDocument))+"&Description=" + (Description==null? "" : System.Uri.EscapeDataString(Description))+"&"+string.Join("&", Tags.Select(z => $"Tags={z}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6841,7 +6814,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6862,8 +6834,7 @@ namespace MyNS
 		public async Task GET_CreatePolicyVersionAsync(string PolicyArn, string PolicyDocument, bool SetAsDefault, GET_CreatePolicyVersionAction Action, GET_CreatePolicyVersionVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=CreatePolicyVersion?PolicyArn=" + (PolicyArn==null? "" : System.Uri.EscapeDataString(PolicyArn))+"&PolicyDocument=" + (PolicyDocument==null? "" : System.Uri.EscapeDataString(PolicyDocument))+"&SetAsDefault="+SetAsDefault+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6877,7 +6848,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6915,8 +6885,7 @@ namespace MyNS
 		public async Task GET_CreateRoleAsync(string Path, string RoleName, string AssumeRolePolicyDocument, string Description, int MaxSessionDuration, string PermissionsBoundary, Tag[] Tags, GET_CreateRoleAction Action, GET_CreateRoleVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=CreateRole?Path=" + (Path==null? "" : System.Uri.EscapeDataString(Path))+"&RoleName=" + (RoleName==null? "" : System.Uri.EscapeDataString(RoleName))+"&AssumeRolePolicyDocument=" + (AssumeRolePolicyDocument==null? "" : System.Uri.EscapeDataString(AssumeRolePolicyDocument))+"&Description=" + (Description==null? "" : System.Uri.EscapeDataString(Description))+"&MaxSessionDuration="+MaxSessionDuration+"&PermissionsBoundary=" + (PermissionsBoundary==null? "" : System.Uri.EscapeDataString(PermissionsBoundary))+"&"+string.Join("&", Tags.Select(z => $"Tags={z}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6930,7 +6899,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6953,8 +6921,7 @@ namespace MyNS
 		public async Task GET_CreateSAMLProviderAsync(string SAMLMetadataDocument, string Name, Tag[] Tags, GET_CreateSAMLProviderAction Action, GET_CreateSAMLProviderVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=CreateSAMLProvider?SAMLMetadataDocument=" + (SAMLMetadataDocument==null? "" : System.Uri.EscapeDataString(SAMLMetadataDocument))+"&Name=" + (Name==null? "" : System.Uri.EscapeDataString(Name))+"&"+string.Join("&", Tags.Select(z => $"Tags={z}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6968,7 +6935,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6991,8 +6957,7 @@ namespace MyNS
 		public async Task GET_CreateServiceLinkedRoleAsync(string AWSServiceName, string Description, string CustomSuffix, GET_CreateServiceLinkedRoleAction Action, GET_CreateServiceLinkedRoleVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=CreateServiceLinkedRole?AWSServiceName=" + (AWSServiceName==null? "" : System.Uri.EscapeDataString(AWSServiceName))+"&Description=" + (Description==null? "" : System.Uri.EscapeDataString(Description))+"&CustomSuffix=" + (CustomSuffix==null? "" : System.Uri.EscapeDataString(CustomSuffix))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -7006,7 +6971,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -7023,8 +6987,7 @@ namespace MyNS
 		public async Task GET_CreateServiceSpecificCredentialAsync(string UserName, string ServiceName, GET_CreateServiceSpecificCredentialAction Action, GET_CreateServiceSpecificCredentialVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=CreateServiceSpecificCredential?UserName=" + (UserName==null? "" : System.Uri.EscapeDataString(UserName))+"&ServiceName=" + (ServiceName==null? "" : System.Uri.EscapeDataString(ServiceName))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -7038,7 +7001,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -7065,8 +7027,7 @@ namespace MyNS
 		public async Task GET_CreateUserAsync(string Path, string UserName, string PermissionsBoundary, Tag[] Tags, GET_CreateUserAction Action, GET_CreateUserVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=CreateUser?Path=" + (Path==null? "" : System.Uri.EscapeDataString(Path))+"&UserName=" + (UserName==null? "" : System.Uri.EscapeDataString(UserName))+"&PermissionsBoundary=" + (PermissionsBoundary==null? "" : System.Uri.EscapeDataString(PermissionsBoundary))+"&"+string.Join("&", Tags.Select(z => $"Tags={z}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -7080,7 +7041,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -7102,8 +7062,7 @@ namespace MyNS
 		public async Task GET_CreateVirtualMFADeviceAsync(string Path, string VirtualMFADeviceName, Tag[] Tags, GET_CreateVirtualMFADeviceAction Action, GET_CreateVirtualMFADeviceVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=CreateVirtualMFADevice?Path=" + (Path==null? "" : System.Uri.EscapeDataString(Path))+"&VirtualMFADeviceName=" + (VirtualMFADeviceName==null? "" : System.Uri.EscapeDataString(VirtualMFADeviceName))+"&"+string.Join("&", Tags.Select(z => $"Tags={z}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -7117,7 +7076,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -7137,8 +7095,7 @@ namespace MyNS
 		public async Task GET_DeactivateMFADeviceAsync(string UserName, string SerialNumber, GET_DeactivateMFADeviceAction Action, GET_DeactivateMFADeviceVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DeactivateMFADevice?UserName=" + (UserName==null? "" : System.Uri.EscapeDataString(UserName))+"&SerialNumber=" + (SerialNumber==null? "" : System.Uri.EscapeDataString(SerialNumber))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -7152,7 +7109,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -7172,8 +7128,7 @@ namespace MyNS
 		public async Task GET_DeleteAccessKeyAsync(string UserName, string AccessKeyId, GET_DeleteAccessKeyAction Action, GET_DeleteAccessKeyVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DeleteAccessKey?UserName=" + (UserName==null? "" : System.Uri.EscapeDataString(UserName))+"&AccessKeyId=" + (AccessKeyId==null? "" : System.Uri.EscapeDataString(AccessKeyId))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -7187,7 +7142,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -7203,8 +7157,7 @@ namespace MyNS
 		public async Task GET_DeleteAccountAliasAsync(string AccountAlias, GET_DeleteAccountAliasAction Action, GET_DeleteAccountAliasVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DeleteAccountAlias?AccountAlias=" + (AccountAlias==null? "" : System.Uri.EscapeDataString(AccountAlias))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -7218,7 +7171,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -7230,8 +7182,7 @@ namespace MyNS
 		public async Task GET_DeleteAccountPasswordPolicyAsync(GET_DeleteAccountPasswordPolicyAction Action, GET_DeleteAccountPasswordPolicyVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DeleteAccountPasswordPolicy?Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -7246,7 +7197,6 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
-			}
 		}
 		
 		/// <summary>
@@ -7257,8 +7207,7 @@ namespace MyNS
 		public async Task POST_DeleteAccountPasswordPolicyAsync(GET_DeleteAccountPasswordPolicyAction Action, POST_DeleteAccountPasswordPolicyVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DeleteAccountPasswordPolicy?Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -7267,7 +7216,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -7283,8 +7231,7 @@ namespace MyNS
 		public async Task GET_DeleteGroupAsync(string GroupName, GET_DeleteGroupAction Action, GET_DeleteGroupVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DeleteGroup?GroupName=" + (GroupName==null? "" : System.Uri.EscapeDataString(GroupName))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -7298,7 +7245,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -7318,8 +7264,7 @@ namespace MyNS
 		public async Task GET_DeleteGroupPolicyAsync(string GroupName, string PolicyName, GET_DeleteGroupPolicyAction Action, GET_DeleteGroupPolicyVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DeleteGroupPolicy?GroupName=" + (GroupName==null? "" : System.Uri.EscapeDataString(GroupName))+"&PolicyName=" + (PolicyName==null? "" : System.Uri.EscapeDataString(PolicyName))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -7333,7 +7278,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -7349,8 +7293,7 @@ namespace MyNS
 		public async Task GET_DeleteInstanceProfileAsync(string InstanceProfileName, GET_DeleteInstanceProfileAction Action, GET_DeleteInstanceProfileVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DeleteInstanceProfile?InstanceProfileName=" + (InstanceProfileName==null? "" : System.Uri.EscapeDataString(InstanceProfileName))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -7364,7 +7307,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -7380,8 +7322,7 @@ namespace MyNS
 		public async Task GET_DeleteLoginProfileAsync(string UserName, GET_DeleteLoginProfileAction Action, GET_DeleteLoginProfileVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DeleteLoginProfile?UserName=" + (UserName==null? "" : System.Uri.EscapeDataString(UserName))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -7395,7 +7336,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -7411,8 +7351,7 @@ namespace MyNS
 		public async Task GET_DeleteOpenIDConnectProviderAsync(string OpenIDConnectProviderArn, GET_DeleteOpenIDConnectProviderAction Action, GET_DeleteOpenIDConnectProviderVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DeleteOpenIDConnectProvider?OpenIDConnectProviderArn=" + (OpenIDConnectProviderArn==null? "" : System.Uri.EscapeDataString(OpenIDConnectProviderArn))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -7426,7 +7365,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -7442,8 +7380,7 @@ namespace MyNS
 		public async Task GET_DeletePolicyAsync(string PolicyArn, GET_DeletePolicyAction Action, GET_DeletePolicyVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DeletePolicy?PolicyArn=" + (PolicyArn==null? "" : System.Uri.EscapeDataString(PolicyArn))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -7457,7 +7394,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -7474,8 +7410,7 @@ namespace MyNS
 		public async Task GET_DeletePolicyVersionAsync(string PolicyArn, string VersionId, GET_DeletePolicyVersionAction Action, GET_DeletePolicyVersionVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DeletePolicyVersion?PolicyArn=" + (PolicyArn==null? "" : System.Uri.EscapeDataString(PolicyArn))+"&VersionId=" + (VersionId==null? "" : System.Uri.EscapeDataString(VersionId))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -7489,7 +7424,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -7505,8 +7439,7 @@ namespace MyNS
 		public async Task GET_DeleteRoleAsync(string RoleName, GET_DeleteRoleAction Action, GET_DeleteRoleVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DeleteRole?RoleName=" + (RoleName==null? "" : System.Uri.EscapeDataString(RoleName))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -7520,7 +7453,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -7536,8 +7468,7 @@ namespace MyNS
 		public async Task GET_DeleteRolePermissionsBoundaryAsync(string RoleName, GET_DeleteRolePermissionsBoundaryAction Action, GET_DeleteRolePermissionsBoundaryVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DeleteRolePermissionsBoundary?RoleName=" + (RoleName==null? "" : System.Uri.EscapeDataString(RoleName))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -7551,7 +7482,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -7571,8 +7501,7 @@ namespace MyNS
 		public async Task GET_DeleteRolePolicyAsync(string RoleName, string PolicyName, GET_DeleteRolePolicyAction Action, GET_DeleteRolePolicyVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DeleteRolePolicy?RoleName=" + (RoleName==null? "" : System.Uri.EscapeDataString(RoleName))+"&PolicyName=" + (PolicyName==null? "" : System.Uri.EscapeDataString(PolicyName))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -7586,7 +7515,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -7602,8 +7530,7 @@ namespace MyNS
 		public async Task GET_DeleteSAMLProviderAsync(string SAMLProviderArn, GET_DeleteSAMLProviderAction Action, GET_DeleteSAMLProviderVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DeleteSAMLProvider?SAMLProviderArn=" + (SAMLProviderArn==null? "" : System.Uri.EscapeDataString(SAMLProviderArn))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -7617,7 +7544,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -7637,8 +7563,7 @@ namespace MyNS
 		public async Task GET_DeleteSSHPublicKeyAsync(string UserName, string SSHPublicKeyId, GET_DeleteSSHPublicKeyAction Action, GET_DeleteSSHPublicKeyVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DeleteSSHPublicKey?UserName=" + (UserName==null? "" : System.Uri.EscapeDataString(UserName))+"&SSHPublicKeyId=" + (SSHPublicKeyId==null? "" : System.Uri.EscapeDataString(SSHPublicKeyId))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -7652,7 +7577,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -7668,8 +7592,7 @@ namespace MyNS
 		public async Task GET_DeleteServerCertificateAsync(string ServerCertificateName, GET_DeleteServerCertificateAction Action, GET_DeleteServerCertificateVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DeleteServerCertificate?ServerCertificateName=" + (ServerCertificateName==null? "" : System.Uri.EscapeDataString(ServerCertificateName))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -7683,7 +7606,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -7699,8 +7621,7 @@ namespace MyNS
 		public async Task GET_DeleteServiceLinkedRoleAsync(string RoleName, GET_DeleteServiceLinkedRoleAction Action, GET_DeleteServiceLinkedRoleVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DeleteServiceLinkedRole?RoleName=" + (RoleName==null? "" : System.Uri.EscapeDataString(RoleName))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -7714,7 +7635,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -7734,8 +7654,7 @@ namespace MyNS
 		public async Task GET_DeleteServiceSpecificCredentialAsync(string UserName, string ServiceSpecificCredentialId, GET_DeleteServiceSpecificCredentialAction Action, GET_DeleteServiceSpecificCredentialVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DeleteServiceSpecificCredential?UserName=" + (UserName==null? "" : System.Uri.EscapeDataString(UserName))+"&ServiceSpecificCredentialId=" + (ServiceSpecificCredentialId==null? "" : System.Uri.EscapeDataString(ServiceSpecificCredentialId))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -7749,7 +7668,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -7769,8 +7687,7 @@ namespace MyNS
 		public async Task GET_DeleteSigningCertificateAsync(string UserName, string CertificateId, GET_DeleteSigningCertificateAction Action, GET_DeleteSigningCertificateVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DeleteSigningCertificate?UserName=" + (UserName==null? "" : System.Uri.EscapeDataString(UserName))+"&CertificateId=" + (CertificateId==null? "" : System.Uri.EscapeDataString(CertificateId))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -7784,7 +7701,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -7800,8 +7716,7 @@ namespace MyNS
 		public async Task GET_DeleteUserAsync(string UserName, GET_DeleteUserAction Action, GET_DeleteUserVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DeleteUser?UserName=" + (UserName==null? "" : System.Uri.EscapeDataString(UserName))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -7815,7 +7730,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -7831,8 +7745,7 @@ namespace MyNS
 		public async Task GET_DeleteUserPermissionsBoundaryAsync(string UserName, GET_DeleteUserPermissionsBoundaryAction Action, GET_DeleteUserPermissionsBoundaryVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DeleteUserPermissionsBoundary?UserName=" + (UserName==null? "" : System.Uri.EscapeDataString(UserName))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -7846,7 +7759,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -7866,8 +7778,7 @@ namespace MyNS
 		public async Task GET_DeleteUserPolicyAsync(string UserName, string PolicyName, GET_DeleteUserPolicyAction Action, GET_DeleteUserPolicyVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DeleteUserPolicy?UserName=" + (UserName==null? "" : System.Uri.EscapeDataString(UserName))+"&PolicyName=" + (PolicyName==null? "" : System.Uri.EscapeDataString(PolicyName))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -7881,7 +7792,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -7897,8 +7807,7 @@ namespace MyNS
 		public async Task GET_DeleteVirtualMFADeviceAsync(string SerialNumber, GET_DeleteVirtualMFADeviceAction Action, GET_DeleteVirtualMFADeviceVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DeleteVirtualMFADevice?SerialNumber=" + (SerialNumber==null? "" : System.Uri.EscapeDataString(SerialNumber))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -7912,7 +7821,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -7932,8 +7840,7 @@ namespace MyNS
 		public async Task GET_DetachGroupPolicyAsync(string GroupName, string PolicyArn, GET_DetachGroupPolicyAction Action, GET_DetachGroupPolicyVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DetachGroupPolicy?GroupName=" + (GroupName==null? "" : System.Uri.EscapeDataString(GroupName))+"&PolicyArn=" + (PolicyArn==null? "" : System.Uri.EscapeDataString(PolicyArn))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -7947,7 +7854,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -7967,8 +7873,7 @@ namespace MyNS
 		public async Task GET_DetachRolePolicyAsync(string RoleName, string PolicyArn, GET_DetachRolePolicyAction Action, GET_DetachRolePolicyVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DetachRolePolicy?RoleName=" + (RoleName==null? "" : System.Uri.EscapeDataString(RoleName))+"&PolicyArn=" + (PolicyArn==null? "" : System.Uri.EscapeDataString(PolicyArn))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -7982,7 +7887,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -8002,8 +7906,7 @@ namespace MyNS
 		public async Task GET_DetachUserPolicyAsync(string UserName, string PolicyArn, GET_DetachUserPolicyAction Action, GET_DetachUserPolicyVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DetachUserPolicy?UserName=" + (UserName==null? "" : System.Uri.EscapeDataString(UserName))+"&PolicyArn=" + (PolicyArn==null? "" : System.Uri.EscapeDataString(PolicyArn))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -8017,7 +7920,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -8045,8 +7947,7 @@ namespace MyNS
 		public async Task GET_EnableMFADeviceAsync(string UserName, string SerialNumber, string AuthenticationCode1, string AuthenticationCode2, GET_EnableMFADeviceAction Action, GET_EnableMFADeviceVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=EnableMFADevice?UserName=" + (UserName==null? "" : System.Uri.EscapeDataString(UserName))+"&SerialNumber=" + (SerialNumber==null? "" : System.Uri.EscapeDataString(SerialNumber))+"&AuthenticationCode1=" + (AuthenticationCode1==null? "" : System.Uri.EscapeDataString(AuthenticationCode1))+"&AuthenticationCode2=" + (AuthenticationCode2==null? "" : System.Uri.EscapeDataString(AuthenticationCode2))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -8060,7 +7961,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -8072,8 +7972,7 @@ namespace MyNS
 		public async Task GET_GenerateCredentialReportAsync(GET_GenerateCredentialReportAction Action, GET_GenerateCredentialReportVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=GenerateCredentialReport?Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -8088,7 +7987,6 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
-			}
 		}
 		
 		/// <summary>
@@ -8099,8 +7997,7 @@ namespace MyNS
 		public async Task POST_GenerateCredentialReportAsync(GET_GenerateCredentialReportAction Action, POST_GenerateCredentialReportVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=GenerateCredentialReport?Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -8109,7 +8006,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -8126,8 +8022,7 @@ namespace MyNS
 		public async Task GET_GenerateOrganizationsAccessReportAsync(string EntityPath, string OrganizationsPolicyId, GET_GenerateOrganizationsAccessReportAction Action, GET_GenerateOrganizationsAccessReportVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=GenerateOrganizationsAccessReport?EntityPath=" + (EntityPath==null? "" : System.Uri.EscapeDataString(EntityPath))+"&OrganizationsPolicyId=" + (OrganizationsPolicyId==null? "" : System.Uri.EscapeDataString(OrganizationsPolicyId))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -8141,7 +8036,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -8158,8 +8052,7 @@ namespace MyNS
 		public async Task GET_GenerateServiceLastAccessedDetailsAsync(string Arn, AccessAdvisorUsageGranularityType Granularity, GET_GenerateServiceLastAccessedDetailsAction Action, GET_GenerateServiceLastAccessedDetailsVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=GenerateServiceLastAccessedDetails?Arn=" + (Arn==null? "" : System.Uri.EscapeDataString(Arn))+"&Granularity=" + Granularity+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -8173,7 +8066,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -8189,8 +8081,7 @@ namespace MyNS
 		public async Task GET_GetAccessKeyLastUsedAsync(string AccessKeyId, GET_GetAccessKeyLastUsedAction Action, GET_GetAccessKeyLastUsedVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=GetAccessKeyLastUsed?AccessKeyId=" + (AccessKeyId==null? "" : System.Uri.EscapeDataString(AccessKeyId))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -8204,7 +8095,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -8225,8 +8115,7 @@ namespace MyNS
 		public async Task GET_GetAccountAuthorizationDetailsAsync(EntityType[] Filter, int MaxItems, string Marker, GET_GetAccountAuthorizationDetailsAction Action, GET_GetAccountAuthorizationDetailsVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=GetAccountAuthorizationDetails?"+string.Join("&", Filter.Select(z => $"Filter={z}"))+"&MaxItems="+MaxItems+"&Marker=" + (Marker==null? "" : System.Uri.EscapeDataString(Marker))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -8240,7 +8129,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -8252,8 +8140,7 @@ namespace MyNS
 		public async Task GET_GetAccountPasswordPolicyAsync(GET_GetAccountPasswordPolicyAction Action, GET_GetAccountPasswordPolicyVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=GetAccountPasswordPolicy?Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -8267,7 +8154,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -8279,8 +8165,7 @@ namespace MyNS
 		public async Task POST_GetAccountPasswordPolicyAsync(GET_GetAccountPasswordPolicyAction Action, POST_GetAccountPasswordPolicyVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=GetAccountPasswordPolicy?Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -8289,7 +8174,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -8301,8 +8185,7 @@ namespace MyNS
 		public async Task GET_GetAccountSummaryAsync(GET_GetAccountSummaryAction Action, GET_GetAccountSummaryVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=GetAccountSummary?Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -8317,7 +8200,6 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
-			}
 		}
 		
 		/// <summary>
@@ -8328,8 +8210,7 @@ namespace MyNS
 		public async Task POST_GetAccountSummaryAsync(GET_GetAccountSummaryAction Action, POST_GetAccountSummaryVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=GetAccountSummary?Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -8338,7 +8219,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -8351,8 +8231,7 @@ namespace MyNS
 		public async Task GET_GetContextKeysForCustomPolicyAsync(string[] PolicyInputList, GET_GetContextKeysForCustomPolicyAction Action, GET_GetContextKeysForCustomPolicyVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=GetContextKeysForCustomPolicy?"+string.Join("&", PolicyInputList.Select(z => $"PolicyInputList={System.Uri.EscapeDataString(z.ToString())}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -8366,7 +8245,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -8383,8 +8261,7 @@ namespace MyNS
 		public async Task GET_GetContextKeysForPrincipalPolicyAsync(string PolicySourceArn, string[] PolicyInputList, GET_GetContextKeysForPrincipalPolicyAction Action, GET_GetContextKeysForPrincipalPolicyVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=GetContextKeysForPrincipalPolicy?PolicySourceArn=" + (PolicySourceArn==null? "" : System.Uri.EscapeDataString(PolicySourceArn))+"&"+string.Join("&", PolicyInputList.Select(z => $"PolicyInputList={System.Uri.EscapeDataString(z.ToString())}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -8398,7 +8275,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -8410,8 +8286,7 @@ namespace MyNS
 		public async Task GET_GetCredentialReportAsync(GET_GetCredentialReportAction Action, GET_GetCredentialReportVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=GetCredentialReport?Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -8426,7 +8301,6 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
-			}
 		}
 		
 		/// <summary>
@@ -8437,8 +8311,7 @@ namespace MyNS
 		public async Task POST_GetCredentialReportAsync(GET_GetCredentialReportAction Action, POST_GetCredentialReportVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=GetCredentialReport?Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -8447,7 +8320,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -8471,8 +8343,7 @@ namespace MyNS
 		public async Task GET_GetGroupAsync(string GroupName, string Marker, int MaxItems, GET_GetGroupAction Action, GET_GetGroupVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=GetGroup?GroupName=" + (GroupName==null? "" : System.Uri.EscapeDataString(GroupName))+"&Marker=" + (Marker==null? "" : System.Uri.EscapeDataString(Marker))+"&MaxItems="+MaxItems+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -8486,7 +8357,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -8506,8 +8376,7 @@ namespace MyNS
 		public async Task GET_GetGroupPolicyAsync(string GroupName, string PolicyName, GET_GetGroupPolicyAction Action, GET_GetGroupPolicyVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=GetGroupPolicy?GroupName=" + (GroupName==null? "" : System.Uri.EscapeDataString(GroupName))+"&PolicyName=" + (PolicyName==null? "" : System.Uri.EscapeDataString(PolicyName))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -8521,7 +8390,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -8537,8 +8405,7 @@ namespace MyNS
 		public async Task GET_GetInstanceProfileAsync(string InstanceProfileName, GET_GetInstanceProfileAction Action, GET_GetInstanceProfileVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=GetInstanceProfile?InstanceProfileName=" + (InstanceProfileName==null? "" : System.Uri.EscapeDataString(InstanceProfileName))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -8552,7 +8419,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -8568,8 +8434,7 @@ namespace MyNS
 		public async Task GET_GetLoginProfileAsync(string UserName, GET_GetLoginProfileAction Action, GET_GetLoginProfileVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=GetLoginProfile?UserName=" + (UserName==null? "" : System.Uri.EscapeDataString(UserName))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -8583,7 +8448,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -8603,8 +8467,7 @@ namespace MyNS
 		public async Task GET_GetMFADeviceAsync(string SerialNumber, string UserName, GET_GetMFADeviceAction Action, GET_GetMFADeviceVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=GetMFADevice?SerialNumber=" + (SerialNumber==null? "" : System.Uri.EscapeDataString(SerialNumber))+"&UserName=" + (UserName==null? "" : System.Uri.EscapeDataString(UserName))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -8618,7 +8481,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -8634,8 +8496,7 @@ namespace MyNS
 		public async Task GET_GetOpenIDConnectProviderAsync(string OpenIDConnectProviderArn, GET_GetOpenIDConnectProviderAction Action, GET_GetOpenIDConnectProviderVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=GetOpenIDConnectProvider?OpenIDConnectProviderArn=" + (OpenIDConnectProviderArn==null? "" : System.Uri.EscapeDataString(OpenIDConnectProviderArn))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -8649,7 +8510,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -8674,8 +8534,7 @@ namespace MyNS
 		public async Task GET_GetOrganizationsAccessReportAsync(string JobId, int MaxItems, string Marker, SortKeyType SortKey, GET_GetOrganizationsAccessReportAction Action, GET_GetOrganizationsAccessReportVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=GetOrganizationsAccessReport?JobId=" + (JobId==null? "" : System.Uri.EscapeDataString(JobId))+"&MaxItems="+MaxItems+"&Marker=" + (Marker==null? "" : System.Uri.EscapeDataString(Marker))+"&SortKey=" + SortKey+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -8689,7 +8548,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -8705,8 +8563,7 @@ namespace MyNS
 		public async Task GET_GetPolicyAsync(string PolicyArn, GET_GetPolicyAction Action, GET_GetPolicyVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=GetPolicy?PolicyArn=" + (PolicyArn==null? "" : System.Uri.EscapeDataString(PolicyArn))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -8720,7 +8577,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -8737,8 +8593,7 @@ namespace MyNS
 		public async Task GET_GetPolicyVersionAsync(string PolicyArn, string VersionId, GET_GetPolicyVersionAction Action, GET_GetPolicyVersionVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=GetPolicyVersion?PolicyArn=" + (PolicyArn==null? "" : System.Uri.EscapeDataString(PolicyArn))+"&VersionId=" + (VersionId==null? "" : System.Uri.EscapeDataString(VersionId))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -8752,7 +8607,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -8768,8 +8622,7 @@ namespace MyNS
 		public async Task GET_GetRoleAsync(string RoleName, GET_GetRoleAction Action, GET_GetRoleVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=GetRole?RoleName=" + (RoleName==null? "" : System.Uri.EscapeDataString(RoleName))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -8783,7 +8636,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -8803,8 +8655,7 @@ namespace MyNS
 		public async Task GET_GetRolePolicyAsync(string RoleName, string PolicyName, GET_GetRolePolicyAction Action, GET_GetRolePolicyVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=GetRolePolicy?RoleName=" + (RoleName==null? "" : System.Uri.EscapeDataString(RoleName))+"&PolicyName=" + (PolicyName==null? "" : System.Uri.EscapeDataString(PolicyName))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -8818,7 +8669,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -8834,8 +8684,7 @@ namespace MyNS
 		public async Task GET_GetSAMLProviderAsync(string SAMLProviderArn, GET_GetSAMLProviderAction Action, GET_GetSAMLProviderVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=GetSAMLProvider?SAMLProviderArn=" + (SAMLProviderArn==null? "" : System.Uri.EscapeDataString(SAMLProviderArn))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -8849,7 +8698,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -8870,8 +8718,7 @@ namespace MyNS
 		public async Task GET_GetSSHPublicKeyAsync(string UserName, string SSHPublicKeyId, EncodingType Encoding, GET_GetSSHPublicKeyAction Action, GET_GetSSHPublicKeyVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=GetSSHPublicKey?UserName=" + (UserName==null? "" : System.Uri.EscapeDataString(UserName))+"&SSHPublicKeyId=" + (SSHPublicKeyId==null? "" : System.Uri.EscapeDataString(SSHPublicKeyId))+"&Encoding=" + Encoding+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -8885,7 +8732,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -8901,8 +8747,7 @@ namespace MyNS
 		public async Task GET_GetServerCertificateAsync(string ServerCertificateName, GET_GetServerCertificateAction Action, GET_GetServerCertificateVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=GetServerCertificate?ServerCertificateName=" + (ServerCertificateName==null? "" : System.Uri.EscapeDataString(ServerCertificateName))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -8916,7 +8761,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -8940,8 +8784,7 @@ namespace MyNS
 		public async Task GET_GetServiceLastAccessedDetailsAsync(string JobId, int MaxItems, string Marker, GET_GetServiceLastAccessedDetailsAction Action, GET_GetServiceLastAccessedDetailsVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=GetServiceLastAccessedDetails?JobId=" + (JobId==null? "" : System.Uri.EscapeDataString(JobId))+"&MaxItems="+MaxItems+"&Marker=" + (Marker==null? "" : System.Uri.EscapeDataString(Marker))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -8955,7 +8798,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -8983,8 +8825,7 @@ namespace MyNS
 		public async Task GET_GetServiceLastAccessedDetailsWithEntitiesAsync(string JobId, string ServiceNamespace, int MaxItems, string Marker, GET_GetServiceLastAccessedDetailsWithEntitiesAction Action, GET_GetServiceLastAccessedDetailsWithEntitiesVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=GetServiceLastAccessedDetailsWithEntities?JobId=" + (JobId==null? "" : System.Uri.EscapeDataString(JobId))+"&ServiceNamespace=" + (ServiceNamespace==null? "" : System.Uri.EscapeDataString(ServiceNamespace))+"&MaxItems="+MaxItems+"&Marker=" + (Marker==null? "" : System.Uri.EscapeDataString(Marker))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -8998,7 +8839,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -9014,8 +8854,7 @@ namespace MyNS
 		public async Task GET_GetServiceLinkedRoleDeletionStatusAsync(string DeletionTaskId, GET_GetServiceLinkedRoleDeletionStatusAction Action, GET_GetServiceLinkedRoleDeletionStatusVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=GetServiceLinkedRoleDeletionStatus?DeletionTaskId=" + (DeletionTaskId==null? "" : System.Uri.EscapeDataString(DeletionTaskId))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -9029,7 +8868,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -9045,8 +8883,7 @@ namespace MyNS
 		public async Task GET_GetUserAsync(string UserName, GET_GetUserAction Action, GET_GetUserVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=GetUser?UserName=" + (UserName==null? "" : System.Uri.EscapeDataString(UserName))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -9060,7 +8897,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -9080,8 +8916,7 @@ namespace MyNS
 		public async Task GET_GetUserPolicyAsync(string UserName, string PolicyName, GET_GetUserPolicyAction Action, GET_GetUserPolicyVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=GetUserPolicy?UserName=" + (UserName==null? "" : System.Uri.EscapeDataString(UserName))+"&PolicyName=" + (PolicyName==null? "" : System.Uri.EscapeDataString(PolicyName))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -9095,7 +8930,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -9119,8 +8953,7 @@ namespace MyNS
 		public async Task GET_ListAccessKeysAsync(string UserName, string Marker, int MaxItems, GET_ListAccessKeysAction Action, GET_ListAccessKeysVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=ListAccessKeys?UserName=" + (UserName==null? "" : System.Uri.EscapeDataString(UserName))+"&Marker=" + (Marker==null? "" : System.Uri.EscapeDataString(Marker))+"&MaxItems="+MaxItems+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -9134,7 +8967,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -9154,8 +8986,7 @@ namespace MyNS
 		public async Task GET_ListAccountAliasesAsync(string Marker, int MaxItems, GET_ListAccountAliasesAction Action, GET_ListAccountAliasesVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=ListAccountAliases?Marker=" + (Marker==null? "" : System.Uri.EscapeDataString(Marker))+"&MaxItems="+MaxItems+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -9169,7 +9000,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -9197,8 +9027,7 @@ namespace MyNS
 		public async Task GET_ListAttachedGroupPoliciesAsync(string GroupName, string PathPrefix, string Marker, int MaxItems, GET_ListAttachedGroupPoliciesAction Action, GET_ListAttachedGroupPoliciesVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=ListAttachedGroupPolicies?GroupName=" + (GroupName==null? "" : System.Uri.EscapeDataString(GroupName))+"&PathPrefix=" + (PathPrefix==null? "" : System.Uri.EscapeDataString(PathPrefix))+"&Marker=" + (Marker==null? "" : System.Uri.EscapeDataString(Marker))+"&MaxItems="+MaxItems+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -9212,7 +9041,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -9240,8 +9068,7 @@ namespace MyNS
 		public async Task GET_ListAttachedRolePoliciesAsync(string RoleName, string PathPrefix, string Marker, int MaxItems, GET_ListAttachedRolePoliciesAction Action, GET_ListAttachedRolePoliciesVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=ListAttachedRolePolicies?RoleName=" + (RoleName==null? "" : System.Uri.EscapeDataString(RoleName))+"&PathPrefix=" + (PathPrefix==null? "" : System.Uri.EscapeDataString(PathPrefix))+"&Marker=" + (Marker==null? "" : System.Uri.EscapeDataString(Marker))+"&MaxItems="+MaxItems+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -9255,7 +9082,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -9283,8 +9109,7 @@ namespace MyNS
 		public async Task GET_ListAttachedUserPoliciesAsync(string UserName, string PathPrefix, string Marker, int MaxItems, GET_ListAttachedUserPoliciesAction Action, GET_ListAttachedUserPoliciesVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=ListAttachedUserPolicies?UserName=" + (UserName==null? "" : System.Uri.EscapeDataString(UserName))+"&PathPrefix=" + (PathPrefix==null? "" : System.Uri.EscapeDataString(PathPrefix))+"&Marker=" + (Marker==null? "" : System.Uri.EscapeDataString(Marker))+"&MaxItems="+MaxItems+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -9298,7 +9123,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -9328,8 +9152,7 @@ namespace MyNS
 		public async Task GET_ListEntitiesForPolicyAsync(string PolicyArn, EntityType EntityFilter, string PathPrefix, PolicyUsageType PolicyUsageFilter, string Marker, int MaxItems, GET_ListEntitiesForPolicyAction Action, GET_ListEntitiesForPolicyVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=ListEntitiesForPolicy?PolicyArn=" + (PolicyArn==null? "" : System.Uri.EscapeDataString(PolicyArn))+"&EntityFilter=" + EntityFilter+"&PathPrefix=" + (PathPrefix==null? "" : System.Uri.EscapeDataString(PathPrefix))+"&PolicyUsageFilter=" + PolicyUsageFilter+"&Marker=" + (Marker==null? "" : System.Uri.EscapeDataString(Marker))+"&MaxItems="+MaxItems+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -9343,7 +9166,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -9367,8 +9189,7 @@ namespace MyNS
 		public async Task GET_ListGroupPoliciesAsync(string GroupName, string Marker, int MaxItems, GET_ListGroupPoliciesAction Action, GET_ListGroupPoliciesVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=ListGroupPolicies?GroupName=" + (GroupName==null? "" : System.Uri.EscapeDataString(GroupName))+"&Marker=" + (Marker==null? "" : System.Uri.EscapeDataString(Marker))+"&MaxItems="+MaxItems+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -9382,7 +9203,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -9406,8 +9226,7 @@ namespace MyNS
 		public async Task GET_ListGroupsAsync(string PathPrefix, string Marker, int MaxItems, GET_ListGroupsAction Action, GET_ListGroupsVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=ListGroups?PathPrefix=" + (PathPrefix==null? "" : System.Uri.EscapeDataString(PathPrefix))+"&Marker=" + (Marker==null? "" : System.Uri.EscapeDataString(Marker))+"&MaxItems="+MaxItems+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -9421,7 +9240,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -9445,8 +9263,7 @@ namespace MyNS
 		public async Task GET_ListGroupsForUserAsync(string UserName, string Marker, int MaxItems, GET_ListGroupsForUserAction Action, GET_ListGroupsForUserVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=ListGroupsForUser?UserName=" + (UserName==null? "" : System.Uri.EscapeDataString(UserName))+"&Marker=" + (Marker==null? "" : System.Uri.EscapeDataString(Marker))+"&MaxItems="+MaxItems+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -9460,7 +9277,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -9484,8 +9300,7 @@ namespace MyNS
 		public async Task GET_ListInstanceProfileTagsAsync(string InstanceProfileName, string Marker, int MaxItems, GET_ListInstanceProfileTagsAction Action, GET_ListInstanceProfileTagsVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=ListInstanceProfileTags?InstanceProfileName=" + (InstanceProfileName==null? "" : System.Uri.EscapeDataString(InstanceProfileName))+"&Marker=" + (Marker==null? "" : System.Uri.EscapeDataString(Marker))+"&MaxItems="+MaxItems+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -9499,7 +9314,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -9523,8 +9337,7 @@ namespace MyNS
 		public async Task GET_ListInstanceProfilesAsync(string PathPrefix, string Marker, int MaxItems, GET_ListInstanceProfilesAction Action, GET_ListInstanceProfilesVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=ListInstanceProfiles?PathPrefix=" + (PathPrefix==null? "" : System.Uri.EscapeDataString(PathPrefix))+"&Marker=" + (Marker==null? "" : System.Uri.EscapeDataString(Marker))+"&MaxItems="+MaxItems+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -9538,7 +9351,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -9562,8 +9374,7 @@ namespace MyNS
 		public async Task GET_ListInstanceProfilesForRoleAsync(string RoleName, string Marker, int MaxItems, GET_ListInstanceProfilesForRoleAction Action, GET_ListInstanceProfilesForRoleVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=ListInstanceProfilesForRole?RoleName=" + (RoleName==null? "" : System.Uri.EscapeDataString(RoleName))+"&Marker=" + (Marker==null? "" : System.Uri.EscapeDataString(Marker))+"&MaxItems="+MaxItems+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -9577,7 +9388,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -9601,8 +9411,7 @@ namespace MyNS
 		public async Task GET_ListMFADeviceTagsAsync(string SerialNumber, string Marker, int MaxItems, GET_ListMFADeviceTagsAction Action, GET_ListMFADeviceTagsVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=ListMFADeviceTags?SerialNumber=" + (SerialNumber==null? "" : System.Uri.EscapeDataString(SerialNumber))+"&Marker=" + (Marker==null? "" : System.Uri.EscapeDataString(Marker))+"&MaxItems="+MaxItems+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -9616,7 +9425,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -9640,8 +9448,7 @@ namespace MyNS
 		public async Task GET_ListMFADevicesAsync(string UserName, string Marker, int MaxItems, GET_ListMFADevicesAction Action, GET_ListMFADevicesVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=ListMFADevices?UserName=" + (UserName==null? "" : System.Uri.EscapeDataString(UserName))+"&Marker=" + (Marker==null? "" : System.Uri.EscapeDataString(Marker))+"&MaxItems="+MaxItems+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -9655,7 +9462,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -9679,8 +9485,7 @@ namespace MyNS
 		public async Task GET_ListOpenIDConnectProviderTagsAsync(string OpenIDConnectProviderArn, string Marker, int MaxItems, GET_ListOpenIDConnectProviderTagsAction Action, GET_ListOpenIDConnectProviderTagsVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=ListOpenIDConnectProviderTags?OpenIDConnectProviderArn=" + (OpenIDConnectProviderArn==null? "" : System.Uri.EscapeDataString(OpenIDConnectProviderArn))+"&Marker=" + (Marker==null? "" : System.Uri.EscapeDataString(Marker))+"&MaxItems="+MaxItems+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -9694,7 +9499,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -9706,8 +9510,7 @@ namespace MyNS
 		public async Task GET_ListOpenIDConnectProvidersAsync(GET_ListOpenIDConnectProvidersAction Action, GET_ListOpenIDConnectProvidersVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=ListOpenIDConnectProviders?Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -9721,7 +9524,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -9748,8 +9550,7 @@ namespace MyNS
 		public async Task GET_ListPoliciesAsync(PolicyScopeType Scope, bool OnlyAttached, string PathPrefix, PolicyUsageType PolicyUsageFilter, string Marker, int MaxItems, GET_ListPoliciesAction Action, GET_ListPoliciesVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=ListPolicies?Scope=" + Scope+"&OnlyAttached="+OnlyAttached+"&PathPrefix=" + (PathPrefix==null? "" : System.Uri.EscapeDataString(PathPrefix))+"&PolicyUsageFilter=" + PolicyUsageFilter+"&Marker=" + (Marker==null? "" : System.Uri.EscapeDataString(Marker))+"&MaxItems="+MaxItems+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -9763,7 +9564,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -9787,8 +9587,7 @@ namespace MyNS
 		public async Task GET_ListPoliciesGrantingServiceAccessAsync(string Marker, string Arn, string[] ServiceNamespaces, GET_ListPoliciesGrantingServiceAccessAction Action, GET_ListPoliciesGrantingServiceAccessVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=ListPoliciesGrantingServiceAccess?Marker=" + (Marker==null? "" : System.Uri.EscapeDataString(Marker))+"&Arn=" + (Arn==null? "" : System.Uri.EscapeDataString(Arn))+"&"+string.Join("&", ServiceNamespaces.Select(z => $"ServiceNamespaces={System.Uri.EscapeDataString(z.ToString())}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -9802,7 +9601,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -9826,8 +9624,7 @@ namespace MyNS
 		public async Task GET_ListPolicyTagsAsync(string PolicyArn, string Marker, int MaxItems, GET_ListPolicyTagsAction Action, GET_ListPolicyTagsVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=ListPolicyTags?PolicyArn=" + (PolicyArn==null? "" : System.Uri.EscapeDataString(PolicyArn))+"&Marker=" + (Marker==null? "" : System.Uri.EscapeDataString(Marker))+"&MaxItems="+MaxItems+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -9841,7 +9638,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -9865,8 +9661,7 @@ namespace MyNS
 		public async Task GET_ListPolicyVersionsAsync(string PolicyArn, string Marker, int MaxItems, GET_ListPolicyVersionsAction Action, GET_ListPolicyVersionsVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=ListPolicyVersions?PolicyArn=" + (PolicyArn==null? "" : System.Uri.EscapeDataString(PolicyArn))+"&Marker=" + (Marker==null? "" : System.Uri.EscapeDataString(Marker))+"&MaxItems="+MaxItems+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -9880,7 +9675,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -9904,8 +9698,7 @@ namespace MyNS
 		public async Task GET_ListRolePoliciesAsync(string RoleName, string Marker, int MaxItems, GET_ListRolePoliciesAction Action, GET_ListRolePoliciesVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=ListRolePolicies?RoleName=" + (RoleName==null? "" : System.Uri.EscapeDataString(RoleName))+"&Marker=" + (Marker==null? "" : System.Uri.EscapeDataString(Marker))+"&MaxItems="+MaxItems+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -9919,7 +9712,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -9943,8 +9735,7 @@ namespace MyNS
 		public async Task GET_ListRoleTagsAsync(string RoleName, string Marker, int MaxItems, GET_ListRoleTagsAction Action, GET_ListRoleTagsVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=ListRoleTags?RoleName=" + (RoleName==null? "" : System.Uri.EscapeDataString(RoleName))+"&Marker=" + (Marker==null? "" : System.Uri.EscapeDataString(Marker))+"&MaxItems="+MaxItems+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -9958,7 +9749,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -9982,8 +9772,7 @@ namespace MyNS
 		public async Task GET_ListRolesAsync(string PathPrefix, string Marker, int MaxItems, GET_ListRolesAction Action, GET_ListRolesVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=ListRoles?PathPrefix=" + (PathPrefix==null? "" : System.Uri.EscapeDataString(PathPrefix))+"&Marker=" + (Marker==null? "" : System.Uri.EscapeDataString(Marker))+"&MaxItems="+MaxItems+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -9997,7 +9786,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -10021,8 +9809,7 @@ namespace MyNS
 		public async Task GET_ListSAMLProviderTagsAsync(string SAMLProviderArn, string Marker, int MaxItems, GET_ListSAMLProviderTagsAction Action, GET_ListSAMLProviderTagsVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=ListSAMLProviderTags?SAMLProviderArn=" + (SAMLProviderArn==null? "" : System.Uri.EscapeDataString(SAMLProviderArn))+"&Marker=" + (Marker==null? "" : System.Uri.EscapeDataString(Marker))+"&MaxItems="+MaxItems+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -10036,7 +9823,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -10048,8 +9834,7 @@ namespace MyNS
 		public async Task GET_ListSAMLProvidersAsync(GET_ListSAMLProvidersAction Action, GET_ListSAMLProvidersVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=ListSAMLProviders?Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -10063,7 +9848,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -10087,8 +9871,7 @@ namespace MyNS
 		public async Task GET_ListSSHPublicKeysAsync(string UserName, string Marker, int MaxItems, GET_ListSSHPublicKeysAction Action, GET_ListSSHPublicKeysVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=ListSSHPublicKeys?UserName=" + (UserName==null? "" : System.Uri.EscapeDataString(UserName))+"&Marker=" + (Marker==null? "" : System.Uri.EscapeDataString(Marker))+"&MaxItems="+MaxItems+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -10102,7 +9885,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -10126,8 +9908,7 @@ namespace MyNS
 		public async Task GET_ListServerCertificateTagsAsync(string ServerCertificateName, string Marker, int MaxItems, GET_ListServerCertificateTagsAction Action, GET_ListServerCertificateTagsVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=ListServerCertificateTags?ServerCertificateName=" + (ServerCertificateName==null? "" : System.Uri.EscapeDataString(ServerCertificateName))+"&Marker=" + (Marker==null? "" : System.Uri.EscapeDataString(Marker))+"&MaxItems="+MaxItems+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -10141,7 +9922,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -10165,8 +9945,7 @@ namespace MyNS
 		public async Task GET_ListServerCertificatesAsync(string PathPrefix, string Marker, int MaxItems, GET_ListServerCertificatesAction Action, GET_ListServerCertificatesVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=ListServerCertificates?PathPrefix=" + (PathPrefix==null? "" : System.Uri.EscapeDataString(PathPrefix))+"&Marker=" + (Marker==null? "" : System.Uri.EscapeDataString(Marker))+"&MaxItems="+MaxItems+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -10180,7 +9959,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -10197,8 +9975,7 @@ namespace MyNS
 		public async Task GET_ListServiceSpecificCredentialsAsync(string UserName, string ServiceName, GET_ListServiceSpecificCredentialsAction Action, GET_ListServiceSpecificCredentialsVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=ListServiceSpecificCredentials?UserName=" + (UserName==null? "" : System.Uri.EscapeDataString(UserName))+"&ServiceName=" + (ServiceName==null? "" : System.Uri.EscapeDataString(ServiceName))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -10212,7 +9989,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -10236,8 +10012,7 @@ namespace MyNS
 		public async Task GET_ListSigningCertificatesAsync(string UserName, string Marker, int MaxItems, GET_ListSigningCertificatesAction Action, GET_ListSigningCertificatesVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=ListSigningCertificates?UserName=" + (UserName==null? "" : System.Uri.EscapeDataString(UserName))+"&Marker=" + (Marker==null? "" : System.Uri.EscapeDataString(Marker))+"&MaxItems="+MaxItems+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -10251,7 +10026,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -10275,8 +10049,7 @@ namespace MyNS
 		public async Task GET_ListUserPoliciesAsync(string UserName, string Marker, int MaxItems, GET_ListUserPoliciesAction Action, GET_ListUserPoliciesVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=ListUserPolicies?UserName=" + (UserName==null? "" : System.Uri.EscapeDataString(UserName))+"&Marker=" + (Marker==null? "" : System.Uri.EscapeDataString(Marker))+"&MaxItems="+MaxItems+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -10290,7 +10063,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -10314,8 +10086,7 @@ namespace MyNS
 		public async Task GET_ListUserTagsAsync(string UserName, string Marker, int MaxItems, GET_ListUserTagsAction Action, GET_ListUserTagsVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=ListUserTags?UserName=" + (UserName==null? "" : System.Uri.EscapeDataString(UserName))+"&Marker=" + (Marker==null? "" : System.Uri.EscapeDataString(Marker))+"&MaxItems="+MaxItems+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -10329,7 +10100,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -10353,8 +10123,7 @@ namespace MyNS
 		public async Task GET_ListUsersAsync(string PathPrefix, string Marker, int MaxItems, GET_ListUsersAction Action, GET_ListUsersVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=ListUsers?PathPrefix=" + (PathPrefix==null? "" : System.Uri.EscapeDataString(PathPrefix))+"&Marker=" + (Marker==null? "" : System.Uri.EscapeDataString(Marker))+"&MaxItems="+MaxItems+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -10368,7 +10137,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -10389,8 +10157,7 @@ namespace MyNS
 		public async Task GET_ListVirtualMFADevicesAsync(AssignmentStatusType AssignmentStatus, string Marker, int MaxItems, GET_ListVirtualMFADevicesAction Action, GET_ListVirtualMFADevicesVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=ListVirtualMFADevices?AssignmentStatus=" + AssignmentStatus+"&Marker=" + (Marker==null? "" : System.Uri.EscapeDataString(Marker))+"&MaxItems="+MaxItems+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -10404,7 +10171,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -10428,8 +10194,7 @@ namespace MyNS
 		public async Task GET_PutGroupPolicyAsync(string GroupName, string PolicyName, string PolicyDocument, GET_PutGroupPolicyAction Action, GET_PutGroupPolicyVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=PutGroupPolicy?GroupName=" + (GroupName==null? "" : System.Uri.EscapeDataString(GroupName))+"&PolicyName=" + (PolicyName==null? "" : System.Uri.EscapeDataString(PolicyName))+"&PolicyDocument=" + (PolicyDocument==null? "" : System.Uri.EscapeDataString(PolicyDocument))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -10443,7 +10208,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -10463,8 +10227,7 @@ namespace MyNS
 		public async Task GET_PutRolePermissionsBoundaryAsync(string RoleName, string PermissionsBoundary, GET_PutRolePermissionsBoundaryAction Action, GET_PutRolePermissionsBoundaryVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=PutRolePermissionsBoundary?RoleName=" + (RoleName==null? "" : System.Uri.EscapeDataString(RoleName))+"&PermissionsBoundary=" + (PermissionsBoundary==null? "" : System.Uri.EscapeDataString(PermissionsBoundary))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -10478,7 +10241,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -10502,8 +10264,7 @@ namespace MyNS
 		public async Task GET_PutRolePolicyAsync(string RoleName, string PolicyName, string PolicyDocument, GET_PutRolePolicyAction Action, GET_PutRolePolicyVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=PutRolePolicy?RoleName=" + (RoleName==null? "" : System.Uri.EscapeDataString(RoleName))+"&PolicyName=" + (PolicyName==null? "" : System.Uri.EscapeDataString(PolicyName))+"&PolicyDocument=" + (PolicyDocument==null? "" : System.Uri.EscapeDataString(PolicyDocument))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -10517,7 +10278,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -10537,8 +10297,7 @@ namespace MyNS
 		public async Task GET_PutUserPermissionsBoundaryAsync(string UserName, string PermissionsBoundary, GET_PutUserPermissionsBoundaryAction Action, GET_PutUserPermissionsBoundaryVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=PutUserPermissionsBoundary?UserName=" + (UserName==null? "" : System.Uri.EscapeDataString(UserName))+"&PermissionsBoundary=" + (PermissionsBoundary==null? "" : System.Uri.EscapeDataString(PermissionsBoundary))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -10552,7 +10311,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -10576,8 +10334,7 @@ namespace MyNS
 		public async Task GET_PutUserPolicyAsync(string UserName, string PolicyName, string PolicyDocument, GET_PutUserPolicyAction Action, GET_PutUserPolicyVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=PutUserPolicy?UserName=" + (UserName==null? "" : System.Uri.EscapeDataString(UserName))+"&PolicyName=" + (PolicyName==null? "" : System.Uri.EscapeDataString(PolicyName))+"&PolicyDocument=" + (PolicyDocument==null? "" : System.Uri.EscapeDataString(PolicyDocument))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -10591,7 +10348,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -10611,8 +10367,7 @@ namespace MyNS
 		public async Task GET_RemoveClientIDFromOpenIDConnectProviderAsync(string OpenIDConnectProviderArn, string ClientID, GET_RemoveClientIDFromOpenIDConnectProviderAction Action, GET_RemoveClientIDFromOpenIDConnectProviderVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=RemoveClientIDFromOpenIDConnectProvider?OpenIDConnectProviderArn=" + (OpenIDConnectProviderArn==null? "" : System.Uri.EscapeDataString(OpenIDConnectProviderArn))+"&ClientID=" + (ClientID==null? "" : System.Uri.EscapeDataString(ClientID))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -10626,7 +10381,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -10646,8 +10400,7 @@ namespace MyNS
 		public async Task GET_RemoveRoleFromInstanceProfileAsync(string InstanceProfileName, string RoleName, GET_RemoveRoleFromInstanceProfileAction Action, GET_RemoveRoleFromInstanceProfileVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=RemoveRoleFromInstanceProfile?InstanceProfileName=" + (InstanceProfileName==null? "" : System.Uri.EscapeDataString(InstanceProfileName))+"&RoleName=" + (RoleName==null? "" : System.Uri.EscapeDataString(RoleName))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -10661,7 +10414,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -10681,8 +10433,7 @@ namespace MyNS
 		public async Task GET_RemoveUserFromGroupAsync(string GroupName, string UserName, GET_RemoveUserFromGroupAction Action, GET_RemoveUserFromGroupVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=RemoveUserFromGroup?GroupName=" + (GroupName==null? "" : System.Uri.EscapeDataString(GroupName))+"&UserName=" + (UserName==null? "" : System.Uri.EscapeDataString(UserName))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -10696,7 +10447,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -10716,8 +10466,7 @@ namespace MyNS
 		public async Task GET_ResetServiceSpecificCredentialAsync(string UserName, string ServiceSpecificCredentialId, GET_ResetServiceSpecificCredentialAction Action, GET_ResetServiceSpecificCredentialVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=ResetServiceSpecificCredential?UserName=" + (UserName==null? "" : System.Uri.EscapeDataString(UserName))+"&ServiceSpecificCredentialId=" + (ServiceSpecificCredentialId==null? "" : System.Uri.EscapeDataString(ServiceSpecificCredentialId))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -10731,7 +10480,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -10759,8 +10507,7 @@ namespace MyNS
 		public async Task GET_ResyncMFADeviceAsync(string UserName, string SerialNumber, string AuthenticationCode1, string AuthenticationCode2, GET_ResyncMFADeviceAction Action, GET_ResyncMFADeviceVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=ResyncMFADevice?UserName=" + (UserName==null? "" : System.Uri.EscapeDataString(UserName))+"&SerialNumber=" + (SerialNumber==null? "" : System.Uri.EscapeDataString(SerialNumber))+"&AuthenticationCode1=" + (AuthenticationCode1==null? "" : System.Uri.EscapeDataString(AuthenticationCode1))+"&AuthenticationCode2=" + (AuthenticationCode2==null? "" : System.Uri.EscapeDataString(AuthenticationCode2))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -10774,7 +10521,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -10791,8 +10537,7 @@ namespace MyNS
 		public async Task GET_SetDefaultPolicyVersionAsync(string PolicyArn, string VersionId, GET_SetDefaultPolicyVersionAction Action, GET_SetDefaultPolicyVersionVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=SetDefaultPolicyVersion?PolicyArn=" + (PolicyArn==null? "" : System.Uri.EscapeDataString(PolicyArn))+"&VersionId=" + (VersionId==null? "" : System.Uri.EscapeDataString(VersionId))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -10806,7 +10551,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -10819,8 +10563,7 @@ namespace MyNS
 		public async Task GET_SetSecurityTokenServicePreferencesAsync(GlobalEndpointTokenVersion GlobalEndpointTokenVersion, GET_SetSecurityTokenServicePreferencesAction Action, GET_SetSecurityTokenServicePreferencesVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=SetSecurityTokenServicePreferences?GlobalEndpointTokenVersion=" + GlobalEndpointTokenVersion+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -10834,7 +10577,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -10875,8 +10617,7 @@ namespace MyNS
 		public async Task GET_SimulateCustomPolicyAsync(string[] PolicyInputList, string[] PermissionsBoundaryPolicyInputList, string[] ActionNames, string[] ResourceArns, string ResourcePolicy, string ResourceOwner, string CallerArn, ContextEntry[] ContextEntries, string ResourceHandlingOption, int MaxItems, string Marker, GET_SimulateCustomPolicyAction Action, GET_SimulateCustomPolicyVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=SimulateCustomPolicy?"+string.Join("&", PolicyInputList.Select(z => $"PolicyInputList={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", PermissionsBoundaryPolicyInputList.Select(z => $"PermissionsBoundaryPolicyInputList={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", ActionNames.Select(z => $"ActionNames={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", ResourceArns.Select(z => $"ResourceArns={System.Uri.EscapeDataString(z.ToString())}"))+"&ResourcePolicy=" + (ResourcePolicy==null? "" : System.Uri.EscapeDataString(ResourcePolicy))+"&ResourceOwner=" + (ResourceOwner==null? "" : System.Uri.EscapeDataString(ResourceOwner))+"&CallerArn=" + (CallerArn==null? "" : System.Uri.EscapeDataString(CallerArn))+"&"+string.Join("&", ContextEntries.Select(z => $"ContextEntries={z}"))+"&ResourceHandlingOption=" + (ResourceHandlingOption==null? "" : System.Uri.EscapeDataString(ResourceHandlingOption))+"&MaxItems="+MaxItems+"&Marker=" + (Marker==null? "" : System.Uri.EscapeDataString(Marker))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -10890,7 +10631,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -10935,8 +10675,7 @@ namespace MyNS
 		public async Task GET_SimulatePrincipalPolicyAsync(string PolicySourceArn, string[] PolicyInputList, string[] PermissionsBoundaryPolicyInputList, string[] ActionNames, string[] ResourceArns, string ResourcePolicy, string ResourceOwner, string CallerArn, ContextEntry[] ContextEntries, string ResourceHandlingOption, int MaxItems, string Marker, GET_SimulatePrincipalPolicyAction Action, GET_SimulatePrincipalPolicyVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=SimulatePrincipalPolicy?PolicySourceArn=" + (PolicySourceArn==null? "" : System.Uri.EscapeDataString(PolicySourceArn))+"&"+string.Join("&", PolicyInputList.Select(z => $"PolicyInputList={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", PermissionsBoundaryPolicyInputList.Select(z => $"PermissionsBoundaryPolicyInputList={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", ActionNames.Select(z => $"ActionNames={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", ResourceArns.Select(z => $"ResourceArns={System.Uri.EscapeDataString(z.ToString())}"))+"&ResourcePolicy=" + (ResourcePolicy==null? "" : System.Uri.EscapeDataString(ResourcePolicy))+"&ResourceOwner=" + (ResourceOwner==null? "" : System.Uri.EscapeDataString(ResourceOwner))+"&CallerArn=" + (CallerArn==null? "" : System.Uri.EscapeDataString(CallerArn))+"&"+string.Join("&", ContextEntries.Select(z => $"ContextEntries={z}"))+"&ResourceHandlingOption=" + (ResourceHandlingOption==null? "" : System.Uri.EscapeDataString(ResourceHandlingOption))+"&MaxItems="+MaxItems+"&Marker=" + (Marker==null? "" : System.Uri.EscapeDataString(Marker))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -10950,7 +10689,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -10969,8 +10707,7 @@ namespace MyNS
 		public async Task GET_TagInstanceProfileAsync(string InstanceProfileName, Tag[] Tags, GET_TagInstanceProfileAction Action, GET_TagInstanceProfileVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=TagInstanceProfile?InstanceProfileName=" + (InstanceProfileName==null? "" : System.Uri.EscapeDataString(InstanceProfileName))+"&"+string.Join("&", Tags.Select(z => $"Tags={z}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -10984,7 +10721,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -11003,8 +10739,7 @@ namespace MyNS
 		public async Task GET_TagMFADeviceAsync(string SerialNumber, Tag[] Tags, GET_TagMFADeviceAction Action, GET_TagMFADeviceVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=TagMFADevice?SerialNumber=" + (SerialNumber==null? "" : System.Uri.EscapeDataString(SerialNumber))+"&"+string.Join("&", Tags.Select(z => $"Tags={z}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -11018,7 +10753,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -11037,8 +10771,7 @@ namespace MyNS
 		public async Task GET_TagOpenIDConnectProviderAsync(string OpenIDConnectProviderArn, Tag[] Tags, GET_TagOpenIDConnectProviderAction Action, GET_TagOpenIDConnectProviderVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=TagOpenIDConnectProvider?OpenIDConnectProviderArn=" + (OpenIDConnectProviderArn==null? "" : System.Uri.EscapeDataString(OpenIDConnectProviderArn))+"&"+string.Join("&", Tags.Select(z => $"Tags={z}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -11052,7 +10785,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -11071,8 +10803,7 @@ namespace MyNS
 		public async Task GET_TagPolicyAsync(string PolicyArn, Tag[] Tags, GET_TagPolicyAction Action, GET_TagPolicyVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=TagPolicy?PolicyArn=" + (PolicyArn==null? "" : System.Uri.EscapeDataString(PolicyArn))+"&"+string.Join("&", Tags.Select(z => $"Tags={z}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -11086,7 +10817,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -11105,8 +10835,7 @@ namespace MyNS
 		public async Task GET_TagRoleAsync(string RoleName, Tag[] Tags, GET_TagRoleAction Action, GET_TagRoleVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=TagRole?RoleName=" + (RoleName==null? "" : System.Uri.EscapeDataString(RoleName))+"&"+string.Join("&", Tags.Select(z => $"Tags={z}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -11120,7 +10849,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -11139,8 +10867,7 @@ namespace MyNS
 		public async Task GET_TagSAMLProviderAsync(string SAMLProviderArn, Tag[] Tags, GET_TagSAMLProviderAction Action, GET_TagSAMLProviderVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=TagSAMLProvider?SAMLProviderArn=" + (SAMLProviderArn==null? "" : System.Uri.EscapeDataString(SAMLProviderArn))+"&"+string.Join("&", Tags.Select(z => $"Tags={z}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -11154,7 +10881,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -11173,8 +10899,7 @@ namespace MyNS
 		public async Task GET_TagServerCertificateAsync(string ServerCertificateName, Tag[] Tags, GET_TagServerCertificateAction Action, GET_TagServerCertificateVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=TagServerCertificate?ServerCertificateName=" + (ServerCertificateName==null? "" : System.Uri.EscapeDataString(ServerCertificateName))+"&"+string.Join("&", Tags.Select(z => $"Tags={z}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -11188,7 +10913,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -11207,8 +10931,7 @@ namespace MyNS
 		public async Task GET_TagUserAsync(string UserName, Tag[] Tags, GET_TagUserAction Action, GET_TagUserVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=TagUser?UserName=" + (UserName==null? "" : System.Uri.EscapeDataString(UserName))+"&"+string.Join("&", Tags.Select(z => $"Tags={z}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -11222,7 +10945,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -11241,8 +10963,7 @@ namespace MyNS
 		public async Task GET_UntagInstanceProfileAsync(string InstanceProfileName, string[] TagKeys, GET_UntagInstanceProfileAction Action, GET_UntagInstanceProfileVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=UntagInstanceProfile?InstanceProfileName=" + (InstanceProfileName==null? "" : System.Uri.EscapeDataString(InstanceProfileName))+"&"+string.Join("&", TagKeys.Select(z => $"TagKeys={System.Uri.EscapeDataString(z.ToString())}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -11256,7 +10977,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -11275,8 +10995,7 @@ namespace MyNS
 		public async Task GET_UntagMFADeviceAsync(string SerialNumber, string[] TagKeys, GET_UntagMFADeviceAction Action, GET_UntagMFADeviceVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=UntagMFADevice?SerialNumber=" + (SerialNumber==null? "" : System.Uri.EscapeDataString(SerialNumber))+"&"+string.Join("&", TagKeys.Select(z => $"TagKeys={System.Uri.EscapeDataString(z.ToString())}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -11290,7 +11009,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -11309,8 +11027,7 @@ namespace MyNS
 		public async Task GET_UntagOpenIDConnectProviderAsync(string OpenIDConnectProviderArn, string[] TagKeys, GET_UntagOpenIDConnectProviderAction Action, GET_UntagOpenIDConnectProviderVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=UntagOpenIDConnectProvider?OpenIDConnectProviderArn=" + (OpenIDConnectProviderArn==null? "" : System.Uri.EscapeDataString(OpenIDConnectProviderArn))+"&"+string.Join("&", TagKeys.Select(z => $"TagKeys={System.Uri.EscapeDataString(z.ToString())}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -11324,7 +11041,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -11343,8 +11059,7 @@ namespace MyNS
 		public async Task GET_UntagPolicyAsync(string PolicyArn, string[] TagKeys, GET_UntagPolicyAction Action, GET_UntagPolicyVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=UntagPolicy?PolicyArn=" + (PolicyArn==null? "" : System.Uri.EscapeDataString(PolicyArn))+"&"+string.Join("&", TagKeys.Select(z => $"TagKeys={System.Uri.EscapeDataString(z.ToString())}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -11358,7 +11073,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -11377,8 +11091,7 @@ namespace MyNS
 		public async Task GET_UntagRoleAsync(string RoleName, string[] TagKeys, GET_UntagRoleAction Action, GET_UntagRoleVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=UntagRole?RoleName=" + (RoleName==null? "" : System.Uri.EscapeDataString(RoleName))+"&"+string.Join("&", TagKeys.Select(z => $"TagKeys={System.Uri.EscapeDataString(z.ToString())}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -11392,7 +11105,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -11411,8 +11123,7 @@ namespace MyNS
 		public async Task GET_UntagSAMLProviderAsync(string SAMLProviderArn, string[] TagKeys, GET_UntagSAMLProviderAction Action, GET_UntagSAMLProviderVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=UntagSAMLProvider?SAMLProviderArn=" + (SAMLProviderArn==null? "" : System.Uri.EscapeDataString(SAMLProviderArn))+"&"+string.Join("&", TagKeys.Select(z => $"TagKeys={System.Uri.EscapeDataString(z.ToString())}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -11426,7 +11137,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -11445,8 +11155,7 @@ namespace MyNS
 		public async Task GET_UntagServerCertificateAsync(string ServerCertificateName, string[] TagKeys, GET_UntagServerCertificateAction Action, GET_UntagServerCertificateVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=UntagServerCertificate?ServerCertificateName=" + (ServerCertificateName==null? "" : System.Uri.EscapeDataString(ServerCertificateName))+"&"+string.Join("&", TagKeys.Select(z => $"TagKeys={System.Uri.EscapeDataString(z.ToString())}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -11460,7 +11169,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -11479,8 +11187,7 @@ namespace MyNS
 		public async Task GET_UntagUserAsync(string UserName, string[] TagKeys, GET_UntagUserAction Action, GET_UntagUserVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=UntagUser?UserName=" + (UserName==null? "" : System.Uri.EscapeDataString(UserName))+"&"+string.Join("&", TagKeys.Select(z => $"TagKeys={System.Uri.EscapeDataString(z.ToString())}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -11494,7 +11201,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -11515,8 +11221,7 @@ namespace MyNS
 		public async Task GET_UpdateAccessKeyAsync(string UserName, string AccessKeyId, StatusType Status, GET_UpdateAccessKeyAction Action, GET_UpdateAccessKeyVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=UpdateAccessKey?UserName=" + (UserName==null? "" : System.Uri.EscapeDataString(UserName))+"&AccessKeyId=" + (AccessKeyId==null? "" : System.Uri.EscapeDataString(AccessKeyId))+"&Status=" + Status+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -11530,7 +11235,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -11560,8 +11264,7 @@ namespace MyNS
 		public async Task GET_UpdateAccountPasswordPolicyAsync(int MinimumPasswordLength, bool RequireSymbols, bool RequireNumbers, bool RequireUppercaseCharacters, bool RequireLowercaseCharacters, bool AllowUsersToChangePassword, int MaxPasswordAge, int PasswordReusePrevention, bool HardExpiry, GET_UpdateAccountPasswordPolicyAction Action, GET_UpdateAccountPasswordPolicyVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=UpdateAccountPasswordPolicy?MinimumPasswordLength="+MinimumPasswordLength+"&RequireSymbols="+RequireSymbols+"&RequireNumbers="+RequireNumbers+"&RequireUppercaseCharacters="+RequireUppercaseCharacters+"&RequireLowercaseCharacters="+RequireLowercaseCharacters+"&AllowUsersToChangePassword="+AllowUsersToChangePassword+"&MaxPasswordAge="+MaxPasswordAge+"&PasswordReusePrevention="+PasswordReusePrevention+"&HardExpiry="+HardExpiry+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -11575,7 +11278,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -11595,8 +11297,7 @@ namespace MyNS
 		public async Task GET_UpdateAssumeRolePolicyAsync(string RoleName, string PolicyDocument, GET_UpdateAssumeRolePolicyAction Action, GET_UpdateAssumeRolePolicyVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=UpdateAssumeRolePolicy?RoleName=" + (RoleName==null? "" : System.Uri.EscapeDataString(RoleName))+"&PolicyDocument=" + (PolicyDocument==null? "" : System.Uri.EscapeDataString(PolicyDocument))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -11610,7 +11311,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -11634,8 +11334,7 @@ namespace MyNS
 		public async Task GET_UpdateGroupAsync(string GroupName, string NewPath, string NewGroupName, GET_UpdateGroupAction Action, GET_UpdateGroupVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=UpdateGroup?GroupName=" + (GroupName==null? "" : System.Uri.EscapeDataString(GroupName))+"&NewPath=" + (NewPath==null? "" : System.Uri.EscapeDataString(NewPath))+"&NewGroupName=" + (NewGroupName==null? "" : System.Uri.EscapeDataString(NewGroupName))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -11649,7 +11348,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -11670,8 +11368,7 @@ namespace MyNS
 		public async Task GET_UpdateLoginProfileAsync(string UserName, string Password, bool PasswordResetRequired, GET_UpdateLoginProfileAction Action, GET_UpdateLoginProfileVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=UpdateLoginProfile?UserName=" + (UserName==null? "" : System.Uri.EscapeDataString(UserName))+"&Password=" + (Password==null? "" : System.Uri.EscapeDataString(Password))+"&PasswordResetRequired="+PasswordResetRequired+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -11685,7 +11382,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -11702,8 +11398,7 @@ namespace MyNS
 		public async Task GET_UpdateOpenIDConnectProviderThumbprintAsync(string OpenIDConnectProviderArn, string[] ThumbprintList, GET_UpdateOpenIDConnectProviderThumbprintAction Action, GET_UpdateOpenIDConnectProviderThumbprintVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=UpdateOpenIDConnectProviderThumbprint?OpenIDConnectProviderArn=" + (OpenIDConnectProviderArn==null? "" : System.Uri.EscapeDataString(OpenIDConnectProviderArn))+"&"+string.Join("&", ThumbprintList.Select(z => $"ThumbprintList={System.Uri.EscapeDataString(z.ToString())}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -11717,7 +11412,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -11740,8 +11434,7 @@ namespace MyNS
 		public async Task GET_UpdateRoleAsync(string RoleName, string Description, int MaxSessionDuration, GET_UpdateRoleAction Action, GET_UpdateRoleVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=UpdateRole?RoleName=" + (RoleName==null? "" : System.Uri.EscapeDataString(RoleName))+"&Description=" + (Description==null? "" : System.Uri.EscapeDataString(Description))+"&MaxSessionDuration="+MaxSessionDuration+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -11755,7 +11448,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -11774,8 +11466,7 @@ namespace MyNS
 		public async Task GET_UpdateRoleDescriptionAsync(string RoleName, string Description, GET_UpdateRoleDescriptionAction Action, GET_UpdateRoleDescriptionVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=UpdateRoleDescription?RoleName=" + (RoleName==null? "" : System.Uri.EscapeDataString(RoleName))+"&Description=" + (Description==null? "" : System.Uri.EscapeDataString(Description))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -11789,7 +11480,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -11809,8 +11499,7 @@ namespace MyNS
 		public async Task GET_UpdateSAMLProviderAsync(string SAMLMetadataDocument, string SAMLProviderArn, GET_UpdateSAMLProviderAction Action, GET_UpdateSAMLProviderVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=UpdateSAMLProvider?SAMLMetadataDocument=" + (SAMLMetadataDocument==null? "" : System.Uri.EscapeDataString(SAMLMetadataDocument))+"&SAMLProviderArn=" + (SAMLProviderArn==null? "" : System.Uri.EscapeDataString(SAMLProviderArn))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -11824,7 +11513,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -11845,8 +11533,7 @@ namespace MyNS
 		public async Task GET_UpdateSSHPublicKeyAsync(string UserName, string SSHPublicKeyId, StatusType Status, GET_UpdateSSHPublicKeyAction Action, GET_UpdateSSHPublicKeyVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=UpdateSSHPublicKey?UserName=" + (UserName==null? "" : System.Uri.EscapeDataString(UserName))+"&SSHPublicKeyId=" + (SSHPublicKeyId==null? "" : System.Uri.EscapeDataString(SSHPublicKeyId))+"&Status=" + Status+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -11860,7 +11547,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -11884,8 +11570,7 @@ namespace MyNS
 		public async Task GET_UpdateServerCertificateAsync(string ServerCertificateName, string NewPath, string NewServerCertificateName, GET_UpdateServerCertificateAction Action, GET_UpdateServerCertificateVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=UpdateServerCertificate?ServerCertificateName=" + (ServerCertificateName==null? "" : System.Uri.EscapeDataString(ServerCertificateName))+"&NewPath=" + (NewPath==null? "" : System.Uri.EscapeDataString(NewPath))+"&NewServerCertificateName=" + (NewServerCertificateName==null? "" : System.Uri.EscapeDataString(NewServerCertificateName))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -11899,7 +11584,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -11920,8 +11604,7 @@ namespace MyNS
 		public async Task GET_UpdateServiceSpecificCredentialAsync(string UserName, string ServiceSpecificCredentialId, StatusType Status, GET_UpdateServiceSpecificCredentialAction Action, GET_UpdateServiceSpecificCredentialVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=UpdateServiceSpecificCredential?UserName=" + (UserName==null? "" : System.Uri.EscapeDataString(UserName))+"&ServiceSpecificCredentialId=" + (ServiceSpecificCredentialId==null? "" : System.Uri.EscapeDataString(ServiceSpecificCredentialId))+"&Status=" + Status+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -11935,7 +11618,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -11956,8 +11638,7 @@ namespace MyNS
 		public async Task GET_UpdateSigningCertificateAsync(string UserName, string CertificateId, StatusType Status, GET_UpdateSigningCertificateAction Action, GET_UpdateSigningCertificateVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=UpdateSigningCertificate?UserName=" + (UserName==null? "" : System.Uri.EscapeDataString(UserName))+"&CertificateId=" + (CertificateId==null? "" : System.Uri.EscapeDataString(CertificateId))+"&Status=" + Status+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -11971,7 +11652,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -11995,8 +11675,7 @@ namespace MyNS
 		public async Task GET_UpdateUserAsync(string UserName, string NewPath, string NewUserName, GET_UpdateUserAction Action, GET_UpdateUserVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=UpdateUser?UserName=" + (UserName==null? "" : System.Uri.EscapeDataString(UserName))+"&NewPath=" + (NewPath==null? "" : System.Uri.EscapeDataString(NewPath))+"&NewUserName=" + (NewUserName==null? "" : System.Uri.EscapeDataString(NewUserName))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -12010,7 +11689,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -12030,8 +11708,7 @@ namespace MyNS
 		public async Task GET_UploadSSHPublicKeyAsync(string UserName, string SSHPublicKeyBody, GET_UploadSSHPublicKeyAction Action, GET_UploadSSHPublicKeyVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=UploadSSHPublicKey?UserName=" + (UserName==null? "" : System.Uri.EscapeDataString(UserName))+"&SSHPublicKeyBody=" + (SSHPublicKeyBody==null? "" : System.Uri.EscapeDataString(SSHPublicKeyBody))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -12045,7 +11722,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -12080,8 +11756,7 @@ namespace MyNS
 		public async Task GET_UploadServerCertificateAsync(string Path, string ServerCertificateName, string CertificateBody, string PrivateKey, string CertificateChain, Tag[] Tags, GET_UploadServerCertificateAction Action, GET_UploadServerCertificateVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=UploadServerCertificate?Path=" + (Path==null? "" : System.Uri.EscapeDataString(Path))+"&ServerCertificateName=" + (ServerCertificateName==null? "" : System.Uri.EscapeDataString(ServerCertificateName))+"&CertificateBody=" + (CertificateBody==null? "" : System.Uri.EscapeDataString(CertificateBody))+"&PrivateKey=" + (PrivateKey==null? "" : System.Uri.EscapeDataString(PrivateKey))+"&CertificateChain=" + (CertificateChain==null? "" : System.Uri.EscapeDataString(CertificateChain))+"&"+string.Join("&", Tags.Select(z => $"Tags={z}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -12095,7 +11770,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -12115,8 +11789,7 @@ namespace MyNS
 		public async Task GET_UploadSigningCertificateAsync(string UserName, string CertificateBody, GET_UploadSigningCertificateAction Action, GET_UploadSigningCertificateVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=UploadSigningCertificate?UserName=" + (UserName==null? "" : System.Uri.EscapeDataString(UserName))+"&CertificateBody=" + (CertificateBody==null? "" : System.Uri.EscapeDataString(CertificateBody))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -12130,7 +11803,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

@@ -15381,8 +15381,7 @@ namespace MyNS
 					Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "audit-case/?max_election_cycle="+max_election_cycle+"&"+string.Join("&", q.Select(z => $"q={System.Uri.EscapeDataString(z.ToString())}"))+"&sub_category_id=" + (sub_category_id==null? "" : System.Uri.EscapeDataString(sub_category_id))+"&"+string.Join("&", cycle.Select(z => $"cycle={z}"))+"&sort_null_only="+sort_null_only+"&"+string.Join("&", audit_case_id.Select(z => $"audit_case_id={System.Uri.EscapeDataString(z.ToString())}"))+"&sort_hide_null="+sort_hide_null+"&"+string.Join("&", candidate_id.Select(z => $"candidate_id={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", qq.Select(z => $"qq={System.Uri.EscapeDataString(z.ToString())}"))+"&per_page="+per_page+"&"+string.Join("&", sort.Select(z => $"sort={System.Uri.EscapeDataString(z.ToString())}"))+"&min_election_cycle="+min_election_cycle+"&"+string.Join("&", audit_id.Select(z => $"audit_id={z}"))+"&committee_designation=" + (committee_designation==null? "" : System.Uri.EscapeDataString(committee_designation))+"&api_key=" + (api_key==null? "" : System.Uri.EscapeDataString(api_key))+"&"+string.Join("&", committee_type.Select(z => $"committee_type={System.Uri.EscapeDataString(z.ToString())}"))+"&sort_nulls_last="+sort_nulls_last+"&page="+page+"&"+string.Join("&", committee_id.Select(z => $"committee_id={System.Uri.EscapeDataString(z.ToString())}"))+"&primary_category_id=" + (primary_category_id==null? "" : System.Uri.EscapeDataString(primary_category_id));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -15396,7 +15395,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -15438,8 +15436,7 @@ namespace MyNS
 		public async Task Audit_categoryGetByApi_keyAndSort_nulls_lastAndPageAndSort_null_onlyAndSort_hide_nullAndPer_pageAndPrimary_category_idAndSortAndPrimary_category_nameAsync(string api_key, bool sort_nulls_last, int page, bool sort_null_only, bool sort_hide_null, int per_page, string[] primary_category_id, string sort, string[] primary_category_name, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "audit-category/?api_key=" + (api_key==null? "" : System.Uri.EscapeDataString(api_key))+"&sort_nulls_last="+sort_nulls_last+"&page="+page+"&sort_null_only="+sort_null_only+"&sort_hide_null="+sort_hide_null+"&per_page="+per_page+"&"+string.Join("&", primary_category_id.Select(z => $"primary_category_id={System.Uri.EscapeDataString(z.ToString())}"))+"&sort=" + (sort==null? "" : System.Uri.EscapeDataString(sort))+"&"+string.Join("&", primary_category_name.Select(z => $"primary_category_name={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -15453,7 +15450,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -15495,8 +15491,7 @@ namespace MyNS
 		public async Task Audit_primary_categoryGetByApi_keyAndSort_nulls_lastAndPageAndSort_null_onlyAndSort_hide_nullAndPer_pageAndPrimary_category_idAndSortAndPrimary_category_nameAsync(string api_key, bool sort_nulls_last, int page, bool sort_null_only, bool sort_hide_null, int per_page, string[] primary_category_id, string sort, string[] primary_category_name, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "audit-primary-category/?api_key=" + (api_key==null? "" : System.Uri.EscapeDataString(api_key))+"&sort_nulls_last="+sort_nulls_last+"&page="+page+"&sort_null_only="+sort_null_only+"&sort_hide_null="+sort_hide_null+"&per_page="+per_page+"&"+string.Join("&", primary_category_id.Select(z => $"primary_category_id={System.Uri.EscapeDataString(z.ToString())}"))+"&sort=" + (sort==null? "" : System.Uri.EscapeDataString(sort))+"&"+string.Join("&", primary_category_name.Select(z => $"primary_category_name={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -15510,7 +15505,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -15573,8 +15567,7 @@ namespace MyNS
 					Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "calendar-dates/?"+string.Join("&", calendar_category_id.Select(z => $"calendar_category_id={z}"))+"&api_key=" + (api_key==null? "" : System.Uri.EscapeDataString(api_key))+"&"+string.Join("&", description.Select(z => $"description={System.Uri.EscapeDataString(z.ToString())}"))+"&sort_nulls_last="+sort_nulls_last+"&sort_null_only="+sort_null_only+"&page="+page+"&max_end_date="+max_end_date+"&"+string.Join("&", summary.Select(z => $"summary={System.Uri.EscapeDataString(z.ToString())}"))+"&min_end_date="+min_end_date+"&sort_hide_null="+sort_hide_null+"&min_start_date="+min_start_date+"&max_start_date="+max_start_date+"&per_page="+per_page+"&sort=" + (sort==null? "" : System.Uri.EscapeDataString(sort))+"&event_id="+event_id;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -15588,7 +15581,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -15662,8 +15654,7 @@ namespace MyNS
 					Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "calendar-dates/export/?"+string.Join("&", calendar_category_id.Select(z => $"calendar_category_id={z}"))+"&api_key=" + (api_key==null? "" : System.Uri.EscapeDataString(api_key))+"&"+string.Join("&", description.Select(z => $"description={System.Uri.EscapeDataString(z.ToString())}"))+"&sort_nulls_last="+sort_nulls_last+"&sort_null_only="+sort_null_only+"&page="+page+"&max_end_date="+max_end_date+"&"+string.Join("&", summary.Select(z => $"summary={System.Uri.EscapeDataString(z.ToString())}"))+"&min_end_date="+min_end_date+"&sort_hide_null="+sort_hide_null+"&min_start_date="+min_start_date+"&per_page="+per_page+"&max_start_date="+max_start_date+"&renderer=" + renderer+"&sort=" + (sort==null? "" : System.Uri.EscapeDataString(sort))+"&event_id="+event_id;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -15677,7 +15668,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -15757,8 +15747,7 @@ namespace MyNS
 					Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "candidate/"+ (candidate_id==null? "" : System.Uri.EscapeDataString(candidate_id))+"/?"+string.Join("&", incumbent_challenge.Select(z => $"incumbent_challenge={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", cycle.Select(z => $"cycle={z}"))+"&sort_null_only="+sort_null_only+"&federal_funds_flag="+federal_funds_flag+"&sort_hide_null="+sort_hide_null+"&"+string.Join("&", name.Select(z => $"name={System.Uri.EscapeDataString(z.ToString())}"))+"&per_page="+per_page+"&"+string.Join("&", election_year.Select(z => $"election_year={z}"))+"&"+string.Join("&", office.Select(z => $"office={System.Uri.EscapeDataString(z.ToString())}"))+"&sort=" + (sort==null? "" : System.Uri.EscapeDataString(sort))+"&"+string.Join("&", candidate_status.Select(z => $"candidate_status={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", district.Select(z => $"district={System.Uri.EscapeDataString(z.ToString())}"))+"&api_key=" + (api_key==null? "" : System.Uri.EscapeDataString(api_key))+"&has_raised_funds="+has_raised_funds+"&"+string.Join("&", party.Select(z => $"party={System.Uri.EscapeDataString(z.ToString())}"))+"&sort_nulls_last="+sort_nulls_last+"&page="+page+"&"+string.Join("&", state.Select(z => $"state={System.Uri.EscapeDataString(z.ToString())}"))+"&year=" + (year==null? "" : System.Uri.EscapeDataString(year));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -15772,7 +15761,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -15855,8 +15843,7 @@ namespace MyNS
 		public async Task Candidate_candidate_idCommitteesGetByApi_keyAndCommittee_typeAndCycleAndSort_null_onlyAndPageAndYearAndSort_nulls_lastAndSort_hide_nullAndPer_pageAndFiling_frequencyAndOrganization_typeAndDesignationAndSortAsync(string api_key, string[] committee_type, int[] cycle, bool sort_null_only, int page, int[] year, bool sort_nulls_last, bool sort_hide_null, int per_page, string[] filing_frequency, string[] organization_type, string[] designation, string sort, string candidate_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "candidate/"+ (candidate_id==null? "" : System.Uri.EscapeDataString(candidate_id))+"/committees/?api_key=" + (api_key==null? "" : System.Uri.EscapeDataString(api_key))+"&"+string.Join("&", committee_type.Select(z => $"committee_type={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", cycle.Select(z => $"cycle={z}"))+"&sort_null_only="+sort_null_only+"&page="+page+"&"+string.Join("&", year.Select(z => $"year={z}"))+"&sort_nulls_last="+sort_nulls_last+"&sort_hide_null="+sort_hide_null+"&per_page="+per_page+"&"+string.Join("&", filing_frequency.Select(z => $"filing_frequency={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", organization_type.Select(z => $"organization_type={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", designation.Select(z => $"designation={System.Uri.EscapeDataString(z.ToString())}"))+"&sort=" + (sort==null? "" : System.Uri.EscapeDataString(sort));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -15870,7 +15857,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -15913,8 +15899,7 @@ namespace MyNS
 		public async Task Candidate_candidate_idCommitteesHistoryGetByApi_keyAndElection_fullAndSort_nulls_lastAndPageAndSort_null_onlyAndSort_hide_nullAndPer_pageAndDesignationAndSortAsync(string api_key, bool election_full, bool sort_nulls_last, int page, bool sort_null_only, bool sort_hide_null, int per_page, string[] designation, string sort, string candidate_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "candidate/"+ (candidate_id==null? "" : System.Uri.EscapeDataString(candidate_id))+"/committees/history/?api_key=" + (api_key==null? "" : System.Uri.EscapeDataString(api_key))+"&election_full="+election_full+"&sort_nulls_last="+sort_nulls_last+"&page="+page+"&sort_null_only="+sort_null_only+"&sort_hide_null="+sort_hide_null+"&per_page="+per_page+"&"+string.Join("&", designation.Select(z => $"designation={System.Uri.EscapeDataString(z.ToString())}"))+"&sort=" + (sort==null? "" : System.Uri.EscapeDataString(sort));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -15928,7 +15913,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -15976,8 +15960,7 @@ namespace MyNS
 		public async Task Candidate_candidate_idCommitteesHistory_cycleGetByApi_keyAndElection_fullAndSort_nulls_lastAndPageAndSort_null_onlyAndSort_hide_nullAndPer_pageAndDesignationAndSortAsync(string api_key, bool election_full, bool sort_nulls_last, int page, bool sort_null_only, bool sort_hide_null, int per_page, string[] designation, string sort, int cycle, string candidate_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "candidate/"+ (candidate_id==null? "" : System.Uri.EscapeDataString(candidate_id))+"/committees/history/"+cycle+"/?api_key=" + (api_key==null? "" : System.Uri.EscapeDataString(api_key))+"&election_full="+election_full+"&sort_nulls_last="+sort_nulls_last+"&page="+page+"&sort_null_only="+sort_null_only+"&sort_hide_null="+sort_hide_null+"&per_page="+per_page+"&"+string.Join("&", designation.Select(z => $"designation={System.Uri.EscapeDataString(z.ToString())}"))+"&sort=" + (sort==null? "" : System.Uri.EscapeDataString(sort));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -15991,7 +15974,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -16241,8 +16223,7 @@ namespace MyNS
 					Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "candidate/"+ (candidate_id==null? "" : System.Uri.EscapeDataString(candidate_id))+"/filings/?is_amended="+is_amended+"&min_receipt_date="+min_receipt_date+"&"+string.Join("&", form_category.Select(z => $"form_category={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", request_type.Select(z => $"request_type={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", primary_general_indicator.Select(z => $"primary_general_indicator={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", cycle.Select(z => $"cycle={z}"))+"&sort_null_only="+sort_null_only+"&max_receipt_date="+max_receipt_date+"&sort_hide_null="+sort_hide_null+"&"+string.Join("&", file_number.Select(z => $"file_number={z}"))+"&per_page="+per_page+"&"+string.Join("&", office.Select(z => $"office={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", sort.Select(z => $"sort={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", q_filer.Select(z => $"q_filer={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", district.Select(z => $"district={System.Uri.EscapeDataString(z.ToString())}"))+"&api_key=" + (api_key==null? "" : System.Uri.EscapeDataString(api_key))+"&filer_type=" + filer_type+"&most_recent="+most_recent+"&"+string.Join("&", report_type.Select(z => $"report_type={System.Uri.EscapeDataString(z.ToString())}"))+"&committee_type=" + (committee_type==null? "" : System.Uri.EscapeDataString(committee_type))+"&"+string.Join("&", party.Select(z => $"party={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", form_type.Select(z => $"form_type={System.Uri.EscapeDataString(z.ToString())}"))+"&sort_nulls_last="+sort_nulls_last+"&page="+page+"&"+string.Join("&", state.Select(z => $"state={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", report_year.Select(z => $"report_year={z}"))+"&"+string.Join("&", amendment_indicator.Select(z => $"amendment_indicator={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", document_type.Select(z => $"document_type={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", beginning_image_number.Select(z => $"beginning_image_number={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -16256,7 +16237,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -16296,8 +16276,7 @@ namespace MyNS
 		public async Task Candidate_candidate_idHistoryGetByPageAndApi_keyAndSort_hide_nullAndElection_fullAndPer_pageAndSort_null_onlyAndSortAndSort_nulls_lastAsync(int page, string api_key, bool sort_hide_null, bool election_full, int per_page, bool sort_null_only, string sort, bool sort_nulls_last, string candidate_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "candidate/"+ (candidate_id==null? "" : System.Uri.EscapeDataString(candidate_id))+"/history/?page="+page+"&api_key=" + (api_key==null? "" : System.Uri.EscapeDataString(api_key))+"&sort_hide_null="+sort_hide_null+"&election_full="+election_full+"&per_page="+per_page+"&sort_null_only="+sort_null_only+"&sort=" + (sort==null? "" : System.Uri.EscapeDataString(sort))+"&sort_nulls_last="+sort_nulls_last;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -16311,7 +16290,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -16360,8 +16338,7 @@ namespace MyNS
 		public async Task Candidate_candidate_idHistory_cycleGetByPageAndApi_keyAndSort_hide_nullAndElection_fullAndPer_pageAndSort_null_onlyAndSortAndSort_nulls_lastAsync(int page, string api_key, bool sort_hide_null, bool election_full, int per_page, bool sort_null_only, string sort, bool sort_nulls_last, int cycle, string candidate_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "candidate/"+ (candidate_id==null? "" : System.Uri.EscapeDataString(candidate_id))+"/history/"+cycle+"/?page="+page+"&api_key=" + (api_key==null? "" : System.Uri.EscapeDataString(api_key))+"&sort_hide_null="+sort_hide_null+"&election_full="+election_full+"&per_page="+per_page+"&sort_null_only="+sort_null_only+"&sort=" + (sort==null? "" : System.Uri.EscapeDataString(sort))+"&sort_nulls_last="+sort_nulls_last;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -16375,7 +16352,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -16423,8 +16399,7 @@ namespace MyNS
 		public async Task Candidate_candidate_idTotalsGetByApi_keyAndElection_fullAndCycleAndSort_nulls_lastAndPageAndSort_null_onlyAndSort_hide_nullAndPer_pageAndSortAsync(string api_key, bool election_full, int[] cycle, bool sort_nulls_last, int page, bool sort_null_only, bool sort_hide_null, int per_page, string sort, string candidate_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "candidate/"+ (candidate_id==null? "" : System.Uri.EscapeDataString(candidate_id))+"/totals/?api_key=" + (api_key==null? "" : System.Uri.EscapeDataString(api_key))+"&election_full="+election_full+"&"+string.Join("&", cycle.Select(z => $"cycle={z}"))+"&sort_nulls_last="+sort_nulls_last+"&page="+page+"&sort_null_only="+sort_null_only+"&sort_hide_null="+sort_hide_null+"&per_page="+per_page+"&sort=" + (sort==null? "" : System.Uri.EscapeDataString(sort));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -16438,7 +16413,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -16534,8 +16508,7 @@ namespace MyNS
 					Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "candidates/?"+string.Join("&", incumbent_challenge.Select(z => $"incumbent_challenge={System.Uri.EscapeDataString(z.ToString())}"))+"&min_first_file_date="+min_first_file_date+"&"+string.Join("&", q.Select(z => $"q={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", cycle.Select(z => $"cycle={z}"))+"&sort_null_only="+sort_null_only+"&federal_funds_flag="+federal_funds_flag+"&sort_hide_null="+sort_hide_null+"&"+string.Join("&", candidate_id.Select(z => $"candidate_id={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", name.Select(z => $"name={System.Uri.EscapeDataString(z.ToString())}"))+"&per_page="+per_page+"&"+string.Join("&", election_year.Select(z => $"election_year={z}"))+"&"+string.Join("&", office.Select(z => $"office={System.Uri.EscapeDataString(z.ToString())}"))+"&sort=" + (sort==null? "" : System.Uri.EscapeDataString(sort))+"&"+string.Join("&", candidate_status.Select(z => $"candidate_status={System.Uri.EscapeDataString(z.ToString())}"))+"&max_first_file_date="+max_first_file_date+"&"+string.Join("&", district.Select(z => $"district={System.Uri.EscapeDataString(z.ToString())}"))+"&api_key=" + (api_key==null? "" : System.Uri.EscapeDataString(api_key))+"&has_raised_funds="+has_raised_funds+"&"+string.Join("&", party.Select(z => $"party={System.Uri.EscapeDataString(z.ToString())}"))+"&sort_nulls_last="+sort_nulls_last+"&is_active_candidate="+is_active_candidate+"&page="+page+"&"+string.Join("&", state.Select(z => $"state={System.Uri.EscapeDataString(z.ToString())}"))+"&year=" + (year==null? "" : System.Uri.EscapeDataString(year));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -16549,7 +16522,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -16648,8 +16620,7 @@ namespace MyNS
 					Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "candidates/search/?"+string.Join("&", incumbent_challenge.Select(z => $"incumbent_challenge={System.Uri.EscapeDataString(z.ToString())}"))+"&min_first_file_date="+min_first_file_date+"&"+string.Join("&", q.Select(z => $"q={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", cycle.Select(z => $"cycle={z}"))+"&sort_null_only="+sort_null_only+"&federal_funds_flag="+federal_funds_flag+"&sort_hide_null="+sort_hide_null+"&"+string.Join("&", candidate_id.Select(z => $"candidate_id={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", name.Select(z => $"name={System.Uri.EscapeDataString(z.ToString())}"))+"&per_page="+per_page+"&"+string.Join("&", election_year.Select(z => $"election_year={z}"))+"&"+string.Join("&", office.Select(z => $"office={System.Uri.EscapeDataString(z.ToString())}"))+"&sort=" + (sort==null? "" : System.Uri.EscapeDataString(sort))+"&"+string.Join("&", candidate_status.Select(z => $"candidate_status={System.Uri.EscapeDataString(z.ToString())}"))+"&max_first_file_date="+max_first_file_date+"&"+string.Join("&", district.Select(z => $"district={System.Uri.EscapeDataString(z.ToString())}"))+"&api_key=" + (api_key==null? "" : System.Uri.EscapeDataString(api_key))+"&has_raised_funds="+has_raised_funds+"&"+string.Join("&", party.Select(z => $"party={System.Uri.EscapeDataString(z.ToString())}"))+"&sort_nulls_last="+sort_nulls_last+"&is_active_candidate="+is_active_candidate+"&page="+page+"&"+string.Join("&", state.Select(z => $"state={System.Uri.EscapeDataString(z.ToString())}"))+"&year=" + (year==null? "" : System.Uri.EscapeDataString(year));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -16663,7 +16634,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -16755,8 +16725,7 @@ namespace MyNS
 					Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "candidates/totals/?max_disbursements=" + (max_disbursements==null? "" : System.Uri.EscapeDataString(max_disbursements))+"&"+string.Join("&", q.Select(z => $"q={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", cycle.Select(z => $"cycle={z}"))+"&sort_null_only="+sort_null_only+"&max_cash_on_hand_end_period=" + (max_cash_on_hand_end_period==null? "" : System.Uri.EscapeDataString(max_cash_on_hand_end_period))+"&max_debts_owed_by_committee=" + (max_debts_owed_by_committee==null? "" : System.Uri.EscapeDataString(max_debts_owed_by_committee))+"&min_disbursements=" + (min_disbursements==null? "" : System.Uri.EscapeDataString(min_disbursements))+"&federal_funds_flag="+federal_funds_flag+"&sort_hide_null="+sort_hide_null+"&"+string.Join("&", candidate_id.Select(z => $"candidate_id={System.Uri.EscapeDataString(z.ToString())}"))+"&per_page="+per_page+"&"+string.Join("&", election_year.Select(z => $"election_year={z}"))+"&"+string.Join("&", office.Select(z => $"office={System.Uri.EscapeDataString(z.ToString())}"))+"&sort=" + (sort==null? "" : System.Uri.EscapeDataString(sort))+"&"+string.Join("&", district.Select(z => $"district={System.Uri.EscapeDataString(z.ToString())}"))+"&api_key=" + (api_key==null? "" : System.Uri.EscapeDataString(api_key))+"&election_full="+election_full+"&min_debts_owed_by_committee=" + (min_debts_owed_by_committee==null? "" : System.Uri.EscapeDataString(min_debts_owed_by_committee))+"&max_receipts=" + (max_receipts==null? "" : System.Uri.EscapeDataString(max_receipts))+"&has_raised_funds="+has_raised_funds+"&"+string.Join("&", party.Select(z => $"party={System.Uri.EscapeDataString(z.ToString())}"))+"&sort_nulls_last="+sort_nulls_last+"&is_active_candidate="+is_active_candidate+"&page="+page+"&"+string.Join("&", state.Select(z => $"state={System.Uri.EscapeDataString(z.ToString())}"))+"&min_cash_on_hand_end_period=" + (min_cash_on_hand_end_period==null? "" : System.Uri.EscapeDataString(min_cash_on_hand_end_period))+"&min_receipts=" + (min_receipts==null? "" : System.Uri.EscapeDataString(min_receipts));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -16770,7 +16739,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -16847,8 +16815,7 @@ namespace MyNS
 					Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "candidates/totals/aggregates/?max_election_cycle="+max_election_cycle+"&sort_null_only="+sort_null_only+"&sort_hide_null="+sort_hide_null+"&per_page="+per_page+"&"+string.Join("&", election_year.Select(z => $"election_year={z}"))+"&office=" + office+"&"+string.Join("&", sort.Select(z => $"sort={System.Uri.EscapeDataString(z.ToString())}"))+"&min_election_cycle="+min_election_cycle+"&"+string.Join("&", district.Select(z => $"district={System.Uri.EscapeDataString(z.ToString())}"))+"&api_key=" + (api_key==null? "" : System.Uri.EscapeDataString(api_key))+"&election_full="+election_full+"&party=" + party+"&is_active_candidate="+is_active_candidate+"&page="+page+"&"+string.Join("&", state.Select(z => $"state={System.Uri.EscapeDataString(z.ToString())}"))+"&sort_nulls_last="+sort_nulls_last+"&aggregate_by=" + aggregate_by;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -16862,7 +16829,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -16910,8 +16876,7 @@ namespace MyNS
 		public async Task CandidatesTotalsBy_officeGetByApi_keyAndMax_election_cycleAndElection_fullAndIs_active_candidateAndPageAndSort_null_onlyAndSort_nulls_lastAndElection_yearAndSort_hide_nullAndPer_pageAndOfficeAndSortAndMin_election_cycleAsync(string api_key, int max_election_cycle, bool election_full, bool is_active_candidate, int page, bool sort_null_only, bool sort_nulls_last, int[] election_year, bool sort_hide_null, int per_page, CandidatesTotalsBy_officeGetByApi_keyAndMax_election_cycleAndElection_fullAndIs_active_candidateAndPageAndSort_null_onlyAndSort_nulls_lastAndElection_yearAndSort_hide_nullAndPer_pageAndOfficeAndSortAndMin_election_cycleOffice office, string sort, int min_election_cycle, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "candidates/totals/by_office/?api_key=" + (api_key==null? "" : System.Uri.EscapeDataString(api_key))+"&max_election_cycle="+max_election_cycle+"&election_full="+election_full+"&is_active_candidate="+is_active_candidate+"&page="+page+"&sort_null_only="+sort_null_only+"&sort_nulls_last="+sort_nulls_last+"&"+string.Join("&", election_year.Select(z => $"election_year={z}"))+"&sort_hide_null="+sort_hide_null+"&per_page="+per_page+"&office=" + office+"&sort=" + (sort==null? "" : System.Uri.EscapeDataString(sort))+"&min_election_cycle="+min_election_cycle;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -16925,7 +16890,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -16959,8 +16923,7 @@ namespace MyNS
 		public async Task CandidatesTotalsBy_officeBy_partyGetByApi_keyAndElection_fullAndSort_null_onlyAndPageAndIs_active_candidateAndSort_nulls_lastAndElection_yearAndSort_hide_nullAndPer_pageAndOfficeAndSortAsync(string api_key, bool election_full, bool sort_null_only, int page, bool is_active_candidate, bool sort_nulls_last, int[] election_year, bool sort_hide_null, int per_page, CandidatesTotalsBy_officeBy_partyGetByApi_keyAndElection_fullAndSort_null_onlyAndPageAndIs_active_candidateAndSort_nulls_lastAndElection_yearAndSort_hide_nullAndPer_pageAndOfficeAndSortOffice office, string sort, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "candidates/totals/by_office/by_party/?api_key=" + (api_key==null? "" : System.Uri.EscapeDataString(api_key))+"&election_full="+election_full+"&sort_null_only="+sort_null_only+"&page="+page+"&is_active_candidate="+is_active_candidate+"&sort_nulls_last="+sort_nulls_last+"&"+string.Join("&", election_year.Select(z => $"election_year={z}"))+"&sort_hide_null="+sort_hide_null+"&per_page="+per_page+"&office=" + office+"&sort=" + (sort==null? "" : System.Uri.EscapeDataString(sort));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -16974,7 +16937,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -17050,8 +17012,7 @@ namespace MyNS
 		public async Task Committee_committee_idGetByApi_keyAndCommittee_typeAndCycleAndSort_null_onlyAndPageAndYearAndSort_nulls_lastAndSort_hide_nullAndPer_pageAndFiling_frequencyAndOrganization_typeAndDesignationAndSortAsync(string api_key, string[] committee_type, int[] cycle, bool sort_null_only, int page, int[] year, bool sort_nulls_last, bool sort_hide_null, int per_page, string[] filing_frequency, string[] organization_type, string[] designation, string sort, string committee_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "committee/"+ (committee_id==null? "" : System.Uri.EscapeDataString(committee_id))+"/?api_key=" + (api_key==null? "" : System.Uri.EscapeDataString(api_key))+"&"+string.Join("&", committee_type.Select(z => $"committee_type={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", cycle.Select(z => $"cycle={z}"))+"&sort_null_only="+sort_null_only+"&page="+page+"&"+string.Join("&", year.Select(z => $"year={z}"))+"&sort_nulls_last="+sort_nulls_last+"&sort_hide_null="+sort_hide_null+"&per_page="+per_page+"&"+string.Join("&", filing_frequency.Select(z => $"filing_frequency={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", organization_type.Select(z => $"organization_type={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", designation.Select(z => $"designation={System.Uri.EscapeDataString(z.ToString())}"))+"&sort=" + (sort==null? "" : System.Uri.EscapeDataString(sort));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -17065,7 +17026,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -17138,8 +17098,7 @@ namespace MyNS
 					Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "committee/"+ (committee_id==null? "" : System.Uri.EscapeDataString(committee_id))+"/candidates/?"+string.Join("&", incumbent_challenge.Select(z => $"incumbent_challenge={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", cycle.Select(z => $"cycle={z}"))+"&sort_null_only="+sort_null_only+"&federal_funds_flag="+federal_funds_flag+"&sort_hide_null="+sort_hide_null+"&"+string.Join("&", name.Select(z => $"name={System.Uri.EscapeDataString(z.ToString())}"))+"&per_page="+per_page+"&"+string.Join("&", election_year.Select(z => $"election_year={z}"))+"&"+string.Join("&", office.Select(z => $"office={System.Uri.EscapeDataString(z.ToString())}"))+"&sort=" + (sort==null? "" : System.Uri.EscapeDataString(sort))+"&"+string.Join("&", candidate_status.Select(z => $"candidate_status={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", district.Select(z => $"district={System.Uri.EscapeDataString(z.ToString())}"))+"&api_key=" + (api_key==null? "" : System.Uri.EscapeDataString(api_key))+"&has_raised_funds="+has_raised_funds+"&"+string.Join("&", party.Select(z => $"party={System.Uri.EscapeDataString(z.ToString())}"))+"&sort_nulls_last="+sort_nulls_last+"&page="+page+"&"+string.Join("&", state.Select(z => $"state={System.Uri.EscapeDataString(z.ToString())}"))+"&year=" + (year==null? "" : System.Uri.EscapeDataString(year));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -17153,7 +17112,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -17186,8 +17144,7 @@ namespace MyNS
 		public async Task Committee_committee_idCandidatesHistoryGetByPageAndApi_keyAndSort_hide_nullAndElection_fullAndPer_pageAndSort_null_onlyAndSortAndSort_nulls_lastAsync(int page, string api_key, bool sort_hide_null, bool election_full, int per_page, bool sort_null_only, string sort, bool sort_nulls_last, string committee_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "committee/"+ (committee_id==null? "" : System.Uri.EscapeDataString(committee_id))+"/candidates/history/?page="+page+"&api_key=" + (api_key==null? "" : System.Uri.EscapeDataString(api_key))+"&sort_hide_null="+sort_hide_null+"&election_full="+election_full+"&per_page="+per_page+"&sort_null_only="+sort_null_only+"&sort=" + (sort==null? "" : System.Uri.EscapeDataString(sort))+"&sort_nulls_last="+sort_nulls_last;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -17201,7 +17158,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -17243,8 +17199,7 @@ namespace MyNS
 		public async Task Committee_committee_idCandidatesHistory_cycleGetByPageAndApi_keyAndSort_hide_nullAndElection_fullAndPer_pageAndSort_null_onlyAndSortAndSort_nulls_lastAsync(int page, string api_key, bool sort_hide_null, bool election_full, int per_page, bool sort_null_only, string sort, bool sort_nulls_last, string committee_id, int cycle, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "committee/"+ (committee_id==null? "" : System.Uri.EscapeDataString(committee_id))+"/candidates/history/"+cycle+"/?page="+page+"&api_key=" + (api_key==null? "" : System.Uri.EscapeDataString(api_key))+"&sort_hide_null="+sort_hide_null+"&election_full="+election_full+"&per_page="+per_page+"&sort_null_only="+sort_null_only+"&sort=" + (sort==null? "" : System.Uri.EscapeDataString(sort))+"&sort_nulls_last="+sort_nulls_last;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -17258,7 +17213,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -17501,8 +17455,7 @@ namespace MyNS
 					Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "committee/"+ (committee_id==null? "" : System.Uri.EscapeDataString(committee_id))+"/filings/?is_amended="+is_amended+"&min_receipt_date="+min_receipt_date+"&"+string.Join("&", form_category.Select(z => $"form_category={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", request_type.Select(z => $"request_type={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", primary_general_indicator.Select(z => $"primary_general_indicator={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", cycle.Select(z => $"cycle={z}"))+"&sort_null_only="+sort_null_only+"&max_receipt_date="+max_receipt_date+"&sort_hide_null="+sort_hide_null+"&"+string.Join("&", file_number.Select(z => $"file_number={z}"))+"&per_page="+per_page+"&"+string.Join("&", office.Select(z => $"office={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", sort.Select(z => $"sort={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", q_filer.Select(z => $"q_filer={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", district.Select(z => $"district={System.Uri.EscapeDataString(z.ToString())}"))+"&api_key=" + (api_key==null? "" : System.Uri.EscapeDataString(api_key))+"&filer_type=" + filer_type+"&most_recent="+most_recent+"&"+string.Join("&", report_type.Select(z => $"report_type={System.Uri.EscapeDataString(z.ToString())}"))+"&committee_type=" + (committee_type==null? "" : System.Uri.EscapeDataString(committee_type))+"&"+string.Join("&", party.Select(z => $"party={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", form_type.Select(z => $"form_type={System.Uri.EscapeDataString(z.ToString())}"))+"&sort_nulls_last="+sort_nulls_last+"&page="+page+"&"+string.Join("&", state.Select(z => $"state={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", report_year.Select(z => $"report_year={z}"))+"&"+string.Join("&", amendment_indicator.Select(z => $"amendment_indicator={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", document_type.Select(z => $"document_type={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", beginning_image_number.Select(z => $"beginning_image_number={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -17516,7 +17469,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -17552,8 +17504,7 @@ namespace MyNS
 		public async Task Committee_committee_idHistoryGetByApi_keyAndElection_fullAndSort_nulls_lastAndPageAndSort_null_onlyAndSort_hide_nullAndPer_pageAndDesignationAndSortAsync(string api_key, bool election_full, bool sort_nulls_last, int page, bool sort_null_only, bool sort_hide_null, int per_page, string[] designation, string sort, string committee_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "committee/"+ (committee_id==null? "" : System.Uri.EscapeDataString(committee_id))+"/history/?api_key=" + (api_key==null? "" : System.Uri.EscapeDataString(api_key))+"&election_full="+election_full+"&sort_nulls_last="+sort_nulls_last+"&page="+page+"&sort_null_only="+sort_null_only+"&sort_hide_null="+sort_hide_null+"&per_page="+per_page+"&"+string.Join("&", designation.Select(z => $"designation={System.Uri.EscapeDataString(z.ToString())}"))+"&sort=" + (sort==null? "" : System.Uri.EscapeDataString(sort));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -17567,7 +17518,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -17608,8 +17558,7 @@ namespace MyNS
 		public async Task Committee_committee_idHistory_cycleGetByApi_keyAndElection_fullAndSort_nulls_lastAndPageAndSort_null_onlyAndSort_hide_nullAndPer_pageAndDesignationAndSortAsync(string api_key, bool election_full, bool sort_nulls_last, int page, bool sort_null_only, bool sort_hide_null, int per_page, string[] designation, string sort, string committee_id, int cycle, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "committee/"+ (committee_id==null? "" : System.Uri.EscapeDataString(committee_id))+"/history/"+cycle+"/?api_key=" + (api_key==null? "" : System.Uri.EscapeDataString(api_key))+"&election_full="+election_full+"&sort_nulls_last="+sort_nulls_last+"&page="+page+"&sort_null_only="+sort_null_only+"&sort_hide_null="+sort_hide_null+"&per_page="+per_page+"&"+string.Join("&", designation.Select(z => $"designation={System.Uri.EscapeDataString(z.ToString())}"))+"&sort=" + (sort==null? "" : System.Uri.EscapeDataString(sort));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -17623,7 +17572,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -17820,8 +17768,7 @@ namespace MyNS
 					Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "committee/"+ (committee_id==null? "" : System.Uri.EscapeDataString(committee_id))+"/reports/?min_party_coordinated_expenditures=" + (min_party_coordinated_expenditures==null? "" : System.Uri.EscapeDataString(min_party_coordinated_expenditures))+"&is_amended="+is_amended+"&max_party_coordinated_expenditures=" + (max_party_coordinated_expenditures==null? "" : System.Uri.EscapeDataString(max_party_coordinated_expenditures))+"&max_cash_on_hand_end_period_amount=" + (max_cash_on_hand_end_period_amount==null? "" : System.Uri.EscapeDataString(max_cash_on_hand_end_period_amount))+"&max_disbursements_amount=" + (max_disbursements_amount==null? "" : System.Uri.EscapeDataString(max_disbursements_amount))+"&max_debts_owed_expenditures=" + (max_debts_owed_expenditures==null? "" : System.Uri.EscapeDataString(max_debts_owed_expenditures))+"&min_receipts_amount=" + (min_receipts_amount==null? "" : System.Uri.EscapeDataString(min_receipts_amount))+"&"+string.Join("&", cycle.Select(z => $"cycle={z}"))+"&sort_null_only="+sort_null_only+"&min_debts_owed_amount=" + (min_debts_owed_amount==null? "" : System.Uri.EscapeDataString(min_debts_owed_amount))+"&sort_hide_null="+sort_hide_null+"&candidate_id=" + (candidate_id==null? "" : System.Uri.EscapeDataString(candidate_id))+"&min_independent_expenditures=" + (min_independent_expenditures==null? "" : System.Uri.EscapeDataString(min_independent_expenditures))+"&per_page="+per_page+"&"+string.Join("&", sort.Select(z => $"sort={System.Uri.EscapeDataString(z.ToString())}"))+"&api_key=" + (api_key==null? "" : System.Uri.EscapeDataString(api_key))+"&max_receipts_amount=" + (max_receipts_amount==null? "" : System.Uri.EscapeDataString(max_receipts_amount))+"&"+string.Join("&", report_type.Select(z => $"report_type={System.Uri.EscapeDataString(z.ToString())}"))+"&max_total_contributions=" + (max_total_contributions==null? "" : System.Uri.EscapeDataString(max_total_contributions))+"&sort_nulls_last="+sort_nulls_last+"&page="+page+"&"+string.Join("&", year.Select(z => $"year={z}"))+"&max_independent_expenditures=" + (max_independent_expenditures==null? "" : System.Uri.EscapeDataString(max_independent_expenditures))+"&"+string.Join("&", type.Select(z => $"type={System.Uri.EscapeDataString(z.ToString())}"))+"&min_cash_on_hand_end_period_amount=" + (min_cash_on_hand_end_period_amount==null? "" : System.Uri.EscapeDataString(min_cash_on_hand_end_period_amount))+"&min_disbursements_amount=" + (min_disbursements_amount==null? "" : System.Uri.EscapeDataString(min_disbursements_amount))+"&min_total_contributions=" + (min_total_contributions==null? "" : System.Uri.EscapeDataString(min_total_contributions))+"&"+string.Join("&", beginning_image_number.Select(z => $"beginning_image_number={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -17835,7 +17782,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -17874,8 +17820,7 @@ namespace MyNS
 		public async Task Committee_committee_idTotalsGetByPageAndApi_keyAndSort_hide_nullAndPer_pageAndSort_nulls_lastAndSortAndCycleAndSort_null_onlyAsync(int page, string api_key, bool sort_hide_null, int per_page, bool sort_nulls_last, string sort, int[] cycle, bool sort_null_only, string committee_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "committee/"+ (committee_id==null? "" : System.Uri.EscapeDataString(committee_id))+"/totals/?page="+page+"&api_key=" + (api_key==null? "" : System.Uri.EscapeDataString(api_key))+"&sort_hide_null="+sort_hide_null+"&per_page="+per_page+"&sort_nulls_last="+sort_nulls_last+"&sort=" + (sort==null? "" : System.Uri.EscapeDataString(sort))+"&"+string.Join("&", cycle.Select(z => $"cycle={z}"))+"&sort_null_only="+sort_null_only;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -17889,7 +17834,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -18016,8 +17960,7 @@ namespace MyNS
 					Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "committees/?"+string.Join("&", treasurer_name.Select(z => $"treasurer_name={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", q.Select(z => $"q={System.Uri.EscapeDataString(z.ToString())}"))+"&min_first_file_date="+min_first_file_date+"&"+string.Join("&", cycle.Select(z => $"cycle={z}"))+"&"+string.Join("&", sponsor_candidate_id.Select(z => $"sponsor_candidate_id={System.Uri.EscapeDataString(z.ToString())}"))+"&sort_null_only="+sort_null_only+"&sort_hide_null="+sort_hide_null+"&"+string.Join("&", candidate_id.Select(z => $"candidate_id={System.Uri.EscapeDataString(z.ToString())}"))+"&per_page="+per_page+"&"+string.Join("&", filing_frequency.Select(z => $"filing_frequency={System.Uri.EscapeDataString(z.ToString())}"))+"&sort=" + (sort==null? "" : System.Uri.EscapeDataString(sort))+"&max_first_file_date="+max_first_file_date+"&min_first_f1_date="+min_first_f1_date+"&api_key=" + (api_key==null? "" : System.Uri.EscapeDataString(api_key))+"&min_last_f1_date="+min_last_f1_date+"&"+string.Join("&", committee_type.Select(z => $"committee_type={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", party.Select(z => $"party={System.Uri.EscapeDataString(z.ToString())}"))+"&sort_nulls_last="+sort_nulls_last+"&page="+page+"&"+string.Join("&", year.Select(z => $"year={z}"))+"&"+string.Join("&", committee_id.Select(z => $"committee_id={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", state.Select(z => $"state={System.Uri.EscapeDataString(z.ToString())}"))+"&max_last_f1_date="+max_last_f1_date+"&max_first_f1_date="+max_first_f1_date+"&"+string.Join("&", designation.Select(z => $"designation={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", organization_type.Select(z => $"organization_type={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -18031,7 +17974,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -18097,8 +18039,7 @@ namespace MyNS
 					Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "communication_costs/?min_date="+min_date+"&"+string.Join("&", support_oppose_indicator.Select(z => $"support_oppose_indicator={System.Uri.EscapeDataString(z.ToString())}"))+"&max_image_number=" + (max_image_number==null? "" : System.Uri.EscapeDataString(max_image_number))+"&min_image_number=" + (min_image_number==null? "" : System.Uri.EscapeDataString(min_image_number))+"&sort_null_only="+sort_null_only+"&sort_hide_null="+sort_hide_null+"&min_amount=" + (min_amount==null? "" : System.Uri.EscapeDataString(min_amount))+"&per_page="+per_page+"&"+string.Join("&", candidate_id.Select(z => $"candidate_id={System.Uri.EscapeDataString(z.ToString())}"))+"&line_number=" + (line_number==null? "" : System.Uri.EscapeDataString(line_number))+"&sort=" + (sort==null? "" : System.Uri.EscapeDataString(sort))+"&api_key=" + (api_key==null? "" : System.Uri.EscapeDataString(api_key))+"&sort_nulls_last="+sort_nulls_last+"&page="+page+"&"+string.Join("&", committee_id.Select(z => $"committee_id={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", image_number.Select(z => $"image_number={System.Uri.EscapeDataString(z.ToString())}"))+"&max_date="+max_date+"&max_amount=" + (max_amount==null? "" : System.Uri.EscapeDataString(max_amount));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -18112,7 +18053,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -18152,8 +18092,7 @@ namespace MyNS
 		public async Task Communication_costsAggregatesGetByApi_keyAndSupport_oppose_indicatorAndCycleAndSort_null_onlyAndPageAndCommittee_idAndSort_nulls_lastAndSort_hide_nullAndCandidate_idAndPer_pageAndSortAsync(string api_key, Communication_costsAggregatesGetByApi_keyAndSupport_oppose_indicatorAndCycleAndSort_null_onlyAndPageAndCommittee_idAndSort_nulls_lastAndSort_hide_nullAndCandidate_idAndPer_pageAndSortSupport_oppose_indicator support_oppose_indicator, int[] cycle, bool sort_null_only, int page, string[] committee_id, bool sort_nulls_last, bool sort_hide_null, string[] candidate_id, int per_page, string sort, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "communication_costs/aggregates/?api_key=" + (api_key==null? "" : System.Uri.EscapeDataString(api_key))+"&support_oppose_indicator=" + support_oppose_indicator+"&"+string.Join("&", cycle.Select(z => $"cycle={z}"))+"&sort_null_only="+sort_null_only+"&page="+page+"&"+string.Join("&", committee_id.Select(z => $"committee_id={System.Uri.EscapeDataString(z.ToString())}"))+"&sort_nulls_last="+sort_nulls_last+"&sort_hide_null="+sort_hide_null+"&"+string.Join("&", candidate_id.Select(z => $"candidate_id={System.Uri.EscapeDataString(z.ToString())}"))+"&per_page="+per_page+"&sort=" + (sort==null? "" : System.Uri.EscapeDataString(sort));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -18167,7 +18106,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -18209,8 +18147,7 @@ namespace MyNS
 		public async Task Communication_costsBy_candidateGetByDistrictAndApi_keyAndSupport_opposeAndElection_fullAndCycleAndSort_null_onlyAndPageAndStateAndSort_nulls_lastAndSort_hide_nullAndCandidate_idAndPer_pageAndOfficeAndSortAsync(string district, string api_key, Communication_costsAggregatesGetByApi_keyAndSupport_oppose_indicatorAndCycleAndSort_null_onlyAndPageAndCommittee_idAndSort_nulls_lastAndSort_hide_nullAndCandidate_idAndPer_pageAndSortSupport_oppose_indicator support_oppose, bool election_full, int[] cycle, bool sort_null_only, int page, string state, bool sort_nulls_last, bool sort_hide_null, string[] candidate_id, int per_page, Communication_costsBy_candidateGetByDistrictAndApi_keyAndSupport_opposeAndElection_fullAndCycleAndSort_null_onlyAndPageAndStateAndSort_nulls_lastAndSort_hide_nullAndCandidate_idAndPer_pageAndOfficeAndSortOffice office, string sort, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "communication_costs/by_candidate/?district=" + (district==null? "" : System.Uri.EscapeDataString(district))+"&api_key=" + (api_key==null? "" : System.Uri.EscapeDataString(api_key))+"&support_oppose=" + support_oppose+"&election_full="+election_full+"&"+string.Join("&", cycle.Select(z => $"cycle={z}"))+"&sort_null_only="+sort_null_only+"&page="+page+"&state=" + (state==null? "" : System.Uri.EscapeDataString(state))+"&sort_nulls_last="+sort_nulls_last+"&sort_hide_null="+sort_hide_null+"&"+string.Join("&", candidate_id.Select(z => $"candidate_id={System.Uri.EscapeDataString(z.ToString())}"))+"&per_page="+per_page+"&office=" + office+"&sort=" + (sort==null? "" : System.Uri.EscapeDataString(sort));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -18224,7 +18161,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -18264,8 +18200,7 @@ namespace MyNS
 		public async Task Communication_costsTotalsBy_candidateGetByApi_keyAndElection_fullAndCycleAndSort_nulls_lastAndPageAndSort_null_onlyAndSort_hide_nullAndCandidate_idAndPer_pageAndSortAsync(string api_key, bool election_full, int[] cycle, bool sort_nulls_last, int page, bool sort_null_only, bool sort_hide_null, string[] candidate_id, int per_page, string sort, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "communication_costs/totals/by_candidate/?api_key=" + (api_key==null? "" : System.Uri.EscapeDataString(api_key))+"&election_full="+election_full+"&"+string.Join("&", cycle.Select(z => $"cycle={z}"))+"&sort_nulls_last="+sort_nulls_last+"&page="+page+"&sort_null_only="+sort_null_only+"&sort_hide_null="+sort_hide_null+"&"+string.Join("&", candidate_id.Select(z => $"candidate_id={System.Uri.EscapeDataString(z.ToString())}"))+"&per_page="+per_page+"&sort=" + (sort==null? "" : System.Uri.EscapeDataString(sort));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -18279,7 +18214,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -18313,8 +18247,7 @@ namespace MyNS
 		public async Task EfileFilingsGetByApi_keyAndMin_receipt_dateAndSort_nulls_lastAndPageAndCommittee_idAndSort_null_onlyAndMax_receipt_dateAndSort_hide_nullAndFile_numberAndPer_pageAndSortAndQ_filerAsync(string api_key, System.DateOnly min_receipt_date, bool sort_nulls_last, int page, string[] committee_id, bool sort_null_only, System.DateOnly max_receipt_date, bool sort_hide_null, int[] file_number, int per_page, string sort, string[] q_filer, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "efile/filings/?api_key=" + (api_key==null? "" : System.Uri.EscapeDataString(api_key))+"&min_receipt_date="+min_receipt_date+"&sort_nulls_last="+sort_nulls_last+"&page="+page+"&"+string.Join("&", committee_id.Select(z => $"committee_id={System.Uri.EscapeDataString(z.ToString())}"))+"&sort_null_only="+sort_null_only+"&max_receipt_date="+max_receipt_date+"&sort_hide_null="+sort_hide_null+"&"+string.Join("&", file_number.Select(z => $"file_number={z}"))+"&per_page="+per_page+"&sort=" + (sort==null? "" : System.Uri.EscapeDataString(sort))+"&"+string.Join("&", q_filer.Select(z => $"q_filer={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -18328,7 +18261,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -18374,8 +18306,7 @@ namespace MyNS
 		public async Task EfileReportsHouse_senateGetByApi_keyAndMin_receipt_dateAndSort_nulls_lastAndPageAndCommittee_idAndSort_null_onlyAndMax_receipt_dateAndSort_hide_nullAndFile_numberAndPer_pageAndSortAndQ_filerAsync(string api_key, System.DateOnly min_receipt_date, bool sort_nulls_last, int page, string[] committee_id, bool sort_null_only, System.DateOnly max_receipt_date, bool sort_hide_null, int[] file_number, int per_page, string sort, string[] q_filer, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "efile/reports/house-senate/?api_key=" + (api_key==null? "" : System.Uri.EscapeDataString(api_key))+"&min_receipt_date="+min_receipt_date+"&sort_nulls_last="+sort_nulls_last+"&page="+page+"&"+string.Join("&", committee_id.Select(z => $"committee_id={System.Uri.EscapeDataString(z.ToString())}"))+"&sort_null_only="+sort_null_only+"&max_receipt_date="+max_receipt_date+"&sort_hide_null="+sort_hide_null+"&"+string.Join("&", file_number.Select(z => $"file_number={z}"))+"&per_page="+per_page+"&sort=" + (sort==null? "" : System.Uri.EscapeDataString(sort))+"&"+string.Join("&", q_filer.Select(z => $"q_filer={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -18389,7 +18320,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -18435,8 +18365,7 @@ namespace MyNS
 		public async Task EfileReportsPac_partyGetByApi_keyAndMin_receipt_dateAndSort_nulls_lastAndPageAndCommittee_idAndSort_null_onlyAndMax_receipt_dateAndSort_hide_nullAndFile_numberAndPer_pageAndSortAndQ_filerAsync(string api_key, System.DateOnly min_receipt_date, bool sort_nulls_last, int page, string[] committee_id, bool sort_null_only, System.DateOnly max_receipt_date, bool sort_hide_null, int[] file_number, int per_page, string sort, string[] q_filer, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "efile/reports/pac-party/?api_key=" + (api_key==null? "" : System.Uri.EscapeDataString(api_key))+"&min_receipt_date="+min_receipt_date+"&sort_nulls_last="+sort_nulls_last+"&page="+page+"&"+string.Join("&", committee_id.Select(z => $"committee_id={System.Uri.EscapeDataString(z.ToString())}"))+"&sort_null_only="+sort_null_only+"&max_receipt_date="+max_receipt_date+"&sort_hide_null="+sort_hide_null+"&"+string.Join("&", file_number.Select(z => $"file_number={z}"))+"&per_page="+per_page+"&sort=" + (sort==null? "" : System.Uri.EscapeDataString(sort))+"&"+string.Join("&", q_filer.Select(z => $"q_filer={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -18450,7 +18379,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -18496,8 +18424,7 @@ namespace MyNS
 		public async Task EfileReportsPresidentialGetByApi_keyAndMin_receipt_dateAndSort_nulls_lastAndPageAndCommittee_idAndSort_null_onlyAndMax_receipt_dateAndSort_hide_nullAndFile_numberAndPer_pageAndSortAndQ_filerAsync(string api_key, System.DateOnly min_receipt_date, bool sort_nulls_last, int page, string[] committee_id, bool sort_null_only, System.DateOnly max_receipt_date, bool sort_hide_null, int[] file_number, int per_page, string sort, string[] q_filer, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "efile/reports/presidential/?api_key=" + (api_key==null? "" : System.Uri.EscapeDataString(api_key))+"&min_receipt_date="+min_receipt_date+"&sort_nulls_last="+sort_nulls_last+"&page="+page+"&"+string.Join("&", committee_id.Select(z => $"committee_id={System.Uri.EscapeDataString(z.ToString())}"))+"&sort_null_only="+sort_null_only+"&max_receipt_date="+max_receipt_date+"&sort_hide_null="+sort_hide_null+"&"+string.Join("&", file_number.Select(z => $"file_number={z}"))+"&per_page="+per_page+"&sort=" + (sort==null? "" : System.Uri.EscapeDataString(sort))+"&"+string.Join("&", q_filer.Select(z => $"q_filer={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -18511,7 +18438,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -18596,8 +18522,7 @@ namespace MyNS
 					Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "election-dates/?"+string.Join("&", election_state.Select(z => $"election_state={System.Uri.EscapeDataString(z.ToString())}"))+"&max_election_date="+max_election_date+"&"+string.Join("&", election_district.Select(z => $"election_district={System.Uri.EscapeDataString(z.ToString())}"))+"&min_update_date="+min_update_date+"&sort_null_only="+sort_null_only+"&sort_hide_null="+sort_hide_null+"&max_create_date="+max_create_date+"&per_page="+per_page+"&"+string.Join("&", election_year.Select(z => $"election_year={System.Uri.EscapeDataString(z.ToString())}"))+"&sort=" + (sort==null? "" : System.Uri.EscapeDataString(sort))+"&min_create_date="+min_create_date+"&api_key=" + (api_key==null? "" : System.Uri.EscapeDataString(api_key))+"&"+string.Join("&", election_party.Select(z => $"election_party={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", office_sought.Select(z => $"office_sought={System.Uri.EscapeDataString(z.ToString())}"))+"&sort_nulls_last="+sort_nulls_last+"&page="+page+"&max_update_date="+max_update_date+"&"+string.Join("&", election_type_id.Select(z => $"election_type_id={System.Uri.EscapeDataString(z.ToString())}"))+"&max_primary_general_date="+max_primary_general_date+"&min_election_date="+min_election_date+"&min_primary_general_date="+min_primary_general_date;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -18611,7 +18536,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -18681,8 +18605,7 @@ namespace MyNS
 					Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "electioneering/?min_date="+min_date+"&api_key=" + (api_key==null? "" : System.Uri.EscapeDataString(api_key))+"&description=" + (description==null? "" : System.Uri.EscapeDataString(description))+"&sort_null_only="+sort_null_only+"&page="+page+"&"+string.Join("&", committee_id.Select(z => $"committee_id={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", report_year.Select(z => $"report_year={z}"))+"&last_index="+last_index+"&sort_nulls_last="+sort_nulls_last+"&sort_hide_null="+sort_hide_null+"&"+string.Join("&", candidate_id.Select(z => $"candidate_id={System.Uri.EscapeDataString(z.ToString())}"))+"&per_page="+per_page+"&min_amount=" + (min_amount==null? "" : System.Uri.EscapeDataString(min_amount))+"&max_date="+max_date+"&max_amount=" + (max_amount==null? "" : System.Uri.EscapeDataString(max_amount))+"&sort=" + (sort==null? "" : System.Uri.EscapeDataString(sort));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -18696,7 +18619,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -18735,8 +18657,7 @@ namespace MyNS
 		public async Task ElectioneeringAggregatesGetByApi_keyAndCycleAndSort_nulls_lastAndPageAndCommittee_idAndSort_null_onlyAndSort_hide_nullAndCandidate_idAndPer_pageAndSortAsync(string api_key, int[] cycle, bool sort_nulls_last, int page, string[] committee_id, bool sort_null_only, bool sort_hide_null, string[] candidate_id, int per_page, string sort, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "electioneering/aggregates/?api_key=" + (api_key==null? "" : System.Uri.EscapeDataString(api_key))+"&"+string.Join("&", cycle.Select(z => $"cycle={z}"))+"&sort_nulls_last="+sort_nulls_last+"&page="+page+"&"+string.Join("&", committee_id.Select(z => $"committee_id={System.Uri.EscapeDataString(z.ToString())}"))+"&sort_null_only="+sort_null_only+"&sort_hide_null="+sort_hide_null+"&"+string.Join("&", candidate_id.Select(z => $"candidate_id={System.Uri.EscapeDataString(z.ToString())}"))+"&per_page="+per_page+"&sort=" + (sort==null? "" : System.Uri.EscapeDataString(sort));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -18750,7 +18671,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -18791,8 +18711,7 @@ namespace MyNS
 		public async Task ElectioneeringBy_candidateGetByDistrictAndApi_keyAndElection_fullAndCycleAndSort_null_onlyAndPageAndStateAndSort_nulls_lastAndSort_hide_nullAndCandidate_idAndPer_pageAndOfficeAndSortAsync(string district, string api_key, bool election_full, int[] cycle, bool sort_null_only, int page, string state, bool sort_nulls_last, bool sort_hide_null, string[] candidate_id, int per_page, Communication_costsBy_candidateGetByDistrictAndApi_keyAndSupport_opposeAndElection_fullAndCycleAndSort_null_onlyAndPageAndStateAndSort_nulls_lastAndSort_hide_nullAndCandidate_idAndPer_pageAndOfficeAndSortOffice office, string sort, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "electioneering/by_candidate/?district=" + (district==null? "" : System.Uri.EscapeDataString(district))+"&api_key=" + (api_key==null? "" : System.Uri.EscapeDataString(api_key))+"&election_full="+election_full+"&"+string.Join("&", cycle.Select(z => $"cycle={z}"))+"&sort_null_only="+sort_null_only+"&page="+page+"&state=" + (state==null? "" : System.Uri.EscapeDataString(state))+"&sort_nulls_last="+sort_nulls_last+"&sort_hide_null="+sort_hide_null+"&"+string.Join("&", candidate_id.Select(z => $"candidate_id={System.Uri.EscapeDataString(z.ToString())}"))+"&per_page="+per_page+"&office=" + office+"&sort=" + (sort==null? "" : System.Uri.EscapeDataString(sort));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -18806,7 +18725,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -18847,8 +18765,7 @@ namespace MyNS
 		public async Task ElectioneeringTotalsBy_candidateGetByApi_keyAndElection_fullAndCycleAndSort_nulls_lastAndPageAndSort_null_onlyAndSort_hide_nullAndCandidate_idAndPer_pageAndSortAsync(string api_key, bool election_full, int[] cycle, bool sort_nulls_last, int page, bool sort_null_only, bool sort_hide_null, string[] candidate_id, int per_page, string sort, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "electioneering/totals/by_candidate/?api_key=" + (api_key==null? "" : System.Uri.EscapeDataString(api_key))+"&election_full="+election_full+"&"+string.Join("&", cycle.Select(z => $"cycle={z}"))+"&sort_nulls_last="+sort_nulls_last+"&page="+page+"&sort_null_only="+sort_null_only+"&sort_hide_null="+sort_hide_null+"&"+string.Join("&", candidate_id.Select(z => $"candidate_id={System.Uri.EscapeDataString(z.ToString())}"))+"&per_page="+per_page+"&sort=" + (sort==null? "" : System.Uri.EscapeDataString(sort));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -18862,7 +18779,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -18911,8 +18827,7 @@ namespace MyNS
 		public async Task ElectionsGetByDistrictAndApi_keyAndElection_fullAndCycleAndSort_null_onlyAndPageAndStateAndSort_nulls_lastAndSort_hide_nullAndPer_pageAndOfficeAndSortAsync(string district, string api_key, bool election_full, int cycle, bool sort_null_only, int page, string state, bool sort_nulls_last, bool sort_hide_null, int per_page, Communication_costsBy_candidateGetByDistrictAndApi_keyAndSupport_opposeAndElection_fullAndCycleAndSort_null_onlyAndPageAndStateAndSort_nulls_lastAndSort_hide_nullAndCandidate_idAndPer_pageAndOfficeAndSortOffice office, string sort, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "elections/?district=" + (district==null? "" : System.Uri.EscapeDataString(district))+"&api_key=" + (api_key==null? "" : System.Uri.EscapeDataString(api_key))+"&election_full="+election_full+"&cycle="+cycle+"&sort_null_only="+sort_null_only+"&page="+page+"&state=" + (state==null? "" : System.Uri.EscapeDataString(state))+"&sort_nulls_last="+sort_nulls_last+"&sort_hide_null="+sort_hide_null+"&per_page="+per_page+"&office=" + office+"&sort=" + (sort==null? "" : System.Uri.EscapeDataString(sort));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -18926,7 +18841,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -18962,8 +18876,7 @@ namespace MyNS
 		public async Task ElectionsSearchGetByZipAndDistrictAndApi_keyAndCycleAndSort_null_onlyAndSort_nulls_lastAndPageAndStateAndSort_hide_nullAndPer_pageAndOfficeAndSortAsync(int[] zip, string[] district, string api_key, int[] cycle, bool sort_null_only, bool sort_nulls_last, int page, string[] state, bool sort_hide_null, int per_page, Communication_costsBy_candidateGetByDistrictAndApi_keyAndSupport_opposeAndElection_fullAndCycleAndSort_null_onlyAndPageAndStateAndSort_nulls_lastAndSort_hide_nullAndCandidate_idAndPer_pageAndOfficeAndSortOffice[] office, string[] sort, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "elections/search/?"+string.Join("&", zip.Select(z => $"zip={z}"))+"&"+string.Join("&", district.Select(z => $"district={System.Uri.EscapeDataString(z.ToString())}"))+"&api_key=" + (api_key==null? "" : System.Uri.EscapeDataString(api_key))+"&"+string.Join("&", cycle.Select(z => $"cycle={z}"))+"&sort_null_only="+sort_null_only+"&sort_nulls_last="+sort_nulls_last+"&page="+page+"&"+string.Join("&", state.Select(z => $"state={System.Uri.EscapeDataString(z.ToString())}"))+"&sort_hide_null="+sort_hide_null+"&per_page="+per_page+"&"+string.Join("&", office.Select(z => $"office={z}"))+"&"+string.Join("&", sort.Select(z => $"sort={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -18977,7 +18890,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -19007,8 +18919,7 @@ namespace MyNS
 		public async Task ElectionsSummaryGetByStateAndDistrictAndApi_keyAndElection_fullAndOfficeAndCycleAsync(string state, string district, string api_key, bool election_full, Communication_costsBy_candidateGetByDistrictAndApi_keyAndSupport_opposeAndElection_fullAndCycleAndSort_null_onlyAndPageAndStateAndSort_nulls_lastAndSort_hide_nullAndCandidate_idAndPer_pageAndOfficeAndSortOffice office, int cycle, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "elections/summary/?state=" + (state==null? "" : System.Uri.EscapeDataString(state))+"&district=" + (district==null? "" : System.Uri.EscapeDataString(district))+"&api_key=" + (api_key==null? "" : System.Uri.EscapeDataString(api_key))+"&election_full="+election_full+"&office=" + office+"&cycle="+cycle;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -19022,7 +18933,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -19276,8 +19186,7 @@ namespace MyNS
 					Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "filings/?is_amended="+is_amended+"&min_receipt_date="+min_receipt_date+"&"+string.Join("&", form_category.Select(z => $"form_category={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", request_type.Select(z => $"request_type={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", primary_general_indicator.Select(z => $"primary_general_indicator={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", cycle.Select(z => $"cycle={z}"))+"&sort_null_only="+sort_null_only+"&max_receipt_date="+max_receipt_date+"&sort_hide_null="+sort_hide_null+"&"+string.Join("&", candidate_id.Select(z => $"candidate_id={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", file_number.Select(z => $"file_number={z}"))+"&per_page="+per_page+"&"+string.Join("&", office.Select(z => $"office={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", sort.Select(z => $"sort={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", q_filer.Select(z => $"q_filer={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", district.Select(z => $"district={System.Uri.EscapeDataString(z.ToString())}"))+"&api_key=" + (api_key==null? "" : System.Uri.EscapeDataString(api_key))+"&filer_type=" + filer_type+"&most_recent="+most_recent+"&"+string.Join("&", report_type.Select(z => $"report_type={System.Uri.EscapeDataString(z.ToString())}"))+"&committee_type=" + (committee_type==null? "" : System.Uri.EscapeDataString(committee_type))+"&"+string.Join("&", party.Select(z => $"party={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", form_type.Select(z => $"form_type={System.Uri.EscapeDataString(z.ToString())}"))+"&sort_nulls_last="+sort_nulls_last+"&page="+page+"&"+string.Join("&", state.Select(z => $"state={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", report_year.Select(z => $"report_year={z}"))+"&"+string.Join("&", committee_id.Select(z => $"committee_id={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", amendment_indicator.Select(z => $"amendment_indicator={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", document_type.Select(z => $"document_type={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", beginning_image_number.Select(z => $"beginning_image_number={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -19291,7 +19200,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -19490,8 +19398,7 @@ namespace MyNS
 					Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "legal/search/?"+string.Join("&", case_statutory_citation.Select(z => $"case_statutory_citation={System.Uri.EscapeDataString(z.ToString())}"))+"&af_min_rtb_date="+af_min_rtb_date+"&af_report_year=" + (af_report_year==null? "" : System.Uri.EscapeDataString(af_report_year))+"&q=" + (q==null? "" : System.Uri.EscapeDataString(q))+"&from_hit="+from_hit+"&"+string.Join("&", ao_requestor_type.Select(z => $"ao_requestor_type={z}"))+"&case_max_close_date="+case_max_close_date+"&ao_is_pending="+ao_is_pending+"&af_fd_fine_amount="+af_fd_fine_amount+"&case_min_open_date="+case_min_open_date+"&ao_min_issue_date="+ao_min_issue_date+"&sort=" + (sort==null? "" : System.Uri.EscapeDataString(sort))+"&ao_citation_require_all="+ao_citation_require_all+"&"+string.Join("&", case_doc_category_id.Select(z => $"case_doc_category_id={System.Uri.EscapeDataString(z.ToString())}"))+"&ao_status=" + (ao_status==null? "" : System.Uri.EscapeDataString(ao_status))+"&af_max_rtb_date="+af_max_rtb_date+"&af_rtb_fine_amount="+af_rtb_fine_amount+"&case_respondents=" + (case_respondents==null? "" : System.Uri.EscapeDataString(case_respondents))+"&"+string.Join("&", ao_entity_name.Select(z => $"ao_entity_name={System.Uri.EscapeDataString(z.ToString())}"))+"&ao_requestor=" + (ao_requestor==null? "" : System.Uri.EscapeDataString(ao_requestor))+"&"+string.Join("&", ao_category.Select(z => $"ao_category={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", ao_regulatory_citation.Select(z => $"ao_regulatory_citation={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", case_regulatory_citation.Select(z => $"case_regulatory_citation={System.Uri.EscapeDataString(z.ToString())}"))+"&case_citation_require_all="+case_citation_require_all+"&"+string.Join("&", case_dispositions.Select(z => $"case_dispositions={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", ao_name.Select(z => $"ao_name={System.Uri.EscapeDataString(z.ToString())}"))+"&af_max_fd_date="+af_max_fd_date+"&ao_max_request_date="+ao_max_request_date+"&mur_type=" + mur_type+"&hits_returned="+hits_returned+"&case_election_cycles="+case_election_cycles+"&case_min_close_date="+case_min_close_date+"&ao_max_issue_date="+ao_max_issue_date+"&af_committee_id=" + (af_committee_id==null? "" : System.Uri.EscapeDataString(af_committee_id))+"&af_min_fd_date="+af_min_fd_date+"&case_max_open_date="+case_max_open_date+"&api_key=" + (api_key==null? "" : System.Uri.EscapeDataString(api_key))+"&ao_min_request_date="+ao_min_request_date+"&"+string.Join("&", ao_no.Select(z => $"ao_no={System.Uri.EscapeDataString(z.ToString())}"))+"&type=" + type+"&"+string.Join("&", case_no.Select(z => $"case_no={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", ao_statutory_citation.Select(z => $"ao_statutory_citation={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", af_name.Select(z => $"af_name={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -19505,7 +19412,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -19524,8 +19430,7 @@ namespace MyNS
 		public async Task NamesAudit_candidatesGetByApi_keyAndQAsync(string api_key, string[] q, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "names/audit_candidates/?api_key=" + (api_key==null? "" : System.Uri.EscapeDataString(api_key))+"&"+string.Join("&", q.Select(z => $"q={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -19539,7 +19444,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -19558,8 +19462,7 @@ namespace MyNS
 		public async Task NamesAudit_committeesGetByApi_keyAndQAsync(string api_key, string[] q, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "names/audit_committees/?api_key=" + (api_key==null? "" : System.Uri.EscapeDataString(api_key))+"&"+string.Join("&", q.Select(z => $"q={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -19573,7 +19476,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -19592,8 +19494,7 @@ namespace MyNS
 		public async Task NamesCandidatesGetByApi_keyAndQAsync(string api_key, string[] q, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "names/candidates/?api_key=" + (api_key==null? "" : System.Uri.EscapeDataString(api_key))+"&"+string.Join("&", q.Select(z => $"q={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -19607,7 +19508,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -19626,8 +19526,7 @@ namespace MyNS
 		public async Task NamesCommitteesGetByApi_keyAndQAsync(string api_key, string[] q, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "names/committees/?api_key=" + (api_key==null? "" : System.Uri.EscapeDataString(api_key))+"&"+string.Join("&", q.Select(z => $"q={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -19641,7 +19540,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -19805,8 +19703,7 @@ namespace MyNS
 					Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "operations-log/?min_receipt_date="+min_receipt_date+"&"+string.Join("&", candidate_committee_id.Select(z => $"candidate_committee_id={System.Uri.EscapeDataString(z.ToString())}"))+"&sort_null_only="+sort_null_only+"&max_receipt_date="+max_receipt_date+"&sort_hide_null="+sort_hide_null+"&max_transaction_data_complete_date="+max_transaction_data_complete_date+"&per_page="+per_page+"&"+string.Join("&", sort.Select(z => $"sort={System.Uri.EscapeDataString(z.ToString())}"))+"&api_key=" + (api_key==null? "" : System.Uri.EscapeDataString(api_key))+"&"+string.Join("&", report_type.Select(z => $"report_type={System.Uri.EscapeDataString(z.ToString())}"))+"&min_transaction_data_complete_date="+min_transaction_data_complete_date+"&"+string.Join("&", form_type.Select(z => $"form_type={System.Uri.EscapeDataString(z.ToString())}"))+"&sort_nulls_last="+sort_nulls_last+"&max_coverage_end_date="+max_coverage_end_date+"&page="+page+"&"+string.Join("&", report_year.Select(z => $"report_year={z}"))+"&"+string.Join("&", status_num.Select(z => $"status_num={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", amendment_indicator.Select(z => $"amendment_indicator={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", beginning_image_number.Select(z => $"beginning_image_number={System.Uri.EscapeDataString(z.ToString())}"))+"&min_coverage_end_date="+min_coverage_end_date;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -19820,7 +19717,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -19847,8 +19743,7 @@ namespace MyNS
 		public async Task PresidentialContributionsBy_candidateGetByApi_keyAndSort_nulls_lastAndPageAndSort_null_onlyAndSort_hide_nullAndPer_pageAndElection_yearAndContributor_stateAndSortAsync(string api_key, bool sort_nulls_last, int page, bool sort_null_only, bool sort_hide_null, int per_page, int[] election_year, string[] contributor_state, string sort, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "presidential/contributions/by_candidate/?api_key=" + (api_key==null? "" : System.Uri.EscapeDataString(api_key))+"&sort_nulls_last="+sort_nulls_last+"&page="+page+"&sort_null_only="+sort_null_only+"&sort_hide_null="+sort_hide_null+"&per_page="+per_page+"&"+string.Join("&", election_year.Select(z => $"election_year={z}"))+"&"+string.Join("&", contributor_state.Select(z => $"contributor_state={System.Uri.EscapeDataString(z.ToString())}"))+"&sort=" + (sort==null? "" : System.Uri.EscapeDataString(sort));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -19862,7 +19757,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -19912,8 +19806,7 @@ namespace MyNS
 		public async Task PresidentialContributionsBy_sizeGetByApi_keyAndSort_nulls_lastAndPageAndSort_null_onlyAndSizeAndSort_hide_nullAndCandidate_idAndPer_pageAndElection_yearAndSortAsync(string api_key, bool sort_nulls_last, int page, bool sort_null_only, int[] size, bool sort_hide_null, string[] candidate_id, int per_page, int[] election_year, string sort, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "presidential/contributions/by_size/?api_key=" + (api_key==null? "" : System.Uri.EscapeDataString(api_key))+"&sort_nulls_last="+sort_nulls_last+"&page="+page+"&sort_null_only="+sort_null_only+"&"+string.Join("&", size.Select(z => $"size={z}"))+"&sort_hide_null="+sort_hide_null+"&"+string.Join("&", candidate_id.Select(z => $"candidate_id={System.Uri.EscapeDataString(z.ToString())}"))+"&per_page="+per_page+"&"+string.Join("&", election_year.Select(z => $"election_year={z}"))+"&sort=" + (sort==null? "" : System.Uri.EscapeDataString(sort));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -19927,7 +19820,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -19966,8 +19858,7 @@ namespace MyNS
 		public async Task PresidentialContributionsBy_stateGetByApi_keyAndSort_nulls_lastAndPageAndSort_null_onlyAndSort_hide_nullAndCandidate_idAndPer_pageAndElection_yearAndSortAsync(string api_key, bool sort_nulls_last, int page, bool sort_null_only, bool sort_hide_null, string[] candidate_id, int per_page, int[] election_year, string sort, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "presidential/contributions/by_state/?api_key=" + (api_key==null? "" : System.Uri.EscapeDataString(api_key))+"&sort_nulls_last="+sort_nulls_last+"&page="+page+"&sort_null_only="+sort_null_only+"&sort_hide_null="+sort_hide_null+"&"+string.Join("&", candidate_id.Select(z => $"candidate_id={System.Uri.EscapeDataString(z.ToString())}"))+"&per_page="+per_page+"&"+string.Join("&", election_year.Select(z => $"election_year={z}"))+"&sort=" + (sort==null? "" : System.Uri.EscapeDataString(sort));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -19981,7 +19872,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -20020,8 +19910,7 @@ namespace MyNS
 		public async Task PresidentialCoverage_end_dateGetByApi_keyAndSort_nulls_lastAndPageAndSort_null_onlyAndSort_hide_nullAndCandidate_idAndPer_pageAndElection_yearAndSortAsync(string api_key, bool sort_nulls_last, int page, bool sort_null_only, bool sort_hide_null, string[] candidate_id, int per_page, int[] election_year, string sort, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "presidential/coverage_end_date/?api_key=" + (api_key==null? "" : System.Uri.EscapeDataString(api_key))+"&sort_nulls_last="+sort_nulls_last+"&page="+page+"&sort_null_only="+sort_null_only+"&sort_hide_null="+sort_hide_null+"&"+string.Join("&", candidate_id.Select(z => $"candidate_id={System.Uri.EscapeDataString(z.ToString())}"))+"&per_page="+per_page+"&"+string.Join("&", election_year.Select(z => $"election_year={z}"))+"&sort=" + (sort==null? "" : System.Uri.EscapeDataString(sort));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -20035,7 +19924,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -20074,8 +19962,7 @@ namespace MyNS
 		public async Task PresidentialFinancial_summaryGetByApi_keyAndSort_nulls_lastAndPageAndSort_null_onlyAndSort_hide_nullAndCandidate_idAndPer_pageAndElection_yearAndSortAsync(string api_key, bool sort_nulls_last, int page, bool sort_null_only, bool sort_hide_null, string[] candidate_id, int per_page, int[] election_year, string sort, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "presidential/financial_summary/?api_key=" + (api_key==null? "" : System.Uri.EscapeDataString(api_key))+"&sort_nulls_last="+sort_nulls_last+"&page="+page+"&sort_null_only="+sort_null_only+"&sort_hide_null="+sort_hide_null+"&"+string.Join("&", candidate_id.Select(z => $"candidate_id={System.Uri.EscapeDataString(z.ToString())}"))+"&per_page="+per_page+"&"+string.Join("&", election_year.Select(z => $"election_year={z}"))+"&sort=" + (sort==null? "" : System.Uri.EscapeDataString(sort));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -20089,7 +19976,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -20147,8 +20033,7 @@ namespace MyNS
 					Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "rad-analyst/?api_key=" + (api_key==null? "" : System.Uri.EscapeDataString(api_key))+"&min_assignment_update_date="+min_assignment_update_date+"&"+string.Join("&", telephone_ext.Select(z => $"telephone_ext={z}"))+"&"+string.Join("&", analyst_id.Select(z => $"analyst_id={z}"))+"&sort_null_only="+sort_null_only+"&page="+page+"&"+string.Join("&", committee_id.Select(z => $"committee_id={System.Uri.EscapeDataString(z.ToString())}"))+"&sort_nulls_last="+sort_nulls_last+"&sort_hide_null="+sort_hide_null+"&"+string.Join("&", name.Select(z => $"name={System.Uri.EscapeDataString(z.ToString())}"))+"&per_page="+per_page+"&"+string.Join("&", email.Select(z => $"email={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", title.Select(z => $"title={System.Uri.EscapeDataString(z.ToString())}"))+"&sort=" + (sort==null? "" : System.Uri.EscapeDataString(sort))+"&max_assignment_update_date="+max_assignment_update_date+"&"+string.Join("&", analyst_short_id.Select(z => $"analyst_short_id={z}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -20162,7 +20047,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -20276,8 +20160,7 @@ namespace MyNS
 					Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "reporting-dates/?api_key=" + (api_key==null? "" : System.Uri.EscapeDataString(api_key))+"&min_update_date="+min_update_date+"&"+string.Join("&", report_type.Select(z => $"report_type={System.Uri.EscapeDataString(z.ToString())}"))+"&min_due_date="+min_due_date+"&sort_null_only="+sort_null_only+"&page="+page+"&max_due_date="+max_due_date+"&"+string.Join("&", report_year.Select(z => $"report_year={z}"))+"&sort_nulls_last="+sort_nulls_last+"&max_create_date="+max_create_date+"&max_update_date="+max_update_date+"&per_page="+per_page+"&sort_hide_null="+sort_hide_null+"&sort=" + (sort==null? "" : System.Uri.EscapeDataString(sort))+"&min_create_date="+min_create_date;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -20291,7 +20174,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -20523,8 +20405,7 @@ namespace MyNS
 					Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "reports/"+entity_type+"/?max_party_coordinated_expenditures=" + (max_party_coordinated_expenditures==null? "" : System.Uri.EscapeDataString(max_party_coordinated_expenditures))+"&max_debts_owed_expenditures=" + (max_debts_owed_expenditures==null? "" : System.Uri.EscapeDataString(max_debts_owed_expenditures))+"&min_receipts_amount=" + (min_receipts_amount==null? "" : System.Uri.EscapeDataString(min_receipts_amount))+"&min_debts_owed_amount=" + (min_debts_owed_amount==null? "" : System.Uri.EscapeDataString(min_debts_owed_amount))+"&max_receipt_date="+max_receipt_date+"&sort_hide_null="+sort_hide_null+"&candidate_id=" + (candidate_id==null? "" : System.Uri.EscapeDataString(candidate_id))+"&"+string.Join("&", sort.Select(z => $"sort={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", q_spender.Select(z => $"q_spender={System.Uri.EscapeDataString(z.ToString())}"))+"&max_receipts_amount=" + (max_receipts_amount==null? "" : System.Uri.EscapeDataString(max_receipts_amount))+"&filer_type=" + filer_type+"&"+string.Join("&", report_type.Select(z => $"report_type={System.Uri.EscapeDataString(z.ToString())}"))+"&max_total_contributions=" + (max_total_contributions==null? "" : System.Uri.EscapeDataString(max_total_contributions))+"&sort_nulls_last="+sort_nulls_last+"&max_independent_expenditures=" + (max_independent_expenditures==null? "" : System.Uri.EscapeDataString(max_independent_expenditures))+"&min_total_contributions=" + (min_total_contributions==null? "" : System.Uri.EscapeDataString(min_total_contributions))+"&min_party_coordinated_expenditures=" + (min_party_coordinated_expenditures==null? "" : System.Uri.EscapeDataString(min_party_coordinated_expenditures))+"&"+string.Join("&", beginning_image_number.Select(z => $"beginning_image_number={System.Uri.EscapeDataString(z.ToString())}"))+"&min_receipt_date="+min_receipt_date+"&is_amended="+is_amended+"&max_disbursements_amount=" + (max_disbursements_amount==null? "" : System.Uri.EscapeDataString(max_disbursements_amount))+"&max_cash_on_hand_end_period_amount=" + (max_cash_on_hand_end_period_amount==null? "" : System.Uri.EscapeDataString(max_cash_on_hand_end_period_amount))+"&"+string.Join("&", amendment_indicator.Select(z => $"amendment_indicator={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", cycle.Select(z => $"cycle={z}"))+"&sort_null_only="+sort_null_only+"&min_independent_expenditures=" + (min_independent_expenditures==null? "" : System.Uri.EscapeDataString(min_independent_expenditures))+"&per_page="+per_page+"&"+string.Join("&", q_filer.Select(z => $"q_filer={System.Uri.EscapeDataString(z.ToString())}"))+"&api_key=" + (api_key==null? "" : System.Uri.EscapeDataString(api_key))+"&"+string.Join("&", committee_type.Select(z => $"committee_type={System.Uri.EscapeDataString(z.ToString())}"))+"&page="+page+"&"+string.Join("&", year.Select(z => $"year={z}"))+"&"+string.Join("&", committee_id.Select(z => $"committee_id={System.Uri.EscapeDataString(z.ToString())}"))+"&min_cash_on_hand_end_period_amount=" + (min_cash_on_hand_end_period_amount==null? "" : System.Uri.EscapeDataString(min_cash_on_hand_end_period_amount))+"&min_disbursements_amount=" + (min_disbursements_amount==null? "" : System.Uri.EscapeDataString(min_disbursements_amount))+"&most_recent="+most_recent;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -20538,7 +20419,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -20701,8 +20581,7 @@ namespace MyNS
 					Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "schedules/schedule_a/?is_individual="+is_individual+"&min_date="+min_date+"&max_image_number=" + (max_image_number==null? "" : System.Uri.EscapeDataString(max_image_number))+"&min_image_number=" + (min_image_number==null? "" : System.Uri.EscapeDataString(min_image_number))+"&"+string.Join("&", contributor_type.Select(z => $"contributor_type={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", contributor_id.Select(z => $"contributor_id={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", recipient_committee_org_type.Select(z => $"recipient_committee_org_type={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", contributor_employer.Select(z => $"contributor_employer={System.Uri.EscapeDataString(z.ToString())}"))+"&sort_null_only="+sort_null_only+"&last_index="+last_index+"&"+string.Join("&", contributor_name.Select(z => $"contributor_name={System.Uri.EscapeDataString(z.ToString())}"))+"&min_amount=" + (min_amount==null? "" : System.Uri.EscapeDataString(min_amount))+"&sort_hide_null="+sort_hide_null+"&"+string.Join("&", recipient_committee_designation.Select(z => $"recipient_committee_designation={System.Uri.EscapeDataString(z.ToString())}"))+"&max_load_date="+max_load_date+"&"+string.Join("&", recipient_committee_type.Select(z => $"recipient_committee_type={System.Uri.EscapeDataString(z.ToString())}"))+"&sort=" + (sort==null? "" : System.Uri.EscapeDataString(sort))+"&last_contribution_receipt_date="+last_contribution_receipt_date+"&last_contribution_receipt_amount="+last_contribution_receipt_amount+"&line_number=" + (line_number==null? "" : System.Uri.EscapeDataString(line_number))+"&"+string.Join("&", contributor_state.Select(z => $"contributor_state={System.Uri.EscapeDataString(z.ToString())}"))+"&per_page="+per_page+"&api_key=" + (api_key==null? "" : System.Uri.EscapeDataString(api_key))+"&"+string.Join("&", two_year_transaction_period.Select(z => $"two_year_transaction_period={z}"))+"&"+string.Join("&", contributor_zip.Select(z => $"contributor_zip={System.Uri.EscapeDataString(z.ToString())}"))+"&min_load_date="+min_load_date+"&"+string.Join("&", contributor_occupation.Select(z => $"contributor_occupation={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", contributor_city.Select(z => $"contributor_city={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", committee_id.Select(z => $"committee_id={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", image_number.Select(z => $"image_number={System.Uri.EscapeDataString(z.ToString())}"))+"&max_date="+max_date+"&max_amount=" + (max_amount==null? "" : System.Uri.EscapeDataString(max_amount));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -20716,7 +20595,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -20748,8 +20626,7 @@ namespace MyNS
 		public async Task SchedulesSchedule_aBy_employerGetByApi_keyAndCycleAndSort_nulls_lastAndPageAndCommittee_idAndSort_null_onlyAndSort_hide_nullAndEmployerAndPer_pageAndSortAsync(string api_key, int[] cycle, bool sort_nulls_last, int page, string[] committee_id, bool sort_null_only, bool sort_hide_null, string[] employer, int per_page, string sort, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "schedules/schedule_a/by_employer/?api_key=" + (api_key==null? "" : System.Uri.EscapeDataString(api_key))+"&"+string.Join("&", cycle.Select(z => $"cycle={z}"))+"&sort_nulls_last="+sort_nulls_last+"&page="+page+"&"+string.Join("&", committee_id.Select(z => $"committee_id={System.Uri.EscapeDataString(z.ToString())}"))+"&sort_null_only="+sort_null_only+"&sort_hide_null="+sort_hide_null+"&"+string.Join("&", employer.Select(z => $"employer={System.Uri.EscapeDataString(z.ToString())}"))+"&per_page="+per_page+"&sort=" + (sort==null? "" : System.Uri.EscapeDataString(sort));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -20763,7 +20640,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -20795,8 +20671,7 @@ namespace MyNS
 		public async Task SchedulesSchedule_aBy_occupationGetByApi_keyAndCycleAndSort_nulls_lastAndPageAndCommittee_idAndSort_null_onlyAndOccupationAndSort_hide_nullAndPer_pageAndSortAsync(string api_key, int[] cycle, bool sort_nulls_last, int page, string[] committee_id, bool sort_null_only, string[] occupation, bool sort_hide_null, int per_page, string sort, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "schedules/schedule_a/by_occupation/?api_key=" + (api_key==null? "" : System.Uri.EscapeDataString(api_key))+"&"+string.Join("&", cycle.Select(z => $"cycle={z}"))+"&sort_nulls_last="+sort_nulls_last+"&page="+page+"&"+string.Join("&", committee_id.Select(z => $"committee_id={System.Uri.EscapeDataString(z.ToString())}"))+"&sort_null_only="+sort_null_only+"&"+string.Join("&", occupation.Select(z => $"occupation={System.Uri.EscapeDataString(z.ToString())}"))+"&sort_hide_null="+sort_hide_null+"&per_page="+per_page+"&sort=" + (sort==null? "" : System.Uri.EscapeDataString(sort));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -20810,7 +20685,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -20862,8 +20736,7 @@ namespace MyNS
 		public async Task SchedulesSchedule_aBy_sizeGetByApi_keyAndCycleAndSort_nulls_lastAndPageAndCommittee_idAndSort_null_onlyAndSizeAndSort_hide_nullAndPer_pageAndSortAsync(string api_key, int[] cycle, bool sort_nulls_last, int page, string[] committee_id, bool sort_null_only, int[] size, bool sort_hide_null, int per_page, string sort, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "schedules/schedule_a/by_size/?api_key=" + (api_key==null? "" : System.Uri.EscapeDataString(api_key))+"&"+string.Join("&", cycle.Select(z => $"cycle={z}"))+"&sort_nulls_last="+sort_nulls_last+"&page="+page+"&"+string.Join("&", committee_id.Select(z => $"committee_id={System.Uri.EscapeDataString(z.ToString())}"))+"&sort_null_only="+sort_null_only+"&"+string.Join("&", size.Select(z => $"size={z}"))+"&sort_hide_null="+sort_hide_null+"&per_page="+per_page+"&sort=" + (sort==null? "" : System.Uri.EscapeDataString(sort));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -20877,7 +20750,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -20917,8 +20789,7 @@ namespace MyNS
 		public async Task SchedulesSchedule_aBy_sizeBy_candidateGetByApi_keyAndElection_fullAndCycleAndSort_null_onlyAndSort_nulls_lastAndPageAndSort_hide_nullAndCandidate_idAndPer_pageAndSortAsync(string api_key, bool election_full, int[] cycle, bool sort_null_only, bool sort_nulls_last, int page, bool sort_hide_null, string[] candidate_id, int per_page, string sort, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "schedules/schedule_a/by_size/by_candidate/?api_key=" + (api_key==null? "" : System.Uri.EscapeDataString(api_key))+"&election_full="+election_full+"&"+string.Join("&", cycle.Select(z => $"cycle={z}"))+"&sort_null_only="+sort_null_only+"&sort_nulls_last="+sort_nulls_last+"&page="+page+"&sort_hide_null="+sort_hide_null+"&"+string.Join("&", candidate_id.Select(z => $"candidate_id={System.Uri.EscapeDataString(z.ToString())}"))+"&per_page="+per_page+"&sort=" + (sort==null? "" : System.Uri.EscapeDataString(sort));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -20932,7 +20803,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -20965,8 +20835,7 @@ namespace MyNS
 		public async Task SchedulesSchedule_aBy_stateGetByApi_keyAndHide_nullAndCycleAndSort_null_onlyAndPageAndStateAndCommittee_idAndSort_nulls_lastAndSort_hide_nullAndPer_pageAndSortAsync(string api_key, bool hide_null, int[] cycle, bool sort_null_only, int page, string[] state, string[] committee_id, bool sort_nulls_last, bool sort_hide_null, int per_page, string sort, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "schedules/schedule_a/by_state/?api_key=" + (api_key==null? "" : System.Uri.EscapeDataString(api_key))+"&hide_null="+hide_null+"&"+string.Join("&", cycle.Select(z => $"cycle={z}"))+"&sort_null_only="+sort_null_only+"&page="+page+"&"+string.Join("&", state.Select(z => $"state={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", committee_id.Select(z => $"committee_id={System.Uri.EscapeDataString(z.ToString())}"))+"&sort_nulls_last="+sort_nulls_last+"&sort_hide_null="+sort_hide_null+"&per_page="+per_page+"&sort=" + (sort==null? "" : System.Uri.EscapeDataString(sort));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -20980,7 +20849,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -21020,8 +20888,7 @@ namespace MyNS
 		public async Task SchedulesSchedule_aBy_stateBy_candidateGetByApi_keyAndElection_fullAndCycleAndSort_null_onlyAndSort_nulls_lastAndPageAndSort_hide_nullAndCandidate_idAndPer_pageAndSortAsync(string api_key, bool election_full, int[] cycle, bool sort_null_only, bool sort_nulls_last, int page, bool sort_hide_null, string[] candidate_id, int per_page, string sort, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "schedules/schedule_a/by_state/by_candidate/?api_key=" + (api_key==null? "" : System.Uri.EscapeDataString(api_key))+"&election_full="+election_full+"&"+string.Join("&", cycle.Select(z => $"cycle={z}"))+"&sort_null_only="+sort_null_only+"&sort_nulls_last="+sort_nulls_last+"&page="+page+"&sort_hide_null="+sort_hide_null+"&"+string.Join("&", candidate_id.Select(z => $"candidate_id={System.Uri.EscapeDataString(z.ToString())}"))+"&per_page="+per_page+"&sort=" + (sort==null? "" : System.Uri.EscapeDataString(sort));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -21035,7 +20902,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -21076,8 +20942,7 @@ namespace MyNS
 		public async Task SchedulesSchedule_aBy_stateBy_candidateTotalsGetByApi_keyAndElection_fullAndCycleAndSort_null_onlyAndSort_nulls_lastAndPageAndSort_hide_nullAndCandidate_idAndPer_pageAndSortAsync(string api_key, bool election_full, int[] cycle, bool sort_null_only, bool sort_nulls_last, int page, bool sort_hide_null, string[] candidate_id, int per_page, string sort, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "schedules/schedule_a/by_state/by_candidate/totals/?api_key=" + (api_key==null? "" : System.Uri.EscapeDataString(api_key))+"&election_full="+election_full+"&"+string.Join("&", cycle.Select(z => $"cycle={z}"))+"&sort_null_only="+sort_null_only+"&sort_nulls_last="+sort_nulls_last+"&page="+page+"&sort_hide_null="+sort_hide_null+"&"+string.Join("&", candidate_id.Select(z => $"candidate_id={System.Uri.EscapeDataString(z.ToString())}"))+"&per_page="+per_page+"&sort=" + (sort==null? "" : System.Uri.EscapeDataString(sort));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -21091,7 +20956,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -21141,8 +21005,7 @@ namespace MyNS
 		public async Task SchedulesSchedule_aBy_stateTotalsGetByApi_keyAndCommittee_typeAndCycleAndSort_null_onlyAndPageAndStateAndSort_nulls_lastAndSort_hide_nullAndPer_pageAndSortAsync(string api_key, string[] committee_type, int[] cycle, bool sort_null_only, int page, string[] state, bool sort_nulls_last, bool sort_hide_null, int per_page, string sort, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "schedules/schedule_a/by_state/totals/?api_key=" + (api_key==null? "" : System.Uri.EscapeDataString(api_key))+"&"+string.Join("&", committee_type.Select(z => $"committee_type={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", cycle.Select(z => $"cycle={z}"))+"&sort_null_only="+sort_null_only+"&page="+page+"&"+string.Join("&", state.Select(z => $"state={System.Uri.EscapeDataString(z.ToString())}"))+"&sort_nulls_last="+sort_nulls_last+"&sort_hide_null="+sort_hide_null+"&per_page="+per_page+"&sort=" + (sort==null? "" : System.Uri.EscapeDataString(sort));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -21156,7 +21019,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -21189,8 +21051,7 @@ namespace MyNS
 		public async Task SchedulesSchedule_aBy_zipGetByZipAndApi_keyAndCycleAndSort_null_onlyAndPageAndStateAndCommittee_idAndSort_nulls_lastAndSort_hide_nullAndPer_pageAndSortAsync(string[] zip, string api_key, int[] cycle, bool sort_null_only, int page, string[] state, string[] committee_id, bool sort_nulls_last, bool sort_hide_null, int per_page, string sort, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "schedules/schedule_a/by_zip/?"+string.Join("&", zip.Select(z => $"zip={System.Uri.EscapeDataString(z.ToString())}"))+"&api_key=" + (api_key==null? "" : System.Uri.EscapeDataString(api_key))+"&"+string.Join("&", cycle.Select(z => $"cycle={z}"))+"&sort_null_only="+sort_null_only+"&page="+page+"&"+string.Join("&", state.Select(z => $"state={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", committee_id.Select(z => $"committee_id={System.Uri.EscapeDataString(z.ToString())}"))+"&sort_nulls_last="+sort_nulls_last+"&sort_hide_null="+sort_hide_null+"&per_page="+per_page+"&sort=" + (sort==null? "" : System.Uri.EscapeDataString(sort));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -21204,7 +21065,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -21267,8 +21127,7 @@ namespace MyNS
 					Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "schedules/schedule_a/efile/?min_date="+min_date+"&max_image_number=" + (max_image_number==null? "" : System.Uri.EscapeDataString(max_image_number))+"&"+string.Join("&", contributor_employer.Select(z => $"contributor_employer={System.Uri.EscapeDataString(z.ToString())}"))+"&min_image_number=" + (min_image_number==null? "" : System.Uri.EscapeDataString(min_image_number))+"&sort_null_only="+sort_null_only+"&sort_hide_null="+sort_hide_null+"&"+string.Join("&", contributor_name.Select(z => $"contributor_name={System.Uri.EscapeDataString(z.ToString())}"))+"&min_amount=" + (min_amount==null? "" : System.Uri.EscapeDataString(min_amount))+"&per_page="+per_page+"&"+string.Join("&", contributor_state.Select(z => $"contributor_state={System.Uri.EscapeDataString(z.ToString())}"))+"&sort=" + (sort==null? "" : System.Uri.EscapeDataString(sort))+"&line_number=" + (line_number==null? "" : System.Uri.EscapeDataString(line_number))+"&api_key=" + (api_key==null? "" : System.Uri.EscapeDataString(api_key))+"&"+string.Join("&", contributor_occupation.Select(z => $"contributor_occupation={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", contributor_city.Select(z => $"contributor_city={System.Uri.EscapeDataString(z.ToString())}"))+"&sort_nulls_last="+sort_nulls_last+"&page="+page+"&"+string.Join("&", committee_id.Select(z => $"committee_id={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", image_number.Select(z => $"image_number={System.Uri.EscapeDataString(z.ToString())}"))+"&max_date="+max_date+"&max_amount=" + (max_amount==null? "" : System.Uri.EscapeDataString(max_amount));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -21282,7 +21141,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -21446,8 +21304,7 @@ namespace MyNS
 					Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "schedules/schedule_a/"+ (sub_id==null? "" : System.Uri.EscapeDataString(sub_id))+"/?is_individual="+is_individual+"&min_date="+min_date+"&max_image_number=" + (max_image_number==null? "" : System.Uri.EscapeDataString(max_image_number))+"&min_image_number=" + (min_image_number==null? "" : System.Uri.EscapeDataString(min_image_number))+"&"+string.Join("&", contributor_type.Select(z => $"contributor_type={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", contributor_id.Select(z => $"contributor_id={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", recipient_committee_org_type.Select(z => $"recipient_committee_org_type={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", contributor_employer.Select(z => $"contributor_employer={System.Uri.EscapeDataString(z.ToString())}"))+"&sort_null_only="+sort_null_only+"&last_index="+last_index+"&"+string.Join("&", contributor_name.Select(z => $"contributor_name={System.Uri.EscapeDataString(z.ToString())}"))+"&min_amount=" + (min_amount==null? "" : System.Uri.EscapeDataString(min_amount))+"&sort_hide_null="+sort_hide_null+"&"+string.Join("&", recipient_committee_designation.Select(z => $"recipient_committee_designation={System.Uri.EscapeDataString(z.ToString())}"))+"&max_load_date="+max_load_date+"&"+string.Join("&", recipient_committee_type.Select(z => $"recipient_committee_type={System.Uri.EscapeDataString(z.ToString())}"))+"&sort=" + (sort==null? "" : System.Uri.EscapeDataString(sort))+"&last_contribution_receipt_date="+last_contribution_receipt_date+"&last_contribution_receipt_amount="+last_contribution_receipt_amount+"&line_number=" + (line_number==null? "" : System.Uri.EscapeDataString(line_number))+"&"+string.Join("&", contributor_state.Select(z => $"contributor_state={System.Uri.EscapeDataString(z.ToString())}"))+"&per_page="+per_page+"&api_key=" + (api_key==null? "" : System.Uri.EscapeDataString(api_key))+"&"+string.Join("&", two_year_transaction_period.Select(z => $"two_year_transaction_period={z}"))+"&"+string.Join("&", contributor_zip.Select(z => $"contributor_zip={System.Uri.EscapeDataString(z.ToString())}"))+"&min_load_date="+min_load_date+"&"+string.Join("&", contributor_occupation.Select(z => $"contributor_occupation={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", contributor_city.Select(z => $"contributor_city={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", committee_id.Select(z => $"committee_id={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", image_number.Select(z => $"image_number={System.Uri.EscapeDataString(z.ToString())}"))+"&max_date="+max_date+"&max_amount=" + (max_amount==null? "" : System.Uri.EscapeDataString(max_amount));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -21461,7 +21318,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -21610,8 +21466,7 @@ namespace MyNS
 					Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "schedules/schedule_b/?min_date="+min_date+"&"+string.Join("&", spender_committee_designation.Select(z => $"spender_committee_designation={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", recipient_committee_id.Select(z => $"recipient_committee_id={System.Uri.EscapeDataString(z.ToString())}"))+"&last_disbursement_date="+last_disbursement_date+"&max_image_number=" + (max_image_number==null? "" : System.Uri.EscapeDataString(max_image_number))+"&"+string.Join("&", disbursement_description.Select(z => $"disbursement_description={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", disbursement_purpose_category.Select(z => $"disbursement_purpose_category={System.Uri.EscapeDataString(z.ToString())}"))+"&min_image_number=" + (min_image_number==null? "" : System.Uri.EscapeDataString(min_image_number))+"&sort_null_only="+sort_null_only+"&last_index="+last_index+"&sort_hide_null="+sort_hide_null+"&min_amount=" + (min_amount==null? "" : System.Uri.EscapeDataString(min_amount))+"&per_page="+per_page+"&line_number=" + (line_number==null? "" : System.Uri.EscapeDataString(line_number))+"&sort=" + (sort==null? "" : System.Uri.EscapeDataString(sort))+"&"+string.Join("&", recipient_city.Select(z => $"recipient_city={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", spender_committee_type.Select(z => $"spender_committee_type={System.Uri.EscapeDataString(z.ToString())}"))+"&last_disbursement_amount="+last_disbursement_amount+"&"+string.Join("&", spender_committee_org_type.Select(z => $"spender_committee_org_type={System.Uri.EscapeDataString(z.ToString())}"))+"&api_key=" + (api_key==null? "" : System.Uri.EscapeDataString(api_key))+"&"+string.Join("&", two_year_transaction_period.Select(z => $"two_year_transaction_period={z}"))+"&"+string.Join("&", committee_id.Select(z => $"committee_id={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", image_number.Select(z => $"image_number={System.Uri.EscapeDataString(z.ToString())}"))+"&max_date="+max_date+"&"+string.Join("&", recipient_name.Select(z => $"recipient_name={System.Uri.EscapeDataString(z.ToString())}"))+"&max_amount=" + (max_amount==null? "" : System.Uri.EscapeDataString(max_amount))+"&"+string.Join("&", recipient_state.Select(z => $"recipient_state={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -21625,7 +21480,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -21660,8 +21514,7 @@ namespace MyNS
 		public async Task SchedulesSchedule_bBy_purposeGetByApi_keyAndPurposeAndCycleAndSort_null_onlyAndPageAndCommittee_idAndSort_nulls_lastAndSort_hide_nullAndPer_pageAndSortAsync(string api_key, string[] purpose, int[] cycle, bool sort_null_only, int page, string[] committee_id, bool sort_nulls_last, bool sort_hide_null, int per_page, string sort, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "schedules/schedule_b/by_purpose/?api_key=" + (api_key==null? "" : System.Uri.EscapeDataString(api_key))+"&"+string.Join("&", purpose.Select(z => $"purpose={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", cycle.Select(z => $"cycle={z}"))+"&sort_null_only="+sort_null_only+"&page="+page+"&"+string.Join("&", committee_id.Select(z => $"committee_id={System.Uri.EscapeDataString(z.ToString())}"))+"&sort_nulls_last="+sort_nulls_last+"&sort_hide_null="+sort_hide_null+"&per_page="+per_page+"&sort=" + (sort==null? "" : System.Uri.EscapeDataString(sort));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -21675,7 +21528,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -21708,8 +21560,7 @@ namespace MyNS
 		public async Task SchedulesSchedule_bBy_recipientGetByApi_keyAndRecipient_nameAndCycleAndSort_null_onlyAndPageAndCommittee_idAndSort_nulls_lastAndSort_hide_nullAndPer_pageAndSortAsync(string api_key, string[] recipient_name, int[] cycle, bool sort_null_only, int page, string[] committee_id, bool sort_nulls_last, bool sort_hide_null, int per_page, string sort, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "schedules/schedule_b/by_recipient/?api_key=" + (api_key==null? "" : System.Uri.EscapeDataString(api_key))+"&"+string.Join("&", recipient_name.Select(z => $"recipient_name={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", cycle.Select(z => $"cycle={z}"))+"&sort_null_only="+sort_null_only+"&page="+page+"&"+string.Join("&", committee_id.Select(z => $"committee_id={System.Uri.EscapeDataString(z.ToString())}"))+"&sort_nulls_last="+sort_nulls_last+"&sort_hide_null="+sort_hide_null+"&per_page="+per_page+"&sort=" + (sort==null? "" : System.Uri.EscapeDataString(sort));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -21723,7 +21574,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -21756,8 +21606,7 @@ namespace MyNS
 		public async Task SchedulesSchedule_bBy_recipient_idGetByApi_keyAndCycleAndSort_nulls_lastAndPageAndCommittee_idAndSort_null_onlyAndRecipient_idAndSort_hide_nullAndPer_pageAndSortAsync(string api_key, int[] cycle, bool sort_nulls_last, int page, string[] committee_id, bool sort_null_only, string[] recipient_id, bool sort_hide_null, int per_page, string sort, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "schedules/schedule_b/by_recipient_id/?api_key=" + (api_key==null? "" : System.Uri.EscapeDataString(api_key))+"&"+string.Join("&", cycle.Select(z => $"cycle={z}"))+"&sort_nulls_last="+sort_nulls_last+"&page="+page+"&"+string.Join("&", committee_id.Select(z => $"committee_id={System.Uri.EscapeDataString(z.ToString())}"))+"&sort_null_only="+sort_null_only+"&"+string.Join("&", recipient_id.Select(z => $"recipient_id={System.Uri.EscapeDataString(z.ToString())}"))+"&sort_hide_null="+sort_hide_null+"&per_page="+per_page+"&sort=" + (sort==null? "" : System.Uri.EscapeDataString(sort));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -21771,7 +21620,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -21824,8 +21672,7 @@ namespace MyNS
 					Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "schedules/schedule_b/efile/?min_date="+min_date+"&api_key=" + (api_key==null? "" : System.Uri.EscapeDataString(api_key))+"&"+string.Join("&", disbursement_description.Select(z => $"disbursement_description={System.Uri.EscapeDataString(z.ToString())}"))+"&sort_null_only="+sort_null_only+"&page="+page+"&"+string.Join("&", committee_id.Select(z => $"committee_id={System.Uri.EscapeDataString(z.ToString())}"))+"&sort_nulls_last="+sort_nulls_last+"&"+string.Join("&", image_number.Select(z => $"image_number={System.Uri.EscapeDataString(z.ToString())}"))+"&sort_hide_null="+sort_hide_null+"&max_date="+max_date+"&per_page="+per_page+"&min_amount=" + (min_amount==null? "" : System.Uri.EscapeDataString(min_amount))+"&max_amount=" + (max_amount==null? "" : System.Uri.EscapeDataString(max_amount))+"&sort=" + (sort==null? "" : System.Uri.EscapeDataString(sort))+"&"+string.Join("&", recipient_city.Select(z => $"recipient_city={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", recipient_state.Select(z => $"recipient_state={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -21839,7 +21686,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -21989,8 +21835,7 @@ namespace MyNS
 					Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "schedules/schedule_b/"+ (sub_id==null? "" : System.Uri.EscapeDataString(sub_id))+"/?min_date="+min_date+"&"+string.Join("&", spender_committee_designation.Select(z => $"spender_committee_designation={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", recipient_committee_id.Select(z => $"recipient_committee_id={System.Uri.EscapeDataString(z.ToString())}"))+"&last_disbursement_date="+last_disbursement_date+"&max_image_number=" + (max_image_number==null? "" : System.Uri.EscapeDataString(max_image_number))+"&"+string.Join("&", disbursement_description.Select(z => $"disbursement_description={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", disbursement_purpose_category.Select(z => $"disbursement_purpose_category={System.Uri.EscapeDataString(z.ToString())}"))+"&min_image_number=" + (min_image_number==null? "" : System.Uri.EscapeDataString(min_image_number))+"&sort_null_only="+sort_null_only+"&last_index="+last_index+"&sort_hide_null="+sort_hide_null+"&min_amount=" + (min_amount==null? "" : System.Uri.EscapeDataString(min_amount))+"&per_page="+per_page+"&line_number=" + (line_number==null? "" : System.Uri.EscapeDataString(line_number))+"&sort=" + (sort==null? "" : System.Uri.EscapeDataString(sort))+"&"+string.Join("&", recipient_city.Select(z => $"recipient_city={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", spender_committee_type.Select(z => $"spender_committee_type={System.Uri.EscapeDataString(z.ToString())}"))+"&last_disbursement_amount="+last_disbursement_amount+"&"+string.Join("&", spender_committee_org_type.Select(z => $"spender_committee_org_type={System.Uri.EscapeDataString(z.ToString())}"))+"&api_key=" + (api_key==null? "" : System.Uri.EscapeDataString(api_key))+"&"+string.Join("&", two_year_transaction_period.Select(z => $"two_year_transaction_period={z}"))+"&"+string.Join("&", committee_id.Select(z => $"committee_id={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", image_number.Select(z => $"image_number={System.Uri.EscapeDataString(z.ToString())}"))+"&max_date="+max_date+"&"+string.Join("&", recipient_name.Select(z => $"recipient_name={System.Uri.EscapeDataString(z.ToString())}"))+"&max_amount=" + (max_amount==null? "" : System.Uri.EscapeDataString(max_amount))+"&"+string.Join("&", recipient_state.Select(z => $"recipient_state={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -22004,7 +21849,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -22086,8 +21930,7 @@ namespace MyNS
 					Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "schedules/schedule_c/?min_payment_to_date="+min_payment_to_date+"&max_image_number=" + (max_image_number==null? "" : System.Uri.EscapeDataString(max_image_number))+"&min_image_number=" + (min_image_number==null? "" : System.Uri.EscapeDataString(min_image_number))+"&max_incurred_date="+max_incurred_date+"&sort_null_only="+sort_null_only+"&last_index="+last_index+"&sort_hide_null="+sort_hide_null+"&min_amount=" + (min_amount==null? "" : System.Uri.EscapeDataString(min_amount))+"&per_page="+per_page+"&"+string.Join("&", loan_source_name.Select(z => $"loan_source_name={System.Uri.EscapeDataString(z.ToString())}"))+"&line_number=" + (line_number==null? "" : System.Uri.EscapeDataString(line_number))+"&sort=" + (sort==null? "" : System.Uri.EscapeDataString(sort))+"&max_payment_to_date="+max_payment_to_date+"&"+string.Join("&", candidate_name.Select(z => $"candidate_name={System.Uri.EscapeDataString(z.ToString())}"))+"&api_key=" + (api_key==null? "" : System.Uri.EscapeDataString(api_key))+"&sort_nulls_last="+sort_nulls_last+"&page="+page+"&"+string.Join("&", committee_id.Select(z => $"committee_id={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", image_number.Select(z => $"image_number={System.Uri.EscapeDataString(z.ToString())}"))+"&min_incurred_date="+min_incurred_date+"&max_amount=" + (max_amount==null? "" : System.Uri.EscapeDataString(max_amount));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -22101,7 +21944,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -22127,8 +21969,7 @@ namespace MyNS
 		public async Task SchedulesSchedule_c_sub_idGetByPageAndApi_keyAndSort_hide_nullAndPer_pageAndSort_null_onlyAndSortAndSort_nulls_lastAsync(int page, string api_key, bool sort_hide_null, int per_page, bool sort_null_only, string sort, bool sort_nulls_last, string sub_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "schedules/schedule_c/"+ (sub_id==null? "" : System.Uri.EscapeDataString(sub_id))+"/?page="+page+"&api_key=" + (api_key==null? "" : System.Uri.EscapeDataString(api_key))+"&sort_hide_null="+sort_hide_null+"&per_page="+per_page+"&sort_null_only="+sort_null_only+"&sort=" + (sort==null? "" : System.Uri.EscapeDataString(sort))+"&sort_nulls_last="+sort_nulls_last;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -22142,7 +21983,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -22213,8 +22053,7 @@ namespace MyNS
 					Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "schedules/schedule_d/?max_payment_period="+max_payment_period+"&min_date="+min_date+"&max_image_number=" + (max_image_number==null? "" : System.Uri.EscapeDataString(max_image_number))+"&max_amount_outstanding_close="+max_amount_outstanding_close+"&min_image_number=" + (min_image_number==null? "" : System.Uri.EscapeDataString(min_image_number))+"&sort_null_only="+sort_null_only+"&min_payment_period="+min_payment_period+"&min_amount_incurred="+min_amount_incurred+"&"+string.Join("&", creditor_debtor_name.Select(z => $"creditor_debtor_name={System.Uri.EscapeDataString(z.ToString())}"))+"&sort_hide_null="+sort_hide_null+"&"+string.Join("&", candidate_id.Select(z => $"candidate_id={System.Uri.EscapeDataString(z.ToString())}"))+"&per_page="+per_page+"&min_amount_outstanding_beginning="+min_amount_outstanding_beginning+"&sort=" + (sort==null? "" : System.Uri.EscapeDataString(sort))+"&min_amount_outstanding_close="+min_amount_outstanding_close+"&api_key=" + (api_key==null? "" : System.Uri.EscapeDataString(api_key))+"&nature_of_debt=" + (nature_of_debt==null? "" : System.Uri.EscapeDataString(nature_of_debt))+"&max_amount_incurred="+max_amount_incurred+"&sort_nulls_last="+sort_nulls_last+"&page="+page+"&"+string.Join("&", committee_id.Select(z => $"committee_id={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", image_number.Select(z => $"image_number={System.Uri.EscapeDataString(z.ToString())}"))+"&max_date="+max_date+"&max_amount_outstanding_beginning="+max_amount_outstanding_beginning;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -22228,7 +22067,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -22254,8 +22092,7 @@ namespace MyNS
 		public async Task SchedulesSchedule_d_sub_idGetByPageAndApi_keyAndSort_hide_nullAndPer_pageAndSort_null_onlyAndSortAndSort_nulls_lastAsync(int page, string api_key, bool sort_hide_null, int per_page, bool sort_null_only, string sort, bool sort_nulls_last, string sub_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "schedules/schedule_d/"+ (sub_id==null? "" : System.Uri.EscapeDataString(sub_id))+"/?page="+page+"&api_key=" + (api_key==null? "" : System.Uri.EscapeDataString(api_key))+"&sort_hide_null="+sort_hide_null+"&per_page="+per_page+"&sort_null_only="+sort_null_only+"&sort=" + (sort==null? "" : System.Uri.EscapeDataString(sort))+"&sort_nulls_last="+sort_nulls_last;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -22269,7 +22106,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -22464,8 +22300,7 @@ namespace MyNS
 					Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "schedules/schedule_e/?last_expenditure_date="+last_expenditure_date+"&max_image_number=" + (max_image_number==null? "" : System.Uri.EscapeDataString(max_image_number))+"&"+string.Join("&", is_notice.Select(z => $"is_notice={z}"))+"&"+string.Join("&", payee_name.Select(z => $"payee_name={System.Uri.EscapeDataString(z.ToString())}"))+"&min_amount=" + (min_amount==null? "" : System.Uri.EscapeDataString(min_amount))+"&"+string.Join("&", candidate_id.Select(z => $"candidate_id={System.Uri.EscapeDataString(z.ToString())}"))+"&sort_hide_null="+sort_hide_null+"&last_office_total_ytd="+last_office_total_ytd+"&sort=" + (sort==null? "" : System.Uri.EscapeDataString(sort))+"&min_filing_date="+min_filing_date+"&"+string.Join("&", q_spender.Select(z => $"q_spender={System.Uri.EscapeDataString(z.ToString())}"))+"&min_dissemination_date="+min_dissemination_date+"&"+string.Join("&", candidate_office_state.Select(z => $"candidate_office_state={System.Uri.EscapeDataString(z.ToString())}"))+"&sort_nulls_last="+sort_nulls_last+"&last_expenditure_amount="+last_expenditure_amount+"&"+string.Join("&", image_number.Select(z => $"image_number={System.Uri.EscapeDataString(z.ToString())}"))+"&max_date="+max_date+"&max_dissemination_date="+max_dissemination_date+"&min_date="+min_date+"&"+string.Join("&", filing_form.Select(z => $"filing_form={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", support_oppose_indicator.Select(z => $"support_oppose_indicator={z}"))+"&min_image_number=" + (min_image_number==null? "" : System.Uri.EscapeDataString(min_image_number))+"&"+string.Join("&", cycle.Select(z => $"cycle={z}"))+"&max_filing_date="+max_filing_date+"&sort_null_only="+sort_null_only+"&last_support_oppose_indicator=" + (last_support_oppose_indicator==null? "" : System.Uri.EscapeDataString(last_support_oppose_indicator))+"&last_index="+last_index+"&per_page="+per_page+"&"+string.Join("&", candidate_office_district.Select(z => $"candidate_office_district={System.Uri.EscapeDataString(z.ToString())}"))+"&line_number=" + (line_number==null? "" : System.Uri.EscapeDataString(line_number))+"&api_key=" + (api_key==null? "" : System.Uri.EscapeDataString(api_key))+"&"+string.Join("&", committee_id.Select(z => $"committee_id={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", candidate_party.Select(z => $"candidate_party={System.Uri.EscapeDataString(z.ToString())}"))+"&max_amount=" + (max_amount==null? "" : System.Uri.EscapeDataString(max_amount))+"&most_recent="+most_recent+"&"+string.Join("&", candidate_office.Select(z => $"candidate_office={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -22479,7 +22314,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -22543,8 +22377,7 @@ namespace MyNS
 					Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "schedules/schedule_e/by_candidate/?district=" + (district==null? "" : System.Uri.EscapeDataString(district))+"&api_key=" + (api_key==null? "" : System.Uri.EscapeDataString(api_key))+"&support_oppose=" + support_oppose+"&election_full="+election_full+"&"+string.Join("&", cycle.Select(z => $"cycle={z}"))+"&sort_null_only="+sort_null_only+"&page="+page+"&state=" + (state==null? "" : System.Uri.EscapeDataString(state))+"&"+string.Join("&", committee_id.Select(z => $"committee_id={System.Uri.EscapeDataString(z.ToString())}"))+"&sort_nulls_last="+sort_nulls_last+"&sort_hide_null="+sort_hide_null+"&"+string.Join("&", candidate_id.Select(z => $"candidate_id={System.Uri.EscapeDataString(z.ToString())}"))+"&per_page="+per_page+"&office=" + office+"&sort=" + (sort==null? "" : System.Uri.EscapeDataString(sort));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -22558,7 +22391,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -22671,8 +22503,7 @@ namespace MyNS
 					Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "schedules/schedule_e/efile/?max_expenditure_amount="+max_expenditure_amount+"&"+string.Join("&", support_oppose_indicator.Select(z => $"support_oppose_indicator={z}"))+"&min_expenditure_date="+min_expenditure_date+"&"+string.Join("&", filing_form.Select(z => $"filing_form={System.Uri.EscapeDataString(z.ToString())}"))+"&max_expenditure_date="+max_expenditure_date+"&max_filed_date="+max_filed_date+"&is_notice="+is_notice+"&sort_null_only="+sort_null_only+"&sort_hide_null="+sort_hide_null+"&"+string.Join("&", payee_name.Select(z => $"payee_name={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", candidate_id.Select(z => $"candidate_id={System.Uri.EscapeDataString(z.ToString())}"))+"&per_page="+per_page+"&"+string.Join("&", candidate_office_district.Select(z => $"candidate_office_district={System.Uri.EscapeDataString(z.ToString())}"))+"&sort=" + (sort==null? "" : System.Uri.EscapeDataString(sort))+"&api_key=" + (api_key==null? "" : System.Uri.EscapeDataString(api_key))+"&min_expenditure_amount="+min_expenditure_amount+"&"+string.Join("&", spender_name.Select(z => $"spender_name={System.Uri.EscapeDataString(z.ToString())}"))+"&min_dissemination_date="+min_dissemination_date+"&"+string.Join("&", candidate_office_state.Select(z => $"candidate_office_state={System.Uri.EscapeDataString(z.ToString())}"))+"&sort_nulls_last="+sort_nulls_last+"&page="+page+"&"+string.Join("&", committee_id.Select(z => $"committee_id={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", candidate_search.Select(z => $"candidate_search={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", image_number.Select(z => $"image_number={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", candidate_party.Select(z => $"candidate_party={System.Uri.EscapeDataString(z.ToString())}"))+"&min_filed_date="+min_filed_date+"&max_dissemination_date="+max_dissemination_date+"&most_recent="+most_recent+"&candidate_office=" + candidate_office;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -22686,7 +22517,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -22726,8 +22556,7 @@ namespace MyNS
 		public async Task SchedulesSchedule_eTotalsBy_candidateGetByApi_keyAndElection_fullAndCycleAndSort_nulls_lastAndPageAndSort_null_onlyAndSort_hide_nullAndCandidate_idAndPer_pageAndSortAsync(string api_key, bool election_full, int[] cycle, bool sort_nulls_last, int page, bool sort_null_only, bool sort_hide_null, string[] candidate_id, int per_page, string sort, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "schedules/schedule_e/totals/by_candidate/?api_key=" + (api_key==null? "" : System.Uri.EscapeDataString(api_key))+"&election_full="+election_full+"&"+string.Join("&", cycle.Select(z => $"cycle={z}"))+"&sort_nulls_last="+sort_nulls_last+"&page="+page+"&sort_null_only="+sort_null_only+"&sort_hide_null="+sort_hide_null+"&"+string.Join("&", candidate_id.Select(z => $"candidate_id={System.Uri.EscapeDataString(z.ToString())}"))+"&per_page="+per_page+"&sort=" + (sort==null? "" : System.Uri.EscapeDataString(sort));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -22741,7 +22570,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -22816,8 +22644,7 @@ namespace MyNS
 					Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "schedules/schedule_f/?min_date="+min_date+"&max_image_number=" + (max_image_number==null? "" : System.Uri.EscapeDataString(max_image_number))+"&"+string.Join("&", cycle.Select(z => $"cycle={z}"))+"&min_image_number=" + (min_image_number==null? "" : System.Uri.EscapeDataString(min_image_number))+"&sort_null_only="+sort_null_only+"&"+string.Join("&", payee_name.Select(z => $"payee_name={System.Uri.EscapeDataString(z.ToString())}"))+"&min_amount=" + (min_amount==null? "" : System.Uri.EscapeDataString(min_amount))+"&per_page="+per_page+"&"+string.Join("&", candidate_id.Select(z => $"candidate_id={System.Uri.EscapeDataString(z.ToString())}"))+"&sort_hide_null="+sort_hide_null+"&line_number=" + (line_number==null? "" : System.Uri.EscapeDataString(line_number))+"&sort=" + (sort==null? "" : System.Uri.EscapeDataString(sort))+"&api_key=" + (api_key==null? "" : System.Uri.EscapeDataString(api_key))+"&sort_nulls_last="+sort_nulls_last+"&page="+page+"&"+string.Join("&", committee_id.Select(z => $"committee_id={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", image_number.Select(z => $"image_number={System.Uri.EscapeDataString(z.ToString())}"))+"&max_date="+max_date+"&max_amount=" + (max_amount==null? "" : System.Uri.EscapeDataString(max_amount));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -22831,7 +22658,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -22853,8 +22679,7 @@ namespace MyNS
 		public async Task SchedulesSchedule_f_sub_idGetByPageAndApi_keyAndPer_pageAsync(int page, string api_key, int per_page, string sub_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "schedules/schedule_f/"+ (sub_id==null? "" : System.Uri.EscapeDataString(sub_id))+"/?page="+page+"&api_key=" + (api_key==null? "" : System.Uri.EscapeDataString(api_key))+"&per_page="+per_page;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -22868,7 +22693,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -22898,8 +22722,7 @@ namespace MyNS
 		public async Task State_election_officeGetByPageAndStateAndApi_keyAndSort_hide_nullAndPer_pageAndSort_null_onlyAndSortAndSort_nulls_lastAsync(int page, string state, string api_key, bool sort_hide_null, int per_page, bool sort_null_only, string sort, bool sort_nulls_last, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "state-election-office/?page="+page+"&state=" + (state==null? "" : System.Uri.EscapeDataString(state))+"&api_key=" + (api_key==null? "" : System.Uri.EscapeDataString(api_key))+"&sort_hide_null="+sort_hide_null+"&per_page="+per_page+"&sort_null_only="+sort_null_only+"&sort=" + (sort==null? "" : System.Uri.EscapeDataString(sort))+"&sort_nulls_last="+sort_nulls_last;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -22913,7 +22736,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -22943,8 +22765,7 @@ namespace MyNS
 		public async Task TotalsBy_entityGetByPageAndApi_keyAndSort_hide_nullAndPer_pageAndSort_null_onlyAndSortAndCycleAndSort_nulls_lastAsync(int page, string api_key, bool sort_hide_null, int per_page, bool sort_null_only, string sort, int cycle, bool sort_nulls_last, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "totals/by_entity/?page="+page+"&api_key=" + (api_key==null? "" : System.Uri.EscapeDataString(api_key))+"&sort_hide_null="+sort_hide_null+"&per_page="+per_page+"&sort_null_only="+sort_null_only+"&sort=" + (sort==null? "" : System.Uri.EscapeDataString(sort))+"&cycle="+cycle+"&sort_nulls_last="+sort_nulls_last;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -22958,7 +22779,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -22993,8 +22813,7 @@ namespace MyNS
 		public async Task TotalsInaugural_committeesBy_contributorGetByApi_keyAndCycleAndSort_nulls_lastAndPageAndCommittee_idAndSort_null_onlyAndContributor_nameAndSort_hide_nullAndPer_pageAndSortAsync(string api_key, int[] cycle, bool sort_nulls_last, int page, string[] committee_id, bool sort_null_only, string[] contributor_name, bool sort_hide_null, int per_page, string[] sort, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "totals/inaugural_committees/by_contributor/?api_key=" + (api_key==null? "" : System.Uri.EscapeDataString(api_key))+"&"+string.Join("&", cycle.Select(z => $"cycle={z}"))+"&sort_nulls_last="+sort_nulls_last+"&page="+page+"&"+string.Join("&", committee_id.Select(z => $"committee_id={System.Uri.EscapeDataString(z.ToString())}"))+"&sort_null_only="+sort_null_only+"&"+string.Join("&", contributor_name.Select(z => $"contributor_name={System.Uri.EscapeDataString(z.ToString())}"))+"&sort_hide_null="+sort_hide_null+"&per_page="+per_page+"&"+string.Join("&", sort.Select(z => $"sort={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -23008,7 +22827,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -23150,8 +22968,7 @@ namespace MyNS
 					Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "totals/"+entity_type+"/?"+string.Join("&", treasurer_name.Select(z => $"treasurer_name={System.Uri.EscapeDataString(z.ToString())}"))+"&max_disbursements=" + (max_disbursements==null? "" : System.Uri.EscapeDataString(max_disbursements))+"&"+string.Join("&", committee_state.Select(z => $"committee_state={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", cycle.Select(z => $"cycle={z}"))+"&sort_null_only="+sort_null_only+"&"+string.Join("&", sponsor_candidate_id.Select(z => $"sponsor_candidate_id={System.Uri.EscapeDataString(z.ToString())}"))+"&min_disbursements=" + (min_disbursements==null? "" : System.Uri.EscapeDataString(min_disbursements))+"&min_last_cash_on_hand_end_period=" + (min_last_cash_on_hand_end_period==null? "" : System.Uri.EscapeDataString(min_last_cash_on_hand_end_period))+"&max_last_cash_on_hand_end_period=" + (max_last_cash_on_hand_end_period==null? "" : System.Uri.EscapeDataString(max_last_cash_on_hand_end_period))+"&sort_hide_null="+sort_hide_null+"&per_page="+per_page+"&"+string.Join("&", filing_frequency.Select(z => $"filing_frequency={System.Uri.EscapeDataString(z.ToString())}"))+"&sort=" + (sort==null? "" : System.Uri.EscapeDataString(sort))+"&max_last_debts_owed_by_committee=" + (max_last_debts_owed_by_committee==null? "" : System.Uri.EscapeDataString(max_last_debts_owed_by_committee))+"&min_first_f1_date="+min_first_f1_date+"&"+string.Join("&", committee_designation.Select(z => $"committee_designation={System.Uri.EscapeDataString(z.ToString())}"))+"&api_key=" + (api_key==null? "" : System.Uri.EscapeDataString(api_key))+"&max_receipts=" + (max_receipts==null? "" : System.Uri.EscapeDataString(max_receipts))+"&"+string.Join("&", committee_type.Select(z => $"committee_type={System.Uri.EscapeDataString(z.ToString())}"))+"&sort_nulls_last="+sort_nulls_last+"&page="+page+"&"+string.Join("&", committee_id.Select(z => $"committee_id={System.Uri.EscapeDataString(z.ToString())}"))+"&min_last_debts_owed_by_committee=" + (min_last_debts_owed_by_committee==null? "" : System.Uri.EscapeDataString(min_last_debts_owed_by_committee))+"&max_first_f1_date="+max_first_f1_date+"&"+string.Join("&", organization_type.Select(z => $"organization_type={System.Uri.EscapeDataString(z.ToString())}"))+"&min_receipts=" + (min_receipts==null? "" : System.Uri.EscapeDataString(min_receipts));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -23165,7 +22982,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

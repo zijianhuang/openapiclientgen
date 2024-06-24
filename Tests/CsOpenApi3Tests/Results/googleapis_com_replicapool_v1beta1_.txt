@@ -722,8 +722,7 @@ namespace MyNS
 		public async Task Replicapool_pools_listAsync(string projectName, string zone, int maxResults, string pageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = ""+ (projectName==null? "" : System.Uri.EscapeDataString(projectName))+"/zones/"+ (zone==null? "" : System.Uri.EscapeDataString(zone))+"/pools&maxResults="+maxResults+"&pageToken=" + (pageToken==null? "" : System.Uri.EscapeDataString(pageToken));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -738,7 +737,6 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
-			}
 		}
 		
 		/// <summary>
@@ -751,10 +749,8 @@ namespace MyNS
 		public async Task Replicapool_pools_insertAsync(string projectName, string zone, Pool requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = ""+ (projectName==null? "" : System.Uri.EscapeDataString(projectName))+"/zones/"+ (zone==null? "" : System.Uri.EscapeDataString(zone))+"/pools";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -769,7 +765,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -784,8 +779,7 @@ namespace MyNS
 		public async Task Replicapool_pools_getAsync(string projectName, string zone, string poolName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = ""+ (projectName==null? "" : System.Uri.EscapeDataString(projectName))+"/zones/"+ (zone==null? "" : System.Uri.EscapeDataString(zone))+"/pools/"+ (poolName==null? "" : System.Uri.EscapeDataString(poolName));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -799,7 +793,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -814,10 +807,8 @@ namespace MyNS
 		public async Task Replicapool_pools_deleteAsync(string projectName, string zone, string poolName, PoolsDeleteRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = ""+ (projectName==null? "" : System.Uri.EscapeDataString(projectName))+"/zones/"+ (zone==null? "" : System.Uri.EscapeDataString(zone))+"/pools/"+ (poolName==null? "" : System.Uri.EscapeDataString(poolName));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -832,7 +823,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -852,8 +842,7 @@ namespace MyNS
 		public async Task Replicapool_replicas_listAsync(string projectName, string zone, string poolName, int maxResults, string pageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = ""+ (projectName==null? "" : System.Uri.EscapeDataString(projectName))+"/zones/"+ (zone==null? "" : System.Uri.EscapeDataString(zone))+"/pools/"+ (poolName==null? "" : System.Uri.EscapeDataString(poolName))+"/replicas&maxResults="+maxResults+"&pageToken=" + (pageToken==null? "" : System.Uri.EscapeDataString(pageToken));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -867,7 +856,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -883,8 +871,7 @@ namespace MyNS
 		public async Task Replicapool_replicas_getAsync(string projectName, string zone, string poolName, string replicaName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = ""+ (projectName==null? "" : System.Uri.EscapeDataString(projectName))+"/zones/"+ (zone==null? "" : System.Uri.EscapeDataString(zone))+"/pools/"+ (poolName==null? "" : System.Uri.EscapeDataString(poolName))+"/replicas/"+ (replicaName==null? "" : System.Uri.EscapeDataString(replicaName));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -898,7 +885,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -914,10 +900,8 @@ namespace MyNS
 		public async Task Replicapool_replicas_deleteAsync(string projectName, string zone, string poolName, string replicaName, ReplicasDeleteRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = ""+ (projectName==null? "" : System.Uri.EscapeDataString(projectName))+"/zones/"+ (zone==null? "" : System.Uri.EscapeDataString(zone))+"/pools/"+ (poolName==null? "" : System.Uri.EscapeDataString(poolName))+"/replicas/"+ (replicaName==null? "" : System.Uri.EscapeDataString(replicaName));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -932,7 +916,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -948,8 +931,7 @@ namespace MyNS
 		public async Task Replicapool_replicas_restartAsync(string projectName, string zone, string poolName, string replicaName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = ""+ (projectName==null? "" : System.Uri.EscapeDataString(projectName))+"/zones/"+ (zone==null? "" : System.Uri.EscapeDataString(zone))+"/pools/"+ (poolName==null? "" : System.Uri.EscapeDataString(poolName))+"/replicas/"+ (replicaName==null? "" : System.Uri.EscapeDataString(replicaName))+"/restart";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -958,7 +940,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -974,8 +955,7 @@ namespace MyNS
 		public async Task Replicapool_pools_resizeAsync(string projectName, string zone, string poolName, int numReplicas, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = ""+ (projectName==null? "" : System.Uri.EscapeDataString(projectName))+"/zones/"+ (zone==null? "" : System.Uri.EscapeDataString(zone))+"/pools/"+ (poolName==null? "" : System.Uri.EscapeDataString(poolName))+"/resize&numReplicas="+numReplicas;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -984,7 +964,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -999,10 +978,8 @@ namespace MyNS
 		public async Task Replicapool_pools_updatetemplateAsync(string projectName, string zone, string poolName, Template requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = ""+ (projectName==null? "" : System.Uri.EscapeDataString(projectName))+"/zones/"+ (zone==null? "" : System.Uri.EscapeDataString(zone))+"/pools/"+ (poolName==null? "" : System.Uri.EscapeDataString(poolName))+"/updateTemplate";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -1017,7 +994,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

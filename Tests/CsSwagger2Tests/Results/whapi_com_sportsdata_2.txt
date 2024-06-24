@@ -1019,19 +1019,17 @@ namespace MyNS
 		public async Task<CompetitionsWrapper> GetCompetitionsForClassAsync(string classId, string isPublished, string[] fields, string[] include, string[] exclude, string displayed, string channel, string status, string sort, int offset, int limit, string culture)
 		{
 			var requestUri = "classes/"+ (classId==null? "" : System.Uri.EscapeDataString(classId))+"/competitions/&isPublished=" + (isPublished==null? "" : System.Uri.EscapeDataString(isPublished))+"&"+string.Join("&", fields.Select(z => $"fields={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", include.Select(z => $"include={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", exclude.Select(z => $"exclude={System.Uri.EscapeDataString(z.ToString())}"))+"&displayed=" + (displayed==null? "" : System.Uri.EscapeDataString(displayed))+"&channel=" + (channel==null? "" : System.Uri.EscapeDataString(channel))+"&status=" + (status==null? "" : System.Uri.EscapeDataString(status))+"&sort=" + (sort==null? "" : System.Uri.EscapeDataString(sort))+"&offset="+offset+"&limit="+limit+"&culture=" + (culture==null? "" : System.Uri.EscapeDataString(culture));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<CompetitionsWrapper>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<CompetitionsWrapper>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1109,19 +1107,17 @@ namespace MyNS
 					string selectionPublished)
 		{
 			var requestUri = "classes/"+ (classId==null? "" : System.Uri.EscapeDataString(classId))+"/events/&isPublished=" + (isPublished==null? "" : System.Uri.EscapeDataString(isPublished))+"&"+string.Join("&", fields.Select(z => $"fields={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", include.Select(z => $"include={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", exclude.Select(z => $"exclude={System.Uri.EscapeDataString(z.ToString())}"))+"&displayed=" + (displayed==null? "" : System.Uri.EscapeDataString(displayed))+"&channel=" + (channel==null? "" : System.Uri.EscapeDataString(channel))+"&settled="+settled+"&includeEmpty="+includeEmpty+"&status=" + (status==null? "" : System.Uri.EscapeDataString(status))+"&sort=" + (sort==null? "" : System.Uri.EscapeDataString(sort))+"&offset="+offset+"&limit="+limit+"&headlineSummary="+headlineSummary+"&includeAllDescendants="+includeAllDescendants+"&isInPlay="+isInPlay+"&marketCount="+marketCount+"&date=" + (date==null? "" : System.Uri.EscapeDataString(date))+"&dateFrom=" + (dateFrom==null? "" : System.Uri.EscapeDataString(dateFrom))+"&dateTo=" + (dateTo==null? "" : System.Uri.EscapeDataString(dateTo))+"&eventSort=" + (eventSort==null? "" : System.Uri.EscapeDataString(eventSort))+"&culture=" + (culture==null? "" : System.Uri.EscapeDataString(culture))+"&marketPublished=" + (marketPublished==null? "" : System.Uri.EscapeDataString(marketPublished))+"&marketStatus=" + (marketStatus==null? "" : System.Uri.EscapeDataString(marketStatus))+"&marketDisplayed=" + (marketDisplayed==null? "" : System.Uri.EscapeDataString(marketDisplayed))+"&marketChannel=" + (marketChannel==null? "" : System.Uri.EscapeDataString(marketChannel))+"&marketSort=" + (marketSort==null? "" : System.Uri.EscapeDataString(marketSort))+"&marketEW=" + (marketEW==null? "" : System.Uri.EscapeDataString(marketEW))+"&selectionStatus=" + (selectionStatus==null? "" : System.Uri.EscapeDataString(selectionStatus))+"&selectionChannel=" + (selectionChannel==null? "" : System.Uri.EscapeDataString(selectionChannel))+"&selectionPublished=" + (selectionPublished==null? "" : System.Uri.EscapeDataString(selectionPublished));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<EventsWrapper>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<EventsWrapper>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1139,19 +1135,17 @@ namespace MyNS
 		public async Task<Competition> GetCompetitionAsync(string competitionId, string[] fields, string[] include, string[] exclude, string culture)
 		{
 			var requestUri = "competitions/"+ (competitionId==null? "" : System.Uri.EscapeDataString(competitionId))+"&"+string.Join("&", fields.Select(z => $"fields={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", include.Select(z => $"include={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", exclude.Select(z => $"exclude={System.Uri.EscapeDataString(z.ToString())}"))+"&culture=" + (culture==null? "" : System.Uri.EscapeDataString(culture));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Competition>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Competition>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1231,19 +1225,17 @@ namespace MyNS
 					string selectionPublished)
 		{
 			var requestUri = "competitions/"+ (competitionId==null? "" : System.Uri.EscapeDataString(competitionId))+"/events/&isPublished=" + (isPublished==null? "" : System.Uri.EscapeDataString(isPublished))+"&"+string.Join("&", fields.Select(z => $"fields={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", include.Select(z => $"include={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", exclude.Select(z => $"exclude={System.Uri.EscapeDataString(z.ToString())}"))+"&displayed=" + (displayed==null? "" : System.Uri.EscapeDataString(displayed))+"&channel=" + (channel==null? "" : System.Uri.EscapeDataString(channel))+"&settled="+settled+"&includeEmpty="+includeEmpty+"&status=" + (status==null? "" : System.Uri.EscapeDataString(status))+"&sort=" + (sort==null? "" : System.Uri.EscapeDataString(sort))+"&offset="+offset+"&limit="+limit+"&headlineSummary="+headlineSummary+"&includeAllDescendants="+includeAllDescendants+"&isInPlay="+isInPlay+"&marketCount="+marketCount+"&date=" + (date==null? "" : System.Uri.EscapeDataString(date))+"&dateFrom=" + (dateFrom==null? "" : System.Uri.EscapeDataString(dateFrom))+"&dateTo=" + (dateTo==null? "" : System.Uri.EscapeDataString(dateTo))+"&marketGroupId=" + (marketGroupId==null? "" : System.Uri.EscapeDataString(marketGroupId))+"&eventSort=" + (eventSort==null? "" : System.Uri.EscapeDataString(eventSort))+"&culture=" + (culture==null? "" : System.Uri.EscapeDataString(culture))+"&marketPublished=" + (marketPublished==null? "" : System.Uri.EscapeDataString(marketPublished))+"&marketStatus=" + (marketStatus==null? "" : System.Uri.EscapeDataString(marketStatus))+"&marketDisplayed=" + (marketDisplayed==null? "" : System.Uri.EscapeDataString(marketDisplayed))+"&marketChannel=" + (marketChannel==null? "" : System.Uri.EscapeDataString(marketChannel))+"&marketSort=" + (marketSort==null? "" : System.Uri.EscapeDataString(marketSort))+"&marketEW=" + (marketEW==null? "" : System.Uri.EscapeDataString(marketEW))+"&selectionStatus=" + (selectionStatus==null? "" : System.Uri.EscapeDataString(selectionStatus))+"&selectionChannel=" + (selectionChannel==null? "" : System.Uri.EscapeDataString(selectionChannel))+"&selectionPublished=" + (selectionPublished==null? "" : System.Uri.EscapeDataString(selectionPublished));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<EventsWrapper>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<EventsWrapper>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1265,19 +1257,17 @@ namespace MyNS
 		public async Task<MarketGroupsWrapper> GetMarketGroupsForCompetitionAsync(string competitionId, string[] fields, string[] include, string[] exclude, string sort, int offset, int limit, string culture, string name)
 		{
 			var requestUri = "competitions/"+ (competitionId==null? "" : System.Uri.EscapeDataString(competitionId))+"/marketgroups/&"+string.Join("&", fields.Select(z => $"fields={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", include.Select(z => $"include={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", exclude.Select(z => $"exclude={System.Uri.EscapeDataString(z.ToString())}"))+"&sort=" + (sort==null? "" : System.Uri.EscapeDataString(sort))+"&offset="+offset+"&limit="+limit+"&culture=" + (culture==null? "" : System.Uri.EscapeDataString(culture))+"&name=" + (name==null? "" : System.Uri.EscapeDataString(name));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<MarketGroupsWrapper>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<MarketGroupsWrapper>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1296,19 +1286,17 @@ namespace MyNS
 		public async Task<MarketGroupsWrapper> GetMarketsByGroupIdAsync(string competitionId, string[] fields, string[] include, string[] exclude, string marketSort, string marketGroupId)
 		{
 			var requestUri = "competitions/"+ (competitionId==null? "" : System.Uri.EscapeDataString(competitionId))+"/marketsByGroupid&"+string.Join("&", fields.Select(z => $"fields={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", include.Select(z => $"include={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", exclude.Select(z => $"exclude={System.Uri.EscapeDataString(z.ToString())}"))+"&marketSort=" + (marketSort==null? "" : System.Uri.EscapeDataString(marketSort))+"&marketGroupId=" + (marketGroupId==null? "" : System.Uri.EscapeDataString(marketGroupId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<MarketGroupsWrapper>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<MarketGroupsWrapper>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1374,19 +1362,17 @@ namespace MyNS
 					string selectionPublished)
 		{
 			var requestUri = "events/?"+string.Join("&", ids.Select(z => $"ids={System.Uri.EscapeDataString(z.ToString())}"))+"&isPublished=" + (isPublished==null? "" : System.Uri.EscapeDataString(isPublished))+"&includeAllDescendants="+includeAllDescendants+"&"+string.Join("&", fields.Select(z => $"fields={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", include.Select(z => $"include={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", exclude.Select(z => $"exclude={System.Uri.EscapeDataString(z.ToString())}"))+"&channel=" + (channel==null? "" : System.Uri.EscapeDataString(channel))+"&settled="+settled+"&includeEmpty="+includeEmpty+"&headlineSummary="+headlineSummary+"&marketCount="+marketCount+"&sort=" + (sort==null? "" : System.Uri.EscapeDataString(sort))+"&offset="+offset+"&limit="+limit+"&"+string.Join("&", marketIds.Select(z => $"marketIds={System.Uri.EscapeDataString(z.ToString())}"))+"&culture=" + (culture==null? "" : System.Uri.EscapeDataString(culture))+"&marketPublished=" + (marketPublished==null? "" : System.Uri.EscapeDataString(marketPublished))+"&marketStatus=" + (marketStatus==null? "" : System.Uri.EscapeDataString(marketStatus))+"&marketDisplayed=" + (marketDisplayed==null? "" : System.Uri.EscapeDataString(marketDisplayed))+"&marketChannel=" + (marketChannel==null? "" : System.Uri.EscapeDataString(marketChannel))+"&marketSort=" + (marketSort==null? "" : System.Uri.EscapeDataString(marketSort))+"&marketEW=" + (marketEW==null? "" : System.Uri.EscapeDataString(marketEW))+"&selectionStatus=" + (selectionStatus==null? "" : System.Uri.EscapeDataString(selectionStatus))+"&selectionChannel=" + (selectionChannel==null? "" : System.Uri.EscapeDataString(selectionChannel))+"&selectionPublished=" + (selectionPublished==null? "" : System.Uri.EscapeDataString(selectionPublished));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<EventsWrapper>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<EventsWrapper>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1440,19 +1426,17 @@ namespace MyNS
 					string selectionPublished)
 		{
 			var requestUri = "events/"+ (eventId==null? "" : System.Uri.EscapeDataString(eventId))+"&includeAllDescendants="+includeAllDescendants+"&"+string.Join("&", fields.Select(z => $"fields={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", include.Select(z => $"include={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", exclude.Select(z => $"exclude={System.Uri.EscapeDataString(z.ToString())}"))+"&headlineSummary="+headlineSummary+"&marketCount="+marketCount+"&"+string.Join("&", marketIds.Select(z => $"marketIds={System.Uri.EscapeDataString(z.ToString())}"))+"&includeEmpty="+includeEmpty+"&culture=" + (culture==null? "" : System.Uri.EscapeDataString(culture))+"&marketPublished=" + (marketPublished==null? "" : System.Uri.EscapeDataString(marketPublished))+"&marketStatus=" + (marketStatus==null? "" : System.Uri.EscapeDataString(marketStatus))+"&marketDisplayed=" + (marketDisplayed==null? "" : System.Uri.EscapeDataString(marketDisplayed))+"&marketChannel=" + (marketChannel==null? "" : System.Uri.EscapeDataString(marketChannel))+"&marketSort=" + (marketSort==null? "" : System.Uri.EscapeDataString(marketSort))+"&marketEW=" + (marketEW==null? "" : System.Uri.EscapeDataString(marketEW))+"&selectionStatus=" + (selectionStatus==null? "" : System.Uri.EscapeDataString(selectionStatus))+"&selectionChannel=" + (selectionChannel==null? "" : System.Uri.EscapeDataString(selectionChannel))+"&selectionPublished=" + (selectionPublished==null? "" : System.Uri.EscapeDataString(selectionPublished));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<EventsWrapper>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<EventsWrapper>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1469,19 +1453,17 @@ namespace MyNS
 		public async Task<EventCompetitorsWrapper> GetEventCompetitorsAsync(string eventId, string[] fields, string[] include, string[] exclude)
 		{
 			var requestUri = "events/"+ (eventId==null? "" : System.Uri.EscapeDataString(eventId))+"/competitors&"+string.Join("&", fields.Select(z => $"fields={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", include.Select(z => $"include={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", exclude.Select(z => $"exclude={System.Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<EventCompetitorsWrapper>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<EventCompetitorsWrapper>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1528,19 +1510,17 @@ namespace MyNS
 					string selectionPublished)
 		{
 			var requestUri = "events/"+ (eventId==null? "" : System.Uri.EscapeDataString(eventId))+"/markets/&"+string.Join("&", ids.Select(z => $"ids={System.Uri.EscapeDataString(z.ToString())}"))+"&includeAllDescendants="+includeAllDescendants+"&"+string.Join("&", fields.Select(z => $"fields={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", include.Select(z => $"include={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", exclude.Select(z => $"exclude={System.Uri.EscapeDataString(z.ToString())}"))+"&includeEmpty="+includeEmpty+"&culture=" + (culture==null? "" : System.Uri.EscapeDataString(culture))+"&marketPublished=" + (marketPublished==null? "" : System.Uri.EscapeDataString(marketPublished))+"&marketStatus=" + (marketStatus==null? "" : System.Uri.EscapeDataString(marketStatus))+"&marketDisplayed=" + (marketDisplayed==null? "" : System.Uri.EscapeDataString(marketDisplayed))+"&marketChannel=" + (marketChannel==null? "" : System.Uri.EscapeDataString(marketChannel))+"&marketSort=" + (marketSort==null? "" : System.Uri.EscapeDataString(marketSort))+"&marketEW=" + (marketEW==null? "" : System.Uri.EscapeDataString(marketEW))+"&selectionStatus=" + (selectionStatus==null? "" : System.Uri.EscapeDataString(selectionStatus))+"&selectionChannel=" + (selectionChannel==null? "" : System.Uri.EscapeDataString(selectionChannel))+"&selectionPublished=" + (selectionPublished==null? "" : System.Uri.EscapeDataString(selectionPublished));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<MarketsWrapper>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<MarketsWrapper>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1563,19 +1543,17 @@ namespace MyNS
 		public async Task<SelectionsWrapper> GetSelectionsAsync(string eventId, string marketId, string[] ids, string[] fields, string[] include, string[] exclude, string culture, string selectionStatus, string selectionChannel, string selectionPublished)
 		{
 			var requestUri = "events/"+ (eventId==null? "" : System.Uri.EscapeDataString(eventId))+"/markets/"+ (marketId==null? "" : System.Uri.EscapeDataString(marketId))+"/selections/&"+string.Join("&", ids.Select(z => $"ids={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", fields.Select(z => $"fields={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", include.Select(z => $"include={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", exclude.Select(z => $"exclude={System.Uri.EscapeDataString(z.ToString())}"))+"&culture=" + (culture==null? "" : System.Uri.EscapeDataString(culture))+"&selectionStatus=" + (selectionStatus==null? "" : System.Uri.EscapeDataString(selectionStatus))+"&selectionChannel=" + (selectionChannel==null? "" : System.Uri.EscapeDataString(selectionChannel))+"&selectionPublished=" + (selectionPublished==null? "" : System.Uri.EscapeDataString(selectionPublished));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<SelectionsWrapper>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<SelectionsWrapper>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1596,19 +1574,17 @@ namespace MyNS
 		public async Task<SportsWrapper> GetSportsAsync(string sort, int offset, string isPublished, int limit, string[] fields, string[] include, string[] exclude, string culture)
 		{
 			var requestUri = "sports/?sort=" + (sort==null? "" : System.Uri.EscapeDataString(sort))+"&offset="+offset+"&isPublished=" + (isPublished==null? "" : System.Uri.EscapeDataString(isPublished))+"&limit="+limit+"&"+string.Join("&", fields.Select(z => $"fields={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", include.Select(z => $"include={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", exclude.Select(z => $"exclude={System.Uri.EscapeDataString(z.ToString())}"))+"&culture=" + (culture==null? "" : System.Uri.EscapeDataString(culture));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<SportsWrapper>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<SportsWrapper>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1633,19 +1609,17 @@ namespace MyNS
 		public async Task<ClassesWrapper> GetClassesForSportAsync(string sportId, string isPublished, string[] fields, string[] include, string[] exclude, string displayed, string channel, string status, string sort, int offset, int limit, string culture)
 		{
 			var requestUri = "sports/"+ (sportId==null? "" : System.Uri.EscapeDataString(sportId))+"/classes/&isPublished=" + (isPublished==null? "" : System.Uri.EscapeDataString(isPublished))+"&"+string.Join("&", fields.Select(z => $"fields={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", include.Select(z => $"include={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", exclude.Select(z => $"exclude={System.Uri.EscapeDataString(z.ToString())}"))+"&displayed=" + (displayed==null? "" : System.Uri.EscapeDataString(displayed))+"&channel=" + (channel==null? "" : System.Uri.EscapeDataString(channel))+"&status=" + (status==null? "" : System.Uri.EscapeDataString(status))+"&sort=" + (sort==null? "" : System.Uri.EscapeDataString(sort))+"&offset="+offset+"&limit="+limit+"&culture=" + (culture==null? "" : System.Uri.EscapeDataString(culture));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ClassesWrapper>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ClassesWrapper>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1670,19 +1644,17 @@ namespace MyNS
 		public async Task<CompetitionsWrapper> GetCompetitionsForSportAsync(string sportId, string isPublished, string[] fields, string[] include, string[] exclude, string displayed, string channel, string status, string sort, int offset, int limit, string culture)
 		{
 			var requestUri = "sports/"+ (sportId==null? "" : System.Uri.EscapeDataString(sportId))+"/competitions/&isPublished=" + (isPublished==null? "" : System.Uri.EscapeDataString(isPublished))+"&"+string.Join("&", fields.Select(z => $"fields={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", include.Select(z => $"include={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", exclude.Select(z => $"exclude={System.Uri.EscapeDataString(z.ToString())}"))+"&displayed=" + (displayed==null? "" : System.Uri.EscapeDataString(displayed))+"&channel=" + (channel==null? "" : System.Uri.EscapeDataString(channel))+"&status=" + (status==null? "" : System.Uri.EscapeDataString(status))+"&sort=" + (sort==null? "" : System.Uri.EscapeDataString(sort))+"&offset="+offset+"&limit="+limit+"&culture=" + (culture==null? "" : System.Uri.EscapeDataString(culture));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<CompetitionsWrapper>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<CompetitionsWrapper>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1705,19 +1677,17 @@ namespace MyNS
 		public async Task<TopBetsWrapper> GetTopBetsAsync(string[] sportIds, string[] competitionIds, int limit, string[] fields, string[] include, string[] exclude, string param_topBetEventId, string sortName, string culture, string Locale)
 		{
 			var requestUri = "topbets/?"+string.Join("&", sportIds.Select(z => $"sportIds={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", competitionIds.Select(z => $"competitionIds={System.Uri.EscapeDataString(z.ToString())}"))+"&limit="+limit+"&"+string.Join("&", fields.Select(z => $"fields={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", include.Select(z => $"include={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", exclude.Select(z => $"exclude={System.Uri.EscapeDataString(z.ToString())}"))+"&param_topBetEventId=" + (param_topBetEventId==null? "" : System.Uri.EscapeDataString(param_topBetEventId))+"&sortName=" + (sortName==null? "" : System.Uri.EscapeDataString(sortName))+"&culture=" + (culture==null? "" : System.Uri.EscapeDataString(culture))+"&Locale=" + (Locale==null? "" : System.Uri.EscapeDataString(Locale));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<TopBetsWrapper>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<TopBetsWrapper>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

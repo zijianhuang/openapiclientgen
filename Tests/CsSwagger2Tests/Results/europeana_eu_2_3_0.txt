@@ -241,19 +241,17 @@ namespace MyNS
 		public async Task<ModelAndView> GetDatasetAsync(string id, string wskey, string callback)
 		{
 			var requestUri = "v2/dataset/"+ (id==null? "" : System.Uri.EscapeDataString(id))+".json&wskey=" + (wskey==null? "" : System.Uri.EscapeDataString(wskey))+"&callback=" + (callback==null? "" : System.Uri.EscapeDataString(callback));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ModelAndView>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ModelAndView>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -272,19 +270,17 @@ namespace MyNS
 		public async Task<ModelAndView> ListDatasetsAsync(string wskey, string callback, string edmDatasetName, string countryCode, string status, string offset, string pagesize)
 		{
 			var requestUri = "v2/datasets.json?wskey=" + (wskey==null? "" : System.Uri.EscapeDataString(wskey))+"&callback=" + (callback==null? "" : System.Uri.EscapeDataString(callback))+"&edmDatasetName=" + (edmDatasetName==null? "" : System.Uri.EscapeDataString(edmDatasetName))+"&countryCode=" + (countryCode==null? "" : System.Uri.EscapeDataString(countryCode))+"&status=" + (status==null? "" : System.Uri.EscapeDataString(status))+"&offset=" + (offset==null? "" : System.Uri.EscapeDataString(offset))+"&pagesize=" + (pagesize==null? "" : System.Uri.EscapeDataString(pagesize));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ModelAndView>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ModelAndView>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -299,8 +295,7 @@ namespace MyNS
 		public async Task OpenSearchAsync(string searchTerms, int startIndex, int count)
 		{
 			var requestUri = "v2/opensearch.rss?searchTerms=" + (searchTerms==null? "" : System.Uri.EscapeDataString(searchTerms))+"&startIndex="+startIndex+"&count="+count;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -309,7 +304,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -324,19 +318,17 @@ namespace MyNS
 		public async Task<ModelAndView> GetProviderAsync(string id, string wskey, string callback)
 		{
 			var requestUri = "v2/provider/"+ (id==null? "" : System.Uri.EscapeDataString(id))+".json&wskey=" + (wskey==null? "" : System.Uri.EscapeDataString(wskey))+"&callback=" + (callback==null? "" : System.Uri.EscapeDataString(callback));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ModelAndView>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ModelAndView>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -351,19 +343,17 @@ namespace MyNS
 		public async Task<ModelAndView> ListProviderDatasetsAsync(string id, string wskey, string callback)
 		{
 			var requestUri = "v2/provider/"+ (id==null? "" : System.Uri.EscapeDataString(id))+"/datasets.json&wskey=" + (wskey==null? "" : System.Uri.EscapeDataString(wskey))+"&callback=" + (callback==null? "" : System.Uri.EscapeDataString(callback));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ModelAndView>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ModelAndView>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -380,19 +370,17 @@ namespace MyNS
 		public async Task<ModelAndView> ListProvidersAsync(string wskey, string callback, string countryCode, string offset, string pagesize)
 		{
 			var requestUri = "v2/providers.json?wskey=" + (wskey==null? "" : System.Uri.EscapeDataString(wskey))+"&callback=" + (callback==null? "" : System.Uri.EscapeDataString(callback))+"&countryCode=" + (countryCode==null? "" : System.Uri.EscapeDataString(countryCode))+"&offset=" + (offset==null? "" : System.Uri.EscapeDataString(offset))+"&pagesize=" + (pagesize==null? "" : System.Uri.EscapeDataString(pagesize));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ModelAndView>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ModelAndView>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -410,19 +398,17 @@ namespace MyNS
 		public async Task<ModelAndView> GetSingleRecordJsonAsync(string collectionId, string recordId, string profile, string wskey, string callback, int hierarchytimeout)
 		{
 			var requestUri = "v2/record/"+ (collectionId==null? "" : System.Uri.EscapeDataString(collectionId))+"/"+ (recordId==null? "" : System.Uri.EscapeDataString(recordId))+".json&profile=" + (profile==null? "" : System.Uri.EscapeDataString(profile))+"&wskey=" + (wskey==null? "" : System.Uri.EscapeDataString(wskey))+"&callback=" + (callback==null? "" : System.Uri.EscapeDataString(callback))+"&hierarchytimeout="+hierarchytimeout;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ModelAndView>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ModelAndView>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -439,19 +425,17 @@ namespace MyNS
 		public async Task<ModelAndView> GetSingleRecordJsonLDAsync(string collectionId, string recordId, string wskey, string format, string callback)
 		{
 			var requestUri = "v2/record/"+ (collectionId==null? "" : System.Uri.EscapeDataString(collectionId))+"/"+ (recordId==null? "" : System.Uri.EscapeDataString(recordId))+".jsonld&wskey=" + (wskey==null? "" : System.Uri.EscapeDataString(wskey))+"&format=" + (format==null? "" : System.Uri.EscapeDataString(format))+"&callback=" + (callback==null? "" : System.Uri.EscapeDataString(callback));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ModelAndView>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ModelAndView>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -466,8 +450,7 @@ namespace MyNS
 		public async Task GetSingleRecordRDFAsync(string collectionId, string recordId, string wskey)
 		{
 			var requestUri = "v2/record/"+ (collectionId==null? "" : System.Uri.EscapeDataString(collectionId))+"/"+ (recordId==null? "" : System.Uri.EscapeDataString(recordId))+".rdf&wskey=" + (wskey==null? "" : System.Uri.EscapeDataString(wskey));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -476,7 +459,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -520,19 +502,17 @@ namespace MyNS
 					string callback)
 		{
 			var requestUri = "v2/search.json?wskey=" + (wskey==null? "" : System.Uri.EscapeDataString(wskey))+"&query=" + (query==null? "" : System.Uri.EscapeDataString(query))+"&"+string.Join("&", qf.Select(z => $"qf={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", reusability.Select(z => $"reusability={System.Uri.EscapeDataString(z.ToString())}"))+"&profile=" + (profile==null? "" : System.Uri.EscapeDataString(profile))+"&start="+start+"&rows="+rows+"&"+string.Join("&", facet.Select(z => $"facet={System.Uri.EscapeDataString(z.ToString())}"))+"&sort=" + (sort==null? "" : System.Uri.EscapeDataString(sort))+"&"+string.Join("&", colourpalette.Select(z => $"colourpalette={System.Uri.EscapeDataString(z.ToString())}"))+"&thumbnail="+thumbnail+"&media="+media+"&text_fulltext="+text_fulltext+"&landingpage="+landingpage+"&cursor=" + (cursor==null? "" : System.Uri.EscapeDataString(cursor))+"&callback=" + (callback==null? "" : System.Uri.EscapeDataString(callback));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ModelAndView>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ModelAndView>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -549,8 +529,7 @@ namespace MyNS
 		public async Task FieldTripAsync(string query, int offset, int limit, string profile, string language)
 		{
 			var requestUri = "v2/search.rss?query=" + (query==null? "" : System.Uri.EscapeDataString(query))+"&offset="+offset+"&limit="+limit+"&profile=" + (profile==null? "" : System.Uri.EscapeDataString(profile))+"&language=" + (language==null? "" : System.Uri.EscapeDataString(language));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -559,7 +538,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -575,19 +553,17 @@ namespace MyNS
 		public async Task<ModelAndView> SuggestionsAsync(string query, int rows, bool phrases, string callback)
 		{
 			var requestUri = "v2/suggestions.json?query=" + (query==null? "" : System.Uri.EscapeDataString(query))+"&rows="+rows+"&phrases="+phrases+"&callback=" + (callback==null? "" : System.Uri.EscapeDataString(callback));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ModelAndView>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ModelAndView>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -604,19 +580,17 @@ namespace MyNS
 		public async Task<ModelAndView> TranslateQueryUsingGETAsync(string term, string[] languageCodes, string wskey, string profile, string callback)
 		{
 			var requestUri = "v2/translateQuery.json?term=" + (term==null? "" : System.Uri.EscapeDataString(term))+"&"+string.Join("&", languageCodes.Select(z => $"languageCodes={System.Uri.EscapeDataString(z.ToString())}"))+"&wskey=" + (wskey==null? "" : System.Uri.EscapeDataString(wskey))+"&profile=" + (profile==null? "" : System.Uri.EscapeDataString(profile))+"&callback=" + (callback==null? "" : System.Uri.EscapeDataString(callback));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ModelAndView>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ModelAndView>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

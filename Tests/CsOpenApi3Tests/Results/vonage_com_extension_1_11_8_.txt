@@ -361,8 +361,7 @@ namespace MyNS
 		public async Task<EndUserRouteHalResponse> ExtensionCtrl_getAccountExtensionsAsync(string account_id, double page_size, double page, double location_id, string phone_number, string login_name, string email, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/accounts/"+ (account_id==null? "" : System.Uri.EscapeDataString(account_id))+"/extensions&page_size="+page_size+"&page="+page+"&location_id="+location_id+"&phone_number=" + (phone_number==null? "" : System.Uri.EscapeDataString(phone_number))+"&login_name=" + (login_name==null? "" : System.Uri.EscapeDataString(login_name))+"&email=" + (email==null? "" : System.Uri.EscapeDataString(email));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -372,13 +371,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<EndUserRouteHalResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<EndUserRouteHalResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -392,8 +390,7 @@ namespace MyNS
 		public async Task<EndUserRouteHalResponse> ExtensionCtrl_getAccountExtensionByIDAsync(string account_id, double extension_number, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/accounts/"+ (account_id==null? "" : System.Uri.EscapeDataString(account_id))+"/extensions/"+extension_number;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -403,13 +400,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<EndUserRouteHalResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<EndUserRouteHalResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

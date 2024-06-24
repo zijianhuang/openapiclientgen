@@ -353,8 +353,7 @@ namespace MyNS
 		public async Task GetListingViolationsSummaryAsync(string compliance_type)
 		{
 			var requestUri = "listing_violation_summary?compliance_type=" + (compliance_type==null? "" : System.Uri.EscapeDataString(compliance_type));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -363,7 +362,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -376,8 +374,7 @@ namespace MyNS
 		public void GetListingViolationsSummary(string compliance_type)
 		{
 			var requestUri = "listing_violation_summary?compliance_type=" + (compliance_type==null? "" : System.Uri.EscapeDataString(compliance_type));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = httpClient.Send(httpRequestMessage);
 			try
 			{
@@ -386,7 +383,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -403,8 +399,7 @@ namespace MyNS
 		public async Task GetListingViolationsAsync(string compliance_type, string offset, string listing_id, string limit, string filter)
 		{
 			var requestUri = "listing_violation?compliance_type=" + (compliance_type==null? "" : System.Uri.EscapeDataString(compliance_type))+"&offset=" + (offset==null? "" : System.Uri.EscapeDataString(offset))+"&listing_id=" + (listing_id==null? "" : System.Uri.EscapeDataString(listing_id))+"&limit=" + (limit==null? "" : System.Uri.EscapeDataString(limit))+"&filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -413,7 +408,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -430,8 +424,7 @@ namespace MyNS
 		public void GetListingViolations(string compliance_type, string offset, string listing_id, string limit, string filter)
 		{
 			var requestUri = "listing_violation?compliance_type=" + (compliance_type==null? "" : System.Uri.EscapeDataString(compliance_type))+"&offset=" + (offset==null? "" : System.Uri.EscapeDataString(offset))+"&listing_id=" + (listing_id==null? "" : System.Uri.EscapeDataString(listing_id))+"&limit=" + (limit==null? "" : System.Uri.EscapeDataString(limit))+"&filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = httpClient.Send(httpRequestMessage);
 			try
 			{
@@ -440,7 +433,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -452,10 +444,8 @@ namespace MyNS
 		public async Task SuppressViolationAsync(SuppressViolationRequest requestBody)
 		{
 			var requestUri = "suppress_listing_violation";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			using (var requestWriter = new System.IO.StringWriter())
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			using var requestWriter = new System.IO.StringWriter();
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
@@ -469,8 +459,6 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
-			}
-			}
 		}
 		
 		/// <summary>
@@ -481,10 +469,8 @@ namespace MyNS
 		public void SuppressViolation(SuppressViolationRequest requestBody)
 		{
 			var requestUri = "suppress_listing_violation";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			using (var requestWriter = new System.IO.StringWriter())
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			using var requestWriter = new System.IO.StringWriter();
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
@@ -497,8 +483,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
-			}
 			}
 		}
 	}

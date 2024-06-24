@@ -324,8 +324,7 @@ namespace MyNS
 		public async Task<EventRecord[]> GetEventsAsync(string company, string site, string deal, GetEventsType type, string nexttoken, string queryexecutionid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "events?company=" + (company==null? "" : System.Uri.EscapeDataString(company))+"&site=" + (site==null? "" : System.Uri.EscapeDataString(site))+"&deal=" + (deal==null? "" : System.Uri.EscapeDataString(deal))+"&type=" + type+"&nexttoken=" + (nexttoken==null? "" : System.Uri.EscapeDataString(nexttoken))+"&queryexecutionid=" + (queryexecutionid==null? "" : System.Uri.EscapeDataString(queryexecutionid));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -335,13 +334,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<EventRecord[]>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<EventRecord[]>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

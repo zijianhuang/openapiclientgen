@@ -2194,8 +2194,7 @@ namespace MyNS
 		public async Task<ListConferenceReturn> ListConferenceAsync(string ConferenceSid, string FriendlyName, string Status, string CreatedAfter, string CreatedBefore, string MixerRegion, string Tags, string Subaccount, string DetectedIssues, string EndReason, int PageSize, int Page, string PageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/Conferences?ConferenceSid=" + (ConferenceSid==null? "" : System.Uri.EscapeDataString(ConferenceSid))+"&FriendlyName=" + (FriendlyName==null? "" : System.Uri.EscapeDataString(FriendlyName))+"&Status=" + (Status==null? "" : System.Uri.EscapeDataString(Status))+"&CreatedAfter=" + (CreatedAfter==null? "" : System.Uri.EscapeDataString(CreatedAfter))+"&CreatedBefore=" + (CreatedBefore==null? "" : System.Uri.EscapeDataString(CreatedBefore))+"&MixerRegion=" + (MixerRegion==null? "" : System.Uri.EscapeDataString(MixerRegion))+"&Tags=" + (Tags==null? "" : System.Uri.EscapeDataString(Tags))+"&Subaccount=" + (Subaccount==null? "" : System.Uri.EscapeDataString(Subaccount))+"&DetectedIssues=" + (DetectedIssues==null? "" : System.Uri.EscapeDataString(DetectedIssues))+"&EndReason=" + (EndReason==null? "" : System.Uri.EscapeDataString(EndReason))+"&PageSize="+PageSize+"&Page="+Page+"&PageToken=" + (PageToken==null? "" : System.Uri.EscapeDataString(PageToken));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2205,13 +2204,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ListConferenceReturn>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ListConferenceReturn>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2227,8 +2225,7 @@ namespace MyNS
 		public async Task<Insightsv1conference> FetchConferenceAsync(string ConferenceSid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/Conferences/"+ (ConferenceSid==null? "" : System.Uri.EscapeDataString(ConferenceSid));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2238,13 +2235,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Insightsv1conference>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Insightsv1conference>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2271,8 +2267,7 @@ namespace MyNS
 		public async Task<ListConferenceParticipantReturn> ListConferenceParticipantAsync(string ConferenceSid, string ParticipantSid, string Label, string Events, int PageSize, int Page, string PageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/Conferences/"+ (ConferenceSid==null? "" : System.Uri.EscapeDataString(ConferenceSid))+"/Participants&ParticipantSid=" + (ParticipantSid==null? "" : System.Uri.EscapeDataString(ParticipantSid))+"&Label=" + (Label==null? "" : System.Uri.EscapeDataString(Label))+"&Events=" + (Events==null? "" : System.Uri.EscapeDataString(Events))+"&PageSize="+PageSize+"&Page="+Page+"&PageToken=" + (PageToken==null? "" : System.Uri.EscapeDataString(PageToken));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2282,13 +2277,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ListConferenceParticipantReturn>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ListConferenceParticipantReturn>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2310,8 +2304,7 @@ namespace MyNS
 		public async Task<Insightsv1conferenceconference_participant> FetchConferenceParticipantAsync(string ConferenceSid, string ParticipantSid, string Events, string Metrics, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/Conferences/"+ (ConferenceSid==null? "" : System.Uri.EscapeDataString(ConferenceSid))+"/Participants/"+ (ParticipantSid==null? "" : System.Uri.EscapeDataString(ParticipantSid))+"&Events=" + (Events==null? "" : System.Uri.EscapeDataString(Events))+"&Metrics=" + (Metrics==null? "" : System.Uri.EscapeDataString(Metrics));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2321,13 +2314,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Insightsv1conferenceconference_participant>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Insightsv1conferenceconference_participant>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2352,8 +2344,7 @@ namespace MyNS
 		public async Task<ListVideoRoomSummaryReturn> ListVideoRoomSummaryAsync(Video_room_summary_enum_room_type[] RoomType, Video_room_summary_enum_codec[] Codec, string RoomName, System.DateTimeOffset CreatedAfter, System.DateTimeOffset CreatedBefore, int PageSize, int Page, string PageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/Video/Rooms?"+string.Join("&", RoomType.Select(z => $"RoomType={z}"))+"&"+string.Join("&", Codec.Select(z => $"Codec={z}"))+"&RoomName=" + (RoomName==null? "" : System.Uri.EscapeDataString(RoomName))+"&CreatedAfter=" + CreatedAfter.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&CreatedBefore=" + CreatedBefore.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&PageSize="+PageSize+"&Page="+Page+"&PageToken=" + (PageToken==null? "" : System.Uri.EscapeDataString(PageToken));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2363,13 +2354,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ListVideoRoomSummaryReturn>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ListVideoRoomSummaryReturn>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2382,8 +2372,7 @@ namespace MyNS
 		public async Task<Insightsv1video_room_summary> FetchVideoRoomSummaryAsync(string RoomSid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/Video/Rooms/"+ (RoomSid==null? "" : System.Uri.EscapeDataString(RoomSid));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2393,13 +2382,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Insightsv1video_room_summary>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Insightsv1video_room_summary>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2420,8 +2408,7 @@ namespace MyNS
 		public async Task<ListVideoParticipantSummaryReturn> ListVideoParticipantSummaryAsync(string RoomSid, int PageSize, int Page, string PageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/Video/Rooms/"+ (RoomSid==null? "" : System.Uri.EscapeDataString(RoomSid))+"/Participants&PageSize="+PageSize+"&Page="+Page+"&PageToken=" + (PageToken==null? "" : System.Uri.EscapeDataString(PageToken));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2431,13 +2418,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ListVideoParticipantSummaryReturn>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ListVideoParticipantSummaryReturn>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2451,8 +2437,7 @@ namespace MyNS
 		public async Task<Insightsv1video_room_summaryvideo_participant_summary> FetchVideoParticipantSummaryAsync(string RoomSid, string ParticipantSid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/Video/Rooms/"+ (RoomSid==null? "" : System.Uri.EscapeDataString(RoomSid))+"/Participants/"+ (ParticipantSid==null? "" : System.Uri.EscapeDataString(ParticipantSid));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2462,13 +2447,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Insightsv1video_room_summaryvideo_participant_summary>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Insightsv1video_room_summaryvideo_participant_summary>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2484,8 +2468,7 @@ namespace MyNS
 		public async Task<Insightsv1account_settings> FetchAccountSettingsAsync(string SubaccountSid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/Voice/Settings?SubaccountSid=" + (SubaccountSid==null? "" : System.Uri.EscapeDataString(SubaccountSid));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2495,13 +2478,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Insightsv1account_settings>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Insightsv1account_settings>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2576,8 +2558,7 @@ namespace MyNS
 					Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/Voice/Summaries?From=" + (From==null? "" : System.Uri.EscapeDataString(From))+"&To=" + (To==null? "" : System.Uri.EscapeDataString(To))+"&FromCarrier=" + (FromCarrier==null? "" : System.Uri.EscapeDataString(FromCarrier))+"&ToCarrier=" + (ToCarrier==null? "" : System.Uri.EscapeDataString(ToCarrier))+"&FromCountryCode=" + (FromCountryCode==null? "" : System.Uri.EscapeDataString(FromCountryCode))+"&ToCountryCode=" + (ToCountryCode==null? "" : System.Uri.EscapeDataString(ToCountryCode))+"&Branded="+Branded+"&VerifiedCaller="+VerifiedCaller+"&HasTag="+HasTag+"&StartTime=" + (StartTime==null? "" : System.Uri.EscapeDataString(StartTime))+"&EndTime=" + (EndTime==null? "" : System.Uri.EscapeDataString(EndTime))+"&CallType=" + (CallType==null? "" : System.Uri.EscapeDataString(CallType))+"&CallState=" + (CallState==null? "" : System.Uri.EscapeDataString(CallState))+"&Direction=" + (Direction==null? "" : System.Uri.EscapeDataString(Direction))+"&ProcessingState=" + ProcessingState+"&SortBy=" + SortBy+"&Subaccount=" + (Subaccount==null? "" : System.Uri.EscapeDataString(Subaccount))+"&AbnormalSession="+AbnormalSession+"&AnsweredBy=" + AnsweredBy+"&AnsweredByAnnotation=" + (AnsweredByAnnotation==null? "" : System.Uri.EscapeDataString(AnsweredByAnnotation))+"&ConnectivityIssueAnnotation=" + (ConnectivityIssueAnnotation==null? "" : System.Uri.EscapeDataString(ConnectivityIssueAnnotation))+"&QualityIssueAnnotation=" + (QualityIssueAnnotation==null? "" : System.Uri.EscapeDataString(QualityIssueAnnotation))+"&SpamAnnotation="+SpamAnnotation+"&CallScoreAnnotation=" + (CallScoreAnnotation==null? "" : System.Uri.EscapeDataString(CallScoreAnnotation))+"&PageSize="+PageSize+"&Page="+Page+"&PageToken=" + (PageToken==null? "" : System.Uri.EscapeDataString(PageToken));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2587,13 +2568,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ListCallSummariesReturn>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ListCallSummariesReturn>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2609,8 +2589,7 @@ namespace MyNS
 		public async Task<Insightsv1callannotation> FetchAnnotationAsync(string CallSid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/Voice/"+ (CallSid==null? "" : System.Uri.EscapeDataString(CallSid))+"/Annotation";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2620,13 +2599,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Insightsv1callannotation>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Insightsv1callannotation>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2651,8 +2629,7 @@ namespace MyNS
 		public async Task<ListEventReturn> ListEventAsync(string CallSid, Event_enum_twilio_edge Edge, int PageSize, int Page, string PageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/Voice/"+ (CallSid==null? "" : System.Uri.EscapeDataString(CallSid))+"/Events&Edge=" + Edge+"&PageSize="+PageSize+"&Page="+Page+"&PageToken=" + (PageToken==null? "" : System.Uri.EscapeDataString(PageToken));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2662,13 +2639,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ListEventReturn>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ListEventReturn>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2694,8 +2670,7 @@ namespace MyNS
 		public async Task<ListMetricReturn> ListMetricAsync(string CallSid, Event_enum_twilio_edge Edge, Insightsv1callmetricDirection Direction, int PageSize, int Page, string PageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/Voice/"+ (CallSid==null? "" : System.Uri.EscapeDataString(CallSid))+"/Metrics&Edge=" + Edge+"&Direction=" + Direction+"&PageSize="+PageSize+"&Page="+Page+"&PageToken=" + (PageToken==null? "" : System.Uri.EscapeDataString(PageToken));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2705,13 +2680,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ListMetricReturn>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ListMetricReturn>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2728,8 +2702,7 @@ namespace MyNS
 		public async Task<Insightsv1callsummary> FetchSummaryAsync(string CallSid, Call_summaries_enum_processing_state ProcessingState, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/Voice/"+ (CallSid==null? "" : System.Uri.EscapeDataString(CallSid))+"/Summary&ProcessingState=" + ProcessingState;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2739,13 +2712,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Insightsv1callsummary>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Insightsv1callsummary>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2759,8 +2731,7 @@ namespace MyNS
 		public async Task<Insightsv1call> FetchCallAsync(string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/Voice/"+ (Sid==null? "" : System.Uri.EscapeDataString(Sid));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2770,13 +2741,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Insightsv1call>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Insightsv1call>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

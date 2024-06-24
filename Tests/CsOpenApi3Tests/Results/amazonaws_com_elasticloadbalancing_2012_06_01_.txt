@@ -1585,8 +1585,7 @@ namespace MyNS
 		public async Task GET_AddTagsAsync(string[] LoadBalancerNames, Tag[] Tags, GET_AddTagsAction Action, GET_AddTagsVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=AddTags?"+string.Join("&", LoadBalancerNames.Select(z => $"LoadBalancerNames={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", Tags.Select(z => $"Tags={z}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1600,7 +1599,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1614,8 +1612,7 @@ namespace MyNS
 		public async Task GET_ApplySecurityGroupsToLoadBalancerAsync(string LoadBalancerName, string[] SecurityGroups, GET_ApplySecurityGroupsToLoadBalancerAction Action, GET_ApplySecurityGroupsToLoadBalancerVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=ApplySecurityGroupsToLoadBalancer?LoadBalancerName=" + (LoadBalancerName==null? "" : System.Uri.EscapeDataString(LoadBalancerName))+"&"+string.Join("&", SecurityGroups.Select(z => $"SecurityGroups={System.Uri.EscapeDataString(z.ToString())}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1629,7 +1626,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1643,8 +1639,7 @@ namespace MyNS
 		public async Task GET_AttachLoadBalancerToSubnetsAsync(string LoadBalancerName, string[] Subnets, GET_AttachLoadBalancerToSubnetsAction Action, GET_AttachLoadBalancerToSubnetsVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=AttachLoadBalancerToSubnets?LoadBalancerName=" + (LoadBalancerName==null? "" : System.Uri.EscapeDataString(LoadBalancerName))+"&"+string.Join("&", Subnets.Select(z => $"Subnets={System.Uri.EscapeDataString(z.ToString())}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1658,7 +1653,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1672,8 +1666,7 @@ namespace MyNS
 		public async Task GET_ConfigureHealthCheckAsync(string LoadBalancerName, GET_ConfigureHealthCheckHealthCheck HealthCheck, GET_ConfigureHealthCheckAction Action, GET_ConfigureHealthCheckVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=ConfigureHealthCheck?LoadBalancerName=" + (LoadBalancerName==null? "" : System.Uri.EscapeDataString(LoadBalancerName))+"&HealthCheck=" + HealthCheck+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1687,7 +1680,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1702,8 +1694,7 @@ namespace MyNS
 		public async Task GET_CreateAppCookieStickinessPolicyAsync(string LoadBalancerName, string PolicyName, string CookieName, GET_CreateAppCookieStickinessPolicyAction Action, GET_CreateAppCookieStickinessPolicyVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=CreateAppCookieStickinessPolicy?LoadBalancerName=" + (LoadBalancerName==null? "" : System.Uri.EscapeDataString(LoadBalancerName))+"&PolicyName=" + (PolicyName==null? "" : System.Uri.EscapeDataString(PolicyName))+"&CookieName=" + (CookieName==null? "" : System.Uri.EscapeDataString(CookieName))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1717,7 +1708,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1732,8 +1722,7 @@ namespace MyNS
 		public async Task GET_CreateLBCookieStickinessPolicyAsync(string LoadBalancerName, string PolicyName, int CookieExpirationPeriod, GET_CreateLBCookieStickinessPolicyAction Action, GET_CreateLBCookieStickinessPolicyVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=CreateLBCookieStickinessPolicy?LoadBalancerName=" + (LoadBalancerName==null? "" : System.Uri.EscapeDataString(LoadBalancerName))+"&PolicyName=" + (PolicyName==null? "" : System.Uri.EscapeDataString(PolicyName))+"&CookieExpirationPeriod="+CookieExpirationPeriod+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1747,7 +1736,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1768,8 +1756,7 @@ namespace MyNS
 		public async Task GET_CreateLoadBalancerAsync(string LoadBalancerName, Listener[] Listeners, string[] AvailabilityZones, string[] Subnets, string[] SecurityGroups, string Scheme, Tag[] Tags, GET_CreateLoadBalancerAction Action, GET_CreateLoadBalancerVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=CreateLoadBalancer?LoadBalancerName=" + (LoadBalancerName==null? "" : System.Uri.EscapeDataString(LoadBalancerName))+"&"+string.Join("&", Listeners.Select(z => $"Listeners={z}"))+"&"+string.Join("&", AvailabilityZones.Select(z => $"AvailabilityZones={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", Subnets.Select(z => $"Subnets={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", SecurityGroups.Select(z => $"SecurityGroups={System.Uri.EscapeDataString(z.ToString())}"))+"&Scheme=" + (Scheme==null? "" : System.Uri.EscapeDataString(Scheme))+"&"+string.Join("&", Tags.Select(z => $"Tags={z}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1783,7 +1770,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1797,8 +1783,7 @@ namespace MyNS
 		public async Task GET_CreateLoadBalancerListenersAsync(string LoadBalancerName, Listener[] Listeners, GET_CreateLoadBalancerListenersAction Action, GET_CreateLoadBalancerListenersVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=CreateLoadBalancerListeners?LoadBalancerName=" + (LoadBalancerName==null? "" : System.Uri.EscapeDataString(LoadBalancerName))+"&"+string.Join("&", Listeners.Select(z => $"Listeners={z}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1812,7 +1797,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1828,8 +1812,7 @@ namespace MyNS
 		public async Task GET_CreateLoadBalancerPolicyAsync(string LoadBalancerName, string PolicyName, string PolicyTypeName, PolicyAttribute[] PolicyAttributes, GET_CreateLoadBalancerPolicyAction Action, GET_CreateLoadBalancerPolicyVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=CreateLoadBalancerPolicy?LoadBalancerName=" + (LoadBalancerName==null? "" : System.Uri.EscapeDataString(LoadBalancerName))+"&PolicyName=" + (PolicyName==null? "" : System.Uri.EscapeDataString(PolicyName))+"&PolicyTypeName=" + (PolicyTypeName==null? "" : System.Uri.EscapeDataString(PolicyTypeName))+"&"+string.Join("&", PolicyAttributes.Select(z => $"PolicyAttributes={z}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1843,7 +1826,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1856,8 +1838,7 @@ namespace MyNS
 		public async Task GET_DeleteLoadBalancerAsync(string LoadBalancerName, GET_DeleteLoadBalancerAction Action, GET_DeleteLoadBalancerVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DeleteLoadBalancer?LoadBalancerName=" + (LoadBalancerName==null? "" : System.Uri.EscapeDataString(LoadBalancerName))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1871,7 +1852,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1885,8 +1865,7 @@ namespace MyNS
 		public async Task GET_DeleteLoadBalancerListenersAsync(string LoadBalancerName, int[] LoadBalancerPorts, GET_DeleteLoadBalancerListenersAction Action, GET_DeleteLoadBalancerListenersVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DeleteLoadBalancerListeners?LoadBalancerName=" + (LoadBalancerName==null? "" : System.Uri.EscapeDataString(LoadBalancerName))+"&"+string.Join("&", LoadBalancerPorts.Select(z => $"LoadBalancerPorts={z}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1900,7 +1879,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1914,8 +1892,7 @@ namespace MyNS
 		public async Task GET_DeleteLoadBalancerPolicyAsync(string LoadBalancerName, string PolicyName, GET_DeleteLoadBalancerPolicyAction Action, GET_DeleteLoadBalancerPolicyVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DeleteLoadBalancerPolicy?LoadBalancerName=" + (LoadBalancerName==null? "" : System.Uri.EscapeDataString(LoadBalancerName))+"&PolicyName=" + (PolicyName==null? "" : System.Uri.EscapeDataString(PolicyName))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1929,7 +1906,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1943,8 +1919,7 @@ namespace MyNS
 		public async Task GET_DeregisterInstancesFromLoadBalancerAsync(string LoadBalancerName, Instance[] Instances, GET_DeregisterInstancesFromLoadBalancerAction Action, GET_DeregisterInstancesFromLoadBalancerVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DeregisterInstancesFromLoadBalancer?LoadBalancerName=" + (LoadBalancerName==null? "" : System.Uri.EscapeDataString(LoadBalancerName))+"&"+string.Join("&", Instances.Select(z => $"Instances={z}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1958,7 +1933,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1975,8 +1949,7 @@ namespace MyNS
 		public async Task GET_DescribeAccountLimitsAsync(string Marker, int PageSize, GET_DescribeAccountLimitsAction Action, GET_DescribeAccountLimitsVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribeAccountLimits?Marker=" + (Marker==null? "" : System.Uri.EscapeDataString(Marker))+"&PageSize="+PageSize+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1990,7 +1963,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2004,8 +1976,7 @@ namespace MyNS
 		public async Task GET_DescribeInstanceHealthAsync(string LoadBalancerName, Instance[] Instances, GET_DescribeInstanceHealthAction Action, GET_DescribeInstanceHealthVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribeInstanceHealth?LoadBalancerName=" + (LoadBalancerName==null? "" : System.Uri.EscapeDataString(LoadBalancerName))+"&"+string.Join("&", Instances.Select(z => $"Instances={z}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2019,7 +1990,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2032,8 +2002,7 @@ namespace MyNS
 		public async Task GET_DescribeLoadBalancerAttributesAsync(string LoadBalancerName, GET_DescribeLoadBalancerAttributesAction Action, GET_DescribeLoadBalancerAttributesVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribeLoadBalancerAttributes?LoadBalancerName=" + (LoadBalancerName==null? "" : System.Uri.EscapeDataString(LoadBalancerName))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2047,7 +2016,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2061,8 +2029,7 @@ namespace MyNS
 		public async Task GET_DescribeLoadBalancerPoliciesAsync(string LoadBalancerName, string[] PolicyNames, GET_DescribeLoadBalancerPoliciesAction Action, GET_DescribeLoadBalancerPoliciesVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribeLoadBalancerPolicies?LoadBalancerName=" + (LoadBalancerName==null? "" : System.Uri.EscapeDataString(LoadBalancerName))+"&"+string.Join("&", PolicyNames.Select(z => $"PolicyNames={System.Uri.EscapeDataString(z.ToString())}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2076,7 +2043,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2089,8 +2055,7 @@ namespace MyNS
 		public async Task GET_DescribeLoadBalancerPolicyTypesAsync(string[] PolicyTypeNames, GET_DescribeLoadBalancerPolicyTypesAction Action, GET_DescribeLoadBalancerPolicyTypesVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribeLoadBalancerPolicyTypes?"+string.Join("&", PolicyTypeNames.Select(z => $"PolicyTypeNames={System.Uri.EscapeDataString(z.ToString())}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2104,7 +2069,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2122,8 +2086,7 @@ namespace MyNS
 		public async Task GET_DescribeLoadBalancersAsync(string[] LoadBalancerNames, string Marker, int PageSize, GET_DescribeLoadBalancersAction Action, GET_DescribeLoadBalancersVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribeLoadBalancers?"+string.Join("&", LoadBalancerNames.Select(z => $"LoadBalancerNames={System.Uri.EscapeDataString(z.ToString())}"))+"&Marker=" + (Marker==null? "" : System.Uri.EscapeDataString(Marker))+"&PageSize="+PageSize+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2137,7 +2100,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2153,8 +2115,7 @@ namespace MyNS
 		public async Task GET_DescribeTagsAsync(string[] LoadBalancerNames, GET_DescribeTagsAction Action, GET_DescribeTagsVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribeTags?"+string.Join("&", LoadBalancerNames.Select(z => $"LoadBalancerNames={System.Uri.EscapeDataString(z.ToString())}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2168,7 +2129,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2182,8 +2142,7 @@ namespace MyNS
 		public async Task GET_DetachLoadBalancerFromSubnetsAsync(string LoadBalancerName, string[] Subnets, GET_DetachLoadBalancerFromSubnetsAction Action, GET_DetachLoadBalancerFromSubnetsVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DetachLoadBalancerFromSubnets?LoadBalancerName=" + (LoadBalancerName==null? "" : System.Uri.EscapeDataString(LoadBalancerName))+"&"+string.Join("&", Subnets.Select(z => $"Subnets={System.Uri.EscapeDataString(z.ToString())}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2197,7 +2156,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2211,8 +2169,7 @@ namespace MyNS
 		public async Task GET_DisableAvailabilityZonesForLoadBalancerAsync(string LoadBalancerName, string[] AvailabilityZones, GET_DisableAvailabilityZonesForLoadBalancerAction Action, GET_DisableAvailabilityZonesForLoadBalancerVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DisableAvailabilityZonesForLoadBalancer?LoadBalancerName=" + (LoadBalancerName==null? "" : System.Uri.EscapeDataString(LoadBalancerName))+"&"+string.Join("&", AvailabilityZones.Select(z => $"AvailabilityZones={System.Uri.EscapeDataString(z.ToString())}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2226,7 +2183,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2240,8 +2196,7 @@ namespace MyNS
 		public async Task GET_EnableAvailabilityZonesForLoadBalancerAsync(string LoadBalancerName, string[] AvailabilityZones, GET_EnableAvailabilityZonesForLoadBalancerAction Action, GET_EnableAvailabilityZonesForLoadBalancerVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=EnableAvailabilityZonesForLoadBalancer?LoadBalancerName=" + (LoadBalancerName==null? "" : System.Uri.EscapeDataString(LoadBalancerName))+"&"+string.Join("&", AvailabilityZones.Select(z => $"AvailabilityZones={System.Uri.EscapeDataString(z.ToString())}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2255,7 +2210,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2269,8 +2223,7 @@ namespace MyNS
 		public async Task GET_ModifyLoadBalancerAttributesAsync(string LoadBalancerName, GET_ModifyLoadBalancerAttributesLoadBalancerAttributes LoadBalancerAttributes, GET_ModifyLoadBalancerAttributesAction Action, GET_ModifyLoadBalancerAttributesVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=ModifyLoadBalancerAttributes?LoadBalancerName=" + (LoadBalancerName==null? "" : System.Uri.EscapeDataString(LoadBalancerName))+"&LoadBalancerAttributes=" + LoadBalancerAttributes+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2284,7 +2237,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2298,8 +2250,7 @@ namespace MyNS
 		public async Task GET_RegisterInstancesWithLoadBalancerAsync(string LoadBalancerName, Instance[] Instances, GET_RegisterInstancesWithLoadBalancerAction Action, GET_RegisterInstancesWithLoadBalancerVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=RegisterInstancesWithLoadBalancer?LoadBalancerName=" + (LoadBalancerName==null? "" : System.Uri.EscapeDataString(LoadBalancerName))+"&"+string.Join("&", Instances.Select(z => $"Instances={z}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2313,7 +2264,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2329,8 +2279,7 @@ namespace MyNS
 		public async Task GET_RemoveTagsAsync(string[] LoadBalancerNames, TagKeyOnly[] Tags, GET_RemoveTagsAction Action, GET_RemoveTagsVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=RemoveTags?"+string.Join("&", LoadBalancerNames.Select(z => $"LoadBalancerNames={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", Tags.Select(z => $"Tags={z}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2344,7 +2293,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2359,8 +2307,7 @@ namespace MyNS
 		public async Task GET_SetLoadBalancerListenerSSLCertificateAsync(string LoadBalancerName, int LoadBalancerPort, string SSLCertificateId, GET_SetLoadBalancerListenerSSLCertificateAction Action, GET_SetLoadBalancerListenerSSLCertificateVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=SetLoadBalancerListenerSSLCertificate?LoadBalancerName=" + (LoadBalancerName==null? "" : System.Uri.EscapeDataString(LoadBalancerName))+"&LoadBalancerPort="+LoadBalancerPort+"&SSLCertificateId=" + (SSLCertificateId==null? "" : System.Uri.EscapeDataString(SSLCertificateId))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2374,7 +2321,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2389,8 +2335,7 @@ namespace MyNS
 		public async Task GET_SetLoadBalancerPoliciesForBackendServerAsync(string LoadBalancerName, int InstancePort, string[] PolicyNames, GET_SetLoadBalancerPoliciesForBackendServerAction Action, GET_SetLoadBalancerPoliciesForBackendServerVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=SetLoadBalancerPoliciesForBackendServer?LoadBalancerName=" + (LoadBalancerName==null? "" : System.Uri.EscapeDataString(LoadBalancerName))+"&InstancePort="+InstancePort+"&"+string.Join("&", PolicyNames.Select(z => $"PolicyNames={System.Uri.EscapeDataString(z.ToString())}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2404,7 +2349,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2419,8 +2363,7 @@ namespace MyNS
 		public async Task GET_SetLoadBalancerPoliciesOfListenerAsync(string LoadBalancerName, int LoadBalancerPort, string[] PolicyNames, GET_SetLoadBalancerPoliciesOfListenerAction Action, GET_SetLoadBalancerPoliciesOfListenerVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=SetLoadBalancerPoliciesOfListener?LoadBalancerName=" + (LoadBalancerName==null? "" : System.Uri.EscapeDataString(LoadBalancerName))+"&LoadBalancerPort="+LoadBalancerPort+"&"+string.Join("&", PolicyNames.Select(z => $"PolicyNames={System.Uri.EscapeDataString(z.ToString())}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -2434,7 +2377,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

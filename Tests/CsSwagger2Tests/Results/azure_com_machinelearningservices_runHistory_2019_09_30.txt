@@ -1152,19 +1152,17 @@ namespace MyNS
 		public async Task<Experiment> Experiments_GetByIdAsync(string subscriptionId, string resourceGroupName, string workspaceName, string experimentId)
 		{
 			var requestUri = "history/v1.0/subscriptions/"+ (subscriptionId==null? "" : System.Uri.EscapeDataString(subscriptionId))+"/resourceGroups/"+ (resourceGroupName==null? "" : System.Uri.EscapeDataString(resourceGroupName))+"/providers/Microsoft.MachineLearningServices/workspaces/"+ (workspaceName==null? "" : System.Uri.EscapeDataString(workspaceName))+"/experimentids/"+ (experimentId==null? "" : System.Uri.EscapeDataString(experimentId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Experiment>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Experiment>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1182,22 +1180,19 @@ namespace MyNS
 		public async Task<Experiment> Experiments_UpdateAsync(string subscriptionId, string resourceGroupName, string workspaceName, string experimentId, ModifyExperiment requestBody)
 		{
 			var requestUri = "history/v1.0/subscriptions/"+ (subscriptionId==null? "" : System.Uri.EscapeDataString(subscriptionId))+"/resourceGroups/"+ (resourceGroupName==null? "" : System.Uri.EscapeDataString(resourceGroupName))+"/providers/Microsoft.MachineLearningServices/workspaces/"+ (workspaceName==null? "" : System.Uri.EscapeDataString(workspaceName))+"/experimentids/"+ (experimentId==null? "" : System.Uri.EscapeDataString(experimentId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Experiment>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Experiment>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1214,19 +1209,17 @@ namespace MyNS
 		public async Task<Experiment> Experiments_DeleteTagsAsync(string subscriptionId, string resourceGroupName, string workspaceName, string experimentId)
 		{
 			var requestUri = "history/v1.0/subscriptions/"+ (subscriptionId==null? "" : System.Uri.EscapeDataString(subscriptionId))+"/resourceGroups/"+ (resourceGroupName==null? "" : System.Uri.EscapeDataString(resourceGroupName))+"/providers/Microsoft.MachineLearningServices/workspaces/"+ (workspaceName==null? "" : System.Uri.EscapeDataString(workspaceName))+"/experimentids/"+ (experimentId==null? "" : System.Uri.EscapeDataString(experimentId))+"/tags";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Experiment>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Experiment>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1243,19 +1236,17 @@ namespace MyNS
 		public async Task<Experiment> Experiments_GetAsync(string subscriptionId, string resourceGroupName, string workspaceName, string experimentName)
 		{
 			var requestUri = "history/v1.0/subscriptions/"+ (subscriptionId==null? "" : System.Uri.EscapeDataString(subscriptionId))+"/resourceGroups/"+ (resourceGroupName==null? "" : System.Uri.EscapeDataString(resourceGroupName))+"/providers/Microsoft.MachineLearningServices/workspaces/"+ (workspaceName==null? "" : System.Uri.EscapeDataString(workspaceName))+"/experiments/"+ (experimentName==null? "" : System.Uri.EscapeDataString(experimentName));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Experiment>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Experiment>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1272,19 +1263,17 @@ namespace MyNS
 		public async Task<Experiment> Experiments_CreateAsync(string subscriptionId, string resourceGroupName, string workspaceName, string experimentName)
 		{
 			var requestUri = "history/v1.0/subscriptions/"+ (subscriptionId==null? "" : System.Uri.EscapeDataString(subscriptionId))+"/resourceGroups/"+ (resourceGroupName==null? "" : System.Uri.EscapeDataString(resourceGroupName))+"/providers/Microsoft.MachineLearningServices/workspaces/"+ (workspaceName==null? "" : System.Uri.EscapeDataString(workspaceName))+"/experiments/"+ (experimentName==null? "" : System.Uri.EscapeDataString(experimentName));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Experiment>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Experiment>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1302,22 +1291,19 @@ namespace MyNS
 		public async Task<BatchEventCommandResult> Events_BatchPostAsync(string subscriptionId, string resourceGroupName, string workspaceName, string experimentName, BatchEventCommand requestBody)
 		{
 			var requestUri = "history/v1.0/subscriptions/"+ (subscriptionId==null? "" : System.Uri.EscapeDataString(subscriptionId))+"/resourceGroups/"+ (resourceGroupName==null? "" : System.Uri.EscapeDataString(resourceGroupName))+"/providers/Microsoft.MachineLearningServices/workspaces/"+ (workspaceName==null? "" : System.Uri.EscapeDataString(workspaceName))+"/experiments/"+ (experimentName==null? "" : System.Uri.EscapeDataString(experimentName))+"/batch/events";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<BatchEventCommandResult>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<BatchEventCommandResult>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1335,22 +1321,19 @@ namespace MyNS
 		public async Task<BatchAddOrModifyRunResult> Runs_BatchAddOrModifyAsync(string subscriptionId, string resourceGroupName, string workspaceName, string experimentName, BatchAddOrModifyRunRequest requestBody)
 		{
 			var requestUri = "history/v1.0/subscriptions/"+ (subscriptionId==null? "" : System.Uri.EscapeDataString(subscriptionId))+"/resourceGroups/"+ (resourceGroupName==null? "" : System.Uri.EscapeDataString(resourceGroupName))+"/providers/Microsoft.MachineLearningServices/workspaces/"+ (workspaceName==null? "" : System.Uri.EscapeDataString(workspaceName))+"/experiments/"+ (experimentName==null? "" : System.Uri.EscapeDataString(experimentName))+"/batch/runs";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<BatchAddOrModifyRunResult>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<BatchAddOrModifyRunResult>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1368,19 +1351,17 @@ namespace MyNS
 		public async Task<RunMetric> RunMetrics_GetAsync(string subscriptionId, string resourceGroupName, string workspaceName, string experimentName, string metricId)
 		{
 			var requestUri = "history/v1.0/subscriptions/"+ (subscriptionId==null? "" : System.Uri.EscapeDataString(subscriptionId))+"/resourceGroups/"+ (resourceGroupName==null? "" : System.Uri.EscapeDataString(resourceGroupName))+"/providers/Microsoft.MachineLearningServices/workspaces/"+ (workspaceName==null? "" : System.Uri.EscapeDataString(workspaceName))+"/experiments/"+ (experimentName==null? "" : System.Uri.EscapeDataString(experimentName))+"/metrics/"+ (metricId==null? "" : System.Uri.EscapeDataString(metricId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<RunMetric>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<RunMetric>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1405,22 +1386,19 @@ namespace MyNS
 		public async Task<PaginatedRunMetricList> RunMetrics_GetByQueryAsync(string subscriptionId, string resourceGroupName, string workspaceName, string experimentName, RunMetrics_GetByQueryMergeStrategyType MergeStrategyType, RunMetrics_GetByQueryMergeStrategyOptions MergeStrategyOptions, string MergeStrategySettings_Version, RunMetrics_GetByQueryMergeStrategySettings_SelectMetrics MergeStrategySettings_SelectMetrics, QueryParams requestBody)
 		{
 			var requestUri = "history/v1.0/subscriptions/"+ (subscriptionId==null? "" : System.Uri.EscapeDataString(subscriptionId))+"/resourceGroups/"+ (resourceGroupName==null? "" : System.Uri.EscapeDataString(resourceGroupName))+"/providers/Microsoft.MachineLearningServices/workspaces/"+ (workspaceName==null? "" : System.Uri.EscapeDataString(workspaceName))+"/experiments/"+ (experimentName==null? "" : System.Uri.EscapeDataString(experimentName))+"/metrics:query&MergeStrategyType=" + MergeStrategyType+"&MergeStrategyOptions=" + MergeStrategyOptions+"&MergeStrategySettings.Version=" + (MergeStrategySettings_Version==null? "" : System.Uri.EscapeDataString(MergeStrategySettings_Version))+"&MergeStrategySettings.SelectMetrics=" + MergeStrategySettings_SelectMetrics;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<PaginatedRunMetricList>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<PaginatedRunMetricList>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1438,19 +1416,17 @@ namespace MyNS
 		public async Task<Run> Runs_GetAsync(string subscriptionId, string resourceGroupName, string workspaceName, string experimentName, string runId)
 		{
 			var requestUri = "history/v1.0/subscriptions/"+ (subscriptionId==null? "" : System.Uri.EscapeDataString(subscriptionId))+"/resourceGroups/"+ (resourceGroupName==null? "" : System.Uri.EscapeDataString(resourceGroupName))+"/providers/Microsoft.MachineLearningServices/workspaces/"+ (workspaceName==null? "" : System.Uri.EscapeDataString(workspaceName))+"/experiments/"+ (experimentName==null? "" : System.Uri.EscapeDataString(experimentName))+"/runs/"+ (runId==null? "" : System.Uri.EscapeDataString(runId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Run>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Run>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1469,22 +1445,19 @@ namespace MyNS
 		public async Task<Run> Runs_PatchAsync(string subscriptionId, string resourceGroupName, string workspaceName, string experimentName, string runId, CreateRun requestBody)
 		{
 			var requestUri = "history/v1.0/subscriptions/"+ (subscriptionId==null? "" : System.Uri.EscapeDataString(subscriptionId))+"/resourceGroups/"+ (resourceGroupName==null? "" : System.Uri.EscapeDataString(resourceGroupName))+"/providers/Microsoft.MachineLearningServices/workspaces/"+ (workspaceName==null? "" : System.Uri.EscapeDataString(workspaceName))+"/experiments/"+ (experimentName==null? "" : System.Uri.EscapeDataString(experimentName))+"/runs/"+ (runId==null? "" : System.Uri.EscapeDataString(runId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Run>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Run>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1503,19 +1476,17 @@ namespace MyNS
 		public async Task<PaginatedArtifactList> RunArtifacts_ListInContainerAsync(string subscriptionId, string resourceGroupName, string workspaceName, string experimentName, string runId, string continuationToken)
 		{
 			var requestUri = "history/v1.0/subscriptions/"+ (subscriptionId==null? "" : System.Uri.EscapeDataString(subscriptionId))+"/resourceGroups/"+ (resourceGroupName==null? "" : System.Uri.EscapeDataString(resourceGroupName))+"/providers/Microsoft.MachineLearningServices/workspaces/"+ (workspaceName==null? "" : System.Uri.EscapeDataString(workspaceName))+"/experiments/"+ (experimentName==null? "" : System.Uri.EscapeDataString(experimentName))+"/runs/"+ (runId==null? "" : System.Uri.EscapeDataString(runId))+"/artifacts&continuationToken=" + (continuationToken==null? "" : System.Uri.EscapeDataString(continuationToken));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<PaginatedArtifactList>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<PaginatedArtifactList>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1534,19 +1505,17 @@ namespace MyNS
 		public async Task<string> RunArtifacts_GetSasUriAsync(string subscriptionId, string resourceGroupName, string workspaceName, string experimentName, string runId, string path)
 		{
 			var requestUri = "history/v1.0/subscriptions/"+ (subscriptionId==null? "" : System.Uri.EscapeDataString(subscriptionId))+"/resourceGroups/"+ (resourceGroupName==null? "" : System.Uri.EscapeDataString(resourceGroupName))+"/providers/Microsoft.MachineLearningServices/workspaces/"+ (workspaceName==null? "" : System.Uri.EscapeDataString(workspaceName))+"/experiments/"+ (experimentName==null? "" : System.Uri.EscapeDataString(experimentName))+"/runs/"+ (runId==null? "" : System.Uri.EscapeDataString(runId))+"/artifacts/artifacturi&path=" + (path==null? "" : System.Uri.EscapeDataString(path));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<string>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<string>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1565,22 +1534,19 @@ namespace MyNS
 		public async Task<BatchArtifactContentInformationResult> RunArtifacts_BatchCreateEmptyArtifactsAsync(string subscriptionId, string resourceGroupName, string workspaceName, string experimentName, string runId, ArtifactPathList requestBody)
 		{
 			var requestUri = "history/v1.0/subscriptions/"+ (subscriptionId==null? "" : System.Uri.EscapeDataString(subscriptionId))+"/resourceGroups/"+ (resourceGroupName==null? "" : System.Uri.EscapeDataString(resourceGroupName))+"/providers/Microsoft.MachineLearningServices/workspaces/"+ (workspaceName==null? "" : System.Uri.EscapeDataString(workspaceName))+"/experiments/"+ (experimentName==null? "" : System.Uri.EscapeDataString(experimentName))+"/runs/"+ (runId==null? "" : System.Uri.EscapeDataString(runId))+"/artifacts/batch/metadata";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<BatchArtifactContentInformationResult>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<BatchArtifactContentInformationResult>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1599,19 +1565,17 @@ namespace MyNS
 		public async Task<ArtifactContentInformation> RunArtifacts_GetContentInformationAsync(string subscriptionId, string resourceGroupName, string workspaceName, string experimentName, string runId, string path)
 		{
 			var requestUri = "history/v1.0/subscriptions/"+ (subscriptionId==null? "" : System.Uri.EscapeDataString(subscriptionId))+"/resourceGroups/"+ (resourceGroupName==null? "" : System.Uri.EscapeDataString(resourceGroupName))+"/providers/Microsoft.MachineLearningServices/workspaces/"+ (workspaceName==null? "" : System.Uri.EscapeDataString(workspaceName))+"/experiments/"+ (experimentName==null? "" : System.Uri.EscapeDataString(experimentName))+"/runs/"+ (runId==null? "" : System.Uri.EscapeDataString(runId))+"/artifacts/contentinfo&path=" + (path==null? "" : System.Uri.EscapeDataString(path));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ArtifactContentInformation>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ArtifactContentInformation>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1630,19 +1594,17 @@ namespace MyNS
 		public async Task<Artifact> RunArtifacts_GetByIdAsync(string subscriptionId, string resourceGroupName, string workspaceName, string experimentName, string runId, string path)
 		{
 			var requestUri = "history/v1.0/subscriptions/"+ (subscriptionId==null? "" : System.Uri.EscapeDataString(subscriptionId))+"/resourceGroups/"+ (resourceGroupName==null? "" : System.Uri.EscapeDataString(resourceGroupName))+"/providers/Microsoft.MachineLearningServices/workspaces/"+ (workspaceName==null? "" : System.Uri.EscapeDataString(workspaceName))+"/experiments/"+ (experimentName==null? "" : System.Uri.EscapeDataString(experimentName))+"/runs/"+ (runId==null? "" : System.Uri.EscapeDataString(runId))+"/artifacts/metadata&path=" + (path==null? "" : System.Uri.EscapeDataString(path));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Artifact>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Artifact>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1662,19 +1624,17 @@ namespace MyNS
 		public async Task<PaginatedArtifactList> RunArtifacts_ListInPathAsync(string subscriptionId, string resourceGroupName, string workspaceName, string experimentName, string runId, string path, string continuationToken)
 		{
 			var requestUri = "history/v1.0/subscriptions/"+ (subscriptionId==null? "" : System.Uri.EscapeDataString(subscriptionId))+"/resourceGroups/"+ (resourceGroupName==null? "" : System.Uri.EscapeDataString(resourceGroupName))+"/providers/Microsoft.MachineLearningServices/workspaces/"+ (workspaceName==null? "" : System.Uri.EscapeDataString(workspaceName))+"/experiments/"+ (experimentName==null? "" : System.Uri.EscapeDataString(experimentName))+"/runs/"+ (runId==null? "" : System.Uri.EscapeDataString(runId))+"/artifacts/path&path=" + (path==null? "" : System.Uri.EscapeDataString(path))+"&continuationToken=" + (continuationToken==null? "" : System.Uri.EscapeDataString(continuationToken));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<PaginatedArtifactList>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<PaginatedArtifactList>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1694,19 +1654,17 @@ namespace MyNS
 		public async Task<PaginatedArtifactContentInformationList> RunArtifacts_ListSasByPrefixAsync(string subscriptionId, string resourceGroupName, string workspaceName, string experimentName, string runId, string path, string continuationToken)
 		{
 			var requestUri = "history/v1.0/subscriptions/"+ (subscriptionId==null? "" : System.Uri.EscapeDataString(subscriptionId))+"/resourceGroups/"+ (resourceGroupName==null? "" : System.Uri.EscapeDataString(resourceGroupName))+"/providers/Microsoft.MachineLearningServices/workspaces/"+ (workspaceName==null? "" : System.Uri.EscapeDataString(workspaceName))+"/experiments/"+ (experimentName==null? "" : System.Uri.EscapeDataString(experimentName))+"/runs/"+ (runId==null? "" : System.Uri.EscapeDataString(runId))+"/artifacts/prefix/contentinfo&path=" + (path==null? "" : System.Uri.EscapeDataString(path))+"&continuationToken=" + (continuationToken==null? "" : System.Uri.EscapeDataString(continuationToken));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<PaginatedArtifactContentInformationList>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<PaginatedArtifactContentInformationList>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1725,10 +1683,8 @@ namespace MyNS
 		public async Task RunMetrics_BatchPostAsync(string subscriptionId, string resourceGroupName, string workspaceName, string experimentName, string runId, BatchMetric requestBody)
 		{
 			var requestUri = "history/v1.0/subscriptions/"+ (subscriptionId==null? "" : System.Uri.EscapeDataString(subscriptionId))+"/resourceGroups/"+ (resourceGroupName==null? "" : System.Uri.EscapeDataString(resourceGroupName))+"/providers/Microsoft.MachineLearningServices/workspaces/"+ (workspaceName==null? "" : System.Uri.EscapeDataString(workspaceName))+"/experiments/"+ (experimentName==null? "" : System.Uri.EscapeDataString(experimentName))+"/runs/"+ (runId==null? "" : System.Uri.EscapeDataString(runId))+"/batch/metrics";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -1738,7 +1694,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1764,19 +1719,17 @@ namespace MyNS
 		public async Task<PaginatedRunList> Runs_GetChildAsync(string subscriptionId, string resourceGroupName, string workspaceName, string experimentName, string runId, string filter, string continuationtoken, string[] orderby, Runs_GetChildSortorder sortorder, int top, bool count)
 		{
 			var requestUri = "history/v1.0/subscriptions/"+ (subscriptionId==null? "" : System.Uri.EscapeDataString(subscriptionId))+"/resourceGroups/"+ (resourceGroupName==null? "" : System.Uri.EscapeDataString(resourceGroupName))+"/providers/Microsoft.MachineLearningServices/workspaces/"+ (workspaceName==null? "" : System.Uri.EscapeDataString(workspaceName))+"/experiments/"+ (experimentName==null? "" : System.Uri.EscapeDataString(experimentName))+"/runs/"+ (runId==null? "" : System.Uri.EscapeDataString(runId))+"/children&$filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&$continuationtoken=" + (continuationtoken==null? "" : System.Uri.EscapeDataString(continuationtoken))+"&"+string.Join("&", orderby.Select(z => $"$orderby={System.Uri.EscapeDataString(z.ToString())}"))+"&$sortorder=" + sortorder+"&$top="+top+"&$count="+count;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<PaginatedRunList>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<PaginatedRunList>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1794,19 +1747,17 @@ namespace MyNS
 		public async Task<RunDetails> Runs_GetDetailsAsync(string subscriptionId, string resourceGroupName, string workspaceName, string experimentName, string runId)
 		{
 			var requestUri = "history/v1.0/subscriptions/"+ (subscriptionId==null? "" : System.Uri.EscapeDataString(subscriptionId))+"/resourceGroups/"+ (resourceGroupName==null? "" : System.Uri.EscapeDataString(resourceGroupName))+"/providers/Microsoft.MachineLearningServices/workspaces/"+ (workspaceName==null? "" : System.Uri.EscapeDataString(workspaceName))+"/experiments/"+ (experimentName==null? "" : System.Uri.EscapeDataString(experimentName))+"/runs/"+ (runId==null? "" : System.Uri.EscapeDataString(runId))+"/details";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<RunDetails>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<RunDetails>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1825,10 +1776,8 @@ namespace MyNS
 		public async Task Events_PostAsync(string subscriptionId, string resourceGroupName, string workspaceName, string experimentName, string runId, BaseEvent requestBody)
 		{
 			var requestUri = "history/v1.0/subscriptions/"+ (subscriptionId==null? "" : System.Uri.EscapeDataString(subscriptionId))+"/resourceGroups/"+ (resourceGroupName==null? "" : System.Uri.EscapeDataString(resourceGroupName))+"/providers/Microsoft.MachineLearningServices/workspaces/"+ (workspaceName==null? "" : System.Uri.EscapeDataString(workspaceName))+"/experiments/"+ (experimentName==null? "" : System.Uri.EscapeDataString(experimentName))+"/runs/"+ (runId==null? "" : System.Uri.EscapeDataString(runId))+"/events";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -1838,7 +1787,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1857,10 +1805,8 @@ namespace MyNS
 		public async Task RunMetrics_PostAsync(string subscriptionId, string resourceGroupName, string workspaceName, string experimentName, string runId, Metric requestBody)
 		{
 			var requestUri = "history/v1.0/subscriptions/"+ (subscriptionId==null? "" : System.Uri.EscapeDataString(subscriptionId))+"/resourceGroups/"+ (resourceGroupName==null? "" : System.Uri.EscapeDataString(resourceGroupName))+"/providers/Microsoft.MachineLearningServices/workspaces/"+ (workspaceName==null? "" : System.Uri.EscapeDataString(workspaceName))+"/experiments/"+ (experimentName==null? "" : System.Uri.EscapeDataString(experimentName))+"/runs/"+ (runId==null? "" : System.Uri.EscapeDataString(runId))+"/metrics";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -1870,7 +1816,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1888,19 +1833,17 @@ namespace MyNS
 		public async Task<Run> Runs_DeleteTagsAsync(string subscriptionId, string resourceGroupName, string workspaceName, string experimentName, string runId)
 		{
 			var requestUri = "history/v1.0/subscriptions/"+ (subscriptionId==null? "" : System.Uri.EscapeDataString(subscriptionId))+"/resourceGroups/"+ (resourceGroupName==null? "" : System.Uri.EscapeDataString(resourceGroupName))+"/providers/Microsoft.MachineLearningServices/workspaces/"+ (workspaceName==null? "" : System.Uri.EscapeDataString(workspaceName))+"/experiments/"+ (experimentName==null? "" : System.Uri.EscapeDataString(experimentName))+"/runs/"+ (runId==null? "" : System.Uri.EscapeDataString(runId))+"/tags";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Run>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Run>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1918,22 +1861,19 @@ namespace MyNS
 		public async Task<PaginatedRunList> Runs_GetByQueryAsync(string subscriptionId, string resourceGroupName, string workspaceName, string experimentName, QueryParams requestBody)
 		{
 			var requestUri = "history/v1.0/subscriptions/"+ (subscriptionId==null? "" : System.Uri.EscapeDataString(subscriptionId))+"/resourceGroups/"+ (resourceGroupName==null? "" : System.Uri.EscapeDataString(resourceGroupName))+"/providers/Microsoft.MachineLearningServices/workspaces/"+ (workspaceName==null? "" : System.Uri.EscapeDataString(workspaceName))+"/experiments/"+ (experimentName==null? "" : System.Uri.EscapeDataString(experimentName))+"/runs:query";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<PaginatedRunList>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<PaginatedRunList>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1950,22 +1890,19 @@ namespace MyNS
 		public async Task<PaginatedExperimentList> Experiments_GetByQueryAsync(string subscriptionId, string resourceGroupName, string workspaceName, QueryParams requestBody)
 		{
 			var requestUri = "history/v1.0/subscriptions/"+ (subscriptionId==null? "" : System.Uri.EscapeDataString(subscriptionId))+"/resourceGroups/"+ (resourceGroupName==null? "" : System.Uri.EscapeDataString(resourceGroupName))+"/providers/Microsoft.MachineLearningServices/workspaces/"+ (workspaceName==null? "" : System.Uri.EscapeDataString(workspaceName))+"/experiments:query";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<PaginatedExperimentList>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<PaginatedExperimentList>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

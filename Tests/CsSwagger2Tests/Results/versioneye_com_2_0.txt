@@ -61,8 +61,7 @@ namespace MyNS
 		public async Task GetGithubAsync(string lang, bool _private, string org_name, string org_type, string page, bool only_imported)
 		{
 			var requestUri = "github?lang=" + (lang==null? "" : System.Uri.EscapeDataString(lang))+"&private="+_private+"&org_name=" + (org_name==null? "" : System.Uri.EscapeDataString(org_name))+"&org_type=" + (org_type==null? "" : System.Uri.EscapeDataString(org_type))+"&page=" + (page==null? "" : System.Uri.EscapeDataString(page))+"&only_imported="+only_imported;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -71,7 +70,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -84,8 +82,7 @@ namespace MyNS
 		public async Task PostGithubHookProjectIdAsync(string project_id)
 		{
 			var requestUri = "github/hook/"+ (project_id==null? "" : System.Uri.EscapeDataString(project_id));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -94,7 +91,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -114,8 +110,7 @@ namespace MyNS
 		public async Task GetGithubSyncAsync()
 		{
 			var requestUri = "github/sync";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -124,7 +119,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -147,8 +141,7 @@ namespace MyNS
 		public async Task GetGithubRepoKeyAsync(string repo_key)
 		{
 			var requestUri = "github/"+ (repo_key==null? "" : System.Uri.EscapeDataString(repo_key));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -157,7 +150,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -179,10 +171,8 @@ namespace MyNS
 		public async Task PostGithubRepoKeyAsync(string repo_key, PostGithubRepoKeyPostBody requestBody)
 		{
 			var requestUri = "github/"+ (repo_key==null? "" : System.Uri.EscapeDataString(repo_key));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -192,7 +182,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -215,8 +204,7 @@ namespace MyNS
 		public async Task DeleteGithubRepoKeyAsync(string repo_key, string branch)
 		{
 			var requestUri = "github/"+ (repo_key==null? "" : System.Uri.EscapeDataString(repo_key))+"&branch=" + (branch==null? "" : System.Uri.EscapeDataString(branch));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -225,7 +213,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -238,8 +225,7 @@ namespace MyNS
 		public async Task GetMeAsync()
 		{
 			var requestUri = "me";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -248,7 +234,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -262,8 +247,7 @@ namespace MyNS
 		public async Task GetMeCommentsAsync(int page)
 		{
 			var requestUri = "me/comments?page="+page;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -272,7 +256,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -286,8 +269,7 @@ namespace MyNS
 		public async Task GetMeFavoritesAsync(int page)
 		{
 			var requestUri = "me/favorites?page="+page;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -296,7 +278,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -315,8 +296,7 @@ namespace MyNS
 		public async Task GetMeNotificationsAsync(int page)
 		{
 			var requestUri = "me/notifications?page="+page;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -325,7 +305,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -340,8 +319,7 @@ namespace MyNS
 		public async Task GetOrganisationsAsync()
 		{
 			var requestUri = "organisations";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -350,7 +328,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -369,8 +346,7 @@ namespace MyNS
 		public async Task GetOrganisationsOrgaNameInventoryAsync(string team_name, string language, string project_version, string post_filter, int orga_name)
 		{
 			var requestUri = "organisations/"+orga_name+"/inventory?team_name=" + (team_name==null? "" : System.Uri.EscapeDataString(team_name))+"&language=" + (language==null? "" : System.Uri.EscapeDataString(language))+"&project_version=" + (project_version==null? "" : System.Uri.EscapeDataString(project_version))+"&post_filter=" + (post_filter==null? "" : System.Uri.EscapeDataString(post_filter));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -379,7 +355,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -392,8 +367,7 @@ namespace MyNS
 		public async Task GetOrganisationsOrgaNameInventoryDiffAsync(string inventory_diff_id, int orga_name)
 		{
 			var requestUri = "organisations/"+orga_name+"/inventory_diff?inventory_diff_id=" + (inventory_diff_id==null? "" : System.Uri.EscapeDataString(inventory_diff_id));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -402,7 +376,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -418,10 +391,8 @@ namespace MyNS
 		public async Task PostOrganisationsOrgaNameInventoryDiffAsync(int orga_name, PostOrganisationsOrgaNameInventoryDiffPostBody requestBody)
 		{
 			var requestUri = "organisations/"+orga_name+"/inventory_diff";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -431,7 +402,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -444,8 +414,7 @@ namespace MyNS
 		public async Task GetOrganisationsOrgaNameProjectsAsync(int orga_name)
 		{
 			var requestUri = "organisations/"+orga_name+"/projects";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -454,7 +423,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -467,8 +435,7 @@ namespace MyNS
 		public async Task GetOrganisationsOrgaNameTeamsAsync(int orga_name)
 		{
 			var requestUri = "organisations/"+orga_name+"/teams";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -477,7 +444,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -501,8 +467,7 @@ namespace MyNS
 		public async Task GetProductsSearchQAsync(string q, string lang, string g, int page)
 		{
 			var requestUri = "products/search/"+ (q==null? "" : System.Uri.EscapeDataString(q))+"&lang=" + (lang==null? "" : System.Uri.EscapeDataString(lang))+"&g=" + (g==null? "" : System.Uri.EscapeDataString(g))+"&page="+page;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -511,7 +476,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -526,8 +490,7 @@ namespace MyNS
 		public async Task GetProductsShaShaAsync(int sha)
 		{
 			var requestUri = "products/sha/"+sha;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -536,7 +499,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -562,8 +524,7 @@ namespace MyNS
 		public async Task GetProductsLangProdKeyAsync(string lang, string prod_key, string prod_version)
 		{
 			var requestUri = "products/"+ (lang==null? "" : System.Uri.EscapeDataString(lang))+"/"+ (prod_key==null? "" : System.Uri.EscapeDataString(prod_key))+"&prod_version=" + (prod_version==null? "" : System.Uri.EscapeDataString(prod_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -572,7 +533,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -596,8 +556,7 @@ namespace MyNS
 		public async Task GetProductsLangProdKeyFollowAsync(string lang, string prod_key)
 		{
 			var requestUri = "products/"+ (lang==null? "" : System.Uri.EscapeDataString(lang))+"/"+ (prod_key==null? "" : System.Uri.EscapeDataString(prod_key))+"/follow";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -606,7 +565,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -628,8 +586,7 @@ namespace MyNS
 		public async Task PostProductsLangProdKeyFollowAsync(string lang, string prod_key)
 		{
 			var requestUri = "products/"+ (lang==null? "" : System.Uri.EscapeDataString(lang))+"/"+ (prod_key==null? "" : System.Uri.EscapeDataString(prod_key))+"/follow";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -638,7 +595,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -662,8 +618,7 @@ namespace MyNS
 		public async Task DeleteProductsLangProdKeyFollowAsync(string lang, string prod_key)
 		{
 			var requestUri = "products/"+ (lang==null? "" : System.Uri.EscapeDataString(lang))+"/"+ (prod_key==null? "" : System.Uri.EscapeDataString(prod_key))+"/follow";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -672,7 +627,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -699,8 +653,7 @@ namespace MyNS
 		public async Task GetProductsLangProdKeyReferencesAsync(string lang, string prod_key, int page)
 		{
 			var requestUri = "products/"+ (lang==null? "" : System.Uri.EscapeDataString(lang))+"/"+ (prod_key==null? "" : System.Uri.EscapeDataString(prod_key))+"/references&page="+page;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -709,7 +662,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -734,8 +686,7 @@ namespace MyNS
 		public async Task GetProductsLangProdKeyVersionsAsync(string lang, string prod_key)
 		{
 			var requestUri = "products/"+ (lang==null? "" : System.Uri.EscapeDataString(lang))+"/"+ (prod_key==null? "" : System.Uri.EscapeDataString(prod_key))+"/versions";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -744,7 +695,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -759,10 +709,8 @@ namespace MyNS
 		public async Task PostProductsLangProdKeyProdVersionLicenseAsync(string lang, string prod_key, string prod_version, PostProductsLangProdKeyProdVersionLicensePostBody requestBody)
 		{
 			var requestUri = "products/"+ (lang==null? "" : System.Uri.EscapeDataString(lang))+"/"+ (prod_key==null? "" : System.Uri.EscapeDataString(prod_key))+"/"+ (prod_version==null? "" : System.Uri.EscapeDataString(prod_version))+"/license";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -772,7 +720,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -798,8 +745,7 @@ namespace MyNS
 		public async Task PostProductsLangProdKeyProdVersionScmChangesAsync(string lang, string prod_key, string prod_version)
 		{
 			var requestUri = "products/"+ (lang==null? "" : System.Uri.EscapeDataString(lang))+"/"+ (prod_key==null? "" : System.Uri.EscapeDataString(prod_key))+"/"+ (prod_version==null? "" : System.Uri.EscapeDataString(prod_version))+"/scm_changes";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -808,7 +754,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -826,8 +771,7 @@ namespace MyNS
 		public async Task GetProjectsAsync(string orga_name, string team_name)
 		{
 			var requestUri = "projects?orga_name=" + (orga_name==null? "" : System.Uri.EscapeDataString(orga_name))+"&team_name=" + (team_name==null? "" : System.Uri.EscapeDataString(team_name));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -836,7 +780,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -851,10 +794,8 @@ namespace MyNS
 		public async Task PostProjectsAsync(PostProjectsPostBody requestBody)
 		{
 			var requestUri = "projects";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -864,7 +805,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -885,8 +825,7 @@ namespace MyNS
 		public async Task GetProjectsGroupIdArtifactIdMergeGaChildIdAsync(string group_id, string artifact_id, string child_id)
 		{
 			var requestUri = "projects/"+ (group_id==null? "" : System.Uri.EscapeDataString(group_id))+"/"+ (artifact_id==null? "" : System.Uri.EscapeDataString(artifact_id))+"/merge_ga/"+ (child_id==null? "" : System.Uri.EscapeDataString(child_id));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -895,7 +834,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -914,8 +852,7 @@ namespace MyNS
 		public async Task GetProjectsParentIdMergeChildIdAsync(string parent_id, string child_id)
 		{
 			var requestUri = "projects/"+ (parent_id==null? "" : System.Uri.EscapeDataString(parent_id))+"/merge/"+ (child_id==null? "" : System.Uri.EscapeDataString(child_id));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -924,7 +861,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -944,8 +880,7 @@ namespace MyNS
 		public async Task GetProjectsParentIdUnmergeChildIdAsync(string parent_id, string child_id)
 		{
 			var requestUri = "projects/"+ (parent_id==null? "" : System.Uri.EscapeDataString(parent_id))+"/unmerge/"+ (child_id==null? "" : System.Uri.EscapeDataString(child_id));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -954,7 +889,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -968,8 +902,7 @@ namespace MyNS
 		public async Task GetProjectsProjectKeyAsync(string project_key)
 		{
 			var requestUri = "projects/"+ (project_key==null? "" : System.Uri.EscapeDataString(project_key));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -978,7 +911,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1008,8 +940,7 @@ namespace MyNS
 		public async Task PutProjectsProjectKeyAsync(string project_key)
 		{
 			var requestUri = "projects/"+ (project_key==null? "" : System.Uri.EscapeDataString(project_key));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -1018,7 +949,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1034,10 +964,8 @@ namespace MyNS
 		public async Task PostProjectsProjectKeyAsync(string project_key, PostProjectsProjectKeyPostBody requestBody)
 		{
 			var requestUri = "projects/"+ (project_key==null? "" : System.Uri.EscapeDataString(project_key));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -1047,7 +975,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1063,8 +990,7 @@ namespace MyNS
 		public async Task DeleteProjectsProjectKeyAsync(string project_key)
 		{
 			var requestUri = "projects/"+ (project_key==null? "" : System.Uri.EscapeDataString(project_key));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -1073,7 +999,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1093,8 +1018,7 @@ namespace MyNS
 		public async Task GetProjectsProjectKeyDependenciesAsync(string project_key)
 		{
 			var requestUri = "projects/"+ (project_key==null? "" : System.Uri.EscapeDataString(project_key))+"/dependencies";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -1103,7 +1027,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1120,8 +1043,7 @@ namespace MyNS
 		public async Task GetProjectsProjectKeyLicensesAsync(string project_key)
 		{
 			var requestUri = "projects/"+ (project_key==null? "" : System.Uri.EscapeDataString(project_key))+"/licenses";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -1130,7 +1052,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1148,8 +1069,7 @@ namespace MyNS
 		public async Task GetSecurityAsync(string language, string prod_key, int page, string asc_sort, string desc_sort)
 		{
 			var requestUri = "security?language=" + (language==null? "" : System.Uri.EscapeDataString(language))+"&prod_key=" + (prod_key==null? "" : System.Uri.EscapeDataString(prod_key))+"&page="+page+"&asc_sort=" + (asc_sort==null? "" : System.Uri.EscapeDataString(asc_sort))+"&desc_sort=" + (desc_sort==null? "" : System.Uri.EscapeDataString(desc_sort));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -1158,7 +1078,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1171,8 +1090,7 @@ namespace MyNS
 		public async Task GetServicesPingAsync()
 		{
 			var requestUri = "services/ping";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -1181,7 +1099,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1198,8 +1115,7 @@ namespace MyNS
 		public async Task GetSessionsAsync()
 		{
 			var requestUri = "sessions";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -1208,7 +1124,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1220,10 +1135,8 @@ namespace MyNS
 		public async Task PostSessionsAsync(PostSessionsPostBody requestBody)
 		{
 			var requestUri = "sessions";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -1233,7 +1146,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1245,8 +1157,7 @@ namespace MyNS
 		public async Task DeleteSessionsAsync()
 		{
 			var requestUri = "sessions";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -1255,7 +1166,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1267,10 +1177,8 @@ namespace MyNS
 		public async Task PostSessionsLoginAsync(PostSessionsLoginPostBody requestBody)
 		{
 			var requestUri = "sessions/login";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -1280,7 +1188,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1294,8 +1201,7 @@ namespace MyNS
 		public async Task GetUsersUsernameAsync(string username)
 		{
 			var requestUri = "users/"+ (username==null? "" : System.Uri.EscapeDataString(username));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -1304,7 +1210,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1319,8 +1224,7 @@ namespace MyNS
 		public async Task GetUsersUsernameCommentsAsync(string username, int page)
 		{
 			var requestUri = "users/"+ (username==null? "" : System.Uri.EscapeDataString(username))+"/comments&page="+page;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -1329,7 +1233,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1344,8 +1247,7 @@ namespace MyNS
 		public async Task GetUsersUsernameFavoritesAsync(string username, int page)
 		{
 			var requestUri = "users/"+ (username==null? "" : System.Uri.EscapeDataString(username))+"/favorites&page="+page;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -1354,7 +1256,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

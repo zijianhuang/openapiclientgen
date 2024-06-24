@@ -52,8 +52,7 @@ namespace MyNS
 		public async Task<App_api_wmm_endpoints_WMM_magnetic_fieldReturn> App_api_wmm_endpoints_WMM_magnetic_fieldAsync(double altitude, double latitude, double longitude, double year, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "magnetic_field?altitude="+altitude+"&latitude="+latitude+"&longitude="+longitude+"&year="+year;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -63,13 +62,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<App_api_wmm_endpoints_WMM_magnetic_fieldReturn>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<App_api_wmm_endpoints_WMM_magnetic_fieldReturn>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

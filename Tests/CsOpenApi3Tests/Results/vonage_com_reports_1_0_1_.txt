@@ -391,8 +391,7 @@ namespace MyNS
 		public async Task<CallLogsHalResponse> GetCallLogsAsync(string account_id, string start_gte, string start_lte, string end_gte, string end_lte, double page_size, double page, string to, string from, string source_user, string destination_user, GetCallLogsDirection direction, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "accounts/"+ (account_id==null? "" : System.Uri.EscapeDataString(account_id))+"/call-logs&start:gte=" + (start_gte==null? "" : System.Uri.EscapeDataString(start_gte))+"&start:lte=" + (start_lte==null? "" : System.Uri.EscapeDataString(start_lte))+"&end:gte=" + (end_gte==null? "" : System.Uri.EscapeDataString(end_gte))+"&end:lte=" + (end_lte==null? "" : System.Uri.EscapeDataString(end_lte))+"&page_size="+page_size+"&page="+page+"&to=" + (to==null? "" : System.Uri.EscapeDataString(to))+"&from=" + (from==null? "" : System.Uri.EscapeDataString(from))+"&source_user=" + (source_user==null? "" : System.Uri.EscapeDataString(source_user))+"&destination_user=" + (destination_user==null? "" : System.Uri.EscapeDataString(destination_user))+"&direction=" + direction;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -402,13 +401,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<CallLogsHalResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<CallLogsHalResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

@@ -3009,8 +3009,7 @@ namespace MyNS
 		public async Task GET_AddSourceIdentifierToSubscriptionAsync(string SubscriptionName, string SourceIdentifier, GET_AddSourceIdentifierToSubscriptionAction Action, GET_AddSourceIdentifierToSubscriptionVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=AddSourceIdentifierToSubscription?SubscriptionName=" + (SubscriptionName==null? "" : System.Uri.EscapeDataString(SubscriptionName))+"&SourceIdentifier=" + (SourceIdentifier==null? "" : System.Uri.EscapeDataString(SourceIdentifier))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3024,7 +3023,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3035,8 +3033,7 @@ namespace MyNS
 		public async Task GET_AddTagsToResourceAsync(string ResourceName, string[] Tags, GET_AddTagsToResourceAction Action, GET_AddTagsToResourceVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=AddTagsToResource?ResourceName=" + (ResourceName==null? "" : System.Uri.EscapeDataString(ResourceName))+"&"+string.Join("&", Tags.Select(z => $"Tags={System.Uri.EscapeDataString(z.ToString())}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3050,7 +3047,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3061,8 +3057,7 @@ namespace MyNS
 		public async Task GET_AuthorizeDBSecurityGroupIngressAsync(string DBSecurityGroupName, string CIDRIP, string EC2SecurityGroupName, string EC2SecurityGroupId, string EC2SecurityGroupOwnerId, GET_AuthorizeDBSecurityGroupIngressAction Action, GET_AuthorizeDBSecurityGroupIngressVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=AuthorizeDBSecurityGroupIngress?DBSecurityGroupName=" + (DBSecurityGroupName==null? "" : System.Uri.EscapeDataString(DBSecurityGroupName))+"&CIDRIP=" + (CIDRIP==null? "" : System.Uri.EscapeDataString(CIDRIP))+"&EC2SecurityGroupName=" + (EC2SecurityGroupName==null? "" : System.Uri.EscapeDataString(EC2SecurityGroupName))+"&EC2SecurityGroupId=" + (EC2SecurityGroupId==null? "" : System.Uri.EscapeDataString(EC2SecurityGroupId))+"&EC2SecurityGroupOwnerId=" + (EC2SecurityGroupOwnerId==null? "" : System.Uri.EscapeDataString(EC2SecurityGroupOwnerId))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3076,7 +3071,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3087,8 +3081,7 @@ namespace MyNS
 		public async Task GET_CopyDBSnapshotAsync(string SourceDBSnapshotIdentifier, string TargetDBSnapshotIdentifier, string[] Tags, GET_CopyDBSnapshotAction Action, GET_CopyDBSnapshotVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=CopyDBSnapshot?SourceDBSnapshotIdentifier=" + (SourceDBSnapshotIdentifier==null? "" : System.Uri.EscapeDataString(SourceDBSnapshotIdentifier))+"&TargetDBSnapshotIdentifier=" + (TargetDBSnapshotIdentifier==null? "" : System.Uri.EscapeDataString(TargetDBSnapshotIdentifier))+"&"+string.Join("&", Tags.Select(z => $"Tags={System.Uri.EscapeDataString(z.ToString())}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3102,7 +3095,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3141,8 +3133,7 @@ namespace MyNS
 					Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=CreateDBInstance?DBName=" + (DBName==null? "" : System.Uri.EscapeDataString(DBName))+"&DBInstanceIdentifier=" + (DBInstanceIdentifier==null? "" : System.Uri.EscapeDataString(DBInstanceIdentifier))+"&AllocatedStorage="+AllocatedStorage+"&DBInstanceClass=" + (DBInstanceClass==null? "" : System.Uri.EscapeDataString(DBInstanceClass))+"&Engine=" + (Engine==null? "" : System.Uri.EscapeDataString(Engine))+"&MasterUsername=" + (MasterUsername==null? "" : System.Uri.EscapeDataString(MasterUsername))+"&MasterUserPassword=" + (MasterUserPassword==null? "" : System.Uri.EscapeDataString(MasterUserPassword))+"&"+string.Join("&", DBSecurityGroups.Select(z => $"DBSecurityGroups={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", VpcSecurityGroupIds.Select(z => $"VpcSecurityGroupIds={System.Uri.EscapeDataString(z.ToString())}"))+"&AvailabilityZone=" + (AvailabilityZone==null? "" : System.Uri.EscapeDataString(AvailabilityZone))+"&DBSubnetGroupName=" + (DBSubnetGroupName==null? "" : System.Uri.EscapeDataString(DBSubnetGroupName))+"&PreferredMaintenanceWindow=" + (PreferredMaintenanceWindow==null? "" : System.Uri.EscapeDataString(PreferredMaintenanceWindow))+"&DBParameterGroupName=" + (DBParameterGroupName==null? "" : System.Uri.EscapeDataString(DBParameterGroupName))+"&BackupRetentionPeriod="+BackupRetentionPeriod+"&PreferredBackupWindow=" + (PreferredBackupWindow==null? "" : System.Uri.EscapeDataString(PreferredBackupWindow))+"&Port="+Port+"&MultiAZ="+MultiAZ+"&EngineVersion=" + (EngineVersion==null? "" : System.Uri.EscapeDataString(EngineVersion))+"&AutoMinorVersionUpgrade="+AutoMinorVersionUpgrade+"&LicenseModel=" + (LicenseModel==null? "" : System.Uri.EscapeDataString(LicenseModel))+"&Iops="+Iops+"&OptionGroupName=" + (OptionGroupName==null? "" : System.Uri.EscapeDataString(OptionGroupName))+"&CharacterSetName=" + (CharacterSetName==null? "" : System.Uri.EscapeDataString(CharacterSetName))+"&PubliclyAccessible="+PubliclyAccessible+"&"+string.Join("&", Tags.Select(z => $"Tags={System.Uri.EscapeDataString(z.ToString())}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3156,7 +3147,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3167,8 +3157,7 @@ namespace MyNS
 		public async Task GET_CreateDBInstanceReadReplicaAsync(string DBInstanceIdentifier, string SourceDBInstanceIdentifier, string DBInstanceClass, string AvailabilityZone, int Port, bool AutoMinorVersionUpgrade, int Iops, string OptionGroupName, bool PubliclyAccessible, string[] Tags, string DBSubnetGroupName, GET_CreateDBInstanceReadReplicaAction Action, GET_CreateDBInstanceReadReplicaVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=CreateDBInstanceReadReplica?DBInstanceIdentifier=" + (DBInstanceIdentifier==null? "" : System.Uri.EscapeDataString(DBInstanceIdentifier))+"&SourceDBInstanceIdentifier=" + (SourceDBInstanceIdentifier==null? "" : System.Uri.EscapeDataString(SourceDBInstanceIdentifier))+"&DBInstanceClass=" + (DBInstanceClass==null? "" : System.Uri.EscapeDataString(DBInstanceClass))+"&AvailabilityZone=" + (AvailabilityZone==null? "" : System.Uri.EscapeDataString(AvailabilityZone))+"&Port="+Port+"&AutoMinorVersionUpgrade="+AutoMinorVersionUpgrade+"&Iops="+Iops+"&OptionGroupName=" + (OptionGroupName==null? "" : System.Uri.EscapeDataString(OptionGroupName))+"&PubliclyAccessible="+PubliclyAccessible+"&"+string.Join("&", Tags.Select(z => $"Tags={System.Uri.EscapeDataString(z.ToString())}"))+"&DBSubnetGroupName=" + (DBSubnetGroupName==null? "" : System.Uri.EscapeDataString(DBSubnetGroupName))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3182,7 +3171,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3193,8 +3181,7 @@ namespace MyNS
 		public async Task GET_CreateDBParameterGroupAsync(string DBParameterGroupName, string DBParameterGroupFamily, string Description, string[] Tags, GET_CreateDBParameterGroupAction Action, GET_CreateDBParameterGroupVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=CreateDBParameterGroup?DBParameterGroupName=" + (DBParameterGroupName==null? "" : System.Uri.EscapeDataString(DBParameterGroupName))+"&DBParameterGroupFamily=" + (DBParameterGroupFamily==null? "" : System.Uri.EscapeDataString(DBParameterGroupFamily))+"&Description=" + (Description==null? "" : System.Uri.EscapeDataString(Description))+"&"+string.Join("&", Tags.Select(z => $"Tags={System.Uri.EscapeDataString(z.ToString())}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3208,7 +3195,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3219,8 +3205,7 @@ namespace MyNS
 		public async Task GET_CreateDBSecurityGroupAsync(string DBSecurityGroupName, string DBSecurityGroupDescription, string[] Tags, GET_CreateDBSecurityGroupAction Action, GET_CreateDBSecurityGroupVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=CreateDBSecurityGroup?DBSecurityGroupName=" + (DBSecurityGroupName==null? "" : System.Uri.EscapeDataString(DBSecurityGroupName))+"&DBSecurityGroupDescription=" + (DBSecurityGroupDescription==null? "" : System.Uri.EscapeDataString(DBSecurityGroupDescription))+"&"+string.Join("&", Tags.Select(z => $"Tags={System.Uri.EscapeDataString(z.ToString())}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3234,7 +3219,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3245,8 +3229,7 @@ namespace MyNS
 		public async Task GET_CreateDBSnapshotAsync(string DBSnapshotIdentifier, string DBInstanceIdentifier, string[] Tags, GET_CreateDBSnapshotAction Action, GET_CreateDBSnapshotVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=CreateDBSnapshot?DBSnapshotIdentifier=" + (DBSnapshotIdentifier==null? "" : System.Uri.EscapeDataString(DBSnapshotIdentifier))+"&DBInstanceIdentifier=" + (DBInstanceIdentifier==null? "" : System.Uri.EscapeDataString(DBInstanceIdentifier))+"&"+string.Join("&", Tags.Select(z => $"Tags={System.Uri.EscapeDataString(z.ToString())}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3260,7 +3243,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3271,8 +3253,7 @@ namespace MyNS
 		public async Task GET_CreateDBSubnetGroupAsync(string DBSubnetGroupName, string DBSubnetGroupDescription, string[] SubnetIds, string[] Tags, GET_CreateDBSubnetGroupAction Action, GET_CreateDBSubnetGroupVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=CreateDBSubnetGroup?DBSubnetGroupName=" + (DBSubnetGroupName==null? "" : System.Uri.EscapeDataString(DBSubnetGroupName))+"&DBSubnetGroupDescription=" + (DBSubnetGroupDescription==null? "" : System.Uri.EscapeDataString(DBSubnetGroupDescription))+"&"+string.Join("&", SubnetIds.Select(z => $"SubnetIds={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", Tags.Select(z => $"Tags={System.Uri.EscapeDataString(z.ToString())}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3286,7 +3267,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3297,8 +3277,7 @@ namespace MyNS
 		public async Task GET_CreateEventSubscriptionAsync(string SubscriptionName, string SnsTopicArn, string SourceType, string[] EventCategories, string[] SourceIds, bool Enabled, string[] Tags, GET_CreateEventSubscriptionAction Action, GET_CreateEventSubscriptionVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=CreateEventSubscription?SubscriptionName=" + (SubscriptionName==null? "" : System.Uri.EscapeDataString(SubscriptionName))+"&SnsTopicArn=" + (SnsTopicArn==null? "" : System.Uri.EscapeDataString(SnsTopicArn))+"&SourceType=" + (SourceType==null? "" : System.Uri.EscapeDataString(SourceType))+"&"+string.Join("&", EventCategories.Select(z => $"EventCategories={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", SourceIds.Select(z => $"SourceIds={System.Uri.EscapeDataString(z.ToString())}"))+"&Enabled="+Enabled+"&"+string.Join("&", Tags.Select(z => $"Tags={System.Uri.EscapeDataString(z.ToString())}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3312,7 +3291,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3323,8 +3301,7 @@ namespace MyNS
 		public async Task GET_CreateOptionGroupAsync(string OptionGroupName, string EngineName, string MajorEngineVersion, string OptionGroupDescription, string[] Tags, GET_CreateOptionGroupAction Action, GET_CreateOptionGroupVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=CreateOptionGroup?OptionGroupName=" + (OptionGroupName==null? "" : System.Uri.EscapeDataString(OptionGroupName))+"&EngineName=" + (EngineName==null? "" : System.Uri.EscapeDataString(EngineName))+"&MajorEngineVersion=" + (MajorEngineVersion==null? "" : System.Uri.EscapeDataString(MajorEngineVersion))+"&OptionGroupDescription=" + (OptionGroupDescription==null? "" : System.Uri.EscapeDataString(OptionGroupDescription))+"&"+string.Join("&", Tags.Select(z => $"Tags={System.Uri.EscapeDataString(z.ToString())}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3338,7 +3315,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3349,8 +3325,7 @@ namespace MyNS
 		public async Task GET_DeleteDBInstanceAsync(string DBInstanceIdentifier, bool SkipFinalSnapshot, string FinalDBSnapshotIdentifier, GET_DeleteDBInstanceAction Action, GET_DeleteDBInstanceVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DeleteDBInstance?DBInstanceIdentifier=" + (DBInstanceIdentifier==null? "" : System.Uri.EscapeDataString(DBInstanceIdentifier))+"&SkipFinalSnapshot="+SkipFinalSnapshot+"&FinalDBSnapshotIdentifier=" + (FinalDBSnapshotIdentifier==null? "" : System.Uri.EscapeDataString(FinalDBSnapshotIdentifier))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3364,7 +3339,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3375,8 +3349,7 @@ namespace MyNS
 		public async Task GET_DeleteDBParameterGroupAsync(string DBParameterGroupName, GET_DeleteDBParameterGroupAction Action, GET_DeleteDBParameterGroupVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DeleteDBParameterGroup?DBParameterGroupName=" + (DBParameterGroupName==null? "" : System.Uri.EscapeDataString(DBParameterGroupName))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3390,7 +3363,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3401,8 +3373,7 @@ namespace MyNS
 		public async Task GET_DeleteDBSecurityGroupAsync(string DBSecurityGroupName, GET_DeleteDBSecurityGroupAction Action, GET_DeleteDBSecurityGroupVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DeleteDBSecurityGroup?DBSecurityGroupName=" + (DBSecurityGroupName==null? "" : System.Uri.EscapeDataString(DBSecurityGroupName))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3416,7 +3387,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3427,8 +3397,7 @@ namespace MyNS
 		public async Task GET_DeleteDBSnapshotAsync(string DBSnapshotIdentifier, GET_DeleteDBSnapshotAction Action, GET_DeleteDBSnapshotVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DeleteDBSnapshot?DBSnapshotIdentifier=" + (DBSnapshotIdentifier==null? "" : System.Uri.EscapeDataString(DBSnapshotIdentifier))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3442,7 +3411,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3453,8 +3421,7 @@ namespace MyNS
 		public async Task GET_DeleteDBSubnetGroupAsync(string DBSubnetGroupName, GET_DeleteDBSubnetGroupAction Action, GET_DeleteDBSubnetGroupVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DeleteDBSubnetGroup?DBSubnetGroupName=" + (DBSubnetGroupName==null? "" : System.Uri.EscapeDataString(DBSubnetGroupName))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3468,7 +3435,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3479,8 +3445,7 @@ namespace MyNS
 		public async Task GET_DeleteEventSubscriptionAsync(string SubscriptionName, GET_DeleteEventSubscriptionAction Action, GET_DeleteEventSubscriptionVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DeleteEventSubscription?SubscriptionName=" + (SubscriptionName==null? "" : System.Uri.EscapeDataString(SubscriptionName))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3494,7 +3459,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3505,8 +3469,7 @@ namespace MyNS
 		public async Task GET_DeleteOptionGroupAsync(string OptionGroupName, GET_DeleteOptionGroupAction Action, GET_DeleteOptionGroupVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DeleteOptionGroup?OptionGroupName=" + (OptionGroupName==null? "" : System.Uri.EscapeDataString(OptionGroupName))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3520,7 +3483,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3531,8 +3493,7 @@ namespace MyNS
 		public async Task GET_DescribeDBEngineVersionsAsync(string Engine, string EngineVersion, string DBParameterGroupFamily, string[] Filters, int MaxRecords, string Marker, bool DefaultOnly, bool ListSupportedCharacterSets, GET_DescribeDBEngineVersionsAction Action, GET_DescribeDBEngineVersionsVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribeDBEngineVersions?Engine=" + (Engine==null? "" : System.Uri.EscapeDataString(Engine))+"&EngineVersion=" + (EngineVersion==null? "" : System.Uri.EscapeDataString(EngineVersion))+"&DBParameterGroupFamily=" + (DBParameterGroupFamily==null? "" : System.Uri.EscapeDataString(DBParameterGroupFamily))+"&"+string.Join("&", Filters.Select(z => $"Filters={System.Uri.EscapeDataString(z.ToString())}"))+"&MaxRecords="+MaxRecords+"&Marker=" + (Marker==null? "" : System.Uri.EscapeDataString(Marker))+"&DefaultOnly="+DefaultOnly+"&ListSupportedCharacterSets="+ListSupportedCharacterSets+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3546,7 +3507,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3557,8 +3517,7 @@ namespace MyNS
 		public async Task GET_DescribeDBInstancesAsync(string DBInstanceIdentifier, string[] Filters, int MaxRecords, string Marker, GET_DescribeDBInstancesAction Action, GET_DescribeDBInstancesVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribeDBInstances?DBInstanceIdentifier=" + (DBInstanceIdentifier==null? "" : System.Uri.EscapeDataString(DBInstanceIdentifier))+"&"+string.Join("&", Filters.Select(z => $"Filters={System.Uri.EscapeDataString(z.ToString())}"))+"&MaxRecords="+MaxRecords+"&Marker=" + (Marker==null? "" : System.Uri.EscapeDataString(Marker))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3572,7 +3531,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3583,8 +3541,7 @@ namespace MyNS
 		public async Task GET_DescribeDBLogFilesAsync(string DBInstanceIdentifier, string FilenameContains, int FileLastWritten, int FileSize, string[] Filters, int MaxRecords, string Marker, GET_DescribeDBLogFilesAction Action, GET_DescribeDBLogFilesVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribeDBLogFiles?DBInstanceIdentifier=" + (DBInstanceIdentifier==null? "" : System.Uri.EscapeDataString(DBInstanceIdentifier))+"&FilenameContains=" + (FilenameContains==null? "" : System.Uri.EscapeDataString(FilenameContains))+"&FileLastWritten="+FileLastWritten+"&FileSize="+FileSize+"&"+string.Join("&", Filters.Select(z => $"Filters={System.Uri.EscapeDataString(z.ToString())}"))+"&MaxRecords="+MaxRecords+"&Marker=" + (Marker==null? "" : System.Uri.EscapeDataString(Marker))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3598,7 +3555,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3609,8 +3565,7 @@ namespace MyNS
 		public async Task GET_DescribeDBParameterGroupsAsync(string DBParameterGroupName, string[] Filters, int MaxRecords, string Marker, GET_DescribeDBParameterGroupsAction Action, GET_DescribeDBParameterGroupsVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribeDBParameterGroups?DBParameterGroupName=" + (DBParameterGroupName==null? "" : System.Uri.EscapeDataString(DBParameterGroupName))+"&"+string.Join("&", Filters.Select(z => $"Filters={System.Uri.EscapeDataString(z.ToString())}"))+"&MaxRecords="+MaxRecords+"&Marker=" + (Marker==null? "" : System.Uri.EscapeDataString(Marker))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3624,7 +3579,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3635,8 +3589,7 @@ namespace MyNS
 		public async Task GET_DescribeDBParametersAsync(string DBParameterGroupName, string Source, string[] Filters, int MaxRecords, string Marker, GET_DescribeDBParametersAction Action, GET_DescribeDBParametersVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribeDBParameters?DBParameterGroupName=" + (DBParameterGroupName==null? "" : System.Uri.EscapeDataString(DBParameterGroupName))+"&Source=" + (Source==null? "" : System.Uri.EscapeDataString(Source))+"&"+string.Join("&", Filters.Select(z => $"Filters={System.Uri.EscapeDataString(z.ToString())}"))+"&MaxRecords="+MaxRecords+"&Marker=" + (Marker==null? "" : System.Uri.EscapeDataString(Marker))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3650,7 +3603,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3661,8 +3613,7 @@ namespace MyNS
 		public async Task GET_DescribeDBSecurityGroupsAsync(string DBSecurityGroupName, string[] Filters, int MaxRecords, string Marker, GET_DescribeDBSecurityGroupsAction Action, GET_DescribeDBSecurityGroupsVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribeDBSecurityGroups?DBSecurityGroupName=" + (DBSecurityGroupName==null? "" : System.Uri.EscapeDataString(DBSecurityGroupName))+"&"+string.Join("&", Filters.Select(z => $"Filters={System.Uri.EscapeDataString(z.ToString())}"))+"&MaxRecords="+MaxRecords+"&Marker=" + (Marker==null? "" : System.Uri.EscapeDataString(Marker))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3676,7 +3627,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3687,8 +3637,7 @@ namespace MyNS
 		public async Task GET_DescribeDBSnapshotsAsync(string DBInstanceIdentifier, string DBSnapshotIdentifier, string SnapshotType, string[] Filters, int MaxRecords, string Marker, GET_DescribeDBSnapshotsAction Action, GET_DescribeDBSnapshotsVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribeDBSnapshots?DBInstanceIdentifier=" + (DBInstanceIdentifier==null? "" : System.Uri.EscapeDataString(DBInstanceIdentifier))+"&DBSnapshotIdentifier=" + (DBSnapshotIdentifier==null? "" : System.Uri.EscapeDataString(DBSnapshotIdentifier))+"&SnapshotType=" + (SnapshotType==null? "" : System.Uri.EscapeDataString(SnapshotType))+"&"+string.Join("&", Filters.Select(z => $"Filters={System.Uri.EscapeDataString(z.ToString())}"))+"&MaxRecords="+MaxRecords+"&Marker=" + (Marker==null? "" : System.Uri.EscapeDataString(Marker))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3702,7 +3651,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3713,8 +3661,7 @@ namespace MyNS
 		public async Task GET_DescribeDBSubnetGroupsAsync(string DBSubnetGroupName, string[] Filters, int MaxRecords, string Marker, GET_DescribeDBSubnetGroupsAction Action, GET_DescribeDBSubnetGroupsVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribeDBSubnetGroups?DBSubnetGroupName=" + (DBSubnetGroupName==null? "" : System.Uri.EscapeDataString(DBSubnetGroupName))+"&"+string.Join("&", Filters.Select(z => $"Filters={System.Uri.EscapeDataString(z.ToString())}"))+"&MaxRecords="+MaxRecords+"&Marker=" + (Marker==null? "" : System.Uri.EscapeDataString(Marker))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3728,7 +3675,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3739,8 +3685,7 @@ namespace MyNS
 		public async Task GET_DescribeEngineDefaultParametersAsync(string DBParameterGroupFamily, string[] Filters, int MaxRecords, string Marker, GET_DescribeEngineDefaultParametersAction Action, GET_DescribeEngineDefaultParametersVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribeEngineDefaultParameters?DBParameterGroupFamily=" + (DBParameterGroupFamily==null? "" : System.Uri.EscapeDataString(DBParameterGroupFamily))+"&"+string.Join("&", Filters.Select(z => $"Filters={System.Uri.EscapeDataString(z.ToString())}"))+"&MaxRecords="+MaxRecords+"&Marker=" + (Marker==null? "" : System.Uri.EscapeDataString(Marker))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3754,7 +3699,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3765,8 +3709,7 @@ namespace MyNS
 		public async Task GET_DescribeEventCategoriesAsync(string SourceType, string[] Filters, GET_DescribeEventCategoriesAction Action, GET_DescribeEventCategoriesVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribeEventCategories?SourceType=" + (SourceType==null? "" : System.Uri.EscapeDataString(SourceType))+"&"+string.Join("&", Filters.Select(z => $"Filters={System.Uri.EscapeDataString(z.ToString())}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3780,7 +3723,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3791,8 +3733,7 @@ namespace MyNS
 		public async Task GET_DescribeEventSubscriptionsAsync(string SubscriptionName, string[] Filters, int MaxRecords, string Marker, GET_DescribeEventSubscriptionsAction Action, GET_DescribeEventSubscriptionsVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribeEventSubscriptions?SubscriptionName=" + (SubscriptionName==null? "" : System.Uri.EscapeDataString(SubscriptionName))+"&"+string.Join("&", Filters.Select(z => $"Filters={System.Uri.EscapeDataString(z.ToString())}"))+"&MaxRecords="+MaxRecords+"&Marker=" + (Marker==null? "" : System.Uri.EscapeDataString(Marker))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3806,7 +3747,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3817,8 +3757,7 @@ namespace MyNS
 		public async Task GET_DescribeEventsAsync(string SourceIdentifier, GET_DescribeEventsSourceType SourceType, System.DateTimeOffset StartTime, System.DateTimeOffset EndTime, int Duration, string[] EventCategories, string[] Filters, int MaxRecords, string Marker, GET_DescribeEventsAction Action, GET_DescribeEventsVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribeEvents?SourceIdentifier=" + (SourceIdentifier==null? "" : System.Uri.EscapeDataString(SourceIdentifier))+"&SourceType=" + SourceType+"&StartTime=" + StartTime.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&EndTime=" + EndTime.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&Duration="+Duration+"&"+string.Join("&", EventCategories.Select(z => $"EventCategories={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", Filters.Select(z => $"Filters={System.Uri.EscapeDataString(z.ToString())}"))+"&MaxRecords="+MaxRecords+"&Marker=" + (Marker==null? "" : System.Uri.EscapeDataString(Marker))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3832,7 +3771,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3843,8 +3781,7 @@ namespace MyNS
 		public async Task GET_DescribeOptionGroupOptionsAsync(string EngineName, string MajorEngineVersion, string[] Filters, int MaxRecords, string Marker, GET_DescribeOptionGroupOptionsAction Action, GET_DescribeOptionGroupOptionsVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribeOptionGroupOptions?EngineName=" + (EngineName==null? "" : System.Uri.EscapeDataString(EngineName))+"&MajorEngineVersion=" + (MajorEngineVersion==null? "" : System.Uri.EscapeDataString(MajorEngineVersion))+"&"+string.Join("&", Filters.Select(z => $"Filters={System.Uri.EscapeDataString(z.ToString())}"))+"&MaxRecords="+MaxRecords+"&Marker=" + (Marker==null? "" : System.Uri.EscapeDataString(Marker))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3858,7 +3795,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3869,8 +3805,7 @@ namespace MyNS
 		public async Task GET_DescribeOptionGroupsAsync(string OptionGroupName, string[] Filters, string Marker, int MaxRecords, string EngineName, string MajorEngineVersion, GET_DescribeOptionGroupsAction Action, GET_DescribeOptionGroupsVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribeOptionGroups?OptionGroupName=" + (OptionGroupName==null? "" : System.Uri.EscapeDataString(OptionGroupName))+"&"+string.Join("&", Filters.Select(z => $"Filters={System.Uri.EscapeDataString(z.ToString())}"))+"&Marker=" + (Marker==null? "" : System.Uri.EscapeDataString(Marker))+"&MaxRecords="+MaxRecords+"&EngineName=" + (EngineName==null? "" : System.Uri.EscapeDataString(EngineName))+"&MajorEngineVersion=" + (MajorEngineVersion==null? "" : System.Uri.EscapeDataString(MajorEngineVersion))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3884,7 +3819,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3895,8 +3829,7 @@ namespace MyNS
 		public async Task GET_DescribeOrderableDBInstanceOptionsAsync(string Engine, string EngineVersion, string DBInstanceClass, string LicenseModel, bool Vpc, string[] Filters, int MaxRecords, string Marker, GET_DescribeOrderableDBInstanceOptionsAction Action, GET_DescribeOrderableDBInstanceOptionsVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribeOrderableDBInstanceOptions?Engine=" + (Engine==null? "" : System.Uri.EscapeDataString(Engine))+"&EngineVersion=" + (EngineVersion==null? "" : System.Uri.EscapeDataString(EngineVersion))+"&DBInstanceClass=" + (DBInstanceClass==null? "" : System.Uri.EscapeDataString(DBInstanceClass))+"&LicenseModel=" + (LicenseModel==null? "" : System.Uri.EscapeDataString(LicenseModel))+"&Vpc="+Vpc+"&"+string.Join("&", Filters.Select(z => $"Filters={System.Uri.EscapeDataString(z.ToString())}"))+"&MaxRecords="+MaxRecords+"&Marker=" + (Marker==null? "" : System.Uri.EscapeDataString(Marker))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3910,7 +3843,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3921,8 +3853,7 @@ namespace MyNS
 		public async Task GET_DescribeReservedDBInstancesAsync(string ReservedDBInstanceId, string ReservedDBInstancesOfferingId, string DBInstanceClass, string Duration, string ProductDescription, string OfferingType, bool MultiAZ, string[] Filters, int MaxRecords, string Marker, GET_DescribeReservedDBInstancesAction Action, GET_DescribeReservedDBInstancesVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribeReservedDBInstances?ReservedDBInstanceId=" + (ReservedDBInstanceId==null? "" : System.Uri.EscapeDataString(ReservedDBInstanceId))+"&ReservedDBInstancesOfferingId=" + (ReservedDBInstancesOfferingId==null? "" : System.Uri.EscapeDataString(ReservedDBInstancesOfferingId))+"&DBInstanceClass=" + (DBInstanceClass==null? "" : System.Uri.EscapeDataString(DBInstanceClass))+"&Duration=" + (Duration==null? "" : System.Uri.EscapeDataString(Duration))+"&ProductDescription=" + (ProductDescription==null? "" : System.Uri.EscapeDataString(ProductDescription))+"&OfferingType=" + (OfferingType==null? "" : System.Uri.EscapeDataString(OfferingType))+"&MultiAZ="+MultiAZ+"&"+string.Join("&", Filters.Select(z => $"Filters={System.Uri.EscapeDataString(z.ToString())}"))+"&MaxRecords="+MaxRecords+"&Marker=" + (Marker==null? "" : System.Uri.EscapeDataString(Marker))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3936,7 +3867,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3947,8 +3877,7 @@ namespace MyNS
 		public async Task GET_DescribeReservedDBInstancesOfferingsAsync(string ReservedDBInstancesOfferingId, string DBInstanceClass, string Duration, string ProductDescription, string OfferingType, bool MultiAZ, string[] Filters, int MaxRecords, string Marker, GET_DescribeReservedDBInstancesOfferingsAction Action, GET_DescribeReservedDBInstancesOfferingsVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DescribeReservedDBInstancesOfferings?ReservedDBInstancesOfferingId=" + (ReservedDBInstancesOfferingId==null? "" : System.Uri.EscapeDataString(ReservedDBInstancesOfferingId))+"&DBInstanceClass=" + (DBInstanceClass==null? "" : System.Uri.EscapeDataString(DBInstanceClass))+"&Duration=" + (Duration==null? "" : System.Uri.EscapeDataString(Duration))+"&ProductDescription=" + (ProductDescription==null? "" : System.Uri.EscapeDataString(ProductDescription))+"&OfferingType=" + (OfferingType==null? "" : System.Uri.EscapeDataString(OfferingType))+"&MultiAZ="+MultiAZ+"&"+string.Join("&", Filters.Select(z => $"Filters={System.Uri.EscapeDataString(z.ToString())}"))+"&MaxRecords="+MaxRecords+"&Marker=" + (Marker==null? "" : System.Uri.EscapeDataString(Marker))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3962,7 +3891,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3973,8 +3901,7 @@ namespace MyNS
 		public async Task GET_DownloadDBLogFilePortionAsync(string DBInstanceIdentifier, string LogFileName, string Marker, int NumberOfLines, GET_DownloadDBLogFilePortionAction Action, GET_DownloadDBLogFilePortionVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=DownloadDBLogFilePortion?DBInstanceIdentifier=" + (DBInstanceIdentifier==null? "" : System.Uri.EscapeDataString(DBInstanceIdentifier))+"&LogFileName=" + (LogFileName==null? "" : System.Uri.EscapeDataString(LogFileName))+"&Marker=" + (Marker==null? "" : System.Uri.EscapeDataString(Marker))+"&NumberOfLines="+NumberOfLines+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -3988,7 +3915,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -3999,8 +3925,7 @@ namespace MyNS
 		public async Task GET_ListTagsForResourceAsync(string ResourceName, string[] Filters, GET_ListTagsForResourceAction Action, GET_ListTagsForResourceVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=ListTagsForResource?ResourceName=" + (ResourceName==null? "" : System.Uri.EscapeDataString(ResourceName))+"&"+string.Join("&", Filters.Select(z => $"Filters={System.Uri.EscapeDataString(z.ToString())}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4014,7 +3939,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4046,8 +3970,7 @@ namespace MyNS
 					Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=ModifyDBInstance?DBInstanceIdentifier=" + (DBInstanceIdentifier==null? "" : System.Uri.EscapeDataString(DBInstanceIdentifier))+"&AllocatedStorage="+AllocatedStorage+"&DBInstanceClass=" + (DBInstanceClass==null? "" : System.Uri.EscapeDataString(DBInstanceClass))+"&"+string.Join("&", DBSecurityGroups.Select(z => $"DBSecurityGroups={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", VpcSecurityGroupIds.Select(z => $"VpcSecurityGroupIds={System.Uri.EscapeDataString(z.ToString())}"))+"&ApplyImmediately="+ApplyImmediately+"&MasterUserPassword=" + (MasterUserPassword==null? "" : System.Uri.EscapeDataString(MasterUserPassword))+"&DBParameterGroupName=" + (DBParameterGroupName==null? "" : System.Uri.EscapeDataString(DBParameterGroupName))+"&BackupRetentionPeriod="+BackupRetentionPeriod+"&PreferredBackupWindow=" + (PreferredBackupWindow==null? "" : System.Uri.EscapeDataString(PreferredBackupWindow))+"&PreferredMaintenanceWindow=" + (PreferredMaintenanceWindow==null? "" : System.Uri.EscapeDataString(PreferredMaintenanceWindow))+"&MultiAZ="+MultiAZ+"&EngineVersion=" + (EngineVersion==null? "" : System.Uri.EscapeDataString(EngineVersion))+"&AllowMajorVersionUpgrade="+AllowMajorVersionUpgrade+"&AutoMinorVersionUpgrade="+AutoMinorVersionUpgrade+"&Iops="+Iops+"&OptionGroupName=" + (OptionGroupName==null? "" : System.Uri.EscapeDataString(OptionGroupName))+"&NewDBInstanceIdentifier=" + (NewDBInstanceIdentifier==null? "" : System.Uri.EscapeDataString(NewDBInstanceIdentifier))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4061,7 +3984,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4072,8 +3994,7 @@ namespace MyNS
 		public async Task GET_ModifyDBParameterGroupAsync(string DBParameterGroupName, string[] Parameters, GET_ModifyDBParameterGroupAction Action, GET_ModifyDBParameterGroupVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=ModifyDBParameterGroup?DBParameterGroupName=" + (DBParameterGroupName==null? "" : System.Uri.EscapeDataString(DBParameterGroupName))+"&"+string.Join("&", Parameters.Select(z => $"Parameters={System.Uri.EscapeDataString(z.ToString())}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4087,7 +4008,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4098,8 +4018,7 @@ namespace MyNS
 		public async Task GET_ModifyDBSubnetGroupAsync(string DBSubnetGroupName, string DBSubnetGroupDescription, string[] SubnetIds, GET_ModifyDBSubnetGroupAction Action, GET_ModifyDBSubnetGroupVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=ModifyDBSubnetGroup?DBSubnetGroupName=" + (DBSubnetGroupName==null? "" : System.Uri.EscapeDataString(DBSubnetGroupName))+"&DBSubnetGroupDescription=" + (DBSubnetGroupDescription==null? "" : System.Uri.EscapeDataString(DBSubnetGroupDescription))+"&"+string.Join("&", SubnetIds.Select(z => $"SubnetIds={System.Uri.EscapeDataString(z.ToString())}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4113,7 +4032,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4124,8 +4042,7 @@ namespace MyNS
 		public async Task GET_ModifyEventSubscriptionAsync(string SubscriptionName, string SnsTopicArn, string SourceType, string[] EventCategories, bool Enabled, GET_ModifyEventSubscriptionAction Action, GET_ModifyEventSubscriptionVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=ModifyEventSubscription?SubscriptionName=" + (SubscriptionName==null? "" : System.Uri.EscapeDataString(SubscriptionName))+"&SnsTopicArn=" + (SnsTopicArn==null? "" : System.Uri.EscapeDataString(SnsTopicArn))+"&SourceType=" + (SourceType==null? "" : System.Uri.EscapeDataString(SourceType))+"&"+string.Join("&", EventCategories.Select(z => $"EventCategories={System.Uri.EscapeDataString(z.ToString())}"))+"&Enabled="+Enabled+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4139,7 +4056,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4150,8 +4066,7 @@ namespace MyNS
 		public async Task GET_ModifyOptionGroupAsync(string OptionGroupName, string[] OptionsToInclude, string[] OptionsToRemove, bool ApplyImmediately, GET_ModifyOptionGroupAction Action, GET_ModifyOptionGroupVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=ModifyOptionGroup?OptionGroupName=" + (OptionGroupName==null? "" : System.Uri.EscapeDataString(OptionGroupName))+"&"+string.Join("&", OptionsToInclude.Select(z => $"OptionsToInclude={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", OptionsToRemove.Select(z => $"OptionsToRemove={System.Uri.EscapeDataString(z.ToString())}"))+"&ApplyImmediately="+ApplyImmediately+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4165,7 +4080,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4176,8 +4090,7 @@ namespace MyNS
 		public async Task GET_PromoteReadReplicaAsync(string DBInstanceIdentifier, int BackupRetentionPeriod, string PreferredBackupWindow, GET_PromoteReadReplicaAction Action, GET_PromoteReadReplicaVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=PromoteReadReplica?DBInstanceIdentifier=" + (DBInstanceIdentifier==null? "" : System.Uri.EscapeDataString(DBInstanceIdentifier))+"&BackupRetentionPeriod="+BackupRetentionPeriod+"&PreferredBackupWindow=" + (PreferredBackupWindow==null? "" : System.Uri.EscapeDataString(PreferredBackupWindow))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4191,7 +4104,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4202,8 +4114,7 @@ namespace MyNS
 		public async Task GET_PurchaseReservedDBInstancesOfferingAsync(string ReservedDBInstancesOfferingId, string ReservedDBInstanceId, int DBInstanceCount, string[] Tags, GET_PurchaseReservedDBInstancesOfferingAction Action, GET_PurchaseReservedDBInstancesOfferingVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=PurchaseReservedDBInstancesOffering?ReservedDBInstancesOfferingId=" + (ReservedDBInstancesOfferingId==null? "" : System.Uri.EscapeDataString(ReservedDBInstancesOfferingId))+"&ReservedDBInstanceId=" + (ReservedDBInstanceId==null? "" : System.Uri.EscapeDataString(ReservedDBInstanceId))+"&DBInstanceCount="+DBInstanceCount+"&"+string.Join("&", Tags.Select(z => $"Tags={System.Uri.EscapeDataString(z.ToString())}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4217,7 +4128,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4228,8 +4138,7 @@ namespace MyNS
 		public async Task GET_RebootDBInstanceAsync(string DBInstanceIdentifier, bool ForceFailover, GET_RebootDBInstanceAction Action, GET_RebootDBInstanceVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=RebootDBInstance?DBInstanceIdentifier=" + (DBInstanceIdentifier==null? "" : System.Uri.EscapeDataString(DBInstanceIdentifier))+"&ForceFailover="+ForceFailover+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4243,7 +4152,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4254,8 +4162,7 @@ namespace MyNS
 		public async Task GET_RemoveSourceIdentifierFromSubscriptionAsync(string SubscriptionName, string SourceIdentifier, GET_RemoveSourceIdentifierFromSubscriptionAction Action, GET_RemoveSourceIdentifierFromSubscriptionVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=RemoveSourceIdentifierFromSubscription?SubscriptionName=" + (SubscriptionName==null? "" : System.Uri.EscapeDataString(SubscriptionName))+"&SourceIdentifier=" + (SourceIdentifier==null? "" : System.Uri.EscapeDataString(SourceIdentifier))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4269,7 +4176,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4280,8 +4186,7 @@ namespace MyNS
 		public async Task GET_RemoveTagsFromResourceAsync(string ResourceName, string[] TagKeys, GET_RemoveTagsFromResourceAction Action, GET_RemoveTagsFromResourceVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=RemoveTagsFromResource?ResourceName=" + (ResourceName==null? "" : System.Uri.EscapeDataString(ResourceName))+"&"+string.Join("&", TagKeys.Select(z => $"TagKeys={System.Uri.EscapeDataString(z.ToString())}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4295,7 +4200,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4306,8 +4210,7 @@ namespace MyNS
 		public async Task GET_ResetDBParameterGroupAsync(string DBParameterGroupName, bool ResetAllParameters, string[] Parameters, GET_ResetDBParameterGroupAction Action, GET_ResetDBParameterGroupVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=ResetDBParameterGroup?DBParameterGroupName=" + (DBParameterGroupName==null? "" : System.Uri.EscapeDataString(DBParameterGroupName))+"&ResetAllParameters="+ResetAllParameters+"&"+string.Join("&", Parameters.Select(z => $"Parameters={System.Uri.EscapeDataString(z.ToString())}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4321,7 +4224,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4350,8 +4252,7 @@ namespace MyNS
 					Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=RestoreDBInstanceFromDBSnapshot?DBInstanceIdentifier=" + (DBInstanceIdentifier==null? "" : System.Uri.EscapeDataString(DBInstanceIdentifier))+"&DBSnapshotIdentifier=" + (DBSnapshotIdentifier==null? "" : System.Uri.EscapeDataString(DBSnapshotIdentifier))+"&DBInstanceClass=" + (DBInstanceClass==null? "" : System.Uri.EscapeDataString(DBInstanceClass))+"&Port="+Port+"&AvailabilityZone=" + (AvailabilityZone==null? "" : System.Uri.EscapeDataString(AvailabilityZone))+"&DBSubnetGroupName=" + (DBSubnetGroupName==null? "" : System.Uri.EscapeDataString(DBSubnetGroupName))+"&MultiAZ="+MultiAZ+"&PubliclyAccessible="+PubliclyAccessible+"&AutoMinorVersionUpgrade="+AutoMinorVersionUpgrade+"&LicenseModel=" + (LicenseModel==null? "" : System.Uri.EscapeDataString(LicenseModel))+"&DBName=" + (DBName==null? "" : System.Uri.EscapeDataString(DBName))+"&Engine=" + (Engine==null? "" : System.Uri.EscapeDataString(Engine))+"&Iops="+Iops+"&OptionGroupName=" + (OptionGroupName==null? "" : System.Uri.EscapeDataString(OptionGroupName))+"&"+string.Join("&", Tags.Select(z => $"Tags={System.Uri.EscapeDataString(z.ToString())}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4365,7 +4266,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4396,8 +4296,7 @@ namespace MyNS
 					Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=RestoreDBInstanceToPointInTime?SourceDBInstanceIdentifier=" + (SourceDBInstanceIdentifier==null? "" : System.Uri.EscapeDataString(SourceDBInstanceIdentifier))+"&TargetDBInstanceIdentifier=" + (TargetDBInstanceIdentifier==null? "" : System.Uri.EscapeDataString(TargetDBInstanceIdentifier))+"&RestoreTime=" + RestoreTime.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&UseLatestRestorableTime="+UseLatestRestorableTime+"&DBInstanceClass=" + (DBInstanceClass==null? "" : System.Uri.EscapeDataString(DBInstanceClass))+"&Port="+Port+"&AvailabilityZone=" + (AvailabilityZone==null? "" : System.Uri.EscapeDataString(AvailabilityZone))+"&DBSubnetGroupName=" + (DBSubnetGroupName==null? "" : System.Uri.EscapeDataString(DBSubnetGroupName))+"&MultiAZ="+MultiAZ+"&PubliclyAccessible="+PubliclyAccessible+"&AutoMinorVersionUpgrade="+AutoMinorVersionUpgrade+"&LicenseModel=" + (LicenseModel==null? "" : System.Uri.EscapeDataString(LicenseModel))+"&DBName=" + (DBName==null? "" : System.Uri.EscapeDataString(DBName))+"&Engine=" + (Engine==null? "" : System.Uri.EscapeDataString(Engine))+"&Iops="+Iops+"&OptionGroupName=" + (OptionGroupName==null? "" : System.Uri.EscapeDataString(OptionGroupName))+"&"+string.Join("&", Tags.Select(z => $"Tags={System.Uri.EscapeDataString(z.ToString())}"))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4411,7 +4310,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4422,8 +4320,7 @@ namespace MyNS
 		public async Task GET_RevokeDBSecurityGroupIngressAsync(string DBSecurityGroupName, string CIDRIP, string EC2SecurityGroupName, string EC2SecurityGroupId, string EC2SecurityGroupOwnerId, GET_RevokeDBSecurityGroupIngressAction Action, GET_RevokeDBSecurityGroupIngressVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "#Action=RevokeDBSecurityGroupIngress?DBSecurityGroupName=" + (DBSecurityGroupName==null? "" : System.Uri.EscapeDataString(DBSecurityGroupName))+"&CIDRIP=" + (CIDRIP==null? "" : System.Uri.EscapeDataString(CIDRIP))+"&EC2SecurityGroupName=" + (EC2SecurityGroupName==null? "" : System.Uri.EscapeDataString(EC2SecurityGroupName))+"&EC2SecurityGroupId=" + (EC2SecurityGroupId==null? "" : System.Uri.EscapeDataString(EC2SecurityGroupId))+"&EC2SecurityGroupOwnerId=" + (EC2SecurityGroupOwnerId==null? "" : System.Uri.EscapeDataString(EC2SecurityGroupOwnerId))+"&Action=" + Action+"&Version=" + Version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4437,7 +4334,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

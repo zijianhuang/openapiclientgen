@@ -4930,8 +4930,7 @@ namespace MyNS
 		public async Task FetchActionAsync(string id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "action/"+ (id==null? "" : System.Uri.EscapeDataString(id));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4945,7 +4944,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4959,8 +4957,7 @@ namespace MyNS
 		public async Task FetchBundleAsync(string id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "bundle/"+ (id==null? "" : System.Uri.EscapeDataString(id));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4974,7 +4971,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5034,8 +5030,7 @@ namespace MyNS
 					Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "calendar_event?filter[patient]=" + (filter_patient==null? "" : System.Uri.EscapeDataString(filter_patient))+"&filter[groups]=" + (filter_groups==null? "" : System.Uri.EscapeDataString(filter_groups))+"&filter[organization]=" + (filter_organization==null? "" : System.Uri.EscapeDataString(filter_organization))+"&filter[attendees]=" + (filter_attendees==null? "" : System.Uri.EscapeDataString(filter_attendees))+"&filter[type]=" + filter_type+"&filter[completed]="+filter_completed+"&filter[start_at]=" + (filter_start_at==null? "" : System.Uri.EscapeDataString(filter_start_at))+"&filter[end_at]=" + (filter_end_at==null? "" : System.Uri.EscapeDataString(filter_end_at))+"&filter[completed_at]=" + (filter_completed_at==null? "" : System.Uri.EscapeDataString(filter_completed_at))+"&filter[created_at]=" + (filter_created_at==null? "" : System.Uri.EscapeDataString(filter_created_at))+"&filter[updated_at]=" + (filter_updated_at==null? "" : System.Uri.EscapeDataString(filter_updated_at))+"&page[number]="+page_number+"&page[size]="+page_size+"&page[limit]="+page_limit+"&page[cursor]=" + (page_cursor==null? "" : System.Uri.EscapeDataString(page_cursor))+"&include=" + include;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5049,7 +5044,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5063,8 +5057,7 @@ namespace MyNS
 		public async Task DeleteCalendarEventAsync(string id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "calendar_event/"+ (id==null? "" : System.Uri.EscapeDataString(id));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5078,7 +5071,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5092,8 +5084,7 @@ namespace MyNS
 		public async Task FetchCalendarEventAsync(string id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "calendar_event/"+ (id==null? "" : System.Uri.EscapeDataString(id));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5107,7 +5098,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5124,8 +5114,7 @@ namespace MyNS
 		public async Task FetchCoachesAsync(string filter_groups, string filter_organization, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "coach?filter[groups]=" + (filter_groups==null? "" : System.Uri.EscapeDataString(filter_groups))+"&filter[organization]=" + (filter_organization==null? "" : System.Uri.EscapeDataString(filter_organization));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5139,7 +5128,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5153,8 +5141,7 @@ namespace MyNS
 		public async Task FetchCoachAsync(string id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "coach/"+ (id==null? "" : System.Uri.EscapeDataString(id));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5168,7 +5155,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5188,8 +5174,7 @@ namespace MyNS
 		public async Task FetchEmailHistoriesAsync(string filter_receiver, string filter_sender, string filter_emailType, FetchEmailHistoriesSort sort, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "email_history?filter[receiver]=" + (filter_receiver==null? "" : System.Uri.EscapeDataString(filter_receiver))+"&filter[sender]=" + (filter_sender==null? "" : System.Uri.EscapeDataString(filter_sender))+"&filter[emailType]=" + (filter_emailType==null? "" : System.Uri.EscapeDataString(filter_emailType))+"&sort=" + sort;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5203,7 +5188,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5217,8 +5201,7 @@ namespace MyNS
 		public async Task FetchEmailHistoryAsync(string id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "email_history/"+ (id==null? "" : System.Uri.EscapeDataString(id));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5232,7 +5215,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5247,8 +5229,7 @@ namespace MyNS
 		public async Task FetchGroupsAsync(string filter_organization, string filter_name, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "group?filter[organization]=" + (filter_organization==null? "" : System.Uri.EscapeDataString(filter_organization))+"&filter[name]=" + (filter_name==null? "" : System.Uri.EscapeDataString(filter_name));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5262,7 +5243,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5276,8 +5256,7 @@ namespace MyNS
 		public async Task FetchGroupAsync(string id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "group/"+ (id==null? "" : System.Uri.EscapeDataString(id));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5291,7 +5270,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5320,8 +5298,7 @@ namespace MyNS
 		public async Task FetchHealthProfilesAsync(string filter_patient, string filter_groups, string filter_organization, int page_number, int page_size, int page_limit, string page_cursor, FetchHealthProfilesInclude include, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "health_profile?filter[patient]=" + (filter_patient==null? "" : System.Uri.EscapeDataString(filter_patient))+"&filter[groups]=" + (filter_groups==null? "" : System.Uri.EscapeDataString(filter_groups))+"&filter[organization]=" + (filter_organization==null? "" : System.Uri.EscapeDataString(filter_organization))+"&page[number]="+page_number+"&page[size]="+page_size+"&page[limit]="+page_limit+"&page[cursor]=" + (page_cursor==null? "" : System.Uri.EscapeDataString(page_cursor))+"&include=" + include;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5335,7 +5312,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5350,8 +5326,7 @@ namespace MyNS
 		public async Task FetchHealthProfileAsync(string id, FetchHealthProfilesInclude include, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "health_profile/"+ (id==null? "" : System.Uri.EscapeDataString(id))+"&include=" + include;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5365,7 +5340,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5394,8 +5368,7 @@ namespace MyNS
 		public async Task FetchHealthProfileAnswersAsync(string filter_patient, string filter_groups, string filter_organization, int page_number, int page_size, int page_limit, string page_cursor, PatientResourceType include, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "health_profile_answer?filter[patient]=" + (filter_patient==null? "" : System.Uri.EscapeDataString(filter_patient))+"&filter[groups]=" + (filter_groups==null? "" : System.Uri.EscapeDataString(filter_groups))+"&filter[organization]=" + (filter_organization==null? "" : System.Uri.EscapeDataString(filter_organization))+"&page[number]="+page_number+"&page[size]="+page_size+"&page[limit]="+page_limit+"&page[cursor]=" + (page_cursor==null? "" : System.Uri.EscapeDataString(page_cursor))+"&include=" + include;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5409,7 +5382,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5424,8 +5396,7 @@ namespace MyNS
 		public async Task FetchHealthProfileAnswerAsync(string id, PatientResourceType include, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "health_profile_answer/"+ (id==null? "" : System.Uri.EscapeDataString(id))+"&include=" + include;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5439,7 +5410,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5459,8 +5429,7 @@ namespace MyNS
 		public async Task FetchHealthProfileQuestionsAsync(string filter_patient, string filter_groups, string filter_organization, FetchHealthProfileQuestionsInclude include, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "health_profile_question?filter[patient]=" + (filter_patient==null? "" : System.Uri.EscapeDataString(filter_patient))+"&filter[groups]=" + (filter_groups==null? "" : System.Uri.EscapeDataString(filter_groups))+"&filter[organization]=" + (filter_organization==null? "" : System.Uri.EscapeDataString(filter_organization))+"&include=" + include;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5474,7 +5443,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5489,8 +5457,7 @@ namespace MyNS
 		public async Task FetchHealthProfileQuestionAsync(string id, FetchHealthProfileQuestionsInclude include, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "health_profile_question/"+ (id==null? "" : System.Uri.EscapeDataString(id))+"&include=" + include;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5504,7 +5471,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5517,8 +5483,7 @@ namespace MyNS
 		public async Task FetchHealthQuestionDefinitionsAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "health_question_definition";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5532,7 +5497,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5546,8 +5510,7 @@ namespace MyNS
 		public async Task FetchHealthQuestionDefinitionAsync(string id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "health_question_definition/"+ (id==null? "" : System.Uri.EscapeDataString(id));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5561,7 +5524,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5587,10 +5549,8 @@ namespace MyNS
 		public async Task CreateTokenAsync(CreateTokenInclude include, CreateTokenRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "oauth/token?include=" + include;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -5606,7 +5566,6 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
-			}
 		}
 		
 		/// <summary>
@@ -5619,8 +5578,7 @@ namespace MyNS
 		public async Task FetchTokenGroupsAsync(string id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "oauth/token/"+ (id==null? "" : System.Uri.EscapeDataString(id))+"/groups";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5634,7 +5592,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5648,8 +5605,7 @@ namespace MyNS
 		public async Task FetchTokenOrganizationAsync(string id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "oauth/token/"+ (id==null? "" : System.Uri.EscapeDataString(id))+"/organization";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5663,7 +5619,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5677,8 +5632,7 @@ namespace MyNS
 		public async Task FetchOrganizationAsync(string id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "organization/"+ (id==null? "" : System.Uri.EscapeDataString(id));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5692,7 +5646,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5723,8 +5676,7 @@ namespace MyNS
 		public async Task FetchPatientsAsync(string filter_groups, string filter_organization, string filter_identifier_system, string filter_identifier_value, bool filter_archived, string filter_created_at, string filter_updated_at, int page_number, int page_size, int page_limit, string page_cursor, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "patient?filter[groups]=" + (filter_groups==null? "" : System.Uri.EscapeDataString(filter_groups))+"&filter[organization]=" + (filter_organization==null? "" : System.Uri.EscapeDataString(filter_organization))+"&filter[identifier][system]=" + (filter_identifier_system==null? "" : System.Uri.EscapeDataString(filter_identifier_system))+"&filter[identifier][value]=" + (filter_identifier_value==null? "" : System.Uri.EscapeDataString(filter_identifier_value))+"&filter[archived]="+filter_archived+"&filter[created_at]=" + (filter_created_at==null? "" : System.Uri.EscapeDataString(filter_created_at))+"&filter[updated_at]=" + (filter_updated_at==null? "" : System.Uri.EscapeDataString(filter_updated_at))+"&page[number]="+page_number+"&page[size]="+page_size+"&page[limit]="+page_limit+"&page[cursor]=" + (page_cursor==null? "" : System.Uri.EscapeDataString(page_cursor));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5738,7 +5690,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5752,8 +5703,7 @@ namespace MyNS
 		public async Task FetchPatientAsync(string id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "patient/"+ (id==null? "" : System.Uri.EscapeDataString(id));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5767,7 +5717,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5781,8 +5730,7 @@ namespace MyNS
 		public async Task FetchPatientCoachesAsync(string id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "patient/"+ (id==null? "" : System.Uri.EscapeDataString(id))+"/coaches";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5796,7 +5744,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5810,8 +5757,7 @@ namespace MyNS
 		public async Task FetchPatientGroupsAsync(string id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "patient/"+ (id==null? "" : System.Uri.EscapeDataString(id))+"/groups";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5825,7 +5771,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5853,8 +5798,7 @@ namespace MyNS
 		public async Task FetchPatientHealthMetricsAsync(string filter_patient, string filter_groups, string filter_organization, int page_number, int page_size, int page_limit, string page_cursor, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "patient_health_metric?filter[patient]=" + (filter_patient==null? "" : System.Uri.EscapeDataString(filter_patient))+"&filter[groups]=" + (filter_groups==null? "" : System.Uri.EscapeDataString(filter_groups))+"&filter[organization]=" + (filter_organization==null? "" : System.Uri.EscapeDataString(filter_organization))+"&page[number]="+page_number+"&page[size]="+page_size+"&page[limit]="+page_limit+"&page[cursor]=" + (page_cursor==null? "" : System.Uri.EscapeDataString(page_cursor));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5868,7 +5812,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5882,8 +5825,7 @@ namespace MyNS
 		public async Task FetchPatientHealthMetricAsync(string id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "patient_health_metric/"+ (id==null? "" : System.Uri.EscapeDataString(id));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5897,7 +5839,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5917,8 +5858,7 @@ namespace MyNS
 		public async Task FetchPatientPlanSummariesAsync(string filter_patient, string filter_groups, string filter_organization, FetchPatientPlanSummariesInclude include, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "patient_plan_summary?filter[patient]=" + (filter_patient==null? "" : System.Uri.EscapeDataString(filter_patient))+"&filter[groups]=" + (filter_groups==null? "" : System.Uri.EscapeDataString(filter_groups))+"&filter[organization]=" + (filter_organization==null? "" : System.Uri.EscapeDataString(filter_organization))+"&include=" + include;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5932,7 +5872,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5947,8 +5886,7 @@ namespace MyNS
 		public async Task FetchPatientPlanSummaryAsync(string id, FetchPatientPlanSummariesInclude include, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "patient_plan_summary/"+ (id==null? "" : System.Uri.EscapeDataString(id))+"&include=" + include;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5962,7 +5900,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5993,8 +5930,7 @@ namespace MyNS
 		public async Task FetchPatientHealthResultsAsync(string filter_patient, string filter_actions, string filter_start_at, string filter_end_at, string filter_threads, string filter_created_at, string filter_updated_at, int page_number, int page_size, int page_limit, string page_after, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "result?filter[patient]=" + (filter_patient==null? "" : System.Uri.EscapeDataString(filter_patient))+"&filter[actions]=" + (filter_actions==null? "" : System.Uri.EscapeDataString(filter_actions))+"&filter[start_at]=" + (filter_start_at==null? "" : System.Uri.EscapeDataString(filter_start_at))+"&filter[end_at]=" + (filter_end_at==null? "" : System.Uri.EscapeDataString(filter_end_at))+"&filter[threads]=" + (filter_threads==null? "" : System.Uri.EscapeDataString(filter_threads))+"&filter[created_at]=" + (filter_created_at==null? "" : System.Uri.EscapeDataString(filter_created_at))+"&filter[updated_at]=" + (filter_updated_at==null? "" : System.Uri.EscapeDataString(filter_updated_at))+"&page[number]="+page_number+"&page[size]="+page_size+"&page[limit]="+page_limit+"&page[after]=" + (page_after==null? "" : System.Uri.EscapeDataString(page_after));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6008,7 +5944,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6022,8 +5957,7 @@ namespace MyNS
 		public async Task FetchPatientHealthResultAsync(string id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "result/"+ (id==null? "" : System.Uri.EscapeDataString(id));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6037,7 +5971,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6058,8 +5991,7 @@ namespace MyNS
 		public async Task FetchRewardsAsync(string filter_patient, string filter_reward_program_activation, string filter_thread, string filter_groups, string filter_organization, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "reward?filter[patient]=" + (filter_patient==null? "" : System.Uri.EscapeDataString(filter_patient))+"&filter[reward_program_activation]=" + (filter_reward_program_activation==null? "" : System.Uri.EscapeDataString(filter_reward_program_activation))+"&filter[thread]=" + (filter_thread==null? "" : System.Uri.EscapeDataString(filter_thread))+"&filter[groups]=" + (filter_groups==null? "" : System.Uri.EscapeDataString(filter_groups))+"&filter[organization]=" + (filter_organization==null? "" : System.Uri.EscapeDataString(filter_organization));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6073,7 +6005,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6087,8 +6018,7 @@ namespace MyNS
 		public async Task FetchRewardAsync(string id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "reward/"+ (id==null? "" : System.Uri.EscapeDataString(id));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6102,7 +6032,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6118,8 +6047,7 @@ namespace MyNS
 		public async Task FetchRewardEarningsAsync(string filter_groups, string filter_patient, bool filter_ready_for_fulfillment, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "reward_earning?filter[groups]=" + (filter_groups==null? "" : System.Uri.EscapeDataString(filter_groups))+"&filter[patient]=" + (filter_patient==null? "" : System.Uri.EscapeDataString(filter_patient))+"&filter[ready_for_fulfillment]="+filter_ready_for_fulfillment;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6133,7 +6061,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6147,8 +6074,7 @@ namespace MyNS
 		public async Task FetchRewardEarningAsync(string id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "reward_earning/"+ (id==null? "" : System.Uri.EscapeDataString(id));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6162,7 +6088,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6176,8 +6101,7 @@ namespace MyNS
 		public async Task FetchRewardEarningFulfillmentsAsync(string filter_patient, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "reward_earning_fulfillment?filter[patient]=" + (filter_patient==null? "" : System.Uri.EscapeDataString(filter_patient));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6191,7 +6115,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6205,8 +6128,7 @@ namespace MyNS
 		public async Task FetchRewardEarningFulfillmentAsync(string id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "reward_earning_fulfillment/"+ (id==null? "" : System.Uri.EscapeDataString(id));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6220,7 +6142,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6237,8 +6158,7 @@ namespace MyNS
 		public async Task FetchRewardProgramsAsync(string filter_groups, string filter_organization, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "reward_program?filter[groups]=" + (filter_groups==null? "" : System.Uri.EscapeDataString(filter_groups))+"&filter[organization]=" + (filter_organization==null? "" : System.Uri.EscapeDataString(filter_organization));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6252,7 +6172,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6266,8 +6185,7 @@ namespace MyNS
 		public async Task FetchRewardProgramAsync(string id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "reward_program/"+ (id==null? "" : System.Uri.EscapeDataString(id));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6281,7 +6199,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6295,8 +6212,7 @@ namespace MyNS
 		public async Task FetchRewardProgramGroupAsync(string id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "reward_program/"+ (id==null? "" : System.Uri.EscapeDataString(id))+"/group";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6310,7 +6226,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6329,8 +6244,7 @@ namespace MyNS
 		public async Task FetchRewardProgramActivationsAsync(string filter_patient, string filter_groups, string filter_organization, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "reward_program_activation?filter[patient]=" + (filter_patient==null? "" : System.Uri.EscapeDataString(filter_patient))+"&filter[groups]=" + (filter_groups==null? "" : System.Uri.EscapeDataString(filter_groups))+"&filter[organization]=" + (filter_organization==null? "" : System.Uri.EscapeDataString(filter_organization));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6344,7 +6258,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -6358,8 +6271,7 @@ namespace MyNS
 		public async Task FetchRewardProgramActivationAsync(string id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "reward_program_activation/"+ (id==null? "" : System.Uri.EscapeDataString(id));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -6373,7 +6285,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

@@ -340,10 +340,8 @@ namespace MyNS
 		public async Task<BatchGetRecordResponse> BatchGetRecordAsync(BatchGetRecordPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "BatchGetRecord";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -354,13 +352,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<BatchGetRecordResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<BatchGetRecordResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -387,8 +384,7 @@ namespace MyNS
 		public async Task DeleteRecordAsync(string FeatureGroupName, string RecordIdentifierValueAsString, string EventTime, TargetStore[] TargetStores, DeletionMode DeletionMode, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "FeatureGroup/"+ (FeatureGroupName==null? "" : System.Uri.EscapeDataString(FeatureGroupName))+"#RecordIdentifierValueAsString&EventTime&RecordIdentifierValueAsString=" + (RecordIdentifierValueAsString==null? "" : System.Uri.EscapeDataString(RecordIdentifierValueAsString))+"&EventTime=" + (EventTime==null? "" : System.Uri.EscapeDataString(EventTime))+"&"+string.Join("&", TargetStores.Select(z => $"TargetStores={z}"))+"&DeletionMode=" + DeletionMode;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -402,7 +398,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -425,8 +420,7 @@ namespace MyNS
 		public async Task<GetRecordResponse> GetRecordAsync(string FeatureGroupName, string RecordIdentifierValueAsString, string[] FeatureName, ExpirationTimeResponse ExpirationTimeResponse, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "FeatureGroup/"+ (FeatureGroupName==null? "" : System.Uri.EscapeDataString(FeatureGroupName))+"#RecordIdentifierValueAsString&RecordIdentifierValueAsString=" + (RecordIdentifierValueAsString==null? "" : System.Uri.EscapeDataString(RecordIdentifierValueAsString))+"&"+string.Join("&", FeatureName.Select(z => $"FeatureName={System.Uri.EscapeDataString(z.ToString())}"))+"&ExpirationTimeResponse=" + ExpirationTimeResponse;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -436,13 +430,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<GetRecordResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<GetRecordResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -458,10 +451,8 @@ namespace MyNS
 		public async Task PutRecordAsync(string FeatureGroupName, PutRecordPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "FeatureGroup/"+ (FeatureGroupName==null? "" : System.Uri.EscapeDataString(FeatureGroupName));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -476,7 +467,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

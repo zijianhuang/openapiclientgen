@@ -46,8 +46,7 @@ namespace MyNS
 		public async Task Version_2GetBySkuAsync(string sku)
 		{
 			var requestUri = "v2/inventory?sku=" + (sku==null? "" : System.Uri.EscapeDataString(sku));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -56,7 +55,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -70,8 +68,7 @@ namespace MyNS
 		public async Task Version_3GetBySkuAndShipNodeAsync(string sku, string shipNode)
 		{
 			var requestUri = "v3/inventory?sku=" + (sku==null? "" : System.Uri.EscapeDataString(sku))+"&shipNode=" + (shipNode==null? "" : System.Uri.EscapeDataString(shipNode));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -80,7 +77,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

@@ -46,8 +46,7 @@ namespace MyNS
 		public async Task CompareStationAsync(string stationName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1.0/compareStation/"+ (stationName==null? "" : System.Uri.EscapeDataString(stationName))+"/";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -61,7 +60,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -75,8 +73,7 @@ namespace MyNS
 		public async Task GetAemetStationAsync(string stationName, string period, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1.0/getAemetStation/"+ (stationName==null? "" : System.Uri.EscapeDataString(stationName))+"/"+ (period==null? "" : System.Uri.EscapeDataString(period))+"/";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -90,7 +87,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -104,8 +100,7 @@ namespace MyNS
 		public async Task GetEasywindAsync(string easywindId, string period, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1.0/getEasyWind/"+ (easywindId==null? "" : System.Uri.EscapeDataString(easywindId))+"/&period=" + (period==null? "" : System.Uri.EscapeDataString(period));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -119,7 +114,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -132,8 +126,7 @@ namespace MyNS
 		public async Task GetEventStationsAsync(string eventId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1.0/getEventStations/"+ (eventId==null? "" : System.Uri.EscapeDataString(eventId))+"/";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -147,7 +140,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -160,8 +152,7 @@ namespace MyNS
 		public async Task GetForecastPointsAsync(string yatchclubid, string language, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1.0/getForecastPoints/"+ (yatchclubid==null? "" : System.Uri.EscapeDataString(yatchclubid))+"/language/"+ (language==null? "" : System.Uri.EscapeDataString(language));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -175,7 +166,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -196,8 +186,7 @@ namespace MyNS
 		public async Task GetForecastTimeSeriesAsync(float latitude, float longitude, string inittime, string endtime, int days, int hours, string weather, string wave, string entryid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1.0/getForecastTimeSeries/"+latitude+"/"+longitude+"/?inittime=" + (inittime==null? "" : System.Uri.EscapeDataString(inittime))+"&endtime=" + (endtime==null? "" : System.Uri.EscapeDataString(endtime))+"&days="+days+"&hours="+hours+"&weather=" + (weather==null? "" : System.Uri.EscapeDataString(weather))+"&wave=" + (wave==null? "" : System.Uri.EscapeDataString(wave))+"&entryid=" + (entryid==null? "" : System.Uri.EscapeDataString(entryid));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -211,7 +200,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -232,8 +220,7 @@ namespace MyNS
 		public async Task GetForecastTimeSeriesWrfAsync(float latitude, float longitude, string inittime, string endtime, int days, int hours, string weather, string wave, string entryid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1.0/getForecastTimeSeriesWrf/"+latitude+"/"+longitude+"/?inittime=" + (inittime==null? "" : System.Uri.EscapeDataString(inittime))+"&endtime=" + (endtime==null? "" : System.Uri.EscapeDataString(endtime))+"&days="+days+"&hours="+hours+"&weather=" + (weather==null? "" : System.Uri.EscapeDataString(weather))+"&wave=" + (wave==null? "" : System.Uri.EscapeDataString(wave))+"&entryid=" + (entryid==null? "" : System.Uri.EscapeDataString(entryid));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -247,7 +234,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -261,8 +247,7 @@ namespace MyNS
 		public async Task GetSocibWeatherStationAsync(string stationName, string period, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1.0/getSocibWeatherStation/"+ (stationName==null? "" : System.Uri.EscapeDataString(stationName))+"/"+ (period==null? "" : System.Uri.EscapeDataString(period))+"/";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -276,7 +261,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -290,8 +274,7 @@ namespace MyNS
 		public async Task GetWeatherDisplayAsync(string stationName, string period, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1.0/getWeatherDisplay/"+ (stationName==null? "" : System.Uri.EscapeDataString(stationName))+"/&period=" + (period==null? "" : System.Uri.EscapeDataString(period));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -305,7 +288,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -317,8 +299,7 @@ namespace MyNS
 		public async Task GetWebCamsAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1.0/getWebCams/";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -332,7 +313,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

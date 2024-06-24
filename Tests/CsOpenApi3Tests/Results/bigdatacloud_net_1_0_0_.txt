@@ -51,8 +51,7 @@ namespace MyNS
 		public async Task IpGeolocationWithConfidenceAreaAndHazardReportApiAsync(string ip, string localityLanguage, string key, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "data/ip-geolocation-full?ip=" + (ip==null? "" : System.Uri.EscapeDataString(ip))+"&localityLanguage=" + (localityLanguage==null? "" : System.Uri.EscapeDataString(localityLanguage))+"&key=" + (key==null? "" : System.Uri.EscapeDataString(key));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -66,7 +65,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -84,8 +82,7 @@ namespace MyNS
 		public async Task IpGeolocationWithConfidenceAreaApiAsync(string ip, string localityLanguage, string key, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "data/ip-geolocation-with-confidence?ip=" + (ip==null? "" : System.Uri.EscapeDataString(ip))+"&localityLanguage=" + (localityLanguage==null? "" : System.Uri.EscapeDataString(localityLanguage))+"&key=" + (key==null? "" : System.Uri.EscapeDataString(key));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -99,7 +96,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

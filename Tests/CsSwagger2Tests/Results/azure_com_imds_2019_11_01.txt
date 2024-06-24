@@ -832,19 +832,17 @@ namespace MyNS
 		public async Task<AttestedData> Attested_GetDocumentAsync(Attested_GetDocumentApi_version api_version, string nonce)
 		{
 			var requestUri = "attested/document?api-version=" + api_version+"&nonce=" + (nonce==null? "" : System.Uri.EscapeDataString(nonce));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<AttestedData>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<AttestedData>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -857,19 +855,17 @@ namespace MyNS
 		public async Task<IdentityInfoResponse> Identity_GetInfoAsync(Identity_GetInfoApi_version api_version)
 		{
 			var requestUri = "identity/info?api-version=" + api_version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<IdentityInfoResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<IdentityInfoResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -888,19 +884,17 @@ namespace MyNS
 		public async Task<IdentityTokenResponse> Identity_GetTokenAsync(string resource, Identity_GetTokenApi_version api_version, string client_id, string object_id, string msi_res_id, string authority, Identity_GetTokenBypass_cache bypass_cache)
 		{
 			var requestUri = "identity/oauth2/token?resource=" + (resource==null? "" : System.Uri.EscapeDataString(resource))+"&api-version=" + api_version+"&client_id=" + (client_id==null? "" : System.Uri.EscapeDataString(client_id))+"&object_id=" + (object_id==null? "" : System.Uri.EscapeDataString(object_id))+"&msi_res_id=" + (msi_res_id==null? "" : System.Uri.EscapeDataString(msi_res_id))+"&authority=" + (authority==null? "" : System.Uri.EscapeDataString(authority))+"&bypass_cache=" + bypass_cache;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<IdentityTokenResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<IdentityTokenResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -913,19 +907,17 @@ namespace MyNS
 		public async Task<Instance> Instances_GetMetadataAsync(Instances_GetMetadataApi_version api_version)
 		{
 			var requestUri = "instance?api-version=" + api_version;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Instance>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Instance>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

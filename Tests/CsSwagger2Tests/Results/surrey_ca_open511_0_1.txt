@@ -46,8 +46,7 @@ namespace MyNS
 		public async Task AreasGetByFormatAsync(string format, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "areas?format=" + (format==null? "" : System.Uri.EscapeDataString(format));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -61,7 +60,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -83,8 +81,7 @@ namespace MyNS
 		public async Task EventsGetByFormatAndStatusAndSeverityAndJurisdictionAndEvent_typeAndCreatedAndUpdatedAndRoad_nameAndArea_idAndBboxAsync(string format, string status, string severity, string jurisdiction, string event_type, string created, string updated, string road_name, string area_id, string bbox, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "events?format=" + (format==null? "" : System.Uri.EscapeDataString(format))+"&status=" + (status==null? "" : System.Uri.EscapeDataString(status))+"&severity=" + (severity==null? "" : System.Uri.EscapeDataString(severity))+"&jurisdiction=" + (jurisdiction==null? "" : System.Uri.EscapeDataString(jurisdiction))+"&event_type=" + (event_type==null? "" : System.Uri.EscapeDataString(event_type))+"&created=" + (created==null? "" : System.Uri.EscapeDataString(created))+"&updated=" + (updated==null? "" : System.Uri.EscapeDataString(updated))+"&road_name=" + (road_name==null? "" : System.Uri.EscapeDataString(road_name))+"&area_id=" + (area_id==null? "" : System.Uri.EscapeDataString(area_id))+"&bbox=" + (bbox==null? "" : System.Uri.EscapeDataString(bbox));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -98,7 +95,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -111,8 +107,7 @@ namespace MyNS
 		public async Task JurisdictionGetByFormatAsync(string format, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "jurisdiction?format=" + (format==null? "" : System.Uri.EscapeDataString(format));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -126,7 +121,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -139,8 +133,7 @@ namespace MyNS
 		public async Task JurisdictiongeographyGetByFormatAsync(string format, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "jurisdictiongeography?format=" + (format==null? "" : System.Uri.EscapeDataString(format));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -154,7 +147,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

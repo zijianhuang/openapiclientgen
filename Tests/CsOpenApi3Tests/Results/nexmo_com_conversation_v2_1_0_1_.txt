@@ -393,8 +393,7 @@ namespace MyNS
 		public async Task<object> Get_conversationsAsync(int page_size, Get_conversationsOrder order, string cursor, string date_start, string date_end, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "conversations?page_size="+page_size+"&order=" + order+"&cursor=" + (cursor==null? "" : System.Uri.EscapeDataString(cursor))+"&date_start=" + (date_start==null? "" : System.Uri.EscapeDataString(date_start))+"&date_end=" + (date_end==null? "" : System.Uri.EscapeDataString(date_end));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -404,13 +403,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<object>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<object>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -434,8 +432,7 @@ namespace MyNS
 		public async Task<object> Get_eventsAsync(string conversation_id, int page_size, Get_conversationsOrder order, string cursor, string start_id, string end_id, string event_type, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "conversations/"+ (conversation_id==null? "" : System.Uri.EscapeDataString(conversation_id))+"/events&page_size="+page_size+"&order=" + order+"&cursor=" + (cursor==null? "" : System.Uri.EscapeDataString(cursor))+"&start_id=" + (start_id==null? "" : System.Uri.EscapeDataString(start_id))+"&end_id=" + (end_id==null? "" : System.Uri.EscapeDataString(end_id))+"&event_type=" + (event_type==null? "" : System.Uri.EscapeDataString(event_type));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -445,13 +442,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<object>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<object>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -472,8 +468,7 @@ namespace MyNS
 		public async Task<object> Get_membersAsync(string conversation_id, int page_size, Get_conversationsOrder order, string cursor, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "conversations/"+ (conversation_id==null? "" : System.Uri.EscapeDataString(conversation_id))+"/members&page_size="+page_size+"&order=" + order+"&cursor=" + (cursor==null? "" : System.Uri.EscapeDataString(cursor));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -483,13 +478,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<object>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<object>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -509,8 +503,7 @@ namespace MyNS
 		public async Task<object> Get_usersAsync(int page_size, Get_conversationsOrder order, string cursor, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "users?page_size="+page_size+"&order=" + order+"&cursor=" + (cursor==null? "" : System.Uri.EscapeDataString(cursor));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -520,13 +513,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<object>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<object>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

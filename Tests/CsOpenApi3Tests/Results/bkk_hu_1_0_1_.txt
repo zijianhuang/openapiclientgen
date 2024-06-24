@@ -4774,8 +4774,7 @@ namespace MyNS
 		public async Task<AlertSearchMethodResponse> SearchAlertsAsync(string query, long start, long end, int minResult, string appVersion, ApiVersion version, Dialect dialect, ReferencesSchema[] includeReferences, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = ""+dialect+"/api/where/alert-search?query=" + (query==null? "" : System.Uri.EscapeDataString(query))+"&start="+start+"&end="+end+"&minResult="+minResult+"&appVersion=" + (appVersion==null? "" : System.Uri.EscapeDataString(appVersion))+"&version=" + version+"&"+string.Join("&", includeReferences.Select(z => $"includeReferences={z}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4785,13 +4784,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<AlertSearchMethodResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<AlertSearchMethodResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4845,8 +4843,7 @@ namespace MyNS
 					Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = ""+dialect+"/api/where/arrivals-and-departures-for-location?groupLimit="+groupLimit+"&clientLon="+clientLon+"&clientLat="+clientLat+"&minutesBefore="+minutesBefore+"&minutesAfter="+minutesAfter+"&"+string.Join("&", stopId.Select(z => $"stopId={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", includeRouteId.Select(z => $"includeRouteId={System.Uri.EscapeDataString(z.ToString())}"))+"&time="+time+"&onlyDepartures="+onlyDepartures+"&limit="+limit+"&lat="+lat+"&lon="+lon+"&latSpan="+latSpan+"&lonSpan="+lonSpan+"&radius="+radius+"&query=" + (query==null? "" : System.Uri.EscapeDataString(query))+"&minResult="+minResult+"&appVersion=" + (appVersion==null? "" : System.Uri.EscapeDataString(appVersion))+"&version=" + version+"&"+string.Join("&", includeReferences.Select(z => $"includeReferences={z}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4856,13 +4853,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ArrivalsAndDeparturesForLocationOTPMethodResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ArrivalsAndDeparturesForLocationOTPMethodResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4910,8 +4906,7 @@ namespace MyNS
 					Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = ""+dialect+"/api/where/arrivals-and-departures-for-stop?minutesBefore="+minutesBefore+"&minutesAfter="+minutesAfter+"&"+string.Join("&", stopId.Select(z => $"stopId={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", includeRouteId.Select(z => $"includeRouteId={System.Uri.EscapeDataString(z.ToString())}"))+"&time="+time+"&onlyDepartures="+onlyDepartures+"&limit="+limit+"&lat="+lat+"&lon="+lon+"&latSpan="+latSpan+"&lonSpan="+lonSpan+"&radius="+radius+"&query=" + (query==null? "" : System.Uri.EscapeDataString(query))+"&minResult="+minResult+"&appVersion=" + (appVersion==null? "" : System.Uri.EscapeDataString(appVersion))+"&version=" + version+"&"+string.Join("&", includeReferences.Select(z => $"includeReferences={z}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4921,13 +4916,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ArrivalsAndDeparturesForStopOTPMethodResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ArrivalsAndDeparturesForStopOTPMethodResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4942,8 +4936,7 @@ namespace MyNS
 		public async Task<BicycleRentalMethodResponse> GetBicycleRentalStationsAsync(string appVersion, ApiVersion version, Dialect dialect, ReferencesSchema[] includeReferences, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = ""+dialect+"/api/where/bicycle-rental?appVersion=" + (appVersion==null? "" : System.Uri.EscapeDataString(appVersion))+"&version=" + version+"&"+string.Join("&", includeReferences.Select(z => $"includeReferences={z}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4953,13 +4946,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<BicycleRentalMethodResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<BicycleRentalMethodResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -4978,8 +4970,7 @@ namespace MyNS
 		public async Task BookingRedirectAsync(string routeId, string directionId, string tripId, string serviceDate, string boardStopId, string alightStopId, ApiVersion version, string appVersion, Dialect dialect, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = ""+dialect+"/api/where/booking-redirect?routeId=" + (routeId==null? "" : System.Uri.EscapeDataString(routeId))+"&directionId=" + (directionId==null? "" : System.Uri.EscapeDataString(directionId))+"&tripId=" + (tripId==null? "" : System.Uri.EscapeDataString(tripId))+"&serviceDate=" + (serviceDate==null? "" : System.Uri.EscapeDataString(serviceDate))+"&boardStopId=" + (boardStopId==null? "" : System.Uri.EscapeDataString(boardStopId))+"&alightStopId=" + (alightStopId==null? "" : System.Uri.EscapeDataString(alightStopId))+"&version=" + version+"&appVersion=" + (appVersion==null? "" : System.Uri.EscapeDataString(appVersion));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -4993,7 +4984,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5009,8 +4999,7 @@ namespace MyNS
 		public async Task<MetadataResponse> GetMetadataAsync(long time, string appVersion, ApiVersion version, Dialect dialect, ReferencesSchema[] includeReferences, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = ""+dialect+"/api/where/metadata?time="+time+"&appVersion=" + (appVersion==null? "" : System.Uri.EscapeDataString(appVersion))+"&version=" + version+"&"+string.Join("&", includeReferences.Select(z => $"includeReferences={z}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5020,13 +5009,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<MetadataResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<MetadataResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5044,8 +5032,7 @@ namespace MyNS
 		public async Task<MultiRouteDetailsMethodResponse> GetMultiRouteDetailsAsync(string[] routeId, string date, bool related, string appVersion, ApiVersion version, Dialect dialect, ReferencesSchema[] includeReferences, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = ""+dialect+"/api/where/multi-route-details?"+string.Join("&", routeId.Select(z => $"routeId={System.Uri.EscapeDataString(z.ToString())}"))+"&date=" + (date==null? "" : System.Uri.EscapeDataString(date))+"&related="+related+"&appVersion=" + (appVersion==null? "" : System.Uri.EscapeDataString(appVersion))+"&version=" + version+"&"+string.Join("&", includeReferences.Select(z => $"includeReferences={z}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5055,13 +5042,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<MultiRouteDetailsMethodResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<MultiRouteDetailsMethodResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5076,10 +5062,8 @@ namespace MyNS
 		public async Task<OnboardDepartSearchMethodResponse> SearchForOnboardDepartVehiclesAsync(string appVersion, ApiVersion version, Dialect dialect, ReferencesSchema[] includeReferences, OnboardDepartPosition[] requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = ""+dialect+"/api/where/onboard-depart-search?appVersion=" + (appVersion==null? "" : System.Uri.EscapeDataString(appVersion))+"&version=" + version+"&"+string.Join("&", includeReferences.Select(z => $"includeReferences={z}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -5090,13 +5074,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<OnboardDepartSearchMethodResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<OnboardDepartSearchMethodResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5146,8 +5129,7 @@ namespace MyNS
 					Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = ""+dialect+"/api/where/plan-access?version=" + version+"&appVersion=" + (appVersion==null? "" : System.Uri.EscapeDataString(appVersion))+"&"+string.Join("&", includeReferences.Select(z => $"includeReferences={z}"))+"&date=" + (date==null? "" : System.Uri.EscapeDataString(date))+"&time=" + (time==null? "" : System.Uri.EscapeDataString(time))+"&fromPlace=" + (fromPlace==null? "" : System.Uri.EscapeDataString(fromPlace))+"&toPlace=" + (toPlace==null? "" : System.Uri.EscapeDataString(toPlace))+"&"+string.Join("&", mode.Select(z => $"mode={z}"))+"&shouldBuyTickets="+shouldBuyTickets+"&showIntermediateStops="+showIntermediateStops+"&arriveBy="+arriveBy+"&wheelchair="+wheelchair+"&triangleSafetyFactor="+triangleSafetyFactor+"&triangleSlopeFactor="+triangleSlopeFactor+"&triangleTimeFactor="+triangleTimeFactor+"&optimize=" + optimize+"&walkProfile=" + walkProfile+"&numItineraries="+numItineraries;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5157,13 +5139,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<PlanTripResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<PlanTripResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5213,8 +5194,7 @@ namespace MyNS
 					Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = ""+dialect+"/api/where/plan-trip?version=" + version+"&appVersion=" + (appVersion==null? "" : System.Uri.EscapeDataString(appVersion))+"&"+string.Join("&", includeReferences.Select(z => $"includeReferences={z}"))+"&date=" + (date==null? "" : System.Uri.EscapeDataString(date))+"&time=" + (time==null? "" : System.Uri.EscapeDataString(time))+"&fromPlace=" + (fromPlace==null? "" : System.Uri.EscapeDataString(fromPlace))+"&toPlace=" + (toPlace==null? "" : System.Uri.EscapeDataString(toPlace))+"&"+string.Join("&", mode.Select(z => $"mode={z}"))+"&shouldBuyTickets="+shouldBuyTickets+"&showIntermediateStops="+showIntermediateStops+"&arriveBy="+arriveBy+"&wheelchair="+wheelchair+"&triangleSafetyFactor="+triangleSafetyFactor+"&triangleSlopeFactor="+triangleSlopeFactor+"&triangleTimeFactor="+triangleTimeFactor+"&optimize=" + optimize+"&walkProfile=" + walkProfile+"&numItineraries="+numItineraries;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5224,13 +5204,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<PlanTripResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<PlanTripResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5249,8 +5228,7 @@ namespace MyNS
 		public async Task<ReferencesMethodResponse> GetReferencesAsync(string[] agencyId, string[] alertId, string[] routeId, string[] stopId, string appVersion, ApiVersion version, Dialect dialect, ReferencesSchema[] includeReferences, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = ""+dialect+"/api/where/references?"+string.Join("&", agencyId.Select(z => $"agencyId={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", alertId.Select(z => $"alertId={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", routeId.Select(z => $"routeId={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", stopId.Select(z => $"stopId={System.Uri.EscapeDataString(z.ToString())}"))+"&appVersion=" + (appVersion==null? "" : System.Uri.EscapeDataString(appVersion))+"&version=" + version+"&"+string.Join("&", includeReferences.Select(z => $"includeReferences={z}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5260,13 +5238,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ReferencesMethodResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ReferencesMethodResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5284,8 +5261,7 @@ namespace MyNS
 		public async Task<RouteDetailsMethodResponse> GetRouteDetailsAsync(string routeId, string date, bool related, string appVersion, ApiVersion version, Dialect dialect, ReferencesSchema[] includeReferences, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = ""+dialect+"/api/where/route-details?routeId=" + (routeId==null? "" : System.Uri.EscapeDataString(routeId))+"&date=" + (date==null? "" : System.Uri.EscapeDataString(date))+"&related="+related+"&appVersion=" + (appVersion==null? "" : System.Uri.EscapeDataString(appVersion))+"&version=" + version+"&"+string.Join("&", includeReferences.Select(z => $"includeReferences={z}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5295,13 +5271,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<RouteDetailsMethodResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<RouteDetailsMethodResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5317,8 +5292,7 @@ namespace MyNS
 		public async Task<RouteDetailsForStopMethodResponse> GetRouteDetailsForStopAsync(string stopId, string appVersion, ApiVersion version, Dialect dialect, ReferencesSchema[] includeReferences, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = ""+dialect+"/api/where/route-details-for-stop?stopId=" + (stopId==null? "" : System.Uri.EscapeDataString(stopId))+"&appVersion=" + (appVersion==null? "" : System.Uri.EscapeDataString(appVersion))+"&version=" + version+"&"+string.Join("&", includeReferences.Select(z => $"includeReferences={z}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5328,13 +5302,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<RouteDetailsForStopMethodResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<RouteDetailsForStopMethodResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5352,8 +5325,7 @@ namespace MyNS
 		public async Task<ScheduleForStopOTPMethodResponse> GetScheduleForStopAsync(string[] stopId, string date, bool onlyDepartures, string appVersion, ApiVersion version, Dialect dialect, ReferencesSchema[] includeReferences, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = ""+dialect+"/api/where/schedule-for-stop?"+string.Join("&", stopId.Select(z => $"stopId={System.Uri.EscapeDataString(z.ToString())}"))+"&date=" + (date==null? "" : System.Uri.EscapeDataString(date))+"&onlyDepartures="+onlyDepartures+"&appVersion=" + (appVersion==null? "" : System.Uri.EscapeDataString(appVersion))+"&version=" + version+"&"+string.Join("&", includeReferences.Select(z => $"includeReferences={z}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5363,13 +5335,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ScheduleForStopOTPMethodResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ScheduleForStopOTPMethodResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5388,8 +5359,7 @@ namespace MyNS
 		public async Task<SearchMethodResponse> SearchAsync(string query, float lat, float lon, int minResult, string appVersion, ApiVersion version, Dialect dialect, ReferencesSchema[] includeReferences, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = ""+dialect+"/api/where/search?query=" + (query==null? "" : System.Uri.EscapeDataString(query))+"&lat="+lat+"&lon="+lon+"&minResult="+minResult+"&appVersion=" + (appVersion==null? "" : System.Uri.EscapeDataString(appVersion))+"&version=" + version+"&"+string.Join("&", includeReferences.Select(z => $"includeReferences={z}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5399,13 +5369,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<SearchMethodResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<SearchMethodResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5417,8 +5386,7 @@ namespace MyNS
 		public async Task<StatisticsResponse> GetStatisticsAsync(Dialect dialect, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = ""+dialect+"/api/where/statistics";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5428,13 +5396,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<StatisticsResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<StatisticsResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5456,8 +5423,7 @@ namespace MyNS
 		public async Task<StopsForLocationResponse> GetStopsForLocationAsync(float lat, float lon, float latSpan, float lonSpan, int radius, string query, int minResult, string appVersion, ApiVersion version, Dialect dialect, ReferencesSchema[] includeReferences, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = ""+dialect+"/api/where/stops-for-location?lat="+lat+"&lon="+lon+"&latSpan="+latSpan+"&lonSpan="+lonSpan+"&radius="+radius+"&query=" + (query==null? "" : System.Uri.EscapeDataString(query))+"&minResult="+minResult+"&appVersion=" + (appVersion==null? "" : System.Uri.EscapeDataString(appVersion))+"&version=" + version+"&"+string.Join("&", includeReferences.Select(z => $"includeReferences={z}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5467,13 +5433,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<StopsForLocationResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<StopsForLocationResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5490,8 +5455,7 @@ namespace MyNS
 		public async Task<TicketingMethodResponse> GetTicketingDataAsync(long ifModifiedSince, bool full, string appVersion, ApiVersion version, Dialect dialect, ReferencesSchema[] includeReferences, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = ""+dialect+"/api/where/ticketing-locations?ifModifiedSince="+ifModifiedSince+"&full="+full+"&appVersion=" + (appVersion==null? "" : System.Uri.EscapeDataString(appVersion))+"&version=" + version+"&"+string.Join("&", includeReferences.Select(z => $"includeReferences={z}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5501,13 +5465,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<TicketingMethodResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<TicketingMethodResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5526,8 +5489,7 @@ namespace MyNS
 		public async Task<TripDetailsOTPMethodResponse> GetTripDetailsAsync(string vehicleId, string tripId, string date, long ifModifiedSince, string appVersion, ApiVersion version, Dialect dialect, ReferencesSchema[] includeReferences, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = ""+dialect+"/api/where/trip-details?vehicleId=" + (vehicleId==null? "" : System.Uri.EscapeDataString(vehicleId))+"&tripId=" + (tripId==null? "" : System.Uri.EscapeDataString(tripId))+"&date=" + (date==null? "" : System.Uri.EscapeDataString(date))+"&ifModifiedSince="+ifModifiedSince+"&appVersion=" + (appVersion==null? "" : System.Uri.EscapeDataString(appVersion))+"&version=" + version+"&"+string.Join("&", includeReferences.Select(z => $"includeReferences={z}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5537,13 +5499,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<TripDetailsOTPMethodResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<TripDetailsOTPMethodResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5561,8 +5522,7 @@ namespace MyNS
 		public async Task<VehicleForTripMethodResponse> GetVehicleForTripAsync(string[] tripId, string[] date, long ifModifiedSince, string appVersion, ApiVersion version, Dialect dialect, ReferencesSchema[] includeReferences, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = ""+dialect+"/api/where/vehicle-for-trip?"+string.Join("&", tripId.Select(z => $"tripId={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", date.Select(z => $"date={System.Uri.EscapeDataString(z.ToString())}"))+"&ifModifiedSince="+ifModifiedSince+"&appVersion=" + (appVersion==null? "" : System.Uri.EscapeDataString(appVersion))+"&version=" + version+"&"+string.Join("&", includeReferences.Select(z => $"includeReferences={z}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5572,13 +5532,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<VehicleForTripMethodResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<VehicleForTripMethodResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5600,8 +5559,7 @@ namespace MyNS
 		public async Task<VehiclesForLocationMethodResponse> GetVehiclesForLocationAsync(string query, float lat, float lon, float latSpan, float lonSpan, int radius, long ifModifiedSince, string appVersion, ApiVersion version, Dialect dialect, ReferencesSchema[] includeReferences, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = ""+dialect+"/api/where/vehicles-for-location?query=" + (query==null? "" : System.Uri.EscapeDataString(query))+"&lat="+lat+"&lon="+lon+"&latSpan="+latSpan+"&lonSpan="+lonSpan+"&radius="+radius+"&ifModifiedSince="+ifModifiedSince+"&appVersion=" + (appVersion==null? "" : System.Uri.EscapeDataString(appVersion))+"&version=" + version+"&"+string.Join("&", includeReferences.Select(z => $"includeReferences={z}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5611,13 +5569,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<VehiclesForLocationMethodResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<VehiclesForLocationMethodResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5635,8 +5592,7 @@ namespace MyNS
 		public async Task<VehiclesForRouteMethodResponse> GetVehiclesForRouteAsync(string[] routeId, bool related, long ifModifiedSince, string appVersion, ApiVersion version, Dialect dialect, ReferencesSchema[] includeReferences, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = ""+dialect+"/api/where/vehicles-for-route?"+string.Join("&", routeId.Select(z => $"routeId={System.Uri.EscapeDataString(z.ToString())}"))+"&related="+related+"&ifModifiedSince="+ifModifiedSince+"&appVersion=" + (appVersion==null? "" : System.Uri.EscapeDataString(appVersion))+"&version=" + version+"&"+string.Join("&", includeReferences.Select(z => $"includeReferences={z}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5646,13 +5602,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<VehiclesForRouteMethodResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<VehiclesForRouteMethodResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -5669,8 +5624,7 @@ namespace MyNS
 		public async Task<VehiclesForStopMethodResponse> GetVehiclesForStopAsync(string stopId, long ifModifiedSince, string appVersion, ApiVersion version, Dialect dialect, ReferencesSchema[] includeReferences, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = ""+dialect+"/api/where/vehicles-for-stop?stopId=" + (stopId==null? "" : System.Uri.EscapeDataString(stopId))+"&ifModifiedSince="+ifModifiedSince+"&appVersion=" + (appVersion==null? "" : System.Uri.EscapeDataString(appVersion))+"&version=" + version+"&"+string.Join("&", includeReferences.Select(z => $"includeReferences={z}"));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -5680,13 +5634,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<VehiclesForStopMethodResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<VehiclesForStopMethodResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

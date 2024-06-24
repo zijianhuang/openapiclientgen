@@ -196,8 +196,7 @@ namespace MyNS
 		public async Task<Lookupsv2phone_number> FetchPhoneNumberAsync(string PhoneNumber, string Fields, string CountryCode, string FirstName, string LastName, string AddressLine1, string AddressLine2, string City, string State, string PostalCode, string AddressCountryCode, string NationalId, string DateOfBirth, string LastVerifiedDate, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v2/PhoneNumbers/"+ (PhoneNumber==null? "" : System.Uri.EscapeDataString(PhoneNumber))+"&Fields=" + (Fields==null? "" : System.Uri.EscapeDataString(Fields))+"&CountryCode=" + (CountryCode==null? "" : System.Uri.EscapeDataString(CountryCode))+"&FirstName=" + (FirstName==null? "" : System.Uri.EscapeDataString(FirstName))+"&LastName=" + (LastName==null? "" : System.Uri.EscapeDataString(LastName))+"&AddressLine1=" + (AddressLine1==null? "" : System.Uri.EscapeDataString(AddressLine1))+"&AddressLine2=" + (AddressLine2==null? "" : System.Uri.EscapeDataString(AddressLine2))+"&City=" + (City==null? "" : System.Uri.EscapeDataString(City))+"&State=" + (State==null? "" : System.Uri.EscapeDataString(State))+"&PostalCode=" + (PostalCode==null? "" : System.Uri.EscapeDataString(PostalCode))+"&AddressCountryCode=" + (AddressCountryCode==null? "" : System.Uri.EscapeDataString(AddressCountryCode))+"&NationalId=" + (NationalId==null? "" : System.Uri.EscapeDataString(NationalId))+"&DateOfBirth=" + (DateOfBirth==null? "" : System.Uri.EscapeDataString(DateOfBirth))+"&LastVerifiedDate=" + (LastVerifiedDate==null? "" : System.Uri.EscapeDataString(LastVerifiedDate));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -207,13 +206,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Lookupsv2phone_number>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Lookupsv2phone_number>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

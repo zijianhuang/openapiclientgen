@@ -363,8 +363,7 @@ namespace MyNS
 		public async Task<FetchMultiDailyMetricsTimeSeriesResponse> Businessprofileperformance_locations_fetchMultiDailyMetricsTimeSeriesAsync(string location, DailyMetricTimeSeriesDailyMetric[] dailyMetrics, int dailyRange_endDate_day, int dailyRange_endDate_month, int dailyRange_endDate_year, int dailyRange_startDate_day, int dailyRange_startDate_month, int dailyRange_startDate_year, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/"+ (location==null? "" : System.Uri.EscapeDataString(location))+":fetchMultiDailyMetricsTimeSeries&"+string.Join("&", dailyMetrics.Select(z => $"dailyMetrics={z}"))+"&dailyRange.endDate.day="+dailyRange_endDate_day+"&dailyRange.endDate.month="+dailyRange_endDate_month+"&dailyRange.endDate.year="+dailyRange_endDate_year+"&dailyRange.startDate.day="+dailyRange_startDate_day+"&dailyRange.startDate.month="+dailyRange_startDate_month+"&dailyRange.startDate.year="+dailyRange_startDate_year;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -374,13 +373,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<FetchMultiDailyMetricsTimeSeriesResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<FetchMultiDailyMetricsTimeSeriesResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -405,8 +403,7 @@ namespace MyNS
 		public async Task<GetDailyMetricsTimeSeriesResponse> Businessprofileperformance_locations_getDailyMetricsTimeSeriesAsync(string name, DailyMetricTimeSeriesDailyMetric dailyMetric, int dailyRange_endDate_day, int dailyRange_endDate_month, int dailyRange_endDate_year, int dailyRange_startDate_day, int dailyRange_startDate_month, int dailyRange_startDate_year, DailySubEntityTypeDayOfWeek dailySubEntityType_dayOfWeek, int dailySubEntityType_timeOfDay_hours, int dailySubEntityType_timeOfDay_minutes, int dailySubEntityType_timeOfDay_nanos, int dailySubEntityType_timeOfDay_seconds, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/"+ (name==null? "" : System.Uri.EscapeDataString(name))+":getDailyMetricsTimeSeries&dailyMetric=" + dailyMetric+"&dailyRange.endDate.day="+dailyRange_endDate_day+"&dailyRange.endDate.month="+dailyRange_endDate_month+"&dailyRange.endDate.year="+dailyRange_endDate_year+"&dailyRange.startDate.day="+dailyRange_startDate_day+"&dailyRange.startDate.month="+dailyRange_startDate_month+"&dailyRange.startDate.year="+dailyRange_startDate_year+"&dailySubEntityType.dayOfWeek=" + dailySubEntityType_dayOfWeek+"&dailySubEntityType.timeOfDay.hours="+dailySubEntityType_timeOfDay_hours+"&dailySubEntityType.timeOfDay.minutes="+dailySubEntityType_timeOfDay_minutes+"&dailySubEntityType.timeOfDay.nanos="+dailySubEntityType_timeOfDay_nanos+"&dailySubEntityType.timeOfDay.seconds="+dailySubEntityType_timeOfDay_seconds;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -416,13 +413,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<GetDailyMetricsTimeSeriesResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<GetDailyMetricsTimeSeriesResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -443,8 +439,7 @@ namespace MyNS
 		public async Task<ListSearchKeywordImpressionsMonthlyResponse> Businessprofileperformance_locations_searchkeywords_impressions_monthly_listAsync(string parent, int monthlyRange_endMonth_day, int monthlyRange_endMonth_month, int monthlyRange_endMonth_year, int monthlyRange_startMonth_day, int monthlyRange_startMonth_month, int monthlyRange_startMonth_year, int pageSize, string pageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/"+ (parent==null? "" : System.Uri.EscapeDataString(parent))+"/searchkeywords/impressions/monthly&monthlyRange.endMonth.day="+monthlyRange_endMonth_day+"&monthlyRange.endMonth.month="+monthlyRange_endMonth_month+"&monthlyRange.endMonth.year="+monthlyRange_endMonth_year+"&monthlyRange.startMonth.day="+monthlyRange_startMonth_day+"&monthlyRange.startMonth.month="+monthlyRange_startMonth_month+"&monthlyRange.startMonth.year="+monthlyRange_startMonth_year+"&pageSize="+pageSize+"&pageToken=" + (pageToken==null? "" : System.Uri.EscapeDataString(pageToken));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -454,13 +449,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<ListSearchKeywordImpressionsMonthlyResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<ListSearchKeywordImpressionsMonthlyResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

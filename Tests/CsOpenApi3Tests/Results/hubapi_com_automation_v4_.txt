@@ -1327,10 +1327,8 @@ namespace MyNS
 		public async Task Post_SlashautomationSlashv4SlashactionsSlashcallbacksSlashcomplete_completeBatchAsync(BatchInputCallbackCompletionBatchRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "automation/v4/actions/callbacks/complete";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -1345,7 +1343,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1355,10 +1352,8 @@ namespace MyNS
 		public async Task Post_SlashautomationSlashv4SlashactionsSlashcallbacksSlashcallbackIdSlashcomplete_completeAsync(string callbackId, CallbackCompletionRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "automation/v4/actions/callbacks/"+ (callbackId==null? "" : System.Uri.EscapeDataString(callbackId))+"/complete";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -1373,7 +1368,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1387,8 +1381,7 @@ namespace MyNS
 		public async Task<CollectionResponsePublicActionDefinitionForwardPaging> Get_SlashautomationSlashv4SlashactionsSlashappId_getPageAsync(int limit, string after, bool archived, int appId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "automation/v4/actions/"+appId+"?limit="+limit+"&after=" + (after==null? "" : System.Uri.EscapeDataString(after))+"&archived="+archived;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1398,13 +1391,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<CollectionResponsePublicActionDefinitionForwardPaging>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<CollectionResponsePublicActionDefinitionForwardPaging>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1414,10 +1406,8 @@ namespace MyNS
 		public async Task Post_SlashautomationSlashv4SlashactionsSlashappId_createAsync(int appId, PublicActionDefinitionEgg requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "automation/v4/actions/"+appId;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -1433,7 +1423,6 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
-			}
 		}
 		
 		/// <summary>
@@ -1442,8 +1431,7 @@ namespace MyNS
 		public async Task Delete_SlashautomationSlashv4SlashactionsSlashappIdSlashdefinitionId_archiveAsync(string definitionId, int appId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "automation/v4/actions/"+appId+"/"+ (definitionId==null? "" : System.Uri.EscapeDataString(definitionId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1457,7 +1445,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1469,8 +1456,7 @@ namespace MyNS
 		public async Task<PublicActionDefinition> Get_SlashautomationSlashv4SlashactionsSlashappIdSlashdefinitionId_getByIdAsync(string definitionId, bool archived, int appId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "automation/v4/actions/"+appId+"/"+ (definitionId==null? "" : System.Uri.EscapeDataString(definitionId))+"&archived="+archived;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1480,13 +1466,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<PublicActionDefinition>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<PublicActionDefinition>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1497,10 +1482,8 @@ namespace MyNS
 		public async Task<PublicActionDefinition> Patch_SlashautomationSlashv4SlashactionsSlashappIdSlashdefinitionId_updateAsync(string definitionId, int appId, PublicActionDefinitionPatch requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "automation/v4/actions/"+appId+"/"+ (definitionId==null? "" : System.Uri.EscapeDataString(definitionId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -1511,13 +1494,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<PublicActionDefinition>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<PublicActionDefinition>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1528,8 +1510,7 @@ namespace MyNS
 		public async Task<CollectionResponsePublicActionFunctionIdentifierNoPaging> Get_SlashautomationSlashv4SlashactionsSlashappIdSlashdefinitionIdSlashfunctions_getPageAsync(string definitionId, int appId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "automation/v4/actions/"+appId+"/"+ (definitionId==null? "" : System.Uri.EscapeDataString(definitionId))+"/functions";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1539,13 +1520,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<CollectionResponsePublicActionFunctionIdentifierNoPaging>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<CollectionResponsePublicActionFunctionIdentifierNoPaging>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1555,8 +1535,7 @@ namespace MyNS
 		public async Task Delete_SlashautomationSlashv4SlashactionsSlashappIdSlashdefinitionIdSlashfunctionsSlashfunctionType_archiveByFunctionTypeAsync(string definitionId, PublicActionFunctionIdentifierFunctionType functionType, int appId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "automation/v4/actions/"+appId+"/"+ (definitionId==null? "" : System.Uri.EscapeDataString(definitionId))+"/functions/"+functionType;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1570,7 +1549,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1581,8 +1559,7 @@ namespace MyNS
 		public async Task<PublicActionFunction> Get_SlashautomationSlashv4SlashactionsSlashappIdSlashdefinitionIdSlashfunctionsSlashfunctionType_getByFunctionTypeAsync(string definitionId, PublicActionFunctionIdentifierFunctionType functionType, int appId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "automation/v4/actions/"+appId+"/"+ (definitionId==null? "" : System.Uri.EscapeDataString(definitionId))+"/functions/"+functionType;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1592,13 +1569,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<PublicActionFunction>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<PublicActionFunction>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1608,8 +1584,7 @@ namespace MyNS
 		public async Task Delete_SlashautomationSlashv4SlashactionsSlashappIdSlashdefinitionIdSlashfunctionsSlashfunctionTypeSlashfunctionId_archiveAsync(string definitionId, PublicActionFunctionIdentifierFunctionType functionType, string functionId, int appId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "automation/v4/actions/"+appId+"/"+ (definitionId==null? "" : System.Uri.EscapeDataString(definitionId))+"/functions/"+functionType+"/"+ (functionId==null? "" : System.Uri.EscapeDataString(functionId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1623,7 +1598,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1634,8 +1608,7 @@ namespace MyNS
 		public async Task<PublicActionFunction> Get_SlashautomationSlashv4SlashactionsSlashappIdSlashdefinitionIdSlashfunctionsSlashfunctionTypeSlashfunctionId_getByIdAsync(string definitionId, PublicActionFunctionIdentifierFunctionType functionType, string functionId, int appId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "automation/v4/actions/"+appId+"/"+ (definitionId==null? "" : System.Uri.EscapeDataString(definitionId))+"/functions/"+functionType+"/"+ (functionId==null? "" : System.Uri.EscapeDataString(functionId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1645,13 +1618,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<PublicActionFunction>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<PublicActionFunction>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1664,8 +1636,7 @@ namespace MyNS
 		public async Task<CollectionResponsePublicActionRevisionForwardPaging> Get_SlashautomationSlashv4SlashactionsSlashappIdSlashdefinitionIdSlashrevisions_getPageAsync(string definitionId, int limit, string after, int appId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "automation/v4/actions/"+appId+"/"+ (definitionId==null? "" : System.Uri.EscapeDataString(definitionId))+"/revisions&limit="+limit+"&after=" + (after==null? "" : System.Uri.EscapeDataString(after));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1675,13 +1646,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<CollectionResponsePublicActionRevisionForwardPaging>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<CollectionResponsePublicActionRevisionForwardPaging>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1692,8 +1662,7 @@ namespace MyNS
 		public async Task<PublicActionRevision> Get_SlashautomationSlashv4SlashactionsSlashappIdSlashdefinitionIdSlashrevisionsSlashrevisionId_getByIdAsync(string definitionId, string revisionId, int appId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "automation/v4/actions/"+appId+"/"+ (definitionId==null? "" : System.Uri.EscapeDataString(definitionId))+"/revisions/"+ (revisionId==null? "" : System.Uri.EscapeDataString(revisionId));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1703,13 +1672,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<PublicActionRevision>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<PublicActionRevision>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

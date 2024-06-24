@@ -44,8 +44,7 @@ namespace MyNS
 		public async Task CityGetByKeyAndLngAndLatAndFormatAsync(string key, double lng, double lat, CityGetByKeyAndLngAndLatAndFormatFormat format, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "city?key=" + (key==null? "" : System.Uri.EscapeDataString(key))+"&lng="+lng+"&lat="+lat+"&format=" + format;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -59,7 +58,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

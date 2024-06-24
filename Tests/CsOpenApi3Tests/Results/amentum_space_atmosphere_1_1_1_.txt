@@ -55,8 +55,7 @@ namespace MyNS
 		public async Task<App_api_endpoints_JB2008_sample_atmosphereReturn> App_api_endpoints_JB2008_sample_atmosphereAsync(int year, int month, int day, double altitude, double geodetic_latitude, double geodetic_longitude, double utc, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "jb2008?year="+year+"&month="+month+"&day="+day+"&altitude="+altitude+"&geodetic_latitude="+geodetic_latitude+"&geodetic_longitude="+geodetic_longitude+"&utc="+utc;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -66,13 +65,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<App_api_endpoints_JB2008_sample_atmosphereReturn>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<App_api_endpoints_JB2008_sample_atmosphereReturn>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -100,8 +98,7 @@ namespace MyNS
 		public async Task<App_api_endpoints_NRLMSISE00_sample_atmosphereReturn> App_api_endpoints_NRLMSISE00_sample_atmosphereAsync(int year, int month, int day, double altitude, double geodetic_latitude, double geodetic_longitude, double utc, double f107a, double f107, double ap, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "nrlmsise00?year="+year+"&month="+month+"&day="+day+"&altitude="+altitude+"&geodetic_latitude="+geodetic_latitude+"&geodetic_longitude="+geodetic_longitude+"&utc="+utc+"&f107a="+f107a+"&f107="+f107+"&ap="+ap;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -111,13 +108,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<App_api_endpoints_NRLMSISE00_sample_atmosphereReturn>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<App_api_endpoints_NRLMSISE00_sample_atmosphereReturn>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -140,8 +136,7 @@ namespace MyNS
 		public async Task<App_api_wfs_endpoints_WFS_get_valuesReturn> App_api_wfs_endpoints_WFS_get_valuesAsync(double latitude, double longitude, double altitude, int year, int month, int day, int hour, int minute, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "wam-ipe?latitude="+latitude+"&longitude="+longitude+"&altitude="+altitude+"&year="+year+"&month="+month+"&day="+day+"&hour="+hour+"&minute="+minute;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -151,13 +146,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<App_api_wfs_endpoints_WFS_get_valuesReturn>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<App_api_wfs_endpoints_WFS_get_valuesReturn>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

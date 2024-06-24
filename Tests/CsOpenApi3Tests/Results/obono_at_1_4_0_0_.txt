@@ -636,8 +636,7 @@ namespace MyNS
 		public async Task<AuthResult> AuthGetAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "auth";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -647,17 +646,14 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
-				{
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				using JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(streamContent));
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<AuthResult>(jsonReader);
-				}
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -670,8 +666,7 @@ namespace MyNS
 		public async Task<Beleg> Belege_belegUuidGetAsync(string belegUuid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "belege/"+ (belegUuid==null? "" : System.Uri.EscapeDataString(belegUuid));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -681,17 +676,14 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
-				{
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				using JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(streamContent));
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<Beleg>(jsonReader);
-				}
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -706,8 +698,7 @@ namespace MyNS
 		public async Task ExportCsvRegistrierkassen_registrierkasseUuidBelegeGetByBeforeAndAfterAndPostenAsync(string registrierkasseUuid, string before, string after, bool posten, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "export/csv/registrierkassen/"+ (registrierkasseUuid==null? "" : System.Uri.EscapeDataString(registrierkasseUuid))+"/belege&before=" + (before==null? "" : System.Uri.EscapeDataString(before))+"&after=" + (after==null? "" : System.Uri.EscapeDataString(after))+"&posten="+posten;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -721,7 +712,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -735,8 +725,7 @@ namespace MyNS
 		public async Task ExportDep131Registrierkassen_registrierkasseUuidBelegeGetByBeforeAndAfterAsync(string registrierkasseUuid, string before, string after, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "export/dep131/registrierkassen/"+ (registrierkasseUuid==null? "" : System.Uri.EscapeDataString(registrierkasseUuid))+"/belege&before=" + (before==null? "" : System.Uri.EscapeDataString(before))+"&after=" + (after==null? "" : System.Uri.EscapeDataString(after));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -750,7 +739,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -764,8 +752,7 @@ namespace MyNS
 		public async Task ExportDep7Registrierkassen_registrierkasseUuidBelegeGetByBeforeAndAfterAsync(string registrierkasseUuid, string before, string after, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "export/dep7/registrierkassen/"+ (registrierkasseUuid==null? "" : System.Uri.EscapeDataString(registrierkasseUuid))+"/belege&before=" + (before==null? "" : System.Uri.EscapeDataString(before))+"&after=" + (after==null? "" : System.Uri.EscapeDataString(after));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -779,7 +766,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -793,8 +779,7 @@ namespace MyNS
 		public async Task ExportGobdRegistrierkassen_registrierkasseUuidGetByBeforeAndAfterAsync(string registrierkasseUuid, string before, string after, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "export/gobd/registrierkassen/"+ (registrierkasseUuid==null? "" : System.Uri.EscapeDataString(registrierkasseUuid))+"&before=" + (before==null? "" : System.Uri.EscapeDataString(before))+"&after=" + (after==null? "" : System.Uri.EscapeDataString(after));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -808,7 +793,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -820,8 +804,7 @@ namespace MyNS
 		public async Task ExportHtmlBelege_belegUuidGetAsync(string belegUuid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "export/html/belege/"+ (belegUuid==null? "" : System.Uri.EscapeDataString(belegUuid));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -835,7 +818,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -847,8 +829,7 @@ namespace MyNS
 		public async Task ExportPdfBelege_belegUuidGetAsync(string belegUuid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "export/pdf/belege/"+ (belegUuid==null? "" : System.Uri.EscapeDataString(belegUuid));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -862,7 +843,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -874,8 +854,7 @@ namespace MyNS
 		public async Task ExportQrBelege_belegUuidGetAsync(string belegUuid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "export/qr/belege/"+ (belegUuid==null? "" : System.Uri.EscapeDataString(belegUuid));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -889,7 +868,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -905,8 +883,7 @@ namespace MyNS
 		public async Task ExportThermal_printBelege_belegUuidGetByQrAndWidthAndDialectAndEncodingAsync(string belegUuid, bool qr, int width, ExportThermal_printBelege_belegUuidGetByQrAndWidthAndDialectAndEncodingDialect dialect, ExportThermal_printBelege_belegUuidGetByQrAndWidthAndDialectAndEncodingEncoding encoding, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "export/thermal-print/belege/"+ (belegUuid==null? "" : System.Uri.EscapeDataString(belegUuid))+"&qr="+qr+"&width="+width+"&dialect=" + dialect+"&encoding=" + encoding;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -920,7 +897,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -934,8 +910,7 @@ namespace MyNS
 		public async Task ExportXlsRegistrierkassen_registrierkasseUuidBelegeGetByBeforeAndAfterAsync(string registrierkasseUuid, string before, string after, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "export/xls/registrierkassen/"+ (registrierkasseUuid==null? "" : System.Uri.EscapeDataString(registrierkasseUuid))+"/belege&before=" + (before==null? "" : System.Uri.EscapeDataString(before))+"&after=" + (after==null? "" : System.Uri.EscapeDataString(after));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -949,7 +924,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -962,8 +936,7 @@ namespace MyNS
 		public async Task<Registrierkasse> Registrierkassen_registrierkasseUuidGetAsync(string registrierkasseUuid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "registrierkassen/"+ (registrierkasseUuid==null? "" : System.Uri.EscapeDataString(registrierkasseUuid));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -973,17 +946,14 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
-				{
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				using JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(streamContent));
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<Registrierkasse>(jsonReader);
-				}
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -996,10 +966,8 @@ namespace MyNS
 		public async Task Registrierkassen_registrierkasseUuidAbschlussPostAsync(string registrierkasseUuid, Abschlussbelegdaten requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "registrierkassen/"+ (registrierkasseUuid==null? "" : System.Uri.EscapeDataString(registrierkasseUuid))+"/abschluss";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			using (var requestWriter = new System.IO.StringWriter())
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			using var requestWriter = new System.IO.StringWriter();
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
@@ -1017,8 +985,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
-			}
 			}
 		}
 		
@@ -1039,8 +1005,7 @@ namespace MyNS
 		public async Task<Belege> Registrierkassen_registrierkasseUuidBelegeGetByFormatAndOrderAndLimitAndOffsetAndBeforeAndAfterAndGteAndLteAsync(string registrierkasseUuid, Registrierkassen_registrierkasseUuidBelegeGetByFormatAndOrderAndLimitAndOffsetAndBeforeAndAfterAndGteAndLteFormat format, Registrierkassen_registrierkasseUuidBelegeGetByFormatAndOrderAndLimitAndOffsetAndBeforeAndAfterAndGteAndLteOrder order, int limit, int offset, string before, string after, int gte, int lte, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "registrierkassen/"+ (registrierkasseUuid==null? "" : System.Uri.EscapeDataString(registrierkasseUuid))+"/belege&format=" + format+"&order=" + order+"&limit="+limit+"&offset="+offset+"&before=" + (before==null? "" : System.Uri.EscapeDataString(before))+"&after=" + (after==null? "" : System.Uri.EscapeDataString(after))+"&gte="+gte+"&lte="+lte;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1050,17 +1015,14 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
-				{
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				using JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(streamContent));
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<Belege>(jsonReader);
-				}
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1074,8 +1036,7 @@ namespace MyNS
 		public async Task<Beleg> Registrierkassen_registrierkasseUuidBelege_belegUuidGetAsync(string registrierkasseUuid, string belegUuid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "registrierkassen/"+ (registrierkasseUuid==null? "" : System.Uri.EscapeDataString(registrierkasseUuid))+"/belege/"+ (belegUuid==null? "" : System.Uri.EscapeDataString(belegUuid));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1085,17 +1046,14 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
-				{
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				using JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(streamContent));
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<Beleg>(jsonReader);
-				}
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1109,10 +1067,8 @@ namespace MyNS
 		public async Task Registrierkassen_registrierkasseUuidBelege_belegUuidPutAsync(string registrierkasseUuid, string belegUuid, Belegdaten requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "registrierkassen/"+ (registrierkasseUuid==null? "" : System.Uri.EscapeDataString(registrierkasseUuid))+"/belege/"+ (belegUuid==null? "" : System.Uri.EscapeDataString(belegUuid));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
-			{
-			using (var requestWriter = new System.IO.StringWriter())
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri);
+			using var requestWriter = new System.IO.StringWriter();
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
@@ -1131,8 +1087,6 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
-			}
-			}
 		}
 		
 		/// <summary>
@@ -1144,8 +1098,7 @@ namespace MyNS
 		public async Task Registrierkassen_registrierkasseUuidDepGetAsync(string registrierkasseUuid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "registrierkassen/"+ (registrierkasseUuid==null? "" : System.Uri.EscapeDataString(registrierkasseUuid))+"/dep";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1159,7 +1112,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1172,8 +1124,7 @@ namespace MyNS
 		public async Task<Monatsbeleg[]> Registrierkassen_registrierkasseUuidMonatsbelegeGetByYearAndMonthAsync(string registrierkasseUuid, int year, int month, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "registrierkassen/"+ (registrierkasseUuid==null? "" : System.Uri.EscapeDataString(registrierkasseUuid))+"/monatsbelege&year="+year+"&month="+month;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1183,17 +1134,14 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
-				{
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				using JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(streamContent));
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<Monatsbeleg[]>(jsonReader);
-				}
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

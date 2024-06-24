@@ -170,19 +170,17 @@ namespace MyNS
 		public async Task<OrchestratorVersionProfileListResult> ContainerServices_ListOrchestratorsAsync(string api_version, string subscriptionId, string location, string resource_type)
 		{
 			var requestUri = "subscriptions/"+ (subscriptionId==null? "" : System.Uri.EscapeDataString(subscriptionId))+"/providers/Microsoft.ContainerService/locations/"+ (location==null? "" : System.Uri.EscapeDataString(location))+"/orchestrators?api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version))+"&resource-type=" + (resource_type==null? "" : System.Uri.EscapeDataString(resource_type));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<OrchestratorVersionProfileListResult>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<OrchestratorVersionProfileListResult>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

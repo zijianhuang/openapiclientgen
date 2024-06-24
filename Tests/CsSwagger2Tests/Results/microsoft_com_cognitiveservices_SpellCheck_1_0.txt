@@ -297,19 +297,17 @@ namespace MyNS
 		public async Task<SpellCheck> SpellCheckerAsync(SpellCheckerActionType ActionType, string AppName, string cc, string ClientMachineName, string DocId, string mkt, string SessionId, string SetLang, string UserId, SpellCheckerMode Mode, string PreContextText, string PostContextText, string Text)
 		{
 			var requestUri = "spellcheck?ActionType=" + ActionType+"&AppName=" + (AppName==null? "" : System.Uri.EscapeDataString(AppName))+"&cc=" + (cc==null? "" : System.Uri.EscapeDataString(cc))+"&ClientMachineName=" + (ClientMachineName==null? "" : System.Uri.EscapeDataString(ClientMachineName))+"&DocId=" + (DocId==null? "" : System.Uri.EscapeDataString(DocId))+"&mkt=" + (mkt==null? "" : System.Uri.EscapeDataString(mkt))+"&SessionId=" + (SessionId==null? "" : System.Uri.EscapeDataString(SessionId))+"&SetLang=" + (SetLang==null? "" : System.Uri.EscapeDataString(SetLang))+"&UserId=" + (UserId==null? "" : System.Uri.EscapeDataString(UserId))+"&Mode=" + Mode+"&PreContextText=" + (PreContextText==null? "" : System.Uri.EscapeDataString(PreContextText))+"&PostContextText=" + (PostContextText==null? "" : System.Uri.EscapeDataString(PostContextText))+"&Text=" + (Text==null? "" : System.Uri.EscapeDataString(Text));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<SpellCheck>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<SpellCheck>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

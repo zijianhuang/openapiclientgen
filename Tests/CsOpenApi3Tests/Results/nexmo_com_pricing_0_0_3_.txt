@@ -202,8 +202,7 @@ namespace MyNS
 		public async Task<PricingCountriesResponse> RetrievePricingAllCountriesAsync(string type, string api_key, string api_secret, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "get-full-pricing/outbound/"+ (type==null? "" : System.Uri.EscapeDataString(type))+"&api_key=" + (api_key==null? "" : System.Uri.EscapeDataString(api_key))+"&api_secret=" + (api_secret==null? "" : System.Uri.EscapeDataString(api_secret));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -213,13 +212,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<PricingCountriesResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<PricingCountriesResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -237,8 +235,7 @@ namespace MyNS
 		public async Task<PricingCountriesResponse> RetrievePrefixPricingAsync(string type, string api_key, string api_secret, string prefix, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "get-prefix-pricing/outbound/"+ (type==null? "" : System.Uri.EscapeDataString(type))+"&api_key=" + (api_key==null? "" : System.Uri.EscapeDataString(api_key))+"&api_secret=" + (api_secret==null? "" : System.Uri.EscapeDataString(api_secret))+"&prefix=" + (prefix==null? "" : System.Uri.EscapeDataString(prefix));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -248,13 +245,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<PricingCountriesResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<PricingCountriesResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -272,8 +268,7 @@ namespace MyNS
 		public async Task<PricingCountryResponse> RetrievePricingCountryAsync(string type, string api_key, string api_secret, string country, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "get-pricing/outbound/"+ (type==null? "" : System.Uri.EscapeDataString(type))+"&api_key=" + (api_key==null? "" : System.Uri.EscapeDataString(api_key))+"&api_secret=" + (api_secret==null? "" : System.Uri.EscapeDataString(api_secret))+"&country=" + (country==null? "" : System.Uri.EscapeDataString(country));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -283,13 +278,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<PricingCountryResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<PricingCountryResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

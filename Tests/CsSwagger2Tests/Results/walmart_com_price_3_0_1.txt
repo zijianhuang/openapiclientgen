@@ -49,8 +49,7 @@ namespace MyNS
 		public async Task GetFeedsStatusAsync(string feedId, string includeDetails, string offset, string limit)
 		{
 			var requestUri = "v3/feeds/"+ (feedId==null? "" : System.Uri.EscapeDataString(feedId))+"&includeDetails=" + (includeDetails==null? "" : System.Uri.EscapeDataString(includeDetails))+"&offset=" + (offset==null? "" : System.Uri.EscapeDataString(offset))+"&limit=" + (limit==null? "" : System.Uri.EscapeDataString(limit));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -59,7 +58,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

@@ -77,8 +77,7 @@ namespace MyNS
 		public async Task ComputeFabricOperations_GetAsync(string subscriptionId, string location, string provider, string computeOperationResult, string api_version)
 		{
 			var requestUri = "subscriptions/"+ (subscriptionId==null? "" : System.Uri.EscapeDataString(subscriptionId))+"/resourceGroups/System."+ (location==null? "" : System.Uri.EscapeDataString(location))+"/providers/"+ (provider==null? "" : System.Uri.EscapeDataString(provider))+"/fabricLocations/"+ (location==null? "" : System.Uri.EscapeDataString(location))+"/computeOperationResults/"+ (computeOperationResult==null? "" : System.Uri.EscapeDataString(computeOperationResult))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -87,7 +86,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -103,8 +101,7 @@ namespace MyNS
 		public async Task NetworkFabricOperations_GetAsync(string subscriptionId, string location, string provider, string networkOperationResult, string api_version)
 		{
 			var requestUri = "subscriptions/"+ (subscriptionId==null? "" : System.Uri.EscapeDataString(subscriptionId))+"/resourceGroups/System."+ (location==null? "" : System.Uri.EscapeDataString(location))+"/providers/"+ (provider==null? "" : System.Uri.EscapeDataString(provider))+"/fabricLocations/"+ (location==null? "" : System.Uri.EscapeDataString(location))+"/networkOperationResults/"+ (networkOperationResult==null? "" : System.Uri.EscapeDataString(networkOperationResult))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
@@ -113,7 +110,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

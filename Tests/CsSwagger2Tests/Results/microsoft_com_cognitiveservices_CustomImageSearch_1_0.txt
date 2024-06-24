@@ -518,19 +518,17 @@ namespace MyNS
 					int width)
 		{
 			var requestUri = "images/search?customConfig=" + (customConfig==null? "" : System.Uri.EscapeDataString(customConfig))+"&aspect=" + aspect+"&color=" + color+"&cc=" + (cc==null? "" : System.Uri.EscapeDataString(cc))+"&count="+count+"&freshness=" + freshness+"&height="+height+"&id=" + (id==null? "" : System.Uri.EscapeDataString(id))+"&imageContent=" + imageContent+"&imageType=" + imageType+"&license=" + license+"&mkt=" + (mkt==null? "" : System.Uri.EscapeDataString(mkt))+"&maxFileSize="+maxFileSize+"&maxHeight="+maxHeight+"&maxWidth="+maxWidth+"&minFileSize="+minFileSize+"&minHeight="+minHeight+"&minWidth="+minWidth+"&offset="+offset+"&q=" + (q==null? "" : System.Uri.EscapeDataString(q))+"&safeSearch=" + safeSearch+"&size=" + size+"&setLang=" + (setLang==null? "" : System.Uri.EscapeDataString(setLang))+"&width="+width;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Images>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Images>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

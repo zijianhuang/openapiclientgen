@@ -1687,8 +1687,7 @@ namespace MyNS
 		public async Task<AnalyzeIamPolicyResponse> Cloudasset_analyzeIamPolicyAsync(string parent, string[] analysisQuery_accessSelector_permissions, string[] analysisQuery_accessSelector_roles, string analysisQuery_identitySelector_identity, string analysisQuery_resourceSelector_fullResourceName, bool options_analyzeServiceAccountImpersonation, string options_executionTimeout, bool options_expandGroups, bool options_expandResources, bool options_expandRoles, bool options_outputGroupEdges, bool options_outputResourceEdges, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1p4beta1/"+ (parent==null? "" : System.Uri.EscapeDataString(parent))+":analyzeIamPolicy&"+string.Join("&", analysisQuery_accessSelector_permissions.Select(z => $"analysisQuery.accessSelector.permissions={System.Uri.EscapeDataString(z.ToString())}"))+"&"+string.Join("&", analysisQuery_accessSelector_roles.Select(z => $"analysisQuery.accessSelector.roles={System.Uri.EscapeDataString(z.ToString())}"))+"&analysisQuery.identitySelector.identity=" + (analysisQuery_identitySelector_identity==null? "" : System.Uri.EscapeDataString(analysisQuery_identitySelector_identity))+"&analysisQuery.resourceSelector.fullResourceName=" + (analysisQuery_resourceSelector_fullResourceName==null? "" : System.Uri.EscapeDataString(analysisQuery_resourceSelector_fullResourceName))+"&options.analyzeServiceAccountImpersonation="+options_analyzeServiceAccountImpersonation+"&options.executionTimeout=" + (options_executionTimeout==null? "" : System.Uri.EscapeDataString(options_executionTimeout))+"&options.expandGroups="+options_expandGroups+"&options.expandResources="+options_expandResources+"&options.expandRoles="+options_expandRoles+"&options.outputGroupEdges="+options_outputGroupEdges+"&options.outputResourceEdges="+options_outputResourceEdges;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -1698,13 +1697,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<AnalyzeIamPolicyResponse>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<AnalyzeIamPolicyResponse>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1717,10 +1715,8 @@ namespace MyNS
 		public async Task<Operation> Cloudasset_exportIamPolicyAnalysisAsync(string parent, ExportIamPolicyAnalysisRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1p4beta1/"+ (parent==null? "" : System.Uri.EscapeDataString(parent))+":exportIamPolicyAnalysis";
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
-			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -1731,13 +1727,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Operation>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Operation>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

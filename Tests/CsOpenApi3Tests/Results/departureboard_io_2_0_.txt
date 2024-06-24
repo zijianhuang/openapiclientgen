@@ -61,8 +61,7 @@ namespace MyNS
 		public async Task GetArrivalsAndDeparturesByCRSAsync(string CRS, string apiKey, int numServices, int timeOffset, int timeWindow, bool serviceDetails, string filterStation, string filterType, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "getArrivalsAndDeparturesByCRS/"+ (CRS==null? "" : System.Uri.EscapeDataString(CRS))+"&apiKey=" + (apiKey==null? "" : System.Uri.EscapeDataString(apiKey))+"&numServices="+numServices+"&timeOffset="+timeOffset+"&timeWindow="+timeWindow+"&serviceDetails="+serviceDetails+"&filterStation=" + (filterStation==null? "" : System.Uri.EscapeDataString(filterStation))+"&filterType=" + (filterType==null? "" : System.Uri.EscapeDataString(filterType));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -76,7 +75,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -103,8 +101,7 @@ namespace MyNS
 		public async Task GetArrivalsByCRSAsync(string CRS, string apiKey, int numServices, int timeOffset, int timeWindow, bool serviceDetails, string filterStation, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "getArrivalsByCRS/"+ (CRS==null? "" : System.Uri.EscapeDataString(CRS))+"&apiKey=" + (apiKey==null? "" : System.Uri.EscapeDataString(apiKey))+"&numServices="+numServices+"&timeOffset="+timeOffset+"&timeWindow="+timeWindow+"&serviceDetails="+serviceDetails+"&filterStation=" + (filterStation==null? "" : System.Uri.EscapeDataString(filterStation));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -118,7 +115,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -145,8 +141,7 @@ namespace MyNS
 		public async Task GetDeparturesByCRSAsync(string CRS, string apiKey, int numServices, int timeOffset, int timeWindow, bool serviceDetails, string filterStation, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "getDeparturesByCRS/"+ (CRS==null? "" : System.Uri.EscapeDataString(CRS))+"&apiKey=" + (apiKey==null? "" : System.Uri.EscapeDataString(apiKey))+"&numServices="+numServices+"&timeOffset="+timeOffset+"&timeWindow="+timeWindow+"&serviceDetails="+serviceDetails+"&filterStation=" + (filterStation==null? "" : System.Uri.EscapeDataString(filterStation));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -160,7 +155,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -186,8 +180,7 @@ namespace MyNS
 		public async Task GetFastestDeparturesByCRSAsync(string CRS, string apiKey, string filterList, int timeOffset, int timeWindow, bool serviceDetails, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "getFastestDeparturesByCRS/"+ (CRS==null? "" : System.Uri.EscapeDataString(CRS))+"&apiKey=" + (apiKey==null? "" : System.Uri.EscapeDataString(apiKey))+"&filterList=" + (filterList==null? "" : System.Uri.EscapeDataString(filterList))+"&timeOffset="+timeOffset+"&timeWindow="+timeWindow+"&serviceDetails="+serviceDetails;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -201,7 +194,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -227,8 +219,7 @@ namespace MyNS
 		public async Task GetNextDeparturesByCRSAsync(string CRS, string apiKey, string filterList, int timeOffset, int timeWindow, bool serviceDetails, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "getNextDeparturesByCRS/"+ (CRS==null? "" : System.Uri.EscapeDataString(CRS))+"&apiKey=" + (apiKey==null? "" : System.Uri.EscapeDataString(apiKey))+"&filterList=" + (filterList==null? "" : System.Uri.EscapeDataString(filterList))+"&timeOffset="+timeOffset+"&timeWindow="+timeWindow+"&serviceDetails="+serviceDetails;
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -242,7 +233,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -256,8 +246,7 @@ namespace MyNS
 		public async Task GetServiceDetailsByIDAsync(string serviceID, string apiKey, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "getServiceDetailsByID/"+ (serviceID==null? "" : System.Uri.EscapeDataString(serviceID))+"&apiKey=" + (apiKey==null? "" : System.Uri.EscapeDataString(apiKey));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -271,7 +260,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}

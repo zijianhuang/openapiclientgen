@@ -49,8 +49,7 @@ namespace MyNS
 		public async Task<GetfullnameparsedmatchReturn> GetfullnameparsedmatchAsync(string license, string firstname, string lastname, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "getfullnameparsedmatch?license=" + (license==null? "" : System.Uri.EscapeDataString(license))+"&firstname=" + (firstname==null? "" : System.Uri.EscapeDataString(firstname))+"&lastname=" + (lastname==null? "" : System.Uri.EscapeDataString(lastname));
-			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
-			{
+			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
 			if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
@@ -60,13 +59,12 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<GetfullnameparsedmatchReturn>(contentString, jsonSerializerSettings);
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<GetfullnameparsedmatchReturn>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 	}
