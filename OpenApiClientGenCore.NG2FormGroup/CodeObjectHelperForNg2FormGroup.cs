@@ -167,7 +167,7 @@ namespace Fonlow.TypeScriptCodeDom
 		/// </summary>
 		/// <param name="codeMemberField"></param>
 		/// <returns></returns>
-		string GetCodeMemberFieldTextForAngularFormControl(CodeMemberField codeMemberField)
+		static string GetCodeMemberFieldTextForAngularFormControl(CodeMemberField codeMemberField)
 		{
 			var tsTypeName = RefineAngularFormControlTypeName(codeMemberField);
 			var fieldName = codeMemberField.Name.EndsWith('?') ? codeMemberField.Name.Substring(0, codeMemberField.Name.Length - 1) : codeMemberField.Name;
@@ -179,7 +179,7 @@ namespace Fonlow.TypeScriptCodeDom
 		/// </summary>
 		/// <param name="codeMemberField"></param>
 		/// <returns></returns>
-		string RefineAngularFormControlTypeName(CodeMemberField codeMemberField)
+		static string RefineAngularFormControlTypeName(CodeMemberField codeMemberField)
 		{
 			var tsTypeName = GetCodeTypeReferenceText(codeMemberField.Type);
 			var alreadyNullable = tsTypeName.Contains("| null");
@@ -203,7 +203,7 @@ namespace Fonlow.TypeScriptCodeDom
 		/// </summary>
 		/// <param name="codeMemberField"></param>
 		/// <returns>Text of FormControl creation.</returns>
-		string GetCodeMemberFieldTextForAngularFormGroup(CodeMemberField codeMemberField)
+		static string GetCodeMemberFieldTextForAngularFormGroup(CodeMemberField codeMemberField)
 		{
 			var customAttributes = codeMemberField.CustomAttributes;
 			var fieldName = codeMemberField.Name.EndsWith('?') ? codeMemberField.Name.Substring(0, codeMemberField.Name.Length - 1) : codeMemberField.Name;

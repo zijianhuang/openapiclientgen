@@ -34,7 +34,7 @@
 	</ItemGroup>
 
 	<Target Name="PreBuild" BeforeTargets="PreBuildEvent">
-		<Exec Command="pwsh -Command &quot;&amp; {copy-item -Path ../SwagTestsResults/* -Destination $(TargetDir)Results -Recurse}&quot;&#xD;&#xA;pwsh -Command &quot;&amp; {copy-item -Path ./SwagMock/* -Destination $(TargetDir)SwagMock -Recurse}&quot;" />
+		<Exec Command="pwsh -Command &quot;&amp; {copy-item -Path ./SwagMock/* -Destination $(TargetDir)SwagMock -Recurse}&quot;&#xD;&#xA;pwsh -Command &quot;&amp; {copy-item -Path ../SwagTestsResults/* -Destination $(TargetDir)Results -Recurse}&quot;" />
 	</Target>
 
 </Project>
