@@ -39,7 +39,7 @@
 	</ItemGroup>
 
 	<Target Name="PreBuild" BeforeTargets="PreBuildEvent">
-		<Exec Command="pwsh -File ../../PowershellScripts/CopyFiles.ps1 $(ProjectDir)Results/ $(TargetDir)&#xD;&#xA;" />
+		<Exec Command="pwsh -Command &quot;&amp; {new-item -Path $(TargetDir) -Name &quot;Results&quot; -ItemType &quot;directory&quot;}&quot;&#xD;&#xA;pwsh -Command &quot;&amp; {copy-item -Path ../CsSwagger2TestsResults/* -Destination $(TargetDir)Results -Recurse}&quot;&#xD;&#xA;" />
 	</Target>
 
 </Project>

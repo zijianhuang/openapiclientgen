@@ -98,7 +98,7 @@ namespace Fonlow.OpenApiClientGen.TestHelpers
 		{
 			var idx = defDirName.IndexOf("\\APIs\\");
 			var whatAfter = defDirName.Substring(idx + 6);
-			return $"{resultsDir}\\{RefinePropertyName(whatAfter)}.txt";
+			return $"{resultsDir}\\{RefinePropertyName(whatAfter)}.cs";
 		}
 
 		static string RefinePropertyName(string s)
