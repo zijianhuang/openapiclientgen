@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-	<TargetFramework>net7.0</TargetFramework>
+	<TargetFramework>net8.0</TargetFramework>
 	<AssemblyName>Fonlow.OpenApiClientGen.JQ</AssemblyName>
 	<RootNamespace>Fonlow.OpenApiClientGen.JQ</RootNamespace>
 	<Authors>Zijian Huang</Authors>
@@ -9,7 +9,7 @@
 	<PackageLicenseExpression>MIT</PackageLicenseExpression>
 	<PackageProjectUrl>https://github.com/zijianhuang/openapiclientgen</PackageProjectUrl>
 	<NeutralLanguage>en</NeutralLanguage>
-	<Version>2</Version>
+	<Version>2.1</Version>
 	<AnalysisLevel>latest-all</AnalysisLevel>
   </PropertyGroup>
 

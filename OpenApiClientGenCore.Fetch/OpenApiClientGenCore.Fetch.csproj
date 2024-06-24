@@ -1,14 +1,14 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-	<TargetFramework>net7.0</TargetFramework>
+	<TargetFramework>net8.0</TargetFramework>
 	<AssemblyName>Fonlow.OpenApiClientGen.Fetch</AssemblyName>
 	<Authors>Zijian Huang</Authors>
 	<Copyright>Copyright © Zijian Huang 2020-2024</Copyright>
 	<PackageLicenseExpression>MIT</PackageLicenseExpression>
 	<PackageProjectUrl>https://github.com/zijianhuang/openapiclientgen</PackageProjectUrl>
 	<NeutralLanguage>en</NeutralLanguage>
-	<Version>2.2</Version>
+	<Version>2.3</Version>
 	<AnalysisLevel>latest-all</AnalysisLevel>
   </PropertyGroup>
 

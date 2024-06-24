@@ -1,14 +1,14 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net7.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/zijianhuang/openapiclientgen</PackageProjectUrl>
     <Copyright>Copyright © Zijian Huang 2021-$([System.DateTime]::Now.Year)</Copyright>
     <Authors>Zijian Huang</Authors>
     <NeutralLanguage>en</NeutralLanguage>
     <Description>Shared component for plugins that generate TypeScript client API codes</Description>
-    <Version>3.1.2</Version>
+    <Version>3.2</Version>
     <AnalysisLevel>latest-all</AnalysisLevel>
   </PropertyGroup>
 

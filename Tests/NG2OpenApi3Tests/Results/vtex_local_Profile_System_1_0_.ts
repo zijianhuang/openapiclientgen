@@ -374,7 +374,7 @@ export namespace MyNS {
 		 * > Learn more about the [Profile System](https://developers.vtex.com/vtex-rest-api/docs/profile-system) and its other API endpoints.
 		 * Post api/storage/profile-system/profiles
 		 * @param {number} ttl This parameter sets the the Time To Live (TTL), in days, of the specific document being created or updated with this request. After this period of time from the moment of the request, the document is deleted. By sending this parameter you override the TTL set for the schema.
-		 * > Currently, the available default document schemas have no TTL. This means that documents are stored indefinitely, unless a TTL is sent when creating or updating.
+		 * > Currently, the available default document schemas have no TTL. This means that documents are stored indefinitely, unless a TTL is sent when creating or updating.
 		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
@@ -415,7 +415,7 @@ export namespace MyNS {
 		 * Get api/storage/profile-system/profiles/{profileId}
 		 * @param {string} profileId ID of the client's profile as returned by the Create profile endpoint's response, in the `id` field. It can also be an `alternativeKey` according to your custom profile schema. In this case, this request should also send the `alternativeKey` parameter.
 		 * @param {string} alternativeKey The `profileId` path parameter may be substituted by other profile fields in this request. When making this request, send the `alternativeKey` parameter with a value equal to the key of the field you wish to use as `profileId`.
-		 * > Currently, there are two possible values for this parameter: `email` and `document`.
+		 * > Currently, there are two possible values for this parameter: `email` and `document`.
 		 * @return {Array<string>} OK
 		 */
 		GetProfile(profileId: string, alternativeKey: string | null | undefined): Observable<Array<string>> {
@@ -430,9 +430,9 @@ export namespace MyNS {
 		 * Patch api/storage/profile-system/profiles/{profileId}
 		 * @param {string} profileId ID of the client's profile as returned by the Create profile endpoint's response, in the `id` field. It can also be an `alternativeKey` according to your custom profile schema. In this case, this request should also send the `alternativeKey` parameter.
 		 * @param {string} alternativeKey The `profileId` path parameter may be substituted by other profile fields in this request. When making this request, send the `alternativeKey` parameter with a value equal to the key of the field you wish to use as `profileId`.
-		 * > Currently, there are two possible values for this parameter: `email` and `document`.
+		 * > Currently, there are two possible values for this parameter: `email` and `document`.
 		 * @param {number} ttl This parameter sets the the Time To Live (TTL), in days, of the specific document being created or updated with this request. After this period of time from the moment of the request, the document is deleted. By sending this parameter you override the TTL set for the schema.
-		 * > Currently, the available default document schemas have no TTL. This means that documents are stored indefinitely, unless a TTL is sent when creating or updating.
+		 * > Currently, the available default document schemas have no TTL. This means that documents are stored indefinitely, unless a TTL is sent when creating or updating.
 		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {string} OK
 		 */
@@ -448,7 +448,7 @@ export namespace MyNS {
 		 * Get api/storage/profile-system/profiles/{profileId}/addresses
 		 * @param {string} profileId ID of the client's profile as returned by the Create profile endpoint's response, in the `id` field. It can also be an `alternativeKey` according to your custom profile schema. In this case, this request should also send the `alternativeKey` parameter.
 		 * @param {string} alternativeKey The `profileId` path parameter may be substituted by other profile fields in this request. When making this request, send the `alternativeKey` parameter with a value equal to the key of the field you wish to use as `profileId`.
-		 * > Currently, there are two possible values for this parameter: `email` and `document`.
+		 * > Currently, there are two possible values for this parameter: `email` and `document`.
 		 * @return {Array<string>} OK
 		 */
 		GetClientAddresses(profileId: string, alternativeKey: string | null | undefined): Observable<Array<string>> {
@@ -463,7 +463,7 @@ export namespace MyNS {
 		 * Post api/storage/profile-system/profiles/{profileId}/addresses
 		 * @param {string} profileId ID of the client's profile as returned by the Create profile endpoint's response, in the `id` field. It can also be an `alternativeKey` according to your custom profile schema. In this case, this request should also send the `alternativeKey` parameter.
 		 * @param {string} alternativeKey The `profileId` path parameter may be substituted by other profile fields in this request. When making this request, send the `alternativeKey` parameter with a value equal to the key of the field you wish to use as `profileId`.
-		 * > Currently, there are two possible values for this parameter: `email` and `document`.
+		 * > Currently, there are two possible values for this parameter: `email` and `document`.
 		 * @return {void} 
 		 */
 		CreateClientAddress(profileId: string, alternativeKey: string | null | undefined, requestBody: Address): Observable<HttpResponse<string>> {
@@ -477,7 +477,7 @@ export namespace MyNS {
 		 * Get api/storage/profile-system/profiles/{profileId}/addresses/unmask
 		 * @param {string} profileId ID of the client's profile as returned by the Create profile endpoint's response, in the `id` field. It can also be an `alternativeKey` according to your custom profile schema. In this case, this request should also send the `alternativeKey` parameter.
 		 * @param {string} alternativeKey The `profileId` path parameter may be substituted by other profile fields in this request. When making this request, send the `alternativeKey` parameter with a value equal to the key of the field you wish to use as `profileId`.
-		 * > Currently, there are two possible values for this parameter: `email` and `document`.
+		 * > Currently, there are two possible values for this parameter: `email` and `document`.
 		 * @return {Array<string>} OK
 		 */
 		GetUnmaskedClientAddresses(profileId: string, alternativeKey: string | null | undefined): Observable<Array<string>> {
@@ -492,7 +492,7 @@ export namespace MyNS {
 		 * @param {string} profileId ID of the client's profile as returned by the Create profile endpoint's response, in the `id` field. It can also be an `alternativeKey` according to your custom profile schema. In this case, this request should also send the `alternativeKey` parameter.
 		 * @param {string} addressId ID of a client's specific address as returned in the Create client address endpoint's response, in the `id` field.
 		 * @param {string} alternativeKey The `profileId` path parameter may be substituted by other profile fields in this request. When making this request, send the `alternativeKey` parameter with a value equal to the key of the field you wish to use as `profileId`.
-		 * > Currently, there are two possible values for this parameter: `email` and `document`.
+		 * > Currently, there are two possible values for this parameter: `email` and `document`.
 		 * @return {void} 
 		 */
 		DeleteAddress(profileId: string, addressId: string, alternativeKey: string | null | undefined): Observable<HttpResponse<string>> {
@@ -508,7 +508,7 @@ export namespace MyNS {
 		 * @param {string} profileId ID of the client's profile as returned by the Create profile endpoint's response, in the `id` field. It can also be an `alternativeKey` according to your custom profile schema. In this case, this request should also send the `alternativeKey` parameter.
 		 * @param {string} addressId ID of a client's specific address as returned in the Create client address endpoint's response, in the `id` field.
 		 * @param {string} alternativeKey The `profileId` path parameter may be substituted by other profile fields in this request. When making this request, send the `alternativeKey` parameter with a value equal to the key of the field you wish to use as `profileId`.
-		 * > Currently, there are two possible values for this parameter: `email` and `document`.
+		 * > Currently, there are two possible values for this parameter: `email` and `document`.
 		 * @return {string} OK
 		 */
 		GetAddress(profileId: string, addressId: string, alternativeKey: string | null | undefined): Observable<string> {
@@ -523,7 +523,7 @@ export namespace MyNS {
 		 * @param {string} profileId ID of the client's profile as returned by the Create profile endpoint's response, in the `id` field. It can also be an `alternativeKey` according to your custom profile schema. In this case, this request should also send the `alternativeKey` parameter.
 		 * @param {string} addressId ID of a client's specific address as returned in the Create client address endpoint's response, in the `id` field.
 		 * @param {string} alternativeKey The `profileId` path parameter may be substituted by other profile fields in this request. When making this request, send the `alternativeKey` parameter with a value equal to the key of the field you wish to use as `profileId`.
-		 * > Currently, there are two possible values for this parameter: `email` and `document`.
+		 * > Currently, there are two possible values for this parameter: `email` and `document`.
 		 * @return {string} OK
 		 */
 		UpdateClientAddress(profileId: string, addressId: string, alternativeKey: string | null | undefined, requestBody: UpdateClientAddressPatchBody): Observable<string> {
@@ -539,7 +539,7 @@ export namespace MyNS {
 		 * @param {string} addressId ID of a client's specific address as returned in the Create client address endpoint's response, in the `id` field.
 		 * @param {string} reason Reason for requesting unmasked data.
 		 * @param {string} alternativeKey The `profileId` path parameter may be substituted by other profile fields in this request. When making this request, send the `alternativeKey` parameter with a value equal to the key of the field you wish to use as `profileId`.
-		 * > Currently, there are two possible values for this parameter: `email` and `document`.
+		 * > Currently, there are two possible values for this parameter: `email` and `document`.
 		 * @return {string} OK
 		 */
 		GetUnmaskedAddress(profileId: string, addressId: string, reason: string, alternativeKey: string | null | undefined): Observable<string> {
@@ -557,7 +557,7 @@ export namespace MyNS {
 		 * @param {string} addressVersionId ID of the version of a given client's address as returned by endpoints that create or update address information in the `version` field.
 		 * @param {string} reason Reason for requesting unmasked data.
 		 * @param {string} alternativeKey The `profileId` path parameter may be substituted by other profile fields in this request. When making this request, send the `alternativeKey` parameter with a value equal to the key of the field you wish to use as `profileId`.
-		 * > Currently, there are two possible values for this parameter: `email` and `document`.
+		 * > Currently, there are two possible values for this parameter: `email` and `document`.
 		 * @return {string} OK
 		 */
 		GetAddressByVersion(profileId: string, addressId: string, addressVersionId: string, reason: string, alternativeKey: string | null | undefined): Observable<string> {
@@ -574,7 +574,7 @@ export namespace MyNS {
 		 * @param {string} addressVersionId ID of the version of a given client's address as returned by endpoints that create or update address information in the `version` field.
 		 * @param {string} reason Reason for requesting unmasked data.
 		 * @param {string} alternativeKey The `profileId` path parameter may be substituted by other profile fields in this request. When making this request, send the `alternativeKey` parameter with a value equal to the key of the field you wish to use as `profileId`.
-		 * > Currently, there are two possible values for this parameter: `email` and `document`.
+		 * > Currently, there are two possible values for this parameter: `email` and `document`.
 		 * @return {string} OK
 		 */
 		GetUnmaskedAddressByVersion(profileId: string, addressId: string, addressVersionId: string, reason: string, alternativeKey: string | null | undefined): Observable<string> {
@@ -588,7 +588,7 @@ export namespace MyNS {
 		 * Delete api/storage/profile-system/profiles/{profileId}/purchase-info
 		 * @param {string} profileId ID of the client's profile as returned by the Create profile endpoint's response, in the `id` field. It can also be an `alternativeKey` according to your custom profile schema. In this case, this request should also send the `alternativeKey` parameter.
 		 * @param {string} alternativeKey The `profileId` path parameter may be substituted by other profile fields in this request. When making this request, send the `alternativeKey` parameter with a value equal to the key of the field you wish to use as `profileId`.
-		 * > Currently, there are two possible values for this parameter: `email` and `document`.
+		 * > Currently, there are two possible values for this parameter: `email` and `document`.
 		 * @return {void} 
 		 */
 		DeletePurchaseInformation(profileId: string, alternativeKey: string | null | undefined): Observable<HttpResponse<string>> {
@@ -603,7 +603,7 @@ export namespace MyNS {
 		 * Get api/storage/profile-system/profiles/{profileId}/purchase-info
 		 * @param {string} profileId ID of the client's profile as returned by the Create profile endpoint's response, in the `id` field. It can also be an `alternativeKey` according to your custom profile schema. In this case, this request should also send the `alternativeKey` parameter.
 		 * @param {string} alternativeKey The `profileId` path parameter may be substituted by other profile fields in this request. When making this request, send the `alternativeKey` parameter with a value equal to the key of the field you wish to use as `profileId`.
-		 * > Currently, there are two possible values for this parameter: `email` and `document`.
+		 * > Currently, there are two possible values for this parameter: `email` and `document`.
 		 * @return {Array<string>} OK
 		 */
 		GetPurchaseInformation(profileId: string, alternativeKey: string | null | undefined): Observable<Array<string>> {
@@ -617,7 +617,7 @@ export namespace MyNS {
 		 * Patch api/storage/profile-system/profiles/{profileId}/purchase-info
 		 * @param {string} profileId ID of the client's profile as returned by the Create profile endpoint's response, in the `id` field. It can also be an `alternativeKey` according to your custom profile schema. In this case, this request should also send the `alternativeKey` parameter.
 		 * @param {string} alternativeKey The `profileId` path parameter may be substituted by other profile fields in this request. When making this request, send the `alternativeKey` parameter with a value equal to the key of the field you wish to use as `profileId`.
-		 * > Currently, there are two possible values for this parameter: `email` and `document`.
+		 * > Currently, there are two possible values for this parameter: `email` and `document`.
 		 * @return {string} OK
 		 */
 		UpdatePurchaseInformation(profileId: string, alternativeKey: string | null | undefined, requestBody: any): Observable<string> {
@@ -631,7 +631,7 @@ export namespace MyNS {
 		 * Post api/storage/profile-system/profiles/{profileId}/purchase-info
 		 * @param {string} profileId ID of the client's profile as returned by the Create profile endpoint's response, in the `id` field. It can also be an `alternativeKey` according to your custom profile schema. In this case, this request should also send the `alternativeKey` parameter.
 		 * @param {string} alternativeKey The `profileId` path parameter may be substituted by other profile fields in this request. When making this request, send the `alternativeKey` parameter with a value equal to the key of the field you wish to use as `profileId`.
-		 * > Currently, there are two possible values for this parameter: `email` and `document`.
+		 * > Currently, there are two possible values for this parameter: `email` and `document`.
 		 * @return {void} 
 		 */
 		CreatePurchaseInformation(profileId: string, alternativeKey: string | null | undefined, requestBody: any): Observable<HttpResponse<string>> {
@@ -659,7 +659,7 @@ export namespace MyNS {
 		 * @param {string} profileId ID of the client's profile as returned by the Create profile endpoint's response, in the `id` field. It can also be an `alternativeKey` according to your custom profile schema. In this case, this request should also send the `alternativeKey` parameter.
 		 * @param {string} reason Reason for requesting unmasked data.
 		 * @param {string} alternativeKey The `profileId` path parameter may be substituted by other profile fields in this request. When making this request, send the `alternativeKey` parameter with a value equal to the key of the field you wish to use as `profileId`.
-		 * > Currently, there are two possible values for this parameter: `email` and `document`.
+		 * > Currently, there are two possible values for this parameter: `email` and `document`.
 		 * @return {Array<string>} OK
 		 */
 		GetUnmaskedProfile(profileId: string, reason: string, alternativeKey: string | null | undefined): Observable<Array<string>> {

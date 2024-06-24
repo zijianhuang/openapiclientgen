@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFramework>net7.0</TargetFramework>
+		<TargetFramework>net8.0</TargetFramework>
 		<AssemblyName>Fonlow.OpenApiClientGen.NG2</AssemblyName>
 		<NeutralLanguage>en</NeutralLanguage>
 		<GeneratePackageOnBuild>false</GeneratePackageOnBuild>
@@ -10,7 +10,7 @@
 		<Copyright>Copyright © Zijian Huang 2021-2024</Copyright>
 		<Authors>Zijian Huang</Authors>
 		<RootNamespace>Fonlow.OpenApiClientGen.NG2</RootNamespace>
-		<Version>2</Version>
+		<Version>2.1</Version>
 		<AnalysisLevel>latest-all</AnalysisLevel>
 	</PropertyGroup>
 

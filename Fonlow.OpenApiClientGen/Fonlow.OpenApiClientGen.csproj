@@ -2,7 +2,7 @@
 
 	<PropertyGroup>
 		<OutputType>Exe</OutputType>
-		<TargetFramework>net7.0</TargetFramework>
+		<TargetFramework>net8.0</TargetFramework>
 		<RootNamespace>Fonlow.OpenApiClientGen</RootNamespace>
 		<AssemblyName>Fonlow.OpenApiClientGen</AssemblyName>
 		<Authors>Zijian Huang</Authors>
@@ -11,9 +11,9 @@
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
 		<NeutralLanguage>en</NeutralLanguage>
 		<Copyright>Copyright © Zijian Huang 2021-$([System.DateTime]::Now.Year)</Copyright>
-		<Version>3.1.4</Version>
+		<Version>3.2</Version>
 		<PackageTags>Swagger, Open API Specification, C#, .NET Core, Web API, TypeScript, Angular, YAML</PackageTags>
-		<PackageReleaseNotes>Better support for Int64 in JS. More doc comments generated.</PackageReleaseNotes>
+		<PackageReleaseNotes>.NET 8</PackageReleaseNotes>
 		<AnalysisLevel>latest-all</AnalysisLevel>
 	</PropertyGroup>
 
@@ -40,7 +40,7 @@
 	<ItemGroup>
 		<PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="8.0.0" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Console" Version="8.0.0" />
-		<PackageReference Include="Microsoft.OpenApi.Readers" Version="1.6.14" />
+		<PackageReference Include="Microsoft.OpenApi.Readers" Version="1.6.15" />
 	</ItemGroup>
 
 	<ItemGroup>

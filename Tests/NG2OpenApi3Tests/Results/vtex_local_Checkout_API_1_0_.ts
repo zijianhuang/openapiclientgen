@@ -600,7 +600,7 @@ export namespace MyNS {
 		 * Post api/checkout/pub/orderForm/{orderFormId}/items
 		 * @param {string} orderFormId ID of the orderForm corresponding to the cart in which the new item will be added.
 		 * @param {Array<string>} allowedOutdatedData In order to optimize performance, this parameter allows some information to not be updated when there are changes in the minicart. For instance, if a shopper adds another unit of a given SKU to the cart, it may not be necessary to recalculate payment information, which could impact performance.
-		 * This array accepts strings and currently the only possible value is `”paymentData”`.
+		 * This array accepts strings and currently the only possible value is `”paymentData”`.
 		 * @return {ItemsReturn} OK
 		 */
 		Items(orderFormId: string, allowedOutdatedData: Array<string> | null | undefined, requestBody: ItemsPostBody): Observable<ItemsReturn> {
@@ -631,7 +631,7 @@ export namespace MyNS {
 		 * Post api/checkout/pub/orderForm/{orderFormId}/items/update
 		 * @param {string} orderFormId ID of the `orderForm` corresponding to the cart whose items you want to update.
 		 * @param {Array<string>} allowedOutdatedData In order to optimize performance, this parameter allows some information to not be updated when there are changes in the minicart. For instance, if a shopper adds another unit of a given SKU to the cart, it may not be necessary to recalculate payment information, which could impact performance.
-		 * This array accepts strings and currently the only possible value is `”paymentData”`.
+		 * This array accepts strings and currently the only possible value is `”paymentData”`.
 		 * @return {ItemsUpdateReturn} OK
 		 */
 		ItemsUpdate(orderFormId: string, allowedOutdatedData: Array<string> | null | undefined, requestBody: ItemsUpdatePostBody): Observable<ItemsUpdateReturn> {
@@ -702,7 +702,7 @@ export namespace MyNS {
 		 * **Important**: The fields (`sku id`, `quantity`, `seller`, `country`, `postalCode` and `geoCoordinates`) are just examples of content that you can simulate in your cart. You can add more fields to the request as per your need. Access the [orderForm](https://developers.vtex.com/docs/guides/orderform-fields) guide to check the available fields.
 		 * Post api/checkout/pub/orderForms/simulation
 		 * @param {number} RnbBehavior This parameter defines which promotions apply to the simulation. Use `0` for simulations at cart stage, which means all promotions apply. In case of window simulation use `1`, which indicates promotions that apply nominal discounts over the total purchase value shouldn't be considered on the simulation.
-		 * Note that if this not sent, the parameter is `1`.
+		 * Note that if this not sent, the parameter is `1`.
 		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} sc Trade Policy (Sales Channel) identification.
 		 *     Type: int, -2,147,483,648 to 2,147,483,647
