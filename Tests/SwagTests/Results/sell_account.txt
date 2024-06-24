@@ -1306,8 +1306,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
+				var stream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<FulfillmentPolicyResponse>(jsonReader);
@@ -1331,12 +1331,12 @@ namespace MyNS
 			var requestUri = "fulfillment_policy/?marketplace_id=" + (marketplace_id==null? "" : System.Uri.EscapeDataString(marketplace_id));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
-			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
+			var responseMessage = httpClient.Send(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
+				var stream = responseMessage.Content.ReadAsStream();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<FulfillmentPolicyResponse>(jsonReader);
@@ -1394,7 +1394,7 @@ namespace MyNS
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
-			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
+			var responseMessage = httpClient.Send(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -1422,8 +1422,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
+				var stream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<FulfillmentPolicy>(jsonReader);
@@ -1447,12 +1447,12 @@ namespace MyNS
 			var requestUri = "fulfillment_policy/"+ (fulfillmentPolicyId==null? "" : System.Uri.EscapeDataString(fulfillmentPolicyId));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
-			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
+			var responseMessage = httpClient.Send(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
+				var stream = responseMessage.Content.ReadAsStream();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<FulfillmentPolicy>(jsonReader);
@@ -1487,8 +1487,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
+				var stream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<SetFulfillmentPolicyResponse>(jsonReader);
@@ -1520,12 +1520,12 @@ namespace MyNS
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
-			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
+			var responseMessage = httpClient.Send(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
+				var stream = responseMessage.Content.ReadAsStream();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<SetFulfillmentPolicyResponse>(jsonReader);
@@ -1571,7 +1571,7 @@ namespace MyNS
 			var requestUri = "fulfillment_policy/"+ (fulfillmentPolicyId==null? "" : System.Uri.EscapeDataString(fulfillmentPolicyId));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
 			{
-			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
+			var responseMessage = httpClient.Send(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -1599,8 +1599,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
+				var stream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<FulfillmentPolicy>(jsonReader);
@@ -1625,12 +1625,12 @@ namespace MyNS
 			var requestUri = "fulfillment_policy/get_by_policy_name?marketplace_id=" + (marketplace_id==null? "" : System.Uri.EscapeDataString(marketplace_id))+"&name=" + (name==null? "" : System.Uri.EscapeDataString(name));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
-			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
+			var responseMessage = httpClient.Send(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
+				var stream = responseMessage.Content.ReadAsStream();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<FulfillmentPolicy>(jsonReader);
@@ -1658,8 +1658,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
+				var stream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<PaymentPolicyResponse>(jsonReader);
@@ -1683,12 +1683,12 @@ namespace MyNS
 			var requestUri = "payment_policy/?marketplace_id=" + (marketplace_id==null? "" : System.Uri.EscapeDataString(marketplace_id));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
-			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
+			var responseMessage = httpClient.Send(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
+				var stream = responseMessage.Content.ReadAsStream();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<PaymentPolicyResponse>(jsonReader);
@@ -1746,7 +1746,7 @@ namespace MyNS
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
-			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
+			var responseMessage = httpClient.Send(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -1774,8 +1774,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
+				var stream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<PaymentPolicy>(jsonReader);
@@ -1799,12 +1799,12 @@ namespace MyNS
 			var requestUri = "payment_policy/"+ (payment_policy_id==null? "" : System.Uri.EscapeDataString(payment_policy_id));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
-			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
+			var responseMessage = httpClient.Send(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
+				var stream = responseMessage.Content.ReadAsStream();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<PaymentPolicy>(jsonReader);
@@ -1839,8 +1839,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
+				var stream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<SetPaymentPolicyResponse>(jsonReader);
@@ -1872,12 +1872,12 @@ namespace MyNS
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
-			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
+			var responseMessage = httpClient.Send(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
+				var stream = responseMessage.Content.ReadAsStream();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<SetPaymentPolicyResponse>(jsonReader);
@@ -1923,7 +1923,7 @@ namespace MyNS
 			var requestUri = "payment_policy/"+ (payment_policy_id==null? "" : System.Uri.EscapeDataString(payment_policy_id));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
 			{
-			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
+			var responseMessage = httpClient.Send(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -1951,8 +1951,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
+				var stream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<PaymentPolicy>(jsonReader);
@@ -1977,12 +1977,12 @@ namespace MyNS
 			var requestUri = "payment_policy/get_by_policy_name?marketplace_id=" + (marketplace_id==null? "" : System.Uri.EscapeDataString(marketplace_id))+"&name=" + (name==null? "" : System.Uri.EscapeDataString(name));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
-			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
+			var responseMessage = httpClient.Send(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
+				var stream = responseMessage.Content.ReadAsStream();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<PaymentPolicy>(jsonReader);
@@ -2011,8 +2011,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
+				var stream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<PaymentsProgramResponse>(jsonReader);
@@ -2037,12 +2037,12 @@ namespace MyNS
 			var requestUri = "payments_program/"+ (marketplace_id==null? "" : System.Uri.EscapeDataString(marketplace_id))+"/"+ (payments_program_type==null? "" : System.Uri.EscapeDataString(payments_program_type));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
-			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
+			var responseMessage = httpClient.Send(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
+				var stream = responseMessage.Content.ReadAsStream();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<PaymentsProgramResponse>(jsonReader);
@@ -2069,8 +2069,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
+				var stream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<SellingPrivileges>(jsonReader);
@@ -2093,12 +2093,12 @@ namespace MyNS
 			var requestUri = "privilege/";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
-			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
+			var responseMessage = httpClient.Send(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
+				var stream = responseMessage.Content.ReadAsStream();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<SellingPrivileges>(jsonReader);
@@ -2125,8 +2125,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
+				var stream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<Programs>(jsonReader);
@@ -2149,12 +2149,12 @@ namespace MyNS
 			var requestUri = "program/get_opted_in_programs";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
-			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
+			var responseMessage = httpClient.Send(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
+				var stream = responseMessage.Content.ReadAsStream();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<Programs>(jsonReader);
@@ -2188,8 +2188,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
+				var stream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
 				return jsonReader.ReadAsString();
 				}
@@ -2219,12 +2219,12 @@ namespace MyNS
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
-			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
+			var responseMessage = httpClient.Send(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
+				var stream = responseMessage.Content.ReadAsStream();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
 				return jsonReader.ReadAsString();
 				}
@@ -2258,8 +2258,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
+				var stream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
 				return jsonReader.ReadAsString();
 				}
@@ -2289,12 +2289,12 @@ namespace MyNS
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
-			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
+			var responseMessage = httpClient.Send(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
+				var stream = responseMessage.Content.ReadAsStream();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
 				return jsonReader.ReadAsString();
 				}
@@ -2322,8 +2322,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
+				var stream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<RateTableResponse>(jsonReader);
@@ -2347,12 +2347,12 @@ namespace MyNS
 			var requestUri = "rate_table/?country_code=" + (country_code==null? "" : System.Uri.EscapeDataString(country_code));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
-			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
+			var responseMessage = httpClient.Send(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
+				var stream = responseMessage.Content.ReadAsStream();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<RateTableResponse>(jsonReader);
@@ -2380,8 +2380,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
+				var stream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<ReturnPolicyResponse>(jsonReader);
@@ -2405,12 +2405,12 @@ namespace MyNS
 			var requestUri = "return_policy/?marketplace_id=" + (marketplace_id==null? "" : System.Uri.EscapeDataString(marketplace_id));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
-			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
+			var responseMessage = httpClient.Send(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
+				var stream = responseMessage.Content.ReadAsStream();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<ReturnPolicyResponse>(jsonReader);
@@ -2468,7 +2468,7 @@ namespace MyNS
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
-			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
+			var responseMessage = httpClient.Send(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2496,8 +2496,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
+				var stream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<ReturnPolicy>(jsonReader);
@@ -2521,12 +2521,12 @@ namespace MyNS
 			var requestUri = "return_policy/"+ (return_policy_id==null? "" : System.Uri.EscapeDataString(return_policy_id));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
-			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
+			var responseMessage = httpClient.Send(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
+				var stream = responseMessage.Content.ReadAsStream();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<ReturnPolicy>(jsonReader);
@@ -2561,8 +2561,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
+				var stream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<SetReturnPolicyResponse>(jsonReader);
@@ -2594,12 +2594,12 @@ namespace MyNS
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
-			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
+			var responseMessage = httpClient.Send(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
+				var stream = responseMessage.Content.ReadAsStream();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<SetReturnPolicyResponse>(jsonReader);
@@ -2645,7 +2645,7 @@ namespace MyNS
 			var requestUri = "return_policy/"+ (return_policy_id==null? "" : System.Uri.EscapeDataString(return_policy_id));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
 			{
-			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
+			var responseMessage = httpClient.Send(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2673,8 +2673,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
+				var stream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<ReturnPolicy>(jsonReader);
@@ -2699,12 +2699,12 @@ namespace MyNS
 			var requestUri = "return_policy/get_by_policy_name?marketplace_id=" + (marketplace_id==null? "" : System.Uri.EscapeDataString(marketplace_id))+"&name=" + (name==null? "" : System.Uri.EscapeDataString(name));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
-			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
+			var responseMessage = httpClient.Send(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
+				var stream = responseMessage.Content.ReadAsStream();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<ReturnPolicy>(jsonReader);
@@ -2733,8 +2733,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
+				var stream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<SalesTax>(jsonReader);
@@ -2759,12 +2759,12 @@ namespace MyNS
 			var requestUri = "sales_tax/"+ (countryCode==null? "" : System.Uri.EscapeDataString(countryCode))+"/"+ (jurisdictionId==null? "" : System.Uri.EscapeDataString(jurisdictionId));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
-			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
+			var responseMessage = httpClient.Send(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
+				var stream = responseMessage.Content.ReadAsStream();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<SalesTax>(jsonReader);
@@ -2826,7 +2826,7 @@ namespace MyNS
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
-			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
+			var responseMessage = httpClient.Send(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2873,7 +2873,7 @@ namespace MyNS
 			var requestUri = "sales_tax/"+ (countryCode==null? "" : System.Uri.EscapeDataString(countryCode))+"/"+ (jurisdictionId==null? "" : System.Uri.EscapeDataString(jurisdictionId));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
 			{
-			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
+			var responseMessage = httpClient.Send(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2900,8 +2900,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
+				var stream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<SalesTaxes>(jsonReader);
@@ -2925,12 +2925,12 @@ namespace MyNS
 			var requestUri = "sales_tax/?country_code=" + (country_code==null? "" : System.Uri.EscapeDataString(country_code));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
-			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
+			var responseMessage = httpClient.Send(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
+				var stream = responseMessage.Content.ReadAsStream();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<SalesTaxes>(jsonReader);

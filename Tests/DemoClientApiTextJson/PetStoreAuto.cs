@@ -236,8 +236,7 @@ namespace My.Pet.Client
 			var requestUri = "pet";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
 			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -248,8 +247,8 @@ namespace My.Pet.Client
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Pet>(contentString, jsonSerializerSettings);
+				var stream = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Pet>(stream, jsonSerializerSettings);
 			}
 			finally
 			{
@@ -269,8 +268,7 @@ namespace My.Pet.Client
 			var requestUri = "user";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
 			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -300,8 +298,7 @@ namespace My.Pet.Client
 			var requestUri = "user/createWithList";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
 			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -312,8 +309,8 @@ namespace My.Pet.Client
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<User>(contentString, jsonSerializerSettings);
+				var stream = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<User>(stream, jsonSerializerSettings);
 			}
 			finally
 			{
@@ -427,8 +424,8 @@ namespace My.Pet.Client
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Pet[]>(contentString, jsonSerializerSettings);
+				var stream = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Pet[]>(stream, jsonSerializerSettings);
 			}
 			finally
 			{
@@ -458,8 +455,8 @@ namespace My.Pet.Client
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Pet[]>(contentString, jsonSerializerSettings);
+				var stream = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Pet[]>(stream, jsonSerializerSettings);
 			}
 			finally
 			{
@@ -488,8 +485,8 @@ namespace My.Pet.Client
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<System.Collections.Generic.Dictionary<string, int>>(contentString, jsonSerializerSettings);
+				var stream = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<System.Collections.Generic.Dictionary<string, int>>(stream, jsonSerializerSettings);
 			}
 			finally
 			{
@@ -519,8 +516,8 @@ namespace My.Pet.Client
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Order>(contentString, jsonSerializerSettings);
+				var stream = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Order>(stream, jsonSerializerSettings);
 			}
 			finally
 			{
@@ -550,8 +547,8 @@ namespace My.Pet.Client
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Pet>(contentString, jsonSerializerSettings);
+				var stream = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Pet>(stream, jsonSerializerSettings);
 			}
 			finally
 			{
@@ -580,8 +577,8 @@ namespace My.Pet.Client
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<User>(contentString, jsonSerializerSettings);
+				var stream = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<User>(stream, jsonSerializerSettings);
 			}
 			finally
 			{
@@ -611,8 +608,8 @@ namespace My.Pet.Client
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<string>(contentString, jsonSerializerSettings);
+				var stream = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<string>(stream, jsonSerializerSettings);
 			}
 			finally
 			{
@@ -658,8 +655,7 @@ namespace My.Pet.Client
 			var requestUri = "store/order";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
 			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -670,8 +666,8 @@ namespace My.Pet.Client
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Order>(contentString, jsonSerializerSettings);
+				var stream = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Order>(stream, jsonSerializerSettings);
 			}
 			finally
 			{
@@ -692,8 +688,7 @@ namespace My.Pet.Client
 			var requestUri = "pet";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
 			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
@@ -704,8 +699,8 @@ namespace My.Pet.Client
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var contentString = await responseMessage.Content.ReadAsStringAsync();
-				return JsonSerializer.Deserialize<Pet>(contentString, jsonSerializerSettings);
+				var stream = await responseMessage.Content.ReadAsStreamAsync();
+				return JsonSerializer.Deserialize<Pet>(stream, jsonSerializerSettings);
 			}
 			finally
 			{
@@ -750,8 +745,7 @@ namespace My.Pet.Client
 			var requestUri = "user/"+ (username==null? "" : System.Uri.EscapeDataString(username));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
 			{
-			var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);
-			var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, "application/json");
+			var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);
 			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{

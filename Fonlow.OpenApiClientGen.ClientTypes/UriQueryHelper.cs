@@ -22,11 +22,11 @@ namespace Fonlow.CodeDom.Web
 			}
 			catch (ArgumentException ex)
 			{
-				throw new CodeGenException($"When CreateuriQuery, path {uriText} triggers error: {ex.Message}");
+				throw new CodeGenOperationException($"When CreateuriQuery, path {uriText} triggers error: {ex.Message}");
 			}
 			catch (IndexOutOfRangeException ex)
 			{
-				throw new CodeGenException($"Something wrong with {uriText}, no parameters? or error: {ex.Message}");
+				throw new CodeGenOperationException($"Something wrong with {uriText}, no parameters? or error: {ex.Message}");
 			}
 
 			if (parameterNames.Length == 0 && parameterDescriptions.Length == 0)
@@ -58,11 +58,11 @@ namespace Fonlow.CodeDom.Web
 			}
 			catch (ArgumentException ex)
 			{
-				throw new CodeGenException($"When CreateuriQuery, path {uriText} triggers error: {ex.Message}");
+				throw new CodeGenOperationException($"When CreateuriQuery, path {uriText} triggers error: {ex.Message}");
 			}
 			catch (FormatException ex)
 			{
-				throw new CodeGenException($"When CreateuriQuery, path {uriText} triggers error: {ex.Message}");
+				throw new CodeGenOperationException($"When CreateuriQuery, path {uriText} triggers error: {ex.Message}");
 			}
 
 			if (parameterNames.Length == 0 && parameterDescriptions.Length == 0)

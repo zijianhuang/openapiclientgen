@@ -68,7 +68,7 @@ namespace MyNS
 			var requestUri = "pet/"+petId;
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
 			{
-			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
+			var responseMessage = httpClient.Send(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();

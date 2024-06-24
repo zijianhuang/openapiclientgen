@@ -781,8 +781,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
+				var stream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<GraphDescriptorResult>(jsonReader);
@@ -808,12 +808,12 @@ namespace MyNS
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/graph/descriptors/"+ (storageKey==null? "" : System.Uri.EscapeDataString(storageKey))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
-			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
+			var responseMessage = httpClient.Send(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
+				var stream = responseMessage.Content.ReadAsStream();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<GraphDescriptorResult>(jsonReader);
@@ -851,8 +851,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
+				var stream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<GraphGroup[]>(jsonReader);
@@ -886,12 +886,12 @@ namespace MyNS
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/graph/groups&scopeDescriptor=" + (scopeDescriptor==null? "" : System.Uri.EscapeDataString(scopeDescriptor))+"&subjectTypes=" + (subjectTypes==null? "" : System.Uri.EscapeDataString(subjectTypes))+"&continuationToken=" + (continuationToken==null? "" : System.Uri.EscapeDataString(continuationToken))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
-			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
+			var responseMessage = httpClient.Send(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
+				var stream = responseMessage.Content.ReadAsStream();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<GraphGroup[]>(jsonReader);
@@ -936,8 +936,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
+				var stream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<GraphGroup>(jsonReader);
@@ -979,12 +979,12 @@ namespace MyNS
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
-			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
+			var responseMessage = httpClient.Send(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
+				var stream = responseMessage.Content.ReadAsStream();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<GraphGroup>(jsonReader);
@@ -1018,8 +1018,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
+				var stream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<GraphGroup>(jsonReader);
@@ -1048,12 +1048,12 @@ namespace MyNS
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/graph/groups/"+ (groupDescriptor==null? "" : System.Uri.EscapeDataString(groupDescriptor))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
-			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
+			var responseMessage = httpClient.Send(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
+				var stream = responseMessage.Content.ReadAsStream();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<GraphGroup>(jsonReader);
@@ -1110,7 +1110,7 @@ namespace MyNS
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/graph/groups/"+ (groupDescriptor==null? "" : System.Uri.EscapeDataString(groupDescriptor))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
 			{
-			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
+			var responseMessage = httpClient.Send(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -1144,8 +1144,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
+				var stream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<GraphMembership[]>(jsonReader);
@@ -1176,12 +1176,12 @@ namespace MyNS
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/graph/Memberships/"+ (subjectDescriptor==null? "" : System.Uri.EscapeDataString(subjectDescriptor))+"&direction=" + direction+"&depth="+depth+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
-			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
+			var responseMessage = httpClient.Send(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
+				var stream = responseMessage.Content.ReadAsStream();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<GraphMembership[]>(jsonReader);
@@ -1212,8 +1212,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
+				var stream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<GraphMembership>(jsonReader);
@@ -1240,12 +1240,12 @@ namespace MyNS
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/graph/memberships/"+ (subjectDescriptor==null? "" : System.Uri.EscapeDataString(subjectDescriptor))+"/"+ (containerDescriptor==null? "" : System.Uri.EscapeDataString(containerDescriptor))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
-			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
+			var responseMessage = httpClient.Send(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
+				var stream = responseMessage.Content.ReadAsStream();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<GraphMembership>(jsonReader);
@@ -1276,8 +1276,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
+				var stream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<GraphMembership>(jsonReader);
@@ -1304,12 +1304,12 @@ namespace MyNS
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/graph/memberships/"+ (subjectDescriptor==null? "" : System.Uri.EscapeDataString(subjectDescriptor))+"/"+ (containerDescriptor==null? "" : System.Uri.EscapeDataString(containerDescriptor))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
 			{
-			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
+			var responseMessage = httpClient.Send(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
+				var stream = responseMessage.Content.ReadAsStream();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<GraphMembership>(jsonReader);
@@ -1362,7 +1362,7 @@ namespace MyNS
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/graph/memberships/"+ (subjectDescriptor==null? "" : System.Uri.EscapeDataString(subjectDescriptor))+"/"+ (containerDescriptor==null? "" : System.Uri.EscapeDataString(containerDescriptor))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
 			{
-			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
+			var responseMessage = httpClient.Send(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -1391,8 +1391,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
+				var stream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<GraphMembershipState>(jsonReader);
@@ -1418,12 +1418,12 @@ namespace MyNS
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/graph/membershipstates/"+ (subjectDescriptor==null? "" : System.Uri.EscapeDataString(subjectDescriptor))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
-			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
+			var responseMessage = httpClient.Send(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
+				var stream = responseMessage.Content.ReadAsStream();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<GraphMembershipState>(jsonReader);
@@ -1483,7 +1483,7 @@ namespace MyNS
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
-			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
+			var responseMessage = httpClient.Send(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -1512,8 +1512,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
+				var stream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<GraphStorageKeyResult>(jsonReader);
@@ -1538,12 +1538,12 @@ namespace MyNS
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/graph/storagekeys/"+ (subjectDescriptor==null? "" : System.Uri.EscapeDataString(subjectDescriptor))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
-			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
+			var responseMessage = httpClient.Send(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
+				var stream = responseMessage.Content.ReadAsStream();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<GraphStorageKeyResult>(jsonReader);
@@ -1579,8 +1579,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
+				var stream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<System.Collections.Generic.Dictionary<string, GraphSubject>>(jsonReader);
@@ -1613,12 +1613,12 @@ namespace MyNS
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
-			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
+			var responseMessage = httpClient.Send(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
+				var stream = responseMessage.Content.ReadAsStream();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<System.Collections.Generic.Dictionary<string, GraphSubject>>(jsonReader);
@@ -1655,8 +1655,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
+				var stream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<GraphSubject[]>(jsonReader);
@@ -1689,12 +1689,12 @@ namespace MyNS
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
-			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
+			var responseMessage = httpClient.Send(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
+				var stream = responseMessage.Content.ReadAsStream();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<GraphSubject[]>(jsonReader);
@@ -1723,8 +1723,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
+				var stream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<Avatar>(jsonReader);
@@ -1748,12 +1748,12 @@ namespace MyNS
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/graph/Subjects/"+ (subjectDescriptor==null? "" : System.Uri.EscapeDataString(subjectDescriptor))+"/avatars&size=" + size+"&format=" + (format==null? "" : System.Uri.EscapeDataString(format))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
-			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
+			var responseMessage = httpClient.Send(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
+				var stream = responseMessage.Content.ReadAsStream();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<Avatar>(jsonReader);
@@ -1813,7 +1813,7 @@ namespace MyNS
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
-			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
+			var responseMessage = httpClient.Send(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -1860,7 +1860,7 @@ namespace MyNS
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/graph/Subjects/"+ (subjectDescriptor==null? "" : System.Uri.EscapeDataString(subjectDescriptor))+"/avatars&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
 			{
-			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
+			var responseMessage = httpClient.Send(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -1895,8 +1895,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
+				var stream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<GraphUser[]>(jsonReader);
@@ -1928,12 +1928,12 @@ namespace MyNS
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/graph/users&subjectTypes=" + (subjectTypes==null? "" : System.Uri.EscapeDataString(subjectTypes))+"&continuationToken=" + (continuationToken==null? "" : System.Uri.EscapeDataString(continuationToken))+"&scopeDescriptor=" + (scopeDescriptor==null? "" : System.Uri.EscapeDataString(scopeDescriptor))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
-			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
+			var responseMessage = httpClient.Send(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
+				var stream = responseMessage.Content.ReadAsStream();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<GraphUser[]>(jsonReader);
@@ -1984,8 +1984,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
+				var stream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<GraphUser>(jsonReader);
@@ -2033,12 +2033,12 @@ namespace MyNS
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
-			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
+			var responseMessage = httpClient.Send(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
+				var stream = responseMessage.Content.ReadAsStream();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<GraphUser>(jsonReader);
@@ -2069,8 +2069,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
+				var stream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<GraphUser>(jsonReader);
@@ -2096,12 +2096,12 @@ namespace MyNS
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/graph/users/"+ (userDescriptor==null? "" : System.Uri.EscapeDataString(userDescriptor))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
-			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
+			var responseMessage = httpClient.Send(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
+				var stream = responseMessage.Content.ReadAsStream();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<GraphUser>(jsonReader);
@@ -2156,7 +2156,7 @@ namespace MyNS
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/graph/users/"+ (userDescriptor==null? "" : System.Uri.EscapeDataString(userDescriptor))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
 			{
-			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
+			var responseMessage = httpClient.Send(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2192,8 +2192,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
+				var stream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<GraphUser>(jsonReader);
@@ -2227,12 +2227,12 @@ namespace MyNS
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
-			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
+			var responseMessage = httpClient.Send(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
+				var stream = responseMessage.Content.ReadAsStream();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<GraphUser>(jsonReader);
@@ -2261,8 +2261,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
+				var stream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<GraphProviderInfo>(jsonReader);
@@ -2286,12 +2286,12 @@ namespace MyNS
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/graph/Users/"+ (userDescriptor==null? "" : System.Uri.EscapeDataString(userDescriptor))+"/providerinfo&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
-			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
+			var responseMessage = httpClient.Send(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
+				var stream = responseMessage.Content.ReadAsStream();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<GraphProviderInfo>(jsonReader);

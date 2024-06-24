@@ -201,8 +201,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
+				var stream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<RateLimitsResponse>(jsonReader);
@@ -227,12 +227,12 @@ namespace MyNS
 			var requestUri = "rate_limit/?api_context=" + (api_context==null? "" : System.Uri.EscapeDataString(api_context))+"&api_name=" + (api_name==null? "" : System.Uri.EscapeDataString(api_name));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
-			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
+			var responseMessage = httpClient.Send(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
+				var stream = responseMessage.Content.ReadAsStream();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<RateLimitsResponse>(jsonReader);
@@ -261,8 +261,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
+				var stream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<RateLimitsResponse>(jsonReader);
@@ -287,12 +287,12 @@ namespace MyNS
 			var requestUri = "user_rate_limit/?api_context=" + (api_context==null? "" : System.Uri.EscapeDataString(api_context))+"&api_name=" + (api_name==null? "" : System.Uri.EscapeDataString(api_name));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
-			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
+			var responseMessage = httpClient.Send(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
+				var stream = responseMessage.Content.ReadAsStream();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<RateLimitsResponse>(jsonReader);

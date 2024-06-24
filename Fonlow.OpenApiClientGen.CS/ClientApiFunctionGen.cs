@@ -25,7 +25,7 @@ namespace Fonlow.OpenApiClientGen.CS
 		string RelativePath;
 		CodeTypeReference returnTypeReference;
 		//bool returnTypeIsStream;
-		CodeMemberMethod method;
+		CodeMemberMethod clientMethod;
 		ComponentsToCsTypes coms2CsTypes;
 		NameComposer nameComposer;
 		ParametersRefBuilder parametersRefBuilder;
@@ -99,11 +99,11 @@ namespace Fonlow.OpenApiClientGen.CS
 				r = returnRefBuilder.GetOperationReturnTypeReference(apiOperation);
 
 			}
-			catch (CodeGenException ex)
+			catch (CodeGenOperationException ex)
 			{
 				if (ex.Pending)
 				{
-					throw new CodeGenException($"Definition {relativePath}=>{httpMethod} triggers error pending {ex.Message}");
+					throw new CodeGenOperationException($"Definition {relativePath}=>{httpMethod} triggers error pending {ex.Message}");
 				}
 
 				throw;
@@ -113,7 +113,7 @@ namespace Fonlow.OpenApiClientGen.CS
 			stringAsString = r.Item2;
 
 			//create method
-			method = forAsync ? CreateMethodBasicForAsync() : CreateMethodBasic();
+			clientMethod = forAsync ? CreateMethodBasicForAsync() : CreateMethodBasic();
 
 			CreateDocComments();
 
@@ -133,7 +133,7 @@ namespace Fonlow.OpenApiClientGen.CS
 					break;
 			}
 
-			return method;
+			return clientMethod;
 		}
 
 		static string RemovePrefixSlash(string uriText)
@@ -174,7 +174,7 @@ namespace Fonlow.OpenApiClientGen.CS
 				if (string.IsNullOrWhiteSpace(doc))
 					return;
 
-				method.Comments.Add(new CodeCommentStatement("<" + elementName + ">" + doc + "</" + elementName + ">", true));
+				clientMethod.Comments.Add(new CodeCommentStatement("<" + elementName + ">" + doc + "</" + elementName + ">", true));
 			}
 
 			void CreateParamDocComment(ParameterDescription item)
@@ -191,19 +191,19 @@ namespace Fonlow.OpenApiClientGen.CS
 
 					if (ss.Count > 0)
 					{
-						AddLinesAsParamDocComment(method.Comments, item.Name, ss);
+						AddLinesAsParamDocComment(clientMethod.Comments, item.Name, ss);
 					}
 				}
 				else
 				{
 					if (!string.IsNullOrEmpty(item.Documentation))
 					{
-						AddDescriptionAsParamDocComment(method.Comments, item.Name, item.Documentation);
+						AddDescriptionAsParamDocComment(clientMethod.Comments, item.Name, item.Documentation);
 					}
 				}
 			}
 
-			method.Comments.Add(new CodeCommentStatement("<summary>", true));
+			clientMethod.Comments.Add(new CodeCommentStatement("<summary>", true));
 			string[] noIndent = Fonlow.DocComment.StringFunctions.TrimIndentedMultiLineTextToArray(
 				apiOperation.Summary
 				+ ((String.IsNullOrEmpty(apiOperation.Summary) || string.IsNullOrEmpty(apiOperation.Description)) ? String.Empty : Environment.NewLine)
@@ -212,12 +212,12 @@ namespace Fonlow.OpenApiClientGen.CS
 			{
 				foreach (string item in noIndent)
 				{
-					method.Comments.Add(new CodeCommentStatement(item, true));
+					clientMethod.Comments.Add(new CodeCommentStatement(item, true));
 				}
 			}
 
-			method.Comments.Add(new CodeCommentStatement(actionName + " " + RelativePath, true));
-			method.Comments.Add(new CodeCommentStatement("</summary>", true));
+			clientMethod.Comments.Add(new CodeCommentStatement(actionName + " " + RelativePath, true));
+			clientMethod.Comments.Add(new CodeCommentStatement("</summary>", true));
 			foreach (ParameterDescription item in parameterDescriptions)
 			{
 				CreateParamDocComment(item);
@@ -225,7 +225,7 @@ namespace Fonlow.OpenApiClientGen.CS
 
 			if (!String.IsNullOrEmpty(requestBodyComment))
 			{
-				AddDescriptionAsParamDocComment(method.Comments, "requestBody", requestBodyComment);
+				AddDescriptionAsParamDocComment(clientMethod.Comments, "requestBody", requestBodyComment);
 			}
 
 			CreateDocComment("returns", NameComposer.GetOperationReturnComment(apiOperation));
@@ -264,15 +264,15 @@ namespace Fonlow.OpenApiClientGen.CS
 				.Select(d =>
 				new CodeParameterDeclarationExpression(d.ParameterTypeReference, d.Name))
 				.ToArray();
-			method.Parameters.AddRange(parameters);
+			clientMethod.Parameters.AddRange(parameters);
 			if (settings.CancellationTokenEnabled)
 			{
-				method.Parameters.Add(new CodeParameterDeclarationExpression("System.Threading.CancellationToken", "cancellationToken"));
+				clientMethod.Parameters.Add(new CodeParameterDeclarationExpression("System.Threading.CancellationToken", "cancellationToken"));
 			}
 
 			if (settings.HandleHttpRequestHeaders)
 			{
-				method.Parameters.Add(new CodeParameterDeclarationExpression("Action<System.Net.Http.Headers.HttpRequestHeaders>", "handleHeaders = null"));
+				clientMethod.Parameters.Add(new CodeParameterDeclarationExpression("Action<System.Net.Http.Headers.HttpRequestHeaders>", "handleHeaders = null"));
 			}
 
 			string jsUriQuery = UriQueryHelper.CreateUriQuery(RelativePath, parameterDescriptions);
@@ -280,19 +280,19 @@ namespace Fonlow.OpenApiClientGen.CS
 			string uriText = jsUriQuery == null ? $"\"{RelativePath}\"" : RemoveTrialEmptyString($"\"{jsUriQuery}\"");
 #pragma warning restore CA1508 // Avoid dead conditional code
 
-			method.Statements.Add(new CodeVariableDeclarationStatement(
+			clientMethod.Statements.Add(new CodeVariableDeclarationStatement(
 				new CodeTypeReference("var"), "requestUri",
 				new CodeSnippetExpression(uriText)));
 
-			method.Statements.Add(new CodeSnippetStatement(
-				"\t\t\t" + $@"using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.{httpMethod}, requestUri))
+			clientMethod.Statements.Add(new CodeSnippetStatement(
+				ThreeTabs + $@"using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.{httpMethod}, requestUri))
 			{{"
 			));
 
 			if (settings.HandleHttpRequestHeaders)
 			{
-				method.Statements.Add(new CodeSnippetStatement(
-					"\t\t\t" + $@"if (handleHeaders != null)
+				clientMethod.Statements.Add(new CodeSnippetStatement(
+					ThreeTabs + $@"if (handleHeaders != null)
 			{{
 				handleHeaders(httpRequestMessage.Headers);
 			}}
@@ -300,14 +300,14 @@ namespace Fonlow.OpenApiClientGen.CS
 				));
 			}
 
-			AddResponseMessageSendAsync(method);
+			AddResponseMessageSendAsync(clientMethod);
 
 			CodeVariableReferenceExpression resultReference = new("responseMessage");
 
 
 			CodeTryCatchFinallyStatement try1 = new();
 			try1.TryStatements.Add(new CodeMethodInvokeExpression(resultReference, statementOfEnsureSuccessStatusCode));
-			method.Statements.Add(try1);
+			clientMethod.Statements.Add(try1);
 
 			//Statement: return something;
 			if (returnTypeReference != null)
@@ -317,12 +317,12 @@ namespace Fonlow.OpenApiClientGen.CS
 
 			try1.FinallyStatements.Add(new CodeMethodInvokeExpression(resultReference, "Dispose"));
 
-			Add3TEndBacket(method);
+			Add3TEndBacket(clientMethod);
 		}
 
 		static void AddNewtonSoftJsonTextReader(CodeStatementCollection statementCollection)
 		{
-			statementCollection.Add(new CodeSnippetStatement("\t\t\t\tusing (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))"));
+			statementCollection.Add(new CodeSnippetStatement("\t\t\t\tusing (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))"));
 		}
 
 		void AddNewtonSoftJsonSerializerDeserialize(CodeStatementCollection statementCollection)
@@ -338,13 +338,15 @@ namespace Fonlow.OpenApiClientGen.CS
 				new CodeTypeReference("var"), "serializer", new CodeSnippetExpression("JsonSerializer.Create(jsonSerializerSettings)")));
 		}
 
-		void AddResponseMessageSendAsync(CodeMemberMethod method)
+		void AddResponseMessageSendAsync(CodeMemberMethod codeMemberMethod)
 		{
 			var cancellationToken = settings.CancellationTokenEnabled ? ", cancellationToken" : String.Empty;
-			method.Statements.Add(new CodeVariableDeclarationStatement(
+			codeMemberMethod.Statements.Add(new CodeVariableDeclarationStatement(
 				new CodeTypeReference("var"), "responseMessage", forAsync ? new CodeSnippetExpression($"await httpClient.SendAsync(httpRequestMessage{cancellationToken})")
-				: new CodeSnippetExpression($"httpClient.SendAsync(httpRequestMessage{cancellationToken}).Result")));
+				: new CodeSnippetExpression($"httpClient.Send(httpRequestMessage{cancellationToken})")));
 		}
+
+		static string ThreeTabs => "\t\t\t";
 
 		void RenderPostOrPutImplementation(OperationType httpMethod)
 		{
@@ -353,21 +355,21 @@ namespace Fonlow.OpenApiClientGen.CS
 				.Select(d =>
 				new CodeParameterDeclarationExpression(d.ParameterTypeReference, d.Name))
 				.ToArray();
-			method.Parameters.AddRange(parameters);
+			clientMethod.Parameters.AddRange(parameters);
 
 			if (requestBodyCodeTypeReference != null)
 			{
-				method.Parameters.Add(new CodeParameterDeclarationExpression(requestBodyCodeTypeReference, "requestBody"));
+				clientMethod.Parameters.Add(new CodeParameterDeclarationExpression(requestBodyCodeTypeReference, "requestBody"));
 			}
 
 			if (settings.CancellationTokenEnabled)
 			{
-				method.Parameters.Add(new CodeParameterDeclarationExpression("System.Threading.CancellationToken", "cancellationToken"));
+				clientMethod.Parameters.Add(new CodeParameterDeclarationExpression("System.Threading.CancellationToken", "cancellationToken"));
 			}
 
 			if (settings.HandleHttpRequestHeaders)
 			{
-				method.Parameters.Add(new CodeParameterDeclarationExpression(
+				clientMethod.Parameters.Add(new CodeParameterDeclarationExpression(
 				"Action<System.Net.Http.Headers.HttpRequestHeaders>", "handleHeaders = null"));
 			}
 
@@ -385,15 +387,15 @@ namespace Fonlow.OpenApiClientGen.CS
 				string uriText = jsUriQuery == null ? $"\"{RelativePath}\"" :
 				RemoveTrialEmptyString($"\"{jsUriQuery}\"");
 
-				method.Statements.Add(new CodeVariableDeclarationStatement(
+				clientMethod.Statements.Add(new CodeVariableDeclarationStatement(
 					new CodeTypeReference("var"), "requestUri",
 					new CodeSnippetExpression(uriText)));
 			}
 
 			AddRequestUriWithQueryAssignmentStatement();
 
-			method.Statements.Add(new CodeSnippetStatement(
-				"\t\t\t" + $@"using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.{httpMethod}, requestUri))
+			clientMethod.Statements.Add(new CodeSnippetStatement(
+				ThreeTabs + $@"using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.{httpMethod}, requestUri))
 			{{"
 				));
 
@@ -402,30 +404,31 @@ namespace Fonlow.OpenApiClientGen.CS
 
 				if (settings.UseSystemTextJson)
 				{
-					method.Statements.Add(new CodeSnippetStatement("\t\t\t" + @"var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);"));
-					method.Statements.Add(new CodeSnippetStatement("\t\t\t" + @"var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, ""application/json"");"));
+					//clientMethod.Statements.Add(new CodeSnippetStatement(ThreeTabs + @"var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);"));
+					//clientMethod.Statements.Add(new CodeSnippetStatement(ThreeTabs + @"var content = new System.Net.Http.StringContent(contentJson, System.Text.Encoding.UTF8, ""application/json"");"));
+					clientMethod.Statements.Add(new CodeSnippetStatement(ThreeTabs + $"var content = System.Net.Http.Json.JsonContent.Create(requestBody, mediaType: null, jsonSerializerSettings);"));
 				}
 				else
 				{
-					method.Statements.Add(new CodeSnippetStatement(
-						"\t\t\t" + @"using (var requestWriter = new System.IO.StringWriter())
+					clientMethod.Statements.Add(new CodeSnippetStatement(
+						ThreeTabs + @"using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);"
 					));
-					method.Statements.Add(new CodeMethodInvokeExpression(new CodeSnippetExpression("requestSerializer"), "Serialize",
+					clientMethod.Statements.Add(new CodeMethodInvokeExpression(new CodeSnippetExpression("requestSerializer"), "Serialize",
 						new CodeSnippetExpression("requestWriter"),
 						new CodeSnippetExpression("requestBody")));
 
 
-					method.Statements.Add(new CodeSnippetStatement(
-						"\t\t\t" + @"var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, ""application/json"");"
+					clientMethod.Statements.Add(new CodeSnippetStatement(
+						ThreeTabs + @"var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, ""application/json"");"
 					));
 				}
 
-				method.Statements.Add(new CodeSnippetStatement("\t\t\t" + @"httpRequestMessage.Content = content;"));
+				clientMethod.Statements.Add(new CodeSnippetStatement(ThreeTabs + @"httpRequestMessage.Content = content;"));
 				if (settings.HandleHttpRequestHeaders)
 				{
-					method.Statements.Add(new CodeSnippetStatement("\t\t\t" + @"if (handleHeaders != null)
+					clientMethod.Statements.Add(new CodeSnippetStatement(ThreeTabs + @"if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
 			}
@@ -434,12 +437,12 @@ namespace Fonlow.OpenApiClientGen.CS
 
 			}
 
-			AddResponseMessageSendAsync(method);
+			AddResponseMessageSendAsync(clientMethod);
 
 			CodeVariableReferenceExpression resultReference = new("responseMessage");
 
 			CodeTryCatchFinallyStatement try1 = new();
-			method.Statements.Add(try1);
+			clientMethod.Statements.Add(try1);
 			try1.TryStatements.Add(new CodeMethodInvokeExpression(resultReference, statementOfEnsureSuccessStatusCode));
 
 			//Statement: return something;
@@ -452,10 +455,10 @@ namespace Fonlow.OpenApiClientGen.CS
 
 			if (requestBodyCodeTypeReference != null && !settings.UseSystemTextJson)
 			{
-				Add3TEndBacket(method);
+				Add3TEndBacket(clientMethod);
 			}
 
-			Add3TEndBacket(method);
+			Add3TEndBacket(clientMethod);
 		}
 
 		static void Add3TEndBacket(CodeMemberMethod method)
@@ -478,28 +481,19 @@ namespace Fonlow.OpenApiClientGen.CS
 			statementCollection.Add(new CodeMethodReturnStatement(new CodeMethodInvokeExpression(
 				new CodeMethodReferenceExpression(
 				new CodeVariableReferenceExpression("JsonSerializer"), "Deserialize", returnTypeReference),
-				new CodeSnippetExpression("contentString"), new CodeSnippetExpression("jsonSerializerSettings"))));
+				new CodeSnippetExpression("stream"), new CodeSnippetExpression("jsonSerializerSettings"))));
 		}
 
-		void AddResponseMessageRead(CodeStatementCollection statementCollection)
+		void AddResponseMessageReadStream(CodeStatementCollection statementCollection)
 		{
-			if (settings.UseSystemTextJson)
-			{
-				statementCollection.Add(new CodeSnippetStatement(forAsync
-					? "\t\t\t\tvar contentString = await responseMessage.Content.ReadAsStringAsync();"
-					: "\t\t\t\tvar contentString = responseMessage.Content.ReadAsStringAsync().Result;"));
-			}
-			else
-			{
-				statementCollection.Add(new CodeSnippetStatement(forAsync
-					? "\t\t\t\tvar responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();"
-					: "\t\t\t\tvar responseMessageStream = responseMessage.Content.ReadAsStreamAsync().Result;"));
-			}
+			statementCollection.Add(new CodeSnippetStatement(forAsync
+				 ? "\t\t\t\tvar stream = await responseMessage.Content.ReadAsStreamAsync();"
+				 : "\t\t\t\tvar stream = responseMessage.Content.ReadAsStream();"));
 		}
 
 		void AddReturnStatement(CodeStatementCollection statementCollection)
 		{
-			AddResponseMessageRead(statementCollection);
+			AddResponseMessageReadStream(statementCollection);
 
 			if (returnTypeReference != null && returnTypeReference.BaseType == "System.String" &&
 				returnTypeReference.ArrayElementType == null)
@@ -511,12 +505,12 @@ namespace Fonlow.OpenApiClientGen.CS
 						statementCollection.Add(new CodeMethodReturnStatement(new CodeMethodInvokeExpression(
 							new CodeMethodReferenceExpression(
 								new CodeVariableReferenceExpression("JsonSerializer"), "Deserialize", new CodeTypeReference(typeof(System.String))),
-							new CodeSnippetExpression("contentString"),
+							new CodeSnippetExpression("stream"),
 							new CodeSnippetExpression("jsonSerializerSettings"))));
 					}
 					else
 					{
-						statementCollection.Add(new CodeSnippetStatement("\t\t\t\tusing (System.IO.StreamReader streamReader = new System.IO.StreamReader(responseMessageStream))"));
+						statementCollection.Add(new CodeSnippetStatement("\t\t\t\tusing (System.IO.StreamReader streamReader = new System.IO.StreamReader(stream))"));
 						Add4TStartBacket(statementCollection);
 						statementCollection.Add(new CodeMethodReturnStatement(new CodeSnippetExpression("streamReader.ReadToEnd();")));
 						Add4TEndBacket(statementCollection);
@@ -529,7 +523,7 @@ namespace Fonlow.OpenApiClientGen.CS
 						statementCollection.Add(new CodeMethodReturnStatement(new CodeMethodInvokeExpression(
 							new CodeMethodReferenceExpression(
 								new CodeVariableReferenceExpression("JsonSerializer"), "Deserialize", new CodeTypeReference(typeof(System.String))),
-							new CodeSnippetExpression("contentString"),
+							new CodeSnippetExpression("stream"),
 							new CodeSnippetExpression("jsonSerializerSettings"))));
 					}
 					else

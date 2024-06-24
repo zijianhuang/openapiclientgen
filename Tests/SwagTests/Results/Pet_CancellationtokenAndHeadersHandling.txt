@@ -371,7 +371,7 @@ namespace MyNS
 				handleHeaders(httpRequestMessage.Headers);
 			}
 
-			var responseMessage = httpClient.SendAsync(httpRequestMessage, cancellationToken).Result;
+			var responseMessage = httpClient.Send(httpRequestMessage, cancellationToken);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -439,7 +439,7 @@ namespace MyNS
 				handleHeaders(httpRequestMessage.Headers);
 			}
 
-			var responseMessage = httpClient.SendAsync(httpRequestMessage, cancellationToken).Result;
+			var responseMessage = httpClient.Send(httpRequestMessage, cancellationToken);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -473,8 +473,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
+				var stream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<Pet>(jsonReader);
@@ -504,12 +504,12 @@ namespace MyNS
 				handleHeaders(httpRequestMessage.Headers);
 			}
 
-			var responseMessage = httpClient.SendAsync(httpRequestMessage, cancellationToken).Result;
+			var responseMessage = httpClient.Send(httpRequestMessage, cancellationToken);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
+				var stream = responseMessage.Content.ReadAsStream();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<Pet>(jsonReader);
@@ -564,7 +564,7 @@ namespace MyNS
 				handleHeaders(httpRequestMessage.Headers);
 			}
 
-			var responseMessage = httpClient.SendAsync(httpRequestMessage, cancellationToken).Result;
+			var responseMessage = httpClient.Send(httpRequestMessage, cancellationToken);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -600,8 +600,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
+				var stream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<Pet[]>(jsonReader);
@@ -634,12 +634,12 @@ namespace MyNS
 				handleHeaders(httpRequestMessage.Headers);
 			}
 
-			var responseMessage = httpClient.SendAsync(httpRequestMessage, cancellationToken).Result;
+			var responseMessage = httpClient.Send(httpRequestMessage, cancellationToken);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
+				var stream = responseMessage.Content.ReadAsStream();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<Pet[]>(jsonReader);
@@ -673,8 +673,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
+				var stream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<Pet[]>(jsonReader);
@@ -704,12 +704,12 @@ namespace MyNS
 				handleHeaders(httpRequestMessage.Headers);
 			}
 
-			var responseMessage = httpClient.SendAsync(httpRequestMessage, cancellationToken).Result;
+			var responseMessage = httpClient.Send(httpRequestMessage, cancellationToken);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
+				var stream = responseMessage.Content.ReadAsStream();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<Pet[]>(jsonReader);
@@ -742,8 +742,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
+				var stream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<System.Collections.Generic.Dictionary<string, int>>(jsonReader);
@@ -772,12 +772,12 @@ namespace MyNS
 				handleHeaders(httpRequestMessage.Headers);
 			}
 
-			var responseMessage = httpClient.SendAsync(httpRequestMessage, cancellationToken).Result;
+			var responseMessage = httpClient.Send(httpRequestMessage, cancellationToken);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
+				var stream = responseMessage.Content.ReadAsStream();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<System.Collections.Generic.Dictionary<string, int>>(jsonReader);
@@ -816,8 +816,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
+				var stream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<Order>(jsonReader);
@@ -853,12 +853,12 @@ namespace MyNS
 				handleHeaders(httpRequestMessage.Headers);
 			}
 
-			var responseMessage = httpClient.SendAsync(httpRequestMessage, cancellationToken).Result;
+			var responseMessage = httpClient.Send(httpRequestMessage, cancellationToken);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
+				var stream = responseMessage.Content.ReadAsStream();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<Order>(jsonReader);
@@ -896,8 +896,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
+				var stream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<Order>(jsonReader);
@@ -930,12 +930,12 @@ namespace MyNS
 				handleHeaders(httpRequestMessage.Headers);
 			}
 
-			var responseMessage = httpClient.SendAsync(httpRequestMessage, cancellationToken).Result;
+			var responseMessage = httpClient.Send(httpRequestMessage, cancellationToken);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
+				var stream = responseMessage.Content.ReadAsStream();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<Order>(jsonReader);
@@ -996,7 +996,7 @@ namespace MyNS
 				handleHeaders(httpRequestMessage.Headers);
 			}
 
-			var responseMessage = httpClient.SendAsync(httpRequestMessage, cancellationToken).Result;
+			var responseMessage = httpClient.Send(httpRequestMessage, cancellationToken);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -1065,7 +1065,7 @@ namespace MyNS
 				handleHeaders(httpRequestMessage.Headers);
 			}
 
-			var responseMessage = httpClient.SendAsync(httpRequestMessage, cancellationToken).Result;
+			var responseMessage = httpClient.Send(httpRequestMessage, cancellationToken);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -1098,8 +1098,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
+				var stream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<User>(jsonReader);
@@ -1128,12 +1128,12 @@ namespace MyNS
 				handleHeaders(httpRequestMessage.Headers);
 			}
 
-			var responseMessage = httpClient.SendAsync(httpRequestMessage, cancellationToken).Result;
+			var responseMessage = httpClient.Send(httpRequestMessage, cancellationToken);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
+				var stream = responseMessage.Content.ReadAsStream();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<User>(jsonReader);
@@ -1205,7 +1205,7 @@ namespace MyNS
 				handleHeaders(httpRequestMessage.Headers);
 			}
 
-			var responseMessage = httpClient.SendAsync(httpRequestMessage, cancellationToken).Result;
+			var responseMessage = httpClient.Send(httpRequestMessage, cancellationToken);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -1262,7 +1262,7 @@ namespace MyNS
 				handleHeaders(httpRequestMessage.Headers);
 			}
 
-			var responseMessage = httpClient.SendAsync(httpRequestMessage, cancellationToken).Result;
+			var responseMessage = httpClient.Send(httpRequestMessage, cancellationToken);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -1329,7 +1329,7 @@ namespace MyNS
 				handleHeaders(httpRequestMessage.Headers);
 			}
 
-			var responseMessage = httpClient.SendAsync(httpRequestMessage, cancellationToken).Result;
+			var responseMessage = httpClient.Send(httpRequestMessage, cancellationToken);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -1397,7 +1397,7 @@ namespace MyNS
 				handleHeaders(httpRequestMessage.Headers);
 			}
 
-			var responseMessage = httpClient.SendAsync(httpRequestMessage, cancellationToken).Result;
+			var responseMessage = httpClient.Send(httpRequestMessage, cancellationToken);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -1431,8 +1431,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
+				var stream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
 				return jsonReader.ReadAsString();
 				}
@@ -1461,12 +1461,12 @@ namespace MyNS
 				handleHeaders(httpRequestMessage.Headers);
 			}
 
-			var responseMessage = httpClient.SendAsync(httpRequestMessage, cancellationToken).Result;
+			var responseMessage = httpClient.Send(httpRequestMessage, cancellationToken);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var responseMessageStream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
+				var stream = responseMessage.Content.ReadAsStream();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
 				return jsonReader.ReadAsString();
 				}
@@ -1518,7 +1518,7 @@ namespace MyNS
 				handleHeaders(httpRequestMessage.Headers);
 			}
 
-			var responseMessage = httpClient.SendAsync(httpRequestMessage, cancellationToken).Result;
+			var responseMessage = httpClient.Send(httpRequestMessage, cancellationToken);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();

@@ -45,7 +45,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					}
 					catch (ArgumentException ex)
 					{
-						throw new CodeGenException(ex.Message) { Pending = true };
+						throw new CodeGenOperationException(ex.Message) { Pending = true };
 					}
 
 					return Tuple.Create(codeTypeReference, false);

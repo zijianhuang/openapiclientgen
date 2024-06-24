@@ -402,7 +402,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					}
 					catch (InvalidCastException ex)
 					{
-						throw new CodeGenException($"When dealing with {propertyName} of {primitivePropertyType}, error: {ex.Message}");
+						throw new CodeGenOperationException($"When dealing with {propertyName} of {primitivePropertyType}, error: {ex.Message}");
 					}
 
 					CodeTypeDeclaration existingDeclaration = FindEnumDeclaration(enumMemberNames);
@@ -489,7 +489,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				}
 				else
 				{
-					throw new CodeGenException("Mixed up enum.");
+					throw new CodeGenOperationException("Mixed up enum.");
 				}
 			}).ToArray();
 		}

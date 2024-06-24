@@ -10,6 +10,7 @@
 	"DataAnnotationsEnabled": true,
 	"DataAnnotationsToComments": true,
 	"HandleHttpRequestHeaders": true,
-	"SortTypesMembersAndMethods": true
+	"SortTypesMembersAndMethods": true,
+	"GenerateBothAsyncAndSync": true
 
 }

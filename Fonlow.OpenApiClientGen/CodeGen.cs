@@ -25,7 +25,7 @@ namespace Fonlow.CodeDom.Web
 					else
 					{
 						string msg = $"{csharpClientProjectDir} not exist while current directory is {currentDir}";
-						throw new CodeGenException(msg);
+						throw new CodeGenOperationException(msg);
 					}
 				}
 
@@ -54,7 +54,7 @@ namespace Fonlow.CodeDom.Web
 							else
 							{
 								string msg = $"{theFolder} not exist while current directory is {currentDir}";
-								throw new CodeGenException(msg);
+								throw new CodeGenOperationException(msg);
 							}
 						}
 
@@ -63,13 +63,13 @@ namespace Fonlow.CodeDom.Web
 					{
 						Trace.TraceWarning(e.Message);
 						string msg = $"Invalid TypeScriptFolder {folder} while current directory is {currentDir}";
-						throw new CodeGenException(msg);
+						throw new CodeGenOperationException(msg);
 					}
 
 					if (!System.IO.Directory.Exists(theFolder))
 					{
 						string msg = $"TypeScriptFolder {theFolder} not exist while current directory is {currentDir}";
-						throw new CodeGenException(msg);
+						throw new CodeGenOperationException(msg);
 					}
 					return System.IO.Path.Combine(theFolder, fileName);
 				};
@@ -90,16 +90,17 @@ namespace Fonlow.CodeDom.Web
 					};
 
 					string assemblyFilePath = System.IO.Path.Combine(exeDir, plugin.AssemblyName + ".dll");
-					Ts.ControllersTsClientApiGenBase tsGen = PluginFactory.CreateImplementationsFromAssembly(assemblyFilePath, settings, jsOutput);
-					if (tsGen != null)
+					try
 					{
+						Ts.ControllersTsClientApiGenBase tsGen = PluginFactory.CreateImplementationsFromAssembly(assemblyFilePath, settings, jsOutput);
 						Trace.TraceInformation($"Generate codes with {tsGen.ProductName} ......");
 						tsGen.CreateCodeDom(paths, components);
 						tsGen.Save();
 					}
-					else
+					catch (Exception ex) when (ex is CodeGenLoadPluginException || ex is CodeGenReadPluginException)
 					{
-						Trace.TraceWarning($"Not done with plugin {plugin.AssemblyName}");
+						Console.Error.WriteLine(ex);
+						throw;
 					}
 				}
 			}

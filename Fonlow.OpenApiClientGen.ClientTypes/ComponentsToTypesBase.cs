@@ -311,7 +311,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					}
 					catch (InvalidCastException ex)
 					{
-						throw new CodeGenException($"When dealing with {propertyName} of {arrayType}, error: {ex.Message}");
+						throw new CodeGenOperationException($"When dealing with {propertyName} of {arrayType}, error: {ex.Message}");
 					}
 
 					CodeTypeDeclaration existingDeclaration = FindEnumDeclaration(enumMemberNames);
@@ -536,7 +536,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					}
 					catch (InvalidCastException ex)
 					{
-						throw new CodeGenException($"When dealing with {propertyName} of {schemaType}, error: {ex.Message}");
+						throw new CodeGenOperationException($"When dealing with {propertyName} of {schemaType}, error: {ex.Message}");
 					}
 
 					CodeTypeDeclaration existingDeclaration = FindEnumDeclaration(enumMemberNames);

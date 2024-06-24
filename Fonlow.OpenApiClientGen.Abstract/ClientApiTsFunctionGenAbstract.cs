@@ -86,11 +86,11 @@ namespace Fonlow.CodeDom.Web.Ts
 				r = returnRefBuilder.GetOperationReturnTypeReference(apiOperation);
 
 			}
-			catch (CodeGenException ex)
+			catch (CodeGenOperationException ex)
 			{
 				if (ex.Pending)
 				{
-					throw new CodeGenException($"When generating TS scripts, definition {relativePath}=>{httpMethod} triggers error {ex.Message}");
+					throw new CodeGenOperationException($"When generating TS scripts, definition {relativePath}=>{httpMethod} triggers error {ex.Message}");
 				}
 
 				throw;

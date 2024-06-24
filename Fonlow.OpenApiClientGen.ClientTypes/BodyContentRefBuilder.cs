@@ -40,7 +40,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 						}
 						catch (ArgumentException ex)
 						{
-							throw new CodeGenException($"Definition {path}=>{httpMethod} for op.RequestBody.Reference triggers error: {ex.Message}");
+							throw new CodeGenOperationException($"Definition {path}=>{httpMethod} for op.RequestBody.Reference triggers error: {ex.Message}");
 						}
 					}
 

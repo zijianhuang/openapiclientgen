@@ -53,7 +53,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					}
 					catch (ArgumentNullException)
 					{
-						throw new CodeGenException($"Definition {path}=>{httpMethod} does not contain OperationId");
+						throw new CodeGenOperationException($"Definition {path}=>{httpMethod} does not contain OperationId");
 					}
 
 					break;

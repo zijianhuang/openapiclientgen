@@ -36,7 +36,7 @@ namespace Fonlow.OpenApiClientGen.TestHelpers
 			OpenApiDocument doc = ReadDef(filePath);
 			if (doc.Components==null && doc.Paths == null)
 			{
-				throw new CodeGenException("Cannot read def correctly. This may be due to the bug in the parser or the def is doggy.");
+				throw new CodeGenOperationException("Cannot read def correctly. This may be due to the bug in the parser or the def is doggy.");
 				//somehow ms openapi parser can not recognize openapi: 3.1.0 in \APIs\adyen.com\CheckoutService\37\ however, throw proper exception for the other 3.1 def files.
 			}
 
