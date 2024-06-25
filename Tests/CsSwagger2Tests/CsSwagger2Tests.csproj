@@ -30,7 +30,7 @@
 			<PrivateAssets>all</PrivateAssets>
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
-		<PackageReference Include="Fonlow.Testing.ServiceCore" Version="3.6.4-Beta3" />
+		<PackageReference Include="Fonlow.Testing.ServiceCore" Version="3.6.4-Beta4" />
 	</ItemGroup>
 
 	<ItemGroup>
