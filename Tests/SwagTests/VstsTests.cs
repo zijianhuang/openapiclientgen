@@ -8,6 +8,7 @@ namespace SwagTests
 	/// <summary>
 	/// Test with Swagger 2 definitions at https://github.com/MicrosoftDocs/vsts-rest-api-specs
 	/// </summary>
+	[Collection(IntegrationTests.TestConstants.CopyAssetsAndInit)]
 	public class VstsCsTests
 	{
 		public VstsCsTests(ITestOutputHelper output)

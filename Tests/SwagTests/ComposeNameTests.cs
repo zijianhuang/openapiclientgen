@@ -24,6 +24,7 @@ namespace SwagTests
 		public NameComposer Composer { get;}
 	}
 
+	[Collection(IntegrationTests.TestConstants.CopyAssetsAndInit)]
 	public class ComposeNameTests : IClassFixture<DocFixture>
 	{
 		public ComposeNameTests(DocFixture fixture)

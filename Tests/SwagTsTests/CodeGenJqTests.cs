@@ -5,7 +5,7 @@ using Fonlow.OpenApiClientGen.TestHelpers;
 
 namespace SwagTests
 {
-	[Collection("PluginsInSequence")] //CodeGen is not thread safe
+	[Collection(IntegrationTests.TestConstants.CopyAssetsAndInit)]
 	public class CodeGenJqTests
 	{
 		public CodeGenJqTests()

@@ -7,6 +7,7 @@ using Fonlow.OpenApiClientGen.TestHelpers;
 
 namespace SwagOpenApiDirTests
 {
+	[Collection(IntegrationTests.TestConstants.CopyAssetsAndInit)]
 	public class ODAzureTests
 	{
 		readonly CSharpTestHelperForOpenApiDir helper;

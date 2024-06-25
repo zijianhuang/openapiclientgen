@@ -6,6 +6,7 @@ using Fonlow.OpenApiClientGen.TestHelpers;
 
 namespace OpenApiDirTests
 {
+	[Collection(IntegrationTests.TestConstants.CopyAssetsAndInit)]
 	public partial class OpenApi3Tests
 	{
 		readonly IOpenApiDirTestHelper helper; 

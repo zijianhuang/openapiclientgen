@@ -28,6 +28,7 @@
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 			<PrivateAssets>all</PrivateAssets>
 		</PackageReference>
+		<PackageReference Include="Fonlow.Testing.ServiceCore" Version="3.6.4-Beta3" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -37,10 +38,6 @@
 	</ItemGroup>
 
 	<Import Project="..\OpenApi3Shared\OpenApi3Shared.projitems" Label="Shared" />
-
-	<Target Name="PreBuild" BeforeTargets="PreBuildEvent">
-		<Exec Command="pwsh -Command &quot;&amp; {new-item -Path $(TargetDir) -Name &quot;Results&quot; -ItemType &quot;directory&quot;}&quot;&#xD;&#xA;pwsh -Command &quot;&amp; {copy-item -Path ../CsOpenApi3TestsResults/* -Destination $(TargetDir)Results -Recurse}&quot;" />
-	</Target>
 
 
 </Project>

@@ -5,6 +5,7 @@ using Fonlow.OpenApiClientGen.TestHelpers;
 
 namespace SwagTests
 {
+	[Collection(IntegrationTests.TestConstants.CopyAssetsAndInit)]
 	public class CodeGenCsTests
 	{
 		public CodeGenCsTests(ITestOutputHelper output)

@@ -5,7 +5,7 @@ using Fonlow.OpenApiClientGen.TestHelpers;
 
 namespace SwagTests
 {
-	[Collection("PluginsInSequence")]
+	[Collection(IntegrationTests.TestConstants.CopyAssetsAndInit)]
 	public class CodeGenNG2FormGroupBuildTests
 	{
 		public CodeGenNG2FormGroupBuildTests(ITestOutputHelper output)

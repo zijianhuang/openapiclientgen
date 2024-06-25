@@ -30,6 +30,7 @@
 			<PrivateAssets>all</PrivateAssets>
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
+		<PackageReference Include="Fonlow.Testing.ServiceCore" Version="3.6.4-Beta3" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -37,9 +38,5 @@
 		<ProjectReference Include="..\ClientCodesValidation\ClientCodesValidation.csproj" />
 		<ProjectReference Include="..\CsTestHelpers\CsTestHelpers.csproj" />
 	</ItemGroup>
-
-	<Target Name="PreBuild" BeforeTargets="PreBuildEvent">
-		<Exec Command="pwsh -Command &quot;&amp; {new-item -Path $(TargetDir) -Name &quot;Results&quot; -ItemType &quot;directory&quot;}&quot;&#xD;&#xA;pwsh -Command &quot;&amp; {copy-item -Path ../CsSwagger2TestsResults/* -Destination $(TargetDir)Results -Recurse}&quot;&#xD;&#xA;" />
-	</Target>
 
 </Project>

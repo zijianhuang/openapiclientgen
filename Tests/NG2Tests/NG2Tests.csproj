@@ -27,16 +27,13 @@
 			<PrivateAssets>all</PrivateAssets>
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
+		<PackageReference Include="Fonlow.Testing.ServiceCore" Version="3.6.4-Beta3" />
 	</ItemGroup>
 
 	<ItemGroup>
 		<ProjectReference Include="..\..\OpenApiClientGenCore.NG2FormGroup\OpenApiClientGenCore.NG2FormGroup.csproj" />
 		<ProjectReference Include="..\TsTestHelpers\TsTestHelpers.csproj" />
 	</ItemGroup>
-
-	<Target Name="PreBuild" BeforeTargets="PreBuildEvent">
-		<Exec Command="pwsh -File ../../PowershellScripts/CopyFiles.ps1 $(ProjectDir)SwagMock/ $(TargetDir)&#xD;&#xA;pwsh -File ../../PowershellScripts/CopyFiles.ps1 $(ProjectDir)Results/ $(TargetDir)&#xD;&#xA;" />
-	</Target>
 
 	<Import Project="..\SwaggerDirShared\SwaggerDirShared.projitems" Label="Shared" />
 

@@ -6,7 +6,7 @@ using Fonlow.OpenApiClientGen.TestHelpers;
 
 namespace SwagOpenApiDirTests
 {
-	[Collection("NGBuildInSequence")]
+	[Collection(IntegrationTests.TestConstants.CopyAssetsAndInit)]
 	public partial class ODMiscTests
 	{
 		readonly NG2OpenApiDirTestHelper helper;

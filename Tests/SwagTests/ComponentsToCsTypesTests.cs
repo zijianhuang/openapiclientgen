@@ -6,6 +6,7 @@ using Xunit;
 
 namespace SwagTests
 {
+	[Collection(IntegrationTests.TestConstants.CopyAssetsAndInit)]
 	public class ComponentsToCsTypesTests
 	{
 		static OpenApiDocument ReadJson(string filePath)

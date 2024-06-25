@@ -30,6 +30,7 @@
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 			<PrivateAssets>all</PrivateAssets>
 		</PackageReference>
+		<PackageReference Include="Fonlow.Testing.ServiceCore" Version="3.6.4-Beta3" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -38,9 +39,5 @@
 	</ItemGroup>
 
 	<Import Project="..\OpenApi3Shared\OpenApi3Shared.projitems" Label="Shared" />
-
-	<Target Name="PreBuild" BeforeTargets="PreBuildEvent">
-		<Exec Command="pwsh -File ../../PowershellScripts/CopyFiles.ps1 $(ProjectDir)Results/ $(TargetDir)&#xD;&#xA;" />
-	</Target>
 
 </Project>
