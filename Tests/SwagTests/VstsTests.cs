@@ -187,7 +187,7 @@ namespace SwagTests
 			GenerateAndAssertAndBuild("SwagMock/Vsts/testPlan.json", "Results/Vsts/testPlan.cs");
 		}
 
-		[Fact(Skip ="GitHub Actions do not like this.")]
+		[Fact(Skip = "GitHub Actions do not like this. System.IO.FileNotFoundException : Could not find file '/home/runner/work/openapiclientgen/openapiclientgen/Tests/SwagTests/bin/Release/net8.0/Results/Vsts/testResults.cs'.")]
 		public void Test_testResults()
 		{
 			GenerateAndAssertAndBuild("SwagMock/Vsts/testResults.json", "Results/Vsts/testResults.cs");
