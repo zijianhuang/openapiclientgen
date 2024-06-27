@@ -17999,8 +17999,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(100)]
+		[System.ComponentModel.DataAnnotations.Length(1, 100)]
 		public string[] AutomationRulesArns { get; set; }
 	}
 	
@@ -18015,8 +18014,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(25)]
+		[System.ComponentModel.DataAnnotations.Length(1, 25)]
 		public string[] StandardsSubscriptionArns { get; set; }
 	}
 	
@@ -18031,8 +18029,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(25)]
+		[System.ComponentModel.DataAnnotations.Length(1, 25)]
 		public StandardsSubscriptionRequest[] StandardsSubscriptionRequests { get; set; }
 	}
 	
@@ -18047,8 +18044,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(100)]
+		[System.ComponentModel.DataAnnotations.Length(1, 100)]
 		public string[] AutomationRulesArns { get; set; }
 	}
 	
@@ -18087,8 +18083,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(100)]
+		[System.ComponentModel.DataAnnotations.Length(1, 100)]
 		public AwsSecurityFinding[] Findings { get; set; }
 	}
 	
@@ -18103,8 +18098,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(100)]
+		[System.ComponentModel.DataAnnotations.Length(1, 100)]
 		public UpdateAutomationRulesRequestItem[] UpdateAutomationRulesRequestItems { get; set; }
 	}
 	
@@ -18324,8 +18318,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1)]
 		public AutomationRulesAction[] Actions { get; set; }
 	}
 	
@@ -19318,8 +19311,7 @@ namespace MyNS
 		/// Maximum items: 25
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(25)]
+		[System.ComponentModel.DataAnnotations.Length(1, 25)]
 		public string[] StandardsSubscriptionArns { get; set; }
 		
 		/// <summary>

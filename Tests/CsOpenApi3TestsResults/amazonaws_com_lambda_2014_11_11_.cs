@@ -740,8 +740,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(64)]
+		[System.ComponentModel.DataAnnotations.Length(1, 64)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[a-zA-Z0-9-_]+")]
 		public string FunctionName { get; set; }
 		

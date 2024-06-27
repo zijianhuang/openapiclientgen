@@ -2906,8 +2906,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(36)]
+		[System.ComponentModel.DataAnnotations.Length(1, 36)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[\w.-]*")]
 		public string Name { get; set; }
 		

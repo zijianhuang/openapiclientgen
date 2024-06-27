@@ -466,8 +466,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="zipCode")]
-		[System.ComponentModel.DataAnnotations.MinLength(5)]
-		[System.ComponentModel.DataAnnotations.MaxLength(5)]
+		[System.ComponentModel.DataAnnotations.Length(5, 5)]
 		public string ZipCode { get; set; }
 		
 		/// <summary>
@@ -1039,8 +1038,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="stateCode")]
-		[System.ComponentModel.DataAnnotations.MinLength(2)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2)]
+		[System.ComponentModel.DataAnnotations.Length(2, 2)]
 		public string StateCode { get; set; }
 		
 		/// <summary>
@@ -1408,8 +1406,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="zipCode")]
-		[System.ComponentModel.DataAnnotations.MinLength(5)]
-		[System.ComponentModel.DataAnnotations.MaxLength(5)]
+		[System.ComponentModel.DataAnnotations.Length(5, 5)]
 		public string ZipCode { get; set; }
 		
 		/// <summary>

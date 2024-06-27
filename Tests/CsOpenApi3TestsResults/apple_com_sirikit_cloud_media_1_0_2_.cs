@@ -800,8 +800,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="identifier")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1000)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1000)]
 		public string Identifier { get; set; }
 		
 		[System.Runtime.Serialization.DataMember(Name="isLive")]
@@ -958,8 +957,7 @@ namespace MyNS
 		/// Max length: 2000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="url")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2000)]
+		[System.ComponentModel.DataAnnotations.Length(1, 2000)]
 		public string Url { get; set; }
 		
 		/// <summary>
@@ -1045,8 +1043,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DefaultValue("/queues/playMedia")]
 		[System.Runtime.Serialization.DataMember(Name="url")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(4000)]
+		[System.ComponentModel.DataAnnotations.Length(1, 4000)]
 		public string Url { get; set; } = "/queues/playMedia";
 	}
 	
@@ -1062,8 +1059,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DefaultValue("/queues/updateActivity")]
 		[System.Runtime.Serialization.DataMember(Name="url")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(4000)]
+		[System.ComponentModel.DataAnnotations.Length(1, 4000)]
 		public string Url { get; set; } = "/queues/updateActivity";
 	}
 	
@@ -1079,8 +1075,7 @@ namespace MyNS
 		/// Max length: 2000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="url")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2000)]
+		[System.ComponentModel.DataAnnotations.Length(0, 2000)]
 		public string Url { get; set; }
 	}
 	
@@ -1232,8 +1227,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="identifier")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(128)]
+		[System.ComponentModel.DataAnnotations.Length(1, 128)]
 		public string Identifier { get; set; }
 		
 		[System.Runtime.Serialization.DataMember(Name="playerContext")]
@@ -1272,8 +1266,7 @@ namespace MyNS
 		/// Max length: 1000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="contentIdentifier")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1000)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1000)]
 		public string ContentIdentifier { get; set; }
 		
 		[System.Runtime.Serialization.DataMember(Name="offsetInMillis")]
@@ -1287,8 +1280,7 @@ namespace MyNS
 		/// Max length: 1024
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="queueIdentifier")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1024)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1024)]
 		public string QueueIdentifier { get; set; }
 	}
 	
@@ -1417,8 +1409,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="playlistName")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1000)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1000)]
 		public string PlaylistName { get; set; }
 	}
 	
@@ -2351,8 +2342,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="identifier")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1024)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1024)]
 		public string Identifier { get; set; }
 		
 		[System.Runtime.Serialization.DataMember(Name="insertPointer")]
@@ -2363,8 +2353,7 @@ namespace MyNS
 		/// Max length: 2000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextContentUrl")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2000)]
+		[System.ComponentModel.DataAnnotations.Length(1, 2000)]
 		public string NextContentUrl { get; set; }
 		
 		[System.Runtime.Serialization.DataMember(Name="playPointer")]
@@ -2378,8 +2367,7 @@ namespace MyNS
 		/// Max length: 2000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="previousContentUrl")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2000)]
+		[System.ComponentModel.DataAnnotations.Length(1, 2000)]
 		public string PreviousContentUrl { get; set; }
 		
 		[System.Runtime.Serialization.DataMember(Name="skipsRemaining")]
@@ -2418,8 +2406,7 @@ namespace MyNS
 		/// Max length: 1000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="contentIdentifier")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1000)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1000)]
 		public string ContentIdentifier { get; set; }
 		
 		[System.Runtime.Serialization.DataMember(Name="offsetInMillis")]
@@ -2485,8 +2472,7 @@ namespace MyNS
 		/// Max length: 1000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="afterIdentifier")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1000)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1000)]
 		public string AfterIdentifier { get; set; }
 		
 		[System.Runtime.Serialization.DataMember(Name="replace")]

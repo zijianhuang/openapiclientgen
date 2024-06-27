@@ -31,8 +31,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="arn")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1011)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1011)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"arn:aws:iotroborunner:[\w-]+:\w+:destination/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$|^arn:aws:iotroborunner:[\w-]+:\w+:site/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/destination/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}")]
 		public string Arn { get; set; }
 		
@@ -44,8 +43,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="id")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public string Id { get; set; }
 		
 		/// <summary>
@@ -135,8 +133,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="arn")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1011)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1011)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"arn:aws:iotroborunner:[\w-]+:\w+:site/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}")]
 		public string Arn { get; set; }
 		
@@ -148,8 +145,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="id")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public string Id { get; set; }
 		
 		/// <summary>
@@ -182,8 +178,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="arn")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1011)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1011)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"arn:aws:iotroborunner:[\w-]+:\w+:site/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/worker-fleet/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/worker/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}")]
 		public string Arn { get; set; }
 		
@@ -195,8 +190,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="id")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public string Id { get; set; }
 		
 		/// <summary>
@@ -224,8 +218,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="site")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1011)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1011)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"arn:aws:iotroborunner:[\w-]+:\w+:site/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}")]
 		public string Site { get; set; }
 	}
@@ -268,8 +261,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="arn")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1011)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1011)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"arn:aws:iotroborunner:[\w-]+:\w+:site/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/worker-fleet/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}")]
 		public string Arn { get; set; }
 		
@@ -281,8 +273,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="id")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public string Id { get; set; }
 		
 		/// <summary>
@@ -335,8 +326,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="arn")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1011)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1011)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"arn:aws:iotroborunner:[\w-]+:\w+:destination/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$|^arn:aws:iotroborunner:[\w-]+:\w+:site/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/destination/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}")]
 		public string Arn { get; set; }
 		
@@ -348,8 +338,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="id")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public string Id { get; set; }
 		
 		/// <summary>
@@ -360,8 +349,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -373,8 +361,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="site")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1011)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1011)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"arn:aws:iotroborunner:[\w-]+:\w+:site/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}")]
 		public string Site { get; set; }
 		
@@ -408,8 +395,7 @@ namespace MyNS
 		/// Max length: 131072
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="additionalFixedProperties")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(131072)]
+		[System.ComponentModel.DataAnnotations.Length(1, 131072)]
 		public string AdditionalFixedProperties { get; set; }
 	}
 	
@@ -426,8 +412,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="arn")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1011)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1011)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"arn:aws:iotroborunner:[\w-]+:\w+:site/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}")]
 		public string Arn { get; set; }
 		
@@ -439,8 +424,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="id")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public string Id { get; set; }
 		
 		/// <summary>
@@ -451,8 +435,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -464,8 +447,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="countryCode")]
-		[System.ComponentModel.DataAnnotations.MinLength(2)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2)]
+		[System.ComponentModel.DataAnnotations.Length(2, 2)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[a-zA-Z]{2}")]
 		public string CountryCode { get; set; }
 		
@@ -475,8 +457,7 @@ namespace MyNS
 		/// Max length: 140
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(140)]
+		[System.ComponentModel.DataAnnotations.Length(0, 140)]
 		public string Description { get; set; }
 		
 		/// <summary>
@@ -509,8 +490,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="arn")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1011)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1011)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"arn:aws:iotroborunner:[\w-]+:\w+:site/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/worker-fleet/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/worker/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}")]
 		public string Arn { get; set; }
 		
@@ -522,8 +502,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="id")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public string Id { get; set; }
 		
 		/// <summary>
@@ -535,8 +514,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="fleet")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1011)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1011)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"arn:aws:iotroborunner:[\w-]+:\w+:site/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/worker-fleet/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}")]
 		public string Fleet { get; set; }
 		
@@ -549,8 +527,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="site")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1011)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1011)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"arn:aws:iotroborunner:[\w-]+:\w+:site/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}")]
 		public string Site { get; set; }
 		
@@ -578,8 +555,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -588,8 +564,7 @@ namespace MyNS
 		/// Max length: 131072
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="additionalTransientProperties")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(131072)]
+		[System.ComponentModel.DataAnnotations.Length(1, 131072)]
 		public string AdditionalTransientProperties { get; set; }
 		
 		/// <summary>
@@ -598,8 +573,7 @@ namespace MyNS
 		/// Max length: 131072
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="additionalFixedProperties")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(131072)]
+		[System.ComponentModel.DataAnnotations.Length(1, 131072)]
 		public string AdditionalFixedProperties { get; set; }
 		
 		/// <summary>
@@ -636,8 +610,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="vendorWorkerId")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public string VendorWorkerId { get; set; }
 		
 		/// <summary>
@@ -646,8 +619,7 @@ namespace MyNS
 		/// Max length: 45
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="vendorWorkerIpAddress")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(45)]
+		[System.ComponentModel.DataAnnotations.Length(1, 45)]
 		public string VendorWorkerIpAddress { get; set; }
 		
 		/// <summary>
@@ -656,8 +628,7 @@ namespace MyNS
 		/// Max length: 131072
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="vendorAdditionalTransientProperties")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(131072)]
+		[System.ComponentModel.DataAnnotations.Length(1, 131072)]
 		public string VendorAdditionalTransientProperties { get; set; }
 		
 		/// <summary>
@@ -666,8 +637,7 @@ namespace MyNS
 		/// Max length: 131072
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="vendorAdditionalFixedProperties")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(131072)]
+		[System.ComponentModel.DataAnnotations.Length(1, 131072)]
 		public string VendorAdditionalFixedProperties { get; set; }
 	}
 	
@@ -705,8 +675,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="id")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public string Id { get; set; }
 		
 		/// <summary>
@@ -718,8 +687,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="arn")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1011)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1011)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"arn:aws:iotroborunner:[\w-]+:\w+:site/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/worker-fleet/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}")]
 		public string Arn { get; set; }
 		
@@ -731,8 +699,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -744,8 +711,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="site")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1011)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1011)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"arn:aws:iotroborunner:[\w-]+:\w+:site/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}")]
 		public string Site { get; set; }
 		
@@ -771,8 +737,7 @@ namespace MyNS
 		/// Max length: 131072
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="additionalFixedProperties")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(131072)]
+		[System.ComponentModel.DataAnnotations.Length(1, 131072)]
 		public string AdditionalFixedProperties { get; set; }
 	}
 	
@@ -787,8 +752,7 @@ namespace MyNS
 		/// Pattern: .*[a-zA-Z0-9_.-/+=]*.*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextToken")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2048)]
+		[System.ComponentModel.DataAnnotations.Length(1, 2048)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@".*[a-zA-Z0-9_.-/+=]*.*")]
 		public string NextToken { get; set; }
 		
@@ -815,8 +779,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="arn")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1011)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1011)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"arn:aws:iotroborunner:[\w-]+:\w+:destination/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$|^arn:aws:iotroborunner:[\w-]+:\w+:site/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/destination/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}")]
 		public string Arn { get; set; }
 		
@@ -828,8 +791,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="id")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public string Id { get; set; }
 		
 		/// <summary>
@@ -840,8 +802,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -853,8 +814,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="site")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1011)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1011)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"arn:aws:iotroborunner:[\w-]+:\w+:site/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}")]
 		public string Site { get; set; }
 		
@@ -888,8 +848,7 @@ namespace MyNS
 		/// Max length: 131072
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="additionalFixedProperties")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(131072)]
+		[System.ComponentModel.DataAnnotations.Length(1, 131072)]
 		public string AdditionalFixedProperties { get; set; }
 	}
 	
@@ -904,8 +863,7 @@ namespace MyNS
 		/// Pattern: .*[a-zA-Z0-9_.-/+=]*.*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextToken")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2048)]
+		[System.ComponentModel.DataAnnotations.Length(1, 2048)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@".*[a-zA-Z0-9_.-/+=]*.*")]
 		public string NextToken { get; set; }
 		
@@ -932,8 +890,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="arn")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1011)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1011)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"arn:aws:iotroborunner:[\w-]+:\w+:site/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}")]
 		public string Arn { get; set; }
 		
@@ -953,8 +910,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="countryCode")]
-		[System.ComponentModel.DataAnnotations.MinLength(2)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2)]
+		[System.ComponentModel.DataAnnotations.Length(2, 2)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[a-zA-Z]{2}")]
 		public string CountryCode { get; set; }
 		
@@ -978,8 +934,7 @@ namespace MyNS
 		/// Pattern: .*[a-zA-Z0-9_.-/+=]*.*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextToken")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2048)]
+		[System.ComponentModel.DataAnnotations.Length(1, 2048)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@".*[a-zA-Z0-9_.-/+=]*.*")]
 		public string NextToken { get; set; }
 		
@@ -1006,8 +961,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="arn")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1011)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1011)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"arn:aws:iotroborunner:[\w-]+:\w+:site/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/worker-fleet/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}")]
 		public string Arn { get; set; }
 		
@@ -1019,8 +973,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="id")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public string Id { get; set; }
 		
 		/// <summary>
@@ -1031,8 +984,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -1044,8 +996,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="site")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1011)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1011)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"arn:aws:iotroborunner:[\w-]+:\w+:site/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}")]
 		public string Site { get; set; }
 		
@@ -1071,8 +1022,7 @@ namespace MyNS
 		/// Max length: 131072
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="additionalFixedProperties")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(131072)]
+		[System.ComponentModel.DataAnnotations.Length(1, 131072)]
 		public string AdditionalFixedProperties { get; set; }
 	}
 	
@@ -1087,8 +1037,7 @@ namespace MyNS
 		/// Pattern: .*[a-zA-Z0-9_.-/+=]*.*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextToken")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2048)]
+		[System.ComponentModel.DataAnnotations.Length(1, 2048)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@".*[a-zA-Z0-9_.-/+=]*.*")]
 		public string NextToken { get; set; }
 		
@@ -1115,8 +1064,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="arn")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1011)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1011)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"arn:aws:iotroborunner:[\w-]+:\w+:site/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/worker-fleet/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/worker/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}")]
 		public string Arn { get; set; }
 		
@@ -1128,8 +1076,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="id")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public string Id { get; set; }
 		
 		/// <summary>
@@ -1141,8 +1088,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="fleet")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1011)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1011)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"arn:aws:iotroborunner:[\w-]+:\w+:site/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/worker-fleet/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}")]
 		public string Fleet { get; set; }
 		
@@ -1170,8 +1116,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -1183,8 +1128,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="site")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1011)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1011)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"arn:aws:iotroborunner:[\w-]+:\w+:site/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}")]
 		public string Site { get; set; }
 		
@@ -1194,8 +1138,7 @@ namespace MyNS
 		/// Max length: 131072
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="additionalTransientProperties")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(131072)]
+		[System.ComponentModel.DataAnnotations.Length(1, 131072)]
 		public string AdditionalTransientProperties { get; set; }
 		
 		/// <summary>
@@ -1204,8 +1147,7 @@ namespace MyNS
 		/// Max length: 131072
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="additionalFixedProperties")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(131072)]
+		[System.ComponentModel.DataAnnotations.Length(1, 131072)]
 		public string AdditionalFixedProperties { get; set; }
 		
 		/// <summary>
@@ -1240,8 +1182,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="arn")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1011)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1011)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"arn:aws:iotroborunner:[\w-]+:\w+:destination/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$|^arn:aws:iotroborunner:[\w-]+:\w+:site/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/destination/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}")]
 		public string Arn { get; set; }
 		
@@ -1253,8 +1194,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="id")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public string Id { get; set; }
 		
 		/// <summary>
@@ -1265,8 +1205,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -1291,8 +1230,7 @@ namespace MyNS
 		/// Max length: 131072
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="additionalFixedProperties")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(131072)]
+		[System.ComponentModel.DataAnnotations.Length(1, 131072)]
 		public string AdditionalFixedProperties { get; set; }
 	}
 	
@@ -1309,8 +1247,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="arn")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1011)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1011)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"arn:aws:iotroborunner:[\w-]+:\w+:site/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}")]
 		public string Arn { get; set; }
 		
@@ -1322,8 +1259,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="id")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public string Id { get; set; }
 		
 		/// <summary>
@@ -1334,8 +1270,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -1345,8 +1280,7 @@ namespace MyNS
 		/// Pattern: [a-zA-Z]{2}
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="countryCode")]
-		[System.ComponentModel.DataAnnotations.MinLength(2)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2)]
+		[System.ComponentModel.DataAnnotations.Length(2, 2)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[a-zA-Z]{2}")]
 		public string CountryCode { get; set; }
 		
@@ -1356,8 +1290,7 @@ namespace MyNS
 		/// Max length: 140
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(140)]
+		[System.ComponentModel.DataAnnotations.Length(0, 140)]
 		public string Description { get; set; }
 		
 		/// <summary>
@@ -1382,8 +1315,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="arn")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1011)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1011)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"arn:aws:iotroborunner:[\w-]+:\w+:site/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/worker-fleet/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/worker/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}")]
 		public string Arn { get; set; }
 		
@@ -1395,8 +1327,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="id")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public string Id { get; set; }
 		
 		/// <summary>
@@ -1408,8 +1339,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="fleet")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1011)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1011)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"arn:aws:iotroborunner:[\w-]+:\w+:site/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/worker-fleet/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}")]
 		public string Fleet { get; set; }
 		
@@ -1429,8 +1359,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -1439,8 +1368,7 @@ namespace MyNS
 		/// Max length: 131072
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="additionalTransientProperties")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(131072)]
+		[System.ComponentModel.DataAnnotations.Length(1, 131072)]
 		public string AdditionalTransientProperties { get; set; }
 		
 		/// <summary>
@@ -1449,8 +1377,7 @@ namespace MyNS
 		/// Max length: 131072
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="additionalFixedProperties")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(131072)]
+		[System.ComponentModel.DataAnnotations.Length(1, 131072)]
 		public string AdditionalFixedProperties { get; set; }
 		
 		/// <summary>
@@ -1485,8 +1412,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="arn")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1011)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1011)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"arn:aws:iotroborunner:[\w-]+:\w+:site/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/worker-fleet/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}")]
 		public string Arn { get; set; }
 		
@@ -1498,8 +1424,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="id")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public string Id { get; set; }
 		
 		/// <summary>
@@ -1510,8 +1435,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -1528,8 +1452,7 @@ namespace MyNS
 		/// Max length: 131072
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="additionalFixedProperties")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(131072)]
+		[System.ComponentModel.DataAnnotations.Length(1, 131072)]
 		public string AdditionalFixedProperties { get; set; }
 	}
 	
@@ -1561,8 +1484,7 @@ namespace MyNS
 		/// Pattern: [!-~]*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(64)]
+		[System.ComponentModel.DataAnnotations.Length(1, 64)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[!-~]*")]
 		public string ClientToken { get; set; }
 		
@@ -1574,8 +1496,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -1587,8 +1508,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="site")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1011)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1011)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"arn:aws:iotroborunner:[\w-]+:\w+:site/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}")]
 		public string Site { get; set; }
 		
@@ -1601,8 +1521,7 @@ namespace MyNS
 		/// Max length: 131072
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="additionalFixedProperties")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(131072)]
+		[System.ComponentModel.DataAnnotations.Length(1, 131072)]
 		public string AdditionalFixedProperties { get; set; }
 	}
 	
@@ -1617,8 +1536,7 @@ namespace MyNS
 		/// Pattern: [!-~]*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(64)]
+		[System.ComponentModel.DataAnnotations.Length(1, 64)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[!-~]*")]
 		public string ClientToken { get; set; }
 		
@@ -1630,8 +1548,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -1643,8 +1560,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="countryCode")]
-		[System.ComponentModel.DataAnnotations.MinLength(2)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2)]
+		[System.ComponentModel.DataAnnotations.Length(2, 2)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[a-zA-Z]{2}")]
 		public string CountryCode { get; set; }
 		
@@ -1654,8 +1570,7 @@ namespace MyNS
 		/// Max length: 140
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(140)]
+		[System.ComponentModel.DataAnnotations.Length(0, 140)]
 		public string Description { get; set; }
 	}
 	
@@ -1670,8 +1585,7 @@ namespace MyNS
 		/// Pattern: [!-~]*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(64)]
+		[System.ComponentModel.DataAnnotations.Length(1, 64)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[!-~]*")]
 		public string ClientToken { get; set; }
 		
@@ -1683,8 +1597,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -1696,8 +1609,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="site")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1011)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1011)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"arn:aws:iotroborunner:[\w-]+:\w+:site/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}")]
 		public string Site { get; set; }
 		
@@ -1707,8 +1619,7 @@ namespace MyNS
 		/// Max length: 131072
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="additionalFixedProperties")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(131072)]
+		[System.ComponentModel.DataAnnotations.Length(1, 131072)]
 		public string AdditionalFixedProperties { get; set; }
 	}
 	
@@ -1723,8 +1634,7 @@ namespace MyNS
 		/// Pattern: [!-~]*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(64)]
+		[System.ComponentModel.DataAnnotations.Length(1, 64)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[!-~]*")]
 		public string ClientToken { get; set; }
 		
@@ -1736,8 +1646,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -1749,8 +1658,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="fleet")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1011)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1011)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"arn:aws:iotroborunner:[\w-]+:\w+:site/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/worker-fleet/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}")]
 		public string Fleet { get; set; }
 		
@@ -1760,8 +1668,7 @@ namespace MyNS
 		/// Max length: 131072
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="additionalTransientProperties")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(131072)]
+		[System.ComponentModel.DataAnnotations.Length(1, 131072)]
 		public string AdditionalTransientProperties { get; set; }
 		
 		/// <summary>
@@ -1770,8 +1677,7 @@ namespace MyNS
 		/// Max length: 131072
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="additionalFixedProperties")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(131072)]
+		[System.ComponentModel.DataAnnotations.Length(1, 131072)]
 		public string AdditionalFixedProperties { get; set; }
 		
 		/// <summary>
@@ -1806,8 +1712,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="id")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1011)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1011)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"arn:aws:iotroborunner:[\w-]+:\w+:destination/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$|^arn:aws:iotroborunner:[\w-]+:\w+:site/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/destination/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}")]
 		public string Id { get; set; }
 	}
@@ -1825,8 +1730,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="id")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1011)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1011)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"arn:aws:iotroborunner:[\w-]+:\w+:site/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}")]
 		public string Id { get; set; }
 	}
@@ -1844,8 +1748,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="id")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1011)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1011)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"arn:aws:iotroborunner:[\w-]+:\w+:site/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/worker-fleet/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}")]
 		public string Id { get; set; }
 	}
@@ -1863,8 +1766,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="id")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1011)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1011)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"arn:aws:iotroborunner:[\w-]+:\w+:site/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/worker-fleet/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/worker/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}")]
 		public string Id { get; set; }
 	}
@@ -1922,8 +1824,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="id")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1011)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1011)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"arn:aws:iotroborunner:[\w-]+:\w+:destination/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$|^arn:aws:iotroborunner:[\w-]+:\w+:site/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/destination/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}")]
 		public string Id { get; set; }
 		
@@ -1933,8 +1834,7 @@ namespace MyNS
 		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="name")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -1949,8 +1849,7 @@ namespace MyNS
 		/// Max length: 131072
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="additionalFixedProperties")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(131072)]
+		[System.ComponentModel.DataAnnotations.Length(1, 131072)]
 		public string AdditionalFixedProperties { get; set; }
 	}
 	
@@ -1967,8 +1866,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="id")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1011)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1011)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"arn:aws:iotroborunner:[\w-]+:\w+:site/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}")]
 		public string Id { get; set; }
 		
@@ -1978,8 +1876,7 @@ namespace MyNS
 		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="name")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -1989,8 +1886,7 @@ namespace MyNS
 		/// Pattern: [a-zA-Z]{2}
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="countryCode")]
-		[System.ComponentModel.DataAnnotations.MinLength(2)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2)]
+		[System.ComponentModel.DataAnnotations.Length(2, 2)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[a-zA-Z]{2}")]
 		public string CountryCode { get; set; }
 		
@@ -2000,8 +1896,7 @@ namespace MyNS
 		/// Max length: 140
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(140)]
+		[System.ComponentModel.DataAnnotations.Length(0, 140)]
 		public string Description { get; set; }
 	}
 	
@@ -2018,8 +1913,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="id")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1011)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1011)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"arn:aws:iotroborunner:[\w-]+:\w+:site/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/worker-fleet/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}")]
 		public string Id { get; set; }
 		
@@ -2029,8 +1923,7 @@ namespace MyNS
 		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="name")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -2039,8 +1932,7 @@ namespace MyNS
 		/// Max length: 131072
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="additionalFixedProperties")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(131072)]
+		[System.ComponentModel.DataAnnotations.Length(1, 131072)]
 		public string AdditionalFixedProperties { get; set; }
 	}
 	
@@ -2057,8 +1949,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="id")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1011)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1011)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"arn:aws:iotroborunner:[\w-]+:\w+:site/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/worker-fleet/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/worker/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}")]
 		public string Id { get; set; }
 		
@@ -2068,8 +1959,7 @@ namespace MyNS
 		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="name")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -2078,8 +1968,7 @@ namespace MyNS
 		/// Max length: 131072
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="additionalTransientProperties")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(131072)]
+		[System.ComponentModel.DataAnnotations.Length(1, 131072)]
 		public string AdditionalTransientProperties { get; set; }
 		
 		/// <summary>
@@ -2088,8 +1977,7 @@ namespace MyNS
 		/// Max length: 131072
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="additionalFixedProperties")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(131072)]
+		[System.ComponentModel.DataAnnotations.Length(1, 131072)]
 		public string AdditionalFixedProperties { get; set; }
 		
 		/// <summary>
@@ -2753,8 +2641,7 @@ namespace MyNS
 		/// Pattern: [!-~]*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(64)]
+		[System.ComponentModel.DataAnnotations.Length(1, 64)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[!-~]*")]
 		public string ClientToken { get; set; }
 		
@@ -2766,8 +2653,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -2779,8 +2665,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="site")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1011)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1011)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"arn:aws:iotroborunner:[\w-]+:\w+:site/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}")]
 		public string Site { get; set; }
 		
@@ -2796,8 +2681,7 @@ namespace MyNS
 		/// Max length: 131072
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="additionalFixedProperties")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(131072)]
+		[System.ComponentModel.DataAnnotations.Length(1, 131072)]
 		public string AdditionalFixedProperties { get; set; }
 	}
 	
@@ -2811,8 +2695,7 @@ namespace MyNS
 		/// Pattern: [!-~]*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(64)]
+		[System.ComponentModel.DataAnnotations.Length(1, 64)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[!-~]*")]
 		public string ClientToken { get; set; }
 		
@@ -2824,8 +2707,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -2837,8 +2719,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="countryCode")]
-		[System.ComponentModel.DataAnnotations.MinLength(2)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2)]
+		[System.ComponentModel.DataAnnotations.Length(2, 2)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[a-zA-Z]{2}")]
 		public string CountryCode { get; set; }
 		
@@ -2848,8 +2729,7 @@ namespace MyNS
 		/// Max length: 140
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(140)]
+		[System.ComponentModel.DataAnnotations.Length(0, 140)]
 		public string Description { get; set; }
 	}
 	
@@ -2863,8 +2743,7 @@ namespace MyNS
 		/// Pattern: [!-~]*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(64)]
+		[System.ComponentModel.DataAnnotations.Length(1, 64)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[!-~]*")]
 		public string ClientToken { get; set; }
 		
@@ -2876,8 +2755,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -2889,8 +2767,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="fleet")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1011)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1011)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"arn:aws:iotroborunner:[\w-]+:\w+:site/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/worker-fleet/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}")]
 		public string Fleet { get; set; }
 		
@@ -2900,8 +2777,7 @@ namespace MyNS
 		/// Max length: 131072
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="additionalTransientProperties")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(131072)]
+		[System.ComponentModel.DataAnnotations.Length(1, 131072)]
 		public string AdditionalTransientProperties { get; set; }
 		
 		/// <summary>
@@ -2910,8 +2786,7 @@ namespace MyNS
 		/// Max length: 131072
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="additionalFixedProperties")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(131072)]
+		[System.ComponentModel.DataAnnotations.Length(1, 131072)]
 		public string AdditionalFixedProperties { get; set; }
 		
 		/// <summary>
@@ -2942,8 +2817,7 @@ namespace MyNS
 		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="vendorWorkerId")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public string VendorWorkerId { get; set; }
 		
 		/// <summary>
@@ -2952,8 +2826,7 @@ namespace MyNS
 		/// Max length: 45
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="vendorWorkerIpAddress")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(45)]
+		[System.ComponentModel.DataAnnotations.Length(1, 45)]
 		public string VendorWorkerIpAddress { get; set; }
 		
 		/// <summary>
@@ -2962,8 +2835,7 @@ namespace MyNS
 		/// Max length: 131072
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="vendorAdditionalTransientProperties")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(131072)]
+		[System.ComponentModel.DataAnnotations.Length(1, 131072)]
 		public string VendorAdditionalTransientProperties { get; set; }
 		
 		/// <summary>
@@ -2972,8 +2844,7 @@ namespace MyNS
 		/// Max length: 131072
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="vendorAdditionalFixedProperties")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(131072)]
+		[System.ComponentModel.DataAnnotations.Length(1, 131072)]
 		public string VendorAdditionalFixedProperties { get; set; }
 	}
 	
@@ -3001,8 +2872,7 @@ namespace MyNS
 		/// Pattern: [!-~]*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(64)]
+		[System.ComponentModel.DataAnnotations.Length(1, 64)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[!-~]*")]
 		public string ClientToken { get; set; }
 		
@@ -3014,8 +2884,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -3027,8 +2896,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="site")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1011)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1011)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"arn:aws:iotroborunner:[\w-]+:\w+:site/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}")]
 		public string Site { get; set; }
 		
@@ -3038,8 +2906,7 @@ namespace MyNS
 		/// Max length: 131072
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="additionalFixedProperties")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(131072)]
+		[System.ComponentModel.DataAnnotations.Length(1, 131072)]
 		public string AdditionalFixedProperties { get; set; }
 	}
 	
@@ -3055,8 +2922,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="id")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1011)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1011)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"arn:aws:iotroborunner:[\w-]+:\w+:destination/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$|^arn:aws:iotroborunner:[\w-]+:\w+:site/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/destination/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}")]
 		public string Id { get; set; }
 	}
@@ -3073,8 +2939,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="id")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1011)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1011)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"arn:aws:iotroborunner:[\w-]+:\w+:site/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}")]
 		public string Id { get; set; }
 	}
@@ -3091,8 +2956,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="id")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1011)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1011)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"arn:aws:iotroborunner:[\w-]+:\w+:site/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/worker-fleet/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/worker/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}")]
 		public string Id { get; set; }
 	}
@@ -3109,8 +2973,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="id")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1011)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1011)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"arn:aws:iotroborunner:[\w-]+:\w+:site/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/worker-fleet/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}")]
 		public string Id { get; set; }
 	}
@@ -3127,8 +2990,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="id")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1011)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1011)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"arn:aws:iotroborunner:[\w-]+:\w+:destination/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$|^arn:aws:iotroborunner:[\w-]+:\w+:site/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/destination/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}")]
 		public string Id { get; set; }
 		
@@ -3138,8 +3000,7 @@ namespace MyNS
 		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="name")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -3154,8 +3015,7 @@ namespace MyNS
 		/// Max length: 131072
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="additionalFixedProperties")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(131072)]
+		[System.ComponentModel.DataAnnotations.Length(1, 131072)]
 		public string AdditionalFixedProperties { get; set; }
 	}
 	
@@ -3171,8 +3031,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="id")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1011)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1011)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"arn:aws:iotroborunner:[\w-]+:\w+:site/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}")]
 		public string Id { get; set; }
 		
@@ -3182,8 +3041,7 @@ namespace MyNS
 		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="name")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -3193,8 +3051,7 @@ namespace MyNS
 		/// Pattern: [a-zA-Z]{2}
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="countryCode")]
-		[System.ComponentModel.DataAnnotations.MinLength(2)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2)]
+		[System.ComponentModel.DataAnnotations.Length(2, 2)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[a-zA-Z]{2}")]
 		public string CountryCode { get; set; }
 		
@@ -3204,8 +3061,7 @@ namespace MyNS
 		/// Max length: 140
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(140)]
+		[System.ComponentModel.DataAnnotations.Length(0, 140)]
 		public string Description { get; set; }
 	}
 	
@@ -3221,8 +3077,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="id")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1011)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1011)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"arn:aws:iotroborunner:[\w-]+:\w+:site/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/worker-fleet/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/worker/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}")]
 		public string Id { get; set; }
 		
@@ -3232,8 +3087,7 @@ namespace MyNS
 		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="name")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -3242,8 +3096,7 @@ namespace MyNS
 		/// Max length: 131072
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="additionalTransientProperties")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(131072)]
+		[System.ComponentModel.DataAnnotations.Length(1, 131072)]
 		public string AdditionalTransientProperties { get; set; }
 		
 		/// <summary>
@@ -3252,8 +3105,7 @@ namespace MyNS
 		/// Max length: 131072
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="additionalFixedProperties")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(131072)]
+		[System.ComponentModel.DataAnnotations.Length(1, 131072)]
 		public string AdditionalFixedProperties { get; set; }
 		
 		/// <summary>
@@ -3284,8 +3136,7 @@ namespace MyNS
 		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="vendorWorkerId")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public string VendorWorkerId { get; set; }
 		
 		/// <summary>
@@ -3294,8 +3145,7 @@ namespace MyNS
 		/// Max length: 45
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="vendorWorkerIpAddress")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(45)]
+		[System.ComponentModel.DataAnnotations.Length(1, 45)]
 		public string VendorWorkerIpAddress { get; set; }
 		
 		/// <summary>
@@ -3304,8 +3154,7 @@ namespace MyNS
 		/// Max length: 131072
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="vendorAdditionalTransientProperties")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(131072)]
+		[System.ComponentModel.DataAnnotations.Length(1, 131072)]
 		public string VendorAdditionalTransientProperties { get; set; }
 		
 		/// <summary>
@@ -3314,8 +3163,7 @@ namespace MyNS
 		/// Max length: 131072
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="vendorAdditionalFixedProperties")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(131072)]
+		[System.ComponentModel.DataAnnotations.Length(1, 131072)]
 		public string VendorAdditionalFixedProperties { get; set; }
 	}
 	
@@ -3345,8 +3193,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="id")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1011)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1011)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"arn:aws:iotroborunner:[\w-]+:\w+:site/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/worker-fleet/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}")]
 		public string Id { get; set; }
 		
@@ -3356,8 +3203,7 @@ namespace MyNS
 		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="name")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -3366,8 +3212,7 @@ namespace MyNS
 		/// Max length: 131072
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="additionalFixedProperties")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(131072)]
+		[System.ComponentModel.DataAnnotations.Length(1, 131072)]
 		public string AdditionalFixedProperties { get; set; }
 	}
 }

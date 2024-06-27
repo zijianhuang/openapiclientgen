@@ -90,8 +90,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="country")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2)]
+		[System.ComponentModel.DataAnnotations.Length(1, 2)]
 		public string Country { get; set; }
 		
 		/// <summary>
@@ -101,8 +100,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="number")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(100)]
+		[System.ComponentModel.DataAnnotations.Length(1, 100)]
 		public string Number { get; set; }
 	}
 	

@@ -6805,8 +6805,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="commit_sha")]
-		[System.ComponentModel.DataAnnotations.MinLength(40)]
-		[System.ComponentModel.DataAnnotations.MaxLength(40)]
+		[System.ComponentModel.DataAnnotations.Length(40, 40)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[0-9a-fA-F]+$")]
 		public string Commit_sha { get; set; }
 		
@@ -14771,8 +14770,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="sha")]
-		[System.ComponentModel.DataAnnotations.MinLength(40)]
-		[System.ComponentModel.DataAnnotations.MaxLength(40)]
+		[System.ComponentModel.DataAnnotations.Length(40, 40)]
 		public string Sha { get; set; }
 		
 		/// <summary>
@@ -57149,8 +57147,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="labels")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(100)]
+		[System.ComponentModel.DataAnnotations.Length(1, 100)]
 		public string[] Labels { get; set; }
 	}
 	
@@ -57183,8 +57180,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="labels")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(100)]
+		[System.ComponentModel.DataAnnotations.Length(0, 100)]
 		public string[] Labels { get; set; }
 	}
 	
@@ -57932,8 +57928,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="labels")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(100)]
+		[System.ComponentModel.DataAnnotations.Length(1, 100)]
 		public string[] Labels { get; set; }
 	}
 	
@@ -57966,8 +57961,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="labels")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(100)]
+		[System.ComponentModel.DataAnnotations.Length(0, 100)]
 		public string[] Labels { get; set; }
 	}
 	
@@ -59603,8 +59597,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="labels")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(100)]
+		[System.ComponentModel.DataAnnotations.Length(1, 100)]
 		public string[] Labels { get; set; }
 	}
 	
@@ -59637,8 +59630,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="labels")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(100)]
+		[System.ComponentModel.DataAnnotations.Length(0, 100)]
 		public string[] Labels { get; set; }
 	}
 	
@@ -60988,8 +60980,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="commit_sha")]
-		[System.ComponentModel.DataAnnotations.MinLength(40)]
-		[System.ComponentModel.DataAnnotations.MaxLength(40)]
+		[System.ComponentModel.DataAnnotations.Length(40, 40)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[0-9a-fA-F]+$")]
 		public string Commit_sha { get; set; }
 		
@@ -61578,8 +61569,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="event_type")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(100)]
+		[System.ComponentModel.DataAnnotations.Length(1, 100)]
 		public string Event_type { get; set; }
 	}
 	

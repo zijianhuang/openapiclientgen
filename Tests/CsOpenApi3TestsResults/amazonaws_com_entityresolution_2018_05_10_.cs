@@ -1577,8 +1577,7 @@ namespace MyNS
 		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(0, 255)]
 		public string Description { get; set; }
 		
 		/// <summary>
@@ -1595,8 +1594,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="inputSourceConfig")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(20)]
+		[System.ComponentModel.DataAnnotations.Length(1, 20)]
 		public InputSource[] InputSourceConfig { get; set; }
 		
 		/// <summary>
@@ -1607,8 +1605,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="outputSourceConfig")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1)]
 		public OutputSource[] OutputSourceConfig { get; set; }
 		
 		/// <summary>
@@ -1642,8 +1639,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="workflowName")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(0, 255)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[a-zA-Z_0-9-]*$")]
 		public string WorkflowName { get; set; }
 	}
@@ -1674,8 +1670,7 @@ namespace MyNS
 		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(0, 255)]
 		public string Description { get; set; }
 		
 		/// <summary>
@@ -1684,8 +1679,7 @@ namespace MyNS
 		/// Maximum items: 25
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="mappedInputFields")]
-		[System.ComponentModel.DataAnnotations.MinLength(2)]
-		[System.ComponentModel.DataAnnotations.MaxLength(25)]
+		[System.ComponentModel.DataAnnotations.Length(2, 25)]
 		public SchemaInputAttribute[] MappedInputFields { get; set; }
 		
 		/// <summary>
@@ -1697,8 +1691,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="schemaName")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(0, 255)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[a-zA-Z_0-9-]*$")]
 		public string SchemaName { get; set; }
 		
@@ -1718,8 +1711,7 @@ namespace MyNS
 		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(0, 255)]
 		public string Description { get; set; }
 		
 		/// <summary>
@@ -1736,8 +1728,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="inputSourceConfig")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(20)]
+		[System.ComponentModel.DataAnnotations.Length(1, 20)]
 		public InputSource[] InputSourceConfig { get; set; }
 		
 		/// <summary>
@@ -1748,8 +1739,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="outputSourceConfig")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1)]
 		public OutputSource[] OutputSourceConfig { get; set; }
 		
 		/// <summary>

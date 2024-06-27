@@ -2147,8 +2147,7 @@ namespace MyNS
 		/// Max length: 2
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="country_of_birth")]
-		[System.ComponentModel.DataAnnotations.MinLength(2)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2)]
+		[System.ComponentModel.DataAnnotations.Length(2, 2)]
 		public string Country_of_birth { get; set; }
 		
 		/// <summary>

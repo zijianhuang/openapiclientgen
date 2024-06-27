@@ -2809,8 +2809,7 @@ namespace MyNS
 		/// Max length: 4096
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(4096)]
+		[System.ComponentModel.DataAnnotations.Length(1, 4096)]
 		public string ClientToken { get; set; }
 		
 		/// <summary>
@@ -2820,8 +2819,7 @@ namespace MyNS
 		/// Pattern: ^[a-zA-Z0-9\s_.,-]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[a-zA-Z0-9\s_.,-]+")]
 		public string Description { get; set; }
 		
@@ -2834,8 +2832,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[a-zA-Z0-9\s_.,-]+")]
 		public string Name { get; set; }
 		
@@ -2892,8 +2889,7 @@ namespace MyNS
 		/// Max length: 4096
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(4096)]
+		[System.ComponentModel.DataAnnotations.Length(1, 4096)]
 		public string ClientToken { get; set; }
 		
 		/// <summary>
@@ -2919,8 +2915,7 @@ namespace MyNS
 		/// Max length: 4096
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(4096)]
+		[System.ComponentModel.DataAnnotations.Length(1, 4096)]
 		public string ClientToken { get; set; }
 		
 		/// <summary>
@@ -2938,8 +2933,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[a-zA-Z0-9\s_.,-]+")]
 		public string Name { get; set; }
 		
@@ -2949,8 +2943,7 @@ namespace MyNS
 		/// Max length: 4096
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="overrideLinkOutUri")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(4096)]
+		[System.ComponentModel.DataAnnotations.Length(1, 4096)]
 		public string OverrideLinkOutUri { get; set; }
 		
 		/// <summary>
@@ -2965,8 +2958,7 @@ namespace MyNS
 		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="title")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public string Title { get; set; }
 		
 		/// <summary>
@@ -2977,8 +2969,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="uploadId")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1200)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1200)]
 		public string UploadId { get; set; }
 	}
 	
@@ -2991,8 +2982,7 @@ namespace MyNS
 		/// Max length: 4096
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(4096)]
+		[System.ComponentModel.DataAnnotations.Length(1, 4096)]
 		public string ClientToken { get; set; }
 		
 		/// <summary>
@@ -3002,8 +2992,7 @@ namespace MyNS
 		/// Pattern: ^[a-zA-Z0-9\s_.,-]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[a-zA-Z0-9\s_.,-]+")]
 		public string Description { get; set; }
 		
@@ -3024,8 +3013,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[a-zA-Z0-9\s_.,-]+")]
 		public string Name { get; set; }
 		
@@ -3084,8 +3072,7 @@ namespace MyNS
 		/// Max length: 4096
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(4096)]
+		[System.ComponentModel.DataAnnotations.Length(1, 4096)]
 		public string ClientToken { get; set; }
 		
 		/// <summary>
@@ -3095,8 +3082,7 @@ namespace MyNS
 		/// Pattern: ^[a-zA-Z0-9\s_.,-]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[a-zA-Z0-9\s_.,-]+")]
 		public string Description { get; set; }
 		
@@ -3109,8 +3095,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[a-zA-Z0-9\s_.,-]+")]
 		public string Name { get; set; }
 		
@@ -3136,8 +3121,7 @@ namespace MyNS
 		/// Max length: 4096
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="overrideLinkOutUri")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(4096)]
+		[System.ComponentModel.DataAnnotations.Length(1, 4096)]
 		public string OverrideLinkOutUri { get; set; }
 		
 		/// <summary>
@@ -3152,8 +3136,7 @@ namespace MyNS
 		/// Max length: 4096
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="revisionId")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(4096)]
+		[System.ComponentModel.DataAnnotations.Length(1, 4096)]
 		public string RevisionId { get; set; }
 		
 		/// <summary>
@@ -3162,8 +3145,7 @@ namespace MyNS
 		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="title")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public string Title { get; set; }
 		
 		/// <summary>
@@ -3172,8 +3154,7 @@ namespace MyNS
 		/// Max length: 1200
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="uploadId")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1200)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1200)]
 		public string UploadId { get; set; }
 	}
 	
@@ -3219,8 +3200,7 @@ namespace MyNS
 		/// Max length: 2048
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextToken")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2048)]
+		[System.ComponentModel.DataAnnotations.Length(1, 2048)]
 		public string NextToken { get; set; }
 		
 		/// <summary>
@@ -3243,8 +3223,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="templateUri")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(4096)]
+		[System.ComponentModel.DataAnnotations.Length(1, 4096)]
 		public string TemplateUri { get; set; }
 	}
 	

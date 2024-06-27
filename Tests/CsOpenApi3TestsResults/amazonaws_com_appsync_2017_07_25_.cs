@@ -4730,8 +4730,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(65536)]
+		[System.ComponentModel.DataAnnotations.Length(1, 65536)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[_A-Za-z][_0-9A-Za-z]*")]
 		public string Name { get; set; }
 		
@@ -4883,8 +4882,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="domainName")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(253)]
+		[System.ComponentModel.DataAnnotations.Length(1, 253)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^(\*[\w\d-]*\.)?([\w\d-]+\.)+[\w\d-]+$")]
 		public string DomainName { get; set; }
 		
@@ -4897,8 +4895,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="certificateArn")]
-		[System.ComponentModel.DataAnnotations.MinLength(20)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2048)]
+		[System.ComponentModel.DataAnnotations.Length(20, 2048)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^arn:[a-z-]*:(acm|iam):[a-z0-9-]*:\d{12}:(certificate|server-certificate)/[0-9A-Za-z_/-]*$")]
 		public string CertificateArn { get; set; }
 		
@@ -4909,8 +4906,7 @@ namespace MyNS
 		/// Pattern: ^.*$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(0, 255)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^.*$")]
 		public string Description { get; set; }
 	}
@@ -4927,8 +4923,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(65536)]
+		[System.ComponentModel.DataAnnotations.Length(1, 65536)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[_A-Za-z][_0-9A-Za-z]*")]
 		public string Name { get; set; }
 		
@@ -4947,8 +4942,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="dataSourceName")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(65536)]
+		[System.ComponentModel.DataAnnotations.Length(1, 65536)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[_A-Za-z][_0-9A-Za-z]*")]
 		public string DataSourceName { get; set; }
 		
@@ -4959,8 +4953,7 @@ namespace MyNS
 		/// Pattern: ^.*$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="requestMappingTemplate")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(65536)]
+		[System.ComponentModel.DataAnnotations.Length(1, 65536)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^.*$")]
 		public string RequestMappingTemplate { get; set; }
 		
@@ -4971,8 +4964,7 @@ namespace MyNS
 		/// Pattern: ^.*$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="responseMappingTemplate")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(65536)]
+		[System.ComponentModel.DataAnnotations.Length(1, 65536)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^.*$")]
 		public string ResponseMappingTemplate { get; set; }
 		
@@ -5009,8 +5001,7 @@ namespace MyNS
 		/// Max length: 32768
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="code")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(32768)]
+		[System.ComponentModel.DataAnnotations.Length(1, 32768)]
 		public string Code { get; set; }
 	}
 	
@@ -5193,8 +5184,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="fieldName")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(65536)]
+		[System.ComponentModel.DataAnnotations.Length(1, 65536)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[_A-Za-z][_0-9A-Za-z]*")]
 		public string FieldName { get; set; }
 		
@@ -5205,8 +5195,7 @@ namespace MyNS
 		/// Pattern: [_A-Za-z][_0-9A-Za-z]*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="dataSourceName")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(65536)]
+		[System.ComponentModel.DataAnnotations.Length(1, 65536)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[_A-Za-z][_0-9A-Za-z]*")]
 		public string DataSourceName { get; set; }
 		
@@ -5217,8 +5206,7 @@ namespace MyNS
 		/// Pattern: ^.*$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="requestMappingTemplate")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(65536)]
+		[System.ComponentModel.DataAnnotations.Length(1, 65536)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^.*$")]
 		public string RequestMappingTemplate { get; set; }
 		
@@ -5229,8 +5217,7 @@ namespace MyNS
 		/// Pattern: ^.*$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="responseMappingTemplate")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(65536)]
+		[System.ComponentModel.DataAnnotations.Length(1, 65536)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^.*$")]
 		public string ResponseMappingTemplate { get; set; }
 		
@@ -5279,8 +5266,7 @@ namespace MyNS
 		/// Max length: 32768
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="code")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(32768)]
+		[System.ComponentModel.DataAnnotations.Length(1, 32768)]
 		public string Code { get; set; }
 	}
 	
@@ -5509,8 +5495,7 @@ namespace MyNS
 		/// Pattern: ^.*$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(0, 255)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^.*$")]
 		public string Description { get; set; }
 	}
@@ -5527,8 +5512,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(65536)]
+		[System.ComponentModel.DataAnnotations.Length(1, 65536)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[_A-Za-z][_0-9A-Za-z]*")]
 		public string Name { get; set; }
 		
@@ -5547,8 +5531,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="dataSourceName")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(65536)]
+		[System.ComponentModel.DataAnnotations.Length(1, 65536)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[_A-Za-z][_0-9A-Za-z]*")]
 		public string DataSourceName { get; set; }
 		
@@ -5559,8 +5542,7 @@ namespace MyNS
 		/// Pattern: ^.*$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="requestMappingTemplate")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(65536)]
+		[System.ComponentModel.DataAnnotations.Length(1, 65536)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^.*$")]
 		public string RequestMappingTemplate { get; set; }
 		
@@ -5571,8 +5553,7 @@ namespace MyNS
 		/// Pattern: ^.*$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="responseMappingTemplate")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(65536)]
+		[System.ComponentModel.DataAnnotations.Length(1, 65536)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^.*$")]
 		public string ResponseMappingTemplate { get; set; }
 		
@@ -5609,8 +5590,7 @@ namespace MyNS
 		/// Max length: 32768
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="code")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(32768)]
+		[System.ComponentModel.DataAnnotations.Length(1, 32768)]
 		public string Code { get; set; }
 	}
 	
@@ -5771,8 +5751,7 @@ namespace MyNS
 		/// Pattern: [_A-Za-z][_0-9A-Za-z]*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="dataSourceName")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(65536)]
+		[System.ComponentModel.DataAnnotations.Length(1, 65536)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[_A-Za-z][_0-9A-Za-z]*")]
 		public string DataSourceName { get; set; }
 		
@@ -5783,8 +5762,7 @@ namespace MyNS
 		/// Pattern: ^.*$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="requestMappingTemplate")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(65536)]
+		[System.ComponentModel.DataAnnotations.Length(1, 65536)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^.*$")]
 		public string RequestMappingTemplate { get; set; }
 		
@@ -5795,8 +5773,7 @@ namespace MyNS
 		/// Pattern: ^.*$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="responseMappingTemplate")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(65536)]
+		[System.ComponentModel.DataAnnotations.Length(1, 65536)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^.*$")]
 		public string ResponseMappingTemplate { get; set; }
 		
@@ -5845,8 +5822,7 @@ namespace MyNS
 		/// Max length: 32768
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="code")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(32768)]
+		[System.ComponentModel.DataAnnotations.Length(1, 32768)]
 		public string Code { get; set; }
 	}
 	
@@ -5950,8 +5926,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="code")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(32768)]
+		[System.ComponentModel.DataAnnotations.Length(1, 32768)]
 		public string Code { get; set; }
 		
 		/// <summary>
@@ -5963,8 +5938,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="context")]
-		[System.ComponentModel.DataAnnotations.MinLength(2)]
-		[System.ComponentModel.DataAnnotations.MaxLength(28000)]
+		[System.ComponentModel.DataAnnotations.Length(2, 28000)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[\s\S]*$")]
 		public string Context { get; set; }
 		
@@ -5997,8 +5971,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="template")]
-		[System.ComponentModel.DataAnnotations.MinLength(2)]
-		[System.ComponentModel.DataAnnotations.MaxLength(65536)]
+		[System.ComponentModel.DataAnnotations.Length(2, 65536)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[\s\S]*$")]
 		public string Template { get; set; }
 		
@@ -6011,8 +5984,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="context")]
-		[System.ComponentModel.DataAnnotations.MinLength(2)]
-		[System.ComponentModel.DataAnnotations.MaxLength(28000)]
+		[System.ComponentModel.DataAnnotations.Length(2, 28000)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[\s\S]*$")]
 		public string Context { get; set; }
 	}

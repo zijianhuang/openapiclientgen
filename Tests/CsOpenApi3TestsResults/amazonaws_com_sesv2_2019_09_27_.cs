@@ -7044,8 +7044,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(10)]
+		[System.ComponentModel.DataAnnotations.Length(1, 10)]
 		public BatchGetMetricDataQuery[] Queries { get; set; }
 	}
 	
@@ -7758,8 +7757,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1000)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1000)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^(([^:/?#]+):)?(//([^/?#]*))?([^?#]*)(\?([^#]*))?(#(.*))?")]
 		public string WebsiteURL { get; set; }
 		
@@ -7777,8 +7775,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(5000)]
+		[System.ComponentModel.DataAnnotations.Length(1, 5000)]
 		public string UseCaseDescription { get; set; }
 		
 		/// <summary>
@@ -7787,8 +7784,7 @@ namespace MyNS
 		/// Maximum items: 4
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(4)]
+		[System.ComponentModel.DataAnnotations.Length(1, 4)]
 		public string[] AdditionalContactEmailAddresses { get; set; }
 		
 		/// <summary>

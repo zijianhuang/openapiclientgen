@@ -2929,8 +2929,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="alarmModelName")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(128)]
+		[System.ComponentModel.DataAnnotations.Length(1, 128)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[a-zA-Z0-9_-]+$")]
 		public string AlarmModelName { get; set; }
 		
@@ -2950,8 +2949,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="roleArn")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2048)]
+		[System.ComponentModel.DataAnnotations.Length(1, 2048)]
 		public string RoleArn { get; set; }
 		
 		/// <summary>
@@ -2967,8 +2965,7 @@ namespace MyNS
 		/// Pattern: ^((`[\w\- ]+`)|([\w\-]+))(\.((`[\w- ]+`)|([\w\-]+)))*$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="key")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(128)]
+		[System.ComponentModel.DataAnnotations.Length(1, 128)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^((`[\w\- ]+`)|([\w\-]+))(\.((`[\w- ]+`)|([\w\-]+)))*$")]
 		public string Key { get; set; }
 		
@@ -3051,8 +3048,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="detectorModelName")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(128)]
+		[System.ComponentModel.DataAnnotations.Length(1, 128)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[a-zA-Z0-9_-]+$")]
 		public string DetectorModelName { get; set; }
 		
@@ -3079,8 +3075,7 @@ namespace MyNS
 		/// Pattern: ^((`[\w\- ]+`)|([\w\-]+))(\.((`[\w- ]+`)|([\w\-]+)))*$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="key")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(128)]
+		[System.ComponentModel.DataAnnotations.Length(1, 128)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^((`[\w\- ]+`)|([\w\-]+))(\.((`[\w- ]+`)|([\w\-]+)))*$")]
 		public string Key { get; set; }
 		
@@ -3092,8 +3087,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="roleArn")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2048)]
+		[System.ComponentModel.DataAnnotations.Length(1, 2048)]
 		public string RoleArn { get; set; }
 		
 		/// <summary>
@@ -3131,8 +3125,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="inputName")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(128)]
+		[System.ComponentModel.DataAnnotations.Length(1, 128)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[a-zA-Z][a-zA-Z0-9_]*$")]
 		public string InputName { get; set; }
 		
@@ -3185,8 +3178,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="roleArn")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2048)]
+		[System.ComponentModel.DataAnnotations.Length(1, 2048)]
 		public string RoleArn { get; set; }
 		
 		/// <summary>
@@ -3283,8 +3275,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="roleArn")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2048)]
+		[System.ComponentModel.DataAnnotations.Length(1, 2048)]
 		public string RoleArn { get; set; }
 		
 		/// <summary>

@@ -2212,8 +2212,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="appBundleIdentifier")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1011)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1011)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"arn:.+$|^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}")]
 		public string AppBundleIdentifier { get; set; }
 		
@@ -2225,8 +2224,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="taskIdList")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(50)]
+		[System.ComponentModel.DataAnnotations.Length(1, 50)]
 		public string[] TaskIdList { get; set; }
 	}
 	
@@ -2261,8 +2259,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="app")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public string App { get; set; }
 		
 		/// <summary>
@@ -2303,8 +2300,7 @@ namespace MyNS
 		/// Maximum items: 50
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="tags")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(50)]
+		[System.ComponentModel.DataAnnotations.Length(0, 50)]
 		public Tag[] Tags { get; set; }
 	}
 	
@@ -2346,8 +2342,7 @@ namespace MyNS
 		/// Pattern: arn:.+$|^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="customerManagedKeyIdentifier")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1011)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1011)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"arn:.+$|^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}")]
 		public string CustomerManagedKeyIdentifier { get; set; }
 		
@@ -2357,8 +2352,7 @@ namespace MyNS
 		/// Maximum items: 50
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="tags")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(50)]
+		[System.ComponentModel.DataAnnotations.Length(0, 50)]
 		public Tag[] Tags { get; set; }
 	}
 	
@@ -2373,8 +2367,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="app")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public string App { get; set; }
 		
 		/// <summary>
@@ -2385,8 +2378,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="tenantId")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1024)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1024)]
 		public string TenantId { get; set; }
 		
 		/// <summary>
@@ -2411,8 +2403,7 @@ namespace MyNS
 		/// Maximum items: 50
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="tags")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(50)]
+		[System.ComponentModel.DataAnnotations.Length(0, 50)]
 		public Tag[] Tags { get; set; }
 	}
 	
@@ -2449,8 +2440,7 @@ namespace MyNS
 		/// Maximum items: 50
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="tags")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(50)]
+		[System.ComponentModel.DataAnnotations.Length(0, 50)]
 		public Tag[] Tags { get; set; }
 	}
 	
@@ -2534,8 +2524,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="tags")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(50)]
+		[System.ComponentModel.DataAnnotations.Length(0, 50)]
 		public Tag[] Tags { get; set; }
 	}
 	
@@ -2551,8 +2540,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="appBundleIdentifier")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1011)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1011)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"arn:.+$|^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}")]
 		public string AppBundleIdentifier { get; set; }
 		
@@ -2565,8 +2553,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="email")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(320)]
+		[System.ComponentModel.DataAnnotations.Length(0, 320)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*")]
 		public string Email { get; set; }
 	}

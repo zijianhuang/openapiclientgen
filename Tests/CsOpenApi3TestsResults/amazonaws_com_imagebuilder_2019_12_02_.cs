@@ -5751,8 +5751,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(36)]
+		[System.ComponentModel.DataAnnotations.Length(1, 36)]
 		public string ClientToken { get; set; }
 	}
 	
@@ -5785,8 +5784,7 @@ namespace MyNS
 		/// Max length: 1024
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1024)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1024)]
 		public string Description { get; set; }
 		
 		/// <summary>
@@ -5795,8 +5793,7 @@ namespace MyNS
 		/// Max length: 1024
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="changeDescription")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1024)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1024)]
 		public string ChangeDescription { get; set; }
 		
 		/// <summary>
@@ -5813,8 +5810,7 @@ namespace MyNS
 		/// Maximum items: 25
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="supportedOsVersions")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(25)]
+		[System.ComponentModel.DataAnnotations.Length(1, 25)]
 		public string[] SupportedOsVersions { get; set; }
 		
 		/// <summary>
@@ -5824,8 +5820,7 @@ namespace MyNS
 		/// Pattern: [^\x00]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="data")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(16000)]
+		[System.ComponentModel.DataAnnotations.Length(1, 16000)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[^\x00]+")]
 		public string Data { get; set; }
 		
@@ -5841,8 +5836,7 @@ namespace MyNS
 		/// Max length: 1024
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="kmsKeyId")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1024)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1024)]
 		public string KmsKeyId { get; set; }
 		
 		/// <summary>
@@ -5859,8 +5853,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(36)]
+		[System.ComponentModel.DataAnnotations.Length(1, 36)]
 		public string ClientToken { get; set; }
 	}
 	
@@ -5891,8 +5884,7 @@ namespace MyNS
 		/// Max length: 1024
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1024)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1024)]
 		public string Description { get; set; }
 		
 		/// <summary>
@@ -5928,8 +5920,7 @@ namespace MyNS
 		/// Pattern: [^\x00]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="dockerfileTemplateData")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(16000)]
+		[System.ComponentModel.DataAnnotations.Length(1, 16000)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[^\x00]+")]
 		public string DockerfileTemplateData { get; set; }
 		
@@ -5951,8 +5942,7 @@ namespace MyNS
 		/// Max length: 1024
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="imageOsVersionOverride")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1024)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1024)]
 		public string ImageOsVersionOverride { get; set; }
 		
 		/// <summary>
@@ -5963,8 +5953,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="parentImage")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1024)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1024)]
 		public string ParentImage { get; set; }
 		
 		/// <summary>
@@ -5979,8 +5968,7 @@ namespace MyNS
 		/// Max length: 1024
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="workingDirectory")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1024)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1024)]
 		public string WorkingDirectory { get; set; }
 		
 		/// <summary>
@@ -5997,8 +5985,7 @@ namespace MyNS
 		/// Max length: 1024
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="kmsKeyId")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1024)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1024)]
 		public string KmsKeyId { get; set; }
 		
 		/// <summary>
@@ -6009,8 +5996,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(36)]
+		[System.ComponentModel.DataAnnotations.Length(1, 36)]
 		public string ClientToken { get; set; }
 	}
 	
@@ -6053,8 +6039,7 @@ namespace MyNS
 		/// Max length: 1024
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1024)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1024)]
 		public string Description { get; set; }
 		
 		/// <summary>
@@ -6079,8 +6064,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(36)]
+		[System.ComponentModel.DataAnnotations.Length(1, 36)]
 		public string ClientToken { get; set; }
 	}
 	
@@ -6147,8 +6131,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(36)]
+		[System.ComponentModel.DataAnnotations.Length(1, 36)]
 		public string ClientToken { get; set; }
 		
 		/// <summary>
@@ -6197,8 +6180,7 @@ namespace MyNS
 		/// Max length: 1024
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1024)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1024)]
 		public string Description { get; set; }
 		
 		/// <summary>
@@ -6273,8 +6255,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(36)]
+		[System.ComponentModel.DataAnnotations.Length(1, 36)]
 		public string ClientToken { get; set; }
 		
 		/// <summary>
@@ -6336,8 +6317,7 @@ namespace MyNS
 		/// Max length: 1024
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1024)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1024)]
 		public string Description { get; set; }
 		
 		/// <summary>
@@ -6368,8 +6348,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="parentImage")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1024)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1024)]
 		public string ParentImage { get; set; }
 		
 		/// <summary>
@@ -6390,8 +6369,7 @@ namespace MyNS
 		/// Max length: 1024
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="workingDirectory")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1024)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1024)]
 		public string WorkingDirectory { get; set; }
 		
 		/// <summary>
@@ -6408,8 +6386,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(36)]
+		[System.ComponentModel.DataAnnotations.Length(1, 36)]
 		public string ClientToken { get; set; }
 	}
 	
@@ -6442,8 +6419,7 @@ namespace MyNS
 		/// Max length: 1024
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1024)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1024)]
 		public string Description { get; set; }
 		
 		/// <summary>
@@ -6461,8 +6437,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="instanceProfileName")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(256)]
+		[System.ComponentModel.DataAnnotations.Length(1, 256)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[\w+=,.@-]+$")]
 		public string InstanceProfileName { get; set; }
 		
@@ -6478,8 +6453,7 @@ namespace MyNS
 		/// Max length: 1024
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="subnetId")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1024)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1024)]
 		public string SubnetId { get; set; }
 		
 		/// <summary>
@@ -6494,8 +6468,7 @@ namespace MyNS
 		/// Max length: 1024
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="keyPair")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1024)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1024)]
 		public string KeyPair { get; set; }
 		
 		/// <summary>
@@ -6538,8 +6511,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(36)]
+		[System.ComponentModel.DataAnnotations.Length(1, 36)]
 		public string ClientToken { get; set; }
 	}
 	
@@ -6589,8 +6561,7 @@ namespace MyNS
 		/// Max length: 1024
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1024)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1024)]
 		public string Description { get; set; }
 		
 		/// <summary>
@@ -6599,8 +6570,7 @@ namespace MyNS
 		/// Max length: 1024
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="changeDescription")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1024)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1024)]
 		public string ChangeDescription { get; set; }
 		
 		/// <summary>
@@ -6633,8 +6603,7 @@ namespace MyNS
 		/// Max length: 1024
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="data")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1024)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1024)]
 		public string Data { get; set; }
 		
 		/// <summary>
@@ -6649,8 +6618,7 @@ namespace MyNS
 		/// Max length: 1024
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="kmsKeyId")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1024)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1024)]
 		public string KmsKeyId { get; set; }
 		
 		/// <summary>
@@ -6667,8 +6635,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(36)]
+		[System.ComponentModel.DataAnnotations.Length(1, 36)]
 		public string ClientToken { get; set; }
 	}
 	
@@ -6683,8 +6650,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1024)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1024)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -6703,8 +6669,7 @@ namespace MyNS
 		/// Max length: 1024
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1024)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1024)]
 		public string Description { get; set; }
 		
 		/// <summary>
@@ -6731,8 +6696,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="vmImportTaskId")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1024)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1024)]
 		public string VmImportTaskId { get; set; }
 		
 		/// <summary>
@@ -6749,8 +6713,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(36)]
+		[System.ComponentModel.DataAnnotations.Length(1, 36)]
 		public string ClientToken { get; set; }
 	}
 	
@@ -6782,8 +6745,7 @@ namespace MyNS
 		/// Max length: 65535
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextToken")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(65535)]
+		[System.ComponentModel.DataAnnotations.Length(1, 65535)]
 		public string NextToken { get; set; }
 	}
 	
@@ -6802,8 +6764,7 @@ namespace MyNS
 		/// Maximum items: 10
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="filters")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(10)]
+		[System.ComponentModel.DataAnnotations.Length(1, 10)]
 		public Filter[] Filters { get; set; }
 		
 		/// <summary>
@@ -6827,8 +6788,7 @@ namespace MyNS
 		/// Max length: 65535
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextToken")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(65535)]
+		[System.ComponentModel.DataAnnotations.Length(1, 65535)]
 		public string NextToken { get; set; }
 	}
 	
@@ -6847,8 +6807,7 @@ namespace MyNS
 		/// Maximum items: 10
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="filters")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(10)]
+		[System.ComponentModel.DataAnnotations.Length(1, 10)]
 		public Filter[] Filters { get; set; }
 		
 		/// <summary>
@@ -6866,8 +6825,7 @@ namespace MyNS
 		/// Max length: 1024
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextToken")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1024)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1024)]
 		public string NextToken { get; set; }
 	}
 	
@@ -6880,8 +6838,7 @@ namespace MyNS
 		/// Maximum items: 10
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="filters")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(10)]
+		[System.ComponentModel.DataAnnotations.Length(1, 10)]
 		public Filter[] Filters { get; set; }
 		
 		/// <summary>
@@ -6899,8 +6856,7 @@ namespace MyNS
 		/// Max length: 65535
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextToken")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(65535)]
+		[System.ComponentModel.DataAnnotations.Length(1, 65535)]
 		public string NextToken { get; set; }
 	}
 	
@@ -6923,8 +6879,7 @@ namespace MyNS
 		/// Maximum items: 10
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="filters")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(10)]
+		[System.ComponentModel.DataAnnotations.Length(1, 10)]
 		public Filter[] Filters { get; set; }
 		
 		/// <summary>
@@ -6942,8 +6897,7 @@ namespace MyNS
 		/// Max length: 65535
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextToken")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(65535)]
+		[System.ComponentModel.DataAnnotations.Length(1, 65535)]
 		public string NextToken { get; set; }
 	}
 	
@@ -6975,8 +6929,7 @@ namespace MyNS
 		/// Max length: 65535
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextToken")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(65535)]
+		[System.ComponentModel.DataAnnotations.Length(1, 65535)]
 		public string NextToken { get; set; }
 	}
 	
@@ -6999,8 +6952,7 @@ namespace MyNS
 		/// Maximum items: 10
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="filters")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(10)]
+		[System.ComponentModel.DataAnnotations.Length(1, 10)]
 		public Filter[] Filters { get; set; }
 		
 		/// <summary>
@@ -7018,8 +6970,7 @@ namespace MyNS
 		/// Max length: 65535
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextToken")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(65535)]
+		[System.ComponentModel.DataAnnotations.Length(1, 65535)]
 		public string NextToken { get; set; }
 	}
 	
@@ -7032,8 +6983,7 @@ namespace MyNS
 		/// Maximum items: 10
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="filters")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(10)]
+		[System.ComponentModel.DataAnnotations.Length(1, 10)]
 		public Filter[] Filters { get; set; }
 		
 		/// <summary>
@@ -7051,8 +7001,7 @@ namespace MyNS
 		/// Max length: 65535
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextToken")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(65535)]
+		[System.ComponentModel.DataAnnotations.Length(1, 65535)]
 		public string NextToken { get; set; }
 	}
 	
@@ -7071,8 +7020,7 @@ namespace MyNS
 		/// Maximum items: 10
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="filters")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(10)]
+		[System.ComponentModel.DataAnnotations.Length(1, 10)]
 		public Filter[] Filters { get; set; }
 		
 		/// <summary>
@@ -7090,8 +7038,7 @@ namespace MyNS
 		/// Max length: 65535
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextToken")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(65535)]
+		[System.ComponentModel.DataAnnotations.Length(1, 65535)]
 		public string NextToken { get; set; }
 	}
 	
@@ -7110,8 +7057,7 @@ namespace MyNS
 		/// Max length: 65535
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextToken")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(65535)]
+		[System.ComponentModel.DataAnnotations.Length(1, 65535)]
 		public string NextToken { get; set; }
 	}
 	
@@ -7134,8 +7080,7 @@ namespace MyNS
 		/// Maximum items: 1
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="filters")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1)]
 		public ImageScanFindingsFilter[] Filters { get; set; }
 		
 		/// <summary>
@@ -7153,8 +7098,7 @@ namespace MyNS
 		/// Max length: 65535
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextToken")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(65535)]
+		[System.ComponentModel.DataAnnotations.Length(1, 65535)]
 		public string NextToken { get; set; }
 	}
 	
@@ -7173,8 +7117,7 @@ namespace MyNS
 		/// Maximum items: 10
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="filters")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(10)]
+		[System.ComponentModel.DataAnnotations.Length(1, 10)]
 		public Filter[] Filters { get; set; }
 		
 		/// <summary>
@@ -7198,8 +7141,7 @@ namespace MyNS
 		/// Max length: 65535
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextToken")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(65535)]
+		[System.ComponentModel.DataAnnotations.Length(1, 65535)]
 		public string NextToken { get; set; }
 		
 		/// <summary>
@@ -7218,8 +7160,7 @@ namespace MyNS
 		/// Maximum items: 10
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="filters")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(10)]
+		[System.ComponentModel.DataAnnotations.Length(1, 10)]
 		public Filter[] Filters { get; set; }
 		
 		/// <summary>
@@ -7237,8 +7178,7 @@ namespace MyNS
 		/// Max length: 65535
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextToken")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(65535)]
+		[System.ComponentModel.DataAnnotations.Length(1, 65535)]
 		public string NextToken { get; set; }
 	}
 	
@@ -7272,8 +7212,7 @@ namespace MyNS
 		/// Max length: 65535
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextToken")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(65535)]
+		[System.ComponentModel.DataAnnotations.Length(1, 65535)]
 		public string NextToken { get; set; }
 		
 		/// <summary>
@@ -7305,8 +7244,7 @@ namespace MyNS
 		/// Max length: 65535
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextToken")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(65535)]
+		[System.ComponentModel.DataAnnotations.Length(1, 65535)]
 		public string NextToken { get; set; }
 		
 		/// <summary>
@@ -7341,8 +7279,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="policy")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(30000)]
+		[System.ComponentModel.DataAnnotations.Length(1, 30000)]
 		public string Policy { get; set; }
 	}
 	
@@ -7367,8 +7304,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="policy")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(30000)]
+		[System.ComponentModel.DataAnnotations.Length(1, 30000)]
 		public string Policy { get; set; }
 	}
 	
@@ -7393,8 +7329,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="policy")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(30000)]
+		[System.ComponentModel.DataAnnotations.Length(1, 30000)]
 		public string Policy { get; set; }
 	}
 	
@@ -7419,8 +7354,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="policy")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(30000)]
+		[System.ComponentModel.DataAnnotations.Length(1, 30000)]
 		public string Policy { get; set; }
 	}
 	
@@ -7445,8 +7379,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(36)]
+		[System.ComponentModel.DataAnnotations.Length(1, 36)]
 		public string ClientToken { get; set; }
 	}
 	
@@ -7469,8 +7402,7 @@ namespace MyNS
 		/// Max length: 1024
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1024)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1024)]
 		public string Description { get; set; }
 		
 		/// <summary>
@@ -7489,8 +7421,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(36)]
+		[System.ComponentModel.DataAnnotations.Length(1, 36)]
 		public string ClientToken { get; set; }
 	}
 	
@@ -7513,8 +7444,7 @@ namespace MyNS
 		/// Max length: 1024
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1024)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1024)]
 		public string Description { get; set; }
 		
 		/// <summary>
@@ -7583,8 +7513,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(36)]
+		[System.ComponentModel.DataAnnotations.Length(1, 36)]
 		public string ClientToken { get; set; }
 		
 		/// <summary>
@@ -7646,8 +7575,7 @@ namespace MyNS
 		/// Max length: 1024
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1024)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1024)]
 		public string Description { get; set; }
 		
 		/// <summary>
@@ -7665,8 +7593,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="instanceProfileName")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(256)]
+		[System.ComponentModel.DataAnnotations.Length(1, 256)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[\w+=,.@-]+$")]
 		public string InstanceProfileName { get; set; }
 		
@@ -7682,8 +7609,7 @@ namespace MyNS
 		/// Max length: 1024
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="subnetId")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1024)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1024)]
 		public string SubnetId { get; set; }
 		
 		/// <summary>
@@ -7698,8 +7624,7 @@ namespace MyNS
 		/// Max length: 1024
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="keyPair")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1024)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1024)]
 		public string KeyPair { get; set; }
 		
 		/// <summary>
@@ -7724,8 +7649,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(36)]
+		[System.ComponentModel.DataAnnotations.Length(1, 36)]
 		public string ClientToken { get; set; }
 		
 		/// <summary>

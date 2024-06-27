@@ -1508,8 +1508,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="symbol")]
-		[System.ComponentModel.DataAnnotations.MinLength(3)]
-		[System.ComponentModel.DataAnnotations.MaxLength(14)]
+		[System.ComponentModel.DataAnnotations.Length(3, 14)]
 		public string Symbol { get; set; }
 	}
 	

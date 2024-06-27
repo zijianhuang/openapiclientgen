@@ -488,8 +488,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(63)]
+		[System.ComponentModel.DataAnnotations.Length(1, 63)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[a-z0-9](-*[a-z0-9])*$")]
 		public string HumanLoopName { get; set; }
 		
@@ -546,8 +545,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(63)]
+		[System.ComponentModel.DataAnnotations.Length(1, 63)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[a-z0-9](-*[a-z0-9])*$")]
 		public string HumanLoopName { get; set; }
 	}

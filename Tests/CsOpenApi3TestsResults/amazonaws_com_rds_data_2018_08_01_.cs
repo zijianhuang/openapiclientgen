@@ -853,8 +853,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="resourceArn")]
-		[System.ComponentModel.DataAnnotations.MinLength(11)]
-		[System.ComponentModel.DataAnnotations.MaxLength(100)]
+		[System.ComponentModel.DataAnnotations.Length(11, 100)]
 		public string ResourceArn { get; set; }
 		
 		/// <summary>
@@ -865,8 +864,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="secretArn")]
-		[System.ComponentModel.DataAnnotations.MinLength(11)]
-		[System.ComponentModel.DataAnnotations.MaxLength(100)]
+		[System.ComponentModel.DataAnnotations.Length(11, 100)]
 		public string SecretArn { get; set; }
 		
 		/// <summary>
@@ -877,8 +875,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="sql")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(65536)]
+		[System.ComponentModel.DataAnnotations.Length(0, 65536)]
 		public string Sql { get; set; }
 		
 		/// <summary>
@@ -887,8 +884,7 @@ namespace MyNS
 		/// Max length: 64
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="database")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(64)]
+		[System.ComponentModel.DataAnnotations.Length(0, 64)]
 		public string Database { get; set; }
 		
 		/// <summary>
@@ -897,8 +893,7 @@ namespace MyNS
 		/// Max length: 64
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="schema")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(64)]
+		[System.ComponentModel.DataAnnotations.Length(0, 64)]
 		public string Schema { get; set; }
 		
 		/// <summary>
@@ -913,8 +908,7 @@ namespace MyNS
 		/// Max length: 192
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="transactionId")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(192)]
+		[System.ComponentModel.DataAnnotations.Length(0, 192)]
 		public string TransactionId { get; set; }
 	}
 	
@@ -929,8 +923,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="resourceArn")]
-		[System.ComponentModel.DataAnnotations.MinLength(11)]
-		[System.ComponentModel.DataAnnotations.MaxLength(100)]
+		[System.ComponentModel.DataAnnotations.Length(11, 100)]
 		public string ResourceArn { get; set; }
 		
 		/// <summary>
@@ -941,8 +934,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="secretArn")]
-		[System.ComponentModel.DataAnnotations.MinLength(11)]
-		[System.ComponentModel.DataAnnotations.MaxLength(100)]
+		[System.ComponentModel.DataAnnotations.Length(11, 100)]
 		public string SecretArn { get; set; }
 		
 		/// <summary>
@@ -951,8 +943,7 @@ namespace MyNS
 		/// Max length: 64
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="database")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(64)]
+		[System.ComponentModel.DataAnnotations.Length(0, 64)]
 		public string Database { get; set; }
 		
 		/// <summary>
@@ -961,8 +952,7 @@ namespace MyNS
 		/// Max length: 64
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="schema")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(64)]
+		[System.ComponentModel.DataAnnotations.Length(0, 64)]
 		public string Schema { get; set; }
 	}
 	
@@ -977,8 +967,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="resourceArn")]
-		[System.ComponentModel.DataAnnotations.MinLength(11)]
-		[System.ComponentModel.DataAnnotations.MaxLength(100)]
+		[System.ComponentModel.DataAnnotations.Length(11, 100)]
 		public string ResourceArn { get; set; }
 		
 		/// <summary>
@@ -989,8 +978,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="secretArn")]
-		[System.ComponentModel.DataAnnotations.MinLength(11)]
-		[System.ComponentModel.DataAnnotations.MaxLength(100)]
+		[System.ComponentModel.DataAnnotations.Length(11, 100)]
 		public string SecretArn { get; set; }
 		
 		/// <summary>
@@ -1001,8 +989,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="transactionId")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(192)]
+		[System.ComponentModel.DataAnnotations.Length(0, 192)]
 		public string TransactionId { get; set; }
 	}
 	
@@ -1017,8 +1004,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="dbClusterOrInstanceArn")]
-		[System.ComponentModel.DataAnnotations.MinLength(11)]
-		[System.ComponentModel.DataAnnotations.MaxLength(100)]
+		[System.ComponentModel.DataAnnotations.Length(11, 100)]
 		public string DbClusterOrInstanceArn { get; set; }
 		
 		/// <summary>
@@ -1029,8 +1015,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="awsSecretStoreArn")]
-		[System.ComponentModel.DataAnnotations.MinLength(11)]
-		[System.ComponentModel.DataAnnotations.MaxLength(100)]
+		[System.ComponentModel.DataAnnotations.Length(11, 100)]
 		public string AwsSecretStoreArn { get; set; }
 		
 		/// <summary>
@@ -1041,8 +1026,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="sqlStatements")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(65536)]
+		[System.ComponentModel.DataAnnotations.Length(0, 65536)]
 		public string SqlStatements { get; set; }
 		
 		/// <summary>
@@ -1051,8 +1035,7 @@ namespace MyNS
 		/// Max length: 64
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="database")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(64)]
+		[System.ComponentModel.DataAnnotations.Length(0, 64)]
 		public string Database { get; set; }
 		
 		/// <summary>
@@ -1061,8 +1044,7 @@ namespace MyNS
 		/// Max length: 64
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="schema")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(64)]
+		[System.ComponentModel.DataAnnotations.Length(0, 64)]
 		public string Schema { get; set; }
 	}
 	
@@ -1077,8 +1059,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="resourceArn")]
-		[System.ComponentModel.DataAnnotations.MinLength(11)]
-		[System.ComponentModel.DataAnnotations.MaxLength(100)]
+		[System.ComponentModel.DataAnnotations.Length(11, 100)]
 		public string ResourceArn { get; set; }
 		
 		/// <summary>
@@ -1089,8 +1070,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="secretArn")]
-		[System.ComponentModel.DataAnnotations.MinLength(11)]
-		[System.ComponentModel.DataAnnotations.MaxLength(100)]
+		[System.ComponentModel.DataAnnotations.Length(11, 100)]
 		public string SecretArn { get; set; }
 		
 		/// <summary>
@@ -1101,8 +1081,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="sql")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(65536)]
+		[System.ComponentModel.DataAnnotations.Length(0, 65536)]
 		public string Sql { get; set; }
 		
 		/// <summary>
@@ -1111,8 +1090,7 @@ namespace MyNS
 		/// Max length: 64
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="database")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(64)]
+		[System.ComponentModel.DataAnnotations.Length(0, 64)]
 		public string Database { get; set; }
 		
 		/// <summary>
@@ -1121,8 +1099,7 @@ namespace MyNS
 		/// Max length: 64
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="schema")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(64)]
+		[System.ComponentModel.DataAnnotations.Length(0, 64)]
 		public string Schema { get; set; }
 		
 		/// <summary>
@@ -1137,8 +1114,7 @@ namespace MyNS
 		/// Max length: 192
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="transactionId")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(192)]
+		[System.ComponentModel.DataAnnotations.Length(0, 192)]
 		public string TransactionId { get; set; }
 		
 		/// <summary>
@@ -1187,8 +1163,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="resourceArn")]
-		[System.ComponentModel.DataAnnotations.MinLength(11)]
-		[System.ComponentModel.DataAnnotations.MaxLength(100)]
+		[System.ComponentModel.DataAnnotations.Length(11, 100)]
 		public string ResourceArn { get; set; }
 		
 		/// <summary>
@@ -1199,8 +1174,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="secretArn")]
-		[System.ComponentModel.DataAnnotations.MinLength(11)]
-		[System.ComponentModel.DataAnnotations.MaxLength(100)]
+		[System.ComponentModel.DataAnnotations.Length(11, 100)]
 		public string SecretArn { get; set; }
 		
 		/// <summary>
@@ -1211,8 +1185,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="transactionId")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(192)]
+		[System.ComponentModel.DataAnnotations.Length(0, 192)]
 		public string TransactionId { get; set; }
 	}
 }

@@ -1607,8 +1607,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(32)]
+		[System.ComponentModel.DataAnnotations.Length(1, 32)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"(?!^.*--)(?!^[0-9]+$)(?!^-)(?!.*-$)^[A-Za-z0-9-]+$")]
 		public string Name { get; set; }
 		
@@ -1694,8 +1693,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(20)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1600)]
+		[System.ComponentModel.DataAnnotations.Length(20, 1600)]
 		public string RoleArn { get; set; }
 		
 		/// <summary>
@@ -1770,8 +1768,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(22)]
-		[System.ComponentModel.DataAnnotations.MaxLength(22)]
+		[System.ComponentModel.DataAnnotations.Length(22, 22)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[A-Za-z-0-9]+$")]
 		public string DocumentId { get; set; }
 		
@@ -1807,8 +1804,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(20)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1600)]
+		[System.ComponentModel.DataAnnotations.Length(20, 1600)]
 		public string RoleArn { get; set; }
 		
 		/// <summary>
@@ -1848,8 +1844,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(32)]
+		[System.ComponentModel.DataAnnotations.Length(1, 32)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"(?!^.*--)(?!^[0-9]+$)(?!^-)(?!.*-$)^[A-Za-z0-9-]+$")]
 		public string StreamName { get; set; }
 	}

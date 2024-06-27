@@ -2202,8 +2202,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(64)]
+		[System.ComponentModel.DataAnnotations.Length(1, 64)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@".+")]
 		public string ClientToken { get; set; }
 		
@@ -2273,8 +2272,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(64)]
+		[System.ComponentModel.DataAnnotations.Length(1, 64)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@".+")]
 		public string CreationToken { get; set; }
 		
@@ -2321,8 +2319,7 @@ namespace MyNS
 		/// Pattern: .+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(64)]
+		[System.ComponentModel.DataAnnotations.Length(1, 64)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@".+")]
 		public string AvailabilityZoneName { get; set; }
 		
@@ -2363,8 +2360,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(15)]
-		[System.ComponentModel.DataAnnotations.MaxLength(47)]
+		[System.ComponentModel.DataAnnotations.Length(15, 47)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^subnet-[0-9a-f]{8,40}$")]
 		public string SubnetId { get; set; }
 		
@@ -2375,8 +2371,7 @@ namespace MyNS
 		/// Pattern: ^[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(7)]
-		[System.ComponentModel.DataAnnotations.MaxLength(15)]
+		[System.ComponentModel.DataAnnotations.Length(7, 15)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}$")]
 		public string IpAddress { get; set; }
 		
@@ -2443,8 +2438,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(20000)]
+		[System.ComponentModel.DataAnnotations.Length(1, 20000)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[\s\S]+")]
 		public string Policy { get; set; }
 		
@@ -2466,8 +2460,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(50)]
+		[System.ComponentModel.DataAnnotations.Length(1, 50)]
 		public string[] TagKeys { get; set; }
 	}
 	

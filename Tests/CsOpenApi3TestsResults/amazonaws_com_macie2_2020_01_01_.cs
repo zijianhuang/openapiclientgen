@@ -7769,8 +7769,7 @@ namespace MyNS
 		/// Pattern: ^[\s\S]+$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(512)]
+		[System.ComponentModel.DataAnnotations.Length(1, 512)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[\s\S]+$")]
 		public string Description { get; set; }
 		
@@ -7783,8 +7782,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(128)]
+		[System.ComponentModel.DataAnnotations.Length(1, 128)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^.+$")]
 		public string Name { get; set; }
 		
@@ -8134,8 +8132,7 @@ namespace MyNS
 		/// Pattern: ^[\s\S]+$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(512)]
+		[System.ComponentModel.DataAnnotations.Length(1, 512)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[\s\S]+$")]
 		public string Description { get; set; }
 		
@@ -8148,8 +8145,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(128)]
+		[System.ComponentModel.DataAnnotations.Length(1, 128)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^.+$")]
 		public string Name { get; set; }
 	}

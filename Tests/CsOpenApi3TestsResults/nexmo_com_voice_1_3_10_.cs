@@ -117,8 +117,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="number")]
-		[System.ComponentModel.DataAnnotations.MinLength(7)]
-		[System.ComponentModel.DataAnnotations.MaxLength(15)]
+		[System.ComponentModel.DataAnnotations.Length(7, 15)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"\d{7,15}")]
 		public string Number { get; set; }
 		
@@ -260,8 +259,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="number")]
-		[System.ComponentModel.DataAnnotations.MinLength(7)]
-		[System.ComponentModel.DataAnnotations.MaxLength(15)]
+		[System.ComponentModel.DataAnnotations.Length(7, 15)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"\d{7,15}")]
 		public string Number { get; set; }
 		
@@ -295,8 +293,7 @@ namespace MyNS
 		/// Max length: 50
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="uri")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(50)]
+		[System.ComponentModel.DataAnnotations.Length(1, 50)]
 		public string Uri { get; set; }
 	}
 	
@@ -356,8 +353,7 @@ namespace MyNS
 		/// Max length: 50
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="uri")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(50)]
+		[System.ComponentModel.DataAnnotations.Length(1, 50)]
 		public string Uri { get; set; }
 	}
 	

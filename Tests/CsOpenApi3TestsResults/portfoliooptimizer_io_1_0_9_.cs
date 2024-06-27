@@ -4347,8 +4347,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="assetHierarchicalClassification")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(4)]
+		[System.ComponentModel.DataAnnotations.Length(1, 4)]
 		public string[] AssetHierarchicalClassification { get; set; }
 	}
 	
@@ -5330,8 +5329,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="assets")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1)]
 		public AssetsReturnsSimulationMonte_carloCornish_fisherPostReturnSimulationsAssets[] AssetsReturnsSimulationMonte_carloCornish_fisherPostReturnSimulationsAssets { get; set; }
 	}
 	
@@ -5425,8 +5423,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="assets")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1)]
 		public AssetsReturnsSimulationMonte_carloCornish_fisherCorrectedPostReturnSimulationsAssets[] AssetsReturnsSimulationMonte_carloCornish_fisherCorrectedPostReturnSimulationsAssets { get; set; }
 	}
 	
@@ -5504,8 +5501,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="assets")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1)]
 		public AssetsReturnsSimulationMonte_carloGaussianPostReturnSimulationsAssets[] AssetsReturnsSimulationMonte_carloGaussianPostReturnSimulationsAssets { get; set; }
 	}
 	
@@ -5543,8 +5539,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="turbulenceThresholds")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(3)]
+		[System.ComponentModel.DataAnnotations.Length(1, 3)]
 		public double[] TurbulenceThresholds { get; set; }
 		
 		/// <summary>
@@ -5603,8 +5598,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="assetTurbulencePartitionedReturns")]
-		[System.ComponentModel.DataAnnotations.MinLength(2)]
-		[System.ComponentModel.DataAnnotations.MaxLength(4)]
+		[System.ComponentModel.DataAnnotations.Length(2, 4)]
 		public AssetsReturnsTurbulence_partitionedPostReturnAssetsAssetTurbulencePartitionedReturns[] AssetsReturnsTurbulence_partitionedPostReturnAssetsAssetTurbulencePartitionedReturns { get; set; }
 	}
 	
@@ -6921,8 +6915,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="portfolioSharpeRatioConfidenceInterval")]
-		[System.ComponentModel.DataAnnotations.MinLength(2)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2)]
+		[System.ComponentModel.DataAnnotations.Length(2, 2)]
 		public double[] PortfolioSharpeRatioConfidenceInterval { get; set; }
 	}
 	

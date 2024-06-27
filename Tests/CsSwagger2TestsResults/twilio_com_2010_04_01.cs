@@ -697,8 +697,7 @@ namespace MyNS
 		/// Max length: 34
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="parent_call_sid")]
-		[System.ComponentModel.DataAnnotations.MinLength(34)]
-		[System.ComponentModel.DataAnnotations.MaxLength(34)]
+		[System.ComponentModel.DataAnnotations.Length(34, 34)]
 		public string Parent_call_sid { get; set; }
 		
 		[System.Runtime.Serialization.DataMember(Name="phone_number_sid")]
@@ -712,8 +711,7 @@ namespace MyNS
 		/// Max length: 34
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="sid")]
-		[System.ComponentModel.DataAnnotations.MinLength(34)]
-		[System.ComponentModel.DataAnnotations.MaxLength(34)]
+		[System.ComponentModel.DataAnnotations.Length(34, 34)]
 		public string Sid { get; set; }
 		
 		/// <summary>
@@ -848,8 +846,7 @@ namespace MyNS
 		/// Max length: 34
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="parent_call_sid")]
-		[System.ComponentModel.DataAnnotations.MinLength(34)]
-		[System.ComponentModel.DataAnnotations.MaxLength(34)]
+		[System.ComponentModel.DataAnnotations.Length(34, 34)]
 		public string Parent_call_sid { get; set; }
 		
 		/// <summary>
@@ -875,8 +872,7 @@ namespace MyNS
 		/// Max length: 34
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="sid")]
-		[System.ComponentModel.DataAnnotations.MinLength(34)]
-		[System.ComponentModel.DataAnnotations.MaxLength(34)]
+		[System.ComponentModel.DataAnnotations.Length(34, 34)]
 		public string Sid { get; set; }
 		
 		/// <summary>
@@ -3115,8 +3111,7 @@ namespace MyNS
 		/// Max length: 2
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="region")]
-		[System.ComponentModel.DataAnnotations.MinLength(2)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2)]
+		[System.ComponentModel.DataAnnotations.Length(2, 2)]
 		public string Region { get; set; }
 	}
 	
@@ -3193,8 +3188,7 @@ namespace MyNS
 		/// Max length: 34
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="sid")]
-		[System.ComponentModel.DataAnnotations.MinLength(34)]
-		[System.ComponentModel.DataAnnotations.MaxLength(34)]
+		[System.ComponentModel.DataAnnotations.Length(34, 34)]
 		public string Sid { get; set; }
 		
 		[System.Runtime.Serialization.DataMember(Name="uri")]
@@ -3273,8 +3267,7 @@ namespace MyNS
 		/// Max length: 34
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="sid")]
-		[System.ComponentModel.DataAnnotations.MinLength(34)]
-		[System.ComponentModel.DataAnnotations.MaxLength(34)]
+		[System.ComponentModel.DataAnnotations.Length(34, 34)]
 		public string Sid { get; set; }
 		
 		[System.Runtime.Serialization.DataMember(Name="uri")]

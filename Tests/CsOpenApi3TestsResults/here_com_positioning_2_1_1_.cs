@@ -125,8 +125,7 @@ namespace MyNS
 		/// Maximum items: 32
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nmr")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(32)]
+		[System.ComponentModel.DataAnnotations.Length(1, 32)]
 		public CdmaNmr[] Nmr { get; set; }
 		
 		/// <summary>
@@ -254,8 +253,7 @@ namespace MyNS
 		/// Max length: 150
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="firmware")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(150)]
+		[System.ComponentModel.DataAnnotations.Length(1, 150)]
 		public string Firmware { get; set; }
 		
 		/// <summary>
@@ -266,8 +264,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="manufacturer")]
-		[System.ComponentModel.DataAnnotations.MinLength(2)]
-		[System.ComponentModel.DataAnnotations.MaxLength(50)]
+		[System.ComponentModel.DataAnnotations.Length(2, 50)]
 		public string Manufacturer { get; set; }
 		
 		/// <summary>
@@ -278,8 +275,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="model")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(50)]
+		[System.ComponentModel.DataAnnotations.Length(1, 50)]
 		public string Model { get; set; }
 		
 		/// <summary>
@@ -290,8 +286,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
-		[System.ComponentModel.DataAnnotations.MinLength(3)]
-		[System.ComponentModel.DataAnnotations.MaxLength(50)]
+		[System.ComponentModel.DataAnnotations.Length(3, 50)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -300,8 +295,7 @@ namespace MyNS
 		/// Max length: 50
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="platform")]
-		[System.ComponentModel.DataAnnotations.MinLength(3)]
-		[System.ComponentModel.DataAnnotations.MaxLength(50)]
+		[System.ComponentModel.DataAnnotations.Length(3, 50)]
 		public string Platform { get; set; }
 		
 		/// <summary>
@@ -312,8 +306,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="version")]
-		[System.ComponentModel.DataAnnotations.MinLength(3)]
-		[System.ComponentModel.DataAnnotations.MaxLength(13)]
+		[System.ComponentModel.DataAnnotations.Length(3, 13)]
 		public string Version { get; set; }
 	}
 	
@@ -472,8 +465,7 @@ namespace MyNS
 		/// Maximum items: 32
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nmr")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(32)]
+		[System.ComponentModel.DataAnnotations.Length(1, 32)]
 		public GsmNmr[] Nmr { get; set; }
 		
 		/// <summary>
@@ -619,8 +611,7 @@ namespace MyNS
 		/// Maximum items: 16
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="cdma")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(16)]
+		[System.ComponentModel.DataAnnotations.Length(1, 16)]
 		public Cdma[] Cdma { get; set; }
 		
 		/// <summary>
@@ -635,8 +626,7 @@ namespace MyNS
 		/// Maximum items: 16
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="gsm")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(16)]
+		[System.ComponentModel.DataAnnotations.Length(1, 16)]
 		public Gsm[] Gsm { get; set; }
 		
 		/// <summary>
@@ -645,8 +635,7 @@ namespace MyNS
 		/// Maximum items: 16
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="lte")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(16)]
+		[System.ComponentModel.DataAnnotations.Length(1, 16)]
 		public Lte[] Lte { get; set; }
 		
 		/// <summary>
@@ -655,8 +644,7 @@ namespace MyNS
 		/// Maximum items: 16
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="tdscdma")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(16)]
+		[System.ComponentModel.DataAnnotations.Length(1, 16)]
 		public Tdscdma[] Tdscdma { get; set; }
 		
 		/// <summary>
@@ -665,8 +653,7 @@ namespace MyNS
 		/// Maximum items: 16
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="wcdma")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(16)]
+		[System.ComponentModel.DataAnnotations.Length(1, 16)]
 		public Wcdma[] Wcdma { get; set; }
 		
 		/// <summary>
@@ -676,8 +663,7 @@ namespace MyNS
 		/// Maximum items: 256
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="wlan")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(256)]
+		[System.ComponentModel.DataAnnotations.Length(1, 256)]
 		public WlanLocate[] Wlan { get; set; }
 	}
 	
@@ -735,8 +721,7 @@ namespace MyNS
 		/// Maximum items: 32
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nmr")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(32)]
+		[System.ComponentModel.DataAnnotations.Length(1, 32)]
 		public LteNmr[] Nmr { get; set; }
 		
 		/// <summary>
@@ -932,8 +917,7 @@ namespace MyNS
 		/// Maximum items: 32
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nmr")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(32)]
+		[System.ComponentModel.DataAnnotations.Length(1, 32)]
 		public TdscdmaNmr[] Nmr { get; set; }
 		
 		/// <summary>
@@ -1118,8 +1102,7 @@ namespace MyNS
 		/// Maximum items: 32
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nmr")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(32)]
+		[System.ComponentModel.DataAnnotations.Length(1, 32)]
 		public WcdmaNmr[] Nmr { get; set; }
 		
 		/// <summary>

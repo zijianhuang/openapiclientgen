@@ -3605,8 +3605,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(256)]
+		[System.ComponentModel.DataAnnotations.Length(1, 256)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[ a-zA-Z0-9_:-]{1,256}$")]
 		public string Name { get; set; }
 		
@@ -3671,8 +3670,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="endpointDetails")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(500)]
+		[System.ComponentModel.DataAnnotations.Length(0, 500)]
 		public EndpointDetails[] EndpointDetails { get; set; }
 		
 		/// <summary>
@@ -3718,8 +3716,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(256)]
+		[System.ComponentModel.DataAnnotations.Length(1, 256)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[ a-zA-Z0-9_:-]{1,256}$")]
 		public string Name { get; set; }
 		
@@ -3741,8 +3738,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="satelliteId")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(128)]
+		[System.ComponentModel.DataAnnotations.Length(1, 128)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$")]
 		public string SatelliteId { get; set; }
 		
@@ -3798,8 +3794,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="dataflowEdges")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(500)]
+		[System.ComponentModel.DataAnnotations.Length(0, 500)]
 		public string[][] DataflowEdges { get; set; }
 		
 		/// <summary>
@@ -3822,8 +3817,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(256)]
+		[System.ComponentModel.DataAnnotations.Length(1, 256)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[ a-zA-Z0-9_:-]{1,256}$")]
 		public string Name { get; set; }
 		
@@ -3959,8 +3953,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(256)]
+		[System.ComponentModel.DataAnnotations.Length(1, 256)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[ a-zA-Z0-9_:-]{1,256}$")]
 		public string Name { get; set; }
 	}
@@ -4008,8 +4001,7 @@ namespace MyNS
 		/// Pattern: ^[ a-zA-Z0-9_:-]{1,256}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="name")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(256)]
+		[System.ComponentModel.DataAnnotations.Length(1, 256)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[ a-zA-Z0-9_:-]{1,256}$")]
 		public string Name { get; set; }
 		
@@ -4050,8 +4042,7 @@ namespace MyNS
 		/// Maximum items: 500
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="dataflowEdges")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(500)]
+		[System.ComponentModel.DataAnnotations.Length(0, 500)]
 		public string[][] DataflowEdges { get; set; }
 		
 		/// <summary>
@@ -4070,8 +4061,7 @@ namespace MyNS
 		/// Pattern: ^[ a-zA-Z0-9_:-]{1,256}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="name")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(256)]
+		[System.ComponentModel.DataAnnotations.Length(1, 256)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[ a-zA-Z0-9_:-]{1,256}$")]
 		public string Name { get; set; }
 		
@@ -4148,8 +4138,7 @@ namespace MyNS
 		/// Pattern: ^[ a-zA-Z0-9-._:=]{4,256}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="groundStation")]
-		[System.ComponentModel.DataAnnotations.MinLength(4)]
-		[System.ComponentModel.DataAnnotations.MaxLength(500)]
+		[System.ComponentModel.DataAnnotations.Length(4, 500)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[ a-zA-Z0-9-._:=]{4,256}$")]
 		public string GroundStation { get; set; }
 		
@@ -4175,8 +4164,7 @@ namespace MyNS
 		/// Pattern: ^[A-Za-z0-9-/+_.=]+$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextToken")]
-		[System.ComponentModel.DataAnnotations.MinLength(3)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1000)]
+		[System.ComponentModel.DataAnnotations.Length(3, 1000)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[A-Za-z0-9-/+_.=]+$")]
 		public string NextToken { get; set; }
 		
@@ -4202,8 +4190,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="statusList")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(500)]
+		[System.ComponentModel.DataAnnotations.Length(0, 500)]
 		public ContactStatus[] StatusList { get; set; }
 	}
 	
@@ -4227,8 +4214,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="satelliteId")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(128)]
+		[System.ComponentModel.DataAnnotations.Length(1, 128)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$")]
 		public string SatelliteId { get; set; }
 		
@@ -4246,8 +4232,7 @@ namespace MyNS
 		/// Maximum items: 500
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="statusList")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(500)]
+		[System.ComponentModel.DataAnnotations.Length(0, 500)]
 		public EphemerisStatus[] StatusList { get; set; }
 	}
 	
@@ -4338,8 +4323,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="groundStation")]
-		[System.ComponentModel.DataAnnotations.MinLength(4)]
-		[System.ComponentModel.DataAnnotations.MaxLength(500)]
+		[System.ComponentModel.DataAnnotations.Length(4, 500)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[ a-zA-Z0-9-._:=]{4,256}$")]
 		public string GroundStation { get; set; }
 		
@@ -4393,8 +4377,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="componentStatuses")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(20)]
+		[System.ComponentModel.DataAnnotations.Length(0, 20)]
 		public ComponentStatusData[] ComponentStatuses { get; set; }
 		
 		/// <summary>
@@ -4406,8 +4389,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="taskId")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(128)]
+		[System.ComponentModel.DataAnnotations.Length(1, 128)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$")]
 		public string TaskId { get; set; }
 	}

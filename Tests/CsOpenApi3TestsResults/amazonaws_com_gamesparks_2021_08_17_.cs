@@ -2306,8 +2306,7 @@ namespace MyNS
 		/// Max length: 126
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(33)]
-		[System.ComponentModel.DataAnnotations.MaxLength(126)]
+		[System.ComponentModel.DataAnnotations.Length(33, 126)]
 		public string ClientToken { get; set; }
 		
 		/// <summary>
@@ -2317,8 +2316,7 @@ namespace MyNS
 		/// Pattern: ^\S(.*\S)?$|^$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(250)]
+		[System.ComponentModel.DataAnnotations.Length(0, 250)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^\S(.*\S)?$|^$")]
 		public string Description { get; set; }
 		
@@ -2331,8 +2329,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(36)]
+		[System.ComponentModel.DataAnnotations.Length(1, 36)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[a-zA-Z0-9_-]+$")]
 		public string GameName { get; set; }
 		
@@ -2353,8 +2350,7 @@ namespace MyNS
 		/// Pattern: ^\S(.*\S)?$|^$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(250)]
+		[System.ComponentModel.DataAnnotations.Length(0, 250)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^\S(.*\S)?$|^$")]
 		public string Description { get; set; }
 	}
@@ -2368,8 +2364,7 @@ namespace MyNS
 		/// Max length: 126
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(33)]
-		[System.ComponentModel.DataAnnotations.MaxLength(126)]
+		[System.ComponentModel.DataAnnotations.Length(33, 126)]
 		public string ClientToken { get; set; }
 		
 		/// <summary>
@@ -2379,8 +2374,7 @@ namespace MyNS
 		/// Pattern: ^\S(.*\S)?$|^$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(250)]
+		[System.ComponentModel.DataAnnotations.Length(0, 250)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^\S(.*\S)?$|^$")]
 		public string Description { get; set; }
 		
@@ -2393,8 +2387,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(20)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2048)]
+		[System.ComponentModel.DataAnnotations.Length(20, 2048)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^arn:(aws[a-zA-Z-]*)?:iam::\d{12}:role/.+$")]
 		public string Role { get; set; }
 		
@@ -2407,8 +2400,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(36)]
+		[System.ComponentModel.DataAnnotations.Length(1, 36)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[a-zA-Z0-9_-]+$")]
 		public string StageName { get; set; }
 		
@@ -2429,8 +2421,7 @@ namespace MyNS
 		/// Pattern: ^\S(.*\S)?$|^$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(250)]
+		[System.ComponentModel.DataAnnotations.Length(0, 250)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^\S(.*\S)?$|^$")]
 		public string Description { get; set; }
 	}
@@ -2445,8 +2436,7 @@ namespace MyNS
 		/// Pattern: ^\S(.*\S)?$|^$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(250)]
+		[System.ComponentModel.DataAnnotations.Length(0, 250)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^\S(.*\S)?$|^$")]
 		public string Description { get; set; }
 		
@@ -2457,8 +2447,7 @@ namespace MyNS
 		/// Pattern: ^arn:(aws[a-zA-Z-]*)?:iam::\d{12}:role/.+$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(20)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2048)]
+		[System.ComponentModel.DataAnnotations.Length(20, 2048)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^arn:(aws[a-zA-Z-]*)?:iam::\d{12}:role/.+$")]
 		public string Role { get; set; }
 	}
@@ -2493,8 +2482,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(100)]
+		[System.ComponentModel.DataAnnotations.Length(1, 100)]
 		public SectionModification[] Modifications { get; set; }
 	}
 	
@@ -2508,8 +2496,7 @@ namespace MyNS
 		/// Pattern: ^\S(.*\S)?$|^$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(250)]
+		[System.ComponentModel.DataAnnotations.Length(0, 250)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^\S(.*\S)?$|^$")]
 		public string Description { get; set; }
 	}
@@ -2523,8 +2510,7 @@ namespace MyNS
 		/// Max length: 126
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(33)]
-		[System.ComponentModel.DataAnnotations.MaxLength(126)]
+		[System.ComponentModel.DataAnnotations.Length(33, 126)]
 		public string ClientToken { get; set; }
 		
 		/// <summary>
@@ -2536,8 +2522,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(33)]
-		[System.ComponentModel.DataAnnotations.MaxLength(36)]
+		[System.ComponentModel.DataAnnotations.Length(33, 36)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^Snapshot_\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d{3,6}Z$")]
 		public string SnapshotId { get; set; }
 	}

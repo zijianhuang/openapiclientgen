@@ -2252,8 +2252,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="sources")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(50)]
+		[System.ComponentModel.DataAnnotations.Length(0, 50)]
 		public AwsLogSourceConfiguration[] Sources { get; set; }
 	}
 	
@@ -2281,8 +2280,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="sourceName")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(64)]
+		[System.ComponentModel.DataAnnotations.Length(1, 64)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[\\\w\-_:/.]*$")]
 		public string SourceName { get; set; }
 		
@@ -2293,8 +2291,7 @@ namespace MyNS
 		/// Pattern: ^[A-Za-z0-9\-\.\_]*$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="sourceVersion")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(32)]
+		[System.ComponentModel.DataAnnotations.Length(1, 32)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[A-Za-z0-9\-\.\_]*$")]
 		public string SourceVersion { get; set; }
 	}
@@ -2336,8 +2333,7 @@ namespace MyNS
 		/// Maximum items: 50
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="tags")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(50)]
+		[System.ComponentModel.DataAnnotations.Length(0, 50)]
 		public Tag[] Tags { get; set; }
 	}
 	
@@ -2470,8 +2466,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="subscriberName")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(64)]
+		[System.ComponentModel.DataAnnotations.Length(0, 64)]
 		public string SubscriberName { get; set; }
 		
 		/// <summary>
@@ -2480,8 +2475,7 @@ namespace MyNS
 		/// Maximum items: 50
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="tags")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(50)]
+		[System.ComponentModel.DataAnnotations.Length(0, 50)]
 		public Tag[] Tags { get; set; }
 	}
 	
@@ -2550,8 +2544,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="sources")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(50)]
+		[System.ComponentModel.DataAnnotations.Length(0, 50)]
 		public AwsLogSourceConfiguration[] Sources { get; set; }
 	}
 	
@@ -2609,8 +2602,7 @@ namespace MyNS
 		/// Pattern: ^[\\\w\-_:/.@=+]*$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="subscriberName")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(64)]
+		[System.ComponentModel.DataAnnotations.Length(0, 64)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[\\\w\-_:/.@=+]*$")]
 		public string SubscriberName { get; set; }
 	}
@@ -2743,8 +2735,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="tags")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(50)]
+		[System.ComponentModel.DataAnnotations.Length(0, 50)]
 		public Tag[] Tags { get; set; }
 	}
 }

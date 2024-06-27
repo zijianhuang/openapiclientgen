@@ -789,8 +789,7 @@ namespace MyNS
 		/// Max length: 1024
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="filterPattern")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1024)]
+		[System.ComponentModel.DataAnnotations.Length(0, 1024)]
 		public string FilterPattern { get; set; }
 		
 		[System.Runtime.Serialization.DataMember(Name="metricTransformations")]
@@ -1184,8 +1183,7 @@ namespace MyNS
 		/// Max length: 1024
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="filterPattern")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1024)]
+		[System.ComponentModel.DataAnnotations.Length(0, 1024)]
 		public string FilterPattern { get; set; }
 		
 		[System.Runtime.Serialization.DataMember(Name="destinationArn")]
@@ -2125,8 +2123,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="filterPattern")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1024)]
+		[System.ComponentModel.DataAnnotations.Length(0, 1024)]
 		public string FilterPattern { get; set; }
 		
 		/// <summary>

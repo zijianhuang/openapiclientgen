@@ -1014,8 +1014,7 @@ namespace MyNS
 		/// Maximum items: 10
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="getTokenBalanceInputs")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(10)]
+		[System.ComponentModel.DataAnnotations.Length(1, 10)]
 		public BatchGetTokenBalanceInputItem[] GetTokenBalanceInputs { get; set; }
 	}
 	
@@ -1117,8 +1116,7 @@ namespace MyNS
 		/// Max length: 131070
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextToken")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(131070)]
+		[System.ComponentModel.DataAnnotations.Length(0, 131070)]
 		public string NextToken { get; set; }
 		
 		/// <summary>
@@ -1178,8 +1176,7 @@ namespace MyNS
 		/// Max length: 131070
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextToken")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(131070)]
+		[System.ComponentModel.DataAnnotations.Length(0, 131070)]
 		public string NextToken { get; set; }
 		
 		/// <summary>
@@ -1237,8 +1234,7 @@ namespace MyNS
 		/// Max length: 131070
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextToken")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(131070)]
+		[System.ComponentModel.DataAnnotations.Length(0, 131070)]
 		public string NextToken { get; set; }
 		
 		/// <summary>

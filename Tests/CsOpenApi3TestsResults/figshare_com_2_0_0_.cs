@@ -163,8 +163,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="email")]
-		[System.ComponentModel.DataAnnotations.MinLength(3)]
-		[System.ComponentModel.DataAnnotations.MaxLength(150)]
+		[System.ComponentModel.DataAnnotations.Length(3, 150)]
 		public string Email { get; set; }
 		
 		/// <summary>
@@ -899,8 +898,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="title")]
-		[System.ComponentModel.DataAnnotations.MinLength(3)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1000)]
+		[System.ComponentModel.DataAnnotations.Length(3, 1000)]
 		public string Title { get; set; }
 	}
 	
@@ -1227,8 +1225,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="title")]
-		[System.ComponentModel.DataAnnotations.MinLength(3)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1000)]
+		[System.ComponentModel.DataAnnotations.Length(3, 1000)]
 		public string Title { get; set; }
 	}
 	
@@ -1437,8 +1434,7 @@ namespace MyNS
 		/// Max length: 1000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="title")]
-		[System.ComponentModel.DataAnnotations.MinLength(3)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1000)]
+		[System.ComponentModel.DataAnnotations.Length(3, 1000)]
 		public string Title { get; set; }
 	}
 	
@@ -2274,8 +2270,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="title")]
-		[System.ComponentModel.DataAnnotations.MinLength(3)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1000)]
+		[System.ComponentModel.DataAnnotations.Length(3, 1000)]
 		public string Title { get; set; }
 	}
 	
@@ -2512,8 +2507,7 @@ namespace MyNS
 		/// Max length: 1000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="title")]
-		[System.ComponentModel.DataAnnotations.MinLength(3)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1000)]
+		[System.ComponentModel.DataAnnotations.Length(3, 1000)]
 		public string Title { get; set; }
 	}
 	
@@ -2836,8 +2830,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="text")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2000)]
+		[System.ComponentModel.DataAnnotations.Length(1, 2000)]
 		public string Text { get; set; }
 	}
 	
@@ -3998,8 +3991,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="title")]
-		[System.ComponentModel.DataAnnotations.MinLength(3)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1000)]
+		[System.ComponentModel.DataAnnotations.Length(3, 1000)]
 		public string Title { get; set; }
 	}
 	
@@ -4172,8 +4164,7 @@ namespace MyNS
 		/// Max length: 1000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="title")]
-		[System.ComponentModel.DataAnnotations.MinLength(3)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1000)]
+		[System.ComponentModel.DataAnnotations.Length(3, 1000)]
 		public string Title { get; set; }
 	}
 	

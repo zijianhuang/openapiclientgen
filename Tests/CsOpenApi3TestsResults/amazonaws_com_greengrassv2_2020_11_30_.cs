@@ -2699,8 +2699,7 @@ namespace MyNS
 		/// Maximum items: 100
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="entries")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(100)]
+		[System.ComponentModel.DataAnnotations.Length(1, 100)]
 		public AssociateClientDeviceWithCoreDeviceEntry[] Entries { get; set; }
 	}
 	
@@ -2713,8 +2712,7 @@ namespace MyNS
 		/// Maximum items: 100
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="entries")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(100)]
+		[System.ComponentModel.DataAnnotations.Length(1, 100)]
 		public DisassociateClientDeviceFromCoreDeviceEntry[] Entries { get; set; }
 	}
 	
@@ -2746,8 +2744,7 @@ namespace MyNS
 		/// Pattern: ^[a-zA-Z0-9-]+$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(64)]
+		[System.ComponentModel.DataAnnotations.Length(1, 64)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[a-zA-Z0-9-]+$")]
 		public string ClientToken { get; set; }
 	}
@@ -2793,8 +2790,7 @@ namespace MyNS
 		/// Max length: 256
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="deploymentName")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(256)]
+		[System.ComponentModel.DataAnnotations.Length(1, 256)]
 		public string DeploymentName { get; set; }
 		
 		/// <summary>
@@ -2836,8 +2832,7 @@ namespace MyNS
 		/// Pattern: ^[a-zA-Z0-9-]+$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(64)]
+		[System.ComponentModel.DataAnnotations.Length(1, 64)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[a-zA-Z0-9-]+$")]
 		public string ClientToken { get; set; }
 	}

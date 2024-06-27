@@ -317,8 +317,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DefaultValue("en_US")]
 		[System.Runtime.Serialization.DataMember(Name="locale")]
-		[System.ComponentModel.DataAnnotations.MinLength(5)]
-		[System.ComponentModel.DataAnnotations.MaxLength(5)]
+		[System.ComponentModel.DataAnnotations.Length(5, 5)]
 		public string Locale { get; set; } = "en_US";
 		
 		/// <summary>
@@ -710,8 +709,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="results")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2083)]
+		[System.ComponentModel.DataAnnotations.Length(1, 2083)]
 		public string Results { get; set; }
 	}
 	

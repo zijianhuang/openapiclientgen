@@ -418,8 +418,7 @@ namespace MyNS
 		/// Pattern: ^[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="poolId")]
-		[System.ComponentModel.DataAnnotations.MinLength(36)]
-		[System.ComponentModel.DataAnnotations.MaxLength(36)]
+		[System.ComponentModel.DataAnnotations.Length(36, 36)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}$")]
 		public string PoolId { get; set; }
 		
@@ -668,8 +667,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="fileSystemId")]
-		[System.ComponentModel.DataAnnotations.MinLength(36)]
-		[System.ComponentModel.DataAnnotations.MaxLength(36)]
+		[System.ComponentModel.DataAnnotations.Length(36, 36)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}$")]
 		public string FileSystemId { get; set; }
 		
@@ -686,8 +684,7 @@ namespace MyNS
 		/// Pattern: ^[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="mountTargetId")]
-		[System.ComponentModel.DataAnnotations.MinLength(36)]
-		[System.ComponentModel.DataAnnotations.MaxLength(36)]
+		[System.ComponentModel.DataAnnotations.Length(36, 36)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}$")]
 		public string MountTargetId { get; set; }
 		
@@ -1012,8 +1009,7 @@ namespace MyNS
 		/// Pattern: ^[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="fileSystemId")]
-		[System.ComponentModel.DataAnnotations.MinLength(36)]
-		[System.ComponentModel.DataAnnotations.MaxLength(36)]
+		[System.ComponentModel.DataAnnotations.Length(36, 36)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}$")]
 		public string FileSystemId { get; set; }
 		
@@ -1030,8 +1026,7 @@ namespace MyNS
 		/// Pattern: ^[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="snapshotId")]
-		[System.ComponentModel.DataAnnotations.MinLength(36)]
-		[System.ComponentModel.DataAnnotations.MaxLength(36)]
+		[System.ComponentModel.DataAnnotations.Length(36, 36)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}$")]
 		public string SnapshotId { get; set; }
 	}
@@ -1120,8 +1115,7 @@ namespace MyNS
 		/// Pattern: ^[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="baremetalTenantId")]
-		[System.ComponentModel.DataAnnotations.MinLength(36)]
-		[System.ComponentModel.DataAnnotations.MaxLength(36)]
+		[System.ComponentModel.DataAnnotations.Length(36, 36)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}$")]
 		public string BaremetalTenantId { get; set; }
 		
@@ -1134,8 +1128,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="creationToken")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(80)]
+		[System.ComponentModel.DataAnnotations.Length(1, 80)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[a-zA-Z][a-zA-Z0-9\-]{0,79}$")]
 		public string CreationToken { get; set; }
 		
@@ -1158,8 +1151,7 @@ namespace MyNS
 		/// Pattern: ^[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="fileSystemId")]
-		[System.ComponentModel.DataAnnotations.MinLength(36)]
-		[System.ComponentModel.DataAnnotations.MaxLength(36)]
+		[System.ComponentModel.DataAnnotations.Length(36, 36)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}$")]
 		public string FileSystemId { get; set; }
 		
@@ -1201,8 +1193,7 @@ namespace MyNS
 		/// Pattern: ^[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}|(\\?([^\/]*[\/])*)([^\/]+)$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="snapshotId")]
-		[System.ComponentModel.DataAnnotations.MinLength(36)]
-		[System.ComponentModel.DataAnnotations.MaxLength(36)]
+		[System.ComponentModel.DataAnnotations.Length(36, 36)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}|(\\?([^\/]*[\/])*)([^\/]+)$")]
 		public string SnapshotId { get; set; }
 		

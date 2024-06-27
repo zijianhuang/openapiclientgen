@@ -1829,8 +1829,7 @@ namespace MyNS
 		/// Pattern: [A-Za-z0-9._/#-]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="datastoreName")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(256)]
+		[System.ComponentModel.DataAnnotations.Length(1, 256)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[A-Za-z0-9._/#-]+")]
 		public string DatastoreName { get; set; }
 		
@@ -1843,8 +1842,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(64)]
+		[System.ComponentModel.DataAnnotations.Length(1, 64)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[A-Za-z0-9._-]+")]
 		public string ClientToken { get; set; }
 		
@@ -1861,8 +1859,7 @@ namespace MyNS
 		/// Pattern: arn:aws[a-zA-Z-]{0,16}:kms:[a-z]{2}(-[a-z]{1,16}){1,3}-\d{1}:\d{12}:((key/[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12})|(alias/[a-zA-Z0-9:/_-]{1,256}))
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="kmsKeyArn")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(512)]
+		[System.ComponentModel.DataAnnotations.Length(1, 512)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"arn:aws[a-zA-Z-]{0,16}:kms:[a-z]{2}(-[a-z]{1,16}){1,3}-\d{1}:\d{12}:((key/[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12})|(alias/[a-zA-Z0-9:/_-]{1,256}))")]
 		public string KmsKeyArn { get; set; }
 	}
@@ -1925,8 +1922,7 @@ namespace MyNS
 		/// Pattern: [A-Za-z0-9._/#-]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="jobName")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(64)]
+		[System.ComponentModel.DataAnnotations.Length(1, 64)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[A-Za-z0-9._/#-]+")]
 		public string JobName { get; set; }
 		
@@ -1939,8 +1935,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="dataAccessRoleArn")]
-		[System.ComponentModel.DataAnnotations.MinLength(20)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2048)]
+		[System.ComponentModel.DataAnnotations.Length(20, 2048)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"arn:aws(-[^:]+)?:iam::[0-9]{12}:role/.+")]
 		public string DataAccessRoleArn { get; set; }
 		
@@ -1953,8 +1948,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(64)]
+		[System.ComponentModel.DataAnnotations.Length(1, 64)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[A-Za-z0-9._-]+")]
 		public string ClientToken { get; set; }
 		
@@ -1967,8 +1961,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="inputS3Uri")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1024)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1024)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"s3://[a-z0-9][\.\-a-z0-9]{1,61}[a-z0-9](/.*)?")]
 		public string InputS3Uri { get; set; }
 		
@@ -1981,8 +1974,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="outputS3Uri")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1024)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1024)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"s3://[a-z0-9][\.\-a-z0-9]{1,61}[a-z0-9](/.*)?")]
 		public string OutputS3Uri { get; set; }
 	}

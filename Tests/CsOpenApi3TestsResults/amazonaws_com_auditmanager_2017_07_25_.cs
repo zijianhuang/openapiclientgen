@@ -5134,8 +5134,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="evidenceFolderId")]
-		[System.ComponentModel.DataAnnotations.MinLength(36)]
-		[System.ComponentModel.DataAnnotations.MaxLength(36)]
+		[System.ComponentModel.DataAnnotations.Length(36, 36)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$")]
 		public string EvidenceFolderId { get; set; }
 	}
@@ -5152,8 +5151,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="evidenceFolderId")]
-		[System.ComponentModel.DataAnnotations.MinLength(36)]
-		[System.ComponentModel.DataAnnotations.MaxLength(36)]
+		[System.ComponentModel.DataAnnotations.Length(36, 36)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$")]
 		public string EvidenceFolderId { get; set; }
 		
@@ -5165,8 +5163,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="evidenceIds")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(50)]
+		[System.ComponentModel.DataAnnotations.Length(0, 50)]
 		public string[] EvidenceIds { get; set; }
 	}
 	
@@ -5181,8 +5178,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="createDelegationRequests")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(50)]
+		[System.ComponentModel.DataAnnotations.Length(1, 50)]
 		public CreateDelegationRequest[] CreateDelegationRequests { get; set; }
 	}
 	
@@ -5197,8 +5193,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="delegationIds")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(50)]
+		[System.ComponentModel.DataAnnotations.Length(1, 50)]
 		public string[] DelegationIds { get; set; }
 	}
 	
@@ -5214,8 +5209,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="evidenceFolderId")]
-		[System.ComponentModel.DataAnnotations.MinLength(36)]
-		[System.ComponentModel.DataAnnotations.MaxLength(36)]
+		[System.ComponentModel.DataAnnotations.Length(36, 36)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$")]
 		public string EvidenceFolderId { get; set; }
 		
@@ -5227,8 +5221,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="evidenceIds")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(50)]
+		[System.ComponentModel.DataAnnotations.Length(0, 50)]
 		public string[] EvidenceIds { get; set; }
 	}
 	
@@ -5243,8 +5236,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="manualEvidence")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(50)]
+		[System.ComponentModel.DataAnnotations.Length(1, 50)]
 		public ManualEvidence[] ManualEvidence { get; set; }
 	}
 	
@@ -5260,8 +5252,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(300)]
+		[System.ComponentModel.DataAnnotations.Length(1, 300)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[^\\]*$")]
 		public string Name { get; set; }
 		
@@ -5308,8 +5299,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="frameworkId")]
-		[System.ComponentModel.DataAnnotations.MinLength(36)]
-		[System.ComponentModel.DataAnnotations.MaxLength(36)]
+		[System.ComponentModel.DataAnnotations.Length(36, 36)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$")]
 		public string FrameworkId { get; set; }
 		
@@ -5352,8 +5342,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(300)]
+		[System.ComponentModel.DataAnnotations.Length(1, 300)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[^\\]*$")]
 		public string Name { get; set; }
 		
@@ -5364,8 +5353,7 @@ namespace MyNS
 		/// Pattern: ^[\w\W\s\S]*$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1000)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1000)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[\w\W\s\S]*$")]
 		public string Description { get; set; }
 		
@@ -5408,8 +5396,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(300)]
+		[System.ComponentModel.DataAnnotations.Length(1, 300)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[a-zA-Z0-9-_\.]+$")]
 		public string Name { get; set; }
 		
@@ -5430,8 +5417,7 @@ namespace MyNS
 		/// Pattern: \(\?s\).*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="queryStatement")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(10000)]
+		[System.ComponentModel.DataAnnotations.Length(1, 10000)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"\(\?s\).*")]
 		public string QueryStatement { get; set; }
 	}
@@ -5448,8 +5434,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(300)]
+		[System.ComponentModel.DataAnnotations.Length(1, 300)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[^\\]*$")]
 		public string Name { get; set; }
 		
@@ -5520,8 +5505,7 @@ namespace MyNS
 		/// Pattern: ^[^\\]*$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="assessmentName")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(300)]
+		[System.ComponentModel.DataAnnotations.Length(1, 300)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[^\\]*$")]
 		public string AssessmentName { get; set; }
 		
@@ -5588,8 +5572,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(300)]
+		[System.ComponentModel.DataAnnotations.Length(1, 300)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[^\\]*$")]
 		public string Name { get; set; }
 		
@@ -5600,8 +5583,7 @@ namespace MyNS
 		/// Pattern: ^[\w\W\s\S]*$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1000)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1000)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[\w\W\s\S]*$")]
 		public string Description { get; set; }
 		
@@ -5638,8 +5620,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(300)]
+		[System.ComponentModel.DataAnnotations.Length(1, 300)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[^\\]*$")]
 		public string Name { get; set; }
 		
@@ -5704,8 +5685,7 @@ namespace MyNS
 		/// Pattern: ^[0-9]{12}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="adminAccountId")]
-		[System.ComponentModel.DataAnnotations.MinLength(12)]
-		[System.ComponentModel.DataAnnotations.MaxLength(12)]
+		[System.ComponentModel.DataAnnotations.Length(12, 12)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[0-9]{12}$")]
 		public string AdminAccountId { get; set; }
 	}
@@ -5722,8 +5702,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="evidenceFolderId")]
-		[System.ComponentModel.DataAnnotations.MinLength(36)]
-		[System.ComponentModel.DataAnnotations.MaxLength(36)]
+		[System.ComponentModel.DataAnnotations.Length(36, 36)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$")]
 		public string EvidenceFolderId { get; set; }
 	}
@@ -5750,8 +5729,7 @@ namespace MyNS
 		/// Pattern: ^arn:.*:kms:.*|DEFAULT
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="kmsKey")]
-		[System.ComponentModel.DataAnnotations.MinLength(7)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2048)]
+		[System.ComponentModel.DataAnnotations.Length(7, 2048)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^arn:.*:kms:.*|DEFAULT")]
 		public string KmsKey { get; set; }
 		
@@ -5762,8 +5740,7 @@ namespace MyNS
 		/// Pattern: ^[0-9]{12}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="delegatedAdminAccount")]
-		[System.ComponentModel.DataAnnotations.MinLength(12)]
-		[System.ComponentModel.DataAnnotations.MaxLength(12)]
+		[System.ComponentModel.DataAnnotations.Length(12, 12)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[0-9]{12}$")]
 		public string DelegatedAdminAccount { get; set; }
 	}
@@ -5780,8 +5757,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="adminAccountId")]
-		[System.ComponentModel.DataAnnotations.MinLength(12)]
-		[System.ComponentModel.DataAnnotations.MaxLength(12)]
+		[System.ComponentModel.DataAnnotations.Length(12, 12)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[0-9]{12}$")]
 		public string AdminAccountId { get; set; }
 	}
@@ -5798,8 +5774,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="destinationAccount")]
-		[System.ComponentModel.DataAnnotations.MinLength(12)]
-		[System.ComponentModel.DataAnnotations.MaxLength(12)]
+		[System.ComponentModel.DataAnnotations.Length(12, 12)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[0-9]{12}$")]
 		public string DestinationAccount { get; set; }
 		
@@ -5910,8 +5885,7 @@ namespace MyNS
 		/// Pattern: ^arn:.*:sns:.*|NONE
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="snsTopic")]
-		[System.ComponentModel.DataAnnotations.MinLength(4)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2048)]
+		[System.ComponentModel.DataAnnotations.Length(4, 2048)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^arn:.*:sns:.*|NONE")]
 		public string SnsTopic { get; set; }
 		
@@ -5934,8 +5908,7 @@ namespace MyNS
 		/// Pattern: ^arn:.*:kms:.*|DEFAULT
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="kmsKey")]
-		[System.ComponentModel.DataAnnotations.MinLength(7)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2048)]
+		[System.ComponentModel.DataAnnotations.Length(7, 2048)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^arn:.*:kms:.*|DEFAULT")]
 		public string KmsKey { get; set; }
 		
@@ -5997,8 +5970,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="s3RelativePath")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1024)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1024)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^(S|s)3:\/\/[a-zA-Z0-9\-\.\(\)\'\*\_\!\/]+$")]
 		public string S3RelativePath { get; set; }
 	}

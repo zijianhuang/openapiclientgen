@@ -1083,8 +1083,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="deviceId")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(32)]
+		[System.ComponentModel.DataAnnotations.Length(1, 32)]
 		public string DeviceId { get; set; }
 	}
 	
@@ -1100,8 +1099,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="placementName")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(128)]
+		[System.ComponentModel.DataAnnotations.Length(1, 128)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[a-zA-Z0-9_-]+$")]
 		public string PlacementName { get; set; }
 		
@@ -1124,8 +1122,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="projectName")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(128)]
+		[System.ComponentModel.DataAnnotations.Length(1, 128)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[0-9A-Za-z_-]+$")]
 		public string ProjectName { get; set; }
 		
@@ -1135,8 +1132,7 @@ namespace MyNS
 		/// Max length: 500
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(500)]
+		[System.ComponentModel.DataAnnotations.Length(0, 500)]
 		public string Description { get; set; }
 		
 		/// <summary>
@@ -1181,8 +1177,7 @@ namespace MyNS
 		/// Max length: 500
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(500)]
+		[System.ComponentModel.DataAnnotations.Length(0, 500)]
 		public string Description { get; set; }
 		
 		/// <summary>

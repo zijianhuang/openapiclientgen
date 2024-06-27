@@ -1092,8 +1092,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2048)]
+		[System.ComponentModel.DataAnnotations.Length(0, 2048)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"arn:aws(-[a-z]{1,3}){0,2}:iam::\d+:role/.*")]
 		public string ExecutionRoleArn { get; set; }
 		
@@ -1106,8 +1105,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(500)]
+		[System.ComponentModel.DataAnnotations.Length(0, 500)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[0-9A-Za-z _-]+")]
 		public string Description { get; set; }
 		
@@ -1184,8 +1182,7 @@ namespace MyNS
 		/// Pattern: arn:aws(-[a-z]{1,3}){0,2}:iam::\d+:role/.*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2048)]
+		[System.ComponentModel.DataAnnotations.Length(0, 2048)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"arn:aws(-[a-z]{1,3}){0,2}:iam::\d+:role/.*")]
 		public string ExecutionRoleArn { get; set; }
 		
@@ -1202,8 +1199,7 @@ namespace MyNS
 		/// Pattern: [0-9A-Za-z _-]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(500)]
+		[System.ComponentModel.DataAnnotations.Length(0, 500)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[0-9A-Za-z _-]+")]
 		public string Description { get; set; }
 		

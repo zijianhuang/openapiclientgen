@@ -102,8 +102,7 @@ namespace MyNS
 		/// Pattern: ^AC[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="account_sid")]
-		[System.ComponentModel.DataAnnotations.MinLength(34)]
-		[System.ComponentModel.DataAnnotations.MaxLength(34)]
+		[System.ComponentModel.DataAnnotations.Length(34, 34)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^AC[0-9a-fA-F]{32}$")]
 		public string Account_sid { get; set; }
 		
@@ -186,8 +185,7 @@ namespace MyNS
 		/// Pattern: ^TK[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="sid")]
-		[System.ComponentModel.DataAnnotations.MinLength(34)]
-		[System.ComponentModel.DataAnnotations.MaxLength(34)]
+		[System.ComponentModel.DataAnnotations.Length(34, 34)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^TK[0-9a-fA-F]{32}$")]
 		public string Sid { get; set; }
 		
@@ -263,8 +261,7 @@ namespace MyNS
 		/// Pattern: ^AC[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="account_sid")]
-		[System.ComponentModel.DataAnnotations.MinLength(34)]
-		[System.ComponentModel.DataAnnotations.MaxLength(34)]
+		[System.ComponentModel.DataAnnotations.Length(34, 34)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^AC[0-9a-fA-F]{32}$")]
 		public string Account_sid { get; set; }
 		
@@ -293,8 +290,7 @@ namespace MyNS
 		/// Pattern: ^CL[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="sid")]
-		[System.ComponentModel.DataAnnotations.MinLength(34)]
-		[System.ComponentModel.DataAnnotations.MaxLength(34)]
+		[System.ComponentModel.DataAnnotations.Length(34, 34)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^CL[0-9a-fA-F]{32}$")]
 		public string Sid { get; set; }
 		
@@ -305,8 +301,7 @@ namespace MyNS
 		/// Pattern: ^TK[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="trunk_sid")]
-		[System.ComponentModel.DataAnnotations.MinLength(34)]
-		[System.ComponentModel.DataAnnotations.MaxLength(34)]
+		[System.ComponentModel.DataAnnotations.Length(34, 34)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^TK[0-9a-fA-F]{32}$")]
 		public string Trunk_sid { get; set; }
 		
@@ -328,8 +323,7 @@ namespace MyNS
 		/// Pattern: ^AC[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="account_sid")]
-		[System.ComponentModel.DataAnnotations.MinLength(34)]
-		[System.ComponentModel.DataAnnotations.MaxLength(34)]
+		[System.ComponentModel.DataAnnotations.Length(34, 34)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^AC[0-9a-fA-F]{32}$")]
 		public string Account_sid { get; set; }
 		
@@ -358,8 +352,7 @@ namespace MyNS
 		/// Pattern: ^AL[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="sid")]
-		[System.ComponentModel.DataAnnotations.MinLength(34)]
-		[System.ComponentModel.DataAnnotations.MaxLength(34)]
+		[System.ComponentModel.DataAnnotations.Length(34, 34)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^AL[0-9a-fA-F]{32}$")]
 		public string Sid { get; set; }
 		
@@ -370,8 +363,7 @@ namespace MyNS
 		/// Pattern: ^TK[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="trunk_sid")]
-		[System.ComponentModel.DataAnnotations.MinLength(34)]
-		[System.ComponentModel.DataAnnotations.MaxLength(34)]
+		[System.ComponentModel.DataAnnotations.Length(34, 34)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^TK[0-9a-fA-F]{32}$")]
 		public string Trunk_sid { get; set; }
 		
@@ -393,8 +385,7 @@ namespace MyNS
 		/// Pattern: ^AC[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="account_sid")]
-		[System.ComponentModel.DataAnnotations.MinLength(34)]
-		[System.ComponentModel.DataAnnotations.MaxLength(34)]
+		[System.ComponentModel.DataAnnotations.Length(34, 34)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^AC[0-9a-fA-F]{32}$")]
 		public string Account_sid { get; set; }
 		
@@ -435,8 +426,7 @@ namespace MyNS
 		/// Pattern: ^OU[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="sid")]
-		[System.ComponentModel.DataAnnotations.MinLength(34)]
-		[System.ComponentModel.DataAnnotations.MaxLength(34)]
+		[System.ComponentModel.DataAnnotations.Length(34, 34)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^OU[0-9a-fA-F]{32}$")]
 		public string Sid { get; set; }
 		
@@ -453,8 +443,7 @@ namespace MyNS
 		/// Pattern: ^TK[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="trunk_sid")]
-		[System.ComponentModel.DataAnnotations.MinLength(34)]
-		[System.ComponentModel.DataAnnotations.MaxLength(34)]
+		[System.ComponentModel.DataAnnotations.Length(34, 34)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^TK[0-9a-fA-F]{32}$")]
 		public string Trunk_sid { get; set; }
 		
@@ -482,8 +471,7 @@ namespace MyNS
 		/// Pattern: ^AC[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="account_sid")]
-		[System.ComponentModel.DataAnnotations.MinLength(34)]
-		[System.ComponentModel.DataAnnotations.MaxLength(34)]
+		[System.ComponentModel.DataAnnotations.Length(34, 34)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^AC[0-9a-fA-F]{32}$")]
 		public string Account_sid { get; set; }
 		
@@ -545,8 +533,7 @@ namespace MyNS
 		/// Pattern: ^PN[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="sid")]
-		[System.ComponentModel.DataAnnotations.MinLength(34)]
-		[System.ComponentModel.DataAnnotations.MaxLength(34)]
+		[System.ComponentModel.DataAnnotations.Length(34, 34)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^PN[0-9a-fA-F]{32}$")]
 		public string Sid { get; set; }
 		
@@ -557,8 +544,7 @@ namespace MyNS
 		/// Pattern: ^AP[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="sms_application_sid")]
-		[System.ComponentModel.DataAnnotations.MinLength(34)]
-		[System.ComponentModel.DataAnnotations.MaxLength(34)]
+		[System.ComponentModel.DataAnnotations.Length(34, 34)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^AP[0-9a-fA-F]{32}$")]
 		public string Sms_application_sid { get; set; }
 		
@@ -605,8 +591,7 @@ namespace MyNS
 		/// Pattern: ^TK[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="trunk_sid")]
-		[System.ComponentModel.DataAnnotations.MinLength(34)]
-		[System.ComponentModel.DataAnnotations.MaxLength(34)]
+		[System.ComponentModel.DataAnnotations.Length(34, 34)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^TK[0-9a-fA-F]{32}$")]
 		public string Trunk_sid { get; set; }
 		
@@ -623,8 +608,7 @@ namespace MyNS
 		/// Pattern: ^AP[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="voice_application_sid")]
-		[System.ComponentModel.DataAnnotations.MinLength(34)]
-		[System.ComponentModel.DataAnnotations.MaxLength(34)]
+		[System.ComponentModel.DataAnnotations.Length(34, 34)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^AP[0-9a-fA-F]{32}$")]
 		public string Voice_application_sid { get; set; }
 		

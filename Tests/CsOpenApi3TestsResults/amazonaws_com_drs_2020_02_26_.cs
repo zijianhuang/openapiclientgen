@@ -4617,8 +4617,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="cfnStackName")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(128)]
+		[System.ComponentModel.DataAnnotations.Length(1, 128)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[a-zA-Z][-a-zA-Z0-9]*$")]
 		public string CfnStackName { get; set; }
 		
@@ -4631,8 +4630,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="sourceNetworkID")]
-		[System.ComponentModel.DataAnnotations.MinLength(20)]
-		[System.ComponentModel.DataAnnotations.MaxLength(20)]
+		[System.ComponentModel.DataAnnotations.Length(20, 20)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^sn-[0-9a-zA-Z]{17}$")]
 		public string SourceNetworkID { get; set; }
 	}
@@ -4649,8 +4647,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="sourceServerArn")]
-		[System.ComponentModel.DataAnnotations.MinLength(20)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2048)]
+		[System.ComponentModel.DataAnnotations.Length(20, 2048)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^arn:(?:[0-9a-zA-Z_-]+:){3}([0-9]{12,}):source-server/(s-[0-9a-zA-Z]{17})$")]
 		public string SourceServerArn { get; set; }
 		
@@ -4683,8 +4680,7 @@ namespace MyNS
 		/// Pattern: ^arn:.{16,2044}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="exportBucketArn")]
-		[System.ComponentModel.DataAnnotations.MinLength(20)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2048)]
+		[System.ComponentModel.DataAnnotations.Length(20, 2048)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^arn:.{16,2044}$")]
 		public string ExportBucketArn { get; set; }
 		
@@ -4786,8 +4782,7 @@ namespace MyNS
 		/// Pattern: ^arn:.{16,2044}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="ebsEncryptionKeyArn")]
-		[System.ComponentModel.DataAnnotations.MinLength(20)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2048)]
+		[System.ComponentModel.DataAnnotations.Length(20, 2048)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^arn:.{16,2044}$")]
 		public string EbsEncryptionKeyArn { get; set; }
 		
@@ -4799,8 +4794,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="pitPolicy")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(10)]
+		[System.ComponentModel.DataAnnotations.Length(1, 10)]
 		public PITPolicyRule[] PitPolicy { get; set; }
 		
 		/// <summary>
@@ -4811,8 +4805,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="replicationServerInstanceType")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(0, 255)]
 		public string ReplicationServerInstanceType { get; set; }
 		
 		/// <summary>
@@ -4823,8 +4816,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="replicationServersSecurityGroupsIDs")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(32)]
+		[System.ComponentModel.DataAnnotations.Length(0, 32)]
 		public string[] ReplicationServersSecurityGroupsIDs { get; set; }
 		
 		/// <summary>
@@ -4836,8 +4828,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="stagingAreaSubnetId")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(0, 255)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^subnet-[0-9a-fA-F]{8,}$")]
 		public string StagingAreaSubnetId { get; set; }
 		
@@ -4876,8 +4867,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="originAccountID")]
-		[System.ComponentModel.DataAnnotations.MinLength(12)]
-		[System.ComponentModel.DataAnnotations.MaxLength(12)]
+		[System.ComponentModel.DataAnnotations.Length(12, 12)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[0-9]{12,}")]
 		public string OriginAccountID { get; set; }
 		
@@ -4890,8 +4880,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="originRegion")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(0, 255)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^(us(-gov)?|ap|ca|cn|eu|sa|af|me)-(central|north|(north(?:east|west))|south|south(?:east|west)|east|west)-[0-9]$")]
 		public string OriginRegion { get; set; }
 		
@@ -4910,8 +4899,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="vpcID")]
-		[System.ComponentModel.DataAnnotations.MinLength(12)]
-		[System.ComponentModel.DataAnnotations.MaxLength(21)]
+		[System.ComponentModel.DataAnnotations.Length(12, 21)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^vpc-[0-9a-fA-F]{8,}$")]
 		public string VpcID { get; set; }
 	}
@@ -4928,8 +4916,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="jobID")]
-		[System.ComponentModel.DataAnnotations.MinLength(24)]
-		[System.ComponentModel.DataAnnotations.MaxLength(24)]
+		[System.ComponentModel.DataAnnotations.Length(24, 24)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^drsjob-[0-9a-zA-Z]{17}$")]
 		public string JobID { get; set; }
 	}
@@ -4946,8 +4933,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="launchConfigurationTemplateID")]
-		[System.ComponentModel.DataAnnotations.MinLength(21)]
-		[System.ComponentModel.DataAnnotations.MaxLength(21)]
+		[System.ComponentModel.DataAnnotations.Length(21, 21)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^lct-[0-9a-zA-Z]{17}$")]
 		public string LaunchConfigurationTemplateID { get; set; }
 	}
@@ -4964,8 +4950,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="recoveryInstanceID")]
-		[System.ComponentModel.DataAnnotations.MinLength(10)]
-		[System.ComponentModel.DataAnnotations.MaxLength(19)]
+		[System.ComponentModel.DataAnnotations.Length(10, 19)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^i-[0-9a-fA-F]{8,}$")]
 		public string RecoveryInstanceID { get; set; }
 	}
@@ -4982,8 +4967,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="replicationConfigurationTemplateID")]
-		[System.ComponentModel.DataAnnotations.MinLength(21)]
-		[System.ComponentModel.DataAnnotations.MaxLength(21)]
+		[System.ComponentModel.DataAnnotations.Length(21, 21)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^rct-[0-9a-zA-Z]{17}$")]
 		public string ReplicationConfigurationTemplateID { get; set; }
 	}
@@ -5000,8 +4984,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="sourceNetworkID")]
-		[System.ComponentModel.DataAnnotations.MinLength(20)]
-		[System.ComponentModel.DataAnnotations.MaxLength(20)]
+		[System.ComponentModel.DataAnnotations.Length(20, 20)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^sn-[0-9a-zA-Z]{17}$")]
 		public string SourceNetworkID { get; set; }
 	}
@@ -5018,8 +5001,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="sourceServerID")]
-		[System.ComponentModel.DataAnnotations.MinLength(19)]
-		[System.ComponentModel.DataAnnotations.MaxLength(19)]
+		[System.ComponentModel.DataAnnotations.Length(19, 19)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^s-[0-9a-zA-Z]{17}$")]
 		public string SourceServerID { get; set; }
 	}
@@ -5036,8 +5018,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="jobID")]
-		[System.ComponentModel.DataAnnotations.MinLength(24)]
-		[System.ComponentModel.DataAnnotations.MaxLength(24)]
+		[System.ComponentModel.DataAnnotations.Length(24, 24)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^drsjob-[0-9a-zA-Z]{17}$")]
 		public string JobID { get; set; }
 		
@@ -5055,8 +5036,7 @@ namespace MyNS
 		/// Max length: 2048
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextToken")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2048)]
+		[System.ComponentModel.DataAnnotations.Length(0, 2048)]
 		public string NextToken { get; set; }
 	}
 	
@@ -5083,8 +5063,7 @@ namespace MyNS
 		/// Max length: 2048
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextToken")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2048)]
+		[System.ComponentModel.DataAnnotations.Length(0, 2048)]
 		public string NextToken { get; set; }
 	}
 	
@@ -5110,8 +5089,7 @@ namespace MyNS
 		/// Maximum items: 1
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="launchConfigurationTemplateIDs")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1)]
+		[System.ComponentModel.DataAnnotations.Length(0, 1)]
 		public string[] LaunchConfigurationTemplateIDs { get; set; }
 		
 		/// <summary>
@@ -5129,8 +5107,7 @@ namespace MyNS
 		/// Max length: 2048
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextToken")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2048)]
+		[System.ComponentModel.DataAnnotations.Length(0, 2048)]
 		public string NextToken { get; set; }
 	}
 	
@@ -5157,8 +5134,7 @@ namespace MyNS
 		/// Max length: 2048
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextToken")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2048)]
+		[System.ComponentModel.DataAnnotations.Length(0, 2048)]
 		public string NextToken { get; set; }
 	}
 	
@@ -5195,8 +5171,7 @@ namespace MyNS
 		/// Max length: 2048
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextToken")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2048)]
+		[System.ComponentModel.DataAnnotations.Length(0, 2048)]
 		public string NextToken { get; set; }
 		
 		/// <summary>
@@ -5214,8 +5189,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="sourceServerID")]
-		[System.ComponentModel.DataAnnotations.MinLength(19)]
-		[System.ComponentModel.DataAnnotations.MaxLength(19)]
+		[System.ComponentModel.DataAnnotations.Length(19, 19)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^s-[0-9a-zA-Z]{17}$")]
 		public string SourceServerID { get; set; }
 	}
@@ -5247,8 +5221,7 @@ namespace MyNS
 		/// Max length: 2048
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextToken")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2048)]
+		[System.ComponentModel.DataAnnotations.Length(0, 2048)]
 		public string NextToken { get; set; }
 		
 		/// <summary>
@@ -5257,8 +5230,7 @@ namespace MyNS
 		/// Maximum items: 200
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="replicationConfigurationTemplateIDs")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(200)]
+		[System.ComponentModel.DataAnnotations.Length(0, 200)]
 		public string[] ReplicationConfigurationTemplateIDs { get; set; }
 	}
 	
@@ -5285,8 +5257,7 @@ namespace MyNS
 		/// Max length: 2048
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextToken")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2048)]
+		[System.ComponentModel.DataAnnotations.Length(0, 2048)]
 		public string NextToken { get; set; }
 	}
 	
@@ -5326,8 +5297,7 @@ namespace MyNS
 		/// Max length: 2048
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextToken")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2048)]
+		[System.ComponentModel.DataAnnotations.Length(0, 2048)]
 		public string NextToken { get; set; }
 	}
 	
@@ -5356,8 +5326,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="recoveryInstanceID")]
-		[System.ComponentModel.DataAnnotations.MinLength(10)]
-		[System.ComponentModel.DataAnnotations.MaxLength(19)]
+		[System.ComponentModel.DataAnnotations.Length(10, 19)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^i-[0-9a-fA-F]{8,}$")]
 		public string RecoveryInstanceID { get; set; }
 	}
@@ -5374,8 +5343,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="sourceServerID")]
-		[System.ComponentModel.DataAnnotations.MinLength(19)]
-		[System.ComponentModel.DataAnnotations.MaxLength(19)]
+		[System.ComponentModel.DataAnnotations.Length(19, 19)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^s-[0-9a-zA-Z]{17}$")]
 		public string SourceServerID { get; set; }
 	}
@@ -5392,8 +5360,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="sourceNetworkID")]
-		[System.ComponentModel.DataAnnotations.MinLength(20)]
-		[System.ComponentModel.DataAnnotations.MaxLength(20)]
+		[System.ComponentModel.DataAnnotations.Length(20, 20)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^sn-[0-9a-zA-Z]{17}$")]
 		public string SourceNetworkID { get; set; }
 	}
@@ -5410,8 +5377,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="recoveryInstanceID")]
-		[System.ComponentModel.DataAnnotations.MinLength(10)]
-		[System.ComponentModel.DataAnnotations.MaxLength(19)]
+		[System.ComponentModel.DataAnnotations.Length(10, 19)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^i-[0-9a-fA-F]{8,}$")]
 		public string RecoveryInstanceID { get; set; }
 	}
@@ -5428,8 +5394,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="sourceServerID")]
-		[System.ComponentModel.DataAnnotations.MinLength(19)]
-		[System.ComponentModel.DataAnnotations.MaxLength(19)]
+		[System.ComponentModel.DataAnnotations.Length(19, 19)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^s-[0-9a-zA-Z]{17}$")]
 		public string SourceServerID { get; set; }
 	}
@@ -5446,8 +5411,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="sourceServerID")]
-		[System.ComponentModel.DataAnnotations.MinLength(19)]
-		[System.ComponentModel.DataAnnotations.MaxLength(19)]
+		[System.ComponentModel.DataAnnotations.Length(19, 19)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^s-[0-9a-zA-Z]{17}$")]
 		public string SourceServerID { get; set; }
 	}
@@ -5470,8 +5434,7 @@ namespace MyNS
 		/// Max length: 2048
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextToken")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2048)]
+		[System.ComponentModel.DataAnnotations.Length(0, 2048)]
 		public string NextToken { get; set; }
 		
 		/// <summary>
@@ -5483,8 +5446,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="stagingAccountID")]
-		[System.ComponentModel.DataAnnotations.MinLength(12)]
-		[System.ComponentModel.DataAnnotations.MaxLength(12)]
+		[System.ComponentModel.DataAnnotations.Length(12, 12)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[0-9]{12,}")]
 		public string StagingAccountID { get; set; }
 	}
@@ -5513,8 +5475,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="sourceServerID")]
-		[System.ComponentModel.DataAnnotations.MinLength(19)]
-		[System.ComponentModel.DataAnnotations.MaxLength(19)]
+		[System.ComponentModel.DataAnnotations.Length(19, 19)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^s-[0-9a-zA-Z]{17}$")]
 		public string SourceServerID { get; set; }
 	}
@@ -5531,8 +5492,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="recoveryInstanceID")]
-		[System.ComponentModel.DataAnnotations.MinLength(10)]
-		[System.ComponentModel.DataAnnotations.MaxLength(19)]
+		[System.ComponentModel.DataAnnotations.Length(10, 19)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^i-[0-9a-fA-F]{8,}$")]
 		public string RecoveryInstanceID { get; set; }
 	}
@@ -5548,8 +5508,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="recoveryInstanceIDs")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(200)]
+		[System.ComponentModel.DataAnnotations.Length(1, 200)]
 		public string[] RecoveryInstanceIDs { get; set; }
 		
 		/// <summary>
@@ -5576,8 +5535,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="sourceServers")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(200)]
+		[System.ComponentModel.DataAnnotations.Length(1, 200)]
 		public StartRecoveryRequestSourceServer[] SourceServers { get; set; }
 		
 		/// <summary>
@@ -5599,8 +5557,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="sourceServerID")]
-		[System.ComponentModel.DataAnnotations.MinLength(19)]
-		[System.ComponentModel.DataAnnotations.MaxLength(19)]
+		[System.ComponentModel.DataAnnotations.Length(19, 19)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^s-[0-9a-zA-Z]{17}$")]
 		public string SourceServerID { get; set; }
 	}
@@ -5622,8 +5579,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="sourceNetworks")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(100)]
+		[System.ComponentModel.DataAnnotations.Length(1, 100)]
 		public StartSourceNetworkRecoveryRequestNetworkEntry[] SourceNetworks { get; set; }
 		
 		/// <summary>
@@ -5645,8 +5601,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="sourceNetworkID")]
-		[System.ComponentModel.DataAnnotations.MinLength(20)]
-		[System.ComponentModel.DataAnnotations.MaxLength(20)]
+		[System.ComponentModel.DataAnnotations.Length(20, 20)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^sn-[0-9a-zA-Z]{17}$")]
 		public string SourceNetworkID { get; set; }
 	}
@@ -5663,8 +5618,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="recoveryInstanceID")]
-		[System.ComponentModel.DataAnnotations.MinLength(10)]
-		[System.ComponentModel.DataAnnotations.MaxLength(19)]
+		[System.ComponentModel.DataAnnotations.Length(10, 19)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^i-[0-9a-fA-F]{8,}$")]
 		public string RecoveryInstanceID { get; set; }
 	}
@@ -5681,8 +5635,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="sourceServerID")]
-		[System.ComponentModel.DataAnnotations.MinLength(19)]
-		[System.ComponentModel.DataAnnotations.MaxLength(19)]
+		[System.ComponentModel.DataAnnotations.Length(19, 19)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^s-[0-9a-zA-Z]{17}$")]
 		public string SourceServerID { get; set; }
 	}
@@ -5699,8 +5652,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="sourceNetworkID")]
-		[System.ComponentModel.DataAnnotations.MinLength(20)]
-		[System.ComponentModel.DataAnnotations.MaxLength(20)]
+		[System.ComponentModel.DataAnnotations.Length(20, 20)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^sn-[0-9a-zA-Z]{17}$")]
 		public string SourceNetworkID { get; set; }
 	}
@@ -5716,8 +5668,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="recoveryInstanceIDs")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(200)]
+		[System.ComponentModel.DataAnnotations.Length(1, 200)]
 		public string[] RecoveryInstanceIDs { get; set; }
 	}
 	
@@ -5738,8 +5689,7 @@ namespace MyNS
 		/// Max length: 256
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="name")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(256)]
+		[System.ComponentModel.DataAnnotations.Length(0, 256)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -5751,8 +5701,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="recoveryInstanceID")]
-		[System.ComponentModel.DataAnnotations.MinLength(10)]
-		[System.ComponentModel.DataAnnotations.MaxLength(19)]
+		[System.ComponentModel.DataAnnotations.Length(10, 19)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^i-[0-9a-fA-F]{8,}$")]
 		public string RecoveryInstanceID { get; set; }
 		
@@ -5796,8 +5745,7 @@ namespace MyNS
 		/// Max length: 128
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="name")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(128)]
+		[System.ComponentModel.DataAnnotations.Length(0, 128)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -5809,8 +5757,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="sourceServerID")]
-		[System.ComponentModel.DataAnnotations.MinLength(19)]
-		[System.ComponentModel.DataAnnotations.MaxLength(19)]
+		[System.ComponentModel.DataAnnotations.Length(19, 19)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^s-[0-9a-zA-Z]{17}$")]
 		public string SourceServerID { get; set; }
 		
@@ -5850,8 +5797,7 @@ namespace MyNS
 		/// Pattern: ^arn:.{16,2044}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="exportBucketArn")]
-		[System.ComponentModel.DataAnnotations.MinLength(20)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2048)]
+		[System.ComponentModel.DataAnnotations.Length(20, 2048)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^arn:.{16,2044}$")]
 		public string ExportBucketArn { get; set; }
 		
@@ -5864,8 +5810,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="launchConfigurationTemplateID")]
-		[System.ComponentModel.DataAnnotations.MinLength(21)]
-		[System.ComponentModel.DataAnnotations.MaxLength(21)]
+		[System.ComponentModel.DataAnnotations.Length(21, 21)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^lct-[0-9a-zA-Z]{17}$")]
 		public string LaunchConfigurationTemplateID { get; set; }
 		
@@ -5949,8 +5894,7 @@ namespace MyNS
 		/// Pattern: ^arn:.{16,2044}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="ebsEncryptionKeyArn")]
-		[System.ComponentModel.DataAnnotations.MinLength(20)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2048)]
+		[System.ComponentModel.DataAnnotations.Length(20, 2048)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^arn:.{16,2044}$")]
 		public string EbsEncryptionKeyArn { get; set; }
 		
@@ -5960,8 +5904,7 @@ namespace MyNS
 		/// Max length: 128
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="name")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(128)]
+		[System.ComponentModel.DataAnnotations.Length(0, 128)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -5970,8 +5913,7 @@ namespace MyNS
 		/// Maximum items: 10
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="pitPolicy")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(10)]
+		[System.ComponentModel.DataAnnotations.Length(1, 10)]
 		public PITPolicyRule[] PitPolicy { get; set; }
 		
 		/// <summary>
@@ -5980,8 +5922,7 @@ namespace MyNS
 		/// Maximum items: 60
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="replicatedDisks")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(60)]
+		[System.ComponentModel.DataAnnotations.Length(0, 60)]
 		public ReplicationConfigurationReplicatedDisk[] ReplicatedDisks { get; set; }
 		
 		/// <summary>
@@ -5990,8 +5931,7 @@ namespace MyNS
 		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="replicationServerInstanceType")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(0, 255)]
 		public string ReplicationServerInstanceType { get; set; }
 		
 		/// <summary>
@@ -6000,8 +5940,7 @@ namespace MyNS
 		/// Maximum items: 32
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="replicationServersSecurityGroupsIDs")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(32)]
+		[System.ComponentModel.DataAnnotations.Length(0, 32)]
 		public string[] ReplicationServersSecurityGroupsIDs { get; set; }
 		
 		/// <summary>
@@ -6013,8 +5952,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="sourceServerID")]
-		[System.ComponentModel.DataAnnotations.MinLength(19)]
-		[System.ComponentModel.DataAnnotations.MaxLength(19)]
+		[System.ComponentModel.DataAnnotations.Length(19, 19)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^s-[0-9a-zA-Z]{17}$")]
 		public string SourceServerID { get; set; }
 		
@@ -6025,8 +5963,7 @@ namespace MyNS
 		/// Pattern: ^subnet-[0-9a-fA-F]{8,}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="stagingAreaSubnetId")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(0, 255)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^subnet-[0-9a-fA-F]{8,}$")]
 		public string StagingAreaSubnetId { get; set; }
 		
@@ -6053,8 +5990,7 @@ namespace MyNS
 		/// Pattern: ^arn:.{16,2044}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="arn")]
-		[System.ComponentModel.DataAnnotations.MinLength(20)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2048)]
+		[System.ComponentModel.DataAnnotations.Length(20, 2048)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^arn:.{16,2044}$")]
 		public string Arn { get; set; }
 		
@@ -6109,8 +6045,7 @@ namespace MyNS
 		/// Pattern: ^arn:.{16,2044}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="ebsEncryptionKeyArn")]
-		[System.ComponentModel.DataAnnotations.MinLength(20)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2048)]
+		[System.ComponentModel.DataAnnotations.Length(20, 2048)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^arn:.{16,2044}$")]
 		public string EbsEncryptionKeyArn { get; set; }
 		
@@ -6120,8 +6055,7 @@ namespace MyNS
 		/// Maximum items: 10
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="pitPolicy")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(10)]
+		[System.ComponentModel.DataAnnotations.Length(1, 10)]
 		public PITPolicyRule[] PitPolicy { get; set; }
 		
 		/// <summary>
@@ -6133,8 +6067,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="replicationConfigurationTemplateID")]
-		[System.ComponentModel.DataAnnotations.MinLength(21)]
-		[System.ComponentModel.DataAnnotations.MaxLength(21)]
+		[System.ComponentModel.DataAnnotations.Length(21, 21)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^rct-[0-9a-zA-Z]{17}$")]
 		public string ReplicationConfigurationTemplateID { get; set; }
 		
@@ -6144,8 +6077,7 @@ namespace MyNS
 		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="replicationServerInstanceType")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(0, 255)]
 		public string ReplicationServerInstanceType { get; set; }
 		
 		/// <summary>
@@ -6154,8 +6086,7 @@ namespace MyNS
 		/// Maximum items: 32
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="replicationServersSecurityGroupsIDs")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(32)]
+		[System.ComponentModel.DataAnnotations.Length(0, 32)]
 		public string[] ReplicationServersSecurityGroupsIDs { get; set; }
 		
 		/// <summary>
@@ -6165,8 +6096,7 @@ namespace MyNS
 		/// Pattern: ^subnet-[0-9a-fA-F]{8,}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="stagingAreaSubnetId")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(0, 255)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^subnet-[0-9a-fA-F]{8,}$")]
 		public string StagingAreaSubnetId { get; set; }
 		

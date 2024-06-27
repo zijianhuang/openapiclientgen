@@ -44,8 +44,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="url")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(65536)]
+		[System.ComponentModel.DataAnnotations.Length(1, 65536)]
 		public string Url { get; set; }
 	}
 	
@@ -77,8 +76,7 @@ namespace MyNS
 		/// Pattern: ^[a-zA-Z0-9\-_.]+$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="uid")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(256)]
+		[System.ComponentModel.DataAnnotations.Length(1, 256)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[a-zA-Z0-9\-_.]+$")]
 		public string Uid { get; set; }
 	}
@@ -125,8 +123,7 @@ namespace MyNS
 		/// Pattern: ^[a-zA-Z0-9\-_.]+$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="uid")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(256)]
+		[System.ComponentModel.DataAnnotations.Length(1, 256)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[a-zA-Z0-9\-_.]+$")]
 		public string Uid { get; set; }
 		
@@ -372,8 +369,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="url")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(65536)]
+		[System.ComponentModel.DataAnnotations.Length(1, 65536)]
 		public string Url { get; set; }
 	}
 	
@@ -413,8 +409,7 @@ namespace MyNS
 		/// Pattern: ^[a-zA-Z0-9\-_.]+$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="appUid")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(256)]
+		[System.ComponentModel.DataAnnotations.Length(1, 256)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[a-zA-Z0-9\-_.]+$")]
 		public string AppUid { get; set; }
 		
@@ -432,8 +427,7 @@ namespace MyNS
 		/// Pattern: ^[a-zA-Z0-9\-_.]+$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="endpointUid")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(256)]
+		[System.ComponentModel.DataAnnotations.Length(1, 256)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[a-zA-Z0-9\-_.]+$")]
 		public string EndpointUid { get; set; }
 	}
@@ -482,8 +476,7 @@ namespace MyNS
 		/// Pattern: ^[a-zA-Z0-9\-_.]+$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="appUid")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(256)]
+		[System.ComponentModel.DataAnnotations.Length(1, 256)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[a-zA-Z0-9\-_.]+$")]
 		public string AppUid { get; set; }
 		
@@ -501,8 +494,7 @@ namespace MyNS
 		/// Pattern: ^[a-zA-Z0-9\-_.]+$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="endpointUid")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(256)]
+		[System.ComponentModel.DataAnnotations.Length(1, 256)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[a-zA-Z0-9\-_.]+$")]
 		public string EndpointUid { get; set; }
 	}
@@ -551,8 +543,7 @@ namespace MyNS
 		/// Pattern: ^[a-zA-Z0-9\-_.]+$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="appUid")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(256)]
+		[System.ComponentModel.DataAnnotations.Length(1, 256)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[a-zA-Z0-9\-_.]+$")]
 		public string AppUid { get; set; }
 		
@@ -570,8 +561,7 @@ namespace MyNS
 		/// Pattern: ^[a-zA-Z0-9\-_.]+$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="endpointUid")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(256)]
+		[System.ComponentModel.DataAnnotations.Length(1, 256)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[a-zA-Z0-9\-_.]+$")]
 		public string EndpointUid { get; set; }
 		
@@ -649,8 +639,7 @@ namespace MyNS
 		/// Maximum items: 10
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="channels")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(10)]
+		[System.ComponentModel.DataAnnotations.Length(1, 10)]
 		public string[] Channels { get; set; }
 		
 		[System.ComponentModel.DefaultValue("")]
@@ -693,8 +682,7 @@ namespace MyNS
 		/// Pattern: ^[a-zA-Z0-9\-_.]+$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="uid")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(256)]
+		[System.ComponentModel.DataAnnotations.Length(1, 256)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[a-zA-Z0-9\-_.]+$")]
 		public string Uid { get; set; }
 		
@@ -705,8 +693,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="url")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(65536)]
+		[System.ComponentModel.DataAnnotations.Length(1, 65536)]
 		public string Url { get; set; }
 		
 		/// <summary>
@@ -729,8 +716,7 @@ namespace MyNS
 		/// Maximum items: 5
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="channels")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(5)]
+		[System.ComponentModel.DataAnnotations.Length(1, 5)]
 		public string[] Channels { get; set; }
 		
 		/// <summary>
@@ -740,8 +726,7 @@ namespace MyNS
 		/// Pattern: ^[a-zA-Z0-9\-_.]+$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="eventId")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(256)]
+		[System.ComponentModel.DataAnnotations.Length(1, 256)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[a-zA-Z0-9\-_.]+$")]
 		public string EventId { get; set; }
 		
@@ -827,8 +812,7 @@ namespace MyNS
 		/// Maximum items: 10
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="channels")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(10)]
+		[System.ComponentModel.DataAnnotations.Length(1, 10)]
 		public string[] Channels { get; set; }
 		
 		/// <summary>
@@ -877,8 +861,7 @@ namespace MyNS
 		/// Pattern: ^[a-zA-Z0-9\-_.]+$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="uid")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(256)]
+		[System.ComponentModel.DataAnnotations.Length(1, 256)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[a-zA-Z0-9\-_.]+$")]
 		public string Uid { get; set; }
 		
@@ -896,8 +879,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="url")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(65536)]
+		[System.ComponentModel.DataAnnotations.Length(1, 65536)]
 		public string Url { get; set; }
 		
 		/// <summary>
@@ -980,8 +962,7 @@ namespace MyNS
 		/// Max length: 51200
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="code")]
-		[System.ComponentModel.DataAnnotations.MinLength(10)]
-		[System.ComponentModel.DataAnnotations.MaxLength(51200)]
+		[System.ComponentModel.DataAnnotations.Length(10, 51200)]
 		public string Code { get; set; }
 		
 		[System.Runtime.Serialization.DataMember(Name="enabled")]
@@ -997,8 +978,7 @@ namespace MyNS
 		/// Max length: 51200
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="code")]
-		[System.ComponentModel.DataAnnotations.MinLength(10)]
-		[System.ComponentModel.DataAnnotations.MaxLength(51200)]
+		[System.ComponentModel.DataAnnotations.Length(10, 51200)]
 		public string Code { get; set; }
 		
 		[System.Runtime.Serialization.DataMember(Name="enabled")]
@@ -1015,8 +995,7 @@ namespace MyNS
 		/// Maximum items: 10
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="channels")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(10)]
+		[System.ComponentModel.DataAnnotations.Length(1, 10)]
 		public string[] Channels { get; set; }
 		
 		[System.ComponentModel.DefaultValue("")]
@@ -1051,8 +1030,7 @@ namespace MyNS
 		/// Pattern: ^[a-zA-Z0-9\-_.]+$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="uid")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(256)]
+		[System.ComponentModel.DataAnnotations.Length(1, 256)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[a-zA-Z0-9\-_.]+$")]
 		public string Uid { get; set; }
 		
@@ -1063,8 +1041,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="url")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(65536)]
+		[System.ComponentModel.DataAnnotations.Length(1, 65536)]
 		public string Url { get; set; }
 		
 		/// <summary>
@@ -1113,8 +1090,7 @@ namespace MyNS
 		/// Pattern: ^[a-zA-Z0-9\-_.]+$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="appUid")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(256)]
+		[System.ComponentModel.DataAnnotations.Length(1, 256)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[a-zA-Z0-9\-_.]+$")]
 		public string AppUid { get; set; }
 		
@@ -1132,8 +1108,7 @@ namespace MyNS
 		/// Pattern: ^[a-zA-Z0-9\-_.]+$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="endpointUid")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(256)]
+		[System.ComponentModel.DataAnnotations.Length(1, 256)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[a-zA-Z0-9\-_.]+$")]
 		public string EndpointUid { get; set; }
 	}
@@ -1657,8 +1632,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="url")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(65536)]
+		[System.ComponentModel.DataAnnotations.Length(1, 65536)]
 		public string Url { get; set; }
 	}
 	
@@ -1778,8 +1752,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="url")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(65536)]
+		[System.ComponentModel.DataAnnotations.Length(1, 65536)]
 		public string Url { get; set; }
 	}
 	
@@ -1815,8 +1788,7 @@ namespace MyNS
 		/// Maximum items: 10
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="channels")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(10)]
+		[System.ComponentModel.DataAnnotations.Length(1, 10)]
 		public string[] Channels { get; set; }
 		
 		/// <summary>
@@ -1880,8 +1852,7 @@ namespace MyNS
 		/// Pattern: ^[a-zA-Z0-9\-_.]+$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="uid")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(256)]
+		[System.ComponentModel.DataAnnotations.Length(1, 256)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[a-zA-Z0-9\-_.]+$")]
 		public string Uid { get; set; }
 		
@@ -1892,8 +1863,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="url")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(65536)]
+		[System.ComponentModel.DataAnnotations.Length(1, 65536)]
 		public string Url { get; set; }
 		
 		/// <summary>
@@ -1941,8 +1911,7 @@ namespace MyNS
 		/// Maximum items: 5
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="channels")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(5)]
+		[System.ComponentModel.DataAnnotations.Length(1, 5)]
 		public string[] Channels { get; set; }
 		
 		/// <summary>
@@ -1952,8 +1921,7 @@ namespace MyNS
 		/// Pattern: ^[a-zA-Z0-9\-_.]+$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="eventId")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(256)]
+		[System.ComponentModel.DataAnnotations.Length(1, 256)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[a-zA-Z0-9\-_.]+$")]
 		public string EventId { get; set; }
 		
@@ -2026,8 +1994,7 @@ namespace MyNS
 		/// Pattern: ^[a-zA-Z0-9\-_.]+$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="appUid")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(256)]
+		[System.ComponentModel.DataAnnotations.Length(1, 256)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[a-zA-Z0-9\-_.]+$")]
 		public string AppUid { get; set; }
 		
@@ -2052,8 +2019,7 @@ namespace MyNS
 		/// Pattern: ^[a-zA-Z0-9\-_.]+$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="msgEventId")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(256)]
+		[System.ComponentModel.DataAnnotations.Length(1, 256)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[a-zA-Z0-9\-_.]+$")]
 		public string MsgEventId { get; set; }
 		
@@ -2136,8 +2102,7 @@ namespace MyNS
 		/// Pattern: ^[a-zA-Z0-9\-_.]+$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="appUid")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(256)]
+		[System.ComponentModel.DataAnnotations.Length(1, 256)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[a-zA-Z0-9\-_.]+$")]
 		public string AppUid { get; set; }
 		
@@ -2162,8 +2127,7 @@ namespace MyNS
 		/// Pattern: ^[a-zA-Z0-9\-_.]+$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="msgEventId")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(256)]
+		[System.ComponentModel.DataAnnotations.Length(1, 256)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[a-zA-Z0-9\-_.]+$")]
 		public string MsgEventId { get; set; }
 		
@@ -2196,8 +2160,7 @@ namespace MyNS
 		/// Maximum items: 5
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="channels")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(5)]
+		[System.ComponentModel.DataAnnotations.Length(1, 5)]
 		public string[] Channels { get; set; }
 		
 		/// <summary>
@@ -2207,8 +2170,7 @@ namespace MyNS
 		/// Pattern: ^[a-zA-Z0-9\-_.]+$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="eventId")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(256)]
+		[System.ComponentModel.DataAnnotations.Length(1, 256)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[a-zA-Z0-9\-_.]+$")]
 		public string EventId { get; set; }
 		

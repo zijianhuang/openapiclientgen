@@ -768,8 +768,7 @@ namespace MyNS
 		/// Maximum items: 3
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="recentIntentSummaryView")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(3)]
+		[System.ComponentModel.DataAnnotations.Length(0, 3)]
 		public IntentSummary[] RecentIntentSummaryView { get; set; }
 		
 		/// <summary>
@@ -778,8 +777,7 @@ namespace MyNS
 		/// Maximum items: 20
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="activeContexts")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(20)]
+		[System.ComponentModel.DataAnnotations.Length(0, 20)]
 		public ActiveContext[] ActiveContexts { get; set; }
 	}
 	
@@ -843,8 +841,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="inputText")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1024)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1024)]
 		public string InputText { get; set; }
 		
 		/// <summary>
@@ -853,8 +850,7 @@ namespace MyNS
 		/// Maximum items: 20
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="activeContexts")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(20)]
+		[System.ComponentModel.DataAnnotations.Length(0, 20)]
 		public ActiveContext[] ActiveContexts { get; set; }
 	}
 }

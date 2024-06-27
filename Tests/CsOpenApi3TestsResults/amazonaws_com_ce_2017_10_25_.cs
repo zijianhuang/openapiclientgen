@@ -319,8 +319,7 @@ namespace MyNS
 		/// Max length: 50
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(50)]
+		[System.ComponentModel.DataAnnotations.Length(1, 50)]
 		public string Key { get; set; }
 		
 		[System.Runtime.Serialization.DataMember()]
@@ -513,8 +512,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(50)]
+		[System.ComponentModel.DataAnnotations.Length(1, 50)]
 		public string Name { get; set; }
 		
 		[System.Runtime.Serialization.DataMember()]
@@ -541,8 +539,7 @@ namespace MyNS
 		/// Max length: 50
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(50)]
+		[System.ComponentModel.DataAnnotations.Length(1, 50)]
 		public string DefaultValue { get; set; }
 		
 		[System.Runtime.Serialization.DataMember()]
@@ -573,8 +570,7 @@ namespace MyNS
 		/// Max length: 50
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(50)]
+		[System.ComponentModel.DataAnnotations.Length(1, 50)]
 		public string Value { get; set; }
 		
 		[System.Runtime.Serialization.DataMember()]
@@ -814,8 +810,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(50)]
+		[System.ComponentModel.DataAnnotations.Length(1, 50)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -845,8 +840,7 @@ namespace MyNS
 		/// Max length: 50
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(50)]
+		[System.ComponentModel.DataAnnotations.Length(1, 50)]
 		public string DefaultValue { get; set; }
 	}
 	
@@ -1507,8 +1501,7 @@ namespace MyNS
 		/// Max length: 50
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(50)]
+		[System.ComponentModel.DataAnnotations.Length(1, 50)]
 		public string CostCategoryName { get; set; }
 		
 		/// <summary>
@@ -2997,8 +2990,7 @@ namespace MyNS
 		/// Pattern: ^\d{4}-\d\d-\d\dT\d\d:\d\d:\d\d(([+-]\d\d:\d\d)|Z)$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(20)]
-		[System.ComponentModel.DataAnnotations.MaxLength(25)]
+		[System.ComponentModel.DataAnnotations.Length(20, 25)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^\d{4}-\d\d-\d\dT\d\d:\d\d:\d\d(([+-]\d\d:\d\d)|Z)$")]
 		public string GenerationTimestamp { get; set; }
 		
@@ -3009,8 +3001,7 @@ namespace MyNS
 		/// Pattern: ^\d{4}-\d\d-\d\dT\d\d:\d\d:\d\d(([+-]\d\d:\d\d)|Z)$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(20)]
-		[System.ComponentModel.DataAnnotations.MaxLength(25)]
+		[System.ComponentModel.DataAnnotations.Length(20, 25)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^\d{4}-\d\d-\d\dT\d\d:\d\d:\d\d(([+-]\d\d:\d\d)|Z)$")]
 		public string LatestUsageTimestamp { get; set; }
 		
@@ -3094,8 +3085,7 @@ namespace MyNS
 		/// Pattern: ^\d{4}-\d\d-\d\dT\d\d:\d\d:\d\d(([+-]\d\d:\d\d)|Z)$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(20)]
-		[System.ComponentModel.DataAnnotations.MaxLength(25)]
+		[System.ComponentModel.DataAnnotations.Length(20, 25)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^\d{4}-\d\d-\d\dT\d\d:\d\d:\d\d(([+-]\d\d:\d\d)|Z)$")]
 		public string StartTime { get; set; }
 		
@@ -3883,8 +3873,7 @@ namespace MyNS
 		/// Max length: 50
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(50)]
+		[System.ComponentModel.DataAnnotations.Length(1, 50)]
 		public string Name { get; set; }
 		
 		[System.Runtime.Serialization.DataMember()]
@@ -3908,8 +3897,7 @@ namespace MyNS
 		/// Max length: 50
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(50)]
+		[System.ComponentModel.DataAnnotations.Length(1, 50)]
 		public string DefaultValue { get; set; }
 	}
 	
@@ -4294,8 +4282,7 @@ namespace MyNS
 		/// Max length: 50
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(50)]
+		[System.ComponentModel.DataAnnotations.Length(1, 50)]
 		public string DefaultValue { get; set; }
 		
 		[System.Runtime.Serialization.DataMember()]

@@ -572,8 +572,7 @@ namespace MyNS
 		/// Pattern: ^snap-[0-9a-f]+$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(64)]
+		[System.ComponentModel.DataAnnotations.Length(1, 64)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^snap-[0-9a-f]+$")]
 		public string ParentSnapshotId { get; set; }
 		
@@ -616,8 +615,7 @@ namespace MyNS
 		/// Pattern: arn:aws[a-z\-]*:kms:.*:[0-9]{12}:key/.*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2048)]
+		[System.ComponentModel.DataAnnotations.Length(1, 2048)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"arn:aws[a-z\-]*:kms:.*:[0-9]{12}:key/.*")]
 		public string KmsKeyArn { get; set; }
 		

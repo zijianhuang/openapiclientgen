@@ -1941,8 +1941,7 @@ namespace MyNS
 		/// Max length: 2147483647
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="publicKey")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2147483647)]
+		[System.ComponentModel.DataAnnotations.Length(1, 2147483647)]
 		public string PublicKey { get; set; }
 	}
 	
@@ -1956,8 +1955,7 @@ namespace MyNS
 		/// Max length: 2147483647
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="publicKey")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2147483647)]
+		[System.ComponentModel.DataAnnotations.Length(1, 2147483647)]
 		public string PublicKey { get; set; }
 	}
 	
@@ -2190,8 +2188,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="cobrandLogin")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2147483647)]
+		[System.ComponentModel.DataAnnotations.Length(1, 2147483647)]
 		public string CobrandLogin { get; set; }
 		
 		/// <summary>
@@ -2201,8 +2198,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="cobrandPassword")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2147483647)]
+		[System.ComponentModel.DataAnnotations.Length(1, 2147483647)]
 		public string CobrandPassword { get; set; }
 		
 		/// <summary>
@@ -2270,8 +2266,7 @@ namespace MyNS
 		/// Max length: 2147483647
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="callbackUrl")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2147483647)]
+		[System.ComponentModel.DataAnnotations.Length(1, 2147483647)]
 		public string CallbackUrl { get; set; }
 		
 		/// <summary>
@@ -2330,8 +2325,7 @@ namespace MyNS
 		/// Max length: 2147483647
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="callbackUrl")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2147483647)]
+		[System.ComponentModel.DataAnnotations.Length(1, 2147483647)]
 		public string CallbackUrl { get; set; }
 		
 		/// <summary>
@@ -2419,8 +2413,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="accountName")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(100)]
+		[System.ComponentModel.DataAnnotations.Length(1, 100)]
 		public string AccountName { get; set; }
 		
 		/// <summary>
@@ -2429,8 +2422,7 @@ namespace MyNS
 		/// Pattern: ^[a-zA-Z0-9]+$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="accountNumber")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(100)]
+		[System.ComponentModel.DataAnnotations.Length(0, 100)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[a-zA-Z0-9]+$")]
 		public string AccountNumber { get; set; }
 		
@@ -2441,8 +2433,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="accountType")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2147483647)]
+		[System.ComponentModel.DataAnnotations.Length(1, 2147483647)]
 		public string AccountType { get; set; }
 		
 		[System.Runtime.Serialization.DataMember(Name="address")]
@@ -2471,8 +2462,7 @@ namespace MyNS
 		/// Max length: 250
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="memo")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(250)]
+		[System.ComponentModel.DataAnnotations.Length(0, 250)]
 		public string Memo { get; set; }
 		
 		/// <summary>
@@ -2480,8 +2470,7 @@ namespace MyNS
 		/// Max length: 50
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nickname")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(50)]
+		[System.ComponentModel.DataAnnotations.Length(0, 50)]
 		public string Nickname { get; set; }
 		
 		[System.Runtime.Serialization.DataMember(Name="valuationType")]
@@ -2510,8 +2499,7 @@ namespace MyNS
 		/// Max length: 2147483647
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="callbackUrl")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2147483647)]
+		[System.ComponentModel.DataAnnotations.Length(1, 2147483647)]
 		public string CallbackUrl { get; set; }
 	}
 	
@@ -2537,8 +2525,7 @@ namespace MyNS
 		/// Max length: 2147483647
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="callbackUrl")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2147483647)]
+		[System.ComponentModel.DataAnnotations.Length(1, 2147483647)]
 		public string CallbackUrl { get; set; }
 	}
 	
@@ -4901,8 +4888,7 @@ namespace MyNS
 		/// Max length: 2147483647
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="id")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2147483647)]
+		[System.ComponentModel.DataAnnotations.Length(1, 2147483647)]
 		public string Id { get; set; }
 		
 		/// <summary>
@@ -6935,8 +6921,7 @@ namespace MyNS
 		/// Max length: 50
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="categoryName")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(50)]
+		[System.ComponentModel.DataAnnotations.Length(1, 50)]
 		public string CategoryName { get; set; }
 		
 		/// <summary>
@@ -7045,8 +7030,7 @@ namespace MyNS
 		/// Max length: 100
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="accountName")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(100)]
+		[System.ComponentModel.DataAnnotations.Length(1, 100)]
 		public string AccountName { get; set; }
 		
 		/// <summary>
@@ -7055,8 +7039,7 @@ namespace MyNS
 		/// Pattern: ^[a-zA-Z0-9]+$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="accountNumber")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(100)]
+		[System.ComponentModel.DataAnnotations.Length(0, 100)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[a-zA-Z0-9]+$")]
 		public string AccountNumber { get; set; }
 		
@@ -7095,8 +7078,7 @@ namespace MyNS
 		/// Max length: 250
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="memo")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(250)]
+		[System.ComponentModel.DataAnnotations.Length(0, 250)]
 		public string Memo { get; set; }
 		
 		/// <summary>
@@ -7104,8 +7086,7 @@ namespace MyNS
 		/// Max length: 50
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nickname")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(50)]
+		[System.ComponentModel.DataAnnotations.Length(0, 50)]
 		public string Nickname { get; set; }
 	}
 	
@@ -7158,8 +7139,7 @@ namespace MyNS
 		/// Max length: 2147483647
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="callbackUrl")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2147483647)]
+		[System.ComponentModel.DataAnnotations.Length(1, 2147483647)]
 		public string CallbackUrl { get; set; }
 	}
 	
@@ -7185,8 +7165,7 @@ namespace MyNS
 		/// Max length: 2147483647
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="callbackUrl")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2147483647)]
+		[System.ComponentModel.DataAnnotations.Length(1, 2147483647)]
 		public string CallbackUrl { get; set; }
 	}
 	
@@ -7264,8 +7243,7 @@ namespace MyNS
 		/// Max length: 2147483647
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="dateFormat")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2147483647)]
+		[System.ComponentModel.DataAnnotations.Length(1, 2147483647)]
 		public string DateFormat { get; set; }
 		
 		/// <summary>
@@ -7280,8 +7258,7 @@ namespace MyNS
 		/// Max length: 2147483647
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="timeZone")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2147483647)]
+		[System.ComponentModel.DataAnnotations.Length(1, 2147483647)]
 		public string TimeZone { get; set; }
 	}
 	
@@ -7385,8 +7362,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="accountNumber")]
-		[System.ComponentModel.DataAnnotations.MinLength(3)]
-		[System.ComponentModel.DataAnnotations.MaxLength(17)]
+		[System.ComponentModel.DataAnnotations.Length(3, 17)]
 		public string AccountNumber { get; set; }
 		
 		/// <summary>
@@ -7640,8 +7616,7 @@ namespace MyNS
 		/// Max length: 2147483647
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="dateFormat")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2147483647)]
+		[System.ComponentModel.DataAnnotations.Length(1, 2147483647)]
 		public string DateFormat { get; set; }
 		
 		/// <summary>
@@ -7656,8 +7631,7 @@ namespace MyNS
 		/// Max length: 2147483647
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="timeZone")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2147483647)]
+		[System.ComponentModel.DataAnnotations.Length(1, 2147483647)]
 		public string TimeZone { get; set; }
 	}
 	
@@ -7759,8 +7733,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="loginName")]
-		[System.ComponentModel.DataAnnotations.MinLength(3)]
-		[System.ComponentModel.DataAnnotations.MaxLength(150)]
+		[System.ComponentModel.DataAnnotations.Length(3, 150)]
 		public string LoginName { get; set; }
 		
 		[System.Runtime.Serialization.DataMember(Name="name")]

@@ -82,8 +82,7 @@ namespace MyNS
 		/// Max length: 256
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="preview_img_url")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(256)]
+		[System.ComponentModel.DataAnnotations.Length(1, 256)]
 		public string Preview_img_url { get; set; }
 	}
 	
@@ -97,8 +96,7 @@ namespace MyNS
 		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="crop")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public string Crop { get; set; }
 		
 		/// <summary>
@@ -129,8 +127,7 @@ namespace MyNS
 		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="resize")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public string Resize { get; set; }
 		
 		/// <summary>
@@ -397,8 +394,7 @@ namespace MyNS
 		/// Max length: 256
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="result_file_url")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(256)]
+		[System.ComponentModel.DataAnnotations.Length(1, 256)]
 		public string Result_file_url { get; set; }
 	}
 	

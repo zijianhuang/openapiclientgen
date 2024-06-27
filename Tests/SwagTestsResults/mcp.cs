@@ -29,8 +29,7 @@ namespace MyNS
 		/// Min length: 6
 		/// Max length: 6
 		/// </summary>
-		[System.ComponentModel.DataAnnotations.MinLength(6)]
-		[System.ComponentModel.DataAnnotations.MaxLength(6)]
+		[System.ComponentModel.DataAnnotations.Length(6, 6)]
 		public string ClaimId { get; set; }
 		
 		public System.Nullable<System.DateOnly> LodgementDate { get; set; }
@@ -45,8 +44,7 @@ namespace MyNS
 		/// Max length: 8
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
-		[System.ComponentModel.DataAnnotations.MinLength(8)]
-		[System.ComponentModel.DataAnnotations.MaxLength(8)]
+		[System.ComponentModel.DataAnnotations.Length(8, 8)]
 		public string ProviderNumber { get; set; }
 	}
 	
@@ -101,24 +99,21 @@ namespace MyNS
 		/// Min length: 1
 		/// Max length: 30
 		/// </summary>
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(30)]
+		[System.ComponentModel.DataAnnotations.Length(1, 30)]
 		public string AccountName { get; set; }
 		
 		/// <summary>
 		/// Min length: 1
 		/// Max length: 9
 		/// </summary>
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(9)]
+		[System.ComponentModel.DataAnnotations.Length(1, 9)]
 		public string AccountNumber { get; set; }
 		
 		/// <summary>
 		/// Min length: 6
 		/// Max length: 6
 		/// </summary>
-		[System.ComponentModel.DataAnnotations.MinLength(6)]
-		[System.ComponentModel.DataAnnotations.MaxLength(6)]
+		[System.ComponentModel.DataAnnotations.Length(6, 6)]
 		public string BsbCode { get; set; }
 	}
 	
@@ -133,8 +128,7 @@ namespace MyNS
 		/// Min length: 1
 		/// Max length: 9
 		/// </summary>
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(9)]
+		[System.ComponentModel.DataAnnotations.Length(1, 9)]
 		public string ChargeAmount { get; set; }
 		
 		public string ClaimChannelCode { get; set; }
@@ -227,8 +221,7 @@ namespace MyNS
 		/// Min length: 1
 		/// Max length: 9
 		/// </summary>
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(9)]
+		[System.ComponentModel.DataAnnotations.Length(1, 9)]
 		public string ChargeAmount { get; set; }
 		
 		public string ClaimId { get; set; }
@@ -277,16 +270,14 @@ namespace MyNS
 		/// Min length: 10
 		/// Max length: 10
 		/// </summary>
-		[System.ComponentModel.DataAnnotations.MinLength(10)]
-		[System.ComponentModel.DataAnnotations.MaxLength(10)]
+		[System.ComponentModel.DataAnnotations.Length(10, 10)]
 		public string MemberNumber { get; set; }
 		
 		/// <summary>
 		/// Min length: 1
 		/// Max length: 1
 		/// </summary>
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1)]
 		public string MemberRefNumber { get; set; }
 	}
 	
@@ -303,16 +294,14 @@ namespace MyNS
 		/// Min length: 1
 		/// Max length: 1
 		/// </summary>
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1)]
 		public string SecondInitial { get; set; }
 		
 		/// <summary>
 		/// Min length: 1
 		/// Max length: 1
 		/// </summary>
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1)]
 		public string Sex { get; set; }
 	}
 	
@@ -331,8 +320,7 @@ namespace MyNS
 		/// Min length: 1
 		/// Max length: 9
 		/// </summary>
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(9)]
+		[System.ComponentModel.DataAnnotations.Length(1, 9)]
 		public string ChargeAmount { get; set; }
 		
 		public string ItemNumber { get; set; }
@@ -357,16 +345,14 @@ namespace MyNS
 		/// Min length: 8
 		/// Max length: 8
 		/// </summary>
-		[System.ComponentModel.DataAnnotations.MinLength(8)]
-		[System.ComponentModel.DataAnnotations.MaxLength(8)]
+		[System.ComponentModel.DataAnnotations.Length(8, 8)]
 		public string FacilityId { get; set; }
 		
 		/// <summary>
 		/// Min length: 1
 		/// Max length: 1
 		/// </summary>
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1)]
 		public string HospitalInd { get; set; }
 		
 		/// <summary>
@@ -391,8 +377,7 @@ namespace MyNS
 		/// Max length: 1
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1)]
 		public string ServiceTypeCode { get; set; }
 	}
 	
@@ -405,8 +390,7 @@ namespace MyNS
 		/// Max length: 2
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
-		[System.ComponentModel.DataAnnotations.MinLength(2)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2)]
+		[System.ComponentModel.DataAnnotations.Length(2, 2)]
 		public string Id { get; set; }
 		
 		/// <summary>
@@ -445,8 +429,7 @@ namespace MyNS
 		/// Min length: 1
 		/// Max length: 1
 		/// </summary>
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1)]
 		public string ReferralOverrideCode { get; set; }
 		
 		/// <summary>
@@ -463,8 +446,7 @@ namespace MyNS
 		/// Max length: 1
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1)]
 		public string SubmissionAuthorityInd { get; set; }
 	}
 	
@@ -497,16 +479,14 @@ namespace MyNS
 		/// Min length: 1
 		/// Max length: 2
 		/// </summary>
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2)]
+		[System.ComponentModel.DataAnnotations.Length(1, 2)]
 		public string Period { get; set; }
 		
 		/// <summary>
 		/// Min length: 1
 		/// Max length: 1
 		/// </summary>
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1)]
 		public string PeriodCode { get; set; }
 		
 		/// <summary>
@@ -521,8 +501,7 @@ namespace MyNS
 		/// Max length: 1
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1)]
 		public string TypeCode { get; set; }
 	}
 	
@@ -535,8 +514,7 @@ namespace MyNS
 		/// Max length: 4
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
-		[System.ComponentModel.DataAnnotations.MinLength(4)]
-		[System.ComponentModel.DataAnnotations.MaxLength(4)]
+		[System.ComponentModel.DataAnnotations.Length(4, 4)]
 		public string Id { get; set; }
 		
 		public System.Nullable<System.DateTimeOffset> AccessionDateTime { get; set; }
@@ -545,16 +523,14 @@ namespace MyNS
 		/// Min length: 1
 		/// Max length: 1
 		/// </summary>
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1)]
 		public string AftercareOverrideInd { get; set; }
 		
 		/// <summary>
 		/// Min length: 1
 		/// Max length: 9
 		/// </summary>
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(9)]
+		[System.ComponentModel.DataAnnotations.Length(1, 9)]
 		public string ChargeAmount { get; set; }
 		
 		public System.Nullable<System.DateTimeOffset> CollectionDateTime { get; set; }
@@ -563,88 +539,77 @@ namespace MyNS
 		/// Min length: 1
 		/// Max length: 1
 		/// </summary>
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1)]
 		public string DuplicateServiceOverrideInd { get; set; }
 		
 		/// <summary>
 		/// Min length: 1
 		/// Max length: 2
 		/// </summary>
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2)]
+		[System.ComponentModel.DataAnnotations.Length(1, 2)]
 		public string FieldQuantity { get; set; }
 		
 		/// <summary>
 		/// Min length: 1
 		/// Max length: 5
 		/// </summary>
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(5)]
+		[System.ComponentModel.DataAnnotations.Length(1, 5)]
 		public string ItemNumber { get; set; }
 		
 		/// <summary>
 		/// Min length: 1
 		/// Max length: 6
 		/// </summary>
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(6)]
+		[System.ComponentModel.DataAnnotations.Length(1, 6)]
 		public string LspNumber { get; set; }
 		
 		/// <summary>
 		/// Min length: 1
 		/// Max length: 1
 		/// </summary>
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1)]
 		public string MultipleProcedureOverrideInd { get; set; }
 		
 		/// <summary>
 		/// Min length: 1
 		/// Max length: 2
 		/// </summary>
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2)]
+		[System.ComponentModel.DataAnnotations.Length(1, 2)]
 		public string NumberOfPatientsSeen { get; set; }
 		
 		/// <summary>
 		/// Min length: 2
 		/// Max length: 2
 		/// </summary>
-		[System.ComponentModel.DataAnnotations.MinLength(2)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2)]
+		[System.ComponentModel.DataAnnotations.Length(2, 2)]
 		public string RestrictiveOverrideCode { get; set; }
 		
 		/// <summary>
 		/// Min length: 1
 		/// Max length: 1
 		/// </summary>
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1)]
 		public string Rule3ExemptInd { get; set; }
 		
 		/// <summary>
 		/// Min length: 1
 		/// Max length: 1
 		/// </summary>
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1)]
 		public string S4b3ExemptInd { get; set; }
 		
 		/// <summary>
 		/// Min length: 3
 		/// Max length: 5
 		/// </summary>
-		[System.ComponentModel.DataAnnotations.MinLength(3)]
-		[System.ComponentModel.DataAnnotations.MaxLength(5)]
+		[System.ComponentModel.DataAnnotations.Length(3, 5)]
 		public string ScpId { get; set; }
 		
 		/// <summary>
 		/// Min length: 1
 		/// Max length: 2
 		/// </summary>
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2)]
+		[System.ComponentModel.DataAnnotations.Length(1, 2)]
 		public string SelfDeemedCode { get; set; }
 		
 		public string Text { get; set; }
@@ -653,8 +618,7 @@ namespace MyNS
 		/// Min length: 3
 		/// Max length: 3
 		/// </summary>
-		[System.ComponentModel.DataAnnotations.MinLength(3)]
-		[System.ComponentModel.DataAnnotations.MaxLength(3)]
+		[System.ComponentModel.DataAnnotations.Length(3, 3)]
 		public string TimeDuration { get; set; }
 	}
 	
@@ -691,8 +655,7 @@ namespace MyNS
 		/// Min length: 1
 		/// Max length: 1
 		/// </summary>
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1)]
 		public string HospitalInd { get; set; }
 		
 		/// <summary>
@@ -717,8 +680,7 @@ namespace MyNS
 		/// Max length: 1
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1)]
 		public string ServiceTypeCode { get; set; }
 	}
 	
@@ -731,8 +693,7 @@ namespace MyNS
 		/// Max length: 2
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
-		[System.ComponentModel.DataAnnotations.MinLength(2)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2)]
+		[System.ComponentModel.DataAnnotations.Length(2, 2)]
 		public string Id { get; set; }
 		
 		public AcceptedDisabilityType AcceptedDisability { get; set; }
@@ -749,8 +710,7 @@ namespace MyNS
 		/// Min length: 1
 		/// Max length: 1
 		/// </summary>
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1)]
 		public string BreakInEpisodeOfCareNumber { get; set; }
 		
 		public System.Nullable<System.DateOnly> BreakInEpisodeStartDate { get; set; }
@@ -759,16 +719,14 @@ namespace MyNS
 		/// Min length: 1
 		/// Max length: 5
 		/// </summary>
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(5)]
+		[System.ComponentModel.DataAnnotations.Length(1, 5)]
 		public string NumberOfCNCHours { get; set; }
 		
 		/// <summary>
 		/// Min length: 1
 		/// Max length: 3
 		/// </summary>
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(3)]
+		[System.ComponentModel.DataAnnotations.Length(1, 3)]
 		public string NumberOfCNCVisits { get; set; }
 		
 		/// <summary>
@@ -781,24 +739,21 @@ namespace MyNS
 		/// Min length: 1
 		/// Max length: 5
 		/// </summary>
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(5)]
+		[System.ComponentModel.DataAnnotations.Length(1, 5)]
 		public string NumberOfENHours { get; set; }
 		
 		/// <summary>
 		/// Min length: 1
 		/// Max length: 3
 		/// </summary>
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(3)]
+		[System.ComponentModel.DataAnnotations.Length(1, 3)]
 		public string NumberOfENVisits { get; set; }
 		
 		/// <summary>
 		/// Min length: 8
 		/// Max length: 8
 		/// </summary>
-		[System.ComponentModel.DataAnnotations.MinLength(8)]
-		[System.ComponentModel.DataAnnotations.MaxLength(8)]
+		[System.ComponentModel.DataAnnotations.Length(8, 8)]
 		public string FacilityId { get; set; }
 		
 		/// <summary>
@@ -817,16 +772,14 @@ namespace MyNS
 		/// Min length: 1
 		/// Max length: 5
 		/// </summary>
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(5)]
+		[System.ComponentModel.DataAnnotations.Length(1, 5)]
 		public string NumberOfNSSHours { get; set; }
 		
 		/// <summary>
 		/// Min length: 1
 		/// Max length: 3
 		/// </summary>
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(3)]
+		[System.ComponentModel.DataAnnotations.Length(1, 3)]
 		public string NumberOfNSSVisits { get; set; }
 		
 		/// <summary>
@@ -841,24 +794,21 @@ namespace MyNS
 		/// Min length: 1
 		/// Max length: 1
 		/// </summary>
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1)]
 		public string ReferralOverrideCode { get; set; }
 		
 		/// <summary>
 		/// Min length: 1
 		/// Max length: 5
 		/// </summary>
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(5)]
+		[System.ComponentModel.DataAnnotations.Length(1, 5)]
 		public string NumberOfRNHours { get; set; }
 		
 		/// <summary>
 		/// Min length: 1
 		/// Max length: 3
 		/// </summary>
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(3)]
+		[System.ComponentModel.DataAnnotations.Length(1, 3)]
 		public string NumberOfRNVisits { get; set; }
 		
 		/// <summary>
@@ -875,8 +825,7 @@ namespace MyNS
 		/// Max length: 1
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1)]
 		public string SubmissionAuthorityInd { get; set; }
 	}
 	
@@ -895,8 +844,7 @@ namespace MyNS
 		/// Max length: 1
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1)]
 		public string Ind { get; set; }
 	}
 	
@@ -909,16 +857,14 @@ namespace MyNS
 		/// Max length: 4
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
-		[System.ComponentModel.DataAnnotations.MinLength(4)]
-		[System.ComponentModel.DataAnnotations.MaxLength(4)]
+		[System.ComponentModel.DataAnnotations.Length(4, 4)]
 		public string Id { get; set; }
 		
 		/// <summary>
 		/// Min length: 1
 		/// Max length: 8
 		/// </summary>
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(8)]
+		[System.ComponentModel.DataAnnotations.Length(1, 8)]
 		public string AccountReferenceNumber { get; set; }
 		
 		public System.Nullable<System.DateOnly> AdmissionDate { get; set; }
@@ -927,8 +873,7 @@ namespace MyNS
 		/// Min length: 3
 		/// Max length: 7
 		/// </summary>
-		[System.ComponentModel.DataAnnotations.MinLength(3)]
-		[System.ComponentModel.DataAnnotations.MaxLength(7)]
+		[System.ComponentModel.DataAnnotations.Length(3, 7)]
 		public string ChargeAmount { get; set; }
 		
 		public System.Nullable<System.DateOnly> DischargeDate { get; set; }
@@ -939,8 +884,7 @@ namespace MyNS
 		/// Min length: 1
 		/// Max length: 1
 		/// </summary>
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1)]
 		public string DuplicateServiceOverrideInd { get; set; }
 		
 		/// <summary>
@@ -949,64 +893,56 @@ namespace MyNS
 		/// Max length: 5
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(5)]
+		[System.ComponentModel.DataAnnotations.Length(1, 5)]
 		public string ItemNumber { get; set; }
 		
 		/// <summary>
 		/// Min length: 1
 		/// Max length: 1
 		/// </summary>
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1)]
 		public string MultipleProcedureOverrideInd { get; set; }
 		
 		/// <summary>
 		/// Min length: 1
 		/// Max length: 2
 		/// </summary>
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2)]
+		[System.ComponentModel.DataAnnotations.Length(1, 2)]
 		public string NumberOfPatientsSeen { get; set; }
 		
 		/// <summary>
 		/// Min length: 1
 		/// Max length: 2
 		/// </summary>
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2)]
+		[System.ComponentModel.DataAnnotations.Length(1, 2)]
 		public string NumberOfTeeth { get; set; }
 		
 		/// <summary>
 		/// Min length: 1
 		/// Max length: 2
 		/// </summary>
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2)]
+		[System.ComponentModel.DataAnnotations.Length(1, 2)]
 		public string OpticalScriptCode { get; set; }
 		
 		/// <summary>
 		/// Min length: 2
 		/// Max length: 2
 		/// </summary>
-		[System.ComponentModel.DataAnnotations.MinLength(2)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2)]
+		[System.ComponentModel.DataAnnotations.Length(2, 2)]
 		public string RestrictiveOverrideCode { get; set; }
 		
 		/// <summary>
 		/// Min length: 1
 		/// Max length: 1
 		/// </summary>
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1)]
 		public string SecondDeviceInd { get; set; }
 		
 		/// <summary>
 		/// Min length: 1
 		/// Max length: 2
 		/// </summary>
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2)]
+		[System.ComponentModel.DataAnnotations.Length(1, 2)]
 		public string SelfDeemedCode { get; set; }
 		
 		public string Text { get; set; }
@@ -1015,24 +951,21 @@ namespace MyNS
 		/// Min length: 3
 		/// Max length: 3
 		/// </summary>
-		[System.ComponentModel.DataAnnotations.MinLength(3)]
-		[System.ComponentModel.DataAnnotations.MaxLength(3)]
+		[System.ComponentModel.DataAnnotations.Length(3, 3)]
 		public string TimeDuration { get; set; }
 		
 		/// <summary>
 		/// Min length: 2
 		/// Max length: 2
 		/// </summary>
-		[System.ComponentModel.DataAnnotations.MinLength(2)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2)]
+		[System.ComponentModel.DataAnnotations.Length(2, 2)]
 		public string ToothNumber { get; set; }
 		
 		/// <summary>
 		/// Min length: 3
 		/// Max length: 3
 		/// </summary>
-		[System.ComponentModel.DataAnnotations.MinLength(3)]
-		[System.ComponentModel.DataAnnotations.MaxLength(3)]
+		[System.ComponentModel.DataAnnotations.Length(3, 3)]
 		public string UpperLowerJawCode { get; set; }
 	}
 	
@@ -1051,8 +984,7 @@ namespace MyNS
 		/// Max length: 9
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
-		[System.ComponentModel.DataAnnotations.MinLength(3)]
-		[System.ComponentModel.DataAnnotations.MaxLength(9)]
+		[System.ComponentModel.DataAnnotations.Length(3, 9)]
 		public string VeteranNumber { get; set; }
 	}
 	
@@ -1075,32 +1007,28 @@ namespace MyNS
 		/// Min length: 1
 		/// Max length: 40
 		/// </summary>
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(40)]
+		[System.ComponentModel.DataAnnotations.Length(1, 40)]
 		public string AddressLineOne { get; set; }
 		
 		/// <summary>
 		/// Min length: 1
 		/// Max length: 40
 		/// </summary>
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(40)]
+		[System.ComponentModel.DataAnnotations.Length(1, 40)]
 		public string AddressLineTwo { get; set; }
 		
 		/// <summary>
 		/// Min length: 1
 		/// Max length: 40
 		/// </summary>
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(40)]
+		[System.ComponentModel.DataAnnotations.Length(1, 40)]
 		public string Locality { get; set; }
 		
 		/// <summary>
 		/// Min length: 4
 		/// Max length: 4
 		/// </summary>
-		[System.ComponentModel.DataAnnotations.MinLength(4)]
-		[System.ComponentModel.DataAnnotations.MaxLength(4)]
+		[System.ComponentModel.DataAnnotations.Length(4, 4)]
 		public string Postcode { get; set; }
 	}
 	
@@ -1137,8 +1065,7 @@ namespace MyNS
 		/// Min length: 1
 		/// Max length: 1
 		/// </summary>
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1)]
 		public string HospitalInd { get; set; }
 		
 		/// <summary>
@@ -1147,8 +1074,7 @@ namespace MyNS
 		/// Max length: 1
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1)]
 		public string ServiceTypeCode { get; set; }
 		
 		/// <summary>
@@ -1177,8 +1103,7 @@ namespace MyNS
 		/// Max length: 2
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
-		[System.ComponentModel.DataAnnotations.MinLength(2)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2)]
+		[System.ComponentModel.DataAnnotations.Length(2, 2)]
 		public string Id { get; set; }
 		
 		/// <summary>
@@ -1197,8 +1122,7 @@ namespace MyNS
 		/// Min length: 8
 		/// Max length: 8
 		/// </summary>
-		[System.ComponentModel.DataAnnotations.MinLength(8)]
-		[System.ComponentModel.DataAnnotations.MaxLength(8)]
+		[System.ComponentModel.DataAnnotations.Length(8, 8)]
 		public string FacilityId { get; set; }
 		
 		/// <summary>
@@ -1217,8 +1141,7 @@ namespace MyNS
 		/// Min length: 1
 		/// Max length: 1
 		/// </summary>
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1)]
 		public string ReferralOverrideCode { get; set; }
 		
 		/// <summary>
@@ -1227,16 +1150,14 @@ namespace MyNS
 		/// Max length: 1
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1)]
 		public string SubmissionAuthorityInd { get; set; }
 		
 		/// <summary>
 		/// Min length: 1
 		/// Max length: 1
 		/// </summary>
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1)]
 		public string TreatmentLocationCode { get; set; }
 		
 		public AcceptedDisabilityType AcceptedDisability { get; set; }
@@ -1265,8 +1186,7 @@ namespace MyNS
 		/// Min length: 1
 		/// Max length: 8
 		/// </summary>
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(8)]
+		[System.ComponentModel.DataAnnotations.Length(1, 8)]
 		public string AccountReferenceNumber { get; set; }
 		
 		public System.Nullable<System.Int32> DistanceKilometres { get; set; }
@@ -1301,8 +1221,7 @@ namespace MyNS
 		/// Min length: 6
 		/// Max length: 6
 		/// </summary>
-		[System.ComponentModel.DataAnnotations.MinLength(6)]
-		[System.ComponentModel.DataAnnotations.MaxLength(6)]
+		[System.ComponentModel.DataAnnotations.Length(6, 6)]
 		public string ClaimId { get; set; }
 		
 		public System.Nullable<System.DateOnly> LodgementDate { get; set; }
@@ -1357,8 +1276,7 @@ namespace MyNS
 		/// Min length: 1
 		/// Max length: 9
 		/// </summary>
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(9)]
+		[System.ComponentModel.DataAnnotations.Length(1, 9)]
 		public string ChargeAmount { get; set; }
 		
 		public string ClaimId { get; set; }
@@ -1407,8 +1325,7 @@ namespace MyNS
 		/// Min length: 1
 		/// Max length: 9
 		/// </summary>
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(9)]
+		[System.ComponentModel.DataAnnotations.Length(1, 9)]
 		public string ChargeAmount { get; set; }
 		
 		public string GstInd { get; set; }
@@ -1553,8 +1470,7 @@ namespace MyNS
 		/// Max length: 3
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
-		[System.ComponentModel.DataAnnotations.MinLength(3)]
-		[System.ComponentModel.DataAnnotations.MaxLength(3)]
+		[System.ComponentModel.DataAnnotations.Length(3, 3)]
 		public string TypeCode { get; set; }
 	}
 	
@@ -1575,24 +1491,21 @@ namespace MyNS
 		/// Min length: 1
 		/// Max length: 19
 		/// </summary>
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(19)]
+		[System.ComponentModel.DataAnnotations.Length(1, 19)]
 		public string MemberNumber { get; set; }
 		
 		/// <summary>
 		/// Min length: 1
 		/// Max length: 2
 		/// </summary>
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2)]
+		[System.ComponentModel.DataAnnotations.Length(1, 2)]
 		public string MemberRefNumber { get; set; }
 		
 		/// <summary>
 		/// Min length: 3
 		/// Max length: 3
 		/// </summary>
-		[System.ComponentModel.DataAnnotations.MinLength(3)]
-		[System.ComponentModel.DataAnnotations.MaxLength(3)]
+		[System.ComponentModel.DataAnnotations.Length(3, 3)]
 		public string Organisation { get; set; }
 	}
 	
@@ -1751,8 +1664,7 @@ namespace MyNS
 		/// Min length: 1
 		/// Max length: 1
 		/// </summary>
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1)]
 		public string ReferralOverrideCode { get; set; }
 		
 		/// <summary>
@@ -1761,8 +1673,7 @@ namespace MyNS
 		/// Max length: 1
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1)]
 		public string AccountPaidInd { get; set; }
 		
 		public string AccountReferenceId { get; set; }
@@ -1773,8 +1684,7 @@ namespace MyNS
 		/// Max length: 1
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1)]
 		public string SubmissionAuthorityInd { get; set; }
 		
 		/// <summary>
@@ -1801,8 +1711,7 @@ namespace MyNS
 		/// Max length: 2
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
-		[System.ComponentModel.DataAnnotations.MinLength(2)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2)]
+		[System.ComponentModel.DataAnnotations.Length(2, 2)]
 		public string Id { get; set; }
 		
 		/// <summary>
@@ -1825,24 +1734,21 @@ namespace MyNS
 		/// Min length: 3
 		/// Max length: 7
 		/// </summary>
-		[System.ComponentModel.DataAnnotations.MinLength(3)]
-		[System.ComponentModel.DataAnnotations.MaxLength(7)]
+		[System.ComponentModel.DataAnnotations.Length(3, 7)]
 		public string PatientContribAmount { get; set; }
 		
 		/// <summary>
 		/// Min length: 8
 		/// Max length: 8
 		/// </summary>
-		[System.ComponentModel.DataAnnotations.MinLength(8)]
-		[System.ComponentModel.DataAnnotations.MaxLength(8)]
+		[System.ComponentModel.DataAnnotations.Length(8, 8)]
 		public string FacilityId { get; set; }
 		
 		/// <summary>
 		/// Min length: 1
 		/// Max length: 1
 		/// </summary>
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1)]
 		public string HospitalInd { get; set; }
 	}
 	
@@ -1863,8 +1769,7 @@ namespace MyNS
 		/// Min length: 5
 		/// Max length: 128
 		/// </summary>
-		[System.ComponentModel.DataAnnotations.MinLength(5)]
-		[System.ComponentModel.DataAnnotations.MaxLength(128)]
+		[System.ComponentModel.DataAnnotations.Length(5, 128)]
 		public string EmailAddress { get; set; }
 		
 		public string Name { get; set; }
@@ -1873,8 +1778,7 @@ namespace MyNS
 		/// Min length: 8
 		/// Max length: 19
 		/// </summary>
-		[System.ComponentModel.DataAnnotations.MinLength(8)]
-		[System.ComponentModel.DataAnnotations.MaxLength(19)]
+		[System.ComponentModel.DataAnnotations.Length(8, 19)]
 		public string PhoneNumber { get; set; }
 	}
 	
@@ -2013,8 +1917,7 @@ namespace MyNS
 		/// Max length: 3
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
-		[System.ComponentModel.DataAnnotations.MinLength(3)]
-		[System.ComponentModel.DataAnnotations.MaxLength(3)]
+		[System.ComponentModel.DataAnnotations.Length(3, 3)]
 		public string ReasonCode { get; set; }
 	}
 	

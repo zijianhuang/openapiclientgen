@@ -2297,8 +2297,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(16)]
-		[System.ComponentModel.DataAnnotations.MaxLength(4096)]
+		[System.ComponentModel.DataAnnotations.Length(16, 4096)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^(?:[0-9a-fA-F][0-9a-fA-F])+$")]
 		public string CipherText { get; set; }
 		
@@ -2350,8 +2349,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(16)]
-		[System.ComponentModel.DataAnnotations.MaxLength(4064)]
+		[System.ComponentModel.DataAnnotations.Length(16, 4064)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^(?:[0-9a-fA-F][0-9a-fA-F])+$")]
 		public string PlainText { get; set; }
 	}
@@ -2395,8 +2393,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(7)]
-		[System.ComponentModel.DataAnnotations.MaxLength(322)]
+		[System.ComponentModel.DataAnnotations.Length(7, 322)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^arn:aws:payment-cryptography:[a-z]{2}-[a-z]{1,16}-[0-9]+:[0-9]{12}:(key/[0-9a-zA-Z]{16,64}|alias/[a-zA-Z0-9/_-]+)$|^alias/[a-zA-Z0-9/_-]+$")]
 		public string KeyIdentifier { get; set; }
 		
@@ -2409,8 +2406,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(12)]
-		[System.ComponentModel.DataAnnotations.MaxLength(19)]
+		[System.ComponentModel.DataAnnotations.Length(12, 19)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[0-9]+$")]
 		public string PrimaryAccountNumber { get; set; }
 		
@@ -2472,8 +2468,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(7)]
-		[System.ComponentModel.DataAnnotations.MaxLength(322)]
+		[System.ComponentModel.DataAnnotations.Length(7, 322)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^arn:aws:payment-cryptography:[a-z]{2}-[a-z]{1,16}-[0-9]+:[0-9]{12}:(key/[0-9a-zA-Z]{16,64}|alias/[a-zA-Z0-9/_-]+)$|^alias/[a-zA-Z0-9/_-]+$")]
 		public string KeyIdentifier { get; set; }
 		
@@ -2495,8 +2490,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(2)]
-		[System.ComponentModel.DataAnnotations.MaxLength(4096)]
+		[System.ComponentModel.DataAnnotations.Length(2, 4096)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[0-9a-fA-F]+$")]
 		public string MessageData { get; set; }
 	}
@@ -2532,8 +2526,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(7)]
-		[System.ComponentModel.DataAnnotations.MaxLength(322)]
+		[System.ComponentModel.DataAnnotations.Length(7, 322)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^arn:aws:payment-cryptography:[a-z]{2}-[a-z]{1,16}-[0-9]+:[0-9]{12}:(key/[0-9a-zA-Z]{16,64}|alias/[a-zA-Z0-9/_-]+)$|^alias/[a-zA-Z0-9/_-]+$")]
 		public string EncryptionKeyIdentifier { get; set; }
 		
@@ -2554,8 +2547,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(7)]
-		[System.ComponentModel.DataAnnotations.MaxLength(322)]
+		[System.ComponentModel.DataAnnotations.Length(7, 322)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^arn:aws:payment-cryptography:[a-z]{2}-[a-z]{1,16}-[0-9]+:[0-9]{12}:(key/[0-9a-zA-Z]{16,64}|alias/[a-zA-Z0-9/_-]+)$|^alias/[a-zA-Z0-9/_-]+$")]
 		public string GenerationKeyIdentifier { get; set; }
 		
@@ -2585,8 +2577,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(12)]
-		[System.ComponentModel.DataAnnotations.MaxLength(19)]
+		[System.ComponentModel.DataAnnotations.Length(12, 19)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[0-9]+$")]
 		public string PrimaryAccountNumber { get; set; }
 	}
@@ -2625,8 +2616,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(16)]
-		[System.ComponentModel.DataAnnotations.MaxLength(4096)]
+		[System.ComponentModel.DataAnnotations.Length(16, 4096)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^(?:[0-9a-fA-F][0-9a-fA-F])+$")]
 		public string CipherText { get; set; }
 		
@@ -2655,8 +2645,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(7)]
-		[System.ComponentModel.DataAnnotations.MaxLength(322)]
+		[System.ComponentModel.DataAnnotations.Length(7, 322)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^arn:aws:payment-cryptography:[a-z]{2}-[a-z]{1,16}-[0-9]+:[0-9]{12}:(key/[0-9a-zA-Z]{16,64}|alias/[a-zA-Z0-9/_-]+)$|^alias/[a-zA-Z0-9/_-]+$")]
 		public string OutgoingKeyIdentifier { get; set; }
 	}
@@ -2699,8 +2688,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(16)]
-		[System.ComponentModel.DataAnnotations.MaxLength(32)]
+		[System.ComponentModel.DataAnnotations.Length(16, 32)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[0-9a-fA-F]+$")]
 		public string EncryptedPinBlock { get; set; }
 		
@@ -2719,8 +2707,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(7)]
-		[System.ComponentModel.DataAnnotations.MaxLength(322)]
+		[System.ComponentModel.DataAnnotations.Length(7, 322)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^arn:aws:payment-cryptography:[a-z]{2}-[a-z]{1,16}-[0-9]+:[0-9]{12}:(key/[0-9a-zA-Z]{16,64}|alias/[a-zA-Z0-9/_-]+)$|^alias/[a-zA-Z0-9/_-]+$")]
 		public string IncomingKeyIdentifier { get; set; }
 		
@@ -2747,8 +2734,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(7)]
-		[System.ComponentModel.DataAnnotations.MaxLength(322)]
+		[System.ComponentModel.DataAnnotations.Length(7, 322)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^arn:aws:payment-cryptography:[a-z]{2}-[a-z]{1,16}-[0-9]+:[0-9]{12}:(key/[0-9a-zA-Z]{16,64}|alias/[a-zA-Z0-9/_-]+)$|^alias/[a-zA-Z0-9/_-]+$")]
 		public string OutgoingKeyIdentifier { get; set; }
 		
@@ -2831,8 +2817,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(16)]
-		[System.ComponentModel.DataAnnotations.MaxLength(16)]
+		[System.ComponentModel.DataAnnotations.Length(16, 16)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[0-9a-fA-F]+$")]
 		public string AuthRequestCryptogram { get; set; }
 		
@@ -2851,8 +2836,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(7)]
-		[System.ComponentModel.DataAnnotations.MaxLength(322)]
+		[System.ComponentModel.DataAnnotations.Length(7, 322)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^arn:aws:payment-cryptography:[a-z]{2}-[a-z]{1,16}-[0-9]+:[0-9]{12}:(key/[0-9a-zA-Z]{16,64}|alias/[a-zA-Z0-9/_-]+)$|^alias/[a-zA-Z0-9/_-]+$")]
 		public string KeyIdentifier { get; set; }
 		
@@ -2881,8 +2865,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(2)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1024)]
+		[System.ComponentModel.DataAnnotations.Length(2, 1024)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[0-9a-fA-F]+$")]
 		public string TransactionData { get; set; }
 	}
@@ -2928,8 +2911,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(7)]
-		[System.ComponentModel.DataAnnotations.MaxLength(322)]
+		[System.ComponentModel.DataAnnotations.Length(7, 322)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^arn:aws:payment-cryptography:[a-z]{2}-[a-z]{1,16}-[0-9]+:[0-9]{12}:(key/[0-9a-zA-Z]{16,64}|alias/[a-zA-Z0-9/_-]+)$|^alias/[a-zA-Z0-9/_-]+$")]
 		public string KeyIdentifier { get; set; }
 		
@@ -2942,8 +2924,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(12)]
-		[System.ComponentModel.DataAnnotations.MaxLength(19)]
+		[System.ComponentModel.DataAnnotations.Length(12, 19)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[0-9]+$")]
 		public string PrimaryAccountNumber { get; set; }
 		
@@ -2956,8 +2937,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(3)]
-		[System.ComponentModel.DataAnnotations.MaxLength(5)]
+		[System.ComponentModel.DataAnnotations.Length(3, 5)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[0-9]+$")]
 		public string ValidationData { get; set; }
 		
@@ -3013,8 +2993,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(7)]
-		[System.ComponentModel.DataAnnotations.MaxLength(322)]
+		[System.ComponentModel.DataAnnotations.Length(7, 322)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^arn:aws:payment-cryptography:[a-z]{2}-[a-z]{1,16}-[0-9]+:[0-9]{12}:(key/[0-9a-zA-Z]{16,64}|alias/[a-zA-Z0-9/_-]+)$|^alias/[a-zA-Z0-9/_-]+$")]
 		public string KeyIdentifier { get; set; }
 		
@@ -3027,8 +3006,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(4)]
-		[System.ComponentModel.DataAnnotations.MaxLength(128)]
+		[System.ComponentModel.DataAnnotations.Length(4, 128)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[0-9a-fA-F]+$")]
 		public string Mac { get; set; }
 		
@@ -3050,8 +3028,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(2)]
-		[System.ComponentModel.DataAnnotations.MaxLength(4096)]
+		[System.ComponentModel.DataAnnotations.Length(2, 4096)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[0-9a-fA-F]+$")]
 		public string MessageData { get; set; }
 		
@@ -3101,8 +3078,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(16)]
-		[System.ComponentModel.DataAnnotations.MaxLength(32)]
+		[System.ComponentModel.DataAnnotations.Length(16, 32)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[0-9a-fA-F]+$")]
 		public string EncryptedPinBlock { get; set; }
 		
@@ -3115,8 +3091,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(7)]
-		[System.ComponentModel.DataAnnotations.MaxLength(322)]
+		[System.ComponentModel.DataAnnotations.Length(7, 322)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^arn:aws:payment-cryptography:[a-z]{2}-[a-z]{1,16}-[0-9]+:[0-9]{12}:(key/[0-9a-zA-Z]{16,64}|alias/[a-zA-Z0-9/_-]+)$|^alias/[a-zA-Z0-9/_-]+$")]
 		public string EncryptionKeyIdentifier { get; set; }
 		
@@ -3146,8 +3121,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(12)]
-		[System.ComponentModel.DataAnnotations.MaxLength(19)]
+		[System.ComponentModel.DataAnnotations.Length(12, 19)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[0-9]+$")]
 		public string PrimaryAccountNumber { get; set; }
 		
@@ -3168,8 +3142,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(7)]
-		[System.ComponentModel.DataAnnotations.MaxLength(322)]
+		[System.ComponentModel.DataAnnotations.Length(7, 322)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^arn:aws:payment-cryptography:[a-z]{2}-[a-z]{1,16}-[0-9]+:[0-9]{12}:(key/[0-9a-zA-Z]{16,64}|alias/[a-zA-Z0-9/_-]+)$|^alias/[a-zA-Z0-9/_-]+$")]
 		public string VerificationKeyIdentifier { get; set; }
 	}

@@ -6706,8 +6706,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="accountId")]
-		[System.ComponentModel.DataAnnotations.MinLength(12)]
-		[System.ComponentModel.DataAnnotations.MaxLength(12)]
+		[System.ComponentModel.DataAnnotations.Length(12, 12)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^\d{12}$")]
 		public string AccountId { get; set; }
 	}
@@ -6721,8 +6720,7 @@ namespace MyNS
 		/// Maximum items: 100
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="accountIds")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(100)]
+		[System.ComponentModel.DataAnnotations.Length(0, 100)]
 		public string[] AccountIds { get; set; }
 	}
 	
@@ -6737,8 +6735,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="findingArns")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(10)]
+		[System.ComponentModel.DataAnnotations.Length(1, 10)]
 		public string[] FindingArns { get; set; }
 	}
 	
@@ -6753,8 +6750,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="findingArns")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(10)]
+		[System.ComponentModel.DataAnnotations.Length(1, 10)]
 		public string[] FindingArns { get; set; }
 	}
 	
@@ -6769,8 +6765,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="accountIds")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(100)]
+		[System.ComponentModel.DataAnnotations.Length(1, 100)]
 		public string[] AccountIds { get; set; }
 	}
 	
@@ -6783,8 +6778,7 @@ namespace MyNS
 		/// Maximum items: 100
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="accountIds")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(100)]
+		[System.ComponentModel.DataAnnotations.Length(0, 100)]
 		public string[] AccountIds { get; set; }
 	}
 	
@@ -6799,8 +6793,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="accountIds")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(100)]
+		[System.ComponentModel.DataAnnotations.Length(0, 100)]
 		public MemberAccountEc2DeepInspectionStatus[] AccountIds { get; set; }
 	}
 	
@@ -6849,8 +6842,7 @@ namespace MyNS
 		/// Max length: 512
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(512)]
+		[System.ComponentModel.DataAnnotations.Length(1, 512)]
 		public string Description { get; set; }
 		
 		/// <summary>
@@ -6869,8 +6861,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(128)]
+		[System.ComponentModel.DataAnnotations.Length(1, 128)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -6879,8 +6870,7 @@ namespace MyNS
 		/// Max length: 512
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="reason")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(512)]
+		[System.ComponentModel.DataAnnotations.Length(1, 512)]
 		public string Reason { get; set; }
 		
 		/// <summary>
@@ -7267,8 +7257,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="arn")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(128)]
+		[System.ComponentModel.DataAnnotations.Length(1, 128)]
 		public string Arn { get; set; }
 	}
 	
@@ -7281,8 +7270,7 @@ namespace MyNS
 		/// Maximum items: 100
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="accountIds")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(100)]
+		[System.ComponentModel.DataAnnotations.Length(0, 100)]
 		public string[] AccountIds { get; set; }
 		
 		/// <summary>
@@ -7291,8 +7279,7 @@ namespace MyNS
 		/// Maximum items: 3
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="resourceTypes")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(3)]
+		[System.ComponentModel.DataAnnotations.Length(0, 3)]
 		public ResourceScanType[] ResourceTypes { get; set; }
 	}
 	
@@ -7308,8 +7295,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="delegatedAdminAccountId")]
-		[System.ComponentModel.DataAnnotations.MinLength(12)]
-		[System.ComponentModel.DataAnnotations.MaxLength(12)]
+		[System.ComponentModel.DataAnnotations.Length(12, 12)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^\d{12}$")]
 		public string DelegatedAdminAccountId { get; set; }
 	}
@@ -7326,8 +7312,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="accountId")]
-		[System.ComponentModel.DataAnnotations.MinLength(12)]
-		[System.ComponentModel.DataAnnotations.MaxLength(12)]
+		[System.ComponentModel.DataAnnotations.Length(12, 12)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^\d{12}$")]
 		public string AccountId { get; set; }
 	}
@@ -7341,8 +7326,7 @@ namespace MyNS
 		/// Maximum items: 100
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="accountIds")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(100)]
+		[System.ComponentModel.DataAnnotations.Length(0, 100)]
 		public string[] AccountIds { get; set; }
 		
 		/// <summary>
@@ -7351,8 +7335,7 @@ namespace MyNS
 		/// Max length: 64
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(64)]
+		[System.ComponentModel.DataAnnotations.Length(1, 64)]
 		public string ClientToken { get; set; }
 		
 		/// <summary>
@@ -7363,8 +7346,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="resourceTypes")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(3)]
+		[System.ComponentModel.DataAnnotations.Length(1, 3)]
 		public ResourceScanType[] ResourceTypes { get; set; }
 	}
 	
@@ -7377,8 +7359,7 @@ namespace MyNS
 		/// Max length: 64
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(64)]
+		[System.ComponentModel.DataAnnotations.Length(1, 64)]
 		public string ClientToken { get; set; }
 		
 		/// <summary>
@@ -7390,8 +7371,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="delegatedAdminAccountId")]
-		[System.ComponentModel.DataAnnotations.MinLength(12)]
-		[System.ComponentModel.DataAnnotations.MaxLength(12)]
+		[System.ComponentModel.DataAnnotations.Length(12, 12)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^\d{12}$")]
 		public string DelegatedAdminAccountId { get; set; }
 	}
@@ -7420,8 +7400,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="accountId")]
-		[System.ComponentModel.DataAnnotations.MinLength(12)]
-		[System.ComponentModel.DataAnnotations.MaxLength(12)]
+		[System.ComponentModel.DataAnnotations.Length(12, 12)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^\d{12}$")]
 		public string AccountId { get; set; }
 	}
@@ -7458,8 +7437,7 @@ namespace MyNS
 		/// Max length: 1000000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextToken")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1000000)]
+		[System.ComponentModel.DataAnnotations.Length(0, 1000000)]
 		public string NextToken { get; set; }
 		
 		/// <summary>
@@ -7493,8 +7471,7 @@ namespace MyNS
 		/// Max length: 1000000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextToken")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1000000)]
+		[System.ComponentModel.DataAnnotations.Length(0, 1000000)]
 		public string NextToken { get; set; }
 	}
 	
@@ -7562,8 +7539,7 @@ namespace MyNS
 		/// Max length: 1000000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextToken")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1000000)]
+		[System.ComponentModel.DataAnnotations.Length(0, 1000000)]
 		public string NextToken { get; set; }
 	}
 	
@@ -7628,8 +7604,7 @@ namespace MyNS
 		/// Max length: 1000000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextToken")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1000000)]
+		[System.ComponentModel.DataAnnotations.Length(0, 1000000)]
 		public string NextToken { get; set; }
 	}
 	
@@ -7663,8 +7638,7 @@ namespace MyNS
 		/// Max length: 1000000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextToken")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1000000)]
+		[System.ComponentModel.DataAnnotations.Length(0, 1000000)]
 		public string NextToken { get; set; }
 	}
 	
@@ -7677,8 +7651,7 @@ namespace MyNS
 		/// Maximum items: 10
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="accountIds")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(10)]
+		[System.ComponentModel.DataAnnotations.Length(1, 10)]
 		public StringFilter[] AccountIds { get; set; }
 		
 		/// <summary>
@@ -7710,8 +7683,7 @@ namespace MyNS
 		/// Max length: 1000000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextToken")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1000000)]
+		[System.ComponentModel.DataAnnotations.Length(0, 1000000)]
 		public string NextToken { get; set; }
 	}
 	
@@ -7776,8 +7748,7 @@ namespace MyNS
 		/// Max length: 1000000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextToken")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1000000)]
+		[System.ComponentModel.DataAnnotations.Length(0, 1000000)]
 		public string NextToken { get; set; }
 		
 		/// <summary>
@@ -7945,8 +7916,7 @@ namespace MyNS
 		/// Max length: 1000000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextToken")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1000000)]
+		[System.ComponentModel.DataAnnotations.Length(0, 1000000)]
 		public string NextToken { get; set; }
 		
 		/// <summary>
@@ -7977,8 +7947,7 @@ namespace MyNS
 		/// Maximum items: 7000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="accountIds")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(7000)]
+		[System.ComponentModel.DataAnnotations.Length(1, 7000)]
 		public string[] AccountIds { get; set; }
 		
 		/// <summary>
@@ -8036,8 +8005,7 @@ namespace MyNS
 		/// Max length: 1000000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextToken")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1000000)]
+		[System.ComponentModel.DataAnnotations.Length(0, 1000000)]
 		public string NextToken { get; set; }
 	}
 	
@@ -8082,8 +8050,7 @@ namespace MyNS
 		/// Maximum items: 5
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="packagePaths")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(5)]
+		[System.ComponentModel.DataAnnotations.Length(0, 5)]
 		public string[] PackagePaths { get; set; }
 	}
 	
@@ -8132,8 +8099,7 @@ namespace MyNS
 		/// Max length: 512
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(512)]
+		[System.ComponentModel.DataAnnotations.Length(1, 512)]
 		public string Description { get; set; }
 		
 		/// <summary>
@@ -8144,8 +8110,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="filterArn")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(128)]
+		[System.ComponentModel.DataAnnotations.Length(1, 128)]
 		public string FilterArn { get; set; }
 		
 		/// <summary>
@@ -8160,8 +8125,7 @@ namespace MyNS
 		/// Max length: 128
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="name")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(128)]
+		[System.ComponentModel.DataAnnotations.Length(1, 128)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -8170,8 +8134,7 @@ namespace MyNS
 		/// Max length: 512
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="reason")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(512)]
+		[System.ComponentModel.DataAnnotations.Length(1, 512)]
 		public string Reason { get; set; }
 	}
 	
@@ -8316,8 +8279,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="orgPackagePaths")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(5)]
+		[System.ComponentModel.DataAnnotations.Length(0, 5)]
 		public string[] OrgPackagePaths { get; set; }
 	}
 	

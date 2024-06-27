@@ -2230,8 +2230,7 @@ namespace MyNS
 		/// Pattern: ^.*$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(512)]
+		[System.ComponentModel.DataAnnotations.Length(0, 512)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^.*$")]
 		public string Description { get; set; }
 		
@@ -2248,8 +2247,7 @@ namespace MyNS
 		/// Pattern: ^$|arn:(aws[a-zA-Z0-9-]*):([a-zA-Z0-9\-]+):([a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1})?:(\d{12})?:(.+)$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1600)]
+		[System.ComponentModel.DataAnnotations.Length(0, 1600)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^$|arn:(aws[a-zA-Z0-9-]*):([a-zA-Z0-9\-]+):([a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1})?:(\d{12})?:(.+)$")]
 		public string Enrichment { get; set; }
 		
@@ -2268,8 +2266,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1600)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1600)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^arn:(aws[a-zA-Z-]*)?:iam::\d{12}:role/?[a-zA-Z0-9+=,.@\-_/]+$")]
 		public string RoleArn { get; set; }
 		
@@ -2282,8 +2279,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1600)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1600)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^smk://(([a-zA-Z0-9]|[a-zA-Z0-9][a-zA-Z0-9\-]*[a-zA-Z0-9])\.)*([A-Za-z0-9]|[A-Za-z0-9][A-Za-z0-9\-]*[A-Za-z0-9]):[0-9]{1,5}|arn:(aws[a-zA-Z0-9-]*):([a-zA-Z0-9\-]+):([a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1})?:(\d{12})?:(.+)$")]
 		public string Source { get; set; }
 		
@@ -2308,8 +2304,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1600)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1600)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^arn:(aws[a-zA-Z0-9-]*):([a-zA-Z0-9\-]+):([a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1})?:(\d{12})?:(.+)$")]
 		public string Target { get; set; }
 		
@@ -2408,8 +2403,7 @@ namespace MyNS
 		/// Pattern: ^.*$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(512)]
+		[System.ComponentModel.DataAnnotations.Length(0, 512)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^.*$")]
 		public string Description { get; set; }
 		
@@ -2426,8 +2420,7 @@ namespace MyNS
 		/// Pattern: ^$|arn:(aws[a-zA-Z0-9-]*):([a-zA-Z0-9\-]+):([a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1})?:(\d{12})?:(.+)$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1600)]
+		[System.ComponentModel.DataAnnotations.Length(0, 1600)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^$|arn:(aws[a-zA-Z0-9-]*):([a-zA-Z0-9\-]+):([a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1})?:(\d{12})?:(.+)$")]
 		public string Enrichment { get; set; }
 		
@@ -2446,8 +2439,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1600)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1600)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^arn:(aws[a-zA-Z-]*)?:iam::\d{12}:role/?[a-zA-Z0-9+=,.@\-_/]+$")]
 		public string RoleArn { get; set; }
 		
@@ -2464,8 +2456,7 @@ namespace MyNS
 		/// Pattern: ^arn:(aws[a-zA-Z0-9-]*):([a-zA-Z0-9\-]+):([a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1})?:(\d{12})?:(.+)$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1600)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1600)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^arn:(aws[a-zA-Z0-9-]*):([a-zA-Z0-9\-]+):([a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1})?:(\d{12})?:(.+)$")]
 		public string Target { get; set; }
 		

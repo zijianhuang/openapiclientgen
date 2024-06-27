@@ -1233,8 +1233,7 @@ namespace MyNS
 		/// Maximum items: 2
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="capabilities")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2)]
+		[System.ComponentModel.DataAnnotations.Length(0, 2)]
 		public ParticipantTokenCapability[] Capabilities { get; set; }
 		
 		/// <summary>
@@ -1255,8 +1254,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="stageArn")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(128)]
+		[System.ComponentModel.DataAnnotations.Length(1, 128)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^arn:aws:ivs:[a-z0-9-]+:[0-9]+:stage/[a-zA-Z0-9-]+$")]
 		public string StageArn { get; set; }
 		
@@ -1266,8 +1264,7 @@ namespace MyNS
 		/// Max length: 128
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="userId")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(128)]
+		[System.ComponentModel.DataAnnotations.Length(0, 128)]
 		public string UserId { get; set; }
 	}
 	
@@ -1281,8 +1278,7 @@ namespace MyNS
 		/// Pattern: ^[a-zA-Z0-9-_]*$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="name")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(128)]
+		[System.ComponentModel.DataAnnotations.Length(0, 128)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[a-zA-Z0-9-_]*$")]
 		public string Name { get; set; }
 		
@@ -1292,8 +1288,7 @@ namespace MyNS
 		/// Maximum items: 12
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="participantTokenConfigurations")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(12)]
+		[System.ComponentModel.DataAnnotations.Length(0, 12)]
 		public ParticipantTokenConfiguration[] ParticipantTokenConfigurations { get; set; }
 		
 		/// <summary>
@@ -1315,8 +1310,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="arn")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(128)]
+		[System.ComponentModel.DataAnnotations.Length(1, 128)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^arn:aws:ivs:[a-z0-9-]+:[0-9]+:stage/[a-zA-Z0-9-]+$")]
 		public string Arn { get; set; }
 	}
@@ -1338,8 +1332,7 @@ namespace MyNS
 		/// Max length: 128
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="reason")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(128)]
+		[System.ComponentModel.DataAnnotations.Length(0, 128)]
 		public string Reason { get; set; }
 		
 		/// <summary>
@@ -1351,8 +1344,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="stageArn")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(128)]
+		[System.ComponentModel.DataAnnotations.Length(1, 128)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^arn:aws:ivs:[a-z0-9-]+:[0-9]+:stage/[a-zA-Z0-9-]+$")]
 		public string StageArn { get; set; }
 	}
@@ -1377,8 +1369,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="sessionId")]
-		[System.ComponentModel.DataAnnotations.MinLength(16)]
-		[System.ComponentModel.DataAnnotations.MaxLength(16)]
+		[System.ComponentModel.DataAnnotations.Length(16, 16)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^st-[a-zA-Z0-9]+$")]
 		public string SessionId { get; set; }
 		
@@ -1391,8 +1382,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="stageArn")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(128)]
+		[System.ComponentModel.DataAnnotations.Length(1, 128)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^arn:aws:ivs:[a-z0-9-]+:[0-9]+:stage/[a-zA-Z0-9-]+$")]
 		public string StageArn { get; set; }
 	}
@@ -1409,8 +1399,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="arn")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(128)]
+		[System.ComponentModel.DataAnnotations.Length(1, 128)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^arn:aws:ivs:[a-z0-9-]+:[0-9]+:stage/[a-zA-Z0-9-]+$")]
 		public string Arn { get; set; }
 	}
@@ -1427,8 +1416,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="sessionId")]
-		[System.ComponentModel.DataAnnotations.MinLength(16)]
-		[System.ComponentModel.DataAnnotations.MaxLength(16)]
+		[System.ComponentModel.DataAnnotations.Length(16, 16)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^st-[a-zA-Z0-9]+$")]
 		public string SessionId { get; set; }
 		
@@ -1441,8 +1429,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="stageArn")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(128)]
+		[System.ComponentModel.DataAnnotations.Length(1, 128)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^arn:aws:ivs:[a-z0-9-]+:[0-9]+:stage/[a-zA-Z0-9-]+$")]
 		public string StageArn { get; set; }
 	}
@@ -1466,8 +1453,7 @@ namespace MyNS
 		/// Pattern: ^[a-zA-Z0-9+/=_-]*$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextToken")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1024)]
+		[System.ComponentModel.DataAnnotations.Length(0, 1024)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[a-zA-Z0-9+/=_-]*$")]
 		public string NextToken { get; set; }
 		
@@ -1488,8 +1474,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="sessionId")]
-		[System.ComponentModel.DataAnnotations.MinLength(16)]
-		[System.ComponentModel.DataAnnotations.MaxLength(16)]
+		[System.ComponentModel.DataAnnotations.Length(16, 16)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^st-[a-zA-Z0-9]+$")]
 		public string SessionId { get; set; }
 		
@@ -1502,8 +1487,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="stageArn")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(128)]
+		[System.ComponentModel.DataAnnotations.Length(1, 128)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^arn:aws:ivs:[a-z0-9-]+:[0-9]+:stage/[a-zA-Z0-9-]+$")]
 		public string StageArn { get; set; }
 	}
@@ -1529,8 +1513,7 @@ namespace MyNS
 		/// Max length: 128
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="filterByUserId")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(128)]
+		[System.ComponentModel.DataAnnotations.Length(0, 128)]
 		public string FilterByUserId { get; set; }
 		
 		/// <summary>
@@ -1549,8 +1532,7 @@ namespace MyNS
 		/// Pattern: ^[a-zA-Z0-9+/=_-]*$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextToken")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1024)]
+		[System.ComponentModel.DataAnnotations.Length(0, 1024)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[a-zA-Z0-9+/=_-]*$")]
 		public string NextToken { get; set; }
 		
@@ -1563,8 +1545,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="sessionId")]
-		[System.ComponentModel.DataAnnotations.MinLength(16)]
-		[System.ComponentModel.DataAnnotations.MaxLength(16)]
+		[System.ComponentModel.DataAnnotations.Length(16, 16)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^st-[a-zA-Z0-9]+$")]
 		public string SessionId { get; set; }
 		
@@ -1577,8 +1558,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="stageArn")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(128)]
+		[System.ComponentModel.DataAnnotations.Length(1, 128)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^arn:aws:ivs:[a-z0-9-]+:[0-9]+:stage/[a-zA-Z0-9-]+$")]
 		public string StageArn { get; set; }
 	}
@@ -1602,8 +1582,7 @@ namespace MyNS
 		/// Pattern: ^[a-zA-Z0-9+/=_-]*$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextToken")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1024)]
+		[System.ComponentModel.DataAnnotations.Length(0, 1024)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[a-zA-Z0-9+/=_-]*$")]
 		public string NextToken { get; set; }
 		
@@ -1616,8 +1595,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="stageArn")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(128)]
+		[System.ComponentModel.DataAnnotations.Length(1, 128)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^arn:aws:ivs:[a-z0-9-]+:[0-9]+:stage/[a-zA-Z0-9-]+$")]
 		public string StageArn { get; set; }
 	}
@@ -1641,8 +1619,7 @@ namespace MyNS
 		/// Pattern: ^[a-zA-Z0-9+/=_-]*$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextToken")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1024)]
+		[System.ComponentModel.DataAnnotations.Length(0, 1024)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[a-zA-Z0-9+/=_-]*$")]
 		public string NextToken { get; set; }
 	}
@@ -1671,8 +1648,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="arn")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(128)]
+		[System.ComponentModel.DataAnnotations.Length(1, 128)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^arn:aws:ivs:[a-z0-9-]+:[0-9]+:stage/[a-zA-Z0-9-]+$")]
 		public string Arn { get; set; }
 		
@@ -1683,8 +1659,7 @@ namespace MyNS
 		/// Pattern: ^[a-zA-Z0-9-_]*$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="name")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(128)]
+		[System.ComponentModel.DataAnnotations.Length(0, 128)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[a-zA-Z0-9-_]*$")]
 		public string Name { get; set; }
 	}

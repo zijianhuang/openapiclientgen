@@ -1003,8 +1003,7 @@ namespace MyNS
 		/// Max length: 2
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="country")]
-		[System.ComponentModel.DataAnnotations.MinLength(2)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2)]
+		[System.ComponentModel.DataAnnotations.Length(2, 2)]
 		public string Country { get; set; }
 		
 		/// <summary>
@@ -1013,8 +1012,7 @@ namespace MyNS
 		/// Max length: 2
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="county")]
-		[System.ComponentModel.DataAnnotations.MinLength(2)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2)]
+		[System.ComponentModel.DataAnnotations.Length(2, 2)]
 		public string County { get; set; }
 		
 		/// <summary>
@@ -1035,8 +1033,7 @@ namespace MyNS
 		/// Max length: 64
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="scheme")]
-		[System.ComponentModel.DataAnnotations.MinLength(2)]
-		[System.ComponentModel.DataAnnotations.MaxLength(64)]
+		[System.ComponentModel.DataAnnotations.Length(2, 64)]
 		public string Scheme { get; set; }
 		
 		/// <summary>
@@ -1045,8 +1042,7 @@ namespace MyNS
 		/// Max length: 64
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="superscheme")]
-		[System.ComponentModel.DataAnnotations.MinLength(2)]
-		[System.ComponentModel.DataAnnotations.MaxLength(64)]
+		[System.ComponentModel.DataAnnotations.Length(2, 64)]
 		public string Superscheme { get; set; }
 	}
 	
@@ -1062,8 +1058,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="country")]
-		[System.ComponentModel.DataAnnotations.MinLength(2)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2)]
+		[System.ComponentModel.DataAnnotations.Length(2, 2)]
 		public string Country { get; set; }
 		
 		/// <summary>
@@ -1072,8 +1067,7 @@ namespace MyNS
 		/// Max length: 2
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="county")]
-		[System.ComponentModel.DataAnnotations.MinLength(2)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2)]
+		[System.ComponentModel.DataAnnotations.Length(2, 2)]
 		public string County { get; set; }
 		
 		/// <summary>
@@ -1092,8 +1086,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="scheme")]
-		[System.ComponentModel.DataAnnotations.MinLength(2)]
-		[System.ComponentModel.DataAnnotations.MaxLength(64)]
+		[System.ComponentModel.DataAnnotations.Length(2, 64)]
 		public string Scheme { get; set; }
 		
 		/// <summary>
@@ -1104,8 +1097,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="superscheme")]
-		[System.ComponentModel.DataAnnotations.MinLength(2)]
-		[System.ComponentModel.DataAnnotations.MaxLength(64)]
+		[System.ComponentModel.DataAnnotations.Length(2, 64)]
 		public string Superscheme { get; set; }
 		
 		/// <summary>
@@ -1114,8 +1106,7 @@ namespace MyNS
 		/// Max length: 64
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="third_party_password")]
-		[System.ComponentModel.DataAnnotations.MinLength(2)]
-		[System.ComponentModel.DataAnnotations.MaxLength(64)]
+		[System.ComponentModel.DataAnnotations.Length(2, 64)]
 		public string Third_party_password { get; set; }
 		
 		/// <summary>
@@ -1124,8 +1115,7 @@ namespace MyNS
 		/// Max length: 64
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="third_party_username")]
-		[System.ComponentModel.DataAnnotations.MinLength(2)]
-		[System.ComponentModel.DataAnnotations.MaxLength(64)]
+		[System.ComponentModel.DataAnnotations.Length(2, 64)]
 		public string Third_party_username { get; set; }
 	}
 	
@@ -1147,8 +1137,7 @@ namespace MyNS
 		/// Max length: 64
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="third_party_password")]
-		[System.ComponentModel.DataAnnotations.MinLength(2)]
-		[System.ComponentModel.DataAnnotations.MaxLength(64)]
+		[System.ComponentModel.DataAnnotations.Length(2, 64)]
 		public string Third_party_password { get; set; }
 		
 		/// <summary>
@@ -1157,8 +1146,7 @@ namespace MyNS
 		/// Max length: 64
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="third_party_username")]
-		[System.ComponentModel.DataAnnotations.MinLength(2)]
-		[System.ComponentModel.DataAnnotations.MaxLength(64)]
+		[System.ComponentModel.DataAnnotations.Length(2, 64)]
 		public string Third_party_username { get; set; }
 	}
 	
@@ -1172,8 +1160,7 @@ namespace MyNS
 		/// Max length: 128
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="email")]
-		[System.ComponentModel.DataAnnotations.MinLength(5)]
-		[System.ComponentModel.DataAnnotations.MaxLength(128)]
+		[System.ComponentModel.DataAnnotations.Length(5, 128)]
 		public string Email { get; set; }
 		
 		/// <summary>
@@ -1239,8 +1226,7 @@ namespace MyNS
 		/// Max length: 128
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="email")]
-		[System.ComponentModel.DataAnnotations.MinLength(5)]
-		[System.ComponentModel.DataAnnotations.MaxLength(128)]
+		[System.ComponentModel.DataAnnotations.Length(5, 128)]
 		public string Email { get; set; }
 		
 		/// <summary>
@@ -1280,8 +1266,7 @@ namespace MyNS
 		/// Max length: 128
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="email")]
-		[System.ComponentModel.DataAnnotations.MinLength(5)]
-		[System.ComponentModel.DataAnnotations.MaxLength(128)]
+		[System.ComponentModel.DataAnnotations.Length(5, 128)]
 		public string Email { get; set; }
 		
 		/// <summary>
@@ -1541,8 +1526,7 @@ namespace MyNS
 		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="client_redirect_fail_url")]
-		[System.ComponentModel.DataAnnotations.MinLength(11)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(11, 255)]
 		public string Client_redirect_fail_url { get; set; }
 		
 		/// <summary>
@@ -1551,8 +1535,7 @@ namespace MyNS
 		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="client_redirect_success_url")]
-		[System.ComponentModel.DataAnnotations.MinLength(11)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(11, 255)]
 		public string Client_redirect_success_url { get; set; }
 		
 		/// <summary>
@@ -1561,8 +1544,7 @@ namespace MyNS
 		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="corppass_url")]
-		[System.ComponentModel.DataAnnotations.MinLength(11)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(11, 255)]
 		public string Corppass_url { get; set; }
 		
 		/// <summary>
@@ -1583,8 +1565,7 @@ namespace MyNS
 		/// Max length: 128
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="signer_email")]
-		[System.ComponentModel.DataAnnotations.MinLength(2)]
-		[System.ComponentModel.DataAnnotations.MaxLength(128)]
+		[System.ComponentModel.DataAnnotations.Length(2, 128)]
 		public string Signer_email { get; set; }
 		
 		/// <summary>
@@ -1593,8 +1574,7 @@ namespace MyNS
 		/// Max length: 64
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="signer_name")]
-		[System.ComponentModel.DataAnnotations.MinLength(2)]
-		[System.ComponentModel.DataAnnotations.MaxLength(64)]
+		[System.ComponentModel.DataAnnotations.Length(2, 64)]
 		public string Signer_name { get; set; }
 		
 		/// <summary>
@@ -1651,8 +1631,7 @@ namespace MyNS
 		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="client_redirect_fail_url")]
-		[System.ComponentModel.DataAnnotations.MinLength(11)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(11, 255)]
 		public string Client_redirect_fail_url { get; set; }
 		
 		/// <summary>
@@ -1661,8 +1640,7 @@ namespace MyNS
 		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="client_redirect_success_url")]
-		[System.ComponentModel.DataAnnotations.MinLength(11)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(11, 255)]
 		public string Client_redirect_success_url { get; set; }
 		
 		/// <summary>
@@ -1685,8 +1663,7 @@ namespace MyNS
 		/// Max length: 128
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="signer_email")]
-		[System.ComponentModel.DataAnnotations.MinLength(2)]
-		[System.ComponentModel.DataAnnotations.MaxLength(128)]
+		[System.ComponentModel.DataAnnotations.Length(2, 128)]
 		public string Signer_email { get; set; }
 		
 		/// <summary>
@@ -1695,8 +1672,7 @@ namespace MyNS
 		/// Max length: 64
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="signer_name")]
-		[System.ComponentModel.DataAnnotations.MinLength(2)]
-		[System.ComponentModel.DataAnnotations.MaxLength(64)]
+		[System.ComponentModel.DataAnnotations.Length(2, 64)]
 		public string Signer_name { get; set; }
 		
 		/// <summary>
@@ -3779,8 +3755,7 @@ namespace MyNS
 		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public string Description { get; set; }
 		
 		/// <summary>
@@ -3813,8 +3788,7 @@ namespace MyNS
 		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="name")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -11540,8 +11514,7 @@ namespace MyNS
 		/// Max length: 36
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="idempotencyGuid")]
-		[System.ComponentModel.DataAnnotations.MinLength(36)]
-		[System.ComponentModel.DataAnnotations.MaxLength(36)]
+		[System.ComponentModel.DataAnnotations.Length(36, 36)]
 		public string IdempotencyGuid { get; set; }
 		
 		/// <summary>
@@ -11901,8 +11874,7 @@ namespace MyNS
 		/// Maximum items: 1
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="taxesDutiesFees")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1)]
+		[System.ComponentModel.DataAnnotations.Length(0, 1)]
 		public Tax[] TaxesDutiesFees { get; set; }
 		
 		/// <summary>
@@ -20275,8 +20247,7 @@ namespace MyNS
 		/// Max length: 36
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="idempotencyGuid")]
-		[System.ComponentModel.DataAnnotations.MinLength(36)]
-		[System.ComponentModel.DataAnnotations.MaxLength(36)]
+		[System.ComponentModel.DataAnnotations.Length(36, 36)]
 		public string IdempotencyGuid { get; set; }
 		
 		/// <summary>
@@ -20469,8 +20440,7 @@ namespace MyNS
 		/// Max length: 64
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="identifier")]
-		[System.ComponentModel.DataAnnotations.MinLength(2)]
-		[System.ComponentModel.DataAnnotations.MaxLength(64)]
+		[System.ComponentModel.DataAnnotations.Length(2, 64)]
 		public string Identifier { get; set; }
 		
 		/// <summary>
@@ -20479,8 +20449,7 @@ namespace MyNS
 		/// Max length: 64
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="scheme")]
-		[System.ComponentModel.DataAnnotations.MinLength(2)]
-		[System.ComponentModel.DataAnnotations.MaxLength(64)]
+		[System.ComponentModel.DataAnnotations.Length(2, 64)]
 		public string Scheme { get; set; }
 		
 		/// <summary>
@@ -20489,8 +20458,7 @@ namespace MyNS
 		/// Max length: 64
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="superscheme")]
-		[System.ComponentModel.DataAnnotations.MinLength(2)]
-		[System.ComponentModel.DataAnnotations.MaxLength(64)]
+		[System.ComponentModel.DataAnnotations.Length(2, 64)]
 		public string Superscheme { get; set; }
 	}
 	
@@ -20512,8 +20480,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="city")]
-		[System.ComponentModel.DataAnnotations.MinLength(2)]
-		[System.ComponentModel.DataAnnotations.MaxLength(64)]
+		[System.ComponentModel.DataAnnotations.Length(2, 64)]
 		public string City { get; set; }
 		
 		/// <summary>
@@ -20540,8 +20507,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="line1")]
-		[System.ComponentModel.DataAnnotations.MinLength(2)]
-		[System.ComponentModel.DataAnnotations.MaxLength(192)]
+		[System.ComponentModel.DataAnnotations.Length(2, 192)]
 		public string Line1 { get; set; }
 		
 		/// <summary>
@@ -20560,8 +20526,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="party_name")]
-		[System.ComponentModel.DataAnnotations.MinLength(2)]
-		[System.ComponentModel.DataAnnotations.MaxLength(64)]
+		[System.ComponentModel.DataAnnotations.Length(2, 64)]
 		public string Party_name { get; set; }
 		
 		/// <summary>
@@ -20587,8 +20552,7 @@ namespace MyNS
 		/// Max length: 64
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="third_party_password")]
-		[System.ComponentModel.DataAnnotations.MinLength(2)]
-		[System.ComponentModel.DataAnnotations.MaxLength(64)]
+		[System.ComponentModel.DataAnnotations.Length(2, 64)]
 		public string Third_party_password { get; set; }
 		
 		/// <summary>
@@ -20597,8 +20561,7 @@ namespace MyNS
 		/// Max length: 64
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="third_party_username")]
-		[System.ComponentModel.DataAnnotations.MinLength(2)]
-		[System.ComponentModel.DataAnnotations.MaxLength(64)]
+		[System.ComponentModel.DataAnnotations.Length(2, 64)]
 		public string Third_party_username { get; set; }
 		
 		/// <summary>
@@ -20609,8 +20572,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="zip")]
-		[System.ComponentModel.DataAnnotations.MinLength(2)]
-		[System.ComponentModel.DataAnnotations.MaxLength(32)]
+		[System.ComponentModel.DataAnnotations.Length(2, 32)]
 		public string Zip { get; set; }
 	}
 	
@@ -20630,8 +20592,7 @@ namespace MyNS
 		/// Max length: 64
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="city")]
-		[System.ComponentModel.DataAnnotations.MinLength(2)]
-		[System.ComponentModel.DataAnnotations.MaxLength(64)]
+		[System.ComponentModel.DataAnnotations.Length(2, 64)]
 		public string City { get; set; }
 		
 		/// <summary>
@@ -20660,8 +20621,7 @@ namespace MyNS
 		/// Max length: 192
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="line1")]
-		[System.ComponentModel.DataAnnotations.MinLength(2)]
-		[System.ComponentModel.DataAnnotations.MaxLength(192)]
+		[System.ComponentModel.DataAnnotations.Length(2, 192)]
 		public string Line1 { get; set; }
 		
 		/// <summary>
@@ -20678,8 +20638,7 @@ namespace MyNS
 		/// Max length: 64
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="party_name")]
-		[System.ComponentModel.DataAnnotations.MinLength(2)]
-		[System.ComponentModel.DataAnnotations.MaxLength(64)]
+		[System.ComponentModel.DataAnnotations.Length(2, 64)]
 		public string Party_name { get; set; }
 		
 		/// <summary>
@@ -20711,8 +20670,7 @@ namespace MyNS
 		/// Max length: 64
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="third_party_password")]
-		[System.ComponentModel.DataAnnotations.MinLength(2)]
-		[System.ComponentModel.DataAnnotations.MaxLength(64)]
+		[System.ComponentModel.DataAnnotations.Length(2, 64)]
 		public string Third_party_password { get; set; }
 		
 		/// <summary>
@@ -20721,8 +20679,7 @@ namespace MyNS
 		/// Max length: 64
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="third_party_username")]
-		[System.ComponentModel.DataAnnotations.MinLength(2)]
-		[System.ComponentModel.DataAnnotations.MaxLength(64)]
+		[System.ComponentModel.DataAnnotations.Length(2, 64)]
 		public string Third_party_username { get; set; }
 		
 		/// <summary>
@@ -20731,8 +20688,7 @@ namespace MyNS
 		/// Max length: 32
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="zip")]
-		[System.ComponentModel.DataAnnotations.MinLength(2)]
-		[System.ComponentModel.DataAnnotations.MaxLength(32)]
+		[System.ComponentModel.DataAnnotations.Length(2, 32)]
 		public string Zip { get; set; }
 	}
 	
@@ -20782,8 +20738,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="identifier")]
-		[System.ComponentModel.DataAnnotations.MinLength(2)]
-		[System.ComponentModel.DataAnnotations.MaxLength(64)]
+		[System.ComponentModel.DataAnnotations.Length(2, 64)]
 		public string Identifier { get; set; }
 		
 		/// <summary>
@@ -20794,8 +20749,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="scheme")]
-		[System.ComponentModel.DataAnnotations.MinLength(2)]
-		[System.ComponentModel.DataAnnotations.MaxLength(64)]
+		[System.ComponentModel.DataAnnotations.Length(2, 64)]
 		public string Scheme { get; set; }
 		
 		/// <summary>
@@ -20806,8 +20760,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="superscheme")]
-		[System.ComponentModel.DataAnnotations.MinLength(2)]
-		[System.ComponentModel.DataAnnotations.MaxLength(64)]
+		[System.ComponentModel.DataAnnotations.Length(2, 64)]
 		public string Superscheme { get; set; }
 	}
 	
@@ -21869,8 +21822,7 @@ namespace MyNS
 		/// Max length: 20
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="identifier")]
-		[System.ComponentModel.DataAnnotations.MinLength(2)]
-		[System.ComponentModel.DataAnnotations.MaxLength(20)]
+		[System.ComponentModel.DataAnnotations.Length(2, 20)]
 		public string Identifier { get; set; }
 		
 		/// <summary>

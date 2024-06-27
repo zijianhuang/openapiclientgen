@@ -4261,8 +4261,7 @@ namespace MyNS
 		/// Pattern: ^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(36)]
-		[System.ComponentModel.DataAnnotations.MaxLength(36)]
+		[System.ComponentModel.DataAnnotations.Length(36, 36)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$")]
 		public string NextToken { get; set; }
 	}
@@ -4312,8 +4311,7 @@ namespace MyNS
 		/// Pattern: ^[\w-]*$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(100)]
+		[System.ComponentModel.DataAnnotations.Length(1, 100)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[\w-]*$")]
 		public string InsightId { get; set; }
 	}
@@ -4347,8 +4345,7 @@ namespace MyNS
 		/// Maximum items: 5
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(5)]
+		[System.ComponentModel.DataAnnotations.Length(0, 5)]
 		public string[] AccountIds { get; set; }
 		
 		/// <summary>
@@ -4357,8 +4354,7 @@ namespace MyNS
 		/// Maximum items: 5
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(5)]
+		[System.ComponentModel.DataAnnotations.Length(0, 5)]
 		public string[] OrganizationalUnitIds { get; set; }
 	}
 	
@@ -4385,8 +4381,7 @@ namespace MyNS
 		/// Maximum items: 5
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(5)]
+		[System.ComponentModel.DataAnnotations.Length(0, 5)]
 		public string[] AccountIds { get; set; }
 		
 		/// <summary>
@@ -4395,8 +4390,7 @@ namespace MyNS
 		/// Maximum items: 5
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(5)]
+		[System.ComponentModel.DataAnnotations.Length(0, 5)]
 		public string[] OrganizationalUnitIds { get; set; }
 	}
 	
@@ -4417,8 +4411,7 @@ namespace MyNS
 		/// Maximum items: 5
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(5)]
+		[System.ComponentModel.DataAnnotations.Length(0, 5)]
 		public string[] AccountIds { get; set; }
 		
 		/// <summary>
@@ -4427,8 +4420,7 @@ namespace MyNS
 		/// Maximum items: 5
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(5)]
+		[System.ComponentModel.DataAnnotations.Length(0, 5)]
 		public string[] OrganizationalUnitIds { get; set; }
 		
 		/// <summary>
@@ -4438,8 +4430,7 @@ namespace MyNS
 		/// Pattern: ^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(36)]
-		[System.ComponentModel.DataAnnotations.MaxLength(36)]
+		[System.ComponentModel.DataAnnotations.Length(36, 36)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$")]
 		public string NextToken { get; set; }
 		
@@ -4499,8 +4490,7 @@ namespace MyNS
 		/// Pattern: ^[a-zA-Z0-9]+[a-zA-Z0-9-]*$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(100)]
+		[System.ComponentModel.DataAnnotations.Length(1, 100)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[a-zA-Z0-9]+[a-zA-Z0-9-]*$")]
 		public string ClientToken { get; set; }
 	}
@@ -4540,8 +4530,7 @@ namespace MyNS
 		/// Pattern: ^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(36)]
-		[System.ComponentModel.DataAnnotations.MaxLength(36)]
+		[System.ComponentModel.DataAnnotations.Length(36, 36)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$")]
 		public string NextToken { get; set; }
 		
@@ -4552,8 +4541,7 @@ namespace MyNS
 		/// Pattern: ^\d{12}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(12)]
-		[System.ComponentModel.DataAnnotations.MaxLength(12)]
+		[System.ComponentModel.DataAnnotations.Length(12, 12)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^\d{12}$")]
 		public string AccountId { get; set; }
 		
@@ -4596,8 +4584,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(100)]
+		[System.ComponentModel.DataAnnotations.Length(1, 100)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[\w-]*$")]
 		public string InsightId { get; set; }
 		
@@ -4617,8 +4604,7 @@ namespace MyNS
 		/// Pattern: ^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(36)]
-		[System.ComponentModel.DataAnnotations.MaxLength(36)]
+		[System.ComponentModel.DataAnnotations.Length(36, 36)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$")]
 		public string NextToken { get; set; }
 	}
@@ -4650,8 +4636,7 @@ namespace MyNS
 		/// Pattern: ^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(36)]
-		[System.ComponentModel.DataAnnotations.MaxLength(36)]
+		[System.ComponentModel.DataAnnotations.Length(36, 36)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$")]
 		public string NextToken { get; set; }
 		
@@ -4662,8 +4647,7 @@ namespace MyNS
 		/// Pattern: ^\d{12}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(12)]
-		[System.ComponentModel.DataAnnotations.MaxLength(12)]
+		[System.ComponentModel.DataAnnotations.Length(12, 12)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^\d{12}$")]
 		public string AccountId { get; set; }
 	}
@@ -4720,8 +4704,7 @@ namespace MyNS
 		/// Pattern: ^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(36)]
-		[System.ComponentModel.DataAnnotations.MaxLength(36)]
+		[System.ComponentModel.DataAnnotations.Length(36, 36)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$")]
 		public string NextToken { get; set; }
 	}
@@ -4764,8 +4747,7 @@ namespace MyNS
 		/// Pattern: ^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(36)]
-		[System.ComponentModel.DataAnnotations.MaxLength(36)]
+		[System.ComponentModel.DataAnnotations.Length(36, 36)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$")]
 		public string NextToken { get; set; }
 	}
@@ -4806,8 +4788,7 @@ namespace MyNS
 		/// Maximum items: 1
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1)]
+		[System.ComponentModel.DataAnnotations.Length(0, 1)]
 		public string[] AccountIds { get; set; }
 		
 		/// <summary>
@@ -4816,8 +4797,7 @@ namespace MyNS
 		/// Maximum items: 1
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1)]
+		[System.ComponentModel.DataAnnotations.Length(0, 1)]
 		public string[] OrganizationalUnitIds { get; set; }
 		
 		/// <summary>
@@ -4827,8 +4807,7 @@ namespace MyNS
 		/// Pattern: ^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(36)]
-		[System.ComponentModel.DataAnnotations.MaxLength(36)]
+		[System.ComponentModel.DataAnnotations.Length(36, 36)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$")]
 		public string NextToken { get; set; }
 	}
@@ -4858,8 +4837,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(100)]
+		[System.ComponentModel.DataAnnotations.Length(1, 100)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[\w-]*$")]
 		public string InsightId { get; set; }
 		
@@ -4870,8 +4848,7 @@ namespace MyNS
 		/// Pattern: ^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(36)]
-		[System.ComponentModel.DataAnnotations.MaxLength(36)]
+		[System.ComponentModel.DataAnnotations.Length(36, 36)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$")]
 		public string NextToken { get; set; }
 		
@@ -4888,8 +4865,7 @@ namespace MyNS
 		/// Pattern: ^\d{12}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(12)]
-		[System.ComponentModel.DataAnnotations.MaxLength(12)]
+		[System.ComponentModel.DataAnnotations.Length(12, 12)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^\d{12}$")]
 		public string AccountId { get; set; }
 	}
@@ -4927,8 +4903,7 @@ namespace MyNS
 		/// Pattern: ^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(36)]
-		[System.ComponentModel.DataAnnotations.MaxLength(36)]
+		[System.ComponentModel.DataAnnotations.Length(36, 36)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$")]
 		public string NextToken { get; set; }
 		
@@ -4981,8 +4956,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1)]
 		public string[] AccountIds { get; set; }
 		
 		/// <summary>
@@ -5015,8 +4989,7 @@ namespace MyNS
 		/// Pattern: ^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(36)]
-		[System.ComponentModel.DataAnnotations.MaxLength(36)]
+		[System.ComponentModel.DataAnnotations.Length(36, 36)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$")]
 		public string NextToken { get; set; }
 		

@@ -684,8 +684,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="participant_ids")]
-		[System.ComponentModel.DataAnnotations.MinLength(2)]
-		[System.ComponentModel.DataAnnotations.MaxLength(49)]
+		[System.ComponentModel.DataAnnotations.Length(2, 49)]
 		public string[] Participant_ids { get; set; }
 	}
 	
@@ -1191,8 +1190,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="bbox")]
-		[System.ComponentModel.DataAnnotations.MinLength(4)]
-		[System.ComponentModel.DataAnnotations.MaxLength(4)]
+		[System.ComponentModel.DataAnnotations.Length(4, 4)]
 		public double[] Bbox { get; set; }
 		
 		/// <summary>
@@ -1231,8 +1229,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="coordinates")]
-		[System.ComponentModel.DataAnnotations.MinLength(2)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2)]
+		[System.ComponentModel.DataAnnotations.Length(2, 2)]
 		public double[] Coordinates { get; set; }
 		
 		/// <summary>
@@ -1317,8 +1314,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="options")]
-		[System.ComponentModel.DataAnnotations.MinLength(2)]
-		[System.ComponentModel.DataAnnotations.MaxLength(4)]
+		[System.ComponentModel.DataAnnotations.Length(2, 4)]
 		public PollOption[] Options { get; set; }
 		
 		[System.Runtime.Serialization.DataMember(Name="voting_status")]
@@ -1340,8 +1336,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="label")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(25)]
+		[System.ComponentModel.DataAnnotations.Length(1, 25)]
 		public string Label { get; set; }
 		
 		/// <summary>
@@ -4447,8 +4442,7 @@ namespace MyNS
 		/// Max length: 100
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(100)]
+		[System.ComponentModel.DataAnnotations.Length(0, 100)]
 		public string Description { get; set; }
 		
 		/// <summary>
@@ -4458,8 +4452,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(25)]
+		[System.ComponentModel.DataAnnotations.Length(1, 25)]
 		public string Name { get; set; }
 		
 		[System.Runtime.Serialization.DataMember(Name="private")]
@@ -4655,8 +4648,7 @@ namespace MyNS
 		/// Max length: 100
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(100)]
+		[System.ComponentModel.DataAnnotations.Length(0, 100)]
 		public string Description { get; set; }
 		
 		/// <summary>
@@ -4664,8 +4656,7 @@ namespace MyNS
 		/// Max length: 25
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="name")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(25)]
+		[System.ComponentModel.DataAnnotations.Length(1, 25)]
 		public string Name { get; set; }
 		
 		[System.Runtime.Serialization.DataMember(Name="private")]
@@ -5185,8 +5176,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="media_ids")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(4)]
+		[System.ComponentModel.DataAnnotations.Length(1, 4)]
 		public string[] Media_ids { get; set; }
 		
 		/// <summary>
@@ -5195,8 +5185,7 @@ namespace MyNS
 		/// Maximum items: 10
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="tagged_user_ids")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(10)]
+		[System.ComponentModel.DataAnnotations.Length(0, 10)]
 		public string[] Tagged_user_ids { get; set; }
 	}
 	
@@ -5221,8 +5210,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="options")]
-		[System.ComponentModel.DataAnnotations.MinLength(2)]
-		[System.ComponentModel.DataAnnotations.MaxLength(4)]
+		[System.ComponentModel.DataAnnotations.Length(2, 4)]
 		public string[] Options { get; set; }
 		
 		/// <summary>

@@ -3684,8 +3684,7 @@ namespace MyNS
 		/// Max length: 16384
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(16384)]
+		[System.ComponentModel.DataAnnotations.Length(0, 16384)]
 		public string Comment { get; set; }
 		
 		/// <summary>
@@ -3749,8 +3748,7 @@ namespace MyNS
 		/// Max length: 16384
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(16384)]
+		[System.ComponentModel.DataAnnotations.Length(0, 16384)]
 		public string Comment { get; set; }
 		
 		/// <summary>
@@ -3783,8 +3781,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(10)]
-		[System.ComponentModel.DataAnnotations.MaxLength(512)]
+		[System.ComponentModel.DataAnnotations.Length(10, 512)]
 		public string RevocationComment { get; set; }
 	}
 	

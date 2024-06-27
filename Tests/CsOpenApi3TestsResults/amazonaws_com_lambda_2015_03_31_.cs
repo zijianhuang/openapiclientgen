@@ -5404,8 +5404,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(100)]
+		[System.ComponentModel.DataAnnotations.Length(1, 100)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"([a-zA-Z0-9-_]+)")]
 		public string StatementId { get; set; }
 		
@@ -5454,8 +5453,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(100)]
+		[System.ComponentModel.DataAnnotations.Length(1, 100)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"([a-zA-Z0-9-_]+)")]
 		public string StatementId { get; set; }
 		
@@ -5504,8 +5502,7 @@ namespace MyNS
 		/// Pattern: [a-zA-Z0-9._\-]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(256)]
+		[System.ComponentModel.DataAnnotations.Length(0, 256)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[a-zA-Z0-9._\-]+")]
 		public string EventSourceToken { get; set; }
 		
@@ -5522,8 +5519,7 @@ namespace MyNS
 		/// Pattern: ^o-[a-z0-9]{10,32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(12)]
-		[System.ComponentModel.DataAnnotations.MaxLength(34)]
+		[System.ComponentModel.DataAnnotations.Length(12, 34)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^o-[a-z0-9]{10,32}$")]
 		public string PrincipalOrgID { get; set; }
 		
@@ -5546,8 +5542,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(128)]
+		[System.ComponentModel.DataAnnotations.Length(1, 128)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"(?!^[0-9]+$)([a-zA-Z0-9-_]+)")]
 		public string Name { get; set; }
 		
@@ -5560,8 +5555,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1024)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1024)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"(\$LATEST|[0-9]+)")]
 		public string FunctionVersion { get; set; }
 		
@@ -5571,8 +5565,7 @@ namespace MyNS
 		/// Max length: 256
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(256)]
+		[System.ComponentModel.DataAnnotations.Length(0, 256)]
 		public string Description { get; set; }
 		
 		/// <summary>
@@ -5598,8 +5591,7 @@ namespace MyNS
 		/// Max length: 256
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(256)]
+		[System.ComponentModel.DataAnnotations.Length(0, 256)]
 		public string Description { get; set; }
 		
 		/// <summary>
@@ -5651,8 +5643,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(140)]
+		[System.ComponentModel.DataAnnotations.Length(1, 140)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"(arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}(-gov)?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?")]
 		public string FunctionName { get; set; }
 		
@@ -5752,8 +5743,7 @@ namespace MyNS
 		/// Maximum items: 1
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1)]
 		public string[] Topics { get; set; }
 		
 		/// <summary>
@@ -5762,8 +5752,7 @@ namespace MyNS
 		/// Maximum items: 1
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1)]
 		public string[] Queues { get; set; }
 		
 		/// <summary>
@@ -5772,8 +5761,7 @@ namespace MyNS
 		/// Maximum items: 22
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(22)]
+		[System.ComponentModel.DataAnnotations.Length(0, 22)]
 		public SourceAccessConfiguration[] SourceAccessConfigurations { get; set; }
 		
 		/// <summary>
@@ -5788,8 +5776,7 @@ namespace MyNS
 		/// Maximum items: 1
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1)]
+		[System.ComponentModel.DataAnnotations.Length(0, 1)]
 		public FunctionResponseType[] FunctionResponseTypes { get; set; }
 		
 		/// <summary>
@@ -5887,8 +5874,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(140)]
+		[System.ComponentModel.DataAnnotations.Length(1, 140)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"(arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}(-gov)?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?")]
 		public string FunctionName { get; set; }
 		
@@ -5932,8 +5918,7 @@ namespace MyNS
 		/// Max length: 256
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(256)]
+		[System.ComponentModel.DataAnnotations.Length(0, 256)]
 		public string Description { get; set; }
 		
 		/// <summary>
@@ -6039,8 +6024,7 @@ namespace MyNS
 		/// Maximum items: 1
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1)]
 		public Architecture[] Architectures { get; set; }
 		
 		/// <summary>
@@ -6334,8 +6318,7 @@ namespace MyNS
 		/// Pattern: (\$LATEST|[0-9]+)
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1024)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1024)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"(\$LATEST|[0-9]+)")]
 		public string FunctionVersion { get; set; }
 		
@@ -6345,8 +6328,7 @@ namespace MyNS
 		/// Max length: 256
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(256)]
+		[System.ComponentModel.DataAnnotations.Length(0, 256)]
 		public string Description { get; set; }
 		
 		/// <summary>
@@ -6378,8 +6360,7 @@ namespace MyNS
 		/// Max length: 256
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(256)]
+		[System.ComponentModel.DataAnnotations.Length(0, 256)]
 		public string Description { get; set; }
 		
 		/// <summary>
@@ -6419,8 +6400,7 @@ namespace MyNS
 		/// Pattern: (arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}(-gov)?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(140)]
+		[System.ComponentModel.DataAnnotations.Length(1, 140)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"(arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}(-gov)?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?")]
 		public string FunctionName { get; set; }
 		
@@ -6499,8 +6479,7 @@ namespace MyNS
 		/// Maximum items: 22
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(22)]
+		[System.ComponentModel.DataAnnotations.Length(0, 22)]
 		public SourceAccessConfiguration[] SourceAccessConfigurations { get; set; }
 		
 		/// <summary>
@@ -6518,8 +6497,7 @@ namespace MyNS
 		/// Maximum items: 1
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1)]
+		[System.ComponentModel.DataAnnotations.Length(0, 1)]
 		public FunctionResponseType[] FunctionResponseTypes { get; set; }
 		
 		/// <summary>
@@ -6719,8 +6697,7 @@ namespace MyNS
 		/// Max length: 256
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(256)]
+		[System.ComponentModel.DataAnnotations.Length(0, 256)]
 		public string Description { get; set; }
 		
 		/// <summary>
@@ -7001,8 +6978,7 @@ namespace MyNS
 		/// Pattern: ^arn:(aws[a-zA-Z-]*):lambda:[a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1}::runtime:.+$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(26)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2048)]
+		[System.ComponentModel.DataAnnotations.Length(26, 2048)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^arn:(aws[a-zA-Z-]*):lambda:[a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1}::runtime:.+$")]
 		public string RuntimeVersionArn { get; set; }
 	}
@@ -7136,8 +7112,7 @@ namespace MyNS
 		/// Max length: 256
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(256)]
+		[System.ComponentModel.DataAnnotations.Length(0, 256)]
 		public string Description { get; set; }
 		
 		/// <summary>
@@ -7316,8 +7291,7 @@ namespace MyNS
 		/// Max length: 256
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(256)]
+		[System.ComponentModel.DataAnnotations.Length(0, 256)]
 		public string Description { get; set; }
 		
 		/// <summary>
@@ -7343,8 +7317,7 @@ namespace MyNS
 		/// Pattern: ^[0-9A-Za-z\.\-_]*(?<!\.)$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(3)]
-		[System.ComponentModel.DataAnnotations.MaxLength(63)]
+		[System.ComponentModel.DataAnnotations.Length(3, 63)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[0-9A-Za-z\.\-_]*(?<!\.)$")]
 		public string S3Bucket { get; set; }
 		
@@ -7354,8 +7327,7 @@ namespace MyNS
 		/// Max length: 1024
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1024)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1024)]
 		public string S3Key { get; set; }
 		
 		/// <summary>
@@ -7364,8 +7336,7 @@ namespace MyNS
 		/// Max length: 1024
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1024)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1024)]
 		public string S3ObjectVersion { get; set; }
 		
 		/// <summary>
@@ -7398,8 +7369,7 @@ namespace MyNS
 		/// Maximum items: 1
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1)]
 		public Architecture[] Architectures { get; set; }
 	}
 }

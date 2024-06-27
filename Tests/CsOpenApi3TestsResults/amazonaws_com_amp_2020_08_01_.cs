@@ -1722,8 +1722,7 @@ namespace MyNS
 		/// Pattern: [!-~]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(64)]
+		[System.ComponentModel.DataAnnotations.Length(1, 64)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[!-~]+")]
 		public string ClientToken { get; set; }
 	}
@@ -1746,8 +1745,7 @@ namespace MyNS
 		/// Pattern: [!-~]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(64)]
+		[System.ComponentModel.DataAnnotations.Length(1, 64)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[!-~]+")]
 		public string ClientToken { get; set; }
 	}
@@ -1772,8 +1770,7 @@ namespace MyNS
 		/// Pattern: [!-~]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(64)]
+		[System.ComponentModel.DataAnnotations.Length(1, 64)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[!-~]+")]
 		public string ClientToken { get; set; }
 	}
@@ -1798,8 +1795,7 @@ namespace MyNS
 		/// Pattern: [!-~]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(64)]
+		[System.ComponentModel.DataAnnotations.Length(1, 64)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[!-~]+")]
 		public string ClientToken { get; set; }
 	}
@@ -1816,8 +1812,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(64)]
+		[System.ComponentModel.DataAnnotations.Length(1, 64)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@".*[0-9A-Za-z][-.0-9A-Z_a-z]*.*")]
 		public string Name { get; set; }
 		
@@ -1836,8 +1831,7 @@ namespace MyNS
 		/// Pattern: [!-~]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(64)]
+		[System.ComponentModel.DataAnnotations.Length(1, 64)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[!-~]+")]
 		public string ClientToken { get; set; }
 		
@@ -1857,8 +1851,7 @@ namespace MyNS
 		/// Max length: 100
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="alias")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(100)]
+		[System.ComponentModel.DataAnnotations.Length(1, 100)]
 		public string Alias { get; set; }
 		
 		/// <summary>
@@ -1868,8 +1861,7 @@ namespace MyNS
 		/// Pattern: [!-~]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(64)]
+		[System.ComponentModel.DataAnnotations.Length(1, 64)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[!-~]+")]
 		public string ClientToken { get; set; }
 		
@@ -1898,8 +1890,7 @@ namespace MyNS
 		/// Pattern: [!-~]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(64)]
+		[System.ComponentModel.DataAnnotations.Length(1, 64)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[!-~]+")]
 		public string ClientToken { get; set; }
 	}
@@ -1925,8 +1916,7 @@ namespace MyNS
 		/// Max length: 100
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="alias")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(100)]
+		[System.ComponentModel.DataAnnotations.Length(1, 100)]
 		public string Alias { get; set; }
 		
 		/// <summary>
@@ -1936,8 +1926,7 @@ namespace MyNS
 		/// Pattern: [!-~]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(64)]
+		[System.ComponentModel.DataAnnotations.Length(1, 64)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[!-~]+")]
 		public string ClientToken { get; set; }
 	}

@@ -3632,8 +3632,7 @@ namespace MyNS
 		/// Maximum items: 99
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="access_tokens")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(99)]
+		[System.ComponentModel.DataAnnotations.Length(1, 99)]
 		public string[] Access_tokens { get; set; }
 		
 		/// <summary>
@@ -14473,8 +14472,7 @@ namespace MyNS
 		/// Maximum items: 99
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="transaction_item_access_tokens")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(99)]
+		[System.ComponentModel.DataAnnotations.Length(1, 99)]
 		public string[] Transaction_item_access_tokens { get; set; }
 		
 		/// <summary>
@@ -16093,8 +16091,7 @@ namespace MyNS
 		/// Max length: 4
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="last_4_digits")]
-		[System.ComponentModel.DataAnnotations.MinLength(4)]
-		[System.ComponentModel.DataAnnotations.MaxLength(4)]
+		[System.ComponentModel.DataAnnotations.Length(4, 4)]
 		public string Last_4_digits { get; set; }
 	}
 	
@@ -17582,8 +17579,7 @@ namespace MyNS
 		/// Max length: 34
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="iban")]
-		[System.ComponentModel.DataAnnotations.MinLength(15)]
-		[System.ComponentModel.DataAnnotations.MaxLength(34)]
+		[System.ComponentModel.DataAnnotations.Length(15, 34)]
 		public string Iban { get; set; }
 		
 		/// <summary>
@@ -17612,8 +17608,7 @@ namespace MyNS
 		/// Max length: 34
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="iban")]
-		[System.ComponentModel.DataAnnotations.MinLength(15)]
-		[System.ComponentModel.DataAnnotations.MaxLength(34)]
+		[System.ComponentModel.DataAnnotations.Length(15, 34)]
 		public string Iban { get; set; }
 		
 		/// <summary>
@@ -29598,8 +29593,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="mask")]
-		[System.ComponentModel.DataAnnotations.MinLength(2)]
-		[System.ComponentModel.DataAnnotations.MaxLength(4)]
+		[System.ComponentModel.DataAnnotations.Length(2, 4)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[A-Za-z0-9]{2,4}$")]
 		public string Mask { get; set; }
 		
@@ -29753,8 +29747,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="bic")]
-		[System.ComponentModel.DataAnnotations.MinLength(8)]
-		[System.ComponentModel.DataAnnotations.MaxLength(11)]
+		[System.ComponentModel.DataAnnotations.Length(8, 11)]
 		public string Bic { get; set; }
 		
 		/// <summary>
@@ -29765,8 +29758,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="iban")]
-		[System.ComponentModel.DataAnnotations.MinLength(15)]
-		[System.ComponentModel.DataAnnotations.MaxLength(34)]
+		[System.ComponentModel.DataAnnotations.Length(15, 34)]
 		public string Iban { get; set; }
 	}
 	
@@ -31136,8 +31128,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="currency")]
-		[System.ComponentModel.DataAnnotations.MinLength(3)]
-		[System.ComponentModel.DataAnnotations.MaxLength(3)]
+		[System.ComponentModel.DataAnnotations.Length(3, 3)]
 		public PaymentAmountCurrency Currency { get; set; }
 		
 		/// <summary>
@@ -31187,8 +31178,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="currency")]
-		[System.ComponentModel.DataAnnotations.MinLength(3)]
-		[System.ComponentModel.DataAnnotations.MaxLength(3)]
+		[System.ComponentModel.DataAnnotations.Length(3, 3)]
 		public PaymentAmountCurrency Currency { get; set; }
 		
 		/// <summary>
@@ -31382,8 +31372,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="city")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(35)]
+		[System.ComponentModel.DataAnnotations.Length(1, 35)]
 		public string City { get; set; }
 		
 		/// <summary>
@@ -31394,8 +31383,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="country")]
-		[System.ComponentModel.DataAnnotations.MinLength(2)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2)]
+		[System.ComponentModel.DataAnnotations.Length(2, 2)]
 		public string Country { get; set; }
 		
 		/// <summary>
@@ -31406,8 +31394,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="postal_code")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(16)]
+		[System.ComponentModel.DataAnnotations.Length(1, 16)]
 		public string Postal_code { get; set; }
 		
 		/// <summary>
@@ -31612,8 +31599,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="reference")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(18)]
+		[System.ComponentModel.DataAnnotations.Length(1, 18)]
 		public string Reference { get; set; }
 		
 		/// <summary>
@@ -31750,8 +31736,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="idempotency_key")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(128)]
+		[System.ComponentModel.DataAnnotations.Length(1, 128)]
 		public string Idempotency_key { get; set; }
 		
 		/// <summary>
@@ -32185,8 +32170,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="reference")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(18)]
+		[System.ComponentModel.DataAnnotations.Length(1, 18)]
 		public string Reference { get; set; }
 		
 		/// <summary>
@@ -32401,8 +32385,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="idempotency_key")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(128)]
+		[System.ComponentModel.DataAnnotations.Length(1, 128)]
 		public string Idempotency_key { get; set; }
 		
 		/// <summary>
@@ -32421,8 +32404,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="reference")]
-		[System.ComponentModel.DataAnnotations.MinLength(6)]
-		[System.ComponentModel.DataAnnotations.MaxLength(18)]
+		[System.ComponentModel.DataAnnotations.Length(6, 18)]
 		public string Reference { get; set; }
 		
 		/// <summary>
@@ -32713,8 +32695,7 @@ namespace MyNS
 		/// Max length: 34
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="iban")]
-		[System.ComponentModel.DataAnnotations.MinLength(15)]
-		[System.ComponentModel.DataAnnotations.MaxLength(34)]
+		[System.ComponentModel.DataAnnotations.Length(15, 34)]
 		public string Iban { get; set; }
 		
 		/// <summary>
@@ -33977,8 +33958,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="client_transaction_id")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(36)]
+		[System.ComponentModel.DataAnnotations.Length(1, 36)]
 		public string Client_transaction_id { get; set; }
 		
 		/// <summary>
@@ -34144,8 +34124,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="client_transaction_id")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(36)]
+		[System.ComponentModel.DataAnnotations.Length(1, 36)]
 		public string Client_transaction_id { get; set; }
 		
 		/// <summary>
@@ -34783,8 +34762,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="client_transaction_id")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(36)]
+		[System.ComponentModel.DataAnnotations.Length(1, 36)]
 		public string Client_transaction_id { get; set; }
 		
 		/// <summary>
@@ -35222,8 +35200,7 @@ namespace MyNS
 		/// Max length: 10
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="account")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(10)]
+		[System.ComponentModel.DataAnnotations.Length(1, 10)]
 		public string Account { get; set; }
 		
 		/// <summary>
@@ -35232,8 +35209,7 @@ namespace MyNS
 		/// Max length: 6
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="sort_code")]
-		[System.ComponentModel.DataAnnotations.MinLength(6)]
-		[System.ComponentModel.DataAnnotations.MaxLength(6)]
+		[System.ComponentModel.DataAnnotations.Length(6, 6)]
 		public string Sort_code { get; set; }
 	}
 	
@@ -37728,8 +37704,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="client_transaction_id")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(36)]
+		[System.ComponentModel.DataAnnotations.Length(1, 36)]
 		public string Client_transaction_id { get; set; }
 		
 		/// <summary>
@@ -37862,8 +37837,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="client_transaction_id")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(36)]
+		[System.ComponentModel.DataAnnotations.Length(1, 36)]
 		public string Client_transaction_id { get; set; }
 		
 		/// <summary>
@@ -38094,8 +38068,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="client_transaction_id")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(36)]
+		[System.ComponentModel.DataAnnotations.Length(1, 36)]
 		public string Client_transaction_id { get; set; }
 		
 		/// <summary>
@@ -42702,8 +42675,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="description")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(8)]
+		[System.ComponentModel.DataAnnotations.Length(1, 8)]
 		public string Description { get; set; }
 		
 		/// <summary>
@@ -45009,8 +44981,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="client_user_id")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(128)]
+		[System.ComponentModel.DataAnnotations.Length(1, 128)]
 		public string Client_user_id { get; set; }
 		
 		/// <summary>
@@ -45482,8 +45453,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="iso_currency_code")]
-		[System.ComponentModel.DataAnnotations.MinLength(3)]
-		[System.ComponentModel.DataAnnotations.MaxLength(3)]
+		[System.ComponentModel.DataAnnotations.Length(3, 3)]
 		public WalletCreateRequestIso_currency_code Iso_currency_code { get; set; }
 		
 		/// <summary>
@@ -45600,8 +45570,7 @@ namespace MyNS
 		/// Max length: 3
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="iso_currency_code")]
-		[System.ComponentModel.DataAnnotations.MinLength(3)]
-		[System.ComponentModel.DataAnnotations.MaxLength(3)]
+		[System.ComponentModel.DataAnnotations.Length(3, 3)]
 		public WalletCreateRequestIso_currency_code Iso_currency_code { get; set; }
 		
 		/// <summary>
@@ -45763,8 +45732,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="iso_currency_code")]
-		[System.ComponentModel.DataAnnotations.MinLength(3)]
-		[System.ComponentModel.DataAnnotations.MaxLength(3)]
+		[System.ComponentModel.DataAnnotations.Length(3, 3)]
 		public WalletCreateRequestIso_currency_code Iso_currency_code { get; set; }
 		
 		/// <summary>
@@ -45837,8 +45805,7 @@ namespace MyNS
 		/// Max length: 34
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="iban")]
-		[System.ComponentModel.DataAnnotations.MinLength(15)]
-		[System.ComponentModel.DataAnnotations.MaxLength(34)]
+		[System.ComponentModel.DataAnnotations.Length(15, 34)]
 		public string Iban { get; set; }
 	}
 	
@@ -45909,8 +45876,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="idempotency_key")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(128)]
+		[System.ComponentModel.DataAnnotations.Length(1, 128)]
 		public string Idempotency_key { get; set; }
 		
 		/// <summary>
@@ -45922,8 +45888,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="reference")]
-		[System.ComponentModel.DataAnnotations.MinLength(6)]
-		[System.ComponentModel.DataAnnotations.MaxLength(18)]
+		[System.ComponentModel.DataAnnotations.Length(6, 18)]
 		public string Reference { get; set; }
 		
 		/// <summary>

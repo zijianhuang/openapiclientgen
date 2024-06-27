@@ -5334,8 +5334,7 @@ namespace MyNS
 		/// Max length: 8
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="code")]
-		[System.ComponentModel.DataAnnotations.MinLength(8)]
-		[System.ComponentModel.DataAnnotations.MaxLength(8)]
+		[System.ComponentModel.DataAnnotations.Length(8, 8)]
 		public string Code { get; set; }
 		
 		/// <summary>
@@ -5417,8 +5416,7 @@ namespace MyNS
 		/// Max length: 8
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="paymentRequestCode")]
-		[System.ComponentModel.DataAnnotations.MinLength(8)]
-		[System.ComponentModel.DataAnnotations.MaxLength(8)]
+		[System.ComponentModel.DataAnnotations.Length(8, 8)]
 		public string PaymentRequestCode { get; set; }
 		
 		/// <summary>

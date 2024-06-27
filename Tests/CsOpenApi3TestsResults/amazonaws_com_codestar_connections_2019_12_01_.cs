@@ -120,8 +120,7 @@ namespace MyNS
 		/// Maximum items: 200
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(200)]
+		[System.ComponentModel.DataAnnotations.Length(0, 200)]
 		public Tag[] Tags { get; set; }
 	}
 	
@@ -158,8 +157,7 @@ namespace MyNS
 		/// Maximum items: 200
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(200)]
+		[System.ComponentModel.DataAnnotations.Length(0, 200)]
 		public Tag[] Tags { get; set; }
 	}
 	

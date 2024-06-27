@@ -433,8 +433,7 @@ namespace MyNS
 		/// Maximum items: 250
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="itineraries")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(250)]
+		[System.ComponentModel.DataAnnotations.Length(1, 250)]
 		public FlightOfferItineraries[] FlightOfferItineraries { get; set; }
 		
 		/// <summary>
@@ -491,8 +490,7 @@ namespace MyNS
 		/// Maximum items: 18
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="travelerPricings")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(18)]
+		[System.ComponentModel.DataAnnotations.Length(1, 18)]
 		public FlightOfferTravelerPricings[] FlightOfferTravelerPricings { get; set; }
 		
 		/// <summary>
@@ -509,8 +507,7 @@ namespace MyNS
 		/// Maximum items: 9
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="validatingAirlineCodes")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(9)]
+		[System.ComponentModel.DataAnnotations.Length(1, 9)]
 		public string[] ValidatingAirlineCodes { get; set; }
 	}
 	
@@ -530,8 +527,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="segments")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(9)]
+		[System.ComponentModel.DataAnnotations.Length(1, 9)]
 		public Segment[] Segments { get; set; }
 	}
 	
@@ -597,8 +593,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="fareDetailsBySegment")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(18)]
+		[System.ComponentModel.DataAnnotations.Length(1, 18)]
 		public FlightOfferTravelerPricingsFareDetailsBySegment[] FlightOfferTravelerPricingsFareDetailsBySegment { get; set; }
 		
 		/// <summary>
@@ -851,8 +846,7 @@ namespace MyNS
 		/// Max length: 2
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="carrierCode")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2)]
+		[System.ComponentModel.DataAnnotations.Length(1, 2)]
 		public string CarrierCode { get; set; }
 		
 		/// <summary>
@@ -873,8 +867,7 @@ namespace MyNS
 		/// Max length: 4
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="number")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(4)]
+		[System.ComponentModel.DataAnnotations.Length(1, 4)]
 		public string Number { get; set; }
 		
 		/// <summary>
@@ -903,8 +896,7 @@ namespace MyNS
 		/// Max length: 2
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="carrierCode")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2)]
+		[System.ComponentModel.DataAnnotations.Length(1, 2)]
 		public string CarrierCode { get; set; }
 	}
 	
@@ -946,8 +938,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="originDestinations")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(6)]
+		[System.ComponentModel.DataAnnotations.Length(1, 6)]
 		public OriginDestination[] OriginDestinations { get; set; }
 		
 		[System.Runtime.Serialization.DataMember(Name="searchCriteria")]
@@ -970,8 +961,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="travelers")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(18)]
+		[System.ComponentModel.DataAnnotations.Length(1, 18)]
 		public Traveler[] Travelers { get; set; }
 	}
 	
@@ -985,8 +975,7 @@ namespace MyNS
 		/// Maximum items: 2
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="alternativeDestinationsCodes")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2)]
+		[System.ComponentModel.DataAnnotations.Length(1, 2)]
 		public string[] AlternativeDestinationsCodes { get; set; }
 		
 		/// <summary>
@@ -995,8 +984,7 @@ namespace MyNS
 		/// Maximum items: 2
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="alternativeOriginsCodes")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2)]
+		[System.ComponentModel.DataAnnotations.Length(1, 2)]
 		public string[] AlternativeOriginsCodes { get; set; }
 		
 		[System.Runtime.Serialization.DataMember(Name="arrivalDateTimeRange")]
@@ -1026,8 +1014,7 @@ namespace MyNS
 		/// Maximum items: 3
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="excludedConnectionPoints")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(3)]
+		[System.ComponentModel.DataAnnotations.Length(1, 3)]
 		public string[] ExcludedConnectionPoints { get; set; }
 		
 		[System.Runtime.Serialization.DataMember(Name="id")]
@@ -1039,8 +1026,7 @@ namespace MyNS
 		/// Maximum items: 2
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="includedConnectionPoints")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2)]
+		[System.ComponentModel.DataAnnotations.Length(1, 2)]
 		public string[] IncludedConnectionPoints { get; set; }
 		
 		/// <summary>
@@ -1143,8 +1129,7 @@ namespace MyNS
 		/// Maximum items: 6
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="cabinRestrictions")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(6)]
+		[System.ComponentModel.DataAnnotations.Length(1, 6)]
 		public SearchCriteriaFlightFiltersCabinRestrictions[] SearchCriteriaFlightFiltersCabinRestrictions { get; set; }
 		
 		/// <summary>
@@ -1227,8 +1212,7 @@ namespace MyNS
 		/// Maximum items: 99
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="excludedCarrierCodes")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(99)]
+		[System.ComponentModel.DataAnnotations.Length(1, 99)]
 		public string[] ExcludedCarrierCodes { get; set; }
 		
 		/// <summary>
@@ -1237,8 +1221,7 @@ namespace MyNS
 		/// Maximum items: 99
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="includedCarrierCodes")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(99)]
+		[System.ComponentModel.DataAnnotations.Length(1, 99)]
 		public string[] IncludedCarrierCodes { get; set; }
 	}
 	

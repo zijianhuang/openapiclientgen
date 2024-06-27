@@ -1743,8 +1743,7 @@ namespace MyNS
 		/// Pattern: ^[a-zA-Z0-9]{10}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="profileVersion")]
-		[System.ComponentModel.DataAnnotations.MinLength(10)]
-		[System.ComponentModel.DataAnnotations.MaxLength(10)]
+		[System.ComponentModel.DataAnnotations.Length(10, 10)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[a-zA-Z0-9]{10}$")]
 		public string ProfileVersion { get; set; }
 		
@@ -1876,8 +1875,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="profileName")]
-		[System.ComponentModel.DataAnnotations.MinLength(2)]
-		[System.ComponentModel.DataAnnotations.MaxLength(64)]
+		[System.ComponentModel.DataAnnotations.Length(2, 64)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[a-zA-Z0-9_]{2,}")]
 		public string ProfileName { get; set; }
 		
@@ -1896,8 +1894,7 @@ namespace MyNS
 		/// Pattern: ^[0-9]{12}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="profileOwner")]
-		[System.ComponentModel.DataAnnotations.MinLength(12)]
-		[System.ComponentModel.DataAnnotations.MaxLength(12)]
+		[System.ComponentModel.DataAnnotations.Length(12, 12)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[0-9]{12}$")]
 		public string ProfileOwner { get; set; }
 	}
@@ -1938,8 +1935,7 @@ namespace MyNS
 		/// Pattern: ^[0-9]{12}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="jobOwner")]
-		[System.ComponentModel.DataAnnotations.MinLength(12)]
-		[System.ComponentModel.DataAnnotations.MaxLength(12)]
+		[System.ComponentModel.DataAnnotations.Length(12, 12)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[0-9]{12}$")]
 		public string JobOwner { get; set; }
 		
@@ -1951,8 +1947,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="reason")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(500)]
+		[System.ComponentModel.DataAnnotations.Length(1, 500)]
 		public string Reason { get; set; }
 	}
 	
@@ -1968,8 +1963,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="profileVersion")]
-		[System.ComponentModel.DataAnnotations.MinLength(10)]
-		[System.ComponentModel.DataAnnotations.MaxLength(10)]
+		[System.ComponentModel.DataAnnotations.Length(10, 10)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[a-zA-Z0-9]{10}$")]
 		public string ProfileVersion { get; set; }
 		
@@ -1981,8 +1975,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="reason")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(500)]
+		[System.ComponentModel.DataAnnotations.Length(1, 500)]
 		public string Reason { get; set; }
 		
 		/// <summary>
@@ -2006,8 +1999,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="profileName")]
-		[System.ComponentModel.DataAnnotations.MinLength(2)]
-		[System.ComponentModel.DataAnnotations.MaxLength(64)]
+		[System.ComponentModel.DataAnnotations.Length(2, 64)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[a-zA-Z0-9_]{2,}")]
 		public string ProfileName { get; set; }
 		
@@ -2018,8 +2010,7 @@ namespace MyNS
 		/// Pattern: ^[0-9]{12}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="profileOwner")]
-		[System.ComponentModel.DataAnnotations.MinLength(12)]
-		[System.ComponentModel.DataAnnotations.MaxLength(12)]
+		[System.ComponentModel.DataAnnotations.Length(12, 12)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[0-9]{12}$")]
 		public string ProfileOwner { get; set; }
 		
@@ -2031,8 +2022,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="payload")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(4096)]
+		[System.ComponentModel.DataAnnotations.Length(1, 4096)]
 		public string Payload { get; set; }
 		
 		/// <summary>

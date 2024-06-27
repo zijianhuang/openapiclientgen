@@ -1138,8 +1138,7 @@ namespace MyNS
 		/// Max length: 65536
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="value")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(65536)]
+		[System.ComponentModel.DataAnnotations.Length(1, 65536)]
 		public string Value { get; set; }
 	}
 	
@@ -2506,8 +2505,7 @@ namespace MyNS
 		/// Max length: 200
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="notes")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(200)]
+		[System.ComponentModel.DataAnnotations.Length(0, 200)]
 		public string Notes { get; set; }
 		
 		[System.Runtime.Serialization.DataMember(Name="scope")]
@@ -2528,8 +2526,7 @@ namespace MyNS
 		/// Max length: 65536
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="value")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(65536)]
+		[System.ComponentModel.DataAnnotations.Length(1, 65536)]
 		public string Value { get; set; }
 	}
 	
@@ -2546,8 +2543,7 @@ namespace MyNS
 		/// Max length: 200
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="value")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(200)]
+		[System.ComponentModel.DataAnnotations.Length(1, 200)]
 		public string Value { get; set; }
 	}
 	
@@ -2617,8 +2613,7 @@ namespace MyNS
 		/// Max length: 200
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="notes")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(200)]
+		[System.ComponentModel.DataAnnotations.Length(0, 200)]
 		public string Notes { get; set; }
 		
 		[System.Runtime.Serialization.DataMember(Name="scope")]
@@ -2636,8 +2631,7 @@ namespace MyNS
 		/// Max length: 65536
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="value")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(65536)]
+		[System.ComponentModel.DataAnnotations.Length(1, 65536)]
 		public string Value { get; set; }
 	}
 	

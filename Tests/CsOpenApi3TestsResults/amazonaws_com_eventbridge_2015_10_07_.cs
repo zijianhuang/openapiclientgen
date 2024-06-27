@@ -2624,8 +2624,7 @@ namespace MyNS
 		/// Maximum items: 40
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(40)]
+		[System.ComponentModel.DataAnnotations.Length(0, 40)]
 		public string[] Sqls { get; set; }
 	}
 	

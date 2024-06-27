@@ -597,8 +597,7 @@ namespace MyNS
 		/// Max length: 128
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="comment")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(128)]
+		[System.ComponentModel.DataAnnotations.Length(0, 128)]
 		public string Comment { get; set; }
 		
 		/// <summary>
@@ -608,8 +607,7 @@ namespace MyNS
 		/// Pattern: ^([1-9][0-9]*)(m|h)$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="expiresIn")]
-		[System.ComponentModel.DataAnnotations.MinLength(2)]
-		[System.ComponentModel.DataAnnotations.MaxLength(5)]
+		[System.ComponentModel.DataAnnotations.Length(2, 5)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^([1-9][0-9]*)(m|h)$")]
 		public string ExpiresIn { get; set; }
 	}
@@ -625,8 +623,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="awayFrom")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(20)]
+		[System.ComponentModel.DataAnnotations.Length(0, 20)]
 		public string AwayFrom { get; set; }
 		
 		/// <summary>
@@ -637,8 +634,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="comment")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(128)]
+		[System.ComponentModel.DataAnnotations.Length(0, 128)]
 		public string Comment { get; set; }
 		
 		/// <summary>
@@ -650,8 +646,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="expiresIn")]
-		[System.ComponentModel.DataAnnotations.MinLength(2)]
-		[System.ComponentModel.DataAnnotations.MaxLength(5)]
+		[System.ComponentModel.DataAnnotations.Length(2, 5)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^([1-9][0-9]*)(m|h)$")]
 		public string ExpiresIn { get; set; }
 		
@@ -663,8 +658,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="resourceIdentifier")]
-		[System.ComponentModel.DataAnnotations.MinLength(8)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1024)]
+		[System.ComponentModel.DataAnnotations.Length(8, 1024)]
 		public string ResourceIdentifier { get; set; }
 	}
 }

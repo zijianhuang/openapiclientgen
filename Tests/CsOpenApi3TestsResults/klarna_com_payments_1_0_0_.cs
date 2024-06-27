@@ -107,8 +107,7 @@ namespace MyNS
 		/// Max length: 99
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="attention")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(99)]
+		[System.ComponentModel.DataAnnotations.Length(0, 99)]
 		public string Attention { get; set; }
 		
 		/// <summary>
@@ -117,8 +116,7 @@ namespace MyNS
 		/// Max length: 99
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="city")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(99)]
+		[System.ComponentModel.DataAnnotations.Length(0, 99)]
 		public string City { get; set; }
 		
 		/// <summary>
@@ -135,8 +133,7 @@ namespace MyNS
 		/// Max length: 99
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="email")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(99)]
+		[System.ComponentModel.DataAnnotations.Length(0, 99)]
 		public string Email { get; set; }
 		
 		/// <summary>
@@ -148,8 +145,7 @@ namespace MyNS
 		/// Max length: 99
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="family_name")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(99)]
+		[System.ComponentModel.DataAnnotations.Length(0, 99)]
 		public string Family_name { get; set; }
 		
 		/// <summary>
@@ -161,8 +157,7 @@ namespace MyNS
 		/// Max length: 99
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="given_name")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(99)]
+		[System.ComponentModel.DataAnnotations.Length(0, 99)]
 		public string Given_name { get; set; }
 		
 		/// <summary>
@@ -171,8 +166,7 @@ namespace MyNS
 		/// Max length: 99
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="organization_name")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(99)]
+		[System.ComponentModel.DataAnnotations.Length(0, 99)]
 		public string Organization_name { get; set; }
 		
 		/// <summary>
@@ -181,8 +175,7 @@ namespace MyNS
 		/// Max length: 99
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="phone")]
-		[System.ComponentModel.DataAnnotations.MinLength(5)]
-		[System.ComponentModel.DataAnnotations.MaxLength(99)]
+		[System.ComponentModel.DataAnnotations.Length(5, 99)]
 		public string Phone { get; set; }
 		
 		/// <summary>
@@ -192,8 +185,7 @@ namespace MyNS
 		/// Max length: 10
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="postal_code")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(10)]
+		[System.ComponentModel.DataAnnotations.Length(0, 10)]
 		public string Postal_code { get; set; }
 		
 		/// <summary>
@@ -202,8 +194,7 @@ namespace MyNS
 		/// Max length: 99
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="region")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(99)]
+		[System.ComponentModel.DataAnnotations.Length(0, 99)]
 		public string Region { get; set; }
 		
 		/// <summary>
@@ -214,8 +205,7 @@ namespace MyNS
 		/// Max length: 99
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="street_address")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(99)]
+		[System.ComponentModel.DataAnnotations.Length(0, 99)]
 		public string Street_address { get; set; }
 		
 		/// <summary>
@@ -224,8 +214,7 @@ namespace MyNS
 		/// Max length: 99
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="street_address2")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(99)]
+		[System.ComponentModel.DataAnnotations.Length(0, 99)]
 		public string Street_address2 { get; set; }
 		
 		/// <summary>
@@ -240,8 +229,7 @@ namespace MyNS
 		/// Max length: 20
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="title")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(20)]
+		[System.ComponentModel.DataAnnotations.Length(0, 20)]
 		public string Title { get; set; }
 	}
 	
@@ -341,8 +329,7 @@ namespace MyNS
 		/// Max length: 6000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="merchant_data")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(6000)]
+		[System.ComponentModel.DataAnnotations.Length(0, 6000)]
 		public string Merchant_data { get; set; }
 		
 		/// <summary>
@@ -351,8 +338,7 @@ namespace MyNS
 		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="merchant_reference1")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(0, 255)]
 		public string Merchant_reference1 { get; set; }
 		
 		/// <summary>
@@ -361,8 +347,7 @@ namespace MyNS
 		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="merchant_reference2")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(0, 255)]
 		public string Merchant_reference2 { get; set; }
 		
 		[System.Runtime.Serialization.DataMember(Name="merchant_urls")]
@@ -386,8 +371,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="order_lines")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1000)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1000)]
 		public Order_line[] Order_lines { get; set; }
 		
 		/// <summary>
@@ -551,8 +535,7 @@ namespace MyNS
 		/// Max length: 2000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="authorization")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2000)]
+		[System.ComponentModel.DataAnnotations.Length(0, 2000)]
 		public string Authorization { get; set; }
 		
 		/// <summary>
@@ -561,8 +544,7 @@ namespace MyNS
 		/// Max length: 2000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="confirmation")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2000)]
+		[System.ComponentModel.DataAnnotations.Length(0, 2000)]
 		public string Confirmation { get; set; }
 		
 		/// <summary>
@@ -571,8 +553,7 @@ namespace MyNS
 		/// Max length: 2000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="notification")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2000)]
+		[System.ComponentModel.DataAnnotations.Length(0, 2000)]
 		public string Notification { get; set; }
 		
 		/// <summary>
@@ -581,8 +562,7 @@ namespace MyNS
 		/// Max length: 2000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="push")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2000)]
+		[System.ComponentModel.DataAnnotations.Length(0, 2000)]
 		public string Push { get; set; }
 	}
 	
@@ -597,8 +577,7 @@ namespace MyNS
 		/// Max length: 1024
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="image_url")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1024)]
+		[System.ComponentModel.DataAnnotations.Length(0, 1024)]
 		public string Image_url { get; set; }
 		
 		/// <summary>
@@ -607,8 +586,7 @@ namespace MyNS
 		/// Max length: 1024
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="merchant_data")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1024)]
+		[System.ComponentModel.DataAnnotations.Length(0, 1024)]
 		public string Merchant_data { get; set; }
 		
 		/// <summary>
@@ -619,8 +597,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public string Name { get; set; }
 		
 		[System.Runtime.Serialization.DataMember(Name="product_identifiers")]
@@ -632,8 +609,7 @@ namespace MyNS
 		/// Max length: 1024
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="product_url")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1024)]
+		[System.ComponentModel.DataAnnotations.Length(0, 1024)]
 		public string Product_url { get; set; }
 		
 		/// <summary>
@@ -652,8 +628,7 @@ namespace MyNS
 		/// Max length: 8
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="quantity_unit")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(8)]
+		[System.ComponentModel.DataAnnotations.Length(1, 8)]
 		public string Quantity_unit { get; set; }
 		
 		/// <summary>
@@ -662,8 +637,7 @@ namespace MyNS
 		/// Max length: 256
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="reference")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(256)]
+		[System.ComponentModel.DataAnnotations.Length(0, 256)]
 		public string Reference { get; set; }
 		
 		[System.Runtime.Serialization.DataMember(Name="subscription")]
@@ -740,8 +714,7 @@ namespace MyNS
 		/// Max length: 70
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="brand")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(70)]
+		[System.ComponentModel.DataAnnotations.Length(0, 70)]
 		public string Brand { get; set; }
 		
 		/// <summary>
@@ -750,8 +723,7 @@ namespace MyNS
 		/// Max length: 750
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="category_path")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(750)]
+		[System.ComponentModel.DataAnnotations.Length(0, 750)]
 		public string Category_path { get; set; }
 		
 		/// <summary>
@@ -760,8 +732,7 @@ namespace MyNS
 		/// Max length: 64
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="color")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(64)]
+		[System.ComponentModel.DataAnnotations.Length(0, 64)]
 		public string Color { get; set; }
 		
 		/// <summary>
@@ -770,8 +741,7 @@ namespace MyNS
 		/// Max length: 50
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="global_trade_item_number")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(50)]
+		[System.ComponentModel.DataAnnotations.Length(0, 50)]
 		public string Global_trade_item_number { get; set; }
 		
 		/// <summary>
@@ -780,8 +750,7 @@ namespace MyNS
 		/// Max length: 70
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="manufacturer_part_number")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(70)]
+		[System.ComponentModel.DataAnnotations.Length(0, 70)]
 		public string Manufacturer_part_number { get; set; }
 		
 		/// <summary>
@@ -790,8 +759,7 @@ namespace MyNS
 		/// Max length: 64
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="size")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(64)]
+		[System.ComponentModel.DataAnnotations.Length(0, 64)]
 		public string Size { get; set; }
 	}
 	
@@ -825,8 +793,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public string Name { get; set; }
 	}
 	
@@ -1059,8 +1026,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="client_token")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(4096)]
+		[System.ComponentModel.DataAnnotations.Length(0, 4096)]
 		public string Client_token { get; set; }
 		
 		/// <summary>
@@ -1077,8 +1043,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="session_id")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(0, 255)]
 		public string Session_id { get; set; }
 	}
 	
@@ -1181,8 +1146,7 @@ namespace MyNS
 		/// Max length: 4096
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="client_token")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(4096)]
+		[System.ComponentModel.DataAnnotations.Length(0, 4096)]
 		public string Client_token { get; set; }
 		
 		/// <summary>
@@ -1242,8 +1206,7 @@ namespace MyNS
 		/// Max length: 6000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="merchant_data")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(6000)]
+		[System.ComponentModel.DataAnnotations.Length(0, 6000)]
 		public string Merchant_data { get; set; }
 		
 		/// <summary>
@@ -1252,8 +1215,7 @@ namespace MyNS
 		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="merchant_reference1")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(0, 255)]
 		public string Merchant_reference1 { get; set; }
 		
 		/// <summary>
@@ -1262,8 +1224,7 @@ namespace MyNS
 		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="merchant_reference2")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(0, 255)]
 		public string Merchant_reference2 { get; set; }
 		
 		[System.Runtime.Serialization.DataMember(Name="merchant_urls")]
@@ -1286,8 +1247,7 @@ namespace MyNS
 		/// Maximum items: 1000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="order_lines")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1000)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1000)]
 		public Order_line[] Order_lines { get; set; }
 		
 		/// <summary>
@@ -1386,8 +1346,7 @@ namespace MyNS
 		/// Max length: 4096
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="client_token")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(4096)]
+		[System.ComponentModel.DataAnnotations.Length(0, 4096)]
 		public string Client_token { get; set; }
 		
 		/// <summary>
@@ -1447,8 +1406,7 @@ namespace MyNS
 		/// Max length: 6000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="merchant_data")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(6000)]
+		[System.ComponentModel.DataAnnotations.Length(0, 6000)]
 		public string Merchant_data { get; set; }
 		
 		/// <summary>
@@ -1457,8 +1415,7 @@ namespace MyNS
 		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="merchant_reference1")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(0, 255)]
 		public string Merchant_reference1 { get; set; }
 		
 		/// <summary>
@@ -1467,8 +1424,7 @@ namespace MyNS
 		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="merchant_reference2")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(0, 255)]
 		public string Merchant_reference2 { get; set; }
 		
 		[System.Runtime.Serialization.DataMember(Name="merchant_urls")]
@@ -1495,8 +1451,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="order_lines")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1000)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1000)]
 		public Order_line[] Order_lines { get; set; }
 		
 		/// <summary>
@@ -1571,8 +1526,7 @@ namespace MyNS
 		/// Max length: 4096
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="client_token")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(4096)]
+		[System.ComponentModel.DataAnnotations.Length(0, 4096)]
 		public string Client_token { get; set; }
 		
 		/// <summary>
@@ -1632,8 +1586,7 @@ namespace MyNS
 		/// Max length: 6000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="merchant_data")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(6000)]
+		[System.ComponentModel.DataAnnotations.Length(0, 6000)]
 		public string Merchant_data { get; set; }
 		
 		/// <summary>
@@ -1642,8 +1595,7 @@ namespace MyNS
 		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="merchant_reference1")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(0, 255)]
 		public string Merchant_reference1 { get; set; }
 		
 		/// <summary>
@@ -1652,8 +1604,7 @@ namespace MyNS
 		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="merchant_reference2")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(0, 255)]
 		public string Merchant_reference2 { get; set; }
 		
 		[System.Runtime.Serialization.DataMember(Name="merchant_urls")]
@@ -1676,8 +1627,7 @@ namespace MyNS
 		/// Maximum items: 1000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="order_lines")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1000)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1000)]
 		public Order_line[] Order_lines { get; set; }
 		
 		/// <summary>

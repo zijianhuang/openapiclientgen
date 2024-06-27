@@ -12205,8 +12205,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="sha")]
-		[System.ComponentModel.DataAnnotations.MinLength(40)]
-		[System.ComponentModel.DataAnnotations.MaxLength(40)]
+		[System.ComponentModel.DataAnnotations.Length(40, 40)]
 		public string Sha { get; set; }
 		
 		/// <summary>

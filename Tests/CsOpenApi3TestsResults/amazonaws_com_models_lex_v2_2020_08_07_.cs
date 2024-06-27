@@ -13431,8 +13431,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="customVocabularyItemList")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(10)]
+		[System.ComponentModel.DataAnnotations.Length(1, 10)]
 		public NewCustomVocabularyItem[] CustomVocabularyItemList { get; set; }
 	}
 	
@@ -13447,8 +13446,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="customVocabularyItemList")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(10)]
+		[System.ComponentModel.DataAnnotations.Length(1, 10)]
 		public CustomVocabularyEntryId[] CustomVocabularyItemList { get; set; }
 	}
 	
@@ -13463,8 +13461,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="customVocabularyItemList")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(10)]
+		[System.ComponentModel.DataAnnotations.Length(1, 10)]
 		public CustomVocabularyItem[] CustomVocabularyItemList { get; set; }
 	}
 	
@@ -13477,8 +13474,7 @@ namespace MyNS
 		/// Max length: 200
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(200)]
+		[System.ComponentModel.DataAnnotations.Length(0, 200)]
 		public string Description { get; set; }
 		
 		/// <summary>
@@ -13521,8 +13517,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="botName")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(100)]
+		[System.ComponentModel.DataAnnotations.Length(1, 100)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^([0-9a-zA-Z][_-]?){1,100}$")]
 		public string BotName { get; set; }
 		
@@ -13532,8 +13527,7 @@ namespace MyNS
 		/// Max length: 200
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(200)]
+		[System.ComponentModel.DataAnnotations.Length(0, 200)]
 		public string Description { get; set; }
 		
 		/// <summary>
@@ -13545,8 +13539,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="roleArn")]
-		[System.ComponentModel.DataAnnotations.MinLength(32)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2048)]
+		[System.ComponentModel.DataAnnotations.Length(32, 2048)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^arn:aws:iam::[0-9]{12}:role/.*$")]
 		public string RoleArn { get; set; }
 		
@@ -13593,8 +13586,7 @@ namespace MyNS
 		/// Maximum items: 10
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="botMembers")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(10)]
+		[System.ComponentModel.DataAnnotations.Length(0, 10)]
 		public BotMember[] BotMembers { get; set; }
 	}
 	
@@ -13620,8 +13612,7 @@ namespace MyNS
 		/// Maximum items: 2
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="filters")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2)]
+		[System.ComponentModel.DataAnnotations.Length(1, 2)]
 		public BotFilter[] Filters { get; set; }
 		
 		/// <summary>
@@ -13662,8 +13653,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="botAliasName")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(100)]
+		[System.ComponentModel.DataAnnotations.Length(1, 100)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^([0-9a-zA-Z][_-]?){1,100}$")]
 		public string BotAliasName { get; set; }
 		
@@ -13673,8 +13663,7 @@ namespace MyNS
 		/// Max length: 200
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(200)]
+		[System.ComponentModel.DataAnnotations.Length(0, 200)]
 		public string Description { get; set; }
 		
 		/// <summary>
@@ -13684,8 +13673,7 @@ namespace MyNS
 		/// Pattern: ^[0-9]+$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="botVersion")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(5)]
+		[System.ComponentModel.DataAnnotations.Length(1, 5)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[0-9]+$")]
 		public string BotVersion { get; set; }
 		
@@ -13767,8 +13755,7 @@ namespace MyNS
 		/// Max length: 200
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(200)]
+		[System.ComponentModel.DataAnnotations.Length(0, 200)]
 		public string Description { get; set; }
 		
 		/// <summary>
@@ -13814,8 +13801,7 @@ namespace MyNS
 		/// Maximum items: 1
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="filters")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1)]
 		public BotLocaleFilter[] Filters { get; set; }
 		
 		/// <summary>
@@ -13853,8 +13839,7 @@ namespace MyNS
 		/// Max length: 200
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(200)]
+		[System.ComponentModel.DataAnnotations.Length(0, 200)]
 		public string Description { get; set; }
 		
 		/// <summary>
@@ -13926,8 +13911,7 @@ namespace MyNS
 		/// Max length: 1024
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="filePassword")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1024)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1024)]
 		public string FilePassword { get; set; }
 	}
 	
@@ -13957,8 +13941,7 @@ namespace MyNS
 		/// Pattern: ^[0-9a-zA-Z]+$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="botId")]
-		[System.ComponentModel.DataAnnotations.MinLength(10)]
-		[System.ComponentModel.DataAnnotations.MaxLength(10)]
+		[System.ComponentModel.DataAnnotations.Length(10, 10)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[0-9a-zA-Z]+$")]
 		public string BotId { get; set; }
 		
@@ -13969,8 +13952,7 @@ namespace MyNS
 		/// Pattern: ^(DRAFT|[0-9]+)$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="botVersion")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(5)]
+		[System.ComponentModel.DataAnnotations.Length(1, 5)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^(DRAFT|[0-9]+)$")]
 		public string BotVersion { get; set; }
 		
@@ -13986,8 +13968,7 @@ namespace MyNS
 		/// Maximum items: 1
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="filters")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1)]
 		public ExportFilter[] Filters { get; set; }
 		
 		/// <summary>
@@ -14034,8 +14015,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="intentName")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(100)]
+		[System.ComponentModel.DataAnnotations.Length(1, 100)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^([0-9a-zA-Z][_-]?){1,100}$")]
 		public string IntentName { get; set; }
 		
@@ -14045,8 +14025,7 @@ namespace MyNS
 		/// Max length: 200
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(200)]
+		[System.ComponentModel.DataAnnotations.Length(0, 200)]
 		public string Description { get; set; }
 		
 		/// <summary>
@@ -14091,8 +14070,7 @@ namespace MyNS
 		/// Maximum items: 5
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="inputContexts")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(5)]
+		[System.ComponentModel.DataAnnotations.Length(0, 5)]
 		public InputContext[] InputContexts { get; set; }
 		
 		/// <summary>
@@ -14101,8 +14079,7 @@ namespace MyNS
 		/// Maximum items: 10
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="outputContexts")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(10)]
+		[System.ComponentModel.DataAnnotations.Length(0, 10)]
 		public OutputContext[] OutputContexts { get; set; }
 		
 		/// <summary>
@@ -14262,8 +14239,7 @@ namespace MyNS
 		/// Maximum items: 1
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="filters")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1)]
 		public IntentFilter[] Filters { get; set; }
 		
 		/// <summary>
@@ -14332,8 +14308,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="statementId")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(100)]
+		[System.ComponentModel.DataAnnotations.Length(1, 100)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^([0-9a-zA-Z][_-]?){1,100}$")]
 		public string StatementId { get; set; }
 		
@@ -14380,8 +14355,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="slotName")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(100)]
+		[System.ComponentModel.DataAnnotations.Length(1, 100)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^([0-9a-zA-Z][_-]?){1,100}$")]
 		public string SlotName { get; set; }
 		
@@ -14391,8 +14365,7 @@ namespace MyNS
 		/// Max length: 200
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(200)]
+		[System.ComponentModel.DataAnnotations.Length(0, 200)]
 		public string Description { get; set; }
 		
 		/// <summary>
@@ -14402,8 +14375,7 @@ namespace MyNS
 		/// Pattern: ^((AMAZON\.)[a-zA-Z_]+?|[0-9a-zA-Z]+)$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="slotTypeId")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(25)]
+		[System.ComponentModel.DataAnnotations.Length(1, 25)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^((AMAZON\.)[a-zA-Z_]+?|[0-9a-zA-Z]+)$")]
 		public string SlotTypeId { get; set; }
 		
@@ -14498,8 +14470,7 @@ namespace MyNS
 		/// Maximum items: 1
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="filters")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1)]
 		public SlotFilter[] Filters { get; set; }
 		
 		/// <summary>
@@ -14540,8 +14511,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="slotTypeName")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(100)]
+		[System.ComponentModel.DataAnnotations.Length(1, 100)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^([0-9a-zA-Z][_-]?){1,100}$")]
 		public string SlotTypeName { get; set; }
 		
@@ -14551,8 +14521,7 @@ namespace MyNS
 		/// Max length: 200
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(200)]
+		[System.ComponentModel.DataAnnotations.Length(0, 200)]
 		public string Description { get; set; }
 		
 		/// <summary>
@@ -14561,8 +14530,7 @@ namespace MyNS
 		/// Maximum items: 10000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="slotTypeValues")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(10000)]
+		[System.ComponentModel.DataAnnotations.Length(1, 10000)]
 		public SlotTypeValue[] SlotTypeValues { get; set; }
 		
 		/// <summary>
@@ -14632,8 +14600,7 @@ namespace MyNS
 		/// Maximum items: 1
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="filters")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1)]
 		public SlotTypeFilter[] Filters { get; set; }
 		
 		/// <summary>
@@ -14693,8 +14660,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="botName")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(100)]
+		[System.ComponentModel.DataAnnotations.Length(1, 100)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^([0-9a-zA-Z][_-]?){1,100}$")]
 		public string BotName { get; set; }
 		
@@ -14704,8 +14670,7 @@ namespace MyNS
 		/// Max length: 200
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(200)]
+		[System.ComponentModel.DataAnnotations.Length(0, 200)]
 		public string Description { get; set; }
 		
 		/// <summary>
@@ -14717,8 +14682,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="roleArn")]
-		[System.ComponentModel.DataAnnotations.MinLength(32)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2048)]
+		[System.ComponentModel.DataAnnotations.Length(32, 2048)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^arn:aws:iam::[0-9]{12}:role/.*$")]
 		public string RoleArn { get; set; }
 		
@@ -14753,8 +14717,7 @@ namespace MyNS
 		/// Maximum items: 10
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="botMembers")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(10)]
+		[System.ComponentModel.DataAnnotations.Length(0, 10)]
 		public BotMember[] BotMembers { get; set; }
 	}
 	
@@ -14777,8 +14740,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="botAliasName")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(100)]
+		[System.ComponentModel.DataAnnotations.Length(1, 100)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^([0-9a-zA-Z][_-]?){1,100}$")]
 		public string BotAliasName { get; set; }
 		
@@ -14788,8 +14750,7 @@ namespace MyNS
 		/// Max length: 200
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(200)]
+		[System.ComponentModel.DataAnnotations.Length(0, 200)]
 		public string Description { get; set; }
 		
 		/// <summary>
@@ -14799,8 +14760,7 @@ namespace MyNS
 		/// Pattern: ^(DRAFT|[0-9]+)$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="botVersion")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(5)]
+		[System.ComponentModel.DataAnnotations.Length(1, 5)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^(DRAFT|[0-9]+)$")]
 		public string BotVersion { get; set; }
 		
@@ -14849,8 +14809,7 @@ namespace MyNS
 		/// Max length: 1024
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="filePassword")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1024)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1024)]
 		public string FilePassword { get; set; }
 	}
 	
@@ -14866,8 +14825,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="intentName")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(100)]
+		[System.ComponentModel.DataAnnotations.Length(1, 100)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^([0-9a-zA-Z][_-]?){1,100}$")]
 		public string IntentName { get; set; }
 		
@@ -14877,8 +14835,7 @@ namespace MyNS
 		/// Max length: 200
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(200)]
+		[System.ComponentModel.DataAnnotations.Length(0, 200)]
 		public string Description { get; set; }
 		
 		/// <summary>
@@ -14929,8 +14886,7 @@ namespace MyNS
 		/// Maximum items: 5
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="inputContexts")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(5)]
+		[System.ComponentModel.DataAnnotations.Length(0, 5)]
 		public InputContext[] InputContexts { get; set; }
 		
 		/// <summary>
@@ -14939,8 +14895,7 @@ namespace MyNS
 		/// Maximum items: 10
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="outputContexts")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(10)]
+		[System.ComponentModel.DataAnnotations.Length(0, 10)]
 		public OutputContext[] OutputContexts { get; set; }
 		
 		/// <summary>
@@ -15097,8 +15052,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="slotName")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(100)]
+		[System.ComponentModel.DataAnnotations.Length(1, 100)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^([0-9a-zA-Z][_-]?){1,100}$")]
 		public string SlotName { get; set; }
 		
@@ -15108,8 +15062,7 @@ namespace MyNS
 		/// Max length: 200
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(200)]
+		[System.ComponentModel.DataAnnotations.Length(0, 200)]
 		public string Description { get; set; }
 		
 		/// <summary>
@@ -15119,8 +15072,7 @@ namespace MyNS
 		/// Pattern: ^((AMAZON\.)[a-zA-Z_]+?|[0-9a-zA-Z]+)$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="slotTypeId")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(25)]
+		[System.ComponentModel.DataAnnotations.Length(1, 25)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^((AMAZON\.)[a-zA-Z_]+?|[0-9a-zA-Z]+)$")]
 		public string SlotTypeId { get; set; }
 		
@@ -15212,8 +15164,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="slotTypeName")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(100)]
+		[System.ComponentModel.DataAnnotations.Length(1, 100)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^([0-9a-zA-Z][_-]?){1,100}$")]
 		public string SlotTypeName { get; set; }
 		
@@ -15223,8 +15174,7 @@ namespace MyNS
 		/// Max length: 200
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(200)]
+		[System.ComponentModel.DataAnnotations.Length(0, 200)]
 		public string Description { get; set; }
 		
 		/// <summary>
@@ -15233,8 +15183,7 @@ namespace MyNS
 		/// Maximum items: 10000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="slotTypeValues")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(10000)]
+		[System.ComponentModel.DataAnnotations.Length(1, 10000)]
 		public SlotTypeValue[] SlotTypeValues { get; set; }
 		
 		/// <summary>
@@ -15301,8 +15250,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="testSetName")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(100)]
+		[System.ComponentModel.DataAnnotations.Length(1, 100)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^([0-9a-zA-Z][_-]?){1,100}$")]
 		public string TestSetName { get; set; }
 		
@@ -15312,8 +15260,7 @@ namespace MyNS
 		/// Max length: 200
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(200)]
+		[System.ComponentModel.DataAnnotations.Length(0, 200)]
 		public string Description { get; set; }
 	}
 	
@@ -15352,8 +15299,7 @@ namespace MyNS
 		/// Pattern: ^(\bTSTALIASID\b|[0-9a-zA-Z]+)$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="botAliasId")]
-		[System.ComponentModel.DataAnnotations.MinLength(10)]
-		[System.ComponentModel.DataAnnotations.MaxLength(10)]
+		[System.ComponentModel.DataAnnotations.Length(10, 10)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^(\bTSTALIASID\b|[0-9a-zA-Z]+)$")]
 		public string BotAliasId { get; set; }
 		
@@ -15364,8 +15310,7 @@ namespace MyNS
 		/// Pattern: ^(DRAFT|[0-9]+)$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="botVersion")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(5)]
+		[System.ComponentModel.DataAnnotations.Length(1, 5)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^(DRAFT|[0-9]+)$")]
 		public string BotVersion { get; set; }
 		
@@ -15397,8 +15342,7 @@ namespace MyNS
 		/// Maximum items: 1
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="filters")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1)]
 		public AggregatedUtterancesFilter[] Filters { get; set; }
 		
 		/// <summary>
@@ -15590,8 +15534,7 @@ namespace MyNS
 		/// Pattern: ^[0-9a-zA-Z]+$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="botId")]
-		[System.ComponentModel.DataAnnotations.MinLength(10)]
-		[System.ComponentModel.DataAnnotations.MaxLength(10)]
+		[System.ComponentModel.DataAnnotations.Length(10, 10)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[0-9a-zA-Z]+$")]
 		public string BotId { get; set; }
 		
@@ -15602,8 +15545,7 @@ namespace MyNS
 		/// Pattern: ^DRAFT$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="botVersion")]
-		[System.ComponentModel.DataAnnotations.MinLength(5)]
-		[System.ComponentModel.DataAnnotations.MaxLength(5)]
+		[System.ComponentModel.DataAnnotations.Length(5, 5)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^DRAFT$")]
 		public string BotVersion { get; set; }
 		
@@ -15619,8 +15561,7 @@ namespace MyNS
 		/// Maximum items: 1
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="filters")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1)]
 		public ImportFilter[] Filters { get; set; }
 		
 		/// <summary>
@@ -15667,8 +15608,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="importId")]
-		[System.ComponentModel.DataAnnotations.MinLength(10)]
-		[System.ComponentModel.DataAnnotations.MaxLength(10)]
+		[System.ComponentModel.DataAnnotations.Length(10, 10)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[0-9a-zA-Z]+$")]
 		public string ImportId { get; set; }
 		
@@ -15694,8 +15634,7 @@ namespace MyNS
 		/// Max length: 1024
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="filePassword")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1024)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1024)]
 		public string FilePassword { get; set; }
 	}
 	
@@ -15745,8 +15684,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="metrics")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(5)]
+		[System.ComponentModel.DataAnnotations.Length(1, 5)]
 		public AnalyticsIntentMetric[] Metrics { get; set; }
 		
 		/// <summary>
@@ -15755,8 +15693,7 @@ namespace MyNS
 		/// Maximum items: 1
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="binBy")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1)]
 		public AnalyticsBinBySpecification[] BinBy { get; set; }
 		
 		/// <summary>
@@ -15765,8 +15702,7 @@ namespace MyNS
 		/// Maximum items: 3
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="groupBy")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(3)]
+		[System.ComponentModel.DataAnnotations.Length(1, 3)]
 		public AnalyticsIntentGroupBySpecification[] GroupBy { get; set; }
 		
 		/// <summary>
@@ -15775,8 +15711,7 @@ namespace MyNS
 		/// Maximum items: 9
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="filters")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(9)]
+		[System.ComponentModel.DataAnnotations.Length(1, 9)]
 		public AnalyticsIntentFilter[] Filters { get; set; }
 		
 		/// <summary>
@@ -15822,8 +15757,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="intentPath")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1024)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1024)]
 		public string IntentPath { get; set; }
 		
 		/// <summary>
@@ -15832,8 +15766,7 @@ namespace MyNS
 		/// Maximum items: 5
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="filters")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(5)]
+		[System.ComponentModel.DataAnnotations.Length(1, 5)]
 		public AnalyticsPathFilter[] Filters { get; set; }
 	}
 	
@@ -15864,8 +15797,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="metrics")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(5)]
+		[System.ComponentModel.DataAnnotations.Length(1, 5)]
 		public AnalyticsIntentStageMetric[] Metrics { get; set; }
 		
 		/// <summary>
@@ -15874,8 +15806,7 @@ namespace MyNS
 		/// Maximum items: 1
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="binBy")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1)]
 		public AnalyticsBinBySpecification[] BinBy { get; set; }
 		
 		/// <summary>
@@ -15884,8 +15815,7 @@ namespace MyNS
 		/// Maximum items: 2
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="groupBy")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2)]
+		[System.ComponentModel.DataAnnotations.Length(1, 2)]
 		public AnalyticsIntentStageGroupBySpecification[] GroupBy { get; set; }
 		
 		/// <summary>
@@ -15894,8 +15824,7 @@ namespace MyNS
 		/// Maximum items: 9
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="filters")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(9)]
+		[System.ComponentModel.DataAnnotations.Length(1, 9)]
 		public AnalyticsIntentStageFilter[] Filters { get; set; }
 		
 		/// <summary>
@@ -15964,8 +15893,7 @@ namespace MyNS
 		/// Maximum items: 10
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="filters")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(10)]
+		[System.ComponentModel.DataAnnotations.Length(1, 10)]
 		public AnalyticsSessionFilter[] Filters { get; set; }
 		
 		/// <summary>
@@ -16021,8 +15949,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="metrics")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(7)]
+		[System.ComponentModel.DataAnnotations.Length(1, 7)]
 		public AnalyticsSessionMetric[] Metrics { get; set; }
 		
 		/// <summary>
@@ -16031,8 +15958,7 @@ namespace MyNS
 		/// Maximum items: 1
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="binBy")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1)]
 		public AnalyticsBinBySpecification[] BinBy { get; set; }
 		
 		/// <summary>
@@ -16041,8 +15967,7 @@ namespace MyNS
 		/// Maximum items: 2
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="groupBy")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2)]
+		[System.ComponentModel.DataAnnotations.Length(1, 2)]
 		public AnalyticsSessionGroupBySpecification[] GroupBy { get; set; }
 		
 		/// <summary>
@@ -16051,8 +15976,7 @@ namespace MyNS
 		/// Maximum items: 10
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="filters")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(10)]
+		[System.ComponentModel.DataAnnotations.Length(1, 10)]
 		public AnalyticsSessionFilter[] Filters { get; set; }
 		
 		/// <summary>
@@ -16240,8 +16164,7 @@ namespace MyNS
 		/// Maximum items: 9
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="filters")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(9)]
+		[System.ComponentModel.DataAnnotations.Length(1, 9)]
 		public AnalyticsUtteranceFilter[] Filters { get; set; }
 		
 		/// <summary>
@@ -16297,8 +16220,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="metrics")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(4)]
+		[System.ComponentModel.DataAnnotations.Length(1, 4)]
 		public AnalyticsUtteranceMetric[] Metrics { get; set; }
 		
 		/// <summary>
@@ -16307,8 +16229,7 @@ namespace MyNS
 		/// Maximum items: 1
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="binBy")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1)]
 		public AnalyticsBinBySpecification[] BinBy { get; set; }
 		
 		/// <summary>
@@ -16317,8 +16238,7 @@ namespace MyNS
 		/// Maximum items: 2
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="groupBy")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2)]
+		[System.ComponentModel.DataAnnotations.Length(1, 2)]
 		public AnalyticsUtteranceGroupBySpecification[] GroupBy { get; set; }
 		
 		/// <summary>
@@ -16327,8 +16247,7 @@ namespace MyNS
 		/// Maximum items: 1
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="attributes")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1)]
 		public AnalyticsUtteranceAttribute[] Attributes { get; set; }
 		
 		/// <summary>
@@ -16337,8 +16256,7 @@ namespace MyNS
 		/// Maximum items: 9
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="filters")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(9)]
+		[System.ComponentModel.DataAnnotations.Length(1, 9)]
 		public AnalyticsUtteranceFilter[] Filters { get; set; }
 		
 		/// <summary>
@@ -16374,8 +16292,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="filters")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1)]
 		public AssociatedTranscriptFilter[] Filters { get; set; }
 		
 		/// <summary>
@@ -16442,8 +16359,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="testSetName")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(100)]
+		[System.ComponentModel.DataAnnotations.Length(1, 100)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^([0-9a-zA-Z][_-]?){1,100}$")]
 		public string TestSetName { get; set; }
 		
@@ -16453,8 +16369,7 @@ namespace MyNS
 		/// Max length: 200
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(200)]
+		[System.ComponentModel.DataAnnotations.Length(0, 200)]
 		public string Description { get; set; }
 		
 		/// <summary>
@@ -16482,8 +16397,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="roleArn")]
-		[System.ComponentModel.DataAnnotations.MinLength(32)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2048)]
+		[System.ComponentModel.DataAnnotations.Length(32, 2048)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^arn:aws:iam::[0-9]{12}:role/.*$")]
 		public string RoleArn { get; set; }
 		

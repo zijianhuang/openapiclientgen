@@ -3340,8 +3340,7 @@ namespace MyNS
 		/// Max length: 500
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(500)]
+		[System.ComponentModel.DataAnnotations.Length(0, 500)]
 		public string Description { get; set; }
 		
 		/// <summary>
@@ -3466,8 +3465,7 @@ namespace MyNS
 		/// Max length: 500
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(500)]
+		[System.ComponentModel.DataAnnotations.Length(0, 500)]
 		public string Description { get; set; }
 		
 		/// <summary>
@@ -3589,8 +3587,7 @@ namespace MyNS
 		/// Max length: 500
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(500)]
+		[System.ComponentModel.DataAnnotations.Length(0, 500)]
 		public string Description { get; set; }
 	}
 	

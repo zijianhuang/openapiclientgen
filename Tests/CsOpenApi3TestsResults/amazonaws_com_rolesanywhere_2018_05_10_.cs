@@ -1660,8 +1660,7 @@ namespace MyNS
 		/// Maximum items: 50
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="managedPolicyArns")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(50)]
+		[System.ComponentModel.DataAnnotations.Length(0, 50)]
 		public string[] ManagedPolicyArns { get; set; }
 		
 		/// <summary>
@@ -1673,8 +1672,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[ a-zA-Z0-9-_]*$")]
 		public string Name { get; set; }
 		
@@ -1692,8 +1690,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="roleArns")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(50)]
+		[System.ComponentModel.DataAnnotations.Length(0, 50)]
 		public string[] RoleArns { get; set; }
 		
 		/// <summary>
@@ -1708,8 +1705,7 @@ namespace MyNS
 		/// Maximum items: 200
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="tags")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(200)]
+		[System.ComponentModel.DataAnnotations.Length(0, 200)]
 		public Tag[] Tags { get; set; }
 	}
 	
@@ -1731,8 +1727,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[ a-zA-Z0-9-_]*$")]
 		public string Name { get; set; }
 		
@@ -1742,8 +1737,7 @@ namespace MyNS
 		/// Maximum items: 50
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="notificationSettings")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(50)]
+		[System.ComponentModel.DataAnnotations.Length(0, 50)]
 		public NotificationSetting[] NotificationSettings { get; set; }
 		
 		/// <summary>
@@ -1760,8 +1754,7 @@ namespace MyNS
 		/// Maximum items: 200
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="tags")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(200)]
+		[System.ComponentModel.DataAnnotations.Length(0, 200)]
 		public Tag[] Tags { get; set; }
 	}
 	
@@ -1784,8 +1777,7 @@ namespace MyNS
 		/// Max length: 300000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="crlData")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(300000)]
+		[System.ComponentModel.DataAnnotations.Length(1, 300000)]
 		public string CrlData { get; set; }
 		
 		/// <summary>
@@ -1795,8 +1787,7 @@ namespace MyNS
 		/// Pattern: ^[ a-zA-Z0-9-_]*$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="name")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[ a-zA-Z0-9-_]*$")]
 		public string Name { get; set; }
 	}
@@ -1819,8 +1810,7 @@ namespace MyNS
 		/// Maximum items: 50
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="managedPolicyArns")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(50)]
+		[System.ComponentModel.DataAnnotations.Length(0, 50)]
 		public string[] ManagedPolicyArns { get; set; }
 		
 		/// <summary>
@@ -1830,8 +1820,7 @@ namespace MyNS
 		/// Pattern: ^[ a-zA-Z0-9-_]*$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="name")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[ a-zA-Z0-9-_]*$")]
 		public string Name { get; set; }
 		
@@ -1841,8 +1830,7 @@ namespace MyNS
 		/// Maximum items: 50
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="roleArns")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(50)]
+		[System.ComponentModel.DataAnnotations.Length(0, 50)]
 		public string[] RoleArns { get; set; }
 		
 		/// <summary>
@@ -1851,8 +1839,7 @@ namespace MyNS
 		/// Max length: 100000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="sessionPolicy")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(100000)]
+		[System.ComponentModel.DataAnnotations.Length(1, 100000)]
 		public string SessionPolicy { get; set; }
 	}
 	
@@ -1866,8 +1853,7 @@ namespace MyNS
 		/// Pattern: ^[ a-zA-Z0-9-_]*$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="name")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[ a-zA-Z0-9-_]*$")]
 		public string Name { get; set; }
 		
@@ -1899,8 +1885,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="crlData")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(300000)]
+		[System.ComponentModel.DataAnnotations.Length(1, 300000)]
 		public string CrlData { get; set; }
 		
 		/// <summary>
@@ -1918,8 +1903,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[ a-zA-Z0-9-_]*$")]
 		public string Name { get; set; }
 		
@@ -1929,8 +1913,7 @@ namespace MyNS
 		/// Maximum items: 200
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="tags")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(200)]
+		[System.ComponentModel.DataAnnotations.Length(0, 200)]
 		public Tag[] Tags { get; set; }
 		
 		/// <summary>
@@ -1942,8 +1925,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="trustAnchorArn")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1011)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1011)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^arn:aws(-[^:]+)?:rolesanywhere(:.*){2}(:trust-anchor.*)$")]
 		public string TrustAnchorArn { get; set; }
 	}
@@ -1959,8 +1941,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="notificationSettings")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(50)]
+		[System.ComponentModel.DataAnnotations.Length(0, 50)]
 		public NotificationSetting[] NotificationSettings { get; set; }
 		
 		/// <summary>
@@ -1972,8 +1953,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="trustAnchorId")]
-		[System.ComponentModel.DataAnnotations.MinLength(36)]
-		[System.ComponentModel.DataAnnotations.MaxLength(36)]
+		[System.ComponentModel.DataAnnotations.Length(36, 36)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[a-f0-9]{8}-([a-z0-9]{4}-){3}[a-z0-9]{12}")]
 		public string TrustAnchorId { get; set; }
 	}
@@ -1989,8 +1969,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="notificationSettingKeys")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(50)]
+		[System.ComponentModel.DataAnnotations.Length(0, 50)]
 		public NotificationSettingKey[] NotificationSettingKeys { get; set; }
 		
 		/// <summary>
@@ -2002,8 +1981,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="trustAnchorId")]
-		[System.ComponentModel.DataAnnotations.MinLength(36)]
-		[System.ComponentModel.DataAnnotations.MaxLength(36)]
+		[System.ComponentModel.DataAnnotations.Length(36, 36)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[a-f0-9]{8}-([a-z0-9]{4}-){3}[a-z0-9]{12}")]
 		public string TrustAnchorId { get; set; }
 	}
@@ -2019,8 +1997,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="resourceArn")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1011)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1011)]
 		public string ResourceArn { get; set; }
 		
 		/// <summary>
@@ -2031,8 +2008,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="tags")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(200)]
+		[System.ComponentModel.DataAnnotations.Length(0, 200)]
 		public Tag[] Tags { get; set; }
 	}
 	
@@ -2047,8 +2023,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="resourceArn")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1011)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1011)]
 		public string ResourceArn { get; set; }
 		
 		/// <summary>
@@ -2059,8 +2034,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="tagKeys")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(200)]
+		[System.ComponentModel.DataAnnotations.Length(0, 200)]
 		public string[] TagKeys { get; set; }
 	}
 }

@@ -711,8 +711,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(10)]
-		[System.ComponentModel.DataAnnotations.MaxLength(150)]
+		[System.ComponentModel.DataAnnotations.Length(10, 150)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[a-zA-Z0-9][a-zA-Z0-9_-]*")]
 		public string ClientRequestToken { get; set; }
 		

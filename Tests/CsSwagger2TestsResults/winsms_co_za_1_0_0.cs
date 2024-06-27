@@ -116,8 +116,7 @@ namespace MyNS
 		/// Maximum items: 1000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="deletedMessageStatuses")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1000)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1000)]
 		public DeletedMessageStatus[] DeletedMessageStatuses { get; set; }
 		
 		/// <summary>
@@ -265,8 +264,7 @@ namespace MyNS
 		/// Maximum items: 1000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="incomingMessages")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1000)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1000)]
 		public IncomingMessage[] IncomingMessages { get; set; }
 		
 		/// <summary>
@@ -378,8 +376,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="recipients")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1000)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1000)]
 		public MessageRecipientDetails[] Recipients { get; set; }
 		
 		/// <summary>
@@ -431,8 +428,7 @@ namespace MyNS
 		/// Maximum items: 1000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="recipients")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1000)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1000)]
 		public MessageRecipientResponse[] Recipients { get; set; }
 	}
 	
@@ -573,8 +569,7 @@ namespace MyNS
 		/// Maximum items: 1000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="messageStatuses")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1000)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1000)]
 		public MessageStatus[] MessageStatuses { get; set; }
 		
 		/// <summary>
@@ -669,8 +664,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="recipients")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1000)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1000)]
 		public MessageRecipientDetails[] Recipients { get; set; }
 		
 		/// <summary>
@@ -693,8 +687,7 @@ namespace MyNS
 		/// Maximum items: 1000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="recipients")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1000)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1000)]
 		public MessageRecipientResponse[] Recipients { get; set; }
 		
 		/// <summary>
@@ -816,8 +809,7 @@ namespace MyNS
 		/// Maximum items: 1000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="scheduledMessages")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1000)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1000)]
 		public ScheduledMessage[] ScheduledMessages { get; set; }
 		
 		/// <summary>
@@ -900,8 +892,7 @@ namespace MyNS
 		/// Maximum items: 1000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="shortcodeMessages")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1000)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1000)]
 		public ShortcodeMessage[] ShortcodeMessages { get; set; }
 		
 		/// <summary>

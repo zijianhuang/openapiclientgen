@@ -29,8 +29,7 @@ namespace MyNS
 		/// Pattern: ^CH[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="conversation_sid")]
-		[System.ComponentModel.DataAnnotations.MinLength(34)]
-		[System.ComponentModel.DataAnnotations.MaxLength(34)]
+		[System.ComponentModel.DataAnnotations.Length(34, 34)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^CH[0-9a-fA-F]{32}$")]
 		public string Conversation_sid { get; set; }
 		

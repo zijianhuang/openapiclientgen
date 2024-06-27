@@ -1210,8 +1210,7 @@ namespace MyNS
 		/// Pattern: ^[0-9a-z.]+$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(32)]
+		[System.ComponentModel.DataAnnotations.Length(1, 32)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[0-9a-z.]+$")]
 		public string AirflowVersion { get; set; }
 		
@@ -1224,8 +1223,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1024)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1024)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@".*")]
 		public string DagS3Path { get; set; }
 		
@@ -1235,8 +1233,7 @@ namespace MyNS
 		/// Max length: 1024
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1024)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1024)]
 		public string EnvironmentClass { get; set; }
 		
 		/// <summary>
@@ -1248,8 +1245,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1224)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1224)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^arn:aws(-[a-z]+)?:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+$")]
 		public string ExecutionRoleArn { get; set; }
 		
@@ -1260,8 +1256,7 @@ namespace MyNS
 		/// Pattern: ^(((arn:aws(-[a-z]+)?:kms:[a-z]{2}-[a-z]+-\d:\d+:)?key\/)?[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}|(arn:aws(-[a-z]+)?:kms:[a-z]{2}-[a-z]+-\d:\d+:)?alias/.+)$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1224)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1224)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^(((arn:aws(-[a-z]+)?:kms:[a-z]{2}-[a-z]+-\d:\d+:)?key\/)?[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}|(arn:aws(-[a-z]+)?:kms:[a-z]{2}-[a-z]+-\d:\d+:)?alias/.+)$")]
 		public string KmsKey { get; set; }
 		
@@ -1301,8 +1296,7 @@ namespace MyNS
 		/// Max length: 1024
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1024)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1024)]
 		public string PluginsS3ObjectVersion { get; set; }
 		
 		/// <summary>
@@ -1312,8 +1306,7 @@ namespace MyNS
 		/// Pattern: .*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1024)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1024)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@".*")]
 		public string PluginsS3Path { get; set; }
 		
@@ -1323,8 +1316,7 @@ namespace MyNS
 		/// Max length: 1024
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1024)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1024)]
 		public string RequirementsS3ObjectVersion { get; set; }
 		
 		/// <summary>
@@ -1334,8 +1326,7 @@ namespace MyNS
 		/// Pattern: .*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1024)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1024)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@".*")]
 		public string RequirementsS3Path { get; set; }
 		
@@ -1356,8 +1347,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1224)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1224)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^arn:aws(-[a-z]+)?:s3:::[a-z0-9.\-]+$")]
 		public string SourceBucketArn { get; set; }
 		
@@ -1367,8 +1357,7 @@ namespace MyNS
 		/// Max length: 1024
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1024)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1024)]
 		public string StartupScriptS3ObjectVersion { get; set; }
 		
 		/// <summary>
@@ -1378,8 +1367,7 @@ namespace MyNS
 		/// Pattern: .*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1024)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1024)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@".*")]
 		public string StartupScriptS3Path { get; set; }
 		
@@ -1402,8 +1390,7 @@ namespace MyNS
 		/// Pattern: (MON|TUE|WED|THU|FRI|SAT|SUN):([01]\d|2[0-3]):(00|30)
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(9)]
+		[System.ComponentModel.DataAnnotations.Length(1, 9)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"(MON|TUE|WED|THU|FRI|SAT|SUN):([01]\d|2[0-3]):(00|30)")]
 		public string WeeklyMaintenanceWindowStart { get; set; }
 	}
@@ -1453,8 +1440,7 @@ namespace MyNS
 		/// Pattern: ^[0-9a-z.]+$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(32)]
+		[System.ComponentModel.DataAnnotations.Length(1, 32)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[0-9a-z.]+$")]
 		public string AirflowVersion { get; set; }
 		
@@ -1465,8 +1451,7 @@ namespace MyNS
 		/// Pattern: .*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1024)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1024)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@".*")]
 		public string DagS3Path { get; set; }
 		
@@ -1476,8 +1461,7 @@ namespace MyNS
 		/// Max length: 1024
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1024)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1024)]
 		public string EnvironmentClass { get; set; }
 		
 		/// <summary>
@@ -1487,8 +1471,7 @@ namespace MyNS
 		/// Pattern: ^arn:aws(-[a-z]+)?:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1224)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1224)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^arn:aws(-[a-z]+)?:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+$")]
 		public string ExecutionRoleArn { get; set; }
 		
@@ -1526,8 +1509,7 @@ namespace MyNS
 		/// Max length: 1024
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1024)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1024)]
 		public string PluginsS3ObjectVersion { get; set; }
 		
 		/// <summary>
@@ -1537,8 +1519,7 @@ namespace MyNS
 		/// Pattern: .*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1024)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1024)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@".*")]
 		public string PluginsS3Path { get; set; }
 		
@@ -1548,8 +1529,7 @@ namespace MyNS
 		/// Max length: 1024
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1024)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1024)]
 		public string RequirementsS3ObjectVersion { get; set; }
 		
 		/// <summary>
@@ -1559,8 +1539,7 @@ namespace MyNS
 		/// Pattern: .*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1024)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1024)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@".*")]
 		public string RequirementsS3Path { get; set; }
 		
@@ -1579,8 +1558,7 @@ namespace MyNS
 		/// Pattern: ^arn:aws(-[a-z]+)?:s3:::[a-z0-9.\-]+$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1224)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1224)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^arn:aws(-[a-z]+)?:s3:::[a-z0-9.\-]+$")]
 		public string SourceBucketArn { get; set; }
 		
@@ -1590,8 +1568,7 @@ namespace MyNS
 		/// Max length: 1024
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1024)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1024)]
 		public string StartupScriptS3ObjectVersion { get; set; }
 		
 		/// <summary>
@@ -1601,8 +1578,7 @@ namespace MyNS
 		/// Pattern: .*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1024)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1024)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@".*")]
 		public string StartupScriptS3Path { get; set; }
 		
@@ -1619,8 +1595,7 @@ namespace MyNS
 		/// Pattern: (MON|TUE|WED|THU|FRI|SAT|SUN):([01]\d|2[0-3]):(00|30)
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(9)]
+		[System.ComponentModel.DataAnnotations.Length(1, 9)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"(MON|TUE|WED|THU|FRI|SAT|SUN):([01]\d|2[0-3]):(00|30)")]
 		public string WeeklyMaintenanceWindowStart { get; set; }
 	}

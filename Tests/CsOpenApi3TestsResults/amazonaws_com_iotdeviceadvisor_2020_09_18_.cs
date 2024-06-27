@@ -1307,8 +1307,7 @@ namespace MyNS
 		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="suiteDefinitionVersion")]
-		[System.ComponentModel.DataAnnotations.MinLength(2)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(2, 255)]
 		public string SuiteDefinitionVersion { get; set; }
 		
 		/// <summary>

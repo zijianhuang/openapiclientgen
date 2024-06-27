@@ -335,8 +335,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(256)]
+		[System.ComponentModel.DataAnnotations.Length(1, 256)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@".*\S.*")]
 		public string InstanceId { get; set; }
 		
@@ -349,8 +348,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(256)]
+		[System.ComponentModel.DataAnnotations.Length(1, 256)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@".*\S.*")]
 		public string ContactId { get; set; }
 		
@@ -370,8 +368,7 @@ namespace MyNS
 		/// Pattern: .*\S.*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(131070)]
+		[System.ComponentModel.DataAnnotations.Length(1, 131070)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@".*\S.*")]
 		public string NextToken { get; set; }
 	}

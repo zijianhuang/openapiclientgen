@@ -6696,8 +6696,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(50)]
+		[System.ComponentModel.DataAnnotations.Length(0, 50)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^connect-peer-([0-9a-f]{8,17})$")]
 		public string ConnectPeerId { get; set; }
 		
@@ -6710,8 +6709,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(50)]
+		[System.ComponentModel.DataAnnotations.Length(0, 50)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[\s\S]*")]
 		public string DeviceId { get; set; }
 		
@@ -6722,8 +6720,7 @@ namespace MyNS
 		/// Pattern: [\s\S]*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(50)]
+		[System.ComponentModel.DataAnnotations.Length(0, 50)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[\s\S]*")]
 		public string LinkId { get; set; }
 	}
@@ -6740,8 +6737,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(500)]
+		[System.ComponentModel.DataAnnotations.Length(0, 500)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[\s\S]*")]
 		public string CustomerGatewayArn { get; set; }
 		
@@ -6754,8 +6750,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(50)]
+		[System.ComponentModel.DataAnnotations.Length(0, 50)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[\s\S]*")]
 		public string DeviceId { get; set; }
 		
@@ -6766,8 +6761,7 @@ namespace MyNS
 		/// Pattern: [\s\S]*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(50)]
+		[System.ComponentModel.DataAnnotations.Length(0, 50)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[\s\S]*")]
 		public string LinkId { get; set; }
 	}
@@ -6784,8 +6778,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(50)]
+		[System.ComponentModel.DataAnnotations.Length(0, 50)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[\s\S]*")]
 		public string DeviceId { get; set; }
 		
@@ -6798,8 +6791,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(50)]
+		[System.ComponentModel.DataAnnotations.Length(0, 50)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[\s\S]*")]
 		public string LinkId { get; set; }
 	}
@@ -6816,8 +6808,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(500)]
+		[System.ComponentModel.DataAnnotations.Length(0, 500)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[\s\S]*")]
 		public string TransitGatewayConnectPeerArn { get; set; }
 		
@@ -6830,8 +6821,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(50)]
+		[System.ComponentModel.DataAnnotations.Length(0, 50)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[\s\S]*")]
 		public string DeviceId { get; set; }
 		
@@ -6842,8 +6832,7 @@ namespace MyNS
 		/// Pattern: [\s\S]*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(50)]
+		[System.ComponentModel.DataAnnotations.Length(0, 50)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[\s\S]*")]
 		public string LinkId { get; set; }
 	}
@@ -6860,8 +6849,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(50)]
+		[System.ComponentModel.DataAnnotations.Length(0, 50)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^core-network-([0-9a-f]{8,17})$")]
 		public string CoreNetworkId { get; set; }
 		
@@ -6874,8 +6862,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(63)]
+		[System.ComponentModel.DataAnnotations.Length(1, 63)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[\s\S]*")]
 		public string EdgeLocation { get; set; }
 		
@@ -6888,8 +6875,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(50)]
+		[System.ComponentModel.DataAnnotations.Length(0, 50)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^attachment-([0-9a-f]{8,17})$")]
 		public string TransportAttachmentId { get; set; }
 		
@@ -6914,8 +6900,7 @@ namespace MyNS
 		/// Pattern: [\s\S]*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(256)]
+		[System.ComponentModel.DataAnnotations.Length(0, 256)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[\s\S]*")]
 		public string ClientToken { get; set; }
 	}
@@ -6939,8 +6924,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(50)]
+		[System.ComponentModel.DataAnnotations.Length(0, 50)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^attachment-([0-9a-f]{8,17})$")]
 		public string ConnectAttachmentId { get; set; }
 		
@@ -6951,8 +6935,7 @@ namespace MyNS
 		/// Pattern: [\s\S]*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(50)]
+		[System.ComponentModel.DataAnnotations.Length(1, 50)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[\s\S]*")]
 		public string CoreNetworkAddress { get; set; }
 		
@@ -6965,8 +6948,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(50)]
+		[System.ComponentModel.DataAnnotations.Length(1, 50)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[\s\S]*")]
 		public string PeerAddress { get; set; }
 		
@@ -6997,8 +6979,7 @@ namespace MyNS
 		/// Pattern: [\s\S]*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(256)]
+		[System.ComponentModel.DataAnnotations.Length(0, 256)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[\s\S]*")]
 		public string ClientToken { get; set; }
 	}
@@ -7022,8 +7003,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(50)]
+		[System.ComponentModel.DataAnnotations.Length(0, 50)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[\s\S]*")]
 		public string DeviceId { get; set; }
 		
@@ -7036,8 +7016,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(50)]
+		[System.ComponentModel.DataAnnotations.Length(0, 50)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[\s\S]*")]
 		public string ConnectedDeviceId { get; set; }
 		
@@ -7048,8 +7027,7 @@ namespace MyNS
 		/// Pattern: [\s\S]*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(50)]
+		[System.ComponentModel.DataAnnotations.Length(0, 50)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[\s\S]*")]
 		public string LinkId { get; set; }
 		
@@ -7060,8 +7038,7 @@ namespace MyNS
 		/// Pattern: [\s\S]*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(50)]
+		[System.ComponentModel.DataAnnotations.Length(0, 50)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[\s\S]*")]
 		public string ConnectedLinkId { get; set; }
 		
@@ -7072,8 +7049,7 @@ namespace MyNS
 		/// Pattern: [\s\S]*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(256)]
+		[System.ComponentModel.DataAnnotations.Length(0, 256)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[\s\S]*")]
 		public string Description { get; set; }
 		
@@ -7096,8 +7072,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(50)]
+		[System.ComponentModel.DataAnnotations.Length(0, 50)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[\s\S]*")]
 		public string GlobalNetworkId { get; set; }
 		
@@ -7108,8 +7083,7 @@ namespace MyNS
 		/// Pattern: [\s\S]*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(256)]
+		[System.ComponentModel.DataAnnotations.Length(0, 256)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[\s\S]*")]
 		public string Description { get; set; }
 		
@@ -7126,8 +7100,7 @@ namespace MyNS
 		/// Pattern: [\s\S]*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(10000000)]
+		[System.ComponentModel.DataAnnotations.Length(0, 10000000)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[\s\S]*")]
 		public string PolicyDocument { get; set; }
 		
@@ -7138,8 +7111,7 @@ namespace MyNS
 		/// Pattern: [\s\S]*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(256)]
+		[System.ComponentModel.DataAnnotations.Length(0, 256)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[\s\S]*")]
 		public string ClientToken { get; set; }
 	}
@@ -7160,8 +7132,7 @@ namespace MyNS
 		/// Pattern: [\s\S]*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(256)]
+		[System.ComponentModel.DataAnnotations.Length(0, 256)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[\s\S]*")]
 		public string Description { get; set; }
 		
@@ -7172,8 +7143,7 @@ namespace MyNS
 		/// Pattern: [\s\S]*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(256)]
+		[System.ComponentModel.DataAnnotations.Length(0, 256)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[\s\S]*")]
 		public string Type { get; set; }
 		
@@ -7184,8 +7154,7 @@ namespace MyNS
 		/// Pattern: [\s\S]*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(256)]
+		[System.ComponentModel.DataAnnotations.Length(0, 256)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[\s\S]*")]
 		public string Vendor { get; set; }
 		
@@ -7196,8 +7165,7 @@ namespace MyNS
 		/// Pattern: [\s\S]*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(256)]
+		[System.ComponentModel.DataAnnotations.Length(0, 256)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[\s\S]*")]
 		public string Model { get; set; }
 		
@@ -7208,8 +7176,7 @@ namespace MyNS
 		/// Pattern: [\s\S]*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(256)]
+		[System.ComponentModel.DataAnnotations.Length(0, 256)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[\s\S]*")]
 		public string SerialNumber { get; set; }
 		
@@ -7226,8 +7193,7 @@ namespace MyNS
 		/// Pattern: [\s\S]*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(50)]
+		[System.ComponentModel.DataAnnotations.Length(0, 50)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[\s\S]*")]
 		public string SiteId { get; set; }
 		
@@ -7271,8 +7237,7 @@ namespace MyNS
 		/// Pattern: [\s\S]*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(256)]
+		[System.ComponentModel.DataAnnotations.Length(0, 256)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[\s\S]*")]
 		public string Description { get; set; }
 		
@@ -7293,8 +7258,7 @@ namespace MyNS
 		/// Pattern: [\s\S]*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(256)]
+		[System.ComponentModel.DataAnnotations.Length(0, 256)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[\s\S]*")]
 		public string Description { get; set; }
 		
@@ -7305,8 +7269,7 @@ namespace MyNS
 		/// Pattern: [\s\S]*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(256)]
+		[System.ComponentModel.DataAnnotations.Length(0, 256)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[\s\S]*")]
 		public string Type { get; set; }
 		
@@ -7325,8 +7288,7 @@ namespace MyNS
 		/// Pattern: [\s\S]*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(256)]
+		[System.ComponentModel.DataAnnotations.Length(0, 256)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[\s\S]*")]
 		public string Provider { get; set; }
 		
@@ -7339,8 +7301,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(50)]
+		[System.ComponentModel.DataAnnotations.Length(0, 50)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[\s\S]*")]
 		public string SiteId { get; set; }
 		
@@ -7371,8 +7332,7 @@ namespace MyNS
 		/// Pattern: [\s\S]*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(256)]
+		[System.ComponentModel.DataAnnotations.Length(0, 256)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[\s\S]*")]
 		public string Description { get; set; }
 		
@@ -7414,8 +7374,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(50)]
+		[System.ComponentModel.DataAnnotations.Length(0, 50)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^core-network-([0-9a-f]{8,17})$")]
 		public string CoreNetworkId { get; set; }
 		
@@ -7428,8 +7387,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(500)]
+		[System.ComponentModel.DataAnnotations.Length(0, 500)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^arn:[^:]{1,63}:ec2:[^:]{0,63}:[^:]{0,63}:vpn-connection\/vpn-[0-9a-f]{8,17}$")]
 		public string VpnConnectionArn { get; set; }
 		
@@ -7446,8 +7404,7 @@ namespace MyNS
 		/// Pattern: [\s\S]*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(256)]
+		[System.ComponentModel.DataAnnotations.Length(0, 256)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[\s\S]*")]
 		public string ClientToken { get; set; }
 	}
@@ -7464,8 +7421,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(50)]
+		[System.ComponentModel.DataAnnotations.Length(0, 50)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^core-network-([0-9a-f]{8,17})$")]
 		public string CoreNetworkId { get; set; }
 		
@@ -7478,8 +7434,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(500)]
+		[System.ComponentModel.DataAnnotations.Length(0, 500)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[\s\S]*")]
 		public string TransitGatewayArn { get; set; }
 		
@@ -7496,8 +7451,7 @@ namespace MyNS
 		/// Pattern: [\s\S]*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(256)]
+		[System.ComponentModel.DataAnnotations.Length(0, 256)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[\s\S]*")]
 		public string ClientToken { get; set; }
 	}
@@ -7514,8 +7468,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(50)]
+		[System.ComponentModel.DataAnnotations.Length(0, 50)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^peering-([0-9a-f]{8,17})$")]
 		public string PeeringId { get; set; }
 		
@@ -7528,8 +7481,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(500)]
+		[System.ComponentModel.DataAnnotations.Length(0, 500)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[\s\S]*")]
 		public string TransitGatewayRouteTableArn { get; set; }
 		
@@ -7546,8 +7498,7 @@ namespace MyNS
 		/// Pattern: [\s\S]*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(256)]
+		[System.ComponentModel.DataAnnotations.Length(0, 256)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[\s\S]*")]
 		public string ClientToken { get; set; }
 	}
@@ -7564,8 +7515,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(50)]
+		[System.ComponentModel.DataAnnotations.Length(0, 50)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^core-network-([0-9a-f]{8,17})$")]
 		public string CoreNetworkId { get; set; }
 		
@@ -7578,8 +7528,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(500)]
+		[System.ComponentModel.DataAnnotations.Length(0, 500)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^arn:[^:]{1,63}:ec2:[^:]{0,63}:[^:]{0,63}:vpc\/vpc-[0-9a-f]{8,17}$")]
 		public string VpcArn { get; set; }
 		
@@ -7610,8 +7559,7 @@ namespace MyNS
 		/// Pattern: [\s\S]*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(256)]
+		[System.ComponentModel.DataAnnotations.Length(0, 256)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[\s\S]*")]
 		public string ClientToken { get; set; }
 	}
@@ -7636,8 +7584,7 @@ namespace MyNS
 		/// Pattern: [\s\S]*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(50)]
+		[System.ComponentModel.DataAnnotations.Length(0, 50)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[\s\S]*")]
 		public string LinkId { get; set; }
 		
@@ -7648,8 +7595,7 @@ namespace MyNS
 		/// Pattern: [\s\S]*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(50)]
+		[System.ComponentModel.DataAnnotations.Length(0, 50)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[\s\S]*")]
 		public string ConnectedLinkId { get; set; }
 		
@@ -7660,8 +7606,7 @@ namespace MyNS
 		/// Pattern: [\s\S]*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(256)]
+		[System.ComponentModel.DataAnnotations.Length(0, 256)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[\s\S]*")]
 		public string Description { get; set; }
 	}
@@ -7676,8 +7621,7 @@ namespace MyNS
 		/// Pattern: [\s\S]*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(256)]
+		[System.ComponentModel.DataAnnotations.Length(0, 256)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[\s\S]*")]
 		public string Description { get; set; }
 	}
@@ -7698,8 +7642,7 @@ namespace MyNS
 		/// Pattern: [\s\S]*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(256)]
+		[System.ComponentModel.DataAnnotations.Length(0, 256)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[\s\S]*")]
 		public string Description { get; set; }
 		
@@ -7710,8 +7653,7 @@ namespace MyNS
 		/// Pattern: [\s\S]*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(256)]
+		[System.ComponentModel.DataAnnotations.Length(0, 256)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[\s\S]*")]
 		public string Type { get; set; }
 		
@@ -7722,8 +7664,7 @@ namespace MyNS
 		/// Pattern: [\s\S]*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(256)]
+		[System.ComponentModel.DataAnnotations.Length(0, 256)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[\s\S]*")]
 		public string Vendor { get; set; }
 		
@@ -7734,8 +7675,7 @@ namespace MyNS
 		/// Pattern: [\s\S]*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(256)]
+		[System.ComponentModel.DataAnnotations.Length(0, 256)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[\s\S]*")]
 		public string Model { get; set; }
 		
@@ -7746,8 +7686,7 @@ namespace MyNS
 		/// Pattern: [\s\S]*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(256)]
+		[System.ComponentModel.DataAnnotations.Length(0, 256)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[\s\S]*")]
 		public string SerialNumber { get; set; }
 		
@@ -7764,8 +7703,7 @@ namespace MyNS
 		/// Pattern: [\s\S]*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(50)]
+		[System.ComponentModel.DataAnnotations.Length(0, 50)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[\s\S]*")]
 		public string SiteId { get; set; }
 	}
@@ -7803,8 +7741,7 @@ namespace MyNS
 		/// Pattern: [\s\S]*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(256)]
+		[System.ComponentModel.DataAnnotations.Length(0, 256)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[\s\S]*")]
 		public string Description { get; set; }
 	}
@@ -7819,8 +7756,7 @@ namespace MyNS
 		/// Pattern: [\s\S]*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(256)]
+		[System.ComponentModel.DataAnnotations.Length(0, 256)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[\s\S]*")]
 		public string Description { get; set; }
 		
@@ -7831,8 +7767,7 @@ namespace MyNS
 		/// Pattern: [\s\S]*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(256)]
+		[System.ComponentModel.DataAnnotations.Length(0, 256)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[\s\S]*")]
 		public string Type { get; set; }
 		
@@ -7849,8 +7784,7 @@ namespace MyNS
 		/// Pattern: [\s\S]*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(256)]
+		[System.ComponentModel.DataAnnotations.Length(0, 256)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[\s\S]*")]
 		public string Provider { get; set; }
 	}
@@ -7877,8 +7811,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(10000000)]
+		[System.ComponentModel.DataAnnotations.Length(0, 10000000)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[\s\S]*")]
 		public string PolicyDocument { get; set; }
 	}
@@ -7893,8 +7826,7 @@ namespace MyNS
 		/// Pattern: [\s\S]*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(256)]
+		[System.ComponentModel.DataAnnotations.Length(0, 256)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[\s\S]*")]
 		public string Description { get; set; }
 		
@@ -7930,8 +7862,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(10000000)]
+		[System.ComponentModel.DataAnnotations.Length(0, 10000000)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[\s\S]*")]
 		public string PolicyDocument { get; set; }
 		
@@ -7942,8 +7873,7 @@ namespace MyNS
 		/// Pattern: [\s\S]*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(256)]
+		[System.ComponentModel.DataAnnotations.Length(0, 256)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[\s\S]*")]
 		public string Description { get; set; }
 		
@@ -7960,8 +7890,7 @@ namespace MyNS
 		/// Pattern: [\s\S]*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(256)]
+		[System.ComponentModel.DataAnnotations.Length(0, 256)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[\s\S]*")]
 		public string ClientToken { get; set; }
 	}
@@ -8048,8 +7977,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(500)]
+		[System.ComponentModel.DataAnnotations.Length(0, 500)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[\s\S]*")]
 		public string TransitGatewayArn { get; set; }
 	}
@@ -8097,8 +8025,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(50)]
+		[System.ComponentModel.DataAnnotations.Length(0, 50)]
 		public string Action { get; set; }
 	}
 	

@@ -3781,8 +3781,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="requests")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(20)]
+		[System.ComponentModel.DataAnnotations.Length(1, 20)]
 		public EvaluationRequest[] Requests { get; set; }
 	}
 	
@@ -3796,8 +3795,7 @@ namespace MyNS
 		/// Pattern: .*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(160)]
+		[System.ComponentModel.DataAnnotations.Length(0, 160)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@".*")]
 		public string Description { get; set; }
 		
@@ -3809,8 +3807,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="metricGoals")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(3)]
+		[System.ComponentModel.DataAnnotations.Length(1, 3)]
 		public MetricGoalConfig[] MetricGoals { get; set; }
 		
 		/// <summary>
@@ -3822,8 +3819,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(127)]
+		[System.ComponentModel.DataAnnotations.Length(1, 127)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[-a-zA-Z0-9._]*$")]
 		public string Name { get; set; }
 		
@@ -3840,8 +3836,7 @@ namespace MyNS
 		/// Pattern: .*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="randomizationSalt")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(127)]
+		[System.ComponentModel.DataAnnotations.Length(0, 127)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@".*")]
 		public string RandomizationSalt { get; set; }
 		
@@ -3861,8 +3856,7 @@ namespace MyNS
 		/// Pattern: (^[-a-zA-Z0-9._]*$)|(arn:[^:]*:[^:]*:[^:]*:[^:]*:segment/[-a-zA-Z0-9._]*)
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="segment")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2048)]
+		[System.ComponentModel.DataAnnotations.Length(0, 2048)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"(^[-a-zA-Z0-9._]*$)|(arn:[^:]*:[^:]*:[^:]*:[^:]*:segment/[-a-zA-Z0-9._]*)")]
 		public string Segment { get; set; }
 		
@@ -3880,8 +3874,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="treatments")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(5)]
+		[System.ComponentModel.DataAnnotations.Length(0, 5)]
 		public TreatmentConfig[] Treatments { get; set; }
 	}
 	
@@ -3905,8 +3898,7 @@ namespace MyNS
 		/// Pattern: ^[-a-zA-Z0-9._]*$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="defaultVariation")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(127)]
+		[System.ComponentModel.DataAnnotations.Length(1, 127)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[-a-zA-Z0-9._]*$")]
 		public string DefaultVariation { get; set; }
 		
@@ -3917,8 +3909,7 @@ namespace MyNS
 		/// Pattern: .*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(160)]
+		[System.ComponentModel.DataAnnotations.Length(0, 160)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@".*")]
 		public string Description { get; set; }
 		
@@ -3943,8 +3934,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(127)]
+		[System.ComponentModel.DataAnnotations.Length(1, 127)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[-a-zA-Z0-9._]*$")]
 		public string Name { get; set; }
 		
@@ -3962,8 +3952,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="variations")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(5)]
+		[System.ComponentModel.DataAnnotations.Length(1, 5)]
 		public VariationConfig[] Variations { get; set; }
 	}
 	
@@ -3977,8 +3966,7 @@ namespace MyNS
 		/// Pattern: .*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(160)]
+		[System.ComponentModel.DataAnnotations.Length(0, 160)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@".*")]
 		public string Description { get; set; }
 		
@@ -3990,8 +3978,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="groups")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(5)]
+		[System.ComponentModel.DataAnnotations.Length(1, 5)]
 		public LaunchGroupConfig[] Groups { get; set; }
 		
 		/// <summary>
@@ -4000,8 +3987,7 @@ namespace MyNS
 		/// Maximum items: 3
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="metricMonitors")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(3)]
+		[System.ComponentModel.DataAnnotations.Length(0, 3)]
 		public MetricMonitorConfig[] MetricMonitors { get; set; }
 		
 		/// <summary>
@@ -4013,8 +3999,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(127)]
+		[System.ComponentModel.DataAnnotations.Length(1, 127)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[-a-zA-Z0-9._]*$")]
 		public string Name { get; set; }
 		
@@ -4025,8 +4010,7 @@ namespace MyNS
 		/// Pattern: .*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="randomizationSalt")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(127)]
+		[System.ComponentModel.DataAnnotations.Length(0, 127)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@".*")]
 		public string RandomizationSalt { get; set; }
 		
@@ -4072,8 +4056,7 @@ namespace MyNS
 		/// Pattern: .*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(160)]
+		[System.ComponentModel.DataAnnotations.Length(0, 160)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@".*")]
 		public string Description { get; set; }
 		
@@ -4086,8 +4069,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(127)]
+		[System.ComponentModel.DataAnnotations.Length(1, 127)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[-a-zA-Z0-9._]*$")]
 		public string Name { get; set; }
 		
@@ -4128,8 +4110,7 @@ namespace MyNS
 		/// Pattern: .*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(160)]
+		[System.ComponentModel.DataAnnotations.Length(0, 160)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@".*")]
 		public string Description { get; set; }
 		
@@ -4142,8 +4123,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(64)]
+		[System.ComponentModel.DataAnnotations.Length(1, 64)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[-a-zA-Z0-9._]*$")]
 		public string Name { get; set; }
 		
@@ -4155,8 +4135,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="pattern")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1024)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1024)]
 		public string Pattern { get; set; }
 		
 		/// <summary>
@@ -4176,8 +4155,7 @@ namespace MyNS
 		/// Pattern: .*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(160)]
+		[System.ComponentModel.DataAnnotations.Length(0, 160)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@".*")]
 		public string Description { get; set; }
 		
@@ -4187,8 +4165,7 @@ namespace MyNS
 		/// Maximum items: 3
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="metricGoals")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(3)]
+		[System.ComponentModel.DataAnnotations.Length(1, 3)]
 		public MetricGoalConfig[] MetricGoals { get; set; }
 		
 		/// <summary>
@@ -4204,8 +4181,7 @@ namespace MyNS
 		/// Pattern: .*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="randomizationSalt")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(127)]
+		[System.ComponentModel.DataAnnotations.Length(0, 127)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@".*")]
 		public string RandomizationSalt { get; set; }
 		
@@ -4231,8 +4207,7 @@ namespace MyNS
 		/// Pattern: (^[-a-zA-Z0-9._]*$)|(arn:[^:]*:[^:]*:[^:]*:[^:]*:segment/[-a-zA-Z0-9._]*)
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="segment")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2048)]
+		[System.ComponentModel.DataAnnotations.Length(0, 2048)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"(^[-a-zA-Z0-9._]*$)|(arn:[^:]*:[^:]*:[^:]*:[^:]*:segment/[-a-zA-Z0-9._]*)")]
 		public string Segment { get; set; }
 		
@@ -4242,8 +4217,7 @@ namespace MyNS
 		/// Maximum items: 5
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="treatments")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(5)]
+		[System.ComponentModel.DataAnnotations.Length(0, 5)]
 		public TreatmentConfig[] Treatments { get; set; }
 	}
 	
@@ -4266,8 +4240,7 @@ namespace MyNS
 		/// Maximum items: 5
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="addOrUpdateVariations")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(5)]
+		[System.ComponentModel.DataAnnotations.Length(1, 5)]
 		public VariationConfig[] AddOrUpdateVariations { get; set; }
 		
 		/// <summary>
@@ -4277,8 +4250,7 @@ namespace MyNS
 		/// Pattern: ^[-a-zA-Z0-9._]*$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="defaultVariation")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(127)]
+		[System.ComponentModel.DataAnnotations.Length(1, 127)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[-a-zA-Z0-9._]*$")]
 		public string DefaultVariation { get; set; }
 		
@@ -4289,8 +4261,7 @@ namespace MyNS
 		/// Pattern: .*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(160)]
+		[System.ComponentModel.DataAnnotations.Length(0, 160)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@".*")]
 		public string Description { get; set; }
 		
@@ -4312,8 +4283,7 @@ namespace MyNS
 		/// Maximum items: 5
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="removeVariations")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(5)]
+		[System.ComponentModel.DataAnnotations.Length(0, 5)]
 		public string[] RemoveVariations { get; set; }
 	}
 	
@@ -4327,8 +4297,7 @@ namespace MyNS
 		/// Pattern: .*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(160)]
+		[System.ComponentModel.DataAnnotations.Length(0, 160)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@".*")]
 		public string Description { get; set; }
 		
@@ -4338,8 +4307,7 @@ namespace MyNS
 		/// Maximum items: 5
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="groups")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(5)]
+		[System.ComponentModel.DataAnnotations.Length(1, 5)]
 		public LaunchGroupConfig[] Groups { get; set; }
 		
 		/// <summary>
@@ -4348,8 +4316,7 @@ namespace MyNS
 		/// Maximum items: 3
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="metricMonitors")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(3)]
+		[System.ComponentModel.DataAnnotations.Length(0, 3)]
 		public MetricMonitorConfig[] MetricMonitors { get; set; }
 		
 		/// <summary>
@@ -4359,8 +4326,7 @@ namespace MyNS
 		/// Pattern: .*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="randomizationSalt")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(127)]
+		[System.ComponentModel.DataAnnotations.Length(0, 127)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@".*")]
 		public string RandomizationSalt { get; set; }
 		
@@ -4394,8 +4360,7 @@ namespace MyNS
 		/// Pattern: .*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(160)]
+		[System.ComponentModel.DataAnnotations.Length(0, 160)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@".*")]
 		public string Description { get; set; }
 	}
@@ -4422,8 +4387,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="entityId")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(512)]
+		[System.ComponentModel.DataAnnotations.Length(1, 512)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@".*")]
 		public string EntityId { get; set; }
 		
@@ -4457,8 +4421,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="metricNames")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1)]
 		public string[] MetricNames { get; set; }
 		
 		/// <summary>
@@ -4476,8 +4439,7 @@ namespace MyNS
 		/// Maximum items: 5
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="reportNames")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(5)]
+		[System.ComponentModel.DataAnnotations.Length(0, 5)]
 		public ExperimentReportName[] ReportNames { get; set; }
 		
 		/// <summary>
@@ -4486,8 +4448,7 @@ namespace MyNS
 		/// Maximum items: 5
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="resultStats")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(5)]
+		[System.ComponentModel.DataAnnotations.Length(0, 5)]
 		public ExperimentResultRequestType[] ResultStats { get; set; }
 		
 		/// <summary>
@@ -4504,8 +4465,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="treatmentNames")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(5)]
+		[System.ComponentModel.DataAnnotations.Length(1, 5)]
 		public string[] TreatmentNames { get; set; }
 	}
 	
@@ -4532,8 +4492,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="events")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(50)]
+		[System.ComponentModel.DataAnnotations.Length(0, 50)]
 		public Event[] Events { get; set; }
 	}
 	
@@ -4565,8 +4524,7 @@ namespace MyNS
 		/// Pattern: .*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="reason")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(160)]
+		[System.ComponentModel.DataAnnotations.Length(0, 160)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@".*")]
 		public string Reason { get; set; }
 	}
@@ -4587,8 +4545,7 @@ namespace MyNS
 		/// Pattern: .*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="reason")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(160)]
+		[System.ComponentModel.DataAnnotations.Length(0, 160)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@".*")]
 		public string Reason { get; set; }
 	}
@@ -4604,8 +4561,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="pattern")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1024)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1024)]
 		public string Pattern { get; set; }
 		
 		/// <summary>

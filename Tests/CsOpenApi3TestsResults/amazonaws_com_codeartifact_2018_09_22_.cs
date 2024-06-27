@@ -3141,8 +3141,7 @@ namespace MyNS
 		/// Pattern: \S+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="encryptionKey")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1011)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1011)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"\S+")]
 		public string EncryptionKey { get; set; }
 		
@@ -3152,8 +3151,7 @@ namespace MyNS
 		/// Maximum items: 200
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="tags")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(200)]
+		[System.ComponentModel.DataAnnotations.Length(0, 200)]
 		public Tag[] Tags { get; set; }
 	}
 	
@@ -3182,8 +3180,7 @@ namespace MyNS
 		/// Maximum items: 200
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="tags")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(200)]
+		[System.ComponentModel.DataAnnotations.Length(0, 200)]
 		public Tag[] Tags { get; set; }
 	}
 	
@@ -3285,8 +3282,7 @@ namespace MyNS
 		/// Pattern: \S+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="policyRevision")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(100)]
+		[System.ComponentModel.DataAnnotations.Length(1, 100)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"\S+")]
 		public string PolicyRevision { get; set; }
 		
@@ -3299,8 +3295,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="policyDocument")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(7168)]
+		[System.ComponentModel.DataAnnotations.Length(1, 7168)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[\P{C}\s]+")]
 		public string PolicyDocument { get; set; }
 	}
@@ -3324,8 +3319,7 @@ namespace MyNS
 		/// Pattern: \S+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextToken")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2000)]
+		[System.ComponentModel.DataAnnotations.Length(1, 2000)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"\S+")]
 		public string NextToken { get; set; }
 	}
@@ -3354,8 +3348,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="domain")]
-		[System.ComponentModel.DataAnnotations.MinLength(2)]
-		[System.ComponentModel.DataAnnotations.MaxLength(50)]
+		[System.ComponentModel.DataAnnotations.Length(2, 50)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[a-z][a-z0-9\-]{0,48}[a-z0-9]")]
 		public string Domain { get; set; }
 		
@@ -3366,8 +3359,7 @@ namespace MyNS
 		/// Pattern: [0-9]{12}
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="domainOwner")]
-		[System.ComponentModel.DataAnnotations.MinLength(12)]
-		[System.ComponentModel.DataAnnotations.MaxLength(12)]
+		[System.ComponentModel.DataAnnotations.Length(12, 12)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[0-9]{12}")]
 		public string DomainOwner { get; set; }
 		
@@ -3378,8 +3370,7 @@ namespace MyNS
 		/// Pattern: \S+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="policyRevision")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(100)]
+		[System.ComponentModel.DataAnnotations.Length(1, 100)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"\S+")]
 		public string PolicyRevision { get; set; }
 		
@@ -3392,8 +3383,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="policyDocument")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(7168)]
+		[System.ComponentModel.DataAnnotations.Length(1, 7168)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[\P{C}\s]+")]
 		public string PolicyDocument { get; set; }
 	}
@@ -3409,8 +3399,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="tags")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(200)]
+		[System.ComponentModel.DataAnnotations.Length(0, 200)]
 		public Tag[] Tags { get; set; }
 	}
 	
@@ -3425,8 +3414,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="tagKeys")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(200)]
+		[System.ComponentModel.DataAnnotations.Length(0, 200)]
 		public string[] TagKeys { get; set; }
 	}
 	

@@ -5014,8 +5014,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="idempotency_key")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(192)]
+		[System.ComponentModel.DataAnnotations.Length(1, 192)]
 		public string Idempotency_key { get; set; }
 		
 		/// <summary>

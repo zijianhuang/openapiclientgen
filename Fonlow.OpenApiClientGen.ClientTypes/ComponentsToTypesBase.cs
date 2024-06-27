@@ -106,7 +106,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				var groupedComponentsSchemas = ComponentsSchemas
 					.GroupBy(d => NameFunc.GetNamespaceOfClassName(d.Key))
 					.OrderBy(k => k.Key); // always sort namespaces if there are multiple ones
-				//var namespacesOfTypes = groupedComponentsSchemas.Select(d => d.Key).ToArray();
+										  //var namespacesOfTypes = groupedComponentsSchemas.Select(d => d.Key).ToArray();
 				foreach (var groupedTypes in groupedComponentsSchemas)
 				{
 					var classNamespaceText = groupedTypes.Key;
@@ -589,15 +589,22 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 		protected virtual void AddValidationAttributes(OpenApiSchema fieldSchema, CodeMemberField memberField)
 		{
-			if (fieldSchema.MinLength.HasValue)
+			if (fieldSchema.MinLength.HasValue && fieldSchema.MaxLength.HasValue)
+			{
+				CodeSnippetExpression minLen = new(fieldSchema.MinLength.Value.ToString());
+				CodeSnippetExpression maxLen = new(fieldSchema.MaxLength.Value.ToString());
+				CodeAttributeArgument[] attributeParams = new CodeAttributeArgument[] { new CodeAttributeArgument(minLen), new CodeAttributeArgument(maxLen) };
+				CodeAttributeDeclaration cad = new("System.ComponentModel.DataAnnotations.Length", attributeParams); //.NET 8 feature
+				memberField.CustomAttributes.Add(cad);
+			}
+			else if (fieldSchema.MinLength.HasValue)
 			{
 				CodeSnippetExpression len = new(fieldSchema.MinLength.Value.ToString());
 				CodeAttributeArgument[] attributeParams = new CodeAttributeArgument[] { new CodeAttributeArgument(len) };
 				CodeAttributeDeclaration cad = new("System.ComponentModel.DataAnnotations.MinLength", attributeParams);
 				memberField.CustomAttributes.Add(cad);
 			}
-
-			if (fieldSchema.MaxLength.HasValue)
+			else if (fieldSchema.MaxLength.HasValue)
 			{
 				CodeSnippetExpression len = new(fieldSchema.MaxLength.Value.ToString());
 				CodeAttributeArgument[] attributeParams = new CodeAttributeArgument[] { new CodeAttributeArgument(len) };
@@ -642,15 +649,22 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				memberField.CustomAttributes.Add(cad);
 			}
 
-			if (fieldSchema.MinItems.HasValue)
+			if (fieldSchema.MinItems.HasValue && fieldSchema.MaxItems.HasValue)
+			{
+				CodeSnippetExpression minLen = new(fieldSchema.MinItems.Value.ToString());
+				CodeSnippetExpression maxLen = new(fieldSchema.MaxItems.Value.ToString());
+				CodeAttributeArgument[] attributeParams = new CodeAttributeArgument[] { new CodeAttributeArgument(minLen), new CodeAttributeArgument(maxLen) };
+				CodeAttributeDeclaration cad = new("System.ComponentModel.DataAnnotations.Length", attributeParams); //.NET 8 feature
+				memberField.CustomAttributes.Add(cad);
+			}
+			else if (fieldSchema.MinItems.HasValue)
 			{
 				CodeSnippetExpression len = new(fieldSchema.MinItems.Value.ToString());
 				CodeAttributeArgument[] attributeParams = new CodeAttributeArgument[] { new CodeAttributeArgument(len) };
 				CodeAttributeDeclaration cad = new("System.ComponentModel.DataAnnotations.MinLength", attributeParams);
 				memberField.CustomAttributes.Add(cad);
 			}
-
-			if (fieldSchema.MaxItems.HasValue)
+			else if (fieldSchema.MaxItems.HasValue)
 			{
 				CodeSnippetExpression len = new(fieldSchema.MaxItems.Value.ToString());
 				CodeAttributeArgument[] attributeParams = new CodeAttributeArgument[] { new CodeAttributeArgument(len) };
@@ -696,7 +710,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			{
 				if (d.Value.Content.TryGetValue("application/json", out OpenApiMediaType mediaTypeObject))
 				{
-					if (mediaTypeObject.Schema.Reference == null && (mediaTypeObject.Schema.Properties==null || mediaTypeObject.Schema.Properties.Count == 0))
+					if (mediaTypeObject.Schema.Reference == null && (mediaTypeObject.Schema.Properties == null || mediaTypeObject.Schema.Properties.Count == 0))
 					{
 						return false;
 					}

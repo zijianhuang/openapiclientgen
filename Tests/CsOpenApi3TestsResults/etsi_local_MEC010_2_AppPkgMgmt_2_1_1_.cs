@@ -517,8 +517,7 @@ namespace MyNS
 		/// Maximum items: 2
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="dstInterface")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2)]
+		[System.ComponentModel.DataAnnotations.Length(0, 2)]
 		public InterfaceDescriptor[] DstInterface { get; set; }
 		
 		/// <summary>

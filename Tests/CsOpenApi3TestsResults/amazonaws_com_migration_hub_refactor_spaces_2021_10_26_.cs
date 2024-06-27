@@ -2541,8 +2541,7 @@ namespace MyNS
 		/// Pattern: ^[\x20-\x7E]{1,64}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(64)]
+		[System.ComponentModel.DataAnnotations.Length(1, 64)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[\x20-\x7E]{1,64}$")]
 		public string ClientToken { get; set; }
 		
@@ -2555,8 +2554,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(3)]
-		[System.ComponentModel.DataAnnotations.MaxLength(63)]
+		[System.ComponentModel.DataAnnotations.Length(3, 63)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^(?!app-)[a-zA-Z0-9]+[a-zA-Z0-9-_ ]+$")]
 		public string Name { get; set; }
 		
@@ -2583,8 +2581,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(12)]
-		[System.ComponentModel.DataAnnotations.MaxLength(21)]
+		[System.ComponentModel.DataAnnotations.Length(12, 21)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^vpc-[-a-f0-9]{8}([-a-f0-9]{9})?$")]
 		public string VpcId { get; set; }
 	}
@@ -2609,8 +2606,7 @@ namespace MyNS
 		/// Pattern: ^[\x20-\x7E]{1,64}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(64)]
+		[System.ComponentModel.DataAnnotations.Length(1, 64)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[\x20-\x7E]{1,64}$")]
 		public string ClientToken { get; set; }
 		
@@ -2621,8 +2617,7 @@ namespace MyNS
 		/// Pattern: ^[a-zA-Z0-9-_\s\.\!\*\#\@\']+$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(256)]
+		[System.ComponentModel.DataAnnotations.Length(1, 256)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[a-zA-Z0-9-_\s\.\!\*\#\@\']+$")]
 		public string Description { get; set; }
 		
@@ -2635,8 +2630,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(3)]
-		[System.ComponentModel.DataAnnotations.MaxLength(63)]
+		[System.ComponentModel.DataAnnotations.Length(3, 63)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^(?!env-)[a-zA-Z0-9]+[a-zA-Z0-9-_ ]+$")]
 		public string Name { get; set; }
 		
@@ -2665,8 +2659,7 @@ namespace MyNS
 		/// Pattern: ^[\x20-\x7E]{1,64}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(64)]
+		[System.ComponentModel.DataAnnotations.Length(1, 64)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[\x20-\x7E]{1,64}$")]
 		public string ClientToken { get; set; }
 		
@@ -2693,8 +2686,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(14)]
-		[System.ComponentModel.DataAnnotations.MaxLength(14)]
+		[System.ComponentModel.DataAnnotations.Length(14, 14)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^svc-[0-9A-Za-z]{10}$")]
 		public string ServiceIdentifier { get; set; }
 		
@@ -2747,8 +2739,7 @@ namespace MyNS
 		/// Pattern: ^[\x20-\x7E]{1,64}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(64)]
+		[System.ComponentModel.DataAnnotations.Length(1, 64)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[\x20-\x7E]{1,64}$")]
 		public string ClientToken { get; set; }
 		
@@ -2759,8 +2750,7 @@ namespace MyNS
 		/// Pattern: ^[a-zA-Z0-9-_\s\.\!\*\#\@\']+$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(256)]
+		[System.ComponentModel.DataAnnotations.Length(1, 256)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[a-zA-Z0-9-_\s\.\!\*\#\@\']+$")]
 		public string Description { get; set; }
 		
@@ -2787,8 +2777,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(3)]
-		[System.ComponentModel.DataAnnotations.MaxLength(63)]
+		[System.ComponentModel.DataAnnotations.Length(3, 63)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^(?!svc-)[a-zA-Z0-9]+[a-zA-Z0-9-_ ]+$")]
 		public string Name { get; set; }
 		
@@ -2811,8 +2800,7 @@ namespace MyNS
 		/// Pattern: ^vpc-[-a-f0-9]{8}([-a-f0-9]{9})?$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(12)]
-		[System.ComponentModel.DataAnnotations.MaxLength(21)]
+		[System.ComponentModel.DataAnnotations.Length(12, 21)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^vpc-[-a-f0-9]{8}([-a-f0-9]{9})?$")]
 		public string VpcId { get; set; }
 	}
@@ -2870,8 +2858,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(300000)]
+		[System.ComponentModel.DataAnnotations.Length(1, 300000)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^.*\S.*$")]
 		public string Policy { get; set; }
 		
@@ -2884,8 +2871,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(20)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2048)]
+		[System.ComponentModel.DataAnnotations.Length(20, 2048)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^arn:aws:refactor-spaces:[a-zA-Z0-9\-]+:\w{12}:[a-zA-Z_0-9+=,.@\-_/]+$")]
 		public string ResourceArn { get; set; }
 	}

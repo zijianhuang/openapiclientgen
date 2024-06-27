@@ -31,8 +31,7 @@ namespace MyNS
 		/// Max length: 4
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="account_number_suffix")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(4)]
+		[System.ComponentModel.DataAnnotations.Length(1, 4)]
 		public string Account_number_suffix { get; set; }
 		
 		/// <summary>
@@ -105,8 +104,7 @@ namespace MyNS
 		/// Max length: 40
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="brand_dispute_id")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(40)]
+		[System.ComponentModel.DataAnnotations.Length(1, 40)]
 		public string Brand_dispute_id { get; set; }
 		
 		/// <summary>
@@ -121,8 +119,7 @@ namespace MyNS
 		/// Max length: 40
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="created_at")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(40)]
+		[System.ComponentModel.DataAnnotations.Length(1, 40)]
 		public string Created_at { get; set; }
 		
 		/// <summary>
@@ -131,8 +128,7 @@ namespace MyNS
 		/// Max length: 40
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="dispute_id")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(40)]
+		[System.ComponentModel.DataAnnotations.Length(1, 40)]
 		public string Dispute_id { get; set; }
 		
 		/// <summary>
@@ -147,8 +143,7 @@ namespace MyNS
 		/// Max length: 40
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="due_at")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(40)]
+		[System.ComponentModel.DataAnnotations.Length(1, 40)]
 		public string Due_at { get; set; }
 		
 		/// <summary>
@@ -163,8 +158,7 @@ namespace MyNS
 		/// Max length: 40
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="id")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(40)]
+		[System.ComponentModel.DataAnnotations.Length(1, 40)]
 		public string Id { get; set; }
 		
 		/// <summary>
@@ -173,8 +167,7 @@ namespace MyNS
 		/// Max length: 40
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="location_id")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(40)]
+		[System.ComponentModel.DataAnnotations.Length(1, 40)]
 		public string Location_id { get; set; }
 		
 		/// <summary>
@@ -189,8 +182,7 @@ namespace MyNS
 		/// Max length: 40
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="reported_at")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(40)]
+		[System.ComponentModel.DataAnnotations.Length(1, 40)]
 		public string Reported_at { get; set; }
 		
 		/// <summary>
@@ -199,8 +191,7 @@ namespace MyNS
 		/// Max length: 40
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="reported_date")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(40)]
+		[System.ComponentModel.DataAnnotations.Length(1, 40)]
 		public string Reported_date { get; set; }
 		
 		/// <summary>
@@ -215,8 +206,7 @@ namespace MyNS
 		/// Max length: 40
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="updated_at")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(40)]
+		[System.ComponentModel.DataAnnotations.Length(1, 40)]
 		public string Updated_at { get; set; }
 		
 		/// <summary>
@@ -270,8 +260,7 @@ namespace MyNS
 		/// Max length: 192
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="payment_id")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(192)]
+		[System.ComponentModel.DataAnnotations.Length(1, 192)]
 		public string Payment_id { get; set; }
 	}
 	
@@ -338,8 +327,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="idempotency_key")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(128)]
+		[System.ComponentModel.DataAnnotations.Length(1, 128)]
 		public string Idempotency_key { get; set; }
 		
 		/// <summary>
@@ -475,8 +463,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="loyalty_account_id")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(36)]
+		[System.ComponentModel.DataAnnotations.Length(1, 36)]
 		public string Loyalty_account_id { get; set; }
 		
 		/// <summary>
@@ -553,8 +540,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="loyalty_program_id")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(36)]
+		[System.ComponentModel.DataAnnotations.Length(1, 36)]
 		public string Loyalty_program_id { get; set; }
 		
 		/// <summary>
@@ -592,8 +578,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="loyalty_program_id")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(36)]
+		[System.ComponentModel.DataAnnotations.Length(1, 36)]
 		public string Loyalty_program_id { get; set; }
 		
 		/// <summary>
@@ -631,8 +616,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="loyalty_program_id")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(36)]
+		[System.ComponentModel.DataAnnotations.Length(1, 36)]
 		public string Loyalty_program_id { get; set; }
 		
 		/// <summary>
@@ -661,8 +645,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="loyalty_program_id")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(36)]
+		[System.ComponentModel.DataAnnotations.Length(1, 36)]
 		public string Loyalty_program_id { get; set; }
 		
 		/// <summary>
@@ -689,8 +672,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="loyalty_program_id")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(36)]
+		[System.ComponentModel.DataAnnotations.Length(1, 36)]
 		public string Loyalty_program_id { get; set; }
 		
 		/// <summary>
@@ -784,8 +766,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="location_id")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(50)]
+		[System.ComponentModel.DataAnnotations.Length(1, 50)]
 		public string Location_id { get; set; }
 		
 		/// <summary>
@@ -954,8 +935,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="idempotency_key")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(128)]
+		[System.ComponentModel.DataAnnotations.Length(1, 128)]
 		public string Idempotency_key { get; set; }
 	}
 	
@@ -1159,8 +1139,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="id")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(30)]
+		[System.ComponentModel.DataAnnotations.Length(1, 30)]
 		public string Id { get; set; }
 		
 		/// <summary>
@@ -1247,8 +1226,7 @@ namespace MyNS
 		/// Max length: 2
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="country")]
-		[System.ComponentModel.DataAnnotations.MinLength(2)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2)]
+		[System.ComponentModel.DataAnnotations.Length(2, 2)]
 		public string Country { get; set; }
 		
 		/// <summary>
@@ -1348,8 +1326,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="idempotency_key")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(128)]
+		[System.ComponentModel.DataAnnotations.Length(1, 128)]
 		public string Idempotency_key { get; set; }
 		
 		/// <summary>
@@ -2519,8 +2496,7 @@ namespace MyNS
 		/// Pattern: ^[a-zA-Z0-9_-]*$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="key")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(60)]
+		[System.ComponentModel.DataAnnotations.Length(1, 60)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[a-zA-Z0-9_-]*$")]
 		public string Key { get; set; }
 		
@@ -2534,8 +2510,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public string Name { get; set; }
 		
 		[System.Runtime.Serialization.DataMember(Name="number_config")]
@@ -2639,8 +2614,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -3375,8 +3349,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="nonstockable_quantity")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(16)]
+		[System.ComponentModel.DataAnnotations.Length(1, 16)]
 		public string Nonstockable_quantity { get; set; }
 		
 		/// <summary>
@@ -3404,8 +3377,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="stockable_quantity")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(16)]
+		[System.ComponentModel.DataAnnotations.Length(1, 16)]
 		public string Stockable_quantity { get; set; }
 	}
 	
@@ -5111,8 +5083,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="quantity")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(12)]
+		[System.ComponentModel.DataAnnotations.Length(1, 12)]
 		public string Quantity { get; set; }
 		
 		/// <summary>
@@ -5218,8 +5189,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="discount_uid")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(60)]
+		[System.ComponentModel.DataAnnotations.Length(1, 60)]
 		public string Discount_uid { get; set; }
 		
 		/// <summary>
@@ -5266,8 +5236,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="tax_uid")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(60)]
+		[System.ComponentModel.DataAnnotations.Length(1, 60)]
 		public string Tax_uid { get; set; }
 		
 		/// <summary>
@@ -5928,8 +5897,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="quantity")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(12)]
+		[System.ComponentModel.DataAnnotations.Length(1, 12)]
 		public string Quantity { get; set; }
 		
 		/// <summary>
@@ -8102,8 +8070,7 @@ namespace MyNS
 		/// Max length: 65536
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(65536)]
+		[System.ComponentModel.DataAnnotations.Length(1, 65536)]
 		public string Description { get; set; }
 		
 		/// <summary>
@@ -8121,8 +8088,7 @@ namespace MyNS
 		/// Max length: 191
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="invoice_number")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(191)]
+		[System.ComponentModel.DataAnnotations.Length(1, 191)]
 		public string Invoice_number { get; set; }
 		
 		/// <summary>
@@ -8133,8 +8099,7 @@ namespace MyNS
 		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="location_id")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public string Location_id { get; set; }
 		
 		/// <summary>
@@ -8158,8 +8123,7 @@ namespace MyNS
 		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="order_id")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public string Order_id { get; set; }
 		
 		/// <summary>
@@ -8235,8 +8199,7 @@ namespace MyNS
 		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="title")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public string Title { get; set; }
 		
 		/// <summary>
@@ -8341,8 +8304,7 @@ namespace MyNS
 		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="card_id")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public string Card_id { get; set; }
 		
 		/// <summary>
@@ -8455,8 +8417,7 @@ namespace MyNS
 		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="uid")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public string Uid { get; set; }
 	}
 	
@@ -8475,8 +8436,7 @@ namespace MyNS
 		/// Max length: 1000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="message")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1000)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1000)]
 		public string Message { get; set; }
 		
 		/// <summary>
@@ -8563,8 +8523,7 @@ namespace MyNS
 		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="customer_id")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public string Customer_id { get; set; }
 		
 		/// <summary>
@@ -8608,8 +8567,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="idempotency_key")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(45)]
+		[System.ComponentModel.DataAnnotations.Length(1, 45)]
 		public string Idempotency_key { get; set; }
 	}
 	
@@ -9648,8 +9606,7 @@ namespace MyNS
 		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="id")]
-		[System.ComponentModel.DataAnnotations.MinLength(10)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(10, 255)]
 		public string Id { get; set; }
 		
 		/// <summary>
@@ -9853,8 +9810,7 @@ namespace MyNS
 		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="id")]
-		[System.ComponentModel.DataAnnotations.MinLength(10)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(10, 255)]
 		public string Id { get; set; }
 		
 		/// <summary>
@@ -11257,8 +11213,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="idempotency_key")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(192)]
+		[System.ComponentModel.DataAnnotations.Length(1, 192)]
 		public string Idempotency_key { get; set; }
 		
 		/// <summary>
@@ -11364,8 +11319,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="description")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(100)]
+		[System.ComponentModel.DataAnnotations.Length(1, 100)]
 		public string Description { get; set; }
 		
 		/// <summary>
@@ -11376,8 +11330,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="location_id")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(50)]
+		[System.ComponentModel.DataAnnotations.Length(1, 50)]
 		public string Location_id { get; set; }
 	}
 	
@@ -12624,8 +12577,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="source_id")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(16384)]
+		[System.ComponentModel.DataAnnotations.Length(1, 16384)]
 		public string Source_id { get; set; }
 		
 		/// <summary>
@@ -12714,8 +12666,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="idempotency_key")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(192)]
+		[System.ComponentModel.DataAnnotations.Length(1, 192)]
 		public string Idempotency_key { get; set; }
 		
 		/// <summary>
@@ -13374,8 +13325,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="idempotency_key")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(128)]
+		[System.ComponentModel.DataAnnotations.Length(1, 128)]
 		public string Idempotency_key { get; set; }
 	}
 	
@@ -13485,8 +13435,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="evidence_text")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(500)]
+		[System.ComponentModel.DataAnnotations.Length(1, 500)]
 		public string Evidence_text { get; set; }
 		
 		/// <summary>
@@ -13503,8 +13452,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="idempotency_key")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(45)]
+		[System.ComponentModel.DataAnnotations.Length(1, 45)]
 		public string Idempotency_key { get; set; }
 	}
 	
@@ -13535,8 +13483,7 @@ namespace MyNS
 		/// Max length: 40
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="dispute_id")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(40)]
+		[System.ComponentModel.DataAnnotations.Length(1, 40)]
 		public string Dispute_id { get; set; }
 		
 		/// <summary>
@@ -13551,8 +13498,7 @@ namespace MyNS
 		/// Max length: 40
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="evidence_id")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(40)]
+		[System.ComponentModel.DataAnnotations.Length(1, 40)]
 		public string Evidence_id { get; set; }
 		
 		/// <summary>
@@ -13561,8 +13507,7 @@ namespace MyNS
 		/// Max length: 500
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="evidence_text")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(500)]
+		[System.ComponentModel.DataAnnotations.Length(1, 500)]
 		public string Evidence_text { get; set; }
 		
 		/// <summary>
@@ -13577,8 +13522,7 @@ namespace MyNS
 		/// Max length: 40
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="id")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(40)]
+		[System.ComponentModel.DataAnnotations.Length(1, 40)]
 		public string Id { get; set; }
 		
 		/// <summary>
@@ -13587,8 +13531,7 @@ namespace MyNS
 		/// Max length: 40
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="uploaded_at")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(40)]
+		[System.ComponentModel.DataAnnotations.Length(1, 40)]
 		public string Uploaded_at { get; set; }
 	}
 	
@@ -13605,8 +13548,7 @@ namespace MyNS
 		/// Max length: 40
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="filename")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(40)]
+		[System.ComponentModel.DataAnnotations.Length(1, 40)]
 		public string Filename { get; set; }
 		
 		/// <summary>
@@ -13615,8 +13557,7 @@ namespace MyNS
 		/// Max length: 40
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="filetype")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(40)]
+		[System.ComponentModel.DataAnnotations.Length(1, 40)]
 		public string Filetype { get; set; }
 	}
 	
@@ -13643,8 +13584,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="idempotency_key")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(128)]
+		[System.ComponentModel.DataAnnotations.Length(1, 128)]
 		public string Idempotency_key { get; set; }
 	}
 	
@@ -14203,8 +14143,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="idempotency_key")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(128)]
+		[System.ComponentModel.DataAnnotations.Length(1, 128)]
 		public string Idempotency_key { get; set; }
 		
 		/// <summary>
@@ -14641,8 +14580,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="idempotency_key")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(128)]
+		[System.ComponentModel.DataAnnotations.Length(1, 128)]
 		public string Idempotency_key { get; set; }
 		
 		/// <summary>
@@ -14730,8 +14668,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="program_id")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(36)]
+		[System.ComponentModel.DataAnnotations.Length(1, 36)]
 		public string Program_id { get; set; }
 		
 		/// <summary>
@@ -14835,8 +14772,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="idempotency_key")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(128)]
+		[System.ComponentModel.DataAnnotations.Length(1, 128)]
 		public string Idempotency_key { get; set; }
 		
 		/// <summary>
@@ -14877,8 +14813,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="loyalty_account_id")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(36)]
+		[System.ComponentModel.DataAnnotations.Length(1, 36)]
 		public string Loyalty_account_id { get; set; }
 		
 		/// <summary>
@@ -14909,8 +14844,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="reward_tier_id")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(36)]
+		[System.ComponentModel.DataAnnotations.Length(1, 36)]
 		public string Reward_tier_id { get; set; }
 		
 		/// <summary>
@@ -14960,8 +14894,7 @@ namespace MyNS
 		/// Max length: 191
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="location_id")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(191)]
+		[System.ComponentModel.DataAnnotations.Length(1, 191)]
 		public string Location_id { get; set; }
 	}
 	
@@ -14980,8 +14913,7 @@ namespace MyNS
 		/// Max length: 191
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="authorization_code")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(191)]
+		[System.ComponentModel.DataAnnotations.Length(0, 191)]
 		public string Authorization_code { get; set; }
 		
 		/// <summary>
@@ -14999,8 +14931,7 @@ namespace MyNS
 		/// Max length: 48
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="expires_at")]
-		[System.ComponentModel.DataAnnotations.MinLength(20)]
-		[System.ComponentModel.DataAnnotations.MaxLength(48)]
+		[System.ComponentModel.DataAnnotations.Length(20, 48)]
 		public string Expires_at { get; set; }
 	}
 	
@@ -15189,8 +15120,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="idempotency_key")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(45)]
+		[System.ComponentModel.DataAnnotations.Length(1, 45)]
 		public string Idempotency_key { get; set; }
 		
 		/// <summary>
@@ -15374,8 +15304,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="idempotency_key")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(192)]
+		[System.ComponentModel.DataAnnotations.Length(1, 192)]
 		public string Idempotency_key { get; set; }
 		
 		/// <summary>
@@ -15400,8 +15329,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="tender_id")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(192)]
+		[System.ComponentModel.DataAnnotations.Length(1, 192)]
 		public string Tender_id { get; set; }
 	}
 	
@@ -15758,8 +15686,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="idempotency_key")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(64)]
+		[System.ComponentModel.DataAnnotations.Length(1, 64)]
 		public string Idempotency_key { get; set; }
 	}
 	
@@ -17125,8 +17052,7 @@ namespace MyNS
 		/// Max length: 40
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="content_type")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(40)]
+		[System.ComponentModel.DataAnnotations.Length(1, 40)]
 		public string Content_type { get; set; }
 		
 		/// <summary>
@@ -17143,8 +17069,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="idempotency_key")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(45)]
+		[System.ComponentModel.DataAnnotations.Length(1, 45)]
 		public string Idempotency_key { get; set; }
 	}
 	
@@ -17180,8 +17105,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="evidence_text")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(500)]
+		[System.ComponentModel.DataAnnotations.Length(1, 500)]
 		public string Evidence_text { get; set; }
 		
 		/// <summary>
@@ -17198,8 +17122,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="idempotency_key")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(45)]
+		[System.ComponentModel.DataAnnotations.Length(1, 45)]
 		public string Idempotency_key { get; set; }
 	}
 	
@@ -18346,8 +18269,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="id")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public string Id { get; set; }
 		
 		/// <summary>
@@ -19171,8 +19093,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="customer_id")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(191)]
+		[System.ComponentModel.DataAnnotations.Length(1, 191)]
 		public string Customer_id { get; set; }
 	}
 	
@@ -19919,8 +19840,7 @@ namespace MyNS
 		/// Max length: 40
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="location_id")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(40)]
+		[System.ComponentModel.DataAnnotations.Length(1, 40)]
 		public string Location_id { get; set; }
 		
 		/// <summary>
@@ -20277,8 +20197,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="location_id")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public string Location_id { get; set; }
 	}
 	
@@ -20413,8 +20332,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="id")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(36)]
+		[System.ComponentModel.DataAnnotations.Length(1, 36)]
 		public string Id { get; set; }
 		
 		/// <summary>
@@ -20588,8 +20506,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="id")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(36)]
+		[System.ComponentModel.DataAnnotations.Length(1, 36)]
 		public string Id { get; set; }
 		
 		/// <summary>
@@ -22184,8 +22101,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="client_secret")]
-		[System.ComponentModel.DataAnnotations.MinLength(2)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1024)]
+		[System.ComponentModel.DataAnnotations.Length(2, 1024)]
 		public string Client_secret { get; set; }
 		
 		/// <summary>
@@ -22196,8 +22112,7 @@ namespace MyNS
 		/// Max length: 191
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="code")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(191)]
+		[System.ComponentModel.DataAnnotations.Length(0, 191)]
 		public string Code { get; set; }
 		
 		/// <summary>
@@ -22209,8 +22124,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="grant_type")]
-		[System.ComponentModel.DataAnnotations.MinLength(10)]
-		[System.ComponentModel.DataAnnotations.MaxLength(20)]
+		[System.ComponentModel.DataAnnotations.Length(10, 20)]
 		public string Grant_type { get; set; }
 		
 		/// <summary>
@@ -22223,8 +22137,7 @@ namespace MyNS
 		/// Max length: 1024
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="migration_token")]
-		[System.ComponentModel.DataAnnotations.MinLength(2)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1024)]
+		[System.ComponentModel.DataAnnotations.Length(2, 1024)]
 		public string Migration_token { get; set; }
 		
 		/// <summary>
@@ -22233,8 +22146,7 @@ namespace MyNS
 		/// Max length: 2048
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="redirect_uri")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2048)]
+		[System.ComponentModel.DataAnnotations.Length(0, 2048)]
 		public string Redirect_uri { get; set; }
 		
 		/// <summary>
@@ -22244,8 +22156,7 @@ namespace MyNS
 		/// Max length: 1024
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="refresh_token")]
-		[System.ComponentModel.DataAnnotations.MinLength(2)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1024)]
+		[System.ComponentModel.DataAnnotations.Length(2, 1024)]
 		public string Refresh_token { get; set; }
 		
 		/// <summary>
@@ -22279,8 +22190,7 @@ namespace MyNS
 		/// Max length: 1024
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="access_token")]
-		[System.ComponentModel.DataAnnotations.MinLength(2)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1024)]
+		[System.ComponentModel.DataAnnotations.Length(2, 1024)]
 		public string Access_token { get; set; }
 		
 		/// <summary>
@@ -22289,8 +22199,7 @@ namespace MyNS
 		/// Max length: 48
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="expires_at")]
-		[System.ComponentModel.DataAnnotations.MinLength(20)]
-		[System.ComponentModel.DataAnnotations.MaxLength(48)]
+		[System.ComponentModel.DataAnnotations.Length(20, 48)]
 		public string Expires_at { get; set; }
 		
 		/// <summary>
@@ -22306,8 +22215,7 @@ namespace MyNS
 		/// Max length: 191
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="merchant_id")]
-		[System.ComponentModel.DataAnnotations.MinLength(8)]
-		[System.ComponentModel.DataAnnotations.MaxLength(191)]
+		[System.ComponentModel.DataAnnotations.Length(8, 191)]
 		public string Merchant_id { get; set; }
 		
 		/// <summary>
@@ -22325,8 +22233,7 @@ namespace MyNS
 		/// Max length: 1024
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="refresh_token")]
-		[System.ComponentModel.DataAnnotations.MinLength(2)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1024)]
+		[System.ComponentModel.DataAnnotations.Length(2, 1024)]
 		public string Refresh_token { get; set; }
 		
 		/// <summary>
@@ -22349,8 +22256,7 @@ namespace MyNS
 		/// Max length: 10
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="token_type")]
-		[System.ComponentModel.DataAnnotations.MinLength(2)]
-		[System.ComponentModel.DataAnnotations.MaxLength(10)]
+		[System.ComponentModel.DataAnnotations.Length(2, 10)]
 		public string Token_type { get; set; }
 	}
 	
@@ -22787,8 +22693,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="idempotency_key")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(192)]
+		[System.ComponentModel.DataAnnotations.Length(1, 192)]
 		public string Idempotency_key { get; set; }
 		
 		/// <summary>
@@ -22983,8 +22888,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="idempotency_key")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(128)]
+		[System.ComponentModel.DataAnnotations.Length(1, 128)]
 		public string Idempotency_key { get; set; }
 		
 		/// <summary>
@@ -23143,8 +23047,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="domain_name")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public string Domain_name { get; set; }
 	}
 	
@@ -23222,8 +23125,7 @@ namespace MyNS
 		/// Max length: 1024
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="access_token")]
-		[System.ComponentModel.DataAnnotations.MinLength(2)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1024)]
+		[System.ComponentModel.DataAnnotations.Length(2, 1024)]
 		public string Access_token { get; set; }
 	}
 	
@@ -23240,8 +23142,7 @@ namespace MyNS
 		/// Max length: 1024
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="access_token")]
-		[System.ComponentModel.DataAnnotations.MinLength(2)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1024)]
+		[System.ComponentModel.DataAnnotations.Length(2, 1024)]
 		public string Access_token { get; set; }
 		
 		/// <summary>
@@ -23250,8 +23151,7 @@ namespace MyNS
 		/// Max length: 48
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="expires_at")]
-		[System.ComponentModel.DataAnnotations.MinLength(20)]
-		[System.ComponentModel.DataAnnotations.MaxLength(48)]
+		[System.ComponentModel.DataAnnotations.Length(20, 48)]
 		public string Expires_at { get; set; }
 		
 		/// <summary>
@@ -23260,8 +23160,7 @@ namespace MyNS
 		/// Max length: 191
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="merchant_id")]
-		[System.ComponentModel.DataAnnotations.MinLength(8)]
-		[System.ComponentModel.DataAnnotations.MaxLength(191)]
+		[System.ComponentModel.DataAnnotations.Length(8, 191)]
 		public string Merchant_id { get; set; }
 		
 		/// <summary>
@@ -23286,8 +23185,7 @@ namespace MyNS
 		/// Max length: 10
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="token_type")]
-		[System.ComponentModel.DataAnnotations.MinLength(2)]
-		[System.ComponentModel.DataAnnotations.MaxLength(10)]
+		[System.ComponentModel.DataAnnotations.Length(2, 10)]
 		public string Token_type { get; set; }
 	}
 	
@@ -23701,8 +23599,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="gan")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public string Gan { get; set; }
 	}
 	
@@ -24179,8 +24076,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="content")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(65535)]
+		[System.ComponentModel.DataAnnotations.Length(1, 65535)]
 		public string Content { get; set; }
 		
 		/// <summary>
@@ -24415,8 +24311,7 @@ namespace MyNS
 		/// Max length: 1024
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="access_token")]
-		[System.ComponentModel.DataAnnotations.MinLength(2)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1024)]
+		[System.ComponentModel.DataAnnotations.Length(2, 1024)]
 		public string Access_token { get; set; }
 		
 		/// <summary>
@@ -26617,8 +26512,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="customer_id")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(191)]
+		[System.ComponentModel.DataAnnotations.Length(1, 191)]
 		public string Customer_id { get; set; }
 	}
 	
@@ -27158,8 +27052,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="idempotency_key")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(45)]
+		[System.ComponentModel.DataAnnotations.Length(1, 45)]
 		public string Idempotency_key { get; set; }
 		
 		/// <summary>

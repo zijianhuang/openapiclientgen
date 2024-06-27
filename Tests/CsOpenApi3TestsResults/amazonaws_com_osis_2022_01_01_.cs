@@ -1086,8 +1086,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(3)]
-		[System.ComponentModel.DataAnnotations.MaxLength(28)]
+		[System.ComponentModel.DataAnnotations.Length(3, 28)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[a-z][a-z0-9\-]+")]
 		public string PipelineName { get; set; }
 		
@@ -1121,8 +1120,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(24000)]
+		[System.ComponentModel.DataAnnotations.Length(1, 24000)]
 		public string PipelineConfigurationBody { get; set; }
 		
 		/// <summary>
@@ -1215,8 +1213,7 @@ namespace MyNS
 		/// Max length: 24000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(24000)]
+		[System.ComponentModel.DataAnnotations.Length(1, 24000)]
 		public string PipelineConfigurationBody { get; set; }
 		
 		/// <summary>
@@ -1247,8 +1244,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(24000)]
+		[System.ComponentModel.DataAnnotations.Length(1, 24000)]
 		public string PipelineConfigurationBody { get; set; }
 	}
 }

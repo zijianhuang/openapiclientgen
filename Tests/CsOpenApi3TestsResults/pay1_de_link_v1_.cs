@@ -28,8 +28,7 @@ namespace MyNS
 		/// Max length: 50
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="addressAddition")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(50)]
+		[System.ComponentModel.DataAnnotations.Length(1, 50)]
 		public string AddressAddition { get; set; }
 		
 		/// <summary>
@@ -39,8 +38,7 @@ namespace MyNS
 		/// Pattern: ^[^\u0000\\!=<>?+;"*\d]+$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="city")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(50)]
+		[System.ComponentModel.DataAnnotations.Length(1, 50)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[^\u0000\\!=<>?+;""*\d]+$")]
 		public string City { get; set; }
 		
@@ -50,8 +48,7 @@ namespace MyNS
 		/// Max length: 50
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="company")]
-		[System.ComponentModel.DataAnnotations.MinLength(2)]
-		[System.ComponentModel.DataAnnotations.MaxLength(50)]
+		[System.ComponentModel.DataAnnotations.Length(2, 50)]
 		public string Company { get; set; }
 		
 		/// <summary>
@@ -61,8 +58,7 @@ namespace MyNS
 		/// Pattern: [A-Z]{2}
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="country")]
-		[System.ComponentModel.DataAnnotations.MinLength(2)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2)]
+		[System.ComponentModel.DataAnnotations.Length(2, 2)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[A-Z]{2}")]
 		public string Country { get; set; }
 		
@@ -72,8 +68,7 @@ namespace MyNS
 		/// Max length: 50
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="firstName")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(50)]
+		[System.ComponentModel.DataAnnotations.Length(1, 50)]
 		public string FirstName { get; set; }
 		
 		/// <summary>
@@ -82,8 +77,7 @@ namespace MyNS
 		/// Max length: 50
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="lastName")]
-		[System.ComponentModel.DataAnnotations.MinLength(2)]
-		[System.ComponentModel.DataAnnotations.MaxLength(50)]
+		[System.ComponentModel.DataAnnotations.Length(2, 50)]
 		public string LastName { get; set; }
 		
 		/// <summary>
@@ -93,8 +87,7 @@ namespace MyNS
 		/// Pattern: [A-Z]{2}
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="state")]
-		[System.ComponentModel.DataAnnotations.MinLength(2)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2)]
+		[System.ComponentModel.DataAnnotations.Length(2, 2)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[A-Z]{2}")]
 		public string State { get; set; }
 		
@@ -104,8 +97,7 @@ namespace MyNS
 		/// Max length: 50
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="street")]
-		[System.ComponentModel.DataAnnotations.MinLength(2)]
-		[System.ComponentModel.DataAnnotations.MaxLength(50)]
+		[System.ComponentModel.DataAnnotations.Length(2, 50)]
 		public string Street { get; set; }
 		
 		/// <summary>
@@ -115,8 +107,7 @@ namespace MyNS
 		/// Pattern: [0-9A-Za-z_.\-/]{2,10}
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="zip")]
-		[System.ComponentModel.DataAnnotations.MinLength(2)]
-		[System.ComponentModel.DataAnnotations.MaxLength(10)]
+		[System.ComponentModel.DataAnnotations.Length(2, 10)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[0-9A-Za-z_.\-/]{2,10}")]
 		public string Zip { get; set; }
 	}
@@ -143,8 +134,7 @@ namespace MyNS
 		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public string Description { get; set; }
 		
 		/// <summary>
@@ -156,8 +146,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="number")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(32)]
+		[System.ComponentModel.DataAnnotations.Length(1, 32)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[0-9A-Za-z(){} +\-_#/:\[\]]{1,32}")]
 		public string Number { get; set; }
 		
@@ -231,8 +220,7 @@ namespace MyNS
 		/// Max length: 20
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="invoiceId")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(20)]
+		[System.ComponentModel.DataAnnotations.Length(0, 20)]
 		public string InvoiceId { get; set; }
 		
 		/// <summary>
@@ -241,8 +229,7 @@ namespace MyNS
 		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="invoiceText")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(0, 255)]
 		public string InvoiceText { get; set; }
 	}
 	
@@ -286,8 +273,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="currency")]
-		[System.ComponentModel.DataAnnotations.MinLength(3)]
-		[System.ComponentModel.DataAnnotations.MaxLength(3)]
+		[System.ComponentModel.DataAnnotations.Length(3, 3)]
 		public LinkCreateRequestCurrency Currency { get; set; }
 		
 		/// <summary>
@@ -296,8 +282,7 @@ namespace MyNS
 		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(0, 255)]
 		public string Description { get; set; }
 		
 		/// <summary>
@@ -306,8 +291,7 @@ namespace MyNS
 		/// Max length: 254
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="email")]
-		[System.ComponentModel.DataAnnotations.MinLength(4)]
-		[System.ComponentModel.DataAnnotations.MaxLength(254)]
+		[System.ComponentModel.DataAnnotations.Length(4, 254)]
 		public string Email { get; set; }
 		
 		/// <summary>
@@ -406,8 +390,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="shoppingCart")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(400)]
+		[System.ComponentModel.DataAnnotations.Length(1, 400)]
 		public CartItemDto[] ShoppingCart { get; set; }
 		
 		/// <summary>
@@ -1043,8 +1026,7 @@ namespace MyNS
 		/// Max length: 3
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="currency")]
-		[System.ComponentModel.DataAnnotations.MinLength(3)]
-		[System.ComponentModel.DataAnnotations.MaxLength(3)]
+		[System.ComponentModel.DataAnnotations.Length(3, 3)]
 		public LinkCreateRequestCurrency Currency { get; set; }
 		
 		/// <summary>
@@ -1061,8 +1043,7 @@ namespace MyNS
 		/// Max length: 254
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="email")]
-		[System.ComponentModel.DataAnnotations.MinLength(4)]
-		[System.ComponentModel.DataAnnotations.MaxLength(254)]
+		[System.ComponentModel.DataAnnotations.Length(4, 254)]
 		public string Email { get; set; }
 		
 		/// <summary>
@@ -1089,8 +1070,7 @@ namespace MyNS
 		/// Max length: 32
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="id")]
-		[System.ComponentModel.DataAnnotations.MinLength(32)]
-		[System.ComponentModel.DataAnnotations.MaxLength(32)]
+		[System.ComponentModel.DataAnnotations.Length(32, 32)]
 		public string Id { get; set; }
 		
 		/// <summary>
@@ -1184,8 +1164,7 @@ namespace MyNS
 		/// Max length: 20
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="reference")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(20)]
+		[System.ComponentModel.DataAnnotations.Length(1, 20)]
 		public string Reference { get; set; }
 		
 		[System.Runtime.Serialization.DataMember(Name="shipping")]

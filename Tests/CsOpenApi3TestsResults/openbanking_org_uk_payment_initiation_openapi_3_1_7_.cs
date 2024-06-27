@@ -249,8 +249,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(500)]
+		[System.ComponentModel.DataAnnotations.Length(1, 500)]
 		public string Message { get; set; }
 		
 		/// <summary>
@@ -259,8 +258,7 @@ namespace MyNS
 		/// Max length: 500
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(500)]
+		[System.ComponentModel.DataAnnotations.Length(1, 500)]
 		public string Path { get; set; }
 		
 		/// <summary>
@@ -285,8 +283,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(40)]
+		[System.ComponentModel.DataAnnotations.Length(1, 40)]
 		public string Code { get; set; }
 		
 		/// <summary>
@@ -304,8 +301,7 @@ namespace MyNS
 		/// Max length: 40
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(40)]
+		[System.ComponentModel.DataAnnotations.Length(1, 40)]
 		public string Id { get; set; }
 		
 		/// <summary>
@@ -316,8 +312,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(500)]
+		[System.ComponentModel.DataAnnotations.Length(1, 500)]
 		public string Message { get; set; }
 	}
 	
@@ -333,8 +328,7 @@ namespace MyNS
 		/// Maximum items: 7
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(7)]
+		[System.ComponentModel.DataAnnotations.Length(0, 7)]
 		public string[] AddressLine { get; set; }
 		
 		/// <summary>
@@ -349,8 +343,7 @@ namespace MyNS
 		/// Max length: 16
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(16)]
+		[System.ComponentModel.DataAnnotations.Length(1, 16)]
 		public string BuildingNumber { get; set; }
 		
 		/// <summary>
@@ -367,8 +360,7 @@ namespace MyNS
 		/// Max length: 35
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(35)]
+		[System.ComponentModel.DataAnnotations.Length(1, 35)]
 		public string CountrySubDivision { get; set; }
 		
 		/// <summary>
@@ -377,8 +369,7 @@ namespace MyNS
 		/// Max length: 70
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(70)]
+		[System.ComponentModel.DataAnnotations.Length(1, 70)]
 		public string Department { get; set; }
 		
 		/// <summary>
@@ -387,8 +378,7 @@ namespace MyNS
 		/// Max length: 16
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(16)]
+		[System.ComponentModel.DataAnnotations.Length(1, 16)]
 		public string PostCode { get; set; }
 		
 		/// <summary>
@@ -397,8 +387,7 @@ namespace MyNS
 		/// Max length: 70
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(70)]
+		[System.ComponentModel.DataAnnotations.Length(1, 70)]
 		public string StreetName { get; set; }
 		
 		/// <summary>
@@ -407,8 +396,7 @@ namespace MyNS
 		/// Max length: 70
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(70)]
+		[System.ComponentModel.DataAnnotations.Length(1, 70)]
 		public string SubDepartment { get; set; }
 		
 		/// <summary>
@@ -417,8 +405,7 @@ namespace MyNS
 		/// Max length: 35
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(35)]
+		[System.ComponentModel.DataAnnotations.Length(1, 35)]
 		public string TownName { get; set; }
 	}
 	
@@ -441,8 +428,7 @@ namespace MyNS
 		/// Max length: 4
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(3)]
-		[System.ComponentModel.DataAnnotations.MaxLength(4)]
+		[System.ComponentModel.DataAnnotations.Length(3, 4)]
 		public string MerchantCategoryCode { get; set; }
 		
 		/// <summary>
@@ -451,8 +437,7 @@ namespace MyNS
 		/// Max length: 70
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(70)]
+		[System.ComponentModel.DataAnnotations.Length(1, 70)]
 		public string MerchantCustomerIdentification { get; set; }
 		
 		/// <summary>
@@ -470,8 +455,7 @@ namespace MyNS
 		/// Maximum items: 2
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2)]
+		[System.ComponentModel.DataAnnotations.Length(0, 2)]
 		public string[] AddressLine { get; set; }
 		
 		/// <summary>
@@ -480,8 +464,7 @@ namespace MyNS
 		/// Max length: 16
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(16)]
+		[System.ComponentModel.DataAnnotations.Length(1, 16)]
 		public string BuildingNumber { get; set; }
 		
 		/// <summary>
@@ -500,8 +483,7 @@ namespace MyNS
 		/// Max length: 35
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(35)]
+		[System.ComponentModel.DataAnnotations.Length(1, 35)]
 		public string CountrySubDivision { get; set; }
 		
 		/// <summary>
@@ -510,8 +492,7 @@ namespace MyNS
 		/// Max length: 16
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(16)]
+		[System.ComponentModel.DataAnnotations.Length(1, 16)]
 		public string PostCode { get; set; }
 		
 		/// <summary>
@@ -520,8 +501,7 @@ namespace MyNS
 		/// Max length: 70
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(70)]
+		[System.ComponentModel.DataAnnotations.Length(1, 70)]
 		public string StreetName { get; set; }
 		
 		/// <summary>
@@ -532,8 +512,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(35)]
+		[System.ComponentModel.DataAnnotations.Length(1, 35)]
 		public string TownName { get; set; }
 	}
 	
@@ -579,8 +558,7 @@ namespace MyNS
 		/// Max length: 40
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(40)]
+		[System.ComponentModel.DataAnnotations.Length(1, 40)]
 		public string ReferencePaymentOrderId { get; set; }
 		
 		/// <summary>
@@ -666,8 +644,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(128)]
+		[System.ComponentModel.DataAnnotations.Length(1, 128)]
 		public string ConsentId { get; set; }
 		
 		/// <summary>
@@ -712,8 +689,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(35)]
+		[System.ComponentModel.DataAnnotations.Length(1, 35)]
 		public string EndToEndIdentification { get; set; }
 		
 		/// <summary>
@@ -734,8 +710,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(35)]
+		[System.ComponentModel.DataAnnotations.Length(1, 35)]
 		public string InstructionIdentification { get; set; }
 		
 		/// <summary>
@@ -769,8 +744,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(256)]
+		[System.ComponentModel.DataAnnotations.Length(1, 256)]
 		public string Identification { get; set; }
 		
 		/// <summary>
@@ -783,8 +757,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(350)]
+		[System.ComponentModel.DataAnnotations.Length(1, 350)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -802,8 +775,7 @@ namespace MyNS
 		/// Max length: 34
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(34)]
+		[System.ComponentModel.DataAnnotations.Length(1, 34)]
 		public string SecondaryIdentification { get; set; }
 	}
 	
@@ -818,8 +790,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(256)]
+		[System.ComponentModel.DataAnnotations.Length(1, 256)]
 		public string Identification { get; set; }
 		
 		/// <summary>
@@ -829,8 +800,7 @@ namespace MyNS
 		/// Max length: 350
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(350)]
+		[System.ComponentModel.DataAnnotations.Length(1, 350)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -848,8 +818,7 @@ namespace MyNS
 		/// Max length: 34
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(34)]
+		[System.ComponentModel.DataAnnotations.Length(1, 34)]
 		public string SecondaryIdentification { get; set; }
 	}
 	
@@ -889,8 +858,7 @@ namespace MyNS
 		/// Max length: 35
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(35)]
+		[System.ComponentModel.DataAnnotations.Length(1, 35)]
 		public string Reference { get; set; }
 		
 		/// <summary>
@@ -899,8 +867,7 @@ namespace MyNS
 		/// Max length: 140
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(140)]
+		[System.ComponentModel.DataAnnotations.Length(1, 140)]
 		public string Unstructured { get; set; }
 	}
 	
@@ -1018,8 +985,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(35)]
+		[System.ComponentModel.DataAnnotations.Length(1, 35)]
 		public string EndToEndIdentification { get; set; }
 		
 		/// <summary>
@@ -1040,8 +1006,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(35)]
+		[System.ComponentModel.DataAnnotations.Length(1, 35)]
 		public string InstructionIdentification { get; set; }
 		
 		/// <summary>
@@ -1075,8 +1040,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(256)]
+		[System.ComponentModel.DataAnnotations.Length(1, 256)]
 		public string Identification { get; set; }
 		
 		/// <summary>
@@ -1089,8 +1053,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(350)]
+		[System.ComponentModel.DataAnnotations.Length(1, 350)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -1108,8 +1071,7 @@ namespace MyNS
 		/// Max length: 34
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(34)]
+		[System.ComponentModel.DataAnnotations.Length(1, 34)]
 		public string SecondaryIdentification { get; set; }
 	}
 	
@@ -1124,8 +1086,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(256)]
+		[System.ComponentModel.DataAnnotations.Length(1, 256)]
 		public string Identification { get; set; }
 		
 		/// <summary>
@@ -1135,8 +1096,7 @@ namespace MyNS
 		/// Max length: 350
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(350)]
+		[System.ComponentModel.DataAnnotations.Length(1, 350)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -1154,8 +1114,7 @@ namespace MyNS
 		/// Max length: 34
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(34)]
+		[System.ComponentModel.DataAnnotations.Length(1, 34)]
 		public string SecondaryIdentification { get; set; }
 	}
 	
@@ -1195,8 +1154,7 @@ namespace MyNS
 		/// Max length: 35
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(35)]
+		[System.ComponentModel.DataAnnotations.Length(1, 35)]
 		public string Reference { get; set; }
 		
 		/// <summary>
@@ -1205,8 +1163,7 @@ namespace MyNS
 		/// Max length: 140
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(140)]
+		[System.ComponentModel.DataAnnotations.Length(1, 140)]
 		public string Unstructured { get; set; }
 	}
 	
@@ -1273,8 +1230,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(128)]
+		[System.ComponentModel.DataAnnotations.Length(1, 128)]
 		public string ConsentId { get; set; }
 		
 		/// <summary>
@@ -1437,8 +1393,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(35)]
+		[System.ComponentModel.DataAnnotations.Length(1, 35)]
 		public string EndToEndIdentification { get; set; }
 		
 		/// <summary>
@@ -1459,8 +1414,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(35)]
+		[System.ComponentModel.DataAnnotations.Length(1, 35)]
 		public string InstructionIdentification { get; set; }
 		
 		/// <summary>
@@ -1494,8 +1448,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(256)]
+		[System.ComponentModel.DataAnnotations.Length(1, 256)]
 		public string Identification { get; set; }
 		
 		/// <summary>
@@ -1508,8 +1461,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(350)]
+		[System.ComponentModel.DataAnnotations.Length(1, 350)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -1527,8 +1479,7 @@ namespace MyNS
 		/// Max length: 34
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(34)]
+		[System.ComponentModel.DataAnnotations.Length(1, 34)]
 		public string SecondaryIdentification { get; set; }
 	}
 	
@@ -1543,8 +1494,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(256)]
+		[System.ComponentModel.DataAnnotations.Length(1, 256)]
 		public string Identification { get; set; }
 		
 		/// <summary>
@@ -1554,8 +1504,7 @@ namespace MyNS
 		/// Max length: 350
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(350)]
+		[System.ComponentModel.DataAnnotations.Length(1, 350)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -1573,8 +1522,7 @@ namespace MyNS
 		/// Max length: 34
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(34)]
+		[System.ComponentModel.DataAnnotations.Length(1, 34)]
 		public string SecondaryIdentification { get; set; }
 	}
 	
@@ -1614,8 +1562,7 @@ namespace MyNS
 		/// Max length: 35
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(35)]
+		[System.ComponentModel.DataAnnotations.Length(1, 35)]
 		public string Reference { get; set; }
 		
 		/// <summary>
@@ -1624,8 +1571,7 @@ namespace MyNS
 		/// Max length: 140
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(140)]
+		[System.ComponentModel.DataAnnotations.Length(1, 140)]
 		public string Unstructured { get; set; }
 	}
 	
@@ -1684,8 +1630,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(128)]
+		[System.ComponentModel.DataAnnotations.Length(1, 128)]
 		public string ConsentId { get; set; }
 		
 		/// <summary>
@@ -1712,8 +1657,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(40)]
+		[System.ComponentModel.DataAnnotations.Length(1, 40)]
 		public string DomesticPaymentId { get; set; }
 		
 		/// <summary>
@@ -1832,8 +1776,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(35)]
+		[System.ComponentModel.DataAnnotations.Length(1, 35)]
 		public string EndToEndIdentification { get; set; }
 		
 		/// <summary>
@@ -1854,8 +1797,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(35)]
+		[System.ComponentModel.DataAnnotations.Length(1, 35)]
 		public string InstructionIdentification { get; set; }
 		
 		/// <summary>
@@ -1889,8 +1831,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(256)]
+		[System.ComponentModel.DataAnnotations.Length(1, 256)]
 		public string Identification { get; set; }
 		
 		/// <summary>
@@ -1903,8 +1844,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(350)]
+		[System.ComponentModel.DataAnnotations.Length(1, 350)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -1922,8 +1862,7 @@ namespace MyNS
 		/// Max length: 34
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(34)]
+		[System.ComponentModel.DataAnnotations.Length(1, 34)]
 		public string SecondaryIdentification { get; set; }
 	}
 	
@@ -1938,8 +1877,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(256)]
+		[System.ComponentModel.DataAnnotations.Length(1, 256)]
 		public string Identification { get; set; }
 		
 		/// <summary>
@@ -1949,8 +1887,7 @@ namespace MyNS
 		/// Max length: 350
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(350)]
+		[System.ComponentModel.DataAnnotations.Length(1, 350)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -1968,8 +1905,7 @@ namespace MyNS
 		/// Max length: 34
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(34)]
+		[System.ComponentModel.DataAnnotations.Length(1, 34)]
 		public string SecondaryIdentification { get; set; }
 	}
 	
@@ -2009,8 +1945,7 @@ namespace MyNS
 		/// Max length: 35
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(35)]
+		[System.ComponentModel.DataAnnotations.Length(1, 35)]
 		public string Reference { get; set; }
 		
 		/// <summary>
@@ -2019,8 +1954,7 @@ namespace MyNS
 		/// Max length: 140
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(140)]
+		[System.ComponentModel.DataAnnotations.Length(1, 140)]
 		public string Unstructured { get; set; }
 	}
 	
@@ -2101,8 +2035,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(256)]
+		[System.ComponentModel.DataAnnotations.Length(1, 256)]
 		public string Identification { get; set; }
 		
 		/// <summary>
@@ -2115,8 +2048,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(350)]
+		[System.ComponentModel.DataAnnotations.Length(1, 350)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -2134,8 +2066,7 @@ namespace MyNS
 		/// Max length: 34
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(34)]
+		[System.ComponentModel.DataAnnotations.Length(1, 34)]
 		public string SecondaryIdentification { get; set; }
 	}
 	
@@ -2193,8 +2124,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(128)]
+		[System.ComponentModel.DataAnnotations.Length(1, 128)]
 		public string ConsentId { get; set; }
 		
 		/// <summary>
@@ -2237,8 +2167,7 @@ namespace MyNS
 		/// Max length: 35
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(35)]
+		[System.ComponentModel.DataAnnotations.Length(1, 35)]
 		public string EndToEndIdentification { get; set; }
 		
 		/// <summary>
@@ -2259,8 +2188,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(35)]
+		[System.ComponentModel.DataAnnotations.Length(1, 35)]
 		public string InstructionIdentification { get; set; }
 		
 		/// <summary>
@@ -2305,8 +2233,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(256)]
+		[System.ComponentModel.DataAnnotations.Length(1, 256)]
 		public string Identification { get; set; }
 		
 		/// <summary>
@@ -2319,8 +2246,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(350)]
+		[System.ComponentModel.DataAnnotations.Length(1, 350)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -2338,8 +2264,7 @@ namespace MyNS
 		/// Max length: 34
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(34)]
+		[System.ComponentModel.DataAnnotations.Length(1, 34)]
 		public string SecondaryIdentification { get; set; }
 	}
 	
@@ -2354,8 +2279,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(256)]
+		[System.ComponentModel.DataAnnotations.Length(1, 256)]
 		public string Identification { get; set; }
 		
 		/// <summary>
@@ -2365,8 +2289,7 @@ namespace MyNS
 		/// Max length: 350
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(350)]
+		[System.ComponentModel.DataAnnotations.Length(1, 350)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -2384,8 +2307,7 @@ namespace MyNS
 		/// Max length: 34
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(34)]
+		[System.ComponentModel.DataAnnotations.Length(1, 34)]
 		public string SecondaryIdentification { get; set; }
 	}
 	
@@ -2425,8 +2347,7 @@ namespace MyNS
 		/// Max length: 35
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(35)]
+		[System.ComponentModel.DataAnnotations.Length(1, 35)]
 		public string Reference { get; set; }
 		
 		/// <summary>
@@ -2435,8 +2356,7 @@ namespace MyNS
 		/// Max length: 140
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(140)]
+		[System.ComponentModel.DataAnnotations.Length(1, 140)]
 		public string Unstructured { get; set; }
 	}
 	
@@ -2549,8 +2469,7 @@ namespace MyNS
 		/// Max length: 35
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(35)]
+		[System.ComponentModel.DataAnnotations.Length(1, 35)]
 		public string EndToEndIdentification { get; set; }
 		
 		/// <summary>
@@ -2571,8 +2490,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(35)]
+		[System.ComponentModel.DataAnnotations.Length(1, 35)]
 		public string InstructionIdentification { get; set; }
 		
 		/// <summary>
@@ -2617,8 +2535,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(256)]
+		[System.ComponentModel.DataAnnotations.Length(1, 256)]
 		public string Identification { get; set; }
 		
 		/// <summary>
@@ -2631,8 +2548,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(350)]
+		[System.ComponentModel.DataAnnotations.Length(1, 350)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -2650,8 +2566,7 @@ namespace MyNS
 		/// Max length: 34
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(34)]
+		[System.ComponentModel.DataAnnotations.Length(1, 34)]
 		public string SecondaryIdentification { get; set; }
 	}
 	
@@ -2666,8 +2581,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(256)]
+		[System.ComponentModel.DataAnnotations.Length(1, 256)]
 		public string Identification { get; set; }
 		
 		/// <summary>
@@ -2677,8 +2591,7 @@ namespace MyNS
 		/// Max length: 350
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(350)]
+		[System.ComponentModel.DataAnnotations.Length(1, 350)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -2696,8 +2609,7 @@ namespace MyNS
 		/// Max length: 34
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(34)]
+		[System.ComponentModel.DataAnnotations.Length(1, 34)]
 		public string SecondaryIdentification { get; set; }
 	}
 	
@@ -2737,8 +2649,7 @@ namespace MyNS
 		/// Max length: 35
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(35)]
+		[System.ComponentModel.DataAnnotations.Length(1, 35)]
 		public string Reference { get; set; }
 		
 		/// <summary>
@@ -2747,8 +2658,7 @@ namespace MyNS
 		/// Max length: 140
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(140)]
+		[System.ComponentModel.DataAnnotations.Length(1, 140)]
 		public string Unstructured { get; set; }
 	}
 	
@@ -2812,8 +2722,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(128)]
+		[System.ComponentModel.DataAnnotations.Length(1, 128)]
 		public string ConsentId { get; set; }
 		
 		/// <summary>
@@ -2982,8 +2891,7 @@ namespace MyNS
 		/// Max length: 35
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(35)]
+		[System.ComponentModel.DataAnnotations.Length(1, 35)]
 		public string EndToEndIdentification { get; set; }
 		
 		/// <summary>
@@ -3004,8 +2912,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(35)]
+		[System.ComponentModel.DataAnnotations.Length(1, 35)]
 		public string InstructionIdentification { get; set; }
 		
 		/// <summary>
@@ -3050,8 +2957,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(256)]
+		[System.ComponentModel.DataAnnotations.Length(1, 256)]
 		public string Identification { get; set; }
 		
 		/// <summary>
@@ -3064,8 +2970,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(350)]
+		[System.ComponentModel.DataAnnotations.Length(1, 350)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -3083,8 +2988,7 @@ namespace MyNS
 		/// Max length: 34
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(34)]
+		[System.ComponentModel.DataAnnotations.Length(1, 34)]
 		public string SecondaryIdentification { get; set; }
 	}
 	
@@ -3099,8 +3003,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(256)]
+		[System.ComponentModel.DataAnnotations.Length(1, 256)]
 		public string Identification { get; set; }
 		
 		/// <summary>
@@ -3110,8 +3013,7 @@ namespace MyNS
 		/// Max length: 350
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(350)]
+		[System.ComponentModel.DataAnnotations.Length(1, 350)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -3129,8 +3031,7 @@ namespace MyNS
 		/// Max length: 34
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(34)]
+		[System.ComponentModel.DataAnnotations.Length(1, 34)]
 		public string SecondaryIdentification { get; set; }
 	}
 	
@@ -3170,8 +3071,7 @@ namespace MyNS
 		/// Max length: 35
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(35)]
+		[System.ComponentModel.DataAnnotations.Length(1, 35)]
 		public string Reference { get; set; }
 		
 		/// <summary>
@@ -3180,8 +3080,7 @@ namespace MyNS
 		/// Max length: 140
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(140)]
+		[System.ComponentModel.DataAnnotations.Length(1, 140)]
 		public string Unstructured { get; set; }
 	}
 	
@@ -3223,8 +3122,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(128)]
+		[System.ComponentModel.DataAnnotations.Length(1, 128)]
 		public string ConsentId { get; set; }
 		
 		/// <summary>
@@ -3251,8 +3149,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(40)]
+		[System.ComponentModel.DataAnnotations.Length(1, 40)]
 		public string DomesticScheduledPaymentId { get; set; }
 		
 		/// <summary>
@@ -3369,8 +3266,7 @@ namespace MyNS
 		/// Max length: 35
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(35)]
+		[System.ComponentModel.DataAnnotations.Length(1, 35)]
 		public string EndToEndIdentification { get; set; }
 		
 		/// <summary>
@@ -3391,8 +3287,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(35)]
+		[System.ComponentModel.DataAnnotations.Length(1, 35)]
 		public string InstructionIdentification { get; set; }
 		
 		/// <summary>
@@ -3437,8 +3332,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(256)]
+		[System.ComponentModel.DataAnnotations.Length(1, 256)]
 		public string Identification { get; set; }
 		
 		/// <summary>
@@ -3451,8 +3345,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(350)]
+		[System.ComponentModel.DataAnnotations.Length(1, 350)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -3470,8 +3363,7 @@ namespace MyNS
 		/// Max length: 34
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(34)]
+		[System.ComponentModel.DataAnnotations.Length(1, 34)]
 		public string SecondaryIdentification { get; set; }
 	}
 	
@@ -3486,8 +3378,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(256)]
+		[System.ComponentModel.DataAnnotations.Length(1, 256)]
 		public string Identification { get; set; }
 		
 		/// <summary>
@@ -3497,8 +3388,7 @@ namespace MyNS
 		/// Max length: 350
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(350)]
+		[System.ComponentModel.DataAnnotations.Length(1, 350)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -3516,8 +3406,7 @@ namespace MyNS
 		/// Max length: 34
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(34)]
+		[System.ComponentModel.DataAnnotations.Length(1, 34)]
 		public string SecondaryIdentification { get; set; }
 	}
 	
@@ -3557,8 +3446,7 @@ namespace MyNS
 		/// Max length: 35
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(35)]
+		[System.ComponentModel.DataAnnotations.Length(1, 35)]
 		public string Reference { get; set; }
 		
 		/// <summary>
@@ -3567,8 +3455,7 @@ namespace MyNS
 		/// Max length: 140
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(140)]
+		[System.ComponentModel.DataAnnotations.Length(1, 140)]
 		public string Unstructured { get; set; }
 	}
 	
@@ -3635,8 +3522,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(256)]
+		[System.ComponentModel.DataAnnotations.Length(1, 256)]
 		public string Identification { get; set; }
 		
 		/// <summary>
@@ -3649,8 +3535,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(350)]
+		[System.ComponentModel.DataAnnotations.Length(1, 350)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -3668,8 +3553,7 @@ namespace MyNS
 		/// Max length: 34
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(34)]
+		[System.ComponentModel.DataAnnotations.Length(1, 34)]
 		public string SecondaryIdentification { get; set; }
 	}
 	
@@ -3721,8 +3605,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(128)]
+		[System.ComponentModel.DataAnnotations.Length(1, 128)]
 		public string ConsentId { get; set; }
 		
 		/// <summary>
@@ -3824,8 +3707,7 @@ namespace MyNS
 		/// Max length: 35
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(35)]
+		[System.ComponentModel.DataAnnotations.Length(1, 35)]
 		public string NumberOfPayments { get; set; }
 		
 		/// <summary>
@@ -3851,8 +3733,7 @@ namespace MyNS
 		/// Max length: 35
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(35)]
+		[System.ComponentModel.DataAnnotations.Length(1, 35)]
 		public string Reference { get; set; }
 		
 		/// <summary>
@@ -3873,8 +3754,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(256)]
+		[System.ComponentModel.DataAnnotations.Length(1, 256)]
 		public string Identification { get; set; }
 		
 		/// <summary>
@@ -3887,8 +3767,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(350)]
+		[System.ComponentModel.DataAnnotations.Length(1, 350)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -3906,8 +3785,7 @@ namespace MyNS
 		/// Max length: 34
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(34)]
+		[System.ComponentModel.DataAnnotations.Length(1, 34)]
 		public string SecondaryIdentification { get; set; }
 	}
 	
@@ -3922,8 +3800,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(256)]
+		[System.ComponentModel.DataAnnotations.Length(1, 256)]
 		public string Identification { get; set; }
 		
 		/// <summary>
@@ -3933,8 +3810,7 @@ namespace MyNS
 		/// Max length: 350
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(350)]
+		[System.ComponentModel.DataAnnotations.Length(1, 350)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -3952,8 +3828,7 @@ namespace MyNS
 		/// Max length: 34
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(34)]
+		[System.ComponentModel.DataAnnotations.Length(1, 34)]
 		public string SecondaryIdentification { get; set; }
 	}
 	
@@ -4197,8 +4072,7 @@ namespace MyNS
 		/// Max length: 35
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(35)]
+		[System.ComponentModel.DataAnnotations.Length(1, 35)]
 		public string NumberOfPayments { get; set; }
 		
 		/// <summary>
@@ -4224,8 +4098,7 @@ namespace MyNS
 		/// Max length: 35
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(35)]
+		[System.ComponentModel.DataAnnotations.Length(1, 35)]
 		public string Reference { get; set; }
 		
 		/// <summary>
@@ -4246,8 +4119,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(256)]
+		[System.ComponentModel.DataAnnotations.Length(1, 256)]
 		public string Identification { get; set; }
 		
 		/// <summary>
@@ -4260,8 +4132,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(350)]
+		[System.ComponentModel.DataAnnotations.Length(1, 350)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -4279,8 +4150,7 @@ namespace MyNS
 		/// Max length: 34
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(34)]
+		[System.ComponentModel.DataAnnotations.Length(1, 34)]
 		public string SecondaryIdentification { get; set; }
 	}
 	
@@ -4295,8 +4165,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(256)]
+		[System.ComponentModel.DataAnnotations.Length(1, 256)]
 		public string Identification { get; set; }
 		
 		/// <summary>
@@ -4306,8 +4175,7 @@ namespace MyNS
 		/// Max length: 350
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(350)]
+		[System.ComponentModel.DataAnnotations.Length(1, 350)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -4325,8 +4193,7 @@ namespace MyNS
 		/// Max length: 34
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(34)]
+		[System.ComponentModel.DataAnnotations.Length(1, 34)]
 		public string SecondaryIdentification { get; set; }
 	}
 	
@@ -4454,8 +4321,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(128)]
+		[System.ComponentModel.DataAnnotations.Length(1, 128)]
 		public string ConsentId { get; set; }
 		
 		/// <summary>
@@ -4667,8 +4533,7 @@ namespace MyNS
 		/// Max length: 35
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(35)]
+		[System.ComponentModel.DataAnnotations.Length(1, 35)]
 		public string NumberOfPayments { get; set; }
 		
 		/// <summary>
@@ -4694,8 +4559,7 @@ namespace MyNS
 		/// Max length: 35
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(35)]
+		[System.ComponentModel.DataAnnotations.Length(1, 35)]
 		public string Reference { get; set; }
 		
 		/// <summary>
@@ -4716,8 +4580,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(256)]
+		[System.ComponentModel.DataAnnotations.Length(1, 256)]
 		public string Identification { get; set; }
 		
 		/// <summary>
@@ -4730,8 +4593,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(350)]
+		[System.ComponentModel.DataAnnotations.Length(1, 350)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -4749,8 +4611,7 @@ namespace MyNS
 		/// Max length: 34
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(34)]
+		[System.ComponentModel.DataAnnotations.Length(1, 34)]
 		public string SecondaryIdentification { get; set; }
 	}
 	
@@ -4765,8 +4626,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(256)]
+		[System.ComponentModel.DataAnnotations.Length(1, 256)]
 		public string Identification { get; set; }
 		
 		/// <summary>
@@ -4776,8 +4636,7 @@ namespace MyNS
 		/// Max length: 350
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(350)]
+		[System.ComponentModel.DataAnnotations.Length(1, 350)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -4795,8 +4654,7 @@ namespace MyNS
 		/// Max length: 34
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(34)]
+		[System.ComponentModel.DataAnnotations.Length(1, 34)]
 		public string SecondaryIdentification { get; set; }
 	}
 	
@@ -4910,8 +4768,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(128)]
+		[System.ComponentModel.DataAnnotations.Length(1, 128)]
 		public string ConsentId { get; set; }
 		
 		/// <summary>
@@ -4938,8 +4795,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(40)]
+		[System.ComponentModel.DataAnnotations.Length(1, 40)]
 		public string DomesticStandingOrderId { get; set; }
 		
 		/// <summary>
@@ -5099,8 +4955,7 @@ namespace MyNS
 		/// Max length: 35
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(35)]
+		[System.ComponentModel.DataAnnotations.Length(1, 35)]
 		public string NumberOfPayments { get; set; }
 		
 		/// <summary>
@@ -5126,8 +4981,7 @@ namespace MyNS
 		/// Max length: 35
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(35)]
+		[System.ComponentModel.DataAnnotations.Length(1, 35)]
 		public string Reference { get; set; }
 		
 		/// <summary>
@@ -5148,8 +5002,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(256)]
+		[System.ComponentModel.DataAnnotations.Length(1, 256)]
 		public string Identification { get; set; }
 		
 		/// <summary>
@@ -5162,8 +5015,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(350)]
+		[System.ComponentModel.DataAnnotations.Length(1, 350)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -5181,8 +5033,7 @@ namespace MyNS
 		/// Max length: 34
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(34)]
+		[System.ComponentModel.DataAnnotations.Length(1, 34)]
 		public string SecondaryIdentification { get; set; }
 	}
 	
@@ -5197,8 +5048,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(256)]
+		[System.ComponentModel.DataAnnotations.Length(1, 256)]
 		public string Identification { get; set; }
 		
 		/// <summary>
@@ -5208,8 +5058,7 @@ namespace MyNS
 		/// Max length: 350
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(350)]
+		[System.ComponentModel.DataAnnotations.Length(1, 350)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -5227,8 +5076,7 @@ namespace MyNS
 		/// Max length: 34
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(34)]
+		[System.ComponentModel.DataAnnotations.Length(1, 34)]
 		public string SecondaryIdentification { get; set; }
 	}
 	
@@ -5367,8 +5215,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(256)]
+		[System.ComponentModel.DataAnnotations.Length(1, 256)]
 		public string Identification { get; set; }
 		
 		/// <summary>
@@ -5381,8 +5228,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(350)]
+		[System.ComponentModel.DataAnnotations.Length(1, 350)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -5400,8 +5246,7 @@ namespace MyNS
 		/// Max length: 34
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(34)]
+		[System.ComponentModel.DataAnnotations.Length(1, 34)]
 		public string SecondaryIdentification { get; set; }
 	}
 	
@@ -5428,8 +5273,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(128)]
+		[System.ComponentModel.DataAnnotations.Length(1, 128)]
 		public string ConsentId { get; set; }
 		
 		/// <summary>
@@ -5464,8 +5308,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(44)]
+		[System.ComponentModel.DataAnnotations.Length(1, 44)]
 		public string FileHash { get; set; }
 		
 		/// <summary>
@@ -5474,8 +5317,7 @@ namespace MyNS
 		/// Max length: 40
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(40)]
+		[System.ComponentModel.DataAnnotations.Length(1, 40)]
 		public string FileReference { get; set; }
 		
 		/// <summary>
@@ -5534,8 +5376,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(256)]
+		[System.ComponentModel.DataAnnotations.Length(1, 256)]
 		public string Identification { get; set; }
 		
 		/// <summary>
@@ -5545,8 +5386,7 @@ namespace MyNS
 		/// Max length: 350
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(350)]
+		[System.ComponentModel.DataAnnotations.Length(1, 350)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -5564,8 +5404,7 @@ namespace MyNS
 		/// Max length: 34
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(34)]
+		[System.ComponentModel.DataAnnotations.Length(1, 34)]
 		public string SecondaryIdentification { get; set; }
 	}
 	
@@ -5581,8 +5420,7 @@ namespace MyNS
 		/// Max length: 35
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(35)]
+		[System.ComponentModel.DataAnnotations.Length(1, 35)]
 		public string Reference { get; set; }
 		
 		/// <summary>
@@ -5591,8 +5429,7 @@ namespace MyNS
 		/// Max length: 140
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(140)]
+		[System.ComponentModel.DataAnnotations.Length(1, 140)]
 		public string Unstructured { get; set; }
 	}
 	
@@ -5675,8 +5512,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(44)]
+		[System.ComponentModel.DataAnnotations.Length(1, 44)]
 		public string FileHash { get; set; }
 		
 		/// <summary>
@@ -5685,8 +5521,7 @@ namespace MyNS
 		/// Max length: 40
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(40)]
+		[System.ComponentModel.DataAnnotations.Length(1, 40)]
 		public string FileReference { get; set; }
 		
 		/// <summary>
@@ -5745,8 +5580,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(256)]
+		[System.ComponentModel.DataAnnotations.Length(1, 256)]
 		public string Identification { get; set; }
 		
 		/// <summary>
@@ -5756,8 +5590,7 @@ namespace MyNS
 		/// Max length: 350
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(350)]
+		[System.ComponentModel.DataAnnotations.Length(1, 350)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -5775,8 +5608,7 @@ namespace MyNS
 		/// Max length: 34
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(34)]
+		[System.ComponentModel.DataAnnotations.Length(1, 34)]
 		public string SecondaryIdentification { get; set; }
 	}
 	
@@ -5792,8 +5624,7 @@ namespace MyNS
 		/// Max length: 35
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(35)]
+		[System.ComponentModel.DataAnnotations.Length(1, 35)]
 		public string Reference { get; set; }
 		
 		/// <summary>
@@ -5802,8 +5633,7 @@ namespace MyNS
 		/// Max length: 140
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(140)]
+		[System.ComponentModel.DataAnnotations.Length(1, 140)]
 		public string Unstructured { get; set; }
 	}
 	
@@ -5851,8 +5681,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(128)]
+		[System.ComponentModel.DataAnnotations.Length(1, 128)]
 		public string ConsentId { get; set; }
 		
 		/// <summary>
@@ -5983,8 +5812,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(44)]
+		[System.ComponentModel.DataAnnotations.Length(1, 44)]
 		public string FileHash { get; set; }
 		
 		/// <summary>
@@ -5993,8 +5821,7 @@ namespace MyNS
 		/// Max length: 40
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(40)]
+		[System.ComponentModel.DataAnnotations.Length(1, 40)]
 		public string FileReference { get; set; }
 		
 		/// <summary>
@@ -6053,8 +5880,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(256)]
+		[System.ComponentModel.DataAnnotations.Length(1, 256)]
 		public string Identification { get; set; }
 		
 		/// <summary>
@@ -6064,8 +5890,7 @@ namespace MyNS
 		/// Max length: 350
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(350)]
+		[System.ComponentModel.DataAnnotations.Length(1, 350)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -6083,8 +5908,7 @@ namespace MyNS
 		/// Max length: 34
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(34)]
+		[System.ComponentModel.DataAnnotations.Length(1, 34)]
 		public string SecondaryIdentification { get; set; }
 	}
 	
@@ -6100,8 +5924,7 @@ namespace MyNS
 		/// Max length: 35
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(35)]
+		[System.ComponentModel.DataAnnotations.Length(1, 35)]
 		public string Reference { get; set; }
 		
 		/// <summary>
@@ -6110,8 +5933,7 @@ namespace MyNS
 		/// Max length: 140
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(140)]
+		[System.ComponentModel.DataAnnotations.Length(1, 140)]
 		public string Unstructured { get; set; }
 	}
 	
@@ -6173,8 +5995,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(128)]
+		[System.ComponentModel.DataAnnotations.Length(1, 128)]
 		public string ConsentId { get; set; }
 		
 		/// <summary>
@@ -6201,8 +6022,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(40)]
+		[System.ComponentModel.DataAnnotations.Length(1, 40)]
 		public string FilePaymentId { get; set; }
 		
 		/// <summary>
@@ -6289,8 +6109,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(44)]
+		[System.ComponentModel.DataAnnotations.Length(1, 44)]
 		public string FileHash { get; set; }
 		
 		/// <summary>
@@ -6299,8 +6118,7 @@ namespace MyNS
 		/// Max length: 40
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(40)]
+		[System.ComponentModel.DataAnnotations.Length(1, 40)]
 		public string FileReference { get; set; }
 		
 		/// <summary>
@@ -6359,8 +6177,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(256)]
+		[System.ComponentModel.DataAnnotations.Length(1, 256)]
 		public string Identification { get; set; }
 		
 		/// <summary>
@@ -6370,8 +6187,7 @@ namespace MyNS
 		/// Max length: 350
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(350)]
+		[System.ComponentModel.DataAnnotations.Length(1, 350)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -6389,8 +6205,7 @@ namespace MyNS
 		/// Max length: 34
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(34)]
+		[System.ComponentModel.DataAnnotations.Length(1, 34)]
 		public string SecondaryIdentification { get; set; }
 	}
 	
@@ -6406,8 +6221,7 @@ namespace MyNS
 		/// Max length: 35
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(35)]
+		[System.ComponentModel.DataAnnotations.Length(1, 35)]
 		public string Reference { get; set; }
 		
 		/// <summary>
@@ -6416,8 +6230,7 @@ namespace MyNS
 		/// Max length: 140
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(140)]
+		[System.ComponentModel.DataAnnotations.Length(1, 140)]
 		public string Unstructured { get; set; }
 	}
 	
@@ -6568,8 +6381,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(128)]
+		[System.ComponentModel.DataAnnotations.Length(1, 128)]
 		public string ConsentId { get; set; }
 		
 		/// <summary>
@@ -6644,8 +6456,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(35)]
+		[System.ComponentModel.DataAnnotations.Length(1, 35)]
 		public string EndToEndIdentification { get; set; }
 		
 		/// <summary>
@@ -6660,8 +6471,7 @@ namespace MyNS
 		/// Max length: 140
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(140)]
+		[System.ComponentModel.DataAnnotations.Length(1, 140)]
 		public string ExtendedPurpose { get; set; }
 		
 		/// <summary>
@@ -6682,8 +6492,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(35)]
+		[System.ComponentModel.DataAnnotations.Length(1, 35)]
 		public string InstructionIdentification { get; set; }
 		
 		/// <summary>
@@ -6707,8 +6516,7 @@ namespace MyNS
 		/// Max length: 4
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(4)]
+		[System.ComponentModel.DataAnnotations.Length(1, 4)]
 		public string Purpose { get; set; }
 		
 		/// <summary>
@@ -6733,8 +6541,7 @@ namespace MyNS
 		/// Max length: 140
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(140)]
+		[System.ComponentModel.DataAnnotations.Length(1, 140)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -6755,8 +6562,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(256)]
+		[System.ComponentModel.DataAnnotations.Length(1, 256)]
 		public string Identification { get; set; }
 		
 		/// <summary>
@@ -6769,8 +6575,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(350)]
+		[System.ComponentModel.DataAnnotations.Length(1, 350)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -6788,8 +6593,7 @@ namespace MyNS
 		/// Max length: 34
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(34)]
+		[System.ComponentModel.DataAnnotations.Length(1, 34)]
 		public string SecondaryIdentification { get; set; }
 	}
 	
@@ -6802,8 +6606,7 @@ namespace MyNS
 		/// Max length: 35
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(35)]
+		[System.ComponentModel.DataAnnotations.Length(1, 35)]
 		public string Identification { get; set; }
 		
 		/// <summary>
@@ -6812,8 +6615,7 @@ namespace MyNS
 		/// Max length: 140
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(140)]
+		[System.ComponentModel.DataAnnotations.Length(1, 140)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -6840,8 +6642,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(256)]
+		[System.ComponentModel.DataAnnotations.Length(1, 256)]
 		public string Identification { get; set; }
 		
 		/// <summary>
@@ -6851,8 +6652,7 @@ namespace MyNS
 		/// Max length: 350
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(350)]
+		[System.ComponentModel.DataAnnotations.Length(1, 350)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -6870,8 +6670,7 @@ namespace MyNS
 		/// Max length: 34
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(34)]
+		[System.ComponentModel.DataAnnotations.Length(1, 34)]
 		public string SecondaryIdentification { get; set; }
 	}
 	
@@ -6884,8 +6683,7 @@ namespace MyNS
 		/// Max length: 256
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(256)]
+		[System.ComponentModel.DataAnnotations.Length(1, 256)]
 		public string ContractIdentification { get; set; }
 		
 		/// <summary>
@@ -6974,8 +6772,7 @@ namespace MyNS
 		/// Max length: 35
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(35)]
+		[System.ComponentModel.DataAnnotations.Length(1, 35)]
 		public string Reference { get; set; }
 		
 		/// <summary>
@@ -6984,8 +6781,7 @@ namespace MyNS
 		/// Max length: 140
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(140)]
+		[System.ComponentModel.DataAnnotations.Length(1, 140)]
 		public string Unstructured { get; set; }
 	}
 	
@@ -7122,8 +6918,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(35)]
+		[System.ComponentModel.DataAnnotations.Length(1, 35)]
 		public string EndToEndIdentification { get; set; }
 		
 		/// <summary>
@@ -7138,8 +6933,7 @@ namespace MyNS
 		/// Max length: 140
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(140)]
+		[System.ComponentModel.DataAnnotations.Length(1, 140)]
 		public string ExtendedPurpose { get; set; }
 		
 		/// <summary>
@@ -7160,8 +6954,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(35)]
+		[System.ComponentModel.DataAnnotations.Length(1, 35)]
 		public string InstructionIdentification { get; set; }
 		
 		/// <summary>
@@ -7185,8 +6978,7 @@ namespace MyNS
 		/// Max length: 4
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(4)]
+		[System.ComponentModel.DataAnnotations.Length(1, 4)]
 		public string Purpose { get; set; }
 		
 		/// <summary>
@@ -7211,8 +7003,7 @@ namespace MyNS
 		/// Max length: 140
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(140)]
+		[System.ComponentModel.DataAnnotations.Length(1, 140)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -7233,8 +7024,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(256)]
+		[System.ComponentModel.DataAnnotations.Length(1, 256)]
 		public string Identification { get; set; }
 		
 		/// <summary>
@@ -7247,8 +7037,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(350)]
+		[System.ComponentModel.DataAnnotations.Length(1, 350)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -7266,8 +7055,7 @@ namespace MyNS
 		/// Max length: 34
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(34)]
+		[System.ComponentModel.DataAnnotations.Length(1, 34)]
 		public string SecondaryIdentification { get; set; }
 	}
 	
@@ -7280,8 +7068,7 @@ namespace MyNS
 		/// Max length: 35
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(35)]
+		[System.ComponentModel.DataAnnotations.Length(1, 35)]
 		public string Identification { get; set; }
 		
 		/// <summary>
@@ -7290,8 +7077,7 @@ namespace MyNS
 		/// Max length: 140
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(140)]
+		[System.ComponentModel.DataAnnotations.Length(1, 140)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -7318,8 +7104,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(256)]
+		[System.ComponentModel.DataAnnotations.Length(1, 256)]
 		public string Identification { get; set; }
 		
 		/// <summary>
@@ -7329,8 +7114,7 @@ namespace MyNS
 		/// Max length: 350
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(350)]
+		[System.ComponentModel.DataAnnotations.Length(1, 350)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -7348,8 +7132,7 @@ namespace MyNS
 		/// Max length: 34
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(34)]
+		[System.ComponentModel.DataAnnotations.Length(1, 34)]
 		public string SecondaryIdentification { get; set; }
 	}
 	
@@ -7362,8 +7145,7 @@ namespace MyNS
 		/// Max length: 256
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(256)]
+		[System.ComponentModel.DataAnnotations.Length(1, 256)]
 		public string ContractIdentification { get; set; }
 		
 		/// <summary>
@@ -7427,8 +7209,7 @@ namespace MyNS
 		/// Max length: 35
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(35)]
+		[System.ComponentModel.DataAnnotations.Length(1, 35)]
 		public string Reference { get; set; }
 		
 		/// <summary>
@@ -7437,8 +7218,7 @@ namespace MyNS
 		/// Max length: 140
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(140)]
+		[System.ComponentModel.DataAnnotations.Length(1, 140)]
 		public string Unstructured { get; set; }
 	}
 	
@@ -7494,8 +7274,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(128)]
+		[System.ComponentModel.DataAnnotations.Length(1, 128)]
 		public string ConsentId { get; set; }
 		
 		/// <summary>
@@ -7640,8 +7419,7 @@ namespace MyNS
 		/// Max length: 256
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(256)]
+		[System.ComponentModel.DataAnnotations.Length(1, 256)]
 		public string ContractIdentification { get; set; }
 		
 		/// <summary>
@@ -7742,8 +7520,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(35)]
+		[System.ComponentModel.DataAnnotations.Length(1, 35)]
 		public string EndToEndIdentification { get; set; }
 		
 		/// <summary>
@@ -7758,8 +7535,7 @@ namespace MyNS
 		/// Max length: 140
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(140)]
+		[System.ComponentModel.DataAnnotations.Length(1, 140)]
 		public string ExtendedPurpose { get; set; }
 		
 		/// <summary>
@@ -7780,8 +7556,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(35)]
+		[System.ComponentModel.DataAnnotations.Length(1, 35)]
 		public string InstructionIdentification { get; set; }
 		
 		/// <summary>
@@ -7805,8 +7580,7 @@ namespace MyNS
 		/// Max length: 4
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(4)]
+		[System.ComponentModel.DataAnnotations.Length(1, 4)]
 		public string Purpose { get; set; }
 		
 		/// <summary>
@@ -7831,8 +7605,7 @@ namespace MyNS
 		/// Max length: 140
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(140)]
+		[System.ComponentModel.DataAnnotations.Length(1, 140)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -7853,8 +7626,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(256)]
+		[System.ComponentModel.DataAnnotations.Length(1, 256)]
 		public string Identification { get; set; }
 		
 		/// <summary>
@@ -7867,8 +7639,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(350)]
+		[System.ComponentModel.DataAnnotations.Length(1, 350)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -7886,8 +7657,7 @@ namespace MyNS
 		/// Max length: 34
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(34)]
+		[System.ComponentModel.DataAnnotations.Length(1, 34)]
 		public string SecondaryIdentification { get; set; }
 	}
 	
@@ -7900,8 +7670,7 @@ namespace MyNS
 		/// Max length: 35
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(35)]
+		[System.ComponentModel.DataAnnotations.Length(1, 35)]
 		public string Identification { get; set; }
 		
 		/// <summary>
@@ -7910,8 +7679,7 @@ namespace MyNS
 		/// Max length: 140
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(140)]
+		[System.ComponentModel.DataAnnotations.Length(1, 140)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -7938,8 +7706,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(256)]
+		[System.ComponentModel.DataAnnotations.Length(1, 256)]
 		public string Identification { get; set; }
 		
 		/// <summary>
@@ -7949,8 +7716,7 @@ namespace MyNS
 		/// Max length: 350
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(350)]
+		[System.ComponentModel.DataAnnotations.Length(1, 350)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -7968,8 +7734,7 @@ namespace MyNS
 		/// Max length: 34
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(34)]
+		[System.ComponentModel.DataAnnotations.Length(1, 34)]
 		public string SecondaryIdentification { get; set; }
 	}
 	
@@ -7982,8 +7747,7 @@ namespace MyNS
 		/// Max length: 256
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(256)]
+		[System.ComponentModel.DataAnnotations.Length(1, 256)]
 		public string ContractIdentification { get; set; }
 		
 		/// <summary>
@@ -8047,8 +7811,7 @@ namespace MyNS
 		/// Max length: 35
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(35)]
+		[System.ComponentModel.DataAnnotations.Length(1, 35)]
 		public string Reference { get; set; }
 		
 		/// <summary>
@@ -8057,8 +7820,7 @@ namespace MyNS
 		/// Max length: 140
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(140)]
+		[System.ComponentModel.DataAnnotations.Length(1, 140)]
 		public string Unstructured { get; set; }
 	}
 	
@@ -8100,8 +7862,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(128)]
+		[System.ComponentModel.DataAnnotations.Length(1, 128)]
 		public string ConsentId { get; set; }
 		
 		/// <summary>
@@ -8158,8 +7919,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(40)]
+		[System.ComponentModel.DataAnnotations.Length(1, 40)]
 		public string InternationalPaymentId { get; set; }
 		
 		/// <summary>
@@ -8227,8 +7987,7 @@ namespace MyNS
 		/// Max length: 256
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(256)]
+		[System.ComponentModel.DataAnnotations.Length(1, 256)]
 		public string ContractIdentification { get; set; }
 		
 		/// <summary>
@@ -8329,8 +8088,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(35)]
+		[System.ComponentModel.DataAnnotations.Length(1, 35)]
 		public string EndToEndIdentification { get; set; }
 		
 		/// <summary>
@@ -8345,8 +8103,7 @@ namespace MyNS
 		/// Max length: 140
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(140)]
+		[System.ComponentModel.DataAnnotations.Length(1, 140)]
 		public string ExtendedPurpose { get; set; }
 		
 		/// <summary>
@@ -8367,8 +8124,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(35)]
+		[System.ComponentModel.DataAnnotations.Length(1, 35)]
 		public string InstructionIdentification { get; set; }
 		
 		/// <summary>
@@ -8392,8 +8148,7 @@ namespace MyNS
 		/// Max length: 4
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(4)]
+		[System.ComponentModel.DataAnnotations.Length(1, 4)]
 		public string Purpose { get; set; }
 		
 		/// <summary>
@@ -8418,8 +8173,7 @@ namespace MyNS
 		/// Max length: 140
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(140)]
+		[System.ComponentModel.DataAnnotations.Length(1, 140)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -8440,8 +8194,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(256)]
+		[System.ComponentModel.DataAnnotations.Length(1, 256)]
 		public string Identification { get; set; }
 		
 		/// <summary>
@@ -8454,8 +8207,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(350)]
+		[System.ComponentModel.DataAnnotations.Length(1, 350)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -8473,8 +8225,7 @@ namespace MyNS
 		/// Max length: 34
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(34)]
+		[System.ComponentModel.DataAnnotations.Length(1, 34)]
 		public string SecondaryIdentification { get; set; }
 	}
 	
@@ -8487,8 +8238,7 @@ namespace MyNS
 		/// Max length: 35
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(35)]
+		[System.ComponentModel.DataAnnotations.Length(1, 35)]
 		public string Identification { get; set; }
 		
 		/// <summary>
@@ -8497,8 +8247,7 @@ namespace MyNS
 		/// Max length: 140
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(140)]
+		[System.ComponentModel.DataAnnotations.Length(1, 140)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -8525,8 +8274,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(256)]
+		[System.ComponentModel.DataAnnotations.Length(1, 256)]
 		public string Identification { get; set; }
 		
 		/// <summary>
@@ -8536,8 +8284,7 @@ namespace MyNS
 		/// Max length: 350
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(350)]
+		[System.ComponentModel.DataAnnotations.Length(1, 350)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -8555,8 +8302,7 @@ namespace MyNS
 		/// Max length: 34
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(34)]
+		[System.ComponentModel.DataAnnotations.Length(1, 34)]
 		public string SecondaryIdentification { get; set; }
 	}
 	
@@ -8569,8 +8315,7 @@ namespace MyNS
 		/// Max length: 256
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(256)]
+		[System.ComponentModel.DataAnnotations.Length(1, 256)]
 		public string ContractIdentification { get; set; }
 		
 		/// <summary>
@@ -8634,8 +8379,7 @@ namespace MyNS
 		/// Max length: 35
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(35)]
+		[System.ComponentModel.DataAnnotations.Length(1, 35)]
 		public string Reference { get; set; }
 		
 		/// <summary>
@@ -8644,8 +8388,7 @@ namespace MyNS
 		/// Max length: 140
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(140)]
+		[System.ComponentModel.DataAnnotations.Length(1, 140)]
 		public string Unstructured { get; set; }
 	}
 	
@@ -8724,8 +8467,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(256)]
+		[System.ComponentModel.DataAnnotations.Length(1, 256)]
 		public string Identification { get; set; }
 		
 		/// <summary>
@@ -8738,8 +8480,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(350)]
+		[System.ComponentModel.DataAnnotations.Length(1, 350)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -8757,8 +8498,7 @@ namespace MyNS
 		/// Max length: 34
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(34)]
+		[System.ComponentModel.DataAnnotations.Length(1, 34)]
 		public string SecondaryIdentification { get; set; }
 	}
 	
@@ -8771,8 +8511,7 @@ namespace MyNS
 		/// Max length: 35
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(35)]
+		[System.ComponentModel.DataAnnotations.Length(1, 35)]
 		public string Identification { get; set; }
 		
 		/// <summary>
@@ -8781,8 +8520,7 @@ namespace MyNS
 		/// Max length: 140
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(140)]
+		[System.ComponentModel.DataAnnotations.Length(1, 140)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -8807,8 +8545,7 @@ namespace MyNS
 		/// Max length: 140
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(140)]
+		[System.ComponentModel.DataAnnotations.Length(1, 140)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -8849,8 +8586,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(128)]
+		[System.ComponentModel.DataAnnotations.Length(1, 128)]
 		public string ConsentId { get; set; }
 		
 		/// <summary>
@@ -8923,8 +8659,7 @@ namespace MyNS
 		/// Max length: 35
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(35)]
+		[System.ComponentModel.DataAnnotations.Length(1, 35)]
 		public string EndToEndIdentification { get; set; }
 		
 		/// <summary>
@@ -8939,8 +8674,7 @@ namespace MyNS
 		/// Max length: 140
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(140)]
+		[System.ComponentModel.DataAnnotations.Length(1, 140)]
 		public string ExtendedPurpose { get; set; }
 		
 		/// <summary>
@@ -8961,8 +8695,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(35)]
+		[System.ComponentModel.DataAnnotations.Length(1, 35)]
 		public string InstructionIdentification { get; set; }
 		
 		/// <summary>
@@ -8986,8 +8719,7 @@ namespace MyNS
 		/// Max length: 4
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(4)]
+		[System.ComponentModel.DataAnnotations.Length(1, 4)]
 		public string Purpose { get; set; }
 		
 		/// <summary>
@@ -9023,8 +8755,7 @@ namespace MyNS
 		/// Max length: 140
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(140)]
+		[System.ComponentModel.DataAnnotations.Length(1, 140)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -9045,8 +8776,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(256)]
+		[System.ComponentModel.DataAnnotations.Length(1, 256)]
 		public string Identification { get; set; }
 		
 		/// <summary>
@@ -9059,8 +8789,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(350)]
+		[System.ComponentModel.DataAnnotations.Length(1, 350)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -9078,8 +8807,7 @@ namespace MyNS
 		/// Max length: 34
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(34)]
+		[System.ComponentModel.DataAnnotations.Length(1, 34)]
 		public string SecondaryIdentification { get; set; }
 	}
 	
@@ -9092,8 +8820,7 @@ namespace MyNS
 		/// Max length: 35
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(35)]
+		[System.ComponentModel.DataAnnotations.Length(1, 35)]
 		public string Identification { get; set; }
 		
 		/// <summary>
@@ -9102,8 +8829,7 @@ namespace MyNS
 		/// Max length: 140
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(140)]
+		[System.ComponentModel.DataAnnotations.Length(1, 140)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -9130,8 +8856,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(256)]
+		[System.ComponentModel.DataAnnotations.Length(1, 256)]
 		public string Identification { get; set; }
 		
 		/// <summary>
@@ -9141,8 +8866,7 @@ namespace MyNS
 		/// Max length: 350
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(350)]
+		[System.ComponentModel.DataAnnotations.Length(1, 350)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -9160,8 +8884,7 @@ namespace MyNS
 		/// Max length: 34
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(34)]
+		[System.ComponentModel.DataAnnotations.Length(1, 34)]
 		public string SecondaryIdentification { get; set; }
 	}
 	
@@ -9174,8 +8897,7 @@ namespace MyNS
 		/// Max length: 256
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(256)]
+		[System.ComponentModel.DataAnnotations.Length(1, 256)]
 		public string ContractIdentification { get; set; }
 		
 		/// <summary>
@@ -9239,8 +8961,7 @@ namespace MyNS
 		/// Max length: 35
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(35)]
+		[System.ComponentModel.DataAnnotations.Length(1, 35)]
 		public string Reference { get; set; }
 		
 		/// <summary>
@@ -9249,8 +8970,7 @@ namespace MyNS
 		/// Max length: 140
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(140)]
+		[System.ComponentModel.DataAnnotations.Length(1, 140)]
 		public string Unstructured { get; set; }
 	}
 	
@@ -9393,8 +9113,7 @@ namespace MyNS
 		/// Max length: 35
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(35)]
+		[System.ComponentModel.DataAnnotations.Length(1, 35)]
 		public string EndToEndIdentification { get; set; }
 		
 		/// <summary>
@@ -9409,8 +9128,7 @@ namespace MyNS
 		/// Max length: 140
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(140)]
+		[System.ComponentModel.DataAnnotations.Length(1, 140)]
 		public string ExtendedPurpose { get; set; }
 		
 		/// <summary>
@@ -9431,8 +9149,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(35)]
+		[System.ComponentModel.DataAnnotations.Length(1, 35)]
 		public string InstructionIdentification { get; set; }
 		
 		/// <summary>
@@ -9456,8 +9173,7 @@ namespace MyNS
 		/// Max length: 4
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(4)]
+		[System.ComponentModel.DataAnnotations.Length(1, 4)]
 		public string Purpose { get; set; }
 		
 		/// <summary>
@@ -9493,8 +9209,7 @@ namespace MyNS
 		/// Max length: 140
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(140)]
+		[System.ComponentModel.DataAnnotations.Length(1, 140)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -9515,8 +9230,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(256)]
+		[System.ComponentModel.DataAnnotations.Length(1, 256)]
 		public string Identification { get; set; }
 		
 		/// <summary>
@@ -9529,8 +9243,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(350)]
+		[System.ComponentModel.DataAnnotations.Length(1, 350)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -9548,8 +9261,7 @@ namespace MyNS
 		/// Max length: 34
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(34)]
+		[System.ComponentModel.DataAnnotations.Length(1, 34)]
 		public string SecondaryIdentification { get; set; }
 	}
 	
@@ -9562,8 +9274,7 @@ namespace MyNS
 		/// Max length: 35
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(35)]
+		[System.ComponentModel.DataAnnotations.Length(1, 35)]
 		public string Identification { get; set; }
 		
 		/// <summary>
@@ -9572,8 +9283,7 @@ namespace MyNS
 		/// Max length: 140
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(140)]
+		[System.ComponentModel.DataAnnotations.Length(1, 140)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -9600,8 +9310,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(256)]
+		[System.ComponentModel.DataAnnotations.Length(1, 256)]
 		public string Identification { get; set; }
 		
 		/// <summary>
@@ -9611,8 +9320,7 @@ namespace MyNS
 		/// Max length: 350
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(350)]
+		[System.ComponentModel.DataAnnotations.Length(1, 350)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -9630,8 +9338,7 @@ namespace MyNS
 		/// Max length: 34
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(34)]
+		[System.ComponentModel.DataAnnotations.Length(1, 34)]
 		public string SecondaryIdentification { get; set; }
 	}
 	
@@ -9644,8 +9351,7 @@ namespace MyNS
 		/// Max length: 256
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(256)]
+		[System.ComponentModel.DataAnnotations.Length(1, 256)]
 		public string ContractIdentification { get; set; }
 		
 		/// <summary>
@@ -9709,8 +9415,7 @@ namespace MyNS
 		/// Max length: 35
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(35)]
+		[System.ComponentModel.DataAnnotations.Length(1, 35)]
 		public string Reference { get; set; }
 		
 		/// <summary>
@@ -9719,8 +9424,7 @@ namespace MyNS
 		/// Max length: 140
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(140)]
+		[System.ComponentModel.DataAnnotations.Length(1, 140)]
 		public string Unstructured { get; set; }
 	}
 	
@@ -9776,8 +9480,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(128)]
+		[System.ComponentModel.DataAnnotations.Length(1, 128)]
 		public string ConsentId { get; set; }
 		
 		/// <summary>
@@ -9930,8 +9633,7 @@ namespace MyNS
 		/// Max length: 256
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(256)]
+		[System.ComponentModel.DataAnnotations.Length(1, 256)]
 		public string ContractIdentification { get; set; }
 		
 		/// <summary>
@@ -10030,8 +9732,7 @@ namespace MyNS
 		/// Max length: 35
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(35)]
+		[System.ComponentModel.DataAnnotations.Length(1, 35)]
 		public string EndToEndIdentification { get; set; }
 		
 		/// <summary>
@@ -10046,8 +9747,7 @@ namespace MyNS
 		/// Max length: 140
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(140)]
+		[System.ComponentModel.DataAnnotations.Length(1, 140)]
 		public string ExtendedPurpose { get; set; }
 		
 		/// <summary>
@@ -10068,8 +9768,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(35)]
+		[System.ComponentModel.DataAnnotations.Length(1, 35)]
 		public string InstructionIdentification { get; set; }
 		
 		/// <summary>
@@ -10093,8 +9792,7 @@ namespace MyNS
 		/// Max length: 4
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(4)]
+		[System.ComponentModel.DataAnnotations.Length(1, 4)]
 		public string Purpose { get; set; }
 		
 		/// <summary>
@@ -10130,8 +9828,7 @@ namespace MyNS
 		/// Max length: 350
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(350)]
+		[System.ComponentModel.DataAnnotations.Length(1, 350)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -10152,8 +9849,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(256)]
+		[System.ComponentModel.DataAnnotations.Length(1, 256)]
 		public string Identification { get; set; }
 		
 		/// <summary>
@@ -10166,8 +9862,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(350)]
+		[System.ComponentModel.DataAnnotations.Length(1, 350)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -10185,8 +9880,7 @@ namespace MyNS
 		/// Max length: 34
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(34)]
+		[System.ComponentModel.DataAnnotations.Length(1, 34)]
 		public string SecondaryIdentification { get; set; }
 	}
 	
@@ -10199,8 +9893,7 @@ namespace MyNS
 		/// Max length: 35
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(35)]
+		[System.ComponentModel.DataAnnotations.Length(1, 35)]
 		public string Identification { get; set; }
 		
 		/// <summary>
@@ -10209,8 +9902,7 @@ namespace MyNS
 		/// Max length: 140
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(140)]
+		[System.ComponentModel.DataAnnotations.Length(1, 140)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -10237,8 +9929,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(256)]
+		[System.ComponentModel.DataAnnotations.Length(1, 256)]
 		public string Identification { get; set; }
 		
 		/// <summary>
@@ -10248,8 +9939,7 @@ namespace MyNS
 		/// Max length: 350
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(350)]
+		[System.ComponentModel.DataAnnotations.Length(1, 350)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -10267,8 +9957,7 @@ namespace MyNS
 		/// Max length: 34
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(34)]
+		[System.ComponentModel.DataAnnotations.Length(1, 34)]
 		public string SecondaryIdentification { get; set; }
 	}
 	
@@ -10281,8 +9970,7 @@ namespace MyNS
 		/// Max length: 256
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(256)]
+		[System.ComponentModel.DataAnnotations.Length(1, 256)]
 		public string ContractIdentification { get; set; }
 		
 		/// <summary>
@@ -10346,8 +10034,7 @@ namespace MyNS
 		/// Max length: 35
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(35)]
+		[System.ComponentModel.DataAnnotations.Length(1, 35)]
 		public string Reference { get; set; }
 		
 		/// <summary>
@@ -10356,8 +10043,7 @@ namespace MyNS
 		/// Max length: 140
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(140)]
+		[System.ComponentModel.DataAnnotations.Length(1, 140)]
 		public string Unstructured { get; set; }
 	}
 	
@@ -10399,8 +10085,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(128)]
+		[System.ComponentModel.DataAnnotations.Length(1, 128)]
 		public string ConsentId { get; set; }
 		
 		/// <summary>
@@ -10457,8 +10142,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(40)]
+		[System.ComponentModel.DataAnnotations.Length(1, 40)]
 		public string InternationalScheduledPaymentId { get; set; }
 		
 		/// <summary>
@@ -10526,8 +10210,7 @@ namespace MyNS
 		/// Max length: 256
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(256)]
+		[System.ComponentModel.DataAnnotations.Length(1, 256)]
 		public string ContractIdentification { get; set; }
 		
 		/// <summary>
@@ -10626,8 +10309,7 @@ namespace MyNS
 		/// Max length: 35
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(35)]
+		[System.ComponentModel.DataAnnotations.Length(1, 35)]
 		public string EndToEndIdentification { get; set; }
 		
 		/// <summary>
@@ -10642,8 +10324,7 @@ namespace MyNS
 		/// Max length: 140
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(140)]
+		[System.ComponentModel.DataAnnotations.Length(1, 140)]
 		public string ExtendedPurpose { get; set; }
 		
 		/// <summary>
@@ -10664,8 +10345,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(35)]
+		[System.ComponentModel.DataAnnotations.Length(1, 35)]
 		public string InstructionIdentification { get; set; }
 		
 		/// <summary>
@@ -10689,8 +10369,7 @@ namespace MyNS
 		/// Max length: 4
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(4)]
+		[System.ComponentModel.DataAnnotations.Length(1, 4)]
 		public string Purpose { get; set; }
 		
 		/// <summary>
@@ -10726,8 +10405,7 @@ namespace MyNS
 		/// Max length: 140
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(140)]
+		[System.ComponentModel.DataAnnotations.Length(1, 140)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -10748,8 +10426,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(256)]
+		[System.ComponentModel.DataAnnotations.Length(1, 256)]
 		public string Identification { get; set; }
 		
 		/// <summary>
@@ -10762,8 +10439,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(350)]
+		[System.ComponentModel.DataAnnotations.Length(1, 350)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -10781,8 +10457,7 @@ namespace MyNS
 		/// Max length: 34
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(34)]
+		[System.ComponentModel.DataAnnotations.Length(1, 34)]
 		public string SecondaryIdentification { get; set; }
 	}
 	
@@ -10795,8 +10470,7 @@ namespace MyNS
 		/// Max length: 35
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(35)]
+		[System.ComponentModel.DataAnnotations.Length(1, 35)]
 		public string Identification { get; set; }
 		
 		/// <summary>
@@ -10805,8 +10479,7 @@ namespace MyNS
 		/// Max length: 140
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(140)]
+		[System.ComponentModel.DataAnnotations.Length(1, 140)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -10833,8 +10506,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(256)]
+		[System.ComponentModel.DataAnnotations.Length(1, 256)]
 		public string Identification { get; set; }
 		
 		/// <summary>
@@ -10844,8 +10516,7 @@ namespace MyNS
 		/// Max length: 350
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(350)]
+		[System.ComponentModel.DataAnnotations.Length(1, 350)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -10863,8 +10534,7 @@ namespace MyNS
 		/// Max length: 34
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(34)]
+		[System.ComponentModel.DataAnnotations.Length(1, 34)]
 		public string SecondaryIdentification { get; set; }
 	}
 	
@@ -10877,8 +10547,7 @@ namespace MyNS
 		/// Max length: 256
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(256)]
+		[System.ComponentModel.DataAnnotations.Length(1, 256)]
 		public string ContractIdentification { get; set; }
 		
 		/// <summary>
@@ -10942,8 +10611,7 @@ namespace MyNS
 		/// Max length: 35
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(35)]
+		[System.ComponentModel.DataAnnotations.Length(1, 35)]
 		public string Reference { get; set; }
 		
 		/// <summary>
@@ -10952,8 +10620,7 @@ namespace MyNS
 		/// Max length: 140
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(140)]
+		[System.ComponentModel.DataAnnotations.Length(1, 140)]
 		public string Unstructured { get; set; }
 	}
 	
@@ -11032,8 +10699,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(256)]
+		[System.ComponentModel.DataAnnotations.Length(1, 256)]
 		public string Identification { get; set; }
 		
 		/// <summary>
@@ -11046,8 +10712,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(350)]
+		[System.ComponentModel.DataAnnotations.Length(1, 350)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -11065,8 +10730,7 @@ namespace MyNS
 		/// Max length: 34
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(34)]
+		[System.ComponentModel.DataAnnotations.Length(1, 34)]
 		public string SecondaryIdentification { get; set; }
 	}
 	
@@ -11079,8 +10743,7 @@ namespace MyNS
 		/// Max length: 35
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(35)]
+		[System.ComponentModel.DataAnnotations.Length(1, 35)]
 		public string Identification { get; set; }
 		
 		/// <summary>
@@ -11089,8 +10752,7 @@ namespace MyNS
 		/// Max length: 140
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(140)]
+		[System.ComponentModel.DataAnnotations.Length(1, 140)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -11115,8 +10777,7 @@ namespace MyNS
 		/// Max length: 140
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(140)]
+		[System.ComponentModel.DataAnnotations.Length(1, 140)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -11157,8 +10818,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(128)]
+		[System.ComponentModel.DataAnnotations.Length(1, 128)]
 		public string ConsentId { get; set; }
 		
 		/// <summary>
@@ -11230,8 +10890,7 @@ namespace MyNS
 		/// Max length: 140
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(140)]
+		[System.ComponentModel.DataAnnotations.Length(1, 140)]
 		public string ExtendedPurpose { get; set; }
 		
 		/// <summary>
@@ -11302,8 +10961,7 @@ namespace MyNS
 		/// Max length: 35
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(35)]
+		[System.ComponentModel.DataAnnotations.Length(1, 35)]
 		public string NumberOfPayments { get; set; }
 		
 		/// <summary>
@@ -11314,8 +10972,7 @@ namespace MyNS
 		/// Max length: 4
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(4)]
+		[System.ComponentModel.DataAnnotations.Length(1, 4)]
 		public string Purpose { get; set; }
 		
 		/// <summary>
@@ -11326,8 +10983,7 @@ namespace MyNS
 		/// Max length: 35
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(35)]
+		[System.ComponentModel.DataAnnotations.Length(1, 35)]
 		public string Reference { get; set; }
 		
 		/// <summary>
@@ -11346,8 +11002,7 @@ namespace MyNS
 		/// Max length: 350
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(350)]
+		[System.ComponentModel.DataAnnotations.Length(1, 350)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -11368,8 +11023,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(256)]
+		[System.ComponentModel.DataAnnotations.Length(1, 256)]
 		public string Identification { get; set; }
 		
 		/// <summary>
@@ -11382,8 +11036,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(350)]
+		[System.ComponentModel.DataAnnotations.Length(1, 350)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -11401,8 +11054,7 @@ namespace MyNS
 		/// Max length: 34
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(34)]
+		[System.ComponentModel.DataAnnotations.Length(1, 34)]
 		public string SecondaryIdentification { get; set; }
 	}
 	
@@ -11415,8 +11067,7 @@ namespace MyNS
 		/// Max length: 35
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(35)]
+		[System.ComponentModel.DataAnnotations.Length(1, 35)]
 		public string Identification { get; set; }
 		
 		/// <summary>
@@ -11425,8 +11076,7 @@ namespace MyNS
 		/// Max length: 140
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(140)]
+		[System.ComponentModel.DataAnnotations.Length(1, 140)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -11453,8 +11103,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(256)]
+		[System.ComponentModel.DataAnnotations.Length(1, 256)]
 		public string Identification { get; set; }
 		
 		/// <summary>
@@ -11464,8 +11113,7 @@ namespace MyNS
 		/// Max length: 350
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(350)]
+		[System.ComponentModel.DataAnnotations.Length(1, 350)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -11483,8 +11131,7 @@ namespace MyNS
 		/// Max length: 34
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(34)]
+		[System.ComponentModel.DataAnnotations.Length(1, 34)]
 		public string SecondaryIdentification { get; set; }
 	}
 	
@@ -11650,8 +11297,7 @@ namespace MyNS
 		/// Max length: 140
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(140)]
+		[System.ComponentModel.DataAnnotations.Length(1, 140)]
 		public string ExtendedPurpose { get; set; }
 		
 		/// <summary>
@@ -11722,8 +11368,7 @@ namespace MyNS
 		/// Max length: 35
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(35)]
+		[System.ComponentModel.DataAnnotations.Length(1, 35)]
 		public string NumberOfPayments { get; set; }
 		
 		/// <summary>
@@ -11734,8 +11379,7 @@ namespace MyNS
 		/// Max length: 4
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(4)]
+		[System.ComponentModel.DataAnnotations.Length(1, 4)]
 		public string Purpose { get; set; }
 		
 		/// <summary>
@@ -11746,8 +11390,7 @@ namespace MyNS
 		/// Max length: 35
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(35)]
+		[System.ComponentModel.DataAnnotations.Length(1, 35)]
 		public string Reference { get; set; }
 		
 		/// <summary>
@@ -11766,8 +11409,7 @@ namespace MyNS
 		/// Max length: 350
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(350)]
+		[System.ComponentModel.DataAnnotations.Length(1, 350)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -11788,8 +11430,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(256)]
+		[System.ComponentModel.DataAnnotations.Length(1, 256)]
 		public string Identification { get; set; }
 		
 		/// <summary>
@@ -11802,8 +11443,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(350)]
+		[System.ComponentModel.DataAnnotations.Length(1, 350)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -11821,8 +11461,7 @@ namespace MyNS
 		/// Max length: 34
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(34)]
+		[System.ComponentModel.DataAnnotations.Length(1, 34)]
 		public string SecondaryIdentification { get; set; }
 	}
 	
@@ -11835,8 +11474,7 @@ namespace MyNS
 		/// Max length: 35
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(35)]
+		[System.ComponentModel.DataAnnotations.Length(1, 35)]
 		public string Identification { get; set; }
 		
 		/// <summary>
@@ -11845,8 +11483,7 @@ namespace MyNS
 		/// Max length: 140
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(140)]
+		[System.ComponentModel.DataAnnotations.Length(1, 140)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -11873,8 +11510,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(256)]
+		[System.ComponentModel.DataAnnotations.Length(1, 256)]
 		public string Identification { get; set; }
 		
 		/// <summary>
@@ -11884,8 +11520,7 @@ namespace MyNS
 		/// Max length: 350
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(350)]
+		[System.ComponentModel.DataAnnotations.Length(1, 350)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -11903,8 +11538,7 @@ namespace MyNS
 		/// Max length: 34
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(34)]
+		[System.ComponentModel.DataAnnotations.Length(1, 34)]
 		public string SecondaryIdentification { get; set; }
 	}
 	
@@ -11984,8 +11618,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(128)]
+		[System.ComponentModel.DataAnnotations.Length(1, 128)]
 		public string ConsentId { get; set; }
 		
 		/// <summary>
@@ -12167,8 +11800,7 @@ namespace MyNS
 		/// Max length: 140
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(140)]
+		[System.ComponentModel.DataAnnotations.Length(1, 140)]
 		public string ExtendedPurpose { get; set; }
 		
 		/// <summary>
@@ -12239,8 +11871,7 @@ namespace MyNS
 		/// Max length: 35
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(35)]
+		[System.ComponentModel.DataAnnotations.Length(1, 35)]
 		public string NumberOfPayments { get; set; }
 		
 		/// <summary>
@@ -12251,8 +11882,7 @@ namespace MyNS
 		/// Max length: 4
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(4)]
+		[System.ComponentModel.DataAnnotations.Length(1, 4)]
 		public string Purpose { get; set; }
 		
 		/// <summary>
@@ -12263,8 +11893,7 @@ namespace MyNS
 		/// Max length: 35
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(35)]
+		[System.ComponentModel.DataAnnotations.Length(1, 35)]
 		public string Reference { get; set; }
 		
 		/// <summary>
@@ -12283,8 +11912,7 @@ namespace MyNS
 		/// Max length: 350
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(350)]
+		[System.ComponentModel.DataAnnotations.Length(1, 350)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -12305,8 +11933,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(256)]
+		[System.ComponentModel.DataAnnotations.Length(1, 256)]
 		public string Identification { get; set; }
 		
 		/// <summary>
@@ -12319,8 +11946,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(350)]
+		[System.ComponentModel.DataAnnotations.Length(1, 350)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -12338,8 +11964,7 @@ namespace MyNS
 		/// Max length: 34
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(34)]
+		[System.ComponentModel.DataAnnotations.Length(1, 34)]
 		public string SecondaryIdentification { get; set; }
 	}
 	
@@ -12352,8 +11977,7 @@ namespace MyNS
 		/// Max length: 35
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(35)]
+		[System.ComponentModel.DataAnnotations.Length(1, 35)]
 		public string Identification { get; set; }
 		
 		/// <summary>
@@ -12362,8 +11986,7 @@ namespace MyNS
 		/// Max length: 140
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(140)]
+		[System.ComponentModel.DataAnnotations.Length(1, 140)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -12390,8 +12013,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(256)]
+		[System.ComponentModel.DataAnnotations.Length(1, 256)]
 		public string Identification { get; set; }
 		
 		/// <summary>
@@ -12401,8 +12023,7 @@ namespace MyNS
 		/// Max length: 350
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(350)]
+		[System.ComponentModel.DataAnnotations.Length(1, 350)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -12420,8 +12041,7 @@ namespace MyNS
 		/// Max length: 34
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(34)]
+		[System.ComponentModel.DataAnnotations.Length(1, 34)]
 		public string SecondaryIdentification { get; set; }
 	}
 	
@@ -12487,8 +12107,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(128)]
+		[System.ComponentModel.DataAnnotations.Length(1, 128)]
 		public string ConsentId { get; set; }
 		
 		/// <summary>
@@ -12523,8 +12142,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(40)]
+		[System.ComponentModel.DataAnnotations.Length(1, 40)]
 		public string InternationalStandingOrderId { get; set; }
 		
 		/// <summary>
@@ -12643,8 +12261,7 @@ namespace MyNS
 		/// Max length: 140
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(140)]
+		[System.ComponentModel.DataAnnotations.Length(1, 140)]
 		public string ExtendedPurpose { get; set; }
 		
 		/// <summary>
@@ -12715,8 +12332,7 @@ namespace MyNS
 		/// Max length: 35
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(35)]
+		[System.ComponentModel.DataAnnotations.Length(1, 35)]
 		public string NumberOfPayments { get; set; }
 		
 		/// <summary>
@@ -12727,8 +12343,7 @@ namespace MyNS
 		/// Max length: 4
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(4)]
+		[System.ComponentModel.DataAnnotations.Length(1, 4)]
 		public string Purpose { get; set; }
 		
 		/// <summary>
@@ -12739,8 +12354,7 @@ namespace MyNS
 		/// Max length: 35
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(35)]
+		[System.ComponentModel.DataAnnotations.Length(1, 35)]
 		public string Reference { get; set; }
 		
 		/// <summary>
@@ -12759,8 +12373,7 @@ namespace MyNS
 		/// Max length: 350
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(350)]
+		[System.ComponentModel.DataAnnotations.Length(1, 350)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -12781,8 +12394,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(256)]
+		[System.ComponentModel.DataAnnotations.Length(1, 256)]
 		public string Identification { get; set; }
 		
 		/// <summary>
@@ -12795,8 +12407,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(350)]
+		[System.ComponentModel.DataAnnotations.Length(1, 350)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -12814,8 +12425,7 @@ namespace MyNS
 		/// Max length: 34
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(34)]
+		[System.ComponentModel.DataAnnotations.Length(1, 34)]
 		public string SecondaryIdentification { get; set; }
 	}
 	
@@ -12828,8 +12438,7 @@ namespace MyNS
 		/// Max length: 35
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(35)]
+		[System.ComponentModel.DataAnnotations.Length(1, 35)]
 		public string Identification { get; set; }
 		
 		/// <summary>
@@ -12838,8 +12447,7 @@ namespace MyNS
 		/// Max length: 140
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(140)]
+		[System.ComponentModel.DataAnnotations.Length(1, 140)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -12866,8 +12474,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(256)]
+		[System.ComponentModel.DataAnnotations.Length(1, 256)]
 		public string Identification { get; set; }
 		
 		/// <summary>
@@ -12877,8 +12484,7 @@ namespace MyNS
 		/// Max length: 350
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(350)]
+		[System.ComponentModel.DataAnnotations.Length(1, 350)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -12896,8 +12502,7 @@ namespace MyNS
 		/// Max length: 34
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(34)]
+		[System.ComponentModel.DataAnnotations.Length(1, 34)]
 		public string SecondaryIdentification { get; set; }
 	}
 	
@@ -13000,8 +12605,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(256)]
+		[System.ComponentModel.DataAnnotations.Length(1, 256)]
 		public string Identification { get; set; }
 		
 		/// <summary>
@@ -13014,8 +12618,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(350)]
+		[System.ComponentModel.DataAnnotations.Length(1, 350)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -13033,8 +12636,7 @@ namespace MyNS
 		/// Max length: 34
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(34)]
+		[System.ComponentModel.DataAnnotations.Length(1, 34)]
 		public string SecondaryIdentification { get; set; }
 	}
 	
@@ -13047,8 +12649,7 @@ namespace MyNS
 		/// Max length: 35
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(35)]
+		[System.ComponentModel.DataAnnotations.Length(1, 35)]
 		public string Identification { get; set; }
 		
 		/// <summary>
@@ -13057,8 +12658,7 @@ namespace MyNS
 		/// Max length: 140
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(140)]
+		[System.ComponentModel.DataAnnotations.Length(1, 140)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -13083,8 +12683,7 @@ namespace MyNS
 		/// Max length: 350
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(350)]
+		[System.ComponentModel.DataAnnotations.Length(1, 350)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -13136,8 +12735,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(210)]
+		[System.ComponentModel.DataAnnotations.Length(1, 210)]
 		public string PaymentTransactionId { get; set; }
 		
 		/// <summary>
@@ -13248,8 +12846,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(128)]
+		[System.ComponentModel.DataAnnotations.Length(1, 128)]
 		public string Status { get; set; }
 		
 		/// <summary>
@@ -13264,8 +12861,7 @@ namespace MyNS
 		/// Max length: 256
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(256)]
+		[System.ComponentModel.DataAnnotations.Length(1, 256)]
 		public string StatusReasonDescription { get; set; }
 	}
 	

@@ -30,8 +30,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="code")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(100)]
+		[System.ComponentModel.DataAnnotations.Length(1, 100)]
 		public string Code { get; set; }
 		
 		/// <summary>
@@ -40,8 +39,7 @@ namespace MyNS
 		/// Max length: 99999
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="field")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(99999)]
+		[System.ComponentModel.DataAnnotations.Length(1, 99999)]
 		public string Field { get; set; }
 		
 		/// <summary>
@@ -52,8 +50,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="issue")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(99999)]
+		[System.ComponentModel.DataAnnotations.Length(1, 99999)]
 		public string Issue { get; set; }
 		
 		/// <summary>
@@ -62,8 +59,7 @@ namespace MyNS
 		/// Max length: 99999
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="link")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(99999)]
+		[System.ComponentModel.DataAnnotations.Length(1, 99999)]
 		public string Link { get; set; }
 		
 		/// <summary>
@@ -80,8 +76,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="suggested_action")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(99999)]
+		[System.ComponentModel.DataAnnotations.Length(1, 99999)]
 		public string Suggested_action { get; set; }
 		
 		/// <summary>
@@ -90,8 +85,7 @@ namespace MyNS
 		/// Max length: 99999
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="value")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(99999)]
+		[System.ComponentModel.DataAnnotations.Length(1, 99999)]
 		public string Value { get; set; }
 	}
 	
@@ -118,8 +112,7 @@ namespace MyNS
 		/// Maximum items: 100
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="errors")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(100)]
+		[System.ComponentModel.DataAnnotations.Length(1, 100)]
 		public Error[] Errors1 { get; set; }
 	}
 	
@@ -136,8 +129,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="freeTrialNumbers")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(10)]
+		[System.ComponentModel.DataAnnotations.Length(0, 10)]
 		public string[] FreeTrialNumbers1 { get; set; }
 	}
 	
@@ -151,8 +143,7 @@ namespace MyNS
 		/// Max length: 24
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="createTimestamp")]
-		[System.ComponentModel.DataAnnotations.MinLength(24)]
-		[System.ComponentModel.DataAnnotations.MaxLength(24)]
+		[System.ComponentModel.DataAnnotations.Length(24, 24)]
 		public System.Nullable<System.DateTimeOffset> CreateTimestamp { get; set; }
 		
 		/// <summary>
@@ -175,8 +166,7 @@ namespace MyNS
 		/// Max length: 13
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="from")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(13)]
+		[System.ComponentModel.DataAnnotations.Length(1, 13)]
 		public string From { get; set; }
 		
 		/// <summary>
@@ -185,8 +175,7 @@ namespace MyNS
 		/// Max length: 1600
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="messageContent")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1600)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1600)]
 		public string MessageContent { get; set; }
 		
 		/// <summary>
@@ -195,8 +184,7 @@ namespace MyNS
 		/// Max length: 36
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="messageId")]
-		[System.ComponentModel.DataAnnotations.MinLength(36)]
-		[System.ComponentModel.DataAnnotations.MaxLength(36)]
+		[System.ComponentModel.DataAnnotations.Length(36, 36)]
 		public string MessageId { get; set; }
 		
 		/// <summary>
@@ -206,8 +194,7 @@ namespace MyNS
 		/// Maximum items: 5
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="multimedia")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(5)]
+		[System.ComponentModel.DataAnnotations.Length(1, 5)]
 		public MultimediaGet[] Multimedia { get; set; }
 		
 		/// <summary>
@@ -225,8 +212,7 @@ namespace MyNS
 		/// Max length: 24
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="receivedTimestamp")]
-		[System.ComponentModel.DataAnnotations.MinLength(24)]
-		[System.ComponentModel.DataAnnotations.MaxLength(24)]
+		[System.ComponentModel.DataAnnotations.Length(24, 24)]
 		public System.Nullable<System.DateTimeOffset> ReceivedTimestamp { get; set; }
 		
 		/// <summary>
@@ -244,8 +230,7 @@ namespace MyNS
 		/// Max length: 24
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="scheduleSend")]
-		[System.ComponentModel.DataAnnotations.MinLength(10)]
-		[System.ComponentModel.DataAnnotations.MaxLength(24)]
+		[System.ComponentModel.DataAnnotations.Length(10, 24)]
 		public System.Nullable<System.DateTimeOffset> ScheduleSend { get; set; }
 		
 		/// <summary>
@@ -254,8 +239,7 @@ namespace MyNS
 		/// Max length: 24
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="sentTimestamp")]
-		[System.ComponentModel.DataAnnotations.MinLength(24)]
-		[System.ComponentModel.DataAnnotations.MaxLength(24)]
+		[System.ComponentModel.DataAnnotations.Length(24, 24)]
 		public System.Nullable<System.DateTimeOffset> SentTimestamp { get; set; }
 		
 		/// <summary>
@@ -276,8 +260,7 @@ namespace MyNS
 		/// Maximum items: 10
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="tags")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(10)]
+		[System.ComponentModel.DataAnnotations.Length(0, 10)]
 		public string[] Tags { get; set; }
 		
 		/// <summary>
@@ -286,8 +269,7 @@ namespace MyNS
 		/// Max length: 16
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="to")]
-		[System.ComponentModel.DataAnnotations.MinLength(5)]
-		[System.ComponentModel.DataAnnotations.MaxLength(16)]
+		[System.ComponentModel.DataAnnotations.Length(5, 16)]
 		public string To { get; set; }
 	}
 	
@@ -314,8 +296,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="fileName")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(100)]
+		[System.ComponentModel.DataAnnotations.Length(1, 100)]
 		public string FileName { get; set; }
 		
 		/// <summary>
@@ -326,8 +307,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="type")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(100)]
+		[System.ComponentModel.DataAnnotations.Length(1, 100)]
 		public string Type { get; set; }
 	}
 	
@@ -367,8 +347,7 @@ namespace MyNS
 		/// Max length: 13
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="from")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(13)]
+		[System.ComponentModel.DataAnnotations.Length(1, 13)]
 		public string From { get; set; }
 		
 		/// <summary>
@@ -377,8 +356,7 @@ namespace MyNS
 		/// Max length: 1600
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="messageContent")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1600)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1600)]
 		public string MessageContent { get; set; }
 		
 		/// <summary>
@@ -394,8 +372,7 @@ namespace MyNS
 		/// Maximum items: 5
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="multimedia")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(5)]
+		[System.ComponentModel.DataAnnotations.Length(1, 5)]
 		public MultimediaGet[] Multimedia { get; set; }
 		
 		/// <summary>
@@ -413,8 +390,7 @@ namespace MyNS
 		/// Max length: 24
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="scheduleSend")]
-		[System.ComponentModel.DataAnnotations.MinLength(10)]
-		[System.ComponentModel.DataAnnotations.MaxLength(24)]
+		[System.ComponentModel.DataAnnotations.Length(10, 24)]
 		public System.Nullable<System.DateTimeOffset> ScheduleSend { get; set; }
 		
 		/// <summary>
@@ -435,8 +411,7 @@ namespace MyNS
 		/// Maximum items: 10
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="tags")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(10)]
+		[System.ComponentModel.DataAnnotations.Length(0, 10)]
 		public string[] Tags { get; set; }
 		
 		/// <summary>
@@ -462,8 +437,7 @@ namespace MyNS
 		/// Max length: 13
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="from")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(13)]
+		[System.ComponentModel.DataAnnotations.Length(1, 13)]
 		public string From { get; set; }
 		
 		/// <summary>
@@ -472,8 +446,7 @@ namespace MyNS
 		/// Max length: 1600
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="messageContent")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1600)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1600)]
 		public string MessageContent { get; set; }
 		
 		/// <summary>
@@ -482,8 +455,7 @@ namespace MyNS
 		/// Max length: 36
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="messageId")]
-		[System.ComponentModel.DataAnnotations.MinLength(36)]
-		[System.ComponentModel.DataAnnotations.MaxLength(36)]
+		[System.ComponentModel.DataAnnotations.Length(36, 36)]
 		public string MessageId { get; set; }
 		
 		/// <summary>
@@ -493,8 +465,7 @@ namespace MyNS
 		/// Maximum items: 5
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="multimedia")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(5)]
+		[System.ComponentModel.DataAnnotations.Length(1, 5)]
 		public MultimediaGet[] Multimedia { get; set; }
 		
 		/// <summary>
@@ -521,8 +492,7 @@ namespace MyNS
 		/// Max length: 24
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="scheduleSend")]
-		[System.ComponentModel.DataAnnotations.MinLength(10)]
-		[System.ComponentModel.DataAnnotations.MaxLength(24)]
+		[System.ComponentModel.DataAnnotations.Length(10, 24)]
 		public System.Nullable<System.DateTimeOffset> ScheduleSend { get; set; }
 		
 		/// <summary>
@@ -543,8 +513,7 @@ namespace MyNS
 		/// Maximum items: 10
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="tags")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(10)]
+		[System.ComponentModel.DataAnnotations.Length(0, 10)]
 		public string[] Tags { get; set; }
 		
 		/// <summary>
@@ -553,8 +522,7 @@ namespace MyNS
 		/// Max length: 16
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="to")]
-		[System.ComponentModel.DataAnnotations.MinLength(5)]
-		[System.ComponentModel.DataAnnotations.MaxLength(16)]
+		[System.ComponentModel.DataAnnotations.Length(5, 16)]
 		public string To { get; set; }
 	}
 	
@@ -570,8 +538,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="fileName")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(100)]
+		[System.ComponentModel.DataAnnotations.Length(1, 100)]
 		public string FileName { get; set; }
 		
 		/// <summary>
@@ -583,8 +550,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="payload")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(999999)]
+		[System.ComponentModel.DataAnnotations.Length(1, 999999)]
 		public string Payload { get; set; }
 		
 		/// <summary>
@@ -595,8 +561,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="type")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(100)]
+		[System.ComponentModel.DataAnnotations.Length(1, 100)]
 		public string Type { get; set; }
 	}
 	
@@ -610,8 +575,7 @@ namespace MyNS
 		/// Max length: 24
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="createTimestamp")]
-		[System.ComponentModel.DataAnnotations.MinLength(24)]
-		[System.ComponentModel.DataAnnotations.MaxLength(24)]
+		[System.ComponentModel.DataAnnotations.Length(24, 24)]
 		public System.Nullable<System.DateTimeOffset> CreateTimestamp { get; set; }
 		
 		/// <summary>
@@ -620,8 +584,7 @@ namespace MyNS
 		/// Max length: 16
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="optoutNumber")]
-		[System.ComponentModel.DataAnnotations.MinLength(5)]
-		[System.ComponentModel.DataAnnotations.MaxLength(16)]
+		[System.ComponentModel.DataAnnotations.Length(5, 16)]
 		public string OptoutNumber { get; set; }
 	}
 	
@@ -635,8 +598,7 @@ namespace MyNS
 		/// Max length: 24
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="lastUse")]
-		[System.ComponentModel.DataAnnotations.MinLength(24)]
-		[System.ComponentModel.DataAnnotations.MaxLength(24)]
+		[System.ComponentModel.DataAnnotations.Length(24, 24)]
 		public System.Nullable<System.DateTimeOffset> LastUse { get; set; }
 		
 		/// <summary>
@@ -652,8 +614,7 @@ namespace MyNS
 		/// Maximum items: 10
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="tags")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(10)]
+		[System.ComponentModel.DataAnnotations.Length(0, 10)]
 		public string[] Tags { get; set; }
 		
 		/// <summary>
@@ -663,8 +624,7 @@ namespace MyNS
 		/// Max length: 10
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="virtualNumber")]
-		[System.ComponentModel.DataAnnotations.MinLength(10)]
-		[System.ComponentModel.DataAnnotations.MaxLength(10)]
+		[System.ComponentModel.DataAnnotations.Length(10, 10)]
 		public string VirtualNumber { get; set; }
 	}
 	
@@ -692,8 +652,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="from")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(13)]
+		[System.ComponentModel.DataAnnotations.Length(1, 13)]
 		public string From { get; set; }
 		
 		/// <summary>
@@ -705,8 +664,7 @@ namespace MyNS
 		/// Max length: 1600
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="messageContent")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1600)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1600)]
 		public string MessageContent { get; set; }
 		
 		/// <summary>
@@ -726,8 +684,7 @@ namespace MyNS
 		/// Maximum items: 5
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="multimedia")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(5)]
+		[System.ComponentModel.DataAnnotations.Length(1, 5)]
 		public Multimedia[] Multimedia { get; set; }
 		
 		/// <summary>
@@ -751,8 +708,7 @@ namespace MyNS
 		/// Max length: 24
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="scheduleSend")]
-		[System.ComponentModel.DataAnnotations.MinLength(10)]
-		[System.ComponentModel.DataAnnotations.MaxLength(24)]
+		[System.ComponentModel.DataAnnotations.Length(10, 24)]
 		public System.Nullable<System.DateTimeOffset> ScheduleSend { get; set; }
 		
 		/// <summary>
@@ -788,8 +744,7 @@ namespace MyNS
 		/// Maximum items: 10
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="tags")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(10)]
+		[System.ComponentModel.DataAnnotations.Length(1, 10)]
 		public string[] Tags { get; set; }
 		
 		/// <summary>
@@ -828,8 +783,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="from")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(13)]
+		[System.ComponentModel.DataAnnotations.Length(1, 13)]
 		public string From { get; set; }
 		
 		/// <summary>
@@ -841,8 +795,7 @@ namespace MyNS
 		/// Max length: 1600
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="messageContent")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1600)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1600)]
 		public string MessageContent { get; set; }
 		
 		/// <summary>
@@ -862,8 +815,7 @@ namespace MyNS
 		/// Maximum items: 5
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="multimedia")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(5)]
+		[System.ComponentModel.DataAnnotations.Length(1, 5)]
 		public Multimedia[] Multimedia { get; set; }
 		
 		/// <summary>
@@ -887,8 +839,7 @@ namespace MyNS
 		/// Max length: 24
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="scheduleSend")]
-		[System.ComponentModel.DataAnnotations.MinLength(10)]
-		[System.ComponentModel.DataAnnotations.MaxLength(24)]
+		[System.ComponentModel.DataAnnotations.Length(10, 24)]
 		public System.Nullable<System.DateTimeOffset> ScheduleSend { get; set; }
 		
 		/// <summary>
@@ -924,8 +875,7 @@ namespace MyNS
 		/// Maximum items: 10
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="tags")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(10)]
+		[System.ComponentModel.DataAnnotations.Length(1, 10)]
 		public string[] Tags { get; set; }
 		
 		/// <summary>
@@ -939,8 +889,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="to")]
-		[System.ComponentModel.DataAnnotations.MinLength(5)]
-		[System.ComponentModel.DataAnnotations.MaxLength(16)]
+		[System.ComponentModel.DataAnnotations.Length(5, 16)]
 		public string To { get; set; }
 	}
 	
@@ -959,8 +908,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="tags")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(10)]
+		[System.ComponentModel.DataAnnotations.Length(0, 10)]
 		public string[] Tags { get; set; }
 	}
 	
@@ -997,8 +945,7 @@ namespace MyNS
 		/// Maximum items: 10
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="tags")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(10)]
+		[System.ComponentModel.DataAnnotations.Length(1, 10)]
 		public string[] Tags { get; set; }
 	}
 	
@@ -1039,8 +986,7 @@ namespace MyNS
 		/// Maximum items: 10
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="tags")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(10)]
+		[System.ComponentModel.DataAnnotations.Length(1, 10)]
 		public string[] Tags { get; set; }
 	}
 	
@@ -1746,8 +1692,7 @@ namespace MyNS
 		/// Maximum items: 50
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="messages")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(50)]
+		[System.ComponentModel.DataAnnotations.Length(1, 50)]
 		public MessageGet[] Messages { get; set; }
 		
 		[System.Runtime.Serialization.DataMember(Name="paging")]
@@ -1796,8 +1741,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="endDate")]
-		[System.ComponentModel.DataAnnotations.MinLength(10)]
-		[System.ComponentModel.DataAnnotations.MaxLength(10)]
+		[System.ComponentModel.DataAnnotations.Length(10, 10)]
 		public System.DateOnly EndDate { get; set; }
 		
 		/// <summary>
@@ -1837,8 +1781,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="startDate")]
-		[System.ComponentModel.DataAnnotations.MinLength(10)]
-		[System.ComponentModel.DataAnnotations.MaxLength(10)]
+		[System.ComponentModel.DataAnnotations.Length(10, 10)]
 		public System.DateOnly StartDate { get; set; }
 	}
 	
@@ -1852,8 +1795,7 @@ namespace MyNS
 		/// Max length: 36
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="reportId")]
-		[System.ComponentModel.DataAnnotations.MinLength(36)]
-		[System.ComponentModel.DataAnnotations.MaxLength(36)]
+		[System.ComponentModel.DataAnnotations.Length(36, 36)]
 		public string ReportId { get; set; }
 		
 		/// <summary>

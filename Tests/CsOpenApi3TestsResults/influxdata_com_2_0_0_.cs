@@ -582,8 +582,7 @@ namespace MyNS
 		/// Maximum items: 2
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="bounds")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2)]
+		[System.ComponentModel.DataAnnotations.Length(0, 2)]
 		public string[] Bounds { get; set; }
 		
 		/// <summary>
@@ -798,8 +797,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="hex")]
-		[System.ComponentModel.DataAnnotations.MinLength(7)]
-		[System.ComponentModel.DataAnnotations.MaxLength(7)]
+		[System.ComponentModel.DataAnnotations.Length(7, 7)]
 		public string Hex { get; set; }
 		
 		/// <summary>
@@ -2021,8 +2019,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DefaultValue("#")]
 		[System.Runtime.Serialization.DataMember(Name="commentPrefix")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1)]
+		[System.ComponentModel.DataAnnotations.Length(0, 1)]
 		public string CommentPrefix { get; set; } = "#";
 		
 		/// <summary>
@@ -2038,8 +2035,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DefaultValue(",")]
 		[System.Runtime.Serialization.DataMember(Name="delimiter")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1)]
 		public string Delimiter { get; set; } = ",";
 		
 		/// <summary>

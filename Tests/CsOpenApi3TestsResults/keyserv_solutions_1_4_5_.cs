@@ -100,8 +100,7 @@ namespace MyNS
 		/// Max length: 800
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="callbackUrl")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(800)]
+		[System.ComponentModel.DataAnnotations.Length(0, 800)]
 		public string CallbackUrl { get; set; }
 		
 		/// <summary>
@@ -136,8 +135,7 @@ namespace MyNS
 		/// Max length: 80
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="name")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(80)]
+		[System.ComponentModel.DataAnnotations.Length(0, 80)]
 		public string Name { get; set; }
 		
 		[System.Runtime.Serialization.DataMember(Name="serial")]
@@ -179,8 +177,7 @@ namespace MyNS
 		/// Max length: 80
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="name")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(80)]
+		[System.ComponentModel.DataAnnotations.Length(0, 80)]
 		public string Name { get; set; }
 		
 		[System.Runtime.Serialization.DataMember(Name="serial")]
@@ -218,8 +215,7 @@ namespace MyNS
 		/// Max length: 800
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="callbackUrl")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(800)]
+		[System.ComponentModel.DataAnnotations.Length(0, 800)]
 		public string CallbackUrl { get; set; }
 		
 		/// <summary>
@@ -254,8 +250,7 @@ namespace MyNS
 		/// Max length: 80
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="name")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(80)]
+		[System.ComponentModel.DataAnnotations.Length(0, 80)]
 		public string Name { get; set; }
 		
 		[System.Runtime.Serialization.DataMember(Name="updated")]
@@ -283,8 +278,7 @@ namespace MyNS
 		/// Max length: 800
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="callbackUrl")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(800)]
+		[System.ComponentModel.DataAnnotations.Length(0, 800)]
 		public string CallbackUrl { get; set; }
 		
 		[System.Runtime.Serialization.DataMember(Name="custom")]
@@ -307,8 +301,7 @@ namespace MyNS
 		/// Max length: 80
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="name")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(80)]
+		[System.ComponentModel.DataAnnotations.Length(0, 80)]
 		public string Name { get; set; }
 		
 		[System.Runtime.Serialization.DataMember(Name="serial")]

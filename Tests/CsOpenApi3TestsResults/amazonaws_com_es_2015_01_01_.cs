@@ -58,8 +58,7 @@ namespace MyNS
 		/// Max length: 12
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(12)]
-		[System.ComponentModel.DataAnnotations.MaxLength(12)]
+		[System.ComponentModel.DataAnnotations.Length(12, 12)]
 		public string OwnerId { get; set; }
 		
 		/// <summary>
@@ -71,8 +70,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(3)]
-		[System.ComponentModel.DataAnnotations.MaxLength(28)]
+		[System.ComponentModel.DataAnnotations.Length(3, 28)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[a-z][a-z0-9\-]+")]
 		public string DomainName { get; set; }
 		
@@ -2939,8 +2937,7 @@ namespace MyNS
 		/// Pattern: [a-z][a-z0-9\-]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(3)]
-		[System.ComponentModel.DataAnnotations.MaxLength(28)]
+		[System.ComponentModel.DataAnnotations.Length(3, 28)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[a-z][a-z0-9\-]+")]
 		public string DomainName { get; set; }
 		
@@ -3855,8 +3852,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(3)]
-		[System.ComponentModel.DataAnnotations.MaxLength(28)]
+		[System.ComponentModel.DataAnnotations.Length(3, 28)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[a-z][a-z0-9\-]+")]
 		public string DomainName { get; set; }
 		
@@ -5446,8 +5442,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(3)]
-		[System.ComponentModel.DataAnnotations.MaxLength(28)]
+		[System.ComponentModel.DataAnnotations.Length(3, 28)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[a-z][a-z0-9\-]+")]
 		public string DomainName { get; set; }
 	}
@@ -5464,8 +5459,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(3)]
-		[System.ComponentModel.DataAnnotations.MaxLength(28)]
+		[System.ComponentModel.DataAnnotations.Length(3, 28)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[a-z][a-z0-9\-]+")]
 		public string DomainName { get; set; }
 		
@@ -5754,8 +5748,7 @@ namespace MyNS
 		/// Max length: 12
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(12)]
-		[System.ComponentModel.DataAnnotations.MaxLength(12)]
+		[System.ComponentModel.DataAnnotations.Length(12, 12)]
 		public string OwnerId { get; set; }
 		
 		/// <summary>
@@ -5765,8 +5758,7 @@ namespace MyNS
 		/// Pattern: [a-z][a-z0-9\-]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(3)]
-		[System.ComponentModel.DataAnnotations.MaxLength(28)]
+		[System.ComponentModel.DataAnnotations.Length(3, 28)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[a-z][a-z0-9\-]+")]
 		public string DomainName { get; set; }
 		
@@ -5782,8 +5774,7 @@ namespace MyNS
 		/// Max length: 12
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(12)]
-		[System.ComponentModel.DataAnnotations.MaxLength(12)]
+		[System.ComponentModel.DataAnnotations.Length(12, 12)]
 		public string OwnerId { get; set; }
 		
 		/// <summary>
@@ -5793,8 +5784,7 @@ namespace MyNS
 		/// Pattern: [a-z][a-z0-9\-]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(3)]
-		[System.ComponentModel.DataAnnotations.MaxLength(28)]
+		[System.ComponentModel.DataAnnotations.Length(3, 28)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[a-z][a-z0-9\-]+")]
 		public string DomainName { get; set; }
 		
@@ -5814,8 +5804,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(3)]
-		[System.ComponentModel.DataAnnotations.MaxLength(28)]
+		[System.ComponentModel.DataAnnotations.Length(3, 28)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[a-z][a-z0-9\-]+")]
 		public string PackageName { get; set; }
 		
@@ -5874,8 +5863,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(512)]
+		[System.ComponentModel.DataAnnotations.Length(1, 512)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"arn:aws[a-z\-]*:[a-z]+:[a-z0-9\-]+:[0-9]+:domain\/[a-z0-9\-]+")]
 		public string DomainArn { get; set; }
 		
@@ -5893,8 +5881,7 @@ namespace MyNS
 		/// Max length: 64
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(64)]
+		[System.ComponentModel.DataAnnotations.Length(1, 64)]
 		public string ClientToken { get; set; }
 	}
 	
@@ -6448,8 +6435,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(5)]
-		[System.ComponentModel.DataAnnotations.MaxLength(64)]
+		[System.ComponentModel.DataAnnotations.Length(5, 64)]
 		public string ReservationName { get; set; }
 		
 		/// <summary>
@@ -6507,8 +6493,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(3)]
-		[System.ComponentModel.DataAnnotations.MaxLength(28)]
+		[System.ComponentModel.DataAnnotations.Length(3, 28)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[a-z][a-z0-9\-]+")]
 		public string DomainName { get; set; }
 	}
@@ -6571,8 +6556,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(5)]
-		[System.ComponentModel.DataAnnotations.MaxLength(256)]
+		[System.ComponentModel.DataAnnotations.Length(5, 256)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^aos-[a-zA-Z0-9]*$")]
 		public string VpcEndpointId { get; set; }
 		
@@ -6607,8 +6591,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(3)]
-		[System.ComponentModel.DataAnnotations.MaxLength(28)]
+		[System.ComponentModel.DataAnnotations.Length(3, 28)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[a-z][a-z0-9\-]+")]
 		public string DomainName { get; set; }
 		

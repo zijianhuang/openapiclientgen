@@ -3087,8 +3087,7 @@ namespace MyNS
 		/// Pattern: .*\S.*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="filterValue")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(256)]
+		[System.ComponentModel.DataAnnotations.Length(0, 256)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@".*\S.*")]
 		public string FilterValue { get; set; }
 		
@@ -3111,8 +3110,7 @@ namespace MyNS
 		/// Pattern: .*\S.*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextToken")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2048)]
+		[System.ComponentModel.DataAnnotations.Length(0, 2048)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@".*\S.*")]
 		public string NextToken { get; set; }
 		
@@ -3133,8 +3131,7 @@ namespace MyNS
 		/// Pattern: .*\S.*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="filterValue")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1024)]
+		[System.ComponentModel.DataAnnotations.Length(0, 1024)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@".*\S.*")]
 		public string FilterValue { get; set; }
 		
@@ -3157,8 +3154,7 @@ namespace MyNS
 		/// Pattern: .*\S.*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextToken")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2048)]
+		[System.ComponentModel.DataAnnotations.Length(0, 2048)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@".*\S.*")]
 		public string NextToken { get; set; }
 		
@@ -3236,8 +3232,7 @@ namespace MyNS
 		/// Maximum items: 10
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="assessmentTargets")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(10)]
+		[System.ComponentModel.DataAnnotations.Length(0, 10)]
 		public AssessmentTarget[] AssessmentTargets { get; set; }
 		
 		/// <summary>
@@ -3247,8 +3242,7 @@ namespace MyNS
 		/// Pattern: [0-9a-z]+[0-9a-z\.\-]*[0-9a-z]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="s3bucketForAnalysisData")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(63)]
+		[System.ComponentModel.DataAnnotations.Length(0, 63)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[0-9a-z]+[0-9a-z\.\-]*[0-9a-z]+")]
 		public string S3bucketForAnalysisData { get; set; }
 		
@@ -3259,8 +3253,7 @@ namespace MyNS
 		/// Pattern: [0-9a-z]+[0-9a-z\.\-]*[0-9a-z]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="s3bucketForReportData")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(63)]
+		[System.ComponentModel.DataAnnotations.Length(0, 63)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[0-9a-z]+[0-9a-z\.\-]*[0-9a-z]+")]
 		public string S3bucketForReportData { get; set; }
 	}
@@ -3277,8 +3270,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(63)]
+		[System.ComponentModel.DataAnnotations.Length(0, 63)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[0-9a-z]+[0-9a-z\.\-]*[0-9a-z]+")]
 		public string S3Bucket { get; set; }
 		
@@ -3303,8 +3295,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(50)]
+		[System.ComponentModel.DataAnnotations.Length(1, 50)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[a-zA-Z0-9_-]+")]
 		public string Name { get; set; }
 		
@@ -3315,8 +3306,7 @@ namespace MyNS
 		/// Pattern: [0-9a-z]+[0-9a-z\.\-]*[0-9a-z]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="s3bucketForReportData")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(63)]
+		[System.ComponentModel.DataAnnotations.Length(0, 63)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[0-9a-z]+[0-9a-z\.\-]*[0-9a-z]+")]
 		public string S3bucketForReportData { get; set; }
 		
@@ -3329,8 +3319,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="s3key")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1024)]
+		[System.ComponentModel.DataAnnotations.Length(0, 1024)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@".*\S.*")]
 		public string S3key { get; set; }
 	}
@@ -3363,8 +3352,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="assessmentId")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(52)]
+		[System.ComponentModel.DataAnnotations.Length(0, 52)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[0-9a-z-:]+")]
 		public string AssessmentId { get; set; }
 	}
@@ -3387,8 +3375,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="applicationComponentId")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(44)]
+		[System.ComponentModel.DataAnnotations.Length(0, 44)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[0-9a-zA-Z-]+")]
 		public string ApplicationComponentId { get; set; }
 		
@@ -3411,8 +3398,7 @@ namespace MyNS
 		/// Pattern: .*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="secretsManagerKey")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(512)]
+		[System.ComponentModel.DataAnnotations.Length(1, 512)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@".*")]
 		public string SecretsManagerKey { get; set; }
 		
@@ -3528,8 +3514,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="serverId")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(27)]
+		[System.ComponentModel.DataAnnotations.Length(1, 27)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@".*\S.*")]
 		public string ServerId { get; set; }
 		

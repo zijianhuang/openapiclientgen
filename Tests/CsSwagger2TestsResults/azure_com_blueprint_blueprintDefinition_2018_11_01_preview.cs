@@ -527,8 +527,7 @@ namespace MyNS
 		/// Max length: 90
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="name")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(90)]
+		[System.ComponentModel.DataAnnotations.Length(1, 90)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -573,8 +572,7 @@ namespace MyNS
 		/// Max length: 90
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="name")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(90)]
+		[System.ComponentModel.DataAnnotations.Length(1, 90)]
 		public string Name { get; set; }
 	}
 	

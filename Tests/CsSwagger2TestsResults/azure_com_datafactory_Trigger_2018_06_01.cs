@@ -351,8 +351,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="offset")]
-		[System.ComponentModel.DataAnnotations.MinLength(8)]
-		[System.ComponentModel.DataAnnotations.MaxLength(15)]
+		[System.ComponentModel.DataAnnotations.Length(8, 15)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"((\d+)\.)?(\d\d):(60|([0-5][0-9])):(60|([0-5][0-9]))")]
 		public string Offset { get; set; }
 		
@@ -363,8 +362,7 @@ namespace MyNS
 		/// Pattern: ((\d+)\.)?(\d\d):(60|([0-5][0-9])):(60|([0-5][0-9]))
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="size")]
-		[System.ComponentModel.DataAnnotations.MinLength(8)]
-		[System.ComponentModel.DataAnnotations.MaxLength(15)]
+		[System.ComponentModel.DataAnnotations.Length(8, 15)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"((\d+)\.)?(\d\d):(60|([0-5][0-9])):(60|([0-5][0-9]))")]
 		public string Size { get; set; }
 	}
@@ -517,8 +515,7 @@ namespace MyNS
 		/// Pattern: ((\d+)\.)?(\d\d):(60|([0-5][0-9])):(60|([0-5][0-9]))
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="offset")]
-		[System.ComponentModel.DataAnnotations.MinLength(8)]
-		[System.ComponentModel.DataAnnotations.MaxLength(15)]
+		[System.ComponentModel.DataAnnotations.Length(8, 15)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"((\d+)\.)?(\d\d):(60|([0-5][0-9])):(60|([0-5][0-9]))")]
 		public string Offset { get; set; }
 		
@@ -529,8 +526,7 @@ namespace MyNS
 		/// Pattern: ((\d+)\.)?(\d\d):(60|([0-5][0-9])):(60|([0-5][0-9]))
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="size")]
-		[System.ComponentModel.DataAnnotations.MinLength(8)]
-		[System.ComponentModel.DataAnnotations.MaxLength(15)]
+		[System.ComponentModel.DataAnnotations.Length(8, 15)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"((\d+)\.)?(\d\d):(60|([0-5][0-9])):(60|([0-5][0-9]))")]
 		public string Size { get; set; }
 	}

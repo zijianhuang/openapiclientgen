@@ -754,8 +754,7 @@ namespace MyNS
 		/// Max length: 300
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="additional_info")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(300)]
+		[System.ComponentModel.DataAnnotations.Length(0, 300)]
 		public string Additional_info { get; set; }
 		
 		/// <summary>
@@ -1212,8 +1211,7 @@ namespace MyNS
 		/// Maximum items: 2
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="coordinates")]
-		[System.ComponentModel.DataAnnotations.MinLength(2)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2)]
+		[System.ComponentModel.DataAnnotations.Length(2, 2)]
 		public double[] Coordinates { get; set; }
 		
 		/// <summary>

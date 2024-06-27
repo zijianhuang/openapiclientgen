@@ -335,8 +335,7 @@ namespace MyNS
 		/// Pattern: ^[a-z][a-z0-9]*$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="name")]
-		[System.ComponentModel.DataAnnotations.MinLength(3)]
-		[System.ComponentModel.DataAnnotations.MaxLength(63)]
+		[System.ComponentModel.DataAnnotations.Length(3, 63)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[a-z][a-z0-9]*$")]
 		public string Name { get; set; }
 		

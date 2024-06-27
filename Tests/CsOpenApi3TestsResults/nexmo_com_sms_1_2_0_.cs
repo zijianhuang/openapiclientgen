@@ -345,8 +345,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="api_key")]
-		[System.ComponentModel.DataAnnotations.MinLength(8)]
-		[System.ComponentModel.DataAnnotations.MaxLength(8)]
+		[System.ComponentModel.DataAnnotations.Length(8, 8)]
 		public string Api_key { get; set; }
 		
 		/// <summary>
@@ -355,8 +354,7 @@ namespace MyNS
 		/// Max length: 32
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="api_secret")]
-		[System.ComponentModel.DataAnnotations.MinLength(6)]
-		[System.ComponentModel.DataAnnotations.MaxLength(32)]
+		[System.ComponentModel.DataAnnotations.Length(6, 32)]
 		public string Api_secret { get; set; }
 		
 		/// <summary>
@@ -415,8 +413,7 @@ namespace MyNS
 		/// Max length: 60
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="sig")]
-		[System.ComponentModel.DataAnnotations.MinLength(16)]
-		[System.ComponentModel.DataAnnotations.MaxLength(60)]
+		[System.ComponentModel.DataAnnotations.Length(16, 60)]
 		public string Sig { get; set; }
 		
 		/// <summary>
@@ -440,8 +437,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="to")]
-		[System.ComponentModel.DataAnnotations.MinLength(7)]
-		[System.ComponentModel.DataAnnotations.MaxLength(15)]
+		[System.ComponentModel.DataAnnotations.Length(7, 15)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"\d{7,15}")]
 		public string To { get; set; }
 		

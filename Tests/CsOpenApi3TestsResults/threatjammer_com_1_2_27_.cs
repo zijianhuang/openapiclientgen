@@ -1301,8 +1301,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="origin")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2083)]
+		[System.ComponentModel.DataAnnotations.Length(1, 2083)]
 		public string Origin { get; set; }
 		
 		/// <summary>
@@ -1340,8 +1339,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="origin")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2083)]
+		[System.ComponentModel.DataAnnotations.Length(1, 2083)]
 		public string Origin { get; set; }
 		
 		/// <summary>
@@ -1365,8 +1363,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="origin")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2083)]
+		[System.ComponentModel.DataAnnotations.Length(1, 2083)]
 		public string Origin { get; set; }
 		
 		/// <summary>
@@ -1390,8 +1387,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="origin")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2083)]
+		[System.ComponentModel.DataAnnotations.Length(1, 2083)]
 		public string Origin { get; set; }
 		
 		/// <summary>

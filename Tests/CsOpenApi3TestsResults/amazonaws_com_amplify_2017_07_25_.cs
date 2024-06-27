@@ -3460,8 +3460,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"\(\?s\).\+")]
 		public string Name { get; set; }
 		
@@ -3498,8 +3497,7 @@ namespace MyNS
 		/// Pattern: \(\?s\).*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="iamServiceRoleArn")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1000)]
+		[System.ComponentModel.DataAnnotations.Length(0, 1000)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"\(\?s\).*")]
 		public string IamServiceRoleArn { get; set; }
 		
@@ -3520,8 +3518,7 @@ namespace MyNS
 		/// Pattern: \(\?s\).\+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="accessToken")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"\(\?s\).\+")]
 		public string AccessToken { get; set; }
 		
@@ -3578,8 +3575,7 @@ namespace MyNS
 		/// Pattern: \(\?s\).\+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="buildSpec")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(25000)]
+		[System.ComponentModel.DataAnnotations.Length(1, 25000)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"\(\?s\).\+")]
 		public string BuildSpec { get; set; }
 		
@@ -3590,8 +3586,7 @@ namespace MyNS
 		/// Pattern: \(\?s\).*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="customHeaders")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(25000)]
+		[System.ComponentModel.DataAnnotations.Length(0, 25000)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"\(\?s\).*")]
 		public string CustomHeaders { get; set; }
 		
@@ -3660,8 +3655,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="environmentName")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"\(\?s\).\+")]
 		public string EnvironmentName { get; set; }
 		
@@ -3672,8 +3666,7 @@ namespace MyNS
 		/// Pattern: \(\?s\).\+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="stackName")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"\(\?s\).\+")]
 		public string StackName { get; set; }
 		
@@ -3684,8 +3677,7 @@ namespace MyNS
 		/// Pattern: \(\?s\).\+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="deploymentArtifacts")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1000)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1000)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"\(\?s\).\+")]
 		public string DeploymentArtifacts { get; set; }
 	}
@@ -3702,8 +3694,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="branchName")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"\(\?s\).\+")]
 		public string BranchName { get; set; }
 		
@@ -3786,8 +3777,7 @@ namespace MyNS
 		/// Pattern: \(\?s\).\+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="buildSpec")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(25000)]
+		[System.ComponentModel.DataAnnotations.Length(1, 25000)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"\(\?s\).\+")]
 		public string BuildSpec { get; set; }
 		
@@ -3798,8 +3788,7 @@ namespace MyNS
 		/// Pattern: \d*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="ttl")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(32)]
+		[System.ComponentModel.DataAnnotations.Length(0, 32)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"\d*")]
 		public string Ttl { get; set; }
 		
@@ -3836,8 +3825,7 @@ namespace MyNS
 		/// Pattern: \(\?s\).*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="backendEnvironmentArn")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1000)]
+		[System.ComponentModel.DataAnnotations.Length(0, 1000)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"\(\?s\).*")]
 		public string BackendEnvironmentArn { get; set; }
 	}
@@ -3912,8 +3900,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="branchName")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"\(\?s\).\+")]
 		public string BranchName { get; set; }
 		
@@ -3938,8 +3925,7 @@ namespace MyNS
 		/// Pattern: \(\?s\).\+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="name")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"\(\?s\).\+")]
 		public string Name { get; set; }
 		
@@ -3966,8 +3952,7 @@ namespace MyNS
 		/// Pattern: \(\?s\).*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="iamServiceRoleArn")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1000)]
+		[System.ComponentModel.DataAnnotations.Length(0, 1000)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"\(\?s\).*")]
 		public string IamServiceRoleArn { get; set; }
 		
@@ -4018,8 +4003,7 @@ namespace MyNS
 		/// Pattern: \(\?s\).\+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="buildSpec")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(25000)]
+		[System.ComponentModel.DataAnnotations.Length(1, 25000)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"\(\?s\).\+")]
 		public string BuildSpec { get; set; }
 		
@@ -4030,8 +4014,7 @@ namespace MyNS
 		/// Pattern: \(\?s\).*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="customHeaders")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(25000)]
+		[System.ComponentModel.DataAnnotations.Length(0, 25000)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"\(\?s\).*")]
 		public string CustomHeaders { get; set; }
 		
@@ -4080,8 +4063,7 @@ namespace MyNS
 		/// Pattern: \(\?s\).\+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="accessToken")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"\(\?s\).\+")]
 		public string AccessToken { get; set; }
 	}
@@ -4196,8 +4178,7 @@ namespace MyNS
 		/// Pattern: \(\?s\).\+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="buildSpec")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(25000)]
+		[System.ComponentModel.DataAnnotations.Length(1, 25000)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"\(\?s\).\+")]
 		public string BuildSpec { get; set; }
 		
@@ -4208,8 +4189,7 @@ namespace MyNS
 		/// Pattern: \d*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="ttl")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(32)]
+		[System.ComponentModel.DataAnnotations.Length(0, 32)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"\d*")]
 		public string Ttl { get; set; }
 		
@@ -4246,8 +4226,7 @@ namespace MyNS
 		/// Pattern: \(\?s\).*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="backendEnvironmentArn")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1000)]
+		[System.ComponentModel.DataAnnotations.Length(0, 1000)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"\(\?s\).*")]
 		public string BackendEnvironmentArn { get; set; }
 	}
@@ -4296,8 +4275,7 @@ namespace MyNS
 		/// Pattern: \(\?s\).\+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="branchName")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"\(\?s\).\+")]
 		public string BranchName { get; set; }
 		

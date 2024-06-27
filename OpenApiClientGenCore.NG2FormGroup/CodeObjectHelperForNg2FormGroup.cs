@@ -222,11 +222,14 @@ namespace Fonlow.TypeScriptCodeDom
 						case "System.ComponentModel.DataAnnotations.Required":
 							validatorList.Add("Validators.required");
 							break;
-						case "System.ComponentModel.DataAnnotations.MaxLength":
-							AddMaxLengthValidations(ca, validatorList);
+						case "System.ComponentModel.DataAnnotations.Length":
+							AddLengthValidations(ca, validatorList);
 							break;
 						case "System.ComponentModel.DataAnnotations.MinLength":
 							AddMinLengthValidations(ca, validatorList);
+							break;
+						case "System.ComponentModel.DataAnnotations.MaxLength":
+							AddMaxLengthValidations(ca, validatorList);
 							break;
 						case "System.ComponentModel.DataAnnotations.Range": // for minimum and maximum
 							AddNumberRangeValidations(ca, validatorList);
@@ -307,6 +310,24 @@ namespace Fonlow.TypeScriptCodeDom
 			if (!arg1VExpression.Value.Contains("MaxValue"))
 			{
 				validatorList.Add($"Validators.max({arg1VExpression.Value})");
+			}
+		}
+
+		static void AddLengthValidations(CodeAttributeDeclaration ca, List<string> validatorList)
+		{
+			Debug.Assert(ca.Arguments.Count == 2);
+			var arg0 = ca.Arguments[0];
+			var arg0VExpression = arg0.Value as CodeSnippetExpression;
+			var arg1 = ca.Arguments[1];
+			var arg1VExpression = arg1.Value as CodeSnippetExpression;
+			if (!arg0VExpression.Value.Contains("MinValue"))
+			{
+				validatorList.Add($"Validators.minLength({arg0VExpression.Value})");
+			}
+
+			if (!arg1VExpression.Value.Contains("MaxValue"))
+			{
+				validatorList.Add($"Validators.maxLength({arg1VExpression.Value})");
 			}
 		}
 

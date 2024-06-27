@@ -105,8 +105,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="url")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(65536)]
+		[System.ComponentModel.DataAnnotations.Length(1, 65536)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@".+/v[0-1](\.[0-9]+)*/?$")]
 		public string Url { get; set; }
 		
@@ -1350,8 +1349,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="href")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(65536)]
+		[System.ComponentModel.DataAnnotations.Length(1, 65536)]
 		public string Href { get; set; }
 		
 		/// <summary>
@@ -1887,8 +1885,7 @@ namespace MyNS
 		/// Max length: 65536
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="url")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(65536)]
+		[System.ComponentModel.DataAnnotations.Length(1, 65536)]
 		public string Url { get; set; }
 		
 		/// <summary>
@@ -2453,8 +2450,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="dimension_types")]
-		[System.ComponentModel.DataAnnotations.MinLength(3)]
-		[System.ComponentModel.DataAnnotations.MaxLength(3)]
+		[System.ComponentModel.DataAnnotations.Length(3, 3)]
 		public Periodicity[] Dimension_types { get; set; }
 		
 		/// <summary>
@@ -2570,8 +2566,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="lattice_vectors")]
-		[System.ComponentModel.DataAnnotations.MinLength(3)]
-		[System.ComponentModel.DataAnnotations.MaxLength(3)]
+		[System.ComponentModel.DataAnnotations.Length(3, 3)]
 		public string[] Lattice_vectors { get; set; }
 		
 		/// <summary>

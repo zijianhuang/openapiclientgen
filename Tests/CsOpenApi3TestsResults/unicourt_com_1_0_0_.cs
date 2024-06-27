@@ -30,8 +30,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(10)]
+		[System.ComponentModel.DataAnnotations.Length(0, 10)]
 		public AccessTokenIdResponse[] AccessTokenIdArray { get; set; }
 		
 		/// <summary>
@@ -43,8 +42,7 @@ namespace MyNS
 		[System.ComponentModel.DefaultValue("AccessTokenIdListResponse")]
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="object")]
-		[System.ComponentModel.DataAnnotations.MinLength(25)]
-		[System.ComponentModel.DataAnnotations.MaxLength(25)]
+		[System.ComponentModel.DataAnnotations.Length(25, 25)]
 		public string Object { get; set; } = "AccessTokenIdListResponse";
 	}
 	
@@ -60,8 +58,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="issueAddress")]
-		[System.ComponentModel.DataAnnotations.MinLength(7)]
-		[System.ComponentModel.DataAnnotations.MaxLength(15)]
+		[System.ComponentModel.DataAnnotations.Length(7, 15)]
 		public string IssueAddress { get; set; }
 		
 		/// <summary>
@@ -72,8 +69,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="issuedDate")]
-		[System.ComponentModel.DataAnnotations.MinLength(25)]
-		[System.ComponentModel.DataAnnotations.MaxLength(25)]
+		[System.ComponentModel.DataAnnotations.Length(25, 25)]
 		public System.DateTimeOffset IssuedDate { get; set; }
 		
 		/// <summary>
@@ -85,8 +81,7 @@ namespace MyNS
 		[System.ComponentModel.DefaultValue("AccessTokenIdResponse")]
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="object")]
-		[System.ComponentModel.DataAnnotations.MinLength(21)]
-		[System.ComponentModel.DataAnnotations.MaxLength(21)]
+		[System.ComponentModel.DataAnnotations.Length(21, 21)]
 		public string Object { get; set; } = "AccessTokenIdResponse";
 		
 		/// <summary>
@@ -97,8 +92,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="tokenId")]
-		[System.ComponentModel.DataAnnotations.MinLength(18)]
-		[System.ComponentModel.DataAnnotations.MaxLength(18)]
+		[System.ComponentModel.DataAnnotations.Length(18, 18)]
 		public string TokenId { get; set; }
 	}
 	
@@ -114,8 +108,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="clientId")]
-		[System.ComponentModel.DataAnnotations.MinLength(32)]
-		[System.ComponentModel.DataAnnotations.MaxLength(32)]
+		[System.ComponentModel.DataAnnotations.Length(32, 32)]
 		public string ClientId { get; set; }
 		
 		/// <summary>
@@ -126,8 +119,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="clientSecret")]
-		[System.ComponentModel.DataAnnotations.MinLength(64)]
-		[System.ComponentModel.DataAnnotations.MaxLength(64)]
+		[System.ComponentModel.DataAnnotations.Length(64, 64)]
 		public string ClientSecret { get; set; }
 	}
 	
@@ -143,8 +135,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="accessToken")]
-		[System.ComponentModel.DataAnnotations.MinLength(700)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2000)]
+		[System.ComponentModel.DataAnnotations.Length(700, 2000)]
 		public string AccessToken { get; set; }
 		
 		/// <summary>
@@ -156,8 +147,7 @@ namespace MyNS
 		[System.ComponentModel.DefaultValue("AccessTokenResponse")]
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="object")]
-		[System.ComponentModel.DataAnnotations.MinLength(19)]
-		[System.ComponentModel.DataAnnotations.MaxLength(19)]
+		[System.ComponentModel.DataAnnotations.Length(19, 19)]
 		public string Object { get; set; } = "AccessTokenResponse";
 		
 		/// <summary>
@@ -168,8 +158,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="tokenId")]
-		[System.ComponentModel.DataAnnotations.MinLength(18)]
-		[System.ComponentModel.DataAnnotations.MaxLength(18)]
+		[System.ComponentModel.DataAnnotations.Length(18, 18)]
 		public string TokenId { get; set; }
 		
 		/// <summary>
@@ -180,8 +169,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="tokenType")]
-		[System.ComponentModel.DataAnnotations.MinLength(6)]
-		[System.ComponentModel.DataAnnotations.MaxLength(6)]
+		[System.ComponentModel.DataAnnotations.Length(6, 6)]
 		public string TokenType { get; set; }
 	}
 	
@@ -196,8 +184,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="level1")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public string Level1 { get; set; }
 		
 		/// <summary>
@@ -207,8 +194,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="level2")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public string Level2 { get; set; }
 		
 		/// <summary>
@@ -218,8 +204,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="level3")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public string Level3 { get; set; }
 		
 		/// <summary>
@@ -229,8 +214,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="level4")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public string Level4 { get; set; }
 		
 		/// <summary>
@@ -241,8 +225,7 @@ namespace MyNS
 		[System.ComponentModel.DefaultValue("AdditionalLevels")]
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="object")]
-		[System.ComponentModel.DataAnnotations.MinLength(16)]
-		[System.ComponentModel.DataAnnotations.MaxLength(16)]
+		[System.ComponentModel.DataAnnotations.Length(16, 16)]
 		public string Object { get; set; } = "AdditionalLevels";
 	}
 	
@@ -261,8 +244,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="city")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(100)]
+		[System.ComponentModel.DataAnnotations.Length(1, 100)]
 		public string City { get; set; }
 		
 		/// <summary>
@@ -273,8 +255,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="countryCode")]
-		[System.ComponentModel.DataAnnotations.MinLength(2)]
-		[System.ComponentModel.DataAnnotations.MaxLength(3)]
+		[System.ComponentModel.DataAnnotations.Length(2, 3)]
 		public string CountryCode { get; set; }
 		
 		/// <summary>
@@ -286,8 +267,7 @@ namespace MyNS
 		[System.ComponentModel.DefaultValue("UNKNOWN")]
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="countryName")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(100)]
+		[System.ComponentModel.DataAnnotations.Length(1, 100)]
 		public string CountryName { get; set; } = "UNKNOWN";
 		
 		/// <summary>
@@ -298,8 +278,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="firstFetchDate")]
-		[System.ComponentModel.DataAnnotations.MinLength(25)]
-		[System.ComponentModel.DataAnnotations.MaxLength(35)]
+		[System.ComponentModel.DataAnnotations.Length(25, 35)]
 		public System.DateTimeOffset FirstFetchDate { get; set; }
 		
 		/// <summary>
@@ -310,8 +289,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="isVisible")]
-		[System.ComponentModel.DataAnnotations.MinLength(4)]
-		[System.ComponentModel.DataAnnotations.MaxLength(5)]
+		[System.ComponentModel.DataAnnotations.Length(4, 5)]
 		public bool IsVisible { get; set; }
 		
 		/// <summary>
@@ -322,8 +300,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="lastFetchDate")]
-		[System.ComponentModel.DataAnnotations.MinLength(25)]
-		[System.ComponentModel.DataAnnotations.MaxLength(35)]
+		[System.ComponentModel.DataAnnotations.Length(25, 35)]
 		public System.DateTimeOffset LastFetchDate { get; set; }
 		
 		/// <summary>
@@ -336,8 +313,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="latitude")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		[System.ComponentModel.DataAnnotations.Range(-90, 90)]
 		public System.Nullable<System.Double> Latitude { get; set; }
 		
@@ -351,8 +327,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="longitude")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		[System.ComponentModel.DataAnnotations.Range(-180, 180)]
 		public System.Nullable<System.Double> Longitude { get; set; }
 		
@@ -364,8 +339,7 @@ namespace MyNS
 		[System.ComponentModel.DefaultValue("Address")]
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="object")]
-		[System.ComponentModel.DataAnnotations.MinLength(7)]
-		[System.ComponentModel.DataAnnotations.MaxLength(7)]
+		[System.ComponentModel.DataAnnotations.Length(7, 7)]
 		public string Object { get; set; } = "Address";
 		
 		/// <summary>
@@ -376,8 +350,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="stateCode")]
-		[System.ComponentModel.DataAnnotations.MinLength(2)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2)]
+		[System.ComponentModel.DataAnnotations.Length(2, 2)]
 		public string StateCode { get; set; }
 		
 		/// <summary>
@@ -389,8 +362,7 @@ namespace MyNS
 		[System.ComponentModel.DefaultValue("UNKNOWN")]
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="stateName")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(100)]
+		[System.ComponentModel.DataAnnotations.Length(1, 100)]
 		public string StateName { get; set; } = "UNKNOWN";
 		
 		/// <summary>
@@ -401,8 +373,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="streetAddress1")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(250)]
+		[System.ComponentModel.DataAnnotations.Length(1, 250)]
 		public string StreetAddress1 { get; set; }
 		
 		/// <summary>
@@ -413,8 +384,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="streetAddress2")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(150)]
+		[System.ComponentModel.DataAnnotations.Length(1, 150)]
 		public string StreetAddress2 { get; set; }
 		
 		/// <summary>
@@ -425,8 +395,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="zip")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(10)]
+		[System.ComponentModel.DataAnnotations.Length(1, 10)]
 		public string Zip { get; set; }
 		
 		/// <summary>
@@ -437,8 +406,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="zip4")]
-		[System.ComponentModel.DataAnnotations.MinLength(4)]
-		[System.ComponentModel.DataAnnotations.MaxLength(4)]
+		[System.ComponentModel.DataAnnotations.Length(4, 4)]
 		public string Zip4 { get; set; }
 	}
 	
@@ -453,8 +421,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="areaOfLawId")]
-		[System.ComponentModel.DataAnnotations.MinLength(18)]
-		[System.ComponentModel.DataAnnotations.MaxLength(18)]
+		[System.ComponentModel.DataAnnotations.Length(18, 18)]
 		public string AreaOfLawId { get; set; }
 		
 		/// <summary>
@@ -464,8 +431,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="caseClass")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public string CaseClass { get; set; }
 		
 		/// <summary>
@@ -475,8 +441,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="caseClassId")]
-		[System.ComponentModel.DataAnnotations.MinLength(18)]
-		[System.ComponentModel.DataAnnotations.MaxLength(18)]
+		[System.ComponentModel.DataAnnotations.Length(18, 18)]
 		public string CaseClassId { get; set; }
 		
 		/// <summary>
@@ -487,8 +452,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="createdDate")]
-		[System.ComponentModel.DataAnnotations.MinLength(25)]
-		[System.ComponentModel.DataAnnotations.MaxLength(25)]
+		[System.ComponentModel.DataAnnotations.Length(25, 25)]
 		public System.DateTimeOffset CreatedDate { get; set; }
 		
 		/// <summary>
@@ -498,8 +462,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -510,8 +473,7 @@ namespace MyNS
 		[System.ComponentModel.DefaultValue("AreaOfLaw")]
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="object")]
-		[System.ComponentModel.DataAnnotations.MinLength(9)]
-		[System.ComponentModel.DataAnnotations.MaxLength(9)]
+		[System.ComponentModel.DataAnnotations.Length(9, 9)]
 		public string Object { get; set; } = "AreaOfLaw";
 	}
 	
@@ -536,8 +498,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="nextPageAPI")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2140)]
+		[System.ComponentModel.DataAnnotations.Length(1, 2140)]
 		public string NextPageAPI { get; set; }
 		
 		/// <summary>
@@ -548,8 +509,7 @@ namespace MyNS
 		[System.ComponentModel.DefaultValue("AreaOfLawResponse")]
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="object")]
-		[System.ComponentModel.DataAnnotations.MinLength(17)]
-		[System.ComponentModel.DataAnnotations.MaxLength(17)]
+		[System.ComponentModel.DataAnnotations.Length(17, 17)]
 		public string Object { get; set; } = "AreaOfLawResponse";
 		
 		/// <summary>
@@ -560,8 +520,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="pageNumber")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public int PageNumber { get; set; }
 		
 		/// <summary>
@@ -572,8 +531,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="previousPageAPI")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2139)]
+		[System.ComponentModel.DataAnnotations.Length(1, 2139)]
 		public string PreviousPageAPI { get; set; }
 		
 		/// <summary>
@@ -584,8 +542,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="totalCount")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public int TotalCount { get; set; }
 		
 		/// <summary>
@@ -596,8 +553,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="totalPages")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public int TotalPages { get; set; }
 	}
 	
@@ -682,8 +638,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="normAttorneyId")]
-		[System.ComponentModel.DataAnnotations.MinLength(18)]
-		[System.ComponentModel.DataAnnotations.MaxLength(18)]
+		[System.ComponentModel.DataAnnotations.Length(18, 18)]
 		public string NormAttorneyId { get; set; }
 		
 		/// <summary>
@@ -913,8 +868,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="normJudgeId")]
-		[System.ComponentModel.DataAnnotations.MinLength(18)]
-		[System.ComponentModel.DataAnnotations.MaxLength(18)]
+		[System.ComponentModel.DataAnnotations.Length(18, 18)]
 		public string NormJudgeId { get; set; }
 		
 		/// <summary>
@@ -1039,8 +993,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="normLawFirmId")]
-		[System.ComponentModel.DataAnnotations.MinLength(18)]
-		[System.ComponentModel.DataAnnotations.MaxLength(18)]
+		[System.ComponentModel.DataAnnotations.Length(18, 18)]
 		public string NormLawFirmId { get; set; }
 		
 		/// <summary>
@@ -1196,8 +1149,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="normPartyId")]
-		[System.ComponentModel.DataAnnotations.MinLength(18)]
-		[System.ComponentModel.DataAnnotations.MaxLength(18)]
+		[System.ComponentModel.DataAnnotations.Length(18, 18)]
 		public string NormPartyId { get; set; }
 		
 		/// <summary>
@@ -1338,8 +1290,7 @@ namespace MyNS
 		[System.ComponentModel.DefaultValue("Contact")]
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="object")]
-		[System.ComponentModel.DataAnnotations.MinLength(7)]
-		[System.ComponentModel.DataAnnotations.MaxLength(7)]
+		[System.ComponentModel.DataAnnotations.Length(7, 7)]
 		public string Object { get; set; } = "Contact";
 		
 		/// <summary>
@@ -1366,8 +1317,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="emailId")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(100)]
+		[System.ComponentModel.DataAnnotations.Length(1, 100)]
 		public string EmailId { get; set; }
 		
 		/// <summary>
@@ -1378,8 +1328,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="firstFetchDate")]
-		[System.ComponentModel.DataAnnotations.MinLength(25)]
-		[System.ComponentModel.DataAnnotations.MaxLength(35)]
+		[System.ComponentModel.DataAnnotations.Length(25, 35)]
 		public System.DateTimeOffset FirstFetchDate { get; set; }
 		
 		/// <summary>
@@ -1390,8 +1339,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="isVisible")]
-		[System.ComponentModel.DataAnnotations.MinLength(4)]
-		[System.ComponentModel.DataAnnotations.MaxLength(5)]
+		[System.ComponentModel.DataAnnotations.Length(4, 5)]
 		public bool IsVisible { get; set; }
 		
 		/// <summary>
@@ -1402,8 +1350,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="lastFetchDate")]
-		[System.ComponentModel.DataAnnotations.MinLength(25)]
-		[System.ComponentModel.DataAnnotations.MaxLength(35)]
+		[System.ComponentModel.DataAnnotations.Length(25, 35)]
 		public System.DateTimeOffset LastFetchDate { get; set; }
 		
 		/// <summary>
@@ -1414,8 +1361,7 @@ namespace MyNS
 		[System.ComponentModel.DefaultValue("Email")]
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="object")]
-		[System.ComponentModel.DataAnnotations.MinLength(5)]
-		[System.ComponentModel.DataAnnotations.MaxLength(5)]
+		[System.ComponentModel.DataAnnotations.Length(5, 5)]
 		public string Object { get; set; } = "Email";
 	}
 	
@@ -1434,8 +1380,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="firstFetchDate")]
-		[System.ComponentModel.DataAnnotations.MinLength(25)]
-		[System.ComponentModel.DataAnnotations.MaxLength(35)]
+		[System.ComponentModel.DataAnnotations.Length(25, 35)]
 		public System.DateTimeOffset FirstFetchDate { get; set; }
 		
 		/// <summary>
@@ -1446,8 +1391,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="isVisible")]
-		[System.ComponentModel.DataAnnotations.MinLength(4)]
-		[System.ComponentModel.DataAnnotations.MaxLength(5)]
+		[System.ComponentModel.DataAnnotations.Length(4, 5)]
 		public bool IsVisible { get; set; }
 		
 		/// <summary>
@@ -1458,8 +1402,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="lastFetchDate")]
-		[System.ComponentModel.DataAnnotations.MinLength(25)]
-		[System.ComponentModel.DataAnnotations.MaxLength(35)]
+		[System.ComponentModel.DataAnnotations.Length(25, 35)]
 		public System.DateTimeOffset LastFetchDate { get; set; }
 		
 		/// <summary>
@@ -1470,8 +1413,7 @@ namespace MyNS
 		[System.ComponentModel.DefaultValue("Phone")]
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="object")]
-		[System.ComponentModel.DataAnnotations.MinLength(5)]
-		[System.ComponentModel.DataAnnotations.MaxLength(5)]
+		[System.ComponentModel.DataAnnotations.Length(5, 5)]
 		public string Object { get; set; } = "Phone";
 		
 		/// <summary>
@@ -1482,8 +1424,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="phoneNumber")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(30)]
+		[System.ComponentModel.DataAnnotations.Length(1, 30)]
 		public string PhoneNumber { get; set; }
 		
 		/// <summary>
@@ -1494,8 +1435,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="phoneType")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(250)]
+		[System.ComponentModel.DataAnnotations.Length(1, 250)]
 		public PhonePhoneType PhoneType { get; set; }
 	}
 	
@@ -1548,8 +1488,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="attorneyId")]
-		[System.ComponentModel.DataAnnotations.MinLength(18)]
-		[System.ComponentModel.DataAnnotations.MaxLength(18)]
+		[System.ComponentModel.DataAnnotations.Length(18, 18)]
 		public string AttorneyId { get; set; }
 		
 		/// <summary>
@@ -1594,8 +1533,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="firstFetchDate")]
-		[System.ComponentModel.DataAnnotations.MinLength(25)]
-		[System.ComponentModel.DataAnnotations.MaxLength(25)]
+		[System.ComponentModel.DataAnnotations.Length(25, 25)]
 		public System.DateTimeOffset FirstFetchDate { get; set; }
 		
 		/// <summary>
@@ -1624,8 +1562,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="lastFetchDate")]
-		[System.ComponentModel.DataAnnotations.MinLength(25)]
-		[System.ComponentModel.DataAnnotations.MaxLength(25)]
+		[System.ComponentModel.DataAnnotations.Length(25, 25)]
 		public System.DateTimeOffset LastFetchDate { get; set; }
 		
 		/// <summary>
@@ -1656,8 +1593,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(250)]
+		[System.ComponentModel.DataAnnotations.Length(1, 250)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -1687,8 +1623,7 @@ namespace MyNS
 		[System.ComponentModel.DefaultValue("Attorney")]
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="object")]
-		[System.ComponentModel.DataAnnotations.MinLength(8)]
-		[System.ComponentModel.DataAnnotations.MaxLength(8)]
+		[System.ComponentModel.DataAnnotations.Length(8, 8)]
 		public string Object { get; set; } = "Attorney";
 		
 		/// <summary>
@@ -1755,8 +1690,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="attorneyLawFirmId")]
-		[System.ComponentModel.DataAnnotations.MinLength(17)]
-		[System.ComponentModel.DataAnnotations.MaxLength(18)]
+		[System.ComponentModel.DataAnnotations.Length(17, 18)]
 		public string AttorneyLawFirmId { get; set; }
 		
 		/// <summary>
@@ -1767,8 +1701,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="firstFetchDate")]
-		[System.ComponentModel.DataAnnotations.MinLength(25)]
-		[System.ComponentModel.DataAnnotations.MaxLength(25)]
+		[System.ComponentModel.DataAnnotations.Length(25, 25)]
 		public string FirstFetchDate { get; set; }
 		
 		/// <summary>
@@ -1787,8 +1720,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="lastFetchDate")]
-		[System.ComponentModel.DataAnnotations.MinLength(25)]
-		[System.ComponentModel.DataAnnotations.MaxLength(25)]
+		[System.ComponentModel.DataAnnotations.Length(25, 25)]
 		public string LastFetchDate { get; set; }
 		
 		/// <summary>
@@ -1799,8 +1731,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(250)]
+		[System.ComponentModel.DataAnnotations.Length(1, 250)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -1812,8 +1743,7 @@ namespace MyNS
 		[System.ComponentModel.DefaultValue("AttorneyLawFirm")]
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="object")]
-		[System.ComponentModel.DataAnnotations.MinLength(15)]
-		[System.ComponentModel.DataAnnotations.MaxLength(15)]
+		[System.ComponentModel.DataAnnotations.Length(15, 15)]
 		public string Object { get; set; } = "AttorneyLawFirm";
 	}
 	
@@ -1828,8 +1758,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="attorneyTypeId")]
-		[System.ComponentModel.DataAnnotations.MinLength(18)]
-		[System.ComponentModel.DataAnnotations.MaxLength(18)]
+		[System.ComponentModel.DataAnnotations.Length(18, 18)]
 		public string AttorneyTypeId { get; set; }
 		
 		/// <summary>
@@ -1840,8 +1769,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="createdDate")]
-		[System.ComponentModel.DataAnnotations.MinLength(25)]
-		[System.ComponentModel.DataAnnotations.MaxLength(25)]
+		[System.ComponentModel.DataAnnotations.Length(25, 25)]
 		public System.DateTimeOffset CreatedDate { get; set; }
 		
 		/// <summary>
@@ -1851,8 +1779,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -1863,8 +1790,7 @@ namespace MyNS
 		[System.ComponentModel.DefaultValue("AttorneyType")]
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="object")]
-		[System.ComponentModel.DataAnnotations.MinLength(12)]
-		[System.ComponentModel.DataAnnotations.MaxLength(12)]
+		[System.ComponentModel.DataAnnotations.Length(12, 12)]
 		public string Object { get; set; } = "AttorneyType";
 	}
 	
@@ -1891,8 +1817,7 @@ namespace MyNS
 		[System.ComponentModel.DefaultValue("PartyAttorneyAssociations")]
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="object")]
-		[System.ComponentModel.DataAnnotations.MinLength(25)]
-		[System.ComponentModel.DataAnnotations.MaxLength(25)]
+		[System.ComponentModel.DataAnnotations.Length(25, 25)]
 		public string Object { get; set; } = "PartyAttorneyAssociations";
 		
 		/// <summary>
@@ -1941,8 +1866,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="attorneyId")]
-		[System.ComponentModel.DataAnnotations.MinLength(18)]
-		[System.ComponentModel.DataAnnotations.MaxLength(18)]
+		[System.ComponentModel.DataAnnotations.Length(18, 18)]
 		public string AttorneyId { get; set; }
 		
 		/// <summary>
@@ -1962,8 +1886,7 @@ namespace MyNS
 		[System.ComponentModel.DefaultValue("PartyAttorneyAssociation")]
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="object")]
-		[System.ComponentModel.DataAnnotations.MinLength(24)]
-		[System.ComponentModel.DataAnnotations.MaxLength(24)]
+		[System.ComponentModel.DataAnnotations.Length(24, 24)]
 		public string Object { get; set; } = "PartyAttorneyAssociation";
 		
 		/// <summary>
@@ -1974,8 +1897,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="partyAttorneyAssociationId")]
-		[System.ComponentModel.DataAnnotations.MinLength(18)]
-		[System.ComponentModel.DataAnnotations.MaxLength(18)]
+		[System.ComponentModel.DataAnnotations.Length(18, 18)]
 		public string PartyAttorneyAssociationId { get; set; }
 		
 		/// <summary>
@@ -1986,8 +1908,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="partyId")]
-		[System.ComponentModel.DataAnnotations.MinLength(18)]
-		[System.ComponentModel.DataAnnotations.MaxLength(18)]
+		[System.ComponentModel.DataAnnotations.Length(18, 18)]
 		public string PartyId { get; set; }
 	}
 	
@@ -2071,8 +1992,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="normAttorneyId")]
-		[System.ComponentModel.DataAnnotations.MinLength(18)]
-		[System.ComponentModel.DataAnnotations.MaxLength(18)]
+		[System.ComponentModel.DataAnnotations.Length(18, 18)]
 		public string NormAttorneyId { get; set; }
 		
 		/// <summary>
@@ -2093,8 +2013,7 @@ namespace MyNS
 		[System.ComponentModel.DefaultValue("PossibleNormAttorney")]
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="object")]
-		[System.ComponentModel.DataAnnotations.MinLength(20)]
-		[System.ComponentModel.DataAnnotations.MaxLength(20)]
+		[System.ComponentModel.DataAnnotations.Length(20, 20)]
 		public string Object { get; set; } = "PossibleNormAttorney";
 		
 		/// <summary>
@@ -2262,8 +2181,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="normLawFirmId")]
-		[System.ComponentModel.DataAnnotations.MinLength(18)]
-		[System.ComponentModel.DataAnnotations.MaxLength(18)]
+		[System.ComponentModel.DataAnnotations.Length(18, 18)]
 		public string NormLawFirmId { get; set; }
 		
 		/// <summary>
@@ -2284,8 +2202,7 @@ namespace MyNS
 		[System.ComponentModel.DefaultValue("PossibleNormLawFirm")]
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="object")]
-		[System.ComponentModel.DataAnnotations.MinLength(19)]
-		[System.ComponentModel.DataAnnotations.MaxLength(19)]
+		[System.ComponentModel.DataAnnotations.Length(19, 19)]
 		public string Object { get; set; } = "PossibleNormLawFirm";
 		
 		/// <summary>
@@ -2478,8 +2395,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="attorneyRepresentationTypeId")]
-		[System.ComponentModel.DataAnnotations.MinLength(18)]
-		[System.ComponentModel.DataAnnotations.MaxLength(18)]
+		[System.ComponentModel.DataAnnotations.Length(18, 18)]
 		public string AttorneyRepresentationTypeId { get; set; }
 		
 		/// <summary>
@@ -2490,8 +2406,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="createdDate")]
-		[System.ComponentModel.DataAnnotations.MinLength(25)]
-		[System.ComponentModel.DataAnnotations.MaxLength(25)]
+		[System.ComponentModel.DataAnnotations.Length(25, 25)]
 		public System.DateTimeOffset CreatedDate { get; set; }
 		
 		/// <summary>
@@ -2501,8 +2416,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -2513,8 +2427,7 @@ namespace MyNS
 		[System.ComponentModel.DefaultValue("AttorneyRepresentationType")]
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="object")]
-		[System.ComponentModel.DataAnnotations.MinLength(26)]
-		[System.ComponentModel.DataAnnotations.MaxLength(26)]
+		[System.ComponentModel.DataAnnotations.Length(26, 26)]
 		public string Object { get; set; } = "AttorneyRepresentationType";
 	}
 	
@@ -2539,8 +2452,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="nextPageAPI")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2159)]
+		[System.ComponentModel.DataAnnotations.Length(1, 2159)]
 		public string NextPageAPI { get; set; }
 		
 		/// <summary>
@@ -2551,8 +2463,7 @@ namespace MyNS
 		[System.ComponentModel.DefaultValue("AttorneyRepresentationTypeResponse")]
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="object")]
-		[System.ComponentModel.DataAnnotations.MinLength(34)]
-		[System.ComponentModel.DataAnnotations.MaxLength(34)]
+		[System.ComponentModel.DataAnnotations.Length(34, 34)]
 		public string Object { get; set; } = "AttorneyRepresentationTypeResponse";
 		
 		/// <summary>
@@ -2563,8 +2474,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="pageNumber")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public int PageNumber { get; set; }
 		
 		/// <summary>
@@ -2575,8 +2485,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="previousPageAPI")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2158)]
+		[System.ComponentModel.DataAnnotations.Length(1, 2158)]
 		public string PreviousPageAPI { get; set; }
 		
 		/// <summary>
@@ -2587,8 +2496,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="totalCount")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public int TotalCount { get; set; }
 		
 		/// <summary>
@@ -2599,8 +2507,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="totalPages")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public int TotalPages { get; set; }
 	}
 	
@@ -2625,8 +2532,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="nextPageAPI")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2145)]
+		[System.ComponentModel.DataAnnotations.Length(1, 2145)]
 		public string NextPageAPI { get; set; }
 		
 		/// <summary>
@@ -2637,8 +2543,7 @@ namespace MyNS
 		[System.ComponentModel.DefaultValue("AttorneyTypeResponse")]
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="object")]
-		[System.ComponentModel.DataAnnotations.MinLength(20)]
-		[System.ComponentModel.DataAnnotations.MaxLength(20)]
+		[System.ComponentModel.DataAnnotations.Length(20, 20)]
 		public string Object { get; set; } = "AttorneyTypeResponse";
 		
 		/// <summary>
@@ -2649,8 +2554,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="pageNumber")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public int PageNumber { get; set; }
 		
 		/// <summary>
@@ -2661,8 +2565,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="previousPageAPI")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2144)]
+		[System.ComponentModel.DataAnnotations.Length(1, 2144)]
 		public string PreviousPageAPI { get; set; }
 		
 		/// <summary>
@@ -2673,8 +2576,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="totalCount")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public int TotalCount { get; set; }
 		
 		/// <summary>
@@ -2685,8 +2587,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="totalPages")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public int TotalPages { get; set; }
 	}
 	
@@ -2722,8 +2623,7 @@ namespace MyNS
 		[System.ComponentModel.DefaultValue("Attorneys")]
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="object")]
-		[System.ComponentModel.DataAnnotations.MinLength(9)]
-		[System.ComponentModel.DataAnnotations.MaxLength(9)]
+		[System.ComponentModel.DataAnnotations.Length(9, 9)]
 		public string Object { get; set; } = "Attorneys";
 		
 		/// <summary>
@@ -3684,8 +3584,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="contactId")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(250)]
+		[System.ComponentModel.DataAnnotations.Length(1, 250)]
 		public string ContactId { get; set; }
 		
 		/// <summary>
@@ -4198,8 +4097,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="caseId")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(250)]
+		[System.ComponentModel.DataAnnotations.Length(1, 250)]
 		public string CaseId { get; set; }
 	}
 	
@@ -4387,8 +4285,7 @@ namespace MyNS
 		[System.ComponentModel.DefaultValue("BillingCycleUsageResponse")]
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="object")]
-		[System.ComponentModel.DataAnnotations.MinLength(25)]
-		[System.ComponentModel.DataAnnotations.MaxLength(25)]
+		[System.ComponentModel.DataAnnotations.Length(25, 25)]
 		public string Object { get; set; } = "BillingCycleUsageResponse";
 		
 		/// <summary>
@@ -4419,8 +4316,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="lastUpdated")]
-		[System.ComponentModel.DataAnnotations.MinLength(25)]
-		[System.ComponentModel.DataAnnotations.MaxLength(25)]
+		[System.ComponentModel.DataAnnotations.Length(25, 25)]
 		public System.Nullable<System.DateTimeOffset> LastUpdated { get; set; }
 	}
 	
@@ -4443,8 +4339,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="lastUpdated")]
-		[System.ComponentModel.DataAnnotations.MinLength(25)]
-		[System.ComponentModel.DataAnnotations.MaxLength(25)]
+		[System.ComponentModel.DataAnnotations.Length(25, 25)]
 		public System.Nullable<System.DateTimeOffset> LastUpdated { get; set; }
 	}
 	
@@ -4467,8 +4362,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="lastUpdated")]
-		[System.ComponentModel.DataAnnotations.MinLength(25)]
-		[System.ComponentModel.DataAnnotations.MaxLength(25)]
+		[System.ComponentModel.DataAnnotations.Length(25, 25)]
 		public System.Nullable<System.DateTimeOffset> LastUpdated { get; set; }
 	}
 	
@@ -4483,8 +4377,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="endDate")]
-		[System.ComponentModel.DataAnnotations.MinLength(25)]
-		[System.ComponentModel.DataAnnotations.MaxLength(25)]
+		[System.ComponentModel.DataAnnotations.Length(25, 25)]
 		public System.DateTimeOffset EndDate { get; set; }
 		
 		/// <summary>
@@ -4495,8 +4388,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="startDate")]
-		[System.ComponentModel.DataAnnotations.MinLength(25)]
-		[System.ComponentModel.DataAnnotations.MaxLength(25)]
+		[System.ComponentModel.DataAnnotations.Length(25, 25)]
 		public System.DateTimeOffset StartDate { get; set; }
 	}
 	
@@ -4512,8 +4404,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="billingCycleArray")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(12)]
+		[System.ComponentModel.DataAnnotations.Length(0, 12)]
 		public string[] BillingCycleArray { get; set; }
 		
 		/// <summary>
@@ -4525,8 +4416,7 @@ namespace MyNS
 		[System.ComponentModel.DefaultValue("BillingCyclesResponse")]
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="object")]
-		[System.ComponentModel.DataAnnotations.MinLength(21)]
-		[System.ComponentModel.DataAnnotations.MaxLength(21)]
+		[System.ComponentModel.DataAnnotations.Length(21, 21)]
 		public string Object { get; set; } = "BillingCyclesResponse";
 	}
 	
@@ -4557,8 +4447,7 @@ namespace MyNS
 		[System.ComponentModel.DefaultValue("CallbackListResponse")]
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="object")]
-		[System.ComponentModel.DataAnnotations.MinLength(20)]
-		[System.ComponentModel.DataAnnotations.MaxLength(20)]
+		[System.ComponentModel.DataAnnotations.Length(20, 20)]
 		public string Object { get; set; } = "CallbackListResponse";
 	}
 	
@@ -4579,8 +4468,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="link")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1024)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1024)]
 		public string Link { get; set; }
 	}
 	
@@ -4601,8 +4489,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="link")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1024)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1024)]
 		public string Link { get; set; }
 	}
 	
@@ -4632,8 +4519,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="caseId")]
-		[System.ComponentModel.DataAnnotations.MinLength(18)]
-		[System.ComponentModel.DataAnnotations.MaxLength(18)]
+		[System.ComponentModel.DataAnnotations.Length(18, 18)]
 		public string CaseId { get; set; }
 		
 		/// <summary>
@@ -4654,8 +4540,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="caseNumber")]
-		[System.ComponentModel.DataAnnotations.MinLength(3)]
-		[System.ComponentModel.DataAnnotations.MaxLength(50)]
+		[System.ComponentModel.DataAnnotations.Length(3, 50)]
 		public string CaseNumber { get; set; }
 		
 		/// <summary>
@@ -4728,8 +4613,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="courtServiceStatusId")]
-		[System.ComponentModel.DataAnnotations.MinLength(18)]
-		[System.ComponentModel.DataAnnotations.MaxLength(18)]
+		[System.ComponentModel.DataAnnotations.Length(18, 18)]
 		public string CourtServiceStatusId { get; set; }
 		
 		/// <summary>
@@ -4757,8 +4641,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="filedDate")]
-		[System.ComponentModel.DataAnnotations.MinLength(25)]
-		[System.ComponentModel.DataAnnotations.MaxLength(25)]
+		[System.ComponentModel.DataAnnotations.Length(25, 25)]
 		public System.DateTimeOffset FiledDate { get; set; }
 		
 		/// <summary>
@@ -4769,8 +4652,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="firstFetchDate")]
-		[System.ComponentModel.DataAnnotations.MinLength(25)]
-		[System.ComponentModel.DataAnnotations.MaxLength(25)]
+		[System.ComponentModel.DataAnnotations.Length(25, 25)]
 		public System.DateTimeOffset FirstFetchDate { get; set; }
 		
 		/// <summary>
@@ -4811,8 +4693,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="lastFetchDate")]
-		[System.ComponentModel.DataAnnotations.MinLength(25)]
-		[System.ComponentModel.DataAnnotations.MaxLength(25)]
+		[System.ComponentModel.DataAnnotations.Length(25, 25)]
 		public System.DateTimeOffset LastFetchDate { get; set; }
 		
 		/// <summary>
@@ -4823,8 +4704,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="lastFetchDateWithUpdates")]
-		[System.ComponentModel.DataAnnotations.MinLength(25)]
-		[System.ComponentModel.DataAnnotations.MaxLength(25)]
+		[System.ComponentModel.DataAnnotations.Length(25, 25)]
 		public System.DateTimeOffset LastFetchDateWithUpdates { get; set; }
 		
 		/// <summary>
@@ -4836,8 +4716,7 @@ namespace MyNS
 		[System.ComponentModel.DefaultValue("Case")]
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="object")]
-		[System.ComponentModel.DataAnnotations.MinLength(4)]
-		[System.ComponentModel.DataAnnotations.MaxLength(4)]
+		[System.ComponentModel.DataAnnotations.Length(4, 4)]
 		public string Object { get; set; } = "Case";
 		
 		/// <summary>
@@ -4848,8 +4727,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="participantsLastFetchDate")]
-		[System.ComponentModel.DataAnnotations.MinLength(25)]
-		[System.ComponentModel.DataAnnotations.MaxLength(25)]
+		[System.ComponentModel.DataAnnotations.Length(25, 25)]
 		public System.Nullable<System.DateTimeOffset> ParticipantsLastFetchDate { get; set; }
 		
 		/// <summary>
@@ -4925,8 +4803,7 @@ namespace MyNS
 		[System.ComponentModel.DefaultValue("CaseDocuments")]
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="object")]
-		[System.ComponentModel.DataAnnotations.MinLength(13)]
-		[System.ComponentModel.DataAnnotations.MaxLength(13)]
+		[System.ComponentModel.DataAnnotations.Length(13, 13)]
 		public string Object { get; set; } = "CaseDocuments";
 		
 		/// <summary>
@@ -4966,8 +4843,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="addedToLibraryDate")]
-		[System.ComponentModel.DataAnnotations.MinLength(25)]
-		[System.ComponentModel.DataAnnotations.MaxLength(25)]
+		[System.ComponentModel.DataAnnotations.Length(25, 25)]
 		public string AddedToLibraryDate { get; set; }
 		
 		/// <summary>
@@ -4978,8 +4854,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="caseDocumentId")]
-		[System.ComponentModel.DataAnnotations.MinLength(18)]
-		[System.ComponentModel.DataAnnotations.MaxLength(18)]
+		[System.ComponentModel.DataAnnotations.Length(18, 18)]
 		public string CaseDocumentId { get; set; }
 		
 		/// <summary>
@@ -5008,8 +4883,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="documentFiledDate")]
-		[System.ComponentModel.DataAnnotations.MinLength(25)]
-		[System.ComponentModel.DataAnnotations.MaxLength(25)]
+		[System.ComponentModel.DataAnnotations.Length(25, 25)]
 		public string DocumentFiledDate { get; set; }
 		
 		/// <summary>
@@ -5031,8 +4905,7 @@ namespace MyNS
 		[System.ComponentModel.DefaultValue(CaseDocumentEstimatedOrderDuration.estimateUnavailable)]
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="estimatedOrderDuration")]
-		[System.ComponentModel.DataAnnotations.MinLength(10)]
-		[System.ComponentModel.DataAnnotations.MaxLength(25)]
+		[System.ComponentModel.DataAnnotations.Length(10, 25)]
 		public CaseDocumentEstimatedOrderDuration EstimatedOrderDuration { get; set; } = CaseDocumentEstimatedOrderDuration.estimateUnavailable;
 		
 		/// <summary>
@@ -5043,8 +4916,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="firstFetchDate")]
-		[System.ComponentModel.DataAnnotations.MinLength(25)]
-		[System.ComponentModel.DataAnnotations.MaxLength(25)]
+		[System.ComponentModel.DataAnnotations.Length(25, 25)]
 		public string FirstFetchDate { get; set; }
 		
 		/// <summary>
@@ -5082,8 +4954,7 @@ namespace MyNS
 		[System.ComponentModel.DefaultValue("CaseDocument")]
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="object")]
-		[System.ComponentModel.DataAnnotations.MinLength(12)]
-		[System.ComponentModel.DataAnnotations.MaxLength(12)]
+		[System.ComponentModel.DataAnnotations.Length(12, 12)]
 		public string Object { get; set; } = "CaseDocument";
 		
 		/// <summary>
@@ -5102,8 +4973,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="parentDocumentId")]
-		[System.ComponentModel.DataAnnotations.MinLength(18)]
-		[System.ComponentModel.DataAnnotations.MaxLength(18)]
+		[System.ComponentModel.DataAnnotations.Length(18, 18)]
 		public string ParentDocumentId { get; set; }
 		
 		/// <summary>
@@ -5170,8 +5040,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="addedToLibraryDate")]
-		[System.ComponentModel.DataAnnotations.MinLength(25)]
-		[System.ComponentModel.DataAnnotations.MaxLength(25)]
+		[System.ComponentModel.DataAnnotations.Length(25, 25)]
 		public string AddedToLibraryDate { get; set; }
 		
 		/// <summary>
@@ -5201,8 +5070,7 @@ namespace MyNS
 		[System.ComponentModel.DefaultValue("PreviewDocument")]
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="object")]
-		[System.ComponentModel.DataAnnotations.MinLength(15)]
-		[System.ComponentModel.DataAnnotations.MaxLength(15)]
+		[System.ComponentModel.DataAnnotations.Length(15, 15)]
 		public string Object { get; set; } = "PreviewDocument";
 	}
 	
@@ -5295,8 +5163,7 @@ namespace MyNS
 		[System.ComponentModel.DefaultValue("CaseStats")]
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="object")]
-		[System.ComponentModel.DataAnnotations.MinLength(9)]
-		[System.ComponentModel.DataAnnotations.MaxLength(9)]
+		[System.ComponentModel.DataAnnotations.Length(9, 9)]
 		public string Object { get; set; } = "CaseStats";
 		
 		/// <summary>
@@ -5342,8 +5209,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="caseStatusGroup")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public string CaseStatusGroup { get; set; }
 		
 		/// <summary>
@@ -5353,8 +5219,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="caseStatusGroupId")]
-		[System.ComponentModel.DataAnnotations.MinLength(18)]
-		[System.ComponentModel.DataAnnotations.MaxLength(18)]
+		[System.ComponentModel.DataAnnotations.Length(18, 18)]
 		public string CaseStatusGroupId { get; set; }
 		
 		/// <summary>
@@ -5364,8 +5229,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="caseStatusId")]
-		[System.ComponentModel.DataAnnotations.MinLength(18)]
-		[System.ComponentModel.DataAnnotations.MaxLength(18)]
+		[System.ComponentModel.DataAnnotations.Length(18, 18)]
 		public string CaseStatusId { get; set; }
 		
 		/// <summary>
@@ -5376,8 +5240,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="createdDate")]
-		[System.ComponentModel.DataAnnotations.MinLength(25)]
-		[System.ComponentModel.DataAnnotations.MaxLength(25)]
+		[System.ComponentModel.DataAnnotations.Length(25, 25)]
 		public System.DateTimeOffset CreatedDate { get; set; }
 		
 		/// <summary>
@@ -5387,8 +5250,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -5399,8 +5261,7 @@ namespace MyNS
 		[System.ComponentModel.DefaultValue("CaseStatus")]
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="object")]
-		[System.ComponentModel.DataAnnotations.MinLength(10)]
-		[System.ComponentModel.DataAnnotations.MaxLength(10)]
+		[System.ComponentModel.DataAnnotations.Length(10, 10)]
 		public string Object { get; set; } = "CaseStatus";
 	}
 	
@@ -5415,8 +5276,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="areaOfLaw")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public string AreaOfLaw { get; set; }
 		
 		/// <summary>
@@ -5426,8 +5286,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="areaOfLawId")]
-		[System.ComponentModel.DataAnnotations.MinLength(18)]
-		[System.ComponentModel.DataAnnotations.MaxLength(18)]
+		[System.ComponentModel.DataAnnotations.Length(18, 18)]
 		public string AreaOfLawId { get; set; }
 		
 		/// <summary>
@@ -5437,8 +5296,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="caseClass")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public string CaseClass { get; set; }
 		
 		/// <summary>
@@ -5448,8 +5306,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="caseClassId")]
-		[System.ComponentModel.DataAnnotations.MinLength(18)]
-		[System.ComponentModel.DataAnnotations.MaxLength(18)]
+		[System.ComponentModel.DataAnnotations.Length(18, 18)]
 		public string CaseClassId { get; set; }
 		
 		/// <summary>
@@ -5459,8 +5316,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="caseTypeGroup")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public string CaseTypeGroup { get; set; }
 		
 		/// <summary>
@@ -5470,8 +5326,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="caseTypeGroupId")]
-		[System.ComponentModel.DataAnnotations.MinLength(18)]
-		[System.ComponentModel.DataAnnotations.MaxLength(18)]
+		[System.ComponentModel.DataAnnotations.Length(18, 18)]
 		public string CaseTypeGroupId { get; set; }
 		
 		/// <summary>
@@ -5481,8 +5336,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="caseTypeId")]
-		[System.ComponentModel.DataAnnotations.MinLength(18)]
-		[System.ComponentModel.DataAnnotations.MaxLength(18)]
+		[System.ComponentModel.DataAnnotations.Length(18, 18)]
 		public string CaseTypeId { get; set; }
 		
 		/// <summary>
@@ -5492,8 +5346,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="caseTypeTag")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public string CaseTypeTag { get; set; }
 		
 		/// <summary>
@@ -5504,8 +5357,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="createdDate")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public System.DateTimeOffset CreatedDate { get; set; }
 		
 		/// <summary>
@@ -5515,8 +5367,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -5527,8 +5378,7 @@ namespace MyNS
 		[System.ComponentModel.DefaultValue("CaseType")]
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="object")]
-		[System.ComponentModel.DataAnnotations.MinLength(8)]
-		[System.ComponentModel.DataAnnotations.MaxLength(8)]
+		[System.ComponentModel.DataAnnotations.Length(8, 8)]
 		public string Object { get; set; } = "CaseType";
 		
 		/// <summary>
@@ -5538,8 +5388,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="saliCode")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public string SaliCode { get; set; }
 	}
 	
@@ -5570,8 +5419,7 @@ namespace MyNS
 		[System.ComponentModel.DefaultValue("CaseCauseOfAction")]
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="object")]
-		[System.ComponentModel.DataAnnotations.MinLength(17)]
-		[System.ComponentModel.DataAnnotations.MaxLength(17)]
+		[System.ComponentModel.DataAnnotations.Length(17, 17)]
 		public string Object { get; set; } = "CaseCauseOfAction";
 	}
 	
@@ -5586,8 +5434,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="causeOfActionGroup")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public string CauseOfActionGroup { get; set; }
 		
 		/// <summary>
@@ -5597,8 +5444,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="causeOfActionGroupId")]
-		[System.ComponentModel.DataAnnotations.MinLength(18)]
-		[System.ComponentModel.DataAnnotations.MaxLength(18)]
+		[System.ComponentModel.DataAnnotations.Length(18, 18)]
 		public string CauseOfActionGroupId { get; set; }
 		
 		/// <summary>
@@ -5608,8 +5454,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="causeOfActionId")]
-		[System.ComponentModel.DataAnnotations.MinLength(18)]
-		[System.ComponentModel.DataAnnotations.MaxLength(18)]
+		[System.ComponentModel.DataAnnotations.Length(18, 18)]
 		public string CauseOfActionId { get; set; }
 		
 		/// <summary>
@@ -5620,8 +5465,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="createdDate")]
-		[System.ComponentModel.DataAnnotations.MinLength(25)]
-		[System.ComponentModel.DataAnnotations.MaxLength(25)]
+		[System.ComponentModel.DataAnnotations.Length(25, 25)]
 		public System.DateTimeOffset CreatedDate { get; set; }
 		
 		/// <summary>
@@ -5631,8 +5475,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -5643,8 +5486,7 @@ namespace MyNS
 		[System.ComponentModel.DefaultValue("CauseOfAction")]
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="object")]
-		[System.ComponentModel.DataAnnotations.MinLength(13)]
-		[System.ComponentModel.DataAnnotations.MaxLength(13)]
+		[System.ComponentModel.DataAnnotations.Length(13, 13)]
 		public string Object { get; set; } = "CauseOfAction";
 	}
 	
@@ -5659,8 +5501,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="causeOfActionAdditionalDataId")]
-		[System.ComponentModel.DataAnnotations.MinLength(18)]
-		[System.ComponentModel.DataAnnotations.MaxLength(18)]
+		[System.ComponentModel.DataAnnotations.Length(18, 18)]
 		public string CauseOfActionAdditionalDataId { get; set; }
 		
 		/// <summary>
@@ -5671,8 +5512,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="createdDate")]
-		[System.ComponentModel.DataAnnotations.MinLength(25)]
-		[System.ComponentModel.DataAnnotations.MaxLength(25)]
+		[System.ComponentModel.DataAnnotations.Length(25, 25)]
 		public System.DateTimeOffset CreatedDate { get; set; }
 		
 		/// <summary>
@@ -5683,8 +5523,7 @@ namespace MyNS
 		[System.ComponentModel.DefaultValue("CauseOfActionAdditionalData")]
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="object")]
-		[System.ComponentModel.DataAnnotations.MinLength(27)]
-		[System.ComponentModel.DataAnnotations.MaxLength(27)]
+		[System.ComponentModel.DataAnnotations.Length(27, 27)]
 		public string Object { get; set; } = "CauseOfActionAdditionalData";
 		
 		/// <summary>
@@ -5694,8 +5533,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="type")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public string Type { get; set; }
 		
 		/// <summary>
@@ -5705,8 +5543,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="value")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public string Value { get; set; }
 	}
 	
@@ -5751,8 +5588,7 @@ namespace MyNS
 		[System.ComponentModel.DefaultValue("CaseCharge")]
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="object")]
-		[System.ComponentModel.DataAnnotations.MinLength(10)]
-		[System.ComponentModel.DataAnnotations.MaxLength(10)]
+		[System.ComponentModel.DataAnnotations.Length(10, 10)]
 		public string Object { get; set; } = "CaseCharge";
 	}
 	
@@ -5767,8 +5603,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="chargeGroup")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public string ChargeGroup { get; set; }
 		
 		/// <summary>
@@ -5778,8 +5613,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="chargeGroupId")]
-		[System.ComponentModel.DataAnnotations.MinLength(18)]
-		[System.ComponentModel.DataAnnotations.MaxLength(18)]
+		[System.ComponentModel.DataAnnotations.Length(18, 18)]
 		public string ChargeGroupId { get; set; }
 		
 		/// <summary>
@@ -5789,8 +5623,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="chargeId")]
-		[System.ComponentModel.DataAnnotations.MinLength(18)]
-		[System.ComponentModel.DataAnnotations.MaxLength(18)]
+		[System.ComponentModel.DataAnnotations.Length(18, 18)]
 		public string ChargeId { get; set; }
 		
 		/// <summary>
@@ -5801,8 +5634,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="createdDate")]
-		[System.ComponentModel.DataAnnotations.MinLength(25)]
-		[System.ComponentModel.DataAnnotations.MaxLength(25)]
+		[System.ComponentModel.DataAnnotations.Length(25, 25)]
 		public System.DateTimeOffset CreatedDate { get; set; }
 		
 		/// <summary>
@@ -5812,8 +5644,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -5824,8 +5655,7 @@ namespace MyNS
 		[System.ComponentModel.DefaultValue("Charge")]
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="object")]
-		[System.ComponentModel.DataAnnotations.MinLength(6)]
-		[System.ComponentModel.DataAnnotations.MaxLength(6)]
+		[System.ComponentModel.DataAnnotations.Length(6, 6)]
 		public string Object { get; set; } = "Charge";
 	}
 	
@@ -5840,8 +5670,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="chargeAdditionalDataId")]
-		[System.ComponentModel.DataAnnotations.MinLength(18)]
-		[System.ComponentModel.DataAnnotations.MaxLength(18)]
+		[System.ComponentModel.DataAnnotations.Length(18, 18)]
 		public string ChargeAdditionalDataId { get; set; }
 		
 		/// <summary>
@@ -5852,8 +5681,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="createdDate")]
-		[System.ComponentModel.DataAnnotations.MinLength(25)]
-		[System.ComponentModel.DataAnnotations.MaxLength(25)]
+		[System.ComponentModel.DataAnnotations.Length(25, 25)]
 		public System.DateTimeOffset CreatedDate { get; set; }
 		
 		/// <summary>
@@ -5864,8 +5692,7 @@ namespace MyNS
 		[System.ComponentModel.DefaultValue("ChargeAdditionalData")]
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="object")]
-		[System.ComponentModel.DataAnnotations.MinLength(20)]
-		[System.ComponentModel.DataAnnotations.MaxLength(20)]
+		[System.ComponentModel.DataAnnotations.Length(20, 20)]
 		public string Object { get; set; } = "ChargeAdditionalData";
 		
 		/// <summary>
@@ -5875,8 +5702,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="type")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public string Type { get; set; }
 		
 		/// <summary>
@@ -5886,8 +5712,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="value")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public string Value { get; set; }
 	}
 	
@@ -5902,8 +5727,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="chargeDegreeId")]
-		[System.ComponentModel.DataAnnotations.MinLength(18)]
-		[System.ComponentModel.DataAnnotations.MaxLength(18)]
+		[System.ComponentModel.DataAnnotations.Length(18, 18)]
 		public string ChargeDegreeId { get; set; }
 		
 		/// <summary>
@@ -5914,8 +5738,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="createdDate")]
-		[System.ComponentModel.DataAnnotations.MinLength(25)]
-		[System.ComponentModel.DataAnnotations.MaxLength(25)]
+		[System.ComponentModel.DataAnnotations.Length(25, 25)]
 		public System.DateTimeOffset CreatedDate { get; set; }
 		
 		/// <summary>
@@ -5925,8 +5748,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -5937,8 +5759,7 @@ namespace MyNS
 		[System.ComponentModel.DefaultValue("ChargeDegree")]
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="object")]
-		[System.ComponentModel.DataAnnotations.MinLength(12)]
-		[System.ComponentModel.DataAnnotations.MaxLength(12)]
+		[System.ComponentModel.DataAnnotations.Length(12, 12)]
 		public string Object { get; set; } = "ChargeDegree";
 	}
 	
@@ -5953,8 +5774,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="chargeSeverityId")]
-		[System.ComponentModel.DataAnnotations.MinLength(18)]
-		[System.ComponentModel.DataAnnotations.MaxLength(18)]
+		[System.ComponentModel.DataAnnotations.Length(18, 18)]
 		public string ChargeSeverityId { get; set; }
 		
 		/// <summary>
@@ -5965,8 +5785,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="createdDate")]
-		[System.ComponentModel.DataAnnotations.MinLength(25)]
-		[System.ComponentModel.DataAnnotations.MaxLength(25)]
+		[System.ComponentModel.DataAnnotations.Length(25, 25)]
 		public System.DateTimeOffset CreatedDate { get; set; }
 		
 		/// <summary>
@@ -5976,8 +5795,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -5988,8 +5806,7 @@ namespace MyNS
 		[System.ComponentModel.DefaultValue("ChargeSeverity")]
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="object")]
-		[System.ComponentModel.DataAnnotations.MinLength(14)]
-		[System.ComponentModel.DataAnnotations.MaxLength(14)]
+		[System.ComponentModel.DataAnnotations.Length(14, 14)]
 		public string Object { get; set; } = "ChargeSeverity";
 	}
 	
@@ -6011,8 +5828,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="appealCourtsForCourtAPI")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public string AppealCourtsForCourtAPI { get; set; }
 		
 		/// <summary>
@@ -6022,8 +5838,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="container")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public string Container { get; set; }
 		
 		/// <summary>
@@ -6033,8 +5848,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="containerType")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public string ContainerType { get; set; }
 		
 		/// <summary>
@@ -6044,8 +5858,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="courtId")]
-		[System.ComponentModel.DataAnnotations.MinLength(18)]
-		[System.ComponentModel.DataAnnotations.MaxLength(18)]
+		[System.ComponentModel.DataAnnotations.Length(18, 18)]
 		public string CourtId { get; set; }
 		
 		/// <summary>
@@ -6055,8 +5868,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="courtLocationsForCourtAPI")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public string CourtLocationsForCourtAPI { get; set; }
 		
 		/// <summary>
@@ -6066,8 +5878,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="courtServiceStatusAPI")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2048)]
+		[System.ComponentModel.DataAnnotations.Length(1, 2048)]
 		public string CourtServiceStatusAPI { get; set; }
 		
 		/// <summary>
@@ -6077,8 +5888,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="courtSystemId")]
-		[System.ComponentModel.DataAnnotations.MinLength(18)]
-		[System.ComponentModel.DataAnnotations.MaxLength(18)]
+		[System.ComponentModel.DataAnnotations.Length(18, 18)]
 		public string CourtSystemId { get; set; }
 		
 		/// <summary>
@@ -6088,8 +5898,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="courtTypeId")]
-		[System.ComponentModel.DataAnnotations.MinLength(18)]
-		[System.ComponentModel.DataAnnotations.MaxLength(18)]
+		[System.ComponentModel.DataAnnotations.Length(18, 18)]
 		public string CourtTypeId { get; set; }
 		
 		/// <summary>
@@ -6100,8 +5909,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="createdDate")]
-		[System.ComponentModel.DataAnnotations.MinLength(25)]
-		[System.ComponentModel.DataAnnotations.MaxLength(25)]
+		[System.ComponentModel.DataAnnotations.Length(25, 25)]
 		public System.DateTimeOffset CreatedDate { get; set; }
 		
 		/// <summary>
@@ -6111,8 +5919,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="jurisdictionGeoForCourtAPI")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public string JurisdictionGeoForCourtAPI { get; set; }
 		
 		/// <summary>
@@ -6122,8 +5929,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -6133,8 +5939,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="nameAka")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public string NameAka { get; set; }
 		
 		/// <summary>
@@ -6145,8 +5950,7 @@ namespace MyNS
 		[System.ComponentModel.DefaultValue("Court")]
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="object")]
-		[System.ComponentModel.DataAnnotations.MinLength(5)]
-		[System.ComponentModel.DataAnnotations.MaxLength(5)]
+		[System.ComponentModel.DataAnnotations.Length(5, 5)]
 		public string Object { get; set; } = "Court";
 		
 		/// <summary>
@@ -6156,8 +5960,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="system")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public string System { get; set; }
 		
 		/// <summary>
@@ -6167,8 +5970,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="type")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public string Type { get; set; }
 	}
 	
@@ -6193,8 +5995,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="courtLocationId")]
-		[System.ComponentModel.DataAnnotations.MinLength(18)]
-		[System.ComponentModel.DataAnnotations.MaxLength(18)]
+		[System.ComponentModel.DataAnnotations.Length(18, 18)]
 		public string CourtLocationId { get; set; }
 		
 		/// <summary>
@@ -6204,8 +6005,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="courtServiceStatusAPI")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2048)]
+		[System.ComponentModel.DataAnnotations.Length(1, 2048)]
 		public string CourtServiceStatusAPI { get; set; }
 		
 		/// <summary>
@@ -6215,8 +6015,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="courtsForCourtLocationAPI")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public string CourtsForCourtLocationAPI { get; set; }
 		
 		/// <summary>
@@ -6227,8 +6026,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="createdDate")]
-		[System.ComponentModel.DataAnnotations.MinLength(25)]
-		[System.ComponentModel.DataAnnotations.MaxLength(25)]
+		[System.ComponentModel.DataAnnotations.Length(25, 25)]
 		public System.DateTimeOffset CreatedDate { get; set; }
 		
 		/// <summary>
@@ -6238,8 +6036,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -6250,8 +6047,7 @@ namespace MyNS
 		[System.ComponentModel.DefaultValue("CourtLocation")]
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="object")]
-		[System.ComponentModel.DataAnnotations.MinLength(13)]
-		[System.ComponentModel.DataAnnotations.MaxLength(13)]
+		[System.ComponentModel.DataAnnotations.Length(13, 13)]
 		public string Object { get; set; } = "CourtLocation";
 		
 		/// <summary>
@@ -6263,8 +6059,7 @@ namespace MyNS
 		[System.ComponentModel.DefaultValue("UNKNOWN")]
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="stateName")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public string StateName { get; set; } = "UNKNOWN";
 		
 		/// <summary>
@@ -6275,8 +6070,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="streetAddress1")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(250)]
+		[System.ComponentModel.DataAnnotations.Length(1, 250)]
 		public string StreetAddress1 { get; set; }
 		
 		/// <summary>
@@ -6322,8 +6116,7 @@ namespace MyNS
 		[System.ComponentModel.DefaultValue("DocketEntries")]
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="object")]
-		[System.ComponentModel.DataAnnotations.MinLength(13)]
-		[System.ComponentModel.DataAnnotations.MaxLength(13)]
+		[System.ComponentModel.DataAnnotations.Length(13, 13)]
 		public string Object { get; set; } = "DocketEntries";
 		
 		/// <summary>
@@ -6379,8 +6172,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="docketEntryDate")]
-		[System.ComponentModel.DataAnnotations.MinLength(25)]
-		[System.ComponentModel.DataAnnotations.MaxLength(25)]
+		[System.ComponentModel.DataAnnotations.Length(25, 25)]
 		public System.DateTimeOffset DocketEntryDate { get; set; }
 		
 		/// <summary>
@@ -6415,8 +6207,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="lastFetchDate")]
-		[System.ComponentModel.DataAnnotations.MinLength(25)]
-		[System.ComponentModel.DataAnnotations.MaxLength(25)]
+		[System.ComponentModel.DataAnnotations.Length(25, 25)]
 		public string LastFetchDate { get; set; }
 		
 		/// <summary>
@@ -6428,8 +6219,7 @@ namespace MyNS
 		[System.ComponentModel.DefaultValue("DocketEntry")]
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="object")]
-		[System.ComponentModel.DataAnnotations.MinLength(11)]
-		[System.ComponentModel.DataAnnotations.MaxLength(11)]
+		[System.ComponentModel.DataAnnotations.Length(11, 11)]
 		public string Object { get; set; } = "DocketEntry";
 		
 		/// <summary>
@@ -6568,8 +6358,7 @@ namespace MyNS
 		[System.ComponentModel.DefaultValue("DocketEntryPrimaryDocuments")]
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="object")]
-		[System.ComponentModel.DataAnnotations.MinLength(27)]
-		[System.ComponentModel.DataAnnotations.MaxLength(27)]
+		[System.ComponentModel.DataAnnotations.Length(27, 27)]
 		public string Object { get; set; } = "DocketEntryPrimaryDocuments";
 		
 		/// <summary>
@@ -6632,8 +6421,7 @@ namespace MyNS
 		[System.ComponentModel.DefaultValue("DocketEntrySecondaryDocuments")]
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="object")]
-		[System.ComponentModel.DataAnnotations.MinLength(29)]
-		[System.ComponentModel.DataAnnotations.MaxLength(29)]
+		[System.ComponentModel.DataAnnotations.Length(29, 29)]
 		public string Object { get; set; } = "DocketEntrySecondaryDocuments";
 		
 		/// <summary>
@@ -6695,8 +6483,7 @@ namespace MyNS
 		[System.ComponentModel.DefaultValue("ReferencedDocketNumber")]
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="object")]
-		[System.ComponentModel.DataAnnotations.MinLength(22)]
-		[System.ComponentModel.DataAnnotations.MaxLength(22)]
+		[System.ComponentModel.DataAnnotations.Length(22, 22)]
 		public string Object { get; set; } = "ReferencedDocketNumber";
 	}
 	
@@ -6881,8 +6668,7 @@ namespace MyNS
 		[System.ComponentModel.DefaultValue("Hearings")]
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="object")]
-		[System.ComponentModel.DataAnnotations.MinLength(8)]
-		[System.ComponentModel.DataAnnotations.MaxLength(8)]
+		[System.ComponentModel.DataAnnotations.Length(8, 8)]
 		public string Object { get; set; } = "Hearings";
 		
 		/// <summary>
@@ -6922,8 +6708,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="firstFetchDate")]
-		[System.ComponentModel.DataAnnotations.MinLength(25)]
-		[System.ComponentModel.DataAnnotations.MaxLength(25)]
+		[System.ComponentModel.DataAnnotations.Length(25, 25)]
 		public string FirstFetchDate { get; set; }
 		
 		/// <summary>
@@ -6934,8 +6719,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="hearingDate")]
-		[System.ComponentModel.DataAnnotations.MinLength(25)]
-		[System.ComponentModel.DataAnnotations.MaxLength(25)]
+		[System.ComponentModel.DataAnnotations.Length(25, 25)]
 		public System.DateTimeOffset HearingDate { get; set; }
 		
 		/// <summary>
@@ -6963,8 +6747,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="lastFetchDate")]
-		[System.ComponentModel.DataAnnotations.MinLength(25)]
-		[System.ComponentModel.DataAnnotations.MaxLength(25)]
+		[System.ComponentModel.DataAnnotations.Length(25, 25)]
 		public string LastFetchDate { get; set; }
 		
 		/// <summary>
@@ -6986,8 +6769,7 @@ namespace MyNS
 		[System.ComponentModel.DefaultValue("Hearing")]
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="object")]
-		[System.ComponentModel.DataAnnotations.MinLength(7)]
-		[System.ComponentModel.DataAnnotations.MaxLength(7)]
+		[System.ComponentModel.DataAnnotations.Length(7, 7)]
 		public string Object { get; set; } = "Hearing";
 	}
 	
@@ -7023,8 +6805,7 @@ namespace MyNS
 		[System.ComponentModel.DefaultValue("Judges")]
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="object")]
-		[System.ComponentModel.DataAnnotations.MinLength(6)]
-		[System.ComponentModel.DataAnnotations.MaxLength(6)]
+		[System.ComponentModel.DataAnnotations.Length(6, 6)]
 		public string Object { get; set; } = "Judges";
 		
 		/// <summary>
@@ -7072,8 +6853,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="firstFetchDate")]
-		[System.ComponentModel.DataAnnotations.MinLength(25)]
-		[System.ComponentModel.DataAnnotations.MaxLength(25)]
+		[System.ComponentModel.DataAnnotations.Length(25, 25)]
 		public System.DateTimeOffset FirstFetchDate { get; set; }
 		
 		/// <summary>
@@ -7102,8 +6882,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="judgeId")]
-		[System.ComponentModel.DataAnnotations.MinLength(18)]
-		[System.ComponentModel.DataAnnotations.MaxLength(18)]
+		[System.ComponentModel.DataAnnotations.Length(18, 18)]
 		public string JudgeId { get; set; }
 		
 		/// <summary>
@@ -7121,8 +6900,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="lastFetchDate")]
-		[System.ComponentModel.DataAnnotations.MinLength(25)]
-		[System.ComponentModel.DataAnnotations.MaxLength(25)]
+		[System.ComponentModel.DataAnnotations.Length(25, 25)]
 		public System.DateTimeOffset LastFetchDate { get; set; }
 		
 		/// <summary>
@@ -7153,8 +6931,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(250)]
+		[System.ComponentModel.DataAnnotations.Length(1, 250)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -7184,8 +6961,7 @@ namespace MyNS
 		[System.ComponentModel.DefaultValue("Judge")]
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="object")]
-		[System.ComponentModel.DataAnnotations.MinLength(5)]
-		[System.ComponentModel.DataAnnotations.MaxLength(5)]
+		[System.ComponentModel.DataAnnotations.Length(5, 5)]
 		public string Object { get; set; } = "Judge";
 		
 		/// <summary>
@@ -7217,8 +6993,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="createdDate")]
-		[System.ComponentModel.DataAnnotations.MinLength(25)]
-		[System.ComponentModel.DataAnnotations.MaxLength(25)]
+		[System.ComponentModel.DataAnnotations.Length(25, 25)]
 		public System.DateTimeOffset CreatedDate { get; set; }
 		
 		/// <summary>
@@ -7228,8 +7003,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="judgeTypeId")]
-		[System.ComponentModel.DataAnnotations.MinLength(18)]
-		[System.ComponentModel.DataAnnotations.MaxLength(18)]
+		[System.ComponentModel.DataAnnotations.Length(18, 18)]
 		public string JudgeTypeId { get; set; }
 		
 		/// <summary>
@@ -7239,8 +7013,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -7251,8 +7024,7 @@ namespace MyNS
 		[System.ComponentModel.DefaultValue("JudgeType")]
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="object")]
-		[System.ComponentModel.DataAnnotations.MinLength(9)]
-		[System.ComponentModel.DataAnnotations.MaxLength(9)]
+		[System.ComponentModel.DataAnnotations.Length(9, 9)]
 		public string Object { get; set; } = "JudgeType";
 	}
 	
@@ -7328,8 +7100,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="normJudgeId")]
-		[System.ComponentModel.DataAnnotations.MinLength(18)]
-		[System.ComponentModel.DataAnnotations.MaxLength(18)]
+		[System.ComponentModel.DataAnnotations.Length(18, 18)]
 		public string NormJudgeId { get; set; }
 		
 		/// <summary>
@@ -7350,8 +7121,7 @@ namespace MyNS
 		[System.ComponentModel.DefaultValue("PossibleNormJudge")]
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="object")]
-		[System.ComponentModel.DataAnnotations.MinLength(17)]
-		[System.ComponentModel.DataAnnotations.MaxLength(17)]
+		[System.ComponentModel.DataAnnotations.Length(17, 17)]
 		public string Object { get; set; } = "PossibleNormJudge";
 		
 		/// <summary>
@@ -7430,8 +7200,7 @@ namespace MyNS
 		[System.ComponentModel.DefaultValue("Parties")]
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="object")]
-		[System.ComponentModel.DataAnnotations.MinLength(7)]
-		[System.ComponentModel.DataAnnotations.MaxLength(7)]
+		[System.ComponentModel.DataAnnotations.Length(7, 7)]
 		public string Object { get; set; } = "Parties";
 		
 		/// <summary>
@@ -7495,8 +7264,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="firstFetchDate")]
-		[System.ComponentModel.DataAnnotations.MinLength(25)]
-		[System.ComponentModel.DataAnnotations.MaxLength(25)]
+		[System.ComponentModel.DataAnnotations.Length(25, 25)]
 		public System.DateTimeOffset FirstFetchDate { get; set; }
 		
 		/// <summary>
@@ -7525,8 +7293,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="lastFetchDate")]
-		[System.ComponentModel.DataAnnotations.MinLength(25)]
-		[System.ComponentModel.DataAnnotations.MaxLength(25)]
+		[System.ComponentModel.DataAnnotations.Length(25, 25)]
 		public System.DateTimeOffset LastFetchDate { get; set; }
 		
 		/// <summary>
@@ -7557,8 +7324,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(250)]
+		[System.ComponentModel.DataAnnotations.Length(1, 250)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -7588,8 +7354,7 @@ namespace MyNS
 		[System.ComponentModel.DefaultValue("Party")]
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="object")]
-		[System.ComponentModel.DataAnnotations.MinLength(5)]
-		[System.ComponentModel.DataAnnotations.MaxLength(5)]
+		[System.ComponentModel.DataAnnotations.Length(5, 5)]
 		public string Object { get; set; } = "Party";
 		
 		/// <summary>
@@ -7617,8 +7382,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="partyId")]
-		[System.ComponentModel.DataAnnotations.MinLength(18)]
-		[System.ComponentModel.DataAnnotations.MaxLength(18)]
+		[System.ComponentModel.DataAnnotations.Length(18, 18)]
 		public string PartyId { get; set; }
 		
 		/// <summary>
@@ -7672,8 +7436,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="createdDate")]
-		[System.ComponentModel.DataAnnotations.MinLength(25)]
-		[System.ComponentModel.DataAnnotations.MaxLength(25)]
+		[System.ComponentModel.DataAnnotations.Length(25, 25)]
 		public System.DateTimeOffset CreatedDate { get; set; }
 		
 		/// <summary>
@@ -7683,8 +7446,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="description")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public string Description { get; set; }
 		
 		/// <summary>
@@ -7694,8 +7456,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -7706,8 +7467,7 @@ namespace MyNS
 		[System.ComponentModel.DefaultValue("PartyRole")]
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="object")]
-		[System.ComponentModel.DataAnnotations.MinLength(9)]
-		[System.ComponentModel.DataAnnotations.MaxLength(9)]
+		[System.ComponentModel.DataAnnotations.Length(9, 9)]
 		public string Object { get; set; } = "PartyRole";
 		
 		/// <summary>
@@ -7717,8 +7477,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="partyRoleGroup")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public string PartyRoleGroup { get; set; }
 		
 		/// <summary>
@@ -7728,8 +7487,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="partyRoleGroupId")]
-		[System.ComponentModel.DataAnnotations.MinLength(18)]
-		[System.ComponentModel.DataAnnotations.MaxLength(18)]
+		[System.ComponentModel.DataAnnotations.Length(18, 18)]
 		public string PartyRoleGroupId { get; set; }
 		
 		/// <summary>
@@ -7739,8 +7497,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="partyRoleId")]
-		[System.ComponentModel.DataAnnotations.MinLength(18)]
-		[System.ComponentModel.DataAnnotations.MaxLength(18)]
+		[System.ComponentModel.DataAnnotations.Length(18, 18)]
 		public string PartyRoleId { get; set; }
 	}
 	
@@ -7825,8 +7582,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="normPartyId")]
-		[System.ComponentModel.DataAnnotations.MinLength(18)]
-		[System.ComponentModel.DataAnnotations.MaxLength(18)]
+		[System.ComponentModel.DataAnnotations.Length(18, 18)]
 		public string NormPartyId { get; set; }
 		
 		/// <summary>
@@ -7847,8 +7603,7 @@ namespace MyNS
 		[System.ComponentModel.DefaultValue("PossibleNormParty")]
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="object")]
-		[System.ComponentModel.DataAnnotations.MinLength(17)]
-		[System.ComponentModel.DataAnnotations.MaxLength(17)]
+		[System.ComponentModel.DataAnnotations.Length(17, 17)]
 		public string Object { get; set; } = "PossibleNormParty";
 		
 		/// <summary>
@@ -7936,8 +7691,7 @@ namespace MyNS
 		[System.ComponentModel.DefaultValue("RelatedCases")]
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="object")]
-		[System.ComponentModel.DataAnnotations.MinLength(12)]
-		[System.ComponentModel.DataAnnotations.MaxLength(12)]
+		[System.ComponentModel.DataAnnotations.Length(12, 12)]
 		public string Object { get; set; } = "RelatedCases";
 		
 		/// <summary>
@@ -8003,8 +7757,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="caseId")]
-		[System.ComponentModel.DataAnnotations.MinLength(18)]
-		[System.ComponentModel.DataAnnotations.MaxLength(18)]
+		[System.ComponentModel.DataAnnotations.Length(18, 18)]
 		public string CaseId { get; set; }
 		
 		/// <summary>
@@ -8025,8 +7778,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="caseNumber")]
-		[System.ComponentModel.DataAnnotations.MinLength(3)]
-		[System.ComponentModel.DataAnnotations.MaxLength(50)]
+		[System.ComponentModel.DataAnnotations.Length(3, 50)]
 		public string CaseNumber { get; set; }
 		
 		/// <summary>
@@ -8053,8 +7805,7 @@ namespace MyNS
 		[System.ComponentModel.DefaultValue("RelatedCase")]
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="object")]
-		[System.ComponentModel.DataAnnotations.MinLength(11)]
-		[System.ComponentModel.DataAnnotations.MaxLength(11)]
+		[System.ComponentModel.DataAnnotations.Length(11, 11)]
 		public string Object { get; set; } = "RelatedCase";
 		
 		/// <summary>
@@ -8065,8 +7816,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="sourceCaseRelationshipType")]
-		[System.ComponentModel.DataAnnotations.MinLength(3)]
-		[System.ComponentModel.DataAnnotations.MaxLength(250)]
+		[System.ComponentModel.DataAnnotations.Length(3, 250)]
 		public string SourceCaseRelationshipType { get; set; }
 	}
 	
@@ -8081,8 +7831,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="caseRelationshipTypeId")]
-		[System.ComponentModel.DataAnnotations.MinLength(18)]
-		[System.ComponentModel.DataAnnotations.MaxLength(18)]
+		[System.ComponentModel.DataAnnotations.Length(18, 18)]
 		public string CaseRelationshipTypeId { get; set; }
 		
 		/// <summary>
@@ -8093,8 +7842,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="createdDate")]
-		[System.ComponentModel.DataAnnotations.MinLength(25)]
-		[System.ComponentModel.DataAnnotations.MaxLength(25)]
+		[System.ComponentModel.DataAnnotations.Length(25, 25)]
 		public System.DateTimeOffset CreatedDate { get; set; }
 		
 		/// <summary>
@@ -8104,8 +7852,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -8116,8 +7863,7 @@ namespace MyNS
 		[System.ComponentModel.DefaultValue("CaseRelationshipType")]
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="object")]
-		[System.ComponentModel.DataAnnotations.MinLength(20)]
-		[System.ComponentModel.DataAnnotations.MaxLength(20)]
+		[System.ComponentModel.DataAnnotations.Length(20, 20)]
 		public string Object { get; set; } = "CaseRelationshipType";
 	}
 	
@@ -8145,8 +7891,7 @@ namespace MyNS
 		[System.ComponentModel.DefaultValue("SourceCaseData")]
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="object")]
-		[System.ComponentModel.DataAnnotations.MinLength(14)]
-		[System.ComponentModel.DataAnnotations.MaxLength(14)]
+		[System.ComponentModel.DataAnnotations.Length(14, 14)]
 		public string Object { get; set; } = "SourceCaseData";
 		
 		/// <summary>
@@ -8237,8 +7982,7 @@ namespace MyNS
 		[System.ComponentModel.DefaultValue("NatureOfSuit")]
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="object")]
-		[System.ComponentModel.DataAnnotations.MinLength(12)]
-		[System.ComponentModel.DataAnnotations.MaxLength(12)]
+		[System.ComponentModel.DataAnnotations.Length(12, 12)]
 		public string Object { get; set; } = "NatureOfSuit";
 		
 		/// <summary>
@@ -8277,8 +8021,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="firstFetchDate")]
-		[System.ComponentModel.DataAnnotations.MinLength(25)]
-		[System.ComponentModel.DataAnnotations.MaxLength(25)]
+		[System.ComponentModel.DataAnnotations.Length(25, 25)]
 		public string FirstFetchDate { get; set; }
 		
 		/// <summary>
@@ -8297,8 +8040,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="lastFetchDate")]
-		[System.ComponentModel.DataAnnotations.MinLength(25)]
-		[System.ComponentModel.DataAnnotations.MaxLength(25)]
+		[System.ComponentModel.DataAnnotations.Length(25, 25)]
 		public string LastFetchDate { get; set; }
 		
 		/// <summary>
@@ -8310,8 +8052,7 @@ namespace MyNS
 		[System.ComponentModel.DefaultValue("SourceCauseOfAction")]
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="object")]
-		[System.ComponentModel.DataAnnotations.MinLength(19)]
-		[System.ComponentModel.DataAnnotations.MaxLength(19)]
+		[System.ComponentModel.DataAnnotations.Length(19, 19)]
 		public string Object { get; set; } = "SourceCauseOfAction";
 		
 		/// <summary>
@@ -8360,8 +8101,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="firstFetchDate")]
-		[System.ComponentModel.DataAnnotations.MinLength(25)]
-		[System.ComponentModel.DataAnnotations.MaxLength(25)]
+		[System.ComponentModel.DataAnnotations.Length(25, 25)]
 		public string FirstFetchDate { get; set; }
 		
 		/// <summary>
@@ -8380,8 +8120,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="lastFetchDate")]
-		[System.ComponentModel.DataAnnotations.MinLength(25)]
-		[System.ComponentModel.DataAnnotations.MaxLength(25)]
+		[System.ComponentModel.DataAnnotations.Length(25, 25)]
 		public string LastFetchDate { get; set; }
 		
 		/// <summary>
@@ -8393,8 +8132,7 @@ namespace MyNS
 		[System.ComponentModel.DefaultValue("SourceCharge")]
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="object")]
-		[System.ComponentModel.DataAnnotations.MinLength(12)]
-		[System.ComponentModel.DataAnnotations.MaxLength(12)]
+		[System.ComponentModel.DataAnnotations.Length(12, 12)]
 		public string Object { get; set; } = "SourceCharge";
 		
 		/// <summary>
@@ -8472,8 +8210,7 @@ namespace MyNS
 		[System.ComponentModel.DefaultValue("SourceChargeAdditionalData")]
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="object")]
-		[System.ComponentModel.DataAnnotations.MinLength(26)]
-		[System.ComponentModel.DataAnnotations.MaxLength(26)]
+		[System.ComponentModel.DataAnnotations.Length(26, 26)]
 		public string Object { get; set; } = "SourceChargeAdditionalData";
 		
 		/// <summary>
@@ -8519,8 +8256,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="firstFetchDate")]
-		[System.ComponentModel.DataAnnotations.MinLength(25)]
-		[System.ComponentModel.DataAnnotations.MaxLength(25)]
+		[System.ComponentModel.DataAnnotations.Length(25, 25)]
 		public string FirstFetchDate { get; set; }
 		
 		/// <summary>
@@ -8531,8 +8267,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="lastFetchDate")]
-		[System.ComponentModel.DataAnnotations.MinLength(25)]
-		[System.ComponentModel.DataAnnotations.MaxLength(25)]
+		[System.ComponentModel.DataAnnotations.Length(25, 25)]
 		public string LastFetchDate { get; set; }
 		
 		/// <summary>
@@ -8544,8 +8279,7 @@ namespace MyNS
 		[System.ComponentModel.DefaultValue("SourcePageData")]
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="object")]
-		[System.ComponentModel.DataAnnotations.MinLength(14)]
-		[System.ComponentModel.DataAnnotations.MaxLength(14)]
+		[System.ComponentModel.DataAnnotations.Length(14, 14)]
 		public string Object { get; set; } = "SourcePageData";
 		
 		/// <summary>
@@ -8708,8 +8442,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="caseClassId")]
-		[System.ComponentModel.DataAnnotations.MinLength(18)]
-		[System.ComponentModel.DataAnnotations.MaxLength(18)]
+		[System.ComponentModel.DataAnnotations.Length(18, 18)]
 		public string CaseClassId { get; set; }
 		
 		/// <summary>
@@ -8720,8 +8453,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="createdDate")]
-		[System.ComponentModel.DataAnnotations.MinLength(25)]
-		[System.ComponentModel.DataAnnotations.MaxLength(25)]
+		[System.ComponentModel.DataAnnotations.Length(25, 25)]
 		public System.DateTimeOffset CreatedDate { get; set; }
 		
 		/// <summary>
@@ -8731,8 +8463,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -8743,8 +8474,7 @@ namespace MyNS
 		[System.ComponentModel.DefaultValue("CaseClass")]
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="object")]
-		[System.ComponentModel.DataAnnotations.MinLength(9)]
-		[System.ComponentModel.DataAnnotations.MaxLength(9)]
+		[System.ComponentModel.DataAnnotations.Length(9, 9)]
 		public string Object { get; set; } = "CaseClass";
 	}
 	
@@ -8799,8 +8529,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="courtServiceStatusAPI")]
-		[System.ComponentModel.DataAnnotations.MinLength(50)]
-		[System.ComponentModel.DataAnnotations.MaxLength(250)]
+		[System.ComponentModel.DataAnnotations.Length(50, 250)]
 		public string CourtServiceStatusAPI { get; set; }
 		
 		/// <summary>
@@ -8828,8 +8557,7 @@ namespace MyNS
 		[System.ComponentModel.DefaultValue("CaseClassCoverage")]
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="object")]
-		[System.ComponentModel.DataAnnotations.MinLength(17)]
-		[System.ComponentModel.DataAnnotations.MaxLength(17)]
+		[System.ComponentModel.DataAnnotations.Length(17, 17)]
 		public string Object { get; set; } = "CaseClassCoverage";
 		
 		/// <summary>
@@ -8870,8 +8598,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="nextPageAPI")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2140)]
+		[System.ComponentModel.DataAnnotations.Length(1, 2140)]
 		public string NextPageAPI { get; set; }
 		
 		/// <summary>
@@ -8882,8 +8609,7 @@ namespace MyNS
 		[System.ComponentModel.DefaultValue("CaseClassResponse")]
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="object")]
-		[System.ComponentModel.DataAnnotations.MinLength(17)]
-		[System.ComponentModel.DataAnnotations.MaxLength(17)]
+		[System.ComponentModel.DataAnnotations.Length(17, 17)]
 		public string Object { get; set; } = "CaseClassResponse";
 		
 		/// <summary>
@@ -8894,8 +8620,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="pageNumber")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public int PageNumber { get; set; }
 		
 		/// <summary>
@@ -8906,8 +8631,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="previousPageAPI")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2140)]
+		[System.ComponentModel.DataAnnotations.Length(1, 2140)]
 		public string PreviousPageAPI { get; set; }
 		
 		/// <summary>
@@ -8918,8 +8642,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="totalCount")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public int TotalCount { get; set; }
 		
 		/// <summary>
@@ -8930,8 +8653,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="totalPages")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public int TotalPages { get; set; }
 	}
 	
@@ -9478,8 +9200,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="areaOfLaw")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public string AreaOfLaw { get; set; }
 		
 		/// <summary>
@@ -9489,8 +9210,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="areaOfLawId")]
-		[System.ComponentModel.DataAnnotations.MinLength(18)]
-		[System.ComponentModel.DataAnnotations.MaxLength(18)]
+		[System.ComponentModel.DataAnnotations.Length(18, 18)]
 		public string AreaOfLawId { get; set; }
 		
 		/// <summary>
@@ -9500,8 +9220,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="caseClass")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public string CaseClass { get; set; }
 		
 		/// <summary>
@@ -9511,8 +9230,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="caseClassId")]
-		[System.ComponentModel.DataAnnotations.MinLength(18)]
-		[System.ComponentModel.DataAnnotations.MaxLength(18)]
+		[System.ComponentModel.DataAnnotations.Length(18, 18)]
 		public string CaseClassId { get; set; }
 		
 		/// <summary>
@@ -9522,8 +9240,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="caseTypeGroupId")]
-		[System.ComponentModel.DataAnnotations.MinLength(18)]
-		[System.ComponentModel.DataAnnotations.MaxLength(18)]
+		[System.ComponentModel.DataAnnotations.Length(18, 18)]
 		public string CaseTypeGroupId { get; set; }
 		
 		/// <summary>
@@ -9534,8 +9251,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="createdDate")]
-		[System.ComponentModel.DataAnnotations.MinLength(25)]
-		[System.ComponentModel.DataAnnotations.MaxLength(25)]
+		[System.ComponentModel.DataAnnotations.Length(25, 25)]
 		public System.DateTimeOffset CreatedDate { get; set; }
 		
 		/// <summary>
@@ -9545,8 +9261,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -9557,8 +9272,7 @@ namespace MyNS
 		[System.ComponentModel.DefaultValue("CaseTypeGroup")]
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="object")]
-		[System.ComponentModel.DataAnnotations.MinLength(13)]
-		[System.ComponentModel.DataAnnotations.MaxLength(13)]
+		[System.ComponentModel.DataAnnotations.Length(13, 13)]
 		public string Object { get; set; } = "CaseTypeGroup";
 	}
 	
@@ -10060,8 +9774,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="courtSystemId")]
-		[System.ComponentModel.DataAnnotations.MinLength(18)]
-		[System.ComponentModel.DataAnnotations.MaxLength(18)]
+		[System.ComponentModel.DataAnnotations.Length(18, 18)]
 		public string CourtSystemId { get; set; }
 		
 		/// <summary>
@@ -10071,8 +9784,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="courtType")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public string CourtType { get; set; }
 		
 		/// <summary>
@@ -10082,8 +9794,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="courtTypeId")]
-		[System.ComponentModel.DataAnnotations.MinLength(18)]
-		[System.ComponentModel.DataAnnotations.MaxLength(18)]
+		[System.ComponentModel.DataAnnotations.Length(18, 18)]
 		public string CourtTypeId { get; set; }
 		
 		/// <summary>
@@ -10094,8 +9805,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="createdDate")]
-		[System.ComponentModel.DataAnnotations.MinLength(25)]
-		[System.ComponentModel.DataAnnotations.MaxLength(25)]
+		[System.ComponentModel.DataAnnotations.Length(25, 25)]
 		public System.DateTimeOffset CreatedDate { get; set; }
 		
 		/// <summary>
@@ -10105,8 +9815,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -10117,8 +9826,7 @@ namespace MyNS
 		[System.ComponentModel.DefaultValue("CourtSystem")]
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="object")]
-		[System.ComponentModel.DataAnnotations.MinLength(11)]
-		[System.ComponentModel.DataAnnotations.MaxLength(11)]
+		[System.ComponentModel.DataAnnotations.Length(11, 11)]
 		public string Object { get; set; } = "CourtSystem";
 	}
 	
@@ -10270,8 +9978,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="courtTypeId")]
-		[System.ComponentModel.DataAnnotations.MinLength(18)]
-		[System.ComponentModel.DataAnnotations.MaxLength(18)]
+		[System.ComponentModel.DataAnnotations.Length(18, 18)]
 		public string CourtTypeId { get; set; }
 		
 		/// <summary>
@@ -10282,8 +9989,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="createdDate")]
-		[System.ComponentModel.DataAnnotations.MinLength(25)]
-		[System.ComponentModel.DataAnnotations.MaxLength(25)]
+		[System.ComponentModel.DataAnnotations.Length(25, 25)]
 		public System.DateTimeOffset CreatedDate { get; set; }
 		
 		/// <summary>
@@ -10293,8 +9999,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -10305,8 +10010,7 @@ namespace MyNS
 		[System.ComponentModel.DefaultValue("CourtType")]
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="object")]
-		[System.ComponentModel.DataAnnotations.MinLength(9)]
-		[System.ComponentModel.DataAnnotations.MaxLength(9)]
+		[System.ComponentModel.DataAnnotations.Length(9, 9)]
 		public string Object { get; set; } = "CourtType";
 	}
 	
@@ -10458,8 +10162,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="city")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public string City { get; set; }
 		
 		/// <summary>
@@ -10469,8 +10172,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="country")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public string Country { get; set; }
 		
 		/// <summary>
@@ -10480,8 +10182,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="county")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public string County { get; set; }
 		
 		/// <summary>
@@ -10491,8 +10192,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="courtsForJurisdictionGeoAPI")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public string CourtsForJurisdictionGeoAPI { get; set; }
 		
 		/// <summary>
@@ -10503,8 +10203,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="createdDate")]
-		[System.ComponentModel.DataAnnotations.MinLength(25)]
-		[System.ComponentModel.DataAnnotations.MaxLength(25)]
+		[System.ComponentModel.DataAnnotations.Length(25, 25)]
 		public System.DateTimeOffset CreatedDate { get; set; }
 		
 		/// <summary>
@@ -10514,8 +10213,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="fipsCode")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public string FipsCode { get; set; }
 		
 		/// <summary>
@@ -10525,8 +10223,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="jurisdictionGeoId")]
-		[System.ComponentModel.DataAnnotations.MinLength(18)]
-		[System.ComponentModel.DataAnnotations.MaxLength(18)]
+		[System.ComponentModel.DataAnnotations.Length(18, 18)]
 		public string JurisdictionGeoId { get; set; }
 		
 		/// <summary>
@@ -10537,8 +10234,7 @@ namespace MyNS
 		[System.ComponentModel.DefaultValue("JurisdictionGeo")]
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="object")]
-		[System.ComponentModel.DataAnnotations.MinLength(15)]
-		[System.ComponentModel.DataAnnotations.MaxLength(15)]
+		[System.ComponentModel.DataAnnotations.Length(15, 15)]
 		public string Object { get; set; } = "JurisdictionGeo";
 		
 		/// <summary>
@@ -10548,8 +10244,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="state")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public string State { get; set; }
 		
 		/// <summary>
@@ -10657,8 +10352,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="normAttorneyId")]
-		[System.ComponentModel.DataAnnotations.MinLength(18)]
-		[System.ComponentModel.DataAnnotations.MaxLength(18)]
+		[System.ComponentModel.DataAnnotations.Length(18, 18)]
 		public string NormAttorneyId { get; set; }
 		
 		/// <summary>
@@ -10775,8 +10469,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="normJudgeId")]
-		[System.ComponentModel.DataAnnotations.MinLength(18)]
-		[System.ComponentModel.DataAnnotations.MaxLength(18)]
+		[System.ComponentModel.DataAnnotations.Length(18, 18)]
 		public string NormJudgeId { get; set; }
 		
 		/// <summary>
@@ -10893,8 +10586,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="normLawFirmId")]
-		[System.ComponentModel.DataAnnotations.MinLength(18)]
-		[System.ComponentModel.DataAnnotations.MaxLength(18)]
+		[System.ComponentModel.DataAnnotations.Length(18, 18)]
 		public string NormLawFirmId { get; set; }
 		
 		/// <summary>
@@ -11011,8 +10703,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="normPartyId")]
-		[System.ComponentModel.DataAnnotations.MinLength(18)]
-		[System.ComponentModel.DataAnnotations.MaxLength(18)]
+		[System.ComponentModel.DataAnnotations.Length(18, 18)]
 		public string NormPartyId { get; set; }
 		
 		/// <summary>
@@ -11191,8 +10882,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="createdDate")]
-		[System.ComponentModel.DataAnnotations.MinLength(25)]
-		[System.ComponentModel.DataAnnotations.MaxLength(25)]
+		[System.ComponentModel.DataAnnotations.Length(25, 25)]
 		public System.DateTimeOffset CreatedDate { get; set; }
 		
 		/// <summary>
@@ -11202,8 +10892,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="description")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public string Description { get; set; }
 		
 		/// <summary>
@@ -11213,8 +10902,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -11225,8 +10913,7 @@ namespace MyNS
 		[System.ComponentModel.DefaultValue("PartyRoleGroup")]
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="object")]
-		[System.ComponentModel.DataAnnotations.MinLength(14)]
-		[System.ComponentModel.DataAnnotations.MaxLength(14)]
+		[System.ComponentModel.DataAnnotations.Length(14, 14)]
 		public string Object { get; set; } = "PartyRoleGroup";
 		
 		/// <summary>
@@ -11236,8 +10923,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="partyRoleGroupId")]
-		[System.ComponentModel.DataAnnotations.MinLength(18)]
-		[System.ComponentModel.DataAnnotations.MaxLength(18)]
+		[System.ComponentModel.DataAnnotations.Length(18, 18)]
 		public string PartyRoleGroupId { get; set; }
 	}
 	
@@ -11391,8 +11077,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="callbackGeneratedDate")]
-		[System.ComponentModel.DataAnnotations.MinLength(25)]
-		[System.ComponentModel.DataAnnotations.MaxLength(25)]
+		[System.ComponentModel.DataAnnotations.Length(25, 25)]
 		public System.Nullable<System.DateTimeOffset> CallbackGeneratedDate { get; set; }
 		
 		/// <summary>
@@ -11410,8 +11095,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="caseDocumentId")]
-		[System.ComponentModel.DataAnnotations.MinLength(18)]
-		[System.ComponentModel.DataAnnotations.MaxLength(18)]
+		[System.ComponentModel.DataAnnotations.Length(18, 18)]
 		public string CaseDocumentId { get; set; }
 		
 		/// <summary>
@@ -11421,8 +11105,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="caseDocumentOrderCallbackAPI")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1024)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1024)]
 		public string CaseDocumentOrderCallbackAPI { get; set; }
 		
 		/// <summary>
@@ -11433,8 +11116,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="caseDocumentOrderCallbackId")]
-		[System.ComponentModel.DataAnnotations.MinLength(18)]
-		[System.ComponentModel.DataAnnotations.MaxLength(18)]
+		[System.ComponentModel.DataAnnotations.Length(18, 18)]
 		public string CaseDocumentOrderCallbackId { get; set; }
 		
 		/// <summary>
@@ -11461,8 +11143,7 @@ namespace MyNS
 		[System.ComponentModel.DefaultValue("CaseDocumentOrderCallback")]
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="object")]
-		[System.ComponentModel.DataAnnotations.MinLength(25)]
-		[System.ComponentModel.DataAnnotations.MaxLength(25)]
+		[System.ComponentModel.DataAnnotations.Length(25, 25)]
 		public string Object { get; set; } = "CaseDocumentOrderCallback";
 		
 		/// <summary>
@@ -11473,8 +11154,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="status")]
-		[System.ComponentModel.DataAnnotations.MinLength(7)]
-		[System.ComponentModel.DataAnnotations.MaxLength(11)]
+		[System.ComponentModel.DataAnnotations.Length(7, 11)]
 		public CaseDocumentOrderCallbackStatus Status { get; set; }
 	}
 	
@@ -11493,8 +11173,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="code")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(75)]
+		[System.ComponentModel.DataAnnotations.Length(1, 75)]
 		public string Code { get; set; }
 		
 		/// <summary>
@@ -11505,8 +11184,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="details")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public string Details { get; set; }
 		
 		/// <summary>
@@ -11517,8 +11195,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="message")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public string Message { get; set; }
 		
 		/// <summary>
@@ -11529,8 +11206,7 @@ namespace MyNS
 		[System.ComponentModel.DefaultValue("Exception")]
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="object")]
-		[System.ComponentModel.DataAnnotations.MinLength(9)]
-		[System.ComponentModel.DataAnnotations.MaxLength(9)]
+		[System.ComponentModel.DataAnnotations.Length(9, 9)]
 		public string Object { get; set; } = "Exception";
 	}
 	
@@ -11546,8 +11222,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="expiryDate")]
-		[System.ComponentModel.DataAnnotations.MinLength(10)]
-		[System.ComponentModel.DataAnnotations.MaxLength(40)]
+		[System.ComponentModel.DataAnnotations.Length(10, 40)]
 		public System.DateTimeOffset ExpiryDate { get; set; }
 		
 		/// <summary>
@@ -11558,8 +11233,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="fileUrl")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2048)]
+		[System.ComponentModel.DataAnnotations.Length(1, 2048)]
 		public string FileUrl { get; set; }
 		
 		/// <summary>
@@ -11570,8 +11244,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -11582,8 +11255,7 @@ namespace MyNS
 		[System.ComponentModel.DefaultValue("ExportFile")]
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="object")]
-		[System.ComponentModel.DataAnnotations.MinLength(10)]
-		[System.ComponentModel.DataAnnotations.MaxLength(10)]
+		[System.ComponentModel.DataAnnotations.Length(10, 10)]
 		public string Object { get; set; } = "ExportFile";
 	}
 	
@@ -11613,8 +11285,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="callbackArray")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(100)]
+		[System.ComponentModel.DataAnnotations.Length(0, 100)]
 		public CaseDocumentOrderCallback[] CallbackArray { get; set; }
 		
 		/// <summary>
@@ -11625,8 +11296,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="nextPageAPI")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1024)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1024)]
 		public string NextPageAPI { get; set; }
 		
 		/// <summary>
@@ -11638,8 +11308,7 @@ namespace MyNS
 		[System.ComponentModel.DefaultValue("CaseDocumentOrderCallbackListResponse")]
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="object")]
-		[System.ComponentModel.DataAnnotations.MinLength(37)]
-		[System.ComponentModel.DataAnnotations.MaxLength(37)]
+		[System.ComponentModel.DataAnnotations.Length(37, 37)]
 		public string Object { get; set; } = "CaseDocumentOrderCallbackListResponse";
 		
 		/// <summary>
@@ -11658,8 +11327,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="previousPageAPI")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1024)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1024)]
 		public string PreviousPageAPI { get; set; }
 		
 		/// <summary>
@@ -11692,8 +11360,7 @@ namespace MyNS
 		/// Max length: 32
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="pacerClientCode")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(32)]
+		[System.ComponentModel.DataAnnotations.Length(0, 32)]
 		public string PacerClientCode { get; set; }
 		
 		/// <summary>
@@ -11704,8 +11371,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="pacerUserId")]
-		[System.ComponentModel.DataAnnotations.MinLength(6)]
-		[System.ComponentModel.DataAnnotations.MaxLength(40)]
+		[System.ComponentModel.DataAnnotations.Length(6, 40)]
 		public string PacerUserId { get; set; }
 	}
 	
@@ -11721,8 +11387,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="caseDocumentId")]
-		[System.ComponentModel.DataAnnotations.MinLength(18)]
-		[System.ComponentModel.DataAnnotations.MaxLength(18)]
+		[System.ComponentModel.DataAnnotations.Length(18, 18)]
 		public string CaseDocumentId { get; set; }
 		
 		/// <summary>
@@ -11752,8 +11417,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="callbackGeneratedDate")]
-		[System.ComponentModel.DataAnnotations.MinLength(25)]
-		[System.ComponentModel.DataAnnotations.MaxLength(25)]
+		[System.ComponentModel.DataAnnotations.Length(25, 25)]
 		public System.Nullable<System.DateTimeOffset> CallbackGeneratedDate { get; set; }
 		
 		/// <summary>
@@ -11763,8 +11427,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="caseExportCallbackAPI")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1024)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1024)]
 		public string CaseExportCallbackAPI { get; set; }
 		
 		/// <summary>
@@ -11775,8 +11438,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="caseExportCallbackId")]
-		[System.ComponentModel.DataAnnotations.MinLength(18)]
-		[System.ComponentModel.DataAnnotations.MaxLength(18)]
+		[System.ComponentModel.DataAnnotations.Length(18, 18)]
 		public string CaseExportCallbackId { get; set; }
 		
 		/// <summary>
@@ -11787,8 +11449,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="caseId")]
-		[System.ComponentModel.DataAnnotations.MinLength(18)]
-		[System.ComponentModel.DataAnnotations.MaxLength(18)]
+		[System.ComponentModel.DataAnnotations.Length(18, 18)]
 		public string CaseId { get; set; }
 		
 		/// <summary>
@@ -11815,8 +11476,7 @@ namespace MyNS
 		[System.ComponentModel.DefaultValue("CaseExportCallback")]
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="object")]
-		[System.ComponentModel.DataAnnotations.MinLength(18)]
-		[System.ComponentModel.DataAnnotations.MaxLength(18)]
+		[System.ComponentModel.DataAnnotations.Length(18, 18)]
 		public string Object { get; set; } = "CaseExportCallback";
 		
 		/// <summary>
@@ -11827,8 +11487,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="status")]
-		[System.ComponentModel.DataAnnotations.MinLength(7)]
-		[System.ComponentModel.DataAnnotations.MaxLength(11)]
+		[System.ComponentModel.DataAnnotations.Length(7, 11)]
 		public CaseDocumentOrderCallbackStatus Status { get; set; }
 	}
 	
@@ -11844,8 +11503,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="callbackArray")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(100)]
+		[System.ComponentModel.DataAnnotations.Length(0, 100)]
 		public CaseExportCallback[] CallbackArray { get; set; }
 		
 		/// <summary>
@@ -11856,8 +11514,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="nextPageAPI")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1024)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1024)]
 		public string NextPageAPI { get; set; }
 		
 		/// <summary>
@@ -11869,8 +11526,7 @@ namespace MyNS
 		[System.ComponentModel.DefaultValue("CaseExportCallbackListResponse")]
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="object")]
-		[System.ComponentModel.DataAnnotations.MinLength(30)]
-		[System.ComponentModel.DataAnnotations.MaxLength(30)]
+		[System.ComponentModel.DataAnnotations.Length(30, 30)]
 		public string Object { get; set; } = "CaseExportCallbackListResponse";
 		
 		/// <summary>
@@ -11889,8 +11545,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="previousPageAPI")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1024)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1024)]
 		public string PreviousPageAPI { get; set; }
 		
 		/// <summary>
@@ -11931,8 +11586,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="nextPageAPI")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2153)]
+		[System.ComponentModel.DataAnnotations.Length(1, 2153)]
 		public string NextPageAPI { get; set; }
 		
 		/// <summary>
@@ -11943,8 +11597,7 @@ namespace MyNS
 		[System.ComponentModel.DefaultValue("CaseRelationshipTypeResponse")]
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="object")]
-		[System.ComponentModel.DataAnnotations.MinLength(28)]
-		[System.ComponentModel.DataAnnotations.MaxLength(28)]
+		[System.ComponentModel.DataAnnotations.Length(28, 28)]
 		public string Object { get; set; } = "CaseRelationshipTypeResponse";
 		
 		/// <summary>
@@ -11955,8 +11608,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="pageNumber")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public int PageNumber { get; set; }
 		
 		/// <summary>
@@ -11967,8 +11619,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="previousPageAPI")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2152)]
+		[System.ComponentModel.DataAnnotations.Length(1, 2152)]
 		public string PreviousPageAPI { get; set; }
 		
 		/// <summary>
@@ -11979,8 +11630,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="totalCount")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public int TotalCount { get; set; }
 		
 		/// <summary>
@@ -11991,8 +11641,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="totalPages")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public int TotalPages { get; set; }
 	}
 	
@@ -12008,8 +11657,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="caseSearchId")]
-		[System.ComponentModel.DataAnnotations.MinLength(18)]
-		[System.ComponentModel.DataAnnotations.MaxLength(18)]
+		[System.ComponentModel.DataAnnotations.Length(18, 18)]
 		public string CaseSearchId { get; set; }
 		
 		/// <summary>
@@ -12029,8 +11677,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="nextPageAPI")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2138)]
+		[System.ComponentModel.DataAnnotations.Length(1, 2138)]
 		public string NextPageAPI { get; set; }
 		
 		/// <summary>
@@ -12041,8 +11688,7 @@ namespace MyNS
 		[System.ComponentModel.DefaultValue("CaseSearchResponse")]
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="object")]
-		[System.ComponentModel.DataAnnotations.MinLength(18)]
-		[System.ComponentModel.DataAnnotations.MaxLength(18)]
+		[System.ComponentModel.DataAnnotations.Length(18, 18)]
 		public string Object { get; set; } = "CaseSearchResponse";
 		
 		/// <summary>
@@ -12052,8 +11698,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="pageNumber")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(4)]
+		[System.ComponentModel.DataAnnotations.Length(1, 4)]
 		public int PageNumber { get; set; }
 		
 		/// <summary>
@@ -12064,8 +11709,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="previousPageAPI")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2138)]
+		[System.ComponentModel.DataAnnotations.Length(1, 2138)]
 		public string PreviousPageAPI { get; set; }
 		
 		/// <summary>
@@ -12076,8 +11720,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="q")]
-		[System.ComponentModel.DataAnnotations.MinLength(3)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2048)]
+		[System.ComponentModel.DataAnnotations.Length(3, 2048)]
 		public string Q { get; set; }
 		
 		/// <summary>
@@ -12088,8 +11731,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="totalCount")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(11)]
+		[System.ComponentModel.DataAnnotations.Length(1, 11)]
 		public int TotalCount { get; set; }
 		
 		/// <summary>
@@ -12100,8 +11742,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="totalPages")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(4)]
+		[System.ComponentModel.DataAnnotations.Length(1, 4)]
 		public int TotalPages { get; set; }
 	}
 	
@@ -12116,8 +11757,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="caseAPI")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public string CaseAPI { get; set; }
 		
 		/// <summary>
@@ -12127,8 +11767,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="caseId")]
-		[System.ComponentModel.DataAnnotations.MinLength(18)]
-		[System.ComponentModel.DataAnnotations.MaxLength(18)]
+		[System.ComponentModel.DataAnnotations.Length(18, 18)]
 		public string CaseId { get; set; }
 		
 		/// <summary>
@@ -12147,8 +11786,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="caseNumber")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public string CaseNumber { get; set; }
 		
 		/// <summary>
@@ -12186,8 +11824,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="filedDate")]
-		[System.ComponentModel.DataAnnotations.MinLength(25)]
-		[System.ComponentModel.DataAnnotations.MaxLength(25)]
+		[System.ComponentModel.DataAnnotations.Length(25, 25)]
 		public System.DateTimeOffset FiledDate { get; set; }
 		
 		/// <summary>
@@ -12197,8 +11834,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="firstFetchDate")]
-		[System.ComponentModel.DataAnnotations.MinLength(25)]
-		[System.ComponentModel.DataAnnotations.MaxLength(25)]
+		[System.ComponentModel.DataAnnotations.Length(25, 25)]
 		public System.DateTimeOffset FirstFetchDate { get; set; }
 		
 		/// <summary>
@@ -12208,8 +11844,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="lastFetchDate")]
-		[System.ComponentModel.DataAnnotations.MinLength(25)]
-		[System.ComponentModel.DataAnnotations.MaxLength(25)]
+		[System.ComponentModel.DataAnnotations.Length(25, 25)]
 		public System.DateTimeOffset LastFetchDate { get; set; }
 		
 		/// <summary>
@@ -12219,8 +11854,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="lastFetchDateWithUpdates")]
-		[System.ComponentModel.DataAnnotations.MinLength(25)]
-		[System.ComponentModel.DataAnnotations.MaxLength(25)]
+		[System.ComponentModel.DataAnnotations.Length(25, 25)]
 		public System.DateTimeOffset LastFetchDateWithUpdates { get; set; }
 		
 		/// <summary>
@@ -12238,8 +11872,7 @@ namespace MyNS
 		[System.ComponentModel.DefaultValue("CaseSearchResult")]
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="object")]
-		[System.ComponentModel.DataAnnotations.MinLength(16)]
-		[System.ComponentModel.DataAnnotations.MaxLength(16)]
+		[System.ComponentModel.DataAnnotations.Length(16, 16)]
 		public string Object { get; set; } = "CaseSearchResult";
 		
 		/// <summary>
@@ -12249,8 +11882,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="participantsLastFetchDate")]
-		[System.ComponentModel.DataAnnotations.MinLength(25)]
-		[System.ComponentModel.DataAnnotations.MaxLength(25)]
+		[System.ComponentModel.DataAnnotations.Length(25, 25)]
 		public System.Nullable<System.DateTimeOffset> ParticipantsLastFetchDate { get; set; }
 	}
 	
@@ -12265,8 +11897,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="highlightSnippet")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(10000)]
+		[System.ComponentModel.DataAnnotations.Length(1, 10000)]
 		public string HighlightSnippet { get; set; }
 		
 		/// <summary>
@@ -12276,8 +11907,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="matchedObjectAPI")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2048)]
+		[System.ComponentModel.DataAnnotations.Length(1, 2048)]
 		public string MatchedObjectAPI { get; set; }
 		
 		/// <summary>
@@ -12287,8 +11917,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="matchedObjectAttribute")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public string MatchedObjectAttribute { get; set; }
 		
 		/// <summary>
@@ -12298,8 +11927,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="matchedObjectId")]
-		[System.ComponentModel.DataAnnotations.MinLength(17)]
-		[System.ComponentModel.DataAnnotations.MaxLength(18)]
+		[System.ComponentModel.DataAnnotations.Length(17, 18)]
 		public string MatchedObjectId { get; set; }
 		
 		/// <summary>
@@ -12309,8 +11937,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="matchedObjectName")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public string MatchedObjectName { get; set; }
 		
 		/// <summary>
@@ -12321,8 +11948,7 @@ namespace MyNS
 		[System.ComponentModel.DefaultValue("MatchedObject")]
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="object")]
-		[System.ComponentModel.DataAnnotations.MinLength(13)]
-		[System.ComponentModel.DataAnnotations.MaxLength(13)]
+		[System.ComponentModel.DataAnnotations.Length(13, 13)]
 		public string Object { get; set; } = "MatchedObject";
 	}
 	
@@ -12337,8 +11963,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="caseStatusGroupId")]
-		[System.ComponentModel.DataAnnotations.MinLength(18)]
-		[System.ComponentModel.DataAnnotations.MaxLength(18)]
+		[System.ComponentModel.DataAnnotations.Length(18, 18)]
 		public string CaseStatusGroupId { get; set; }
 		
 		/// <summary>
@@ -12349,8 +11974,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="createdDate")]
-		[System.ComponentModel.DataAnnotations.MinLength(25)]
-		[System.ComponentModel.DataAnnotations.MaxLength(25)]
+		[System.ComponentModel.DataAnnotations.Length(25, 25)]
 		public System.DateTimeOffset CreatedDate { get; set; }
 		
 		/// <summary>
@@ -12360,8 +11984,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -12372,8 +11995,7 @@ namespace MyNS
 		[System.ComponentModel.DefaultValue("CaseStatusGroup")]
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="object")]
-		[System.ComponentModel.DataAnnotations.MinLength(15)]
-		[System.ComponentModel.DataAnnotations.MaxLength(15)]
+		[System.ComponentModel.DataAnnotations.Length(15, 15)]
 		public string Object { get; set; } = "CaseStatusGroup";
 	}
 	
@@ -12398,8 +12020,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="nextPageAPI")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2148)]
+		[System.ComponentModel.DataAnnotations.Length(1, 2148)]
 		public string NextPageAPI { get; set; }
 		
 		/// <summary>
@@ -12410,8 +12031,7 @@ namespace MyNS
 		[System.ComponentModel.DefaultValue("CaseStatusGroupResponse")]
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="object")]
-		[System.ComponentModel.DataAnnotations.MinLength(23)]
-		[System.ComponentModel.DataAnnotations.MaxLength(23)]
+		[System.ComponentModel.DataAnnotations.Length(23, 23)]
 		public string Object { get; set; } = "CaseStatusGroupResponse";
 		
 		/// <summary>
@@ -12422,8 +12042,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="pageNumber")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public int PageNumber { get; set; }
 		
 		/// <summary>
@@ -12434,8 +12053,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="previousPageAPI")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2147)]
+		[System.ComponentModel.DataAnnotations.Length(1, 2147)]
 		public string PreviousPageAPI { get; set; }
 		
 		/// <summary>
@@ -12446,8 +12064,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="totalCount")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public int TotalCount { get; set; }
 		
 		/// <summary>
@@ -12458,8 +12075,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="totalPages")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public int TotalPages { get; set; }
 	}
 	
@@ -12484,8 +12100,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="nextPageAPI")]
-		[System.ComponentModel.DataAnnotations.MinLength(18)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2143)]
+		[System.ComponentModel.DataAnnotations.Length(18, 2143)]
 		public string NextPageAPI { get; set; }
 		
 		/// <summary>
@@ -12496,8 +12111,7 @@ namespace MyNS
 		[System.ComponentModel.DefaultValue("CaseStatusResponse")]
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="object")]
-		[System.ComponentModel.DataAnnotations.MinLength(18)]
-		[System.ComponentModel.DataAnnotations.MaxLength(18)]
+		[System.ComponentModel.DataAnnotations.Length(18, 18)]
 		public string Object { get; set; } = "CaseStatusResponse";
 		
 		/// <summary>
@@ -12508,8 +12122,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="pageNumber")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public int PageNumber { get; set; }
 		
 		/// <summary>
@@ -12520,8 +12133,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="previousPageAPI")]
-		[System.ComponentModel.DataAnnotations.MinLength(18)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2142)]
+		[System.ComponentModel.DataAnnotations.Length(18, 2142)]
 		public string PreviousPageAPI { get; set; }
 		
 		/// <summary>
@@ -12532,8 +12144,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="totalCount")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public int TotalCount { get; set; }
 		
 		/// <summary>
@@ -12544,8 +12155,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="totalPages")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public int TotalPages { get; set; }
 	}
 	
@@ -12567,8 +12177,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="caseAPI")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public string CaseAPI { get; set; }
 		
 		/// <summary>
@@ -12579,8 +12188,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="caseId")]
-		[System.ComponentModel.DataAnnotations.MinLength(18)]
-		[System.ComponentModel.DataAnnotations.MaxLength(18)]
+		[System.ComponentModel.DataAnnotations.Length(18, 18)]
 		public string CaseId { get; set; }
 		
 		/// <summary>
@@ -12591,8 +12199,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="lastFetchDate")]
-		[System.ComponentModel.DataAnnotations.MinLength(25)]
-		[System.ComponentModel.DataAnnotations.MaxLength(25)]
+		[System.ComponentModel.DataAnnotations.Length(25, 25)]
 		public System.Nullable<System.DateTimeOffset> LastFetchDate { get; set; }
 		
 		/// <summary>
@@ -12603,8 +12210,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="lastFetchDateWithUpdates")]
-		[System.ComponentModel.DataAnnotations.MinLength(25)]
-		[System.ComponentModel.DataAnnotations.MaxLength(25)]
+		[System.ComponentModel.DataAnnotations.Length(25, 25)]
 		public System.Nullable<System.DateTimeOffset> LastFetchDateWithUpdates { get; set; }
 		
 		/// <summary>
@@ -12623,8 +12229,7 @@ namespace MyNS
 		[System.ComponentModel.DefaultValue("CaseTrack")]
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="object")]
-		[System.ComponentModel.DataAnnotations.MinLength(9)]
-		[System.ComponentModel.DataAnnotations.MaxLength(9)]
+		[System.ComponentModel.DataAnnotations.Length(9, 9)]
 		public string Object { get; set; } = "CaseTrack";
 		
 		/// <summary>
@@ -12655,8 +12260,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="lastTrackDate")]
-		[System.ComponentModel.DataAnnotations.MinLength(25)]
-		[System.ComponentModel.DataAnnotations.MaxLength(25)]
+		[System.ComponentModel.DataAnnotations.Length(25, 25)]
 		public System.Nullable<System.DateTimeOffset> LastTrackDate { get; set; }
 		
 		/// <summary>
@@ -12676,8 +12280,7 @@ namespace MyNS
 		[System.ComponentModel.DefaultValue("LastTrackedDetails")]
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="object")]
-		[System.ComponentModel.DataAnnotations.MinLength(18)]
-		[System.ComponentModel.DataAnnotations.MaxLength(18)]
+		[System.ComponentModel.DataAnnotations.Length(18, 18)]
 		public string Object { get; set; } = "LastTrackedDetails";
 		
 		/// <summary>
@@ -12746,8 +12349,7 @@ namespace MyNS
 		[System.ComponentModel.DefaultValue("CaseUpdatePacerOptionsResponse")]
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="object")]
-		[System.ComponentModel.DataAnnotations.MinLength(30)]
-		[System.ComponentModel.DataAnnotations.MaxLength(30)]
+		[System.ComponentModel.DataAnnotations.Length(30, 30)]
 		public string Object { get; set; } = "CaseUpdatePacerOptionsResponse";
 		
 		/// <summary>
@@ -12758,8 +12360,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="pacerClientCode")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(32)]
+		[System.ComponentModel.DataAnnotations.Length(0, 32)]
 		public string PacerClientCode { get; set; }
 		
 		/// <summary>
@@ -12770,8 +12371,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="pacerUserId")]
-		[System.ComponentModel.DataAnnotations.MinLength(6)]
-		[System.ComponentModel.DataAnnotations.MaxLength(40)]
+		[System.ComponentModel.DataAnnotations.Length(6, 40)]
 		public string PacerUserId { get; set; }
 		
 		/// <summary>
@@ -12789,8 +12389,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="refreshType")]
-		[System.ComponentModel.DataAnnotations.MinLength(21)]
-		[System.ComponentModel.DataAnnotations.MaxLength(21)]
+		[System.ComponentModel.DataAnnotations.Length(21, 21)]
 		public System.Nullable<CaseUpdatePacerOptionsResponseRefreshType> RefreshType { get; set; }
 	}
 	
@@ -12818,8 +12417,7 @@ namespace MyNS
 		/// Max length: 15
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="page")]
-		[System.ComponentModel.DataAnnotations.MinLength(11)]
-		[System.ComponentModel.DataAnnotations.MaxLength(15)]
+		[System.ComponentModel.DataAnnotations.Length(11, 15)]
 		public System.Nullable<CaseUpdatePacerOptionsResponseAdditionalPageArrayPage> Page { get; set; }
 	}
 	
@@ -12872,8 +12470,7 @@ namespace MyNS
 		[System.ComponentModel.DefaultValue("Schedule")]
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="object")]
-		[System.ComponentModel.DataAnnotations.MinLength(8)]
-		[System.ComponentModel.DataAnnotations.MaxLength(8)]
+		[System.ComponentModel.DataAnnotations.Length(8, 8)]
 		public string Object { get; set; } = "Schedule";
 		
 		/// <summary>
@@ -12883,8 +12480,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="type")]
-		[System.ComponentModel.DataAnnotations.MinLength(5)]
-		[System.ComponentModel.DataAnnotations.MaxLength(7)]
+		[System.ComponentModel.DataAnnotations.Length(5, 7)]
 		public ScheduleType Type { get; set; }
 	}
 	
@@ -12914,8 +12510,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="caseTrackPreviewArray")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(100)]
+		[System.ComponentModel.DataAnnotations.Length(0, 100)]
 		public CaseTrackPreview[] CaseTrackPreviewArray { get; set; }
 		
 		/// <summary>
@@ -12926,8 +12521,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="nextPageAPI")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1024)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1024)]
 		public string NextPageAPI { get; set; }
 		
 		/// <summary>
@@ -12939,8 +12533,7 @@ namespace MyNS
 		[System.ComponentModel.DefaultValue("CaseTrackListResponse")]
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="object")]
-		[System.ComponentModel.DataAnnotations.MinLength(21)]
-		[System.ComponentModel.DataAnnotations.MaxLength(21)]
+		[System.ComponentModel.DataAnnotations.Length(21, 21)]
 		public string Object { get; set; } = "CaseTrackListResponse";
 		
 		/// <summary>
@@ -12959,8 +12552,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="previousPageAPI")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1024)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1024)]
 		public string PreviousPageAPI { get; set; }
 		
 		/// <summary>
@@ -12991,8 +12583,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="caseAPI")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public string CaseAPI { get; set; }
 		
 		/// <summary>
@@ -13003,8 +12594,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="caseId")]
-		[System.ComponentModel.DataAnnotations.MinLength(18)]
-		[System.ComponentModel.DataAnnotations.MaxLength(18)]
+		[System.ComponentModel.DataAnnotations.Length(18, 18)]
 		public string CaseId { get; set; }
 		
 		/// <summary>
@@ -13015,8 +12605,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="lastFetchDate")]
-		[System.ComponentModel.DataAnnotations.MinLength(25)]
-		[System.ComponentModel.DataAnnotations.MaxLength(25)]
+		[System.ComponentModel.DataAnnotations.Length(25, 25)]
 		public System.Nullable<System.DateTimeOffset> LastFetchDate { get; set; }
 		
 		/// <summary>
@@ -13027,8 +12616,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="lastFetchDateWithUpdates")]
-		[System.ComponentModel.DataAnnotations.MinLength(25)]
-		[System.ComponentModel.DataAnnotations.MaxLength(25)]
+		[System.ComponentModel.DataAnnotations.Length(25, 25)]
 		public System.Nullable<System.DateTimeOffset> LastFetchDateWithUpdates { get; set; }
 		
 		/// <summary>
@@ -13047,8 +12635,7 @@ namespace MyNS
 		[System.ComponentModel.DefaultValue("CaseTrackPreview")]
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="object")]
-		[System.ComponentModel.DataAnnotations.MinLength(16)]
-		[System.ComponentModel.DataAnnotations.MaxLength(16)]
+		[System.ComponentModel.DataAnnotations.Length(16, 16)]
 		public string Object { get; set; } = "CaseTrackPreview";
 		
 		/// <summary>
@@ -13098,8 +12685,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="caseId")]
-		[System.ComponentModel.DataAnnotations.MinLength(18)]
-		[System.ComponentModel.DataAnnotations.MaxLength(18)]
+		[System.ComponentModel.DataAnnotations.Length(18, 18)]
 		public string CaseId { get; set; }
 		
 		/// <summary>
@@ -13158,8 +12744,7 @@ namespace MyNS
 		/// Max length: 32
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="pacerClientCode")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(32)]
+		[System.ComponentModel.DataAnnotations.Length(0, 32)]
 		public string PacerClientCode { get; set; }
 		
 		/// <summary>
@@ -13170,8 +12755,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="pacerUserId")]
-		[System.ComponentModel.DataAnnotations.MinLength(6)]
-		[System.ComponentModel.DataAnnotations.MaxLength(40)]
+		[System.ComponentModel.DataAnnotations.Length(6, 40)]
 		public string PacerUserId { get; set; }
 		
 		/// <summary>
@@ -13188,8 +12772,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DefaultValue(CaseUpdatePacerOptionsResponseRefreshType.fetchNewDocketEntries)]
 		[System.Runtime.Serialization.DataMember(Name="refreshType")]
-		[System.ComponentModel.DataAnnotations.MinLength(21)]
-		[System.ComponentModel.DataAnnotations.MaxLength(21)]
+		[System.ComponentModel.DataAnnotations.Length(21, 21)]
 		public CaseUpdatePacerOptionsResponseRefreshType RefreshType { get; set; } = CaseUpdatePacerOptionsResponseRefreshType.fetchNewDocketEntries;
 	}
 	
@@ -13217,8 +12800,7 @@ namespace MyNS
 		/// Max length: 15
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="page")]
-		[System.ComponentModel.DataAnnotations.MinLength(11)]
-		[System.ComponentModel.DataAnnotations.MaxLength(15)]
+		[System.ComponentModel.DataAnnotations.Length(11, 15)]
 		public CaseUpdatePacerOptionsResponseAdditionalPageArrayPage Page { get; set; }
 	}
 	
@@ -13244,8 +12826,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="type")]
-		[System.ComponentModel.DataAnnotations.MinLength(5)]
-		[System.ComponentModel.DataAnnotations.MaxLength(7)]
+		[System.ComponentModel.DataAnnotations.Length(5, 7)]
 		public ScheduleType Type { get; set; }
 	}
 	
@@ -13270,8 +12851,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="nextPageAPI")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2144)]
+		[System.ComponentModel.DataAnnotations.Length(1, 2144)]
 		public string NextPageAPI { get; set; }
 		
 		/// <summary>
@@ -13282,8 +12862,7 @@ namespace MyNS
 		[System.ComponentModel.DefaultValue("CaseTypeGroupResponse")]
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="object")]
-		[System.ComponentModel.DataAnnotations.MinLength(21)]
-		[System.ComponentModel.DataAnnotations.MaxLength(21)]
+		[System.ComponentModel.DataAnnotations.Length(21, 21)]
 		public string Object { get; set; } = "CaseTypeGroupResponse";
 		
 		/// <summary>
@@ -13294,8 +12873,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="pageNumber")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public int PageNumber { get; set; }
 		
 		/// <summary>
@@ -13306,8 +12884,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="previousPageAPI")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2143)]
+		[System.ComponentModel.DataAnnotations.Length(1, 2143)]
 		public string PreviousPageAPI { get; set; }
 		
 		/// <summary>
@@ -13318,8 +12895,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="totalCount")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public int TotalCount { get; set; }
 		
 		/// <summary>
@@ -13330,8 +12906,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="totalPages")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public int TotalPages { get; set; }
 	}
 	
@@ -13356,8 +12931,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="nextPageAPI")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2139)]
+		[System.ComponentModel.DataAnnotations.Length(1, 2139)]
 		public string NextPageAPI { get; set; }
 		
 		/// <summary>
@@ -13368,8 +12942,7 @@ namespace MyNS
 		[System.ComponentModel.DefaultValue("CaseTypeResponse")]
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="object")]
-		[System.ComponentModel.DataAnnotations.MinLength(16)]
-		[System.ComponentModel.DataAnnotations.MaxLength(16)]
+		[System.ComponentModel.DataAnnotations.Length(16, 16)]
 		public string Object { get; set; } = "CaseTypeResponse";
 		
 		/// <summary>
@@ -13380,8 +12953,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="pageNumber")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public int PageNumber { get; set; }
 		
 		/// <summary>
@@ -13392,8 +12964,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="previousPageAPI")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2138)]
+		[System.ComponentModel.DataAnnotations.Length(1, 2138)]
 		public string PreviousPageAPI { get; set; }
 		
 		/// <summary>
@@ -13404,8 +12975,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="totalCount")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public int TotalCount { get; set; }
 		
 		/// <summary>
@@ -13416,8 +12986,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="totalPages")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public int TotalPages { get; set; }
 	}
 	
@@ -13439,8 +13008,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="caseAPI")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public string CaseAPI { get; set; }
 		
 		/// <summary>
@@ -13451,8 +13019,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="caseId")]
-		[System.ComponentModel.DataAnnotations.MinLength(18)]
-		[System.ComponentModel.DataAnnotations.MaxLength(18)]
+		[System.ComponentModel.DataAnnotations.Length(18, 18)]
 		public string CaseId { get; set; }
 		
 		/// <summary>
@@ -13472,8 +13039,7 @@ namespace MyNS
 		[System.ComponentModel.DefaultValue("CaseUpdate")]
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="object")]
-		[System.ComponentModel.DataAnnotations.MinLength(10)]
-		[System.ComponentModel.DataAnnotations.MaxLength(10)]
+		[System.ComponentModel.DataAnnotations.Length(10, 10)]
 		public string Object { get; set; } = "CaseUpdate";
 		
 		/// <summary>
@@ -13492,8 +13058,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="requestedDate")]
-		[System.ComponentModel.DataAnnotations.MinLength(25)]
-		[System.ComponentModel.DataAnnotations.MaxLength(25)]
+		[System.ComponentModel.DataAnnotations.Length(25, 25)]
 		public System.DateTimeOffset RequestedDate { get; set; }
 		
 		/// <summary>
@@ -13504,8 +13069,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="status")]
-		[System.ComponentModel.DataAnnotations.MinLength(7)]
-		[System.ComponentModel.DataAnnotations.MaxLength(11)]
+		[System.ComponentModel.DataAnnotations.Length(7, 11)]
 		public CaseDocumentOrderCallbackStatus Status { get; set; }
 	}
 	
@@ -13521,8 +13085,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="caseUpdatePreviewArray")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(100)]
+		[System.ComponentModel.DataAnnotations.Length(0, 100)]
 		public CaseUpdatePreview[] CaseUpdatePreviewArray { get; set; }
 		
 		/// <summary>
@@ -13533,8 +13096,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="nextPageAPI")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1024)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1024)]
 		public string NextPageAPI { get; set; }
 		
 		/// <summary>
@@ -13546,8 +13108,7 @@ namespace MyNS
 		[System.ComponentModel.DefaultValue("CaseUpdateListResponse")]
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="object")]
-		[System.ComponentModel.DataAnnotations.MinLength(22)]
-		[System.ComponentModel.DataAnnotations.MaxLength(22)]
+		[System.ComponentModel.DataAnnotations.Length(22, 22)]
 		public string Object { get; set; } = "CaseUpdateListResponse";
 		
 		/// <summary>
@@ -13566,8 +13127,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="previousPageAPI")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1024)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1024)]
 		public string PreviousPageAPI { get; set; }
 		
 		/// <summary>
@@ -13598,8 +13158,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="caseAPI")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public string CaseAPI { get; set; }
 		
 		/// <summary>
@@ -13610,8 +13169,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="caseId")]
-		[System.ComponentModel.DataAnnotations.MinLength(18)]
-		[System.ComponentModel.DataAnnotations.MaxLength(18)]
+		[System.ComponentModel.DataAnnotations.Length(18, 18)]
 		public string CaseId { get; set; }
 		
 		/// <summary>
@@ -13631,8 +13189,7 @@ namespace MyNS
 		[System.ComponentModel.DefaultValue("CaseUpdatePreview")]
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="object")]
-		[System.ComponentModel.DataAnnotations.MinLength(17)]
-		[System.ComponentModel.DataAnnotations.MaxLength(17)]
+		[System.ComponentModel.DataAnnotations.Length(17, 17)]
 		public string Object { get; set; } = "CaseUpdatePreview";
 		
 		/// <summary>
@@ -13651,8 +13208,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="requestedDate")]
-		[System.ComponentModel.DataAnnotations.MinLength(25)]
-		[System.ComponentModel.DataAnnotations.MaxLength(25)]
+		[System.ComponentModel.DataAnnotations.Length(25, 25)]
 		public System.DateTimeOffset RequestedDate { get; set; }
 		
 		/// <summary>
@@ -13663,8 +13219,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="status")]
-		[System.ComponentModel.DataAnnotations.MinLength(7)]
-		[System.ComponentModel.DataAnnotations.MaxLength(11)]
+		[System.ComponentModel.DataAnnotations.Length(7, 11)]
 		public CaseDocumentOrderCallbackStatus Status { get; set; }
 	}
 	
@@ -13689,8 +13244,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="nextPageAPI")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2160)]
+		[System.ComponentModel.DataAnnotations.Length(1, 2160)]
 		public string NextPageAPI { get; set; }
 		
 		/// <summary>
@@ -13701,8 +13255,7 @@ namespace MyNS
 		[System.ComponentModel.DefaultValue("CauseOfActionAdditionalDataResponse")]
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="object")]
-		[System.ComponentModel.DataAnnotations.MinLength(35)]
-		[System.ComponentModel.DataAnnotations.MaxLength(35)]
+		[System.ComponentModel.DataAnnotations.Length(35, 35)]
 		public string Object { get; set; } = "CauseOfActionAdditionalDataResponse";
 		
 		/// <summary>
@@ -13713,8 +13266,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="pageNumber")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public int PageNumber { get; set; }
 		
 		/// <summary>
@@ -13725,8 +13277,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="previousPageAPI")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2159)]
+		[System.ComponentModel.DataAnnotations.Length(1, 2159)]
 		public string PreviousPageAPI { get; set; }
 		
 		/// <summary>
@@ -13737,8 +13288,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="totalCount")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public int TotalCount { get; set; }
 		
 		/// <summary>
@@ -13749,8 +13299,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="totalPages")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public int TotalPages { get; set; }
 	}
 	
@@ -13765,8 +13314,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="causeOfActionGroupId")]
-		[System.ComponentModel.DataAnnotations.MinLength(18)]
-		[System.ComponentModel.DataAnnotations.MaxLength(18)]
+		[System.ComponentModel.DataAnnotations.Length(18, 18)]
 		public string CauseOfActionGroupId { get; set; }
 		
 		/// <summary>
@@ -13777,8 +13325,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="createdDate")]
-		[System.ComponentModel.DataAnnotations.MinLength(25)]
-		[System.ComponentModel.DataAnnotations.MaxLength(25)]
+		[System.ComponentModel.DataAnnotations.Length(25, 25)]
 		public System.DateTimeOffset CreatedDate { get; set; }
 		
 		/// <summary>
@@ -13788,8 +13335,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -13800,8 +13346,7 @@ namespace MyNS
 		[System.ComponentModel.DefaultValue("CauseOfActionGroup")]
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="object")]
-		[System.ComponentModel.DataAnnotations.MinLength(18)]
-		[System.ComponentModel.DataAnnotations.MaxLength(18)]
+		[System.ComponentModel.DataAnnotations.Length(18, 18)]
 		public string Object { get; set; } = "CauseOfActionGroup";
 	}
 	
@@ -13826,8 +13371,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="nextPageAPI")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2151)]
+		[System.ComponentModel.DataAnnotations.Length(1, 2151)]
 		public string NextPageAPI { get; set; }
 		
 		/// <summary>
@@ -13838,8 +13382,7 @@ namespace MyNS
 		[System.ComponentModel.DefaultValue("CauseOfActionGroupResponse")]
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="object")]
-		[System.ComponentModel.DataAnnotations.MinLength(26)]
-		[System.ComponentModel.DataAnnotations.MaxLength(26)]
+		[System.ComponentModel.DataAnnotations.Length(26, 26)]
 		public string Object { get; set; } = "CauseOfActionGroupResponse";
 		
 		/// <summary>
@@ -13850,8 +13393,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="pageNumber")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public int PageNumber { get; set; }
 		
 		/// <summary>
@@ -13862,8 +13404,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="previousPageAPI")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2150)]
+		[System.ComponentModel.DataAnnotations.Length(1, 2150)]
 		public string PreviousPageAPI { get; set; }
 		
 		/// <summary>
@@ -13874,8 +13415,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="totalCount")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public int TotalCount { get; set; }
 		
 		/// <summary>
@@ -13886,8 +13426,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="totalPages")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public int TotalPages { get; set; }
 	}
 	
@@ -13912,8 +13451,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="nextPageAPI")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2146)]
+		[System.ComponentModel.DataAnnotations.Length(1, 2146)]
 		public string NextPageAPI { get; set; }
 		
 		/// <summary>
@@ -13924,8 +13462,7 @@ namespace MyNS
 		[System.ComponentModel.DefaultValue("CauseOfActionResponse")]
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="object")]
-		[System.ComponentModel.DataAnnotations.MinLength(21)]
-		[System.ComponentModel.DataAnnotations.MaxLength(21)]
+		[System.ComponentModel.DataAnnotations.Length(21, 21)]
 		public string Object { get; set; } = "CauseOfActionResponse";
 		
 		/// <summary>
@@ -13936,8 +13473,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="pageNumber")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public int PageNumber { get; set; }
 		
 		/// <summary>
@@ -13948,8 +13484,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="previousPageAPI")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2145)]
+		[System.ComponentModel.DataAnnotations.Length(1, 2145)]
 		public string PreviousPageAPI { get; set; }
 		
 		/// <summary>
@@ -13960,8 +13495,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="totalCount")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public int TotalCount { get; set; }
 		
 		/// <summary>
@@ -13972,8 +13506,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="totalPages")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public int TotalPages { get; set; }
 	}
 	
@@ -13998,8 +13531,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="nextPageAPI")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2153)]
+		[System.ComponentModel.DataAnnotations.Length(1, 2153)]
 		public string NextPageAPI { get; set; }
 		
 		/// <summary>
@@ -14010,8 +13542,7 @@ namespace MyNS
 		[System.ComponentModel.DefaultValue("ChargeAdditionalDataResponse")]
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="object")]
-		[System.ComponentModel.DataAnnotations.MinLength(28)]
-		[System.ComponentModel.DataAnnotations.MaxLength(28)]
+		[System.ComponentModel.DataAnnotations.Length(28, 28)]
 		public string Object { get; set; } = "ChargeAdditionalDataResponse";
 		
 		/// <summary>
@@ -14022,8 +13553,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="pageNumber")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public int PageNumber { get; set; }
 		
 		/// <summary>
@@ -14034,8 +13564,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="previousPageAPI")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2152)]
+		[System.ComponentModel.DataAnnotations.Length(1, 2152)]
 		public string PreviousPageAPI { get; set; }
 		
 		/// <summary>
@@ -14046,8 +13575,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="totalCount")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public int TotalCount { get; set; }
 		
 		/// <summary>
@@ -14058,8 +13586,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="totalPages")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public int TotalPages { get; set; }
 	}
 	
@@ -14084,8 +13611,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="nextPageAPI")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2160)]
+		[System.ComponentModel.DataAnnotations.Length(1, 2160)]
 		public string NextPageAPI { get; set; }
 		
 		/// <summary>
@@ -14096,8 +13622,7 @@ namespace MyNS
 		[System.ComponentModel.DefaultValue("ChargeDegreeResponse")]
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="object")]
-		[System.ComponentModel.DataAnnotations.MinLength(20)]
-		[System.ComponentModel.DataAnnotations.MaxLength(20)]
+		[System.ComponentModel.DataAnnotations.Length(20, 20)]
 		public string Object { get; set; } = "ChargeDegreeResponse";
 		
 		/// <summary>
@@ -14108,8 +13633,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="pageNumber")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public int PageNumber { get; set; }
 		
 		/// <summary>
@@ -14120,8 +13644,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="previousPageAPI")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2159)]
+		[System.ComponentModel.DataAnnotations.Length(1, 2159)]
 		public string PreviousPageAPI { get; set; }
 		
 		/// <summary>
@@ -14132,8 +13655,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="totalCount")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public int TotalCount { get; set; }
 		
 		/// <summary>
@@ -14144,8 +13666,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="totalPages")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public int TotalPages { get; set; }
 	}
 	
@@ -14160,8 +13681,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="chargeGroupId")]
-		[System.ComponentModel.DataAnnotations.MinLength(18)]
-		[System.ComponentModel.DataAnnotations.MaxLength(18)]
+		[System.ComponentModel.DataAnnotations.Length(18, 18)]
 		public string ChargeGroupId { get; set; }
 		
 		/// <summary>
@@ -14172,8 +13692,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="createdDate")]
-		[System.ComponentModel.DataAnnotations.MinLength(25)]
-		[System.ComponentModel.DataAnnotations.MaxLength(25)]
+		[System.ComponentModel.DataAnnotations.Length(25, 25)]
 		public System.DateTimeOffset CreatedDate { get; set; }
 		
 		/// <summary>
@@ -14183,8 +13702,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -14195,8 +13713,7 @@ namespace MyNS
 		[System.ComponentModel.DefaultValue("ChargeGroup")]
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="object")]
-		[System.ComponentModel.DataAnnotations.MinLength(11)]
-		[System.ComponentModel.DataAnnotations.MaxLength(11)]
+		[System.ComponentModel.DataAnnotations.Length(11, 11)]
 		public string Object { get; set; } = "ChargeGroup";
 	}
 	
@@ -14221,8 +13738,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="nextPageAPI")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2142)]
+		[System.ComponentModel.DataAnnotations.Length(1, 2142)]
 		public string NextPageAPI { get; set; }
 		
 		/// <summary>
@@ -14233,8 +13749,7 @@ namespace MyNS
 		[System.ComponentModel.DefaultValue("ChargeGroupResponse")]
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="object")]
-		[System.ComponentModel.DataAnnotations.MinLength(19)]
-		[System.ComponentModel.DataAnnotations.MaxLength(19)]
+		[System.ComponentModel.DataAnnotations.Length(19, 19)]
 		public string Object { get; set; } = "ChargeGroupResponse";
 		
 		/// <summary>
@@ -14245,8 +13760,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="pageNumber")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public int PageNumber { get; set; }
 		
 		/// <summary>
@@ -14257,8 +13771,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="previousPageAPI")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2141)]
+		[System.ComponentModel.DataAnnotations.Length(1, 2141)]
 		public string PreviousPageAPI { get; set; }
 		
 		/// <summary>
@@ -14269,8 +13782,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="totalCount")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public int TotalCount { get; set; }
 		
 		/// <summary>
@@ -14281,8 +13793,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="totalPages")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public int TotalPages { get; set; }
 	}
 	
@@ -14307,8 +13818,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="nextPageAPI")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2137)]
+		[System.ComponentModel.DataAnnotations.Length(1, 2137)]
 		public string NextPageAPI { get; set; }
 		
 		/// <summary>
@@ -14319,8 +13829,7 @@ namespace MyNS
 		[System.ComponentModel.DefaultValue("ChargeResponse")]
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="object")]
-		[System.ComponentModel.DataAnnotations.MinLength(14)]
-		[System.ComponentModel.DataAnnotations.MaxLength(14)]
+		[System.ComponentModel.DataAnnotations.Length(14, 14)]
 		public string Object { get; set; } = "ChargeResponse";
 		
 		/// <summary>
@@ -14331,8 +13840,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="pageNumber")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public int PageNumber { get; set; }
 		
 		/// <summary>
@@ -14343,8 +13851,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="previousPageAPI")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2136)]
+		[System.ComponentModel.DataAnnotations.Length(1, 2136)]
 		public string PreviousPageAPI { get; set; }
 		
 		/// <summary>
@@ -14355,8 +13862,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="totalCount")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public int TotalCount { get; set; }
 		
 		/// <summary>
@@ -14367,8 +13873,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="totalPages")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public int TotalPages { get; set; }
 	}
 	
@@ -14393,8 +13898,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="nextPageAPI")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2160)]
+		[System.ComponentModel.DataAnnotations.Length(1, 2160)]
 		public string NextPageAPI { get; set; }
 		
 		/// <summary>
@@ -14405,8 +13909,7 @@ namespace MyNS
 		[System.ComponentModel.DefaultValue("ChargeSeverityResponse")]
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="object")]
-		[System.ComponentModel.DataAnnotations.MinLength(22)]
-		[System.ComponentModel.DataAnnotations.MaxLength(22)]
+		[System.ComponentModel.DataAnnotations.Length(22, 22)]
 		public string Object { get; set; } = "ChargeSeverityResponse";
 		
 		/// <summary>
@@ -14417,8 +13920,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="pageNumber")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public int PageNumber { get; set; }
 		
 		/// <summary>
@@ -14429,8 +13931,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="previousPageAPI")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2159)]
+		[System.ComponentModel.DataAnnotations.Length(1, 2159)]
 		public string PreviousPageAPI { get; set; }
 		
 		/// <summary>
@@ -14441,8 +13942,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="totalCount")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public int TotalCount { get; set; }
 		
 		/// <summary>
@@ -14453,8 +13953,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="totalPages")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public int TotalPages { get; set; }
 	}
 	
@@ -14484,8 +13983,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="lastUpdateCountDate")]
-		[System.ComponentModel.DataAnnotations.MinLength(25)]
-		[System.ComponentModel.DataAnnotations.MaxLength(25)]
+		[System.ComponentModel.DataAnnotations.Length(25, 25)]
 		public string LastUpdateCountDate { get; set; }
 		
 		/// <summary>
@@ -14497,8 +13995,7 @@ namespace MyNS
 		[System.ComponentModel.DefaultValue("CourtCoverage")]
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="object")]
-		[System.ComponentModel.DataAnnotations.MinLength(13)]
-		[System.ComponentModel.DataAnnotations.MaxLength(13)]
+		[System.ComponentModel.DataAnnotations.Length(13, 13)]
 		public string Object { get; set; } = "CourtCoverage";
 		
 		/// <summary>
@@ -14587,8 +14084,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="nextPageAPI")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2144)]
+		[System.ComponentModel.DataAnnotations.Length(1, 2144)]
 		public string NextPageAPI { get; set; }
 		
 		/// <summary>
@@ -14599,8 +14095,7 @@ namespace MyNS
 		[System.ComponentModel.DefaultValue("CourtLocationResponse")]
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="object")]
-		[System.ComponentModel.DataAnnotations.MinLength(21)]
-		[System.ComponentModel.DataAnnotations.MaxLength(21)]
+		[System.ComponentModel.DataAnnotations.Length(21, 21)]
 		public string Object { get; set; } = "CourtLocationResponse";
 		
 		/// <summary>
@@ -14611,8 +14106,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="pageNumber")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public int PageNumber { get; set; }
 		
 		/// <summary>
@@ -14623,8 +14117,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="previousPageAPI")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2143)]
+		[System.ComponentModel.DataAnnotations.Length(1, 2143)]
 		public string PreviousPageAPI { get; set; }
 		
 		/// <summary>
@@ -14635,8 +14128,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="totalCount")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public int TotalCount { get; set; }
 		
 		/// <summary>
@@ -14647,8 +14139,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="totalPages")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public int TotalPages { get; set; }
 	}
 	
@@ -14673,8 +14164,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="nextPageAPI")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2136)]
+		[System.ComponentModel.DataAnnotations.Length(1, 2136)]
 		public string NextPageAPI { get; set; }
 		
 		/// <summary>
@@ -14685,8 +14175,7 @@ namespace MyNS
 		[System.ComponentModel.DefaultValue("CourtResponse")]
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="object")]
-		[System.ComponentModel.DataAnnotations.MinLength(13)]
-		[System.ComponentModel.DataAnnotations.MaxLength(13)]
+		[System.ComponentModel.DataAnnotations.Length(13, 13)]
 		public string Object { get; set; } = "CourtResponse";
 		
 		/// <summary>
@@ -14696,8 +14185,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="pageNumber")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public int PageNumber { get; set; }
 		
 		/// <summary>
@@ -14708,8 +14196,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="previousPageAPI")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2135)]
+		[System.ComponentModel.DataAnnotations.Length(1, 2135)]
 		public string PreviousPageAPI { get; set; }
 		
 		/// <summary>
@@ -14720,8 +14207,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="totalCount")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public int TotalCount { get; set; }
 		
 		/// <summary>
@@ -14732,8 +14218,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="totalPages")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public int TotalPages { get; set; }
 	}
 	
@@ -14794,8 +14279,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="courtServiceStatusId")]
-		[System.ComponentModel.DataAnnotations.MinLength(18)]
-		[System.ComponentModel.DataAnnotations.MaxLength(18)]
+		[System.ComponentModel.DataAnnotations.Length(18, 18)]
 		public string CourtServiceStatusId { get; set; }
 		
 		/// <summary>
@@ -14807,8 +14291,7 @@ namespace MyNS
 		[System.ComponentModel.DefaultValue("CourtServiceStatus")]
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="object")]
-		[System.ComponentModel.DataAnnotations.MinLength(18)]
-		[System.ComponentModel.DataAnnotations.MaxLength(18)]
+		[System.ComponentModel.DataAnnotations.Length(18, 18)]
 		public string Object { get; set; } = "CourtServiceStatus";
 		
 		/// <summary>
@@ -14819,8 +14302,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="serviceStatusAsOn")]
-		[System.ComponentModel.DataAnnotations.MinLength(25)]
-		[System.ComponentModel.DataAnnotations.MaxLength(25)]
+		[System.ComponentModel.DataAnnotations.Length(25, 25)]
 		public string ServiceStatusAsOn { get; set; }
 	}
 	
@@ -14837,8 +14319,7 @@ namespace MyNS
 		[System.ComponentModel.DefaultValue("ServiceStatus")]
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="object")]
-		[System.ComponentModel.DataAnnotations.MinLength(13)]
-		[System.ComponentModel.DataAnnotations.MaxLength(13)]
+		[System.ComponentModel.DataAnnotations.Length(13, 13)]
 		public string Object { get; set; } = "ServiceStatus";
 		
 		/// <summary>
@@ -14919,8 +14400,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="eta")]
-		[System.ComponentModel.DataAnnotations.MinLength(25)]
-		[System.ComponentModel.DataAnnotations.MaxLength(25)]
+		[System.ComponentModel.DataAnnotations.Length(25, 25)]
 		public string Eta { get; set; }
 		
 		/// <summary>
@@ -14932,8 +14412,7 @@ namespace MyNS
 		[System.ComponentModel.DefaultValue("ServiceStatusDownDetails")]
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="object")]
-		[System.ComponentModel.DataAnnotations.MinLength(24)]
-		[System.ComponentModel.DataAnnotations.MaxLength(24)]
+		[System.ComponentModel.DataAnnotations.Length(24, 24)]
 		public string Object { get; set; } = "ServiceStatusDownDetails";
 		
 		/// <summary>
@@ -14991,8 +14470,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="nextPageAPI")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2153)]
+		[System.ComponentModel.DataAnnotations.Length(1, 2153)]
 		public string NextPageAPI { get; set; }
 		
 		/// <summary>
@@ -15003,8 +14481,7 @@ namespace MyNS
 		[System.ComponentModel.DefaultValue("CourtServiceStatusResponse")]
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="object")]
-		[System.ComponentModel.DataAnnotations.MinLength(26)]
-		[System.ComponentModel.DataAnnotations.MaxLength(26)]
+		[System.ComponentModel.DataAnnotations.Length(26, 26)]
 		public string Object { get; set; } = "CourtServiceStatusResponse";
 		
 		/// <summary>
@@ -15015,8 +14492,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="pageNumber")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public int PageNumber { get; set; }
 		
 		/// <summary>
@@ -15027,8 +14503,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="previousPageAPI")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2152)]
+		[System.ComponentModel.DataAnnotations.Length(1, 2152)]
 		public string PreviousPageAPI { get; set; }
 		
 		/// <summary>
@@ -15039,8 +14514,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="totalCount")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public int TotalCount { get; set; }
 		
 		/// <summary>
@@ -15051,8 +14525,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="totalPages")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public int TotalPages { get; set; }
 	}
 	
@@ -15077,8 +14550,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="nextPageAPI")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2142)]
+		[System.ComponentModel.DataAnnotations.Length(1, 2142)]
 		public string NextPageAPI { get; set; }
 		
 		/// <summary>
@@ -15089,8 +14561,7 @@ namespace MyNS
 		[System.ComponentModel.DefaultValue("CourtSystemResponse")]
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="object")]
-		[System.ComponentModel.DataAnnotations.MinLength(19)]
-		[System.ComponentModel.DataAnnotations.MaxLength(19)]
+		[System.ComponentModel.DataAnnotations.Length(19, 19)]
 		public string Object { get; set; } = "CourtSystemResponse";
 		
 		/// <summary>
@@ -15101,8 +14572,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="pageNumber")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public int PageNumber { get; set; }
 		
 		/// <summary>
@@ -15113,8 +14583,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="previousPageAPI")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2141)]
+		[System.ComponentModel.DataAnnotations.Length(1, 2141)]
 		public string PreviousPageAPI { get; set; }
 		
 		/// <summary>
@@ -15125,8 +14594,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="totalCount")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public int TotalCount { get; set; }
 		
 		/// <summary>
@@ -15137,8 +14605,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="totalPages")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public int TotalPages { get; set; }
 	}
 	
@@ -15163,8 +14630,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="nextPageAPI")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2140)]
+		[System.ComponentModel.DataAnnotations.Length(1, 2140)]
 		public string NextPageAPI { get; set; }
 		
 		/// <summary>
@@ -15175,8 +14641,7 @@ namespace MyNS
 		[System.ComponentModel.DefaultValue("CourtTypeResponse")]
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="object")]
-		[System.ComponentModel.DataAnnotations.MinLength(17)]
-		[System.ComponentModel.DataAnnotations.MaxLength(17)]
+		[System.ComponentModel.DataAnnotations.Length(17, 17)]
 		public string Object { get; set; } = "CourtTypeResponse";
 		
 		/// <summary>
@@ -15187,8 +14652,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="pageNumber")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public int PageNumber { get; set; }
 		
 		/// <summary>
@@ -15199,8 +14663,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="previousPageAPI")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2139)]
+		[System.ComponentModel.DataAnnotations.Length(1, 2139)]
 		public string PreviousPageAPI { get; set; }
 		
 		/// <summary>
@@ -15211,8 +14674,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="totalCount")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public int TotalCount { get; set; }
 		
 		/// <summary>
@@ -15223,8 +14685,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="totalPages")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public int TotalPages { get; set; }
 	}
 	
@@ -15273,8 +14734,7 @@ namespace MyNS
 		[System.ComponentModel.DefaultValue("DailyUsageResponse")]
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="object")]
-		[System.ComponentModel.DataAnnotations.MinLength(18)]
-		[System.ComponentModel.DataAnnotations.MaxLength(18)]
+		[System.ComponentModel.DataAnnotations.Length(18, 18)]
 		public string Object { get; set; } = "DailyUsageResponse";
 		
 		/// <summary>
@@ -15285,8 +14745,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="usageEndTime")]
-		[System.ComponentModel.DataAnnotations.MinLength(25)]
-		[System.ComponentModel.DataAnnotations.MaxLength(25)]
+		[System.ComponentModel.DataAnnotations.Length(25, 25)]
 		public System.DateTimeOffset UsageEndTime { get; set; }
 		
 		/// <summary>
@@ -15297,8 +14756,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="usageStartTime")]
-		[System.ComponentModel.DataAnnotations.MinLength(25)]
-		[System.ComponentModel.DataAnnotations.MaxLength(25)]
+		[System.ComponentModel.DataAnnotations.Length(25, 25)]
 		public System.DateTimeOffset UsageStartTime { get; set; }
 	}
 	
@@ -15321,8 +14779,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="lastUpdated")]
-		[System.ComponentModel.DataAnnotations.MinLength(25)]
-		[System.ComponentModel.DataAnnotations.MaxLength(25)]
+		[System.ComponentModel.DataAnnotations.Length(25, 25)]
 		public System.Nullable<System.DateTimeOffset> LastUpdated { get; set; }
 	}
 	
@@ -15345,8 +14802,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="lastUpdated")]
-		[System.ComponentModel.DataAnnotations.MinLength(25)]
-		[System.ComponentModel.DataAnnotations.MaxLength(25)]
+		[System.ComponentModel.DataAnnotations.Length(25, 25)]
 		public System.Nullable<System.DateTimeOffset> LastUpdated { get; set; }
 	}
 	
@@ -15369,8 +14825,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="lastUpdated")]
-		[System.ComponentModel.DataAnnotations.MinLength(25)]
-		[System.ComponentModel.DataAnnotations.MaxLength(25)]
+		[System.ComponentModel.DataAnnotations.Length(25, 25)]
 		public System.Nullable<System.DateTimeOffset> LastUpdated { get; set; }
 	}
 	
@@ -15386,8 +14841,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="caseDocumentDownloadAPI")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1024)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1024)]
 		public string CaseDocumentDownloadAPI { get; set; }
 		
 		/// <summary>
@@ -15398,8 +14852,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="caseDocumentId")]
-		[System.ComponentModel.DataAnnotations.MinLength(18)]
-		[System.ComponentModel.DataAnnotations.MaxLength(18)]
+		[System.ComponentModel.DataAnnotations.Length(18, 18)]
 		public string CaseDocumentId { get; set; }
 		
 		/// <summary>
@@ -15410,8 +14863,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="expiryDate")]
-		[System.ComponentModel.DataAnnotations.MinLength(25)]
-		[System.ComponentModel.DataAnnotations.MaxLength(25)]
+		[System.ComponentModel.DataAnnotations.Length(25, 25)]
 		public string ExpiryDate { get; set; }
 		
 		/// <summary>
@@ -15422,8 +14874,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="fileUrl")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1024)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1024)]
 		public string FileUrl { get; set; }
 		
 		/// <summary>
@@ -15435,8 +14886,7 @@ namespace MyNS
 		[System.ComponentModel.DefaultValue("DocumentDownload")]
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="object")]
-		[System.ComponentModel.DataAnnotations.MinLength(16)]
-		[System.ComponentModel.DataAnnotations.MaxLength(16)]
+		[System.ComponentModel.DataAnnotations.Length(16, 16)]
 		public string Object { get; set; } = "DocumentDownload";
 	}
 	
@@ -15452,8 +14902,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="clientId")]
-		[System.ComponentModel.DataAnnotations.MinLength(32)]
-		[System.ComponentModel.DataAnnotations.MaxLength(32)]
+		[System.ComponentModel.DataAnnotations.Length(32, 32)]
 		public string ClientId { get; set; }
 		
 		/// <summary>
@@ -15464,8 +14913,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="clientSecret")]
-		[System.ComponentModel.DataAnnotations.MinLength(64)]
-		[System.ComponentModel.DataAnnotations.MaxLength(64)]
+		[System.ComponentModel.DataAnnotations.Length(64, 64)]
 		public string ClientSecret { get; set; }
 		
 		/// <summary>
@@ -15476,8 +14924,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="tokenId")]
-		[System.ComponentModel.DataAnnotations.MinLength(18)]
-		[System.ComponentModel.DataAnnotations.MaxLength(18)]
+		[System.ComponentModel.DataAnnotations.Length(18, 18)]
 		public string TokenId { get; set; }
 	}
 	
@@ -15554,8 +15001,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="nextPageAPI")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2142)]
+		[System.ComponentModel.DataAnnotations.Length(1, 2142)]
 		public string NextPageAPI { get; set; }
 		
 		/// <summary>
@@ -15566,8 +15012,7 @@ namespace MyNS
 		[System.ComponentModel.DefaultValue("JudgeTypeResponse")]
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="object")]
-		[System.ComponentModel.DataAnnotations.MinLength(17)]
-		[System.ComponentModel.DataAnnotations.MaxLength(17)]
+		[System.ComponentModel.DataAnnotations.Length(17, 17)]
 		public string Object { get; set; } = "JudgeTypeResponse";
 		
 		/// <summary>
@@ -15578,8 +15023,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="pageNumber")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public int PageNumber { get; set; }
 		
 		/// <summary>
@@ -15590,8 +15034,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="previousPageAPI")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2141)]
+		[System.ComponentModel.DataAnnotations.Length(1, 2141)]
 		public string PreviousPageAPI { get; set; }
 		
 		/// <summary>
@@ -15602,8 +15045,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="totalCount")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public int TotalCount { get; set; }
 		
 		/// <summary>
@@ -15614,8 +15056,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="totalPages")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public int TotalPages { get; set; }
 	}
 	
@@ -15640,8 +15081,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="nextPageAPI")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2147)]
+		[System.ComponentModel.DataAnnotations.Length(1, 2147)]
 		public string NextPageAPI { get; set; }
 		
 		/// <summary>
@@ -15652,8 +15092,7 @@ namespace MyNS
 		[System.ComponentModel.DefaultValue("JurisdictionGeoResponse")]
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="object")]
-		[System.ComponentModel.DataAnnotations.MinLength(23)]
-		[System.ComponentModel.DataAnnotations.MaxLength(23)]
+		[System.ComponentModel.DataAnnotations.Length(23, 23)]
 		public string Object { get; set; } = "JurisdictionGeoResponse";
 		
 		/// <summary>
@@ -15664,8 +15103,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="pageNumber")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public int PageNumber { get; set; }
 		
 		/// <summary>
@@ -15676,8 +15114,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="previousPageAPI")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2146)]
+		[System.ComponentModel.DataAnnotations.Length(1, 2146)]
 		public string PreviousPageAPI { get; set; }
 		
 		/// <summary>
@@ -15688,8 +15125,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="totalCount")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public int TotalCount { get; set; }
 		
 		/// <summary>
@@ -15700,8 +15136,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="totalPages")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public int TotalPages { get; set; }
 	}
 	
@@ -15872,8 +15307,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="normAttorneyId")]
-		[System.ComponentModel.DataAnnotations.MinLength(18)]
-		[System.ComponentModel.DataAnnotations.MaxLength(18)]
+		[System.ComponentModel.DataAnnotations.Length(18, 18)]
 		public string NormAttorneyId { get; set; }
 		
 		/// <summary>
@@ -15912,8 +15346,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(500)]
+		[System.ComponentModel.DataAnnotations.Length(1, 500)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -15932,8 +15365,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="normAttorneyId")]
-		[System.ComponentModel.DataAnnotations.MinLength(18)]
-		[System.ComponentModel.DataAnnotations.MaxLength(18)]
+		[System.ComponentModel.DataAnnotations.Length(18, 18)]
 		public string NormAttorneyId { get; set; }
 		
 		/// <summary>
@@ -15951,8 +15383,7 @@ namespace MyNS
 		[System.ComponentModel.DefaultValue("SimilarNormAttorney")]
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="object")]
-		[System.ComponentModel.DataAnnotations.MinLength(19)]
-		[System.ComponentModel.DataAnnotations.MaxLength(19)]
+		[System.ComponentModel.DataAnnotations.Length(19, 19)]
 		public string Object { get; set; } = "SimilarNormAttorney";
 	}
 	
@@ -15968,8 +15399,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="nextPageAPI")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2120)]
+		[System.ComponentModel.DataAnnotations.Length(1, 2120)]
 		public string NextPageAPI { get; set; }
 		
 		/// <summary>
@@ -15980,8 +15410,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="normAttorneySearchId")]
-		[System.ComponentModel.DataAnnotations.MinLength(18)]
-		[System.ComponentModel.DataAnnotations.MaxLength(18)]
+		[System.ComponentModel.DataAnnotations.Length(18, 18)]
 		public string NormAttorneySearchId { get; set; }
 		
 		/// <summary>
@@ -16001,8 +15430,7 @@ namespace MyNS
 		[System.ComponentModel.DefaultValue("NormAttorneySearchResponse")]
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="object")]
-		[System.ComponentModel.DataAnnotations.MinLength(26)]
-		[System.ComponentModel.DataAnnotations.MaxLength(26)]
+		[System.ComponentModel.DataAnnotations.Length(26, 26)]
 		public string Object { get; set; } = "NormAttorneySearchResponse";
 		
 		/// <summary>
@@ -16012,8 +15440,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="pageNumber")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(4)]
+		[System.ComponentModel.DataAnnotations.Length(1, 4)]
 		public int PageNumber { get; set; }
 		
 		/// <summary>
@@ -16024,8 +15451,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="previousPageAPI")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2119)]
+		[System.ComponentModel.DataAnnotations.Length(1, 2119)]
 		public string PreviousPageAPI { get; set; }
 		
 		/// <summary>
@@ -16036,8 +15462,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="q")]
-		[System.ComponentModel.DataAnnotations.MinLength(3)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2048)]
+		[System.ComponentModel.DataAnnotations.Length(3, 2048)]
 		public string Q { get; set; }
 		
 		/// <summary>
@@ -16048,8 +15473,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="totalCount")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(11)]
+		[System.ComponentModel.DataAnnotations.Length(1, 11)]
 		public int TotalCount { get; set; }
 		
 		/// <summary>
@@ -16060,8 +15484,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="totalPages")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(4)]
+		[System.ComponentModel.DataAnnotations.Length(1, 4)]
 		public int TotalPages { get; set; }
 	}
 	
@@ -16076,8 +15499,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="firstFetchDate")]
-		[System.ComponentModel.DataAnnotations.MinLength(25)]
-		[System.ComponentModel.DataAnnotations.MaxLength(25)]
+		[System.ComponentModel.DataAnnotations.Length(25, 25)]
 		public System.DateTimeOffset FirstFetchDate { get; set; }
 		
 		/// <summary>
@@ -16087,8 +15509,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="hasAssociatedPublicData")]
-		[System.ComponentModel.DataAnnotations.MinLength(4)]
-		[System.ComponentModel.DataAnnotations.MaxLength(5)]
+		[System.ComponentModel.DataAnnotations.Length(4, 5)]
 		public bool HasAssociatedPublicData { get; set; }
 		
 		/// <summary>
@@ -16098,8 +15519,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="lastFetchDate")]
-		[System.ComponentModel.DataAnnotations.MinLength(25)]
-		[System.ComponentModel.DataAnnotations.MaxLength(25)]
+		[System.ComponentModel.DataAnnotations.Length(25, 25)]
 		public System.DateTimeOffset LastFetchDate { get; set; }
 		
 		/// <summary>
@@ -16116,8 +15536,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -16127,8 +15546,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="normAttorneyDetailsAPI")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public string NormAttorneyDetailsAPI { get; set; }
 		
 		/// <summary>
@@ -16138,8 +15556,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="normAttorneyId")]
-		[System.ComponentModel.DataAnnotations.MinLength(17)]
-		[System.ComponentModel.DataAnnotations.MaxLength(18)]
+		[System.ComponentModel.DataAnnotations.Length(17, 18)]
 		public string NormAttorneyId { get; set; }
 		
 		/// <summary>
@@ -16150,8 +15567,7 @@ namespace MyNS
 		[System.ComponentModel.DefaultValue("NormAttorneySearchResult")]
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="object")]
-		[System.ComponentModel.DataAnnotations.MinLength(24)]
-		[System.ComponentModel.DataAnnotations.MaxLength(24)]
+		[System.ComponentModel.DataAnnotations.Length(24, 24)]
 		public string Object { get; set; } = "NormAttorneySearchResult";
 	}
 	
@@ -16166,8 +15582,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="normCorporateGroupId")]
-		[System.ComponentModel.DataAnnotations.MinLength(18)]
-		[System.ComponentModel.DataAnnotations.MaxLength(18)]
+		[System.ComponentModel.DataAnnotations.Length(18, 18)]
 		public string NormCorporateGroupId { get; set; }
 		
 		/// <summary>
@@ -16278,8 +15693,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="normJudgeId")]
-		[System.ComponentModel.DataAnnotations.MinLength(18)]
-		[System.ComponentModel.DataAnnotations.MaxLength(18)]
+		[System.ComponentModel.DataAnnotations.Length(18, 18)]
 		public string NormJudgeId { get; set; }
 		
 		/// <summary>
@@ -16775,8 +16189,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="nextPageAPI")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2117)]
+		[System.ComponentModel.DataAnnotations.Length(1, 2117)]
 		public string NextPageAPI { get; set; }
 		
 		/// <summary>
@@ -16787,8 +16200,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="normJudgeSearchId")]
-		[System.ComponentModel.DataAnnotations.MinLength(18)]
-		[System.ComponentModel.DataAnnotations.MaxLength(18)]
+		[System.ComponentModel.DataAnnotations.Length(18, 18)]
 		public string NormJudgeSearchId { get; set; }
 		
 		/// <summary>
@@ -16808,8 +16220,7 @@ namespace MyNS
 		[System.ComponentModel.DefaultValue("NormJudgeSearchResponse")]
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="object")]
-		[System.ComponentModel.DataAnnotations.MinLength(23)]
-		[System.ComponentModel.DataAnnotations.MaxLength(23)]
+		[System.ComponentModel.DataAnnotations.Length(23, 23)]
 		public string Object { get; set; } = "NormJudgeSearchResponse";
 		
 		/// <summary>
@@ -16819,8 +16230,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="pageNumber")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(4)]
+		[System.ComponentModel.DataAnnotations.Length(1, 4)]
 		public int PageNumber { get; set; }
 		
 		/// <summary>
@@ -16831,8 +16241,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="previousPageAPI")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2116)]
+		[System.ComponentModel.DataAnnotations.Length(1, 2116)]
 		public string PreviousPageAPI { get; set; }
 		
 		/// <summary>
@@ -16843,8 +16252,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="q")]
-		[System.ComponentModel.DataAnnotations.MinLength(3)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2048)]
+		[System.ComponentModel.DataAnnotations.Length(3, 2048)]
 		public string Q { get; set; }
 		
 		/// <summary>
@@ -16855,8 +16263,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="totalCount")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(11)]
+		[System.ComponentModel.DataAnnotations.Length(1, 11)]
 		public int TotalCount { get; set; }
 		
 		/// <summary>
@@ -16867,8 +16274,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="totalPages")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(4)]
+		[System.ComponentModel.DataAnnotations.Length(1, 4)]
 		public int TotalPages { get; set; }
 	}
 	
@@ -16883,8 +16289,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="firstFetchDate")]
-		[System.ComponentModel.DataAnnotations.MinLength(25)]
-		[System.ComponentModel.DataAnnotations.MaxLength(25)]
+		[System.ComponentModel.DataAnnotations.Length(25, 25)]
 		public System.DateTimeOffset FirstFetchDate { get; set; }
 		
 		/// <summary>
@@ -16894,8 +16299,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="lastFetchDate")]
-		[System.ComponentModel.DataAnnotations.MinLength(25)]
-		[System.ComponentModel.DataAnnotations.MaxLength(25)]
+		[System.ComponentModel.DataAnnotations.Length(25, 25)]
 		public System.DateTimeOffset LastFetchDate { get; set; }
 		
 		/// <summary>
@@ -16912,8 +16316,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -16923,8 +16326,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="normJudgeDetailsAPI")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public string NormJudgeDetailsAPI { get; set; }
 		
 		/// <summary>
@@ -16934,8 +16336,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="normJudgeId")]
-		[System.ComponentModel.DataAnnotations.MinLength(17)]
-		[System.ComponentModel.DataAnnotations.MaxLength(18)]
+		[System.ComponentModel.DataAnnotations.Length(17, 18)]
 		public string NormJudgeId { get; set; }
 		
 		/// <summary>
@@ -16946,8 +16347,7 @@ namespace MyNS
 		[System.ComponentModel.DefaultValue("NormJudgeSearchResult")]
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="object")]
-		[System.ComponentModel.DataAnnotations.MinLength(21)]
-		[System.ComponentModel.DataAnnotations.MaxLength(21)]
+		[System.ComponentModel.DataAnnotations.Length(21, 21)]
 		public string Object { get; set; } = "NormJudgeSearchResult";
 	}
 	
@@ -16998,8 +16398,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="normLawFirmId")]
-		[System.ComponentModel.DataAnnotations.MinLength(18)]
-		[System.ComponentModel.DataAnnotations.MaxLength(18)]
+		[System.ComponentModel.DataAnnotations.Length(18, 18)]
 		public string NormLawFirmId { get; set; }
 		
 		/// <summary>
@@ -17090,8 +16489,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="normOrganizationId")]
-		[System.ComponentModel.DataAnnotations.MinLength(18)]
-		[System.ComponentModel.DataAnnotations.MaxLength(18)]
+		[System.ComponentModel.DataAnnotations.Length(18, 18)]
 		public string NormOrganizationId { get; set; }
 		
 		/// <summary>
@@ -17390,8 +16788,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="normOrganizationId")]
-		[System.ComponentModel.DataAnnotations.MinLength(18)]
-		[System.ComponentModel.DataAnnotations.MaxLength(18)]
+		[System.ComponentModel.DataAnnotations.Length(18, 18)]
 		public string NormOrganizationId { get; set; }
 		
 		/// <summary>
@@ -17474,8 +16871,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="nextPageAPI")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2119)]
+		[System.ComponentModel.DataAnnotations.Length(1, 2119)]
 		public string NextPageAPI { get; set; }
 		
 		/// <summary>
@@ -17486,8 +16882,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="normLawFirmSearchId")]
-		[System.ComponentModel.DataAnnotations.MinLength(18)]
-		[System.ComponentModel.DataAnnotations.MaxLength(18)]
+		[System.ComponentModel.DataAnnotations.Length(18, 18)]
 		public string NormLawFirmSearchId { get; set; }
 		
 		/// <summary>
@@ -17507,8 +16902,7 @@ namespace MyNS
 		[System.ComponentModel.DefaultValue("NormLawFirmSearchResponse")]
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="object")]
-		[System.ComponentModel.DataAnnotations.MinLength(25)]
-		[System.ComponentModel.DataAnnotations.MaxLength(25)]
+		[System.ComponentModel.DataAnnotations.Length(25, 25)]
 		public string Object { get; set; } = "NormLawFirmSearchResponse";
 		
 		/// <summary>
@@ -17518,8 +16912,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="pageNumber")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(4)]
+		[System.ComponentModel.DataAnnotations.Length(1, 4)]
 		public int PageNumber { get; set; }
 		
 		/// <summary>
@@ -17530,8 +16923,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="previousPageAPI")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2118)]
+		[System.ComponentModel.DataAnnotations.Length(1, 2118)]
 		public string PreviousPageAPI { get; set; }
 		
 		/// <summary>
@@ -17542,8 +16934,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="q")]
-		[System.ComponentModel.DataAnnotations.MinLength(3)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2048)]
+		[System.ComponentModel.DataAnnotations.Length(3, 2048)]
 		public string Q { get; set; }
 		
 		/// <summary>
@@ -17554,8 +16945,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="totalCount")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(11)]
+		[System.ComponentModel.DataAnnotations.Length(1, 11)]
 		public int TotalCount { get; set; }
 		
 		/// <summary>
@@ -17566,8 +16956,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="totalPages")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(4)]
+		[System.ComponentModel.DataAnnotations.Length(1, 4)]
 		public int TotalPages { get; set; }
 	}
 	
@@ -17582,8 +16971,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="firstFetchDate")]
-		[System.ComponentModel.DataAnnotations.MinLength(25)]
-		[System.ComponentModel.DataAnnotations.MaxLength(25)]
+		[System.ComponentModel.DataAnnotations.Length(25, 25)]
 		public System.DateTimeOffset FirstFetchDate { get; set; }
 		
 		/// <summary>
@@ -17593,8 +16981,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="lastFetchDate")]
-		[System.ComponentModel.DataAnnotations.MinLength(25)]
-		[System.ComponentModel.DataAnnotations.MaxLength(25)]
+		[System.ComponentModel.DataAnnotations.Length(25, 25)]
 		public System.DateTimeOffset LastFetchDate { get; set; }
 		
 		/// <summary>
@@ -17611,8 +16998,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -17622,8 +17008,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="normLawFirmDetailsAPI")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public string NormLawFirmDetailsAPI { get; set; }
 		
 		/// <summary>
@@ -17633,8 +17018,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="normLawFirmId")]
-		[System.ComponentModel.DataAnnotations.MinLength(17)]
-		[System.ComponentModel.DataAnnotations.MaxLength(18)]
+		[System.ComponentModel.DataAnnotations.Length(17, 18)]
 		public string NormLawFirmId { get; set; }
 		
 		/// <summary>
@@ -17645,8 +17029,7 @@ namespace MyNS
 		[System.ComponentModel.DefaultValue("NormLawFirmSearchResult")]
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="object")]
-		[System.ComponentModel.DataAnnotations.MinLength(23)]
-		[System.ComponentModel.DataAnnotations.MaxLength(23)]
+		[System.ComponentModel.DataAnnotations.Length(23, 23)]
 		public string Object { get; set; } = "NormLawFirmSearchResult";
 	}
 	
@@ -17706,8 +17089,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="normPartyId")]
-		[System.ComponentModel.DataAnnotations.MinLength(18)]
-		[System.ComponentModel.DataAnnotations.MaxLength(18)]
+		[System.ComponentModel.DataAnnotations.Length(18, 18)]
 		public string NormPartyId { get; set; }
 		
 		/// <summary>
@@ -17885,8 +17267,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="normPartyId")]
-		[System.ComponentModel.DataAnnotations.MinLength(18)]
-		[System.ComponentModel.DataAnnotations.MaxLength(18)]
+		[System.ComponentModel.DataAnnotations.Length(18, 18)]
 		public string NormPartyId { get; set; }
 		
 		/// <summary>
@@ -17935,8 +17316,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="nextPageAPI")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2117)]
+		[System.ComponentModel.DataAnnotations.Length(1, 2117)]
 		public string NextPageAPI { get; set; }
 		
 		/// <summary>
@@ -17947,8 +17327,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="normPartySearchId")]
-		[System.ComponentModel.DataAnnotations.MinLength(18)]
-		[System.ComponentModel.DataAnnotations.MaxLength(18)]
+		[System.ComponentModel.DataAnnotations.Length(18, 18)]
 		public string NormPartySearchId { get; set; }
 		
 		/// <summary>
@@ -17968,8 +17347,7 @@ namespace MyNS
 		[System.ComponentModel.DefaultValue("NormPartySearchResponse")]
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="object")]
-		[System.ComponentModel.DataAnnotations.MinLength(23)]
-		[System.ComponentModel.DataAnnotations.MaxLength(23)]
+		[System.ComponentModel.DataAnnotations.Length(23, 23)]
 		public string Object { get; set; } = "NormPartySearchResponse";
 		
 		/// <summary>
@@ -17979,8 +17357,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="pageNumber")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(4)]
+		[System.ComponentModel.DataAnnotations.Length(1, 4)]
 		public int PageNumber { get; set; }
 		
 		/// <summary>
@@ -17991,8 +17368,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="previousPageAPI")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2116)]
+		[System.ComponentModel.DataAnnotations.Length(1, 2116)]
 		public string PreviousPageAPI { get; set; }
 		
 		/// <summary>
@@ -18003,8 +17379,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="q")]
-		[System.ComponentModel.DataAnnotations.MinLength(3)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2048)]
+		[System.ComponentModel.DataAnnotations.Length(3, 2048)]
 		public string Q { get; set; }
 		
 		/// <summary>
@@ -18015,8 +17390,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="totalCount")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(11)]
+		[System.ComponentModel.DataAnnotations.Length(1, 11)]
 		public int TotalCount { get; set; }
 		
 		/// <summary>
@@ -18027,8 +17401,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="totalPages")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(4)]
+		[System.ComponentModel.DataAnnotations.Length(1, 4)]
 		public int TotalPages { get; set; }
 	}
 	
@@ -18043,8 +17416,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="firstFetchDate")]
-		[System.ComponentModel.DataAnnotations.MinLength(25)]
-		[System.ComponentModel.DataAnnotations.MaxLength(25)]
+		[System.ComponentModel.DataAnnotations.Length(25, 25)]
 		public System.DateTimeOffset FirstFetchDate { get; set; }
 		
 		/// <summary>
@@ -18054,8 +17426,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="lastFetchDate")]
-		[System.ComponentModel.DataAnnotations.MinLength(25)]
-		[System.ComponentModel.DataAnnotations.MaxLength(25)]
+		[System.ComponentModel.DataAnnotations.Length(25, 25)]
 		public System.DateTimeOffset LastFetchDate { get; set; }
 		
 		/// <summary>
@@ -18072,8 +17443,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -18083,8 +17453,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="normPartyDetailsAPI")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public string NormPartyDetailsAPI { get; set; }
 		
 		/// <summary>
@@ -18094,8 +17463,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="normPartyId")]
-		[System.ComponentModel.DataAnnotations.MinLength(17)]
-		[System.ComponentModel.DataAnnotations.MaxLength(18)]
+		[System.ComponentModel.DataAnnotations.Length(17, 18)]
 		public string NormPartyId { get; set; }
 		
 		/// <summary>
@@ -18106,8 +17474,7 @@ namespace MyNS
 		[System.ComponentModel.DefaultValue("NormPartySearchResult")]
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="object")]
-		[System.ComponentModel.DataAnnotations.MinLength(21)]
-		[System.ComponentModel.DataAnnotations.MaxLength(21)]
+		[System.ComponentModel.DataAnnotations.Length(21, 21)]
 		public string Object { get; set; } = "NormPartySearchResult";
 		
 		/// <summary>
@@ -18117,8 +17484,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="partyClassificationType")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public string PartyClassificationType { get; set; }
 	}
 	
@@ -18135,8 +17501,7 @@ namespace MyNS
 		[System.ComponentModel.DefaultValue("PACERCaseSearchContent")]
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="object")]
-		[System.ComponentModel.DataAnnotations.MinLength(22)]
-		[System.ComponentModel.DataAnnotations.MaxLength(22)]
+		[System.ComponentModel.DataAnnotations.Length(22, 22)]
 		public string Object { get; set; } = "PACERCaseSearchContent";
 		
 		/// <summary>
@@ -18581,8 +17946,7 @@ namespace MyNS
 		[System.ComponentModel.DefaultValue("PACERCaseSearchResults")]
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="object")]
-		[System.ComponentModel.DataAnnotations.MinLength(22)]
-		[System.ComponentModel.DataAnnotations.MaxLength(22)]
+		[System.ComponentModel.DataAnnotations.Length(22, 22)]
 		public string Object { get; set; } = "PACERCaseSearchResults";
 		
 		/// <summary>
@@ -18621,8 +17985,7 @@ namespace MyNS
 		[System.ComponentModel.DefaultValue("PACERImportCase")]
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="object")]
-		[System.ComponentModel.DataAnnotations.MinLength(15)]
-		[System.ComponentModel.DataAnnotations.MaxLength(15)]
+		[System.ComponentModel.DataAnnotations.Length(15, 15)]
 		public string Object { get; set; } = "PACERImportCase";
 		
 		/// <summary>
@@ -18654,8 +18017,7 @@ namespace MyNS
 		[System.ComponentModel.DefaultValue("PACERImportCaseResults")]
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="object")]
-		[System.ComponentModel.DataAnnotations.MinLength(22)]
-		[System.ComponentModel.DataAnnotations.MaxLength(22)]
+		[System.ComponentModel.DataAnnotations.Length(22, 22)]
 		public string Object { get; set; } = "PACERImportCaseResults";
 		
 		/// <summary>
@@ -18679,8 +18041,7 @@ namespace MyNS
 		[System.ComponentModel.DefaultValue("PACERPartySearchContent")]
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="object")]
-		[System.ComponentModel.DataAnnotations.MinLength(23)]
-		[System.ComponentModel.DataAnnotations.MaxLength(23)]
+		[System.ComponentModel.DataAnnotations.Length(23, 23)]
 		public string Object { get; set; } = "PACERPartySearchContent";
 		
 		/// <summary>
@@ -18884,8 +18245,7 @@ namespace MyNS
 		[System.ComponentModel.DefaultValue("PACERPartySearchResults")]
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="object")]
-		[System.ComponentModel.DataAnnotations.MinLength(23)]
-		[System.ComponentModel.DataAnnotations.MaxLength(23)]
+		[System.ComponentModel.DataAnnotations.Length(23, 23)]
 		public string Object { get; set; } = "PACERPartySearchResults";
 		
 		/// <summary>
@@ -18948,8 +18308,7 @@ namespace MyNS
 		[System.ComponentModel.DefaultValue("PACERSearchPageInfo")]
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="object")]
-		[System.ComponentModel.DataAnnotations.MinLength(19)]
-		[System.ComponentModel.DataAnnotations.MaxLength(19)]
+		[System.ComponentModel.DataAnnotations.Length(19, 19)]
 		public string Object { get; set; } = "PACERSearchPageInfo";
 		
 		/// <summary>
@@ -19048,8 +18407,7 @@ namespace MyNS
 		[System.ComponentModel.DefaultValue("PACERSearchReceipt")]
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="object")]
-		[System.ComponentModel.DataAnnotations.MinLength(18)]
-		[System.ComponentModel.DataAnnotations.MaxLength(18)]
+		[System.ComponentModel.DataAnnotations.Length(18, 18)]
 		public string Object { get; set; } = "PACERSearchReceipt";
 		
 		/// <summary>
@@ -19080,8 +18438,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="searchFee")]
-		[System.ComponentModel.DataAnnotations.MinLength(3)]
-		[System.ComponentModel.DataAnnotations.MaxLength(5)]
+		[System.ComponentModel.DataAnnotations.Length(3, 5)]
 		public string SearchFee { get; set; }
 		
 		/// <summary>
@@ -19092,8 +18449,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="transactionDate")]
-		[System.ComponentModel.DataAnnotations.MinLength(25)]
-		[System.ComponentModel.DataAnnotations.MaxLength(25)]
+		[System.ComponentModel.DataAnnotations.Length(25, 25)]
 		public System.DateTimeOffset TransactionDate { get; set; }
 	}
 	
@@ -19120,8 +18476,7 @@ namespace MyNS
 		[System.ComponentModel.DefaultValue("PCLCase")]
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="object")]
-		[System.ComponentModel.DataAnnotations.MinLength(7)]
-		[System.ComponentModel.DataAnnotations.MaxLength(7)]
+		[System.ComponentModel.DataAnnotations.Length(7, 7)]
 		public string Object { get; set; } = "PCLCase";
 		
 		/// <summary>
@@ -19193,8 +18548,7 @@ namespace MyNS
 		[System.ComponentModel.DefaultValue("PCLParty")]
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="object")]
-		[System.ComponentModel.DataAnnotations.MinLength(8)]
-		[System.ComponentModel.DataAnnotations.MaxLength(8)]
+		[System.ComponentModel.DataAnnotations.Length(8, 8)]
 		public string Object { get; set; } = "PCLParty";
 		
 		/// <summary>
@@ -19255,8 +18609,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="defaultPacerClientCode")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(32)]
+		[System.ComponentModel.DataAnnotations.Length(0, 32)]
 		public string DefaultPacerClientCode { get; set; }
 		
 		/// <summary>
@@ -19268,8 +18621,7 @@ namespace MyNS
 		[System.ComponentModel.DefaultValue("PacerCredential")]
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="object")]
-		[System.ComponentModel.DataAnnotations.MinLength(15)]
-		[System.ComponentModel.DataAnnotations.MaxLength(15)]
+		[System.ComponentModel.DataAnnotations.Length(15, 15)]
 		public string Object { get; set; } = "PacerCredential";
 		
 		/// <summary>
@@ -19280,8 +18632,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="pacerUserId")]
-		[System.ComponentModel.DataAnnotations.MinLength(6)]
-		[System.ComponentModel.DataAnnotations.MaxLength(40)]
+		[System.ComponentModel.DataAnnotations.Length(6, 40)]
 		public string PacerUserId { get; set; }
 	}
 	
@@ -19297,8 +18648,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="nextPageAPI")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1024)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1024)]
 		public string NextPageAPI { get; set; }
 		
 		/// <summary>
@@ -19310,8 +18660,7 @@ namespace MyNS
 		[System.ComponentModel.DefaultValue("PacerCredentialListResponse")]
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="object")]
-		[System.ComponentModel.DataAnnotations.MinLength(27)]
-		[System.ComponentModel.DataAnnotations.MaxLength(27)]
+		[System.ComponentModel.DataAnnotations.Length(27, 27)]
 		public string Object { get; set; } = "PacerCredentialListResponse";
 		
 		/// <summary>
@@ -19322,8 +18671,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="pacerCredentialArray")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(100)]
+		[System.ComponentModel.DataAnnotations.Length(0, 100)]
 		public PacerCredential[] PacerCredentialArray { get; set; }
 		
 		/// <summary>
@@ -19342,8 +18690,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="previousPageAPI")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1024)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1024)]
 		public string PreviousPageAPI { get; set; }
 		
 		/// <summary>
@@ -19373,8 +18720,7 @@ namespace MyNS
 		/// Max length: 32
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="defaultPacerClientCode")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(32)]
+		[System.ComponentModel.DataAnnotations.Length(0, 32)]
 		public string DefaultPacerClientCode { get; set; }
 		
 		/// <summary>
@@ -19385,8 +18731,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="pacerUserId")]
-		[System.ComponentModel.DataAnnotations.MinLength(6)]
-		[System.ComponentModel.DataAnnotations.MaxLength(40)]
+		[System.ComponentModel.DataAnnotations.Length(6, 40)]
 		public string PacerUserId { get; set; }
 		
 		/// <summary>
@@ -19397,8 +18742,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="password")]
-		[System.ComponentModel.DataAnnotations.MinLength(8)]
-		[System.ComponentModel.DataAnnotations.MaxLength(45)]
+		[System.ComponentModel.DataAnnotations.Length(8, 45)]
 		public string Password { get; set; }
 	}
 	
@@ -19414,8 +18758,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="nextPageAPI")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2147)]
+		[System.ComponentModel.DataAnnotations.Length(1, 2147)]
 		public string NextPageAPI { get; set; }
 		
 		/// <summary>
@@ -19426,8 +18769,7 @@ namespace MyNS
 		[System.ComponentModel.DefaultValue("PartyRoleGroupResponse")]
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="object")]
-		[System.ComponentModel.DataAnnotations.MinLength(22)]
-		[System.ComponentModel.DataAnnotations.MaxLength(22)]
+		[System.ComponentModel.DataAnnotations.Length(22, 22)]
 		public string Object { get; set; } = "PartyRoleGroupResponse";
 		
 		/// <summary>
@@ -19438,8 +18780,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="pageNumber")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public int PageNumber { get; set; }
 		
 		/// <summary>
@@ -19459,8 +18800,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="previousPageAPI")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2146)]
+		[System.ComponentModel.DataAnnotations.Length(1, 2146)]
 		public string PreviousPageAPI { get; set; }
 		
 		/// <summary>
@@ -19471,8 +18811,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="totalCount")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public int TotalCount { get; set; }
 		
 		/// <summary>
@@ -19483,8 +18822,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="totalPages")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public int TotalPages { get; set; }
 	}
 	
@@ -19500,8 +18838,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="nextPageAPI")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2142)]
+		[System.ComponentModel.DataAnnotations.Length(1, 2142)]
 		public string NextPageAPI { get; set; }
 		
 		/// <summary>
@@ -19512,8 +18849,7 @@ namespace MyNS
 		[System.ComponentModel.DefaultValue("PartyRoleResponse")]
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="object")]
-		[System.ComponentModel.DataAnnotations.MinLength(17)]
-		[System.ComponentModel.DataAnnotations.MaxLength(17)]
+		[System.ComponentModel.DataAnnotations.Length(17, 17)]
 		public string Object { get; set; } = "PartyRoleResponse";
 		
 		/// <summary>
@@ -19524,8 +18860,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="pageNumber")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public int PageNumber { get; set; }
 		
 		/// <summary>
@@ -19545,8 +18880,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="previousPageAPI")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(2141)]
+		[System.ComponentModel.DataAnnotations.Length(1, 2141)]
 		public string PreviousPageAPI { get; set; }
 		
 		/// <summary>
@@ -19557,8 +18891,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="totalCount")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public int TotalCount { get; set; }
 		
 		/// <summary>
@@ -19569,8 +18902,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="totalPages")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public int TotalPages { get; set; }
 	}
 	
@@ -19589,8 +18921,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="message")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public string Message { get; set; }
 		
 		/// <summary>
@@ -19601,8 +18932,7 @@ namespace MyNS
 		[System.ComponentModel.DefaultValue("Success")]
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="object")]
-		[System.ComponentModel.DataAnnotations.MinLength(7)]
-		[System.ComponentModel.DataAnnotations.MaxLength(7)]
+		[System.ComponentModel.DataAnnotations.Length(7, 7)]
 		public string Object { get; set; } = "Success";
 	}
 	

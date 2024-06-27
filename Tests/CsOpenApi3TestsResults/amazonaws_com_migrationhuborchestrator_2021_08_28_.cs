@@ -2579,8 +2579,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(100)]
+		[System.ComponentModel.DataAnnotations.Length(1, 100)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[-a-zA-Z0-9_.+]+[-a-zA-Z0-9_.+ ]*")]
 		public string Name { get; set; }
 		
@@ -2591,8 +2590,7 @@ namespace MyNS
 		/// Pattern: [-a-zA-Z0-9_.+, ]*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(500)]
+		[System.ComponentModel.DataAnnotations.Length(0, 500)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[-a-zA-Z0-9_.+, ]*")]
 		public string Description { get; set; }
 		
@@ -2605,8 +2603,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="templateId")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(100)]
+		[System.ComponentModel.DataAnnotations.Length(1, 100)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[-a-zA-Z0-9_.+]+[-a-zA-Z0-9_.+ ]*")]
 		public string TemplateId { get; set; }
 		
@@ -2619,8 +2616,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="applicationConfigurationId")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(100)]
+		[System.ComponentModel.DataAnnotations.Length(1, 100)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[-a-zA-Z0-9_.+]+[-a-zA-Z0-9_.+ ]*")]
 		public string ApplicationConfigurationId { get; set; }
 		
@@ -2657,8 +2653,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(100)]
+		[System.ComponentModel.DataAnnotations.Length(1, 100)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[-a-zA-Z0-9_.+]+[-a-zA-Z0-9_.+ ]*")]
 		public string Name { get; set; }
 		
@@ -2671,8 +2666,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="stepGroupId")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(100)]
+		[System.ComponentModel.DataAnnotations.Length(1, 100)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[a-zA-Z0-9-]+")]
 		public string StepGroupId { get; set; }
 		
@@ -2685,8 +2679,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="workflowId")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(100)]
+		[System.ComponentModel.DataAnnotations.Length(1, 100)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[a-zA-Z0-9-]+")]
 		public string WorkflowId { get; set; }
 		
@@ -2705,8 +2698,7 @@ namespace MyNS
 		/// Pattern: [-a-zA-Z0-9_.+, ]*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(500)]
+		[System.ComponentModel.DataAnnotations.Length(0, 500)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[-a-zA-Z0-9_.+, ]*")]
 		public string Description { get; set; }
 		
@@ -2772,8 +2764,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="workflowId")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(100)]
+		[System.ComponentModel.DataAnnotations.Length(1, 100)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[a-zA-Z0-9-]+")]
 		public string WorkflowId { get; set; }
 		
@@ -2786,8 +2777,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(100)]
+		[System.ComponentModel.DataAnnotations.Length(1, 100)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[-a-zA-Z0-9_.+]+[-a-zA-Z0-9_.+ ]*")]
 		public string Name { get; set; }
 		
@@ -2798,8 +2788,7 @@ namespace MyNS
 		/// Pattern: [-a-zA-Z0-9_.+, ]*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(500)]
+		[System.ComponentModel.DataAnnotations.Length(0, 500)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[-a-zA-Z0-9_.+, ]*")]
 		public string Description { get; set; }
 		
@@ -2826,8 +2815,7 @@ namespace MyNS
 		/// Pattern: [-a-zA-Z0-9_.+]+[-a-zA-Z0-9_.+ ]*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="name")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(100)]
+		[System.ComponentModel.DataAnnotations.Length(1, 100)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[-a-zA-Z0-9_.+]+[-a-zA-Z0-9_.+ ]*")]
 		public string Name { get; set; }
 		
@@ -2838,8 +2826,7 @@ namespace MyNS
 		/// Pattern: [-a-zA-Z0-9_.+, ]*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(500)]
+		[System.ComponentModel.DataAnnotations.Length(0, 500)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[-a-zA-Z0-9_.+, ]*")]
 		public string Description { get; set; }
 		
@@ -2866,8 +2853,7 @@ namespace MyNS
 		/// Pattern: [-a-zA-Z0-9_.+]+[-a-zA-Z0-9_.+ ]*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="name")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(100)]
+		[System.ComponentModel.DataAnnotations.Length(1, 100)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[-a-zA-Z0-9_.+]+[-a-zA-Z0-9_.+ ]*")]
 		public string Name { get; set; }
 		
@@ -2878,8 +2864,7 @@ namespace MyNS
 		/// Pattern: [-a-zA-Z0-9_.+, ]*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(500)]
+		[System.ComponentModel.DataAnnotations.Length(0, 500)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[-a-zA-Z0-9_.+, ]*")]
 		public string Description { get; set; }
 		
@@ -2920,8 +2905,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="stepGroupId")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(100)]
+		[System.ComponentModel.DataAnnotations.Length(1, 100)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[a-zA-Z0-9-]+")]
 		public string StepGroupId { get; set; }
 		
@@ -2934,8 +2918,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="workflowId")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(100)]
+		[System.ComponentModel.DataAnnotations.Length(1, 100)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[a-zA-Z0-9-]+")]
 		public string WorkflowId { get; set; }
 		
@@ -2946,8 +2929,7 @@ namespace MyNS
 		/// Pattern: [-a-zA-Z0-9_.+]+[-a-zA-Z0-9_.+ ]*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="name")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(100)]
+		[System.ComponentModel.DataAnnotations.Length(1, 100)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[-a-zA-Z0-9_.+]+[-a-zA-Z0-9_.+ ]*")]
 		public string Name { get; set; }
 		
@@ -2958,8 +2940,7 @@ namespace MyNS
 		/// Pattern: [-a-zA-Z0-9_.+, ]*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(500)]
+		[System.ComponentModel.DataAnnotations.Length(0, 500)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[-a-zA-Z0-9_.+, ]*")]
 		public string Description { get; set; }
 		

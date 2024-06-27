@@ -462,8 +462,7 @@ namespace MyNS
 		/// Max length: 16384
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(16384)]
+		[System.ComponentModel.DataAnnotations.Length(1, 16384)]
 		public string NextToken { get; set; }
 	}
 	
@@ -488,8 +487,7 @@ namespace MyNS
 		/// Max length: 16384
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(16384)]
+		[System.ComponentModel.DataAnnotations.Length(1, 16384)]
 		public string NextToken { get; set; }
 	}
 	

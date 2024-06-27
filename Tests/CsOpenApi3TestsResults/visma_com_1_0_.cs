@@ -187,8 +187,7 @@ namespace MyNS
 		/// Max length: 1000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="location")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1000)]
+		[System.ComponentModel.DataAnnotations.Length(0, 1000)]
 		public string Location { get; set; }
 		
 		/// <summary>
@@ -1053,8 +1052,7 @@ namespace MyNS
 		/// Max length: 25
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="kvkNumber")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(25)]
+		[System.ComponentModel.DataAnnotations.Length(0, 25)]
 		public string KvkNumber { get; set; }
 		
 		[System.Runtime.Serialization.DataMember(Name="lastUpdatedBy")]
@@ -2489,8 +2487,7 @@ namespace MyNS
 		/// Max length: 25
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="kvkNumber")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(25)]
+		[System.ComponentModel.DataAnnotations.Length(0, 25)]
 		public string KvkNumber { get; set; }
 		
 		[System.Runtime.Serialization.DataMember(Name="language")]
@@ -5009,8 +5006,7 @@ namespace MyNS
 		/// Max length: 25
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="kvkNumber")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(25)]
+		[System.ComponentModel.DataAnnotations.Length(0, 25)]
 		public string KvkNumber { get; set; }
 		
 		[System.Runtime.Serialization.DataMember(Name="language")]
@@ -5167,8 +5163,7 @@ namespace MyNS
 		/// Max length: 20
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="purchaseOrderNumberPrefix")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(20)]
+		[System.ComponentModel.DataAnnotations.Length(0, 20)]
 		public string PurchaseOrderNumberPrefix { get; set; }
 		
 		[System.Runtime.Serialization.DataMember(Name="quickSearchSetting")]
@@ -9041,8 +9036,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(200)]
+		[System.ComponentModel.DataAnnotations.Length(0, 200)]
 		public string Name { get; set; }
 		
 		[System.Runtime.Serialization.DataMember(Name="product")]
@@ -9157,8 +9151,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(50)]
+		[System.ComponentModel.DataAnnotations.Length(0, 50)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -9365,8 +9358,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(200)]
+		[System.ComponentModel.DataAnnotations.Length(0, 200)]
 		public string Name { get; set; }
 		
 		[System.Runtime.Serialization.DataMember(Name="sortOrder")]
@@ -9416,8 +9408,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(200)]
+		[System.ComponentModel.DataAnnotations.Length(0, 200)]
 		public string Name { get; set; }
 		
 		[System.Runtime.Serialization.DataMember(Name="phase")]
@@ -9480,8 +9471,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(200)]
+		[System.ComponentModel.DataAnnotations.Length(0, 200)]
 		public string Name { get; set; }
 		
 		[System.Runtime.Serialization.DataMember(Name="phase")]
@@ -11378,8 +11368,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="firstName")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(100)]
+		[System.ComponentModel.DataAnnotations.Length(1, 100)]
 		public string FirstName { get; set; }
 		
 		[System.Runtime.Serialization.DataMember(Name="isActive")]
@@ -11395,8 +11384,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="lastName")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(100)]
+		[System.ComponentModel.DataAnnotations.Length(1, 100)]
 		public string LastName { get; set; }
 		
 		[System.Runtime.Serialization.DataMember(Name="notes")]
@@ -11720,8 +11708,7 @@ namespace MyNS
 		/// Max length: 10
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="code")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(10)]
+		[System.ComponentModel.DataAnnotations.Length(0, 10)]
 		public string Code { get; set; }
 		
 		[System.Runtime.Serialization.DataMember(Name="countryGuid")]
@@ -11750,8 +11737,7 @@ namespace MyNS
 		/// Max length: 10
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="code")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(10)]
+		[System.ComponentModel.DataAnnotations.Length(0, 10)]
 		public string Code { get; set; }
 		
 		[System.Runtime.Serialization.DataMember(Name="countryGuid")]

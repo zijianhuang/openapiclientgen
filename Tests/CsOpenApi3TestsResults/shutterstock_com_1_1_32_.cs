@@ -2969,8 +2969,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(100000)]
+		[System.ComponentModel.DataAnnotations.Length(1, 100000)]
 		public string Name { get; set; }
 		
 		[System.Runtime.Serialization.DataMember(Name="visibility")]
@@ -3025,8 +3024,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="items")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(50)]
+		[System.ComponentModel.DataAnnotations.Length(1, 50)]
 		public CreateCatalogCollectionItem[] Items { get; set; }
 	}
 	
@@ -6040,8 +6038,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="items")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(50)]
+		[System.ComponentModel.DataAnnotations.Length(1, 50)]
 		public RemoveCatalogCollectionItem[] Items { get; set; }
 	}
 	
@@ -6259,8 +6256,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="text")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(100000)]
+		[System.ComponentModel.DataAnnotations.Length(1, 100000)]
 		public string Text { get; set; }
 	}
 	
@@ -6503,8 +6499,7 @@ namespace MyNS
 		/// Max length: 100000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="name")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(100000)]
+		[System.ComponentModel.DataAnnotations.Length(1, 100000)]
 		public string Name { get; set; }
 		
 		[System.Runtime.Serialization.DataMember(Name="visibility")]

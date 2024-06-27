@@ -3044,8 +3044,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(100)]
+		[System.ComponentModel.DataAnnotations.Length(1, 100)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -3072,8 +3071,7 @@ namespace MyNS
 		/// Max length: 10000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextToken")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(10000)]
+		[System.ComponentModel.DataAnnotations.Length(1, 10000)]
 		public string NextToken { get; set; }
 	}
 	
@@ -3092,8 +3090,7 @@ namespace MyNS
 		/// Max length: 1024
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1024)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1024)]
 		public string ClientToken { get; set; }
 		
 		/// <summary>
@@ -3103,8 +3100,7 @@ namespace MyNS
 		/// Pattern: [a-zA-Z0-9]+(?:[-_\.][a-zA-Z0-9]+)*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="alias")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(128)]
+		[System.ComponentModel.DataAnnotations.Length(1, 128)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[a-zA-Z0-9]+(?:[-_\.][a-zA-Z0-9]+)*")]
 		public string Alias { get; set; }
 		
@@ -3114,8 +3110,7 @@ namespace MyNS
 		/// Maximum items: 1
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="ides")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1)]
+		[System.ComponentModel.DataAnnotations.Length(0, 1)]
 		public IdeConfiguration[] Ides { get; set; }
 		
 		/// <summary>
@@ -3183,8 +3178,7 @@ namespace MyNS
 		/// Max length: 10000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextToken")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(10000)]
+		[System.ComponentModel.DataAnnotations.Length(1, 10000)]
 		public string NextToken { get; set; }
 		
 		/// <summary>
@@ -3209,8 +3203,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="displayName")]
-		[System.ComponentModel.DataAnnotations.MinLength(3)]
-		[System.ComponentModel.DataAnnotations.MaxLength(63)]
+		[System.ComponentModel.DataAnnotations.Length(3, 63)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[a-zA-Z0-9]+(?:[-_\. ][a-zA-Z0-9]+)*")]
 		public string DisplayName { get; set; }
 		
@@ -3221,8 +3214,7 @@ namespace MyNS
 		/// Pattern: [a-zA-Z0-9]+(?:[-_a-zA-Z0-9.,;:/\+=?&$%    ])*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(200)]
+		[System.ComponentModel.DataAnnotations.Length(0, 200)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[a-zA-Z0-9]+(?:[-_a-zA-Z0-9.,;:/\+=?&$%    ])*")]
 		public string Description { get; set; }
 	}
@@ -3236,8 +3228,7 @@ namespace MyNS
 		/// Max length: 10000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextToken")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(10000)]
+		[System.ComponentModel.DataAnnotations.Length(1, 10000)]
 		public string NextToken { get; set; }
 		
 		/// <summary>
@@ -3265,8 +3256,7 @@ namespace MyNS
 		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(255)]
+		[System.ComponentModel.DataAnnotations.Length(1, 255)]
 		public string Description { get; set; }
 	}
 	
@@ -3290,8 +3280,7 @@ namespace MyNS
 		/// Pattern: $|^[a-zA-Z0-9]+(?:[-_\.][a-zA-Z0-9]+)*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="alias")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(128)]
+		[System.ComponentModel.DataAnnotations.Length(0, 128)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"$|^[a-zA-Z0-9]+(?:[-_\.][a-zA-Z0-9]+)*")]
 		public string Alias { get; set; }
 		
@@ -3301,8 +3290,7 @@ namespace MyNS
 		/// Maximum items: 1
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="ides")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1)]
+		[System.ComponentModel.DataAnnotations.Length(0, 1)]
 		public IdeConfiguration[] Ides { get; set; }
 		
 		/// <summary>
@@ -3326,8 +3314,7 @@ namespace MyNS
 		/// Max length: 1024
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1024)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1024)]
 		public string ClientToken { get; set; }
 	}
 	
@@ -3358,8 +3345,7 @@ namespace MyNS
 		/// Pattern: [a-zA-Z0-9]+(?:[-_a-zA-Z0-9.,;:/\+=?&$%    ])*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(200)]
+		[System.ComponentModel.DataAnnotations.Length(0, 200)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[a-zA-Z0-9]+(?:[-_a-zA-Z0-9.,;:/\+=?&$%    ])*")]
 		public string Description { get; set; }
 	}
@@ -3374,8 +3360,7 @@ namespace MyNS
 		/// Pattern: [a-zA-Z0-9]+(?:[-_a-zA-Z0-9.,;:/\+=?&$%    ])*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(200)]
+		[System.ComponentModel.DataAnnotations.Length(0, 200)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[a-zA-Z0-9]+(?:[-_a-zA-Z0-9.,;:/\+=?&$%    ])*")]
 		public string Description { get; set; }
 	}
@@ -3389,8 +3374,7 @@ namespace MyNS
 		/// Max length: 10000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextToken")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(10000)]
+		[System.ComponentModel.DataAnnotations.Length(1, 10000)]
 		public string NextToken { get; set; }
 		
 		/// <summary>
@@ -3434,8 +3418,7 @@ namespace MyNS
 		/// Max length: 10000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextToken")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(10000)]
+		[System.ComponentModel.DataAnnotations.Length(1, 10000)]
 		public string NextToken { get; set; }
 		
 		/// <summary>
@@ -3457,8 +3440,7 @@ namespace MyNS
 		/// Max length: 10000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextToken")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(10000)]
+		[System.ComponentModel.DataAnnotations.Length(1, 10000)]
 		public string NextToken { get; set; }
 		
 		/// <summary>
@@ -3480,8 +3462,7 @@ namespace MyNS
 		/// Max length: 10000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextToken")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(10000)]
+		[System.ComponentModel.DataAnnotations.Length(1, 10000)]
 		public string NextToken { get; set; }
 		
 		/// <summary>
@@ -3503,8 +3484,7 @@ namespace MyNS
 		/// Max length: 10000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextToken")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(10000)]
+		[System.ComponentModel.DataAnnotations.Length(1, 10000)]
 		public string NextToken { get; set; }
 	}
 	
@@ -3517,8 +3497,7 @@ namespace MyNS
 		/// Maximum items: 1
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="ides")]
-		[System.ComponentModel.DataAnnotations.MinLength(0)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1)]
+		[System.ComponentModel.DataAnnotations.Length(0, 1)]
 		public IdeConfiguration[] Ides { get; set; }
 		
 		/// <summary>

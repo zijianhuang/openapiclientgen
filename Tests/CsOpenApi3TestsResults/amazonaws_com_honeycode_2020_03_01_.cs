@@ -1773,8 +1773,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="rowsToCreate")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(100)]
+		[System.ComponentModel.DataAnnotations.Length(1, 100)]
 		public CreateRowData[] RowsToCreate { get; set; }
 		
 		/// <summary>
@@ -1784,8 +1783,7 @@ namespace MyNS
 		/// Pattern: ^(?!\s*$).+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="clientRequestToken")]
-		[System.ComponentModel.DataAnnotations.MinLength(32)]
-		[System.ComponentModel.DataAnnotations.MaxLength(64)]
+		[System.ComponentModel.DataAnnotations.Length(32, 64)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^(?!\s*$).+")]
 		public string ClientRequestToken { get; set; }
 	}
@@ -1801,8 +1799,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="rowIds")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(100)]
+		[System.ComponentModel.DataAnnotations.Length(1, 100)]
 		public string[] RowIds { get; set; }
 		
 		/// <summary>
@@ -1812,8 +1809,7 @@ namespace MyNS
 		/// Pattern: ^(?!\s*$).+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="clientRequestToken")]
-		[System.ComponentModel.DataAnnotations.MinLength(32)]
-		[System.ComponentModel.DataAnnotations.MaxLength(64)]
+		[System.ComponentModel.DataAnnotations.Length(32, 64)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^(?!\s*$).+")]
 		public string ClientRequestToken { get; set; }
 	}
@@ -1829,8 +1825,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="rowsToUpdate")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(100)]
+		[System.ComponentModel.DataAnnotations.Length(1, 100)]
 		public UpdateRowData[] RowsToUpdate { get; set; }
 		
 		/// <summary>
@@ -1840,8 +1835,7 @@ namespace MyNS
 		/// Pattern: ^(?!\s*$).+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="clientRequestToken")]
-		[System.ComponentModel.DataAnnotations.MinLength(32)]
-		[System.ComponentModel.DataAnnotations.MaxLength(64)]
+		[System.ComponentModel.DataAnnotations.Length(32, 64)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^(?!\s*$).+")]
 		public string ClientRequestToken { get; set; }
 	}
@@ -1864,8 +1858,7 @@ namespace MyNS
 		/// Pattern: ^(?!\s*$).+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="clientRequestToken")]
-		[System.ComponentModel.DataAnnotations.MinLength(32)]
-		[System.ComponentModel.DataAnnotations.MaxLength(64)]
+		[System.ComponentModel.DataAnnotations.Length(32, 64)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^(?!\s*$).+")]
 		public string ClientRequestToken { get; set; }
 	}
@@ -1882,8 +1875,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="workbookId")]
-		[System.ComponentModel.DataAnnotations.MinLength(36)]
-		[System.ComponentModel.DataAnnotations.MaxLength(36)]
+		[System.ComponentModel.DataAnnotations.Length(36, 36)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}")]
 		public string WorkbookId { get; set; }
 		
@@ -1896,8 +1888,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="appId")]
-		[System.ComponentModel.DataAnnotations.MinLength(36)]
-		[System.ComponentModel.DataAnnotations.MaxLength(36)]
+		[System.ComponentModel.DataAnnotations.Length(36, 36)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}")]
 		public string AppId { get; set; }
 		
@@ -1910,8 +1901,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="screenId")]
-		[System.ComponentModel.DataAnnotations.MinLength(36)]
-		[System.ComponentModel.DataAnnotations.MaxLength(36)]
+		[System.ComponentModel.DataAnnotations.Length(36, 36)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}")]
 		public string ScreenId { get; set; }
 		
@@ -1937,8 +1927,7 @@ namespace MyNS
 		/// Pattern: ^(?!\s*$).+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextToken")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1024)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1024)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^(?!\s*$).+")]
 		public string NextToken { get; set; }
 	}
@@ -1959,8 +1948,7 @@ namespace MyNS
 		/// Pattern: row:[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}\/[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="rowId")]
-		[System.ComponentModel.DataAnnotations.MinLength(77)]
-		[System.ComponentModel.DataAnnotations.MaxLength(77)]
+		[System.ComponentModel.DataAnnotations.Length(77, 77)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"row:[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}\/[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}")]
 		public string RowId { get; set; }
 		
@@ -1971,8 +1959,7 @@ namespace MyNS
 		/// Pattern: ^(?!\s*$).+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="clientRequestToken")]
-		[System.ComponentModel.DataAnnotations.MinLength(32)]
-		[System.ComponentModel.DataAnnotations.MaxLength(64)]
+		[System.ComponentModel.DataAnnotations.Length(32, 64)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^(?!\s*$).+")]
 		public string ClientRequestToken { get; set; }
 	}
@@ -1986,8 +1973,7 @@ namespace MyNS
 		/// Maximum items: 100
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="rowIds")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(100)]
+		[System.ComponentModel.DataAnnotations.Length(1, 100)]
 		public string[] RowIds { get; set; }
 		
 		/// <summary>
@@ -2006,8 +1992,7 @@ namespace MyNS
 		/// Pattern: ^(?!\s*$).+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextToken")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1024)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1024)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^(?!\s*$).+")]
 		public string NextToken { get; set; }
 	}
@@ -2051,8 +2036,7 @@ namespace MyNS
 		/// Pattern: ^(?!\s*$).+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextToken")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(1024)]
+		[System.ComponentModel.DataAnnotations.Length(1, 1024)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^(?!\s*$).+")]
 		public string NextToken { get; set; }
 	}
@@ -2103,8 +2087,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="clientRequestToken")]
-		[System.ComponentModel.DataAnnotations.MinLength(32)]
-		[System.ComponentModel.DataAnnotations.MaxLength(64)]
+		[System.ComponentModel.DataAnnotations.Length(32, 64)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^(?!\s*$).+")]
 		public string ClientRequestToken { get; set; }
 	}

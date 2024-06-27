@@ -74,8 +74,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
-		[System.ComponentModel.DataAnnotations.MinLength(3)]
-		[System.ComponentModel.DataAnnotations.MaxLength(24)]
+		[System.ComponentModel.DataAnnotations.Length(3, 24)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"^[a-z0-9]{3,24}$")]
 		public string Name { get; set; }
 		

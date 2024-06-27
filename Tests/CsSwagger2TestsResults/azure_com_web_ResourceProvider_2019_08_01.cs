@@ -70,8 +70,7 @@ namespace MyNS
 		/// Pattern:  ^[-\w\._\(\)]+[^\.]$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="targetResourceGroup")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		[System.ComponentModel.DataAnnotations.MaxLength(90)]
+		[System.ComponentModel.DataAnnotations.Length(1, 90)]
 		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@" ^[-\w\._\(\)]+[^\.]$")]
 		public string TargetResourceGroup { get; set; }
 	}
