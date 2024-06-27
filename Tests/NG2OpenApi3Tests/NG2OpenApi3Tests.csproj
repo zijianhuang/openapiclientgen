@@ -30,7 +30,7 @@
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 			<PrivateAssets>all</PrivateAssets>
 		</PackageReference>
-		<PackageReference Include="Fonlow.Testing.Integration" Version="1.0.0-Alpha" />
+		<PackageReference Include="Fonlow.Testing.Integration" Version="1.0.0" />
 	</ItemGroup>
 
 	<ItemGroup>
