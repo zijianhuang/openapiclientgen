@@ -1,5 +1,5 @@
 # Strongly Typed OpenAPI Client Generators
-Reading an OpenAPI / Swagger YAML/JSON definition file, OpenApiClientGen generates strongly typed client API codes in C# and in TypeScript for Angular, Axios, Fetch API, Aurelia and jQuery, as well as Angular strictly typed forms.
+Reading an OpenAPI / Swagger YAML/JSON definition file, OpenApiClientGen generates strongly typed client API codes in C# and in TypeScript for Angular, Axios, Fetch API, Aurelia and jQuery, as well as Angular strictly typed reactive forms.
 
 This program is based on Fonlow.TypeScriptCodeDomCore and Fonlow.Poco2TsCore which are core components of [WebApiClientGen](https://github.com/zijianhuang/webapiclientgen), thus the codes generated share similar characteristics.
 
@@ -21,13 +21,85 @@ OpenApiClientGen had been tested upon over 2,000 Open API definitions in v3 form
 * [Generated TypeScript codes for Fetch API](https://github.com/zijianhuang/openapiclientgen/tree/master/Tests/SwagTests/FetchResults) and [integration tests for pet.yaml](https://github.com/zijianhuang/openapiclientgen/tree/master/fetchapi/src)
 * [Generated TypeScript codes for jQuery](https://github.com/zijianhuang/openapiclientgen/tree/master/Tests/SwagTests/JqResults) and [integration tests for pet.yaml](https://github.com/zijianhuang/openapiclientgen/tree/master/jq/src)
 
+## Data Mappings
+
+This section describes only mappings for simple and primitive types in OpenAPI definition, C# and TypeScript.
+
+### To C# Codes
+
+```c#
+static readonly Dictionary<string, Type> basicClrTypeDic = new()
+{
+	{"integer_int32", typeof(int) },
+	{"integer_int64", typeof(long) },
+	{"integer", typeof(int) },
+	{"integer_uint32", typeof(uint) },
+	{"number_float", typeof(float) },
+	{"number_double", typeof(double) },
+	{"number_decimal", typeof(decimal) },
+	{"number", typeof(double) }, //C# by default use double for number literal
+	{"string", typeof(string) },
+	{"boolean", typeof(bool) },
+	{"string_date", typeof(DateOnly) },
+	{"string_date-time", typeof(DateTimeOffset) },
+};
+```
+
+### To TypeScript Codes
+
+```c#
+static readonly Dictionary<string, string> basicTsTypeDic = new()
+{
+	{"integer_int32", "number" },
+	{"integer_int64", "number" },
+	{"integer", "number" },
+	{"integer_uint32", "number" },
+	{"number_float", "number" },
+	{"number_double", "number" },
+	{"number_decimal", "number" },
+	{"number", "number" },
+	{"string", "string" },
+	{"boolean", "boolean" },
+	{"string_date", "Date" },
+	{"string_date-time", "Date" },
+};
+```
+
+And "integer_int64" is actually mapped to "string" because JS supports integral precision up to 53 bits.
+
+**References:**
+* [Dealing with Large Integral Numbers in JavaScript for Integral Types of ASP.NET Core Web API](https://www.codeproject.com/Articles/5377807/Dealing-with-Large-Integral-Numbers-in-JavaScript)
+
+## Validation Mappings
+
+### OpenAPI validation to .NET validation
+
+| Schema | .NET Attribute |
+| ------ | ---- |  
+| MinLength | MinLength |
+| MaxLength | MaxLength |
+| MinLength + MaxLength | Length |
+| Minimum, Maximum | Range(min, max) or Range(TypeFullName, min, max) |
+| MinItems | MinLength |
+| MaxItems | MaxLength |
+| MinItems + MaxItems | Length |
+| Pattern | RegularExpression |
+
+### OpenAPI validation to Angular Reactive Forms Validation
+
+| Schema | Angular Reactive Forms Validation |
+| ----- | ---- |
+| Required | required |
+| MinLength, MaxLength, MinItems, MaxItems | minLength, maxLength |
+| Minimum, Maximum | min, max |
+| Pattern | pattern |
 
 ## Installation
 OpenApiClientGen is a .NET Core console app.
 
 **Prerequisites**
 
-* .NET 7.
+* .NET 8 (since v3.2)
 
 **Remarks**
 
@@ -35,7 +107,7 @@ OpenApiClientGen is a .NET Core console app.
 
 
 ### Source Installation
-Check out this repository or one of its tags, then do a release build or a Visual Stuido's Publish.
+Check out this repository or one of its tags, then do a release build or a Visual Studio's Publish.
 
 **Hints**
 
@@ -43,7 +115,7 @@ The plugin assemblies should be copied accordingly after a release build.
 
 ### Binary Download
 
-Download the [zip files](https://github.com/zijianhuang/openapiclientgen/releases) and extract to a local folder. The console app includes the following plugins for JavaScript/TypeScript libs or frameworks:
+Download one the [zip files](https://github.com/zijianhuang/openapiclientgen/releases) of the releases and extract to a local folder. The console app includes the following plugins for JavaScript/TypeScript libs or frameworks:
 
 * Fonlow.OpenApiClientGen.Aurelia
 * Fonlow.OpenApiClientGen.Axios
@@ -415,55 +487,6 @@ The JSON file is mapped to the following [C# codes](https://github.com/zijianhua
 ```
 
 For more details, especially the contexts of using these settings, please check [Settings Explained](https://github.com/zijianhuang/openapiclientgen/wiki/Settings-Explained).
-
-### Data Mappings
-
-This section describes only mappings for simple and primitive types in OpenAPI definition, C# and TypeScript.
-
-### To C# Codes
-
-```c#
-static readonly Dictionary<string, Type> basicClrTypeDic = new()
-{
-	{"integer_int32", typeof(int) },
-	{"integer_int64", typeof(long) },
-	{"integer", typeof(int) },
-	{"integer_uint32", typeof(uint) },
-	{"number_float", typeof(float) },
-	{"number_double", typeof(double) },
-	{"number_decimal", typeof(decimal) },
-	{"number", typeof(double) }, //C# by default use double for number literal
-	{"string", typeof(string) },
-	{"boolean", typeof(bool) },
-	{"string_date", typeof(DateOnly) },
-	{"string_date-time", typeof(DateTimeOffset) },
-};
-```
-
-### To TypeScript Codes
-
-```c#
-static readonly Dictionary<string, string> basicTsTypeDic = new()
-{
-	{"integer_int32", "number" },
-	{"integer_int64", "number" },
-	{"integer", "number" },
-	{"integer_uint32", "number" },
-	{"number_float", "number" },
-	{"number_double", "number" },
-	{"number_decimal", "number" },
-	{"number", "number" },
-	{"string", "string" },
-	{"boolean", "boolean" },
-	{"string_date", "Date" },
-	{"string_date-time", "Date" },
-};
-```
-
-And "integer_int64" is actually mapped to "string" because JS supports integral precision up to 53 bits.
-
-**References:**
-* [Dealing with Large Integral Numbers in JavaScript for Integral Types of ASP.NET Core Web API](https://www.codeproject.com/Articles/5377807/Dealing-with-Large-Integral-Numbers-in-JavaScript)
 
 ## Comparison with NSwag
 

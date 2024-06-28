@@ -1,28 +1,12 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace My_Pet_Client {
 	export interface Address {
 		city?: string | null;
 		state?: string | null;
 		street?: string | null;
 		zip?: string | null;
-	}
-	export interface AddressFormProperties {
-		city: FormControl<string | null | undefined>,
-		state: FormControl<string | null | undefined>,
-		street: FormControl<string | null | undefined>,
-		zip: FormControl<string | null | undefined>,
-	}
-	export function CreateAddressFormGroup() {
-		return new FormGroup<AddressFormProperties>({
-			city: new FormControl<string | null | undefined>(undefined),
-			state: new FormControl<string | null | undefined>(undefined),
-			street: new FormControl<string | null | undefined>(undefined),
-			zip: new FormControl<string | null | undefined>(undefined),
-		});
-
 	}
 
 	export interface ApiResponse {
@@ -32,40 +16,12 @@ export namespace My_Pet_Client {
 		message?: string | null;
 		type?: string | null;
 	}
-	export interface ApiResponseFormProperties {
-
-		/** Type: int, -2,147,483,648 to 2,147,483,647 */
-		code: FormControl<number | null | undefined>,
-		message: FormControl<string | null | undefined>,
-		type: FormControl<string | null | undefined>,
-	}
-	export function CreateApiResponseFormGroup() {
-		return new FormGroup<ApiResponseFormProperties>({
-			code: new FormControl<number | null | undefined>(undefined),
-			message: new FormControl<string | null | undefined>(undefined),
-			type: new FormControl<string | null | undefined>(undefined),
-		});
-
-	}
 
 	export interface Category {
 
 		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
 		id?: string | null;
 		name?: string | null;
-	}
-	export interface CategoryFormProperties {
-
-		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
-		id: FormControl<string | null | undefined>,
-		name: FormControl<string | null | undefined>,
-	}
-	export function CreateCategoryFormGroup() {
-		return new FormGroup<CategoryFormProperties>({
-			id: new FormControl<string | null | undefined>(undefined),
-			name: new FormControl<string | null | undefined>(undefined),
-		});
-
 	}
 
 	export interface Customer {
@@ -74,19 +30,6 @@ export namespace My_Pet_Client {
 		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
 		id?: string | null;
 		username?: string | null;
-	}
-	export interface CustomerFormProperties {
-
-		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
-		id: FormControl<string | null | undefined>,
-		username: FormControl<string | null | undefined>,
-	}
-	export function CreateCustomerFormGroup() {
-		return new FormGroup<CustomerFormProperties>({
-			id: new FormControl<string | null | undefined>(undefined),
-			username: new FormControl<string | null | undefined>(undefined),
-		});
-
 	}
 
 	export interface Order {
@@ -104,33 +47,6 @@ export namespace My_Pet_Client {
 
 		/** Order Status */
 		status?: OrderStatus | null;
-	}
-	export interface OrderFormProperties {
-		complete: FormControl<boolean | null | undefined>,
-
-		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
-		id: FormControl<string | null | undefined>,
-
-		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
-		petId: FormControl<string | null | undefined>,
-
-		/** Type: int, -2,147,483,648 to 2,147,483,647 */
-		quantity: FormControl<number | null | undefined>,
-		shipDate: FormControl<Date | null | undefined>,
-
-		/** Order Status */
-		status: FormControl<OrderStatus | null | undefined>,
-	}
-	export function CreateOrderFormGroup() {
-		return new FormGroup<OrderFormProperties>({
-			complete: new FormControl<boolean | null | undefined>(undefined),
-			id: new FormControl<string | null | undefined>(undefined),
-			petId: new FormControl<string | null | undefined>(undefined),
-			quantity: new FormControl<number | null | undefined>(undefined),
-			shipDate: new FormControl<Date | null | undefined>(undefined),
-			status: new FormControl<OrderStatus | null | undefined>(undefined),
-		});
-
 	}
 
 	export enum OrderStatus { placed = 0, approved = 1, delivered = 2 }
@@ -151,25 +67,6 @@ export namespace My_Pet_Client {
 		status?: PetStatus | null;
 		tags?: Array<Tag>;
 	}
-	export interface PetFormProperties {
-
-		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
-		id: FormControl<string | null | undefined>,
-
-		/** Required */
-		name: FormControl<string | null | undefined>,
-
-		/** pet status in the store */
-		status: FormControl<PetStatus | null | undefined>,
-	}
-	export function CreatePetFormGroup() {
-		return new FormGroup<PetFormProperties>({
-			id: new FormControl<string | null | undefined>(undefined),
-			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			status: new FormControl<PetStatus | null | undefined>(undefined),
-		});
-
-	}
 
 	export enum PetStatus { available = 0, pending = 1, sold = 2 }
 
@@ -178,19 +75,6 @@ export namespace My_Pet_Client {
 		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
 		id?: string | null;
 		name?: string | null;
-	}
-	export interface TagFormProperties {
-
-		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
-		id: FormControl<string | null | undefined>,
-		name: FormControl<string | null | undefined>,
-	}
-	export function CreateTagFormGroup() {
-		return new FormGroup<TagFormProperties>({
-			id: new FormControl<string | null | undefined>(undefined),
-			name: new FormControl<string | null | undefined>(undefined),
-		});
-
 	}
 
 	export interface User {
@@ -209,36 +93,6 @@ export namespace My_Pet_Client {
 		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		userStatus?: number | null;
-	}
-	export interface UserFormProperties {
-		email: FormControl<string | null | undefined>,
-		firstName: FormControl<string | null | undefined>,
-
-		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
-		id: FormControl<string | null | undefined>,
-		lastName: FormControl<string | null | undefined>,
-		password: FormControl<string | null | undefined>,
-		phone: FormControl<string | null | undefined>,
-		username: FormControl<string | null | undefined>,
-
-		/**
-		 * User Status
-		 * Type: int, -2,147,483,648 to 2,147,483,647
-		 */
-		userStatus: FormControl<number | null | undefined>,
-	}
-	export function CreateUserFormGroup() {
-		return new FormGroup<UserFormProperties>({
-			email: new FormControl<string | null | undefined>(undefined),
-			firstName: new FormControl<string | null | undefined>(undefined),
-			id: new FormControl<string | null | undefined>(undefined),
-			lastName: new FormControl<string | null | undefined>(undefined),
-			password: new FormControl<string | null | undefined>(undefined),
-			phone: new FormControl<string | null | undefined>(undefined),
-			username: new FormControl<string | null | undefined>(undefined),
-			userStatus: new FormControl<number | null | undefined>(undefined),
-		});
-
 	}
 
 	@Injectable()

@@ -14,7 +14,7 @@
 		{
 			"AssemblyName": "Fonlow.OpenApiClientGen.NG2FormGroup",
 			"TargetDir": "./ng2/src/clientapi",
-			"TSFile": "ClientApiAuto.ts",
+			"TSFile": "ClientApiFormGroupAuto.ts",
 			"AsModule": true,
 			"ContentType": "application/json;charset=UTF-8"
 		}
