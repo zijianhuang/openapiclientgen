@@ -11,7 +11,7 @@ namespace IntegrationTests
 	{
 		public PetsFixture()
 		{
-			var c = TestingSettings.Instance.ServiceCommands[0];
+			var c = TestingSettings.Instance.ServiceCommands["LaunchWebApi"];
 			HttpClient.BaseAddress = new System.Uri(c.BaseUrl);
 
 			Api = new PetClient(HttpClient, new Newtonsoft.Json.JsonSerializerSettings()
