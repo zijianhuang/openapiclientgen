@@ -2381,7 +2381,7 @@ namespace MyNS
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/wit/artifactlinktypes&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2433,7 +2433,7 @@ namespace MyNS
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/wit/workitemicons&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2491,7 +2491,7 @@ namespace MyNS
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/wit/workitemicons/"+ (icon==null? "" : System.Uri.EscapeDataString(icon))+"&color=" + (color==null? "" : System.Uri.EscapeDataString(color))+"&v="+v+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2543,7 +2543,7 @@ namespace MyNS
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/wit/workitemrelationtypes&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2597,7 +2597,7 @@ namespace MyNS
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/wit/workitemrelationtypes/"+ (relation==null? "" : System.Uri.EscapeDataString(relation))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2653,7 +2653,7 @@ namespace MyNS
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/wit/workitemtransitions&ids=" + (ids==null? "" : System.Uri.EscapeDataString(ids))+"&action=" + (action==null? "" : System.Uri.EscapeDataString(action))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2705,7 +2705,7 @@ namespace MyNS
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/work/accountmyworkrecentactivity&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2771,7 +2771,7 @@ namespace MyNS
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2827,7 +2827,7 @@ namespace MyNS
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/wit/attachments/"+ (id==null? "" : System.Uri.EscapeDataString(id))+"&fileName=" + (fileName==null? "" : System.Uri.EscapeDataString(fileName))+"&download="+download+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2879,7 +2879,7 @@ namespace MyNS
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/wit/classificationnodes&$depth="+depth+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2939,7 +2939,7 @@ namespace MyNS
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/wit/classificationnodes/"+structureGroup+"/"+ (path==null? "" : System.Uri.EscapeDataString(path))+"&$depth="+depth+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -3009,7 +3009,7 @@ namespace MyNS
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -3065,7 +3065,7 @@ namespace MyNS
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/wit/classificationnodes/"+structureGroup+"/"+ (path==null? "" : System.Uri.EscapeDataString(path))+"&$reclassifyId="+reclassifyId+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -3131,7 +3131,7 @@ namespace MyNS
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -3187,7 +3187,7 @@ namespace MyNS
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/wit/fields&$expand=" + expand+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -3253,7 +3253,7 @@ namespace MyNS
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -3309,7 +3309,7 @@ namespace MyNS
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/wit/fields/"+ (fieldNameOrRefName==null? "" : System.Uri.EscapeDataString(fieldNameOrRefName))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -3361,7 +3361,7 @@ namespace MyNS
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/wit/fields/"+ (fieldNameOrRefName==null? "" : System.Uri.EscapeDataString(fieldNameOrRefName))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -3425,7 +3425,7 @@ namespace MyNS
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -3489,7 +3489,7 @@ namespace MyNS
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -3549,7 +3549,7 @@ namespace MyNS
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/wit/queries&$expand=" + expand+"&$depth="+depth+"&$includeDeleted="+includeDeleted+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -3611,7 +3611,7 @@ namespace MyNS
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/wit/queries/"+ (query==null? "" : System.Uri.EscapeDataString(query))+"&$expand=" + expand+"&$depth="+depth+"&$includeDeleted="+includeDeleted+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -3685,7 +3685,7 @@ namespace MyNS
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -3737,7 +3737,7 @@ namespace MyNS
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/wit/queries/"+ (query==null? "" : System.Uri.EscapeDataString(query))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -3803,7 +3803,7 @@ namespace MyNS
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -3867,7 +3867,7 @@ namespace MyNS
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -3921,7 +3921,7 @@ namespace MyNS
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/wit/recyclebin&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -3977,7 +3977,7 @@ namespace MyNS
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/wit/recyclebin/"+id+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -4029,7 +4029,7 @@ namespace MyNS
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/wit/recyclebin/"+id+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -4093,7 +4093,7 @@ namespace MyNS
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -4155,7 +4155,7 @@ namespace MyNS
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/wit/reporting/workitemlinks&linkTypes=" + (linkTypes==null? "" : System.Uri.EscapeDataString(linkTypes))+"&types=" + (types==null? "" : System.Uri.EscapeDataString(types))+"&continuationToken=" + (continuationToken==null? "" : System.Uri.EscapeDataString(continuationToken))+"&startDateTime=" + startDateTime.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -4231,7 +4231,7 @@ namespace MyNS
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/wit/reporting/workitemrevisions&fields=" + (fields==null? "" : System.Uri.EscapeDataString(fields))+"&types=" + (types==null? "" : System.Uri.EscapeDataString(types))+"&continuationToken=" + (continuationToken==null? "" : System.Uri.EscapeDataString(continuationToken))+"&startDateTime=" + startDateTime.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&includeIdentityRef="+includeIdentityRef+"&includeDeleted="+includeDeleted+"&includeTagRef="+includeTagRef+"&includeLatestOnly="+includeLatestOnly+"&$expand=" + expand+"&includeDiscussionChangesOnly="+includeDiscussionChangesOnly+"&$maxPageSize="+maxPageSize+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -4301,7 +4301,7 @@ namespace MyNS
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -4353,7 +4353,7 @@ namespace MyNS
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/wit/reporting/workItemRevisions/discussions&continuationToken=" + (continuationToken==null? "" : System.Uri.EscapeDataString(continuationToken))+"&$maxPageSize="+maxPageSize+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -4405,7 +4405,7 @@ namespace MyNS
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/wit/tags&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -4457,7 +4457,7 @@ namespace MyNS
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/wit/tags/"+ (tagIdOrName==null? "" : System.Uri.EscapeDataString(tagIdOrName))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -4505,7 +4505,7 @@ namespace MyNS
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/wit/tags/"+ (tagIdOrName==null? "" : System.Uri.EscapeDataString(tagIdOrName))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -4563,7 +4563,7 @@ namespace MyNS
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -4627,7 +4627,7 @@ namespace MyNS
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/wit/workitems&ids=" + (ids==null? "" : System.Uri.EscapeDataString(ids))+"&fields=" + (fields==null? "" : System.Uri.EscapeDataString(fields))+"&asOf=" + asOf.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&$expand=" + expand+"&errorPolicy=" + errorPolicy+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -4689,7 +4689,7 @@ namespace MyNS
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/wit/workitems/$"+ (type==null? "" : System.Uri.EscapeDataString(type))+"&fields=" + (fields==null? "" : System.Uri.EscapeDataString(fields))+"&asOf=" + asOf.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&$expand=" + expand+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -4751,7 +4751,7 @@ namespace MyNS
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/wit/workitems/"+id+"&fields=" + (fields==null? "" : System.Uri.EscapeDataString(fields))+"&asOf=" + asOf.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&$expand=" + expand+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -4809,7 +4809,7 @@ namespace MyNS
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/wit/workitems/"+id+"&destroy="+destroy+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -4863,7 +4863,7 @@ namespace MyNS
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/wit/workItems/"+id+"/revisions&$top="+top+"&$skip="+skip+"&$expand=" + expand+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -4917,7 +4917,7 @@ namespace MyNS
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/wit/workItems/"+id+"/revisions/"+revisionNumber+"&$expand=" + expand+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -4971,7 +4971,7 @@ namespace MyNS
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/wit/workItems/"+id+"/updates&$top="+top+"&$skip="+skip+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -5025,7 +5025,7 @@ namespace MyNS
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/wit/workItems/"+id+"/updates/"+updateNumber+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -5087,7 +5087,7 @@ namespace MyNS
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/wit/workItems/"+workItemId+"/comments&ids=" + (ids==null? "" : System.Uri.EscapeDataString(ids))+"&includeDeleted="+includeDeleted+"&$expand=" + expand+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -5155,7 +5155,7 @@ namespace MyNS
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -5217,7 +5217,7 @@ namespace MyNS
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/wit/workItems/"+workItemId+"/comments/"+commentId+"&includeDeleted="+includeDeleted+"&$expand=" + expand+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -5269,7 +5269,7 @@ namespace MyNS
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/wit/workItems/"+workItemId+"/comments/"+commentId+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -5333,7 +5333,7 @@ namespace MyNS
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -5391,7 +5391,7 @@ namespace MyNS
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/wit/workItems/"+workItemId+"/comments/"+commentId+"/reactions&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -5451,7 +5451,7 @@ namespace MyNS
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/wit/workItems/"+workItemId+"/comments/"+commentId+"/reactions/"+reactionType+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -5511,7 +5511,7 @@ namespace MyNS
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/wit/workItems/"+workItemId+"/comments/"+commentId+"/reactions/"+reactionType+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -5571,7 +5571,7 @@ namespace MyNS
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/wit/workItems/"+workItemId+"/comments/"+commentId+"/reactions/"+reactionType+"/users&$top="+top+"&$skip="+skip+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -5623,7 +5623,7 @@ namespace MyNS
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/wit/workItems/"+workItemId+"/comments/"+commentId+"/versions&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -5675,7 +5675,7 @@ namespace MyNS
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/wit/workItems/"+workItemId+"/comments/"+commentId+"/versions/"+version+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -5739,7 +5739,7 @@ namespace MyNS
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -5793,7 +5793,7 @@ namespace MyNS
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/wit/workitemtypecategories&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -5849,7 +5849,7 @@ namespace MyNS
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/wit/workitemtypecategories/"+ (category==null? "" : System.Uri.EscapeDataString(category))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -5903,7 +5903,7 @@ namespace MyNS
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/wit/workitemtypes&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -5959,7 +5959,7 @@ namespace MyNS
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/wit/workitemtypes/"+ (type==null? "" : System.Uri.EscapeDataString(type))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -6017,7 +6017,7 @@ namespace MyNS
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/wit/workitemtypes/"+ (type==null? "" : System.Uri.EscapeDataString(type))+"/fields&$expand=" + expand+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -6075,7 +6075,7 @@ namespace MyNS
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/wit/workitemtypes/"+ (type==null? "" : System.Uri.EscapeDataString(type))+"/fields/"+ (field==null? "" : System.Uri.EscapeDataString(field))+"&$expand=" + expand+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -6131,7 +6131,7 @@ namespace MyNS
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/wit/workitemtypes/"+ (type==null? "" : System.Uri.EscapeDataString(type))+"/states&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -6189,7 +6189,7 @@ namespace MyNS
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/"+ (team==null? "" : System.Uri.EscapeDataString(team))+"/_apis/wit/templates&workitemtypename=" + (workitemtypename==null? "" : System.Uri.EscapeDataString(workitemtypename))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -6257,7 +6257,7 @@ namespace MyNS
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -6315,7 +6315,7 @@ namespace MyNS
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/"+ (team==null? "" : System.Uri.EscapeDataString(team))+"/_apis/wit/templates/"+ (templateId==null? "" : System.Uri.EscapeDataString(templateId))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -6385,7 +6385,7 @@ namespace MyNS
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -6439,7 +6439,7 @@ namespace MyNS
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/"+ (team==null? "" : System.Uri.EscapeDataString(team))+"/_apis/wit/templates/"+ (templateId==null? "" : System.Uri.EscapeDataString(templateId))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -6507,7 +6507,7 @@ namespace MyNS
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -6569,7 +6569,7 @@ namespace MyNS
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/"+ (team==null? "" : System.Uri.EscapeDataString(team))+"/_apis/wit/wiql/"+ (id==null? "" : System.Uri.EscapeDataString(id))+"&timePrecision="+timePrecision+"&$top="+top+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();

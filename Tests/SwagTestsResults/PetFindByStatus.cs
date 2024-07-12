@@ -220,7 +220,7 @@ namespace MyNS
 		{
 			var requestUri = "pet/findByStatus?"+string.Join("&", status.Select(z => $"status={z}"));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCode();
@@ -272,7 +272,7 @@ namespace MyNS
 		{
 			var requestUri = "pet/findByStatus2?status=" + status;
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCode();
@@ -324,7 +324,7 @@ namespace MyNS
 		{
 			var requestUri = "pet/findByStatus3?status=" + status;
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCode();

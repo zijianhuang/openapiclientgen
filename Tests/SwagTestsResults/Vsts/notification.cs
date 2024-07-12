@@ -2219,7 +2219,7 @@ namespace MyNS
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/notification/diagnosticlogs/"+ (source==null? "" : System.Uri.EscapeDataString(source))+"/entries/"+ (entryId==null? "" : System.Uri.EscapeDataString(entryId))+"&startTime=" + startTime.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&endTime=" + endTime.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2273,7 +2273,7 @@ namespace MyNS
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/notification/eventtypes&publisherId=" + (publisherId==null? "" : System.Uri.EscapeDataString(publisherId))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2327,7 +2327,7 @@ namespace MyNS
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/notification/eventtypes/"+ (eventType==null? "" : System.Uri.EscapeDataString(eventType))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2377,7 +2377,7 @@ namespace MyNS
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/notification/settings&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2437,7 +2437,7 @@ namespace MyNS
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2491,7 +2491,7 @@ namespace MyNS
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/notification/subscribers/"+ (subscriberId==null? "" : System.Uri.EscapeDataString(subscriberId))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2555,7 +2555,7 @@ namespace MyNS
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2617,7 +2617,7 @@ namespace MyNS
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2673,7 +2673,7 @@ namespace MyNS
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/notification/subscriptions&targetId=" + (targetId==null? "" : System.Uri.EscapeDataString(targetId))+"&ids=" + (ids==null? "" : System.Uri.EscapeDataString(ids))+"&queryFlags=" + queryFlags+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2735,7 +2735,7 @@ namespace MyNS
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2787,7 +2787,7 @@ namespace MyNS
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/notification/subscriptions/"+ (subscriptionId==null? "" : System.Uri.EscapeDataString(subscriptionId))+"&queryFlags=" + queryFlags+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2835,7 +2835,7 @@ namespace MyNS
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/notification/subscriptions/"+ (subscriptionId==null? "" : System.Uri.EscapeDataString(subscriptionId))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2893,7 +2893,7 @@ namespace MyNS
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2947,7 +2947,7 @@ namespace MyNS
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/notification/subscriptions/"+ (subscriptionId==null? "" : System.Uri.EscapeDataString(subscriptionId))+"/diagnostics&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -3011,7 +3011,7 @@ namespace MyNS
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -3075,7 +3075,7 @@ namespace MyNS
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -3127,7 +3127,7 @@ namespace MyNS
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/notification/subscriptiontemplates&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();

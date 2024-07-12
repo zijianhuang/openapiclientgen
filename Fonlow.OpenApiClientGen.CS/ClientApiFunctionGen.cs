@@ -342,7 +342,7 @@ namespace Fonlow.OpenApiClientGen.CS
 			var cancellationToken = settings.CancellationTokenEnabled ? ", cancellationToken" : String.Empty;
 			codeMemberMethod.Statements.Add(new CodeVariableDeclarationStatement(
 				new CodeTypeReference("var"), "responseMessage", forAsync ? new CodeSnippetExpression($"await httpClient.SendAsync(httpRequestMessage{cancellationToken})")
-				: new CodeSnippetExpression($"httpClient.Send(httpRequestMessage{cancellationToken})")));
+				: new CodeSnippetExpression($"httpClient.SendAsync(httpRequestMessage{cancellationToken}).Result")));
 		}
 
 		static string ThreeTabs => "\t\t\t";

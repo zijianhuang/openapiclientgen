@@ -364,7 +364,7 @@ namespace MyNS
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -422,7 +422,7 @@ namespace MyNS
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/accesscontrolentries/"+ (securityNamespaceId==null? "" : System.Uri.EscapeDataString(securityNamespaceId))+"&token=" + (token==null? "" : System.Uri.EscapeDataString(token))+"&descriptors=" + (descriptors==null? "" : System.Uri.EscapeDataString(descriptors))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -484,7 +484,7 @@ namespace MyNS
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/accesscontrollists/"+ (securityNamespaceId==null? "" : System.Uri.EscapeDataString(securityNamespaceId))+"&token=" + (token==null? "" : System.Uri.EscapeDataString(token))+"&descriptors=" + (descriptors==null? "" : System.Uri.EscapeDataString(descriptors))+"&includeExtendedInfo="+includeExtendedInfo+"&recurse="+recurse+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -546,7 +546,7 @@ namespace MyNS
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -600,7 +600,7 @@ namespace MyNS
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/accesscontrollists/"+ (securityNamespaceId==null? "" : System.Uri.EscapeDataString(securityNamespaceId))+"&tokens=" + (tokens==null? "" : System.Uri.EscapeDataString(tokens))+"&recurse="+recurse+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -662,7 +662,7 @@ namespace MyNS
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/permissions/"+ (securityNamespaceId==null? "" : System.Uri.EscapeDataString(securityNamespaceId))+"/"+permissions+"&tokens=" + (tokens==null? "" : System.Uri.EscapeDataString(tokens))+"&alwaysAllowAdministrators="+alwaysAllowAdministrators+"&delimiter=" + (delimiter==null? "" : System.Uri.EscapeDataString(delimiter))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -722,7 +722,7 @@ namespace MyNS
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/permissions/"+ (securityNamespaceId==null? "" : System.Uri.EscapeDataString(securityNamespaceId))+"/"+permissions+"&descriptor=" + (descriptor==null? "" : System.Uri.EscapeDataString(descriptor))+"&token=" + (token==null? "" : System.Uri.EscapeDataString(token))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -786,7 +786,7 @@ namespace MyNS
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -842,7 +842,7 @@ namespace MyNS
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/securitynamespaces/"+ (securityNamespaceId==null? "" : System.Uri.EscapeDataString(securityNamespaceId))+"&localOnly="+localOnly+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();

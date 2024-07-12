@@ -1860,7 +1860,7 @@ namespace MyNS
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -1922,7 +1922,7 @@ namespace MyNS
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -1984,7 +1984,7 @@ namespace MyNS
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2046,7 +2046,7 @@ namespace MyNS
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2108,7 +2108,7 @@ namespace MyNS
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2170,7 +2170,7 @@ namespace MyNS
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2226,7 +2226,7 @@ namespace MyNS
 		{
 			var requestUri = "ad_campaign/"+ (campaign_id==null? "" : System.Uri.EscapeDataString(campaign_id))+"/ad&limit=" + (limit==null? "" : System.Uri.EscapeDataString(limit))+"&listing_ids=" + (listing_ids==null? "" : System.Uri.EscapeDataString(listing_ids))+"&offset=" + (offset==null? "" : System.Uri.EscapeDataString(offset));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2282,7 +2282,7 @@ namespace MyNS
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2334,7 +2334,7 @@ namespace MyNS
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2382,7 +2382,7 @@ namespace MyNS
 		{
 			var requestUri = "ad_campaign/"+ (campaign_id==null? "" : System.Uri.EscapeDataString(campaign_id))+"/ad/"+ (ad_id==null? "" : System.Uri.EscapeDataString(ad_id));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2428,7 +2428,7 @@ namespace MyNS
 		{
 			var requestUri = "ad_campaign/"+ (campaign_id==null? "" : System.Uri.EscapeDataString(campaign_id))+"/ad/"+ (ad_id==null? "" : System.Uri.EscapeDataString(ad_id));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2486,7 +2486,7 @@ namespace MyNS
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2540,7 +2540,7 @@ namespace MyNS
 		{
 			var requestUri = "ad_campaign/"+ (campaign_id==null? "" : System.Uri.EscapeDataString(campaign_id))+"/get_ads_by_inventory_reference&inventory_reference_id=" + (inventory_reference_id==null? "" : System.Uri.EscapeDataString(inventory_reference_id))+"&inventory_reference_type=" + (inventory_reference_type==null? "" : System.Uri.EscapeDataString(inventory_reference_type));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2598,7 +2598,7 @@ namespace MyNS
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2650,7 +2650,7 @@ namespace MyNS
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2706,7 +2706,7 @@ namespace MyNS
 		{
 			var requestUri = "ad_campaign?campaign_name=" + (campaign_name==null? "" : System.Uri.EscapeDataString(campaign_name))+"&campaign_status=" + (campaign_status==null? "" : System.Uri.EscapeDataString(campaign_status))+"&end_date_range=" + (end_date_range==null? "" : System.Uri.EscapeDataString(end_date_range))+"&limit=" + (limit==null? "" : System.Uri.EscapeDataString(limit))+"&offset=" + (offset==null? "" : System.Uri.EscapeDataString(offset))+"&start_date_range=" + (start_date_range==null? "" : System.Uri.EscapeDataString(start_date_range));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2760,7 +2760,7 @@ namespace MyNS
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2806,7 +2806,7 @@ namespace MyNS
 		{
 			var requestUri = "ad_campaign/"+ (campaign_id==null? "" : System.Uri.EscapeDataString(campaign_id));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2850,7 +2850,7 @@ namespace MyNS
 		{
 			var requestUri = "ad_campaign/"+ (campaign_id==null? "" : System.Uri.EscapeDataString(campaign_id));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2890,7 +2890,7 @@ namespace MyNS
 		{
 			var requestUri = "ad_campaign/"+ (campaign_id==null? "" : System.Uri.EscapeDataString(campaign_id))+"/end";
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2940,7 +2940,7 @@ namespace MyNS
 		{
 			var requestUri = "ad_campaign/find_campaign_by_ad_reference?inventory_reference_id=" + (inventory_reference_id==null? "" : System.Uri.EscapeDataString(inventory_reference_id))+"&inventory_reference_type=" + (inventory_reference_type==null? "" : System.Uri.EscapeDataString(inventory_reference_type))+"&listing_id=" + (listing_id==null? "" : System.Uri.EscapeDataString(listing_id));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2990,7 +2990,7 @@ namespace MyNS
 		{
 			var requestUri = "ad_campaign/get_campaign_by_name?campaign_name=" + (campaign_name==null? "" : System.Uri.EscapeDataString(campaign_name));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -3034,7 +3034,7 @@ namespace MyNS
 		{
 			var requestUri = "ad_campaign/"+ (campaign_id==null? "" : System.Uri.EscapeDataString(campaign_id))+"/pause";
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -3074,7 +3074,7 @@ namespace MyNS
 		{
 			var requestUri = "ad_campaign/"+ (campaign_id==null? "" : System.Uri.EscapeDataString(campaign_id))+"/resume";
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -3126,7 +3126,7 @@ namespace MyNS
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -3168,7 +3168,7 @@ namespace MyNS
 		{
 			var requestUri = "ad_report/"+ (report_id==null? "" : System.Uri.EscapeDataString(report_id));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -3212,7 +3212,7 @@ namespace MyNS
 		{
 			var requestUri = "ad_report_metadata";
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -3262,7 +3262,7 @@ namespace MyNS
 		{
 			var requestUri = "ad_report_metadata/"+ (report_type==null? "" : System.Uri.EscapeDataString(report_type));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -3316,7 +3316,7 @@ namespace MyNS
 		{
 			var requestUri = "ad_report_task?limit=" + (limit==null? "" : System.Uri.EscapeDataString(limit))+"&offset=" + (offset==null? "" : System.Uri.EscapeDataString(offset))+"&report_task_statuses=" + (report_task_statuses==null? "" : System.Uri.EscapeDataString(report_task_statuses));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -3370,7 +3370,7 @@ namespace MyNS
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -3416,7 +3416,7 @@ namespace MyNS
 		{
 			var requestUri = "ad_report_task/"+ (report_task_id==null? "" : System.Uri.EscapeDataString(report_task_id));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -3460,7 +3460,7 @@ namespace MyNS
 		{
 			var requestUri = "ad_report_task/"+ (report_task_id==null? "" : System.Uri.EscapeDataString(report_task_id));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -3510,7 +3510,7 @@ namespace MyNS
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -3556,7 +3556,7 @@ namespace MyNS
 		{
 			var requestUri = "item_price_markdown/"+ (promotion_id==null? "" : System.Uri.EscapeDataString(promotion_id));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -3617,7 +3617,7 @@ namespace MyNS
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -3660,7 +3660,7 @@ namespace MyNS
 		{
 			var requestUri = "item_price_markdown/"+ (promotion_id==null? "" : System.Uri.EscapeDataString(promotion_id));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -3710,7 +3710,7 @@ namespace MyNS
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -3756,7 +3756,7 @@ namespace MyNS
 		{
 			var requestUri = "item_promotion/"+ (promotion_id==null? "" : System.Uri.EscapeDataString(promotion_id));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -3818,7 +3818,7 @@ namespace MyNS
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -3862,7 +3862,7 @@ namespace MyNS
 		{
 			var requestUri = "item_promotion/"+ (promotion_id==null? "" : System.Uri.EscapeDataString(promotion_id));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -3912,7 +3912,7 @@ namespace MyNS
 		{
 			var requestUri = "promotion/"+ (promotion_id==null? "" : System.Uri.EscapeDataString(promotion_id))+"/get_listing_set?limit=" + (limit==null? "" : System.Uri.EscapeDataString(limit))+"&offset=" + (offset==null? "" : System.Uri.EscapeDataString(offset))+"&q=" + (q==null? "" : System.Uri.EscapeDataString(q))+"&sort=" + (sort==null? "" : System.Uri.EscapeDataString(sort))+"&status=" + (status==null? "" : System.Uri.EscapeDataString(status));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -3970,7 +3970,7 @@ namespace MyNS
 		{
 			var requestUri = "promotion?limit=" + (limit==null? "" : System.Uri.EscapeDataString(limit))+"&marketplace_id=" + (marketplace_id==null? "" : System.Uri.EscapeDataString(marketplace_id))+"&offset=" + (offset==null? "" : System.Uri.EscapeDataString(offset))+"&promotion_status=" + (promotion_status==null? "" : System.Uri.EscapeDataString(promotion_status))+"&promotion_type=" + (promotion_type==null? "" : System.Uri.EscapeDataString(promotion_type))+"&q=" + (q==null? "" : System.Uri.EscapeDataString(q))+"&sort=" + (sort==null? "" : System.Uri.EscapeDataString(sort));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -4014,7 +4014,7 @@ namespace MyNS
 		{
 			var requestUri = "promotion/"+ (promotion_id==null? "" : System.Uri.EscapeDataString(promotion_id))+"/pause";
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -4054,7 +4054,7 @@ namespace MyNS
 		{
 			var requestUri = "promotion/"+ (promotion_id==null? "" : System.Uri.EscapeDataString(promotion_id))+"/resume";
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -4110,7 +4110,7 @@ namespace MyNS
 		{
 			var requestUri = "promotion_report?limit=" + (limit==null? "" : System.Uri.EscapeDataString(limit))+"&marketplace_id=" + (marketplace_id==null? "" : System.Uri.EscapeDataString(marketplace_id))+"&offset=" + (offset==null? "" : System.Uri.EscapeDataString(offset))+"&promotion_status=" + (promotion_status==null? "" : System.Uri.EscapeDataString(promotion_status))+"&promotion_type=" + (promotion_type==null? "" : System.Uri.EscapeDataString(promotion_type))+"&q=" + (q==null? "" : System.Uri.EscapeDataString(q));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -4160,7 +4160,7 @@ namespace MyNS
 		{
 			var requestUri = "promotion_summary_report?marketplace_id=" + (marketplace_id==null? "" : System.Uri.EscapeDataString(marketplace_id));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();

@@ -2036,7 +2036,7 @@ namespace MyNS
 		{
 			var requestUri = "item_summary/search?aspect_filter=" + (aspect_filter==null? "" : System.Uri.EscapeDataString(aspect_filter))+"&category_ids=" + (category_ids==null? "" : System.Uri.EscapeDataString(category_ids))+"&charity_ids=" + (charity_ids==null? "" : System.Uri.EscapeDataString(charity_ids))+"&compatibility_filter=" + (compatibility_filter==null? "" : System.Uri.EscapeDataString(compatibility_filter))+"&epid=" + (epid==null? "" : System.Uri.EscapeDataString(epid))+"&fieldgroups=" + (fieldgroups==null? "" : System.Uri.EscapeDataString(fieldgroups))+"&filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&gtin=" + (gtin==null? "" : System.Uri.EscapeDataString(gtin))+"&limit=" + (limit==null? "" : System.Uri.EscapeDataString(limit))+"&offset=" + (offset==null? "" : System.Uri.EscapeDataString(offset))+"&q=" + (q==null? "" : System.Uri.EscapeDataString(q))+"&sort=" + (sort==null? "" : System.Uri.EscapeDataString(sort));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2110,7 +2110,7 @@ namespace MyNS
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2162,7 +2162,7 @@ namespace MyNS
 		{
 			var requestUri = "item/"+ (item_id==null? "" : System.Uri.EscapeDataString(item_id))+"?fieldgroups=" + (fieldgroups==null? "" : System.Uri.EscapeDataString(fieldgroups));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2218,7 +2218,7 @@ namespace MyNS
 		{
 			var requestUri = "item/get_item_by_legacy_id?fieldgroups=" + (fieldgroups==null? "" : System.Uri.EscapeDataString(fieldgroups))+"&legacy_item_id=" + (legacy_item_id==null? "" : System.Uri.EscapeDataString(legacy_item_id))+"&legacy_variation_id=" + (legacy_variation_id==null? "" : System.Uri.EscapeDataString(legacy_variation_id))+"&legacy_variation_sku=" + (legacy_variation_sku==null? "" : System.Uri.EscapeDataString(legacy_variation_sku));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2268,7 +2268,7 @@ namespace MyNS
 		{
 			var requestUri = "item/get_items_by_item_group?item_group_id=" + (item_group_id==null? "" : System.Uri.EscapeDataString(item_group_id));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2328,7 +2328,7 @@ namespace MyNS
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2386,7 +2386,7 @@ namespace MyNS
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2434,7 +2434,7 @@ namespace MyNS
 		{
 			var requestUri = "shopping_cart/";
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2492,7 +2492,7 @@ namespace MyNS
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2550,7 +2550,7 @@ namespace MyNS
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();

@@ -222,7 +222,7 @@ namespace MyNS
 		{
 			var requestUri = "rate_limit/?api_context=" + (api_context==null? "" : System.Uri.EscapeDataString(api_context))+"&api_name=" + (api_name==null? "" : System.Uri.EscapeDataString(api_name));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -274,7 +274,7 @@ namespace MyNS
 		{
 			var requestUri = "user_rate_limit/?api_context=" + (api_context==null? "" : System.Uri.EscapeDataString(api_context))+"&api_name=" + (api_name==null? "" : System.Uri.EscapeDataString(api_name));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();

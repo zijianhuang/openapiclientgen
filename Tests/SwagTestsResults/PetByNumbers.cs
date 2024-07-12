@@ -351,7 +351,7 @@ namespace MyNS
 		{
 			var requestUri = "pet/findByNumbers?"+string.Join("&", tags.Select(z => $"tags={z}"));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();

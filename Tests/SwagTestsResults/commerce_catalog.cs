@@ -1163,7 +1163,7 @@ namespace MyNS
 		{
 			var requestUri = "change_request/"+ (change_request_id==null? "" : System.Uri.EscapeDataString(change_request_id));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -1217,7 +1217,7 @@ namespace MyNS
 		{
 			var requestUri = "change_request?filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&limit=" + (limit==null? "" : System.Uri.EscapeDataString(limit))+"&offset=" + (offset==null? "" : System.Uri.EscapeDataString(offset));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -1271,7 +1271,7 @@ namespace MyNS
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -1317,7 +1317,7 @@ namespace MyNS
 		{
 			var requestUri = "product/"+ (epid==null? "" : System.Uri.EscapeDataString(epid));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -1381,7 +1381,7 @@ namespace MyNS
 		{
 			var requestUri = "product_summary/search?aspect_filter=" + (aspect_filter==null? "" : System.Uri.EscapeDataString(aspect_filter))+"&category_ids=" + (category_ids==null? "" : System.Uri.EscapeDataString(category_ids))+"&fieldgroups=" + (fieldgroups==null? "" : System.Uri.EscapeDataString(fieldgroups))+"&gtin=" + (gtin==null? "" : System.Uri.EscapeDataString(gtin))+"&limit=" + (limit==null? "" : System.Uri.EscapeDataString(limit))+"&mpn=" + (mpn==null? "" : System.Uri.EscapeDataString(mpn))+"&offset=" + (offset==null? "" : System.Uri.EscapeDataString(offset))+"&q=" + (q==null? "" : System.Uri.EscapeDataString(q));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -1435,7 +1435,7 @@ namespace MyNS
 		{
 			var requestUri = "get_product_metadata?epid=" + (epid==null? "" : System.Uri.EscapeDataString(epid))+"&other_applicable_category_ids=" + (other_applicable_category_ids==null? "" : System.Uri.EscapeDataString(other_applicable_category_ids))+"&primary_category_id=" + (primary_category_id==null? "" : System.Uri.EscapeDataString(primary_category_id));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -1487,7 +1487,7 @@ namespace MyNS
 		{
 			var requestUri = "get_product_metadata_for_categories?other_applicable_category_ids=" + (other_applicable_category_ids==null? "" : System.Uri.EscapeDataString(other_applicable_category_ids))+"&primary_category_id=" + (primary_category_id==null? "" : System.Uri.EscapeDataString(primary_category_id));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();

@@ -220,7 +220,7 @@ namespace MyNS
 		{
 			var requestUri = "pet/findByStatus?"+string.Join("&", status.Select(z => $"status={z}"));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCode();
@@ -272,7 +272,7 @@ namespace MyNS
 		{
 			var requestUri = "pet/findByStatus2?status=" + status;
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCode();
@@ -324,7 +324,7 @@ namespace MyNS
 		{
 			var requestUri = "pet/findByStatus3?status=" + status;
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCode();
@@ -392,7 +392,7 @@ namespace MyNS
 		{
 			var requestUri = "backup-jobs/?nextToken=" + (nextToken==null? "" : System.Uri.EscapeDataString(nextToken))+"&maxResults="+maxResults+"&resourceArn=" + (resourceArn==null? "" : System.Uri.EscapeDataString(resourceArn))+"&state=" + state+"&backupVaultName=" + (backupVaultName==null? "" : System.Uri.EscapeDataString(backupVaultName))+"&createdBefore=" + createdBefore.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&createdAfter=" + createdAfter.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&resourceType=" + (resourceType==null? "" : System.Uri.EscapeDataString(resourceType))+"&MaxResults=" + (MaxResults==null? "" : System.Uri.EscapeDataString(MaxResults))+"&NextToken=" + (NextToken==null? "" : System.Uri.EscapeDataString(NextToken));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCode();

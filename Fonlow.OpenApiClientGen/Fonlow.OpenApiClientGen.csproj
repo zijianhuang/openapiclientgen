@@ -11,7 +11,7 @@
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
 		<NeutralLanguage>en</NeutralLanguage>
 		<Copyright>Copyright © Zijian Huang 2021-$([System.DateTime]::Now.Year)</Copyright>
-		<Version>3.2</Version>
+		<Version>3.2.1</Version>
 		<PackageTags>Swagger, Open API Specification, C#, .NET Core, Web API, TypeScript, Angular, YAML</PackageTags>
 		<PackageReleaseNotes>.NET 8</PackageReleaseNotes>
 		<AnalysisLevel>latest-all</AnalysisLevel>

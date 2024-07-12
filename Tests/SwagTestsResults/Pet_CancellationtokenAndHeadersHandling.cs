@@ -365,7 +365,7 @@ namespace MyNS
 				handleHeaders(httpRequestMessage.Headers);
 			}
 
-			var responseMessage = httpClient.Send(httpRequestMessage, cancellationToken);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage, cancellationToken).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -425,7 +425,7 @@ namespace MyNS
 				handleHeaders(httpRequestMessage.Headers);
 			}
 
-			var responseMessage = httpClient.Send(httpRequestMessage, cancellationToken);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage, cancellationToken).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -483,7 +483,7 @@ namespace MyNS
 				handleHeaders(httpRequestMessage.Headers);
 			}
 
-			var responseMessage = httpClient.Send(httpRequestMessage, cancellationToken);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage, cancellationToken).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -537,7 +537,7 @@ namespace MyNS
 				handleHeaders(httpRequestMessage.Headers);
 			}
 
-			var responseMessage = httpClient.Send(httpRequestMessage, cancellationToken);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage, cancellationToken).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -601,7 +601,7 @@ namespace MyNS
 				handleHeaders(httpRequestMessage.Headers);
 			}
 
-			var responseMessage = httpClient.Send(httpRequestMessage, cancellationToken);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage, cancellationToken).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -663,7 +663,7 @@ namespace MyNS
 				handleHeaders(httpRequestMessage.Headers);
 			}
 
-			var responseMessage = httpClient.Send(httpRequestMessage, cancellationToken);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage, cancellationToken).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -723,7 +723,7 @@ namespace MyNS
 				handleHeaders(httpRequestMessage.Headers);
 			}
 
-			var responseMessage = httpClient.Send(httpRequestMessage, cancellationToken);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage, cancellationToken).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -793,7 +793,7 @@ namespace MyNS
 				handleHeaders(httpRequestMessage.Headers);
 			}
 
-			var responseMessage = httpClient.Send(httpRequestMessage, cancellationToken);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage, cancellationToken).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -861,7 +861,7 @@ namespace MyNS
 				handleHeaders(httpRequestMessage.Headers);
 			}
 
-			var responseMessage = httpClient.Send(httpRequestMessage, cancellationToken);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage, cancellationToken).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -921,7 +921,7 @@ namespace MyNS
 				handleHeaders(httpRequestMessage.Headers);
 			}
 
-			var responseMessage = httpClient.Send(httpRequestMessage, cancellationToken);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage, cancellationToken).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -983,7 +983,7 @@ namespace MyNS
 				handleHeaders(httpRequestMessage.Headers);
 			}
 
-			var responseMessage = httpClient.Send(httpRequestMessage, cancellationToken);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage, cancellationToken).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -1039,7 +1039,7 @@ namespace MyNS
 				handleHeaders(httpRequestMessage.Headers);
 			}
 
-			var responseMessage = httpClient.Send(httpRequestMessage, cancellationToken);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage, cancellationToken).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -1107,7 +1107,7 @@ namespace MyNS
 				handleHeaders(httpRequestMessage.Headers);
 			}
 
-			var responseMessage = httpClient.Send(httpRequestMessage, cancellationToken);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage, cancellationToken).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -1159,7 +1159,7 @@ namespace MyNS
 				handleHeaders(httpRequestMessage.Headers);
 			}
 
-			var responseMessage = httpClient.Send(httpRequestMessage, cancellationToken);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage, cancellationToken).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -1219,7 +1219,7 @@ namespace MyNS
 				handleHeaders(httpRequestMessage.Headers);
 			}
 
-			var responseMessage = httpClient.Send(httpRequestMessage, cancellationToken);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage, cancellationToken).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -1279,7 +1279,7 @@ namespace MyNS
 				handleHeaders(httpRequestMessage.Headers);
 			}
 
-			var responseMessage = httpClient.Send(httpRequestMessage, cancellationToken);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage, cancellationToken).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -1336,7 +1336,7 @@ namespace MyNS
 				handleHeaders(httpRequestMessage.Headers);
 			}
 
-			var responseMessage = httpClient.Send(httpRequestMessage, cancellationToken);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage, cancellationToken).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -1387,7 +1387,7 @@ namespace MyNS
 				handleHeaders(httpRequestMessage.Headers);
 			}
 
-			var responseMessage = httpClient.Send(httpRequestMessage, cancellationToken);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage, cancellationToken).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();

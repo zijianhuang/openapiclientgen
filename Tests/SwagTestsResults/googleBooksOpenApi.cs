@@ -2372,7 +2372,7 @@ namespace MyNS
 		{
 			var requestUri = "cloudloading/addBook?drive_document_id=" + (drive_document_id==null? "" : System.Uri.EscapeDataString(drive_document_id))+"&mime_type=" + (mime_type==null? "" : System.Uri.EscapeDataString(mime_type))+"&name=" + (name==null? "" : System.Uri.EscapeDataString(name))+"&upload_client_token=" + (upload_client_token==null? "" : System.Uri.EscapeDataString(upload_client_token));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2414,7 +2414,7 @@ namespace MyNS
 		{
 			var requestUri = "cloudloading/deleteBook?volumeId=" + (volumeId==null? "" : System.Uri.EscapeDataString(volumeId));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2462,7 +2462,7 @@ namespace MyNS
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2504,7 +2504,7 @@ namespace MyNS
 		{
 			var requestUri = "dictionary/listOfflineMetadata?cpksver=" + (cpksver==null? "" : System.Uri.EscapeDataString(cpksver));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2546,7 +2546,7 @@ namespace MyNS
 		{
 			var requestUri = "familysharing/getFamilyInfo?source=" + (source==null? "" : System.Uri.EscapeDataString(source));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2592,7 +2592,7 @@ namespace MyNS
 		{
 			var requestUri = "familysharing/share?docId=" + (docId==null? "" : System.Uri.EscapeDataString(docId))+"&source=" + (source==null? "" : System.Uri.EscapeDataString(source))+"&volumeId=" + (volumeId==null? "" : System.Uri.EscapeDataString(volumeId));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2638,7 +2638,7 @@ namespace MyNS
 		{
 			var requestUri = "familysharing/unshare?docId=" + (docId==null? "" : System.Uri.EscapeDataString(docId))+"&source=" + (source==null? "" : System.Uri.EscapeDataString(source))+"&volumeId=" + (volumeId==null? "" : System.Uri.EscapeDataString(volumeId));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2678,7 +2678,7 @@ namespace MyNS
 		{
 			var requestUri = "myconfig/getUserSettings";
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2726,7 +2726,7 @@ namespace MyNS
 		{
 			var requestUri = "myconfig/releaseDownloadAccess?"+string.Join("&", volumeIds.Select(z => $"volumeIds={System.Uri.EscapeDataString(z.ToString())}"))+"&cpksver=" + (cpksver==null? "" : System.Uri.EscapeDataString(cpksver))+"&locale=" + (locale==null? "" : System.Uri.EscapeDataString(locale))+"&source=" + (source==null? "" : System.Uri.EscapeDataString(source));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2778,7 +2778,7 @@ namespace MyNS
 		{
 			var requestUri = "myconfig/requestAccess?source=" + (source==null? "" : System.Uri.EscapeDataString(source))+"&volumeId=" + (volumeId==null? "" : System.Uri.EscapeDataString(volumeId))+"&nonce=" + (nonce==null? "" : System.Uri.EscapeDataString(nonce))+"&cpksver=" + (cpksver==null? "" : System.Uri.EscapeDataString(cpksver))+"&licenseTypes=" + licenseTypes+"&locale=" + (locale==null? "" : System.Uri.EscapeDataString(locale));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2834,7 +2834,7 @@ namespace MyNS
 		{
 			var requestUri = "myconfig/syncVolumeLicenses?source=" + (source==null? "" : System.Uri.EscapeDataString(source))+"&nonce=" + (nonce==null? "" : System.Uri.EscapeDataString(nonce))+"&cpksver=" + (cpksver==null? "" : System.Uri.EscapeDataString(cpksver))+"&"+string.Join("&", features.Select(z => $"features={System.Uri.EscapeDataString(z.ToString())}"))+"&includeNonComicsSeries="+includeNonComicsSeries+"&locale=" + (locale==null? "" : System.Uri.EscapeDataString(locale))+"&showPreorders="+showPreorders+"&"+string.Join("&", volumeIds.Select(z => $"volumeIds={System.Uri.EscapeDataString(z.ToString())}"));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2884,7 +2884,7 @@ namespace MyNS
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2950,7 +2950,7 @@ namespace MyNS
 		{
 			var requestUri = "mylibrary/annotations?contentVersion=" + (contentVersion==null? "" : System.Uri.EscapeDataString(contentVersion))+"&layerId=" + (layerId==null? "" : System.Uri.EscapeDataString(layerId))+"&"+string.Join("&", layerIds.Select(z => $"layerIds={System.Uri.EscapeDataString(z.ToString())}"))+"&maxResults="+maxResults+"&pageToken=" + (pageToken==null? "" : System.Uri.EscapeDataString(pageToken))+"&showDeleted="+showDeleted+"&source=" + (source==null? "" : System.Uri.EscapeDataString(source))+"&updatedMax=" + (updatedMax==null? "" : System.Uri.EscapeDataString(updatedMax))+"&updatedMin=" + (updatedMin==null? "" : System.Uri.EscapeDataString(updatedMin))+"&volumeId=" + (volumeId==null? "" : System.Uri.EscapeDataString(volumeId));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -3008,7 +3008,7 @@ namespace MyNS
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -3052,7 +3052,7 @@ namespace MyNS
 		{
 			var requestUri = "mylibrary/annotations/summary?"+string.Join("&", layerIds.Select(z => $"layerIds={System.Uri.EscapeDataString(z.ToString())}"))+"&volumeId=" + (volumeId==null? "" : System.Uri.EscapeDataString(volumeId));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -3096,7 +3096,7 @@ namespace MyNS
 		{
 			var requestUri = "mylibrary/annotations/"+ (annotationId==null? "" : System.Uri.EscapeDataString(annotationId))+"&source=" + (source==null? "" : System.Uri.EscapeDataString(source));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -3150,7 +3150,7 @@ namespace MyNS
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -3192,7 +3192,7 @@ namespace MyNS
 		{
 			var requestUri = "mylibrary/bookshelves?source=" + (source==null? "" : System.Uri.EscapeDataString(source));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -3236,7 +3236,7 @@ namespace MyNS
 		{
 			var requestUri = "mylibrary/bookshelves/"+ (shelf==null? "" : System.Uri.EscapeDataString(shelf))+"&source=" + (source==null? "" : System.Uri.EscapeDataString(source));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -3284,7 +3284,7 @@ namespace MyNS
 		{
 			var requestUri = "mylibrary/bookshelves/"+ (shelf==null? "" : System.Uri.EscapeDataString(shelf))+"/addVolume&volumeId=" + (volumeId==null? "" : System.Uri.EscapeDataString(volumeId))+"&reason=" + reason+"&source=" + (source==null? "" : System.Uri.EscapeDataString(source));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -3328,7 +3328,7 @@ namespace MyNS
 		{
 			var requestUri = "mylibrary/bookshelves/"+ (shelf==null? "" : System.Uri.EscapeDataString(shelf))+"/clearVolumes&source=" + (source==null? "" : System.Uri.EscapeDataString(source));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -3376,7 +3376,7 @@ namespace MyNS
 		{
 			var requestUri = "mylibrary/bookshelves/"+ (shelf==null? "" : System.Uri.EscapeDataString(shelf))+"/moveVolume&volumeId=" + (volumeId==null? "" : System.Uri.EscapeDataString(volumeId))+"&volumePosition="+volumePosition+"&source=" + (source==null? "" : System.Uri.EscapeDataString(source));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -3424,7 +3424,7 @@ namespace MyNS
 		{
 			var requestUri = "mylibrary/bookshelves/"+ (shelf==null? "" : System.Uri.EscapeDataString(shelf))+"/removeVolume&volumeId=" + (volumeId==null? "" : System.Uri.EscapeDataString(volumeId))+"&reason=" + reason+"&source=" + (source==null? "" : System.Uri.EscapeDataString(source));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -3488,7 +3488,7 @@ namespace MyNS
 		{
 			var requestUri = "mylibrary/bookshelves/"+ (shelf==null? "" : System.Uri.EscapeDataString(shelf))+"/volumes&country=" + (country==null? "" : System.Uri.EscapeDataString(country))+"&maxResults="+maxResults+"&projection=" + projection+"&q=" + (q==null? "" : System.Uri.EscapeDataString(q))+"&showPreorders="+showPreorders+"&source=" + (source==null? "" : System.Uri.EscapeDataString(source))+"&startIndex="+startIndex;
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -3534,7 +3534,7 @@ namespace MyNS
 		{
 			var requestUri = "mylibrary/readingpositions/"+ (volumeId==null? "" : System.Uri.EscapeDataString(volumeId))+"&contentVersion=" + (contentVersion==null? "" : System.Uri.EscapeDataString(contentVersion))+"&source=" + (source==null? "" : System.Uri.EscapeDataString(source));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -3588,7 +3588,7 @@ namespace MyNS
 		{
 			var requestUri = "mylibrary/readingpositions/"+ (volumeId==null? "" : System.Uri.EscapeDataString(volumeId))+"/setPosition&timestamp=" + (timestamp==null? "" : System.Uri.EscapeDataString(timestamp))+"&position=" + (position==null? "" : System.Uri.EscapeDataString(position))+"&action=" + action+"&contentVersion=" + (contentVersion==null? "" : System.Uri.EscapeDataString(contentVersion))+"&deviceCookie=" + (deviceCookie==null? "" : System.Uri.EscapeDataString(deviceCookie))+"&source=" + (source==null? "" : System.Uri.EscapeDataString(source));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -3634,7 +3634,7 @@ namespace MyNS
 		{
 			var requestUri = "notification/get?notification_id=" + (notification_id==null? "" : System.Uri.EscapeDataString(notification_id))+"&locale=" + (locale==null? "" : System.Uri.EscapeDataString(locale))+"&source=" + (source==null? "" : System.Uri.EscapeDataString(source));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -3676,7 +3676,7 @@ namespace MyNS
 		{
 			var requestUri = "onboarding/listCategories?locale=" + (locale==null? "" : System.Uri.EscapeDataString(locale));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -3726,7 +3726,7 @@ namespace MyNS
 		{
 			var requestUri = "onboarding/listCategoryVolumes?"+string.Join("&", categoryId.Select(z => $"categoryId={System.Uri.EscapeDataString(z.ToString())}"))+"&locale=" + (locale==null? "" : System.Uri.EscapeDataString(locale))+"&maxAllowedMaturityRating=" + maxAllowedMaturityRating+"&pageSize="+pageSize+"&pageToken=" + (pageToken==null? "" : System.Uri.EscapeDataString(pageToken));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -3772,7 +3772,7 @@ namespace MyNS
 		{
 			var requestUri = "personalizedstream/get?locale=" + (locale==null? "" : System.Uri.EscapeDataString(locale))+"&maxAllowedMaturityRating=" + maxAllowedMaturityRating+"&source=" + (source==null? "" : System.Uri.EscapeDataString(source));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -3824,7 +3824,7 @@ namespace MyNS
 		{
 			var requestUri = "promooffer/accept?androidId=" + (androidId==null? "" : System.Uri.EscapeDataString(androidId))+"&device=" + (device==null? "" : System.Uri.EscapeDataString(device))+"&manufacturer=" + (manufacturer==null? "" : System.Uri.EscapeDataString(manufacturer))+"&model=" + (model==null? "" : System.Uri.EscapeDataString(model))+"&offerId=" + (offerId==null? "" : System.Uri.EscapeDataString(offerId))+"&product=" + (product==null? "" : System.Uri.EscapeDataString(product))+"&serial=" + (serial==null? "" : System.Uri.EscapeDataString(serial))+"&volumeId=" + (volumeId==null? "" : System.Uri.EscapeDataString(volumeId));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -3876,7 +3876,7 @@ namespace MyNS
 		{
 			var requestUri = "promooffer/dismiss?androidId=" + (androidId==null? "" : System.Uri.EscapeDataString(androidId))+"&device=" + (device==null? "" : System.Uri.EscapeDataString(device))+"&manufacturer=" + (manufacturer==null? "" : System.Uri.EscapeDataString(manufacturer))+"&model=" + (model==null? "" : System.Uri.EscapeDataString(model))+"&offerId=" + (offerId==null? "" : System.Uri.EscapeDataString(offerId))+"&product=" + (product==null? "" : System.Uri.EscapeDataString(product))+"&serial=" + (serial==null? "" : System.Uri.EscapeDataString(serial));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -3928,7 +3928,7 @@ namespace MyNS
 		{
 			var requestUri = "promooffer/get?androidId=" + (androidId==null? "" : System.Uri.EscapeDataString(androidId))+"&device=" + (device==null? "" : System.Uri.EscapeDataString(device))+"&manufacturer=" + (manufacturer==null? "" : System.Uri.EscapeDataString(manufacturer))+"&model=" + (model==null? "" : System.Uri.EscapeDataString(model))+"&product=" + (product==null? "" : System.Uri.EscapeDataString(product))+"&serial=" + (serial==null? "" : System.Uri.EscapeDataString(serial));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -3970,7 +3970,7 @@ namespace MyNS
 		{
 			var requestUri = "series/get?"+string.Join("&", series_id.Select(z => $"series_id={System.Uri.EscapeDataString(z.ToString())}"));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -4016,7 +4016,7 @@ namespace MyNS
 		{
 			var requestUri = "series/membership/get?series_id=" + (series_id==null? "" : System.Uri.EscapeDataString(series_id))+"&page_size="+page_size+"&page_token=" + (page_token==null? "" : System.Uri.EscapeDataString(page_token));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -4060,7 +4060,7 @@ namespace MyNS
 		{
 			var requestUri = "users/"+ (userId==null? "" : System.Uri.EscapeDataString(userId))+"/bookshelves&source=" + (source==null? "" : System.Uri.EscapeDataString(source));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -4106,7 +4106,7 @@ namespace MyNS
 		{
 			var requestUri = "users/"+ (userId==null? "" : System.Uri.EscapeDataString(userId))+"/bookshelves/"+ (shelf==null? "" : System.Uri.EscapeDataString(shelf))+"&source=" + (source==null? "" : System.Uri.EscapeDataString(source));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -4166,7 +4166,7 @@ namespace MyNS
 		{
 			var requestUri = "users/"+ (userId==null? "" : System.Uri.EscapeDataString(userId))+"/bookshelves/"+ (shelf==null? "" : System.Uri.EscapeDataString(shelf))+"/volumes&maxResults="+maxResults+"&showPreorders="+showPreorders+"&source=" + (source==null? "" : System.Uri.EscapeDataString(source))+"&startIndex="+startIndex;
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -4244,7 +4244,7 @@ namespace MyNS
 		{
 			var requestUri = "volumes?q=" + (q==null? "" : System.Uri.EscapeDataString(q))+"&download=" + download+"&filter=" + filter+"&langRestrict=" + (langRestrict==null? "" : System.Uri.EscapeDataString(langRestrict))+"&libraryRestrict=" + libraryRestrict+"&maxAllowedMaturityRating=" + maxAllowedMaturityRating+"&maxResults="+maxResults+"&orderBy=" + orderBy+"&partner=" + (partner==null? "" : System.Uri.EscapeDataString(partner))+"&printType=" + printType+"&projection=" + projection+"&showPreorders="+showPreorders+"&source=" + (source==null? "" : System.Uri.EscapeDataString(source))+"&startIndex="+startIndex;
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -4308,7 +4308,7 @@ namespace MyNS
 		{
 			var requestUri = "volumes/mybooks?"+string.Join("&", acquireMethod.Select(z => $"acquireMethod={System.Uri.EscapeDataString(z.ToString())}"))+"&country=" + (country==null? "" : System.Uri.EscapeDataString(country))+"&locale=" + (locale==null? "" : System.Uri.EscapeDataString(locale))+"&maxResults="+maxResults+"&"+string.Join("&", processingState.Select(z => $"processingState={System.Uri.EscapeDataString(z.ToString())}"))+"&source=" + (source==null? "" : System.Uri.EscapeDataString(source))+"&startIndex="+startIndex;
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -4354,7 +4354,7 @@ namespace MyNS
 		{
 			var requestUri = "volumes/recommended?locale=" + (locale==null? "" : System.Uri.EscapeDataString(locale))+"&maxAllowedMaturityRating=" + maxAllowedMaturityRating+"&source=" + (source==null? "" : System.Uri.EscapeDataString(source));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -4402,7 +4402,7 @@ namespace MyNS
 		{
 			var requestUri = "volumes/recommended/rate?rating=" + rating+"&volumeId=" + (volumeId==null? "" : System.Uri.EscapeDataString(volumeId))+"&locale=" + (locale==null? "" : System.Uri.EscapeDataString(locale))+"&source=" + (source==null? "" : System.Uri.EscapeDataString(source));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -4464,7 +4464,7 @@ namespace MyNS
 		{
 			var requestUri = "volumes/useruploaded?locale=" + (locale==null? "" : System.Uri.EscapeDataString(locale))+"&maxResults="+maxResults+"&"+string.Join("&", processingState.Select(z => $"processingState={System.Uri.EscapeDataString(z.ToString())}"))+"&source=" + (source==null? "" : System.Uri.EscapeDataString(source))+"&startIndex="+startIndex+"&"+string.Join("&", volumeId.Select(z => $"volumeId={System.Uri.EscapeDataString(z.ToString())}"));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -4516,7 +4516,7 @@ namespace MyNS
 		{
 			var requestUri = "volumes/"+ (volumeId==null? "" : System.Uri.EscapeDataString(volumeId))+"&country=" + (country==null? "" : System.Uri.EscapeDataString(country))+"&includeNonComicsSeries="+includeNonComicsSeries+"&partner=" + (partner==null? "" : System.Uri.EscapeDataString(partner))+"&projection=" + projection+"&source=" + (source==null? "" : System.Uri.EscapeDataString(source))+"&user_library_consistent_read="+user_library_consistent_read;
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -4566,7 +4566,7 @@ namespace MyNS
 		{
 			var requestUri = "volumes/"+ (volumeId==null? "" : System.Uri.EscapeDataString(volumeId))+"/associated&association=" + association+"&locale=" + (locale==null? "" : System.Uri.EscapeDataString(locale))+"&maxAllowedMaturityRating=" + maxAllowedMaturityRating+"&source=" + (source==null? "" : System.Uri.EscapeDataString(source));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -4642,7 +4642,7 @@ namespace MyNS
 		{
 			var requestUri = "volumes/"+ (volumeId==null? "" : System.Uri.EscapeDataString(volumeId))+"/layers/"+ (layerId==null? "" : System.Uri.EscapeDataString(layerId))+"&contentVersion=" + (contentVersion==null? "" : System.Uri.EscapeDataString(contentVersion))+"&endOffset=" + (endOffset==null? "" : System.Uri.EscapeDataString(endOffset))+"&endPosition=" + (endPosition==null? "" : System.Uri.EscapeDataString(endPosition))+"&locale=" + (locale==null? "" : System.Uri.EscapeDataString(locale))+"&maxResults="+maxResults+"&pageToken=" + (pageToken==null? "" : System.Uri.EscapeDataString(pageToken))+"&showDeleted="+showDeleted+"&source=" + (source==null? "" : System.Uri.EscapeDataString(source))+"&startOffset=" + (startOffset==null? "" : System.Uri.EscapeDataString(startOffset))+"&startPosition=" + (startPosition==null? "" : System.Uri.EscapeDataString(startPosition))+"&updatedMax=" + (updatedMax==null? "" : System.Uri.EscapeDataString(updatedMax))+"&updatedMin=" + (updatedMin==null? "" : System.Uri.EscapeDataString(updatedMin))+"&volumeAnnotationsVersion=" + (volumeAnnotationsVersion==null? "" : System.Uri.EscapeDataString(volumeAnnotationsVersion));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -4692,7 +4692,7 @@ namespace MyNS
 		{
 			var requestUri = "volumes/"+ (volumeId==null? "" : System.Uri.EscapeDataString(volumeId))+"/layers/"+ (layerId==null? "" : System.Uri.EscapeDataString(layerId))+"/annotations/"+ (annotationId==null? "" : System.Uri.EscapeDataString(annotationId))+"&locale=" + (locale==null? "" : System.Uri.EscapeDataString(locale))+"&source=" + (source==null? "" : System.Uri.EscapeDataString(source));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -4768,7 +4768,7 @@ namespace MyNS
 		{
 			var requestUri = "volumes/"+ (volumeId==null? "" : System.Uri.EscapeDataString(volumeId))+"/layers/"+ (layerId==null? "" : System.Uri.EscapeDataString(layerId))+"/data&contentVersion=" + (contentVersion==null? "" : System.Uri.EscapeDataString(contentVersion))+"&"+string.Join("&", annotationDataId.Select(z => $"annotationDataId={System.Uri.EscapeDataString(z.ToString())}"))+"&h="+h+"&locale=" + (locale==null? "" : System.Uri.EscapeDataString(locale))+"&maxResults="+maxResults+"&pageToken=" + (pageToken==null? "" : System.Uri.EscapeDataString(pageToken))+"&scale="+scale+"&source=" + (source==null? "" : System.Uri.EscapeDataString(source))+"&updatedMax=" + (updatedMax==null? "" : System.Uri.EscapeDataString(updatedMax))+"&updatedMin=" + (updatedMin==null? "" : System.Uri.EscapeDataString(updatedMin))+"&w="+w;
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -4832,7 +4832,7 @@ namespace MyNS
 		{
 			var requestUri = "volumes/"+ (volumeId==null? "" : System.Uri.EscapeDataString(volumeId))+"/layers/"+ (layerId==null? "" : System.Uri.EscapeDataString(layerId))+"/data/"+ (annotationDataId==null? "" : System.Uri.EscapeDataString(annotationDataId))+"&contentVersion=" + (contentVersion==null? "" : System.Uri.EscapeDataString(contentVersion))+"&allowWebDefinitions="+allowWebDefinitions+"&h="+h+"&locale=" + (locale==null? "" : System.Uri.EscapeDataString(locale))+"&scale="+scale+"&source=" + (source==null? "" : System.Uri.EscapeDataString(source))+"&w="+w;
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -4888,7 +4888,7 @@ namespace MyNS
 		{
 			var requestUri = "volumes/"+ (volumeId==null? "" : System.Uri.EscapeDataString(volumeId))+"/layersummary&contentVersion=" + (contentVersion==null? "" : System.Uri.EscapeDataString(contentVersion))+"&maxResults="+maxResults+"&pageToken=" + (pageToken==null? "" : System.Uri.EscapeDataString(pageToken))+"&source=" + (source==null? "" : System.Uri.EscapeDataString(source));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -4936,7 +4936,7 @@ namespace MyNS
 		{
 			var requestUri = "volumes/"+ (volumeId==null? "" : System.Uri.EscapeDataString(volumeId))+"/layersummary/"+ (summaryId==null? "" : System.Uri.EscapeDataString(summaryId))+"&contentVersion=" + (contentVersion==null? "" : System.Uri.EscapeDataString(contentVersion))+"&source=" + (source==null? "" : System.Uri.EscapeDataString(source));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();

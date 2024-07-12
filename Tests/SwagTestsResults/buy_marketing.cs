@@ -320,7 +320,7 @@ namespace MyNS
 		{
 			var requestUri = "merchandised_product/get_also_bought_products?brand=" + (brand==null? "" : System.Uri.EscapeDataString(brand))+"&epid=" + (epid==null? "" : System.Uri.EscapeDataString(epid))+"&gtin=" + (gtin==null? "" : System.Uri.EscapeDataString(gtin))+"&mpn=" + (mpn==null? "" : System.Uri.EscapeDataString(mpn));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -376,7 +376,7 @@ namespace MyNS
 		{
 			var requestUri = "merchandised_product/get_also_viewed_products?brand=" + (brand==null? "" : System.Uri.EscapeDataString(brand))+"&epid=" + (epid==null? "" : System.Uri.EscapeDataString(epid))+"&gtin=" + (gtin==null? "" : System.Uri.EscapeDataString(gtin))+"&mpn=" + (mpn==null? "" : System.Uri.EscapeDataString(mpn));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -432,7 +432,7 @@ namespace MyNS
 		{
 			var requestUri = "merchandised_product?aspect_filter=" + (aspect_filter==null? "" : System.Uri.EscapeDataString(aspect_filter))+"&category_id=" + (category_id==null? "" : System.Uri.EscapeDataString(category_id))+"&limit=" + (limit==null? "" : System.Uri.EscapeDataString(limit))+"&metric_name=" + (metric_name==null? "" : System.Uri.EscapeDataString(metric_name));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();

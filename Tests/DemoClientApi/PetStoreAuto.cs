@@ -248,8 +248,8 @@ namespace My.Pet.Client
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream));
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				using JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(streamContent));
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<Pet>(jsonReader);
 			}
@@ -305,8 +305,8 @@ namespace My.Pet.Client
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream));
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				using JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(streamContent));
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<Pet[]>(jsonReader);
 			}
@@ -336,8 +336,8 @@ namespace My.Pet.Client
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream));
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				using JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(streamContent));
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<Pet>(jsonReader);
 			}
@@ -372,8 +372,8 @@ namespace My.Pet.Client
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream));
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				using JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(streamContent));
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<Pet>(jsonReader);
 			}
@@ -404,12 +404,12 @@ namespace My.Pet.Client
 				handleHeaders(httpRequestMessage.Headers);
 			}
 
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = responseMessage.Content.ReadAsStream();
-				using JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream));
+				var streamContent = responseMessage.Content.ReadAsStream();
+				using JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(streamContent));
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<Pet>(jsonReader);
 			}
@@ -440,12 +440,12 @@ namespace My.Pet.Client
 				handleHeaders(httpRequestMessage.Headers);
 			}
 
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = responseMessage.Content.ReadAsStream();
-				using JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream));
+				var streamContent = responseMessage.Content.ReadAsStream();
+				using JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(streamContent));
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<Pet>(jsonReader);
 			}
@@ -471,12 +471,12 @@ namespace My.Pet.Client
 				handleHeaders(httpRequestMessage.Headers);
 			}
 
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = responseMessage.Content.ReadAsStream();
-				using JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream));
+				var streamContent = responseMessage.Content.ReadAsStream();
+				using JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(streamContent));
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<Pet[]>(jsonReader);
 			}
@@ -506,8 +506,8 @@ namespace My.Pet.Client
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream));
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				using JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(streamContent));
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<Pet[]>(jsonReader);
 			}
@@ -533,12 +533,12 @@ namespace My.Pet.Client
 				handleHeaders(httpRequestMessage.Headers);
 			}
 
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = responseMessage.Content.ReadAsStream();
-				using JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream));
+				var streamContent = responseMessage.Content.ReadAsStream();
+				using JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(streamContent));
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<Pet[]>(jsonReader);
 			}
@@ -564,12 +564,12 @@ namespace My.Pet.Client
 				handleHeaders(httpRequestMessage.Headers);
 			}
 
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = responseMessage.Content.ReadAsStream();
-				using JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream));
+				var streamContent = responseMessage.Content.ReadAsStream();
+				using JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(streamContent));
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<Pet>(jsonReader);
 			}
@@ -612,7 +612,7 @@ namespace My.Pet.Client
 		{
 			var requestUri = "pet/"+petId+"?name=" + (name==null? "" : System.Uri.EscapeDataString(name))+"&status=" + (status==null? "" : System.Uri.EscapeDataString(status));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -638,7 +638,7 @@ namespace My.Pet.Client
 				handleHeaders(httpRequestMessage.Headers);
 			}
 
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -714,8 +714,8 @@ namespace My.Pet.Client
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream));
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				using JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(streamContent));
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<System.Collections.Generic.Dictionary<string, int>>(jsonReader);
 			}
@@ -740,12 +740,12 @@ namespace My.Pet.Client
 				handleHeaders(httpRequestMessage.Headers);
 			}
 
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = responseMessage.Content.ReadAsStream();
-				using JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream));
+				var streamContent = responseMessage.Content.ReadAsStream();
+				using JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(streamContent));
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<System.Collections.Generic.Dictionary<string, int>>(jsonReader);
 			}
@@ -775,8 +775,8 @@ namespace My.Pet.Client
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream));
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				using JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(streamContent));
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<Order>(jsonReader);
 			}
@@ -810,8 +810,8 @@ namespace My.Pet.Client
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream));
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				using JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(streamContent));
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<Order>(jsonReader);
 			}
@@ -841,12 +841,12 @@ namespace My.Pet.Client
 				handleHeaders(httpRequestMessage.Headers);
 			}
 
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = responseMessage.Content.ReadAsStream();
-				using JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream));
+				var streamContent = responseMessage.Content.ReadAsStream();
+				using JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(streamContent));
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<Order>(jsonReader);
 			}
@@ -872,12 +872,12 @@ namespace My.Pet.Client
 				handleHeaders(httpRequestMessage.Headers);
 			}
 
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = responseMessage.Content.ReadAsStream();
-				using JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream));
+				var streamContent = responseMessage.Content.ReadAsStream();
+				using JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(streamContent));
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<Order>(jsonReader);
 			}
@@ -902,7 +902,7 @@ namespace My.Pet.Client
 				handleHeaders(httpRequestMessage.Headers);
 			}
 
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -988,8 +988,8 @@ namespace My.Pet.Client
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream));
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				using JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(streamContent));
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<User>(jsonReader);
 			}
@@ -1045,7 +1045,7 @@ namespace My.Pet.Client
 				handleHeaders(httpRequestMessage.Headers);
 			}
 
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -1076,12 +1076,12 @@ namespace My.Pet.Client
 				handleHeaders(httpRequestMessage.Headers);
 			}
 
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = responseMessage.Content.ReadAsStream();
-				using JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream));
+				var streamContent = responseMessage.Content.ReadAsStream();
+				using JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(streamContent));
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<User>(jsonReader);
 			}
@@ -1110,8 +1110,8 @@ namespace My.Pet.Client
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream));
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				using JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(streamContent));
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<User>(jsonReader);
 			}
@@ -1141,8 +1141,8 @@ namespace My.Pet.Client
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream));
+				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
+				using JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(streamContent));
 				return jsonReader.ReadAsString();
 			}
 			finally
@@ -1167,12 +1167,12 @@ namespace My.Pet.Client
 				handleHeaders(httpRequestMessage.Headers);
 			}
 
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = responseMessage.Content.ReadAsStream();
-				using JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream));
+				var streamContent = responseMessage.Content.ReadAsStream();
+				using JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(streamContent));
 				return jsonReader.ReadAsString();
 			}
 			finally
@@ -1218,7 +1218,7 @@ namespace My.Pet.Client
 				handleHeaders(httpRequestMessage.Headers);
 			}
 
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -1244,12 +1244,12 @@ namespace My.Pet.Client
 				handleHeaders(httpRequestMessage.Headers);
 			}
 
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = responseMessage.Content.ReadAsStream();
-				using JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream));
+				var streamContent = responseMessage.Content.ReadAsStream();
+				using JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(streamContent));
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<User>(jsonReader);
 			}
@@ -1312,7 +1312,7 @@ namespace My.Pet.Client
 				handleHeaders(httpRequestMessage.Headers);
 			}
 
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -1338,7 +1338,7 @@ namespace My.Pet.Client
 				handleHeaders(httpRequestMessage.Headers);
 			}
 
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();

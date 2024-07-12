@@ -579,7 +579,7 @@ namespace MyNS
 		{
 			var requestUri = "item_sales/search?aspect_filter=" + (aspect_filter==null? "" : System.Uri.EscapeDataString(aspect_filter))+"&category_ids=" + (category_ids==null? "" : System.Uri.EscapeDataString(category_ids))+"&epid=" + (epid==null? "" : System.Uri.EscapeDataString(epid))+"&fieldgroups=" + (fieldgroups==null? "" : System.Uri.EscapeDataString(fieldgroups))+"&filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&gtin=" + (gtin==null? "" : System.Uri.EscapeDataString(gtin))+"&limit=" + (limit==null? "" : System.Uri.EscapeDataString(limit))+"&offset=" + (offset==null? "" : System.Uri.EscapeDataString(offset))+"&q=" + (q==null? "" : System.Uri.EscapeDataString(q))+"&sort=" + (sort==null? "" : System.Uri.EscapeDataString(sort));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();

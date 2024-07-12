@@ -165,7 +165,7 @@ namespace MyNS
 		{
 			var requestUri = "connections?authEventId=" + (authEventId==null? "" : System.Uri.EscapeDataString(authEventId));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -211,7 +211,7 @@ namespace MyNS
 		{
 			var requestUri = "connections/"+ (id==null? "" : System.Uri.EscapeDataString(id));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();

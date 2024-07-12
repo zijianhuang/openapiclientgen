@@ -243,7 +243,7 @@ namespace MyNS
 		{
 			var requestUri = "_apis/accounts?ownerId=" + (ownerId==null? "" : System.Uri.EscapeDataString(ownerId))+"&memberId=" + (memberId==null? "" : System.Uri.EscapeDataString(memberId))+"&properties=" + (properties==null? "" : System.Uri.EscapeDataString(properties))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();

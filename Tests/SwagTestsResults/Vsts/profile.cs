@@ -343,7 +343,7 @@ namespace MyNS
 		{
 			var requestUri = "_apis/profile/profiles/"+ (id==null? "" : System.Uri.EscapeDataString(id))+"&details="+details+"&withAttributes="+withAttributes+"&partition=" + (partition==null? "" : System.Uri.EscapeDataString(partition))+"&coreAttributes=" + (coreAttributes==null? "" : System.Uri.EscapeDataString(coreAttributes))+"&forceRefresh="+forceRefresh+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();

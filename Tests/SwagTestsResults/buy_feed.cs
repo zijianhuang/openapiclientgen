@@ -869,7 +869,7 @@ namespace MyNS
 		{
 			var requestUri = "item?feed_scope=" + (feed_scope==null? "" : System.Uri.EscapeDataString(feed_scope))+"&category_id=" + (category_id==null? "" : System.Uri.EscapeDataString(category_id))+"&date=" + (date==null? "" : System.Uri.EscapeDataString(date));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -915,7 +915,7 @@ namespace MyNS
 		{
 			var requestUri = "item_group?feed_scope=" + (feed_scope==null? "" : System.Uri.EscapeDataString(feed_scope))+"&category_id=" + (category_id==null? "" : System.Uri.EscapeDataString(category_id))+"&date=" + (date==null? "" : System.Uri.EscapeDataString(date));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -959,7 +959,7 @@ namespace MyNS
 		{
 			var requestUri = "item_snapshot?category_id=" + (category_id==null? "" : System.Uri.EscapeDataString(category_id))+"&snapshot_date=" + (snapshot_date==null? "" : System.Uri.EscapeDataString(snapshot_date));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();

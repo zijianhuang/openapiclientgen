@@ -488,7 +488,7 @@ namespace MyNS
 		{
 			var requestUri = "country/"+ (countryCode==null? "" : System.Uri.EscapeDataString(countryCode))+"/sales_tax_jurisdiction";
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -540,7 +540,7 @@ namespace MyNS
 		{
 			var requestUri = "marketplace/"+ (marketplace_id==null? "" : System.Uri.EscapeDataString(marketplace_id))+"/get_automotive_parts_compatibility_policies?filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -592,7 +592,7 @@ namespace MyNS
 		{
 			var requestUri = "marketplace/"+ (marketplace_id==null? "" : System.Uri.EscapeDataString(marketplace_id))+"/get_item_condition_policies?filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -644,7 +644,7 @@ namespace MyNS
 		{
 			var requestUri = "marketplace/"+ (marketplace_id==null? "" : System.Uri.EscapeDataString(marketplace_id))+"/get_listing_structure_policies?filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -696,7 +696,7 @@ namespace MyNS
 		{
 			var requestUri = "marketplace/"+ (marketplace_id==null? "" : System.Uri.EscapeDataString(marketplace_id))+"/get_negotiated_price_policies?filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -748,7 +748,7 @@ namespace MyNS
 		{
 			var requestUri = "marketplace/"+ (marketplace_id==null? "" : System.Uri.EscapeDataString(marketplace_id))+"/get_product_adoption_policies?filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -800,7 +800,7 @@ namespace MyNS
 		{
 			var requestUri = "marketplace/"+ (marketplace_id==null? "" : System.Uri.EscapeDataString(marketplace_id))+"/get_return_policies?filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();

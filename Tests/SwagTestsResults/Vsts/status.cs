@@ -396,7 +396,7 @@ namespace MyNS
 		{
 			var requestUri = "_apis/status/health?services=" + (services==null? "" : System.Uri.EscapeDataString(services))+"&geographies=" + (geographies==null? "" : System.Uri.EscapeDataString(geographies))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();

@@ -569,7 +569,7 @@ namespace MyNS
 		{
 			var requestUri = "customer_service_metric/"+ (customer_service_metric_type==null? "" : System.Uri.EscapeDataString(customer_service_metric_type))+"/"+ (evaluation_type==null? "" : System.Uri.EscapeDataString(evaluation_type))+"&evaluation_marketplace_id=" + (evaluation_marketplace_id==null? "" : System.Uri.EscapeDataString(evaluation_marketplace_id));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -617,7 +617,7 @@ namespace MyNS
 		{
 			var requestUri = "seller_standards_profile";
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -669,7 +669,7 @@ namespace MyNS
 		{
 			var requestUri = "seller_standards_profile/"+ (program==null? "" : System.Uri.EscapeDataString(program))+"/"+ (cycle==null? "" : System.Uri.EscapeDataString(cycle));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -725,7 +725,7 @@ namespace MyNS
 		{
 			var requestUri = "traffic_report?dimension=" + (dimension==null? "" : System.Uri.EscapeDataString(dimension))+"&filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&metric=" + (metric==null? "" : System.Uri.EscapeDataString(metric))+"&sort=" + (sort==null? "" : System.Uri.EscapeDataString(sort));
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
-			var responseMessage = httpClient.Send(httpRequestMessage);
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
