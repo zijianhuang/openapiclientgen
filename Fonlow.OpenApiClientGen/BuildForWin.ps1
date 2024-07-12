@@ -1,7 +1,7 @@
 # after buildRelease of the sln
-cd $PSScriptRoot
+Set-Location $PSScriptRoot
 $target="../Release/Win"
-$mainDir="bin/Release/net7.0/"
+$mainDir="bin/Release/net8.0/"
 
 Remove-Item -Recurse $target*
 
