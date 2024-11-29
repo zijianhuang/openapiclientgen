@@ -6,7 +6,7 @@ using System.Diagnostics;
 
 namespace Fonlow.CodeDom.Web
 {
-	public static class CodeGen
+	internal static class CodeGen
 	{
 		public static void GenerateClientAPIs(ISettings settings, OpenApiPaths paths, OpenApiComponents components, string outputBasePath)
 		{

@@ -32,7 +32,9 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		public override void SaveCodeToFile(string fileName)
 		{
 			if (String.IsNullOrEmpty(fileName))
+			{
 				throw new ArgumentException("A valid filename is not defined.", nameof(fileName));
+			}
 
 			try
 			{
@@ -884,7 +886,9 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			if (propertyNullable)
 			{
 				if (typeof(String) == type)
+				{
 					typeName = $"{type.FullName}?";
+				}
 			}
 
 			CodeMemberField result = new(typeName, memberName)

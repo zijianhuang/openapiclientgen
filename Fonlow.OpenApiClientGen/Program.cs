@@ -98,7 +98,7 @@ Example:
 
 	}
 
-	public static class OpenApiDocExtentions
+	internal static class OpenApiDocExtentions
 	{
 		public static string FormatOpenApiInfo(this OpenApiInfo info)
 		{

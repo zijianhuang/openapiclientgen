@@ -73,7 +73,9 @@ namespace Fonlow.CodeDom.Web.Ts
 		void WriteCode(TextWriter writer)
 		{
 			if (writer == null)
+			{
 				throw new ArgumentNullException(nameof(writer), "No TextWriter instance is defined.");
+			}
 
 			using var provider = new TypeScriptCodeProvider(new Fonlow.TypeScriptCodeDom.TsCodeGenerator(CreateCodeObjectHelper(jsOutput.AsModule)));
 			provider.GenerateCodeFromCompileUnit(CodeCompileUnit, writer, TsCodeGenerationOptions.Instance);
@@ -108,7 +110,9 @@ namespace Fonlow.CodeDom.Web.Ts
 			componentsToTsTypes.CreateCodeDomForComponents(components);
 
 			if (paths == null)
+			{
 				return;
+			}
 
 			AddBasicReferences();
 
@@ -164,7 +168,9 @@ namespace Fonlow.CodeDom.Web.Ts
 					{
 						CodeTypeDeclaration c = ns.Types[k];
 						if (c.Name == controllerName)
+						{
 							return c;
+						}
 					}
 				}
 			}
@@ -211,9 +217,9 @@ namespace Fonlow.CodeDom.Web.Ts
 		}
 
 
-		abstract protected void AddBasicReferences();
+		protected abstract void AddBasicReferences();
 
-		abstract protected void AddConstructor(CodeTypeDeclaration targetClass);
+		protected abstract void AddConstructor(CodeTypeDeclaration targetClass);
 
 		protected virtual CodeAttributeDeclarationCollection CreateClassCustomAttributes()
 		{

@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFramework>net8.0</TargetFramework>
+		<TargetFramework>net9.0</TargetFramework>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<AssemblyName>Fonlow.OpenApiClientGen.NG2FormGroup</AssemblyName>
 		<Copyright>Copyright © Zijian Huang 2021-2024</Copyright>

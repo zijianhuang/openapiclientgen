@@ -4,7 +4,7 @@ using System.Diagnostics;
 
 namespace Fonlow.Diagnostics
 {
-	public class LoggerTraceListener : TraceListener
+	internal class LoggerTraceListener : TraceListener
 	{
 		private readonly ILogger logger;
 

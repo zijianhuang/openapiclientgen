@@ -1,12 +1,10 @@
 ﻿using Fonlow.CodeDom.Web;
 using Fonlow.OpenApiClientGen.ClientTypes;
 using Fonlow.Reflection;
-using Fonlow.TypeScriptCodeDom;
 using Microsoft.OpenApi.Models;
 using System;
 using System.CodeDom;
 using System.Collections.Generic;
-using System.ComponentModel.Design;
 using System.Diagnostics;
 using System.Linq;
 
@@ -15,7 +13,7 @@ namespace Fonlow.OpenApiClientGen.CS
 	/// <summary>
 	/// Generate a client function upon OpenApiOperation for C#
 	/// </summary>
-	sealed internal class ClientApiFunctionGen
+	internal sealed class ClientApiFunctionGen
 	{
 		OpenApiOperation apiOperation;
 		ParameterDescription[] parameterDescriptions;
@@ -26,7 +24,7 @@ namespace Fonlow.OpenApiClientGen.CS
 		CodeTypeReference returnTypeReference;
 		//bool returnTypeIsStream;
 		CodeMemberMethod clientMethod;
-		ComponentsToCsTypes coms2CsTypes;
+		//ComponentsToCsTypes coms2CsTypes;
 		NameComposer nameComposer;
 		ParametersRefBuilder parametersRefBuilder;
 		BodyContentRefBuilder bodyContentRefBuilder;
@@ -59,7 +57,7 @@ namespace Fonlow.OpenApiClientGen.CS
 			statementOfEnsureSuccessStatusCode = useEnsureSuccessStatusCodeEx ? "EnsureSuccessStatusCodeEx" : "EnsureSuccessStatusCode";
 
 			this.actionName = nameComposer.GetActionName(apiOperation, httpMethod.ToString(), relativePath);
-			this.coms2CsTypes = coms2CsTypes;
+			//this.coms2CsTypes = coms2CsTypes;
 			this.forAsync = forAsync;
 
 
@@ -73,7 +71,9 @@ namespace Fonlow.OpenApiClientGen.CS
 #endif
 
 			if (actionName.EndsWith("Async", StringComparison.Ordinal)) // better to be case sensitive, since some end with something like "cbaSync".
+			{
 				actionName = actionName[0..^5];
+			}
 
 			this.bodyContentRefBuilder = new BodyContentRefBuilder(coms2CsTypes, actionName, renamer);
 			this.parametersRefBuilder = new ParametersRefBuilder(coms2CsTypes, actionName, renamer);
@@ -138,12 +138,7 @@ namespace Fonlow.OpenApiClientGen.CS
 
 		static string RemovePrefixSlash(string uriText)
 		{
-			if (uriText[0] == '/')
-			{
-				return uriText.Remove(0, 1);
-			}
-
-			return uriText;
+			return uriText[0] == '/' ? uriText.Remove(0, 1) : uriText;
 		}
 
 		CodeMemberMethod CreateMethodBasic()
@@ -172,7 +167,9 @@ namespace Fonlow.OpenApiClientGen.CS
 			void CreateDocComment(string elementName, string doc)
 			{
 				if (string.IsNullOrWhiteSpace(doc))
+				{
 					return;
+				}
 
 				clientMethod.Comments.Add(new CodeCommentStatement("<" + elementName + ">" + doc + "</" + elementName + ">", true));
 			}
@@ -236,7 +233,7 @@ namespace Fonlow.OpenApiClientGen.CS
 			comments.Add(new CodeCommentStatement("<param name=\"" + paramName + "\">" + description + "</param>", true));
 		}
 
-		static void AddLinesAsParamDocComment(CodeCommentStatementCollection comments, string paramName, IReadOnlyList<string> lines)
+		static void AddLinesAsParamDocComment(CodeCommentStatementCollection comments, string paramName, List<string> lines)
 		{
 			if (lines.Count == 0)
 			{
@@ -458,21 +455,6 @@ namespace Fonlow.OpenApiClientGen.CS
 			////Add3TEndBacket(clientMethod); for using
 		}
 
-		static void Add3TEndBacket(CodeMemberMethod method)
-		{
-			method.Statements.Add(new CodeSnippetStatement("\t\t\t}"));
-		}
-
-		static void Add4TEndBacket(CodeStatementCollection statementCollection)
-		{
-			statementCollection.Add(new CodeSnippetStatement("\t\t\t\t}"));
-		}
-
-		static void Add4TStartBacket(CodeStatementCollection statementCollection)
-		{
-			statementCollection.Add(new CodeSnippetStatement("\t\t\t\t{"));
-		}
-
 		void DeserializeContentString(CodeStatementCollection statementCollection)
 		{
 			statementCollection.Add(new CodeMethodReturnStatement(new CodeMethodInvokeExpression(
@@ -568,7 +550,7 @@ namespace Fonlow.OpenApiClientGen.CS
 
 		static bool IsPrimitive(string typeName)
 		{
-			string[] ts = new string[] { "System.Int32", "System.Int64", "System.Float", "System.Double", "System.DateTime", "System.Boolean", "System.Enum" };
+			string[] ts = ["System.Int32", "System.Int64", "System.Float", "System.Double", "System.DateTime", "System.Boolean", "System.Enum"];
 			return ts.Contains(typeName);
 		}
 
@@ -581,12 +563,7 @@ namespace Fonlow.OpenApiClientGen.CS
 			}
 
 			int p2 = s.IndexOf("))\"", StringComparison.Ordinal);
-			if (p2 >= 0)
-			{
-				return s.Remove(p2 + 2, 1);
-			}
-
-			return s;
+			return p2 >= 0 ? s.Remove(p2 + 2, 1) : s;
 		}
 
 	}

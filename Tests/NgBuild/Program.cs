@@ -45,16 +45,21 @@ class Program
 		try
 		{
 			var process = Process.Start(info);
-			var errorMsg = process.StandardError.ReadToEnd(); //before WaitForExit() https://docs.microsoft.com/en-us/dotnet/api/system.diagnostics.process.standarderror?view=netcore-3.1#System_Diagnostics_Process_StandardError
-			if (!String.IsNullOrEmpty(errorMsg))
+			if (process != null)
 			{
-				Console.WriteLine("Code generated but with ng build errors:");
-				Console.WriteLine(errorMsg);
+				var errorMsg = process.StandardError.ReadToEnd(); //before WaitForExit() https://docs.microsoft.com/en-us/dotnet/api/system.diagnostics.process.standarderror?view=netcore-3.1#System_Diagnostics_Process_StandardError
+				if (!String.IsNullOrEmpty(errorMsg))
+				{
+					Console.WriteLine("Code generated but with ng build errors:");
+					Console.WriteLine(errorMsg);
+				}
+
+				process.WaitForExit();
+
+				return process.ExitCode;
 			}
 
-			process.WaitForExit();
-
-			return process.ExitCode;
+			throw new ApplicationException("Failed to launch process for npm\\ng.cmd.");
 		}
 		finally
 		{

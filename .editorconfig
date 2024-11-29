@@ -43,3 +43,14 @@ dotnet_diagnostic.CA2254.severity = none
 
 dotnet_diagnostic.CS1998.severity = none
 dotnet_diagnostic.CS1591.severity = none
+
+dotnet_diagnostic.CA1515.severity = none
+
+dotnet_diagnostic.IDE0040.severity = none
+dotnet_diagnostic.IDE0007.severity = none
+dotnet_diagnostic.IDE0008.severity = none
+dotnet_diagnostic.IDE0058.severity = none
+dotnet_diagnostic.IDE0078.severity = none
+dotnet_diagnostic.IDE0130.severity = none
+dotnet_diagnostic.IDE0010.severity = none
+

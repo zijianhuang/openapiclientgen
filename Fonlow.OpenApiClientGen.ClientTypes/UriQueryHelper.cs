@@ -30,7 +30,9 @@ namespace Fonlow.CodeDom.Web
 			}
 
 			if (parameterNames.Length == 0 && parameterDescriptions.Length == 0)
+			{
 				return null;
+			}
 
 			string newUriText = uriText;
 
@@ -66,7 +68,9 @@ namespace Fonlow.CodeDom.Web
 			}
 
 			if (parameterNames.Length == 0 && parameterDescriptions.Length == 0)
+			{
 				return null;
+			}
 
 			string newUriText = uriText;
 

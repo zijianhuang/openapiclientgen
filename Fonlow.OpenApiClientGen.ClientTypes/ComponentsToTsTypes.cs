@@ -40,7 +40,9 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		public override void SaveCodeToFile(string fileName)
 		{
 			if (String.IsNullOrEmpty(fileName))
+			{
 				throw new ArgumentException("A valid TypeScript filename is not defined.", nameof(fileName));
+			}
 
 			try
 			{
@@ -591,7 +593,9 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		public CodeTypeReference TranslateToClientTypeReference(Type type)
 		{
 			if (type == null)
+			{
 				return new CodeTypeReference("void");
+			}
 
 			if (TypeHelper.IsDotNetSimpleType(type))
 			{
@@ -608,7 +612,9 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 			string tsBasicTypeText = Fonlow.TypeScriptCodeDom.TypeMapper.MapToTsBasicType(type);
 			if (tsBasicTypeText != null)
+			{
 				return new CodeTypeReference(tsBasicTypeText);
+			}
 
 			CodeTypeReference actionResultTypeReference = TranslateActionResultToClientTypeReference(type);
 			if (actionResultTypeReference != null)

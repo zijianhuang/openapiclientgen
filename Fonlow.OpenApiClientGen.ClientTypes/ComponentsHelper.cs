@@ -167,7 +167,9 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		public static CodeTypeReference TranslateTypeNameToClientTypeReference(string typeName)
 		{
 			if (typeName == null)
+			{
 				return null;// new CodeTypeReference("void");
+			}
 
 			return new CodeTypeReference(typeName);
 

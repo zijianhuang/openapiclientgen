@@ -56,7 +56,10 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		public static CodeTypeReference TranslateToClientTypeReference(Type type)
 		{
 			if (type == null)
+			{
 				return null;// new CodeTypeReference("void");
+			}
+
 			if (type.IsArray)
 			{
 				Type elementType = type.GetElementType();
@@ -71,7 +74,9 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		public static CodeTypeReference TranslateToClientTypeReference(string typeName)
 		{
 			if (typeName == null)
+			{
 				return null;// new CodeTypeReference("void");
+			}
 
 			return new CodeTypeReference(typeName);
 

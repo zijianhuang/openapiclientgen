@@ -13,7 +13,7 @@ namespace Fonlow.OpenApiClientGen.CS
 	/// <summary>
 	/// Store CodeDom references shared by all functions of the client API class.
 	/// </summary>
-	sealed internal class SharedContext
+	internal sealed class SharedContext
 	{
 		internal CodeFieldReferenceExpression ClientReference { get; set; }
 		internal CodeFieldReferenceExpression BaseUriReference { get; set; }
@@ -53,7 +53,9 @@ namespace Fonlow.OpenApiClientGen.CS
 		void GenerateHackyCodesToWriter(TextWriter writer)
 		{
 			if (writer == null)
+			{
 				throw new ArgumentNullException(nameof(writer), "No TextWriter instance is defined.");
+			}
 
 			using CodeDomProvider provider = CodeDomProvider.CreateProvider("CSharp");
 			CodeGeneratorOptions options = new() { BracingStyle = "C", IndentString = "\t" };
@@ -124,10 +126,14 @@ namespace Fonlow.OpenApiClientGen.CS
 			componentsToCsTypes.CreateCodeDomForComponents(components);
 
 			if (settings.GenerateModelsOnly)
+			{
 				return;
+			}
 
 			if (paths == null)
+			{
 				return;
+			}
 
 			clientNamespace.Imports.AddRange(new CodeNamespaceImport[]{
 				new CodeNamespaceImport("System"),
@@ -235,7 +241,9 @@ namespace Fonlow.OpenApiClientGen.CS
 					{
 						CodeTypeDeclaration c = ns.Types[k];
 						if (c.Name == controllerName)
+						{
 							return c;
+						}
 					}
 				}
 			}

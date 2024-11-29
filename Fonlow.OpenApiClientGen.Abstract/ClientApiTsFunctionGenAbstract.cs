@@ -57,7 +57,7 @@ namespace Fonlow.CodeDom.Web.Ts
 			this.nameComposer = new NameComposer(settings, renamer);
 			this.apiOperation = apiOperation;
 			this.HttpMethod = httpMethod;
-			this.HttpMethodName= HttpMethod.ToString().ToLower(CultureInfo.CurrentCulture); //Method is always uppercase. 
+			this.HttpMethodName = HttpMethod.ToString().ToLower(CultureInfo.CurrentCulture); //Method is always uppercase. 
 			this.ActionName = nameComposer.GetActionName(apiOperation, httpMethod.ToString(), relativePath);
 			this.bodyContentRefBuilder = new BodyContentRefBuilder(com2TsTypes, ActionName, renamer);
 			this.parametersRefBuilder = new ParametersRefBuilder(com2TsTypes, ActionName, renamer);
@@ -122,12 +122,7 @@ namespace Fonlow.CodeDom.Web.Ts
 
 		static string RemovePrefixSlash(string uriText)
 		{
-			if (uriText[0] == '/')
-			{
-				return uriText.Remove(0, 1);
-			}
-
-			return uriText;
+			return uriText[0] == '/' ? uriText.Remove(0, 1) : uriText;
 		}
 
 		void CreateDocComments()
@@ -180,7 +175,7 @@ namespace Fonlow.CodeDom.Web.Ts
 						ReturnTypeReference.UserData[Fonlow.TypeScriptCodeDom.UserDataKeys.FieldTypeInfo] as FieldTypeInfo
 						: null;
 
-					List<string> ss = new();
+					List<string> ss = [];
 					if (!string.IsNullOrEmpty(returnComment))
 					{
 						ss.Add(returnComment);
@@ -262,7 +257,7 @@ namespace Fonlow.CodeDom.Web.Ts
 		/// </summary>
 		/// <param name="lines"></param>
 		/// <returns></returns>
-		static string LinesToIndentedLines(IList<string> lines)
+		static string LinesToIndentedLines(List<string> lines)
 		{
 			if (lines == null || lines.Count == 0)
 			{
@@ -295,12 +290,7 @@ namespace Fonlow.CodeDom.Web.Ts
 			}
 
 			int p2 = s.IndexOf(")'", StringComparison.Ordinal);
-			if (p2 > -1)
-			{
-				return s.Remove(p2 + 1, 1);
-			}
-
-			return s;
+			return p2 > -1 ? s.Remove(p2 + 1, 1) : s;
 		}
 
 		protected CodeParameterDeclarationExpression[] CreateCodeParameterDeclarationExpressions()
