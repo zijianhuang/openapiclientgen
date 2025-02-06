@@ -20,7 +20,7 @@ namespace Fonlow.CodeDom.Web.Ts
 
 		CodeNamespace clientNamespace;
 		protected ISettings settings;
-		readonly JSOutput jsOutput;
+		protected readonly JSOutput jsOutput;
 
 		readonly NameComposer nameComposer;
 		readonly Func<ClientApiTsFunctionGenAbstract> apiFunctionGenFactory; //to be injected in ctor of derived class.

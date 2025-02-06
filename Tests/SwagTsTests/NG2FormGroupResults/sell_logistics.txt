@@ -2,6 +2,18 @@ import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+
+function CreateDateOnlyFormControl(){
+	const fc = new FormControl<any | null | undefined>(undefined);
+	fc.valueChanges.subscribe(v=>{
+		if (v && v instanceof Date){
+			fc.setValue(v.toLocaleDateString("sv").substring(0, 10));
+		}
+	});
+
+	return fc;
+}
+
 export namespace MyNS {
 
 	/** This complex type contains information about a shipping option that can be purchased in addition to the base shipping cost of a recommended rate. Additional options for each rate are defined, named, and offered by the selected shipping carrier. Examples include shipping insurance or the requirement for a recipient signature. */

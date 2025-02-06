@@ -43,33 +43,6 @@ namespace Fonlow.OpenApiClientGen.TestHelpers
 		/// <returns>Codes generated</returns>
 		public string TranslateDefToCode(string defFilePath, ISettings mySettings = null)
 		{
-			static string CreateTsPath(string folder, string fileName)
-			{
-				if (!string.IsNullOrEmpty(folder))
-				{
-					string theFolder;
-					try
-					{
-						theFolder = Path.IsPathRooted(folder) ?
-							folder : Path.Combine(Directory.GetCurrentDirectory(), folder);
-
-					}
-					catch (ArgumentException e)
-					{
-						Trace.TraceWarning(e.Message);
-						throw;
-					}
-
-					if (!Directory.Exists(theFolder))
-					{
-						//throw new ArgumentException("TypeScript Folder Not Exist");
-						Directory.CreateDirectory(theFolder);
-					}
-					return Path.Combine(theFolder, fileName);
-				};
-
-				return null;
-			}
 
 			OpenApiDocument doc = ReadOpenApiDef(defFilePath);
 
@@ -86,16 +59,49 @@ namespace Fonlow.OpenApiClientGen.TestHelpers
 			System.CodeDom.CodeCompileUnit codeCompileUnit = new();
 			System.CodeDom.CodeNamespace clientNamespace = new(settings.ClientNamespace);
 			codeCompileUnit.Namespaces.Add(clientNamespace);//namespace added to Dom
-			JSOutput jsOutput = new()
+			JSOutput jsOutput = GetJSOutput(defFilePath);
+
+			Fonlow.CodeDom.Web.Ts.ControllersTsClientApiGenBase gen = (Fonlow.CodeDom.Web.Ts.ControllersTsClientApiGenBase)Activator.CreateInstance(codeGenType, settings, jsOutput);
+			gen.CreateCodeDom(doc.Paths, doc.Components);
+			return gen.WriteToText();
+		}
+
+		protected virtual JSOutput GetJSOutput(string defFilePath)
+		{
+			return new JSOutput()
 			{
 				JSPath = CreateTsPath("Results", defFilePath),
 				AsModule = true,
 				ContentType = "application/json;charset=UTF-8",
 			};
+		}
 
-			Fonlow.CodeDom.Web.Ts.ControllersTsClientApiGenBase gen = (Fonlow.CodeDom.Web.Ts.ControllersTsClientApiGenBase)Activator.CreateInstance(codeGenType, settings, jsOutput);
-			gen.CreateCodeDom(doc.Paths, doc.Components);
-			return gen.WriteToText();
+		protected static string CreateTsPath(string folder, string fileName)
+		{
+			if (!string.IsNullOrEmpty(folder))
+			{
+				string theFolder;
+				try
+				{
+					theFolder = Path.IsPathRooted(folder) ?
+						folder : Path.Combine(Directory.GetCurrentDirectory(), folder);
+
+				}
+				catch (ArgumentException e)
+				{
+					Trace.TraceWarning(e.Message);
+					throw;
+				}
+
+				if (!Directory.Exists(theFolder))
+				{
+					//throw new ArgumentException("TypeScript Folder Not Exist");
+					Directory.CreateDirectory(theFolder);
+				}
+				return Path.Combine(theFolder, fileName);
+			};
+
+			return null;
 		}
 
 		protected static string ReadFromResults(string filePath)

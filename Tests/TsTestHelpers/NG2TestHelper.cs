@@ -17,7 +17,7 @@ namespace Fonlow.OpenApiClientGen.TestHelpers
 		readonly bool buildToValidate;
 		readonly Action<int, int> assertEqualInt;
 
-		public NG2TestHelper(Type genType, ITestOutputHelper output, ITestingSettings testingSettings, Action<string, string> assertEqual, Action<int, int> assertEqualInt) 
+		public NG2TestHelper(Type genType, ITestOutputHelper output, ITestingSettings testingSettings, Action<string, string> assertEqual, Action<int, int> assertEqualInt)
 		: base(genType, testingSettings, assertEqual)
 		{
 			this.output = output;
@@ -53,6 +53,16 @@ namespace Fonlow.OpenApiClientGen.TestHelpers
 			}
 		}
 
+		protected override JSOutput GetJSOutput(string defFilePath)
+		{
+			return new JSOutput()
+			{
+				JSPath = CreateTsPath("Results", defFilePath),
+				AsModule = true,
+				ContentType = "application/json;charset=UTF-8",
+			};
+		}
+
 		//public void GenerateAndAssertBuild(string openApiFile, string expectedFile, ISettings settings = null)
 		//{
 		//	GenerateAndAssert(openApiFile, expectedFile, settings);
@@ -83,7 +93,7 @@ namespace Fonlow.OpenApiClientGen.TestHelpers
 		{
 			var currentDir = Directory.GetCurrentDirectory();
 			Directory.SetCurrentDirectory(ng2Dir); // setting ProcessStartInfo.WorkingDirectory is not always working. Working in this demo, but not working in other heavier .net core Web app.
-			var ngCmd = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "npm\\ng.cmd");
+			var ngCmd = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles), "nodejs\\ng.cmd");
 			ProcessStartInfo info = new(ngCmd, "build --source-map=false --build-optimizer=false")
 			{
 				UseShellExecute = false,

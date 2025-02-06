@@ -87,6 +87,7 @@ namespace Fonlow.CodeDom.Web
 						JSPath = CreateTsPath(plugin.TargetDir, plugin.TSFile),
 						AsModule = plugin.AsModule,
 						ContentType = plugin.ContentType,
+						NgDateOnlyFormControlEnabled = plugin.NgDateOnlyFormControlEnabled,
 					};
 
 					string assemblyFilePath = System.IO.Path.Combine(exeDir, plugin.AssemblyName + ".dll");

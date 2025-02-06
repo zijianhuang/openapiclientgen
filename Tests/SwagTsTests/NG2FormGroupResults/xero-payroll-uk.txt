@@ -2,6 +2,18 @@ import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+
+function CreateDateOnlyFormControl(){
+	const fc = new FormControl<any | null | undefined>(undefined);
+	fc.valueChanges.subscribe(v=>{
+		if (v && v instanceof Date){
+			fc.setValue(v.toLocaleDateString("sv").substring(0, 10));
+		}
+	});
+
+	return fc;
+}
+
 export namespace MyNS {
 	export interface Pagination {
 
@@ -708,8 +720,8 @@ export namespace MyNS {
 			leaveID: new FormControl<string | null | undefined>(undefined),
 			leaveTypeID: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			description: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			startDate: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
-			endDate: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
+			startDate: CreateDateOnlyFormControl(),
+			endDate: CreateDateOnlyFormControl(),
 			updatedDateUTC: new FormControl<Date | null | undefined>(undefined),
 		});
 
@@ -1181,8 +1193,8 @@ export namespace MyNS {
 			statutoryLeaveID: new FormControl<string | null | undefined>(undefined),
 			employeeID: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			leaveTypeID: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			startDate: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
-			endDate: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
+			startDate: CreateDateOnlyFormControl(),
+			endDate: CreateDateOnlyFormControl(),
 			type: new FormControl<string | null | undefined>(undefined),
 			status: new FormControl<string | null | undefined>(undefined),
 			isPregnancyRelated: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
@@ -2437,8 +2449,8 @@ export namespace MyNS {
 			timesheetID: new FormControl<string | null | undefined>(undefined),
 			payrollCalendarID: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			employeeID: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			startDate: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
-			endDate: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
+			startDate: CreateDateOnlyFormControl(),
+			endDate: CreateDateOnlyFormControl(),
 			status: new FormControl<TimesheetStatus | null | undefined>(undefined),
 			totalHours: new FormControl<number | null | undefined>(undefined),
 			updatedDateUTC: new FormControl<Date | null | undefined>(undefined),
@@ -2507,7 +2519,7 @@ export namespace MyNS {
 	export function CreateTimesheetLineFormGroup() {
 		return new FormGroup<TimesheetLineFormProperties>({
 			timesheetLineID: new FormControl<string | null | undefined>(undefined),
-			date: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
+			date: CreateDateOnlyFormControl(),
 			earningsRateID: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			trackingItemID: new FormControl<string | null | undefined>(undefined),
 			numberOfUnits: new FormControl<number | null | undefined>(undefined, [Validators.required]),
@@ -2645,9 +2657,9 @@ export namespace MyNS {
 			payrollCalendarID: new FormControl<string | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			calendarType: new FormControl<PayRunCalendarCalendarType | null | undefined>(undefined, [Validators.required]),
-			periodStartDate: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
+			periodStartDate: CreateDateOnlyFormControl(),
 			periodEndDate: new FormControl<Date | null | undefined>(undefined),
-			paymentDate: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
+			paymentDate: CreateDateOnlyFormControl(),
 			updatedDateUTC: new FormControl<Date | null | undefined>(undefined),
 		});
 
@@ -2898,7 +2910,7 @@ export namespace MyNS {
 			numberOfUnitsPerWeek: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 			ratePerUnit: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 			numberOfUnitsPerDay: new FormControl<number | null | undefined>(undefined, [Validators.required]),
-			effectiveFrom: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
+			effectiveFrom: CreateDateOnlyFormControl(),
 			annualSalary: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 			status: new FormControl<SalaryAndWageStatus | null | undefined>(undefined, [Validators.required]),
 			paymentType: new FormControl<SalaryAndWagePaymentType | null | undefined>(undefined, [Validators.required]),

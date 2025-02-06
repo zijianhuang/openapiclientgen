@@ -260,6 +260,8 @@
 		///// HTTP content type used in POST of HTTP of NG2. so text/plain could be used to avoid preflight in CORS.
 		///// </summary>
 		public string ContentType { get; set; }
+
+		public bool NgDateOnlyFormControlEnabled { get; set; }
 	}
 
 	public class JSPlugin
@@ -288,5 +290,11 @@
 		/// True to have "export namespace"; false to have "namespace". jQuery wants "namespace" while Angular 2+ wants "export namespace".
 		/// </summary>
 		public bool AsModule { get; set; }
+
+		/// <summary>
+		/// For Angular reactive form control binding with DateOnly, requiring yyyy-MM-dd local date, while the strongly typed field is JavaScript Date.
+		/// </summary>
+		public bool NgDateOnlyFormControlEnabled { get; set; }
+
 	}
 }

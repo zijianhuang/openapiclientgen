@@ -11,10 +11,12 @@ namespace Fonlow.TypeScriptCodeDom
 	public class CodeObjectHelperForNg2FormGroup : CodeObjectHelper
 	{
 		readonly CodeNamespaceCollection codeNamespaceCollection;
+		readonly bool careForDateOnly;
 
-		public CodeObjectHelperForNg2FormGroup(CodeNamespaceCollection codeNamespaceCollection) : base(true)
+		public CodeObjectHelperForNg2FormGroup(CodeNamespaceCollection codeNamespaceCollection, bool careForDateOnly = false) : base(true)
 		{
 			this.codeNamespaceCollection = codeNamespaceCollection;
+			this.careForDateOnly = careForDateOnly;
 		}
 
 		/// <summary>
@@ -203,10 +205,17 @@ namespace Fonlow.TypeScriptCodeDom
 		/// </summary>
 		/// <param name="codeMemberField"></param>
 		/// <returns>Text of FormControl creation.</returns>
-		static string GetCodeMemberFieldTextForAngularFormGroup(CodeMemberField codeMemberField)
+		string GetCodeMemberFieldTextForAngularFormGroup(CodeMemberField codeMemberField)
 		{
+			bool isFieldDateOnly = false;
 			var customAttributes = codeMemberField.CustomAttributes;
 			var fieldName = codeMemberField.Name.EndsWith('?') ? codeMemberField.Name.Substring(0, codeMemberField.Name.Length - 1) : codeMemberField.Name;
+			FieldTypeInfo fieldTypeInfo = codeMemberField.Type.UserData[UserDataKeys.FieldTypeInfo] as FieldTypeInfo;
+			if (fieldTypeInfo.ClrType == typeof(DateOnly) || fieldTypeInfo.ClrType == typeof(DateOnly?))
+			{
+				isFieldDateOnly = true;
+			}
+
 			if (customAttributes.Count > 0)
 			{
 				//Console.WriteLine("customAttributes: " + string.Join(", ",  customAttributes));
@@ -251,8 +260,16 @@ namespace Fonlow.TypeScriptCodeDom
 
 				var text = String.Join(", ", validatorList);
 				var tsTypeName = RefineAngularFormControlTypeName(codeMemberField);
-				return string.IsNullOrEmpty(text) ? $"{fieldName}: new FormControl<{tsTypeName}>(undefined)" :
+
+				if (isFieldDateOnly && careForDateOnly)
+				{
+					return $"{fieldName}: CreateDateOnlyFormControl()";
+				}
+				else
+				{
+					return string.IsNullOrEmpty(text) ? $"{fieldName}: new FormControl<{tsTypeName}>(undefined)" :
 					$"{fieldName}: new FormControl<{tsTypeName}>(undefined, [{text}])";
+				}
 			}
 			else
 			{
