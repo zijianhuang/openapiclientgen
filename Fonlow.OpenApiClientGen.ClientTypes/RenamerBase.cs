@@ -63,13 +63,6 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		/// <returns></returns>
 		public string RefineEnumMemberName(string s, ISettings settings = null)
 		{
-#if DEBUG
-			//test bed
-			if (s == "-1")
-			{
-				Debug.WriteLine("ccc");
-			}
-#endif
 			if (String.IsNullOrEmpty(s))
 			{
 				return "_";
@@ -119,12 +112,6 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 		public string RefineEnumValue(string s)
 		{
-#if DEBUG
-			if (s == "-1")
-			{
-				Debug.WriteLine("ccc");
-			}
-#endif
 			var b = RefineEnumMemberName(s);
 
 			if (int.TryParse(b, out _))

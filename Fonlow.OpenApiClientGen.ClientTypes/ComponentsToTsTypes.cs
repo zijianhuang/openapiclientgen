@@ -99,12 +99,6 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				return;
 			}
 
-#if DEBUG
-			if (refId == "ScriptInstanceInfoRuntimeStatus")
-			{
-				Debug.WriteLine("bbb");
-			}
-#endif
 			if (isForClass)
 			{
 				if (schema.Properties.Count > 0 || (schema.Properties.Count == 0 && allOfBaseTypeSchemaList.Count > 1))
@@ -238,12 +232,6 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 		protected override void AddProperty(string refId, OpenApiSchema propertySchema, CodeTypeDeclaration typeDeclaration, OpenApiSchema schema, string currentTypeName, string ns)
 		{
-#if DEBUG
-			if (propertySchema.Reference?.Id == "BoundingBox")
-			{
-				Debug.WriteLine("bbbbb");
-			}
-#endif
 			var isKeyNameValidTsPropertyName = NameFunc.IsKeyNameValidTsPropertyName(refId);
 			string propertyName = isKeyNameValidTsPropertyName ? refId : $"'{refId}'";
 			string refinedPropertyName = isKeyNameValidTsPropertyName ? refId : Renamer.RefinePropertyName(refId);
@@ -269,12 +257,6 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			{
 				if (propertySchema.Reference != null)
 				{
-#if DEBUG
-					if (propertySchema.Reference.Id == "BoundingBox")
-					{
-						Debug.WriteLine("bbbbb");
-					}
-#endif
 					string propertyTypeNs = settings.DotsToNamespaces ? NameFunc.GetNamespaceOfClassName(propertySchema.Reference.Id) : string.Empty;
 					string propertyTypeName = Renamer.RefineTypeName(propertySchema.Reference.Id, propertyTypeNs, settings.DotsToNamespaces);
 					string propertyTypeWithNs = NameFunc.CombineNamespaceWithClassName(propertyTypeNs, propertyTypeName);
@@ -335,12 +317,6 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				}
 				else if (propertySchema.Enum.Count == 0 && propertySchema.Reference != null && !isPrimitiveType) // for complex type
 				{
-#if DEBUG
-					if (propertySchema.Reference.Id == "BoundingBox")
-					{
-						Debug.WriteLine("bbbbb");
-					}
-#endif
 					CodeTypeReference complexCodeTypeReference = CreateComplexCodeTypeReference(propertySchema);
 					clientProperty = CreateProperty(complexCodeTypeReference, propertyName, isRequired);
 					SetClientPropertyTypeInfo(clientProperty, true, false);
@@ -429,12 +405,6 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				}
 				else if (propertySchema.Reference != null)
 				{
-#if DEBUG
-					if (propertySchema.Reference.Id == "BoundingBox")
-					{
-						Debug.WriteLine("bbbbb");
-					}
-#endif
 					CodeTypeReference complexCodeTypeReference = CreateComplexCodeTypeReference(propertySchema);
 					clientProperty = CreateProperty(complexCodeTypeReference, propertyName, isRequired);
 					SetClientPropertyTypeInfo(clientProperty, true, false);
@@ -477,12 +447,6 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			{
 				if (d is OpenApiPrimitive<string> dString)
 				{
-#if DEBUG
-					if (dString.Value == "-1")
-					{
-						Debug.WriteLine("hahhaah");
-					}
-#endif
 					return RefineTsEnumMemberName(dString.Value);
 				}
 				else if (d is OpenApiNull dNull)
@@ -688,12 +652,6 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			{
 				if (enumMember is OpenApiString stringMember)
 				{
-#if DEBUG
-					if (stringMember.Value == "15.10")
-					{
-						Debug.WriteLine("haha");
-					}
-#endif
 					var memberName = RefineTsEnumMemberName(stringMember.Value);
 					int intValue = k;
 					CodeMemberField clientField = new()

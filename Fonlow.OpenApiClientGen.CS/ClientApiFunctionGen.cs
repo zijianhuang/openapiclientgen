@@ -63,12 +63,6 @@ namespace Fonlow.OpenApiClientGen.CS
 
 			this.RelativePath = RemovePrefixSlash(relativePath);
 			this.RelativePath = RegexFunctions.RefineUrlWithHyphenInParameters(RelativePath);
-#if DEBUG
-			if (this.RelativePath == "admin/serviceAnnouncement/healthOverviews/{serviceHealth_id}/issues/{serviceHealthIssue_id}/microsoft.graph.incidentReport()")
-			{
-				Debug.WriteLine("ffff");
-			}
-#endif
 
 			if (actionName.EndsWith("Async", StringComparison.Ordinal)) // better to be case sensitive, since some end with something like "cbaSync".
 			{

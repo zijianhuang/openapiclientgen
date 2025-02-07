@@ -435,12 +435,6 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 		protected override void AddProperty(string refId, OpenApiSchema propertySchema, CodeTypeDeclaration typeDeclaration, OpenApiSchema schema, string currentTypeName, string ns)
 		{
-#if DEBUG
-			if (propertySchema.Reference?.Id == "BoundingBox")
-			{
-				Debug.WriteLine("bbbbb");
-			}
-#endif
 			string propertyName = Renamer.RefinePropertyName(refId);
 			if (string.IsNullOrEmpty(propertyName))
 			{

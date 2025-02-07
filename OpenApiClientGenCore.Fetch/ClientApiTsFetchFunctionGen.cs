@@ -117,7 +117,7 @@ namespace Fonlow.CodeDom.Web.Ts
 			string uriText = jsUriQuery == null ? $"this.baseUri + '{RelativePath}'" : RemoveTrialEmptyString($"this.baseUri + '{jsUriQuery}'");
 #pragma warning restore CA1508 // Avoid dead conditional code
 
-			if (ReturnTypeReference != null && ReturnTypeReference.BaseType == "System.String" && ReturnTypeReference.ArrayElementType == null)//stringAsString is for .NET Core Web API
+			if (ReturnTypeReference != null && ReturnTypeReference.BaseType.Contains("String", StringComparison.OrdinalIgnoreCase) && ReturnTypeReference.ArrayElementType == null)//stringAsString is for .NET Core Web API
 			{
 				if (HttpMethodName == "get" || HttpMethodName == "delete")
 				{
