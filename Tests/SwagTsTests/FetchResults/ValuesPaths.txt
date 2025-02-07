@@ -8,7 +8,7 @@ export namespace MyNS {
 		 * @return {Array<string>} Success
 		 */
 		ValuesGet(): Promise<Array<string>> {
-			return fetch(this.baseUri + 'api/Values', { method: 'get' }).then(d => {if (d.status<=204) return d.json(); throw d;});
+			return fetch(this.baseUri + 'api/Values', { method: 'get' }).then(d => {if (d.status<=202) return d.json(); else if (d.status==204) return null; throw d;});
 		}
 
 		/**
