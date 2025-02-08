@@ -20,32 +20,32 @@ namespace SwagTests
 		[Fact]
 		public void TestValuesPaths()
 		{
-			helper.GenerateAndAssertAndBuild("SwagMock/ValuesPaths.json", "NG2FormGroupResults/ValuesPaths.txt");
+			helper.GenerateAndAssertAndBuild("SwagMock/ValuesPaths.json", "NG2FormGroupResults/ValuesPaths.ts");
 		}
 
 
 		[Fact]
 		public void TestPetDelete()
 		{
-			helper.GenerateAndAssertAndBuild("SwagMock/PetDelete.json", "NG2FormGroupResults/PetDelete.txt");
+			helper.GenerateAndAssertAndBuild("SwagMock/PetDelete.json", "NG2FormGroupResults/PetDelete.ts");
 		}
 
 		[Fact]
 		public void TestPet()
 		{
-			helper.GenerateAndAssertAndBuild("SwagMock/pet.yaml", "NG2FormGroupResults/Pet.txt");
+			helper.GenerateAndAssertAndBuild("SwagMock/pet.yaml", "NG2FormGroupResults/Pet.ts");
 		}
 
 		[Fact]
 		public void TestPetSuper()
 		{
-			helper.GenerateAndAssertAndBuild("SwagMock/petSuper.yaml", "NG2FormGroupResults/PetSuper.txt");
+			helper.GenerateAndAssertAndBuild("SwagMock/petSuper.yaml", "NG2FormGroupResults/PetSuper.ts");
 		}
 
 		[Fact]
 		public void TestPetByTags()
 		{
-			helper.GenerateAndAssertAndBuild("SwagMock/petByTags.yaml", "NG2FormGroupResults/PetByTags.txt");
+			helper.GenerateAndAssertAndBuild("SwagMock/petByTags.yaml", "NG2FormGroupResults/PetByTags.ts");
 		}
 
 		[Fact]
@@ -53,7 +53,7 @@ namespace SwagTests
 		{
 			var settings = CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.Default);
 			settings.EnumToString = true;
-			helper.GenerateAndAssertAndBuild("SwagMock/pet.yaml", "NG2FormGroupResults/Pet_EnumToString.txt", settings);
+			helper.GenerateAndAssertAndBuild("SwagMock/pet.yaml", "NG2FormGroupResults/Pet_EnumToString.ts", settings);
 		}
 
 		/// <summary>
@@ -62,7 +62,7 @@ namespace SwagTests
 		[Fact]
 		public void TestPetWithPathAsContainerName_NoBuild()
 		{
-			helper.GenerateAndAssert("SwagMock/pet.yaml", "NG2FormGroupResults/PetPathAsContainer.txt", new Settings()
+			helper.GenerateAndAssert("SwagMock/pet.yaml", "NG2FormGroupResults/PetPathAsContainer.ts", new Settings()
 			{
 				ClientNamespace = "MyNS",
 				ContainerClassName = "MyClient",
@@ -78,7 +78,7 @@ namespace SwagTests
 		[Fact]
 		public void TestPetWithGodContainerAndPathAction_NoBuild()
 		{
-			helper.GenerateAndAssert("SwagMock/pet.yaml", "NG2FormGroupResults/PetGodClass.txt", new Settings()
+			helper.GenerateAndAssert("SwagMock/pet.yaml", "NG2FormGroupResults/PetGodClass.ts", new Settings()
 			{
 				ClientNamespace = "MyNS",
 				ActionNameStrategy = ActionNameStrategy.PathMethodQueryParameters,
@@ -90,7 +90,7 @@ namespace SwagTests
 		[Fact]
 		public void TestPetFindByStatus()
 		{
-			helper.GenerateAndAssertAndBuild("SwagMock/petByStatus.yaml", "NG2FormGroupResults/PetFindByStatus.txt", new Settings()
+			helper.GenerateAndAssertAndBuild("SwagMock/petByStatus.yaml", "NG2FormGroupResults/PetFindByStatus.ts", new Settings()
 			{
 				ClientNamespace = "MyNS",
 				PathPrefixToRemove = "/api",
@@ -103,13 +103,13 @@ namespace SwagTests
 		[Fact]
 		public void TestPetStore()
 		{
-			helper.GenerateAndAssertAndBuild("SwagMock/petStore.yaml", "NG2FormGroupResults/PetStore.txt");
+			helper.GenerateAndAssertAndBuild("SwagMock/petStore.yaml", "NG2FormGroupResults/PetStore.ts");
 		}
 
 		[Fact]
 		public void TestPetStoreSorted()
 		{
-			helper.GenerateAndAssertAndBuild("SwagMock/petStore.yaml", "NG2FormGroupResults/PetStoreSorted.txt", new Settings() // based my mySettings
+			helper.GenerateAndAssertAndBuild("SwagMock/petStore.yaml", "NG2FormGroupResults/PetStoreSorted.ts", new Settings() // based my mySettings
 			{
 				ClientNamespace = "MyNS",
 				ContainerClassName = "MyClient", //the TestBed requires this containerClassName
@@ -126,7 +126,7 @@ namespace SwagTests
 		[Fact]
 		public void TestPetStoreExpanded()
 		{
-			helper.GenerateAndAssert("SwagMock/petStoreExpanded.yaml", "NG2FormGroupResults/PetStoreExpanded.txt", new Settings()
+			helper.GenerateAndAssert("SwagMock/petStoreExpanded.yaml", "NG2FormGroupResults/PetStoreExpanded.ts", new Settings()
 			{
 				ClientNamespace = "MyNS",
 				ActionNameStrategy = ActionNameStrategy.NormalizedOperationId,
@@ -140,7 +140,7 @@ namespace SwagTests
 		[Fact]
 		public void TestUspto()
 		{
-			helper.GenerateAndAssert("SwagMock/uspto.yaml", "NG2FormGroupResults/Uspto.txt", new Settings()
+			helper.GenerateAndAssert("SwagMock/uspto.yaml", "NG2FormGroupResults/Uspto.ts", new Settings()
 			{
 				ClientNamespace = "MyNS",
 				ActionNameStrategy = ActionNameStrategy.NormalizedOperationId,
@@ -153,7 +153,7 @@ namespace SwagTests
 		[Fact]
 		public void TestMcp()
 		{
-			helper.GenerateAndAssertAndBuild("SwagMock/mcp.yaml", "NG2FormGroupResults/mcp.txt", new Settings()
+			helper.GenerateAndAssertAndBuild("SwagMock/mcp.yaml", "NG2FormGroupResults/mcp.ts", new Settings()
 			{
 				ClientNamespace = "MyNS",
 				ContainerClassName = "MyClient",
@@ -167,7 +167,7 @@ namespace SwagTests
 		[Fact]
 		public void TestAir()
 		{
-			helper.GenerateAndAssertAndBuild("SwagMock/AirOne.yaml", "NG2FormGroupResults/AirOne.txt", new Settings()
+			helper.GenerateAndAssertAndBuild("SwagMock/AirOne.yaml", "NG2FormGroupResults/AirOne.ts", new Settings()
 			{
 				ClientNamespace = "MyNS",
 				ContainerClassName = "MyClient",
@@ -181,121 +181,121 @@ namespace SwagTests
 		[Fact]
 		public void TestEBaySellAccount()
 		{
-			helper.GenerateAndAssertAndBuild("SwagMock/sell_account_v1_oas3.json", "NG2FormGroupResults/sell_account.txt");
+			helper.GenerateAndAssertAndBuild("SwagMock/sell_account_v1_oas3.json", "NG2FormGroupResults/sell_account.ts");
 		}
 
 		[Fact]
 		public void TestEBay_sell_analytics()
 		{
-			helper.GenerateAndAssertAndBuild("SwagMock/sell_analytics_v1_oas3.yaml", "NG2FormGroupResults/sell_analytics.txt");
+			helper.GenerateAndAssertAndBuild("SwagMock/sell_analytics_v1_oas3.yaml", "NG2FormGroupResults/sell_analytics.ts");
 		}
 
 		[Fact]
 		public void TestEBay_sell_compliance()
 		{
-			helper.GenerateAndAssertAndBuild("SwagMock/sell_compliance_v1_oas3.yaml", "NG2FormGroupResults/sell_compliance.txt");
+			helper.GenerateAndAssertAndBuild("SwagMock/sell_compliance_v1_oas3.yaml", "NG2FormGroupResults/sell_compliance.ts");
 		}
 
 		[Fact]
 		public void TestEBay_sell_finances()
 		{
-			helper.GenerateAndAssertAndBuild("SwagMock/sell_finances_v1_oas3.yaml", "NG2FormGroupResults/sell_finances.txt");
+			helper.GenerateAndAssertAndBuild("SwagMock/sell_finances_v1_oas3.yaml", "NG2FormGroupResults/sell_finances.ts");
 		}
 
 		[Fact]
 		public void TestEBay_sell_inventory()
 		{
-			helper.GenerateAndAssertAndBuild("SwagMock/sell_inventory_v1_oas3.yaml", "NG2FormGroupResults/sell_inventory.txt");
+			helper.GenerateAndAssertAndBuild("SwagMock/sell_inventory_v1_oas3.yaml", "NG2FormGroupResults/sell_inventory.ts");
 		}
 
 		[Fact]
 		public void TestEBay_sell_listing()
 		{
-			helper.GenerateAndAssertAndBuild("SwagMock/sell_listing_v1_beta_oas3.yaml", "NG2FormGroupResults/sell_listing.txt");
+			helper.GenerateAndAssertAndBuild("SwagMock/sell_listing_v1_beta_oas3.yaml", "NG2FormGroupResults/sell_listing.ts");
 		}
 
 		[Fact]
 		public void TestEBay_sell_logistics()
 		{
-			helper.GenerateAndAssertAndBuild("SwagMock/sell_logistics_v1_oas3.json", "NG2FormGroupResults/sell_logistics.txt");
+			helper.GenerateAndAssertAndBuild("SwagMock/sell_logistics_v1_oas3.json", "NG2FormGroupResults/sell_logistics.ts");
 		}
 
 		[Fact]
 		public void TestEBay_sell_negotiation()
 		{
-			helper.GenerateAndAssertAndBuild("SwagMock/sell_negotiation_v1_oas3.yaml", "NG2FormGroupResults/sell_negotiation.txt");
+			helper.GenerateAndAssertAndBuild("SwagMock/sell_negotiation_v1_oas3.yaml", "NG2FormGroupResults/sell_negotiation.ts");
 		}
 
 		[Fact]
 		public void TestEBay_sell_marketing()
 		{
-			helper.GenerateAndAssertAndBuild("SwagMock/sell_marketing_v1_oas3.json", "NG2FormGroupResults/sell_marketing.txt");
+			helper.GenerateAndAssertAndBuild("SwagMock/sell_marketing_v1_oas3.json", "NG2FormGroupResults/sell_marketing.ts");
 		}
 
 		[Fact]
 		public void TestEBay_sell_metadata()
 		{
-			helper.GenerateAndAssertAndBuild("SwagMock/sell_metadata_v1_oas3.json", "NG2FormGroupResults/sell_metadata.txt");
+			helper.GenerateAndAssertAndBuild("SwagMock/sell_metadata_v1_oas3.json", "NG2FormGroupResults/sell_metadata.ts");
 		}
 
 		[Fact]
 		public void TestEBay_sell_recommendation()
 		{
-			helper.GenerateAndAssertAndBuild("SwagMock/sell_recommendation_v1_oas3.yaml", "NG2FormGroupResults/sell_recommendation.txt");
+			helper.GenerateAndAssertAndBuild("SwagMock/sell_recommendation_v1_oas3.yaml", "NG2FormGroupResults/sell_recommendation.ts");
 		}
 
 		[Fact]
 		public void TestRedocOpenApi()
 		{
-			helper.GenerateAndAssertAndBuild("SwagMock/redocOpenApi200501.json", "NG2FormGroupResults/redocOpenApi200501.txt");
+			helper.GenerateAndAssertAndBuild("SwagMock/redocOpenApi200501.json", "NG2FormGroupResults/redocOpenApi200501.ts");
 		}
 
 		[Fact]
 		public void Testxero_accounting()
 		{
-			helper.GenerateAndAssertAndBuild("SwagMock/xero_accounting.yaml", "NG2FormGroupResults/xero_accounting.txt");
+			helper.GenerateAndAssertAndBuild("SwagMock/xero_accounting.yaml", "NG2FormGroupResults/xero_accounting.ts");
 		}
 
 		[Fact]
 		public void Testxero_assets()
 		{
-			helper.GenerateAndAssertAndBuild("SwagMock/xero_assets.yaml", "NG2FormGroupResults/xero_assets.txt");
+			helper.GenerateAndAssertAndBuild("SwagMock/xero_assets.yaml", "NG2FormGroupResults/xero_assets.ts");
 		}
 
 		[Fact]
 		public void Testxero_bankfeeds()
 		{
-			helper.GenerateAndAssertAndBuild("SwagMock/xero_bankfeeds.yaml", "NG2FormGroupResults/xero_bankfeeds.txt");
+			helper.GenerateAndAssertAndBuild("SwagMock/xero_bankfeeds.yaml", "NG2FormGroupResults/xero_bankfeeds.ts");
 		}
 
 		[Fact]
 		public void Testxero_payroll_au()
 		{
-			helper.GenerateAndAssertAndBuild("SwagMock/xero-payroll-au.yaml", "NG2FormGroupResults/xero-payroll-au.txt");
+			helper.GenerateAndAssertAndBuild("SwagMock/xero-payroll-au.yaml", "NG2FormGroupResults/xero-payroll-au.ts");
 		}
 
 		[Fact]
 		public void Testxero_identity()
 		{
-			helper.GenerateAndAssertAndBuild("SwagMock/xero-identity.yaml", "NG2FormGroupResults/xero-identity.txt");
+			helper.GenerateAndAssertAndBuild("SwagMock/xero-identity.yaml", "NG2FormGroupResults/xero-identity.ts");
 		}
 
 		[Fact]
 		public void Testxero_payroll_uk()
 		{
-			helper.GenerateAndAssertAndBuild("SwagMock/xero-payroll-uk.yaml", "NG2FormGroupResults/xero-payroll-uk.txt");
+			helper.GenerateAndAssertAndBuild("SwagMock/xero-payroll-uk.yaml", "NG2FormGroupResults/xero-payroll-uk.ts");
 		}
 
 		[Fact]
 		public void TestMozillaKinto()
 		{
-			helper.GenerateAndAssertAndBuild("SwagMock/MozillaKinto.yaml", "NG2FormGroupResults/MozillaKinto.txt");
+			helper.GenerateAndAssertAndBuild("SwagMock/MozillaKinto.yaml", "NG2FormGroupResults/MozillaKinto.ts");
 		}
 
 		[Fact]
 		public void TestGoogleBooks()
 		{
-			helper.GenerateAndAssertAndBuild("SwagMock/googleBooksOpenApi.yaml", "NG2FormGroupResults/googleBooksOpenApi.txt");
+			helper.GenerateAndAssertAndBuild("SwagMock/googleBooksOpenApi.yaml", "NG2FormGroupResults/googleBooksOpenApi.ts");
 		}
 	}
 

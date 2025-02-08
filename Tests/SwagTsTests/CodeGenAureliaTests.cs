@@ -19,26 +19,26 @@ namespace SwagTests
 		[Fact]
 		public void TestValuesPaths()
 		{
-			helper.GenerateAndAssert("SwagMock/ValuesPaths.json", "AureliaResults/ValuesPaths.txt");
+			helper.GenerateAndAssert("SwagMock/ValuesPaths.json", "AureliaResults/ValuesPaths.ts");
 		}
 
 
 		[Fact]
 		public void TestPetDelete()
 		{
-			helper.GenerateAndAssert("SwagMock/PetDelete.json", "AureliaResults/PetDelete.txt");
+			helper.GenerateAndAssert("SwagMock/PetDelete.json", "AureliaResults/PetDelete.ts");
 		}
 
 		[Fact]
 		public void TestPet()
 		{
-			helper.GenerateAndAssert("SwagMock/pet.yaml", "AureliaResults/Pet.txt");
+			helper.GenerateAndAssert("SwagMock/pet.yaml", "AureliaResults/Pet.ts");
 		}
 
 		[Fact]
 		public void TestPetWithPathAsContainerName()
 		{
-			helper.GenerateAndAssert("SwagMock/pet.yaml", "AureliaResults/PetPathAsContainer.txt", new Settings()
+			helper.GenerateAndAssert("SwagMock/pet.yaml", "AureliaResults/PetPathAsContainer.ts", new Settings()
 			{
 				ClientNamespace = "MyNS",
 				ContainerClassName = "Misc",
@@ -51,7 +51,7 @@ namespace SwagTests
 		[Fact]
 		public void TestPetWithGodContainerAndPathAction()
 		{
-			helper.GenerateAndAssert("SwagMock/pet.yaml" , "AureliaResults/PetGodClass.txt", new Settings()
+			helper.GenerateAndAssert("SwagMock/pet.yaml" , "AureliaResults/PetGodClass.ts", new Settings()
 			{
 				ClientNamespace = "MyNS",
 				ActionNameStrategy = ActionNameStrategy.PathMethodQueryParameters,
@@ -63,7 +63,7 @@ namespace SwagTests
 		[Fact]
 		public void TestPetFindByStatus()
 		{
-			helper.GenerateAndAssert("SwagMock/petByStatus.yaml", "AureliaResults/PetFindByStatus.txt", new Settings()
+			helper.GenerateAndAssert("SwagMock/petByStatus.yaml", "AureliaResults/PetFindByStatus.ts", new Settings()
 			{
 				ClientNamespace = "MyNS",
 				PathPrefixToRemove = "/api",
@@ -76,13 +76,13 @@ namespace SwagTests
 		[Fact]
 		public void TestPetStore()
 		{
-			helper.GenerateAndAssert("SwagMock/petStore.yaml", "AureliaResults/PetStore.txt");
+			helper.GenerateAndAssert("SwagMock/petStore.yaml", "AureliaResults/PetStore.ts");
 		}
 
 		[Fact]
 		public void TestPetStoreExpanded()
 		{
-			helper.GenerateAndAssert("SwagMock/petStoreExpanded.yaml" , "AureliaResults/PetStoreExpanded.txt", new Settings()
+			helper.GenerateAndAssert("SwagMock/petStoreExpanded.yaml" , "AureliaResults/PetStoreExpanded.ts", new Settings()
 			{
 				ClientNamespace = "MyNS",
 				ActionNameStrategy = ActionNameStrategy.NormalizedOperationId,
@@ -93,7 +93,7 @@ namespace SwagTests
 		[Fact]
 		public void TestUspto()
 		{
-			helper.GenerateAndAssert("SwagMock/uspto.yaml" , "AureliaResults/Uspto.txt", new Settings()
+			helper.GenerateAndAssert("SwagMock/uspto.yaml" , "AureliaResults/Uspto.ts", new Settings()
 			{
 				ClientNamespace = "MyNS",
 				ActionNameStrategy = ActionNameStrategy.NormalizedOperationId,
@@ -106,7 +106,7 @@ namespace SwagTests
 		[Fact]
 		public void TestMcp()
 		{
-			helper.GenerateAndAssert("SwagMock/mcp.yaml", "AureliaResults/mcp.txt", new Settings()
+			helper.GenerateAndAssert("SwagMock/mcp.yaml", "AureliaResults/mcp.ts", new Settings()
 			{
 				ClientNamespace = "MyNS",
 				ContainerClassName = "McpClient",
@@ -120,73 +120,73 @@ namespace SwagTests
 		[Fact]
 		public void TestEBaySellAccount()
 		{
-			helper.GenerateAndAssert("SwagMock/sell_account_v1_oas3.json", "AureliaResults/sell_account.txt");
+			helper.GenerateAndAssert("SwagMock/sell_account_v1_oas3.json", "AureliaResults/sell_account.ts");
 		}
 
 		[Fact]
 		public void TestEBay_sell_analytics()
 		{
-			helper.GenerateAndAssert("SwagMock/sell_analytics_v1_oas3.yaml", "AureliaResults/sell_analytics.txt");
+			helper.GenerateAndAssert("SwagMock/sell_analytics_v1_oas3.yaml", "AureliaResults/sell_analytics.ts");
 		}
 
 		[Fact]
 		public void TestEBay_sell_compliance()
 		{
-			helper.GenerateAndAssert("SwagMock/sell_compliance_v1_oas3.yaml", "AureliaResults/sell_compliance.txt");
+			helper.GenerateAndAssert("SwagMock/sell_compliance_v1_oas3.yaml", "AureliaResults/sell_compliance.ts");
 		}
 
 		[Fact]
 		public void TestEBay_sell_finances()
 		{
-			helper.GenerateAndAssert("SwagMock/sell_finances_v1_oas3.yaml", "AureliaResults/sell_finances.txt");
+			helper.GenerateAndAssert("SwagMock/sell_finances_v1_oas3.yaml", "AureliaResults/sell_finances.ts");
 		}
 
 		[Fact]
 		public void TestEBay_sell_inventory()
 		{
-			helper.GenerateAndAssert("SwagMock/sell_inventory_v1_oas3.yaml", "AureliaResults/sell_inventory.txt");
+			helper.GenerateAndAssert("SwagMock/sell_inventory_v1_oas3.yaml", "AureliaResults/sell_inventory.ts");
 		}
 
 		[Fact]
 		public void TestEBay_sell_listing()
 		{
-			helper.GenerateAndAssert("SwagMock/sell_listing_v1_beta_oas3.yaml", "AureliaResults/sell_listing.txt");
+			helper.GenerateAndAssert("SwagMock/sell_listing_v1_beta_oas3.yaml", "AureliaResults/sell_listing.ts");
 		}
 
 		[Fact]
 		public void TestEBay_sell_logistics()
 		{
-			helper.GenerateAndAssert("SwagMock/sell_logistics_v1_oas3.json", "AureliaResults/sell_logistics.txt");
+			helper.GenerateAndAssert("SwagMock/sell_logistics_v1_oas3.json", "AureliaResults/sell_logistics.ts");
 		}
 
 		[Fact]
 		public void TestEBay_sell_negotiation()
 		{
-			helper.GenerateAndAssert("SwagMock/sell_negotiation_v1_oas3.yaml", "AureliaResults/sell_negotiation.txt");
+			helper.GenerateAndAssert("SwagMock/sell_negotiation_v1_oas3.yaml", "AureliaResults/sell_negotiation.ts");
 		}
 
 		[Fact]
 		public void TestEBay_sell_marketing()
 		{
-			helper.GenerateAndAssert("SwagMock/sell_marketing_v1_oas3.json", "AureliaResults/sell_marketing.txt");
+			helper.GenerateAndAssert("SwagMock/sell_marketing_v1_oas3.json", "AureliaResults/sell_marketing.ts");
 		}
 
 		[Fact]
 		public void TestEBay_sell_metadata()
 		{
-			helper.GenerateAndAssert("SwagMock/sell_metadata_v1_oas3.json", "AureliaResults/sell_metadata.txt");
+			helper.GenerateAndAssert("SwagMock/sell_metadata_v1_oas3.json", "AureliaResults/sell_metadata.ts");
 		}
 
 		[Fact]
 		public void TestEBay_sell_recommendation()
 		{
-			helper.GenerateAndAssert("SwagMock/sell_recommendation_v1_oas3.yaml", "AureliaResults/sell_recommendation.txt");
+			helper.GenerateAndAssert("SwagMock/sell_recommendation_v1_oas3.yaml", "AureliaResults/sell_recommendation.ts");
 		}
 
 		[Fact]
 		public void TestRedocOpenApi()
 		{
-			helper.GenerateAndAssert("SwagMock/redocOpenApi200501.json", "AureliaResults/redocOpenApi200501.txt");
+			helper.GenerateAndAssert("SwagMock/redocOpenApi200501.json", "AureliaResults/redocOpenApi200501.ts");
 		}
 	}
 

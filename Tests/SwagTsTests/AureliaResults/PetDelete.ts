@@ -1,0 +1,22 @@
+import {HttpClient} from 'aurelia-fetch-client';
+import {autoinject} from 'aurelia-framework';
+export namespace MyNS {
+	@autoinject()
+	export class PetClient {
+		constructor(private http: HttpClient) {
+		}
+
+		/**
+		 * Deletes a pet
+		 * Delete pet/{petId}
+		 * @param {string} petId Pet id to delete
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 * @return {void} 
+		 */
+		DeletePet(petId: string): Promise<Response> {
+			return this.http.delete('pet/' + petId, {});
+		}
+	}
+
+}
+

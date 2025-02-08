@@ -1,0 +1,207 @@
+import { Injectable, Inject } from '@angular/core';
+import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
+import { Observable } from 'rxjs';
+export namespace MyNS {
+	export interface ApiResponse {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
+		code?: number | null;
+		type?: string | null;
+		message?: string | null;
+	}
+
+
+	/** A representation of a cat */
+	export interface Cat extends Pet {
+
+		/**
+		 * The measured skill for hunting
+		 * Required
+		 */
+		huntingSkill: CatHuntingSkill;
+	}
+
+	export enum CatHuntingSkill { clueless = 0, lazy = 1, adventurous = 2, aggressive = 3 }
+
+	export interface Category {
+
+		/** Category ID */
+		id?: string | null;
+
+		/**
+		 * Category name
+		 * Min length: 1
+		 */
+		name?: string | null;
+
+		/** Test Sub Category */
+		sub?: CategorySub;
+	}
+
+	export interface CategorySub {
+
+		/** Dumb Property */
+		prop1?: string | null;
+	}
+
+
+	/** A representation of a dog */
+	export interface Dog extends Pet {
+
+		/**
+		 * The size of the pack the dog is from
+		 * Required
+		 * Minimum: 1
+		 */
+		packSize: number;
+	}
+
+
+	/** A representation of a honey bee */
+	export interface HoneyBee extends Pet {
+
+		/**
+		 * Average amount of honey produced per day in ounces
+		 * Required
+		 * Type: double
+		 */
+		honeyPerDay: number;
+	}
+
+	export interface Order {
+
+		/** Order ID */
+		id?: string | null;
+
+		/** Pet ID */
+		petId?: string | null;
+
+		/** Minimum: 1 */
+		quantity?: number | null;
+
+		/** Estimated ship date */
+		shipDate?: Date | null;
+
+		/** Order Status */
+		status?: OrderStatus | null;
+
+		/** Indicates whenever order was completed or not */
+		complete?: boolean | null;
+
+		/** Unique Request Id */
+		requestId?: string | null;
+	}
+
+	export enum OrderStatus { placed = 0, approved = 1, delivered = 2 }
+
+	export interface Pet {
+
+		/** Pet ID */
+		id?: string | null;
+
+		/** Categories this pet belongs to */
+		category?: Category;
+
+		/**
+		 * The name given to a pet
+		 * Required
+		 */
+		name: string;
+
+		/**
+		 * The list of URL to a cute photos featuring pet
+		 * Required
+		 * Maximum items: 20
+		 */
+		photoUrls: Array<string>;
+		friend?: Pet;
+
+		/**
+		 * Tags attached to the pet
+		 * Minimum items: 1
+		 */
+		tags?: Array<Tag>;
+
+		/** Pet status in the store */
+		status?: PetStatus | null;
+
+		/** Type of a pet */
+		petType?: string | null;
+	}
+
+	export interface Tag {
+
+		/** Tag ID */
+		id?: string | null;
+
+		/**
+		 * Tag name
+		 * Min length: 1
+		 */
+		name?: string | null;
+	}
+
+	export enum PetStatus { available = 0, pending = 1, sold = 2 }
+
+	export interface User {
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id?: string | null;
+		pet?: Pet;
+
+		/**
+		 * User supplied username
+		 * Min length: 4
+		 */
+		username?: string | null;
+
+		/**
+		 * User first name
+		 * Min length: 1
+		 */
+		firstName?: string | null;
+
+		/**
+		 * User last name
+		 * Min length: 1
+		 */
+		lastName?: string | null;
+
+		/** User email address */
+		email?: string | null;
+
+		/**
+		 * User password, MUST contain a mix of upper and lower case letters, as well as digits
+		 * Min length: 8
+		 */
+		password?: string | null;
+
+		/** User phone number in international format */
+		phone?: string | null;
+
+		/**
+		 * User status
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
+		userStatus?: number | null;
+	}
+
+	@Injectable()
+	export class MyClient {
+		constructor(@Inject('baseUri') private baseUri: string = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + '/', private http: HttpClient) {
+		}
+
+		/**
+		 * Finds Pets by tags
+		 * Multiple tags can be provided with comma separated strings. Use tag1, tag2, tag3 for testing.
+		 * Get pet/findByTags
+		 * @param {Array<string>} tags Tags to filter by
+		 * @return {Array<Pet>} successful operation
+		 */
+		FindPetsByTags(tags: Array<string>): Observable<Array<Pet>> {
+			return this.http.get<Array<Pet>>(this.baseUri + 'pet/findByTags?' + tags.map(z => `tags=${encodeURIComponent(z)}`).join('&'), {});
+		}
+	}
+
+}
+

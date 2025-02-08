@@ -11,12 +11,12 @@ namespace Fonlow.TypeScriptCodeDom
 	public class CodeObjectHelperForNg2FormGroup : CodeObjectHelper
 	{
 		readonly CodeNamespaceCollection codeNamespaceCollection;
-		readonly bool careForDateOnly;
+		readonly bool ngDateOnlyFormControlEnabled;
 
-		public CodeObjectHelperForNg2FormGroup(CodeNamespaceCollection codeNamespaceCollection, bool careForDateOnly = false) : base(true)
+		public CodeObjectHelperForNg2FormGroup(CodeNamespaceCollection codeNamespaceCollection, bool ngDateOnlyFormControlEnabled = false) : base(true)
 		{
 			this.codeNamespaceCollection = codeNamespaceCollection;
-			this.careForDateOnly = careForDateOnly;
+			this.ngDateOnlyFormControlEnabled = ngDateOnlyFormControlEnabled;
 		}
 
 		/// <summary>
@@ -210,6 +210,7 @@ namespace Fonlow.TypeScriptCodeDom
 			bool isFieldDateOnly = false;
 			var customAttributes = codeMemberField.CustomAttributes;
 			var fieldName = codeMemberField.Name.EndsWith('?') ? codeMemberField.Name.Substring(0, codeMemberField.Name.Length - 1) : codeMemberField.Name;
+			var tsTypeName = RefineAngularFormControlTypeName(codeMemberField);
 			FieldTypeInfo fieldTypeInfo = codeMemberField.Type.UserData[UserDataKeys.FieldTypeInfo] as FieldTypeInfo;
 			if (fieldTypeInfo.ClrType == typeof(DateOnly) || fieldTypeInfo.ClrType == typeof(DateOnly?))
 			{
@@ -259,11 +260,11 @@ namespace Fonlow.TypeScriptCodeDom
 				Console.WriteLine();
 
 				var text = String.Join(", ", validatorList);
-				var tsTypeName = RefineAngularFormControlTypeName(codeMemberField);
+				
 
-				if (isFieldDateOnly && careForDateOnly)
+				if (isFieldDateOnly && ngDateOnlyFormControlEnabled)
 				{
-					return $"{fieldName}: CreateDateOnlyFormControl()";
+					return $"{fieldName}: CreateDateOnlyFormControl()"; // DateOnly field is generally with a date picker component, no validator expected? Until someone find a def with validation rules.
 				}
 				else
 				{
@@ -273,8 +274,14 @@ namespace Fonlow.TypeScriptCodeDom
 			}
 			else
 			{
-				var tsTypeName = RefineAngularFormControlTypeName(codeMemberField);
-				return $"{fieldName}: new FormControl<{tsTypeName}>(undefined)";
+				if (isFieldDateOnly && ngDateOnlyFormControlEnabled)
+				{
+					return $"{fieldName}: CreateDateOnlyFormControl()";
+				}
+				else
+				{
+					return $"{fieldName}: new FormControl<{tsTypeName}>(undefined)";
+				}
 			}
 		}
 

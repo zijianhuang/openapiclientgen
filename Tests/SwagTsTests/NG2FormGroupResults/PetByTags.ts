@@ -1,0 +1,459 @@
+import { Injectable, Inject } from '@angular/core';
+import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+
+function CreateDateOnlyFormControl(){
+	const fc = new FormControl<any | null | undefined>(undefined);
+	fc.valueChanges.subscribe(v=>{
+		if (v && v instanceof Date){
+			fc.setValue(v.toLocaleDateString("sv").substring(0, 10));
+		}
+	});
+
+	return fc;
+}
+
+export namespace MyNS {
+	export interface ApiResponse {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
+		code?: number | null;
+		type?: string | null;
+		message?: string | null;
+	}
+	export interface ApiResponseFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
+		code: FormControl<number | null | undefined>,
+		type: FormControl<string | null | undefined>,
+		message: FormControl<string | null | undefined>,
+	}
+	export function CreateApiResponseFormGroup() {
+		return new FormGroup<ApiResponseFormProperties>({
+			code: new FormControl<number | null | undefined>(undefined),
+			type: new FormControl<string | null | undefined>(undefined),
+			message: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
+
+	/** A representation of a cat */
+	export interface Cat extends Pet {
+
+		/**
+		 * The measured skill for hunting
+		 * Required
+		 */
+		huntingSkill: CatHuntingSkill;
+	}
+
+	/** A representation of a cat */
+	export interface CatFormProperties extends PetFormProperties {
+
+		/**
+		 * The measured skill for hunting
+		 * Required
+		 */
+		huntingSkill: FormControl<CatHuntingSkill | null | undefined>,
+	}
+	export function CreateCatFormGroup() {
+		return new FormGroup<CatFormProperties>({
+			id: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			status: new FormControl<PetStatus | null | undefined>(undefined),
+			petType: new FormControl<string | null | undefined>(undefined),
+			huntingSkill: new FormControl<CatHuntingSkill | null | undefined>(undefined, [Validators.required]),
+		});
+
+	}
+
+	export enum CatHuntingSkill { clueless = 0, lazy = 1, adventurous = 2, aggressive = 3 }
+
+	export interface Category {
+
+		/** Category ID */
+		id?: string | null;
+
+		/**
+		 * Category name
+		 * Min length: 1
+		 */
+		name?: string | null;
+
+		/** Test Sub Category */
+		sub?: CategorySub;
+	}
+	export interface CategoryFormProperties {
+
+		/** Category ID */
+		id: FormControl<string | null | undefined>,
+
+		/**
+		 * Category name
+		 * Min length: 1
+		 */
+		name: FormControl<string | null | undefined>,
+	}
+	export function CreateCategoryFormGroup() {
+		return new FormGroup<CategoryFormProperties>({
+			id: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
+		});
+
+	}
+
+	export interface CategorySub {
+
+		/** Dumb Property */
+		prop1?: string | null;
+	}
+	export interface CategorySubFormProperties {
+
+		/** Dumb Property */
+		prop1: FormControl<string | null | undefined>,
+	}
+	export function CreateCategorySubFormGroup() {
+		return new FormGroup<CategorySubFormProperties>({
+			prop1: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
+
+	/** A representation of a dog */
+	export interface Dog extends Pet {
+
+		/**
+		 * The size of the pack the dog is from
+		 * Required
+		 * Minimum: 1
+		 */
+		packSize: number;
+	}
+
+	/** A representation of a dog */
+	export interface DogFormProperties extends PetFormProperties {
+
+		/**
+		 * The size of the pack the dog is from
+		 * Required
+		 * Minimum: 1
+		 */
+		packSize: FormControl<number | null | undefined>,
+	}
+	export function CreateDogFormGroup() {
+		return new FormGroup<DogFormProperties>({
+			id: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			status: new FormControl<PetStatus | null | undefined>(undefined),
+			petType: new FormControl<string | null | undefined>(undefined),
+			packSize: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(1)]),
+		});
+
+	}
+
+
+	/** A representation of a honey bee */
+	export interface HoneyBee extends Pet {
+
+		/**
+		 * Average amount of honey produced per day in ounces
+		 * Required
+		 * Type: double
+		 */
+		honeyPerDay: number;
+	}
+
+	/** A representation of a honey bee */
+	export interface HoneyBeeFormProperties extends PetFormProperties {
+
+		/**
+		 * Average amount of honey produced per day in ounces
+		 * Required
+		 * Type: double
+		 */
+		honeyPerDay: FormControl<number | null | undefined>,
+	}
+	export function CreateHoneyBeeFormGroup() {
+		return new FormGroup<HoneyBeeFormProperties>({
+			id: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			status: new FormControl<PetStatus | null | undefined>(undefined),
+			petType: new FormControl<string | null | undefined>(undefined),
+			honeyPerDay: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+		});
+
+	}
+
+	export interface Order {
+
+		/** Order ID */
+		id?: string | null;
+
+		/** Pet ID */
+		petId?: string | null;
+
+		/** Minimum: 1 */
+		quantity?: number | null;
+
+		/** Estimated ship date */
+		shipDate?: Date | null;
+
+		/** Order Status */
+		status?: OrderStatus | null;
+
+		/** Indicates whenever order was completed or not */
+		complete?: boolean | null;
+
+		/** Unique Request Id */
+		requestId?: string | null;
+	}
+	export interface OrderFormProperties {
+
+		/** Order ID */
+		id: FormControl<string | null | undefined>,
+
+		/** Pet ID */
+		petId: FormControl<string | null | undefined>,
+
+		/** Minimum: 1 */
+		quantity: FormControl<number | null | undefined>,
+
+		/** Estimated ship date */
+		shipDate: FormControl<Date | null | undefined>,
+
+		/** Order Status */
+		status: FormControl<OrderStatus | null | undefined>,
+
+		/** Indicates whenever order was completed or not */
+		complete: FormControl<boolean | null | undefined>,
+
+		/** Unique Request Id */
+		requestId: FormControl<string | null | undefined>,
+	}
+	export function CreateOrderFormGroup() {
+		return new FormGroup<OrderFormProperties>({
+			id: new FormControl<string | null | undefined>(undefined),
+			petId: new FormControl<string | null | undefined>(undefined),
+			quantity: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
+			shipDate: new FormControl<Date | null | undefined>(undefined),
+			status: new FormControl<OrderStatus | null | undefined>(undefined),
+			complete: new FormControl<boolean | null | undefined>(undefined),
+			requestId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
+	export enum OrderStatus { placed = 0, approved = 1, delivered = 2 }
+
+	export interface Pet {
+
+		/** Pet ID */
+		id?: string | null;
+
+		/** Categories this pet belongs to */
+		category?: Category;
+
+		/**
+		 * The name given to a pet
+		 * Required
+		 */
+		name: string;
+
+		/**
+		 * The list of URL to a cute photos featuring pet
+		 * Required
+		 * Maximum items: 20
+		 */
+		photoUrls: Array<string>;
+		friend?: Pet;
+
+		/**
+		 * Tags attached to the pet
+		 * Minimum items: 1
+		 */
+		tags?: Array<Tag>;
+
+		/** Pet status in the store */
+		status?: PetStatus | null;
+
+		/** Type of a pet */
+		petType?: string | null;
+	}
+	export interface PetFormProperties {
+
+		/** Pet ID */
+		id: FormControl<string | null | undefined>,
+
+		/**
+		 * The name given to a pet
+		 * Required
+		 */
+		name: FormControl<string | null | undefined>,
+
+		/** Pet status in the store */
+		status: FormControl<PetStatus | null | undefined>,
+
+		/** Type of a pet */
+		petType: FormControl<string | null | undefined>,
+	}
+	export function CreatePetFormGroup() {
+		return new FormGroup<PetFormProperties>({
+			id: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			status: new FormControl<PetStatus | null | undefined>(undefined),
+			petType: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
+	export interface Tag {
+
+		/** Tag ID */
+		id?: string | null;
+
+		/**
+		 * Tag name
+		 * Min length: 1
+		 */
+		name?: string | null;
+	}
+	export interface TagFormProperties {
+
+		/** Tag ID */
+		id: FormControl<string | null | undefined>,
+
+		/**
+		 * Tag name
+		 * Min length: 1
+		 */
+		name: FormControl<string | null | undefined>,
+	}
+	export function CreateTagFormGroup() {
+		return new FormGroup<TagFormProperties>({
+			id: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
+		});
+
+	}
+
+	export enum PetStatus { available = 0, pending = 1, sold = 2 }
+
+	export interface User {
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id?: string | null;
+		pet?: Pet;
+
+		/**
+		 * User supplied username
+		 * Min length: 4
+		 */
+		username?: string | null;
+
+		/**
+		 * User first name
+		 * Min length: 1
+		 */
+		firstName?: string | null;
+
+		/**
+		 * User last name
+		 * Min length: 1
+		 */
+		lastName?: string | null;
+
+		/** User email address */
+		email?: string | null;
+
+		/**
+		 * User password, MUST contain a mix of upper and lower case letters, as well as digits
+		 * Min length: 8
+		 */
+		password?: string | null;
+
+		/** User phone number in international format */
+		phone?: string | null;
+
+		/**
+		 * User status
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
+		userStatus?: number | null;
+	}
+	export interface UserFormProperties {
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id: FormControl<string | null | undefined>,
+
+		/**
+		 * User supplied username
+		 * Min length: 4
+		 */
+		username: FormControl<string | null | undefined>,
+
+		/**
+		 * User first name
+		 * Min length: 1
+		 */
+		firstName: FormControl<string | null | undefined>,
+
+		/**
+		 * User last name
+		 * Min length: 1
+		 */
+		lastName: FormControl<string | null | undefined>,
+
+		/** User email address */
+		email: FormControl<string | null | undefined>,
+
+		/**
+		 * User password, MUST contain a mix of upper and lower case letters, as well as digits
+		 * Min length: 8
+		 */
+		password: FormControl<string | null | undefined>,
+
+		/** User phone number in international format */
+		phone: FormControl<string | null | undefined>,
+
+		/**
+		 * User status
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
+		userStatus: FormControl<number | null | undefined>,
+	}
+	export function CreateUserFormGroup() {
+		return new FormGroup<UserFormProperties>({
+			id: new FormControl<string | null | undefined>(undefined),
+			username: new FormControl<string | null | undefined>(undefined, [Validators.minLength(4)]),
+			firstName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
+			lastName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
+			email: new FormControl<string | null | undefined>(undefined),
+			password: new FormControl<string | null | undefined>(undefined, [Validators.minLength(8), Validators.pattern('/(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])/')]),
+			phone: new FormControl<string | null | undefined>(undefined, [Validators.pattern('/^\+(?:[0-9]-?){6,14}[0-9]$/')]),
+			userStatus: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
+	@Injectable()
+	export class MyClient {
+		constructor(@Inject('baseUri') private baseUri: string = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + '/', private http: HttpClient) {
+		}
+
+		/**
+		 * Finds Pets by tags
+		 * Multiple tags can be provided with comma separated strings. Use tag1, tag2, tag3 for testing.
+		 * Get pet/findByTags
+		 * @param {Array<string>} tags Tags to filter by
+		 * @return {Array<Pet>} successful operation
+		 */
+		FindPetsByTags(tags: Array<string>): Observable<Array<Pet>> {
+			return this.http.get<Array<Pet>>(this.baseUri + 'pet/findByTags?' + tags.map(z => `tags=${encodeURIComponent(z)}`).join('&'), {});
+		}
+	}
+
+}
+
