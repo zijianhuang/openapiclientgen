@@ -498,5 +498,5 @@ For more details, especially the contexts of using these settings, please check 
 In addition to Wiki, please refer to these articles:
 
 
-* [OpenApiClientGen to Generate Strongly Typed Client API Codes Based on Open API Definitions](https://www.codeproject.com/Articles/5262184/OpenApiClientGen-to-Generate-Strongly-Typed-Client)
-* [Generate Typed Forms of Angular Reactive Forms from Swagger / OpenAPI definitions](https://www.codeproject.com/Articles/5375552/Generate-Typed-Forms-of-Angular-Reactive-Forms-fro)
+* [OpenApiClientGen to Generate Strongly Typed Client API Codes Based on Open API Definitions](https://www.codeproject.com/Articles/5262184/OpenApiClientGen-to-Generate-Strongly-Typed-Client) / [Local Copy](Docs/Articles//OpenApiClientGen%20to%20Generate%20Strongly%20Typed%20Client%20API%20Codes%20Based%20on%20Open%20API%20Definitions%20-%20CodeProject.html)
+* [Generate Typed Forms of Angular Reactive Forms from Swagger / OpenAPI definitions](https://www.codeproject.com/Articles/5375552/Generate-Typed-Forms-of-Angular-Reactive-Forms-fro) / [Local Copy](Docs/Articles/Generate%20Typed%20Forms%20of%20Angular%20Reactive%20Forms%20from%20Swagger%20_%20OpenAPI%20definitions%20-%20CodeProject.html)
