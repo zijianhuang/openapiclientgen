@@ -373,7 +373,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 						new()
 						{
 							Name = memberName,
-							InitExpression = new CodePrimitiveExpression(k) ,
+							InitExpression = new CodePrimitiveExpression(k),
 						}
 						:
 						new()
@@ -463,6 +463,14 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			bool isPrimitiveType = TypeRefHelper.IsPrimitiveTypeOfOA(primitivePropertyType);
 			bool isRequired = schema.Required.Contains(refId); //compare with the original key
 			string defaultValue = GetDefaultValue(propertySchema);
+			if (!string.IsNullOrEmpty(defaultValue) && settings.SpecialTokens != null) // for open ai and alike, with something like <|endoftext|>
+			{
+				if (settings.SpecialTokens.TryGetValue(defaultValue, out string found))
+				{
+					defaultValue = found;
+				}
+			}
+
 			CodeMemberField clientProperty;
 
 			if (String.IsNullOrEmpty(primitivePropertyType))
@@ -505,7 +513,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 						}
 						else
 						{
-							clientProperty = CreateProperty(r.Item1, propertyName, defaultValue);
+							clientProperty = CreateProperty(r.Item1, propertyName, defaultValue); //defaultValue could be enum
 						}
 					}
 				}
@@ -618,7 +626,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					string[] enumMemberNames;
 					try
 					{
-						enumMemberNames =GetStringsFromEnumList(propertySchema.Enum);
+						enumMemberNames = GetStringsFromEnumList(propertySchema.Enum);
 
 						// It's also needed here to provide enums in correct case for the FindEnumDeclaration function
 						if (settings.UsePascalCase)

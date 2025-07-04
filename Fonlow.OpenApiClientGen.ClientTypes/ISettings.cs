@@ -1,4 +1,6 @@
-﻿namespace Fonlow.OpenApiClientGen.ClientTypes
+﻿using System.Collections.Generic;
+
+namespace Fonlow.OpenApiClientGen.ClientTypes
 {
 	public interface ISettings
 	{
@@ -37,5 +39,7 @@
 		bool UsePascalCase { get; set; }
 		bool UseSystemTextJson { get; set; }
 		bool SortTypesMembersAndMethods { get; set; }
+
+		Dictionary<string, string> SpecialTokens { get; set; }
 	}
 }

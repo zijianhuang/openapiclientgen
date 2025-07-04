@@ -1,4 +1,6 @@
-﻿namespace Fonlow.OpenApiClientGen.ClientTypes
+﻿using System.Collections.Generic;
+
+namespace Fonlow.OpenApiClientGen.ClientTypes
 {
 	public enum ActionNameStrategy
 	{
@@ -240,6 +242,9 @@
 		/// When generating codes, sort types, member properties and methods by alphabetic order.
 		/// </summary>
 		public bool SortTypesMembersAndMethods { get; set; }
+
+		public Dictionary<string, string> SpecialTokens { get; set; }
+
 
 		/// <summary>
 		/// Meta for plugins that generate TypeScript/JavaScript codes.

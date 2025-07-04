@@ -468,6 +468,26 @@ namespace SwagTests
 			GenerateAndAssertAndBuild("SwagMock/googleBooksOpenApi.yaml", "Results/googleBooksOpenApi.cs");
 		}
 
+		[Fact]
+		public void TestOpenAi()
+		{
+			GenerateAndAssertAndBuild("SwagMock/openaiapi.yaml", "Results/openaiapi.cs", new Settings()
+			{
+				ClientNamespace = "MyNS",
+				ContainerClassName = "Misc",
+				ContainerNameStrategy = ContainerNameStrategy.None,
+				ActionNameStrategy = ActionNameStrategy.Default,
+				GenerateBothAsyncAndSync = true,
+				//DecorateDataModelWithSerializable = true,
+				UseEnsureSuccessStatusCodeEx = true,
+				DataAnnotationsEnabled = true,
+				DataAnnotationsToComments = true,
+				CancellationTokenEnabled = true,
+				HandleHttpRequestHeaders = true,
+				SpecialTokens= new System.Collections.Generic.Dictionary<string, string>{ ["<|endoftext|>"] = "\"\\r\\n\"" }
+			});
+		}
+
 		[Fact(Skip = "Not sure")]
 		public void TestAzureSecurityInsights()
 		{
