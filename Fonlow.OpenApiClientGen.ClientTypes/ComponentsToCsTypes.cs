@@ -462,7 +462,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			string primitivePropertyType = propertySchema.Type;
 			bool isPrimitiveType = TypeRefHelper.IsPrimitiveTypeOfOA(primitivePropertyType);
 			bool isRequired = schema.Required.Contains(refId); //compare with the original key
-			if (refId== "batch_size" || refId== "eagerness")
+			if (refId == "batch_size" || refId == "eagerness")
 			{
 				Console.WriteLine();
 			}
@@ -804,6 +804,9 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 			if (s.Default is OpenApiString stringValue)
 			{
+				if (stringValue.Value== "dall-e-2"){
+					Console.WriteLine();
+				}
 				if (s.Enum == null || s.Enum.Count == 0) //Sometimes people make make a number default with value string. And this mistake seems common. Better to tolerate.
 				{
 					if (s.Type == "string")
@@ -820,11 +823,22 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 						return "\"" + EscapeString(stringValue.Value) + "\"";
 					}
 
-					if (s.AllOf != null && s.AllOf.Count > 0)
+					if (s.AllOf.Count > 0)
 					{
 						var typeRef = s.AllOf[0].Reference.Id;
 						var refinedTypeName = Renamer.RefineTypeName(typeRef, "");
 						return $"{refinedTypeName}.{Renamer.RefineEnumValue(stringValue.Value)}";
+					}
+
+					if (s.AnyOf.Count > 0)
+					{
+						if (s.AnyOf[0].Type == "string")
+						{
+							if (!stringValue.Value.StartsWith('"'))
+							{
+								return "\"" + stringValue.Value + "\"";
+							}
+						}
 					}
 
 					//if (s.OneOf != null && s.OneOf.Count > 0) //https://swagger.io/docs/specification/v3_0/data-models/oneof-anyof-allof-not/
