@@ -303,6 +303,11 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 							arrayCodeTypeReference = new CodeTypeReference(aliasTypeName);
 							n = propertyName;
 						}
+						else if (propertySchema.Items?.OneOf.Count > 0)
+						{
+							arrayCodeTypeReference = new CodeTypeReference("System.Object[]");
+							n = propertyName;
+						}
 						else
 						{
 							Tuple<CodeTypeReference, string> r = CreateArrayCodeTypeReference(propertySchema, typeDeclaration.Name, propertyName, currentTypeName, ns);

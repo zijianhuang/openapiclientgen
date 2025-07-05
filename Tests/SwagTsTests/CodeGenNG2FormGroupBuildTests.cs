@@ -164,6 +164,27 @@ namespace SwagTests
 			});
 		}
 
+		//[Fact(Skip ="before they fix the bugs and defects")]
+		[Fact]
+		public void TestOpenAi()
+		{
+			helper.GenerateAndAssertAndBuild("SwagMock/openaiapi.yaml", "NG2FormGroupResults/openaiapi.ts", new Settings()
+			{
+				ClientNamespace = "MyNS",
+				ContainerClassName = "MyClient",
+				ContainerNameStrategy = ContainerNameStrategy.None,
+				ActionNameStrategy = ActionNameStrategy.Default,
+				GenerateBothAsyncAndSync = true,
+				//DecorateDataModelWithSerializable = true,
+				UseEnsureSuccessStatusCodeEx = true,
+				DataAnnotationsEnabled = true,
+				DataAnnotationsToComments = true,
+				CancellationTokenEnabled = true,
+				HandleHttpRequestHeaders = true,
+				SpecialTokens = new System.Collections.Generic.Dictionary<string, string> { ["<|endoftext|>"] = "\"\\r\\n\"" }
+			});
+		}
+
 		[Fact]
 		public void TestAir()
 		{
