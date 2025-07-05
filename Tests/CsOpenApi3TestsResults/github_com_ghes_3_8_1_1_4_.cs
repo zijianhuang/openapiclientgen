@@ -13518,10 +13518,11 @@ namespace MyNS
 		/// <summary>
 		/// Labels to associate with this issue; pass one or more label names to replace the set of labels on this issue; send an empty array to clear all labels from the issue; note that the labels are silently dropped for users without push access to the repository
 		/// Required
+		/// Array member types: , 
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="labels")]
-		public string[] Labels { get; set; }
+		public object[] Labels { get; set; }
 		
 		/// <summary>
 		/// Required
@@ -18591,10 +18592,11 @@ namespace MyNS
 		/// <summary>
 		/// Labels to associate with this issue; pass one or more label names to replace the set of labels on this issue; send an empty array to clear all labels from the issue; note that the labels are silently dropped for users without push access to the repository
 		/// Required
+		/// Array member types: , 
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="labels")]
-		public string[] Labels { get; set; }
+		public object[] Labels { get; set; }
 		
 		/// <summary>
 		/// Required
@@ -88546,10 +88548,11 @@ namespace MyNS
 		
 		/// <summary>
 		/// Required
+		/// Array member types: , 
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="requested_reviewers")]
-		public string[] Requested_reviewers { get; set; }
+		public object[] Requested_reviewers { get; set; }
 		
 		/// <summary>
 		/// Required
@@ -91769,10 +91772,11 @@ namespace MyNS
 		
 		/// <summary>
 		/// Required
+		/// Array member types: , 
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="requested_reviewers")]
-		public string[] Requested_reviewers { get; set; }
+		public object[] Requested_reviewers { get; set; }
 		
 		/// <summary>
 		/// Required
@@ -94988,10 +94992,11 @@ namespace MyNS
 		
 		/// <summary>
 		/// Required
+		/// Array member types: , 
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="requested_reviewers")]
-		public string[] Requested_reviewers { get; set; }
+		public object[] Requested_reviewers { get; set; }
 		
 		/// <summary>
 		/// Required
@@ -98197,10 +98202,11 @@ namespace MyNS
 		
 		/// <summary>
 		/// Required
+		/// Array member types: , 
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="requested_reviewers")]
-		public string[] Requested_reviewers { get; set; }
+		public object[] Requested_reviewers { get; set; }
 		
 		/// <summary>
 		/// Required
@@ -101382,10 +101388,11 @@ namespace MyNS
 		
 		/// <summary>
 		/// Required
+		/// Array member types: , 
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="requested_reviewers")]
-		public string[] Requested_reviewers { get; set; }
+		public object[] Requested_reviewers { get; set; }
 		
 		/// <summary>
 		/// Required
@@ -104571,10 +104578,11 @@ namespace MyNS
 		
 		/// <summary>
 		/// Required
+		/// Array member types: , 
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="requested_reviewers")]
-		public string[] Requested_reviewers { get; set; }
+		public object[] Requested_reviewers { get; set; }
 		
 		/// <summary>
 		/// Required
@@ -107863,10 +107871,11 @@ namespace MyNS
 		
 		/// <summary>
 		/// Required
+		/// Array member types: , 
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="requested_reviewers")]
-		public string[] Requested_reviewers { get; set; }
+		public object[] Requested_reviewers { get; set; }
 		
 		/// <summary>
 		/// Required
@@ -111131,10 +111140,11 @@ namespace MyNS
 		
 		/// <summary>
 		/// Required
+		/// Array member types: , 
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="requested_reviewers")]
-		public string[] Requested_reviewers { get; set; }
+		public object[] Requested_reviewers { get; set; }
 		
 		/// <summary>
 		/// Required
@@ -114340,10 +114350,11 @@ namespace MyNS
 		
 		/// <summary>
 		/// Required
+		/// Array member types: , 
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="requested_reviewers")]
-		public string[] Requested_reviewers { get; set; }
+		public object[] Requested_reviewers { get; set; }
 		
 		/// <summary>
 		/// Required
@@ -117547,10 +117558,11 @@ namespace MyNS
 		
 		/// <summary>
 		/// Required
+		/// Array member types: , 
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="requested_reviewers")]
-		public string[] Requested_reviewers { get; set; }
+		public object[] Requested_reviewers { get; set; }
 		
 		/// <summary>
 		/// Required
@@ -120756,10 +120768,11 @@ namespace MyNS
 		
 		/// <summary>
 		/// Required
+		/// Array member types: , 
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="requested_reviewers")]
-		public string[] Requested_reviewers { get; set; }
+		public object[] Requested_reviewers { get; set; }
 		
 		/// <summary>
 		/// Required
@@ -123948,10 +123961,11 @@ namespace MyNS
 		
 		/// <summary>
 		/// Required
+		/// Array member types: , 
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="requested_reviewers")]
-		public string[] Requested_reviewers { get; set; }
+		public object[] Requested_reviewers { get; set; }
 		
 		/// <summary>
 		/// Required
@@ -127139,10 +127153,11 @@ namespace MyNS
 		
 		/// <summary>
 		/// Required
+		/// Array member types: , 
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="requested_reviewers")]
-		public string[] Requested_reviewers { get; set; }
+		public object[] Requested_reviewers { get; set; }
 		
 		/// <summary>
 		/// Required
@@ -130705,10 +130720,11 @@ namespace MyNS
 		
 		/// <summary>
 		/// Required
+		/// Array member types: , 
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="requested_reviewers")]
-		public string[] Requested_reviewers { get; set; }
+		public object[] Requested_reviewers { get; set; }
 		
 		/// <summary>
 		/// Required
@@ -134213,10 +134229,11 @@ namespace MyNS
 		
 		/// <summary>
 		/// Required
+		/// Array member types: , 
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="requested_reviewers")]
-		public string[] Requested_reviewers { get; set; }
+		public object[] Requested_reviewers { get; set; }
 		
 		/// <summary>
 		/// Required
@@ -137751,10 +137768,11 @@ namespace MyNS
 		
 		/// <summary>
 		/// Required
+		/// Array member types: , 
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="requested_reviewers")]
-		public string[] Requested_reviewers { get; set; }
+		public object[] Requested_reviewers { get; set; }
 		
 		/// <summary>
 		/// Required
@@ -140842,10 +140860,11 @@ namespace MyNS
 		
 		/// <summary>
 		/// Required
+		/// Array member types: , 
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="requested_reviewers")]
-		public string[] Requested_reviewers { get; set; }
+		public object[] Requested_reviewers { get; set; }
 		
 		/// <summary>
 		/// Required
@@ -144173,10 +144192,11 @@ namespace MyNS
 		
 		/// <summary>
 		/// Required
+		/// Array member types: , 
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="requested_reviewers")]
-		public string[] Requested_reviewers { get; set; }
+		public object[] Requested_reviewers { get; set; }
 		
 		/// <summary>
 		/// Required
@@ -147364,10 +147384,11 @@ namespace MyNS
 		
 		/// <summary>
 		/// Required
+		/// Array member types: , 
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="requested_reviewers")]
-		public string[] Requested_reviewers { get; set; }
+		public object[] Requested_reviewers { get; set; }
 		
 		/// <summary>
 		/// Required
@@ -150660,10 +150681,11 @@ namespace MyNS
 		
 		/// <summary>
 		/// Required
+		/// Array member types: , 
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="requested_reviewers")]
-		public string[] Requested_reviewers { get; set; }
+		public object[] Requested_reviewers { get; set; }
 		
 		/// <summary>
 		/// Required
@@ -154112,10 +154134,11 @@ namespace MyNS
 		
 		/// <summary>
 		/// Required
+		/// Array member types: , 
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="requested_reviewers")]
-		public string[] Requested_reviewers { get; set; }
+		public object[] Requested_reviewers { get; set; }
 		
 		/// <summary>
 		/// Required
@@ -157619,10 +157642,11 @@ namespace MyNS
 		
 		/// <summary>
 		/// Required
+		/// Array member types: , 
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="requested_reviewers")]
-		public string[] Requested_reviewers { get; set; }
+		public object[] Requested_reviewers { get; set; }
 		
 		/// <summary>
 		/// Required
@@ -160897,10 +160921,11 @@ namespace MyNS
 		
 		/// <summary>
 		/// Required
+		/// Array member types: , 
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="requested_reviewers")]
-		public string[] Requested_reviewers { get; set; }
+		public object[] Requested_reviewers { get; set; }
 		
 		/// <summary>
 		/// Required
@@ -164165,10 +164190,11 @@ namespace MyNS
 		
 		/// <summary>
 		/// Required
+		/// Array member types: , 
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="requested_reviewers")]
-		public string[] Requested_reviewers { get; set; }
+		public object[] Requested_reviewers { get; set; }
 		
 		/// <summary>
 		/// Required
@@ -167367,10 +167393,11 @@ namespace MyNS
 		
 		/// <summary>
 		/// Required
+		/// Array member types: , 
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="requested_reviewers")]
-		public string[] Requested_reviewers { get; set; }
+		public object[] Requested_reviewers { get; set; }
 		
 		/// <summary>
 		/// Required
@@ -229855,9 +229882,10 @@ namespace MyNS
 		
 		/// <summary>
 		/// Labels to associate with this issue. _NOTE: Only users with push access can set labels for new issues. Labels are silently dropped otherwise._
+		/// Array member types: , 
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="labels")]
-		public string[] Labels { get; set; }
+		public object[] Labels { get; set; }
 		
 		[System.Runtime.Serialization.DataMember(Name="milestone")]
 		public string Milestone { get; set; }
@@ -229975,9 +230003,10 @@ namespace MyNS
 		
 		/// <summary>
 		/// Labels to associate with this issue. Pass one or more labels to _replace_ the set of labels on this issue. Send an empty array (`[]`) to clear all labels from the issue. Only users with push access can set labels for issues. Without push access to the repository, label changes are silently dropped.
+		/// Array member types: , 
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="labels")]
-		public string[] Labels { get; set; }
+		public object[] Labels { get; set; }
 		
 		[System.Runtime.Serialization.DataMember(Name="milestone")]
 		public string Milestone { get; set; }

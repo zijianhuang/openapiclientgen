@@ -73,6 +73,7 @@ namespace MyNS
 		
 		/// <summary>
 		/// List of Flux statements
+		/// Array member types: BadStatement, VariableAssignment, MemberAssignment, ExpressionStatement, ReturnStatement, OptionStatement, BuiltinStatement, TestStatement
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="body")]
 		public Statement[] Body { get; set; }
@@ -235,6 +236,7 @@ namespace MyNS
 		
 		/// <summary>
 		/// Elements of the array
+		/// Array member types: ArrayExpression, DictExpression, FunctionExpression, BinaryExpression, CallExpression, ConditionalExpression, LogicalExpression, MemberExpression, IndexExpression, ObjectExpression, ParenExpression, PipeExpression, UnaryExpression, BooleanLiteral, DateTimeLiteral, DurationLiteral, FloatLiteral, IntegerLiteral, PipeLiteral, RegexpLiteral, StringLiteral, UnsignedIntegerLiteral, Identifier
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="elements")]
 		public Expression[] Elements { get; set; }
@@ -1061,6 +1063,7 @@ namespace MyNS
 		
 		/// <summary>
 		/// Block body
+		/// Array member types: BadStatement, VariableAssignment, MemberAssignment, ExpressionStatement, ReturnStatement, OptionStatement, BuiltinStatement, TestStatement
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="body")]
 		public Statement[] Body { get; set; }
@@ -1309,6 +1312,7 @@ namespace MyNS
 		
 		/// <summary>
 		/// Function arguments
+		/// Array member types: ArrayExpression, DictExpression, FunctionExpression, BinaryExpression, CallExpression, ConditionalExpression, LogicalExpression, MemberExpression, IndexExpression, ObjectExpression, ParenExpression, PipeExpression, UnaryExpression, BooleanLiteral, DateTimeLiteral, DurationLiteral, FloatLiteral, IntegerLiteral, PipeLiteral, RegexpLiteral, StringLiteral, UnsignedIntegerLiteral, Identifier
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="arguments")]
 		public Expression[] Arguments { get; set; }
@@ -1829,6 +1833,9 @@ namespace MyNS
 	public class DBRPs
 	{
 		
+		/// <summary>
+		/// Array member types: , 
+		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="content")]
 		public DBRP[] Content { get; set; }
 	}
@@ -2884,6 +2891,7 @@ namespace MyNS
 		/// <summary>
 		/// List of individual layers shown in the map
 		/// Required
+		/// Array member types: GeoCircleViewLayer, GeoHeatMapViewLayer, GeoPointMapViewLayer, GeoTrackMapViewLayer
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="layers")]
@@ -7050,8 +7058,11 @@ namespace MyNS
 	public class TemplateApply
 	{
 		
+		/// <summary>
+		/// Array member types: , 
+		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="actions")]
-		public string[] Actions { get; set; }
+		public object[] Actions { get; set; }
 		
 		[System.Runtime.Serialization.DataMember(Name="dryRun")]
 		public System.Nullable<System.Boolean> DryRun { get; set; }
@@ -9131,6 +9142,9 @@ namespace MyNS
 		[System.Runtime.Serialization.DataMember(Name="tags")]
 		public ThresholdCheckTags[] ThresholdCheckTags { get; set; }
 		
+		/// <summary>
+		/// Array member types: GreaterThreshold, LesserThreshold, RangeThreshold
+		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="thresholds")]
 		public Threshold[] Thresholds { get; set; }
 		

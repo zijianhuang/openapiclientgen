@@ -1285,8 +1285,11 @@ namespace MyNS
 		[System.Runtime.Serialization.DataMember(Name="duration")]
 		public ClipVersionsDuration Duration { get; set; }
 		
+		/// <summary>
+		/// Array member types: , 
+		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="events")]
-		public string[] Events { get; set; }
+		public object[] Events { get; set; }
 		
 		[System.Runtime.Serialization.DataMember(Name="first_broadcast")]
 		public string First_broadcast { get; set; }
@@ -2245,8 +2248,11 @@ namespace MyNS
 		[System.Runtime.Serialization.DataMember(Name="duration")]
 		public VersionDuration Duration { get; set; }
 		
+		/// <summary>
+		/// Array member types: , 
+		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="events")]
-		public string[] Events { get; set; }
+		public object[] Events { get; set; }
 		
 		[System.Runtime.Serialization.DataMember(Name="first_broadcast")]
 		public string First_broadcast { get; set; }

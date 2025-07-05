@@ -625,9 +625,10 @@ namespace MyNS
 		
 		/// <summary>
 		/// Contains a message object that must reflect the current /messages resource. All parameters within the content object reflect the /messages docs.
+		/// Array member types: sendWithFailoverMessage, sendMessage
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="workflow")]
-		public string[] Workflow { get; set; }
+		public object[] Workflow { get; set; }
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]

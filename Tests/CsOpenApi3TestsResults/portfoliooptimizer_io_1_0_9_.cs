@@ -4344,11 +4344,12 @@ namespace MyNS
 		/// Required
 		/// Minimum items: 1
 		/// Maximum items: 4
+		/// Array member types: , 
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="assetHierarchicalClassification")]
 		[System.ComponentModel.DataAnnotations.Length(1, 4)]
-		public string[] AssetHierarchicalClassification { get; set; }
+		public object[] AssetHierarchicalClassification { get; set; }
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]

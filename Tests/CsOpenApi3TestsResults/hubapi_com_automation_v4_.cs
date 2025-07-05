@@ -130,8 +130,11 @@ namespace MyNS
 		[System.Runtime.Serialization.DataMember(Name="id")]
 		public string Id { get; set; }
 		
+		/// <summary>
+		/// Array member types: PublicSingleFieldDependency, PublicConditionalSingleFieldDependency
+		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="inputFieldDependencies")]
-		public string[] InputFieldDependencies { get; set; }
+		public object[] InputFieldDependencies { get; set; }
 		
 		/// <summary>
 		/// Required
@@ -1133,8 +1136,11 @@ namespace MyNS
 		[System.Runtime.Serialization.DataMember(Name="functions")]
 		public PublicActionFunction[] Functions { get; set; }
 		
+		/// <summary>
+		/// Array member types: PublicSingleFieldDependency, PublicConditionalSingleFieldDependency
+		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="inputFieldDependencies")]
-		public string[] InputFieldDependencies { get; set; }
+		public object[] InputFieldDependencies { get; set; }
 		
 		/// <summary>
 		/// Required
@@ -1203,8 +1209,11 @@ namespace MyNS
 		[System.Runtime.Serialization.DataMember(Name="executionRules")]
 		public PublicExecutionTranslationRule[] ExecutionRules { get; set; }
 		
+		/// <summary>
+		/// Array member types: PublicSingleFieldDependency, PublicConditionalSingleFieldDependency
+		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="inputFieldDependencies")]
-		public string[] InputFieldDependencies { get; set; }
+		public object[] InputFieldDependencies { get; set; }
 		
 		[System.Runtime.Serialization.DataMember(Name="inputFields")]
 		public InputFieldDefinition[] InputFields { get; set; }

@@ -891,13 +891,19 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					ss.Insert(0, typeComment);
 				}
 
+				if (memberSchema.Type == "array" && memberSchema.Items?.OneOf?.Count > 0)
+				{
+					var typeList = memberSchema.Items.OneOf.Select(d => d.Reference?.Id);
+					var typeListText = string.Join(", ", typeList);
+					ss.Add("Array member types: " + typeListText);
+				}
+
 				AddLinesAsSummaryDocComments(propertyField.Comments, ss);
 			}
 			else
 			{
 				AddDescriptionAsSummaryDocComments(propertyField.Comments, typeComment);
 			}
-
 		}
 
 		static void AddDescriptionAsSummaryDocComments(CodeCommentStatementCollection comments, string description)

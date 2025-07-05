@@ -9785,9 +9785,10 @@ namespace MyNS
 		
 		/// <summary>
 		/// Segment match conditions. There are multiple possible types, see the [condition types documentation](https://mailchimp.com/developer/marketing/docs/alternative-schemas/#segment-condition-schemas).
+		/// Array member types: , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , 
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="conditions")]
-		public string[] Conditions { get; set; }
+		public object[] Conditions { get; set; }
 		
 		/// <summary>
 		/// Segment match type.
@@ -10330,9 +10331,10 @@ namespace MyNS
 		
 		/// <summary>
 		/// Segment match conditions. There are multiple possible types, see the [condition types documentation](https://mailchimp.com/developer/marketing/docs/alternative-schemas/#segment-condition-schemas).
+		/// Array member types: , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , 
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="conditions")]
-		public string[] Conditions { get; set; }
+		public object[] Conditions { get; set; }
 		
 		/// <summary>
 		/// Segment match type.
@@ -10724,9 +10726,10 @@ namespace MyNS
 		
 		/// <summary>
 		/// Segment match conditions. There are multiple possible types, see the [condition types documentation](https://mailchimp.com/developer/marketing/docs/alternative-schemas/#segment-condition-schemas).
+		/// Array member types: , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , 
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="conditions")]
-		public string[] Conditions { get; set; }
+		public object[] Conditions { get; set; }
 		
 		/// <summary>
 		/// Segment match type.
@@ -11412,9 +11415,10 @@ namespace MyNS
 		
 		/// <summary>
 		/// Segment match conditions. There are multiple possible types, see the [condition types documentation](https://mailchimp.com/developer/marketing/docs/alternative-schemas/#segment-condition-schemas).
+		/// Array member types: , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , 
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="conditions")]
-		public string[] Conditions { get; set; }
+		public object[] Conditions { get; set; }
 		
 		/// <summary>
 		/// Segment match type.
@@ -11970,9 +11974,10 @@ namespace MyNS
 		
 		/// <summary>
 		/// Segment match conditions. There are multiple possible types, see the [condition types documentation](https://mailchimp.com/developer/marketing/docs/alternative-schemas/#segment-condition-schemas).
+		/// Array member types: , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , 
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="conditions")]
-		public string[] Conditions { get; set; }
+		public object[] Conditions { get; set; }
 		
 		/// <summary>
 		/// Segment match type.
@@ -12630,9 +12635,10 @@ namespace MyNS
 		
 		/// <summary>
 		/// Segment match conditions. There are multiple possible types, see the [condition types documentation](https://mailchimp.com/developer/marketing/docs/alternative-schemas/#segment-condition-schemas).
+		/// Array member types: , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , 
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="conditions")]
-		public string[] Conditions { get; set; }
+		public object[] Conditions { get; set; }
 		
 		/// <summary>
 		/// Segment match type.
@@ -15124,9 +15130,10 @@ namespace MyNS
 		
 		/// <summary>
 		/// Segment match conditions. There are multiple possible types, see the [condition types documentation](https://mailchimp.com/developer/marketing/docs/alternative-schemas/#segment-condition-schemas).
+		/// Array member types: , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , 
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="conditions")]
-		public string[] Conditions { get; set; }
+		public object[] Conditions { get; set; }
 		
 		/// <summary>
 		/// Segment match type.
@@ -15831,9 +15838,10 @@ namespace MyNS
 		
 		/// <summary>
 		/// Segment match conditions. There are multiple possible types, see the [condition types documentation](https://mailchimp.com/developer/marketing/docs/alternative-schemas/#segment-condition-schemas).
+		/// Array member types: , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , 
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="conditions")]
-		public string[] Conditions { get; set; }
+		public object[] Conditions { get; set; }
 		
 		/// <summary>
 		/// Segment match type.
@@ -16554,9 +16562,10 @@ namespace MyNS
 		
 		/// <summary>
 		/// Segment match conditions. There are multiple possible types, see the [condition types documentation](https://mailchimp.com/developer/marketing/docs/alternative-schemas/#segment-condition-schemas).
+		/// Array member types: , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , 
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="conditions")]
-		public string[] Conditions { get; set; }
+		public object[] Conditions { get; set; }
 		
 		/// <summary>
 		/// Segment match type.
@@ -17433,9 +17442,10 @@ namespace MyNS
 		
 		/// <summary>
 		/// Segment match conditions. There are multiple possible types, see the [condition types documentation](https://mailchimp.com/developer/marketing/docs/alternative-schemas/#segment-condition-schemas).
+		/// Array member types: , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , 
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="conditions")]
-		public string[] Conditions { get; set; }
+		public object[] Conditions { get; set; }
 		
 		/// <summary>
 		/// Segment match type.
@@ -18031,9 +18041,10 @@ namespace MyNS
 		
 		/// <summary>
 		/// Segment match conditions. There are multiple possible types, see the [condition types documentation](https://mailchimp.com/developer/marketing/docs/alternative-schemas/#segment-condition-schemas).
+		/// Array member types: , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , 
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="conditions")]
-		public string[] Conditions { get; set; }
+		public object[] Conditions { get; set; }
 		
 		/// <summary>
 		/// Segment match type.
@@ -18766,9 +18777,10 @@ namespace MyNS
 		
 		/// <summary>
 		/// Segment match conditions. There are multiple possible types, see the [condition types documentation](https://mailchimp.com/developer/marketing/docs/alternative-schemas/#segment-condition-schemas).
+		/// Array member types: , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , 
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="conditions")]
-		public string[] Conditions { get; set; }
+		public object[] Conditions { get; set; }
 		
 		/// <summary>
 		/// Segment match type.
@@ -19643,9 +19655,10 @@ namespace MyNS
 		
 		/// <summary>
 		/// Segment match conditions. There are multiple possible types, see the [condition types documentation](https://mailchimp.com/developer/marketing/docs/alternative-schemas/#segment-condition-schemas).
+		/// Array member types: , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , 
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="conditions")]
-		public string[] Conditions { get; set; }
+		public object[] Conditions { get; set; }
 		
 		/// <summary>
 		/// Segment match type.
@@ -20526,9 +20539,10 @@ namespace MyNS
 		
 		/// <summary>
 		/// Segment match conditions. There are multiple possible types, see the [condition types documentation](https://mailchimp.com/developer/marketing/docs/alternative-schemas/#segment-condition-schemas).
+		/// Array member types: , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , 
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="conditions")]
-		public string[] Conditions { get; set; }
+		public object[] Conditions { get; set; }
 		
 		/// <summary>
 		/// Segment match type.
@@ -37295,9 +37309,10 @@ namespace MyNS
 		
 		/// <summary>
 		/// Segment match conditions. There are multiple possible types, see the [condition types documentation](https://mailchimp.com/developer/marketing/docs/alternative-schemas/#segment-condition-schemas).
+		/// Array member types: , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , 
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="conditions")]
-		public string[] Conditions { get; set; }
+		public object[] Conditions { get; set; }
 		
 		/// <summary>
 		/// Segment match type.
@@ -46300,9 +46315,10 @@ namespace MyNS
 		
 		/// <summary>
 		/// An array of objects, each representing a contact event. There are multiple possible types, see the [activity schema documentation](https://mailchimp.com/developer/marketing/docs/alternative-schemas/#activity-schemas).
+		/// Array member types: , , , , , , , , , , , , , , , , 
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="activity")]
-		public string[] Activity { get; set; }
+		public object[] Activity { get; set; }
 		
 		/// <summary>
 		/// The MD5 hash of the lowercase version of the list member's email address.
@@ -48144,9 +48160,10 @@ namespace MyNS
 		
 		/// <summary>
 		/// Segment match conditions. There are multiple possible types, see the [condition types documentation](https://mailchimp.com/developer/marketing/docs/alternative-schemas/#segment-condition-schemas).
+		/// Array member types: , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , 
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="conditions")]
-		public string[] Conditions { get; set; }
+		public object[] Conditions { get; set; }
 		
 		/// <summary>
 		/// Match type.
@@ -48198,9 +48215,10 @@ namespace MyNS
 		
 		/// <summary>
 		/// Segment match conditions. There are multiple possible types, see the [condition types documentation](https://mailchimp.com/developer/marketing/docs/alternative-schemas/#segment-condition-schemas).
+		/// Array member types: , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , 
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="conditions")]
-		public string[] Conditions { get; set; }
+		public object[] Conditions { get; set; }
 		
 		/// <summary>
 		/// Match type.
@@ -48306,9 +48324,10 @@ namespace MyNS
 		
 		/// <summary>
 		/// Segment match conditions. There are multiple possible types, see the [condition types documentation](https://mailchimp.com/developer/marketing/docs/alternative-schemas/#segment-condition-schemas).
+		/// Array member types: , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , 
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="conditions")]
-		public string[] Conditions { get; set; }
+		public object[] Conditions { get; set; }
 		
 		/// <summary>
 		/// Match type.
@@ -48428,9 +48447,10 @@ namespace MyNS
 		
 		/// <summary>
 		/// Segment match conditions. There are multiple possible types, see the [condition types documentation](https://mailchimp.com/developer/marketing/docs/alternative-schemas/#segment-condition-schemas).
+		/// Array member types: , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , 
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="conditions")]
-		public string[] Conditions { get; set; }
+		public object[] Conditions { get; set; }
 		
 		/// <summary>
 		/// Match type.
@@ -48590,9 +48610,10 @@ namespace MyNS
 		
 		/// <summary>
 		/// Segment match conditions. There are multiple possible types, see the [condition types documentation](https://mailchimp.com/developer/marketing/docs/alternative-schemas/#segment-condition-schemas).
+		/// Array member types: , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , 
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="conditions")]
-		public string[] Conditions { get; set; }
+		public object[] Conditions { get; set; }
 		
 		/// <summary>
 		/// Match type.
@@ -50980,9 +51001,10 @@ namespace MyNS
 		
 		/// <summary>
 		/// Segment match conditions. There are multiple possible types, see the [condition types documentation](https://mailchimp.com/developer/marketing/docs/alternative-schemas/#segment-condition-schemas).
+		/// Array member types: , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , 
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="conditions")]
-		public string[] Conditions { get; set; }
+		public object[] Conditions { get; set; }
 		
 		/// <summary>
 		/// Segment match type.
@@ -52359,9 +52381,10 @@ namespace MyNS
 		
 		/// <summary>
 		/// Segment match conditions. There are multiple possible types, see the [condition types documentation](https://mailchimp.com/developer/marketing/docs/alternative-schemas/#segment-condition-schemas).
+		/// Array member types: , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , 
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="conditions")]
-		public string[] Conditions { get; set; }
+		public object[] Conditions { get; set; }
 		
 		/// <summary>
 		/// Segment match type.
@@ -59698,9 +59721,10 @@ namespace MyNS
 		
 		/// <summary>
 		/// Segment match conditions. There are multiple possible types, see the [condition types documentation](https://mailchimp.com/developer/marketing/docs/alternative-schemas/#segment-condition-schemas).
+		/// Array member types: , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , 
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="conditions")]
-		public string[] Conditions { get; set; }
+		public object[] Conditions { get; set; }
 		
 		/// <summary>
 		/// Segment match type.

@@ -732,8 +732,11 @@ namespace MyNS
 		[System.Runtime.Serialization.DataMember(Name="created_at")]
 		public System.Nullable<System.DateTimeOffset> Created_at { get; set; }
 		
+		/// <summary>
+		/// Array member types: DateField, TextField, ImageField, CheckBoxField
+		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="fields")]
-		public string[] Fields { get; set; }
+		public object[] Fields { get; set; }
 		
 		[System.Runtime.Serialization.DataMember(Name="id")]
 		public string Id { get; set; }
@@ -896,10 +899,11 @@ namespace MyNS
 		
 		/// <summary>
 		/// Required
+		/// Array member types: DateField, TextField, ImageField, CheckBoxField
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="fields")]
-		public string[] Fields { get; set; }
+		public object[] Fields { get; set; }
 		
 		[System.Runtime.Serialization.DataMember(Name="name")]
 		public string Name { get; set; }

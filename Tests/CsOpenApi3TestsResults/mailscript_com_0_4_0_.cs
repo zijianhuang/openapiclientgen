@@ -1054,10 +1054,11 @@ namespace MyNS
 		
 		/// <summary>
 		/// Required
+		/// Array member types: ActionSend, ActionCombine
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="list")]
-		public string[] List { get; set; }
+		public object[] List { get; set; }
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
@@ -1066,10 +1067,11 @@ namespace MyNS
 		
 		/// <summary>
 		/// Required
+		/// Array member types: Address
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="list")]
-		public string[] List { get; set; }
+		public object[] List { get; set; }
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
@@ -1086,10 +1088,11 @@ namespace MyNS
 		
 		/// <summary>
 		/// Required
+		/// Array member types: MailscriptEmailInput
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="list")]
-		public string[] List { get; set; }
+		public object[] List { get; set; }
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
@@ -1098,10 +1101,11 @@ namespace MyNS
 		
 		/// <summary>
 		/// Required
+		/// Array member types: Integration
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="list")]
-		public string[] List { get; set; }
+		public object[] List { get; set; }
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
@@ -1110,10 +1114,11 @@ namespace MyNS
 		
 		/// <summary>
 		/// Required
+		/// Array member types: Key
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="list")]
-		public string[] List { get; set; }
+		public object[] List { get; set; }
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
@@ -1122,10 +1127,11 @@ namespace MyNS
 		
 		/// <summary>
 		/// Required
+		/// Array member types: Trigger
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="list")]
-		public string[] List { get; set; }
+		public object[] List { get; set; }
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
@@ -1134,10 +1140,11 @@ namespace MyNS
 		
 		/// <summary>
 		/// Required
+		/// Array member types: VerificationEmail, VerificationSms
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="list")]
-		public string[] List { get; set; }
+		public object[] List { get; set; }
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
@@ -1146,10 +1153,11 @@ namespace MyNS
 		
 		/// <summary>
 		/// Required
+		/// Array member types: Workflow
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="list")]
-		public string[] List { get; set; }
+		public object[] List { get; set; }
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
@@ -1158,10 +1166,11 @@ namespace MyNS
 		
 		/// <summary>
 		/// Required
+		/// Array member types: Workspace
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="list")]
-		public string[] List { get; set; }
+		public object[] List { get; set; }
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
@@ -1365,8 +1374,11 @@ namespace MyNS
 		[System.Runtime.Serialization.DataMember(Name="id")]
 		public string Id { get; set; }
 		
+		/// <summary>
+		/// Array member types: KeyValuePair
+		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="pairs")]
-		public string[] Pairs { get; set; }
+		public object[] Pairs { get; set; }
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]

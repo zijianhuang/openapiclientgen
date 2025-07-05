@@ -3000,9 +3000,10 @@ namespace MyNS
 		
 		/// <summary>
 		/// The tracks or episodes in the queue. Can be empty.
+		/// Array member types: TrackObject, EpisodeObject
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="queue")]
-		public string[] Queue { get; set; }
+		public object[] Queue { get; set; }
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]

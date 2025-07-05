@@ -711,10 +711,11 @@ namespace MyNS
 		
 		/// <summary>
 		/// Required
+		/// Array member types: ActionHookActionBody, IFrameActionBody
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="actions")]
-		public string[] Actions { get; set; }
+		public object[] Actions { get; set; }
 		
 		/// <summary>
 		/// Required
@@ -771,10 +772,11 @@ namespace MyNS
 		
 		/// <summary>
 		/// Required
+		/// Array member types: ActionHookActionBody, IFrameActionBody
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="secondary")]
-		public string[] Secondary { get; set; }
+		public object[] Secondary { get; set; }
 		
 		[System.Runtime.Serialization.DataMember(Name="settings")]
 		public IFrameActionBody Settings { get; set; }

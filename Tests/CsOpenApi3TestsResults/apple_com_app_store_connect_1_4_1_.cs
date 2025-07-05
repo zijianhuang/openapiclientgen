@@ -1144,8 +1144,11 @@ namespace MyNS
 		[System.Runtime.Serialization.DataMember(Name="data")]
 		public AppCategory[] Data { get; set; }
 		
+		/// <summary>
+		/// Array member types: AppCategory, AppCategory
+		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="included")]
-		public string[] Included { get; set; }
+		public object[] Included { get; set; }
 		
 		/// <summary>
 		/// Required
@@ -1337,8 +1340,11 @@ namespace MyNS
 		[System.Runtime.Serialization.DataMember(Name="data")]
 		public AppCategory Data { get; set; }
 		
+		/// <summary>
+		/// Array member types: AppCategory, AppCategory
+		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="included")]
-		public string[] Included { get; set; }
+		public object[] Included { get; set; }
 		
 		/// <summary>
 		/// Required
@@ -2415,8 +2421,11 @@ namespace MyNS
 		[System.Runtime.Serialization.DataMember(Name="data")]
 		public AppInfo Data { get; set; }
 		
+		/// <summary>
+		/// Array member types: AppInfoLocalization, AppCategory, AppCategory, AppCategory, AppCategory, AppCategory, AppCategory
+		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="included")]
-		public string[] Included { get; set; }
+		public object[] Included { get; set; }
 		
 		/// <summary>
 		/// Required
@@ -2642,8 +2651,11 @@ namespace MyNS
 		[System.Runtime.Serialization.DataMember(Name="data")]
 		public AppInfo[] Data { get; set; }
 		
+		/// <summary>
+		/// Array member types: AppInfoLocalization, AppCategory, AppCategory, AppCategory, AppCategory, AppCategory, AppCategory
+		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="included")]
-		public string[] Included { get; set; }
+		public object[] Included { get; set; }
 		
 		/// <summary>
 		/// Required
@@ -4190,8 +4202,11 @@ namespace MyNS
 		[System.Runtime.Serialization.DataMember(Name="data")]
 		public App Data { get; set; }
 		
+		/// <summary>
+		/// Array member types: BetaGroup, AppStoreVersion, PrereleaseVersion, BetaAppLocalization, Build, BetaLicenseAgreement, BetaAppReviewDetail, AppInfo, EndUserLicenseAgreement, AppPreOrder, AppPrice, Territory, InAppPurchase, GameCenterEnabledVersion, PerfPowerMetric
+		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="included")]
-		public string[] Included { get; set; }
+		public object[] Included { get; set; }
 		
 		/// <summary>
 		/// Required
@@ -6549,8 +6564,11 @@ namespace MyNS
 		[System.Runtime.Serialization.DataMember(Name="data")]
 		public AppStoreVersionLocalization Data { get; set; }
 		
+		/// <summary>
+		/// Array member types: AppScreenshotSet, AppPreviewSet
+		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="included")]
-		public string[] Included { get; set; }
+		public object[] Included { get; set; }
 		
 		/// <summary>
 		/// Required
@@ -6626,8 +6644,11 @@ namespace MyNS
 		[System.Runtime.Serialization.DataMember(Name="data")]
 		public AppStoreVersionLocalization[] Data { get; set; }
 		
+		/// <summary>
+		/// Array member types: AppScreenshotSet, AppPreviewSet
+		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="included")]
-		public string[] Included { get; set; }
+		public object[] Included { get; set; }
 		
 		/// <summary>
 		/// Required
@@ -6852,8 +6873,11 @@ namespace MyNS
 		[System.Runtime.Serialization.DataMember(Name="data")]
 		public AppStoreVersion Data { get; set; }
 		
+		/// <summary>
+		/// Array member types: AgeRatingDeclaration, AppStoreVersionLocalization, Build, AppStoreVersionPhasedRelease, RoutingAppCoverage, AppStoreReviewDetail, AppStoreVersionSubmission, IdfaDeclaration
+		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="included")]
-		public string[] Included { get; set; }
+		public object[] Included { get; set; }
 		
 		/// <summary>
 		/// Required
@@ -7183,8 +7207,11 @@ namespace MyNS
 		[System.Runtime.Serialization.DataMember(Name="data")]
 		public AppStoreVersion[] Data { get; set; }
 		
+		/// <summary>
+		/// Array member types: AgeRatingDeclaration, AppStoreVersionLocalization, Build, AppStoreVersionPhasedRelease, RoutingAppCoverage, AppStoreReviewDetail, AppStoreVersionSubmission, IdfaDeclaration
+		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="included")]
-		public string[] Included { get; set; }
+		public object[] Included { get; set; }
 		
 		/// <summary>
 		/// Required
@@ -7320,8 +7347,11 @@ namespace MyNS
 		[System.Runtime.Serialization.DataMember(Name="data")]
 		public App[] Data { get; set; }
 		
+		/// <summary>
+		/// Array member types: BetaGroup, AppStoreVersion, PrereleaseVersion, BetaAppLocalization, Build, BetaLicenseAgreement, BetaAppReviewDetail, AppInfo, EndUserLicenseAgreement, AppPreOrder, AppPrice, Territory, InAppPurchase, GameCenterEnabledVersion, PerfPowerMetric
+		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="included")]
-		public string[] Included { get; set; }
+		public object[] Included { get; set; }
 		
 		/// <summary>
 		/// Required
@@ -9325,8 +9355,11 @@ namespace MyNS
 		[System.Runtime.Serialization.DataMember(Name="data")]
 		public BetaGroup Data { get; set; }
 		
+		/// <summary>
+		/// Array member types: App, Build, BetaTester
+		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="included")]
-		public string[] Included { get; set; }
+		public object[] Included { get; set; }
 		
 		/// <summary>
 		/// Required
@@ -9399,8 +9432,11 @@ namespace MyNS
 		[System.Runtime.Serialization.DataMember(Name="data")]
 		public BetaGroup[] Data { get; set; }
 		
+		/// <summary>
+		/// Array member types: App, Build, BetaTester
+		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="included")]
-		public string[] Included { get; set; }
+		public object[] Included { get; set; }
 		
 		/// <summary>
 		/// Required
@@ -10286,8 +10322,11 @@ namespace MyNS
 		[System.Runtime.Serialization.DataMember(Name="data")]
 		public BetaTester Data { get; set; }
 		
+		/// <summary>
+		/// Array member types: App, BetaGroup, Build
+		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="included")]
-		public string[] Included { get; set; }
+		public object[] Included { get; set; }
 		
 		/// <summary>
 		/// Required
@@ -10308,8 +10347,11 @@ namespace MyNS
 		[System.Runtime.Serialization.DataMember(Name="data")]
 		public BetaTester[] Data { get; set; }
 		
+		/// <summary>
+		/// Array member types: App, BetaGroup, Build
+		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="included")]
-		public string[] Included { get; set; }
+		public object[] Included { get; set; }
 		
 		/// <summary>
 		/// Required
@@ -10971,8 +11013,11 @@ namespace MyNS
 		[System.Runtime.Serialization.DataMember(Name="data")]
 		public Build Data { get; set; }
 		
+		/// <summary>
+		/// Array member types: PrereleaseVersion, BetaTester, BetaBuildLocalization, AppEncryptionDeclaration, BetaAppReviewSubmission, App, BuildBetaDetail, AppStoreVersion, BuildIcon, PerfPowerMetric, DiagnosticSignature
+		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="included")]
-		public string[] Included { get; set; }
+		public object[] Included { get; set; }
 		
 		/// <summary>
 		/// Required
@@ -11071,8 +11116,11 @@ namespace MyNS
 		[System.Runtime.Serialization.DataMember(Name="data")]
 		public Build[] Data { get; set; }
 		
+		/// <summary>
+		/// Array member types: PrereleaseVersion, BetaTester, BetaBuildLocalization, AppEncryptionDeclaration, BetaAppReviewSubmission, App, BuildBetaDetail, AppStoreVersion, BuildIcon, PerfPowerMetric, DiagnosticSignature
+		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="included")]
-		public string[] Included { get; set; }
+		public object[] Included { get; set; }
 		
 		/// <summary>
 		/// Required
@@ -11787,8 +11835,11 @@ namespace MyNS
 		[System.Runtime.Serialization.DataMember(Name="data")]
 		public BundleId Data { get; set; }
 		
+		/// <summary>
+		/// Array member types: Profile, BundleIdCapability, App
+		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="included")]
-		public string[] Included { get; set; }
+		public object[] Included { get; set; }
 		
 		/// <summary>
 		/// Required
@@ -11849,8 +11900,11 @@ namespace MyNS
 		[System.Runtime.Serialization.DataMember(Name="data")]
 		public BundleId[] Data { get; set; }
 		
+		/// <summary>
+		/// Array member types: Profile, BundleIdCapability, App
+		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="included")]
-		public string[] Included { get; set; }
+		public object[] Included { get; set; }
 		
 		/// <summary>
 		/// Required
@@ -13864,8 +13918,11 @@ namespace MyNS
 		[System.Runtime.Serialization.DataMember(Name="data")]
 		public PrereleaseVersion[] Data { get; set; }
 		
+		/// <summary>
+		/// Array member types: Build, App
+		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="included")]
-		public string[] Included { get; set; }
+		public object[] Included { get; set; }
 		
 		/// <summary>
 		/// Required
@@ -14020,8 +14077,11 @@ namespace MyNS
 		[System.Runtime.Serialization.DataMember(Name="data")]
 		public PrereleaseVersion Data { get; set; }
 		
+		/// <summary>
+		/// Array member types: Build, App
+		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="included")]
-		public string[] Included { get; set; }
+		public object[] Included { get; set; }
 		
 		/// <summary>
 		/// Required
@@ -14502,8 +14562,11 @@ namespace MyNS
 		[System.Runtime.Serialization.DataMember(Name="data")]
 		public Profile Data { get; set; }
 		
+		/// <summary>
+		/// Array member types: BundleId, Device, Certificate
+		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="included")]
-		public string[] Included { get; set; }
+		public object[] Included { get; set; }
 		
 		/// <summary>
 		/// Required
@@ -14524,8 +14587,11 @@ namespace MyNS
 		[System.Runtime.Serialization.DataMember(Name="data")]
 		public Profile[] Data { get; set; }
 		
+		/// <summary>
+		/// Array member types: BundleId, Device, Certificate
+		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="included")]
-		public string[] Included { get; set; }
+		public object[] Included { get; set; }
 		
 		/// <summary>
 		/// Required

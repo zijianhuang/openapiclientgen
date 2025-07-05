@@ -10564,10 +10564,11 @@ namespace MyNS
 		/// <summary>
 		/// Labels to associate with this issue; pass one or more label names to replace the set of labels on this issue; send an empty array to clear all labels from the issue; note that the labels are silently dropped for users without push access to the repository
 		/// Required
+		/// Array member types: , 
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="labels")]
-		public string[] Labels { get; set; }
+		public object[] Labels { get; set; }
 		
 		/// <summary>
 		/// Required
@@ -13929,10 +13930,11 @@ namespace MyNS
 		/// <summary>
 		/// Labels to associate with this issue; pass one or more label names to replace the set of labels on this issue; send an empty array to clear all labels from the issue; note that the labels are silently dropped for users without push access to the repository
 		/// Required
+		/// Array member types: , 
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="labels")]
-		public string[] Labels { get; set; }
+		public object[] Labels { get; set; }
 		
 		/// <summary>
 		/// Required
@@ -51584,9 +51586,10 @@ namespace MyNS
 		
 		/// <summary>
 		/// Labels to associate with this issue. _NOTE: Only users with push access can set labels for new issues. Labels are silently dropped otherwise._
+		/// Array member types: , 
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="labels")]
-		public string[] Labels { get; set; }
+		public object[] Labels { get; set; }
 		
 		[System.Runtime.Serialization.DataMember(Name="milestone")]
 		public string Milestone { get; set; }
@@ -51714,9 +51717,10 @@ namespace MyNS
 		
 		/// <summary>
 		/// Labels to associate with this issue. Pass one or more Labels to _replace_ the set of Labels on this Issue. Send an empty array (`[]`) to clear all Labels from the Issue. _NOTE: Only users with push access can set labels for issues. Labels are silently dropped otherwise._
+		/// Array member types: , 
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="labels")]
-		public string[] Labels { get; set; }
+		public object[] Labels { get; set; }
 		
 		[System.Runtime.Serialization.DataMember(Name="milestone")]
 		public string Milestone { get; set; }

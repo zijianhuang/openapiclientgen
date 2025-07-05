@@ -2597,8 +2597,11 @@ namespace MyNS
 		[System.Runtime.Serialization.DataMember(Name="fulfillment_date")]
 		public System.DateOnly Fulfillment_date { get; set; }
 		
+		/// <summary>
+		/// Array member types: DocumentItemData, DocumentProductData
+		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="items")]
-		public string[] Items { get; set; }
+		public object[] Items { get; set; }
 		
 		/// <summary>
 		/// Required

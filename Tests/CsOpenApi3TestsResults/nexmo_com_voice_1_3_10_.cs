@@ -84,10 +84,11 @@ namespace MyNS
 		
 		/// <summary>
 		/// Required
+		/// Array member types: EndpointPhoneTo, EndpointSip, EndpointWebsocket, EndpointVBCExtension
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="to")]
-		public string[] To { get; set; }
+		public object[] To { get; set; }
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]

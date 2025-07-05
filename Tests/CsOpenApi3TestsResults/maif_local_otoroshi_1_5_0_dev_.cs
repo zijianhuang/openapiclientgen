@@ -4451,7 +4451,7 @@ namespace MyNS
 		/// FindAllGlobalAuthModules api/auths
 		/// </summary>
 		/// <returns>Successful operation</returns>
-		public async Task<string[]> FindAllGlobalAuthModulesAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<object[]> FindAllGlobalAuthModulesAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/auths";
 			using var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri);
@@ -4465,7 +4465,7 @@ namespace MyNS
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
 				var streamContent = await responseMessage.Content.ReadAsStreamAsync();
-				return JsonSerializer.Deserialize<string[]>(streamContent, jsonSerializerSettings);
+				return JsonSerializer.Deserialize<object[]>(streamContent, jsonSerializerSettings);
 			}
 			finally
 			{

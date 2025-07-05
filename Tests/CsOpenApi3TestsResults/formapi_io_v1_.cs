@@ -1512,10 +1512,11 @@ namespace MyNS
 		
 		/// <summary>
 		/// Required
+		/// Array member types: , 
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="source_pdfs")]
-		public string[] Source_pdfs { get; set; }
+		public object[] Source_pdfs { get; set; }
 		
 		/// <summary>
 		/// Required
@@ -1612,10 +1613,11 @@ namespace MyNS
 		
 		/// <summary>
 		/// Required
+		/// Array member types: , 
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="source_pdfs")]
-		public string[] Source_pdfs { get; set; }
+		public object[] Source_pdfs { get; set; }
 		
 		/// <summary>
 		/// Required
@@ -1675,10 +1677,11 @@ namespace MyNS
 		
 		/// <summary>
 		/// Required
+		/// Array member types: , 
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="source_pdfs")]
-		public string[] Source_pdfs { get; set; }
+		public object[] Source_pdfs { get; set; }
 		
 		/// <summary>
 		/// Required
@@ -1712,10 +1715,11 @@ namespace MyNS
 		
 		/// <summary>
 		/// Required
+		/// Array member types: , 
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="source_pdfs")]
-		public string[] Source_pdfs { get; set; }
+		public object[] Source_pdfs { get; set; }
 		
 		[System.Runtime.Serialization.DataMember(Name="test")]
 		public System.Nullable<System.Boolean> Test { get; set; }

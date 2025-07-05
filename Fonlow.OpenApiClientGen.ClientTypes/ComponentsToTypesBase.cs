@@ -340,6 +340,10 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 						return Tuple.Create(new CodeTypeReference(typeRef), string.Empty);
 					}
 				}
+				else if (arrayItemsSchema.OneOf.Count > 0)
+				{
+					return Tuple.Create(ComponentsHelper.CreateArrayOfCustomTypeReference("System.Object", 1, settings), String.Empty);
+				}
 
 				Type clrType = TypeRefHelper.PrimitiveSwaggerTypeToClrType(arrayType, null);
 				if (settings.ArrayAs == ArrayAsIEnumerableDerived.Array)
