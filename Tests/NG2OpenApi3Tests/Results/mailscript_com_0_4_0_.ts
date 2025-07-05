@@ -1084,8 +1084,11 @@ export namespace MyNS {
 
 	export interface GetAllActionsResponse {
 
-		/** Required */
-		list: Array<string>;
+		/**
+		 * Required
+		 * Array member types: ActionSend, ActionCombine
+		 */
+		list: Array<any>;
 	}
 	export interface GetAllActionsResponseFormProperties {
 	}
@@ -1097,8 +1100,11 @@ export namespace MyNS {
 
 	export interface GetAllAddressesResponse {
 
-		/** Required */
-		list: Array<string>;
+		/**
+		 * Required
+		 * Array member types: Address
+		 */
+		list: Array<any>;
 	}
 	export interface GetAllAddressesResponseFormProperties {
 	}
@@ -1121,8 +1127,11 @@ export namespace MyNS {
 
 	export interface GetAllInputsResponse {
 
-		/** Required */
-		list: Array<string>;
+		/**
+		 * Required
+		 * Array member types: MailscriptEmailInput
+		 */
+		list: Array<any>;
 	}
 	export interface GetAllInputsResponseFormProperties {
 	}
@@ -1134,8 +1143,11 @@ export namespace MyNS {
 
 	export interface GetAllIntegrationsResponse {
 
-		/** Required */
-		list: Array<string>;
+		/**
+		 * Required
+		 * Array member types: Integration
+		 */
+		list: Array<any>;
 	}
 	export interface GetAllIntegrationsResponseFormProperties {
 	}
@@ -1147,8 +1159,11 @@ export namespace MyNS {
 
 	export interface GetAllKeysResponse {
 
-		/** Required */
-		list: Array<string>;
+		/**
+		 * Required
+		 * Array member types: Key
+		 */
+		list: Array<any>;
 	}
 	export interface GetAllKeysResponseFormProperties {
 	}
@@ -1160,8 +1175,11 @@ export namespace MyNS {
 
 	export interface GetAllTriggersResponse {
 
-		/** Required */
-		list: Array<string>;
+		/**
+		 * Required
+		 * Array member types: Trigger
+		 */
+		list: Array<any>;
 	}
 	export interface GetAllTriggersResponseFormProperties {
 	}
@@ -1173,8 +1191,11 @@ export namespace MyNS {
 
 	export interface GetAllVerificationsResponse {
 
-		/** Required */
-		list: Array<string>;
+		/**
+		 * Required
+		 * Array member types: VerificationEmail, VerificationSms
+		 */
+		list: Array<any>;
 	}
 	export interface GetAllVerificationsResponseFormProperties {
 	}
@@ -1186,8 +1207,11 @@ export namespace MyNS {
 
 	export interface GetAllWorkflowsResponse {
 
-		/** Required */
-		list: Array<string>;
+		/**
+		 * Required
+		 * Array member types: Workflow
+		 */
+		list: Array<any>;
 	}
 	export interface GetAllWorkflowsResponseFormProperties {
 	}
@@ -1199,8 +1223,11 @@ export namespace MyNS {
 
 	export interface GetAllWorkspacesResponse {
 
-		/** Required */
-		list: Array<string>;
+		/**
+		 * Required
+		 * Array member types: Workspace
+		 */
+		list: Array<any>;
 	}
 	export interface GetAllWorkspacesResponseFormProperties {
 	}
@@ -1419,7 +1446,9 @@ export namespace MyNS {
 
 	export interface SetWorkflowRequest {
 		id?: string | null;
-		pairs?: Array<string>;
+
+		/** Array member types: KeyValuePair */
+		pairs?: Array<any>;
 	}
 	export interface SetWorkflowRequestFormProperties {
 		id: FormControl<string | null | undefined>,

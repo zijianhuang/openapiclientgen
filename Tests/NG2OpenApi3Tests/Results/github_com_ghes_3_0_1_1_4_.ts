@@ -12379,8 +12379,9 @@ export namespace MyNS {
 		/**
 		 * Labels to associate with this issue; pass one or more label names to replace the set of labels on this issue; send an empty array to clear all labels from the issue; note that the labels are silently dropped for users without push access to the repository
 		 * Required
+		 * Array member types:
 		 */
-		labels: Array<string>;
+		labels: Array<any>;
 
 		/** Required */
 		labels_url: string;
@@ -16277,8 +16278,9 @@ export namespace MyNS {
 		/**
 		 * Labels to associate with this issue; pass one or more label names to replace the set of labels on this issue; send an empty array to clear all labels from the issue; note that the labels are silently dropped for users without push access to the repository
 		 * Required
+		 * Array member types:
 		 */
-		labels: Array<string>;
+		labels: Array<any>;
 
 		/** Required */
 		labels_url: string;
@@ -47592,8 +47594,11 @@ export namespace MyNS {
 		/** The contents of the issue. */
 		body?: string | null;
 
-		/** Labels to associate with this issue. _NOTE: Only users with push access can set labels for new issues. Labels are silently dropped otherwise._ */
-		labels?: Array<string>;
+		/**
+		 * Labels to associate with this issue. _NOTE: Only users with push access can set labels for new issues. Labels are silently dropped otherwise._
+		 * Array member types:
+		 */
+		labels?: Array<any>;
 		milestone?: string;
 
 		/**
@@ -47686,8 +47691,11 @@ export namespace MyNS {
 		/** The contents of the issue. */
 		body?: string | null;
 
-		/** Labels to associate with this issue. Pass one or more Labels to _replace_ the set of Labels on this Issue. Send an empty array (`[]`) to clear all Labels from the Issue. _NOTE: Only users with push access can set labels for issues. Labels are silently dropped otherwise._ */
-		labels?: Array<string>;
+		/**
+		 * Labels to associate with this issue. Pass one or more Labels to _replace_ the set of Labels on this Issue. Send an empty array (`[]`) to clear all Labels from the Issue. _NOTE: Only users with push access can set labels for issues. Labels are silently dropped otherwise._
+		 * Array member types:
+		 */
+		labels?: Array<any>;
 		milestone?: string;
 
 		/** State of the issue. Either `open` or `closed`. */

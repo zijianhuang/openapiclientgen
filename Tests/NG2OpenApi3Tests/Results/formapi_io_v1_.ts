@@ -741,8 +741,11 @@ export namespace MyNS {
 		password?: string | null;
 		pdf_hash?: string | null;
 
-		/** Required */
-		source_pdfs: Array<string>;
+		/**
+		 * Required
+		 * Array member types:
+		 */
+		source_pdfs: Array<any>;
 
 		/** Required */
 		state: ListCombinedSubmissionsReturnState;
@@ -835,8 +838,11 @@ export namespace MyNS {
 		password?: string | null;
 		pdf_hash?: string | null;
 
-		/** Required */
-		source_pdfs: Array<string>;
+		/**
+		 * Required
+		 * Array member types:
+		 */
+		source_pdfs: Array<any>;
 
 		/** Required */
 		state: ListCombinedSubmissionsReturnState;
@@ -898,8 +904,11 @@ export namespace MyNS {
 		password?: string | null;
 		pdf_hash?: string | null;
 
-		/** Required */
-		source_pdfs: Array<string>;
+		/**
+		 * Required
+		 * Array member types:
+		 */
+		source_pdfs: Array<any>;
 
 		/** Required */
 		state: ListCombinedSubmissionsReturnState;
@@ -951,8 +960,11 @@ export namespace MyNS {
 		metadata?: string | null;
 		password?: string | null;
 
-		/** Required */
-		source_pdfs: Array<string>;
+		/**
+		 * Required
+		 * Array member types:
+		 */
+		source_pdfs: Array<any>;
 		test?: boolean | null;
 	}
 	export interface CombinePdfsPostBodyFormProperties {

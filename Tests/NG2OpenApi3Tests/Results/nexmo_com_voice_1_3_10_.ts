@@ -53,8 +53,11 @@ export namespace MyNS {
 		 */
 		ringing_timer?: number | null;
 
-		/** Required */
-		to: Array<string>;
+		/**
+		 * Required
+		 * Array member types: EndpointPhoneTo, EndpointSip, EndpointWebsocket, EndpointVBCExtension
+		 */
+		to: Array<any>;
 	}
 	export interface CreateCallRequestBaseFormProperties {
 

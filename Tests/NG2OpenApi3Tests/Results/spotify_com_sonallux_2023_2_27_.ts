@@ -4199,8 +4199,11 @@ export namespace MyNS {
 		/** The currently playing track or episode. Can be `null`. */
 		currently_playing?: TrackObject;
 
-		/** The tracks or episodes in the queue. Can be empty. */
-		queue?: Array<string>;
+		/**
+		 * The tracks or episodes in the queue. Can be empty.
+		 * Array member types: TrackObject, EpisodeObject
+		 */
+		queue?: Array<any>;
 	}
 	export interface QueueObjectFormProperties {
 	}

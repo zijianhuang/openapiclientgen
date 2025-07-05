@@ -62,8 +62,11 @@ export namespace MyNS {
 	/** Represents a source from a single file */
 	export interface File {
 
-		/** List of Flux statements */
-		body?: Array<Statement>;
+		/**
+		 * List of Flux statements
+		 * Array member types: BadStatement, VariableAssignment, MemberAssignment, ExpressionStatement, ReturnStatement, OptionStatement, BuiltinStatement, TestStatement
+		 */
+		body?: Array<any>;
 
 		/** A list of package imports */
 		imports?: Array<ImportDeclaration>;
@@ -91,16 +94,6 @@ export namespace MyNS {
 		return new FormGroup<FileFormProperties>({
 			name: new FormControl<string | null | undefined>(undefined),
 			type: new FormControl<string | null | undefined>(undefined),
-		});
-
-	}
-
-	export interface Statement {
-	}
-	export interface StatementFormProperties {
-	}
-	export function CreateStatementFormGroup() {
-		return new FormGroup<StatementFormProperties>({
 		});
 
 	}
@@ -273,8 +266,11 @@ export namespace MyNS {
 	/** Used to create and directly specify the elements of an array object */
 	export interface ArrayExpression {
 
-		/** Elements of the array */
-		elements?: Array<Expression>;
+		/**
+		 * Elements of the array
+		 * Array member types: ArrayExpression, DictExpression, FunctionExpression, BinaryExpression, CallExpression, ConditionalExpression, LogicalExpression, MemberExpression, IndexExpression, ObjectExpression, ParenExpression, PipeExpression, UnaryExpression, BooleanLiteral, DateTimeLiteral, DurationLiteral, FloatLiteral, IntegerLiteral, PipeLiteral, RegexpLiteral, StringLiteral, UnsignedIntegerLiteral, Identifier
+		 */
+		elements?: Array<any>;
 
 		/** Type of AST node */
 		type?: string | null;
@@ -289,16 +285,6 @@ export namespace MyNS {
 	export function CreateArrayExpressionFormGroup() {
 		return new FormGroup<ArrayExpressionFormProperties>({
 			type: new FormControl<string | null | undefined>(undefined),
-		});
-
-	}
-
-	export interface Expression {
-	}
-	export interface ExpressionFormProperties {
-	}
-	export function CreateExpressionFormGroup() {
-		return new FormGroup<ExpressionFormProperties>({
 		});
 
 	}
@@ -1098,8 +1084,11 @@ export namespace MyNS {
 	/** A set of statements */
 	export interface Block {
 
-		/** Block body */
-		body?: Array<Statement>;
+		/**
+		 * Block body
+		 * Array member types: BadStatement, VariableAssignment, MemberAssignment, ExpressionStatement, ReturnStatement, OptionStatement, BuiltinStatement, TestStatement
+		 */
+		body?: Array<any>;
 
 		/** Type of AST node */
 		type?: string | null;
@@ -1362,8 +1351,11 @@ export namespace MyNS {
 	/** Represents a function call */
 	export interface CallExpression {
 
-		/** Function arguments */
-		arguments?: Array<Expression>;
+		/**
+		 * Function arguments
+		 * Array member types: ArrayExpression, DictExpression, FunctionExpression, BinaryExpression, CallExpression, ConditionalExpression, LogicalExpression, MemberExpression, IndexExpression, ObjectExpression, ParenExpression, PipeExpression, UnaryExpression, BooleanLiteral, DateTimeLiteral, DurationLiteral, FloatLiteral, IntegerLiteral, PipeLiteral, RegexpLiteral, StringLiteral, UnsignedIntegerLiteral, Identifier
+		 */
+		arguments?: Array<any>;
 		callee?: Expression;
 
 		/** Type of AST node */
@@ -1993,7 +1985,9 @@ export namespace MyNS {
 	}
 
 	export interface DBRPs {
-		content?: Array<DBRP>;
+
+		/** Array member types: */
+		content?: Array<any>;
 	}
 	export interface DBRPsFormProperties {
 	}
@@ -2642,6 +2636,16 @@ export namespace MyNS {
 
 	export enum ErrorCode { 'internal error' = 'internal error', 'not found' = 'not found', conflict = 'conflict', invalid = 'invalid', 'unprocessable entity' = 'unprocessable entity', 'empty value' = 'empty value', unavailable = 'unavailable', forbidden = 'forbidden', 'too many requests' = 'too many requests', unauthorized = 'unauthorized', 'method not allowed' = 'method not allowed', 'request too large' = 'request too large', 'unsupported media type' = 'unsupported media type' }
 
+	export interface Expression {
+	}
+	export interface ExpressionFormProperties {
+	}
+	export function CreateExpressionFormGroup() {
+		return new FormGroup<ExpressionFormProperties>({
+		});
+
+	}
+
 
 	/** May consist of an expression that does not return a value and is executed solely for its side-effects */
 	export interface ExpressionStatement {
@@ -3205,8 +3209,9 @@ export namespace MyNS {
 		/**
 		 * List of individual layers shown in the map
 		 * Required
+		 * Array member types: GeoCircleViewLayer, GeoHeatMapViewLayer, GeoPointMapViewLayer, GeoTrackMapViewLayer
 		 */
-		layers: Array<GeoViewLayer>;
+		layers: Array<any>;
 
 		/** Define map type - regular, satellite etc. */
 		mapStyle?: string | null;
@@ -7120,6 +7125,16 @@ export namespace MyNS {
 
 	}
 
+	export interface Statement {
+	}
+	export interface StatementFormProperties {
+	}
+	export function CreateStatementFormGroup() {
+		return new FormGroup<StatementFormProperties>({
+		});
+
+	}
+
 	export interface TableViewProperties {
 
 		/**
@@ -7797,7 +7812,9 @@ export namespace MyNS {
 	}
 
 	export interface TemplateApply {
-		actions?: Array<string>;
+
+		/** Array member types: */
+		actions?: Array<any>;
 		dryRun?: boolean | null;
 		envRefs?: {[id: string]: any };
 		orgID?: string | null;
@@ -9164,7 +9181,9 @@ export namespace MyNS {
 
 		/** List of tags to write to each status. */
 		ThresholdCheckTags?: Array<ThresholdCheckTags>;
-		thresholds?: Array<Threshold>;
+
+		/** Array member types: GreaterThreshold, LesserThreshold, RangeThreshold */
+		thresholds?: Array<any>;
 
 		/** Required */
 		type: ThresholdCheckType;

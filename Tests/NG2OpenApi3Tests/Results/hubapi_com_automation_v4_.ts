@@ -116,7 +116,9 @@ export namespace MyNS {
 
 		/** Required */
 		id: string;
-		inputFieldDependencies?: Array<string>;
+
+		/** Array member types: PublicSingleFieldDependency, PublicConditionalSingleFieldDependency */
+		inputFieldDependencies?: Array<any>;
 
 		/** Required */
 		inputFields: Array<InputFieldDefinition>;
@@ -632,7 +634,9 @@ export namespace MyNS {
 
 		/** Required */
 		functions: Array<PublicActionFunction>;
-		inputFieldDependencies?: Array<string>;
+
+		/** Array member types: PublicSingleFieldDependency, PublicConditionalSingleFieldDependency */
+		inputFieldDependencies?: Array<any>;
 
 		/** Required */
 		inputFields: Array<InputFieldDefinition>;
@@ -702,7 +706,9 @@ export namespace MyNS {
 	export interface PublicActionDefinitionPatch {
 		actionUrl?: string | null;
 		executionRules?: Array<PublicExecutionTranslationRule>;
-		inputFieldDependencies?: Array<string>;
+
+		/** Array member types: PublicSingleFieldDependency, PublicConditionalSingleFieldDependency */
+		inputFieldDependencies?: Array<any>;
 		inputFields?: Array<InputFieldDefinition>;
 		labels?: {[id: string]: PublicActionLabels };
 		objectRequestOptions?: PublicObjectRequestOptions;

@@ -5319,8 +5319,11 @@ export namespace MyNS {
 
 	export interface GetAutomationsReturnAutomationsRecipientsSegment_opts {
 
-		/** Segment match conditions. There are multiple possible types, see the [condition types documentation](https://mailchimp.com/developer/marketing/docs/alternative-schemas/#segment-condition-schemas). */
-		conditions?: Array<string>;
+		/**
+		 * Segment match conditions. There are multiple possible types, see the [condition types documentation](https://mailchimp.com/developer/marketing/docs/alternative-schemas/#segment-condition-schemas).
+		 * Array member types:
+		 */
+		conditions?: Array<any>;
 
 		/** Segment match type. */
 		match?: GetAutomationsReturnAutomationsRecipientsSegment_optsMatch | null;
@@ -5954,8 +5957,11 @@ export namespace MyNS {
 
 	export interface PostAutomationsReturnRecipientsSegment_opts {
 
-		/** Segment match conditions. There are multiple possible types, see the [condition types documentation](https://mailchimp.com/developer/marketing/docs/alternative-schemas/#segment-condition-schemas). */
-		conditions?: Array<string>;
+		/**
+		 * Segment match conditions. There are multiple possible types, see the [condition types documentation](https://mailchimp.com/developer/marketing/docs/alternative-schemas/#segment-condition-schemas).
+		 * Array member types:
+		 */
+		conditions?: Array<any>;
 
 		/** Segment match type. */
 		match?: GetAutomationsReturnAutomationsRecipientsSegment_optsMatch | null;
@@ -6487,8 +6493,11 @@ export namespace MyNS {
 
 	export interface GetAutomationsIdReturnRecipientsSegment_opts {
 
-		/** Segment match conditions. There are multiple possible types, see the [condition types documentation](https://mailchimp.com/developer/marketing/docs/alternative-schemas/#segment-condition-schemas). */
-		conditions?: Array<string>;
+		/**
+		 * Segment match conditions. There are multiple possible types, see the [condition types documentation](https://mailchimp.com/developer/marketing/docs/alternative-schemas/#segment-condition-schemas).
+		 * Array member types:
+		 */
+		conditions?: Array<any>;
 
 		/** Segment match type. */
 		match?: GetAutomationsReturnAutomationsRecipientsSegment_optsMatch | null;
@@ -7245,8 +7254,11 @@ export namespace MyNS {
 
 	export interface GetAutomationsIdEmailsReturnEmailsRecipientsSegment_opts {
 
-		/** Segment match conditions. There are multiple possible types, see the [condition types documentation](https://mailchimp.com/developer/marketing/docs/alternative-schemas/#segment-condition-schemas). */
-		conditions?: Array<string>;
+		/**
+		 * Segment match conditions. There are multiple possible types, see the [condition types documentation](https://mailchimp.com/developer/marketing/docs/alternative-schemas/#segment-condition-schemas).
+		 * Array member types:
+		 */
+		conditions?: Array<any>;
 
 		/** Segment match type. */
 		match?: GetAutomationsReturnAutomationsRecipientsSegment_optsMatch | null;
@@ -7998,8 +8010,11 @@ export namespace MyNS {
 
 	export interface GetAutomationsIdEmailsIdReturnRecipientsSegment_opts {
 
-		/** Segment match conditions. There are multiple possible types, see the [condition types documentation](https://mailchimp.com/developer/marketing/docs/alternative-schemas/#segment-condition-schemas). */
-		conditions?: Array<string>;
+		/**
+		 * Segment match conditions. There are multiple possible types, see the [condition types documentation](https://mailchimp.com/developer/marketing/docs/alternative-schemas/#segment-condition-schemas).
+		 * Array member types:
+		 */
+		conditions?: Array<any>;
 
 		/** Segment match type. */
 		match?: GetAutomationsReturnAutomationsRecipientsSegment_optsMatch | null;
@@ -8866,8 +8881,11 @@ export namespace MyNS {
 
 	export interface PatchAutomationEmailWorkflowIdReturnRecipientsSegment_opts {
 
-		/** Segment match conditions. There are multiple possible types, see the [condition types documentation](https://mailchimp.com/developer/marketing/docs/alternative-schemas/#segment-condition-schemas). */
-		conditions?: Array<string>;
+		/**
+		 * Segment match conditions. There are multiple possible types, see the [condition types documentation](https://mailchimp.com/developer/marketing/docs/alternative-schemas/#segment-condition-schemas).
+		 * Array member types:
+		 */
+		conditions?: Array<any>;
 
 		/** Segment match type. */
 		match?: GetAutomationsReturnAutomationsRecipientsSegment_optsMatch | null;
@@ -11984,8 +12002,11 @@ export namespace MyNS {
 
 	export interface GetCampaignsReturnCampaignsRecipientsSegment_opts {
 
-		/** Segment match conditions. There are multiple possible types, see the [condition types documentation](https://mailchimp.com/developer/marketing/docs/alternative-schemas/#segment-condition-schemas). */
-		conditions?: Array<string>;
+		/**
+		 * Segment match conditions. There are multiple possible types, see the [condition types documentation](https://mailchimp.com/developer/marketing/docs/alternative-schemas/#segment-condition-schemas).
+		 * Array member types:
+		 */
+		conditions?: Array<any>;
 
 		/** Segment match type. */
 		match?: GetAutomationsReturnAutomationsRecipientsSegment_optsMatch | null;
@@ -12836,8 +12857,11 @@ export namespace MyNS {
 
 	export interface PostCampaignsPostBodyRecipientsSegment_opts {
 
-		/** Segment match conditions. There are multiple possible types, see the [condition types documentation](https://mailchimp.com/developer/marketing/docs/alternative-schemas/#segment-condition-schemas). */
-		conditions?: Array<string>;
+		/**
+		 * Segment match conditions. There are multiple possible types, see the [condition types documentation](https://mailchimp.com/developer/marketing/docs/alternative-schemas/#segment-condition-schemas).
+		 * Array member types:
+		 */
+		conditions?: Array<any>;
 
 		/** Segment match type. */
 		match?: GetAutomationsReturnAutomationsRecipientsSegment_optsMatch | null;
@@ -13760,8 +13784,11 @@ export namespace MyNS {
 
 	export interface PostCampaignsReturnRecipientsSegment_opts {
 
-		/** Segment match conditions. There are multiple possible types, see the [condition types documentation](https://mailchimp.com/developer/marketing/docs/alternative-schemas/#segment-condition-schemas). */
-		conditions?: Array<string>;
+		/**
+		 * Segment match conditions. There are multiple possible types, see the [condition types documentation](https://mailchimp.com/developer/marketing/docs/alternative-schemas/#segment-condition-schemas).
+		 * Array member types:
+		 */
+		conditions?: Array<any>;
 
 		/** Segment match type. */
 		match?: GetAutomationsReturnAutomationsRecipientsSegment_optsMatch | null;
@@ -14949,8 +14976,11 @@ export namespace MyNS {
 
 	export interface GetCampaignsIdReturnRecipientsSegment_opts {
 
-		/** Segment match conditions. There are multiple possible types, see the [condition types documentation](https://mailchimp.com/developer/marketing/docs/alternative-schemas/#segment-condition-schemas). */
-		conditions?: Array<string>;
+		/**
+		 * Segment match conditions. There are multiple possible types, see the [condition types documentation](https://mailchimp.com/developer/marketing/docs/alternative-schemas/#segment-condition-schemas).
+		 * Array member types:
+		 */
+		conditions?: Array<any>;
 
 		/** Segment match type. */
 		match?: GetAutomationsReturnAutomationsRecipientsSegment_optsMatch | null;
@@ -15774,8 +15804,11 @@ export namespace MyNS {
 
 	export interface PatchCampaignsIdPatchBodyRecipientsSegment_opts {
 
-		/** Segment match conditions. There are multiple possible types, see the [condition types documentation](https://mailchimp.com/developer/marketing/docs/alternative-schemas/#segment-condition-schemas). */
-		conditions?: Array<string>;
+		/**
+		 * Segment match conditions. There are multiple possible types, see the [condition types documentation](https://mailchimp.com/developer/marketing/docs/alternative-schemas/#segment-condition-schemas).
+		 * Array member types:
+		 */
+		conditions?: Array<any>;
 
 		/** Segment match type. */
 		match?: GetAutomationsReturnAutomationsRecipientsSegment_optsMatch | null;
@@ -16723,8 +16756,11 @@ export namespace MyNS {
 
 	export interface PatchCampaignsIdReturnRecipientsSegment_opts {
 
-		/** Segment match conditions. There are multiple possible types, see the [condition types documentation](https://mailchimp.com/developer/marketing/docs/alternative-schemas/#segment-condition-schemas). */
-		conditions?: Array<string>;
+		/**
+		 * Segment match conditions. There are multiple possible types, see the [condition types documentation](https://mailchimp.com/developer/marketing/docs/alternative-schemas/#segment-condition-schemas).
+		 * Array member types:
+		 */
+		conditions?: Array<any>;
 
 		/** Segment match type. */
 		match?: GetAutomationsReturnAutomationsRecipientsSegment_optsMatch | null;
@@ -17917,8 +17953,11 @@ export namespace MyNS {
 
 	export interface PostCampaignsIdActionsCreateResendReturnRecipientsSegment_opts {
 
-		/** Segment match conditions. There are multiple possible types, see the [condition types documentation](https://mailchimp.com/developer/marketing/docs/alternative-schemas/#segment-condition-schemas). */
-		conditions?: Array<string>;
+		/**
+		 * Segment match conditions. There are multiple possible types, see the [condition types documentation](https://mailchimp.com/developer/marketing/docs/alternative-schemas/#segment-condition-schemas).
+		 * Array member types:
+		 */
+		conditions?: Array<any>;
 
 		/** Segment match type. */
 		match?: GetAutomationsReturnAutomationsRecipientsSegment_optsMatch | null;
@@ -19129,8 +19168,11 @@ export namespace MyNS {
 
 	export interface PostCampaignsIdActionsReplicateReturnRecipientsSegment_opts {
 
-		/** Segment match conditions. There are multiple possible types, see the [condition types documentation](https://mailchimp.com/developer/marketing/docs/alternative-schemas/#segment-condition-schemas). */
-		conditions?: Array<string>;
+		/**
+		 * Segment match conditions. There are multiple possible types, see the [condition types documentation](https://mailchimp.com/developer/marketing/docs/alternative-schemas/#segment-condition-schemas).
+		 * Array member types:
+		 */
+		conditions?: Array<any>;
 
 		/** Segment match type. */
 		match?: GetAutomationsReturnAutomationsRecipientsSegment_optsMatch | null;
@@ -41020,8 +41062,11 @@ export namespace MyNS {
 
 	export interface GetFacebookAdsIdReturnRecipientsSegment_opts {
 
-		/** Segment match conditions. There are multiple possible types, see the [condition types documentation](https://mailchimp.com/developer/marketing/docs/alternative-schemas/#segment-condition-schemas). */
-		conditions?: Array<string>;
+		/**
+		 * Segment match conditions. There are multiple possible types, see the [condition types documentation](https://mailchimp.com/developer/marketing/docs/alternative-schemas/#segment-condition-schemas).
+		 * Array member types:
+		 */
+		conditions?: Array<any>;
 
 		/** Segment match type. */
 		match?: GetAutomationsReturnAutomationsRecipientsSegment_optsMatch | null;
@@ -53400,8 +53445,11 @@ export namespace MyNS {
 		/** A list of link types and descriptions for the API schema documents. */
 		GetListsIdMembersIdActivityFeedReturn_links?: Array<GetListsIdMembersIdActivityFeedReturn_links>;
 
-		/** An array of objects, each representing a contact event. There are multiple possible types, see the [activity schema documentation](https://mailchimp.com/developer/marketing/docs/alternative-schemas/#activity-schemas). */
-		activity?: Array<string>;
+		/**
+		 * An array of objects, each representing a contact event. There are multiple possible types, see the [activity schema documentation](https://mailchimp.com/developer/marketing/docs/alternative-schemas/#activity-schemas).
+		 * Array member types:
+		 */
+		activity?: Array<any>;
 
 		/** The MD5 hash of the lowercase version of the list member's email address. */
 		email_id?: string | null;
@@ -55819,8 +55867,11 @@ export namespace MyNS {
 
 	export interface PreviewASegmentReturnSegmentsOptions {
 
-		/** Segment match conditions. There are multiple possible types, see the [condition types documentation](https://mailchimp.com/developer/marketing/docs/alternative-schemas/#segment-condition-schemas). */
-		conditions?: Array<string>;
+		/**
+		 * Segment match conditions. There are multiple possible types, see the [condition types documentation](https://mailchimp.com/developer/marketing/docs/alternative-schemas/#segment-condition-schemas).
+		 * Array member types:
+		 */
+		conditions?: Array<any>;
 
 		/** Match type. */
 		match?: GetAutomationsReturnAutomationsRecipientsSegment_optsMatch | null;
@@ -55870,8 +55921,11 @@ export namespace MyNS {
 
 	export interface PostListsIdSegmentsPostBodyOptions {
 
-		/** Segment match conditions. There are multiple possible types, see the [condition types documentation](https://mailchimp.com/developer/marketing/docs/alternative-schemas/#segment-condition-schemas). */
-		conditions?: Array<string>;
+		/**
+		 * Segment match conditions. There are multiple possible types, see the [condition types documentation](https://mailchimp.com/developer/marketing/docs/alternative-schemas/#segment-condition-schemas).
+		 * Array member types:
+		 */
+		conditions?: Array<any>;
 
 		/** Match type. */
 		match?: GetAutomationsReturnAutomationsRecipientsSegment_optsMatch | null;
@@ -56012,8 +56066,11 @@ export namespace MyNS {
 
 	export interface PostListsIdSegmentsReturnOptions {
 
-		/** Segment match conditions. There are multiple possible types, see the [condition types documentation](https://mailchimp.com/developer/marketing/docs/alternative-schemas/#segment-condition-schemas). */
-		conditions?: Array<string>;
+		/**
+		 * Segment match conditions. There are multiple possible types, see the [condition types documentation](https://mailchimp.com/developer/marketing/docs/alternative-schemas/#segment-condition-schemas).
+		 * Array member types:
+		 */
+		conditions?: Array<any>;
 
 		/** Match type. */
 		match?: GetAutomationsReturnAutomationsRecipientsSegment_optsMatch | null;
@@ -56154,8 +56211,11 @@ export namespace MyNS {
 
 	export interface GetListsIdSegmentsIdReturnOptions {
 
-		/** Segment match conditions. There are multiple possible types, see the [condition types documentation](https://mailchimp.com/developer/marketing/docs/alternative-schemas/#segment-condition-schemas). */
-		conditions?: Array<string>;
+		/**
+		 * Segment match conditions. There are multiple possible types, see the [condition types documentation](https://mailchimp.com/developer/marketing/docs/alternative-schemas/#segment-condition-schemas).
+		 * Array member types:
+		 */
+		conditions?: Array<any>;
 
 		/** Match type. */
 		match?: GetAutomationsReturnAutomationsRecipientsSegment_optsMatch | null;
@@ -56345,8 +56405,11 @@ export namespace MyNS {
 
 	export interface PatchListsIdSegmentsIdReturnOptions {
 
-		/** Segment match conditions. There are multiple possible types, see the [condition types documentation](https://mailchimp.com/developer/marketing/docs/alternative-schemas/#segment-condition-schemas). */
-		conditions?: Array<string>;
+		/**
+		 * Segment match conditions. There are multiple possible types, see the [condition types documentation](https://mailchimp.com/developer/marketing/docs/alternative-schemas/#segment-condition-schemas).
+		 * Array member types:
+		 */
+		conditions?: Array<any>;
 
 		/** Match type. */
 		match?: GetAutomationsReturnAutomationsRecipientsSegment_optsMatch | null;
@@ -59251,8 +59314,11 @@ export namespace MyNS {
 
 	export interface PostListsIdSurveysIdActionsCreateEmailReturnRecipientsSegment_opts {
 
-		/** Segment match conditions. There are multiple possible types, see the [condition types documentation](https://mailchimp.com/developer/marketing/docs/alternative-schemas/#segment-condition-schemas). */
-		conditions?: Array<string>;
+		/**
+		 * Segment match conditions. There are multiple possible types, see the [condition types documentation](https://mailchimp.com/developer/marketing/docs/alternative-schemas/#segment-condition-schemas).
+		 * Array member types:
+		 */
+		conditions?: Array<any>;
 
 		/** Segment match type. */
 		match?: GetAutomationsReturnAutomationsRecipientsSegment_optsMatch | null;
@@ -61102,8 +61168,11 @@ export namespace MyNS {
 
 	export interface GetReportingFacebookAdsIdReturnRecipientsSegment_opts {
 
-		/** Segment match conditions. There are multiple possible types, see the [condition types documentation](https://mailchimp.com/developer/marketing/docs/alternative-schemas/#segment-condition-schemas). */
-		conditions?: Array<string>;
+		/**
+		 * Segment match conditions. There are multiple possible types, see the [condition types documentation](https://mailchimp.com/developer/marketing/docs/alternative-schemas/#segment-condition-schemas).
+		 * Array member types:
+		 */
+		conditions?: Array<any>;
 
 		/** Segment match type. */
 		match?: GetAutomationsReturnAutomationsRecipientsSegment_optsMatch | null;
@@ -71659,8 +71728,11 @@ export namespace MyNS {
 
 	export interface GetSearchCampaignsReturnResultsCampaignRecipientsSegment_opts {
 
-		/** Segment match conditions. There are multiple possible types, see the [condition types documentation](https://mailchimp.com/developer/marketing/docs/alternative-schemas/#segment-condition-schemas). */
-		conditions?: Array<string>;
+		/**
+		 * Segment match conditions. There are multiple possible types, see the [condition types documentation](https://mailchimp.com/developer/marketing/docs/alternative-schemas/#segment-condition-schemas).
+		 * Array member types:
+		 */
+		conditions?: Array<any>;
 
 		/** Segment match type. */
 		match?: GetAutomationsReturnAutomationsRecipientsSegment_optsMatch | null;

@@ -700,8 +700,11 @@ export namespace MyNS {
 		/** The template that the Dispatch API will execute. For the initial version of the API the only available value will be failover */
 		template?: CreateWorkflowTemplate | null;
 
-		/** Contains a message object that must reflect the current /messages resource. All parameters within the content object reflect the /messages docs. */
-		workflow?: Array<string>;
+		/**
+		 * Contains a message object that must reflect the current /messages resource. All parameters within the content object reflect the /messages docs.
+		 * Array member types: sendWithFailoverMessage, sendMessage
+		 */
+		workflow?: Array<any>;
 	}
 	export interface CreateWorkflowFormProperties {
 

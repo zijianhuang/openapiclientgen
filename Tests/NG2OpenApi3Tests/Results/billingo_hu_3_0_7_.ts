@@ -692,7 +692,9 @@ export namespace MyNS {
 		 * Type: DateOnly
 		 */
 		fulfillment_date: Date;
-		items?: Array<string>;
+
+		/** Array member types: DocumentItemData, DocumentProductData */
+		items?: Array<any>;
 
 		/** Required */
 		language: DocumentLanguage;

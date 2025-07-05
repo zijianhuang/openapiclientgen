@@ -1883,8 +1883,9 @@ export namespace MyNS {
 		 * Required
 		 * Minimum items: 1
 		 * Maximum items: 4
+		 * Array member types:
 		 */
-		assetHierarchicalClassification: Array<string>;
+		assetHierarchicalClassification: Array<any>;
 	}
 	export interface AssetsCorrelationMatrixTheory_impliedPostPostBodyAssetsFormProperties {
 	}

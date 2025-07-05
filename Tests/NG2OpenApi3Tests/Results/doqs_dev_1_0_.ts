@@ -669,7 +669,9 @@ export namespace MyNS {
 
 	export interface Template {
 		created_at?: Date | null;
-		fields?: Array<string>;
+
+		/** Array member types: DateField, TextField, ImageField, CheckBoxField */
+		fields?: Array<any>;
 		id?: string | null;
 		name?: string | null;
 
@@ -852,8 +854,11 @@ export namespace MyNS {
 
 	export interface UpdateTemplateRequest {
 
-		/** Required */
-		fields: Array<string>;
+		/**
+		 * Required
+		 * Array member types: DateField, TextField, ImageField, CheckBoxField
+		 */
+		fields: Array<any>;
 		name?: string | null;
 	}
 	export interface UpdateTemplateRequestFormProperties {

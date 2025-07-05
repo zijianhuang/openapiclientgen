@@ -1193,7 +1193,9 @@ export namespace MyNS {
 
 		/** Required */
 		data: Array<AppCategory>;
-		included?: Array<string>;
+
+		/** Array member types: AppCategory, AppCategory */
+		included?: Array<any>;
 
 		/** Required */
 		links: PagedDocumentLinks;
@@ -1395,7 +1397,9 @@ export namespace MyNS {
 
 		/** Required */
 		data: AppCategory;
-		included?: Array<string>;
+
+		/** Array member types: AppCategory, AppCategory */
+		included?: Array<any>;
 
 		/** Required */
 		links: DocumentLinks;
@@ -2500,7 +2504,9 @@ export namespace MyNS {
 
 		/** Required */
 		data: AppInfo;
-		included?: Array<string>;
+
+		/** Array member types: AppInfoLocalization, AppCategory, AppCategory, AppCategory, AppCategory, AppCategory, AppCategory */
+		included?: Array<any>;
 
 		/** Required */
 		links: DocumentLinks;
@@ -2781,7 +2787,9 @@ export namespace MyNS {
 
 		/** Required */
 		data: Array<AppInfo>;
-		included?: Array<string>;
+
+		/** Array member types: AppInfoLocalization, AppCategory, AppCategory, AppCategory, AppCategory, AppCategory, AppCategory */
+		included?: Array<any>;
 
 		/** Required */
 		links: PagedDocumentLinks;
@@ -4461,7 +4469,9 @@ export namespace MyNS {
 
 		/** Required */
 		data: App;
-		included?: Array<string>;
+
+		/** Array member types: BetaGroup, AppStoreVersion, PrereleaseVersion, BetaAppLocalization, Build, BetaLicenseAgreement, BetaAppReviewDetail, AppInfo, EndUserLicenseAgreement, AppPreOrder, AppPrice, Territory, InAppPurchase, GameCenterEnabledVersion, PerfPowerMetric */
+		included?: Array<any>;
 
 		/** Required */
 		links: DocumentLinks;
@@ -7050,7 +7060,9 @@ export namespace MyNS {
 
 		/** Required */
 		data: AppStoreVersionLocalization;
-		included?: Array<string>;
+
+		/** Array member types: AppScreenshotSet, AppPreviewSet */
+		included?: Array<any>;
 
 		/** Required */
 		links: DocumentLinks;
@@ -7133,7 +7145,9 @@ export namespace MyNS {
 
 		/** Required */
 		data: Array<AppStoreVersionLocalization>;
-		included?: Array<string>;
+
+		/** Array member types: AppScreenshotSet, AppPreviewSet */
+		included?: Array<any>;
 
 		/** Required */
 		links: PagedDocumentLinks;
@@ -7375,7 +7389,9 @@ export namespace MyNS {
 
 		/** Required */
 		data: AppStoreVersion;
-		included?: Array<string>;
+
+		/** Array member types: AgeRatingDeclaration, AppStoreVersionLocalization, Build, AppStoreVersionPhasedRelease, RoutingAppCoverage, AppStoreReviewDetail, AppStoreVersionSubmission, IdfaDeclaration */
+		included?: Array<any>;
 
 		/** Required */
 		links: DocumentLinks;
@@ -7697,7 +7713,9 @@ export namespace MyNS {
 
 		/** Required */
 		data: Array<AppStoreVersion>;
-		included?: Array<string>;
+
+		/** Array member types: AgeRatingDeclaration, AppStoreVersionLocalization, Build, AppStoreVersionPhasedRelease, RoutingAppCoverage, AppStoreReviewDetail, AppStoreVersionSubmission, IdfaDeclaration */
+		included?: Array<any>;
 
 		/** Required */
 		links: PagedDocumentLinks;
@@ -7858,7 +7876,9 @@ export namespace MyNS {
 
 		/** Required */
 		data: Array<App>;
-		included?: Array<string>;
+
+		/** Array member types: BetaGroup, AppStoreVersion, PrereleaseVersion, BetaAppLocalization, Build, BetaLicenseAgreement, BetaAppReviewDetail, AppInfo, EndUserLicenseAgreement, AppPreOrder, AppPrice, Territory, InAppPurchase, GameCenterEnabledVersion, PerfPowerMetric */
+		included?: Array<any>;
 
 		/** Required */
 		links: PagedDocumentLinks;
@@ -10119,7 +10139,9 @@ export namespace MyNS {
 
 		/** Required */
 		data: BetaGroup;
-		included?: Array<string>;
+
+		/** Array member types: App, Build, BetaTester */
+		included?: Array<any>;
 
 		/** Required */
 		links: DocumentLinks;
@@ -10203,7 +10225,9 @@ export namespace MyNS {
 
 		/** Required */
 		data: Array<BetaGroup>;
-		included?: Array<string>;
+
+		/** Array member types: App, Build, BetaTester */
+		included?: Array<any>;
 
 		/** Required */
 		links: PagedDocumentLinks;
@@ -11180,7 +11204,9 @@ export namespace MyNS {
 
 		/** Required */
 		data: BetaTester;
-		included?: Array<string>;
+
+		/** Array member types: App, BetaGroup, Build */
+		included?: Array<any>;
 
 		/** Required */
 		links: DocumentLinks;
@@ -11197,7 +11223,9 @@ export namespace MyNS {
 
 		/** Required */
 		data: Array<BetaTester>;
-		included?: Array<string>;
+
+		/** Array member types: App, BetaGroup, Build */
+		included?: Array<any>;
 
 		/** Required */
 		links: PagedDocumentLinks;
@@ -11799,7 +11827,9 @@ export namespace MyNS {
 
 		/** Required */
 		data: Build;
-		included?: Array<string>;
+
+		/** Array member types: PrereleaseVersion, BetaTester, BetaBuildLocalization, AppEncryptionDeclaration, BetaAppReviewSubmission, App, BuildBetaDetail, AppStoreVersion, BuildIcon, PerfPowerMetric, DiagnosticSignature */
+		included?: Array<any>;
 
 		/** Required */
 		links: DocumentLinks;
@@ -11917,7 +11947,9 @@ export namespace MyNS {
 
 		/** Required */
 		data: Array<Build>;
-		included?: Array<string>;
+
+		/** Array member types: PrereleaseVersion, BetaTester, BetaBuildLocalization, AppEncryptionDeclaration, BetaAppReviewSubmission, App, BuildBetaDetail, AppStoreVersion, BuildIcon, PerfPowerMetric, DiagnosticSignature */
+		included?: Array<any>;
 
 		/** Required */
 		links: PagedDocumentLinks;
@@ -12537,7 +12569,9 @@ export namespace MyNS {
 
 		/** Required */
 		data: BundleId;
-		included?: Array<string>;
+
+		/** Array member types: Profile, BundleIdCapability, App */
+		included?: Array<any>;
 
 		/** Required */
 		links: DocumentLinks;
@@ -12605,7 +12639,9 @@ export namespace MyNS {
 
 		/** Required */
 		data: Array<BundleId>;
-		included?: Array<string>;
+
+		/** Array member types: Profile, BundleIdCapability, App */
+		included?: Array<any>;
 
 		/** Required */
 		links: PagedDocumentLinks;
@@ -14401,7 +14437,9 @@ export namespace MyNS {
 
 		/** Required */
 		data: Array<PrereleaseVersion>;
-		included?: Array<string>;
+
+		/** Array member types: Build, App */
+		included?: Array<any>;
 
 		/** Required */
 		links: PagedDocumentLinks;
@@ -14581,7 +14619,9 @@ export namespace MyNS {
 
 		/** Required */
 		data: PrereleaseVersion;
-		included?: Array<string>;
+
+		/** Array member types: Build, App */
+		included?: Array<any>;
 
 		/** Required */
 		links: DocumentLinks;
@@ -15024,7 +15064,9 @@ export namespace MyNS {
 
 		/** Required */
 		data: Profile;
-		included?: Array<string>;
+
+		/** Array member types: BundleId, Device, Certificate */
+		included?: Array<any>;
 
 		/** Required */
 		links: DocumentLinks;
@@ -15041,7 +15083,9 @@ export namespace MyNS {
 
 		/** Required */
 		data: Array<Profile>;
-		included?: Array<string>;
+
+		/** Array member types: BundleId, Device, Certificate */
+		included?: Array<any>;
 
 		/** Required */
 		links: PagedDocumentLinks;

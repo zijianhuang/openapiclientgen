@@ -1115,7 +1115,9 @@ export namespace MyNS {
 
 		/** Required */
 		duration: ClipVersionsDuration;
-		events?: Array<string>;
+
+		/** Array member types: */
+		events?: Array<any>;
 		first_broadcast?: string | null;
 		first_broadcast_date_time?: string | null;
 		guidance?: ClipVersionsGuidance;
@@ -2031,7 +2033,9 @@ export namespace MyNS {
 
 		/** Required */
 		duration: VersionDuration;
-		events?: Array<string>;
+
+		/** Array member types: */
+		events?: Array<any>;
 		first_broadcast?: string | null;
 		first_broadcast_date_time?: string | null;
 		guidance?: VersionGuidance;

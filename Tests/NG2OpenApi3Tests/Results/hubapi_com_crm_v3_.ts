@@ -726,8 +726,11 @@ export namespace MyNS {
 
 	export interface IntegratorObjectResult {
 
-		/** Required */
-		actions: Array<string>;
+		/**
+		 * Required
+		 * Array member types: ActionHookActionBody, IFrameActionBody
+		 */
+		actions: Array<any>;
 
 		/** Required */
 		id: string;
@@ -786,8 +789,11 @@ export namespace MyNS {
 	export interface TopLevelActions {
 		primary?: ActionHookActionBody;
 
-		/** Required */
-		secondary: Array<string>;
+		/**
+		 * Required
+		 * Array member types: ActionHookActionBody, IFrameActionBody
+		 */
+		secondary: Array<any>;
 		settings?: IFrameActionBody;
 	}
 	export interface TopLevelActionsFormProperties {

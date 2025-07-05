@@ -18192,8 +18192,9 @@ export namespace MyNS {
 		/**
 		 * Labels to associate with this issue; pass one or more label names to replace the set of labels on this issue; send an empty array to clear all labels from the issue; note that the labels are silently dropped for users without push access to the repository
 		 * Required
+		 * Array member types:
 		 */
-		labels: Array<string>;
+		labels: Array<any>;
 
 		/** Required */
 		labels_url: string;
@@ -21981,8 +21982,9 @@ export namespace MyNS {
 		/**
 		 * Labels to associate with this issue; pass one or more label names to replace the set of labels on this issue; send an empty array to clear all labels from the issue; note that the labels are silently dropped for users without push access to the repository
 		 * Required
+		 * Array member types:
 		 */
-		labels: Array<string>;
+		labels: Array<any>;
 
 		/** Required */
 		labels_url: string;
@@ -104509,8 +104511,11 @@ export namespace MyNS {
 		patch_url: string;
 		rebaseable?: boolean | null;
 
-		/** Required */
-		requested_reviewers: Array<string>;
+		/**
+		 * Required
+		 * Array member types:
+		 */
+		requested_reviewers: Array<any>;
 
 		/** Required */
 		Webhook_pull_request_assignedPull_requestRequested_teams: Array<Webhook_pull_request_assignedPull_requestRequested_teams>;
@@ -108245,8 +108250,11 @@ export namespace MyNS {
 		patch_url: string;
 		rebaseable?: boolean | null;
 
-		/** Required */
-		requested_reviewers: Array<string>;
+		/**
+		 * Required
+		 * Array member types:
+		 */
+		requested_reviewers: Array<any>;
 
 		/** Required */
 		Webhook_pull_request_auto_merge_disabledPull_requestRequested_teams: Array<Webhook_pull_request_auto_merge_disabledPull_requestRequested_teams>;
@@ -111977,8 +111985,11 @@ export namespace MyNS {
 		patch_url: string;
 		rebaseable?: boolean | null;
 
-		/** Required */
-		requested_reviewers: Array<string>;
+		/**
+		 * Required
+		 * Array member types:
+		 */
+		requested_reviewers: Array<any>;
 
 		/** Required */
 		Webhook_pull_request_auto_merge_enabledPull_requestRequested_teams: Array<Webhook_pull_request_auto_merge_enabledPull_requestRequested_teams>;
@@ -115706,8 +115717,11 @@ export namespace MyNS {
 		patch_url: string;
 		rebaseable?: boolean | null;
 
-		/** Required */
-		requested_reviewers: Array<string>;
+		/**
+		 * Required
+		 * Array member types:
+		 */
+		requested_reviewers: Array<any>;
 
 		/** Required */
 		Webhook_pull_request_closedPull_requestRequested_teams: Array<Webhook_pull_request_closedPull_requestRequested_teams>;
@@ -119375,8 +119389,11 @@ export namespace MyNS {
 		patch_url: string;
 		rebaseable?: boolean | null;
 
-		/** Required */
-		requested_reviewers: Array<string>;
+		/**
+		 * Required
+		 * Array member types:
+		 */
+		requested_reviewers: Array<any>;
 
 		/** Required */
 		Webhook_pull_request_converted_to_draftPull_requestRequested_teams: Array<Webhook_pull_request_converted_to_draftPull_requestRequested_teams>;
@@ -123075,8 +123092,11 @@ export namespace MyNS {
 		patch_url: string;
 		rebaseable?: boolean | null;
 
-		/** Required */
-		requested_reviewers: Array<string>;
+		/**
+		 * Required
+		 * Array member types:
+		 */
+		requested_reviewers: Array<any>;
 
 		/** Required */
 		Webhook_pull_request_demilestonedPull_requestRequested_teams: Array<Webhook_pull_request_demilestonedPull_requestRequested_teams>;
@@ -126811,8 +126831,11 @@ export namespace MyNS {
 		patch_url: string;
 		rebaseable?: boolean | null;
 
-		/** Required */
-		requested_reviewers: Array<string>;
+		/**
+		 * Required
+		 * Array member types:
+		 */
+		requested_reviewers: Array<any>;
 
 		/** Required */
 		Webhook_pull_request_dequeuedPull_requestRequested_teams: Array<Webhook_pull_request_dequeuedPull_requestRequested_teams>;
@@ -130652,8 +130675,11 @@ export namespace MyNS {
 		patch_url: string;
 		rebaseable?: boolean | null;
 
-		/** Required */
-		requested_reviewers: Array<string>;
+		/**
+		 * Required
+		 * Array member types:
+		 */
+		requested_reviewers: Array<any>;
 
 		/** Required */
 		Webhook_pull_request_editedPull_requestRequested_teams: Array<Webhook_pull_request_editedPull_requestRequested_teams>;
@@ -134381,8 +134407,11 @@ export namespace MyNS {
 		patch_url: string;
 		rebaseable?: boolean | null;
 
-		/** Required */
-		requested_reviewers: Array<string>;
+		/**
+		 * Required
+		 * Array member types:
+		 */
+		requested_reviewers: Array<any>;
 
 		/** Required */
 		Webhook_pull_request_enqueuedPull_requestRequested_teams: Array<Webhook_pull_request_enqueuedPull_requestRequested_teams>;
@@ -138194,8 +138223,11 @@ export namespace MyNS {
 		patch_url: string;
 		rebaseable?: boolean | null;
 
-		/** Required */
-		requested_reviewers: Array<string>;
+		/**
+		 * Required
+		 * Array member types:
+		 */
+		requested_reviewers: Array<any>;
 
 		/** Required */
 		Webhook_pull_request_labeledPull_requestRequested_teams: Array<Webhook_pull_request_labeledPull_requestRequested_teams>;
@@ -141923,8 +141955,11 @@ export namespace MyNS {
 		patch_url: string;
 		rebaseable?: boolean | null;
 
-		/** Required */
-		requested_reviewers: Array<string>;
+		/**
+		 * Required
+		 * Array member types:
+		 */
+		requested_reviewers: Array<any>;
 
 		/** Required */
 		Webhook_pull_request_lockedPull_requestRequested_teams: Array<Webhook_pull_request_lockedPull_requestRequested_teams>;
@@ -145649,8 +145684,11 @@ export namespace MyNS {
 		patch_url: string;
 		rebaseable?: boolean | null;
 
-		/** Required */
-		requested_reviewers: Array<string>;
+		/**
+		 * Required
+		 * Array member types:
+		 */
+		requested_reviewers: Array<any>;
 
 		/** Required */
 		Webhook_pull_request_milestonedPull_requestRequested_teams: Array<Webhook_pull_request_milestonedPull_requestRequested_teams>;
@@ -149378,8 +149416,11 @@ export namespace MyNS {
 		patch_url: string;
 		rebaseable?: boolean | null;
 
-		/** Required */
-		requested_reviewers: Array<string>;
+		/**
+		 * Required
+		 * Array member types:
+		 */
+		requested_reviewers: Array<any>;
 
 		/** Required */
 		Webhook_pull_request_openedPull_requestRequested_teams: Array<Webhook_pull_request_openedPull_requestRequested_teams>;
@@ -153065,8 +153106,11 @@ export namespace MyNS {
 		patch_url: string;
 		rebaseable?: boolean | null;
 
-		/** Required */
-		requested_reviewers: Array<string>;
+		/**
+		 * Required
+		 * Array member types:
+		 */
+		requested_reviewers: Array<any>;
 
 		/** Required */
 		Webhook_pull_request_ready_for_reviewPull_requestRequested_teams: Array<Webhook_pull_request_ready_for_reviewPull_requestRequested_teams>;
@@ -156768,8 +156812,11 @@ export namespace MyNS {
 		patch_url: string;
 		rebaseable?: boolean | null;
 
-		/** Required */
-		requested_reviewers: Array<string>;
+		/**
+		 * Required
+		 * Array member types:
+		 */
+		requested_reviewers: Array<any>;
 
 		/** Required */
 		Webhook_pull_request_reopenedPull_requestRequested_teams: Array<Webhook_pull_request_reopenedPull_requestRequested_teams>;
@@ -161027,8 +161074,11 @@ export namespace MyNS {
 		/** Required */
 		patch_url: string;
 
-		/** Required */
-		requested_reviewers: Array<string>;
+		/**
+		 * Required
+		 * Array member types:
+		 */
+		requested_reviewers: Array<any>;
 
 		/** Required */
 		Webhook_pull_request_review_comment_createdPull_requestRequested_teams: Array<Webhook_pull_request_review_comment_createdPull_requestRequested_teams>;
@@ -165180,8 +165230,11 @@ export namespace MyNS {
 		/** Required */
 		patch_url: string;
 
-		/** Required */
-		requested_reviewers: Array<string>;
+		/**
+		 * Required
+		 * Array member types:
+		 */
+		requested_reviewers: Array<any>;
 
 		/** Required */
 		Webhook_pull_request_review_comment_deletedPull_requestRequested_teams: Array<Webhook_pull_request_review_comment_deletedPull_requestRequested_teams>;
@@ -169379,8 +169432,11 @@ export namespace MyNS {
 		/** Required */
 		patch_url: string;
 
-		/** Required */
-		requested_reviewers: Array<string>;
+		/**
+		 * Required
+		 * Array member types:
+		 */
+		requested_reviewers: Array<any>;
 
 		/** Required */
 		Webhook_pull_request_review_comment_editedPull_requestRequested_teams: Array<Webhook_pull_request_review_comment_editedPull_requestRequested_teams>;
@@ -172928,8 +172984,11 @@ export namespace MyNS {
 		/** Required */
 		patch_url: string;
 
-		/** Required */
-		requested_reviewers: Array<string>;
+		/**
+		 * Required
+		 * Array member types:
+		 */
+		requested_reviewers: Array<any>;
 
 		/** Required */
 		Webhook_pull_request_review_dismissedPull_requestRequested_teams: Array<Webhook_pull_request_review_dismissedPull_requestRequested_teams>;
@@ -176760,8 +176819,11 @@ export namespace MyNS {
 		/** Required */
 		patch_url: string;
 
-		/** Required */
-		requested_reviewers: Array<string>;
+		/**
+		 * Required
+		 * Array member types:
+		 */
+		requested_reviewers: Array<any>;
 
 		/** Required */
 		Webhook_pull_request_review_editedPull_requestRequested_teams: Array<Webhook_pull_request_review_editedPull_requestRequested_teams>;
@@ -180393,8 +180455,11 @@ export namespace MyNS {
 		/** Required */
 		patch_url: string;
 
-		/** Required */
-		requested_reviewers: Array<string>;
+		/**
+		 * Required
+		 * Array member types:
+		 */
+		requested_reviewers: Array<any>;
 
 		/** Required */
 		Webhook_pull_request_review_submittedPull_requestRequested_teams: Array<Webhook_pull_request_review_submittedPull_requestRequested_teams>;
@@ -184182,8 +184247,11 @@ export namespace MyNS {
 		/** Required */
 		patch_url: string;
 
-		/** Required */
-		requested_reviewers: Array<string>;
+		/**
+		 * Required
+		 * Array member types:
+		 */
+		requested_reviewers: Array<any>;
 
 		/** Required */
 		Webhook_pull_request_review_thread_resolvedPull_requestRequested_teams: Array<Webhook_pull_request_review_thread_resolvedPull_requestRequested_teams>;
@@ -188222,8 +188290,11 @@ export namespace MyNS {
 		/** Required */
 		patch_url: string;
 
-		/** Required */
-		requested_reviewers: Array<string>;
+		/**
+		 * Required
+		 * Array member types:
+		 */
+		requested_reviewers: Array<any>;
 
 		/** Required */
 		Webhook_pull_request_review_thread_unresolvedPull_requestRequested_teams: Array<Webhook_pull_request_review_thread_unresolvedPull_requestRequested_teams>;
@@ -192318,8 +192389,11 @@ export namespace MyNS {
 		patch_url: string;
 		rebaseable?: boolean | null;
 
-		/** Required */
-		requested_reviewers: Array<string>;
+		/**
+		 * Required
+		 * Array member types:
+		 */
+		requested_reviewers: Array<any>;
 
 		/** Required */
 		Webhook_pull_request_synchronizePull_requestRequested_teams: Array<Webhook_pull_request_synchronizePull_requestRequested_teams>;
@@ -196114,8 +196188,11 @@ export namespace MyNS {
 		patch_url: string;
 		rebaseable?: boolean | null;
 
-		/** Required */
-		requested_reviewers: Array<string>;
+		/**
+		 * Required
+		 * Array member types:
+		 */
+		requested_reviewers: Array<any>;
 
 		/** Required */
 		Webhook_pull_request_unassignedPull_requestRequested_teams: Array<Webhook_pull_request_unassignedPull_requestRequested_teams>;
@@ -199927,8 +200004,11 @@ export namespace MyNS {
 		patch_url: string;
 		rebaseable?: boolean | null;
 
-		/** Required */
-		requested_reviewers: Array<string>;
+		/**
+		 * Required
+		 * Array member types:
+		 */
+		requested_reviewers: Array<any>;
 
 		/** Required */
 		Webhook_pull_request_unlabeledPull_requestRequested_teams: Array<Webhook_pull_request_unlabeledPull_requestRequested_teams>;
@@ -203638,8 +203718,11 @@ export namespace MyNS {
 		patch_url: string;
 		rebaseable?: boolean | null;
 
-		/** Required */
-		requested_reviewers: Array<string>;
+		/**
+		 * Required
+		 * Array member types:
+		 */
+		requested_reviewers: Array<any>;
 
 		/** Required */
 		Webhook_pull_request_unlockedPull_requestRequested_teams: Array<Webhook_pull_request_unlockedPull_requestRequested_teams>;
@@ -255416,8 +255499,11 @@ export namespace MyNS {
 		/** The contents of the issue. */
 		body?: string | null;
 
-		/** Labels to associate with this issue. _NOTE: Only users with push access can set labels for new issues. Labels are silently dropped otherwise._ */
-		labels?: Array<string>;
+		/**
+		 * Labels to associate with this issue. _NOTE: Only users with push access can set labels for new issues. Labels are silently dropped otherwise._
+		 * Array member types:
+		 */
+		labels?: Array<any>;
 		milestone?: string;
 
 		/**
@@ -255508,8 +255594,11 @@ export namespace MyNS {
 		/** The contents of the issue. */
 		body?: string | null;
 
-		/** Labels to associate with this issue. Pass one or more labels to _replace_ the set of labels on this issue. Send an empty array (`[]`) to clear all labels from the issue. Only users with push access can set labels for issues. Without push access to the repository, label changes are silently dropped. */
-		labels?: Array<string>;
+		/**
+		 * Labels to associate with this issue. Pass one or more labels to _replace_ the set of labels on this issue. Send an empty array (`[]`) to clear all labels from the issue. Only users with push access can set labels for issues. Without push access to the repository, label changes are silently dropped.
+		 * Array member types:
+		 */
+		labels?: Array<any>;
 		milestone?: string;
 
 		/** The open or closed state of the issue. */

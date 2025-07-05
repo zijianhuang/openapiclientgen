@@ -6286,10 +6286,10 @@ export namespace MyNS {
 		 * Get all global auth. module configs
 		 * Get all global auth. module configs
 		 * Get api/auths
-		 * @return {Array<string>} Successful operation
+		 * @return {Array<any>} Successful operation
 		 */
-		FindAllGlobalAuthModules(): Observable<Array<string>> {
-			return this.http.get<Array<string>>(this.baseUri + 'api/auths', {});
+		FindAllGlobalAuthModules(): Observable<Array<any>> {
+			return this.http.get<Array<any>>(this.baseUri + 'api/auths', {});
 		}
 
 		/**

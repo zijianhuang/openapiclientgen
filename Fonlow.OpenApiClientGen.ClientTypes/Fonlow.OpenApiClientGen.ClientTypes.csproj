@@ -13,7 +13,7 @@
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <AssemblyName>Fonlow.OpenApiClientGen.ClientTypes</AssemblyName>
     <RootNamespace>Fonlow.OpenApiClientGen.ClientTypes</RootNamespace>
-    <Version>3.2.2</Version>
+    <Version>3.3</Version>
     <PackageReleaseNotes>NgDateOnlyFormControlEnabled</PackageReleaseNotes>
     <AnalysisLevel>latest-all</AnalysisLevel>
   </PropertyGroup>
