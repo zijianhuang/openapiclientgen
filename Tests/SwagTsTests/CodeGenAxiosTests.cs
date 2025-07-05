@@ -118,6 +118,26 @@ namespace SwagTests
 		}
 
 		[Fact]
+		public void TestOpenAi()
+		{
+			helper.GenerateAndAssert("SwagMock/openaiapi.yaml", "Results/openaiapi.cs", new Settings()
+			{
+				ClientNamespace = "MyNS",
+				ContainerClassName = "Misc",
+				ContainerNameStrategy = ContainerNameStrategy.None,
+				ActionNameStrategy = ActionNameStrategy.Default,
+				GenerateBothAsyncAndSync = true,
+				//DecorateDataModelWithSerializable = true,
+				UseEnsureSuccessStatusCodeEx = true,
+				DataAnnotationsEnabled = true,
+				DataAnnotationsToComments = true,
+				CancellationTokenEnabled = true,
+				HandleHttpRequestHeaders = true,
+				SpecialTokens = new System.Collections.Generic.Dictionary<string, string> { ["<|endoftext|>"] = "\"\\r\\n\"" }
+			});
+		}
+
+		[Fact]
 		public void TestEBaySellAccount()
 		{
 			helper.GenerateAndAssert("SwagMock/sell_account_v1_oas3.json", "AxiosResults/sell_account.ts");

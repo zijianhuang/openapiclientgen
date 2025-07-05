@@ -93,7 +93,7 @@ namespace Fonlow.OpenApiClientGen.TestHelpers
 		{
 			var currentDir = Directory.GetCurrentDirectory();
 			Directory.SetCurrentDirectory(ng2Dir); // setting ProcessStartInfo.WorkingDirectory is not always working. Working in this demo, but not working in other heavier .net core Web app.
-			var ngCmd = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles), "nodejs\\ng.cmd");
+			var ngCmd = "C:/nvm4w/nodejs/ng.cmd";
 			ProcessStartInfo info = new(ngCmd, "build --source-map=false --build-optimizer=false")
 			{
 				UseShellExecute = false,

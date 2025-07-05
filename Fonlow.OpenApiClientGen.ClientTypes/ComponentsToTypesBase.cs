@@ -340,7 +340,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 						return Tuple.Create(new CodeTypeReference(typeRef), string.Empty);
 					}
 				}
-				else if (arrayItemsSchema.OneOf.Count > 0)
+				else if (arrayItemsSchema.OneOf.Count > 0) // array containing multiple types
 				{
 					return Tuple.Create(ComponentsHelper.CreateArrayOfCustomTypeReference("System.Object", 1, settings), String.Empty);
 				}

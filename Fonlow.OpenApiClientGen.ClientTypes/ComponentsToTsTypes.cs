@@ -535,6 +535,13 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					}
 				}
 
+				if (memberSchema.Type == "array" && memberSchema.Items?.OneOf?.Count > 0)
+				{
+					var typeList = memberSchema.Items.OneOf.Select(d => d.Reference?.Id);
+					var typeListText = string.Join(", ", typeList);
+					ss.Add("Array member types: " + typeListText);
+				}
+
 				if (ss.Count > 0)
 				{
 					propertyField.Comments.Add(new CodeCommentStatement(Fonlow.DocComment.StringFunctions.IndentedArrayToString(ss), true));
