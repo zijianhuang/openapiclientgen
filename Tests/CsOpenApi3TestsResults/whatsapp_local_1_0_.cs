@@ -429,27 +429,12 @@ namespace MyNS
 	{
 		
 		[System.Runtime.Serialization.DataMember(Name="health")]
-		public Gateway_Status Health { get; set; }
+		public System.Nullable<Check_Health_ResponseHealth> Health { get; set; }
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
-	public enum Gateway_Status
+	public enum Check_Health_ResponseHealth
 	{
-		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		connected = 0,
-		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		connecting = 1,
-		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		disconnected = 2,
-		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		uninitialized = 3,
-		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		unregistered = 4,
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
@@ -968,6 +953,26 @@ namespace MyNS
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
 		coreapp = 2,
+	}
+	
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
+	public enum Gateway_Status
+	{
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		connected = 0,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		connecting = 1,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		disconnected = 2,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		uninitialized = 3,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		unregistered = 4,
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]

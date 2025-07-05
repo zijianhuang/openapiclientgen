@@ -462,6 +462,10 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			string primitivePropertyType = propertySchema.Type;
 			bool isPrimitiveType = TypeRefHelper.IsPrimitiveTypeOfOA(primitivePropertyType);
 			bool isRequired = schema.Required.Contains(refId); //compare with the original key
+			if (refId== "batch_size" || refId== "eagerness")
+			{
+				Console.WriteLine();
+			}
 			string defaultValue = GetDefaultValue(propertySchema);
 			if (!string.IsNullOrEmpty(defaultValue) && settings.SpecialTokens != null) // for open ai and alike, with something like <|endoftext|>
 			{
@@ -483,15 +487,53 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					CodeTypeReference ctr = ComponentsHelper.TranslateTypeNameToClientTypeReference(propertyTypeWithNs);
 					clientProperty = CreateProperty(ctr, propertyName, defaultValue); //C#
 				}
-				//else if (propertySchema.AllOf != null && propertySchema.AllOf.Count > 0)
+				//else if (propertySchema.OneOf != null && propertySchema.OneOf.Count > 0 && propertySchema.OneOf[0].Reference!=null) working however, the else block could handle well already.
 				//{
-				//	var reference = propertySchema.AllOf[0].Reference;
+				//	var reference = propertySchema.OneOf[0].Reference;
 				//	string propertyTypeNs = NameFunc.GetNamespaceOfClassName(reference.Id);
 				//	string propertyTypeName = Renamer.RefineTypeName(reference.Id, propertyTypeNs);
 				//	string propertyTypeWithNs = NameFunc.CombineNamespaceWithClassName(propertyTypeNs, propertyTypeName);
 				//	CodeTypeReference ctr = ComponentsHelper.TranslateTypeNameToClientTypeReference(propertyTypeWithNs);
 				//	clientProperty = CreateProperty(ctr, propertyName, defaultValue); //C#
 				//}
+				else if (propertySchema.OneOf.Count > 0 && propertySchema.OneOf[0].Enum.Count > 0) // for string enum
+				{
+					string[] enumMemberNames;
+					try
+					{
+						enumMemberNames = GetStringsFromEnumList(propertySchema.OneOf[0].Enum);
+
+						// It's also needed here to provide enums in correct case for the FindEnumDeclaration function
+						if (settings.UsePascalCase)
+						{
+							for (var i = 0; i < propertySchema.OneOf[0].Enum.Count; i++)
+							{
+								if (propertySchema.OneOf[0].Enum[i] is OpenApiString str)
+								{
+									propertySchema.OneOf[0].Enum[i] = new OpenApiString(str.Value.ToPascalCase());
+								}
+							}
+							enumMemberNames = enumMemberNames.Select(e => e.ToPascalCase()).ToArray();
+						}
+
+					}
+					catch (InvalidCastException ex)
+					{
+						throw new CodeGenOperationException($"When dealing with {propertyName} of {primitivePropertyType}, error: {ex.Message}");
+					}
+
+					CodeTypeDeclaration existingDeclaration = FindEnumDeclaration(enumMemberNames);
+					if (existingDeclaration != null)
+					{
+						string existingTypeName = existingDeclaration.Name;
+						CodeTypeReference enumReference = TypeRefHelper.TranslateToClientTypeReference(existingTypeName);
+						clientProperty = CreateProperty(enumReference, propertyName, String.IsNullOrEmpty(defaultValue) ? null : enumReference.BaseType + "." + Renamer.RefineEnumValue(defaultValue));
+					}
+					else
+					{
+						clientProperty = GenerateCasualEnumForProperty(propertySchema, typeDeclaration.Name, propertyName, ns ?? settings.ClientNamespace, defaultValue, !isRequired || propertySchema.Nullable);
+					}
+				}
 				else
 				{
 					if (propertySchema.Enum.Count > 0) //for casual enum along with defaultValue
@@ -585,42 +627,6 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					CodeTypeReference dicCtr = new(typeof(Dictionary<,>).FullName, dicKeyTypeRef, dicValueTypeRef); //for client codes, Dictionary is better than IDictionary, no worry of different implementation of IDictionary
 					clientProperty = CreateProperty(dicCtr, propertyName, null);
 				}
-				else if (propertySchema.Enum.Count == 0) // for primitive type
-				{
-					Type simpleType;
-					bool isDateOnly = false;
-					if (primitivePropertyType == "string" && propertySchema.Format == "date" && !settings.DateToDateOnly)
-					{
-						simpleType = typeof(DateTimeOffset);
-						isDateOnly = true;
-					}
-					else if (primitivePropertyType == "string" && propertySchema.Format == "uuid" && settings.UseGuid)
-					{
-						simpleType = typeof(Guid);
-					}
-					else
-					{
-						simpleType = TypeRefHelper.PrimitiveSwaggerTypeToClrType(primitivePropertyType, propertySchema.Format);
-					}
-
-					if ((!settings.DisableSystemNullableByDefault && !isRequired || propertySchema.Nullable) && !simpleType.IsClass) //C#
-					{
-						clientProperty = CreateNullableProperty(propertyName, simpleType, settings, propertySchema.Nullable);
-					}
-					else if (propertySchema.Nullable && simpleType.IsClass && settings.UseNullableReferenceType)
-					{
-						clientProperty = CreateNullableProperty(propertyName, simpleType, settings, propertySchema.Nullable);
-					}
-					else
-					{
-						clientProperty = CreateProperty(propertyName, simpleType, defaultValue);
-					}
-
-					if (isDateOnly)
-					{
-						clientProperty.CustomAttributes.Add(new CodeAttributeDeclaration("System.ComponentModel.DataAnnotations.DataTypeAttribute", new CodeAttributeArgument(new CodeSnippetExpression("System.ComponentModel.DataAnnotations.DataType.Date"))));
-					}
-				}
 				else if (propertySchema.Enum.Count > 0 && primitivePropertyType == "string") // for string enum
 				{
 					string[] enumMemberNames;
@@ -657,6 +663,42 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					else
 					{
 						clientProperty = GenerateCasualEnumForProperty(propertySchema, typeDeclaration.Name, propertyName, ns ?? settings.ClientNamespace, defaultValue, !isRequired || propertySchema.Nullable);
+					}
+				}
+				else if (propertySchema.Enum.Count == 0) // for primitive type
+				{
+					Type simpleType;
+					bool isDateOnly = false;
+					if (primitivePropertyType == "string" && propertySchema.Format == "date" && !settings.DateToDateOnly)
+					{
+						simpleType = typeof(DateTimeOffset);
+						isDateOnly = true;
+					}
+					else if (primitivePropertyType == "string" && propertySchema.Format == "uuid" && settings.UseGuid)
+					{
+						simpleType = typeof(Guid);
+					}
+					else
+					{
+						simpleType = TypeRefHelper.PrimitiveSwaggerTypeToClrType(primitivePropertyType, propertySchema.Format);
+					}
+
+					if ((!settings.DisableSystemNullableByDefault && !isRequired || propertySchema.Nullable) && !simpleType.IsClass) //C#
+					{
+						clientProperty = CreateNullableProperty(propertyName, simpleType, settings, propertySchema.Nullable);
+					}
+					else if (propertySchema.Nullable && simpleType.IsClass && settings.UseNullableReferenceType)
+					{
+						clientProperty = CreateNullableProperty(propertyName, simpleType, settings, propertySchema.Nullable);
+					}
+					else
+					{
+						clientProperty = CreateProperty(propertyName, simpleType, defaultValue);
+					}
+
+					if (isDateOnly)
+					{
+						clientProperty.CustomAttributes.Add(new CodeAttributeDeclaration("System.ComponentModel.DataAnnotations.DataTypeAttribute", new CodeAttributeArgument(new CodeSnippetExpression("System.ComponentModel.DataAnnotations.DataType.Date"))));
 					}
 				}
 				else if (primitivePropertyType != "string" && TypeAliasDic.TryGet(primitivePropertyType, out string aliasTypeName)) //check TypeAliasDic
@@ -784,6 +826,13 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 						var refinedTypeName = Renamer.RefineTypeName(typeRef, "");
 						return $"{refinedTypeName}.{Renamer.RefineEnumValue(stringValue.Value)}";
 					}
+
+					//if (s.OneOf != null && s.OneOf.Count > 0) //https://swagger.io/docs/specification/v3_0/data-models/oneof-anyof-allof-not/
+					//{
+					//	var typeRef = s.OneOf[0].Reference.Id;
+					//	var refinedTypeName = Renamer.RefineTypeName(typeRef, "");
+					//	return $"{refinedTypeName}.{Renamer.RefineEnumValue(stringValue.Value)}";
+					//}
 
 					return stringValue.Value;
 				}
@@ -914,15 +963,6 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			};
 			return result;
 		}
-
-		//CodeMemberField CreateProperty(string propertyName, string typeName, string defaultValue)
-		//{
-		//	string memberName = propertyName + (defaultValue == null || !settings.DataAnnotationsEnabled ? " { get; set; }//" : $" {{ get; set; }} = {defaultValue};//");
-
-		//	CodeMemberField result = new CodeMemberField() { Type = ComponentsHelper.TranslateTypeNameToClientTypeReference(typeName), Name = memberName };
-		//	result.Attributes = MemberAttributes.Public | MemberAttributes.Final;
-		//	return result;
-		//}
 
 		CodeMemberField CreateProperty(string propertyName, Type type, string defaultValue)
 		{
