@@ -342,7 +342,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				}
 				else if (arrayItemsSchema.OneOf.Count > 0) // array containing multiple types
 				{
-					return Tuple.Create(ComponentsHelper.CreateArrayOfCustomTypeReference("System.Object", 1, settings), String.Empty);
+					return Tuple.Create(ComponentsHelper.CreateArrayOfCustomTypeReference(CreateTypeTextForArrayContainingMultipleTypes(arrayItemsSchema.OneOf), 1, settings), String.Empty);
 				}
 
 				Type clrType = TypeRefHelper.PrimitiveSwaggerTypeToClrType(arrayType, null);
@@ -357,6 +357,8 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				}
 			}
 		}
+
+		abstract protected string CreateTypeTextForArrayContainingMultipleTypes(IList<OpenApiSchema> list);
 
 		public CodeTypeReference CreateComplexCodeTypeReference(OpenApiSchema propertySchema)
 		{

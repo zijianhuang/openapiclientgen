@@ -3515,7 +3515,7 @@ namespace MyNS
 		/// Array member types: CodeInterpreterTextOutput, CodeInterpreterFileOutput
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
-		public CodeInterpreterToolOutput[] Results { get; set; }
+		public object[] Results { get; set; }
 	}
 	
 	public enum CodeInterpreterToolCallType
@@ -4127,7 +4127,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		public ChatCompletionRequestMessage[] Messages { get; set; }
+		public object[] Messages { get; set; }
 		
 		/// <summary>
 		/// Required
@@ -5332,7 +5332,7 @@ namespace MyNS
 		/// Array member types: , EvalItem
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
-		public CreateEvalItem[] Input { get; set; }
+		public object[] Input { get; set; }
 		
 		/// <summary>
 		/// The labels to classify to each item in the evaluation.
@@ -6656,7 +6656,7 @@ namespace MyNS
 		///
 		/// Array member types: FileSearchTool, FunctionTool, WebSearchPreviewTool, ComputerUsePreviewTool
 		/// </summary>
-		public Tool[] Tools { get; set; }
+		public object[] Tools { get; set; }
 		
 		/// <summary>
 		/// How the model should select which tool (or tools) to use when generating
@@ -6751,10 +6751,6 @@ namespace MyNS
 		///
 		/// </summary>
 		public TextResponseFormatConfiguration Format { get; set; }
-	}
-	
-	public class Tool
-	{
 	}
 	
 	public enum CreateResponseTool_choice
@@ -10534,7 +10530,7 @@ namespace MyNS
 		/// Array member types: InputTextContent, InputImageContent, InputFileContent
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
-		public InputContent[] Content { get; set; }
+		public object[] Content { get; set; }
 	}
 	
 	public enum InputMessageRole
@@ -13483,7 +13479,7 @@ namespace MyNS
 		/// Array member types: OutputTextContent, RefusalContent
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
-		public OutputContent[] Content { get; set; }
+		public object[] Content { get; set; }
 		
 		/// <summary>
 		/// The status of the message input. One of `in_progress`, `completed`, or
@@ -18356,7 +18352,7 @@ namespace MyNS
 		///
 		/// Array member types: FileSearchTool, FunctionTool, WebSearchPreviewTool, ComputerUsePreviewTool
 		/// </summary>
-		public Tool[] Tools { get; set; }
+		public object[] Tools { get; set; }
 		
 		/// <summary>
 		/// How the model should select which tool (or tools) to use when generating
@@ -19349,7 +19345,7 @@ namespace MyNS
 		/// Array member types: InputMessageResource, OutputMessage, FileSearchToolCall, ComputerToolCall, ComputerToolCallOutputResource, WebSearchToolCall, FunctionToolCallResource, FunctionToolCallOutputResource
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
-		public ItemResource[] Data { get; set; }
+		public object[] Data { get; set; }
 		
 		/// <summary>
 		/// Whether there are more items available.
@@ -19506,7 +19502,7 @@ namespace MyNS
 		///
 		/// Array member types: FileSearchTool, FunctionTool, WebSearchPreviewTool, ComputerUsePreviewTool
 		/// </summary>
-		public Tool[] Tools { get; set; }
+		public object[] Tools { get; set; }
 		
 		/// <summary>
 		/// How the model should select which tool (or tools) to use when generating
@@ -22980,6 +22976,10 @@ namespace MyNS
 		browser = 4,
 	}
 	
+	public class Tool
+	{
+	}
+	
 	/// <summary>
 	/// A citation to a file.
 	/// </summary>
@@ -23083,7 +23083,7 @@ namespace MyNS
 		/// Array member types: FileCitationBody, UrlCitationBody, FilePath
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
-		public Annotation[] Annotations { get; set; }
+		public object[] Annotations { get; set; }
 	}
 	
 	public enum OutputTextContentType

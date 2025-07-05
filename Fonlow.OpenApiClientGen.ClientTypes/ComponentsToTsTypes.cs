@@ -537,7 +537,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 				if (memberSchema.Type == "array" && memberSchema.Items?.OneOf?.Count > 0)
 				{
-					var typeList = memberSchema.Items.OneOf.Select(d => d.Reference?.Id);
+					var typeList = memberSchema.Items.OneOf.Select(d => d.Reference?.Id).Where(d=>!string.IsNullOrEmpty(d));
 					var typeListText = string.Join(", ", typeList);
 					ss.Add("Array member types: " + typeListText);
 				}
@@ -808,6 +808,14 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				CodeAttributeDeclaration pa = new("System.ComponentModel.DataAnnotations.RegularExpressionAttribute", new CodeAttributeArgument(patternTextExpression));
 				memberField.CustomAttributes.Add(pa);
 			}
+		}
+
+		protected override string CreateTypeTextForArrayContainingMultipleTypes(IList<OpenApiSchema> list)
+		{
+			//var typeList = list.Select(d => d.Reference?.Id).Where(d=>!string.IsNullOrEmpty(d));
+			//var typeListText = string.Join(" | ", typeList);
+			//return typeListText;
+			return "System.Object"; // many Swagger/OpenAPI definitions define base type and so called sub-types not friendly to Object Oriented programming. Like what in Open AI OpenApi def.
 		}
 	}
 

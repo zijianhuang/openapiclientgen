@@ -462,7 +462,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			string primitivePropertyType = propertySchema.Type;
 			bool isPrimitiveType = TypeRefHelper.IsPrimitiveTypeOfOA(primitivePropertyType);
 			bool isRequired = schema.Required.Contains(refId); //compare with the original key
-			if (refId == "batch_size" || refId == "eagerness")
+			if (refId == "tools" || refId == "eagerness")
 			{
 				Console.WriteLine();
 			}
@@ -562,7 +562,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			}
 			else
 			{
-				if (primitivePropertyType == "array") // for array
+				if (primitivePropertyType == "array") // for array property
 				{
 					CodeTypeReference arrayCodeTypeReference;
 					var foundCodeTypeDeclaration = FindCodeTypeDeclarationInNamespaces(currentTypeName, ns);
@@ -580,6 +580,11 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 							arrayCodeTypeReference = new CodeTypeReference(aliasTypeName);
 							n = propertyName;
 						}
+						else if (propertySchema.Items?.OneOf.Count > 0)
+						{
+							arrayCodeTypeReference = new CodeTypeReference("System.Object[]");
+							n = propertyName;
+						}
 						else
 						{
 							Tuple<CodeTypeReference, string> r = CreateArrayCodeTypeReference(propertySchema, typeDeclaration.Name, propertyName, currentTypeName, ns);
@@ -590,6 +595,11 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 					clientProperty = CreateProperty(arrayCodeTypeReference, n, defaultValue);
 				}
+				//else if (propertySchema.OneOf.Count > 0)
+				//{
+				//	Console.WriteLine();
+				//	clientProperty = null;
+				//}
 				else if (propertySchema.Enum.Count == 0 && propertySchema.Reference != null && !isPrimitiveType) // for complex type
 				{
 					CodeTypeReference complexCodeTypeReference = CreateComplexCodeTypeReference(propertySchema);
@@ -804,7 +814,8 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 			if (s.Default is OpenApiString stringValue)
 			{
-				if (stringValue.Value== "dall-e-2"){
+				if (stringValue.Value == "dall-e-2")
+				{
 					Console.WriteLine();
 				}
 				if (s.Enum == null || s.Enum.Count == 0) //Sometimes people make make a number default with value string. And this mistake seems common. Better to tolerate.
@@ -878,32 +889,6 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 			Trace.TraceWarning($"Default as {s.Default.GetType().FullName} is not yet supported.");
 			return null;
-		}
-
-		protected override void CreateMemberDocComment(string refId, OpenApiSchema memberSchema, CodeMemberField propertyField, OpenApiSchema modelSchema)
-		{
-			string typeComment = memberSchema.Description;
-			if (settings.DataAnnotationsToComments)
-			{
-				List<string> ss = ComponentsHelper.GetCommentsFromAnnotations(memberSchema, refId, modelSchema);
-				if (!String.IsNullOrEmpty(typeComment))
-				{
-					ss.Insert(0, typeComment);
-				}
-
-				if (memberSchema.Type == "array" && memberSchema.Items?.OneOf?.Count > 0)
-				{
-					var typeList = memberSchema.Items.OneOf.Select(d => d.Reference?.Id);
-					var typeListText = string.Join(", ", typeList);
-					ss.Add("Array member types: " + typeListText);
-				}
-
-				AddLinesAsSummaryDocComments(propertyField.Comments, ss);
-			}
-			else
-			{
-				AddDescriptionAsSummaryDocComments(propertyField.Comments, typeComment);
-			}
 		}
 
 		static void AddDescriptionAsSummaryDocComments(CodeCommentStatementCollection comments, string description)
@@ -1083,6 +1068,37 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					throw new CodeGenOperationException("Mixed up enum.");
 				}
 			}).ToArray();
+		}
+
+		protected override void CreateMemberDocComment(string refId, OpenApiSchema memberSchema, CodeMemberField propertyField, OpenApiSchema modelSchema)
+		{
+			string typeComment = memberSchema.Description;
+			if (settings.DataAnnotationsToComments)
+			{
+				List<string> ss = ComponentsHelper.GetCommentsFromAnnotations(memberSchema, refId, modelSchema);
+				if (!String.IsNullOrEmpty(typeComment))
+				{
+					ss.Insert(0, typeComment);
+				}
+
+				if (memberSchema.Type == "array" && memberSchema.Items?.OneOf?.Count > 0)
+				{
+					var typeList = memberSchema.Items.OneOf.Select(d => d.Reference?.Id);
+					var typeListText = string.Join(", ", typeList);
+					ss.Add("Array member types: " + typeListText);
+				}
+
+				AddLinesAsSummaryDocComments(propertyField.Comments, ss);
+			}
+			else
+			{
+				AddDescriptionAsSummaryDocComments(propertyField.Comments, typeComment);
+			}
+		}
+
+		protected override string CreateTypeTextForArrayContainingMultipleTypes(IList<OpenApiSchema> list)
+		{
+			return "System.Object";
 		}
 	}
 

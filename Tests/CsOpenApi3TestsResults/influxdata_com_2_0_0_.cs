@@ -76,7 +76,7 @@ namespace MyNS
 		/// Array member types: BadStatement, VariableAssignment, MemberAssignment, ExpressionStatement, ReturnStatement, OptionStatement, BuiltinStatement, TestStatement
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="body")]
-		public Statement[] Body { get; set; }
+		public object[] Body { get; set; }
 		
 		/// <summary>
 		/// A list of package imports
@@ -101,11 +101,6 @@ namespace MyNS
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="type")]
 		public string Type { get; set; }
-	}
-	
-	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
-	public class Statement
-	{
 	}
 	
 	/// <summary>
@@ -239,18 +234,13 @@ namespace MyNS
 		/// Array member types: ArrayExpression, DictExpression, FunctionExpression, BinaryExpression, CallExpression, ConditionalExpression, LogicalExpression, MemberExpression, IndexExpression, ObjectExpression, ParenExpression, PipeExpression, UnaryExpression, BooleanLiteral, DateTimeLiteral, DurationLiteral, FloatLiteral, IntegerLiteral, PipeLiteral, RegexpLiteral, StringLiteral, UnsignedIntegerLiteral, Identifier
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="elements")]
-		public Expression[] Elements { get; set; }
+		public object[] Elements { get; set; }
 		
 		/// <summary>
 		/// Type of AST node
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="type")]
 		public string Type { get; set; }
-	}
-	
-	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
-	public class Expression
-	{
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
@@ -1066,7 +1056,7 @@ namespace MyNS
 		/// Array member types: BadStatement, VariableAssignment, MemberAssignment, ExpressionStatement, ReturnStatement, OptionStatement, BuiltinStatement, TestStatement
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="body")]
-		public Statement[] Body { get; set; }
+		public object[] Body { get; set; }
 		
 		/// <summary>
 		/// Type of AST node
@@ -1315,7 +1305,7 @@ namespace MyNS
 		/// Array member types: ArrayExpression, DictExpression, FunctionExpression, BinaryExpression, CallExpression, ConditionalExpression, LogicalExpression, MemberExpression, IndexExpression, ObjectExpression, ParenExpression, PipeExpression, UnaryExpression, BooleanLiteral, DateTimeLiteral, DurationLiteral, FloatLiteral, IntegerLiteral, PipeLiteral, RegexpLiteral, StringLiteral, UnsignedIntegerLiteral, Identifier
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="arguments")]
-		public Expression[] Arguments { get; set; }
+		public object[] Arguments { get; set; }
 		
 		[System.Runtime.Serialization.DataMember(Name="callee")]
 		public Expression Callee { get; set; }
@@ -1837,7 +1827,7 @@ namespace MyNS
 		/// Array member types: , 
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="content")]
-		public DBRP[] Content { get; set; }
+		public object[] Content { get; set; }
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
@@ -2387,6 +2377,11 @@ namespace MyNS
 		unsupported_media_type = 12,
 	}
 	
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
+	public class Expression
+	{
+	}
+	
 	/// <summary>
 	/// May consist of an expression that does not return a value and is executed solely for its side-effects
 	/// </summary>
@@ -2895,7 +2890,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="layers")]
-		public GeoViewLayer[] Layers { get; set; }
+		public object[] Layers { get; set; }
 		
 		/// <summary>
 		/// Define map type - regular, satellite etc.
@@ -6437,6 +6432,11 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
+	public class Statement
+	{
+	}
+	
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/04")]
 	public class TableViewProperties
 	{
 		
@@ -9146,7 +9146,7 @@ namespace MyNS
 		/// Array member types: GreaterThreshold, LesserThreshold, RangeThreshold
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="thresholds")]
-		public Threshold[] Thresholds { get; set; }
+		public object[] Thresholds { get; set; }
 		
 		/// <summary>
 		/// Required

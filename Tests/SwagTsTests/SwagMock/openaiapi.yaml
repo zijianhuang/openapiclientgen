@@ -19568,8 +19568,7 @@ components:
                 - $ref: "#/components/schemas/PredictionContent"
             seed:
               type: integer
-              minimum: -9223372036854776000
-              maximum: 9223372036854776000
+              format: int64
               nullable: true
               description: >
                 This feature is in Beta.
@@ -23341,7 +23340,6 @@ components:
             - $ref: "#/components/schemas/EvalCustomDataSourceConfig"
             - $ref: "#/components/schemas/EvalStoredCompletionsDataSourceConfig"
         testing_criteria:
-          default: eval
           description: A list of testing criteria.
           type: array
           items:
