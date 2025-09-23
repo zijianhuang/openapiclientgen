@@ -102,7 +102,6 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			CodeTypeDeclaration existingType = ComponentsHelper.FindTypeDeclarationInNamespaces(codeCompileUnit.Namespaces, currentTypeName, ns);
 			if (existingType != null)
 			{
-				Console.WriteLine($"{refId} exists in CodeDOM");
 				return;
 			}
 
@@ -462,10 +461,6 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			string primitivePropertyType = propertySchema.Type;
 			bool isPrimitiveType = TypeRefHelper.IsPrimitiveTypeOfOA(primitivePropertyType);
 			bool isRequired = schema.Required.Contains(refId); //compare with the original key
-			if (refId == "tools" || refId == "eagerness")
-			{
-				Console.WriteLine();
-			}
 			string defaultValue = GetDefaultValue(propertySchema);
 			if (!string.IsNullOrEmpty(defaultValue) && settings.SpecialTokens != null) // for open ai and alike, with something like <|endoftext|>
 			{
@@ -595,11 +590,6 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 					clientProperty = CreateProperty(arrayCodeTypeReference, n, defaultValue);
 				}
-				//else if (propertySchema.OneOf.Count > 0)
-				//{
-				//	Console.WriteLine();
-				//	clientProperty = null;
-				//}
 				else if (propertySchema.Enum.Count == 0 && propertySchema.Reference != null && !isPrimitiveType) // for complex type
 				{
 					CodeTypeReference complexCodeTypeReference = CreateComplexCodeTypeReference(propertySchema);
@@ -814,10 +804,6 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 			if (s.Default is OpenApiString stringValue)
 			{
-				if (stringValue.Value == "dall-e-2")
-				{
-					Console.WriteLine();
-				}
 				if (s.Enum == null || s.Enum.Count == 0) //Sometimes people make make a number default with value string. And this mistake seems common. Better to tolerate.
 				{
 					if (s.Type == "string")
@@ -1041,7 +1027,6 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				var ps = $"@\"{escapedPattern}\"";
 				CodeSnippetExpression patternTextExpression = new(ps);
 				CodeAttributeDeclaration pa = new("System.ComponentModel.DataAnnotations.RegularExpressionAttribute", new CodeAttributeArgument(patternTextExpression));
-				//Console.WriteLine(ps);
 				memberField.CustomAttributes.Add(pa);
 			}
 		}

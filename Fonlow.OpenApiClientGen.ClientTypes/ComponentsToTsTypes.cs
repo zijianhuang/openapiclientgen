@@ -95,7 +95,6 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			CodeTypeDeclaration existingType = ComponentsHelper.FindTypeDeclarationInNamespaces(codeCompileUnit.Namespaces, currentTypeName, ns);
 			if (existingType != null)
 			{
-				Console.WriteLine($"{refId} exists in CodeDOM");
 				return;
 			}
 

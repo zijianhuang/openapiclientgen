@@ -66,7 +66,6 @@ namespace Fonlow.TypeScriptCodeDom
 		/// <returns></returns>
 		CodeTypeDeclaration FindCodeTypeDeclarationInNamespaces(string typeNameNoNs)
 		{
-			//Console.WriteLine("All TypeDeclarations: " + string.Join("; ", currentCodeNamespace.Types.OfType<CodeTypeDeclaration>().Select(d=>d.Name)));
 			for (int i = 0; i < codeNamespaceCollection.Count; i++)
 			{
 				var ns = codeNamespaceCollection[i];
@@ -219,9 +218,7 @@ namespace Fonlow.TypeScriptCodeDom
 
 			if (customAttributes.Count > 0)
 			{
-				//Console.WriteLine("customAttributes: " + string.Join(", ",  customAttributes));
 				var validatorList = new List<string>();
-				Console.Write("CustomAttributes: ");
 				for (int i = 0; i < customAttributes.Count; i++)
 				{
 					var ca = customAttributes[i];
@@ -257,7 +254,6 @@ namespace Fonlow.TypeScriptCodeDom
 							break;
 					}
 				}
-				Console.WriteLine();
 
 				var text = String.Join(", ", validatorList);
 				
@@ -436,7 +432,6 @@ namespace Fonlow.TypeScriptCodeDom
 			{
 				var parentTypeReference = typeDeclaration.BaseTypes[0];
 				var parentTypeName = TypeMapper.MapCodeTypeReferenceToTsText(parentTypeReference); //namspace prefix included
-																								   //Console.WriteLine("parentTypeName: " + parentTypeName);
 				var parentCodeTypeDeclaration = FindCodeTypeDeclarationInNamespaces(parentTypeName);
 
 				if (parentCodeTypeDeclaration != null)

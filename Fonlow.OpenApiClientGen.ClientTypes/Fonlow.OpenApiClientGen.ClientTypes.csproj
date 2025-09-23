@@ -23,7 +23,7 @@
 
   <ItemGroup>
     <PackageReference Include="Fonlow.Poco2TsCore" Version="4.1.0" />
-    <PackageReference Include="Microsoft.OpenApi.Readers" Version="1.6.24" />
+    <PackageReference Include="Microsoft.OpenApi.Readers" Version="1.6.26" />
     <PackageReference Include="Tavis.UriTemplates" Version="2.0.0" />
   </ItemGroup>
 
