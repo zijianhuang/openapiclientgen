@@ -10,7 +10,7 @@
 		<Copyright>Copyright © Zijian Huang 2021-$([System.DateTime]::Now.Year)</Copyright>
 		<Authors>Zijian Huang</Authors>
 		<RootNamespace>Fonlow.OpenApiClientGen.NG2</RootNamespace>
-		<Version>2.1</Version>
+		<Version>2.2</Version>
 		<AnalysisLevel>latest-all</AnalysisLevel>
 	</PropertyGroup>
 

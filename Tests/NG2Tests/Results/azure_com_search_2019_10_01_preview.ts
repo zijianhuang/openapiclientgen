@@ -648,9 +648,9 @@ export namespace MyNS {
 
 	export enum SkuName { free = 'free', basic = 'basic', standard = 'standard', standard2 = 'standard2', standard3 = 'standard3', storage_optimized_l1 = 'storage_optimized_l1', storage_optimized_l2 = 'storage_optimized_l2' }
 
-	@Injectable()
+	@Injectable({ providedIn: 'root' })
 	export class MyClient {
-		constructor(@Inject('baseUri') private baseUri: string = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + '/', private http: HttpClient) {
+		constructor(@Inject('baseUri') private baseUri: string = window.location.origin + '/', private http: HttpClient) {
 		}
 
 		/**

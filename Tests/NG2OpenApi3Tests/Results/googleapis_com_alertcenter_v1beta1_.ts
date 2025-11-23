@@ -2292,9 +2292,9 @@ export namespace MyNS {
 
 	export enum VoicemailRecipientErrorInvalidReason { EMAIL_INVALID_REASON_UNSPECIFIED = 'EMAIL_INVALID_REASON_UNSPECIFIED', OUT_OF_QUOTA = 'OUT_OF_QUOTA', RECIPIENT_DELETED = 'RECIPIENT_DELETED' }
 
-	@Injectable()
+	@Injectable({ providedIn: 'root' })
 	export class MyClient {
-		constructor(@Inject('baseUri') private baseUri: string = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + '/', private http: HttpClient) {
+		constructor(@Inject('baseUri') private baseUri: string = window.location.origin + '/', private http: HttpClient) {
 		}
 
 		/**

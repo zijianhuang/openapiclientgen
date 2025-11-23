@@ -2512,9 +2512,9 @@ export namespace MyNS {
 	/** <p>Contains the key values of <code>DetailsMap</code>:</p> <ul> <li> <p> <code>PredictiveModelType</code> - Indicates the type of the <code>MLModel</code>.</p> </li> <li> <p> <code>Algorithm</code> - Indicates the algorithm that was used for the <code>MLModel</code>.</p> </li> </ul> */
 	export enum DetailsAttributes { PredictiveModelType = 'PredictiveModelType', Algorithm = 'Algorithm' }
 
-	@Injectable()
+	@Injectable({ providedIn: 'root' })
 	export class MyClient {
-		constructor(@Inject('baseUri') private baseUri: string = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + '/', private http: HttpClient) {
+		constructor(@Inject('baseUri') private baseUri: string = window.location.origin + '/', private http: HttpClient) {
 		}
 
 		/**

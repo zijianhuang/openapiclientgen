@@ -149,9 +149,9 @@ export namespace MyNS {
 
 	export enum ProfileProfileType { PROFILE_TYPE_UNSPECIFIED = 'PROFILE_TYPE_UNSPECIFIED', CPU = 'CPU', WALL = 'WALL', HEAP = 'HEAP', THREADS = 'THREADS', CONTENTION = 'CONTENTION', PEAK_HEAP = 'PEAK_HEAP', HEAP_ALLOC = 'HEAP_ALLOC' }
 
-	@Injectable()
+	@Injectable({ providedIn: 'root' })
 	export class MyClient {
-		constructor(@Inject('baseUri') private baseUri: string = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + '/', private http: HttpClient) {
+		constructor(@Inject('baseUri') private baseUri: string = window.location.origin + '/', private http: HttpClient) {
 		}
 
 		/**

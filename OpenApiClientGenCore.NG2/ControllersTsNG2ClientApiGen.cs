@@ -37,7 +37,7 @@ namespace Fonlow.CodeDom.Web.Ts
 
 			// Add parameters.
 			constructor.Parameters.Add(new CodeParameterDeclarationExpression(
-				"string = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + '/'", "@Inject('baseUri') private baseUri"));
+				"string = window.location.origin + '/'", "@Inject('baseUri') private baseUri"));
 			constructor.Parameters.Add(new CodeParameterDeclarationExpression(
 				"HttpClient", "private http"));
 
@@ -46,9 +46,11 @@ namespace Fonlow.CodeDom.Web.Ts
 
 		protected override CodeAttributeDeclarationCollection CreateClassCustomAttributes()
 		{
-			var c = new CodeTypeReference("Injectable");
-			c.UserData.Add("TsTypeInfo", new TsTypeInfo { TypeOfType = TypeOfType.IsInterface });
-			return new CodeAttributeDeclarationCollection(new CodeAttributeDeclaration[] { new CodeAttributeDeclaration(c) });
+			CodeTypeReference c = new CodeTypeReference("Injectable");
+			c.UserData.Add(UserDataKeys.TsTypeInfo, new TsTypeInfo { TypeOfType = TypeOfType.IsInterface });
+			var atr = new CodeAttributeDeclaration(c);
+			atr.Arguments.Add(new CodeAttributeArgument(new CodeSnippetExpression("{ providedIn: 'root' }")));
+			return new CodeAttributeDeclarationCollection([atr]);
 		}
 	}
 

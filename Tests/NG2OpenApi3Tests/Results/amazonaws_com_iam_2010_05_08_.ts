@@ -7263,9 +7263,9 @@ export namespace MyNS {
 
 	export enum SummaryKeyType { Users = 'Users', UsersQuota = 'UsersQuota', Groups = 'Groups', GroupsQuota = 'GroupsQuota', ServerCertificates = 'ServerCertificates', ServerCertificatesQuota = 'ServerCertificatesQuota', UserPolicySizeQuota = 'UserPolicySizeQuota', GroupPolicySizeQuota = 'GroupPolicySizeQuota', GroupsPerUserQuota = 'GroupsPerUserQuota', SigningCertificatesPerUserQuota = 'SigningCertificatesPerUserQuota', AccessKeysPerUserQuota = 'AccessKeysPerUserQuota', MFADevices = 'MFADevices', MFADevicesInUse = 'MFADevicesInUse', AccountMFAEnabled = 'AccountMFAEnabled', AccountAccessKeysPresent = 'AccountAccessKeysPresent', AccountSigningCertificatesPresent = 'AccountSigningCertificatesPresent', AttachedPoliciesPerGroupQuota = 'AttachedPoliciesPerGroupQuota', AttachedPoliciesPerRoleQuota = 'AttachedPoliciesPerRoleQuota', AttachedPoliciesPerUserQuota = 'AttachedPoliciesPerUserQuota', Policies = 'Policies', PoliciesQuota = 'PoliciesQuota', PolicySizeQuota = 'PolicySizeQuota', PolicyVersionsInUse = 'PolicyVersionsInUse', PolicyVersionsInUseQuota = 'PolicyVersionsInUseQuota', VersionsPerPolicyQuota = 'VersionsPerPolicyQuota', GlobalEndpointTokenVersion = 'GlobalEndpointTokenVersion' }
 
-	@Injectable()
+	@Injectable({ providedIn: 'root' })
 	export class MyClient {
-		constructor(@Inject('baseUri') private baseUri: string = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + '/', private http: HttpClient) {
+		constructor(@Inject('baseUri') private baseUri: string = window.location.origin + '/', private http: HttpClient) {
 		}
 
 		/**

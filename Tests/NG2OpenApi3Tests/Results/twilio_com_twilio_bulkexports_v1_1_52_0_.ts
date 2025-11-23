@@ -340,9 +340,9 @@ export namespace MyNS {
 
 	export enum Job_enum_status { ErrorDuringRun = 'ErrorDuringRun', Submitted = 'Submitted', Running = 'Running', CompletedEmptyRecords = 'CompletedEmptyRecords', Completed = 'Completed', Failed = 'Failed', RunningToBeDeleted = 'RunningToBeDeleted', DeletedByUserRequest = 'DeletedByUserRequest' }
 
-	@Injectable()
+	@Injectable({ providedIn: 'root' })
 	export class MyClient {
-		constructor(@Inject('baseUri') private baseUri: string = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + '/', private http: HttpClient) {
+		constructor(@Inject('baseUri') private baseUri: string = window.location.origin + '/', private http: HttpClient) {
 		}
 
 		/**

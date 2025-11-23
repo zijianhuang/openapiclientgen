@@ -2660,9 +2660,9 @@ export namespace MyNS {
 
 	export enum StorageDatabasecenterProtoCommonProductType { PRODUCT_TYPE_UNSPECIFIED = 'PRODUCT_TYPE_UNSPECIFIED', PRODUCT_TYPE_CLOUD_SQL = 'PRODUCT_TYPE_CLOUD_SQL', CLOUD_SQL = 'CLOUD_SQL', PRODUCT_TYPE_ALLOYDB = 'PRODUCT_TYPE_ALLOYDB', ALLOYDB = 'ALLOYDB', PRODUCT_TYPE_SPANNER = 'PRODUCT_TYPE_SPANNER', SPANNER = 'SPANNER', PRODUCT_TYPE_ON_PREM = 'PRODUCT_TYPE_ON_PREM', ON_PREM = 'ON_PREM', PRODUCT_TYPE_OTHER = 'PRODUCT_TYPE_OTHER' }
 
-	@Injectable()
+	@Injectable({ providedIn: 'root' })
 	export class MyClient {
-		constructor(@Inject('baseUri') private baseUri: string = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + '/', private http: HttpClient) {
+		constructor(@Inject('baseUri') private baseUri: string = window.location.origin + '/', private http: HttpClient) {
 		}
 
 		/**

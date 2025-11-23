@@ -433,9 +433,9 @@ export namespace MyNS {
 
 	export enum StubMappingResponseFault { CONNECTION_RESET_BY_PEER = 'CONNECTION_RESET_BY_PEER', EMPTY_RESPONSE = 'EMPTY_RESPONSE', MALFORMED_RESPONSE_CHUNK = 'MALFORMED_RESPONSE_CHUNK', RANDOM_DATA_THEN_CLOSE = 'RANDOM_DATA_THEN_CLOSE' }
 
-	@Injectable()
+	@Injectable({ providedIn: 'root' })
 	export class MyClient {
-		constructor(@Inject('baseUri') private baseUri: string = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + '/', private http: HttpClient) {
+		constructor(@Inject('baseUri') private baseUri: string = window.location.origin + '/', private http: HttpClient) {
 		}
 
 		/**

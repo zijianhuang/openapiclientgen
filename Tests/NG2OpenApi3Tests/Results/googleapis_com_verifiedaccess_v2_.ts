@@ -411,9 +411,9 @@ export namespace MyNS {
 
 	export enum VerifyChallengeResponseResultKeyTrustLevel { KEY_TRUST_LEVEL_UNSPECIFIED = 'KEY_TRUST_LEVEL_UNSPECIFIED', CHROME_OS_VERIFIED_MODE = 'CHROME_OS_VERIFIED_MODE', CHROME_OS_DEVELOPER_MODE = 'CHROME_OS_DEVELOPER_MODE', CHROME_BROWSER_HW_KEY = 'CHROME_BROWSER_HW_KEY', CHROME_BROWSER_OS_KEY = 'CHROME_BROWSER_OS_KEY', CHROME_BROWSER_NO_KEY = 'CHROME_BROWSER_NO_KEY' }
 
-	@Injectable()
+	@Injectable({ providedIn: 'root' })
 	export class MyClient {
-		constructor(@Inject('baseUri') private baseUri: string = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + '/', private http: HttpClient) {
+		constructor(@Inject('baseUri') private baseUri: string = window.location.origin + '/', private http: HttpClient) {
 		}
 
 		/**

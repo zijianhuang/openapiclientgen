@@ -2963,9 +2963,9 @@ export namespace MyNS {
 
 	export enum IngestionJobStatus { IN_PROGRESS = 'IN_PROGRESS', SUCCESS = 'SUCCESS', FAILED = 'FAILED', IMPORT_IN_PROGRESS = 'IMPORT_IN_PROGRESS' }
 
-	@Injectable()
+	@Injectable({ providedIn: 'root' })
 	export class MyClient {
-		constructor(@Inject('baseUri') private baseUri: string = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + '/', private http: HttpClient) {
+		constructor(@Inject('baseUri') private baseUri: string = window.location.origin + '/', private http: HttpClient) {
 		}
 
 		/**

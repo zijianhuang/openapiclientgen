@@ -214,9 +214,9 @@ export namespace MyNS {
 
 	export enum GoogleCloudResourcesettingsV1SettingMetadataDataType { DATA_TYPE_UNSPECIFIED = 'DATA_TYPE_UNSPECIFIED', BOOLEAN = 'BOOLEAN', STRING = 'STRING', STRING_SET = 'STRING_SET', ENUM_VALUE = 'ENUM_VALUE', DURATION_VALUE = 'DURATION_VALUE', STRING_MAP = 'STRING_MAP' }
 
-	@Injectable()
+	@Injectable({ providedIn: 'root' })
 	export class MyClient {
-		constructor(@Inject('baseUri') private baseUri: string = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + '/', private http: HttpClient) {
+		constructor(@Inject('baseUri') private baseUri: string = window.location.origin + '/', private http: HttpClient) {
 		}
 
 		/**

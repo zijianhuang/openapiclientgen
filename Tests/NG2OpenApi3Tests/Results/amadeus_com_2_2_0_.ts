@@ -1598,9 +1598,9 @@ export namespace MyNS {
 	 */
 	export enum TravelerType { ADULT = 'ADULT', CHILD = 'CHILD', SENIOR = 'SENIOR', YOUNG = 'YOUNG', HELD_INFANT = 'HELD_INFANT', SEATED_INFANT = 'SEATED_INFANT', STUDENT = 'STUDENT' }
 
-	@Injectable()
+	@Injectable({ providedIn: 'root' })
 	export class MyClient {
-		constructor(@Inject('baseUri') private baseUri: string = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + '/', private http: HttpClient) {
+		constructor(@Inject('baseUri') private baseUri: string = window.location.origin + '/', private http: HttpClient) {
 		}
 
 		/**

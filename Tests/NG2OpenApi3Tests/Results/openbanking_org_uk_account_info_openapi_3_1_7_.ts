@@ -16728,9 +16728,9 @@ export namespace MyNS {
 	/** Period e.g. day, week, month etc. for which the fee/charge is capped */
 	export enum OB_Period1Code { PACT = 'PACT', PDAY = 'PDAY', PHYR = 'PHYR', PMTH = 'PMTH', PQTR = 'PQTR', PWEK = 'PWEK', PYER = 'PYER' }
 
-	@Injectable()
+	@Injectable({ providedIn: 'root' })
 	export class MyClient {
-		constructor(@Inject('baseUri') private baseUri: string = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + '/', private http: HttpClient) {
+		constructor(@Inject('baseUri') private baseUri: string = window.location.origin + '/', private http: HttpClient) {
 		}
 
 		/**

@@ -1609,9 +1609,9 @@ export namespace MyNS {
 
 	export enum StopMediationAbExperimentRequestVariantChoice { VARIANT_CHOICE_UNSPECIFIED = 'VARIANT_CHOICE_UNSPECIFIED', VARIANT_CHOICE_A = 'VARIANT_CHOICE_A', VARIANT_CHOICE_B = 'VARIANT_CHOICE_B' }
 
-	@Injectable()
+	@Injectable({ providedIn: 'root' })
 	export class MyClient {
-		constructor(@Inject('baseUri') private baseUri: string = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + '/', private http: HttpClient) {
+		constructor(@Inject('baseUri') private baseUri: string = window.location.origin + '/', private http: HttpClient) {
 		}
 
 		/**

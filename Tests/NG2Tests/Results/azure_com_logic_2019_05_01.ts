@@ -9503,9 +9503,9 @@ export namespace MyNS {
 	/** The x12 time format. */
 	export enum X12TimeFormat { NotSpecified = 'NotSpecified', HHMM = 'HHMM', HHMMSS = 'HHMMSS', HHMMSSdd = 'HHMMSSdd', HHMMSSd = 'HHMMSSd' }
 
-	@Injectable()
+	@Injectable({ providedIn: 'root' })
 	export class MyClient {
-		constructor(@Inject('baseUri') private baseUri: string = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + '/', private http: HttpClient) {
+		constructor(@Inject('baseUri') private baseUri: string = window.location.origin + '/', private http: HttpClient) {
 		}
 
 		/**

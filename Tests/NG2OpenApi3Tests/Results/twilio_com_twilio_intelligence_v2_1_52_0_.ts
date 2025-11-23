@@ -582,9 +582,9 @@ export namespace MyNS {
 
 	export enum Transcript_enum_status { queued = 'queued', 'in-progress' = 'in-progress', completed = 'completed', failed = 'failed', canceled = 'canceled' }
 
-	@Injectable()
+	@Injectable({ providedIn: 'root' })
 	export class MyClient {
-		constructor(@Inject('baseUri') private baseUri: string = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + '/', private http: HttpClient) {
+		constructor(@Inject('baseUri') private baseUri: string = window.location.origin + '/', private http: HttpClient) {
 		}
 
 		/**

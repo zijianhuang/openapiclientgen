@@ -1977,9 +1977,9 @@ export namespace MyNS {
 
 	export enum TitleAssetStyle { minimal = 'minimal', blockbuster = 'blockbuster', vogue = 'vogue', sketchy = 'sketchy', skinny = 'skinny', chunk = 'chunk', chunkLight = 'chunkLight', marker = 'marker', future = 'future', subtitle = 'subtitle' }
 
-	@Injectable()
+	@Injectable({ providedIn: 'root' })
 	export class MyClient {
-		constructor(@Inject('baseUri') private baseUri: string = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + '/', private http: HttpClient) {
+		constructor(@Inject('baseUri') private baseUri: string = window.location.origin + '/', private http: HttpClient) {
 		}
 
 		/**

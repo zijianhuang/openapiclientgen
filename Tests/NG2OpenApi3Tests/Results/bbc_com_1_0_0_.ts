@@ -6630,9 +6630,9 @@ export namespace MyNS {
 	/** The XQuery language version. */
 	export enum Xquery_version { '1.0-ml' = '1.0-ml', '0.9-ml' = '0.9-ml', _1_0 = '1.0', XSLT = 'XSLT' }
 
-	@Injectable()
+	@Injectable({ providedIn: 'root' })
 	export class MyClient {
-		constructor(@Inject('baseUri') private baseUri: string = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + '/', private http: HttpClient) {
+		constructor(@Inject('baseUri') private baseUri: string = window.location.origin + '/', private http: HttpClient) {
 		}
 
 		/**

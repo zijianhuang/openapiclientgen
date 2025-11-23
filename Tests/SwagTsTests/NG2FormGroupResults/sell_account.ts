@@ -3,11 +3,15 @@ import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 
-function CreateDateOnlyFormControl(){
+function CreateDateOnlyFormControl() {
 	const fc = new FormControl<any | null | undefined>(undefined);
-	fc.valueChanges.subscribe(v=>{
-		if (v && v instanceof Date){
-			fc.setValue(v.toLocaleDateString("sv").substring(0, 10));
+	fc.valueChanges.subscribe(v => {
+		if (v) {
+			if (v instanceof Date) {
+				fc.setValue(v.toLocaleDateString("sv").substring(0, 10), { emitEvent: false });
+			} else if (typeof v == 'object' && typeof v.toISODate === 'function') {
+				fc.setValue(v.toISODate(), { emitEvent: false });
+			}
 		}
 	});
 
@@ -1745,9 +1749,9 @@ export namespace MyNS {
 
 	}
 
-	@Injectable()
+	@Injectable({ providedIn: 'root' })
 	export class MyClient {
-		constructor(@Inject('baseUri') private baseUri: string = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + '/', private http: HttpClient) {
+		constructor(@Inject('baseUri') private baseUri: string = window.location.origin + '/', private http: HttpClient) {
 		}
 
 		/**

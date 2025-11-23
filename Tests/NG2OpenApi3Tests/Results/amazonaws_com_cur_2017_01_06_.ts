@@ -381,9 +381,9 @@ export namespace MyNS {
 	/** The format that AWS saves the report in. */
 	export enum ReportFormat { textORcsv = 'textORcsv', Parquet = 'Parquet' }
 
-	@Injectable()
+	@Injectable({ providedIn: 'root' })
 	export class MyClient {
-		constructor(@Inject('baseUri') private baseUri: string = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + '/', private http: HttpClient) {
+		constructor(@Inject('baseUri') private baseUri: string = window.location.origin + '/', private http: HttpClient) {
 		}
 
 		/**

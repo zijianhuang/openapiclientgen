@@ -5409,9 +5409,9 @@ export namespace MyNS {
 
 	export enum DocumentSuggestionsViewMode { DEFAULT_FOR_CURRENT_ACCESS = 'DEFAULT_FOR_CURRENT_ACCESS', SUGGESTIONS_INLINE = 'SUGGESTIONS_INLINE', PREVIEW_SUGGESTIONS_ACCEPTED = 'PREVIEW_SUGGESTIONS_ACCEPTED', PREVIEW_WITHOUT_SUGGESTIONS = 'PREVIEW_WITHOUT_SUGGESTIONS' }
 
-	@Injectable()
+	@Injectable({ providedIn: 'root' })
 	export class MyClient {
-		constructor(@Inject('baseUri') private baseUri: string = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + '/', private http: HttpClient) {
+		constructor(@Inject('baseUri') private baseUri: string = window.location.origin + '/', private http: HttpClient) {
 		}
 
 		/**

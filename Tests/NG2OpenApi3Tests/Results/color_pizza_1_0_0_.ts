@@ -344,9 +344,9 @@ export namespace MyNS {
 
 	export enum PossibleLists { default = 'default', bestOf = 'bestOf', wikipedia = 'wikipedia', french = 'french', ridgway = 'ridgway', risograph = 'risograph', basic = 'basic', chineseTraditional = 'chineseTraditional', html = 'html', japaneseTraditional = 'japaneseTraditional', leCorbusier = 'leCorbusier', nbsIscc = 'nbsIscc', ntc = 'ntc', osxcrayons = 'osxcrayons', ral = 'ral', sanzoWadaI = 'sanzoWadaI', thesaurus = 'thesaurus', werner = 'werner', windows = 'windows', x11 = 'x11', xkcd = 'xkcd' }
 
-	@Injectable()
+	@Injectable({ providedIn: 'root' })
 	export class MyClient {
-		constructor(@Inject('baseUri') private baseUri: string = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + '/', private http: HttpClient) {
+		constructor(@Inject('baseUri') private baseUri: string = window.location.origin + '/', private http: HttpClient) {
 		}
 
 		/**

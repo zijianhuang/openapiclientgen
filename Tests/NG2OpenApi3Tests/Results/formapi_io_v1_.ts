@@ -379,9 +379,9 @@ export namespace MyNS {
 
 	export enum SubmissionState { pending = 'pending', processed = 'processed', invalid_data = 'invalid_data', error = 'error', image_download_failed = 'image_download_failed', image_processing_failed = 'image_processing_failed', waiting_for_data_requests = 'waiting_for_data_requests', syntax_error = 'syntax_error', account_suspended = 'account_suspended', license_revoked = 'license_revoked', accidental = 'accidental' }
 
-	@Injectable()
+	@Injectable({ providedIn: 'root' })
 	export class MyClient {
-		constructor(@Inject('baseUri') private baseUri: string = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + '/', private http: HttpClient) {
+		constructor(@Inject('baseUri') private baseUri: string = window.location.origin + '/', private http: HttpClient) {
 		}
 
 		/**

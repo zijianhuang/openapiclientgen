@@ -1501,9 +1501,9 @@ export namespace MyNS {
 
 	export enum Model_build_enum_status { enqueued = 'enqueued', building = 'building', completed = 'completed', failed = 'failed', canceled = 'canceled' }
 
-	@Injectable()
+	@Injectable({ providedIn: 'root' })
 	export class MyClient {
-		constructor(@Inject('baseUri') private baseUri: string = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + '/', private http: HttpClient) {
+		constructor(@Inject('baseUri') private baseUri: string = window.location.origin + '/', private http: HttpClient) {
 		}
 
 		/**

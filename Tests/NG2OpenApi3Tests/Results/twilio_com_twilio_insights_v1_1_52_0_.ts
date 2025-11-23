@@ -1585,9 +1585,9 @@ export namespace MyNS {
 
 	export enum Video_room_summary_enum_twilio_realm { us1 = 'us1', us2 = 'us2', au1 = 'au1', br1 = 'br1', ie1 = 'ie1', jp1 = 'jp1', sg1 = 'sg1', in1 = 'in1', de1 = 'de1', gll = 'gll' }
 
-	@Injectable()
+	@Injectable({ providedIn: 'root' })
 	export class MyClient {
-		constructor(@Inject('baseUri') private baseUri: string = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + '/', private http: HttpClient) {
+		constructor(@Inject('baseUri') private baseUri: string = window.location.origin + '/', private http: HttpClient) {
 		}
 
 		/**

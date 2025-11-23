@@ -642,9 +642,9 @@ export namespace MyNS {
 
 	export enum MediaResponseInfoTrafficClassField { BE1 = 'BE1', AF1 = 'AF1', AF2 = 'AF2', AF3 = 'AF3', AF4 = 'AF4', NC1 = 'NC1', NC0 = 'NC0', BE0 = 'BE0', LLQ = 'LLQ', LLQ1 = 'LLQ1', LLQ2 = 'LLQ2' }
 
-	@Injectable()
+	@Injectable({ providedIn: 'root' })
 	export class MyClient {
-		constructor(@Inject('baseUri') private baseUri: string = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + '/', private http: HttpClient) {
+		constructor(@Inject('baseUri') private baseUri: string = window.location.origin + '/', private http: HttpClient) {
 		}
 	}
 

@@ -533,9 +533,9 @@ export namespace MyNS {
 	/** - DT_INVALID: Not a legal value for DataType.  Used to indicate a DataType field has not been set. - DT_FLOAT: Data types that all computation devices are expected to be capable to support. - DT_FLOAT_REF: Do not use!  These are only for parameters.  Every enum above should have a corresponding value below (verified by types_test). */
 	export enum TensorflowDataType { DT_INVALID = 'DT_INVALID', DT_FLOAT = 'DT_FLOAT', DT_DOUBLE = 'DT_DOUBLE', DT_INT32 = 'DT_INT32', DT_UINT8 = 'DT_UINT8', DT_INT16 = 'DT_INT16', DT_INT8 = 'DT_INT8', DT_STRING = 'DT_STRING', DT_COMPLEX64 = 'DT_COMPLEX64', DT_INT64 = 'DT_INT64', DT_BOOL = 'DT_BOOL', DT_QINT8 = 'DT_QINT8', DT_QUINT8 = 'DT_QUINT8', DT_QINT32 = 'DT_QINT32', DT_BFLOAT16 = 'DT_BFLOAT16', DT_QINT16 = 'DT_QINT16', DT_QUINT16 = 'DT_QUINT16', DT_UINT16 = 'DT_UINT16', DT_COMPLEX128 = 'DT_COMPLEX128', DT_HALF = 'DT_HALF', DT_RESOURCE = 'DT_RESOURCE', DT_VARIANT = 'DT_VARIANT', DT_UINT32 = 'DT_UINT32', DT_UINT64 = 'DT_UINT64', DT_FLOAT_REF = 'DT_FLOAT_REF', DT_DOUBLE_REF = 'DT_DOUBLE_REF', DT_INT32_REF = 'DT_INT32_REF', DT_UINT8_REF = 'DT_UINT8_REF', DT_INT16_REF = 'DT_INT16_REF', DT_INT8_REF = 'DT_INT8_REF', DT_STRING_REF = 'DT_STRING_REF', DT_COMPLEX64_REF = 'DT_COMPLEX64_REF', DT_INT64_REF = 'DT_INT64_REF', DT_BOOL_REF = 'DT_BOOL_REF', DT_QINT8_REF = 'DT_QINT8_REF', DT_QUINT8_REF = 'DT_QUINT8_REF', DT_QINT32_REF = 'DT_QINT32_REF', DT_BFLOAT16_REF = 'DT_BFLOAT16_REF', DT_QINT16_REF = 'DT_QINT16_REF', DT_QUINT16_REF = 'DT_QUINT16_REF', DT_UINT16_REF = 'DT_UINT16_REF', DT_COMPLEX128_REF = 'DT_COMPLEX128_REF', DT_HALF_REF = 'DT_HALF_REF', DT_RESOURCE_REF = 'DT_RESOURCE_REF', DT_VARIANT_REF = 'DT_VARIANT_REF', DT_UINT32_REF = 'DT_UINT32_REF', DT_UINT64_REF = 'DT_UINT64_REF' }
 
-	@Injectable()
+	@Injectable({ providedIn: 'root' })
 	export class MyClient {
-		constructor(@Inject('baseUri') private baseUri: string = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + '/', private http: HttpClient) {
+		constructor(@Inject('baseUri') private baseUri: string = window.location.origin + '/', private http: HttpClient) {
 		}
 
 		/**

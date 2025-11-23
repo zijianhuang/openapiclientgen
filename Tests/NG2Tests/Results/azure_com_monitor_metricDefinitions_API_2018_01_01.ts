@@ -191,9 +191,9 @@ export namespace MyNS {
 	/** the unit of the metric. */
 	export enum Unit { Count = 'Count', Bytes = 'Bytes', Seconds = 'Seconds', CountPerSecond = 'CountPerSecond', BytesPerSecond = 'BytesPerSecond', Percent = 'Percent', MilliSeconds = 'MilliSeconds', ByteSeconds = 'ByteSeconds', Unspecified = 'Unspecified', Cores = 'Cores', MilliCores = 'MilliCores', NanoCores = 'NanoCores', BitsPerSecond = 'BitsPerSecond' }
 
-	@Injectable()
+	@Injectable({ providedIn: 'root' })
 	export class MyClient {
-		constructor(@Inject('baseUri') private baseUri: string = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + '/', private http: HttpClient) {
+		constructor(@Inject('baseUri') private baseUri: string = window.location.origin + '/', private http: HttpClient) {
 		}
 
 		/**

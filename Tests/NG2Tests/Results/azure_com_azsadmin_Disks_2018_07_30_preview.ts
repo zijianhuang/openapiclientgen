@@ -243,9 +243,9 @@ export namespace MyNS {
 	/** Disk State. */
 	export enum DiskState { Undefined = 'Undefined', Unattached = 'Unattached', Attached = 'Attached', Reserved = 'Reserved', ActiveSAS = 'ActiveSAS', Unknown = 'Unknown', All = 'All', Recommended = 'Recommended', OfflineMigration = 'OfflineMigration', OnlineMigration = 'OnlineMigration' }
 
-	@Injectable()
+	@Injectable({ providedIn: 'root' })
 	export class MyClient {
-		constructor(@Inject('baseUri') private baseUri: string = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + '/', private http: HttpClient) {
+		constructor(@Inject('baseUri') private baseUri: string = window.location.origin + '/', private http: HttpClient) {
 		}
 
 		/**

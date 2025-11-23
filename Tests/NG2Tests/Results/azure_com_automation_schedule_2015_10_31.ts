@@ -384,9 +384,9 @@ export namespace MyNS {
 	/** Gets or sets the frequency of the schedule. */
 	export enum ScheduleFrequency { OneTime = 'OneTime', Day = 'Day', Hour = 'Hour', Week = 'Week', Month = 'Month', Minute = 'Minute' }
 
-	@Injectable()
+	@Injectable({ providedIn: 'root' })
 	export class MyClient {
-		constructor(@Inject('baseUri') private baseUri: string = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + '/', private http: HttpClient) {
+		constructor(@Inject('baseUri') private baseUri: string = window.location.origin + '/', private http: HttpClient) {
 		}
 
 		/**

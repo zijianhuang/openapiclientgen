@@ -732,9 +732,9 @@ export namespace MyNS {
 
 	export enum WebApplicationFirewallPolicyPropertiesResourceState { Creating = 'Creating', Enabling = 'Enabling', Enabled = 'Enabled', Disabling = 'Disabling', Disabled = 'Disabled', Deleting = 'Deleting' }
 
-	@Injectable()
+	@Injectable({ providedIn: 'root' })
 	export class MyClient {
-		constructor(@Inject('baseUri') private baseUri: string = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + '/', private http: HttpClient) {
+		constructor(@Inject('baseUri') private baseUri: string = window.location.origin + '/', private http: HttpClient) {
 		}
 
 		/**

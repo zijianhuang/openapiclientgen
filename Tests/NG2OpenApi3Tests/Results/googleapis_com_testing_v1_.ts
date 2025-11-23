@@ -2825,9 +2825,9 @@ export namespace MyNS {
 
 	export enum TestMatrixOutcomeSummary { OUTCOME_SUMMARY_UNSPECIFIED = 'OUTCOME_SUMMARY_UNSPECIFIED', SUCCESS = 'SUCCESS', FAILURE = 'FAILURE', INCONCLUSIVE = 'INCONCLUSIVE', SKIPPED = 'SKIPPED' }
 
-	@Injectable()
+	@Injectable({ providedIn: 'root' })
 	export class MyClient {
-		constructor(@Inject('baseUri') private baseUri: string = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + '/', private http: HttpClient) {
+		constructor(@Inject('baseUri') private baseUri: string = window.location.origin + '/', private http: HttpClient) {
 		}
 
 		/**

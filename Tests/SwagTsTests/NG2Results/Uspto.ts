@@ -22,9 +22,9 @@ export namespace MyNS {
 		apiDocumentationUrl?: string | null;
 	}
 
-	@Injectable()
+	@Injectable({ providedIn: 'root' })
 	export class MetadataClient {
-		constructor(@Inject('baseUri') private baseUri: string = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + '/', private http: HttpClient) {
+		constructor(@Inject('baseUri') private baseUri: string = window.location.origin + '/', private http: HttpClient) {
 		}
 
 		/**
@@ -49,9 +49,9 @@ export namespace MyNS {
 		}
 	}
 
-	@Injectable()
+	@Injectable({ providedIn: 'root' })
 	export class SearchClient {
-		constructor(@Inject('baseUri') private baseUri: string = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + '/', private http: HttpClient) {
+		constructor(@Inject('baseUri') private baseUri: string = window.location.origin + '/', private http: HttpClient) {
 		}
 	}
 

@@ -2341,9 +2341,9 @@ export namespace MyNS {
 	/** Type of the Workflow Status */
 	export enum WorkflowStatus { active = 'active', expired = 'expired', succeeded = 'succeeded', aborted = 'aborted', failed = 'failed' }
 
-	@Injectable()
+	@Injectable({ providedIn: 'root' })
 	export class MyClient {
-		constructor(@Inject('baseUri') private baseUri: string = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + '/', private http: HttpClient) {
+		constructor(@Inject('baseUri') private baseUri: string = window.location.origin + '/', private http: HttpClient) {
 		}
 
 		/**

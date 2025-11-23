@@ -3306,9 +3306,9 @@ export namespace MyNS {
 
 	export enum EntitlementUnit { Count = 'Count', None = 'None', Seconds = 'Seconds', Microseconds = 'Microseconds', Milliseconds = 'Milliseconds', Bytes = 'Bytes', Kilobytes = 'Kilobytes', Megabytes = 'Megabytes', Gigabytes = 'Gigabytes', Terabytes = 'Terabytes', Bits = 'Bits', Kilobits = 'Kilobits', Megabits = 'Megabits', Gigabits = 'Gigabits', Terabits = 'Terabits', Percent = 'Percent', 'Bytes/Second' = 'Bytes/Second', 'Kilobytes/Second' = 'Kilobytes/Second', 'Megabytes/Second' = 'Megabytes/Second', 'Gigabytes/Second' = 'Gigabytes/Second', 'Terabytes/Second' = 'Terabytes/Second', 'Bits/Second' = 'Bits/Second', 'Kilobits/Second' = 'Kilobits/Second', 'Megabits/Second' = 'Megabits/Second', 'Gigabits/Second' = 'Gigabits/Second', 'Terabits/Second' = 'Terabits/Second', 'Count/Second' = 'Count/Second' }
 
-	@Injectable()
+	@Injectable({ providedIn: 'root' })
 	export class MyClient {
-		constructor(@Inject('baseUri') private baseUri: string = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + '/', private http: HttpClient) {
+		constructor(@Inject('baseUri') private baseUri: string = window.location.origin + '/', private http: HttpClient) {
 		}
 
 		/**

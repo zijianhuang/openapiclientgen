@@ -4962,9 +4962,9 @@ export namespace MyNS {
 
 	export enum InstanceGroupStateChangeReasonCode { INTERNAL_ERROR = 'INTERNAL_ERROR', VALIDATION_ERROR = 'VALIDATION_ERROR', INSTANCE_FAILURE = 'INSTANCE_FAILURE', CLUSTER_TERMINATED = 'CLUSTER_TERMINATED' }
 
-	@Injectable()
+	@Injectable({ providedIn: 'root' })
 	export class MyClient {
-		constructor(@Inject('baseUri') private baseUri: string = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + '/', private http: HttpClient) {
+		constructor(@Inject('baseUri') private baseUri: string = window.location.origin + '/', private http: HttpClient) {
 		}
 
 		/**

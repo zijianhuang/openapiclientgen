@@ -1099,9 +1099,9 @@ export namespace MyNS {
 
 	export enum WorkflowOperationMetadataWorkflowOperationType { UNKNOWN_OPERATION_TYPE = 'UNKNOWN_OPERATION_TYPE', WORKFLOWS_V1 = 'WORKFLOWS_V1', WORKFLOWS_V2 = 'WORKFLOWS_V2' }
 
-	@Injectable()
+	@Injectable({ providedIn: 'root' })
 	export class MyClient {
-		constructor(@Inject('baseUri') private baseUri: string = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + '/', private http: HttpClient) {
+		constructor(@Inject('baseUri') private baseUri: string = window.location.origin + '/', private http: HttpClient) {
 		}
 
 		/**

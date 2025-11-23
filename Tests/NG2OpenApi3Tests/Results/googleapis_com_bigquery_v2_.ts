@@ -8072,9 +8072,9 @@ export namespace MyNS {
 
 	export enum VectorSearchStatisticsIndexUsageMode { INDEX_USAGE_MODE_UNSPECIFIED = 'INDEX_USAGE_MODE_UNSPECIFIED', UNUSED = 'UNUSED', PARTIALLY_USED = 'PARTIALLY_USED', FULLY_USED = 'FULLY_USED' }
 
-	@Injectable()
+	@Injectable({ providedIn: 'root' })
 	export class MyClient {
-		constructor(@Inject('baseUri') private baseUri: string = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + '/', private http: HttpClient) {
+		constructor(@Inject('baseUri') private baseUri: string = window.location.origin + '/', private http: HttpClient) {
 		}
 
 		/**

@@ -1120,9 +1120,9 @@ export namespace MyNS {
 	/** <strong>DEPRECATED</strong> The voice & language to use */
 	export enum Voice_name { Aditi = 'Aditi', Agnieszka = 'Agnieszka', Alva = 'Alva', Amy = 'Amy', Astrid = 'Astrid', Bianca = 'Bianca', Brian = 'Brian', Carla = 'Carla', Carmen = 'Carmen', Carmit = 'Carmit', Catarina = 'Catarina', Celine = 'Celine', Cem = 'Cem', Chantal = 'Chantal', Chipmunk = 'Chipmunk', Conchita = 'Conchita', Cristiano = 'Cristiano', Damayanti = 'Damayanti', Dora = 'Dora', Emma = 'Emma', Empar = 'Empar', Enrique = 'Enrique', Eric = 'Eric', Ewa = 'Ewa', Felipe = 'Felipe', Filiz = 'Filiz', Geraint = 'Geraint', Giorgio = 'Giorgio', Gwyneth = 'Gwyneth', Hans = 'Hans', Henrik = 'Henrik', Ines = 'Ines', Ioana = 'Ioana', Iveta = 'Iveta', Ivy = 'Ivy', Jacek = 'Jacek', Jan = 'Jan', Jennifer = 'Jennifer', Joana = 'Joana', Joanna = 'Joanna', Joey = 'Joey', Jordi = 'Jordi', Justin = 'Justin', Kanya = 'Kanya', Karl = 'Karl', Kendra = 'Kendra', Kimberly = 'Kimberly', Laila = 'Laila', Laura = 'Laura', Lea = 'Lea', Lekha = 'Lekha', Liv = 'Liv', Lotte = 'Lotte', Lucia = 'Lucia', Luciana = 'Luciana', Mads = 'Mads', Maged = 'Maged', Maja = 'Maja', Mariska = 'Mariska', Marlene = 'Marlene', Mathieu = 'Mathieu', Matthew = 'Matthew', Maxim = 'Maxim', 'Mei-Jia' = 'Mei-Jia', Melina = 'Melina', Mia = 'Mia', Miguel = 'Miguel', Miren = 'Miren', Mizuki = 'Mizuki', Montserrat = 'Montserrat', Naja = 'Naja', Nicole = 'Nicole', Nikos = 'Nikos', Nora = 'Nora', Oskar = 'Oskar', Penelope = 'Penelope', Raveena = 'Raveena', Ricardo = 'Ricardo', Ruben = 'Ruben', Russell = 'Russell', Salli = 'Salli', Satu = 'Satu', Seoyeon = 'Seoyeon', 'Sin-Ji' = 'Sin-Ji', Sora = 'Sora', Takumi = 'Takumi', Tarik = 'Tarik', Tatyana = 'Tatyana', Tessa = 'Tessa', 'Tian-Tian' = 'Tian-Tian', Vicki = 'Vicki', Vitoria = 'Vitoria', Yelda = 'Yelda', Zeina = 'Zeina', Zhiyu = 'Zhiyu', Zuzana = 'Zuzana' }
 
-	@Injectable()
+	@Injectable({ providedIn: 'root' })
 	export class MyClient {
-		constructor(@Inject('baseUri') private baseUri: string = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + '/', private http: HttpClient) {
+		constructor(@Inject('baseUri') private baseUri: string = window.location.origin + '/', private http: HttpClient) {
 		}
 
 		/**

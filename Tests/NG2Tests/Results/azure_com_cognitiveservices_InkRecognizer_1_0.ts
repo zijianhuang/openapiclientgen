@@ -1136,9 +1136,9 @@ export namespace MyNS {
 	/** The category should be used to determines the field to read the recognition result. Recognized Object represents the shape that was recognized for the node with category as inkDrawing. For handwriting related nodes, recognizedText contains the actual recognition result. */
 	export enum ShapePattern { drawing = 'drawing', square = 'square', rectangle = 'rectangle', circle = 'circle', ellipse = 'ellipse', triangle = 'triangle', isoscelesTriangle = 'isoscelesTriangle', equilateralTriangle = 'equilateralTriangle', rightTriangle = 'rightTriangle', quadrilateral = 'quadrilateral', diamond = 'diamond', trapezoid = 'trapezoid', parallelogram = 'parallelogram', pentagon = 'pentagon', hexagon = 'hexagon', blockArrow = 'blockArrow', heart = 'heart', starSimple = 'starSimple', starCrossed = 'starCrossed', cloud = 'cloud', line = 'line', curve = 'curve', polyLine = 'polyLine' }
 
-	@Injectable()
+	@Injectable({ providedIn: 'root' })
 	export class MyClient {
-		constructor(@Inject('baseUri') private baseUri: string = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + '/', private http: HttpClient) {
+		constructor(@Inject('baseUri') private baseUri: string = window.location.origin + '/', private http: HttpClient) {
 		}
 
 		/**

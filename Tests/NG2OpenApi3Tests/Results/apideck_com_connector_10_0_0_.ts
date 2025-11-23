@@ -1953,9 +1953,9 @@ export namespace MyNS {
 	/** Name of Apideck Unified API */
 	export enum UnifiedApiId { accounting = 'accounting', ats = 'ats', calendar = 'calendar', crm = 'crm', csp = 'csp', 'customer-support' = 'customer-support', ecommerce = 'ecommerce', email = 'email', 'email-marketing' = 'email-marketing', 'expense-management' = 'expense-management', 'file-storage' = 'file-storage', form = 'form', hris = 'hris', lead = 'lead', payroll = 'payroll', pos = 'pos', procurement = 'procurement', 'project-management' = 'project-management', script = 'script', sms = 'sms', spreadsheet = 'spreadsheet', 'team-messaging' = 'team-messaging', 'issue-tracking' = 'issue-tracking', 'time-registration' = 'time-registration', 'transactional-email' = 'transactional-email', vault = 'vault', 'data-warehouse' = 'data-warehouse' }
 
-	@Injectable()
+	@Injectable({ providedIn: 'root' })
 	export class MyClient {
-		constructor(@Inject('baseUri') private baseUri: string = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + '/', private http: HttpClient) {
+		constructor(@Inject('baseUri') private baseUri: string = window.location.origin + '/', private http: HttpClient) {
 		}
 
 		/**

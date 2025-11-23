@@ -3147,9 +3147,9 @@ export namespace MyNS {
 
 	export enum TransferCallResponseMessage { 'Transfer Call Executed' = 'Transfer Call Executed', 'CallUUID Parameter must be present' = 'CallUUID Parameter must be present', 'Url Parameter must be present' = 'Url Parameter must be present', 'Url is not Valid' = 'Url is not Valid', 'Transfer Call Failed -- Call not found' = 'Transfer Call Failed -- Call not found', 'Transfer Call Failed' = 'Transfer Call Failed' }
 
-	@Injectable()
+	@Injectable({ providedIn: 'root' })
 	export class MyClient {
-		constructor(@Inject('baseUri') private baseUri: string = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + '/', private http: HttpClient) {
+		constructor(@Inject('baseUri') private baseUri: string = window.location.origin + '/', private http: HttpClient) {
 		}
 
 		/**

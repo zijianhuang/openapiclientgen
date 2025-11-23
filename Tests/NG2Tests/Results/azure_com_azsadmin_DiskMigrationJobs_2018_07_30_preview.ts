@@ -639,9 +639,9 @@ export namespace MyNS {
 	/** Migration child task status. */
 	export enum MigrationSubTaskStatus { Undefined = 'Undefined', Running = 'Running', Succeeded = 'Succeeded', Failed = 'Failed', Canceled = 'Canceled', Pending = 'Pending', Skipped = 'Skipped' }
 
-	@Injectable()
+	@Injectable({ providedIn: 'root' })
 	export class MyClient {
-		constructor(@Inject('baseUri') private baseUri: string = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + '/', private http: HttpClient) {
+		constructor(@Inject('baseUri') private baseUri: string = window.location.origin + '/', private http: HttpClient) {
 		}
 
 		/**

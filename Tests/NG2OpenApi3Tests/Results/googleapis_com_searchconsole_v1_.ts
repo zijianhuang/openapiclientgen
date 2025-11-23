@@ -998,9 +998,9 @@ export namespace MyNS {
 
 	export enum WmxSitePermissionLevel { SITE_PERMISSION_LEVEL_UNSPECIFIED = 'SITE_PERMISSION_LEVEL_UNSPECIFIED', SITE_OWNER = 'SITE_OWNER', SITE_FULL_USER = 'SITE_FULL_USER', SITE_RESTRICTED_USER = 'SITE_RESTRICTED_USER', SITE_UNVERIFIED_USER = 'SITE_UNVERIFIED_USER' }
 
-	@Injectable()
+	@Injectable({ providedIn: 'root' })
 	export class MyClient {
-		constructor(@Inject('baseUri') private baseUri: string = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + '/', private http: HttpClient) {
+		constructor(@Inject('baseUri') private baseUri: string = window.location.origin + '/', private http: HttpClient) {
 		}
 
 		/**

@@ -3035,9 +3035,9 @@ export namespace MyNS {
 
 	export enum VaultEventType { '*' = '*', 'vault.connection.created' = 'vault.connection.created', 'vault.connection.updated' = 'vault.connection.updated', 'vault.connection.disabled' = 'vault.connection.disabled', 'vault.connection.deleted' = 'vault.connection.deleted', 'vault.connection.callable' = 'vault.connection.callable', 'vault.connection.revoked' = 'vault.connection.revoked', 'vault.connection.token_refresh.failed' = 'vault.connection.token_refresh.failed' }
 
-	@Injectable()
+	@Injectable({ providedIn: 'root' })
 	export class MyClient {
-		constructor(@Inject('baseUri') private baseUri: string = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + '/', private http: HttpClient) {
+		constructor(@Inject('baseUri') private baseUri: string = window.location.origin + '/', private http: HttpClient) {
 		}
 
 		/**

@@ -147,9 +147,9 @@ export namespace MyNS {
 	/** State of the update run. */
 	export enum UpdateRunState { Unknown = 'Unknown', Succeeded = 'Succeeded', InProgress = 'InProgress', Failed = 'Failed' }
 
-	@Injectable()
+	@Injectable({ providedIn: 'root' })
 	export class MyClient {
-		constructor(@Inject('baseUri') private baseUri: string = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + '/', private http: HttpClient) {
+		constructor(@Inject('baseUri') private baseUri: string = window.location.origin + '/', private http: HttpClient) {
 		}
 
 		/**

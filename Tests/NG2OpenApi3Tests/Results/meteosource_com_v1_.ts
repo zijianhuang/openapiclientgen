@@ -5105,9 +5105,9 @@ export namespace MyNS {
 	/** An enumeration. */
 	export enum Units { auto = 'auto', metric = 'metric', us = 'us', uk = 'uk', ca = 'ca' }
 
-	@Injectable()
+	@Injectable({ providedIn: 'root' })
 	export class MyClient {
-		constructor(@Inject('baseUri') private baseUri: string = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + '/', private http: HttpClient) {
+		constructor(@Inject('baseUri') private baseUri: string = window.location.origin + '/', private http: HttpClient) {
 		}
 
 		/**

@@ -17,7 +17,7 @@ export function myClientFactory(http: HttpClient) {
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
   ],
   providers: [
     provideHttpClient(

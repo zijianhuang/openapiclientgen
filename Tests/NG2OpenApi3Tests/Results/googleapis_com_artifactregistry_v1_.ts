@@ -2492,9 +2492,9 @@ export namespace MyNS {
 
 	export enum VPCSCConfigVpcscPolicy { VPCSC_POLICY_UNSPECIFIED = 'VPCSC_POLICY_UNSPECIFIED', DENY = 'DENY', ALLOW = 'ALLOW' }
 
-	@Injectable()
+	@Injectable({ providedIn: 'root' })
 	export class MyClient {
-		constructor(@Inject('baseUri') private baseUri: string = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + '/', private http: HttpClient) {
+		constructor(@Inject('baseUri') private baseUri: string = window.location.origin + '/', private http: HttpClient) {
 		}
 
 		/**

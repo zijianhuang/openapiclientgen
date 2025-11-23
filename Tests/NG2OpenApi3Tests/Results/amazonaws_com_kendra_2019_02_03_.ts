@@ -6914,9 +6914,9 @@ export namespace MyNS {
 
 	export enum ServiceNowAuthenticationType { HTTP_BASIC = 'HTTP_BASIC', OAUTH2 = 'OAUTH2' }
 
-	@Injectable()
+	@Injectable({ providedIn: 'root' })
 	export class MyClient {
-		constructor(@Inject('baseUri') private baseUri: string = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + '/', private http: HttpClient) {
+		constructor(@Inject('baseUri') private baseUri: string = window.location.origin + '/', private http: HttpClient) {
 		}
 
 		/**

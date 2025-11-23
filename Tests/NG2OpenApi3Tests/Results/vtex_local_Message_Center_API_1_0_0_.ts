@@ -67,9 +67,9 @@ export namespace MyNS {
 
 	export enum _401_UnauthorizedType { 'https://tools.ietf.org/html/rfc7235#section-3.1' = 'https://tools.ietf.org/html/rfc7235#section-3.1' }
 
-	@Injectable()
+	@Injectable({ providedIn: 'root' })
 	export class MyClient {
-		constructor(@Inject('baseUri') private baseUri: string = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + '/', private http: HttpClient) {
+		constructor(@Inject('baseUri') private baseUri: string = window.location.origin + '/', private http: HttpClient) {
 		}
 
 		/**

@@ -2781,9 +2781,9 @@ export namespace MyNS {
 
 	export enum KeySpec { RSA_2048 = 'RSA_2048', RSA_3072 = 'RSA_3072', RSA_4096 = 'RSA_4096', ECC_NIST_P256 = 'ECC_NIST_P256', ECC_NIST_P384 = 'ECC_NIST_P384', ECC_NIST_P521 = 'ECC_NIST_P521', ECC_SECG_P256K1 = 'ECC_SECG_P256K1', SYMMETRIC_DEFAULT = 'SYMMETRIC_DEFAULT', HMAC_224 = 'HMAC_224', HMAC_256 = 'HMAC_256', HMAC_384 = 'HMAC_384', HMAC_512 = 'HMAC_512', SM2 = 'SM2' }
 
-	@Injectable()
+	@Injectable({ providedIn: 'root' })
 	export class MyClient {
-		constructor(@Inject('baseUri') private baseUri: string = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + '/', private http: HttpClient) {
+		constructor(@Inject('baseUri') private baseUri: string = window.location.origin + '/', private http: HttpClient) {
 		}
 
 		/**

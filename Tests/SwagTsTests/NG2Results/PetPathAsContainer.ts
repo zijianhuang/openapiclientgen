@@ -138,9 +138,9 @@ export namespace MyNS {
 		userStatus?: number | null;
 	}
 
-	@Injectable()
+	@Injectable({ providedIn: 'root' })
 	export class PetClient {
-		constructor(@Inject('baseUri') private baseUri: string = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + '/', private http: HttpClient) {
+		constructor(@Inject('baseUri') private baseUri: string = window.location.origin + '/', private http: HttpClient) {
 		}
 
 		/**
@@ -165,9 +165,9 @@ export namespace MyNS {
 		}
 	}
 
-	@Injectable()
+	@Injectable({ providedIn: 'root' })
 	export class Pet_petIdClient {
-		constructor(@Inject('baseUri') private baseUri: string = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + '/', private http: HttpClient) {
+		constructor(@Inject('baseUri') private baseUri: string = window.location.origin + '/', private http: HttpClient) {
 		}
 
 		/**
@@ -192,15 +192,15 @@ export namespace MyNS {
 		}
 	}
 
-	@Injectable()
+	@Injectable({ providedIn: 'root' })
 	export class Pet_petIdUploadImageClient {
-		constructor(@Inject('baseUri') private baseUri: string = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + '/', private http: HttpClient) {
+		constructor(@Inject('baseUri') private baseUri: string = window.location.origin + '/', private http: HttpClient) {
 		}
 	}
 
-	@Injectable()
+	@Injectable({ providedIn: 'root' })
 	export class PetFindByStatusClient {
-		constructor(@Inject('baseUri') private baseUri: string = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + '/', private http: HttpClient) {
+		constructor(@Inject('baseUri') private baseUri: string = window.location.origin + '/', private http: HttpClient) {
 		}
 
 		/**
@@ -215,9 +215,9 @@ export namespace MyNS {
 		}
 	}
 
-	@Injectable()
+	@Injectable({ providedIn: 'root' })
 	export class PetFindByTagsClient {
-		constructor(@Inject('baseUri') private baseUri: string = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + '/', private http: HttpClient) {
+		constructor(@Inject('baseUri') private baseUri: string = window.location.origin + '/', private http: HttpClient) {
 		}
 
 		/**
@@ -232,9 +232,9 @@ export namespace MyNS {
 		}
 	}
 
-	@Injectable()
+	@Injectable({ providedIn: 'root' })
 	export class StoreInventoryClient {
-		constructor(@Inject('baseUri') private baseUri: string = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + '/', private http: HttpClient) {
+		constructor(@Inject('baseUri') private baseUri: string = window.location.origin + '/', private http: HttpClient) {
 		}
 
 		/**
@@ -248,9 +248,9 @@ export namespace MyNS {
 		}
 	}
 
-	@Injectable()
+	@Injectable({ providedIn: 'root' })
 	export class StoreOrderClient {
-		constructor(@Inject('baseUri') private baseUri: string = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + '/', private http: HttpClient) {
+		constructor(@Inject('baseUri') private baseUri: string = window.location.origin + '/', private http: HttpClient) {
 		}
 
 		/**
@@ -264,9 +264,9 @@ export namespace MyNS {
 		}
 	}
 
-	@Injectable()
+	@Injectable({ providedIn: 'root' })
 	export class StoreOrder_orderIdClient {
-		constructor(@Inject('baseUri') private baseUri: string = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + '/', private http: HttpClient) {
+		constructor(@Inject('baseUri') private baseUri: string = window.location.origin + '/', private http: HttpClient) {
 		}
 
 		/**
@@ -292,9 +292,9 @@ export namespace MyNS {
 		}
 	}
 
-	@Injectable()
+	@Injectable({ providedIn: 'root' })
 	export class UserClient {
-		constructor(@Inject('baseUri') private baseUri: string = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + '/', private http: HttpClient) {
+		constructor(@Inject('baseUri') private baseUri: string = window.location.origin + '/', private http: HttpClient) {
 		}
 
 		/**
@@ -309,9 +309,9 @@ export namespace MyNS {
 		}
 	}
 
-	@Injectable()
+	@Injectable({ providedIn: 'root' })
 	export class User_usernameClient {
-		constructor(@Inject('baseUri') private baseUri: string = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + '/', private http: HttpClient) {
+		constructor(@Inject('baseUri') private baseUri: string = window.location.origin + '/', private http: HttpClient) {
 		}
 
 		/**
@@ -348,9 +348,9 @@ export namespace MyNS {
 		}
 	}
 
-	@Injectable()
+	@Injectable({ providedIn: 'root' })
 	export class UserCreateWithArrayClient {
-		constructor(@Inject('baseUri') private baseUri: string = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + '/', private http: HttpClient) {
+		constructor(@Inject('baseUri') private baseUri: string = window.location.origin + '/', private http: HttpClient) {
 		}
 
 		/**
@@ -364,9 +364,9 @@ export namespace MyNS {
 		}
 	}
 
-	@Injectable()
+	@Injectable({ providedIn: 'root' })
 	export class UserCreateWithListClient {
-		constructor(@Inject('baseUri') private baseUri: string = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + '/', private http: HttpClient) {
+		constructor(@Inject('baseUri') private baseUri: string = window.location.origin + '/', private http: HttpClient) {
 		}
 
 		/**
@@ -380,9 +380,9 @@ export namespace MyNS {
 		}
 	}
 
-	@Injectable()
+	@Injectable({ providedIn: 'root' })
 	export class UserLoginClient {
-		constructor(@Inject('baseUri') private baseUri: string = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + '/', private http: HttpClient) {
+		constructor(@Inject('baseUri') private baseUri: string = window.location.origin + '/', private http: HttpClient) {
 		}
 
 		/**
@@ -397,9 +397,9 @@ export namespace MyNS {
 		}
 	}
 
-	@Injectable()
+	@Injectable({ providedIn: 'root' })
 	export class UserLogoutClient {
-		constructor(@Inject('baseUri') private baseUri: string = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + '/', private http: HttpClient) {
+		constructor(@Inject('baseUri') private baseUri: string = window.location.origin + '/', private http: HttpClient) {
 		}
 
 		/**

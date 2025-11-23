@@ -1996,9 +1996,9 @@ export namespace MyNS {
 	/** Specifies the reason for the unavailability of the service. */
 	export enum UnavailableReason { None = 'None', InvalidName = 'InvalidName', SubscriptionIsDisabled = 'SubscriptionIsDisabled', NameInUse = 'NameInUse', NameInLockdown = 'NameInLockdown', TooManyNamespaceInCurrentSubscription = 'TooManyNamespaceInCurrentSubscription' }
 
-	@Injectable()
+	@Injectable({ providedIn: 'root' })
 	export class MyClient {
-		constructor(@Inject('baseUri') private baseUri: string = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + '/', private http: HttpClient) {
+		constructor(@Inject('baseUri') private baseUri: string = window.location.origin + '/', private http: HttpClient) {
 		}
 
 		/**
