@@ -315,7 +315,7 @@ The JSON file is mapped to the following [C# codes](https://github.com/zijianhua
 		public bool DecorateDataModelWithPropertyName { get; set; }
 
 		/// <summary>
-		/// OpenApClinetGen declares all value type properties including enum properties as nullable by default in generated C#, and all properties as nullable by default in generated TypeScript codes, unless the property is required. 
+		/// OpenApiClientGen declares all value type properties including enum properties as nullable by default in generated C#, and all properties as nullable by default in generated TypeScript codes, unless the property is required. 
 		/// This is to prevent serializer from creating payload for properties not assigned.  
 		/// There might be situations in which you don't want such default features and want the codegen to respect OpenApi v3 option nullable. Then turn this setting to true, which affects generated C# codes only.
 		/// Please note, Some Open API definition files do not define nullable for some premitive types and enum, however, the respective backends do not expect some properties presented in the payload of the request.
