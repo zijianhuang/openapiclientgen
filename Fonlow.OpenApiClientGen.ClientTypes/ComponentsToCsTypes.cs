@@ -81,7 +81,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		/// The namespace is extracted from refId if refId contains dots.
 		/// </summary>
 		/// <param name="item">Reference Id and its schema</param>
-		public override void AddTypeToCodeDom(string refId, OpenApiSchema schema)
+		public override void AddTypeToCodeDom(string refId, IOpenApiSchema schema)
 		{
 			if (refId == "BoundingBox")
 			{
@@ -113,7 +113,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				if (schema.Properties.Count > 0 || (schema.Properties.Count == 0 && allOfBaseTypeSchemaList.Count > 1))
 				{
 					typeDeclaration = AddTypeToClassNamespace(currentTypeName, ns);
-					if (type== JsonSchemaType.Null && allOfBaseTypeSchemaList.Count > 0)
+					if (type == JsonSchemaType.Null && allOfBaseTypeSchemaList.Count > 0)
 					{
 						var allOfRef = allOfBaseTypeSchemaList[0];
 						if (allOfRef.Reference == null)
@@ -203,11 +203,11 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				}
 				else if (type != JsonSchemaType.Object && type != JsonSchemaType.Null)
 				{
-					Type clrType = TypeRefHelper.PrimitiveSwaggerTypeToClrType(type, null);
+					Type clrType = TypeRefHelper.PrimitiveSwaggerTypeToClrType(type.Value, null);
 					TypeAliasDic.Add(refId, clrType.FullName);
 					Trace.TraceInformation($"TypeAliasDic.Add({refId}, {clrType.FullName}) -- clrType: {clrType.FullName}");
 				}
-				else if (type == JsonSchemaType.Object || type== JsonSchemaType.Null)//object alias without properties
+				else if (type == JsonSchemaType.Object || type == JsonSchemaType.Null)//object alias without properties
 				{
 					typeDeclaration = AddTypeToClassNamespace(currentTypeName, ns);
 					CreateTypeDocComment(refId, schema, typeDeclaration);
@@ -380,7 +380,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 							new()
 							{
 								Name = memberName,
-								InitExpression = double.IsInteger(doubleMember) ? new CodePrimitiveExpression(Convert.ToInt32(doubleMember)) : new CodePrimitiveExpression(doubleValue),
+								InitExpression = double.IsInteger(doubleMember) ? new CodePrimitiveExpression(Convert.ToInt32(doubleMember)) : new CodePrimitiveExpression(doubleMember),
 							};
 
 						if (settings.DecorateDataModelWithDataContract)
@@ -434,7 +434,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			}
 		}
 
-		protected override void AddProperty(string refId, OpenApiSchema propertySchema, CodeTypeDeclaration typeDeclaration, OpenApiSchema schema, string currentTypeName, string ns)
+		protected override void AddProperty(string refId, IOpenApiSchema propertySchema, CodeTypeDeclaration typeDeclaration, IOpenApiSchema schema, string currentTypeName, string ns)
 		{
 			string propertyName = Renamer.RefinePropertyName(refId);
 			if (string.IsNullOrEmpty(propertyName))
@@ -460,8 +460,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 			bool propertyNameAdjusted = propertyName != refId;
 
-			string primitivePropertyType = propertySchema.Type;
-			bool isPrimitiveType = TypeRefHelper.IsPrimitiveTypeOfOA(primitivePropertyType);
+			var primitivePropertyType = propertySchema.Type;
 			bool isRequired = schema.Required.Contains(refId); //compare with the original key
 			string defaultValue = GetDefaultValue(propertySchema);
 			if (!string.IsNullOrEmpty(defaultValue) && settings.SpecialTokens != null) // for open ai and alike, with something like <|endoftext|>
@@ -474,7 +473,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 			CodeMemberField clientProperty;
 
-			if (String.IsNullOrEmpty(primitivePropertyType))
+			if (!primitivePropertyType.HasValue)
 			{
 				if (propertySchema.Reference != null)
 				{
@@ -484,15 +483,6 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					CodeTypeReference ctr = ComponentsHelper.TranslateTypeNameToClientTypeReference(propertyTypeWithNs);
 					clientProperty = CreateProperty(ctr, propertyName, defaultValue); //C#
 				}
-				//else if (propertySchema.OneOf != null && propertySchema.OneOf.Count > 0 && propertySchema.OneOf[0].Reference!=null) working however, the else block could handle well already.
-				//{
-				//	var reference = propertySchema.OneOf[0].Reference;
-				//	string propertyTypeNs = NameFunc.GetNamespaceOfClassName(reference.Id);
-				//	string propertyTypeName = Renamer.RefineTypeName(reference.Id, propertyTypeNs);
-				//	string propertyTypeWithNs = NameFunc.CombineNamespaceWithClassName(propertyTypeNs, propertyTypeName);
-				//	CodeTypeReference ctr = ComponentsHelper.TranslateTypeNameToClientTypeReference(propertyTypeWithNs);
-				//	clientProperty = CreateProperty(ctr, propertyName, defaultValue); //C#
-				//}
 				else if (propertySchema.OneOf.Count > 0 && propertySchema.OneOf[0].Enum.Count > 0) // for string enum
 				{
 					string[] enumMemberNames;
@@ -559,7 +549,9 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			}
 			else
 			{
-				if (primitivePropertyType == "array") // for array property
+				bool isPrimitiveType = TypeRefHelper.IsPrimitiveTypeOfOA(primitivePropertyType.Value);
+
+				if (primitivePropertyType == JsonSchemaType.Array) // for array property
 				{
 					CodeTypeReference arrayCodeTypeReference;
 					var foundCodeTypeDeclaration = FindCodeTypeDeclarationInNamespaces(currentTypeName, ns);
@@ -610,14 +602,14 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					CodeTypeReference ctr = TypeRefHelper.TranslateToClientTypeReference(casualTypeName);
 					clientProperty = CreateProperty(ctr, propertyName, defaultValue);
 				}
-				else if (primitivePropertyType == "object" && propertySchema.AdditionalProperties != null) // for dictionary
+				else if (primitivePropertyType == JsonSchemaType.Object && propertySchema.AdditionalProperties != null) // for dictionary
 				{
 					CodeTypeReference dicKeyTypeRef = TypeRefHelper.TranslateToClientTypeReference(typeof(string));
 					CodeTypeReference dicValueTypeRef;
 					if (propertySchema.AdditionalProperties.Properties.Count == 0 //not casual type
 						&& propertySchema.AdditionalProperties.Reference == null // not complex type
 						&& propertySchema.AdditionalProperties.Items == null // not casual array type
-						&& (propertySchema.AdditionalProperties.Type == null || propertySchema.AdditionalProperties.Type == "object"))
+						&& (propertySchema.AdditionalProperties.Type == null || propertySchema.AdditionalProperties.Type == JsonSchemaType.Object))
 					{
 						dicValueTypeRef = new CodeTypeReference(typeof(object));
 					}
@@ -629,7 +621,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					CodeTypeReference dicCtr = new(typeof(Dictionary<,>).FullName, dicKeyTypeRef, dicValueTypeRef); //for client codes, Dictionary is better than IDictionary, no worry of different implementation of IDictionary
 					clientProperty = CreateProperty(dicCtr, propertyName, null);
 				}
-				else if (propertySchema.Enum.Count > 0 && primitivePropertyType == "string") // for string enum
+				else if (propertySchema.Enum.Count > 0 && primitivePropertyType == JsonSchemaType.String) // for string enum
 				{
 					string[] enumMemberNames;
 					try
@@ -671,18 +663,18 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				{
 					Type simpleType;
 					bool isDateOnly = false;
-					if (primitivePropertyType == "string" && propertySchema.Format == "date" && !settings.DateToDateOnly)
+					if (primitivePropertyType == JsonSchemaType.String && propertySchema.Format == "date" && !settings.DateToDateOnly)
 					{
 						simpleType = typeof(DateTimeOffset);
 						isDateOnly = true;
 					}
-					else if (primitivePropertyType == "string" && propertySchema.Format == "uuid" && settings.UseGuid)
+					else if (primitivePropertyType == JsonSchemaType.String && propertySchema.Format == "uuid" && settings.UseGuid)
 					{
 						simpleType = typeof(Guid);
 					}
 					else
 					{
-						simpleType = TypeRefHelper.PrimitiveSwaggerTypeToClrType(primitivePropertyType, propertySchema.Format);
+						simpleType = TypeRefHelper.PrimitiveSwaggerTypeToClrType(primitivePropertyType.Value, propertySchema.Format);
 					}
 
 					if ((!settings.DisableSystemNullableByDefault && !isRequired || propertySchema.Nullable) && !simpleType.IsClass) //C#
@@ -703,7 +695,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 						clientProperty.CustomAttributes.Add(new CodeAttributeDeclaration("System.ComponentModel.DataAnnotations.DataTypeAttribute", new CodeAttributeArgument(new CodeSnippetExpression("System.ComponentModel.DataAnnotations.DataType.Date"))));
 					}
 				}
-				else if (primitivePropertyType != "string" && TypeAliasDic.TryGet(primitivePropertyType, out string aliasTypeName)) //check TypeAliasDic
+				else if (primitivePropertyType != JsonSchemaType.String && TypeAliasDic.TryGet(primitivePropertyType.Value.ToString(), out string aliasTypeName)) //check TypeAliasDic
 				{
 					CodeTypeReference r = new(aliasTypeName);
 					clientProperty = CreateProperty(r, propertyName, defaultValue);
@@ -761,7 +753,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			typeDeclaration.Members.Add(clientProperty);
 		}
 
-		CodeMemberField GenerateCasualEnumForProperty(OpenApiSchema propertySchema, string typeDeclarationName, string propertyName, string ns, string defaultValue, bool isNullable)
+		CodeMemberField GenerateCasualEnumForProperty(IOpenApiSchema propertySchema, string typeDeclarationName, string propertyName, string ns, string defaultValue, bool isNullable)
 		{
 			Tuple<CodeTypeReference, CodeTypeDeclaration> r = GenerateCasualEnum(propertySchema, typeDeclarationName, propertyName, ns);
 			if (r.Item2 != null)
@@ -797,88 +789,90 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				defaultValue == null ? null : (r.Item2 == null ? "" : r.Item2.Name + "." + Renamer.RefineEnumValue(defaultValue)));
 		}
 
-		string GetDefaultValue(OpenApiSchema s)
+		string GetDefaultValue(IOpenApiSchema s)
 		{
 			if (s.Default == null)
 			{
 				return null;
 			}
 
-			if (s.Default is OpenApiString stringValue)
+			if (s.Default is JsonValue value)
 			{
-				if (s.Enum == null || s.Enum.Count == 0) //Sometimes people make make a number default with value string. And this mistake seems common. Better to tolerate.
+				if (value.TryGetValue<string>(out var stringValue))
 				{
-					if (s.Type == "string")
+					if (s.Enum == null || s.Enum.Count == 0) //Sometimes people make make a number default with value string. And this mistake seems common. Better to tolerate.
 					{
-						// Handle a blank default date/date-time otherwise the code generated is invalid DateOnly or DateTimeOffset name { get; set; } = "";
-						if (s.Format is "date" or "date-time")
+						if (s.Type == JsonSchemaType.String)
 						{
-							if (string.IsNullOrEmpty(stringValue.Value))
+							// Handle a blank default date/date-time otherwise the code generated is invalid DateOnly or DateTimeOffset name { get; set; } = "";
+							if (s.Format is "date" or "date-time")
 							{
-								return null;
+								if (string.IsNullOrEmpty(stringValue))
+								{
+									return null;
+								}
 							}
+
+							return "\"" + EscapeString(stringValue) + "\"";
 						}
 
-						return "\"" + EscapeString(stringValue.Value) + "\"";
-					}
-
-					if (s.AllOf.Count > 0)
-					{
-						var typeRef = s.AllOf[0].Reference.Id;
-						var refinedTypeName = Renamer.RefineTypeName(typeRef, "");
-						return $"{refinedTypeName}.{Renamer.RefineEnumValue(stringValue.Value)}";
-					}
-
-					if (s.AnyOf.Count > 0)
-					{
-						if (s.AnyOf[0].Type == "string")
+						if (s.AllOf.Count > 0)
 						{
-							if (!stringValue.Value.StartsWith('"'))
+							var typeRef = s.AllOf[0].Reference.Id;
+							var refinedTypeName = Renamer.RefineTypeName(typeRef, "");
+							return $"{refinedTypeName}.{Renamer.RefineEnumValue(stringValue)}";
+						}
+
+						if (s.AnyOf.Count > 0)
+						{
+							if (s.AnyOf[0].Type == JsonSchemaType.String)
 							{
-								return "\"" + stringValue.Value + "\"";
+								if (!stringValue.StartsWith('"'))
+								{
+									return "\"" + stringValue + "\"";
+								}
 							}
+
+							return stringValue;
+						}
+						else //enum
+						{
+							return Renamer.RefineEnumValue(stringValue);
 						}
 					}
 
-					//if (s.OneOf != null && s.OneOf.Count > 0) //https://swagger.io/docs/specification/v3_0/data-models/oneof-anyof-allof-not/
-					//{
-					//	var typeRef = s.OneOf[0].Reference.Id;
-					//	var refinedTypeName = Renamer.RefineTypeName(typeRef, "");
-					//	return $"{refinedTypeName}.{Renamer.RefineEnumValue(stringValue.Value)}";
-					//}
+					if (value.TryGetValue<int>(out var integerValue))
+					{
+						return (s.Enum == null || s.Enum.Count == 0) ? integerValue.ToString() : Renamer.RefineEnumValue(integerValue.ToString());
+					}
 
-					return stringValue.Value;
+					if (value.TryGetValue<bool>(out var boolValue))
+					{
+						return boolValue ? "true" : "false";
+					}
+
+					if (value.TryGetValue<float>(out var floatValue))
+					{
+						return floatValue.ToString() + "F";
+					}
+
+					if (value.TryGetValue<double>(out var doubleValue))
+					{
+						return doubleValue.ToString();
+					}
+
+					Trace.TraceWarning($"Default as {s.Default.GetType().FullName} is not yet supported.");
+
+					return null;
 				}
-				else //enum
-				{
-					return Renamer.RefineEnumValue(stringValue.Value);
-				}
-			}
 
-			if (s.Default is OpenApiInteger integerValue)
+				return null;
+			}
+			else
 			{
-				return (s.Enum == null || s.Enum.Count == 0) ? integerValue.Value.ToString() : Renamer.RefineEnumValue(integerValue.Value.ToString());
+				throw new NotSupportedException("Default should be value type.");
 			}
-
-			if (s.Default is OpenApiBoolean boolValue)
-			{
-				return boolValue.Value ? "true" : "false";
-			}
-
-			if (s.Default is OpenApiFloat floatValue)
-			{
-				return floatValue.Value.ToString() + "F";
-			}
-
-			if (s.Default is OpenApiDouble doubleValue)
-			{
-				return doubleValue.Value.ToString();
-			}
-
-			Trace.TraceWarning($"Default as {s.Default.GetType().FullName} is not yet supported.");
-			return null;
 		}
-
 		static void AddDescriptionAsSummaryDocComments(CodeCommentStatementCollection comments, string description)
 		{
 			if (description != null && comments != null)
@@ -899,7 +893,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			}
 		}
 
-		protected override void CreateTypeDocComment(string refId, OpenApiSchema typeSchema, CodeTypeMember typeDeclaration)
+		protected override void CreateTypeDocComment(string refId, IOpenApiSchema typeSchema, CodeTypeMember typeDeclaration)
 		{
 			string typeComment = typeSchema.Description;
 			if (String.IsNullOrEmpty(typeComment))
@@ -1018,7 +1012,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			}
 		}
 
-		protected override void AddValidationAttributes(OpenApiSchema fieldSchema, CodeMemberField memberField)
+		protected override void AddValidationAttributes(IOpenApiSchema fieldSchema, CodeMemberField memberField)
 		{
 			base.AddValidationAttributes(fieldSchema, memberField);
 
@@ -1038,26 +1032,33 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			ClientNamespace.Imports.Add(new CodeNamespaceImport($"{typeName} = {alias}"));
 		}
 
-		protected override string[] GetStringsFromEnumList(IList<IOpenApiAny> enumList)
+		protected override string[] GetStringsFromEnumList(IList<JsonNode> enumList)
 		{
 			return enumList.Select(d =>
 			{
-				if (d is OpenApiPrimitive<string> dString)
+				if (d is JsonValue value)
 				{
-					return dString.Value;
-				}
-				else if (d is OpenApiNull dNull)
-				{
-					return "null";
+					if (value.TryGetValue<string>(out var dString))
+					{
+						return dString;
+					}
+					else if (value.GetValue<object>() is null)
+					{
+						return "null";
+					}
+					else
+					{
+						throw new CodeGenOperationException("Mixed up enum.");
+					}
 				}
 				else
 				{
-					throw new CodeGenOperationException("Mixed up enum.");
+					throw new NotSupportedException("expected JsonValue");
 				}
 			}).ToArray();
 		}
 
-		protected override void CreateMemberDocComment(string refId, OpenApiSchema memberSchema, CodeMemberField propertyField, OpenApiSchema modelSchema)
+		protected override void CreateMemberDocComment(string refId, IOpenApiSchema memberSchema, CodeMemberField propertyField, IOpenApiSchema modelSchema)
 		{
 			string typeComment = memberSchema.Description;
 			if (settings.DataAnnotationsToComments)
@@ -1068,7 +1069,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					ss.Insert(0, typeComment);
 				}
 
-				if (memberSchema.Type == "array" && memberSchema.Items?.OneOf?.Count > 0)
+				if (memberSchema.Type == JsonSchemaType.Array && memberSchema.Items?.OneOf?.Count > 0)
 				{
 					var typeList = memberSchema.Items.OneOf.Select(d => d.Reference?.Id);
 					var typeListText = string.Join(", ", typeList);
@@ -1083,7 +1084,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			}
 		}
 
-		protected override string CreateTypeTextForArrayContainingMultipleTypes(IList<OpenApiSchema> list)
+		protected override string CreateTypeTextForArrayContainingMultipleTypes(IList<IOpenApiSchema> list)
 		{
 			return "System.Object";
 		}
