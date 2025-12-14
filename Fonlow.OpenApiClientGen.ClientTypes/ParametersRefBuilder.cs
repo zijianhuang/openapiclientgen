@@ -41,7 +41,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					{
 						IsRequired = p.Required,
 						ParameterName = p.Name, // what appear in the HTTP query name, for example: "?api-version=" + api_version
-						ParameterType = p.Schema == null ? typeof(string) : TypeRefHelper.PrimitiveSwaggerTypeToClrType(p.Schema.Type, p.Schema.Format),
+						ParameterType = p.Schema == null ? typeof(string) : TypeRefHelper.PrimitiveSwaggerTypeToClrType(p.Schema.Type.Value, p.Schema.Format),
 						Schema=p.Schema, //p.Schema.Description is always null
 						ParameterBinder = ParameterLocationToParameterBinder(p.In),
 					},
@@ -54,12 +54,12 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			).Where(k => k.ParameterDescriptor.ParameterBinder != ParameterBinder.None).ToArray();
 		}
 
-		public CodeTypeReference OpenApiParameterToCodeTypeReference(OpenApiParameter apiParameter)
+		public CodeTypeReference OpenApiParameterToCodeTypeReference(IOpenApiParameter apiParameter)
 		{
 			return OpenApiParameterSchemaToCodeTypeReference(apiParameter.Schema, apiParameter.Name);
 		}
 
-		public CodeTypeReference OpenApiParameterSchemaToCodeTypeReference(OpenApiSchema apiParameterSchema, string apiParameterName)
+		public CodeTypeReference OpenApiParameterSchemaToCodeTypeReference(IOpenApiSchema apiParameterSchema, string apiParameterName)
 		{
 			return com2CodeDom.PropertySchemaToCodeTypeReference(apiParameterSchema, actionName, apiParameterName);
 		}

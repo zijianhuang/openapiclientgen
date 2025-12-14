@@ -24,11 +24,11 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		/// <returns>item2 indicates whether return is a string.</returns>
 		public Tuple<CodeTypeReference, bool> GetOperationReturnTypeReference(OpenApiOperation op)
 		{
-			if (op.Responses.TryGetValue("200", out OpenApiResponse goodResponse))
+			if (op.Responses.TryGetValue("200", out var goodResponse))
 			{
 				CodeTypeReference codeTypeReference;
 
-				if (goodResponse.Content.TryGetValue("application/json", out OpenApiMediaType content)) // application/json has better to be first.
+				if (goodResponse.Content.TryGetValue("application/json", out var content)) // application/json has better to be first.
 				{
 					if (content == null || content.Schema == null)
 					{
@@ -38,7 +38,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					try
 					{
 						codeTypeReference = com2CodeDom.PropertySchemaToCodeTypeReference(content.Schema, actionName, "Return");
-						Type simpleType = TypeRefHelper.PrimitiveSwaggerTypeToClrType(content.Schema.Type, content.Schema.Format);
+						Type simpleType = TypeRefHelper.PrimitiveSwaggerTypeToClrType(content.Schema.Type.Value, content.Schema.Format);
 						codeTypeReference.UserData[Fonlow.TypeScriptCodeDom.UserDataKeys.FieldTypeInfo] = new Fonlow.TypeScriptCodeDom.FieldTypeInfo
 						{
 							ClrType = simpleType, // client codes won't care about the other properties
@@ -57,11 +57,11 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				{
 					if (content.Schema != null)
 					{
-						string schemaType = content.Schema.Type;
+						var schemaType = content.Schema.Type;
 						if (schemaType != null)
 						{
 							string schemaFormat = content.Schema.Format;
-							Type type = TypeRefHelper.PrimitiveSwaggerTypeToClrType(schemaType, schemaFormat);
+							Type type = TypeRefHelper.PrimitiveSwaggerTypeToClrType(schemaType.Value, schemaFormat);
 							return Tuple.Create(new CodeTypeReference(type), type == typeOfString);
 						}
 					}

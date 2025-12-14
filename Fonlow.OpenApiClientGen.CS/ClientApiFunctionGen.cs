@@ -1,12 +1,14 @@
 ﻿using Fonlow.CodeDom.Web;
 using Fonlow.OpenApiClientGen.ClientTypes;
 using Fonlow.Reflection;
-using Microsoft.OpenApi.YamlReader; using Microsoft.OpenApi;
+using Microsoft.OpenApi.YamlReader; 
+using Microsoft.OpenApi;
 using System;
 using System.CodeDom;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Net.Http;
 
 namespace Fonlow.OpenApiClientGen.CS
 {
@@ -42,10 +44,10 @@ namespace Fonlow.OpenApiClientGen.CS
 
 		string statementOfEnsureSuccessStatusCode;
 
-		public CodeMemberMethod CreateApiFunction(ISettings settings, string relativePath, OperationType httpMethod,
+		public CodeMemberMethod CreateApiFunction(ISettings settings, string relativePath, HttpMethod httpMethod,
 			OpenApiOperation apiOperation, ComponentsToCsTypes coms2CsTypes, bool forAsync, bool useEnsureSuccessStatusCodeEx)
 		{
-			if (!(new OperationType[] { OperationType.Get, OperationType.Post, OperationType.Put, OperationType.Delete, OperationType.Patch }).Any(d => d == httpMethod))
+			if (!(new HttpMethod[] { HttpMethod.Get, HttpMethod.Post, HttpMethod.Put, HttpMethod.Delete, HttpMethod.Patch }).Any(d => d == httpMethod))
 			{
 				Trace.TraceWarning("This HTTP method {0} is not yet supported", httpMethod);
 				return null;
@@ -72,7 +74,7 @@ namespace Fonlow.OpenApiClientGen.CS
 			this.bodyContentRefBuilder = new BodyContentRefBuilder(coms2CsTypes, actionName, renamer);
 			this.parametersRefBuilder = new ParametersRefBuilder(coms2CsTypes, actionName, renamer);
 			this.parameterDescriptions = parametersRefBuilder.OpenApiParametersToParameterDescriptions(apiOperation.Parameters);
-			if (httpMethod == OperationType.Post || httpMethod == OperationType.Put || httpMethod == OperationType.Patch)
+			if (httpMethod == HttpMethod.Post || httpMethod == HttpMethod.Put || httpMethod == HttpMethod.Patch)
 			{
 				Tuple<CodeTypeReference, string, bool> kc = bodyContentRefBuilder.GetBodyContent(apiOperation, httpMethod.ToString(), relativePath, settings.DotsToNamespaces);
 				if (kc != null)
@@ -111,15 +113,15 @@ namespace Fonlow.OpenApiClientGen.CS
 
 			CreateDocComments();
 
-			switch (httpMethod)
+			switch (httpMethod.Method)
 			{
-				case OperationType.Get:
-				case OperationType.Delete:
+				case "GET":
+				case "DELETE":
 					RenderGetOrDeleteImplementation(httpMethod);
 					break;
-				case OperationType.Post:
-				case OperationType.Put:
-				case OperationType.Patch:
+				case "POST":
+				case "PUT":
+				case "PATCH":
 					RenderPostOrPutImplementation(httpMethod);
 					break;
 				default:
@@ -249,7 +251,7 @@ namespace Fonlow.OpenApiClientGen.CS
 			comments.Add(new CodeCommentStatement("</param>"));
 		}
 
-		void RenderGetOrDeleteImplementation(OperationType httpMethod)
+		void RenderGetOrDeleteImplementation(HttpMethod httpMethod)
 		{
 			CodeParameterDeclarationExpression[] parameters = parameterDescriptions.Where(p => p.ParameterDescriptor.ParameterBinder == ParameterBinder.FromUri || p.ParameterDescriptor.ParameterBinder == ParameterBinder.FromQuery)
 				.Select(d =>
@@ -338,7 +340,7 @@ namespace Fonlow.OpenApiClientGen.CS
 
 		static string ThreeTabs => "\t\t\t";
 
-		void RenderPostOrPutImplementation(OperationType httpMethod)
+		void RenderPostOrPutImplementation(HttpMethod httpMethod)
 		{
 			//Create function parameters in prototype
 			CodeParameterDeclarationExpression[] parameters = parameterDescriptions.Where(p => p.ParameterDescriptor.ParameterBinder == ParameterBinder.FromUri || p.ParameterDescriptor.ParameterBinder == ParameterBinder.FromQuery)

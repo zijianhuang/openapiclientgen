@@ -495,9 +495,17 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 						{
 							for (var i = 0; i < propertySchema.OneOf[0].Enum.Count; i++)
 							{
-								if (propertySchema.OneOf[0].Enum[i] is OpenApiString str)
+								var node = propertySchema.OneOf[0].Enum[i];
+								if (node is JsonValue v)
 								{
-									propertySchema.OneOf[0].Enum[i] = new OpenApiString(str.Value.ToPascalCase());
+									if (v.TryGetValue<string>(out var str))
+									{
+										propertySchema.OneOf[0].Enum[i] = JsonValue.Create(str.ToPascalCase());
+									}
+								}
+								else
+								{
+									throw new NotSupportedException("Only Json value supported.");
 								}
 							}
 							enumMemberNames = enumMemberNames.Select(e => e.ToPascalCase()).ToArray();

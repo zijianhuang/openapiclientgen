@@ -256,7 +256,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			{
 				if (settings.ArrayAs == ArrayAsIEnumerableDerived.Array)
 				{
-					Type clrType = TypeRefHelper.PrimitiveSwaggerTypeToClrType("string", null);
+					Type clrType = TypeRefHelper.PrimitiveSwaggerTypeToClrType(JsonSchemaType.String, null);
 					CodeTypeReference arrayCodeTypeReference = TypeRefHelper.CreateArrayTypeReference(clrType, 1);
 					return Tuple.Create(arrayCodeTypeReference, String.Empty);
 				}
@@ -718,7 +718,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		/// </summary>
 		/// <param name="requestBodies"></param>
 		/// <returns></returns>
-		static KeyValuePair<string, IOpenApiSchema>[] ExtractRequestBodiesOfApplicationJson(IDictionary<string, OpenApiRequestBody> requestBodies)
+		static KeyValuePair<string, IOpenApiSchema>[] ExtractRequestBodiesOfApplicationJson(IDictionary<string, IOpenApiRequestBody> requestBodies)
 		{
 			var stronglyTypedBodies = requestBodies.Where(d =>
 			{

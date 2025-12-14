@@ -80,7 +80,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			return new CodeObjectHelper(asModule);
 		}
 
-		public override void AddTypeToCodeDom(string refId, OpenApiSchema schema)
+		public override void AddTypeToCodeDom(string refId, IOpenApiSchema schema)
 		{
 			var ns = settings.DotsToNamespaces ? NameFunc.GetNamespaceOfClassName(refId) : settings.ClientNamespace;
 			var currentTypeName = Renamer.RefineTypeName(refId, ns, settings.DotsToNamespaces);
@@ -127,7 +127,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 						if (allOfBaseTypeSchemaList.Count > 1)
 						{
-							OpenApiSchema allOfProperteisSchema = allOfBaseTypeSchemaList[1]; //the 2nd one points to properties of the derived type, while the 1st one points to the base type.
+							var allOfProperteisSchema = allOfBaseTypeSchemaList[1]; //the 2nd one points to properties of the derived type, while the 1st one points to the base type.
 							AddProperties(typeDeclaration, allOfProperteisSchema, currentTypeName, ns);
 						}
 					}
@@ -406,7 +406,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 					SetClientPropertyTypeInfo(clientProperty, false, false);
 				}
-				else if (primitivePropertyType != JsonSchemaType.String && TypeAliasDic.TryGet(primitivePropertyType.Value, out string aliasTypeName)) //check TypeAliasDic
+				else if (primitivePropertyType != JsonSchemaType.String && TypeAliasDic.TryGet(primitivePropertyType.Value.ToString(), out string aliasTypeName)) //check TypeAliasDic
 				{
 					var r = new CodeTypeReference(aliasTypeName);
 					clientProperty = CreateProperty(r, propertyName, isRequired);

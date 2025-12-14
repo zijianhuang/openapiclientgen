@@ -92,7 +92,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			}
 
 			string byWhat = String.Join("And", op.Parameters.Where(p => p.In == ParameterLocation.Path || p.In == ParameterLocation.Query).Select(p => NameFunc.ToTitleCase(renamer.RefineParameterName(p.Name))));
-			return ToTitleCase(op.Tags[0].Name) + httpMethod + (String.IsNullOrEmpty(byWhat) ? String.Empty : "By" + byWhat);
+			return ToTitleCase(op.Tags.First().Name) + httpMethod + (String.IsNullOrEmpty(byWhat) ? String.Empty : "By" + byWhat);
 		}
 
 		/// <summary>
@@ -135,7 +135,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				case ContainerNameStrategy.Tags:
 					if (op.Tags != null && op.Tags.Count > 0)
 					{
-						return ToTitleCase(op.Tags[0].Name) + settings.ContainerNameSuffix;//todo: concanate multiple ones?
+						return ToTitleCase(op.Tags.First().Name) + settings.ContainerNameSuffix;//todo: concanate multiple ones?
 					}
 					else
 					{
@@ -185,7 +185,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 		public static string GetOperationReturnComment(OpenApiOperation op)
 		{
-			if (op.Responses.TryGetValue("200", out OpenApiResponse goodResponse))
+			if (op.Responses.TryGetValue("200", out var goodResponse))
 			{
 				return goodResponse.Description;
 			}

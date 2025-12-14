@@ -38,7 +38,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		public Type ParameterType
 		{ get; set; }
 
-		public OpenApiSchema Schema
+		public IOpenApiSchema Schema
 		{ get; set; }
 
 		public ParameterBinder ParameterBinder
