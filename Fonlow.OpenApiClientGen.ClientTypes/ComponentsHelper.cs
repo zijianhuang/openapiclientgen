@@ -1,4 +1,4 @@
-﻿using Microsoft.OpenApi.Models;
+﻿using Microsoft.OpenApi;
 using System;
 using System.CodeDom;
 using System.Collections.Generic;
@@ -52,14 +52,14 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				ss.Add(String.Format(CultureInfo.CurrentCulture, "Max length: {0}", fieldSchema.MaxLength.Value));
 			}
 
-			if (fieldSchema.Minimum.HasValue)
+			if (!string.IsNullOrEmpty(fieldSchema.Minimum))
 			{
-				ss.Add(String.Format(CultureInfo.CurrentCulture, "Minimum: {0}", fieldSchema.Minimum.Value));
+				ss.Add(String.Format(CultureInfo.CurrentCulture, "Minimum: {0}", fieldSchema.Minimum));
 			}
 
-			if (fieldSchema.Maximum.HasValue)
+			if (!string.IsNullOrEmpty(fieldSchema.Maximum))
 			{
-				ss.Add(String.Format(CultureInfo.CurrentCulture, "Maximum: {0}", fieldSchema.Maximum.Value));
+				ss.Add(String.Format(CultureInfo.CurrentCulture, "Maximum: {0}", fieldSchema.Maximum));
 			}
 
 			if (fieldSchema.MinItems.HasValue)
@@ -80,7 +80,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 		public static bool FieldSchemaContainsValueConstraints(OpenApiSchema fieldSchema)
 		{
-			return fieldSchema.MaxLength.HasValue || fieldSchema.MinLength.HasValue || fieldSchema.Minimum.HasValue || fieldSchema.Maximum.HasValue || fieldSchema.MinItems.HasValue || fieldSchema.MaxItems.HasValue;
+			return fieldSchema.MaxLength.HasValue || fieldSchema.MinLength.HasValue || !string.IsNullOrEmpty(fieldSchema.Minimum) || !string.IsNullOrEmpty(fieldSchema.Maximum) || fieldSchema.MinItems.HasValue || fieldSchema.MaxItems.HasValue;
 		}
 
 		/// <summary>

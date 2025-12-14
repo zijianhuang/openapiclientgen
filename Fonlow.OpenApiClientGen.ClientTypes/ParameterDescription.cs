@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Text;
 using System.Runtime.Serialization;
 using System.CodeDom;
-using Microsoft.OpenApi.Models;
+using Microsoft.OpenApi;
+using Microsoft.OpenApi.YamlReader;
+using Microsoft.OpenApi.Reader;
 
 namespace Fonlow.OpenApiClientGen.ClientTypes
 {

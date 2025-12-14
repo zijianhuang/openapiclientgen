@@ -1,4 +1,4 @@
-﻿using Microsoft.OpenApi.Models;
+﻿using Microsoft.OpenApi.YamlReader; using Microsoft.OpenApi;
 using System;
 using System.CodeDom;
 using System.Collections.Generic;
@@ -27,7 +27,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		readonly string actionName;
 		readonly IRenamer renamer;
 
-		public ParameterDescription[] OpenApiParametersToParameterDescriptions(IList<OpenApiParameter> ps)
+		public ParameterDescription[] OpenApiParametersToParameterDescriptions(IList<IOpenApiParameter> ps)
 		{
 			return ps.Select(p =>
 			{

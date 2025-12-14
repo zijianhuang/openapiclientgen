@@ -1,6 +1,7 @@
 ﻿using Fonlow.OpenApiClientGen.ClientTypes;
 using Fonlow.TypeScriptCodeDom;
-using Microsoft.OpenApi.Models;
+using Microsoft.OpenApi.YamlReader;
+using Microsoft.OpenApi;
 using System;
 using System.CodeDom;
 using System.Diagnostics;
@@ -9,6 +10,7 @@ using System.Linq;
 using System.Collections.Generic;
 using Fonlow.Poco2Client;
 using System.Globalization;
+using System.Net.Http;
 
 namespace Fonlow.CodeDom.Web.Ts
 {
@@ -30,7 +32,7 @@ namespace Fonlow.CodeDom.Web.Ts
 		ParametersRefBuilder parametersRefBuilder;
 		BodyContentRefBuilder bodyContentRefBuilder;
 		protected string ActionName { get; private set; }
-		protected OperationType HttpMethod { get; private set; }
+		protected HttpMethod HttpMethod { get; private set; }
 		protected string HttpMethodName { get; private set; }
 
 		readonly IRenamer renamer;
@@ -45,14 +47,14 @@ namespace Fonlow.CodeDom.Web.Ts
 			dotNetTypeCommentDic = DotNetTypeCommentGenerator.Get();
 		}
 
-		public CodeMemberMethod CreateApiFunction(ISettings settings, string relativePath, OperationType httpMethod, OpenApiOperation apiOperation, ComponentsToTsTypes com2TsTypes)
+		public CodeMemberMethod CreateApiFunction(ISettings settings, string relativePath, HttpMethod httpMethod, OpenApiOperation apiOperation, ComponentsToTsTypes com2TsTypes)
 		{
-			if (!(new OperationType[] { OperationType.Get, OperationType.Post, OperationType.Put, OperationType.Delete, OperationType.Patch }).Any(d => d == httpMethod))
+			if (!(new HttpMethod[] { HttpMethod.Get, HttpMethod.Post, HttpMethod.Put, HttpMethod.Delete, HttpMethod.Patch }).Any(d => d == httpMethod))
 			{
 				Trace.TraceWarning("This HTTP method {0} is not yet supported", httpMethod);
 				return null;
 			}
-
+			
 			this.settings = settings;
 			this.nameComposer = new NameComposer(settings, renamer);
 			this.apiOperation = apiOperation;
@@ -62,7 +64,7 @@ namespace Fonlow.CodeDom.Web.Ts
 			this.bodyContentRefBuilder = new BodyContentRefBuilder(com2TsTypes, ActionName, renamer);
 			this.parametersRefBuilder = new ParametersRefBuilder(com2TsTypes, ActionName, renamer);
 			this.ParameterDescriptions = parametersRefBuilder.OpenApiParametersToParameterDescriptions(apiOperation.Parameters);
-			if (httpMethod == OperationType.Post || httpMethod == OperationType.Put || httpMethod == OperationType.Patch)
+			if (httpMethod == HttpMethod.Post || httpMethod == HttpMethod.Put || httpMethod == HttpMethod.Patch)
 			{
 				Tuple<CodeTypeReference, string, bool> kc = bodyContentRefBuilder.GetBodyContent(apiOperation, httpMethod.ToString(), relativePath, settings.DotsToNamespaces);
 				if (kc != null)
@@ -103,13 +105,13 @@ namespace Fonlow.CodeDom.Web.Ts
 
 			CreateDocComments();
 
-			switch (HttpMethod)
+			switch (HttpMethod.Method)
 			{
-				case OperationType.Get:
-				case OperationType.Delete:
-				case OperationType.Post:
-				case OperationType.Put:
-				case OperationType.Patch:
+				case "GET":
+				case "DELETE":
+				case "POST":
+				case "PUT":
+				case "PATCH":
 					RenderImplementation();
 					break;
 				default:

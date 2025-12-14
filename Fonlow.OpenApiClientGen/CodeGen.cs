@@ -1,6 +1,6 @@
 ﻿using Fonlow.OpenApiClientGen.ClientTypes;
 using Fonlow.OpenApiClientGen.CS;
-using Microsoft.OpenApi.Models;
+using Microsoft.OpenApi.YamlReader; using Microsoft.OpenApi;
 using System;
 using System.Diagnostics;
 

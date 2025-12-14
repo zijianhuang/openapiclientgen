@@ -1,8 +1,8 @@
 ﻿using Fonlow.Poco2Client;
 using Fonlow.Reflection;
 using Fonlow.TypeScriptCodeDom;
-using Microsoft.OpenApi.Any;
-using Microsoft.OpenApi.Models;
+using Microsoft.OpenApi;
+using Microsoft.OpenApi.YamlReader;
 using System;
 using System.CodeDom;
 using System.CodeDom.Compiler;
@@ -11,6 +11,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Reflection;
+using System.Text.Json.Nodes;
 
 namespace Fonlow.OpenApiClientGen.ClientTypes
 {
@@ -86,9 +87,9 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 			RegisterSchemaRefIdToBeAdded(refId);
 
-			string type = schema.Type;
-			IList<OpenApiSchema> allOfBaseTypeSchemaList = schema.AllOf; //maybe empty
-			IList<IOpenApiAny> enumTypeList = schema.Enum; //maybe empty
+			var type = schema.Type;
+			var allOfBaseTypeSchemaList = schema.AllOf; //maybe empty
+			var enumTypeList = schema.Enum; //maybe empty
 			bool isForClass = enumTypeList.Count == 0;
 			CodeTypeDeclaration typeDeclaration = null;
 
@@ -108,9 +109,9 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					}
 
 					typeDeclaration = AddTypeToClassNamespace(currentTypeName, ns);
-					if (String.IsNullOrEmpty(type) && allOfBaseTypeSchemaList.Count > 0)
+					if (type== JsonSchemaType.Null && allOfBaseTypeSchemaList.Count > 0)
 					{
-						OpenApiSchema allOfRef = allOfBaseTypeSchemaList[0];
+						var allOfRef = allOfBaseTypeSchemaList[0];
 						if (allOfRef.Reference == null)
 						{
 							Trace.TraceWarning($"Not yet support Type {refId} having allOf[0] without Reference. Skipped.");
@@ -132,7 +133,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 					AddProperties(typeDeclaration, schema, currentTypeName, ns);
 				}
-				else if (type == "array") // wrapper of array
+				else if (type == JsonSchemaType.Array) // wrapper of array
 				{
 					OpenApiReference itemsRef = schema.Items.Reference;
 					if (itemsRef == null) //Array type with casual schema
@@ -191,13 +192,13 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 						Trace.TraceInformation($"TypeAliasDic.Add({refId}, {itemsRef.Id}[])");
 					}
 				}
-				else if (type != "object" && !String.IsNullOrEmpty(type))
+				else if (type != JsonSchemaType.Object && type != JsonSchemaType.Null)
 				{
 					var clrType = TypeRefHelper.PrimitiveSwaggerTypeToClrType(type, null);
 					TypeAliasDic.Add(refId, clrType.FullName);
 					Trace.TraceInformation($"TypeAliasDic.Add({refId}, {clrType.FullName}) -- clrType: {clrType.FullName}");
 				}
-				else if (type == "object" || String.IsNullOrEmpty(type))//object alias without properties
+				else if (type == JsonSchemaType.Object || type == JsonSchemaType.Null)//object alias without properties
 				{
 					typeDeclaration = AddTypeToClassNamespace(currentTypeName, ns);
 					CreateTypeDocComment(refId, schema, typeDeclaration);
@@ -445,15 +446,15 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			return $"'{s.Replace("'", "\\'")}'";
 		}
 
-		protected override string[] GetStringsFromEnumList(IList<IOpenApiAny> enumList)
+		protected override string[] GetStringsFromEnumList(IList<JsonValue> enumList)
 		{
 			return enumList.Select(d =>
 			{
-				if (d is OpenApiPrimitive<string> dString)
+				if (d.TryGetValue<string>(out var dString))
 				{
-					return RefineTsEnumMemberName(dString.Value);
+					return RefineTsEnumMemberName(dString);
 				}
-				else if (d is OpenApiNull dNull)
+				else if (d.GetValue<object>() is null)
 				{
 					return "null";
 				}
@@ -656,111 +657,114 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			typeDeclaration.Comments.Add(new CodeCommentStatement(typeComment, true));
 		}
 
-		public override void AddEnumMembers(CodeTypeDeclaration typeDeclaration, IList<IOpenApiAny> enumTypeList)
+		public override void AddEnumMembers(CodeTypeDeclaration typeDeclaration, IList<JsonNode> enumTypeList)
 		{
 			int k = 0;
-			foreach (IOpenApiAny enumMember in enumTypeList)
+			foreach (var node in enumTypeList)
 			{
-				if (enumMember is OpenApiString stringMember)
+				if (node is JsonValue enumPremitive)
 				{
-					var memberName = RefineTsEnumMemberName(stringMember.Value);
-					int intValue = k;
-					CodeMemberField clientField = new()
+					if (enumPremitive.TryGetValue<string>(out var stringMember))
 					{
-						Name = memberName,
-						InitExpression = settings.EnumToString ? new CodePrimitiveExpression("'" + stringMember.Value.Replace("'", "\\'") + "'") : new CodePrimitiveExpression(intValue),
-					};
+						var memberName = RefineTsEnumMemberName(stringMember);
+						int intValue = k;
+						CodeMemberField clientField = new()
+						{
+							Name = memberName,
+							InitExpression = settings.EnumToString ? new CodePrimitiveExpression("'" + stringMember.Value.Replace("'", "\\'") + "'") : new CodePrimitiveExpression(intValue),
+						};
 
-					typeDeclaration.Members.Add(clientField);
-					k++;
-				}
-				else if (enumMember is OpenApiInteger intMember)
-				{
-					string memberName = Renamer.RefineEnumMemberName(intMember.Value.ToString());
-					int intValue = k;
-					CodeMemberField clientField = new()
+						typeDeclaration.Members.Add(clientField);
+						k++;
+					}
+					else if (enumPremitive.TryGetValue<int>(out var intMember))
 					{
-						Name = memberName,
-						InitExpression = new CodePrimitiveExpression(intValue),
-					};
+						string memberName = Renamer.RefineEnumMemberName(intMember.ToString());
+						int intValue = k;
+						CodeMemberField clientField = new()
+						{
+							Name = memberName,
+							InitExpression = new CodePrimitiveExpression(intValue),
+						};
 
-					typeDeclaration.Members.Add(clientField);
-					k++;
-				}
-				else if (enumMember is OpenApiLong longMember)
-				{
-					string memberName = Renamer.RefineEnumMemberName(longMember.Value.ToString());
-					int intValue = k;
-					CodeMemberField clientField = new()
+						typeDeclaration.Members.Add(clientField);
+						k++;
+					}
+					else if (enumPremitive.TryGetValue<long>(out var longMember))
 					{
-						Name = memberName,
-						InitExpression = new CodePrimitiveExpression(intValue),
-					};
+						string memberName = Renamer.RefineEnumMemberName(longMember.ToString());
+						int intValue = k;
+						CodeMemberField clientField = new()
+						{
+							Name = memberName,
+							InitExpression = new CodePrimitiveExpression(intValue),
+						};
 
-					typeDeclaration.Members.Add(clientField);
-					k++;
-				}
-				else if (enumMember is OpenApiPassword passwordMember) // aws alexaforbusiness has PhoneNumberType defined as password format
-				{
-					string memberName = Renamer.RefineEnumMemberName(passwordMember.Value);
-					int intValue = k;
-					CodeMemberField clientField = new()
+						typeDeclaration.Members.Add(clientField);
+						k++;
+					}
+					else if (enumPremitive is OpenApiPassword passwordMember) // aws alexaforbusiness has PhoneNumberType defined as password format
 					{
-						Name = memberName,
-						InitExpression = new CodePrimitiveExpression(intValue),
-					};
+						string memberName = Renamer.RefineEnumMemberName(passwordMember.Value);
+						int intValue = k;
+						CodeMemberField clientField = new()
+						{
+							Name = memberName,
+							InitExpression = new CodePrimitiveExpression(intValue),
+						};
 
-					typeDeclaration.Members.Add(clientField);
-					k++;
-				}
-				else if (enumMember is OpenApiDouble doubleMember) //listennotes.com\2.0 has funky definition of casual enum of type double
-				{
-					string memberName = Renamer.RefineEnumMemberName(doubleMember.Value.ToString());
-					double doubleValue = doubleMember.Value;
-					CodeMemberField clientField = doubleMember.Value.ToString() == "NaN" ?
-						new()
+						typeDeclaration.Members.Add(clientField);
+						k++;
+					}
+					else if (enumPremitive.TryGetValue<double>(out var doubleMember)) //listennotes.com\2.0 has funky definition of casual enum of type double
+					{
+						string memberName = Renamer.RefineEnumMemberName(doubleMember.ToString());
+						double doubleValue = doubleMember.Value;
+						CodeMemberField clientField = doubleMember.Value.ToString() == "NaN" ?
+							new()
+							{
+								Name = memberName,
+								InitExpression = new CodePrimitiveExpression(k),
+							}
+							:
+							new()
+							{
+								Name = memberName,
+								InitExpression = double.IsInteger(doubleValue) ? new CodePrimitiveExpression(Convert.ToInt32(doubleValue)) : new CodePrimitiveExpression(doubleValue),
+							};
+
+						typeDeclaration.Members.Add(clientField);
+						k++;
+					}
+					else if (enumPremitive.TryGetValue<float>(out var floatMember))
+					{
+						string memberName = "_" + Renamer.RefineEnumMemberName(floatMember.ToString());
+						double floatValue = floatMember.Value;
+						CodeMemberField clientField = new()
+						{
+							Name = memberName,
+							InitExpression = new CodePrimitiveExpression(floatValue),
+						};
+
+						typeDeclaration.Members.Add(clientField);
+						k++;
+					}
+					else if (enumPremitive.GetValue<object>() is null) //listennotes.com\2.0 has funky definition of casual enum of type double
+					{
+						string memberName = "_null";
+						CodeMemberField clientField = new()
 						{
 							Name = memberName,
 							InitExpression = new CodePrimitiveExpression(k),
-						}
-						:
-						new()
-						{
-							Name = memberName,
-							InitExpression = double.IsInteger(doubleValue) ? new CodePrimitiveExpression(Convert.ToInt32(doubleValue)) : new CodePrimitiveExpression(doubleValue),
 						};
 
-					typeDeclaration.Members.Add(clientField);
-					k++;
-				}
-				else if (enumMember is OpenApiFloat floatMember)
-				{
-					string memberName = "_" + Renamer.RefineEnumMemberName(floatMember.Value.ToString());
-					double floatValue = floatMember.Value;
-					CodeMemberField clientField = new()
+						typeDeclaration.Members.Add(clientField);
+						k++;
+					}
+					else
 					{
-						Name = memberName,
-						InitExpression = new CodePrimitiveExpression(floatValue),
-					};
-
-					typeDeclaration.Members.Add(clientField);
-					k++;
-				}
-				else if (enumMember is OpenApiNull nullMember) //listennotes.com\2.0 has funky definition of casual enum of type double
-				{
-					string memberName = "_null";
-					CodeMemberField clientField = new()
-					{
-						Name = memberName,
-						InitExpression = new CodePrimitiveExpression(k),
-					};
-
-					typeDeclaration.Members.Add(clientField);
-					k++;
-				}
-				else
-				{
-					throw new ArgumentException($"Not yet supported enumMember of {enumMember.GetType()} with {typeDeclaration.Name}");
+						throw new ArgumentException($"Not yet supported enumMember of {enumPremitive.GetType()} with {typeDeclaration.Name}");
+					} 
 				}
 			}
 		}

@@ -1,4 +1,5 @@
-﻿using Microsoft.OpenApi.Models;
+﻿using Microsoft.OpenApi.YamlReader;
+using Microsoft.OpenApi;
 using System;
 using System.CodeDom;
 
@@ -27,12 +28,12 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		{
 			if (op.RequestBody != null && op.RequestBody.Content != null)
 			{
-				OpenApiMediaType content;
+				IOpenApiMediaType content;
 				string description = op.RequestBody.Description;
 
 				if (op.RequestBody.Reference != null)
 				{
-					if (op.RequestBody.Content.TryGetValue("application/json", out content) && (content.Schema.Type != null && content.Schema.Type != "object"))
+					if (op.RequestBody.Content.TryGetValue("application/json", out content) && (content.Schema.Type != null && content.Schema.Type != JsonSchemaType.Object))
 					{
 						try
 						{

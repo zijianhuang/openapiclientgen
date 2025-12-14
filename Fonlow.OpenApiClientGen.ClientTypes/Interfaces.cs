@@ -1,4 +1,6 @@
-﻿using Microsoft.OpenApi.Models;
+﻿using Microsoft.OpenApi;
+using Microsoft.OpenApi.YamlReader;
+using Microsoft.OpenApi.Reader;
 using System.CodeDom;
 
 namespace Fonlow.OpenApiClientGen.ClientTypes
@@ -8,6 +10,6 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 	/// </summary>
 	public interface IComponentToCodeDom
 	{
-		CodeTypeReference PropertySchemaToCodeTypeReference(OpenApiSchema propertySchema, string containerName, string propertyName);
+		CodeTypeReference PropertySchemaToCodeTypeReference(IOpenApiSchema propertySchema, string containerName, string propertyName);
 	}
 }

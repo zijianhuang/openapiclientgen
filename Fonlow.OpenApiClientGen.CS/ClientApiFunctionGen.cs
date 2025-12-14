@@ -1,7 +1,7 @@
 ﻿using Fonlow.CodeDom.Web;
 using Fonlow.OpenApiClientGen.ClientTypes;
 using Fonlow.Reflection;
-using Microsoft.OpenApi.Models;
+using Microsoft.OpenApi.YamlReader; using Microsoft.OpenApi;
 using System;
 using System.CodeDom;
 using System.Collections.Generic;

@@ -1,6 +1,7 @@
 ﻿using Fonlow.Poco2Client;
-using Microsoft.OpenApi.Any;
-using Microsoft.OpenApi.Models;
+using Microsoft.OpenApi;
+using Microsoft.OpenApi.Reader;
+using Microsoft.OpenApi.YamlReader;
 using System;
 using System.CodeDom;
 using System.CodeDom.Compiler;
@@ -8,6 +9,8 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Text.Json.Nodes;
+using System.Xml.Linq;
 
 namespace Fonlow.OpenApiClientGen.ClientTypes
 {
@@ -93,9 +96,9 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 			RegisterSchemaRefIdToBeAdded(refId);
 
-			string type = schema.Type;
-			IList<OpenApiSchema> allOfBaseTypeSchemaList = schema.AllOf; //maybe empty
-			IList<IOpenApiAny> enumTypeList = schema.Enum; //maybe empty
+			var type = schema.Type;
+			var allOfBaseTypeSchemaList = schema.AllOf; //maybe empty
+			var enumTypeList = schema.Enum; //maybe empty
 			bool isForClass = enumTypeList.Count == 0;
 			CodeTypeDeclaration typeDeclaration = null;
 
@@ -110,9 +113,9 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				if (schema.Properties.Count > 0 || (schema.Properties.Count == 0 && allOfBaseTypeSchemaList.Count > 1))
 				{
 					typeDeclaration = AddTypeToClassNamespace(currentTypeName, ns);
-					if (String.IsNullOrEmpty(type) && allOfBaseTypeSchemaList.Count > 0)
+					if (type== JsonSchemaType.Null && allOfBaseTypeSchemaList.Count > 0)
 					{
-						OpenApiSchema allOfRef = allOfBaseTypeSchemaList[0];
+						var allOfRef = allOfBaseTypeSchemaList[0];
 						if (allOfRef.Reference == null)
 						{
 							Trace.TraceWarning($"Not yet support Type {refId} having allOf[0] without Reference. Skipped.");
@@ -125,7 +128,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 						if (allOfBaseTypeSchemaList.Count > 1)
 						{
-							OpenApiSchema allOfProperteisSchema = allOfBaseTypeSchemaList[1]; //the 2nd one points to properties of the derived type, while the 1st one points to the base type.
+							var allOfProperteisSchema = allOfBaseTypeSchemaList[1]; //the 2nd one points to properties of the derived type, while the 1st one points to the base type.
 							AddProperties(typeDeclaration, allOfProperteisSchema, currentTypeName, ns);
 						}
 					}
@@ -144,7 +147,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 						typeDeclaration.CustomAttributes.Add(new CodeAttributeDeclaration("System.SerializableAttribute"));
 					}
 				}
-				else if (type == "array") // wrapper of array. Microsoft OpenApi library could not intepret this as type alias, so I have to register the alias myself.
+				else if (type == JsonSchemaType.Array) // wrapper of array. Microsoft OpenApi library could not intepret this as type alias, so I have to register the alias myself.
 				{
 					OpenApiReference itemsRef = schema.Items.Reference;
 					if (itemsRef == null) //Array type with casual schema
@@ -160,9 +163,9 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 								Trace.TraceInformation($"TypeAliasDic.Add({refId}, {typeNameX}) -- generated: {newTypeName}");
 							}
 						}
-						else if (!String.IsNullOrEmpty(schema.Items.Type)) // add type alias as something like "using Code_frequency_stat = int[];"
+						else if (schema.Items.Type.HasValue) // add type alias as something like "using Code_frequency_stat = int[];"
 						{
-							var clrType = TypeRefHelper.PrimitiveSwaggerTypeToClrType(schema.Items.Type, schema.Items.Format);
+							var clrType = TypeRefHelper.PrimitiveSwaggerTypeToClrType(schema.Items.Type.Value, schema.Items.Format);
 							var typeNameX = TypeRefHelper.ArrayAsIEnumerableDerivedToType(clrType.Name, settings.ArrayAs);
 							TypeAliasDic.Add(refId, typeNameX);
 						}
@@ -198,13 +201,13 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 						Trace.TraceInformation($"TypeAliasDic.Add({refId}, {typeNameX})");
 					}
 				}
-				else if (type != "object" && !String.IsNullOrEmpty(type))
+				else if (type != JsonSchemaType.Object && type != JsonSchemaType.Null)
 				{
 					Type clrType = TypeRefHelper.PrimitiveSwaggerTypeToClrType(type, null);
 					TypeAliasDic.Add(refId, clrType.FullName);
 					Trace.TraceInformation($"TypeAliasDic.Add({refId}, {clrType.FullName}) -- clrType: {clrType.FullName}");
 				}
-				else if (type == "object" || String.IsNullOrEmpty(type))//object alias without properties
+				else if (type == JsonSchemaType.Object || type== JsonSchemaType.Null)//object alias without properties
 				{
 					typeDeclaration = AddTypeToClassNamespace(currentTypeName, ns);
 					CreateTypeDocComment(refId, schema, typeDeclaration);
@@ -271,163 +274,162 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			RemoveRegisteredSchemaRefId(refId);
 		}
 
-		public override void AddEnumMembers(CodeTypeDeclaration typeDeclaration, IList<IOpenApiAny> enumTypeList)
+		public override void AddEnumMembers(CodeTypeDeclaration typeDeclaration, IList<JsonNode> enumTypeList)
 		{
 			int k = 0;
-			foreach (IOpenApiAny enumMember in enumTypeList)
+			foreach (var node in enumTypeList)
 			{
-				if (enumMember is OpenApiString stringMember)
+				if (node is JsonValue enumPremitive)
 				{
-					var stringMemberValue = stringMember.Value;
-					if (settings.UsePascalCase)
+					if (enumPremitive.TryGetValue<string>(out var stringMember))
 					{
-						stringMemberValue = stringMemberValue.ToPascalCase();
-					}
-
-					string memberName = Renamer.RefineEnumMemberName(stringMemberValue, settings);
-					bool hasFunkyMemberName = memberName != stringMemberValue;
-					int intValue = k;
-					CodeMemberField clientField = new()
-					{
-						Name = memberName,
-						InitExpression = new CodePrimitiveExpression(intValue),
-					};
-
-					if (settings.DecorateDataModelWithDataContract)
-					{
-						if (hasFunkyMemberName || settings.EnumToString)
+						var stringMemberValue = stringMember;
+						if (settings.UsePascalCase)
 						{
-							clientField.CustomAttributes.Add(new CodeAttributeDeclaration($"System.Runtime.Serialization.EnumMemberAttribute", new CodeAttributeArgument("Value", new CodeSnippetExpression($"\"{stringMemberValue}\""))));
+							stringMemberValue = stringMemberValue.ToPascalCase();
 						}
-						else
+
+						string memberName = Renamer.RefineEnumMemberName(stringMemberValue, settings);
+						bool hasFunkyMemberName = memberName != stringMemberValue;
+						int intValue = k;
+						CodeMemberField clientField = new()
+						{
+							Name = memberName,
+							InitExpression = new CodePrimitiveExpression(intValue),
+						};
+
+						if (settings.DecorateDataModelWithDataContract)
+						{
+							if (hasFunkyMemberName || settings.EnumToString)
+							{
+								clientField.CustomAttributes.Add(new CodeAttributeDeclaration($"System.Runtime.Serialization.EnumMemberAttribute", new CodeAttributeArgument("Value", new CodeSnippetExpression($"\"{stringMemberValue}\""))));
+							}
+							else
+							{
+								clientField.CustomAttributes.Add(new CodeAttributeDeclaration("System.Runtime.Serialization.EnumMemberAttribute"));
+							}
+						}
+
+						typeDeclaration.Members.Add(clientField);
+						k++;
+					}
+					else if (enumPremitive.TryGetValue<int>(out var intMember))
+					{
+						string memberName = Renamer.RefineEnumMemberName(intMember.ToString());//take care of negative value
+						CodeMemberField clientField = new()
+						{
+							Name = memberName,
+							InitExpression = new CodePrimitiveExpression(intMember),
+						};
+
+						if (settings.DecorateDataModelWithDataContract)
 						{
 							clientField.CustomAttributes.Add(new CodeAttributeDeclaration("System.Runtime.Serialization.EnumMemberAttribute"));
 						}
+
+						typeDeclaration.Members.Add(clientField);
+						k++;
 					}
-
-					typeDeclaration.Members.Add(clientField);
-					k++;
-				}
-				else if (enumMember is OpenApiInteger intMember)
-				{
-					string memberName = Renamer.RefineEnumMemberName(intMember.Value.ToString());//take care of negative value
-					int intValue = intMember.Value;
-					CodeMemberField clientField = new()
+					else if (enumPremitive.TryGetValue<long>(out var longMember))
 					{
-						Name = memberName,
-						InitExpression = new CodePrimitiveExpression(intValue),
-					};
+						string memberName = Renamer.RefineEnumMemberName(longMember.ToString());
+						CodeMemberField clientField = new()
+						{
+							Name = memberName,
+							InitExpression = new CodePrimitiveExpression(longMember),
+						};
 
-					if (settings.DecorateDataModelWithDataContract)
-					{
-						clientField.CustomAttributes.Add(new CodeAttributeDeclaration("System.Runtime.Serialization.EnumMemberAttribute"));
+						if (settings.DecorateDataModelWithDataContract)
+						{
+							clientField.CustomAttributes.Add(new CodeAttributeDeclaration("System.Runtime.Serialization.EnumMemberAttribute"));
+						}
+
+						typeDeclaration.Members.Add(clientField);
+						k++;
 					}
-
-					typeDeclaration.Members.Add(clientField);
-					k++;
-				}
-				else if (enumMember is OpenApiLong longMember)
-				{
-					string memberName = Renamer.RefineEnumMemberName(longMember.Value.ToString());
-					long longValue = longMember.Value;
-					CodeMemberField clientField = new()
+					else if (enumPremitive is OpenApiPassword passwordMember) // aws alexaforbusiness has PhoneNumberType defined as password format
 					{
-						Name = memberName,
-						InitExpression = new CodePrimitiveExpression(longValue),
-					};
+						string memberName = Renamer.RefineEnumMemberName(passwordMember.Value);
+						int intValue = k;
+						CodeMemberField clientField = new()
+						{
+							Name = memberName,
+							InitExpression = new CodePrimitiveExpression(intValue),
+						};
 
-					if (settings.DecorateDataModelWithDataContract)
-					{
-						clientField.CustomAttributes.Add(new CodeAttributeDeclaration("System.Runtime.Serialization.EnumMemberAttribute"));
+						if (settings.DecorateDataModelWithDataContract)
+						{
+							clientField.CustomAttributes.Add(new CodeAttributeDeclaration("System.Runtime.Serialization.EnumMemberAttribute"));
+						}
+
+						typeDeclaration.Members.Add(clientField);
+						k++;
 					}
-
-					typeDeclaration.Members.Add(clientField);
-					k++;
-				}
-				else if (enumMember is OpenApiPassword passwordMember) // aws alexaforbusiness has PhoneNumberType defined as password format
-				{
-					string memberName = Renamer.RefineEnumMemberName(passwordMember.Value);
-					int intValue = k;
-					CodeMemberField clientField = new()
+					else if (enumPremitive.TryGetValue<double>(out var doubleMember)) //listennotes.com\2.0 has funky definition of casual enum of type double
 					{
-						Name = memberName,
-						InitExpression = new CodePrimitiveExpression(intValue),
-					};
+						//MS openapi parser may intepret 0 or 1 as double rather than integer and this cause the value become 0D or 1D. And some openApi definitions actually float or double as enum member.
+						//MS operapi parser intepret NaN as double and then double.NaN
+						string memberName = Renamer.RefineEnumMemberName(doubleMember.ToString());
+						CodeMemberField clientField = doubleMember.ToString() == "NaN" ?
+							new()
+							{
+								Name = memberName,
+								InitExpression = new CodePrimitiveExpression(k),
+							}
+							:
+							new()
+							{
+								Name = memberName,
+								InitExpression = double.IsInteger(doubleMember) ? new CodePrimitiveExpression(Convert.ToInt32(doubleMember)) : new CodePrimitiveExpression(doubleValue),
+							};
 
-					if (settings.DecorateDataModelWithDataContract)
-					{
-						clientField.CustomAttributes.Add(new CodeAttributeDeclaration("System.Runtime.Serialization.EnumMemberAttribute"));
+						if (settings.DecorateDataModelWithDataContract)
+						{
+							clientField.CustomAttributes.Add(new CodeAttributeDeclaration("System.Runtime.Serialization.EnumMemberAttribute"));
+						}
+
+						typeDeclaration.Members.Add(clientField);
+						k++;
 					}
+					else if (enumPremitive.TryGetValue<float>(out var floatMember))
+					{
+						string memberName = "_" + floatMember.ToString();
+						CodeMemberField clientField = new()
+						{
+							Name = memberName,
+							InitExpression = new CodePrimitiveExpression(floatMember),
+						};
 
-					typeDeclaration.Members.Add(clientField);
-					k++;
-				}
-				else if (enumMember is OpenApiDouble doubleMember) //listennotes.com\2.0 has funky definition of casual enum of type double
-				{
-					//MS openapi parser may intepret 0 or 1 as double rather than integer and this cause the value become 0D or 1D. And some openApi definitions actually float or double as enum member.
-					//MS operapi parser intepret NaN as double and then double.NaN
-					string memberName = Renamer.RefineEnumMemberName(doubleMember.Value.ToString());
-					double doubleValue = doubleMember.Value;
-					CodeMemberField clientField = doubleMember.Value.ToString() == "NaN" ?
-						new()
+						if (settings.DecorateDataModelWithDataContract)
+						{
+							clientField.CustomAttributes.Add(new CodeAttributeDeclaration("System.Runtime.Serialization.EnumMemberAttribute"));
+						}
+
+						typeDeclaration.Members.Add(clientField);
+						k++;
+					}
+					else if (enumPremitive.GetValue<object>() is null) //listennotes.com\2.0 has funky definition of casual enum of type double
+					{
+						string memberName = "_null";
+						CodeMemberField clientField = new()
 						{
 							Name = memberName,
 							InitExpression = new CodePrimitiveExpression(k),
-						}
-						:
-						new()
-						{
-							Name = memberName,
-							InitExpression = double.IsInteger(doubleValue) ? new CodePrimitiveExpression(Convert.ToInt32(doubleValue)) : new CodePrimitiveExpression(doubleValue),
 						};
 
-					if (settings.DecorateDataModelWithDataContract)
-					{
-						clientField.CustomAttributes.Add(new CodeAttributeDeclaration("System.Runtime.Serialization.EnumMemberAttribute"));
+						if (settings.DecorateDataModelWithDataContract)
+						{
+							clientField.CustomAttributes.Add(new CodeAttributeDeclaration("System.Runtime.Serialization.EnumMemberAttribute"));
+						}
+
+						typeDeclaration.Members.Add(clientField);
+						k++;
 					}
-
-					typeDeclaration.Members.Add(clientField);
-					k++;
-				}
-				else if (enumMember is OpenApiFloat floatMember)
-				{
-					string memberName = "_" + floatMember.Value.ToString();
-					double floatValue = floatMember.Value;
-					CodeMemberField clientField = new()
+					else
 					{
-						Name = memberName,
-						InitExpression = new CodePrimitiveExpression(floatValue),
-					};
-
-					if (settings.DecorateDataModelWithDataContract)
-					{
-						clientField.CustomAttributes.Add(new CodeAttributeDeclaration("System.Runtime.Serialization.EnumMemberAttribute"));
+						var enumMemberType = enumPremitive.GetType();
+						throw new ArgumentException($"Not yet supported enumMember of {enumMemberType} with {typeDeclaration.Name}");
 					}
-
-					typeDeclaration.Members.Add(clientField);
-					k++;
-				}
-				else if (enumMember is OpenApiNull nullMember) //listennotes.com\2.0 has funky definition of casual enum of type double
-				{
-					string memberName = "_null";
-					CodeMemberField clientField = new()
-					{
-						Name = memberName,
-						InitExpression = new CodePrimitiveExpression(k),
-					};
-
-					if (settings.DecorateDataModelWithDataContract)
-					{
-						clientField.CustomAttributes.Add(new CodeAttributeDeclaration("System.Runtime.Serialization.EnumMemberAttribute"));
-					}
-
-					typeDeclaration.Members.Add(clientField);
-					k++;
-				}
-				else
-				{
-					var enumMemberType = enumMember.GetType();
-					throw new ArgumentException($"Not yet supported enumMember of {enumMemberType} with {typeDeclaration.Name}");
 				}
 			}
 		}

@@ -1,5 +1,5 @@
 ﻿using Fonlow.OpenApiClientGen.ClientTypes;
-using Microsoft.OpenApi.Models;
+using Microsoft.OpenApi.YamlReader; using Microsoft.OpenApi;
 using System;
 using System.CodeDom;
 using System.CodeDom.Compiler;

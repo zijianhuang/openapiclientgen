@@ -1,4 +1,4 @@
-﻿using Microsoft.OpenApi.Models;
+﻿using Microsoft.OpenApi.YamlReader; using Microsoft.OpenApi;
 using Microsoft.OpenApi.Readers;
 using Microsoft.Extensions.Logging;
 using System;

@@ -1,4 +1,4 @@
-﻿using Microsoft.OpenApi.Models;
+﻿using Microsoft.OpenApi.YamlReader; using Microsoft.OpenApi;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -18,7 +18,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		/// <param name="type"></param>
 		/// <param name="format"></param>
 		/// <returns></returns>
-		public static Type PrimitiveSwaggerTypeToClrType(string type, string format)
+		public static Type PrimitiveSwaggerTypeToClrType(JsonSchemaType type, string format)
 		{
 			string key = type + (String.IsNullOrEmpty(format) ? String.Empty : ("_" + format));
 			if (basicClrTypeDic.TryGetValue(key, out Type t))
@@ -143,16 +143,16 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 //			{"object", "any" },
 		};
 
-		static readonly string[] oafTypes = new string[] { "integer", "number", "string", "boolean" };
+		static readonly JsonSchemaType[] oafTypes = new JsonSchemaType[] { JsonSchemaType.Integer, JsonSchemaType.Number, JsonSchemaType.String, JsonSchemaType.Boolean };
 
 		/// <summary>
 		/// Is it integer, number, string or boolean of openapi?
 		/// </summary>
-		/// <param name="typeName"></param>
+		/// <param name="jsonSchemaType"></param>
 		/// <returns></returns>
-		public static bool IsPrimitiveTypeOfOA(string typeName)
+		public static bool IsPrimitiveTypeOfOA(JsonSchemaType jsonSchemaType)
 		{
-			return oafTypes.Contains(typeName);
+			return oafTypes.Contains(jsonSchemaType);
 		}
 
 		public static bool IsPrimitiveStructure(string typeName)

@@ -1,7 +1,7 @@
 ﻿using Fonlow.OpenApiClientGen.ClientTypes;
 using Fonlow.Poco2Client;
 using Fonlow.TypeScriptCodeDom;
-using Microsoft.OpenApi.Models;
+using Microsoft.OpenApi.YamlReader; using Microsoft.OpenApi;
 using System;
 using System.CodeDom;
 using System.Collections.Generic;
@@ -120,10 +120,10 @@ namespace Fonlow.CodeDom.Web.Ts
 
 			CodeTypeDeclaration[] newClassesCreated = containerClassNames.Select(d => CreateControllerClientClass(clientNamespace, d)).ToArray();
 
-			foreach (KeyValuePair<string, OpenApiPathItem> p in paths)
+			foreach (var p in paths)
 			{
 				string relativePath = p.Key;
-				foreach (KeyValuePair<OperationType, OpenApiOperation> op in p.Value.Operations)
+				foreach (var op in p.Value.Operations)
 				{
 					ClientApiTsFunctionGenAbstract apiFunctionGen = apiFunctionGenFactory();
 					CodeMemberMethod apiFunction = apiFunctionGen.CreateApiFunction(settings, relativePath, op.Key, op.Value, componentsToTsTypes);
@@ -188,9 +188,9 @@ namespace Fonlow.CodeDom.Web.Ts
 
 			List<string> names = new();
 
-			foreach (KeyValuePair<string, OpenApiPathItem> p in paths)
+			foreach (var p in paths)
 			{
-				foreach (KeyValuePair<OperationType, OpenApiOperation> op in p.Value.Operations)
+				foreach (var op in p.Value.Operations)
 				{
 					string name = nameComposer.GetContainerName(op.Value, p.Key);
 					names.Add(name);

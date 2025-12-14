@@ -1,4 +1,6 @@
-﻿using Microsoft.OpenApi.Models;
+﻿using Microsoft.OpenApi;
+using Microsoft.OpenApi.YamlReader;
+using Microsoft.OpenApi.Reader;
 using System;
 using System.CodeDom;
 

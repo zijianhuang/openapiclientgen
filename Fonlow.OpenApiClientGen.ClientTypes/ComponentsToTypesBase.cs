@@ -1,6 +1,7 @@
 ﻿using Fonlow.Poco2Client;
-using Microsoft.OpenApi.Any;
-using Microsoft.OpenApi.Models;
+using Microsoft.OpenApi;
+using Microsoft.OpenApi.YamlReader;
+using Microsoft.OpenApi.Reader;
 using System;
 using System.CodeDom;
 using System.Collections.Generic;
@@ -8,6 +9,7 @@ using System.Data;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Text.Json.Nodes;
 
 namespace Fonlow.OpenApiClientGen.ClientTypes
 {
@@ -175,9 +177,9 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		/// <param name="item">Reference Id and its schema</param>
 		public abstract void AddTypeToCodeDom(string refId, OpenApiSchema schema);
 
-		public abstract void AddEnumMembers(CodeTypeDeclaration typeDeclaration, IList<IOpenApiAny> enumTypeList);
+		public abstract void AddEnumMembers(CodeTypeDeclaration typeDeclaration, IList<JsonNode> enumTypeList);
 
-		public void AddProperties(CodeTypeDeclaration typeDeclaration, OpenApiSchema schema, string currentTypeName, string ns)
+		public void AddProperties(CodeTypeDeclaration typeDeclaration, IOpenApiSchema schema, string currentTypeName, string ns)
 		{
 			IEnumerable<KeyValuePair<string, OpenApiSchema>> propertyList = settings.SortTypesMembersAndMethods ? schema.Properties.OrderBy(d => d.Key) : schema.Properties;
 			foreach (KeyValuePair<string, OpenApiSchema> p in propertyList)
@@ -186,7 +188,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			}
 		}
 
-		protected abstract void AddProperty(string refId, OpenApiSchema propertySchema, CodeTypeDeclaration typeDeclaration, OpenApiSchema schema, string currentTypeName, string ns);
+		protected abstract void AddProperty(string refId, IOpenApiSchema propertySchema, CodeTypeDeclaration typeDeclaration, IOpenApiSchema schema, string currentTypeName, string ns);
 
 		public Tuple<CodeTypeReference, CodeTypeDeclaration> GenerateCasualEnum(OpenApiSchema propertySchema, string typeDeclarationName, string propertyName, string ns)
 		{
@@ -249,7 +251,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		/// <returns>CodeTypeReference and CasualTypeName. Empty if no casualTypeName.</returns>
 		public Tuple<CodeTypeReference, string> CreateArrayCodeTypeReference(OpenApiSchema propertySchema, string typeDeclarationName, string propertyName, string currentTypeName, string ns)
 		{
-			OpenApiSchema arrayItemsSchema = propertySchema.Items;
+			var arrayItemsSchema = propertySchema.Items;
 			if (arrayItemsSchema == null)//ritekit.com has parameter as array but without items type. Presumbly it may be string.
 			{
 				if (settings.ArrayAs == ArrayAsIEnumerableDerived.Array)
@@ -299,13 +301,13 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			}
 			else
 			{
-				string arrayType = arrayItemsSchema.Type;
+				var arrayType = arrayItemsSchema.Type;
 				if (arrayItemsSchema.Enum != null && arrayItemsSchema.Enum.Count > 0)
 				{
 					string[] enumMemberNames;
 					try
 					{
-						enumMemberNames = (String.IsNullOrEmpty(arrayItemsSchema.Type) || arrayItemsSchema.Type == "string")
+						enumMemberNames = (arrayItemsSchema.Type == null || arrayItemsSchema.Type == JsonSchemaType.String)
 							? GetStringsFromEnumList(arrayItemsSchema.Enum)
 							: arrayItemsSchema.Enum.Cast<OpenApiInteger>().Select(m => "_" + m.Value.ToString()).ToArray();
 					}
@@ -470,89 +472,115 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				return null;
 			}
 
-			string schemaType = propertySchema.Type;
-			bool isPrimitiveType = TypeRefHelper.IsPrimitiveTypeOfOA(schemaType);
-			if (String.IsNullOrEmpty(schemaType))
+			var schemaType = propertySchema.Type;
+			if (schemaType.HasValue)
 			{
-				if (propertySchema.Reference != null)
+				bool isPrimitiveType = TypeRefHelper.IsPrimitiveTypeOfOA(schemaType.Value);
+				if (schemaType== JsonSchemaType.Null)
 				{
-					string propertyTypeNs = settings.DotsToNamespaces ? NameFunc.GetNamespaceOfClassName(propertySchema.Reference.Id) : string.Empty;
-					string propertyTypeName = Renamer.RefineTypeName(propertySchema.Reference.Id, propertyTypeNs, settings.DotsToNamespaces);
-					string propertyTypeWithNs = NameFunc.CombineNamespaceWithClassName(propertyTypeNs, propertyTypeName);
-					return ComponentsHelper.TranslateTypeNameToClientTypeReference(propertyTypeWithNs);
+					if (propertySchema.Reference != null)
+					{
+						string propertyTypeNs = settings.DotsToNamespaces ? NameFunc.GetNamespaceOfClassName(propertySchema.Reference.Id) : string.Empty;
+						string propertyTypeName = Renamer.RefineTypeName(propertySchema.Reference.Id, propertyTypeNs, settings.DotsToNamespaces);
+						string propertyTypeWithNs = NameFunc.CombineNamespaceWithClassName(propertyTypeNs, propertyTypeName);
+						return ComponentsHelper.TranslateTypeNameToClientTypeReference(propertyTypeWithNs);
+					}
+					else
+					{
+						if (propertySchema.Enum.Count > 0) //for casual enum
+						{
+							var r = GenerateCasualEnum(propertySchema, containerName, propertyName, settings.ClientNamespace);
+							return r.Item1;
+						}
+						else
+						{
+							Tuple<CodeTypeReference, bool> r = CreateCodeTypeReferenceSchemaOf(propertySchema, containerName, propertyName);
+							return r.Item1;
+						}
+					}
 				}
 				else
 				{
-					if (propertySchema.Enum.Count > 0) //for casual enum
+					if (schemaType == JsonSchemaType.Array) // for array
 					{
-						var r = GenerateCasualEnum(propertySchema, containerName, propertyName, settings.ClientNamespace);
+						var r = CreateArrayCodeTypeReference(propertySchema, containerName, propertyName, null, null);
 						return r.Item1;
 					}
-					else
+					else if (propertySchema.Enum.Count == 0 && propertySchema.Reference != null && !isPrimitiveType) // for complex type
 					{
-						Tuple<CodeTypeReference, bool> r = CreateCodeTypeReferenceSchemaOf(propertySchema, containerName, propertyName);
-						return r.Item1;
+						CodeTypeReference complexCodeTypeReference = CreateComplexCodeTypeReference(propertySchema);
+						return complexCodeTypeReference;
 					}
-				}
-			}
-			else
-			{
-				if (schemaType == "array") // for array
-				{
-					var r = CreateArrayCodeTypeReference(propertySchema, containerName, propertyName, null, null);
-					return r.Item1;
-				}
-				else if (propertySchema.Enum.Count == 0 && propertySchema.Reference != null && !isPrimitiveType) // for complex type
-				{
-					CodeTypeReference complexCodeTypeReference = CreateComplexCodeTypeReference(propertySchema);
-					return complexCodeTypeReference;
-				}
-				else if (propertySchema.Reference == null && propertySchema.Properties != null && propertySchema.Properties.Count > 0) // for casual type
-				{
-					string casualTypeName = containerName + Renamer.RefinePropertyName(propertyName);
-					var found = FindCodeTypeDeclarationInNamespaces(casualTypeName, null); //It could happenen when generating sync and async functions in C#
-					if (found == null)
+					else if (propertySchema.Reference == null && propertySchema.Properties != null && propertySchema.Properties.Count > 0) // for casual type
 					{
-						CodeTypeDeclaration casualTypeDeclaration = AddTypeToClassNamespace(casualTypeName, null);//stay with the namespace of the host class
-						AddProperties(casualTypeDeclaration, propertySchema, casualTypeName, null);
-					}
+						string casualTypeName = containerName + Renamer.RefinePropertyName(propertyName);
+						var found = FindCodeTypeDeclarationInNamespaces(casualTypeName, null); //It could happenen when generating sync and async functions in C#
+						if (found == null)
+						{
+							CodeTypeDeclaration casualTypeDeclaration = AddTypeToClassNamespace(casualTypeName, null);//stay with the namespace of the host class
+							AddProperties(casualTypeDeclaration, propertySchema, casualTypeName, null);
+						}
 
-					return TypeRefHelper.TranslateToClientTypeReference(casualTypeName);
-				}
-				else if (schemaType == "object" && propertySchema.AdditionalProperties != null) // for dictionary
-				{
-					CodeTypeReference dicKeyTypeRef = TypeRefHelper.TranslateToClientTypeReference(typeof(string));
-					CodeTypeReference dicValueTypeRef = PropertySchemaToCodeTypeReference(propertySchema.AdditionalProperties, containerName, propertyName);
-					return new CodeTypeReference(typeof(Dictionary<,>).FullName, dicKeyTypeRef, dicValueTypeRef); //for client codes, Dictionary is better than IDictionary, no worry of different implementation of IDictionary
-				}
-				else if (propertySchema.Enum.Count == 0) // for primitive type
-				{
-					Type t = TypeRefHelper.PrimitiveSwaggerTypeToClrType(schemaType, propertySchema.Format);
-					return new CodeTypeReference(t);
-				}
-				else if (propertySchema.Enum.Count > 0 && schemaType == "string") // for enum
-				{
-					string[] enumMemberNames;
-					try
+						return TypeRefHelper.TranslateToClientTypeReference(casualTypeName);
+					}
+					else if (schemaType == "object" && propertySchema.AdditionalProperties != null) // for dictionary
 					{
-						enumMemberNames = (String.IsNullOrEmpty(propertySchema.Type) || propertySchema.Type == "string")
-							? GetStringsFromEnumList(propertySchema.Enum)
-							: propertySchema.Enum.Cast<OpenApiInteger>().Select(m => "_" + m.Value.ToString()).ToArray();
+						CodeTypeReference dicKeyTypeRef = TypeRefHelper.TranslateToClientTypeReference(typeof(string));
+						CodeTypeReference dicValueTypeRef = PropertySchemaToCodeTypeReference(propertySchema.AdditionalProperties, containerName, propertyName);
+						return new CodeTypeReference(typeof(Dictionary<,>).FullName, dicKeyTypeRef, dicValueTypeRef); //for client codes, Dictionary is better than IDictionary, no worry of different implementation of IDictionary
+					}
+					else if (propertySchema.Enum.Count == 0) // for primitive type
+					{
+						Type t = TypeRefHelper.PrimitiveSwaggerTypeToClrType(schemaType, propertySchema.Format);
+						return new CodeTypeReference(t);
+					}
+					else if (propertySchema.Enum.Count > 0 && schemaType == "string") // for enum
+					{
+						string[] enumMemberNames;
+						try
+						{
+							enumMemberNames = (String.IsNullOrEmpty(propertySchema.Type) || propertySchema.Type == "string")
+								? GetStringsFromEnumList(propertySchema.Enum)
+								: propertySchema.Enum.Cast<OpenApiInteger>().Select(m => "_" + m.Value.ToString()).ToArray();
 
-					}
-					catch (InvalidCastException ex)
-					{
-						throw new CodeGenOperationException($"When dealing with {propertyName} of {schemaType}, error: {ex.Message}");
-					}
+						}
+						catch (InvalidCastException ex)
+						{
+							throw new CodeGenOperationException($"When dealing with {propertyName} of {schemaType}, error: {ex.Message}");
+						}
 
-					CodeTypeDeclaration existingDeclaration = FindEnumDeclaration(enumMemberNames);
-					if (existingDeclaration != null)
-					{
-						string existingTypeName = existingDeclaration.Name;
-						CodeTypeReference enumReference = TypeRefHelper.TranslateToClientTypeReference(existingTypeName);
-						return enumReference;
+						CodeTypeDeclaration existingDeclaration = FindEnumDeclaration(enumMemberNames);
+						if (existingDeclaration != null)
+						{
+							string existingTypeName = existingDeclaration.Name;
+							CodeTypeReference enumReference = TypeRefHelper.TranslateToClientTypeReference(existingTypeName);
+							return enumReference;
+						}
+						else
+						{
+							if (propertySchema.Reference != null)
+							{
+								AddTypeForRefIdIfNotExist(propertySchema.Reference.Id);
+								CodeTypeReference codeTypeReference = ComponentsHelper.TranslateTypeNameToClientTypeReference(Renamer.RefineTypeName(propertySchema.Reference.Id, ""));
+								return codeTypeReference;
+							}
+							else
+							{
+								var r = GenerateCasualEnum(propertySchema, containerName, propertyName, settings.ClientNamespace);
+								return r.Item1;
+							}
+						}
 					}
-					else
+					else if (schemaType != JsonSchemaType.String && TypeAliasDic.TryGet(schemaType, out string aliasTypeName)) //check TypeAliasDic
+					{
+						return new CodeTypeReference(aliasTypeName);
+					}
+					else if (propertySchema.Reference != null)
+					{
+						CodeTypeReference complexCodeTypeReference = CreateComplexCodeTypeReference(propertySchema);
+						return complexCodeTypeReference;
+					}
+					else // for casual enum
 					{
 						if (propertySchema.Reference != null)
 						{
@@ -565,29 +593,6 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 							var r = GenerateCasualEnum(propertySchema, containerName, propertyName, settings.ClientNamespace);
 							return r.Item1;
 						}
-					}
-				}
-				else if (schemaType != "string" && TypeAliasDic.TryGet(schemaType, out string aliasTypeName)) //check TypeAliasDic
-				{
-					return new CodeTypeReference(aliasTypeName);
-				}
-				else if (propertySchema.Reference != null)
-				{
-					CodeTypeReference complexCodeTypeReference = CreateComplexCodeTypeReference(propertySchema);
-					return complexCodeTypeReference;
-				}
-				else // for casual enum
-				{
-					if (propertySchema.Reference != null)
-					{
-						AddTypeForRefIdIfNotExist(propertySchema.Reference.Id);
-						CodeTypeReference codeTypeReference = ComponentsHelper.TranslateTypeNameToClientTypeReference(Renamer.RefineTypeName(propertySchema.Reference.Id, ""));
-						return codeTypeReference;
-					}
-					else
-					{
-						var r = GenerateCasualEnum(propertySchema, containerName, propertyName, settings.ClientNamespace);
-						return r.Item1;
 					}
 				}
 			}
@@ -618,11 +623,11 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				memberField.CustomAttributes.Add(cad);
 			}
 
-			if (fieldSchema.Maximum.HasValue || fieldSchema.Minimum.HasValue)
+			if (!string.IsNullOrEmpty(fieldSchema.Maximum) || !string.IsNullOrEmpty(fieldSchema.Minimum))
 			{
 				Type type = TypeRefHelper.PrimitiveSwaggerTypeToClrType(fieldSchema.Type, fieldSchema.Format);
 				List<CodeAttributeArgument> attributeParams = new();
-				if (fieldSchema.Type == "string")
+				if (fieldSchema.Type == JsonSchemaType.String)
 				{
 					Trace.TraceWarning("A string type property shouldn't be decorated by Maximum or Minimum but MaxLength or MinLength.");//Xero_bankfeeds.yaml has such problem.
 					return;
@@ -703,7 +708,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		/// </summary>
 		/// <param name="enumList"></param>
 		/// <returns></returns>
-		protected abstract string[] GetStringsFromEnumList(IList<IOpenApiAny> enumList);
+		protected abstract string[] GetStringsFromEnumList(IList<JsonNode> enumList);
 
 		/// <summary>
 		/// Extract those with content type application/json, and the properties.count is greater than 0.

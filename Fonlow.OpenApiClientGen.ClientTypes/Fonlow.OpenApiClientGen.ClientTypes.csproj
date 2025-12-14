@@ -13,7 +13,7 @@
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <AssemblyName>Fonlow.OpenApiClientGen.ClientTypes</AssemblyName>
     <RootNamespace>Fonlow.OpenApiClientGen.ClientTypes</RootNamespace>
-    <Version>3.4</Version>
+    <Version>3.5</Version>
     <PackageReleaseNotes>NgDateOnlyFormControlEnabled</PackageReleaseNotes>
     <AnalysisLevel>latest-all</AnalysisLevel>
   </PropertyGroup>
@@ -23,7 +23,8 @@
 
   <ItemGroup>
     <PackageReference Include="Fonlow.Poco2TsCore" Version="4.2.0" />
-    <PackageReference Include="Microsoft.OpenApi.Readers" Version="1.6.28" />
+    <PackageReference Include="Microsoft.OpenApi" Version="3.0.2" />
+    <PackageReference Include="Microsoft.OpenApi.YamlReader" Version="3.0.2" />
     <PackageReference Include="Tavis.UriTemplates" Version="2.0.0" />
   </ItemGroup>
 
