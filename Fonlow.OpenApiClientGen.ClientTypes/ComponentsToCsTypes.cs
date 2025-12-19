@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Text.Json;
 using System.Text.Json.Nodes;
 using System.Xml.Linq;
 
@@ -434,6 +435,18 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			}
 		}
 
+		static bool NodeIsString(JsonNode node, out string str)
+		{
+			if (node is JsonValue value && value.GetValueKind() == JsonValueKind.String)
+			{
+				str = value.GetValue<string>();
+				return true;
+			}
+
+			str = null!;
+			return false;
+		}
+
 		protected override void AddProperty(string refId, IOpenApiSchema propertySchema, CodeTypeDeclaration typeDeclaration, IOpenApiSchema schema, string currentTypeName, string ns)
 		{
 			string propertyName = Renamer.RefinePropertyName(refId);
@@ -641,9 +654,9 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 						{
 							for (var i = 0; i < propertySchema.Enum.Count; i++)
 							{
-								if (propertySchema.Enum[i] is OpenApiString str)
+								if (NodeIsString(propertySchema.Enum[i], out string str))
 								{
-									propertySchema.Enum[i] = new OpenApiString(str.Value.ToPascalCase());
+									propertySchema.Enum[i] = str.ToPascalCase();
 								}
 							}
 							enumMemberNames = enumMemberNames.Select(e => e.ToPascalCase()).ToArray();
