@@ -539,25 +539,25 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					}
 					else
 					{
-						clientProperty = GenerateCasualEnumForProperty(propertySchema, typeDeclaration.Name, propertyName, ns ?? settings.ClientNamespace, defaultValue, !isRequired || propertySchema.Nullable);
+						clientProperty = GenerateCasualEnumForProperty(propertySchema, typeDeclaration.Name, propertyName, ns ?? settings.ClientNamespace, defaultValue, !isRequired || propertySchema.Type.Value.HasFlag(JsonSchemaType.Null));
 					}
 				}
 				else
 				{
 					if (propertySchema.Enum.Count > 0) //for casual enum along with defaultValue
 					{
-						clientProperty = GenerateCasualEnumForProperty(propertySchema, typeDeclaration.Name, propertyName, ns ?? settings.ClientNamespace, defaultValue, !isRequired || propertySchema.Nullable);
+						clientProperty = GenerateCasualEnumForProperty(propertySchema, typeDeclaration.Name, propertyName, ns ?? settings.ClientNamespace, defaultValue, !isRequired || propertySchema.Type.Value.HasFlag(JsonSchemaType.Null));
 					}
 					else
 					{
 						Tuple<CodeTypeReference, bool> r = CreateCodeTypeReferenceSchemaOf(propertySchema, currentTypeName, refId);
 						bool isClass = r.Item2;
-						if ((!settings.DisableSystemNullableByDefault && !isRequired || propertySchema.Nullable) && !isClass) //C#. 
-																															  //if (!settings.DisableSystemNullableByDefault && !isClass && !isRequired || propertySchema.Nullable) //C#
+						if ((!settings.DisableSystemNullableByDefault && !isRequired || propertySchema.Type.Value.HasFlag(JsonSchemaType.Null) && !isClass) //C#. 
+																															  //if (!settings.DisableSystemNullableByDefault && !isClass && !isRequired || propertySchema.Type.Value.HasFlag(JsonSchemaType.Null)) //C#
 						{
 							clientProperty = CreateNullableProperty(r.Item1, propertyName);
 						}
-						else if (isClass && propertySchema.Nullable && settings.UseNullableReferenceType) //vimeo yaml declares a reference type as nullable.
+						else if (isClass && propertySchema.Type.Value.HasFlag(JsonSchemaType.Null) && settings.UseNullableReferenceType) //vimeo yaml declares a reference type as nullable.
 						{
 							clientProperty = CreateNullableProperty(r.Item1, propertyName);
 						}
@@ -677,7 +677,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					}
 					else
 					{
-						clientProperty = GenerateCasualEnumForProperty(propertySchema, typeDeclaration.Name, propertyName, ns ?? settings.ClientNamespace, defaultValue, !isRequired || propertySchema.Nullable);
+						clientProperty = GenerateCasualEnumForProperty(propertySchema, typeDeclaration.Name, propertyName, ns ?? settings.ClientNamespace, defaultValue, !isRequired || propertySchema.Type.Value.HasFlag(JsonSchemaType.Null));
 					}
 				}
 				else if (propertySchema.Enum.Count == 0) // for primitive type
@@ -698,13 +698,13 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 						simpleType = TypeRefHelper.PrimitiveSwaggerTypeToClrType(primitivePropertyType.Value, propertySchema.Format);
 					}
 
-					if ((!settings.DisableSystemNullableByDefault && !isRequired || propertySchema.Nullable) && !simpleType.IsClass) //C#
+					if ((!settings.DisableSystemNullableByDefault && !isRequired || propertySchema.Type.Value.HasFlag(JsonSchemaType.Null)) && !simpleType.IsClass) //C#
 					{
-						clientProperty = CreateNullableProperty(propertyName, simpleType, settings, propertySchema.Nullable);
+						clientProperty = CreateNullableProperty(propertyName, simpleType, settings, propertySchema.Type.Value.HasFlag(JsonSchemaType.Null));
 					}
-					else if (propertySchema.Nullable && simpleType.IsClass && settings.UseNullableReferenceType)
+					else if (propertySchema.Type.Value.HasFlag(JsonSchemaType.Null) && simpleType.IsClass && settings.UseNullableReferenceType)
 					{
-						clientProperty = CreateNullableProperty(propertyName, simpleType, settings, propertySchema.Nullable);
+						clientProperty = CreateNullableProperty(propertyName, simpleType, settings, propertySchema.Type.Value.HasFlag(JsonSchemaType.Null));
 					}
 					else
 					{
@@ -728,7 +728,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				}
 				else // for casual enum
 				{
-					clientProperty = GenerateCasualEnumForProperty(propertySchema, typeDeclaration.Name, propertyName, ns ?? settings.ClientNamespace, defaultValue, !isRequired || propertySchema.Nullable);
+					clientProperty = GenerateCasualEnumForProperty(propertySchema, typeDeclaration.Name, propertyName, ns ?? settings.ClientNamespace, defaultValue, !isRequired || propertySchema.Type.Value.HasFlag(JsonSchemaType.Null));
 				}
 			}
 
@@ -939,7 +939,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			//  Later, we remove the commented out semicolons.
 			string memberName = propertyName + " { get; set; }//";
 
-			var typeName = settings.UseNullableQuestionMark ? $"{type.FullName}?" : $"System.Nullable<{type.FullName}>";
+			var typeName = settings.UseNullableQuestionMark ? $"{type.FullName}?" : $"System.Type.Value.HasFlag(JsonSchemaType.Null)<{type.FullName}>";
 			//c# 8.0 - compat for types that don't support nullable and openapi is set to nullable and not using UseCSharpNullable
 			//i.e: OpenapiDirectoryTests Test_randommer, Test_vimeo and Test_wheretocredit
 			if (propertyNullable)
@@ -965,7 +965,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			//  Later, we remove the commented out semicolons.
 			string memberName = propertyName + " { get; set; }//";
 
-			CodeMemberField result = new(settings.UseNullableQuestionMark ? $"{codeTypeReference.BaseType}?" : $"System.Nullable<{codeTypeReference.BaseType}>", memberName)
+			CodeMemberField result = new(settings.UseNullableQuestionMark ? $"{codeTypeReference.BaseType}?" : $"System.Type.Value.HasFlag(JsonSchemaType.Null)<{codeTypeReference.BaseType}>", memberName)
 			{
 				Attributes = MemberAttributes.Public | MemberAttributes.Final
 			};
@@ -1110,5 +1110,4 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			return "System.Object";
 		}
 	}
-
 }
