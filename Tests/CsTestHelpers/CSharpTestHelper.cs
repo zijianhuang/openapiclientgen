@@ -1,7 +1,7 @@
 ﻿using Fonlow.OpenApiClientGen.ClientTypes;
 using Fonlow.OpenApiClientGen.CS;
 using Microsoft.OpenApi.YamlReader; using Microsoft.OpenApi;
-using Microsoft.OpenApi.Readers;
+
 using System.IO;
 using Xunit.Abstractions;
 
@@ -28,7 +28,7 @@ namespace Fonlow.OpenApiClientGen.TestHelpers
 		static OpenApiDocument ReadDef(string filePath)
 		{
 			using FileStream stream = new(filePath, FileMode.Open, FileAccess.Read);
-			return new OpenApiStreamReader().Read(stream, out OpenApiDiagnostic diagnostic);
+			return OpenApiDocument.LoadAsync(stream, "yaml").Result?.Document;
 		}
 
 		static protected string TranslateDefToCode(string filePath, ISettings settings)

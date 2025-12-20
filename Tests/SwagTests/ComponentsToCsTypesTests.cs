@@ -1,6 +1,5 @@
 using Fonlow.OpenApiClientGen.ClientTypes;
 using Microsoft.OpenApi.YamlReader; using Microsoft.OpenApi;
-using Microsoft.OpenApi.Readers;
 using System.IO;
 using Xunit;
 
@@ -12,7 +11,7 @@ namespace SwagTests
 		static OpenApiDocument ReadJson(string filePath)
 		{
 			using FileStream stream = new(filePath, FileMode.Open, FileAccess.Read);
-			return new OpenApiStreamReader().Read(stream, out OpenApiDiagnostic diagnostic);
+			return OpenApiDocument.LoadAsync(stream).Result?.Document;
 		}
 
 		static string TranslateDefToCsTypesCode(string filePath)

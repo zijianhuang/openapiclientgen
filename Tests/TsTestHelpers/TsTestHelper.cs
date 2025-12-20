@@ -1,6 +1,5 @@
 ﻿using Fonlow.OpenApiClientGen.ClientTypes;
 using Microsoft.OpenApi.YamlReader; using Microsoft.OpenApi;
-using Microsoft.OpenApi.Readers;
 using System;
 using System.Diagnostics;
 using System.IO;
@@ -32,7 +31,7 @@ namespace Fonlow.OpenApiClientGen.TestHelpers
 		static OpenApiDocument ReadOpenApiDef(string filePath)
 		{
 			using FileStream stream = new(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
-			return new OpenApiStreamReader().Read(stream, out OpenApiDiagnostic diagnostic);
+			return OpenApiDocument.LoadAsync(stream).Result?.Document;
 		}
 
 		/// <summary>

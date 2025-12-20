@@ -1,9 +1,10 @@
 using Fonlow.OpenApiClientGen.ClientTypes;
-using Microsoft.OpenApi.YamlReader; using Microsoft.OpenApi;
-using Microsoft.OpenApi.Readers;
+using Microsoft.OpenApi.YamlReader; 
+using Microsoft.OpenApi;
 using System;
 using System.IO;
 using Xunit;
+using System.Net.Http;
 
 namespace SwagTests
 {
@@ -12,7 +13,7 @@ namespace SwagTests
 		public DocFixture()
 		{
 			using FileStream stream = new("SwagMock/myswagger.json", FileMode.Open, FileAccess.Read);
-			Doc = new OpenApiStreamReader().Read(stream, out OpenApiDiagnostic diagnostic);
+			Doc= OpenApiDocument.LoadAsync(stream).Result?.Document;
 			Composer = new NameComposer(new Settings
 			{
 				PathPrefixToRemove = "/api",
@@ -45,24 +46,24 @@ namespace SwagTests
 		[Fact]
 		public void TestComposeActionNameWithId()
 		{
-			OpenApiPathItem pathItem = doc.Paths["/api/Values/{id}"];
-			string actionName = composer.ComposeActionName(pathItem.Operations[OperationType.Get], OperationType.Get.ToString());
+			var pathItem = doc.Paths["/api/Values/{id}"];
+			string actionName = composer.ComposeActionName(pathItem.Operations[HttpMethod.Get], HttpMethod.Get.ToString());
 			Assert.Equal("ValuesGetById", actionName);
 		}
 
 		[Fact]
 		public void TestComposeActionName()
 		{
-			OpenApiPathItem pathItem = doc.Paths["/api/Values"];
-			string actionName = composer.ComposeActionName(pathItem.Operations[OperationType.Get], OperationType.Get.ToString());
+			var pathItem = doc.Paths["/api/Values"];
+			string actionName = composer.ComposeActionName(pathItem.Operations[HttpMethod.Get], HttpMethod.Get.ToString());
 			Assert.Equal("ValuesGet", actionName);
 		}
 
 		[Fact]
 		public void TestComposeActionNameWithParameters()
 		{
-			OpenApiPathItem pathItem = doc.Paths["/api/Entities/link"];
-			string actionName = composer.ComposeActionName(pathItem.Operations[OperationType.Put], OperationType.Put.ToString());
+			var pathItem = doc.Paths["/api/Entities/link"];
+			string actionName = composer.ComposeActionName(pathItem.Operations[HttpMethod.Put], HttpMethod.Put.ToString());
 			Assert.Equal("EntitiesPutByIdAndRelationship", actionName);
 		}
 
@@ -97,16 +98,16 @@ namespace SwagTests
 		//[Fact]
 		//public void TestReturnSimpleType()
 		//{
-		//	OpenApiPathItem pathItem = doc.Paths["/api/SuperDemo/decimal/{d}"];
-		//	Tuple<System.CodeDom.CodeTypeReference, bool> t = ReturnRefHelper.GetOperationReturnSimpleTypeReference(pathItem.Operations[OperationType.Get]);
+		//	var pathItem = doc.Paths["/api/SuperDemo/decimal/{d}"];
+		//	Tuple<System.CodeDom.CodeTypeReference, bool> t = ReturnRefHelper.GetOperationReturnSimpleTypeReference(pathItem.Operations[HttpMethod.Get]);
 		//	Assert.Equal("System.Double", t.Item1.BaseType);
 		//}
 
 		//[Fact]
 		//public void TestReturnComplexType()
 		//{
-		//	OpenApiPathItem pathItem = doc.Paths["/api/Entities/getPerson/{id}"];
-		//	string t = ReturnRefHelper.GetOperationReturnComplexTypeReferenceId(pathItem.Operations[OperationType.Get]);
+		//	var pathItem = doc.Paths["/api/Entities/getPerson/{id}"];
+		//	string t = ReturnRefHelper.GetOperationReturnComplexTypeReferenceId(pathItem.Operations[HttpMethod.Get]);
 		//	Assert.Equal("Person", t);
 		//}
 
@@ -114,7 +115,7 @@ namespace SwagTests
 		//public void TestReturnTypePerson()
 		//{
 		//	var pathItem = doc.Paths["/api/Entities/getPerson/{id}"];
-		//	var t = composer.GetOperationReturnType(pathItem.Operations[OperationType.Get]);
+		//	var t = composer.GetOperationReturnType(pathItem.Operations[HttpMethod.Get]);
 		//	Assert.Equal("Person", t.Item2);
 		//}
 
@@ -122,7 +123,7 @@ namespace SwagTests
 		//public void TestReturnTypeDouble()
 		//{
 		//	var pathItem = doc.Paths["/api/SuperDemo/decimal/{d}"];
-		//	var t = composer.GetOperationReturnType(pathItem.Operations[OperationType.Get]);
+		//	var t = composer.GetOperationReturnType(pathItem.Operations[HttpMethod.Get]);
 		//	Assert.Equal(typeof(double), t.Item1);
 		//}
 
