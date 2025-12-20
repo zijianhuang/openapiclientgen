@@ -30,27 +30,26 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			{
 				IOpenApiMediaType content;
 				string description = op.RequestBody.Description;
+				//if (op.RequestBody.Reference != null)
+				//{
+				//	if (op.RequestBody.Content.TryGetValue("application/json", out content) && (content.Schema.Type != null && content.Schema.Type != JsonSchemaType.Object))
+				//	{
+				//		try
+				//		{
+				//			return Tuple.Create(com2CodeDom.PropertySchemaToCodeTypeReference(content.Schema, actionName, httpMethod + "Body"), description, true);
+				//		}
+				//		catch (ArgumentException ex)
+				//		{
+				//			throw new CodeGenOperationException($"Definition {path}=>{httpMethod} for op.RequestBody.Reference triggers error: {ex.Message}");
+				//		}
+				//	}
 
-				if (op.RequestBody.Reference != null)
-				{
-					if (op.RequestBody.Content.TryGetValue("application/json", out content) && (content.Schema.Type != null && content.Schema.Type != JsonSchemaType.Object))
-					{
-						try
-						{
-							return Tuple.Create(com2CodeDom.PropertySchemaToCodeTypeReference(content.Schema, actionName, httpMethod + "Body"), description, true);
-						}
-						catch (ArgumentException ex)
-						{
-							throw new CodeGenOperationException($"Definition {path}=>{httpMethod} for op.RequestBody.Reference triggers error: {ex.Message}");
-						}
-					}
-
-					var ns = dotsToNamespaces ? NameFunc.GetNamespaceOfClassName(op.RequestBody.Reference.Id) : string.Empty;
-					string typeName = renamer.RefineTypeName(op.RequestBody.Reference.Id, ns, dotsToNamespaces);
-					CodeTypeReference codeTypeReference = new(NameFunc.CombineNamespaceWithClassName(ns, typeName));
-					return Tuple.Create(codeTypeReference, description, true);
-				}
-				else if (op.RequestBody.Content.TryGetValue("application/json", out content))
+				//	var ns = dotsToNamespaces ? NameFunc.GetNamespaceOfClassName(op.RequestBody.Reference.Id) : string.Empty;
+				//	string typeName = renamer.RefineTypeName(op.RequestBody.Reference.Id, ns, dotsToNamespaces);
+				//	CodeTypeReference codeTypeReference = new(NameFunc.CombineNamespaceWithClassName(ns, typeName));
+				//	return Tuple.Create(codeTypeReference, description, true);
+				//}
+				if (op.RequestBody.Content.TryGetValue("application/json", out content))
 				{
 					if (content.Schema != null)
 					{

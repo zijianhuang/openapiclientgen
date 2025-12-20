@@ -115,14 +115,14 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					if (type== JsonSchemaType.Null && allOfBaseTypeSchemaList.Count > 0)
 					{
 						var allOfRef = allOfBaseTypeSchemaList[0];
-						if (allOfRef.Reference == null)
+						if (string.IsNullOrEmpty(allOfRef.Id))
 						{
 							Trace.TraceWarning($"Not yet support Type {refId} having allOf[0] without Reference. Skipped.");
 							RemoveRegisteredSchemaRefId(refId);
 							return;
 						}
 
-						string baseTypeName = Renamer.RefineTypeName(allOfRef.Reference.Id, ns); //pointing to parent class
+						string baseTypeName = Renamer.RefineTypeName(allOfRef.Id, ns); //pointing to parent class
 						typeDeclaration.BaseTypes.Add(baseTypeName);
 
 						if (allOfBaseTypeSchemaList.Count > 1)
@@ -138,8 +138,8 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				}
 				else if (type == JsonSchemaType.Array) // wrapper of array
 				{
-					OpenApiReference itemsRef = schema.Items.Reference;
-					if (itemsRef == null) //Array type with casual schema
+					//OpenApiReference itemsRef = schema.Items.Reference;
+					if (string.IsNullOrEmpty(schema.Items.Id)) //Array type with casual schema
 					{
 						if (schema.Items.Properties.Count > 0) //casual member type definition in an array type
 						{
@@ -172,27 +172,27 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 						return;
 					}
 
-					string typeNs = settings.DotsToNamespaces ? NameFunc.GetNamespaceOfClassName(itemsRef.Id) : string.Empty;
-					string itemsRefTypeName = Renamer.RefineTypeName(itemsRef.Id, typeNs, settings.DotsToNamespaces);
+					string typeNs = settings.DotsToNamespaces ? NameFunc.GetNamespaceOfClassName(schema.Items.Id) : string.Empty;
+					string itemsRefTypeName = Renamer.RefineTypeName(schema.Items.Id, typeNs, settings.DotsToNamespaces);
 					var existing = FindCodeTypeDeclarationInNamespaces(itemsRefTypeName, typeNs);
-					if (existing == null) //so process itemsRef.Id first before considering type alias
+					if (existing == null) //so process schema.Items.Id first before considering type alias
 					{
-						AddTypeToCodeDom(itemsRef.Id, FindSchema(itemsRef.Id)); // add type recursively
-						RemoveRegisteredSchemaRefId(itemsRef.Id);
+						AddTypeToCodeDom(schema.Items.Id, FindSchema(schema.Items.Id)); // add type recursively
+						RemoveRegisteredSchemaRefId(schema.Items.Id);
 					}
 
 					//Array type with ref to the other type
-					if (TypeAliasDic.TryGet(itemsRef.Id, out string arrayTypeAlias))
+					if (TypeAliasDic.TryGet(schema.Items.Id, out string arrayTypeAlias))
 					{
 						var typeNameX = TypeRefHelper.ArrayAsIEnumerableDerivedToType(arrayTypeAlias, ArrayAsIEnumerableDerived.Array);
 						TypeAliasDic.Add(refId, typeNameX);
-						Trace.TraceInformation($"TypeAliasDic.Add({refId}, {arrayTypeAlias}[]) with existing ({itemsRef.Id}, {arrayTypeAlias})");
+						Trace.TraceInformation($"TypeAliasDic.Add({refId}, {arrayTypeAlias}[]) with existing ({schema.Items.Id}, {arrayTypeAlias})");
 					}
 					else
 					{
 						var typeNameX = TypeRefHelper.ArrayAsIEnumerableDerivedToType(itemsRefTypeName, settings.ArrayAs);
 						TypeAliasDic.Add(refId, typeNameX);
-						Trace.TraceInformation($"TypeAliasDic.Add({refId}, {itemsRef.Id}[])");
+						Trace.TraceInformation($"TypeAliasDic.Add({refId}, {schema.Items.Id}[])");
 					}
 				}
 				else if (type != JsonSchemaType.Object && type != JsonSchemaType.Null)
@@ -257,10 +257,10 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 			if (!primitivePropertyType.HasValue)
 			{
-				if (propertySchema.Reference != null)
+				if (!string.IsNullOrEmpty(propertySchema.Id))
 				{
-					string propertyTypeNs = settings.DotsToNamespaces ? NameFunc.GetNamespaceOfClassName(propertySchema.Reference.Id) : string.Empty;
-					string propertyTypeName = Renamer.RefineTypeName(propertySchema.Reference.Id, propertyTypeNs, settings.DotsToNamespaces);
+					string propertyTypeNs = settings.DotsToNamespaces ? NameFunc.GetNamespaceOfClassName(propertySchema.Id) : string.Empty;
+					string propertyTypeName = Renamer.RefineTypeName(propertySchema.Id, propertyTypeNs, settings.DotsToNamespaces);
 					string propertyTypeWithNs = NameFunc.CombineNamespaceWithClassName(propertyTypeNs, propertyTypeName);
 					CodeTypeReference ctr = ComponentsHelper.TranslateTypeNameToClientTypeReference(propertyTypeWithNs);
 					clientProperty = CreateProperty(ctr, propertyName, isRequired); //TS
@@ -302,7 +302,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					}
 					else
 					{
-						if (TypeAliasDic.TryGet(propertySchema.Reference?.Id, out string aliasTypeName))
+						if (TypeAliasDic.TryGet(propertySchema.Id, out string aliasTypeName))
 						{
 							arrayCodeTypeReference = new CodeTypeReference(aliasTypeName);
 							n = propertyName;
@@ -324,13 +324,13 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					clientProperty = CreateProperty(arrayCodeTypeReference, n, isRequired);
 					SetClientPropertyTypeInfo(clientProperty, true, true);
 				}
-				else if (propertySchema.Enum.Count == 0 && propertySchema.Reference != null && !isPrimitiveType) // for complex type
+				else if (propertySchema.Enum.Count == 0 && !string.IsNullOrEmpty(propertySchema.Id) && !isPrimitiveType) // for complex type
 				{
 					CodeTypeReference complexCodeTypeReference = CreateComplexCodeTypeReference(propertySchema);
 					clientProperty = CreateProperty(complexCodeTypeReference, propertyName, isRequired);
 					SetClientPropertyTypeInfo(clientProperty, true, false);
 				}
-				else if (propertySchema.Reference == null && propertySchema.Properties != null && propertySchema.Properties.Count > 0) // for casual type like Category.sub => CategorySub
+				else if (string.IsNullOrEmpty(propertySchema.Id) && propertySchema.Properties != null && propertySchema.Properties.Count > 0) // for casual type like Category.sub => CategorySub
 				{
 					//string casualTypeName = currentTypeName + NameFunc.ToTitleCase(refinedPropertyName);
 					//if (FindCodeTypeDeclarationInNamespaces(casualTypeName, ns) != null)
@@ -359,7 +359,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					CodeTypeReference dicKeyTypeRef = TypeRefHelper.TranslateToClientTypeReference(typeof(string));
 					CodeTypeReference dicValueTypeRef;
 					if (propertySchema.AdditionalProperties.Properties.Count == 0 //not casual type
-						&& propertySchema.AdditionalProperties.Reference == null // not complex type
+						&& string.IsNullOrEmpty(propertySchema.AdditionalProperties.Id) // not complex type
 						&& propertySchema.AdditionalProperties.Items == null // not casual array type
 						&& (propertySchema.AdditionalProperties.Type == null || propertySchema.AdditionalProperties.Type == JsonSchemaType.Object))
 					{
@@ -412,7 +412,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					clientProperty = CreateProperty(r, propertyName, isRequired);
 					SetClientPropertyTypeInfo(clientProperty, true, false);
 				}
-				else if (propertySchema.Reference != null)
+				else if (!string.IsNullOrEmpty(propertySchema.Id))
 				{
 					CodeTypeReference complexCodeTypeReference = CreateComplexCodeTypeReference(propertySchema);
 					clientProperty = CreateProperty(complexCodeTypeReference, propertyName, isRequired);
@@ -553,7 +553,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 				if (memberSchema.Type == JsonSchemaType.Array && memberSchema.Items?.OneOf?.Count > 0)
 				{
-					var typeList = memberSchema.Items.OneOf.Select(d => d.Reference?.Id).Where(d=>!string.IsNullOrEmpty(d));
+					var typeList = memberSchema.Items.OneOf.Select(d => d.Id).Where(d=>!string.IsNullOrEmpty(d));
 					var typeListText = string.Join(", ", typeList);
 					ss.Add("Array member types: " + typeListText);
 				}
@@ -714,19 +714,19 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 						typeDeclaration.Members.Add(clientField);
 						k++;
 					}
-					else if (enumPremitive is OpenApiPassword passwordMember) // aws alexaforbusiness has PhoneNumberType defined as password format
-					{
-						string memberName = Renamer.RefineEnumMemberName(passwordMember.Value);
-						int intValue = k;
-						CodeMemberField clientField = new()
-						{
-							Name = memberName,
-							InitExpression = new CodePrimitiveExpression(intValue),
-						};
+					//else if (enumPremitive is OpenApiPassword passwordMember) // aws alexaforbusiness has PhoneNumberType defined as password format
+					//{
+					//	string memberName = Renamer.RefineEnumMemberName(passwordMember.Value);
+					//	int intValue = k;
+					//	CodeMemberField clientField = new()
+					//	{
+					//		Name = memberName,
+					//		InitExpression = new CodePrimitiveExpression(intValue),
+					//	};
 
-						typeDeclaration.Members.Add(clientField);
-						k++;
-					}
+					//	typeDeclaration.Members.Add(clientField);
+					//	k++;
+					//}
 					else if (enumPremitive.TryGetValue<double>(out var doubleMember)) //listennotes.com\2.0 has funky definition of casual enum of type double
 					{
 						string memberName = Renamer.RefineEnumMemberName(doubleMember.ToString());

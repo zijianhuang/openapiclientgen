@@ -266,9 +266,9 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					return Tuple.Create(new CodeTypeReference(typeRef), string.Empty);
 				}
 			}
-			else if (arrayItemsSchema.Reference != null) //array of custom type
+			else if (!string.IsNullOrEmpty(arrayItemsSchema.Id)) //array of custom type
 			{
-				string arrayTypeSchemaRefId = arrayItemsSchema.Reference.Id;
+				string arrayTypeSchemaRefId = arrayItemsSchema.Id;
 				var arrayTypeNs = settings.DotsToNamespaces ? NameFunc.GetNamespaceOfClassName(arrayTypeSchemaRefId) : string.Empty;
 				var arrayTypeName = Renamer.RefineTypeName(arrayTypeSchemaRefId, arrayTypeNs, settings.DotsToNamespaces);
 				var arrayTypeWithNs = NameFunc.CombineNamespaceWithClassName(arrayTypeNs, arrayTypeName);
@@ -309,7 +309,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					{
 						enumMemberNames = (arrayItemsSchema.Type == null || arrayItemsSchema.Type == JsonSchemaType.String)
 							? GetStringsFromEnumList(arrayItemsSchema.Enum)
-							: arrayItemsSchema.Enum.Cast<OpenApiInteger>().Select(m => "_" + m.Value.ToString()).ToArray();
+							: arrayItemsSchema.Enum.Select(m => "_" + m.AsValue().ToString()).ToArray();
 					}
 					catch (InvalidCastException ex)
 					{
@@ -364,12 +364,12 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 		public CodeTypeReference CreateComplexCodeTypeReference(IOpenApiSchema propertySchema)
 		{
-			string propertyTypeNs = settings.DotsToNamespaces ? NameFunc.GetNamespaceOfClassName(propertySchema.Reference.Id) : string.Empty;
-			string complexType = Renamer.RefineTypeName(propertySchema.Reference.Id, propertyTypeNs, settings.DotsToNamespaces);
+			string propertyTypeNs = settings.DotsToNamespaces ? NameFunc.GetNamespaceOfClassName(propertySchema.Id) : string.Empty;
+			string complexType = Renamer.RefineTypeName(propertySchema.Id, propertyTypeNs, settings.DotsToNamespaces);
 			var existingType = FindCodeTypeDeclarationInNamespaces(complexType, propertyTypeNs);
-			if (existingType == null && !RegisteredSchemaRefIdExists(propertySchema.Reference.Id)) // Referencing to a type not yet added to namespace
+			if (existingType == null && !RegisteredSchemaRefIdExists(propertySchema.Id)) // Referencing to a type not yet added to namespace
 			{
-				AddTypeForRefIdIfNotExist(propertySchema.Reference.Id);
+				AddTypeForRefIdIfNotExist(propertySchema.Id);
 			}
 
 			var typeWithNs = NameFunc.CombineNamespaceWithClassName(propertyTypeNs, complexType);
@@ -478,10 +478,10 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				bool isPrimitiveType = TypeRefHelper.IsPrimitiveTypeOfOA(schemaType.Value);
 				if (schemaType== JsonSchemaType.Null)
 				{
-					if (propertySchema.Reference != null)
+					if (!string.IsNullOrEmpty(propertySchema.Id))
 					{
-						string propertyTypeNs = settings.DotsToNamespaces ? NameFunc.GetNamespaceOfClassName(propertySchema.Reference.Id) : string.Empty;
-						string propertyTypeName = Renamer.RefineTypeName(propertySchema.Reference.Id, propertyTypeNs, settings.DotsToNamespaces);
+						string propertyTypeNs = settings.DotsToNamespaces ? NameFunc.GetNamespaceOfClassName(propertySchema.Id) : string.Empty;
+						string propertyTypeName = Renamer.RefineTypeName(propertySchema.Id, propertyTypeNs, settings.DotsToNamespaces);
 						string propertyTypeWithNs = NameFunc.CombineNamespaceWithClassName(propertyTypeNs, propertyTypeName);
 						return ComponentsHelper.TranslateTypeNameToClientTypeReference(propertyTypeWithNs);
 					}
@@ -506,12 +506,12 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 						var r = CreateArrayCodeTypeReference(propertySchema, containerName, propertyName, null, null);
 						return r.Item1;
 					}
-					else if (propertySchema.Enum.Count == 0 && propertySchema.Reference != null && !isPrimitiveType) // for complex type
+					else if (propertySchema.Enum.Count == 0 && !string.IsNullOrEmpty(propertySchema.Id) && !isPrimitiveType) // for complex type
 					{
 						CodeTypeReference complexCodeTypeReference = CreateComplexCodeTypeReference(propertySchema);
 						return complexCodeTypeReference;
 					}
-					else if (propertySchema.Reference == null && propertySchema.Properties != null && propertySchema.Properties.Count > 0) // for casual type
+					else if (string.IsNullOrEmpty(propertySchema.Id) && propertySchema.Properties != null && propertySchema.Properties.Count > 0) // for casual type
 					{
 						string casualTypeName = containerName + Renamer.RefinePropertyName(propertyName);
 						var found = FindCodeTypeDeclarationInNamespaces(casualTypeName, null); //It could happenen when generating sync and async functions in C#
@@ -541,7 +541,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 						{
 							enumMemberNames = (propertySchema.Type==null || propertySchema.Type == JsonSchemaType.String)
 								? GetStringsFromEnumList(propertySchema.Enum)
-								: propertySchema.Enum.Cast<OpenApiInteger>().Select(m => "_" + m.Value.ToString()).ToArray();
+								: propertySchema.Enum.Select(m => "_" + m.AsValue().ToString()).ToArray();
 
 						}
 						catch (InvalidCastException ex)
@@ -558,10 +558,10 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 						}
 						else
 						{
-							if (propertySchema.Reference != null)
+							if (!string.IsNullOrEmpty(propertySchema.Id))
 							{
-								AddTypeForRefIdIfNotExist(propertySchema.Reference.Id);
-								CodeTypeReference codeTypeReference = ComponentsHelper.TranslateTypeNameToClientTypeReference(Renamer.RefineTypeName(propertySchema.Reference.Id, ""));
+								AddTypeForRefIdIfNotExist(propertySchema.Id);
+								CodeTypeReference codeTypeReference = ComponentsHelper.TranslateTypeNameToClientTypeReference(Renamer.RefineTypeName(propertySchema.Id, ""));
 								return codeTypeReference;
 							}
 							else
@@ -575,17 +575,17 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					{
 						return new CodeTypeReference(aliasTypeName);
 					}
-					else if (propertySchema.Reference != null)
+					else if (!string.IsNullOrEmpty(propertySchema.Id))
 					{
 						CodeTypeReference complexCodeTypeReference = CreateComplexCodeTypeReference(propertySchema);
 						return complexCodeTypeReference;
 					}
 					else // for casual enum
 					{
-						if (propertySchema.Reference != null)
+						if (!string.IsNullOrEmpty(propertySchema.Id))
 						{
-							AddTypeForRefIdIfNotExist(propertySchema.Reference.Id);
-							CodeTypeReference codeTypeReference = ComponentsHelper.TranslateTypeNameToClientTypeReference(Renamer.RefineTypeName(propertySchema.Reference.Id, ""));
+							AddTypeForRefIdIfNotExist(propertySchema.Id);
+							CodeTypeReference codeTypeReference = ComponentsHelper.TranslateTypeNameToClientTypeReference(Renamer.RefineTypeName(propertySchema.Id, ""));
 							return codeTypeReference;
 						}
 						else
@@ -596,6 +596,8 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					}
 				}
 			}
+
+			return null;
 		}
 
 		protected virtual void AddValidationAttributes(IOpenApiSchema fieldSchema, CodeMemberField memberField)
@@ -724,7 +726,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			{
 				if (d.Value.Content.TryGetValue("application/json", out IOpenApiMediaType mediaTypeObject))
 				{
-					if (mediaTypeObject.Schema.Reference == null && (mediaTypeObject.Schema.Properties == null || mediaTypeObject.Schema.Properties.Count == 0))
+					if (string.IsNullOrEmpty(mediaTypeObject.Schema.Id) && (mediaTypeObject.Schema.Properties == null || mediaTypeObject.Schema.Properties.Count == 0))
 					{
 						return false;
 					}

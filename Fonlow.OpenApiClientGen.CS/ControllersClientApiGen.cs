@@ -1,11 +1,13 @@
 ﻿using Fonlow.OpenApiClientGen.ClientTypes;
-using Microsoft.OpenApi.YamlReader; using Microsoft.OpenApi;
+using Microsoft.OpenApi;
+using Microsoft.OpenApi.YamlReader; 
 using System;
 using System.CodeDom;
 using System.CodeDom.Compiler;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net.Http;
 using System.Reflection;
 
 namespace Fonlow.OpenApiClientGen.CS
@@ -162,9 +164,9 @@ namespace Fonlow.OpenApiClientGen.CS
 
 			CodeTypeDeclaration[] newClassesCreated = containerClassNames.Select(d => CreateControllerClientClass(clientNamespace, d)).ToArray();
 
-			foreach (KeyValuePair<string, OpenApiPathItem> p in paths)
+			foreach (KeyValuePair<string, IOpenApiPathItem> p in paths)
 			{
-				foreach (KeyValuePair<OperationType, OpenApiOperation> op in p.Value.Operations)
+				foreach (KeyValuePair<HttpMethod, OpenApiOperation> op in p.Value.Operations)
 				{
 					ClientApiFunctionGen apiFunctionGen = new();
 					CodeMemberMethod apiFunction = apiFunctionGen.CreateApiFunction(settings, p.Key, op.Key, op.Value, componentsToCsTypes, true, settings.UseEnsureSuccessStatusCodeEx);
@@ -213,9 +215,9 @@ namespace Fonlow.OpenApiClientGen.CS
 
 			List<string> names = new();
 
-			foreach (KeyValuePair<string, OpenApiPathItem> p in paths)
+			foreach (KeyValuePair<string, IOpenApiPathItem> p in paths)
 			{
-				foreach (KeyValuePair<OperationType, OpenApiOperation> op in p.Value.Operations)
+				foreach (KeyValuePair<HttpMethod, OpenApiOperation> op in p.Value.Operations)
 				{
 					string name = nameComposer.GetContainerName(op.Value, p.Key);
 					names.Add(name);

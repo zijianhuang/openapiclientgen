@@ -29,6 +29,17 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			return typeof(string);
 		}
 
+		public static Type PrimitiveSwaggerTypeToClrType(string type, string format)
+		{
+			string key = type + (String.IsNullOrEmpty(format) ? String.Empty : ("_" + format));
+			if (basicClrTypeDic.TryGetValue(key, out Type t))
+			{
+				return t;
+			}
+
+			return typeof(string);
+		}
+
 		public static bool IsSwaggerPrimitive(string type)
 		{
 			return basicClrTypeDic.TryGetValue(type, out _);
